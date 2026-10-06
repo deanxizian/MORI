@@ -1,0 +1,53 @@
+"""User-facing review of the executed M1.15 mounting cleanup."""
+import json,html
+from pathlib import Path
+from PIL import Image,ImageDraw,ImageFont
+
+def generate(root):
+    root=Path(root);p=json.loads((root.parent/'config/geometry.json').read_text());load=lambda n:json.loads((root/'reports'/n).read_text())
+    evidence=load('fastener_cleanup_validation.json');bom=load('bom.json');names={a['id']:a['name'] for a in bom};manufacture=load('manufacturing_classification.json');v=load('validation.json')
+    assert evidence['revision']==p['revision'] and evidence['status']=='PASS_GEOMETRY_ONLY' and v['counts']['FAIL']==0
+    changes=[('固定Yaw承重桥','取消两侧外伸脚与竖向螺丝槽；两个桥脚保持直边，主托板底面两枚M2×8锁入盲孔嵌件。','flush_bridge'),('主托板底面','螺钉头藏在4mm板厚内；两孔在X±45、Y−17，避开电池托盘前侧限位；旧安装位不保留空槽。','flush_bridge_underside'),('扬声器后盖','取消两只外伸耳及侧面长工具槽，改为连续椭圆轮廓、背面两枚沉入式M2×20；仍只固定到上壳。','flush_speaker'),('轮驱底盖','四个孔内收至X±29、Y±23，改为简单倒角平板和沉入式M3螺钉；轴承支座保留。','flush_cap'),('反力轴夹口','取消两块外加凸耳；夹口改为连续圆柱外形，横向螺钉和螺母藏在轮廓内。','flush_reaction')]
+    translated={a:'已调整' if r['review'].startswith('Changed:') else '保留必要功能' for a,r in [(r['id'],r) for r in evidence['printed_part_feature_audit']]}
+    notes={'Load_Frame':'内侧短折边承接轮驱；PCB座和壳体连接位保留。','Body_Upper':'盲孔支座、接口板座均在壳内，不做外露螺丝耳。','Body_Lower':'壳内缝合座及轴槽保留；轴槽用于下壳拆出，不是螺丝避让。','Head_Front':'保留内侧壳体连接、相机遮光与定位。','Head_Rear':'保留内侧壳缝连接，外面没有安装耳。','Battery_Tray':'保留连续滑轨与侧向限位孔。','Display_Frame':'保留原厂LCD安装柱对应座和短光学角度安装面。','Pitch_Cradle':'保留双侧承重、头壳定位和屏幕侧向连接面。','Pitch_Yoke':'保留双侧轴承、实际舵机耳对应座与应力释放线导。','Mic_Duct_L':'独立麦克风声道，没有螺丝安装凸耳。','Mic_Duct_R':'独立麦克风声道，没有螺丝安装凸耳。','Wheel_Hub_L':'止转孔与端部螺钉均在轮毂轮廓内。','Wheel_Hub_R':'止转孔与端部螺钉均在轮毂轮廓内。','Yaw_Base':changes[0][1],'Speaker_Mount':changes[2][1],'Motor_Retainer':changes[3][1],'Drive_Bridge':'底盖螺钉座移到电机舱角部；外伸部分仅保留轴承承重所需宽度。','Yaw_Reaction_Link':changes[4][1]}
+    audit='\n'.join(f'| {names[r["id"]]} / {r["id"]} | {translated[r["id"]]} | {notes[r["id"]]} |' for r in evidence['printed_part_feature_audit'])
+    text=f'''# MORI {p['revision']} · 安装结构巡检与修改
+
+已检查{len(evidence['printed_part_feature_audit'])}个本体硬质打印件，按用户要求去掉外伸螺丝耳和外侧长工具槽；保留轴承、原厂光学安装、壳内连接和维修分界。数据来自实际总装与逐件检查，不是自动证明所有几何特征的用途。
+
+## 已修改
+
+'''+''.join(f'- **{title}**：{description}\n' for title,description,_ in changes)+f'''
+没有新增打印件：本体{manufacture['counts']['robot_print']}件；全机紧固件{manufacture['counts']['fasteners']}件（螺钉{manufacture['screw_count']}、螺母{manufacture['nut_count']}、嵌件{manufacture['insert_count']}、垫圈{manufacture['washer_count']}）。承重桥两枚螺母改为嵌件；数量没有被隐藏。为收进轮廓，喇叭杯两侧和底盖保留了容纳沉孔所需材料，体积/质量变化见部件表与估重报告。
+
+## 安装与维修
+
+1. 台面上先将两枚M2试配嵌件装入承重桥脚底的盲孔，再把桥脚放在Load_Frame上，从主托板底面拧入两枚M2×8。该步在安装电池托盘前完成。维修时先禁驱/断电并支撑头部，拆下壳、断开并取出电池和托盘，再从底面操作。
+2. 电机底盖四枚M3×25从板底沉孔进入，螺母从上座角部装入。轮驱安装、轴承、轮毂及下壳拆卸顺序延续轮驱接口报告。
+3. 喇叭连同上壳取下并断线后，从后盖背面拧两枚M2×20；压紧仍经后盖、喇叭法兰、垫圈传到上壳。后盖不固定在内部承重框架上。
+4. 反力轴夹口的螺母从横向口预装，M2×10从对面沉孔拧入。装入头部前先完成舵盘夹紧；舵盘、嵌件和螺纹尺寸均需匹配采购样件。
+
+## 检查结果与边界
+
+总检查{v['counts']}。新增检查测了桥脚外面是否平直、螺丝头是否收进轮廓、桥脚螺钉每1mm/20mm及喇叭螺钉每1mm/30mm的装入过程。原有整机静态实体、130组联合头部姿态、轮转一周、轮驱拆卸和工具检查已重新执行。
+
+桥脚嵌件孔的名义最薄侧壁约1.3mm，只是候选局部尺寸；需用选定嵌件和打印材料试打、验证抗拔与蠕变，不能作为强度通过结论。后盖密封/声学、全局壁厚、线缆公差、手柄/手指、打印及平衡仍未验证。采购件未缩放、未改电路板源文件。
+
+## 逐件巡检
+
+| 打印件 | 处理 | 保留/变更依据 |
+|---|---|---|
+{audit}
+
+[实际检查JSON](fastener_cleanup_validation.json) · [当前总装](../mori_v1_2.blend) · [所有部件与STL](零件分类与精简建议.md)
+'''
+    (root/'reports/安装结构巡检与修改.md').write_text(text)
+    cards=''.join(f'<figure><a href="renders/{image}.png?revision={p["revision"]}"><img src="renders/{image}.png?revision={p["revision"]}" alt="{html.escape(title)}"></a><figcaption><b>{html.escape(title)}</b><br>{html.escape(description)}</figcaption></figure>' for title,description,image in changes)
+    section=f'<section id="mounting"><h2>安装点收进主体轮廓</h2><p>已逐件巡检18个本体打印件，修改承重桥、喇叭后盖、轮驱底盖与反力轴夹口。保留必要的轴承、原厂安装和维修分界；没有新增打印件。<a href="reports/安装结构巡检与修改.md">查看逐件记录与装配要求</a></p><div class="grid">{cards}</div></section>'
+    sheet=Image.new('RGB',(1600,1680),'#26313b');draw=ImageDraw.Draw(sheet);font=ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc',23)
+    for i,(imname,title) in enumerate([('flush_bridge','STRAIGHT BRIDGE / NO PROJECTING EARS'),('flush_bridge_underside','UNDERSIDE RECESSED MOUNTING'),('flush_speaker','CONTINUOUS SPEAKER COVER'),('flush_cap','INSET CAP SCREWS / FLAT PLATE')]):
+        x=i%2*800;y=i//2*840
+        with Image.open(root/'renders'/f'{imname}.png') as im:sheet.paste(im.convert('RGB').resize((800,800)),(x,y+40))
+        draw.text((x+10,y+7),title,font=font,fill='#e6eef4')
+    sheet.save(root/'renders/fastener_cleanup_overview.jpg',quality=94)
+    return section

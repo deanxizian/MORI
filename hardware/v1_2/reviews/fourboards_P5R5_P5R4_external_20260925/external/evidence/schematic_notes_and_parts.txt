@@ -1,0 +1,513 @@
+
+BOARD power P5R5 NOTES
+8 MORI / POWER CONDITIONER / P4
+9 Power flows left to right. Supplies above, returns below. PROTOTYPE / UNVALIDATED.
+11 01  Pack input / reverse protection / shunt
+12 Q90 master stage precedes BAT_IN. No charger on this PCB.
+14 10mR / 1% / 1W
+28 02  Kelvin current sense
+29 Sense from the shunt pads. Discharge-only nominal transfer: 0.2 V/A.
+41 03  Wheel 9 V conditioning
+42 External buck return. Inrush, brake energy and thermal performance: NOT_TESTED.
+46 1000u / 16V
+63 04  Head 6 V conditioning
+64 External buck return. Inrush, brake energy and thermal performance: NOT_TESTED.
+68 1000u / 16V
+84 05  External converter input distribution
+85 J2 -> wheel buck; J4 -> head buck; J6 -> two independent 5 V converters.
+90 06  Wheel rail / brake and overvoltage
+91 Two comparators share one LM393B. External dump resistor needs pulse qualification.
+92 LM393B / brake + fault
+119 5R6 / 5W external
+149 07  Head rail / brake and overvoltage
+150 Two comparators share one LM393B. External dump resistor needs pulse qualification.
+151 LM393B / brake + fault
+178 10R / 5W external
+208 08  Voltage monitor / motion connector
+209 Divider ratio 27 / 127. Current_ADC comes from block 02.
+233 09  Charge insertion / VBUS sense
+234 Sense and interlock only; no CC / PD / CC-CV charger implementation.
+249 10  Supply boundaries / board mounting
+250 80 x 55 mm PCB; populated assembly and thermal performance are not qualified.
+251 Supply boundary
+253 Supply boundary
+255 Supply boundary
+257 Supply boundary
+259 Supply boundary
+266 11  Motion 5 V / independent fused buck
+267 Prototype: verify stability, temperature, cable drop and concurrent load. No PCB placement frozen.
+269 1A input fuse
+271 22u/25V
+277 22u/25V
+283 100n
+289 100n BOOT
+291 10uH / 4A rms
+293 MOTION 5V
+295 22u/25V
+301 22u/25V
+307 100k 0.1%
+309 13.3k 0.1%
+315 75p C0G
+317 OPEN=ON / SHORT=OFF
+319 5V probe
+321 GND probe
+323 Post-fuse power
+325 Post-fuse power declaration only
+326 EN is internally pulled up; never connect to raw battery.
+327 Setpoint 5.077V. MCU 3V3 remains local.
+329 12  Interaction 5 V / independent fused buck
+330 Prototype: verify stability, temperature, cable drop and concurrent load. No PCB placement frozen.
+332 2A input fuse
+334 22u/25V
+340 22u/25V
+346 100n
+352 100n BOOT
+354 10uH / 4A rms
+356 CAM 5V
+358 22u/25V
+364 22u/25V
+370 100k 0.1%
+372 13.3k 0.1%
+378 75p C0G
+380 OPEN=ON / SHORT=OFF
+382 5V probe
+384 GND probe
+386 Post-fuse power
+388 Post-fuse power declaration only
+389 EN is internally pulled up; never connect to raw battery.
+390 Setpoint 5.077V. MCU 3V3 remains local.
+392 13  Physical master power / low-current rear switch
+393 OFF opens Q90 and the separate motion latch loop. No automatic ARM. Existing Q1 retains reverse-polarity protection.
+400 Q90 SO-8: peak loss / inrush SOA / OFF leakage / thermal: NOT_TESTED.
+401 Rear switch only sinks gate current. Do not connect a motor here.
+402 SW1 second pole connects motion J8: LOOP_3V3 to CLR_N.
+PARTS
+C1 100n [38.5, 21.5, 90] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 1823
+   [('1', '/+3V3', (38.5, 22.275)), ('2', '/GND', (38.5, 20.725))]
+C10 Panasonic EEU-FR1C102 1000uF 16V [52, 22] F.Cu lib MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P2_C10__P3_C10__P5_C10 line 23063
+   [('1', '/W_VM', (52.0, 22.0)), ('2', '/GND', (57.0, 22.0))]
+C2 1u 25V [38, 11, 90] F.Cu lib MORI_Custom:C_0603_1608Metric__P3_C2 line 16054
+   [('1', '/BAT_MON', (38.0, 11.775)), ('2', '/GND', (38.0, 10.225))]
+C20 100n [71, 14, 90] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 29954
+   [('1', '/W_VM', (71.0, 14.775)), ('2', '/GND', (71.0, 13.225))]
+C21 10n [70.5, 22] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 5495
+   [('1', '/W_OVSENSE', (69.725, 22.0)), ('2', '/GND', (71.275, 22.0))]
+C30 Panasonic EEU-FR1C102 1000uF 16V [53, 44] F.Cu lib MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P3_C30__P5_C30 line 30103
+   [('1', '/H_VM', (53.0, 44.0)), ('2', '/GND', (58.0, 44.0))]
+C40 100n [70.5, 32.595] F.Cu lib MORI_Custom:C_0603_1608Metric__P5_C40 line 29706
+   [('1', '/H_VM', (69.725, 32.595)), ('2', '/GND', (71.275, 32.595))]
+C41 10n [71, 38.5] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 6451
+   [('1', '/H_OVSENSE', (70.225, 38.5)), ('2', '/GND', (71.775, 38.5))]
+C60 22u / 25V / X7R [22.5, 30.6, -90] F.Cu lib MORI_Custom:C_1210_3225Metric__P3_C60__P3R1_C60 line 18363
+   [('1', '/M5_VIN', (22.5, 29.125)), ('2', '/GND', (22.5, 32.075))]
+C61 100n / 50V / X7R [23.2, 26, 90] F.Cu lib MORI_Custom:C_0603_1608Metric__P5_C61 line 14463
+   [('1', '/M5_VIN', (23.2, 26.775)), ('2', '/GND', (23.2, 25.225))]
+C62 100n / 50V / X7R [28.35, 22.6, 90] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 4302
+   [('1', '/M5_BOOT', (28.35, 23.375)), ('2', '/M5_SW', (28.35, 21.825))]
+C63 22u / 25V / X7R [10, 23, 90] F.Cu lib MORI_Custom:C_1210_3225Metric__P5_C63 line 15572
+   [('1', '/+5V_MOTION', (10.0, 24.475)), ('2', '/GND', (10.0, 21.525))]
+C64 22u / 25V / X7R [10, 28, -90] F.Cu lib Capacitor_SMD:C_1210_3225Metric line 14314
+   [('1', '/+5V_MOTION', (10.0, 26.525)), ('2', '/GND', (10.0, 29.475))]
+C65 75p / 50V / C0G [29.7, 31.65, 180] F.Cu lib MORI_Custom:C_0603_1608Metric__P5_C65 line 6969
+   [('1', '/+5V_MOTION', (30.475, 31.65)), ('2', '/M5_FB', (28.925, 31.65))]
+C66 22u / 25V / X7R [26.5, 30.6, -90] F.Cu lib Capacitor_SMD:C_1210_3225Metric line 29408
+   [('1', '/M5_VIN', (26.5, 29.125)), ('2', '/GND', (26.5, 32.075))]
+C70 22u / 25V / X7R [22.5, 44.4, -90] F.Cu lib MORI_Custom:C_1210_3225Metric__P3_C70 line 29557
+   [('1', '/C5_VIN', (22.5, 42.925)), ('2', '/GND', (22.5, 45.875))]
+C71 100n / 50V / X7R [22.45, 40, 90] F.Cu lib MORI_Custom:C_0603_1608Metric__P5_C71 line 16193
+   [('1', '/C5_VIN', (22.45, 40.775)), ('2', '/GND', (22.45, 39.225))]
+C72 100n / 50V / X7R [27.6, 36.1, 90] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 14881
+   [('1', '/C5_BOOT', (27.6, 36.875)), ('2', '/C5_SW', (27.6, 35.325))]
+C73 22u / 25V / X7R [10, 37, 90] F.Cu lib Capacitor_SMD:C_1210_3225Metric line 28809
+   [('1', '/+5V_CAM', (10.0, 38.475)), ('2', '/GND', (10.0, 35.525))]
+C74 22u / 25V / X7R [10, 42, -90] F.Cu lib MORI_Custom:C_1210_3225Metric__P3_C74 line 28660
+   [('1', '/+5V_CAM', (10.0, 40.525)), ('2', '/GND', (10.0, 43.475))]
+C75 75p / 50V / C0G [29.7, 45.9232, 180] F.Cu lib MORI_Custom:C_0603_1608Metric__P3R1_C75 line 13812
+   [('1', '/+5V_CAM', (30.475, 45.9232)), ('2', '/C5_FB', (28.925, 45.9232))]
+C76 22u / 25V / X7R [26.5, 44.4, -90] F.Cu lib Capacitor_SMD:C_1210_3225Metric line 5098
+   [('1', '/C5_VIN', (26.5, 42.925)), ('2', '/GND', (26.5, 45.875))]
+D1 BZT52H-C10,115 [26, 17.5, 180] F.Cu lib Diode_SMD:D_SOD-123F line 6172
+   [('1', '/BAT_REV', (27.4, 17.5)), ('2', '/REV_GATE', (24.6, 17.5))]
+D10 B540C-13-F [44, 13.5, 180] F.Cu lib MORI_Custom:D_SMC__P3_D10__P5_D10 line 19390
+   [('1', '/W_PRE', (47.4, 13.5)), ('2', '/W9_IN', (40.6, 13.5))]
+D20 BZT52H-C10,115 [73, 9.5] F.Cu lib Diode_SMD:D_SOD-123F line 2820
+   [('1', '/W_BRAKE_GATE', (71.6, 9.5)), ('2', '/GND', (74.4, 9.5))]
+D30 B540C-13-F [36, 35, -90] F.Cu lib MORI_Custom:D_SMC__P5_D30 line 14602
+   [('1', '/H_PRE', (36.0, 31.6)), ('2', '/H6_IN', (36.0, 38.4))]
+D40 BZT52H-C10,115 [59.5, 51] F.Cu lib MORI_Custom:D_SOD-123F__P5_D40 line 10941
+   [('1', '/H_BRAKE_GATE', (58.1, 51.0)), ('2', '/GND', (60.9, 51.0))]
+D90 BZT52H-C10,115 [8.5, 10.5, 180] F.Cu lib Diode_SMD:D_SOD-123F line 28381
+   [('1', '/PACK_FUSED', (9.9, 10.5)), ('2', '/MASTER_GATE', (7.1, 10.5))]
+F60 1A / 125V / very fast [34, 23, 180] F.Cu lib Fuse:Fuse_Littelfuse-NANO2-451_453 line 3099
+   [('1', '/BAT_MON', (36.455, 23.0)), ('2', '/M5_VIN', (31.545, 23.0))]
+F70 2A / 125V / very fast [30.5, 37, -90] F.Cu lib MORI_Custom:Fuse_Littelfuse-NANO2-451_453__P5_F70 line 16332
+   [('1', '/BAT_MON', (30.5, 34.545)), ('2', '/C5_VIN', (30.5, 39.455))]
+H1 M2 mounting / POSITION TBD [3, 3] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 29845
+   [('', '', (3.0, 3.0))]
+H2 M2 mounting / POSITION TBD [3, 52] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 449
+   [('', '', (3.0, 52.0))]
+H3 M2 mounting / POSITION TBD [77, 3] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 5247
+   [('', '', (77.0, 3.0))]
+H4 M2 mounting / POSITION TBD [77, 52] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 15030
+   [('', '', (77.0, 52.0))]
+J1 PACK AFTER 6.3A FUSE [9, 6] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J1 line 15139
+   [('1', '/GND', (9.0, 6.0)), ('2', '/PACK_FUSED', (14.0, 6.0))]
+J10 MOTION CONTROL [44.5, 27, -90] F.Cu lib MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J10 line 27661
+   [('1', '/+3V3', (44.5, 27.0)), ('2', '/ARM_Q', (44.5, 29.0)), ('3', '/FAULT_N', (44.5, 31.0)), ('4', '/CHG_N', (44.5, 33.0)), ('5', '/BAT_ADC', (44.5, 35.0)), ('6', '/WHEEL_ADC', (44.5, 37.0)), ('7', '/CURRENT_ADC', (44.5, 39.0)), ('8', '/GND', (44.5, 41.0))]
+J11 WHEEL DUMP 5R6 EXTERNAL [61, 6] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P5R5_DUMP line 21198
+   [('1', '/W_DUMP_D', (61.0, 6.0)), ('2', '/W_VM', (66.0, 6.0))]
+J12 HEAD DUMP 10R EXTERNAL [65, 50] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J12__P5_J12__P5R5_DUMP line 20119
+   [('1', '/H_DUMP_D', (65.0, 50.0)), ('2', '/H_VM', (70.0, 50.0))]
+J13 S288 DATA [75, 34, 90] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS line 5644
+   [('1', '/W_BUS', (75.0, 34.0)), ('2', '/GND', (75.0, 32.0))]
+J14 HEAD DATA [75, 43, 90] F.Cu lib MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS line 20458
+   [('1', '/H_BUS', (75.0, 43.0)), ('2', '/GND', (75.0, 41.0)), ('3', 'unconnected-(J14-Pad3)', (75.0, 39.0))]
+J15 CHARGE INTERLOCK [4.5, 31, 90] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J15 line 3298
+   [('1', '/CHG_N', (4.5, 31.0)), ('2', '/GND', (4.5, 29.0))]
+J16 CHARGER RAW VBUS SENSE [4.5, 46, 90] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J16 line 1016
+   [('1', '/VBUS_CHARGE', (4.5, 46.0)), ('2', '/GND', (4.5, 44.0))]
+J17 MOTION 5V OUT / 1+ 2GND [4.5, 24, 90] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS line 12402
+   [('1', '/+5V_MOTION', (4.5, 24.0)), ('2', '/GND', (4.5, 22.0))]
+J18 CAM 5V OUT / 1+ 2GND [13, 50] F.Cu lib Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical line 18810
+   [('1', '/+5V_CAM', (13.0, 50.0)), ('2', '/GND', (15.5, 50.0))]
+J19 REAR MASTER / 1RETURN 2GND [4.5, 17, 90] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J19 line 21507
+   [('1', '/MASTER_RETURN', (4.5, 17.0)), ('2', '/GND', (4.5, 15.0))]
+J2 WHEEL BUCK VIN [22, 6] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J2__P5_J2 line 8704
+   [('1', '/GND', (22.0, 6.0)), ('2', '/BAT_MON', (27.0, 6.0))]
+J3 WHEEL BUCK 9V RETURN [35, 6] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3R1_J3 line 558
+   [('1', '/GND', (35.0, 6.0)), ('2', '/W9_IN', (40.0, 6.0))]
+J4 HEAD BUCK VIN [25, 50] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J4__P3_J4__P3R1_J4 line 11893
+   [('1', '/GND', (25.0, 50.0)), ('2', '/BAT_MON', (30.0, 50.0))]
+J5 HEAD BUCK 6V RETURN [40, 50] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J5__P3_J5__P5_J5 line 7846
+   [('1', '/GND', (40.0, 50.0)), ('2', '/H6_IN', (45.0, 50.0))]
+J6 RAW BAT SERVICE / DNP [48, 6] F.Cu lib MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J6__P3R1_J6 line 20889
+   [('1', '/GND', (48.0, 6.0)), ('2', '/BAT_MON', (53.0, 6.0))]
+J7 S288 L [75, 19, 90] F.Cu lib MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J7__P3_J7__P5_J7 line 21925
+   [('1', '/GND', (75.0, 19.0)), ('2', '/W_VM', (75.0, 16.5)), ('3', '/W_BUS', (75.0, 14.0))]
+J8 S288 R [63, 26] F.Cu lib MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J8__P5_J8 line 12930
+   [('1', '/GND', (63.0, 26.0)), ('2', '/W_VM', (65.5, 26.0)), ('3', '/W_BUS', (68.0, 26.0))]
+J9 SCS0009 CHAIN [64, 42.5] F.Cu lib MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P5_J9 line 15721
+   [('1', '/GND', (64.0, 42.5)), ('2', '/H_VM', (66.5, 42.5)), ('3', '/H_BUS', (69.0, 42.5))]
+JP60 SERVICE OFF / OPEN=ON [5, 39.5, -90] F.Cu lib MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P3_JP60__P3R1_JP60 line 34040
+   [('1', '/M5_EN', (5.0, 39.5)), ('2', '/GND', (2.46, 39.5))]
+JP70 SERVICE OFF / OPEN=ON [36.5, 44.5, 90] F.Cu lib MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P5_JP70 line 10039
+   [('1', '/C5_EN', (36.5, 44.5)), ('2', '/GND', (39.04, 44.5))]
+L60 10uH / SRP7050TA-100M [16.5, 24, 180] F.Cu lib MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap line 2581
+   [('1', '/M5_SW', (19.225, 24.0)), ('2', '/+5V_MOTION', (13.775, 24.0))]
+L70 10uH / SRP7050TA-100M [16.5, 38, 180] F.Cu lib MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap line 13951
+   [('1', '/C5_SW', (19.225, 38.0)), ('2', '/+5V_CAM', (13.775, 38.0))]
+Q1 AO4407A [23, 12, 180] F.Cu lib MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_Q1 line 4451
+   [('1', '/BAT_REV', (25.475, 13.905)), ('2', '/BAT_REV', (25.475, 12.635)), ('3', '/BAT_REV', (25.475, 11.365)), ('4', '/REV_GATE', (25.475, 10.095)), ('5', '/BAT_IN', (20.525, 10.095)), ('6', '/BAT_IN', (20.525, 11.365)), ('7', '/BAT_IN', (20.525, 12.635)), ('8', '/BAT_IN', (20.525, 13.905))]
+Q10 AO4407A [53, 12.5] F.Cu lib Package_SO:SOIC-8_3.9x4.9mm_P1.27mm line 18004
+   [('1', '/W_PRE', (50.525, 10.595)), ('2', '/W_PRE', (50.525, 11.865)), ('3', '/W_PRE', (50.525, 13.135)), ('4', '/W_GATE', (50.525, 14.405)), ('5', '/W_VM', (55.475, 14.405)), ('6', '/W_VM', (55.475, 13.135)), ('7', '/W_VM', (55.475, 11.865)), ('8', '/W_VM', (55.475, 10.595))]
+Q11 AO3400A [42, 19, 90] F.Cu lib MORI_Custom:SOT-23__P5_Q11 line 22406
+   [('1', '/ARM_Q', (41.05, 19.9375)), ('2', '/GND', (42.95, 19.9375)), ('3', '/W_GATE_LOW', (42.0, 18.0625))]
+Q20 AO3400A [71.5, 6.5, 180] F.Cu lib Package_TO_SOT_SMD:SOT-23 line 6600
+   [('1', '/W_BRAKE_GATE', (72.4375, 7.45)), ('2', '/GND', (72.4375, 5.55)), ('3', '/W_DUMP_D', (70.5625, 6.5))]
+Q30 AO4407A [51, 34, -90] F.Cu lib MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_Q30 line 9680
+   [('1', '/H_PRE', (52.905, 31.525)), ('2', '/H_PRE', (51.635, 31.525)), ('3', '/H_PRE', (50.365, 31.525)), ('4', '/H_GATE', (49.095, 31.525)), ('5', '/H_VM', (49.095, 36.475)), ('6', '/H_VM', (50.365, 36.475)), ('7', '/H_VM', (51.635, 36.475)), ('8', '/H_VM', (52.905, 36.475))]
+Q31 AO3400A [56, 36, 90] F.Cu lib Package_TO_SOT_SMD:SOT-23 line 9162
+   [('1', '/ARM_Q', (55.05, 36.9375)), ('2', '/GND', (56.95, 36.9375)), ('3', '/H_GATE_LOW', (56.0, 35.0625))]
+Q40 AO3400A [55.5, 51.5, -90] F.Cu lib Package_TO_SOT_SMD:SOT-23 line 7108
+   [('1', '/H_BRAKE_GATE', (56.45, 50.5625)), ('2', '/GND', (54.55, 50.5625)), ('3', '/H_DUMP_D', (55.5, 52.4375))]
+Q50 MMBT3904LT1G [13.5, 44, 90] F.Cu lib MORI_Custom:SOT-23__P5_Q50 line 1444
+   [('1', '/CHG_BASE', (12.55, 44.9375)), ('2', '/GND', (14.45, 44.9375)), ('3', '/CHG_N', (13.5, 43.0625))]
+Q90 AO4407A [14.5, 12] F.Cu lib Package_SO:SOIC-8_3.9x4.9mm_P1.27mm line 10582
+   [('1', '/PACK_FUSED', (12.025, 10.095)), ('2', '/PACK_FUSED', (12.025, 11.365)), ('3', '/PACK_FUSED', (12.025, 12.635)), ('4', '/MASTER_GATE', (12.025, 13.905)), ('5', '/BAT_IN', (16.975, 13.905)), ('6', '/BAT_IN', (16.975, 12.635)), ('7', '/BAT_IN', (16.975, 11.365)), ('8', '/BAT_IN', (16.975, 10.095))]
+R1 10k [22, 17.5, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 9013
+   [('1', '/REV_GATE', (22.825, 17.5)), ('2', '/GND', (21.175, 17.5))]
+R10 10k [47, 18.7, 90] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R10 line 17567
+   [('1', '/W_GATE', (47.0, 19.525)), ('2', '/W_PRE', (47.0, 17.875))]
+R11 100 [45, 18.5, 90] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R11 line 11220
+   [('1', '/W_GATE', (45.0, 19.325)), ('2', '/W_GATE_LOW', (45.0, 17.675))]
+R2 WSL2512R0100FEA 10mR 1% 1W [33, 12] F.Cu lib Resistor_SMD:R_2512_6332Metric line 11369
+   [('1', '/BAT_REV', (30.0375, 12.0)), ('2', '/BAT_MON', (35.9625, 12.0))]
+R20 2.2k [60.5, 10, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 16900
+   [('1', '/W_VM', (61.325, 10.0)), ('2', '/W_REF', (59.675, 10.0))]
+R21 33.2k 0.1% [62, 18.8, -90] F.Cu lib Resistor_SMD:R_0603_1608Metric line 19241
+   [('1', '/W_VM', (62.0, 17.975)), ('2', '/W_SENSE', (62.0, 19.625))]
+R22 10k 0.1% [62, 21.3] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R22 line 3865
+   [('1', '/W_SENSE', (61.175, 21.3)), ('2', '/GND', (62.825, 21.3))]
+R23 1M 0.1% [70.5, 18.25, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 4800
+   [('1', '/W_BRAKE_GATE', (71.325, 18.25)), ('2', '/W_SENSE', (69.675, 18.25))]
+R24 2.2k [69, 19.8, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 10284
+   [('1', '/W_VM', (69.825, 19.8)), ('2', '/W_BRAKE_GATE', (68.175, 19.8))]
+R25 37.4k 0.1% [65.5, 21.2] F.Cu lib Resistor_SMD:R_0603_1608Metric line 6023
+   [('1', '/W_VM', (64.675, 21.2)), ('2', '/W_OVSENSE', (66.325, 21.2))]
+R26 10k 0.1% [75, 25.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 18661
+   [('1', '/W_OVSENSE', (74.175, 25.5)), ('2', '/GND', (75.825, 25.5))]
+R3 0 [30, 16.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 9531
+   [('1', '/BAT_REV', (29.175, 16.5)), ('2', '/KELVIN_P', (30.825, 16.5))]
+R30 10k [49, 29.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 19092
+   [('1', '/H_GATE', (48.175, 29.5)), ('2', '/H_PRE', (49.825, 29.5))]
+R31 100 [48.5, 39] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R31 line 34275
+   [('1', '/H_GATE', (47.675, 39.0)), ('2', '/H_GATE_LOW', (49.325, 39.0))]
+R4 0 [38, 16.5, -90] F.Cu lib Resistor_SMD:R_0603_1608Metric line 4949
+   [('1', '/BAT_MON', (38.0, 15.675)), ('2', '/KELVIN_N', (38.0, 17.325))]
+R40 2.2k [58, 28.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 17049
+   [('1', '/H_VM', (57.175, 28.5)), ('2', '/H_REF', (58.825, 28.5))]
+R41 16.5k 0.1% [62, 38.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 10433
+   [('1', '/H_VM', (61.175, 38.5)), ('2', '/H_SENSE', (62.825, 38.5))]
+R42 10k 0.1% [66.5, 38.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 17855
+   [('1', '/H_SENSE', (65.675, 38.5)), ('2', '/GND', (67.325, 38.5))]
+R43 1M 0.1% [64, 30.7] F.Cu lib Resistor_SMD:R_0603_1608Metric line 12781
+   [('1', '/H_BRAKE_GATE', (63.175, 30.7)), ('2', '/H_SENSE', (64.825, 30.7))]
+R44 2.2k [72.6, 28.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 4153
+   [('1', '/H_VM', (71.775, 28.5)), ('2', '/H_BRAKE_GATE', (73.425, 28.5))]
+R45 18.7k 0.1% [70.5, 36.5, 180] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R45 line 12253
+   [('1', '/H_VM', (71.325, 36.5)), ('2', '/H_OVSENSE', (69.675, 36.5))]
+R46 10k 0.1% [54.5, 28.8, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 4004
+   [('1', '/H_OVSENSE', (55.325, 28.8)), ('2', '/GND', (53.675, 28.8))]
+R50 100k 0.1% [39.5, 24] F.Cu lib Resistor_SMD:R_0603_1608Metric line 300
+   [('1', '/BAT_MON', (38.675, 24.0)), ('2', '/BAT_ADC', (40.325, 24.0))]
+R51 27k 0.1% [41, 22] F.Cu lib Resistor_SMD:R_0603_1608Metric line 2671
+   [('1', '/BAT_ADC', (40.175, 22.0)), ('2', '/GND', (41.825, 22.0))]
+R52 100k 0.1% [45.5, 21, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 22914
+   [('1', '/W_VM', (46.325, 21.0)), ('2', '/WHEEL_ADC', (44.675, 21.0))]
+R53 27k 0.1% [47.5, 24.5, -90] F.Cu lib Resistor_SMD:R_0603_1608Metric line 18512
+   [('1', '/WHEEL_ADC', (47.5, 23.675)), ('2', '/GND', (47.5, 25.325))]
+R54 10k [46, 45.5, 180] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R54 line 3716
+   [('1', '/ARM_Q', (46.825, 45.5)), ('2', '/GND', (45.175, 45.5))]
+R55 47k [10, 45.5] F.Cu lib Resistor_SMD:R_0603_1608Metric line 8555
+   [('1', '/VBUS_CHARGE', (9.175, 45.5)), ('2', '/CHG_BASE', (10.825, 45.5))]
+R56 100k [16.2, 44, 90] F.Cu lib MORI_Custom:R_0603_1608Metric__P5_R56 line 5356
+   [('1', '/CHG_BASE', (16.2, 44.825)), ('2', '/GND', (16.2, 43.175))]
+R60 100k / 0.1% [30, 28.55, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 2432
+   [('1', '/+5V_MOTION', (30.825, 28.55)), ('2', '/M5_FB', (29.175, 28.55))]
+R61 13.3k / 0.1% [30, 30.1] F.Cu lib Resistor_SMD:R_0603_1608Metric line 22765
+   [('1', '/M5_FB', (29.175, 30.1)), ('2', '/GND', (30.825, 30.1))]
+R70 100k / 0.1% [30, 42.55, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 14165
+   [('1', '/+5V_CAM', (30.825, 42.55)), ('2', '/C5_FB', (29.175, 42.55))]
+R71 13.3k / 0.1% [30, 44.1] F.Cu lib MORI_Custom:R_0603_1608Metric__P3_R71 line 161
+   [('1', '/C5_FB', (29.175, 44.1)), ('2', '/GND', (30.825, 44.1))]
+R90 100k [5.5, 11, 90] F.Cu lib Resistor_SMD:R_0603_1608Metric line 867
+   [('1', '/PACK_FUSED', (5.5, 11.825)), ('2', '/MASTER_GATE', (5.5, 10.175))]
+R91 10k [9, 17.5, -90] F.Cu lib Resistor_SMD:R_0603_1608Metric line 17706
+   [('1', '/MASTER_GATE', (9.0, 16.675)), ('2', '/MASTER_RETURN', (9.0, 18.325))]
+TP60 +5V_MOTION [9.5, 32] F.Cu lib MORI_Custom:TestPoint_Pad_D1.5mm__P3_TP60 line 13352
+   [('1', '/+5V_MOTION', (9.5, 32.0))]
+TP61 GND [12.5, 32] F.Cu lib MORI_Custom:TestPoint_Pad_D1.5mm__P5_TP61 line 28958
+   [('1', '/GND', (12.5, 32.0))]
+TP70 +5V_CAM [35, 51] F.Cu lib MORI_Custom:TestPoint_Pad_D1.5mm__P3R1_TP70 line 1972
+   [('1', '/+5V_CAM', (35.0, 51.0))]
+TP71 GND [34.5, 48] F.Cu lib MORI_Custom:TestPoint_Pad_D1.5mm__P5_TP71 line 19669
+   [('1', '/GND', (34.5, 48.0))]
+U1 INA180A1IDBVR [34, 18.5] F.Cu lib MORI_Custom:SOT-23-5__P5_U1 line 11518
+   [('1', '/CURRENT_ADC', (32.8625, 17.55)), ('2', '/GND', (32.8625, 18.5)), ('3', '/KELVIN_P', (32.8625, 19.45)), ('4', '/KELVIN_N', (35.1375, 19.45)), ('5', '/+3V3', (35.1375, 17.55))]
+U20 LM393BDR [66, 14, -90] F.Cu lib MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_U20 line 7477
+   [('1', '/W_BRAKE_GATE', (67.905, 11.525)), ('2', '/W_REF', (66.635, 11.525)), ('3', '/W_SENSE', (65.365, 11.525)), ('4', '/GND', (64.095, 11.525)), ('5', '/W_REF', (64.095, 16.475)), ('6', '/W_OVSENSE', (65.365, 16.475)), ('7', '/FAULT_N', (66.635, 16.475)), ('8', '/W_VM', (67.905, 16.475))]
+U21 TL431BIDBZR [59.5, 13.5, -90] F.Cu lib Package_TO_SOT_SMD:SOT-23 line 16531
+   [('1', '/W_REF', (60.45, 12.5625)), ('2', '/W_REF', (58.55, 12.5625)), ('3', '/GND', (59.5, 14.4375))]
+U40 LM393BDR [65, 34.5] F.Cu lib MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_U40 line 17198
+   [('1', '/H_BRAKE_GATE', (62.525, 32.595)), ('2', '/H_REF', (62.525, 33.865)), ('3', '/H_SENSE', (62.525, 35.135)), ('4', '/GND', (62.525, 36.405)), ('5', '/H_REF', (67.475, 36.405)), ('6', '/H_OVSENSE', (67.475, 35.135)), ('7', '/FAULT_N', (67.475, 33.865)), ('8', '/H_VM', (67.475, 32.595))]
+U41 TL431BIDBZR [58.5, 32, 180] F.Cu lib MORI_Custom:SOT-23__P5_U41 line 8196
+   [('1', '/H_REF', (59.4375, 32.95)), ('2', '/H_REF', (59.4375, 31.05)), ('3', '/GND', (57.5625, 32.0))]
+U60 TPS54302DDCR [27, 26] F.Cu lib MORI_Custom:TI_DDC0006A_TPS54302 line 14041
+   [('1', '/GND', (25.65, 25.05)), ('2', '/M5_SW', (25.65, 26.0)), ('3', '/M5_VIN', (25.65, 26.95)), ('4', '/M5_FB', (28.35, 26.95)), ('5', '/M5_EN', (28.35, 26.0)), ('6', '/M5_BOOT', (28.35, 25.05))]
+U70 TPS54302DDCR [26.25, 40] F.Cu lib MORI_Custom:TI_DDC0006A_TPS54302 line 15448
+   [('1', '/GND', (24.9, 39.05)), ('2', '/C5_SW', (24.9, 40.0)), ('3', '/C5_VIN', (24.9, 40.95)), ('4', '/C5_FB', (27.6, 40.95)), ('5', '/C5_EN', (27.6, 40.0)), ('6', '/C5_BOOT', (27.6, 39.05))]
+PIN TYPES Counter({'passive': 238, 'input': 17, 'power_out': 12, 'power_in': 10, 'open_collector': 5, 'output': 1})
+
+BOARD motion P5R5 NOTES
+8 MORI / MOTION CARRIER / S2
+9 Manually composed circuits. Same electrical interfaces. PROTOTYPE / UNVALIDATED.
+11 01  STM32 module / GPIO map
+12 NC pins are intentionally unused. SWD probe connects on the module top.
+13 WeAct F412RET6 / V1.1
+16 02  Wheel TTL / 6 Mbps target
+17 3.3 V logic; actuator thresholds and timing remain bench items.
+29 03  Head TTL / separate bus
+30 3.3 V logic; actuator thresholds and timing remain bench items.
+42 04  Explicit ARM latch / physical disable loop
+43 CLR_N dominates. Re-arm requires a new ARM_CLK edge; this is not a watchdog.
+86 05  Transmit-enable gating
+87 OE_N = request_N OR ARM_Q_N. Pull-ups disable TX by default.
+103 06  Body IMU connector / source damping
+104 SPI and DRDY belong to the rigid body IMU, not the head.
+113 07  Interaction UART / power-domain isolation
+114 CAM_3V3 powers translator B only. It does not power the motion MCU.
+133 08  Power monitor / RC filters
+134 1k / 10nF filters at the ADC inputs. Scaling is on the power board.
+161 09  Input / user button / supply boundaries
+162 J6 is a user button. Physical disable is J8; reset can cause a fall.
+173 Supply boundary
+175 Supply boundary
+177 Supply boundary
+PARTS
+C1 100n [32, 11.75, 90] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 9107
+   [('1', '/+3V3', (32.0, 12.525)), ('2', '/GND', (32.0, 10.975))]
+C10 10n [15, 28] B.Cu lib MORI_Custom:C_0603_1608Metric__P5_C10 line 9262
+   [('1', '/WHEEL_ADC', (14.225, 28.0)), ('2', '/GND', (15.775, 28.0))]
+C11 10n [18.4, 28] B.Cu lib MORI_Custom:C_0603_1608Metric__P5_C11 line 11256
+   [('1', '/CURRENT_ADC', (17.625, 28.0)), ('2', '/GND', (19.175, 28.0))]
+C12 100n [8, 21, 180] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 9407
+   [('1', '/CLR_N', (8.775, 21.0)), ('2', '/GND', (7.225, 21.0))]
+C2 100n [24.25, 22.75] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 12231
+   [('1', '/+3V3', (23.475, 22.75)), ('2', '/GND', (25.025, 22.75))]
+C3 100n [22.5, 12.25] B.Cu lib MORI_Custom:C_0603_1608Metric__P5_C3 line 11401
+   [('1', '/+3V3', (21.725, 12.25)), ('2', '/GND', (23.275, 12.25))]
+C4 100n [42.5, 9.25, 90] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 12386
+   [('1', '/+3V3', (42.5, 10.025)), ('2', '/GND', (42.5, 8.475))]
+C5 100n [14.5, 10.25] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 6159
+   [('1', '/+3V3', (13.725, 10.25)), ('2', '/GND', (15.275, 10.25))]
+C6 100n [8, 15] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 6794
+   [('1', '/+3V3', (7.225, 15.0)), ('2', '/GND', (8.775, 15.0))]
+C7 100n [42.5, 12] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 6639
+   [('1', '/CAM_3V3', (41.725, 12.0)), ('2', '/GND', (43.275, 12.0))]
+C8 10u [45.5, 7.6, -90] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 6949
+   [('1', '/+5V_MOTION', (45.5, 6.825)), ('2', '/GND', (45.5, 8.375))]
+C9 10n [11.9, 28] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 12866
+   [('1', '/BAT_ADC', (11.125, 28.0)), ('2', '/GND', (12.675, 28.0))]
+D1 BAT54H,115 [30, 21, 90] B.Cu lib Diode_SMD:D_SOD-123 line 10817
+   [('1', '/NRST', (30.0, 22.65)), ('2', '/CLR_N', (30.0, 19.35))]
+D2 BAT54H,115 [13, 15.5, 90] B.Cu lib Diode_SMD:D_SOD-123 line 8823
+   [('1', '/FAULT_N', (13.0, 17.15)), ('2', '/CLR_N', (13.0, 13.85))]
+D3 BAT54H,115 [27, 17.5, 90] B.Cu lib MORI_Custom:D_SOD-123__P5_D3 line 7104
+   [('1', '/CHG_N', (27.0, 19.15)), ('2', '/CLR_N', (27.0, 15.85))]
+H1 M2 clearance [2.5, 2.5] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 1137
+   [('', '', (2.5, 2.5))]
+H2 M2 clearance [2.5, 32.5] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 1028
+   [('', '', (2.5, 32.5))]
+H3 M2 clearance [67.5, 2.5] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 4126
+   [('', '', (67.5, 2.5))]
+H4 M2 clearance [67.5, 32.5] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 919
+   [('', '', (67.5, 32.5))]
+J1 MOTION 5V IN [58.5, 3] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J1 line 2459
+   [('1', '/+5V_MOTION', (58.5, 3.0)), ('2', '/GND', (60.5, 3.0))]
+J2 S288 DATA ONLY [51, 3] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS line 161
+   [('1', '/S288_BUS', (51.0, 3.0)), ('2', '/GND', (53.0, 3.0))]
+J3 HEAD DATA ONLY [62, 18] F.Cu lib MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS line 2867
+   [('1', '/HEAD_BUS', (62.0, 18.0)), ('2', '/GND', (64.0, 18.0)), ('3', 'unconnected-(J3-Pad3)', (66.0, 18.0))]
+J4 BODY IMU SPI [50.5, 25] F.Cu lib MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J4 line 1246
+   [('1', '/+3V3', (50.5, 25.0)), ('2', '/GND', (52.5, 25.0)), ('3', '/IMU_SCK', (54.5, 25.0)), ('4', '/IMU_MOSI', (56.5, 25.0)), ('5', '/IMU_MISO', (58.5, 25.0)), ('6', '/IMU_CS', (60.5, 25.0)), ('7', '/IMU_DRDY', (62.5, 25.0)), ('8', '/GND', (64.5, 25.0))]
+J5 CAM J11 MATCH [50.5, 18] F.Cu lib MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_PH_ANNULUS line 1976
+   [('1', '/CAM_RX', (50.5, 18.0)), ('2', '/CAM_TX', (52.5, 18.0)), ('3', '/CAM_3V3', (54.5, 18.0)), ('4', '/GND', (56.5, 18.0))]
+J6 INTERNAL SERVICE KEY [51, 31.3] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS line 540
+   [('1', '/USER_KEY_N', (51.0, 31.3)), ('2', '/GND', (53.0, 31.3))]
+J7 POWER CONTROL [50.5, 10] F.Cu lib MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J7 line 4614
+   [('1', '/+3V3', (50.5, 10.0)), ('2', '/ARM_Q', (52.5, 10.0)), ('3', '/FAULT_N', (54.5, 10.0)), ('4', '/CHG_N', (56.5, 10.0)), ('5', '/BAT_ADC_IN', (58.5, 10.0)), ('6', '/WHEEL_ADC_IN', (60.5, 10.0)), ('7', '/CURRENT_ADC_IN', (62.5, 10.0)), ('8', '/GND', (64.5, 10.0))]
+J8 LATCHED ENABLE LOOP [58.5, 31.3] F.Cu lib MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS line 4235
+   [('1', '/LOOP_3V3', (58.5, 31.3)), ('2', '/CLR_N', (60.5, 31.3))]
+R1 68 [32.299999, 8.75] B.Cu lib Resistor_SMD:R_0603_1608Metric line 8358
+   [('1', '/S288_TX_BUF', (31.474999, 8.75)), ('2', '/S288_BUS', (33.124999, 8.75))]
+R10 33 [26.5, 27] B.Cu lib Resistor_SMD:R_0603_1608Metric line 5704
+   [('1', '/IMU_SCK_M', (25.675, 27.0)), ('2', '/IMU_SCK', (27.325, 27.0))]
+R11 33 [29.5, 27, 90] B.Cu lib MORI_Custom:R_0603_1608Metric__P5_R11 line 6014
+   [('1', '/IMU_MOSI_M', (29.5, 27.825)), ('2', '/IMU_MOSI', (29.5, 26.175))]
+R12 33 [23.5, 27, 90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 10352
+   [('1', '/IMU_CS_M', (23.5, 27.825)), ('2', '/IMU_CS', (23.5, 26.175))]
+R13 10k [45.5, 19.5, 90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 8513
+   [('1', '/IMU_CS', (45.5, 20.325)), ('2', '/+3V3', (45.5, 18.675))]
+R14 1k [11.125, 25, -90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 9872
+   [('1', '/BAT_ADC_IN', (11.125, 24.175)), ('2', '/BAT_ADC', (11.125, 25.825))]
+R15 1k [14.225, 25, -90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 9717
+   [('1', '/WHEEL_ADC_IN', (14.225, 24.175)), ('2', '/WHEEL_ADC', (14.225, 25.825))]
+R16 1k [17.625, 25, -90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 5394
+   [('1', '/CURRENT_ADC_IN', (17.625, 24.175)), ('2', '/CURRENT_ADC', (17.625, 25.825))]
+R17 10k [16, 17] B.Cu lib Resistor_SMD:R_0603_1608Metric line 7543
+   [('1', '/FAULT_N', (15.175, 17.0)), ('2', '/+3V3', (16.825, 17.0))]
+R18 10k [28, 21.5, -90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 9562
+   [('1', '/CHG_N', (28.0, 20.675)), ('2', '/+3V3', (28.0, 22.325))]
+R19 1k [33, 16, -90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 11101
+   [('1', '/ARM_Q', (33.0, 15.175)), ('2', '/ARM_FEEDBACK', (33.0, 16.825))]
+R2 68 [24.5, 19, 90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 10662
+   [('1', '/HEAD_TX_BUF', (24.5, 19.825)), ('2', '/HEAD_BUS', (24.5, 18.175))]
+R3 10k [15, 7.5, -90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 5549
+   [('1', '/S288_OE_REQ_N', (15.0, 6.675)), ('2', '/+3V3', (15.0, 8.325))]
+R4 10k [17.5, 7.5] B.Cu lib Resistor_SMD:R_0603_1608Metric line 8668
+   [('1', '/HEAD_OE_REQ_N', (16.675, 7.5)), ('2', '/+3V3', (18.325, 7.5))]
+R5 10k [7, 10.25, 180] B.Cu lib Resistor_SMD:R_0603_1608Metric line 12076
+   [('1', '/ARM_CLK', (7.825, 10.25)), ('2', '/GND', (6.175, 10.25))]
+R6 1k [42, 26] B.Cu lib Resistor_SMD:R_0603_1608Metric line 5859
+   [('1', '/+3V3', (41.175, 26.0)), ('2', '/LOOP_3V3', (42.825, 26.0))]
+R7 10k [11.5, 21] B.Cu lib Resistor_SMD:R_0603_1608Metric line 11546
+   [('1', '/CLR_N', (10.675, 21.0)), ('2', '/GND', (12.325, 21.0))]
+R8 10k [47, 29, 90] B.Cu lib Resistor_SMD:R_0603_1608Metric line 10507
+   [('1', '/USER_KEY_N', (47.0, 29.825)), ('2', '/+3V3', (47.0, 28.175))]
+R9 47 [45, 13.75] B.Cu lib Resistor_SMD:R_0603_1608Metric line 7388
+   [('1', '/CAM_RX_BUF', (44.175, 13.75)), ('2', '/CAM_RX', (45.825, 13.75))]
+U1 SN74LVC2G125DCUR [28, 9] B.Cu lib MORI_Custom:TI_DCU0008A_0p85x0p30 line 6314
+   [('1', '/S288_OE_N', (26.45, 9.75)), ('2', '/S288_TX', (26.45, 9.25)), ('3', '/S288_RX', (26.45, 8.75)), ('4', '/GND', (26.45, 8.25)), ('5', '/S288_BUS', (29.55, 8.25)), ('6', '/S288_TX_BUF', (29.55, 8.75)), ('7', '/GND', (29.55, 9.25)), ('8', '/+3V3', (29.55, 9.75))]
+U100 WeAct STM32F412RET6 64Pin V1.1 [6, 0.89] F.Cu lib MORI_Custom:WeAct_F4_64Pin_V11 line 3298
+   [('A1', 'unconnected-(U100-A.1_VB-PadA1)', (7.37, 32.74)), ('A2', '/GND', (7.37, 30.2)), ('A3', 'unconnected-(U100-A.3_PC14-PadA3)', (9.91, 32.74)), ('A4', '/USER_KEY_N', (9.91, 30.2)), ('A5', '/BAT_ADC', (12.45, 32.74)), ('A6', 'unconnected-(U100-A.6_PC15-PadA6)', (12.45, 30.2)), ('A7', '/CURRENT_ADC', (14.99, 32.74)), ('A8', '/WHEEL_ADC', (14.99, 30.2)), ('A9', 'unconnected-(U100-A.9_PA0-PadA9)', (17.53, 32.74)), ('A10', 'unconnected-(U100-A.10_PC3-PadA10)', (17.53, 30.2)), ('A11', '/HEAD_TX', (20.07, 32.74)), ('A12', 'unconnected-(U100-A.12_PA1-PadA12)', (20.07, 30.2)), ('A13', '/IMU_CS_M', (22.61, 32.74)), ('A14', '/HEAD_RX', (22.61, 30.2)), ('A15', '/IMU_MISO', (25.15, 32.74)), ('A16', '/IMU_SCK_M', (25.15, 30.2)), ('A17', '/CHG_N', (27.69, 32.74)), ('A18', '/IMU_MOSI_M', (27.69, 30.2)), ('A19', '/IMU_DRDY', (30.23, 32.74)), ('A20', '/ARM_FEEDBACK', (30.23, 30.2)), ('A21', 'unconnected-(U100-A.21_PB2-PadA21)', (32.77, 32.74)), ('A22', 'unconnected-(U100-A.22_PB1-PadA22)', (32.77, 30.2)), ('A23', 'unconnected-(U100-A.23_PB11_NC_VCAP-PadA23)', (35.31, 32.74)), ('A24', 'unconnected-(U100-A.24_PB10-PadA24)', (35.31, 30.2)), ('B1', 'unconnected-(U100-B.1_PB9-PadB1)', (7.37, 4.8)), ('B2', '/GND', (7.37, 2.26)), ('B3', '/ARM_CLK', (9.91, 4.8)), ('B4', '/CLR_N', (9.91, 2.26)), ('B5', '/S288_OE_REQ_N', (12.45, 4.8)), ('B6', '/HEAD_OE_REQ_N', (12.45, 2.26)), ('B7', '/FAULT_N', (14.99, 4.8)), ('B8', 'unconnected-(U100-B.8_PB4-PadB8)', (14.99, 2.26)), ('B9', 'unconnected-(U100-B.9_PC12-PadB9)', (17.53, 4.8)), ('B10', 'unconnected-(U100-B.10_PD2-PadB10)', (17.53, 2.26)), ('B11', 'unconnected-(U100-B.11_PC10-PadB11)', (20.07, 4.8)), ('B12', 'unconnected-(U100-B.12_PC11-PadB12)', (20.07, 2.26)), ('B13', 'unconnected-(U100-B.13_PA12-PadB13)', (22.61, 4.8)), ('B14', 'unconnected-(U100-B.14_PA15-PadB14)', (22.61, 2.26)), ('B15', '/S288_RX', (25.15, 4.8)), ('B16', 'unconnected-(U100-B.16_PA11-PadB16)', (25.15, 2.26)), ('B17', 'unconnected-(U100-B.17_PA8-PadB17)', (27.69, 4.8)), ('B18', '/S288_TX', (27.69, 2.26)), ('B19', 'unconnected-(U100-B.19_PC8-PadB19)', (30.23, 4.8)), ('B20', 'unconnected-(U100-B.20_PC9-PadB20)', (30.23, 2.26)), ('B21', '/LINK_TX', (32.77, 4.8)), ('B22', '/LINK_RX', (32.77, 2.26)), ('B23', 'unconnected-(U100-B.23_PB14-PadB23)', (35.31, 4.8)), ('B24', 'unconnected-(U100-B.24_PB15-PadB24)', (35.31, 2.26)), ('C1', '/+3V3', (37.85, 32.74)), ('C2', '/GND', (37.85, 30.2)), ('C3', '/+3V3', (40.39, 32.74)), ('C4', '/GND', (40.39, 30.2)), ('C5', '/+3V3', (42.93, 32.74)), ('C6', '/GND', (42.93, 30.2)), ('D1', 'unconnected-(U100-D.1_PB12-PadD1)', (37.85, 4.8)), ('D2', 'unconnected-(U100-D.2_PB13-PadD2)', (37.85, 2.26)), ('D3', '/+5V_MOTION', (40.39, 4.8)), ('D4', '/+5V_MOTION', (40.39, 2.26)), ('D5', '/GND', (42.93, 4.8)), ('D6', '/GND', (42.93, 2.26)), ('E1', 'unconnected-(U100-E.1_GND-PadE1)', (32.39, 19.28)), ('E2', 'unconnected-(U100-E.2_GND-PadE2)', (34.93, 19.28)), ('E3', 'unconnected-(U100-E.3_PA10-PadE3)', (32.39, 21.82)), ('E4', 'unconnected-(U100-E.4_PA14_SWCLK-PadE4)', (34.93, 21.82)), ('E5', 'unconnected-(U100-E.5_PA9-PadE5)', (32.39, 24.36)), ('E6', 'unconnected-(U100-E.6_PA13_SWDIO-PadE6)', (34.93, 24.36)), ('E7', '/NRST', (32.39, 26.9)), ('E8', 'unconnected-(U100-E.8_3V3-PadE8)', (34.93, 26.9))]
+U2 SN74LVC2G125DCUR [21, 23.5, 90] B.Cu lib MORI_Custom:TI_DCU0008A_0p85x0p30__P5_U2 line 12541
+   [('1', '/HEAD_OE_N', (21.75, 25.05)), ('2', '/HEAD_TX', (21.25, 25.05)), ('3', '/HEAD_RX', (20.75, 25.05)), ('4', '/GND', (20.25, 25.05)), ('5', '/HEAD_BUS', (20.25, 21.95)), ('6', '/HEAD_TX_BUF', (20.75, 21.95)), ('7', '/GND', (21.25, 21.95)), ('8', '/+3V3', (21.75, 21.95))]
+U3 SN74LVC2G32DCUR [19, 11.5, 90] B.Cu lib MORI_Custom:TI_DCU0008A_0p85x0p30__P5_U3 line 8023
+   [('1', '/S288_OE_REQ_N', (19.75, 13.05)), ('2', '/ARM_Q_N', (19.25, 13.05)), ('3', '/HEAD_OE_N', (18.75, 13.05)), ('4', '/GND', (18.25, 13.05)), ('5', '/HEAD_OE_REQ_N', (18.25, 9.95)), ('6', '/ARM_Q_N', (18.75, 9.95)), ('7', '/S288_OE_N', (19.25, 9.95)), ('8', '/+3V3', (19.75, 9.95))]
+U4 TXU0202DCUR [39, 10] B.Cu lib MORI_Custom:TI_DCU0008A_0p85x0p30 line 7698
+   [('1', '/CAM_TX', (37.45, 10.75)), ('2', '/GND', (37.45, 10.25)), ('3', '/+3V3', (37.45, 9.75)), ('4', '/LINK_RX', (37.45, 9.25)), ('5', '/LINK_TX', (40.55, 9.25)), ('6', '/+3V3', (40.55, 9.75)), ('7', '/CAM_3V3', (40.55, 10.25)), ('8', '/CAM_RX_BUF', (40.55, 10.75))]
+U5 SN74LVC1G74DCUR [11, 9.5, -90] B.Cu lib MORI_Custom:TI_DCU0008A_0p85x0p30__P5_U5 line 10027
+   [('1', '/ARM_CLK', (10.25, 7.95)), ('2', '/+3V3', (10.75, 7.95)), ('3', '/ARM_Q_N', (11.25, 7.95)), ('4', '/GND', (11.75, 7.95)), ('5', '/ARM_Q', (11.75, 11.05)), ('6', '/CLR_N', (11.25, 11.05)), ('7', '/+3V3', (10.75, 11.05)), ('8', '/+3V3', (10.25, 11.05))]
+U6 TLV803EA29DBZR [8, 18, 180] B.Cu lib Package_TO_SOT_SMD:SOT-23 line 11701
+   [('1', '/GND', (8.9375, 17.05)), ('2', '/CLR_N', (8.9375, 18.95)), ('3', '/+3V3', (7.0625, 18.0))]
+PIN TYPES Counter({'passive': 141, 'input': 31, 'power_in': 16, 'output': 15, 'power_out': 4, 'tri_state': 4, 'open_collector': 2})
+
+BOARD imu P5R4 NOTES
+8 MORI BODY IMU | FUNCTIONAL CIRCUIT
+9 S2 drawing | same pin map and PCB | PROTOTYPE / UNVALIDATED
+11 01  SPI connector / sensor / local decoupling
+12 Body-fixed IMU. Axis transform and assembled pin-1 orientation still require verification.
+20 Supply boundary
+22 Supply boundary
+25 02  Mechanical references
+PARTS
+C1 100n [12.5, 11.7, -90] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 1845
+   [('1', '/+3V3', (12.5, 10.925)), ('2', '/GND', (12.5, 12.475))]
+C2 2.2u [12.5, 14.25, 180] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 286
+   [('1', '/+3V3', (13.275, 14.25)), ('2', '/GND', (11.725, 14.25))]
+C3 10n [9, 12.5] F.Cu lib Capacitor_SMD:C_0603_1608Metric line 435
+   [('1', '/+3V3', (8.225, 12.5)), ('2', '/GND', (9.775, 12.5))]
+H1 M2 clearance [2.5, 12.5] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 1627
+   [('', '', (2.5, 12.5))]
+H2 M2 clearance [17.5, 12.5] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 1736
+   [('', '', (17.5, 12.5))]
+J1 BODY RIGID IMU [3, 3.5] F.Cu lib MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J1 line 867
+   [('1', '/+3V3', (3.0, 3.5)), ('2', '/GND', (5.0, 3.5)), ('3', '/SCK', (7.0, 3.5)), ('4', '/MOSI', (9.0, 3.5)), ('5', '/MISO', (11.0, 3.5)), ('6', '/CS_N', (13.0, 3.5)), ('7', '/DRDY', (15.0, 3.5)), ('8', '/GND', (17.0, 3.5))]
+R1 33 [5.9, 8.65, 180] F.Cu lib Resistor_SMD:R_0603_1608Metric line 137
+   [('1', '/MISO_IC', (6.725, 8.65)), ('2', '/MISO', (5.075, 8.65))]
+R2 10k [15.9, 8.4, -90] F.Cu lib Resistor_SMD:R_0603_1608Metric line 1994
+   [('1', '/CS_N', (15.9, 7.575)), ('2', '/+3V3', (15.9, 9.225))]
+U1 ICM-42688-P [10, 9.6] F.Cu lib MORI_Custom:TDK_ICM42688P_LGA14_3x2p5__P2_U1__P3R1_U1 line 584
+   [('1', '/MISO_IC', (8.8375, 8.85)), ('2', '/GND', (8.8375, 9.35)), ('3', '/GND', (8.8375, 9.85)), ('4', '/DRDY', (8.8375, 10.35)), ('5', '/+3V3', (9.5, 10.5125)), ('6', '/GND', (10.0, 10.5125)), ('7', '/GND', (10.5, 10.5125)), ('8', '/+3V3', (11.1625, 10.35)), ('9', '/GND', (11.1625, 9.85)), ('10', '/GND', (11.1625, 9.35)), ('11', '/GND', (11.1625, 8.85)), ('12', '/CS_N', (10.5, 8.6875)), ('13', '/SCK', (10.0, 8.6875)), ('14', '/MOSI', (9.5, 8.6875))]
+PIN TYPES Counter({'passive': 23, 'input': 4, 'power_in': 3, 'output': 2, 'power_out': 2})
+
+BOARD rear P5R4 NOTES
+8 MORI / REAR TYPE-C + POWER SWITCH / P4
+9 PROTOTYPE / NOT_TESTED. No PD negotiation or battery CC/CV charging on this interface board.
+11 01  USB-C charge inlet / fuse / CC pass-through
+12 5-20V only after external sink negotiation. 1A continuous target; current limit and 3S charger remain external.
+13 USB-C / HRO 31-M-12
+15 1.5A / 125VDC
+28 CC1 ESD
+34 CC2 ESD
+41 02  Physical master switch + latch-clear loop
+42 ON closes both poles. OFF / broken harness opens both. A fresh local ARM is required after switch-on.
+43 DPDT / 0.5A signal only
+47 03  Mechanical and test interfaces
+48 PCB grows 11mm inward. Actual USB/switch opening positions require mechanical update.
+51 H1=(3,11), H2=(21,11); NPTH 2.2mm
+52 24 x 25 x 1.6mm; no exposed top metal on side seats.
+PARTS
+C1 100n / 50V / X7R [4.3, 22.3, -90] B.Cu lib Capacitor_SMD:C_0603_1608Metric line 2480
+   [('1', '/VBUS_FUSED', (4.3, 21.525)), ('2', '/GND', (4.3, 23.075))]
+D1 SMF24A / Littelfuse [3.9, 17.7, 180] B.Cu lib MORI_Custom:D_SOD-123F__P5_D1 line 2186
+   [('1', '/VBUS_FUSED', (5.3, 17.7)), ('2', '/GND', (2.5, 17.7))]
+D2 PESD5V0L1BA,115 [10.95, 9.85, 180] B.Cu lib MORI_Custom:D_SOD-323__P5_D2 line 1212
+   [('1', '/CC1', (12.0, 9.85)), ('2', '/GND', (9.9, 9.85))]
+D3 PESD5V0L1BA,115 [14.3, 9.5] B.Cu lib MORI_Custom:D_SOD-323__P5_D3 line 1486
+   [('1', '/CC2', (13.25, 9.5)), ('2', '/GND', (15.35, 9.5))]
+F1 045101.5MRL / 1.5A [4.099999, 4.4, 90] B.Cu lib MORI_Custom:Littelfuse_451_6.1x2.69_P4__P3R1_F1 line 1098
+   [('1', '/VBUS_RAW', (4.099999, 6.85)), ('2', '/VBUS_FUSED', (4.099999, 1.95))]
+H1 M2 clearance [3, 11] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 308
+   [('', '', (3.0, 11.0))]
+H2 M2 clearance [21, 11] F.Cu lib MountingHole:MountingHole_2.2mm_M2 line 989
+   [('', '', (21.0, 11.0))]
+J2 CHARGER / PH5 SIDE ENTRY [19, 15.7, -90] B.Cu lib MORI_Custom:JST_PH_S5B-PH-K_1x05_P2.00mm_Horizontal__P4_ANNULUS__P5_J2 line 2635
+   [('1', '/VBUS_FUSED', (19.0, 15.7)), ('2', '/GND', (19.0, 17.7)), ('3', '/CC1', (19.0, 19.7)), ('4', '/CC2', (19.0, 21.7)), ('5', '/VBUS_RAW', (19.0, 23.7))]
+J3 MASTER + DISARM / PH4 [8.45, 19.5] F.Cu lib MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_ANNULUS__P3R1_J3 line 417
+   [('1', '/MASTER_RETURN', (8.45, 19.5)), ('2', '/GND', (10.45, 19.5)), ('3', '/LOOP_3V3', (12.45, 19.5)), ('4', '/CLR_N', (14.45, 19.5))]
+SW1 SOFNG MS-202V-G3 [12, 12.9] F.Cu lib MORI_Custom:SOFNG_MS202V_G3_P4__P5_SW1 line 96
+   [('', '', (8.6, 12.9)), ('', '', (15.4, 12.9)), ('1', '/MASTER_RETURN', (9.5, 10.1)), ('2', '/GND', (12.0, 10.1)), ('3', 'unconnected-(SW1-B1-Pad3)', (14.5, 10.1)), ('4', '/LOOP_3V3', (9.5, 15.7)), ('5', '/CLR_N', (12.0, 15.7)), ('6', 'unconnected-(SW1-B2-Pad6)', (14.5, 15.7))]
+USB1 HRO TYPE-C-31-M-12 / charge only [12, 3] B.Cu lib MORI_Custom:USB_C_Receptacle_HRO_TYPE-C-31-M-12__P4_ANNULUS__P5_USB1 line 1770
+   [('', '', (9.11, 5.6)), ('', '', (14.89, 5.6)), ('A1', '/GND', (8.75, 7.045)), ('A4', '/VBUS_RAW', (9.55, 7.045)), ('A5', '/CC1', (10.75, 7.045)), ('A6', 'unconnected-(USB1-PadA6)', (11.75, 7.045)), ('A7', 'unconnected-(USB1-PadA7)', (12.25, 7.045)), ('A8', 'unconnected-(USB1-PadA8)', (13.25, 7.045)), ('A9', '/VBUS_RAW', (14.45, 7.045)), ('A12', '/GND', (15.25, 7.045)), ('B1', '/GND', (15.25, 7.045)), ('B4', '/VBUS_RAW', (14.45, 7.045)), ('B5', '/CC2', (13.75, 7.045)), ('B6', 'unconnected-(USB1-PadB6)', (12.75, 7.045)), ('B7', 'unconnected-(USB1-PadB7)', (11.25, 7.045)), ('B8', 'unconnected-(USB1-PadB8)', (10.25, 7.045)), ('B9', '/VBUS_RAW', (9.55, 7.045)), ('B12', '/GND', (8.75, 7.045)), ('SH', '/GND', (7.68, 1.95)), ('SH', '/GND', (7.68, 6.13)), ('SH', '/GND', (16.32, 1.95)), ('SH', '/GND', (16.32, 6.13))]
+PIN TYPES Counter({'passive': 42})

@@ -1,0 +1,126 @@
+"""Regenerate CAM fan options from a verified lower proposal, preserving pin identity.
+
+Only curves in this independent study are generated. The existing upper pitch
+loops are source-checked references; this individual screen does not prove
+that the four fan options can coexist.
+"""
+from pathlib import Path
+import itertools
+import json
+import sys
+import time
+
+HERE = Path(__file__).resolve().parent
+PROJECT = HERE.parents[3]
+BASE = HERE / 'remaining_routes/nine_lane_swap/combined'
+OUT = BASE / 'upper_fans'
+OUT.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(PROJECT / 'mechanical/scripts'))
+sys.path.insert(0, str(HERE))
+from harness_context import Context, np, sha
+from validate import rigidtr
+from upper_curve_geometry import make
+
+ctx = Context()
+started = time.time()
+lower = json.loads((BASE / 'lower_nine_screen.json').read_text())
+upper = json.loads((HERE / 'cam_upper_screen.json').read_text())
+old = json.loads((HERE / 'cam_joined_verification.json').read_text())
+assert lower['status'] == upper['status'] == old['status'] == 'PASS'
+for report, root in [(lower, PROJECT), (upper, HERE), (old, HERE)]:
+    for name, digest in report['sources'].items():
+        assert sha(PROJECT / name) == digest, name
+    for name, digest in report['inputs'].items():
+        assert sha(root / name) == digest, name
+lower_file = BASE / 'lower_nine_candidates.npz'
+upper_file = HERE / 'cam_upper_candidates.npz'
+assert sha(lower_file) == lower['curve_sha256']
+assert sha(upper_file) == upper['curve_sha256']
+low, loops = np.load(lower_file), np.load(upper_file)
+original = ctx.targets
+groups = {n: s.group if s.group in ['yaw', 'pitch'] else 'body'
+          for n, s in ctx.ss.items()}
+targets = {g: {n: t for n, t in original.items() if groups.get(n, 'body') == g}
+           for g in ['body', 'yaw', 'pitch']}
+rows, arrays, checks = [], {}, 0
+
+for pin in range(1, 5):
+    start = low[f'CAM_{pin}_y0'][-1]
+    anchor = loops[f'slot{pin-1}_pitch0'][0]
+    previous = next(r for r in old['selected'] if r['pin'] == pin)
+    # Rebuild the old parameter choice from the new start; never reuse another
+    # signal's complete curve or change either connector's logical pin number.
+    options = [(previous['waypoint_xy_mm'], previous['radius_mm'],
+                previous['anchor_trim_mm'], previous['lead_mm'])]
+    waypoints = [None, [-9., 7.], [-8., 7.], [-10., 7.], [-12.7, -8.],
+                 [-14., -8.], [-15., -4.], [-13., 2.], [-12., 10.]]
+    options.extend(itertools.product(waypoints, [7., 8., 9., 10., 12., 14.],
+                                     [0., 2., 4.],
+                                     [10.5, 12., 13.5, 15., 16.5, 18., 19.5,
+                                      9., 6., 3., 0.]))
+    accepted, failures, seen = [], [], set()
+    for waypoint, radius, trim, lead in options:
+        identity = (tuple(waypoint) if waypoint else None, radius, trim, lead)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        end = anchor + [0., 0., trim]
+        candidate = make(start, end, radius, lead, waypoint)
+        if candidate is None:
+            continue
+        points, length, error = candidate
+        case = dict(pin=pin, radius_mm=radius, lead_mm=lead,
+                    anchor_trim_mm=trim, waypoint_xy_mm=waypoint)
+        ctx.targets = original
+        hit = ctx.clear(points, chord_error=error, radius=.3302)
+        checks += 1
+        if not hit:
+            for group, selected_targets in targets.items():
+                ctx.targets = selected_targets
+                for yaw in (range(-60, 61, 10) if group == 'body' else [0]):
+                    for pitch in (range(-20, 26, 5) if group == 'pitch' else [0]):
+                        transform = (np.asarray(rigidtr(yaw, 0)) if group == 'body'
+                                     else np.eye(4) if group == 'yaw'
+                                     else np.linalg.inv(np.asarray(rigidtr(0, pitch))))
+                        q = points @ transform[:3, :3].T + transform[:3, 3]
+                        hit = ctx.clear(q, chord_error=error, radius=.3302)
+                        checks += 1
+                        if hit:
+                            hit = dict(hit, group=group, yaw=yaw, pitch=pitch)
+                            break
+                    if hit:
+                        break
+                if hit:
+                    break
+        if hit:
+            failures.append(dict(case, **hit))
+            continue
+        key = f'pin{pin}_candidate{len(accepted)}'
+        arrays[key] = points
+        accepted.append(dict(case, id=key, length_mm=length,
+                             chord_error_mm=error, start_mm=start.tolist(),
+                             end_mm=end.tolist()))
+        print('SWAP_UPPER_OPTION', pin, len(accepted), case, flush=True)
+        if len(accepted) >= 36:
+            break
+    rows.append(dict(pin=pin, status='PASS' if accepted else 'BLOCKED',
+                     candidates=accepted, failures=failures))
+    print('SWAP_UPPER_PIN', pin, len(accepted), len(failures), flush=True)
+
+ctx.targets = original
+ctx.assert_unchanged()
+np.savez_compressed(OUT / 'fan_candidates.npz', **arrays)
+inputs = [BASE / 'lower_nine_screen.json', lower_file,
+          HERE / 'cam_upper_screen.json', upper_file,
+          HERE / 'cam_joined_verification.json', HERE / 'upper_curve_geometry.py']
+report = dict(status='PASS' if all(r['candidates'] for r in rows) else 'BLOCKED',
+              sources=ctx.sources, rows=rows, checks=checks,
+              inputs={str(p.relative_to(PROJECT)): sha(p) for p in inputs},
+              curve_sha256=sha(OUT / 'fan_candidates.npz'),
+              scope='Individual CAM fan options on new mechanical lanes with unchanged logical endpoints',
+              required_surface_gap_mm=.3, wire_OD_mm=.6604,
+              wire_wire='NOT_TESTED', anchors='NOT_TESTED', full_harness='BLOCKED',
+              main_changed=False, supplier_cut_lengths_released=False,
+              script_sha256=sha(Path(__file__)), elapsed_s=time.time()-started)
+(OUT / 'fan_screen.json').write_text(json.dumps(report, indent=2)+'\n')
+print('SWAP_UPPER_DONE', report['status'], report['elapsed_s'], flush=True)

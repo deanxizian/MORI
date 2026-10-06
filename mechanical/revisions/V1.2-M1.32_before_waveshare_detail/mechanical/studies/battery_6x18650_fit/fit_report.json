@@ -1,0 +1,853 @@
+{
+  "timestamp_utc": "2026-09-23T08:12:48.168376+00:00",
+  "source_blend": "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+  "source_sha256": "aeb55d747f07ac67315f2834461027b860b216454400331b3e94079a5274f131",
+  "revision": "V1.2-M1.19",
+  "blender": "5.2.1 LTS",
+  "cell_reference": {
+    "manufacturer": "Molicel",
+    "model": "INR18650P28A",
+    "revision": "1.3",
+    "url": "https://www.molicel.com/wp-content/uploads/INR18650P28A_1.3_Product-Data-Sheet-of-INR-18650-P28A-80093.pdf",
+    "maximum_diameter_mm": 18.6,
+    "maximum_length_mm": 65.2,
+    "purpose": "Example dimensional screening only; no procurement or electrical qualification"
+  },
+  "bay": {
+    "current_pack_xyz_mm": [
+      71.0,
+      55.0,
+      20.0
+    ],
+    "tray_outer_width_mm": 94.19999694824219,
+    "tray_rail_inner_width_mm": 81.0,
+    "uncompressed_side_pad_clearance_mm": 72.0,
+    "tray_depth_mm": 70,
+    "pack_bottom_z_mm": 76.0,
+    "central_ceiling_z_mm": 111.0,
+    "central_height_mm": 35.0
+  },
+  "method": "192-sided cylinder solids in the current assembled .blend; AABB broadphase then Manifold solid intersection, including containment. 9 arrangements x 3 fixed Y translations (-4,0,+4mm). No change to tray/pads/frame/PCB. Load-frame distance from triangle solids; centre ceiling measured by actual solid ray.",
+  "obstacles_checked": [
+    "Body_Upper",
+    "Body_Lower",
+    "Battery_Tray",
+    "Pitch_Yoke",
+    "Yaw_Base",
+    "Yaw_Reaction_Link",
+    "Speaker_Mount",
+    "Load_Frame",
+    "Wheel_Hub_L",
+    "Wheel_Hub_R",
+    "Drive_Bridge",
+    "Speaker",
+    "Speaker_Gasket",
+    "Body_IMU",
+    "MCU_Carrier",
+    "MCU_Motion",
+    "Tire_L",
+    "Tire_R",
+    "Shell_Screw_0",
+    "Shell_Insert_0",
+    "Shell_Screw_1",
+    "Shell_Insert_1",
+    "Shell_Screw_2",
+    "Shell_Insert_2",
+    "Shell_Screw_3",
+    "Shell_Insert_3",
+    "Frame_Screw_0",
+    "Frame_Insert_0",
+    "Frame_Screw_1",
+    "Frame_Insert_1",
+    "Frame_Screw_2",
+    "Frame_Insert_2",
+    "Frame_Screw_3",
+    "Frame_Insert_3",
+    "Battery_Retainer_Screw_-1",
+    "Battery_Retainer_Insert_-1",
+    "Battery_Retainer_Screw_1",
+    "Battery_Retainer_Insert_1",
+    "Drive_L_-8_Screw",
+    "Drive_L_8_Screw",
+    "Drive_R_-8_Screw",
+    "Drive_R_8_Screw",
+    "Yaw_Base_-1_Insert",
+    "Yaw_Base_-1_Screw",
+    "Yaw_Base_1_Insert",
+    "Yaw_Base_1_Screw",
+    "Yaw_Reaction_Retainer_Screw",
+    "Yaw_Reaction_Retainer_Nut",
+    "Speaker_Screw_-1",
+    "Speaker_Insert_-1",
+    "Speaker_Screw_1",
+    "Speaker_Insert_1",
+    "Battery_Pad_-38.0",
+    "Battery_Pad_38.0",
+    "Battery_Pad_Base",
+    "IMU_Insert_0",
+    "IMU_Screw_0",
+    "IMU_Insert_1",
+    "IMU_Screw_1",
+    "Carrier_Insert_0",
+    "Carrier_Screw_0",
+    "Carrier_Insert_1",
+    "Carrier_Screw_1",
+    "Carrier_Insert_2",
+    "Carrier_Screw_2",
+    "Carrier_Insert_3",
+    "Carrier_Screw_3",
+    "Power_Module",
+    "Power_Board_H2_Insert",
+    "Power_Board_H2_Screw",
+    "Power_Board_H3_Insert",
+    "Power_Board_H3_Screw",
+    "Rear_Interface_PCB",
+    "Rear_Interface_Insert_0",
+    "Rear_Interface_Screw_0",
+    "Rear_Interface_Insert_1",
+    "Rear_Interface_Screw_1",
+    "Power_Switch",
+    "USB_Receptacle"
+  ],
+  "proxy_obstacles": [
+    "Body_IMU",
+    "MCU_Carrier",
+    "MCU_Motion"
+  ],
+  "routing_checked": [
+    "Speaker_Lead",
+    "IMU_Lead",
+    "Head_Trunk",
+    "Interface_Lead"
+  ],
+  "candidates": [
+    {
+      "id": "rect_3x2_X",
+      "cell_axis": "X",
+      "bounds_xyz_mm": [
+        [
+          -32.599998474121094,
+          -27.900001525878906,
+          76.0
+        ],
+        [
+          32.599998474121094,
+          27.900001525878906,
+          113.20000457763672
+        ]
+      ],
+      "size_xyz_mm": [
+        65.2,
+        55.8,
+        37.2
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 3535.035
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 3535.035
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 3535.035
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        }
+      ]
+    },
+    {
+      "id": "rect_3x2_Y",
+      "cell_axis": "Y",
+      "bounds_xyz_mm": [
+        [
+          -27.900001525878906,
+          -32.599998474121094,
+          76.0
+        ],
+        [
+          27.900001525878906,
+          32.599998474121094,
+          113.20000457763672
+        ]
+      ],
+      "size_xyz_mm": [
+        55.8,
+        65.2,
+        37.2
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 3569.746
+            },
+            {
+              "part": "Body_IMU",
+              "overlap_volume_mm3": 80.159
+            },
+            {
+              "part": "IMU_Insert_1",
+              "overlap_volume_mm3": 9.733
+            },
+            {
+              "part": "IMU_Screw_1",
+              "overlap_volume_mm3": 31.371
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 3529.134
+            },
+            {
+              "part": "Body_IMU",
+              "overlap_volume_mm3": 10.961
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 3450.824
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        }
+      ]
+    },
+    {
+      "id": "stagger_3plus3_X",
+      "cell_axis": "X",
+      "bounds_xyz_mm": [
+        [
+          -32.599998474121094,
+          -32.54999923706055,
+          76.0
+        ],
+        [
+          32.599998474121094,
+          32.54999923706055,
+          110.70807647705078
+        ]
+      ],
+      "size_xyz_mm": [
+        65.2,
+        65.1,
+        34.708
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "stagger_3plus3_Y",
+      "cell_axis": "Y",
+      "bounds_xyz_mm": [
+        [
+          -32.54999923706055,
+          -32.599998474121094,
+          76.0
+        ],
+        [
+          32.54999923706055,
+          32.599998474121094,
+          110.70807647705078
+        ]
+      ],
+      "size_xyz_mm": [
+        65.1,
+        65.2,
+        34.708
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 22.975
+            },
+            {
+              "part": "Body_IMU",
+              "overlap_volume_mm3": 34.778
+            },
+            {
+              "part": "IMU_Insert_1",
+              "overlap_volume_mm3": 4.677
+            },
+            {
+              "part": "IMU_Screw_1",
+              "overlap_volume_mm3": 25.108
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 1.321
+            },
+            {
+              "part": "Body_IMU",
+              "overlap_volume_mm3": 5.275
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "stagger_4plus2_X",
+      "cell_axis": "X",
+      "bounds_xyz_mm": [
+        [
+          -32.599998474121094,
+          -37.20000076293945,
+          76.0
+        ],
+        [
+          32.599998474121094,
+          37.20000076293945,
+          110.70807647705078
+        ]
+      ],
+      "size_xyz_mm": [
+        65.2,
+        74.4,
+        34.708
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "PASS"
+        }
+      ]
+    },
+    {
+      "id": "stagger_4plus2_Y",
+      "cell_axis": "Y",
+      "bounds_xyz_mm": [
+        [
+          -37.20000076293945,
+          -32.599998474121094,
+          76.0
+        ],
+        [
+          37.20000076293945,
+          32.599998474121094,
+          110.70807647705078
+        ]
+      ],
+      "size_xyz_mm": [
+        74.4,
+        65.2,
+        34.708
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 34.318
+            },
+            {
+              "part": "Body_IMU",
+              "overlap_volume_mm3": 68.644
+            },
+            {
+              "part": "Battery_Pad_-38.0",
+              "overlap_volume_mm3": 74.166
+            },
+            {
+              "part": "Battery_Pad_38.0",
+              "overlap_volume_mm3": 74.166
+            },
+            {
+              "part": "IMU_Insert_1",
+              "overlap_volume_mm3": 6.66
+            },
+            {
+              "part": "IMU_Screw_1",
+              "overlap_volume_mm3": 26.925
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 1.865
+            },
+            {
+              "part": "Body_IMU",
+              "overlap_volume_mm3": 9.488
+            },
+            {
+              "part": "Battery_Pad_-38.0",
+              "overlap_volume_mm3": 74.166
+            },
+            {
+              "part": "Battery_Pad_38.0",
+              "overlap_volume_mm3": 74.166
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [
+            {
+              "part": "Battery_Pad_-38.0",
+              "overlap_volume_mm3": 74.166
+            },
+            {
+              "part": "Battery_Pad_38.0",
+              "overlap_volume_mm3": 74.166
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.2919,
+          "status_bare_cells_only": "FAIL"
+        }
+      ]
+    },
+    {
+      "id": "single_6_X",
+      "cell_axis": "X",
+      "bounds_xyz_mm": [
+        [
+          -32.599998474121094,
+          -55.79999923706055,
+          76.0
+        ],
+        [
+          32.599998474121094,
+          55.79999923706055,
+          94.60000610351562
+        ]
+      ],
+      "size_xyz_mm": [
+        65.2,
+        111.6,
+        18.6
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [],
+          "routing_intersections": [
+            {
+              "route": "IMU_Lead",
+              "overlap_volume_mm3": 14.236
+            }
+          ],
+          "load_frame_minimum_gap_mm": 6.6038,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [],
+          "routing_intersections": [
+            {
+              "route": "IMU_Lead",
+              "overlap_volume_mm3": 14.187
+            }
+          ],
+          "load_frame_minimum_gap_mm": 6.6038,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [],
+          "routing_intersections": [
+            {
+              "route": "IMU_Lead",
+              "overlap_volume_mm3": 3.977
+            }
+          ],
+          "load_frame_minimum_gap_mm": 6.6038,
+          "status_bare_cells_only": "FAIL"
+        }
+      ]
+    },
+    {
+      "id": "single_6_Y",
+      "cell_axis": "Y",
+      "bounds_xyz_mm": [
+        [
+          -55.79999923706055,
+          -32.599998474121094,
+          76.0
+        ],
+        [
+          55.79999923706055,
+          32.599998474121094,
+          94.60000610351562
+        ]
+      ],
+      "size_xyz_mm": [
+        111.6,
+        65.2,
+        18.6
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [
+            {
+              "part": "Body_Lower",
+              "overlap_volume_mm3": 2991.206
+            },
+            {
+              "part": "Battery_Tray",
+              "overlap_volume_mm3": 6118.933
+            },
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 5520.395
+            },
+            {
+              "part": "Battery_Retainer_Screw_-1",
+              "overlap_volume_mm3": 35.101
+            },
+            {
+              "part": "Battery_Retainer_Insert_-1",
+              "overlap_volume_mm3": 12.703
+            },
+            {
+              "part": "Battery_Retainer_Screw_1",
+              "overlap_volume_mm3": 35.101
+            },
+            {
+              "part": "Battery_Retainer_Insert_1",
+              "overlap_volume_mm3": 12.703
+            },
+            {
+              "part": "Battery_Pad_-38.0",
+              "overlap_volume_mm3": 429.927
+            },
+            {
+              "part": "Battery_Pad_38.0",
+              "overlap_volume_mm3": 429.927
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [
+            {
+              "part": "Body_Lower",
+              "overlap_volume_mm3": 2991.206
+            },
+            {
+              "part": "Battery_Tray",
+              "overlap_volume_mm3": 6274.555
+            },
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 5520.395
+            },
+            {
+              "part": "Battery_Retainer_Screw_-1",
+              "overlap_volume_mm3": 35.101
+            },
+            {
+              "part": "Battery_Retainer_Insert_-1",
+              "overlap_volume_mm3": 12.703
+            },
+            {
+              "part": "Battery_Retainer_Screw_1",
+              "overlap_volume_mm3": 35.101
+            },
+            {
+              "part": "Battery_Retainer_Insert_1",
+              "overlap_volume_mm3": 12.703
+            },
+            {
+              "part": "Battery_Pad_-38.0",
+              "overlap_volume_mm3": 429.927
+            },
+            {
+              "part": "Battery_Pad_38.0",
+              "overlap_volume_mm3": 429.927
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [
+            {
+              "part": "Body_Lower",
+              "overlap_volume_mm3": 2991.206
+            },
+            {
+              "part": "Battery_Tray",
+              "overlap_volume_mm3": 6118.933
+            },
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 5520.395
+            },
+            {
+              "part": "Battery_Retainer_Screw_-1",
+              "overlap_volume_mm3": 35.101
+            },
+            {
+              "part": "Battery_Retainer_Insert_-1",
+              "overlap_volume_mm3": 12.703
+            },
+            {
+              "part": "Battery_Retainer_Screw_1",
+              "overlap_volume_mm3": 35.101
+            },
+            {
+              "part": "Battery_Retainer_Insert_1",
+              "overlap_volume_mm3": 12.703
+            },
+            {
+              "part": "Battery_Pad_-38.0",
+              "overlap_volume_mm3": 429.927
+            },
+            {
+              "part": "Battery_Pad_38.0",
+              "overlap_volume_mm3": 429.927
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        }
+      ]
+    },
+    {
+      "id": "upright_3x2_Z",
+      "cell_axis": "Z",
+      "bounds_xyz_mm": [
+        [
+          -27.900001525878906,
+          -18.600000381469727,
+          76.0
+        ],
+        [
+          27.900001525878906,
+          18.600000381469727,
+          141.1999969482422
+        ]
+      ],
+      "size_xyz_mm": [
+        55.8,
+        37.2,
+        65.2
+      ],
+      "placements": [
+        {
+          "shift_y_mm": -4,
+          "solid_intersections": [
+            {
+              "part": "Yaw_Base",
+              "overlap_volume_mm3": 388.256
+            },
+            {
+              "part": "Yaw_Reaction_Link",
+              "overlap_volume_mm3": 135.269
+            },
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 6520.029
+            },
+            {
+              "part": "Yaw_Reaction_Retainer_Screw",
+              "overlap_volume_mm3": 1.831
+            },
+            {
+              "part": "Yaw_Reaction_Retainer_Nut",
+              "overlap_volume_mm3": 5.324
+            },
+            {
+              "part": "Power_Module",
+              "overlap_volume_mm3": 33578.158
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 0,
+          "solid_intersections": [
+            {
+              "part": "Yaw_Base",
+              "overlap_volume_mm3": 369.92
+            },
+            {
+              "part": "Yaw_Reaction_Link",
+              "overlap_volume_mm3": 128.774
+            },
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 6520.029
+            },
+            {
+              "part": "Yaw_Reaction_Retainer_Screw",
+              "overlap_volume_mm3": 1.831
+            },
+            {
+              "part": "Yaw_Reaction_Retainer_Nut",
+              "overlap_volume_mm3": 5.324
+            },
+            {
+              "part": "Power_Module",
+              "overlap_volume_mm3": 33578.158
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        },
+        {
+          "shift_y_mm": 4,
+          "solid_intersections": [
+            {
+              "part": "Yaw_Base",
+              "overlap_volume_mm3": 388.256
+            },
+            {
+              "part": "Yaw_Reaction_Link",
+              "overlap_volume_mm3": 135.269
+            },
+            {
+              "part": "Load_Frame",
+              "overlap_volume_mm3": 6520.029
+            },
+            {
+              "part": "Yaw_Reaction_Retainer_Screw",
+              "overlap_volume_mm3": 1.831
+            },
+            {
+              "part": "Yaw_Reaction_Retainer_Nut",
+              "overlap_volume_mm3": 5.324
+            },
+            {
+              "part": "Power_Module",
+              "overlap_volume_mm3": 33578.158
+            }
+          ],
+          "routing_intersections": [],
+          "load_frame_minimum_gap_mm": 0.0,
+          "status_bare_cells_only": "FAIL"
+        }
+      ]
+    }
+  ],
+  "complete_pack_fit": "BLOCKED",
+  "limitations": [
+    "Zero cell spacing; no pack insulation, holders, nickel tabs, BMS, NTC, harness, plugs or installation allowance.",
+    "Cylinder polygons approximate ideal cell outline; 192 sides have less than 0.002mm radial sag. Vendor tolerances already covered only by this example cell maximums.",
+    "Nominal static fit only; no continuous placement search, assembly/removal sweep, mechanical retention, thermal or balance qualification.",
+    "A bare-cell PASS is not a finished-pack fit approval. Current purchased/PCB placeholder limitations remain."
+  ],
+  "main_blend_unchanged": true
+}

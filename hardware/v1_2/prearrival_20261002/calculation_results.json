@@ -1,0 +1,411 @@
+{
+  "date": "2026-10-02",
+  "scope": "source-backed component and hypothetical load screening",
+  "status": "PASS",
+  "bench": "NOT_TESTED",
+  "qualification": "BLOCKED",
+  "inputs": [
+    {
+      "source": "mechanical/studies/prearrival_finish/engineering_current.json",
+      "snapshot": "inputs/mechanical_received.json",
+      "sha256": "564b5522c3eca821e6abd173a14b07dd9b7b60610a4d90573ea0b69f3023c72b"
+    },
+    {
+      "source": "hardware/v1_2/reports/power_integrity.json",
+      "snapshot": "inputs/power_integrity_received.json",
+      "sha256": "ec57c969d2419b179690736eea8e1e73567ee6fa70841eb1810b14bbc1bf3517"
+    }
+  ],
+  "mechanical_revision": "V1.2-M1.47",
+  "mass_base_kg": 1.3235545285183303,
+  "additional_mass_status": "ASSUMED scenario allowance; not selected part totals",
+  "resistors": {
+    "wheel": {
+      "ohm_nominal": 5.6,
+      "tolerance_fraction": 0.05,
+      "ohm_range": [
+        5.319999999999999,
+        5.88
+      ],
+      "continuous_W_at_40C_datasheet": 5,
+      "continuous_W_at_70C_datasheet": 4.7,
+      "P_at_brake_on_high_V_Rmin_W": 22.761743816395356,
+      "P_at_OV_high_V_Rmin_W": 26.988423698637128,
+      "P_at_motor_absolute_limit_Rmin_W": 29.842105263157897,
+      "minimum_dump_current_at_on_low_V_Rmax_A": 1.820651972371167,
+      "pulse_demands_at_absolute_limit": [
+        {
+          "duration_ms": 1,
+          "energy_J": 0.0298421052631579,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 10,
+          "energy_J": 0.298421052631579,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 100,
+          "energy_J": 2.9842105263157896,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 500,
+          "energy_J": 14.921052631578949,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 1000,
+          "energy_J": 29.842105263157897,
+          "status": "NOT_TESTED"
+        }
+      ],
+      "average_power_only_duty_limit_at_40C": 0.1675485008818342,
+      "average_power_only_duty_limit_at_70C": 0.15749559082892414,
+      "duty_limit_warning": "NOT permission for pulsed operation; separate repetitive-pulse curve and thermal checks required",
+      "C_effective_F_assumed": 0.0008,
+      "energy_between_on_high_and_OV_low_J": 0.00604463187956095,
+      "time_to_OV_at_regen_W_without_dump_ms": {
+        "5": 1.20892637591219,
+        "20": 0.3022315939780475,
+        "40": 0.15111579698902375
+      },
+      "transient_margin_status": "static screening only; comparator, FET, wiring and motor dynamics NOT_TESTED"
+    },
+    "head": {
+      "ohm_nominal": 10.0,
+      "tolerance_fraction": 0.05,
+      "ohm_range": [
+        9.5,
+        10.5
+      ],
+      "continuous_W_at_40C_datasheet": 5,
+      "continuous_W_at_70C_datasheet": 4.7,
+      "P_at_brake_on_high_V_Rmin_W": 4.7797718597083225,
+      "P_at_OV_high_V_Rmin_W": 5.537757917565249,
+      "P_at_motor_absolute_limit_Rmin_W": 5.76421052631579,
+      "minimum_dump_current_at_on_low_V_Rmax_A": 0.6248499407901623,
+      "pulse_demands_at_absolute_limit": [
+        {
+          "duration_ms": 1,
+          "energy_J": 0.00576421052631579,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 10,
+          "energy_J": 0.057642105263157904,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 100,
+          "energy_J": 0.5764210526315791,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 500,
+          "energy_J": 2.882105263157895,
+          "status": "NOT_TESTED"
+        },
+        {
+          "duration_ms": 1000,
+          "energy_J": 5.76421052631579,
+          "status": "NOT_TESTED"
+        }
+      ],
+      "average_power_only_duty_limit_at_40C": 0.8674214755295835,
+      "average_power_only_duty_limit_at_70C": 0.8153761869978086,
+      "duty_limit_warning": "NOT permission for pulsed operation; separate repetitive-pulse curve and thermal checks required",
+      "C_effective_F_assumed": 0.0008,
+      "energy_between_on_high_and_OV_low_J": 0.0018214938511372054,
+      "time_to_OV_at_regen_W_without_dump_ms": {
+        "5": 0.36429877022744106,
+        "20": 0.09107469255686026,
+        "40": 0.04553734627843013
+      },
+      "transient_margin_status": "static screening only; comparator, FET, wiring and motor dynamics NOT_TESTED"
+    }
+  },
+  "wheel_events": [
+    {
+      "scenario": "light",
+      "mass_kg": 1.3735545285183304,
+      "supplement_kg": 0.05,
+      "COM_height_above_axle_m_assumed": 0.065,
+      "speed_m_s_assumed": 0.1,
+      "wheel_radius_m": 0.0525,
+      "rpm": 18.18913635335947,
+      "rad_s": 1.9047619047619049,
+      "translation_J": 0.006867772642591653,
+      "wheel_rotation_J_assumed": 0.0005000000000000001,
+      "20deg_COM_descent_J_assumed": 0.05280200245854818,
+      "single_dump_energy_J_assumed": 0.060169775101139834,
+      "at_10_events_per_second_mean_W_assumed": 0.6016977510113983,
+      "continuous_5deg_downhill_W_assumed": 0.1173985110894924,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "light",
+      "mass_kg": 1.3735545285183304,
+      "supplement_kg": 0.05,
+      "COM_height_above_axle_m_assumed": 0.065,
+      "speed_m_s_assumed": 0.3,
+      "wheel_radius_m": 0.0525,
+      "rpm": 54.56740906007841,
+      "rad_s": 5.714285714285714,
+      "translation_J": 0.061809953783324864,
+      "wheel_rotation_J_assumed": 0.0045,
+      "20deg_COM_descent_J_assumed": 0.05280200245854818,
+      "single_dump_energy_J_assumed": 0.11911195624187304,
+      "at_10_events_per_second_mean_W_assumed": 1.1911195624187303,
+      "continuous_5deg_downhill_W_assumed": 0.35219553326847713,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "light",
+      "mass_kg": 1.3735545285183304,
+      "supplement_kg": 0.05,
+      "COM_height_above_axle_m_assumed": 0.065,
+      "speed_m_s_assumed": 0.5,
+      "wheel_radius_m": 0.0525,
+      "rpm": 90.94568176679734,
+      "rad_s": 9.523809523809524,
+      "translation_J": 0.1716943160647913,
+      "wheel_rotation_J_assumed": 0.0125,
+      "20deg_COM_descent_J_assumed": 0.05280200245854818,
+      "single_dump_energy_J_assumed": 0.2369963185233395,
+      "at_10_events_per_second_mean_W_assumed": 2.369963185233395,
+      "continuous_5deg_downhill_W_assumed": 0.586992555447462,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "middle",
+      "mass_kg": 1.4735545285183302,
+      "supplement_kg": 0.15,
+      "COM_height_above_axle_m_assumed": 0.08,
+      "speed_m_s_assumed": 0.1,
+      "wheel_radius_m": 0.0525,
+      "rpm": 18.18913635335947,
+      "rad_s": 1.9047619047619049,
+      "translation_J": 0.0073677726425916525,
+      "wheel_rotation_J_assumed": 0.0007500000000000001,
+      "20deg_COM_descent_J_assumed": 0.06971838683194134,
+      "single_dump_energy_J_assumed": 0.077836159474533,
+      "at_10_events_per_second_mean_W_assumed": 0.77836159474533,
+      "continuous_5deg_downhill_W_assumed": 0.1259455697356556,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "middle",
+      "mass_kg": 1.4735545285183302,
+      "supplement_kg": 0.15,
+      "COM_height_above_axle_m_assumed": 0.08,
+      "speed_m_s_assumed": 0.3,
+      "wheel_radius_m": 0.0525,
+      "rpm": 54.56740906007841,
+      "rad_s": 5.714285714285714,
+      "translation_J": 0.06630995378332485,
+      "wheel_rotation_J_assumed": 0.00675,
+      "20deg_COM_descent_J_assumed": 0.06971838683194134,
+      "single_dump_energy_J_assumed": 0.1427783406152662,
+      "at_10_events_per_second_mean_W_assumed": 1.427783406152662,
+      "continuous_5deg_downhill_W_assumed": 0.37783670920696677,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "middle",
+      "mass_kg": 1.4735545285183302,
+      "supplement_kg": 0.15,
+      "COM_height_above_axle_m_assumed": 0.08,
+      "speed_m_s_assumed": 0.5,
+      "wheel_radius_m": 0.0525,
+      "rpm": 90.94568176679734,
+      "rad_s": 9.523809523809524,
+      "translation_J": 0.18419431606479128,
+      "wheel_rotation_J_assumed": 0.01875,
+      "20deg_COM_descent_J_assumed": 0.06971838683194134,
+      "single_dump_energy_J_assumed": 0.2726627028967326,
+      "at_10_events_per_second_mean_W_assumed": 2.726627028967326,
+      "continuous_5deg_downhill_W_assumed": 0.629727848678278,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "heavy",
+      "mass_kg": 1.6235545285183304,
+      "supplement_kg": 0.3,
+      "COM_height_above_axle_m_assumed": 0.1,
+      "speed_m_s_assumed": 0.1,
+      "wheel_radius_m": 0.0525,
+      "rpm": 18.18913635335947,
+      "rad_s": 1.9047619047619049,
+      "translation_J": 0.008117772642591654,
+      "wheel_rotation_J_assumed": 0.0010000000000000002,
+      "20deg_COM_descent_J_assumed": 0.09601918394547475,
+      "single_dump_energy_J_assumed": 0.1051369565880664,
+      "at_10_events_per_second_mean_W_assumed": 1.051369565880664,
+      "continuous_5deg_downhill_W_assumed": 0.13876615770490044,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "heavy",
+      "mass_kg": 1.6235545285183304,
+      "supplement_kg": 0.3,
+      "COM_height_above_axle_m_assumed": 0.1,
+      "speed_m_s_assumed": 0.3,
+      "wheel_radius_m": 0.0525,
+      "rpm": 54.56740906007841,
+      "rad_s": 5.714285714285714,
+      "translation_J": 0.07305995378332486,
+      "wheel_rotation_J_assumed": 0.009,
+      "20deg_COM_descent_J_assumed": 0.09601918394547475,
+      "single_dump_energy_J_assumed": 0.1780791377287996,
+      "at_10_events_per_second_mean_W_assumed": 1.780791377287996,
+      "continuous_5deg_downhill_W_assumed": 0.4162984731147013,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    },
+    {
+      "scenario": "heavy",
+      "mass_kg": 1.6235545285183304,
+      "supplement_kg": 0.3,
+      "COM_height_above_axle_m_assumed": 0.1,
+      "speed_m_s_assumed": 0.5,
+      "wheel_radius_m": 0.0525,
+      "rpm": 90.94568176679734,
+      "rad_s": 9.523809523809524,
+      "translation_J": 0.2029443160647913,
+      "wheel_rotation_J_assumed": 0.025,
+      "20deg_COM_descent_J_assumed": 0.09601918394547475,
+      "single_dump_energy_J_assumed": 0.323963500010266,
+      "at_10_events_per_second_mean_W_assumed": 3.2396350001026604,
+      "continuous_5deg_downhill_W_assumed": 0.6938307885245022,
+      "status": "NOT_TESTED; no repeated pulse approval"
+    }
+  ],
+  "wire_screen": {
+    "5852": {
+      "AWG": 28,
+      "OD_min_mm": 0.7874,
+      "OD_nom_mm": 0.889,
+      "OD_max_mm": 0.9906000000000001,
+      "minimum_bend_radius_at_max_OD_mm": 9.906000000000002,
+      "nominal_DCR_ohm_m": null,
+      "SPH002_full_window_fit": false,
+      "SPH004_full_window_fit": false,
+      "SXH001_full_window_fit": false,
+      "H05_previous_3p56mm_trial_satisfies_wire_bend": false,
+      "crimp_and_flex_life": "NOT_TESTED"
+    },
+    "5853": {
+      "AWG": 26,
+      "OD_min_mm": 0.889,
+      "OD_nom_mm": 0.9905999999999999,
+      "OD_max_mm": 1.0921999999999998,
+      "minimum_bend_radius_at_max_OD_mm": 10.921999999999999,
+      "nominal_DCR_ohm_m": 0.12467191601049868,
+      "SPH002_full_window_fit": true,
+      "SPH004_full_window_fit": false,
+      "SXH001_full_window_fit": false,
+      "H05_previous_3p56mm_trial_satisfies_wire_bend": false,
+      "crimp_and_flex_life": "NOT_TESTED"
+    },
+    "5854": {
+      "AWG": 24,
+      "OD_min_mm": 1.016,
+      "OD_nom_mm": 1.1302999999999999,
+      "OD_max_mm": 1.2445999999999997,
+      "minimum_bend_radius_at_max_OD_mm": 12.445999999999998,
+      "nominal_DCR_ohm_m": 0.07316272965879266,
+      "SPH002_full_window_fit": true,
+      "SPH004_full_window_fit": false,
+      "SXH001_full_window_fit": true,
+      "H05_previous_3p56mm_trial_satisfies_wire_bend": false,
+      "crimp_and_flex_life": "NOT_TESTED"
+    },
+    "5855": {
+      "AWG": 22,
+      "OD_min_mm": 1.1683999999999999,
+      "OD_nom_mm": 1.2953999999999999,
+      "OD_max_mm": 1.4223999999999997,
+      "minimum_bend_radius_at_max_OD_mm": 14.223999999999997,
+      "nominal_DCR_ohm_m": 0.045931758530183726,
+      "SPH002_full_window_fit": false,
+      "SPH004_full_window_fit": false,
+      "SXH001_full_window_fit": true,
+      "H05_previous_3p56mm_trial_satisfies_wire_bend": false,
+      "crimp_and_flex_life": "NOT_TESTED"
+    },
+    "5856": {
+      "AWG": 20,
+      "OD_min_mm": 1.3716000000000002,
+      "OD_nom_mm": 1.4732,
+      "OD_max_mm": 1.5748,
+      "minimum_bend_radius_at_max_OD_mm": 15.748,
+      "nominal_DCR_ohm_m": 0.02854330708661417,
+      "SPH002_full_window_fit": false,
+      "SPH004_full_window_fit": false,
+      "SXH001_full_window_fit": false,
+      "H05_previous_3p56mm_trial_satisfies_wire_bend": false,
+      "crimp_and_flex_life": "NOT_TESTED"
+    }
+  },
+  "fuse_screen": {
+    "old_6p3A": "target only; no selected fuse or holder",
+    "candidate": "Littelfuse 029707.5WXNV + 0FHM0001SXJ",
+    "rating_A": 7.5,
+    "fuse_VDC": 32,
+    "fuse_breaking_A_at32VDC": 1000,
+    "holder_A": 20,
+    "simultaneous_input_W_assumed": 64.15,
+    "low_pack_V_assumed": 9.9,
+    "scenario_input_A": 6.47979797979798,
+    "ratio_to_candidate_rating": 0.8639730639730641,
+    "rating_adopted": false,
+    "status": "BLOCKED",
+    "reason": "No pack prospective short-circuit, overload duration, assembled wire ampacity, holder drawing or inrush record; nominal current comparison alone is insufficient."
+  },
+  "charge_screen": {
+    "5V": {
+      "rear_continuous_input_limit_A": 1.0,
+      "efficiency_assumed": 0.85,
+      "at12p6V_max_charge_A_from_power_balance": 0.3373015873015873,
+      "note": "Power-balance ceiling, not guaranteed input limiting or a supported PD contract"
+    },
+    "9V": {
+      "rear_continuous_input_limit_A": 1.0,
+      "efficiency_assumed": 0.85,
+      "at12p6V_max_charge_A_from_power_balance": 0.6071428571428571,
+      "note": "Power-balance ceiling, not guaranteed input limiting or a supported PD contract"
+    },
+    "12V": {
+      "rear_continuous_input_limit_A": 1.0,
+      "efficiency_assumed": 0.85,
+      "at12p6V_max_charge_A_from_power_balance": 0.8095238095238095,
+      "note": "Power-balance ceiling, not guaranteed input limiting or a supported PD contract"
+    },
+    "15V": {
+      "rear_continuous_input_limit_A": 1.0,
+      "efficiency_assumed": 0.85,
+      "at12p6V_max_charge_A_from_power_balance": 1.0119047619047619,
+      "note": "Power-balance ceiling, not guaranteed input limiting or a supported PD contract"
+    },
+    "20V": {
+      "rear_continuous_input_limit_A": 1.0,
+      "efficiency_assumed": 0.85,
+      "at12p6V_max_charge_A_from_power_balance": 1.3492063492063493,
+      "note": "Power-balance ceiling, not guaranteed input limiting or a supported PD contract"
+    },
+    "0p5A_at12p6V_input_A": {
+      "5": 1.4823529411764707,
+      "9": 0.823529411764706,
+      "12": 0.6176470588235294,
+      "15": 0.4941176470588235,
+      "20": 0.37058823529411766
+    },
+    "CV_12p6V_plus1p5percent_V": 12.788999999999998
+  },
+  "head_energy": {
+    "assumed_speed_rad_s": 2,
+    "yaw_and_pitch_rotation_J": 0.0014349512329918887,
+    "pitch_45deg_gravity_change_bound_J": 0.008348717203304828,
+    "warning": "Combined upper-bound scenario; wire, horn and unknown drive inertia/efficiency excluded; not measured regeneration."
+  }
+}

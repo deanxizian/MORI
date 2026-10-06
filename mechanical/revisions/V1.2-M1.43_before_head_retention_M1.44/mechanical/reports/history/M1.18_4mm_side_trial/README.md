@@ -1,0 +1,1 @@
+Actual first trial:4mm constant cheeks and93.4mm tray. Local tray/bearing checks PASS, but overall validation FAIL because yaw bridge screwdriver shafts intersected the inward flat cheek by0.1mm (2.51mm³ each). Rejected. Retain straight walls; adjust uniform thickness and recess depth instead of cutting a tool groove.

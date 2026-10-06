@@ -1,0 +1,37 @@
+{
+  "checked_utc": "2026-09-23T16:27:14.450153+00:00",
+  "hardware_revision": "V1.2-H0.5-P5R2",
+  "sources": {
+    "contracts/components.json": "f10de06f9d95563062c201d3e553e91779c9179b1afb8300ec32e7358b287e1a",
+    "hardware/v1_2/kicad/MORI_power_P5R2/MORI_power_P5R2.kicad_pcb": "dc7cf61576921aa06d0fcf55101aecc158d9fe9bc8641af44f94ef382164f005"
+  },
+  "on_power_board": [
+    {
+      "rail": "5V motion",
+      "controller": "U60 TPS54302",
+      "inductor": "L60",
+      "output_net": "/+5V_MOTION"
+    },
+    {
+      "rail": "5V CAM",
+      "controller": "U70 TPS54302",
+      "inductor": "L70",
+      "output_net": "/+5V_CAM"
+    }
+  ],
+  "external_modules": [
+    {
+      "rail": "9V wheel",
+      "model": "D36V50F9",
+      "input": "J2 /BAT_MON",
+      "return": "J3 /W9_IN"
+    },
+    {
+      "rail": "6V head",
+      "model": "D24V22F6",
+      "input": "J4 /BAT_MON",
+      "return": "J5 /H6_IN"
+    }
+  ],
+  "decision": "Keep current received9V/6V modules. Explicitly label rail functions in animation; no separate5V modules and no electrical edits."
+}

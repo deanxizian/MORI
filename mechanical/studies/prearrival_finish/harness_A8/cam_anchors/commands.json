@@ -1,0 +1,24 @@
+{
+  "cwd": "/Users/dean/Documents/MORI",
+  "versions": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "CAD_Python": "3.12.14"
+  },
+  "commands": [
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/build_CAM_anchor_candidate_v3.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/studies/prearrival_finish/harness_A8/cam_anchors/candidate_v3/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/repair_CAM_anchor_storage.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/verify_CAM_anchor_cleaned_storage.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/verify_CAM_anchor_cleaned_installation.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/verify_CAM_anchor_tool.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/studies/prearrival_finish/harness_A8/cam_anchors/candidate_v3/cleaned/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/render_CAM_anchor_review.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/publish_CAM_anchor_review.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/verify_delivery.py"
+  ],
+  "notes": [
+    "All new geometry is independent. Main/config/hardware are unchanged.",
+    "V1 straight installation failed; V2 beam intersected tie; retain both failed candidates.",
+    "Initial strict coincidence assertions failed on float mesh contacts; final records preserve exact small volumes and bounded surface comparison.",
+    "Render was repeated to assign a separate neutral base material and hide the optical mast in inspection views. No geometry changed.",
+    "The T18R direct downloads returned403; official web extraction is stored without claiming downloaded file hashes."
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CAM供电线与头身装配顺序复核</title><style>
+body{margin:0;background:#f4f6f7;color:#1d3038;font:17px/1.65 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:30px 24px 65px}
+h1{font-size:30px;line-height:1.4}h2{font-size:23px}section{background:white;border:1px solid #d6dfe3;border-radius:12px;padding:22px;margin:22px 0}
+a{color:#116d85}img{width:100%;height:auto}.status{background:#fff0d9;color:#80510b;padding:5px 13px;border-radius:18px;font-weight:650}
+table{border-collapse:collapse;width:100%;font-size:15px}td,th{text-align:left;vertical-align:top;border-bottom:1px solid #dce3e7;padding:12px}th{background:#eef3f5}
+.muted{color:#596d78}li{margin:9px 0}code{font-size:13px;overflow-wrap:anywhere}@media(max-width:700px){main{padding:18px 12px}section{padding:15px}h1{font-size:25px}}
+</style><main><a href="../../index.html">← 走线工作页</a><h1>供电线与头身装配顺序仍有冲突</h1>
+<p><span class="status">完整带线装配 BLOCKED</span></p>
+<p>主模型继续使用已批准的 M1.49 C5＋K1，压板嵌件名义侧壁为 1.675 mm。这轮只检查线束装入和工具路径，没有修改主模型、打印件或硬件。</p>
+<section><h2>查明了哪些限制</h2><table><thead><tr><th>方向</th><th>结果</th><th>证据范围</th></tr></thead><tbody>
+<tr><td>先穿 CAM 信号线，再插身体侧供电插头</td><td>BLOCKED</td><td>上、下壳均未安装时，找到裸胶壳五段连续路径；加入上壳后路径穿壳。附带两根供电线的完整动作未验证。</td></tr>
+<tr><td>供电插头先接好，临时移开两根线</td><td>BLOCKED</td><td>7 组临时静态排布均未通过；单纯转动避开下段后，又受头部支架上方实体限制。未采用这些线形。</td></tr>
+<tr><td>预穿线的头部与承重桥整体放入</td><td>刚体路径 PASS；锁紧 BLOCKED</td><td>桥与头部抬高 19 mm，上壳独立倾斜 15°并抬高 14 mm，383 个刚体位置未检出相交。但上壳合拢后无法沿现有轴线安装两侧桥螺钉。</td></tr>
+</tbody></table><p class="muted">有限候选失败不证明所有顺序都不可行；刚体路径通过也不表示带线、手部支撑或连续净距已通过。</p></section>
+<section><h2>为何不能把整体装入直接当成装配完成</h2>
+<a href="assembly_access.png"><img src="assembly_access.png" alt="当前实体截面：整体抬升姿态，以及上壳与向外移动2毫米的承重桥螺钉相交"></a>
+<p>两侧实际螺钉模型向外移动 2 mm 时，各与上壳相交约 5.50 mm³。这里已用实际螺钉实体复核；不能只看五段插头路径或整体抬升图就放行。</p>
+<p>另按 <a href="https://www.wera.de/en/tools/950-pkls-l-key-metric-chrome-plated">Wera 950 PKLS 05022041001 官方尺寸</a>检查了 2 mm 内六角、5.5 mm 短边、100 mm 长边的保守工具包络，闭壳状态没有通过的候选朝向。实际弯头形状和扭矩仍未验证。</p>
+<p><a href="../head_module_sequence_v2/review.json">完整刚体阶段和零件清单</a> · <a href="../head_module_tools/review.json">工具与螺钉筛查</a> · <a href="geometry_review.json">实际相交坐标证据</a></p></section>
+<section><h2>下一步的边界</h2><ul>
+<li>继续联立预穿线、头部子装配和承重桥锁紧顺序。不能先固定一个孤立的最终线形，再假定其他线和工具都能穿过。</li>
+<li>完整供电引线、USB 尾部、全部自由端移动、线长保持和弯曲检查尚未闭合。</li>
+<li>SCS0009 舵盘和锁紧叠层、实际压接端子及成品线资料仍是独立输入；不以规划包络代替实物配套证据。</li>
+</ul><p>C6、线导向和固定候选仍未采用。本页没有提出新增开孔、移动电路板或其他未经确认的结构改动。</p></section>
+<details><summary>检查记录与诊断修正</summary><ul>
+<li><a href="../power_side_access/review.json">八种侧向退出路径</a></li>
+<li><a href="../power_plug_search/review.json">无外壳时的裸胶壳路径搜索</a> · <a href="../power_plug_simple/review.json">五段连续扫掠</a></li>
+<li><a href="../power_cover_dependency/review.json">加入外壳后的依赖检查</a></li>
+<li><a href="../power_staging/review.json">三组供电线转动</a> · <a href="../power_staging_contour/review.json">四组沿实际孔壁调整</a></li>
+<li><a href="../power_late_access/review.json">早期轴向诊断</a>的 Power 名称匹配过宽，排除了板卡固定件；只作历史诊断，不用于宣称固定件净距通过。后续侧向和搜索检查已纠正。</li>
+<li><a href="../head_module_sequence/review.json">第一次整体移动诊断</a>没有完整划分装配阶段：下壳和部分连接螺钉仍在，Yaw 输出件未随桥移动。保留记录，但其结果不用于判断完整头部模块路径；使用上方 v2 的明确零件清单。</li>
+</ul><p><a href="main_integrity.json">主模型、硬件、STL 和动画保留核验</a> · <a href="plot_review.json">图片来源</a></p></details></main></html>

@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "revision": "V1-H0.1",
+  "status": "PROTOTYPE_H0_1_PIN_REFERENCE_SUPERSEDED_BY_H0_2_PROCUREMENT_PROPOSALS_NOT_FOR_WIRING",
+  "physical_tests": "NOT_TESTED",
+  "mechanical_contract": "mechanical_interfaces.json",
+  "pinmap": "../hardware/v1/interfaces/pinmap_V1-H0.1.csv",
+  "actuator_count": 4,
+  "mcu_count": 2,
+  "route": {
+    "primary": "FOC4012 exact SKU/driver protocol blocked",
+    "alternative": "FIT0521 + Pololu4035 + separate regulated5V; different plant/current loop and no gain reuse"
+  },
+  "power_domains": {
+    "battery": {
+      "chemistry": "Li-ion2S",
+      "nominal_V": 7.2,
+      "charge_max_V": 8.4,
+      "candidate": "ANSMANN2447-0105",
+      "cutoff_V": null,
+      "balance": null,
+      "regenerative_current_allowed_A": null
+    },
+    "motion_3v3": {
+      "candidate": "DFR0570",
+      "separate_branch": true,
+      "qualified_current_A": null
+    },
+    "interaction_3v3": {
+      "candidate": "DFR0570",
+      "separate_branch": true,
+      "qualified_current_A": null
+    },
+    "servo_5v": {
+      "candidate": "DFR0753",
+      "two_servos": true,
+      "peak_design_A": 2.2,
+      "measured": false
+    },
+    "wheel_bus": {
+      "primary_voltage_V": null,
+      "alternative_voltage_V": 5,
+      "regen_clamp_V": null
+    },
+    "charging": {
+      "candidate": "DFR0564",
+      "input": "USB-C5V only, CC-advertisement current limit circuit not frozen",
+      "system_on": false,
+      "requires_cradle": true,
+      "balanced": false,
+      "protection_not_equivalent_to_balance": true,
+      "release": "BLOCKED"
+    }
+  },
+  "shared_battery_note": "Separate regulated domains are not independent safety redundancy; BMS, battery and ground are common.",
+  "motion_interaction_link": {
+    "physical": "3.3V full duplex UART with two opposing Ioff translators",
+    "baud": 460800,
+    "format": "8N1",
+    "max_payload_bytes": 96,
+    "crc": "CRC-16/CCITT-FALSE",
+    "crc_check_123456789_hex": "29b1",
+    "heartbeat_ms": 50,
+    "heartbeat_loss_ms": 200,
+    "maximum_motion_lease_ms": 300,
+    "details": "../hardware/v1/link_protocol.md"
+  },
+  "coordinate_and_units": {
+    "linear_velocity": "m/s +Y forward",
+    "body_forward_tilt": "rad around -X",
+    "yaw": "rad +Z left",
+    "head_pitch": "rad +X up",
+    "wheel_torque": "SI Nm only after calibration; raw FOC integer explicitly opaque",
+    "encoder": "signed accumulated counts, cpr field null until one-revolution measurement"
+  },
+  "sensor": {
+    "imu": "LSM6DSOX body fixed; SPI2 8MHz candidate +INT1;833Hz candidate ODR",
+    "loop_hz_target": 500,
+    "sample_age_limit_ms_target": 3,
+    "actual_bandwidth_and_delay_test": "NOT_TESTED"
+  },
+  "head": {
+    "candidate": "FT90M-FB",
+    "pwm_us": [
+      500,
+      2500
+    ],
+    "vendor_travel_deg": 280,
+    "commissioning_start_us": 1500,
+    "yaw_joint_deg": [
+      -60,
+      60
+    ],
+    "pitch_joint_deg": [
+      -20,
+      25
+    ],
+    "ratio_servo_to_joint": null,
+    "feedback_ADC": "20k top/10k bottom +10nF and protection, not validated circuit",
+    "position_quality": "ESTIMATED until multi-point loaded calibration, feedback range and stale/saturation checks pass"
+  },
+  "safety": {
+    "boot": "DISARMED; both wheel and servo rails inhibited",
+    "rearm": "physical LOCAL_ARM plus fresh checks; no automatic fault recovery",
+    "stop_motion": "zero navigation goal while healthy local balance continues",
+    "disarm": "outputs disabled, robot cannot stand unsupported",
+    "interaction_loss": "zero goal on stale session/heartbeat/lease; motion IMU loop remains local",
+    "critical_fault": "latched outputs off; external catch protection required",
+    "physical_estop": "independent NC power-cut path for actuator domain; detailed rated components unresolved",
+    "firmware_reset": "only supported cradle; common dialogue button never resets motion MCU"
+  },
+  "resources": {
+    "motion": "SPI2 IMU, UART1 interlink, UART2 FOC OR two PCNT x4 plus MCPWM brushed, LEDC2 servo, I2C0 power; ADC1 only",
+    "interaction": "LCD_CAM DVP, SPI2 LCD, I2S0 duplex mic/DAC, UART1, LEDC XCLK+BL, SCCB; DMA/PSRAM simultaneous stress untested",
+    "reserved": [
+      "GPIO35/36/37 octal PSRAM",
+      "GPIO19/20 USB",
+      "GPIO0 maintenance strap",
+      "GPIO3/45/46 left unused straps"
+    ],
+    "reset_note": "LCD_RST wired interaction EN; no unallocated 28th application GPIO. AMP muted in hardware during UART0 boot log."
+  },
+  "unfrozen_device_interfaces": {
+    "camera_24pin": null,
+    "camera_supply_and_IO_voltage": null,
+    "audio_off_domain_I2S_protection": "Requires Ioff buffer or verified module power-off input tolerance; not qualified",
+    "wheel_FOC_physical_connector": null,
+    "battery_cell_balance_interface": null
+  },
+  "hardware_freeze": false,
+  "pcb_release": false,
+  "procurement_release": false,
+  "procurement_revision": "V1-H0.2",
+  "procurement_update": {
+    "status": "BLOCKED",
+    "source": "../hardware/v1/procurement/domestic_parts.json",
+    "pinmap_reference_revision": "V1-H0.1",
+    "pinmap_valid_for_new_candidates": false,
+    "no_wiring_release": "Do not wire H0.2 candidates from H0.1 pinmap; a resource/pin revision must precede schematic work.",
+    "changed_candidates": {
+      "wheel": {
+        "part": "FIT1034+DRI0058",
+        "interface": "3PWM/enable and AS5600 I2C per wheel; no UART firmware",
+        "motor_voltage_min_V": 7.4,
+        "driver_voltage_min_V": 8,
+        "compatible_with_full_2S_range": false,
+        "torque_command_unit": "UNQUALIFIED; voltage FOC is V, not SI N m"
+      },
+      "head": {
+        "part": "SER0046 x2",
+        "supply_V": 5,
+        "feedback": "analog0–3.3V; validate/calibrate before treating as measured position",
+        "vendor_travel_conflict_deg": [
+          270,
+          220
+        ],
+        "usable_loaded_travel_deg": null
+      },
+      "imu": {
+        "part": "SEN0250 BMI160",
+        "module_interface": "Gravity I2C + INT output to be checked",
+        "old_spi_driver_compatible": false,
+        "sample_rate_Hz": null,
+        "timestamp_latency_ms": null
+      },
+      "camera": {
+        "part": "Spotpear0204002 OV5640-A",
+        "power_V": 3.3,
+        "IO_voltage_V": null,
+        "interface": "8bit DVP/SCCB; actual connector pin numbers pending"
+      },
+      "battery": {
+        "part": "Yahboom2S2000 high-rate",
+        "nominal_V": 7.4,
+        "charge_V": 8.4,
+        "capacity_Ah": 2,
+        "vendor_continuous_A": 15,
+        "vendor_max_A": 20,
+        "bench_test": "NOT_TESTED",
+        "balance": null
+      },
+      "speaker": {
+        "part": "FIT0825",
+        "impedance_ohm": 8,
+        "rated_W": 1
+      }
+    },
+    "still_required": [
+      "full 2S wheel supply and regeneration solution",
+      "MCU GPIO/DMA budget for local FOC or final alternative",
+      "camera IO and connector pins",
+      "IMU module INT and timing",
+      "USB-C input and matched charger chain"
+    ],
+    "software_parallel_boundary": "Protocol, safety state machine, mocks and hardware-independent code may continue. No physical driver activation under this revision."
+  }
+}

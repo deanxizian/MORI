@@ -1,0 +1,574 @@
+{
+  "recorded_utc": "2026-09-22T03:12:44.343216+00:00",
+  "software_version": "1.2.0-dev.1",
+  "parameter_version": "V1.2-UNMEASURED-1",
+  "scope": "V1.2软件基线；web only；本机模拟/主机验证，非整机验收",
+  "local_checks_status": "PASS",
+  "hardware_status": "NOT_TESTED",
+  "physical_release": false,
+  "project_git": "NOT_APPLICABLE: no Git repository; file_manifest.json identifies source and binaries",
+  "counts": {
+    "python": 43,
+    "motion_assertions": 2430,
+    "unitree_synthetic_vectors": 41,
+    "typescript_tests": 4,
+    "browser_tests": 2,
+    "legacy_python": 24,
+    "legacy_c_assertions": 2406
+  },
+  "eyes_host_benchmark": {
+    "source": "HOST_TEST",
+    "hardware": "NOT_TESTED",
+    "resolution": [
+      360,
+      360
+    ],
+    "frames": 240,
+    "framebuffer_bytes": 259200,
+    "p50_us": 550.0,
+    "p95_us": 598.0,
+    "p99_us": 619.0,
+    "max_us": 791.0
+  },
+  "matrix": [
+    {
+      "feature": "共享契约、身份/租约/权限、CRC/截断/超长/重复/乱序/重启",
+      "implementation_status": "PASS",
+      "source": "HOST / SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "C/TS/Python及37项原回归+6项动力学扩展；不代表UART物理层"
+    },
+    {
+      "feature": "STOP_MOTION、失联撤目标、故障锁存、人工ACK/复位",
+      "implementation_status": "PASS",
+      "source": "HOST / SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "健康STOP继续平衡；FAULT请求外部禁驱，接受倒下"
+    },
+    {
+      "feature": "S288编码/CRC/单位/齿比/镜像/回绕、TC释放和有界轮询",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "官方C合成向量差分；真实抓包、6Mbps时钟及停止语义未测"
+    },
+    {
+      "feature": "SCS反馈、标定、有限轨迹、联合可达域接口",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "机械签字的region/零点/比例/方向尚未提供；负载温度阈值待定"
+    },
+    {
+      "feature": "ICM身份/SI解码/安装矩阵与时序统计",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "SPI初始化/量程滤波/DRDY调度及板接线尚未接通"
+    },
+    {
+      "feature": "新STM32固件构建与板级接通",
+      "implementation_status": "BLOCKED",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "BLOCKED",
+      "boundary": "可构建安全启动镜像；DMA/SPI端口、实时调度、命令桥和外部禁驱待释放板契约后接入"
+    },
+    {
+      "feature": "微雪/ST77916/codec/CH32/OV3660依赖与适配器构建",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "BLOCKED",
+      "boundary": "物理门全关；FPC、初始化序列、音频槽/时钟/参考路由未释放"
+    },
+    {
+      "feature": "黑底双眼确定性、圆形裁切、过渡和360分辨率",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "主机耗时不是ESP帧率；屏幕实际输出尚未测试"
+    },
+    {
+      "feature": "供电能力/头部惯量/延迟/饱和/死区/噪声/轮滑模型",
+      "implementation_status": "PASS",
+      "source": "SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "ASSUMED加速度输入；不能当S288扭矩辨识、实机参数或续航证据"
+    },
+    {
+      "feature": "网页绑定、遥控、表情、记忆、语音mock和相机模式",
+      "implementation_status": "PASS",
+      "source": "HOST / SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "桌面及手机尺寸Chromium；非实体手机、非实机机器人"
+    },
+    {
+      "feature": "SQLite跨重启/作用域/纠正/删除/备份恢复",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_APPLICABLE",
+      "boundary": "临时测试数据库；没有清空用户数据库或上传用户记忆"
+    },
+    {
+      "feature": "语音适配、Opus/有界队列、播放时钟/打断确认",
+      "implementation_status": "PASS",
+      "source": "HOST / SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "有源码/主机链路；mock不是中文ASR/TTS成功"
+    },
+    {
+      "feature": "自定义中文唤醒、物理AEC、噪声下误唤醒/漏检",
+      "implementation_status": "BLOCKED",
+      "source": "HARDWARE",
+      "unit_simulation_status": "NOT_TESTED",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "模型/许可/真实麦克风与播放参考/声学测试缺失"
+    },
+    {
+      "feature": "像素输入、头部坐标、选定目标/丢失/陈旧/多目标停走",
+      "implementation_status": "PASS",
+      "source": "HOST / SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "确定像素夹具及输入管线；设备视觉算力/曝光/人体泛化未验证"
+    },
+    {
+      "feature": "主动短距离/底盘跟随/有限巡游及取消",
+      "implementation_status": "PASS",
+      "source": "SIMULATION",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "BLOCKED",
+      "boundary": "本地有界状态机已运行；真实自主移动未解锁"
+    },
+    {
+      "feature": "Compose、TLS/WSS配置、云服务适配、凭证与用量",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "PASS",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "配置/认证/预算核心经过测试；没有Docker引擎/授权腾讯云地址，容器与远程部署未运行"
+    },
+    {
+      "feature": "相机+显示+音频+Wi-Fi/温升功耗并发",
+      "implementation_status": "BLOCKED",
+      "source": "HARDWARE",
+      "unit_simulation_status": "NOT_TESTED",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "没有设备实测；不能用依赖编译替代压力测试"
+    },
+    {
+      "feature": "受保护平衡、受控地面移动、60分钟混合续航",
+      "implementation_status": "BLOCKED",
+      "source": "HARDWARE",
+      "unit_simulation_status": "NOT_TESTED",
+      "hardware_status": "NOT_TESTED",
+      "boundary": "没有实机，不能声称已经自平衡站立"
+    },
+    {
+      "feature": "App工程/移动端构建",
+      "implementation_status": "NOT_APPLICABLE",
+      "source": "HOST",
+      "unit_simulation_status": "NOT_APPLICABLE",
+      "hardware_status": "NOT_APPLICABLE",
+      "boundary": "用户要求只做网页，保留已有工程，当前暂停"
+    },
+    {
+      "feature": "远端CI runner实际执行",
+      "implementation_status": "PASS",
+      "source": "HOST",
+      "unit_simulation_status": "NOT_TESTED",
+      "hardware_status": "NOT_APPLICABLE",
+      "boundary": "工作流已更新；本目录无Git仓库，没有远端CI运行结果"
+    }
+  ],
+  "runs": [
+    {
+      "id": "contracts_generate",
+      "description": "协议生成一致性",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/contracts_generate/command.json",
+      "log": "reports/v1_2/runs/contracts_generate/output.log",
+      "command": [
+        "/Users/dean/Documents/MORI/.venv/bin/python",
+        "contracts/generate.py"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:53:49.851032+00:00",
+      "elapsed_s": 0.03287616599118337,
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "typescript",
+      "description": "TypeScript核心4项",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/typescript/command.json",
+      "log": "reports/v1_2/runs/typescript/output.log",
+      "command": [
+        "bash",
+        "tools/node-env.sh",
+        "test"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:53:49.926638+00:00",
+      "elapsed_s": 2.679747541958932,
+      "exit_code": 0,
+      "log_sha256": "91f4d28afddd34a2f44ed27e98e221eca05ae0ae56ccebb8b033da63212ce9aa"
+    },
+    {
+      "id": "python_release",
+      "description": "Python协议/模拟/后端/记忆/音频",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/python_release/command.json",
+      "log": "reports/v1_2/runs/python_release/output.log",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "simulation/tests",
+        "backend/tests",
+        "-q"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T03:06:47.452635+00:00",
+      "elapsed_s": 1.53184945799876,
+      "exit_code": 0,
+      "log_sha256": "6a4ee3b82ad0d8c9c792b7b95078298ebf6a8bfb1b8d389756179b8d9ac27d8e"
+    },
+    {
+      "id": "native",
+      "description": "V1运动与音频C核心",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/native/command.json",
+      "log": "reports/v1_2/runs/native/output.log",
+      "command": [
+        "bash",
+        "tools/test-native.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:53:55.480599+00:00",
+      "elapsed_s": 1.2137515420326963,
+      "exit_code": 0,
+      "log_sha256": "2a5600bd99e2b9b4a1bbcad5000c8150798d3b69fde6408f38c3a87a3160222c"
+    },
+    {
+      "id": "motion_final_sources",
+      "description": "V1.2运动C核心2430断言；ASan/UBSan",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/motion_final_sources/command.json",
+      "log": "reports/v1_2/runs/motion_final_sources/output.log",
+      "command": [
+        "bash",
+        "tools/test-motion-v1_2.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:57:13.063029+00:00",
+      "elapsed_s": 0.9758863330353051,
+      "exit_code": 0,
+      "log_sha256": "39002413737a2db97323b973df527f04907fbcf0f5068ceb9aab336878b80f12"
+    },
+    {
+      "id": "unitree_reference_final",
+      "description": "41组合成命令对照官方C；并非实物报文",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/unitree_reference_final/command.json",
+      "log": "reports/v1_2/runs/unitree_reference_final/output.log",
+      "command": [
+        "bash",
+        "tools/test-s288-reference.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:54:07.619030+00:00",
+      "elapsed_s": 0.5080555829918012,
+      "exit_code": 0,
+      "log_sha256": "5c2303042ed1073b187e711d8316bef54faf56dc113d323cd7665c2711e0baad"
+    },
+    {
+      "id": "eyes_360",
+      "description": "360×360双眼240帧主机渲染",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/eyes_360/command.json",
+      "log": "reports/v1_2/runs/eyes_360/output.log",
+      "command": [
+        "bash",
+        "tools/test-eyes-v1_2.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:54:08.162353+00:00",
+      "elapsed_s": 0.6400735840434209,
+      "exit_code": 0,
+      "log_sha256": "f4675f1c2db821934ba1c9e0e2312885f7f9f74d8bf0cc699e80f765a8f275a8"
+    },
+    {
+      "id": "legacy_host",
+      "description": "旧台架C：163+2211+22+10断言及回归",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/legacy_host/command.json",
+      "log": "reports/v1_2/runs/legacy_host/output.log",
+      "command": [
+        "bash",
+        "software/scripts/test_host.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:53:56.737989+00:00",
+      "elapsed_s": 2.8266844170284458,
+      "exit_code": 0,
+      "log_sha256": "cb47d974cdc23a0965e2ef1f1b1234bce3fdd0653e3498a38bebec879c17e59b"
+    },
+    {
+      "id": "legacy_python",
+      "description": "旧软件24项Python",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/legacy_python/command.json",
+      "log": "reports/v1_2/runs/legacy_python/output.log",
+      "command": [
+        "/Users/dean/Documents/MORI/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "software/tests",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:53:59.607526+00:00",
+      "elapsed_s": 1.4167587920092046,
+      "exit_code": 0,
+      "log_sha256": "ab13ca41fd42a287aa6ee61571d019b5b2a5d204a3ade77e17b3c5606de0717c"
+    },
+    {
+      "id": "format_release",
+      "description": "网页/TS格式",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/format_release/command.json",
+      "log": "reports/v1_2/runs/format_release/output.log",
+      "command": [
+        "bash",
+        "tools/node-env.sh",
+        "format:check"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T03:12:31.971107+00:00",
+      "elapsed_s": 0.9124603330274113,
+      "exit_code": 0,
+      "log_sha256": "fdbeb8f813521ace71b131b42d736726fe46ba880544fa80ed5e11296c983ba3"
+    },
+    {
+      "id": "web_release",
+      "description": "Vue类型检查与生产构建",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/web_release/command.json",
+      "log": "reports/v1_2/runs/web_release/output.log",
+      "command": [
+        "bash",
+        "tools/node-env.sh",
+        "build"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:59:41.278959+00:00",
+      "elapsed_s": 1.7460519160376862,
+      "exit_code": 0,
+      "log_sha256": "5d4f7cca64ed612ff4b1df35291e1da4604de0eed5735c87240b3fa911832e50"
+    },
+    {
+      "id": "browser_release",
+      "description": "桌面/手机尺寸Chromium端到端2项",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/browser_release/command.json",
+      "log": "reports/v1_2/runs/browser_release/output.log",
+      "command": [
+        "bash",
+        "tools/node-env.sh",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "apps/console/playwright.config.ts"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:59:39.682164+00:00",
+      "elapsed_s": 14.249432416982017,
+      "exit_code": 0,
+      "log_sha256": "a84ccbf885dac175b962be1d45ac1a74a6ab3531cf0de377afaaabea20d22c2f"
+    },
+    {
+      "id": "stm32_final_sources",
+      "description": "STM32F413禁驱启动镜像",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/stm32_final_sources/command.json",
+      "log": "reports/v1_2/runs/stm32_final_sources/output.log",
+      "command": [
+        "bash",
+        "tools/build-firmware.sh",
+        "motion"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:57:11.265302+00:00",
+      "elapsed_s": 1.7774278330034576,
+      "exit_code": 0,
+      "log_sha256": "bdf375f123714ddd2e8f2e5006d822d92e5a01b563bc7c5a24476ba1bc508649"
+    },
+    {
+      "id": "interaction_final",
+      "description": "ESP32-S3微雪依赖/板级API/双眼固件",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/interaction_final/command.json",
+      "log": "reports/v1_2/runs/interaction_final/output.log",
+      "command": [
+        "bash",
+        "tools/build-firmware.sh",
+        "interaction"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:33:38.059394+00:00",
+      "elapsed_s": 6.401099208975211,
+      "exit_code": 0,
+      "log_sha256": "22428fc43c9c698027420eb210646bb7fccc0acde86b25ef94664c7b0538cd0e"
+    },
+    {
+      "id": "legacy_firmware",
+      "description": "旧ESP32台架固件保留构建",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/legacy_firmware/command.json",
+      "log": "reports/v1_2/runs/legacy_firmware/output.log",
+      "command": [
+        "bash",
+        "tools/build-firmware.sh",
+        "legacy-motion"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:53:49.777922+00:00",
+      "elapsed_s": 23.737540500005707,
+      "exit_code": 0,
+      "log_sha256": "96be3867f7e34a69559d453c2058fbb4bfa1cfb1636384fab29af89c39009ffa"
+    },
+    {
+      "id": "command_replay",
+      "description": "6帧SIMULATED命令回放",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/command_replay/command.json",
+      "log": "reports/v1_2/runs/command_replay/output.log",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "simulation.replay",
+        "simulation/fixtures/SIMULATED_session.jsonl",
+        "--output",
+        "reports/v1_2/SIMULATED_commands.jsonl"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:57:47.506830+00:00",
+      "elapsed_s": 0.18075699999462813,
+      "exit_code": 0,
+      "log_sha256": "fc2635ce542c7a94305a0dbe991ba7f78750ff88b6024c9974eae8443edbc537"
+    },
+    {
+      "id": "replay_s288",
+      "description": "2帧SIMULATED S288离线回放",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/replay_s288/command.json",
+      "log": "reports/v1_2/runs/replay_s288/output.log",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "simulation.s288_replay",
+        "simulation/fixtures/SIMULATED_s288.jsonl",
+        "--output",
+        "reports/v1_2/SIMULATED_s288.csv"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T02:42:14.525645+00:00",
+      "elapsed_s": 0.018176125013269484,
+      "exit_code": 0,
+      "log_sha256": "8c904afcc7c18c50b24ee7d17ea5e9bb0a96f40099ed305555d657402b62d6c7"
+    },
+    {
+      "id": "dynamics_v1_2",
+      "description": "8类ASSUMED动力学工况",
+      "source": "HOST",
+      "status": "PASS",
+      "command_record": "reports/v1_2/runs/dynamics_v1_2/command.json",
+      "log": "reports/v1_2/runs/dynamics_v1_2/output.log",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "simulation.dynamics",
+        "--output",
+        "reports/v1_2/SIMULATED_dynamics_v1_2.json"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "started_utc": "2026-09-22T03:06:48.631554+00:00",
+      "elapsed_s": 0.042768958024680614,
+      "exit_code": 0,
+      "log_sha256": "2b15f6ff7abe9300673e8d2dafde1a1ec820b07f6ddd2219d6bee50dd7878508"
+    }
+  ],
+  "hardware_and_integration_blockers": [
+    "运动实际板型、GPIO/DMA/USART/SPI/DRDY、时钟容差、物理禁驱和急停链仍NOT_FOR_WIRING。",
+    "S288 IDs/轮符号/外部传动比、允许扭矩/热、timeout/mode0/零扭矩真实行为；官方字段差异需抓包核对。",
+    "3S成品电池/回灌钳位/供电测量与保护阈值；12.6V满充假设没有回灌余量。旧2S阈值不继承。",
+    "头部零点/方向/联合范围/负载温度门、IMU安装和滤波、质量重心、相机内外参和曝光延迟。",
+    "CAM33700/LCD35079 FPC接触面/16–18脚/初始化序列，音频PCM槽/时钟/AEC参考、实体按钮接线。",
+    "提供授权设备与台架条件后，按断电→禁驱限流→单模块→悬空单轮→双轮回灌急停→辨识→保护平衡→受控移动推进。"
+  ],
+  "input_sha256": {
+    "MORI_SPEC_V1_2.md": "09cff33b6a3989a86ea60f7a29cd2fefc48ed4af5948bb48c548cad9479553e0",
+    "software/inputs/v1_2/03_CODEX_SOFTWARE.md": "78776b357e5104ddbfdde7b78d0d2383650d1631622a3045db4911f4582c26b2"
+  },
+  "milestones": {
+    "S1": {
+      "status": "PASS",
+      "source": "HOST / SIMULATION",
+      "detail": "协议、模拟、双眼及本地网页链路"
+    },
+    "S2": {
+      "status": "BLOCKED",
+      "build": "PASS",
+      "detail": "两域可构建；物理端口及台架运行未接通，不能标完整S2通过"
+    },
+    "S3": {
+      "status": "BLOCKED",
+      "local_backend_memory_mock": "PASS",
+      "detail": "真实中文语音/自定义唤醒/云部署未验证；App NOT_APPLICABLE"
+    },
+    "S4": {
+      "status": "PASS",
+      "source": "SIMULATION",
+      "hardware": "BLOCKED",
+      "detail": "像素输入及有界行为路径通过；不等于真实人跟随"
+    },
+    "S5": {
+      "status": "NOT_TESTED",
+      "source": "HARDWARE"
+    }
+  }
+}

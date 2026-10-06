@@ -1,0 +1,109 @@
+{
+  "status": "BLOCKED",
+  "scope": "Rigid common-PH allocation through the pre-yaw assembly; no attached-wire or physical-mating proof",
+  "script_sha256": "49d803b3bc8becf3bc45b159239a57e3f13be6987ff42f665b68f69c102b7a9d",
+  "helper_sha256": "5f7c11e73e91d3fa0678b07f1ad44e0dbbd61b1aebfa8aaa772984c5aa56f6cb",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "source_split_report_sha256": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "source_objects": 209,
+  "present_source_objects": 122,
+  "mating_allocations": 29,
+  "fixed_wire_solids": 14,
+  "housing_bounds_mm": [
+    13.600000381469727,
+    -47.275001525878906,
+    123.79000091552734,
+    23.399999618530273,
+    -42.775001525878906,
+    130.63999938964844
+  ],
+  "housing_evidence": "ASSUMED sourced PH mated allocation, not measured housing",
+  "clearance_box_padding_mm": 0.3,
+  "own_native_mating_domain_mm3": 90.99494561765403,
+  "own_native_mating_domain_scope": "Only MCU_Carrier overlap with the original axial housing pull; not a mating-fit qualification",
+  "grid_step_mm": 2.0,
+  "rigid_edge_sweeps": "Convex endpoint hull for linear fixed-orientation translation",
+  "node_budget": 6000,
+  "time_budget_s": 100,
+  "rows": [
+    {
+      "stage": "straight_disengagement",
+      "translation_mm": [
+        0.0,
+        0.0,
+        8.0
+      ],
+      "status": "PASS",
+      "failure": null
+    },
+    {
+      "stage": "rigid_housing_to_open_neck",
+      "status": "BLOCKED",
+      "start_translation_mm": [
+        0,
+        0,
+        8
+      ],
+      "goal_translation_mm": [
+        -18,
+        44,
+        60
+      ],
+      "expanded_nodes": 4457,
+      "frontier_nodes": 0,
+      "stop": "bounded_grid_exhausted",
+      "blocking_edges_by_object": {
+        "MCU_Motion": 270,
+        "fixed_wire_H01_1": 269,
+        "fixed_wire_H03_1": 56,
+        "fixed_wire_H04_4": 26,
+        "fixed_wire_H01_2": 246,
+        "fixed_wire_H03_2": 114,
+        "Power_Module": 246,
+        "Plug_power_J12": 25,
+        "fixed_wire_H02_2": 35,
+        "Body_Upper": 1328,
+        "fixed_wire_H02_1": 94,
+        "Yaw_Base": 1501,
+        "Plug_power_J5": 54,
+        "fixed_wire_H04_8": 3,
+        "Plug_power_J4": 50,
+        "fixed_wire_H04_3": 27,
+        "fixed_wire_H04_2": 11,
+        "fixed_wire_H04_1": 51,
+        "fixed_wire_H04_7": 2,
+        "E_Straight_Header": 15
+      }
+    }
+  ],
+  "translation_path_mm": null,
+  "collision_queries": 8880,
+  "wire_path_and_material": "NOT_TESTED",
+  "hand_access": "NOT_TESTED",
+  "actual_mating": "NOT_TESTED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "no_universal_impossibility_claim": true,
+  "elapsed_s": 22.43132495880127
+}

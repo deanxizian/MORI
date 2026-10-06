@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM接线端资料与路线</title>
+<style>body{font:16px/1.8 system-ui,sans-serif;background:#f2f5f5;color:#293f46;max-width:1100px;margin:30px auto;padding:0 24px 50px}a{color:#07737e}.note{padding:16px 20px;background:#fff0d7}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}img{width:100%;border-radius:8px}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;border-bottom:1px solid #ccd7d8}@media(max-width:700px){.pair{grid-template-columns:1fr}}</style>
+<p><a href="../index.html">← A8研究</a> · <a href="../../index.html">完整项目状态</a></p><h1>CAM接线端：先用原厂尺寸解决名义空间</h1>
+<p class="note">独立候选，未应用主模型。完整线束仍为BLOCKED；两段之间的活动线尚未连接，不能用于下料。</p>
+<p>已查到<a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH原厂目录</a>：无侧凸SHR-04V-S为5×2.8×5 mm；侧插配对参考长度6.25 mm，插座轴向4.25 mm，推导前侧外露2 mm。<a href="source_update.json">来源与CAD获取限制</a></p>
+<p>微雪原理图只写SH1.0 4P，实际厂牌/料号仍未确认。橙色是条件性插头包络，四色仅为几何槽位。图片只显示CAM，支架隐藏；检查使用全部源实体。</p>
+<div class="pair"><figure><img src="left_departure.png" alt="条件性SH插头，四根线向左圆弧出线"><figcaption>左转：R7/8/9/10 mm</figcaption></figure><figure><img src="forward_departure.png" alt="条件性SH插头，四根线向前平行圆弧出线"><figcaption>前转：四根均R7 mm</figcaption></figure></div>
+<h2>通过了哪些，哪里还没完成</h2><table><tr><th>检查</th><th>结果</th></tr><tr><td>名义插头、5 mm直出段、零位拔出</td><td>PASS；实际插合、公差和照片误差未验证</td></tr><tr><td>两种端部线形与源实体</td><td>PASS；130个组合姿态，线间净空下界约0.329 mm</td></tr><tr><td>与旧Z206暂存段同时放入</td><td>BLOCKED；两条候选均相交，保留失败记录</td></tr><tr><td>改用Z193临时分段后，两段共存</td><td>PASS；4160组合，左转最小间隙1.969 mm、前转4.672 mm</td></tr><tr><td>两段间活动线、固定点、整束装入、最终长度</td><td>NOT_TESTED；仍需完成数字设计</td></tr></table>
+<p>Z206是路线暂存终点，不是硬件。只在独立研究中截短末尾13 mm竖直线，板卡和打印件保持。两段仍未相连，不能称为完整线束。</p>
+<p><a href="README.md">完整说明</a> · <a href="comparison.blend">可编辑比较场景</a> · <a href="mating_allocation.json">插头检查</a> · <a href="departure_screen.json">局部线形</a> · <a href="coexistence_screen.json">旧组合失败</a> · <a href="departure_v2/screen.json">30种后续尝试</a> · <a href="lower_staging/coexistence_screen.json">低位分段检查</a> · <a href="render_manifest.json">图像来源</a> · <a href="commands.json">复现命令</a> · <a href="review_manifest.json">发布清单</a></p>
+<p><a href="../assembly_feed_v3/open_mouth/index.html">J3M穿线出口清理</a> · <a href="../TOOLING_DETAILS.md">端子压接资料</a></p></html>

@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "revision": "V1.2-M1.52",
+  "source_blend_sha256": "9a254621bfb01e040d3cef12bdbe5757052d05f19457c45b4c8999109187ddbd",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "9a254621bfb01e040d3cef12bdbe5757052d05f19457c45b4c8999109187ddbd",
+    "mechanical/reports/build_manifest.json": "5289b632721108f895f3c75e833692b4cdcfd91fb26342b50ec899f039594b3e",
+    "config/geometry.json": "5fbe7d99aeebf2c60dad22a182084868e9495ea4b55a58c022e3b26fe114043b",
+    "contracts/mechanical_interfaces.json": "f47ee0573dd7b839084b9d334a5b79583c8537e2eaf60f30367fec8835d1aecb",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "c9c32cc07027c447e8d9627716490fd9c2392f0e97ee959cca130f7b098d35c6",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "script_sha256": "7d703b8faaeadc558ae7fb4f178c4da9a9e0365b8be42a585462deec905f9878",
+  "scope": {
+    "unchanged": 197,
+    "changed": [
+      "Yaw_Reaction_Retainer_Nut",
+      "Yaw_Reaction_Clamp_Nut"
+    ],
+    "added": [
+      "Body_Front",
+      "Body_Rear"
+    ],
+    "retired": [
+      "Body_Lower",
+      "Body_Upper",
+      "Shell_Insert_0",
+      "Shell_Insert_1",
+      "Shell_Insert_2",
+      "Shell_Insert_3",
+      "Shell_Screw_0",
+      "Shell_Screw_1",
+      "Shell_Screw_2",
+      "Shell_Screw_3"
+    ],
+    "unrelated_config_unchanged": true,
+    "hardware_files_unchanged": 581
+  },
+  "saved_vs_candidate_difference_mm3": {
+    "Body_Rear": 0.005130366655087747,
+    "Body_Front": 0.004816729311397122
+  },
+  "paths": [
+    {
+      "module": "front",
+      "positions": 275,
+      "travel_mm": 220,
+      "wheels": "present",
+      "opposite_shell": "closed",
+      "status": "PASS",
+      "first": null
+    },
+    {
+      "module": "rear",
+      "positions": 275,
+      "travel_mm": 220,
+      "wheels": "present",
+      "opposite_shell": "closed",
+      "status": "PASS",
+      "first": null
+    }
+  ],
+  "modules": {
+    "front": [
+      "Body_Front",
+      "Frame_Insert_0",
+      "Frame_Insert_1",
+      "Speaker",
+      "Speaker_Gasket",
+      "Speaker_Insert_-1",
+      "Speaker_Insert_1",
+      "Speaker_Screw_-1",
+      "Speaker_Screw_1"
+    ],
+    "rear": [
+      "Body_Rear",
+      "Frame_Insert_2",
+      "Frame_Insert_3",
+      "Plug_rear_J2",
+      "Plug_rear_J3",
+      "Power_Switch",
+      "Rear_Interface_Insert_0",
+      "Rear_Interface_Insert_1",
+      "Rear_Interface_PCB",
+      "Rear_Interface_Screw_0",
+      "Rear_Interface_Screw_1",
+      "USB_Receptacle"
+    ]
+  },
+  "frame_tool_access": [
+    {
+      "screw": "Frame_Screw_0",
+      "axis_mm": [
+        48,
+        42
+      ],
+      "status": "PASS",
+      "hits": [],
+      "existing_thread_interfaces": [
+        {
+          "target": "Frame_Insert_0",
+          "overlap_mm3": 0.0016010566970961473,
+          "native_engaged_overlap_mm3": 0.0016010566970958155,
+          "additional_overlap_mm3": -1.1102230246251565e-16,
+          "status": "NOT_TESTED",
+          "meaning": "Existing named screw/insert nominal thread engagement; physical threading not qualified"
+        }
+      ]
+    },
+    {
+      "screw": "Frame_Screw_1",
+      "axis_mm": [
+        -48,
+        42
+      ],
+      "status": "PASS",
+      "hits": [],
+      "existing_thread_interfaces": [
+        {
+          "target": "Frame_Insert_1",
+          "overlap_mm3": 0.0016010566970964092,
+          "native_engaged_overlap_mm3": 0.001601056697097049,
+          "additional_overlap_mm3": 0.0,
+          "status": "NOT_TESTED",
+          "meaning": "Existing named screw/insert nominal thread engagement; physical threading not qualified"
+        }
+      ]
+    },
+    {
+      "screw": "Frame_Screw_2",
+      "axis_mm": [
+        48,
+        -42
+      ],
+      "status": "PASS",
+      "hits": [],
+      "existing_thread_interfaces": [
+        {
+          "target": "Frame_Insert_2",
+          "overlap_mm3": 0.0016010566970962614,
+          "native_engaged_overlap_mm3": 0.0016010566970965368,
+          "additional_overlap_mm3": 0.0,
+          "status": "NOT_TESTED",
+          "meaning": "Existing named screw/insert nominal thread engagement; physical threading not qualified"
+        }
+      ]
+    },
+    {
+      "screw": "Frame_Screw_3",
+      "axis_mm": [
+        -48,
+        -42
+      ],
+      "status": "PASS",
+      "hits": [],
+      "existing_thread_interfaces": [
+        {
+          "target": "Frame_Insert_3",
+          "overlap_mm3": 0.001601056697097048,
+          "native_engaged_overlap_mm3": 0.0016010566970972367,
+          "additional_overlap_mm3": 0.0,
+          "status": "NOT_TESTED",
+          "meaning": "Existing named screw/insert nominal thread engagement; physical threading not qualified"
+        }
+      ]
+    }
+  ],
+  "locators": [
+    {
+      "center_x_mm": -20,
+      "wall": [
+        {
+          "side": "roof",
+          "thickness_mm": 1.6999999999999977
+        },
+        {
+          "side": "left",
+          "thickness_mm": 1.6999999999999977
+        },
+        {
+          "side": "right",
+          "thickness_mm": 1.6999999999999995
+        }
+      ],
+      "tongue_thickness_mm": 2,
+      "clearance_per_side_mm": 0.3,
+      "physical_fit": "NOT_TESTED"
+    },
+    {
+      "center_x_mm": 20,
+      "wall": [
+        {
+          "side": "roof",
+          "thickness_mm": 1.6999999999999977
+        },
+        {
+          "side": "left",
+          "thickness_mm": 1.6999999999999995
+        },
+        {
+          "side": "right",
+          "thickness_mm": 1.6999999999999977
+        }
+      ],
+      "tongue_thickness_mm": 2,
+      "clearance_per_side_mm": 0.3,
+      "physical_fit": "NOT_TESTED"
+    }
+  ],
+  "nominal_tool": "ASSUMED diameter5 x125 shaft + diameter20 x60 handle; 150 mm continuous axial hulls",
+  "complete_wired_assembly": "BLOCKED: finite rigid modules and plug housings only; actual lead slack and unplug/closure deformation unresolved",
+  "physical_fit": "NOT_TESTED",
+  "strength": "NOT_TESTED",
+  "elapsed_s": 13.899861574172974
+}

@@ -1,0 +1,34 @@
+{
+  "status": "BLOCKED",
+  "component_id": "display",
+  "source": "contracts/components.json",
+  "allocation_xyz_mm": [
+    55,
+    8,
+    55
+  ],
+  "conservative_corner_radius_mm": 63.74,
+  "minimum_mother_head_diameter_if_full_rectangle_mm": 132.3,
+  "max_box_center_y_if_head120_mm": 33.0,
+  "center_mm": [
+    0,
+    42,
+    220.0
+  ],
+  "intersections": [
+    {
+      "part": "Head_Front",
+      "intersection_mm3": 430.8
+    },
+    {
+      "part": "Display_Frame",
+      "intersection_mm3": 1468.1
+    }
+  ],
+  "interpretation": "Full vendor55x55 rectangular bound plus assumed8mm thickness is conservative and overlaps the current study. The visible circular backing is only a construction template, not the vendor PCB shape. Actual nonrectangular outline may remove these corners; no whole-module fit approval.",
+  "minimum_changes_proposed": [
+    "Obtain actual glass/PCB/connector outline and net depth first, update template before final holes",
+    "If the full55x55 area is physically occupied, move full screen/mask rearward or locally enlarge head cheeks and re-run all optical/motion checks; do not silently trim PCB or enlarge emitting area"
+  ],
+  "swept_full_unknown_shape": "NOT_TESTED until outline is provided"
+}

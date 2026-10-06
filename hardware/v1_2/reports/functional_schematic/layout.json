@@ -1,0 +1,948 @@
+[
+  {
+    "project": "MORI_motion_P1",
+    "paper": [
+      841,
+      640
+    ],
+    "components": 56,
+    "blocks": [
+      {
+        "title": "01  STM32 module / GPIO map",
+        "references": [
+          "U100"
+        ],
+        "wires": 44,
+        "junctions": 6,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          38.1,
+          198.12,
+          287.02
+        ]
+      },
+      {
+        "title": "02  Wheel TTL / 6 Mbps target",
+        "references": [
+          "U1",
+          "R1",
+          "J2",
+          "C1"
+        ],
+        "wires": 17,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          215.9,
+          38.1,
+          299.72,
+          121.92
+        ]
+      },
+      {
+        "title": "03  Head TTL / separate bus",
+        "references": [
+          "U2",
+          "R2",
+          "J3",
+          "C2"
+        ],
+        "wires": 17,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          38.1,
+          299.72,
+          121.92
+        ]
+      },
+      {
+        "title": "04  Explicit ARM latch / physical disable loop",
+        "references": [
+          "U5",
+          "J8",
+          "R6",
+          "R7",
+          "C12",
+          "R5",
+          "R19",
+          "U6",
+          "C6",
+          "C5",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "wires": 44,
+        "junctions": 2,
+        "manual": true,
+        "bounds_mm": [
+          215.9,
+          165.1,
+          299.72,
+          215.9
+        ]
+      },
+      {
+        "title": "05  Transmit-enable gating",
+        "references": [
+          "U3",
+          "R3",
+          "R4",
+          "C3"
+        ],
+        "wires": 18,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          165.1,
+          299.72,
+          137.16
+        ]
+      },
+      {
+        "title": "06  Body IMU connector / source damping",
+        "references": [
+          "J4",
+          "R10",
+          "R11",
+          "R12",
+          "R13"
+        ],
+        "wires": 14,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          307.34,
+          299.72,
+          129.54
+        ]
+      },
+      {
+        "title": "07  Interaction UART / power-domain isolation",
+        "references": [
+          "U4",
+          "R9",
+          "J5",
+          "C4",
+          "C7"
+        ],
+        "wires": 20,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          215.9,
+          386.08,
+          299.72,
+          157.48
+        ]
+      },
+      {
+        "title": "08  Power monitor / RC filters",
+        "references": [
+          "J7",
+          "R14",
+          "C9",
+          "R15",
+          "C10",
+          "R16",
+          "C11",
+          "R17",
+          "R18"
+        ],
+        "wires": 30,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          441.96,
+          299.72,
+          134.62
+        ]
+      },
+      {
+        "title": "09  Input / user button / supply boundaries",
+        "references": [
+          "J1",
+          "C8",
+          "J6",
+          "R8",
+          "#FLG1",
+          "#FLG2",
+          "#FLG3",
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ],
+        "wires": 11,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          330.2,
+          198.12,
+          185.42
+        ]
+      }
+    ],
+    "schematic_sha256": "e4d4879c4397433b0f4f28af6a31f7e4cd8a2be9458dd45b1977852c65637c8c"
+  },
+  {
+    "project": "MORI_imu_P1",
+    "paper": "A4",
+    "components": 11,
+    "blocks": [
+      {
+        "title": "01  SPI connector / sensor / local decoupling",
+        "references": [
+          "J1",
+          "U1",
+          "R1",
+          "R2",
+          "C1",
+          "C2",
+          "C3",
+          "#FLG1",
+          "#FLG2"
+        ],
+        "wires": 49,
+        "junctions": 18,
+        "inter_block_labels": 0,
+        "local_nets": 8,
+        "bounds_mm": [
+          12.7,
+          40.64,
+          266.7,
+          124.46
+        ]
+      },
+      {
+        "title": "02  Mechanical references",
+        "references": [
+          "H1",
+          "H2"
+        ],
+        "wires": 0,
+        "junctions": 0,
+        "inter_block_labels": 0,
+        "local_nets": 0,
+        "bounds_mm": [
+          12.7,
+          175.26,
+          127.0,
+          25.4
+        ]
+      }
+    ],
+    "schematic_sha256": "5715c98bc51567775aec523d843c765f7eea52ac35ba57917021ce2fa51e9005"
+  },
+  {
+    "project": "MORI_power_P1",
+    "paper": [
+      841,
+      730
+    ],
+    "components": 80,
+    "blocks": [
+      {
+        "title": "01  Pack input / reverse protection / shunt",
+        "references": [
+          "J1",
+          "Q1",
+          "R2",
+          "C2",
+          "D1",
+          "R1"
+        ],
+        "wires": 14,
+        "junctions": 2,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          38.1,
+          264.16,
+          165.1
+        ]
+      },
+      {
+        "title": "02  Kelvin current sense",
+        "references": [
+          "U1",
+          "R3",
+          "R4",
+          "C1"
+        ],
+        "wires": 11,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          208.28,
+          264.16,
+          129.54
+        ]
+      },
+      {
+        "title": "03  Wheel 9 V conditioning",
+        "references": [
+          "J3",
+          "D10",
+          "Q10",
+          "C10",
+          "R10",
+          "R11",
+          "Q11",
+          "J7",
+          "J8",
+          "J13"
+        ],
+        "wires": 27,
+        "junctions": 4,
+        "manual": true,
+        "bounds_mm": [
+          281.94,
+          38.1,
+          266.7,
+          218.44
+        ]
+      },
+      {
+        "title": "04  Head 6 V conditioning",
+        "references": [
+          "J5",
+          "D30",
+          "Q30",
+          "C30",
+          "R30",
+          "R31",
+          "Q31",
+          "J9",
+          "J14"
+        ],
+        "wires": 22,
+        "junctions": 3,
+        "manual": true,
+        "bounds_mm": [
+          553.72,
+          38.1,
+          266.7,
+          218.44
+        ]
+      },
+      {
+        "title": "05  External converter input distribution",
+        "references": [
+          "J2",
+          "J4",
+          "J6"
+        ],
+        "wires": 6,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          342.9,
+          264.16,
+          111.76
+        ]
+      },
+      {
+        "title": "06  Wheel rail / brake and overvoltage",
+        "references": [
+          "U20",
+          "U21",
+          "R20",
+          "R21",
+          "R22",
+          "R23",
+          "R24",
+          "Q20",
+          "J11",
+          "D20",
+          "R25",
+          "R26",
+          "C21",
+          "C20"
+        ],
+        "wires": 51,
+        "junctions": 5,
+        "manual": true,
+        "bounds_mm": [
+          281.94,
+          261.62,
+          266.7,
+          294.64
+        ]
+      },
+      {
+        "title": "07  Head rail / brake and overvoltage",
+        "references": [
+          "U40",
+          "U41",
+          "R40",
+          "R41",
+          "R42",
+          "R43",
+          "R44",
+          "Q40",
+          "J12",
+          "D40",
+          "R45",
+          "R46",
+          "C41",
+          "C40"
+        ],
+        "wires": 51,
+        "junctions": 5,
+        "manual": true,
+        "bounds_mm": [
+          553.72,
+          261.62,
+          266.7,
+          294.64
+        ]
+      },
+      {
+        "title": "08  Voltage monitor / motion connector",
+        "references": [
+          "J10",
+          "R50",
+          "R51",
+          "R52",
+          "R53",
+          "R54"
+        ],
+        "wires": 21,
+        "junctions": 2,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          459.74,
+          264.16,
+          142.24
+        ]
+      },
+      {
+        "title": "09  Charge insertion / VBUS sense",
+        "references": [
+          "J16",
+          "R55",
+          "Q50",
+          "R56",
+          "J15"
+        ],
+        "wires": 13,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          281.94,
+          561.34,
+          266.7,
+          116.84
+        ]
+      },
+      {
+        "title": "10  Supply boundaries / board mounting",
+        "references": [
+          "#FLG1",
+          "#FLG2",
+          "#FLG3",
+          "#FLG4",
+          "#FLG5",
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ],
+        "wires": 5,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          553.72,
+          561.34,
+          266.7,
+          116.84
+        ]
+      }
+    ],
+    "schematic_sha256": "8aa2d0deebef770a5284d5c0abbd935a13ba8c687c6833dc9f3fa397c9213902"
+  },
+  {
+    "project": "MORI_motion_P2",
+    "paper": [
+      841,
+      640
+    ],
+    "components": 56,
+    "blocks": [
+      {
+        "title": "01  STM32 module / GPIO map",
+        "references": [
+          "U100"
+        ],
+        "wires": 44,
+        "junctions": 6,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          38.1,
+          198.12,
+          287.02
+        ]
+      },
+      {
+        "title": "02  Wheel TTL / 6 Mbps target",
+        "references": [
+          "U1",
+          "R1",
+          "J2",
+          "C1"
+        ],
+        "wires": 17,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          215.9,
+          38.1,
+          299.72,
+          121.92
+        ]
+      },
+      {
+        "title": "03  Head TTL / separate bus",
+        "references": [
+          "U2",
+          "R2",
+          "J3",
+          "C2"
+        ],
+        "wires": 17,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          38.1,
+          299.72,
+          121.92
+        ]
+      },
+      {
+        "title": "04  Explicit ARM latch / physical disable loop",
+        "references": [
+          "U5",
+          "J8",
+          "R6",
+          "R7",
+          "C12",
+          "R5",
+          "R19",
+          "U6",
+          "C6",
+          "C5",
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "wires": 44,
+        "junctions": 2,
+        "manual": true,
+        "bounds_mm": [
+          215.9,
+          165.1,
+          299.72,
+          215.9
+        ]
+      },
+      {
+        "title": "05  Transmit-enable gating",
+        "references": [
+          "U3",
+          "R3",
+          "R4",
+          "C3"
+        ],
+        "wires": 18,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          165.1,
+          299.72,
+          137.16
+        ]
+      },
+      {
+        "title": "06  Body IMU connector / source damping",
+        "references": [
+          "J4",
+          "R10",
+          "R11",
+          "R12",
+          "R13"
+        ],
+        "wires": 14,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          307.34,
+          299.72,
+          129.54
+        ]
+      },
+      {
+        "title": "07  Interaction UART / power-domain isolation",
+        "references": [
+          "U4",
+          "R9",
+          "J5",
+          "C4",
+          "C7"
+        ],
+        "wires": 20,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          215.9,
+          386.08,
+          299.72,
+          157.48
+        ]
+      },
+      {
+        "title": "08  Power monitor / RC filters",
+        "references": [
+          "J7",
+          "R14",
+          "C9",
+          "R15",
+          "C10",
+          "R16",
+          "C11",
+          "R17",
+          "R18"
+        ],
+        "wires": 30,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          520.7,
+          441.96,
+          299.72,
+          134.62
+        ]
+      },
+      {
+        "title": "09  Input / user button / supply boundaries",
+        "references": [
+          "J1",
+          "C8",
+          "J6",
+          "R8",
+          "#FLG1",
+          "#FLG2",
+          "#FLG3",
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ],
+        "wires": 11,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          330.2,
+          198.12,
+          185.42
+        ]
+      }
+    ],
+    "schematic_sha256": "7ef4c9fdf5c3844af6d77b400bca851655423339810b3d3f80f81be780c5e128"
+  },
+  {
+    "project": "MORI_imu_P2",
+    "paper": "A4",
+    "components": 11,
+    "blocks": [
+      {
+        "title": "01  SPI connector / sensor / local decoupling",
+        "references": [
+          "J1",
+          "U1",
+          "R1",
+          "R2",
+          "C1",
+          "C2",
+          "C3",
+          "#FLG1",
+          "#FLG2"
+        ],
+        "wires": 49,
+        "junctions": 18,
+        "inter_block_labels": 0,
+        "local_nets": 8,
+        "bounds_mm": [
+          12.7,
+          40.64,
+          266.7,
+          124.46
+        ]
+      },
+      {
+        "title": "02  Mechanical references",
+        "references": [
+          "H1",
+          "H2"
+        ],
+        "wires": 0,
+        "junctions": 0,
+        "inter_block_labels": 0,
+        "local_nets": 0,
+        "bounds_mm": [
+          12.7,
+          175.26,
+          127.0,
+          25.4
+        ]
+      }
+    ],
+    "schematic_sha256": "d6f93426692c72cb0d57bd06b16e853c8c95d80573317e3827c2941e07e92f78"
+  },
+  {
+    "project": "MORI_power_P2",
+    "paper": [
+      841,
+      730
+    ],
+    "components": 80,
+    "blocks": [
+      {
+        "title": "01  Pack input / reverse protection / shunt",
+        "references": [
+          "J1",
+          "Q1",
+          "R2",
+          "C2",
+          "D1",
+          "R1"
+        ],
+        "wires": 14,
+        "junctions": 2,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          38.1,
+          264.16,
+          165.1
+        ]
+      },
+      {
+        "title": "02  Kelvin current sense",
+        "references": [
+          "U1",
+          "R3",
+          "R4",
+          "C1"
+        ],
+        "wires": 11,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          208.28,
+          264.16,
+          129.54
+        ]
+      },
+      {
+        "title": "03  Wheel 9 V conditioning",
+        "references": [
+          "J3",
+          "D10",
+          "Q10",
+          "C10",
+          "R10",
+          "R11",
+          "Q11",
+          "J7",
+          "J8",
+          "J13"
+        ],
+        "wires": 27,
+        "junctions": 4,
+        "manual": true,
+        "bounds_mm": [
+          281.94,
+          38.1,
+          266.7,
+          218.44
+        ]
+      },
+      {
+        "title": "04  Head 6 V conditioning",
+        "references": [
+          "J5",
+          "D30",
+          "Q30",
+          "C30",
+          "R30",
+          "R31",
+          "Q31",
+          "J9",
+          "J14"
+        ],
+        "wires": 22,
+        "junctions": 3,
+        "manual": true,
+        "bounds_mm": [
+          553.72,
+          38.1,
+          266.7,
+          218.44
+        ]
+      },
+      {
+        "title": "05  External converter input distribution",
+        "references": [
+          "J2",
+          "J4",
+          "J6"
+        ],
+        "wires": 6,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          342.9,
+          264.16,
+          111.76
+        ]
+      },
+      {
+        "title": "06  Wheel rail / brake and overvoltage",
+        "references": [
+          "U20",
+          "U21",
+          "R20",
+          "R21",
+          "R22",
+          "R23",
+          "R24",
+          "Q20",
+          "J11",
+          "D20",
+          "R25",
+          "R26",
+          "C21",
+          "C20"
+        ],
+        "wires": 51,
+        "junctions": 5,
+        "manual": true,
+        "bounds_mm": [
+          281.94,
+          261.62,
+          266.7,
+          294.64
+        ]
+      },
+      {
+        "title": "07  Head rail / brake and overvoltage",
+        "references": [
+          "U40",
+          "U41",
+          "R40",
+          "R41",
+          "R42",
+          "R43",
+          "R44",
+          "Q40",
+          "J12",
+          "D40",
+          "R45",
+          "R46",
+          "C41",
+          "C40"
+        ],
+        "wires": 51,
+        "junctions": 5,
+        "manual": true,
+        "bounds_mm": [
+          553.72,
+          261.62,
+          266.7,
+          294.64
+        ]
+      },
+      {
+        "title": "08  Voltage monitor / motion connector",
+        "references": [
+          "J10",
+          "R50",
+          "R51",
+          "R52",
+          "R53",
+          "R54"
+        ],
+        "wires": 21,
+        "junctions": 2,
+        "manual": true,
+        "bounds_mm": [
+          12.7,
+          459.74,
+          264.16,
+          142.24
+        ]
+      },
+      {
+        "title": "09  Charge insertion / VBUS sense",
+        "references": [
+          "J16",
+          "R55",
+          "Q50",
+          "R56",
+          "J15"
+        ],
+        "wires": 13,
+        "junctions": 1,
+        "manual": true,
+        "bounds_mm": [
+          281.94,
+          561.34,
+          266.7,
+          116.84
+        ]
+      },
+      {
+        "title": "10  Supply boundaries / board mounting",
+        "references": [
+          "#FLG1",
+          "#FLG2",
+          "#FLG3",
+          "#FLG4",
+          "#FLG5",
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ],
+        "wires": 5,
+        "junctions": 0,
+        "manual": true,
+        "bounds_mm": [
+          553.72,
+          561.34,
+          266.7,
+          116.84
+        ]
+      }
+    ],
+    "schematic_sha256": "19f6ef30c9dcaa4d077e628ec22e30b23ad98970c2f2dd6910263e719afb5f00"
+  }
+]

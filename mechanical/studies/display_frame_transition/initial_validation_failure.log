@@ -1,0 +1,17 @@
+00:00.305  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/mechanical/scripts/validate.py", line 546, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/validate.py", line 495, in main
+    assembled(); solids={o.name.removeprefix(PREFIX):Solid(o) for o in parts() if o.get('group')!='dock'}
+                                                     ~~~~~^^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/validate.py", line 26, in __init__
+    if self.m.status()!=manifold.Error.NoError: raise ValueError(self.name+': '+str(self.m.status()))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Display_Frame: Error.NotManifold
+
+Error: script failed, file: '/Users/dean/Documents/MORI/mechanical/scripts/validate.py', exiting.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

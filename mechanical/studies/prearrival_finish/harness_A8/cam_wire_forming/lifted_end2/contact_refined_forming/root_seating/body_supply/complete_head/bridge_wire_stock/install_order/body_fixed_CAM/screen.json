@@ -1,0 +1,323 @@
+{
+  "status": "BLOCKED",
+  "scope": "Coarse body-fixed CAM order diagnostic, not a full installation proof",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "script_sha256": "824f081842cfeccc170c3f56cdca0d19847a371ec0e1bae60ec499820b50f26f",
+  "helper_sha256": "3c4166626b3520f4f571d26eebe7257dd5000f9ab54636f27efc36e9068f2573",
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/wire_solids.json": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/verification.json": "351a78dd466e5f008192ae6dcda4c2f7ccff106a2b03695480b5596e738e2bf0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/full_wires.npz": "0b8464d2fc192ffc322dcf6ac5f2cc8c2018051e2cca5351332331167a0098f6",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/split_assembly/screen.json": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2"
+  },
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "source_objects": 209,
+  "present_source_objects": 122,
+  "fixed_body_wires": 14,
+  "CAM_wires": 4,
+  "mating_allocations": 29,
+  "nominal_CAM_lengths_mm": [
+    287.29072199056225,
+    327.8590533262688,
+    285.09331007720493,
+    339.6145291968563
+  ],
+  "rows": [
+    {
+      "stage": "settled_baseline",
+      "status": "PASS",
+      "checked_positions": 1,
+      "planned_positions": 1,
+      "failure": null
+    },
+    {
+      "stage": "bridge_lift_shell_held",
+      "status": "BLOCKED",
+      "checked_positions": 2,
+      "planned_positions": 7,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 1,
+        "point_mm": [
+          -6.75767711962049,
+          -6.757677119620488,
+          140.45774550171853
+        ],
+        "obstacle": "Yaw_Base",
+        "centreline_distance_mm": 0.6871326565742493,
+        "required_bound_mm": 0.6902350560688049,
+        "minimum_sample_witness": {
+          "point_in_obstacle_frame_mm": [
+            -5.688940348219744,
+            -5.6889403482197425,
+            142.21338564016804
+          ],
+          "centreline_to_surface_mm": 0.6373284459114075,
+          "nominal_wire_radius_mm": 0.3302,
+          "curve_chord_error_mm": 0.0002538143505864676,
+          "sampled_surface_gap_mm": 0.3071284459114075,
+          "intersection_witness": false,
+          "scope": "Surface proximity witness at a saved curve sample; not a continuous-path minimum"
+        },
+        "index": 1,
+        "shell_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9659258127212524,
+            -0.25881898403167725,
+            25.881898880004883
+          ],
+          [
+            0.0,
+            0.25881898403167725,
+            0.9659258127212524,
+            17.40741729736328
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "bridge_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "stage": "body_bridge_back",
+      "status": "BLOCKED",
+      "checked_positions": 1,
+      "planned_positions": 5,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 1,
+        "point_mm": [
+          -2.6887918883114814,
+          -6.245830463705398,
+          137.85
+        ],
+        "obstacle": "Yaw_Base",
+        "centreline_distance_mm": 0.649993896484375,
+        "required_bound_mm": 0.6902350560688049,
+        "minimum_sample_witness": {
+          "point_in_obstacle_frame_mm": [
+            -2.4779180439138866,
+            -6.3324499340812785,
+            138.5
+          ],
+          "centreline_to_surface_mm": 7.152557373046875e-07,
+          "nominal_wire_radius_mm": 0.3302,
+          "curve_chord_error_mm": 0.0002538143505864676,
+          "sampled_surface_gap_mm": -0.3301992847442627,
+          "intersection_witness": true,
+          "scope": "Surface proximity witness at a saved curve sample; not a continuous-path minimum"
+        },
+        "index": 0,
+        "shell_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9659258127212524,
+            -0.25881898403167725,
+            25.881898880004883
+          ],
+          [
+            0.0,
+            0.25881898403167725,
+            0.9659258127212524,
+            17.40741729736328
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "bridge_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            18.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "stage": "body_bridge_bench",
+      "status": "BLOCKED",
+      "checked_positions": 1,
+      "planned_positions": 6,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 1,
+        "point_mm": [
+          -3.911125211532565,
+          8.437347792669907,
+          155.85
+        ],
+        "obstacle": "Yaw_Bearing",
+        "centreline_distance_mm": 0.6884616017341614,
+        "required_bound_mm": 0.6902350560688049,
+        "minimum_sample_witness": {
+          "point_in_obstacle_frame_mm": [
+            -4.014608727816101,
+            8.511565180988045,
+            156.2
+          ],
+          "centreline_to_surface_mm": 0.6107954978942871,
+          "nominal_wire_radius_mm": 0.3302,
+          "curve_chord_error_mm": 0.0002538143505864676,
+          "sampled_surface_gap_mm": 0.2805954978942871,
+          "intersection_witness": false,
+          "scope": "Surface proximity witness at a saved curve sample; not a continuous-path minimum"
+        },
+        "index": 0,
+        "shell_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9659258127212524,
+            -0.25881898403167725,
+            11.881898880004883
+          ],
+          [
+            0.0,
+            0.25881898403167725,
+            0.9659258127212524,
+            17.40741729736328
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "bridge_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -14.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            18.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "stage": "body_shell_settle",
+      "status": "PASS",
+      "checked_positions": 5,
+      "planned_positions": 5,
+      "failure": null
+    }
+  ],
+  "housing_motion": "Fixed to body/native Motion J5 reference",
+  "full_wire_shape": "Unchanged saved upright stock and body prefix; no hidden shortening",
+  "source_curve_radius_check": "Reused unchanged source geometry; no curve deformation",
+  "continuous_motion": "NOT_TESTED",
+  "hands_and_shape_support": "NOT_TESTED",
+  "threading_and_real_contacts": "NOT_TESTED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "no_universal_impossibility_claim": true,
+  "elapsed_s": 1.8868732452392578
+}

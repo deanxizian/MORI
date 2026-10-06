@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "scope": "Two finite planning loops only; UART, neck rise and installed harness are not qualified",
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "source_loops_sha256": "71916c871ec8f1b069483298a3e7247086fbbc9bcd50fc06c6170dd4b7359b1d",
+  "source_fixed_wires_sha256": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+  "groups": [
+    {
+      "id": "CAM_POWER_AND_SPK",
+      "status": "PASS",
+      "source_poses": 130,
+      "current_part_count": 209,
+      "current_source_hits": [],
+      "previous_fourteen_wire_hits": [],
+      "certified_project_surface_gap_mm": 0.3,
+      "anchor_and_connector_approaches": "NOT_TESTED"
+    },
+    {
+      "id": "SERVO",
+      "status": "PASS",
+      "source_poses": 130,
+      "current_part_count": 209,
+      "current_source_hits": [],
+      "previous_fourteen_wire_hits": [],
+      "certified_project_surface_gap_mm": 0.3,
+      "anchor_and_connector_approaches": "NOT_TESTED"
+    }
+  ],
+  "inter_group": [
+    {
+      "a": "CAM_POWER_AND_SPK",
+      "b": "SERVO",
+      "status": "PASS",
+      "method": "parallel-plane global distance bound",
+      "surface_gap_lower_bound_mm": 0.386365439026112
+    }
+  ],
+  "classification": "PLACEHOLDER / ASSUMED planning allocations",
+  "actual_harness": "NOT_TESTED",
+  "main_geometry_changed": false,
+  "individual_wire_lengths": "NOT_TESTED",
+  "elapsed_s": 5.175030946731567,
+  "limits": [
+    "Clearance uses original triangles/proxies plus bounded curve-to-chord and sample spacing allowances.",
+    "13 yaw × 10 pitch poses are finite nominal source geometry checks, not continuous-motion certification.",
+    "Endpoints are study coordinates with no real retention or terminal approaches.",
+    "Constant group-centreline length does not establish all individual wire lengths or dynamic lifetime.",
+    "There is no third passing UART route in this report."
+  ]
+}

@@ -1,0 +1,3831 @@
+{
+  "status_vocabulary": [
+    "PASS",
+    "FAIL",
+    "NOT_TESTED",
+    "BLOCKED",
+    "NOT_APPLICABLE"
+  ],
+  "elapsed_s": 45.4,
+  "checks": [
+    {
+      "id": "static_rigid_solids",
+      "status": "BLOCKED",
+      "summary": "刚性实体采样 / 原厂两接插件仅完成保守代理检查",
+      "measurement": {
+        "failures": 0,
+        "details": "static_interference.json",
+        "vendor_proxy_details": "vendor_lcd_import.json"
+      },
+      "method": "Manifold triangle-solid intersections; LCD111 CAD solids plus two connector bounds. Even zero overlaps is not reported as full exact-hardware PASS."
+    },
+    {
+      "id": "combined_yaw_pitch",
+      "status": "BLOCKED",
+      "summary": "Yaw/Pitch 联合采样 / 两接插件精确网格待核",
+      "measurement": {
+        "poses": 130,
+        "yaw_step_deg": 10,
+        "pitch_step_deg": 5,
+        "failures": 0,
+        "bounds_xyz_mm": [
+          [
+            -79.23107147216797,
+            79.23095703125
+          ],
+          [
+            -79.0,
+            78.87886047363281
+          ],
+          [
+            0.0,
+            281.9991213285223
+          ]
+        ]
+      },
+      "method": "Solid-volume intersection with two declared connector proxies; no continuous or complete as-built proof"
+    },
+    {
+      "id": "face_mask_body_clearance",
+      "status": "PASS",
+      "summary": "圆屏外面罩与身体在联合姿态中的实际间隙",
+      "measurement": {
+        "yaw_deg": -60,
+        "pitch_deg": -20,
+        "target": "Body_Upper",
+        "gap_mm": 10.0
+      },
+      "method": "Manifold min_gap on actual face/body/shroud triangle solids at yaw10deg/pitch5deg; minimum0.5mm geometric study threshold, not a production tolerance"
+    },
+    {
+      "id": "sampled_cable_allocations",
+      "status": "PASS",
+      "summary": "联合姿态中的线束预留体与不同运动组实体",
+      "measurement": {
+        "poses": 130,
+        "failure_count": 0,
+        "details": "cable_motion.json"
+      },
+      "method": "Actual tube/torus triangle-solid intersections at yaw 10 deg x pitch 5 deg; does not qualify wire strain/bend fatigue"
+    },
+    {
+      "id": "continuous_motion_proof",
+      "status": "NOT_TESTED",
+      "summary": "有限采样不是连续空间数学证明；弹性、制造公差、舵机回差未建模",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "wheel_360_clearance",
+      "status": "PASS",
+      "summary": "两侧轮胎、轮毂及轮盖完整转动与壳体实际间隙",
+      "measurement": {
+        "poses_each": 37,
+        "minimum_solid_gap_mm": 4.0,
+        "minimum_pair": {
+          "deg": 0,
+          "a": "Tire_L",
+          "b": "Body_Upper",
+          "distance_mm": 4.0
+        },
+        "target_gap_mm": 4,
+        "failures": [],
+        "intentional_contacts": "Axle/bearing pairs separate; not part of wheel-shell gap"
+      },
+      "method": "10 degree actual mesh intersection and solid minimum-distance sampling; local wheel pockets invalidate the old global X-plane bound; finite sampling only"
+    },
+    {
+      "id": "assembled_size",
+      "status": "PASS",
+      "summary": "装配真实包围尺寸",
+      "measurement": {
+        "xyz_mm": [
+          158.46202850341797,
+          157.8788604736328,
+          281.9950866699219
+        ],
+        "bounds_xyz_mm": [
+          [
+            -79.23107147216797,
+            79.23095703125
+          ],
+          [
+            -79.0,
+            78.87886047363281
+          ],
+          [
+            0.0,
+            281.9950866699219
+          ]
+        ],
+        "body_front_width_mm": 158.46202850341797,
+        "wheel_pocket_seat_width_mm": 110,
+        "head_diameter_mm": 120,
+        "preferred_height_band_mm": [
+          285,
+          295
+        ],
+        "within_preferred_height_band": false,
+        "height_note": "Original preferred285-295mm retained for comparison, not product limit. User M1.8 lower-body correction gives derived282mm; intentional deviation. Product maximum300mm remains. Belly20mm is within V1.2 stated20-25 assessment range."
+      },
+      "method": "Product ceiling300mm; preferred band is reported separately, with user lower-body correction recorded. All physical rigid meshes, excluding separate dock, coupons, rendering and keepouts; body width measured from actual upper/lower mesh"
+    },
+    {
+      "id": "declared_mothers_and_sculpted_surface",
+      "status": "PASS",
+      "summary": "原始母球保留；实际外壳按声明卵形公式逆变换检查",
+      "measurement": {
+        "mothers": [
+          {
+            "id": "Head_Mother",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "radius_mm": 60.0,
+            "max_vertex_radius_error_mm": 0.000136311696998348
+          },
+          {
+            "id": "Body_Mother",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "radius_mm": 80.0,
+            "max_vertex_radius_error_mm": 0.00024299585172116167
+          }
+        ],
+        "outer_surface_samples": [
+          {
+            "id": "Body_Upper",
+            "outer_vertices": 3012,
+            "max_vertex_sphere_error_mm": 0.11837793880526704,
+            "max_triangle_centroid_sag_mm": 0.06661762980343156
+          },
+          {
+            "id": "Body_Lower",
+            "outer_vertices": 3212,
+            "max_vertex_sphere_error_mm": 0.06554798737290923,
+            "max_triangle_centroid_sag_mm": 0.06553099407167906
+          },
+          {
+            "id": "Head_Front",
+            "outer_vertices": 2790,
+            "max_vertex_sphere_error_mm": 0.0651766935217779,
+            "max_triangle_centroid_sag_mm": 0.049301498750445205
+          },
+          {
+            "id": "Head_Rear",
+            "outer_vertices": 2812,
+            "max_vertex_sphere_error_mm": 0.11335592513296433,
+            "max_triangle_centroid_sag_mm": 0.045888201038799536
+          }
+        ]
+      },
+      "method": "Original mothers remain true spheres. For B, body XY warping is explicitly inverted before radial comparisons. Local cuts/rims excluded; this is not a claim the sculpted body remains spherical."
+    },
+    {
+      "id": "ground_contacts",
+      "status": "PASS",
+      "summary": "腹部离地、两轮接地与其他零件不穿地",
+      "measurement": {
+        "belly_mm": 20.0,
+        "tire_lowest_z_mm": {
+          "Tire_L": 0.0,
+          "Tire_R": 0.0
+        },
+        "other_lowest_z_mm": 10.5
+      },
+      "method": null
+    },
+    {
+      "id": "body_tilt_geometry",
+      "status": "PASS",
+      "summary": "绕轮轴前后倾斜 ±15°，每 1°",
+      "measurement": [
+        {
+          "body_forward_tilt_deg": -15,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.522488526424354,
+          "belly_z_mm": 18.683968213465732
+        },
+        {
+          "body_forward_tilt_deg": -14,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.548368047335245,
+          "belly_z_mm": 18.861826266444467
+        },
+        {
+          "body_forward_tilt_deg": -13,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.519591788111427,
+          "belly_z_mm": 19.025182890038195
+        },
+        {
+          "body_forward_tilt_deg": -12,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.503598722157193,
+          "belly_z_mm": 19.158604468958174
+        },
+        {
+          "body_forward_tilt_deg": -11,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.500398888046533,
+          "belly_z_mm": 19.30218215231639
+        },
+        {
+          "body_forward_tilt_deg": -10,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.509997942615911,
+          "belly_z_mm": 19.428059724065577
+        },
+        {
+          "body_forward_tilt_deg": -9,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.53237987140129,
+          "belly_z_mm": 19.527102612059394
+        },
+        {
+          "body_forward_tilt_deg": -8,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.53608097860922,
+          "belly_z_mm": 19.63619777722033
+        },
+        {
+          "body_forward_tilt_deg": -7,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.512093791560265,
+          "belly_z_mm": 19.725466492792123
+        },
+        {
+          "body_forward_tilt_deg": -6,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.500900067948326,
+          "belly_z_mm": 19.789954314077306
+        },
+        {
+          "body_forward_tilt_deg": -5,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.502496889162725,
+          "belly_z_mm": 19.864404802211254
+        },
+        {
+          "body_forward_tilt_deg": -4,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.516890976573329,
+          "belly_z_mm": 19.91770659124415
+        },
+        {
+          "body_forward_tilt_deg": -3,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.544071362569651,
+          "belly_z_mm": 19.94751054732209
+        },
+        {
+          "body_forward_tilt_deg": -2,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.525586247444153,
+          "belly_z_mm": 19.98723209107698
+        },
+        {
+          "body_forward_tilt_deg": -1,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.506396561861038,
+          "belly_z_mm": 20.004949808120728
+        },
+        {
+          "body_forward_tilt_deg": 0,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.5,
+          "belly_z_mm": 20.0
+        },
+        {
+          "body_forward_tilt_deg": 1,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.506396561861038,
+          "belly_z_mm": 20.004949808120728
+        },
+        {
+          "body_forward_tilt_deg": 2,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.525586247444153,
+          "belly_z_mm": 19.98723219924605
+        },
+        {
+          "body_forward_tilt_deg": 3,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.544071362569651,
+          "belly_z_mm": 19.94751070953415
+        },
+        {
+          "body_forward_tilt_deg": 4,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.516890976573329,
+          "belly_z_mm": 19.917706807450507
+        },
+        {
+          "body_forward_tilt_deg": 5,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.502496889162725,
+          "belly_z_mm": 19.864404303502212
+        },
+        {
+          "body_forward_tilt_deg": 6,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.500900067948326,
+          "belly_z_mm": 19.789953715959953
+        },
+        {
+          "body_forward_tilt_deg": 7,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.512093791560265,
+          "belly_z_mm": 19.725465795450035
+        },
+        {
+          "body_forward_tilt_deg": 8,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.53608097860922,
+          "belly_z_mm": 19.636197113591606
+        },
+        {
+          "body_forward_tilt_deg": 9,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.53237987140129,
+          "belly_z_mm": 19.52710186612147
+        },
+        {
+          "body_forward_tilt_deg": 10,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.509997942615911,
+          "belly_z_mm": 19.42805889604668
+        },
+        {
+          "body_forward_tilt_deg": 11,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.500398888046533,
+          "belly_z_mm": 19.30217942277031
+        },
+        {
+          "body_forward_tilt_deg": 12,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.503598722157193,
+          "belly_z_mm": 19.15860149475745
+        },
+        {
+          "body_forward_tilt_deg": 13,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.519591788111427,
+          "belly_z_mm": 19.02517967208877
+        },
+        {
+          "body_forward_tilt_deg": 14,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.548368047335245,
+          "belly_z_mm": 18.861824882155986
+        },
+        {
+          "body_forward_tilt_deg": 15,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 10.522488526424354,
+          "belly_z_mm": 18.683966732491626
+        }
+      ],
+      "method": "Positive body forward tilt is -X rotation. Geometric test only, not control safety range"
+    },
+    {
+      "id": "mesh_topology",
+      "status": "BLOCKED",
+      "summary": "实际网格拓扑 / 两原厂接插件转换网格问题保留",
+      "measurement": {
+        "bad": [
+          {
+            "id": "Display_PCB",
+            "vertices": 274292,
+            "triangles": 548561,
+            "boundary_edges": 537,
+            "nonmanifold_edges": 992,
+            "inconsistent_edges": 995,
+            "degenerate_triangles": 145,
+            "signed_volume_mm3": 9807.89038134396,
+            "inconsistent_stl_normals": 0,
+            "vendor_tessellation_not_closed": true,
+            "positive_connected_components": 10,
+            "closed_cavity_boundary_components": 2
+          },
+          {
+            "id": "MCU_Motion",
+            "vertices": 311558,
+            "triangles": 628183,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 5278,
+            "inconsistent_edges": 5158,
+            "degenerate_triangles": 0,
+            "signed_volume_mm3": 3883.685302363746,
+            "inconsistent_stl_normals": 0,
+            "vendor_tessellation_not_closed": true,
+            "positive_connected_components": 6,
+            "closed_cavity_boundary_components": 2
+          }
+        ],
+        "checked": 171
+      },
+      "method": "Actual render meshes checked, never replaced by proxy for topology reporting. Purchased CAD defects do not approve printable meshes."
+    },
+    {
+      "id": "printable_connected_solids",
+      "status": "PASS",
+      "summary": "候选结构件连通且无未声明封闭内孔",
+      "measurement": {
+        "disconnected": []
+      },
+      "method": "Manifold boundary components with positive volume counted; negative-volume closed cavity boundaries are not mistaken for floating parts"
+    },
+    {
+      "id": "exact_self_intersection",
+      "status": "NOT_TESTED",
+      "summary": "Manifold 接受网格不等价于独立、可靠的全部自交证明；未运行精确全三角自交算法",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "nominal_shell_wall_samples",
+      "status": "PASS",
+      "summary": "未截切区域壳厚径向射线抽查",
+      "measurement": [
+        {
+          "id": "Body_Upper",
+          "count": 92,
+          "min_sample_mm": 2.3933146001090173,
+          "max_sample_mm": 2.4405036173197567
+        },
+        {
+          "id": "Body_Lower",
+          "count": 74,
+          "min_sample_mm": 2.332704558688982,
+          "max_sample_mm": 2.375763945938311
+        },
+        {
+          "id": "Head_Front",
+          "count": 80,
+          "min_sample_mm": 2.3979501384406325,
+          "max_sample_mm": 2.4017491356844243
+        },
+        {
+          "id": "Head_Rear",
+          "count": 98,
+          "min_sample_mm": 2.397739644369991,
+          "max_sample_mm": 2.401356982891651
+        }
+      ],
+      "method": "Paired rays, filtering against declared outer/inner profile equations (including B sculpting); radial sample thickness not a global normal minimum wall proof"
+    },
+    {
+      "id": "wheel_pocket_service_wall_samples",
+      "status": "PASS",
+      "summary": "轮窝附近四处下壳工具沉孔的指定截面余厚",
+      "measurement": [
+        {
+          "side": -1,
+          "y_mm": -54,
+          "z_mm": 88.0,
+          "measured_wall_mm": 3.925433870855386
+        },
+        {
+          "side": -1,
+          "y_mm": 54,
+          "z_mm": 88.0,
+          "measured_wall_mm": 3.9255262625978204
+        },
+        {
+          "side": 1,
+          "y_mm": -54,
+          "z_mm": 88.0,
+          "measured_wall_mm": 3.925354153160953
+        },
+        {
+          "side": 1,
+          "y_mm": 54,
+          "z_mm": 88.0,
+          "measured_wall_mm": 3.9253026234517705
+        }
+      ],
+      "method": "Double-precision Manifold ray segments with entry/exit normals on the actual lower-shell mesh at configured seam Y, Z=body_center_z-12; verifies four local ligaments only, not all walls or strength"
+    },
+    {
+      "id": "global_minimum_wall",
+      "status": "NOT_TESTED",
+      "summary": "孔边、布尔窄区和所有支架的全局最小壁厚尚无可靠全覆盖算法；需切片与实体试样",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "camera_nominal_fov",
+      "status": "PASS",
+      "summary": "相机独立开口、假设视场与脸框遮挡",
+      "measurement": {
+        "hfov_deg": 57,
+        "vfov_deg": 44,
+        "rays": 99,
+        "occlusions": [],
+        "window_misses": []
+      },
+      "method": "11 x 9 pinhole rays through actual transparent window and opaque triangulated blockers; all head optical components share pitch transform. Window refraction not simulated"
+    },
+    {
+      "id": "camera_fov_body_motion",
+      "status": "PASS",
+      "summary": "相机联合姿态视场与固定机身遮挡",
+      "measurement": {
+        "poses": 130,
+        "rays_per_pose": 99,
+        "blockages": []
+      },
+      "method": "Ray casts to fixed body meshes; rigid camera/window/front frame relationship also checked in nominal rays"
+    },
+    {
+      "id": "camera_calibration_reflections",
+      "status": "NOT_TESTED",
+      "summary": "真实镜头视场、透明窗折射、保护片反光和实际外参待选型与标定；无实测舵机反馈时头角为估计",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "head_opening_exposure",
+      "status": "NOT_TESTED",
+      "summary": "下护罩按屏幕扫掠让位；极端俯仰开口是否可接受需查看角度渲染并做实体遮光试验，不宣称完全封闭",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "separate_forehead_camera",
+      "status": "PASS",
+      "summary": "相机窗口与圆屏黑面罩分离，中间保留真实白色球壳",
+      "measurement": {
+        "revision": "V1.2-M1.18",
+        "wheel_diameter_before_mm": 105,
+        "wheel_diameter_actual_mm": 105.0,
+        "wheel_axis_z_mm": 52.5,
+        "wheel_axis_rise_mm": 0.0,
+        "wheel_axis_rise_relative_body_mm": 0.0,
+        "belly_clearance_mm": 20.0,
+        "mask_diameter_mm": 60.0,
+        "camera_window_diameter_mm": 7.7,
+        "projected_camera_to_mask_gap_mm": 3.186,
+        "measured_contiguous_white_shell_band_mm": 3.0,
+        "white_shell_bridge_rays": [
+          {
+            "z_mm": 260.617,
+            "white_shell_present": true,
+            "front_y_mm": 45.903
+          },
+          {
+            "z_mm": 260.717,
+            "white_shell_present": true,
+            "front_y_mm": 45.817
+          },
+          {
+            "z_mm": 260.817,
+            "white_shell_present": true,
+            "front_y_mm": 45.731
+          },
+          {
+            "z_mm": 260.917,
+            "white_shell_present": true,
+            "front_y_mm": 45.644
+          },
+          {
+            "z_mm": 261.017,
+            "white_shell_present": true,
+            "front_y_mm": 45.558
+          },
+          {
+            "z_mm": 261.117,
+            "white_shell_present": true,
+            "front_y_mm": 45.472
+          },
+          {
+            "z_mm": 261.217,
+            "white_shell_present": true,
+            "front_y_mm": 45.385
+          },
+          {
+            "z_mm": 261.317,
+            "white_shell_present": true,
+            "front_y_mm": 42.074
+          },
+          {
+            "z_mm": 261.417,
+            "white_shell_present": true,
+            "front_y_mm": 45.213
+          },
+          {
+            "z_mm": 261.517,
+            "white_shell_present": true,
+            "front_y_mm": 45.127
+          },
+          {
+            "z_mm": 261.617,
+            "white_shell_present": true,
+            "front_y_mm": 45.04
+          },
+          {
+            "z_mm": 261.717,
+            "white_shell_present": true,
+            "front_y_mm": 44.981
+          },
+          {
+            "z_mm": 261.817,
+            "white_shell_present": true,
+            "front_y_mm": 44.868
+          },
+          {
+            "z_mm": 261.917,
+            "white_shell_present": true,
+            "front_y_mm": 44.801
+          },
+          {
+            "z_mm": 262.017,
+            "white_shell_present": true,
+            "front_y_mm": 44.695
+          },
+          {
+            "z_mm": 262.117,
+            "white_shell_present": true,
+            "front_y_mm": 44.609
+          },
+          {
+            "z_mm": 262.217,
+            "white_shell_present": true,
+            "front_y_mm": 44.53
+          },
+          {
+            "z_mm": 262.317,
+            "white_shell_present": true,
+            "front_y_mm": 44.463
+          },
+          {
+            "z_mm": 262.417,
+            "white_shell_present": true,
+            "front_y_mm": 44.344
+          },
+          {
+            "z_mm": 262.517,
+            "white_shell_present": true,
+            "front_y_mm": 44.258
+          },
+          {
+            "z_mm": 262.617,
+            "white_shell_present": true,
+            "front_y_mm": 44.173
+          },
+          {
+            "z_mm": 262.717,
+            "white_shell_present": true,
+            "front_y_mm": 44.071
+          },
+          {
+            "z_mm": 262.817,
+            "white_shell_present": true,
+            "front_y_mm": 43.983
+          },
+          {
+            "z_mm": 262.917,
+            "white_shell_present": true,
+            "front_y_mm": 43.863
+          },
+          {
+            "z_mm": 263.017,
+            "white_shell_present": true,
+            "front_y_mm": 43.773
+          },
+          {
+            "z_mm": 263.117,
+            "white_shell_present": true,
+            "front_y_mm": 43.673
+          },
+          {
+            "z_mm": 263.217,
+            "white_shell_present": true,
+            "front_y_mm": 43.603
+          },
+          {
+            "z_mm": 263.317,
+            "white_shell_present": true,
+            "front_y_mm": 43.482
+          },
+          {
+            "z_mm": 263.417,
+            "white_shell_present": true,
+            "front_y_mm": 43.416
+          },
+          {
+            "z_mm": 263.517,
+            "white_shell_present": true,
+            "front_y_mm": 43.292
+          },
+          {
+            "z_mm": 263.617,
+            "white_shell_present": true,
+            "front_y_mm": 43.197
+          }
+        ],
+        "camera_pupil_in_pitch_mm": [
+          0,
+          32.81699274208048,
+          45.38815910968671
+        ],
+        "drive_roof_to_battery_tray_vertical_gap_mm": 6.0,
+        "limits": "Projected separation and seven actual shell rays only; optical ray-grid results are separate. Tyre supplier, camera package/FPC, fasteners, strength and dynamics remain unqualified."
+      },
+      "method": "Actual mesh front-projected bounds and0.1mm-spaced +Y-view rays; longest contiguous shell band must be >=3mm. Tilted aperture projections are measured from the actual shell, not inferred from pupil Z; not a substitute for optical or manufacturing validation"
+    },
+    {
+      "id": "battery_extraction",
+      "status": "PASS",
+      "summary": "拆除上下壳、两侧短限位螺钉并断开电池后沿+Y取出",
+      "measurement": {
+        "failure_count": 0,
+        "details": "battery_access.json"
+      },
+      "method": "41 actual solid-mesh translations including tray inserts; connectors/flexible leads not a certified unplugging path"
+    },
+    {
+      "id": "integral_motor_seat_insertion",
+      "status": "PASS",
+      "summary": "整体电机舱从下方装入两台S288的路径",
+      "measurement": {
+        "failure_count": 0,
+        "details": "motor_insertion.json"
+      },
+      "method": "21 rigid positions per motor at3mm steps; shafts/couplers/wheels and body shells not yet installed; vendor cable approach remains unknown"
+    },
+    {
+      "id": "frame_screwdriver_path",
+      "status": "PASS",
+      "summary": "下壳移除后的四处框架螺丝刀杆路径",
+      "measurement": {
+        "radius_mm": 2.5,
+        "length_mm": 50,
+        "failures": []
+      },
+      "method": "Actual tool cylinder / triangle-solid volumes; full hand and tool handle not included"
+    },
+    {
+      "id": "camera_recess_and_default_pitch",
+      "status": "PASS",
+      "summary": "相机镜筒/保护窗均在头球轮廓内；头壳默认水平，仅光学安装上仰10°",
+      "measurement": {
+        "meshes": [
+          {
+            "part": "Camera_Lens",
+            "maximum_radius_mm": 57.77794439635097,
+            "mother_radius_mm": 60.0,
+            "inset_mm": 2.222055603649032
+          },
+          {
+            "part": "Camera_Window",
+            "maximum_radius_mm": 59.79139501894432,
+            "mother_radius_mm": 60.0,
+            "inset_mm": 0.2086049810556787
+          }
+        ],
+        "default_pitch_deg": 0,
+        "absolute_joint_limits_deg": [
+          -20,
+          25
+        ]
+      },
+      "method": "All mesh vertices within convex mother sphere; invariant under head rotation. Head is level at mechanical zero; fixed optical mounting tilt is independent of joint limits. Exact camera package remains assumed."
+    },
+    {
+      "id": "default_pose_height",
+      "status": "PASS",
+      "summary": "默认水平头姿态的实际尺寸",
+      "measurement": {
+        "default_pitch_deg": 0,
+        "bounds_xyz_mm": [
+          [
+            -79.23107147216797,
+            79.23095703125
+          ],
+          [
+            -79.0,
+            78.87886047363281
+          ],
+          [
+            0.0,
+            281.9950866699219
+          ]
+        ],
+        "units": "mm"
+      },
+      "method": "Actual transformed meshes, separate from zero-pose assembly datum and full-range motion sampling"
+    },
+    {
+      "id": "vertical_rear_ports",
+      "status": "PASS",
+      "summary": "电源/禁驱开关在USB-C正上方，无独立外置重置件",
+      "measurement": {
+        "switch_center_mm": [
+          0.0,
+          -71.0,
+          120.1500015258789
+        ],
+        "usb_center_mm": [
+          0.0,
+          -74.0,
+          112.0
+        ],
+        "vertical_pitch_mm": 8.150001525878906,
+        "external_reset_objects": [],
+        "functional_button": "Function_Button and its exterior opening removed per user request"
+      },
+      "method": null
+    },
+    {
+      "id": "speaker_shell_attachment",
+      "status": "PASS",
+      "summary": "扬声器压盖落在外壳固定座，内框架无连接",
+      "measurement": {
+        "shell_contact_gap_mm": 0.0,
+        "frame_gap_mm": 1.6958202190925562,
+        "shell_overlap_mm3": 0.0004546529494185944,
+        "speaker_overlap_mm3": 0,
+        "fasteners": 2,
+        "nominal_diaphragm_clearance_mm": 1.2,
+        "supplier_minimum_mm": 0.8,
+        "tolerance_mm": 0.3
+      },
+      "method": "Nominal actual-solid contact and intersections; independent removable rear cup. Supplier +/-0.3mm, gasket compression, acoustics and preload are not certified."
+    },
+    {
+      "id": "speaker_shell_tool_access",
+      "status": "PASS",
+      "summary": "抬出上壳并断开音频插头后的压盖工具空间",
+      "measurement": {
+        "rows": [
+          {
+            "side": -1,
+            "failures": []
+          },
+          {
+            "side": 1,
+            "failures": []
+          }
+        ],
+        "shaft_diameter_mm": 4.2,
+        "shaft_length_mm": 30
+      },
+      "method": "Same speaker and shell solids; frame removed from bench assembly. Handle/fingers and connector qualification remain NOT_TESTED."
+    },
+    {
+      "id": "speaker_blind_boss_skin",
+      "status": "PASS",
+      "summary": "扬声器从壳内安装，盲孔末端保留外表皮",
+      "measurement": {
+        "rows": [
+          {
+            "side": -1,
+            "missing_material_mm3": 0.0,
+            "checked_cap_thickness_mm": 1.15
+          },
+          {
+            "side": 1,
+            "missing_material_mm3": 0.0,
+            "checked_cap_thickness_mm": 1.15
+          }
+        ],
+        "screw_trial": "M2x20, rear recessed heads, continuous cup outline"
+      },
+      "method": "Actual shell-solid containment of a1.15mm-thick cap behind each insert pilot; local nominal check, not universal wall-thickness or heat-insert strength proof."
+    },
+    {
+      "id": "weact_vendor_CAD_import",
+      "status": "PASS",
+      "summary": "WeAct V1.1原厂224实体按毫米刚性导入",
+      "measurement": {
+        "status": "PASS",
+        "solid_count": 224,
+        "source_sha256": "dbcf5ae535545af20e4869933e9a405cc663fb8f2da01bf5a7acc95ba2d41d62",
+        "source_scale_factor": 1,
+        "rotation_determinant": 1.0,
+        "source_center_mm": [
+          116.078,
+          69.2145,
+          0.0
+        ],
+        "destination_board_top_datum_mm": [
+          0,
+          -44,
+          121
+        ],
+        "imported_bounds_xyz_mm": [
+          [
+            -29.0,
+            12.62961196899414
+          ],
+          [
+            -60.61000061035156,
+            -27.389999389648438
+          ],
+          [
+            120.09500122070312,
+            132.08644104003906
+          ]
+        ],
+        "tessellation_proxy_indices": [],
+        "collision_method": "Original224 CAD solids; exact double precision union plus declared per-solid fallback. Render meshes unscaled.",
+        "carrier_stack": "P2 native carrier integrated;6mm socket is an unselected allocation",
+        "physical_measurement": false
+      },
+      "method": "CAD mesh preserved; complete CAD bounding solid used conservatively in collision checks. Actual carrier/header stack not qualified."
+    },
+    {
+      "id": "selected_battery_speaker_nominals",
+      "status": "PASS",
+      "summary": "成品电池与扬声器采用明确型号的名义尺寸",
+      "measurement": {
+        "battery": "Tenergy31013 71x55x20mm150g",
+        "speaker": "Same Sky CMS-4017-34SP diameter40x17.5mm25g +/-0.3",
+        "selection_release": "GEOMETRY_ONLY",
+        "battery_NTC_balance_local_cost_charger": "BLOCKED"
+      },
+      "method": "Manufacturer nominal envelope/drawing, no physical measurements; not a procurement or power-on approval."
+    },
+    {
+      "id": "onboard_microphone_registration",
+      "status": "BLOCKED",
+      "summary": "两颗板载MIC实体、声孔和独立声道已示意；位置/封装仅照片估计",
+      "measurement": {
+        "center_x_mm": 16.9,
+        "z_from_board_center_mm": 1.85,
+        "package_xyz_mm": [
+          3,
+          1.2,
+          4
+        ],
+        "pcb_thickness_assumed_mm": 1.6,
+        "status": "ASSUMED_PHOTO_REGISTERED_NOT_DIMENSIONED",
+        "coordinate_uncertainty_mm": 1
+      },
+      "method": "Vendor board image registered to37mm outline. Does not provide metrology; actual board and acoustic gasket alignment must be measured. No independent microphone purchase."
+    },
+    {
+      "id": "belly_relayout_datums",
+      "status": "PASS",
+      "summary": "横躺轮驱、头内Yaw与降低电池/板卡区的实际坐标和支承分组",
+      "measurement": {
+        "wheel_motors": [
+          {
+            "side": "L",
+            "rotation_deg": -90,
+            "bounds_xyz_mm": [
+              [
+                -24.0,
+                -4.0
+              ],
+              [
+                -9.500000953674316,
+                24.5
+              ],
+              [
+                42.5,
+                62.5
+              ]
+            ],
+            "top_mm": 62.5,
+            "output_yz_mm": [
+              0.0,
+              52.5
+            ],
+            "shell_min_gap_mm": 9.90381382238244
+          },
+          {
+            "side": "R",
+            "rotation_deg": 90,
+            "bounds_xyz_mm": [
+              [
+                4.0,
+                24.0
+              ],
+              [
+                -24.5,
+                9.500000953674316
+              ],
+              [
+                42.5,
+                62.5
+              ]
+            ],
+            "top_mm": 62.5,
+            "output_yz_mm": [
+              0.0,
+              52.5
+            ],
+            "shell_min_gap_mm": 9.903787574664348
+          }
+        ],
+        "battery_center_mm": [
+          0,
+          0,
+          91
+        ],
+        "battery_allocation_mm": [
+          80,
+          65,
+          30
+        ],
+        "deck_top_mm": 115.0,
+        "battery_to_deck_mm": 15.0,
+        "power_capacity_xyz_mm": [
+          80.0,
+          55.0,
+          20.600006103515625
+        ],
+        "power_capacity_center_mm": [
+          0.0,
+          3.0,
+          126.80000305175781
+        ],
+        "power_bottom_to_carrier_top_mm": null,
+        "power_to_yaw_bridge_min_gap_mm": 1.399993896484375,
+        "fixed_reaction_link_group": "body",
+        "servo_case_group": "yaw",
+        "yaw_output_group": "body",
+        "yaw_servo_bounds_xyz_mm": [
+          [
+            -6.05000638961792,
+            6.0500054359436035
+          ],
+          [
+            -10.550002098083496,
+            21.950000762939453
+          ],
+          [
+            195.20001220703125,
+            220.45001220703125
+          ]
+        ],
+        "limits": "Power envelope is80x55 PCB plus16mm front/3mm rear component limits, NOT P3 actual populated CAD. Battery uses manufacturer nominal envelope. Gaps exclude unmeasured plugs, tolerances and flex. Finite collision and motion checks are separate."
+      },
+      "method": "Actual solid bounds/distances and motion group inspection; 1:1 source audit, static interference and sampled joint motion reported separately."
+    },
+    {
+      "id": "head_yaw_bench_removal",
+      "status": "PASS",
+      "summary": "倒装Yaw与可拆反力轴的规定顺序取出检查",
+      "measurement": {
+        "cases": 2,
+        "failures": 0,
+        "details": "belly_relayout_validation.json"
+      },
+      "method": "Rigid triangle-solid translations every3mm. Pitch head disconnected and removed; ear/spline/cross-retainer screws removed in stated order. Real cable connectors, hands and thread fits NOT_TESTED."
+    },
+    {
+      "id": "head_yaw_ear_tools",
+      "status": "PASS",
+      "summary": "头内Yaw两安装耳的直线工具杆空间",
+      "measurement": {
+        "tools": [
+          {
+            "name": "Head_Yaw_Ear_0_Screw",
+            "shaft_diameter_mm": 4.2,
+            "length_mm": 30,
+            "removed": [
+              "Body_Lower",
+              "Body_Top_Shroud",
+              "Body_Upper",
+              "CAM_Mainboard",
+              "Camera_Baffle",
+              "Camera_Lens",
+              "Camera_PCB",
+              "Camera_Window",
+              "Display_Frame",
+              "Display_PCB",
+              "Face_Joint_-1_0.0_Nut",
+              "Face_Joint_-1_0.0_Screw",
+              "Face_Joint_-1_7.0_Nut",
+              "Face_Joint_-1_7.0_Screw",
+              "Face_Joint_1_0.0_Nut",
+              "Face_Joint_1_0.0_Screw",
+              "Face_Joint_1_7.0_Nut",
+              "Face_Joint_1_7.0_Screw",
+              "Face_Mask",
+              "Face_Protector",
+              "Head_Front",
+              "Head_Rear",
+              "Head_Yaw_Ear_0_Screw",
+              "Mic_Duct_L",
+              "Mic_Duct_R",
+              "Onboard_MIC_L",
+              "Onboard_MIC_R",
+              "Pitch_Cradle",
+              "Pitch_Horn",
+              "Pitch_Lock_Screw",
+              "Pitch_Output",
+              "Pitch_Trunnion_L",
+              "Pitch_Trunnion_R"
+            ],
+            "failures": []
+          },
+          {
+            "name": "Head_Yaw_Ear_1_Screw",
+            "shaft_diameter_mm": 4.2,
+            "length_mm": 30,
+            "removed": [
+              "Body_Lower",
+              "Body_Top_Shroud",
+              "Body_Upper",
+              "CAM_Mainboard",
+              "Camera_Baffle",
+              "Camera_Lens",
+              "Camera_PCB",
+              "Camera_Window",
+              "Display_Frame",
+              "Display_PCB",
+              "Face_Joint_-1_0.0_Nut",
+              "Face_Joint_-1_0.0_Screw",
+              "Face_Joint_-1_7.0_Nut",
+              "Face_Joint_-1_7.0_Screw",
+              "Face_Joint_1_0.0_Nut",
+              "Face_Joint_1_0.0_Screw",
+              "Face_Joint_1_7.0_Nut",
+              "Face_Joint_1_7.0_Screw",
+              "Face_Mask",
+              "Face_Protector",
+              "Head_Front",
+              "Head_Rear",
+              "Head_Yaw_Ear_1_Screw",
+              "Mic_Duct_L",
+              "Mic_Duct_R",
+              "Onboard_MIC_L",
+              "Onboard_MIC_R",
+              "Pitch_Cradle",
+              "Pitch_Horn",
+              "Pitch_Lock_Screw",
+              "Pitch_Output",
+              "Pitch_Trunnion_L",
+              "Pitch_Trunnion_R"
+            ],
+            "failures": []
+          }
+        ]
+      },
+      "method": "Actual4.2mm diameter30mm shanks before fitting pitch head; excludes handle, thread and supplier screw recess qualification."
+    },
+    {
+      "id": "flat_head_support_envelope",
+      "status": "PASS",
+      "summary": "平板头托在球壳内的名义包络与材料体积",
+      "measurement": {
+        "profile": "planar U with straight chamfers; round functional holes",
+        "before_volume_cm3": 19.09,
+        "after_volume_cm3": 19.09,
+        "maximum_vertex_radius_mm": 57.169,
+        "nominal_inner_sphere_radial_margin_mm": 0.431,
+        "head_shell_attachment_xy_mm": [
+          [
+            48,
+            3
+          ],
+          [
+            -48,
+            3
+          ]
+        ],
+        "shaft_centres_mm": [
+          [
+            44,
+            0,
+            222.0
+          ],
+          [
+            -44,
+            0,
+            222.0
+          ]
+        ],
+        "limits": "Radial envelope and actual mesh volume only; full assembly overlaps and motion are separate checks. Thin ear edges, FDM strength and final shell/PCB fastening remain unqualified."
+      },
+      "method": "All actual cradle vertices against nominal inner sphere; convex sphere contains triangles when vertices are inside. Local shell lugs require separate actual-solid checks."
+    },
+    {
+      "id": "module_screwdriver_access",
+      "status": "PASS",
+      "summary": "新增短螺钉的规定装配阶段工具杆路径",
+      "measurement": {
+        "tested": 10,
+        "failures": [],
+        "details": "module_service_checks.json"
+      },
+      "method": "4.2mm diameter x30mm shank at actual head approach, triangle-solid intersections; named prerequisite removals; handle/fingers and actual screw recess NOT_TESTED"
+    },
+    {
+      "id": "simple_module_removal",
+      "status": "PASS",
+      "summary": "屏幕组件、侧板与Yaw座的有限直线拆装采样",
+      "measurement": {
+        "cases": 2,
+        "failed_cases": 0,
+        "details": "module_service_checks.json"
+      },
+      "method": "Actual triangle-solid translation each3mm; head/body skins and specified fasteners removed first. No flexible cable or human-hand proof."
+    },
+    {
+      "id": "all_fasteners_assembly",
+      "status": "NOT_TESTED",
+      "summary": "其余紧固件长度、嵌件热压头、工具手柄与完整逐件装配路径尚待阶段 B；当前候选孔仅供试打",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "real_hardware_fit",
+      "status": "BLOCKED",
+      "summary": "只验证阶段 A 包络；保留共享契约中硬件候选的适配失败。最新型号与包络见 contracts/mechanical_interfaces.json；真实轮驱、屏幕、相机、舵机和完整连接器仍需阶段 B 回写，不能靠外观调整宣称已适配",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "cable_service_loops",
+      "status": "NOT_TESTED",
+      "summary": "已建服务环、线束路径和约束点；实际柔性扫掠与连接器受力未验证",
+      "measurement": {
+        "static_review": "routing_review.json",
+        "review_pairs": 0
+      },
+      "method": null
+    },
+    {
+      "id": "hard_stop_contact_angles",
+      "status": "NOT_TESTED",
+      "summary": "有限角度限位件已布置；准确触点角度、强度与舵机失控冲击需专门验证，不能用软件限角代替",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "power_interface_operations",
+      "status": "NOT_TESTED",
+      "summary": "已布置 USB-C、按钮、电源开关与插头/手指包络；实物插拔、开关急停可达性、线缆拉力待阶段 B",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "simplified_structure_strength",
+      "status": "NOT_TESTED",
+      "summary": "简单分件与短连接仅为结构设计改动；FDM层间强度、蠕变、冲击、疲劳及紧固预紧未进行仿真或实测",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "hardware_populated_layout",
+      "status": "BLOCKED",
+      "summary": "已只读核对V1.2-H0.4-P4：S3两路5V改为板载TPS54302；芯片包络不等于转换器或PCB尺寸。P3原生坐标/板框交接已读取，但完整P3装件和对插尚未整合；当前80×55板框、+16/−3装件高度是机械容量，最终固定仍待适配",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "lower_body_com_estimate",
+      "status": "PASS",
+      "summary": "当前布局与基准的质量模型比较（包含选型质量变化，不以重心更低作为通过条件）",
+      "measurement": {
+        "revision": "V1.2-M1.18",
+        "before_revision": "V1.2-M1.12",
+        "mass_data_status": "ASSUMED",
+        "before": {
+          "ground_clearance_mm": 20,
+          "wheel_diameter_mm": 105,
+          "wheel_axis_ground_z_mm": 52.5,
+          "wheel_axis_relative_body_z_mm": -47.5,
+          "body_center_ground_z_mm": 100.0,
+          "head_center_ground_z_mm": 222.0,
+          "derived_normal_height_mm": 282.0,
+          "mass_g_rounded": 1285,
+          "estimated_COM_ground_mm": [
+            -0.4,
+            -0.4,
+            116.2
+          ],
+          "estimated_COM_above_axle_mm": 63.7,
+          "estimated_inertia_at_axle_kg_m2": [
+            [
+              0.0118824,
+              -2.2e-06,
+              7.24e-05
+            ],
+            [
+              -2.2e-06,
+              0.0128692,
+              1.15e-05
+            ],
+            [
+              7.24e-05,
+              1.15e-05,
+              0.0033489
+            ]
+          ]
+        },
+        "after": {
+          "ground_clearance_mm": 20,
+          "wheel_diameter_mm": 105,
+          "wheel_axis_ground_z_mm": 52.5,
+          "wheel_axis_relative_body_z_mm": -47.5,
+          "body_center_ground_z_mm": 100.0,
+          "head_center_ground_z_mm": 222.0,
+          "derived_normal_height_mm": 282.0,
+          "mass_g_rounded": 1405,
+          "estimated_COM_ground_mm": [
+            -0.4,
+            -0.1,
+            111.3
+          ],
+          "estimated_COM_above_axle_mm": 58.8,
+          "estimated_inertia_at_axle_kg_m2": [
+            [
+              0.0120745,
+              -2.3e-06,
+              7.2e-05
+            ],
+            [
+              -2.3e-06,
+              0.013297,
+              -1.98e-05
+            ],
+            [
+              7.2e-05,
+              -1.98e-05,
+              0.0037334
+            ]
+          ]
+        },
+        "changes": {
+          "wheel_rise_relative_body_mm": 0.0,
+          "body_lowering_mm": 0.0,
+          "head_lowering_mm": 0.0,
+          "estimated_COM_lowering_mm": 4.9
+        },
+        "battery_center_mm": [
+          0,
+          0,
+          91
+        ],
+        "yaw_bearing_ground_z_mm": 157.0,
+        "method": "Signed triangle-solid volume moments. Compare the named immutable baseline with the current revision. Selected nominal masses and geometry-derived printed masses follow their respective saved assumptions; the mass budget is not measured. Unknown power board stays30g. Inertia recomputed about wheel axis.",
+        "limits": "At least35% mass uncertainty; missing complete populated boards (including S3 power circuits), plugs and real cables. COM estimate is not a measured balance point or proof of improved control. Lower ground clearance reduces obstacle margin. No physical dynamics/strength qualification."
+      },
+      "method": "Geometry/datums and assumed mass moments only; not a stability or dynamic-control acceptance test"
+    },
+    {
+      "id": "mass_inertia_estimates",
+      "status": "PASS",
+      "summary": "已输出有假设的质量与惯量估算（不是载荷验收）",
+      "measurement": {
+        "whole_robot": {
+          "mass_g_rounded": 1405,
+          "center_mm_rounded": [
+            -0.4,
+            -0.1,
+            111.3
+          ],
+          "inertia_at_COM_kg_m2": [
+            [
+              0.0072068,
+              -2.2e-06,
+              4.28e-05
+            ],
+            [
+              -2.2e-06,
+              0.0084292,
+              -2.58e-05
+            ],
+            [
+              4.28e-05,
+              -2.58e-05,
+              0.0037332
+            ]
+          ],
+          "inertia_at_head_joint_kg_m2": [
+            [
+              0.0244503,
+              -2.3e-06,
+              -1.21e-05
+            ],
+            [
+              -2.3e-06,
+              0.0256728,
+              -3.71e-05
+            ],
+            [
+              -1.21e-05,
+              -3.71e-05,
+              0.0037334
+            ]
+          ],
+          "estimated_mass_uncertainty_percent": 35
+        },
+        "head_pitch": {
+          "mass_g_rounded": 185,
+          "center_mm_rounded": [
+            0.1,
+            0.6,
+            229.5
+          ],
+          "inertia_at_COM_kg_m2": [
+            [
+              0.0003129,
+              0.0,
+              1e-07
+            ],
+            [
+              0.0,
+              0.0003136,
+              6e-07
+            ],
+            [
+              1e-07,
+              6e-07,
+              0.0003859
+            ]
+          ],
+          "inertia_at_head_joint_kg_m2": [
+            [
+              0.0003234,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0003241,
+              -2e-07
+            ],
+            [
+              0.0,
+              -2e-07,
+              0.0003859
+            ]
+          ],
+          "estimated_mass_uncertainty_percent": 35
+        },
+        "head_yaw_total": {
+          "mass_g_rounded": 275,
+          "center_mm_rounded": [
+            -1.3,
+            -0.1,
+            219.8
+          ],
+          "inertia_at_COM_kg_m2": [
+            [
+              0.0004135,
+              -3e-07,
+              1.6e-06
+            ],
+            [
+              -3e-07,
+              0.0004543,
+              -7e-06
+            ],
+            [
+              1.6e-06,
+              -7e-06,
+              0.0004502
+            ]
+          ],
+          "inertia_at_head_joint_kg_m2": [
+            [
+              0.0004148,
+              -4e-07,
+              8e-07
+            ],
+            [
+              -4e-07,
+              0.0004561,
+              -7.1e-06
+            ],
+            [
+              8e-07,
+              -7.1e-06,
+              0.0004507
+            ]
+          ],
+          "estimated_mass_uncertainty_percent": 35
+        }
+      },
+      "method": "Signed tetrahedron volume, first and second moments. Uniform effective material densities and separate unselected hardware mass assumptions"
+    },
+    {
+      "id": "structure_mass_targets",
+      "status": "BLOCKED",
+      "summary": "当前结构的估算质量与V1.2工程目标",
+      "measurement": {
+        "whole_g_rounded": 1405,
+        "whole_target_g": [
+          1000,
+          1200
+        ],
+        "pitch_g_rounded": 185,
+        "pitch_target_g": [
+          150,
+          200
+        ],
+        "uncertainty_percent": 35
+      },
+      "method": "Engineering target only. Mass exceeding targets requires a new actuator/dynamics budget; do not reduce assumed wall density simply to pass."
+    },
+    {
+      "id": "head_torque_and_balance",
+      "status": "NOT_TESTED",
+      "summary": "舵机扭矩、头部加速载荷、支架强度、轴承寿命与实机自平衡尚未验证",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "dock_nominal_COM_projection",
+      "status": "PASS",
+      "summary": "托架四点名义支撑多边形内的重心投影",
+      "measurement": {
+        "margin_mm": 29.4,
+        "robot_lift_mm": 8,
+        "drive_required": "DISARMED / DOCKED_MAINTENANCE; no plugged-in driving"
+      },
+      "method": "Assumed masses and rigid contacts; 130 head poses. Actual compliance, friction, cable pull and tipping require physical tests"
+    },
+    {
+      "id": "dock_mesh_contacts",
+      "status": "PASS",
+      "summary": "实际托架网格接触、轮胎离地与实体干涉",
+      "measurement": {
+        "failed_pairs": [],
+        "body_pad_contacts": [
+          {
+            "pad": "Dock_Pad_0",
+            "nearest_sample_mm": 0.0
+          },
+          {
+            "pad": "Dock_Pad_1",
+            "nearest_sample_mm": 0.0
+          },
+          {
+            "pad": "Dock_Pad_2",
+            "nearest_sample_mm": 0.0
+          },
+          {
+            "pad": "Dock_Pad_3",
+            "nearest_sample_mm": 0.0
+          }
+        ],
+        "tire_floor_gap_mm": 8
+      },
+      "method": "Translated assembled robot +8 mm, same meshes; solid intersections and nearest vertex-to-triangle witnesses"
+    },
+    {
+      "id": "dock_physical_stability",
+      "status": "NOT_TESTED",
+      "summary": "软垫变形、地面摩擦、插线拉力及真实重心必须实测；托架稳定不代表机器人断电可自立",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "budget_and_runtime",
+      "status": "BLOCKED",
+      "summary": "1000 元总预算和 60 分钟混合工况续航未验证；未提供完整报价与实测平均功耗",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "display_active_aperture",
+      "status": "PASS",
+      "summary": "真实45.68mm发光区到观察侧的遮挡检查",
+      "measurement": {
+        "active_diameter_mm": 45.68,
+        "sample_grid": 17,
+        "blocked_rays": []
+      },
+      "method": "Orthographic +Y rays from display front; circular active-region samples against every opaque triangle mesh. Clear protector excluded; reflections not simulated."
+    },
+    {
+      "id": "head_front_display_center",
+      "status": "PASS",
+      "summary": "圆屏按球面径向安装，各光学层沿10°法线同轴；头壳仍水平",
+      "measurement": {
+        "expected_radial_center_world_mm": [
+          0.0,
+          49.89186096191406,
+          230.7972869873047
+        ],
+        "active_center_world_mm": [
+          0.0,
+          49.89172172546387,
+          230.79798126220703
+        ],
+        "head_front_center_xz_mm": [
+          0,
+          222.0
+        ],
+        "measured_centres_xyz_mm": {
+          "vendor_front_glass": [
+            0.0,
+            49.89172172546387,
+            230.79798126220703
+          ],
+          "Face_Mask": [
+            0.0,
+            50.67970657348633,
+            230.9362030029297
+          ],
+          "Face_Protector": [
+            0.0,
+            51.22134780883789,
+            231.03170776367188
+          ],
+          "eyes_midpoint": [
+            0.0,
+            50.541831970214844,
+            230.91189575195312
+          ]
+        },
+        "coaxial_errors_mm": {
+          "vendor_front_glass": 0.0,
+          "Face_Mask": 0.0007102714640194917,
+          "Face_Protector": 0.0007114426816375192,
+          "eyes_midpoint": 0.0007065704922653381
+        },
+        "optics_fixed_pitch_deg": 10,
+        "vendor_scale_factor": 1.0,
+        "active_diameter_mm": 45.68
+      },
+      "method": "Original CAD front-glass vertices selected in source mount frame, then actual world centre measured. Different-thickness layers are checked coaxial along tilted optical normal; head shell remains at zero pitch."
+    },
+    {
+      "id": "head_allocations_inside_outer_envelope",
+      "status": "PASS",
+      "summary": "头内主板/屏板/相机/舵机位于声明头外形内",
+      "measurement": {
+        "outside": [],
+        "head_radius_mm": 60.0
+      },
+      "method": "All vertices of allocated rigid hardware against convex spherical head mother; separate shell/body and joint collisions tested with triangle solids. Not a claim actual hardware matches allocations."
+    },
+    {
+      "id": "wheel_coaxial_geometry",
+      "status": "PASS",
+      "summary": "双轮同轴且轮轴高度等于实际轮胎半径",
+      "measurement": [
+        {
+          "wheel": "L",
+          "center_y_mm": 0.0,
+          "center_z_mm": 52.5,
+          "radius_mm": 52.5
+        },
+        {
+          "wheel": "R",
+          "center_y_mm": 0.0,
+          "center_z_mm": 52.5,
+          "radius_mm": 52.5
+        }
+      ],
+      "method": null
+    },
+    {
+      "id": "usb_plug_approach_allocation",
+      "status": "PASS",
+      "summary": "USB插头外壳与前端插拔预留",
+      "measurement": {
+        "body_mm": [
+          16,
+          34,
+          10
+        ],
+        "nose_mm": [
+          8.4,
+          6,
+          2.6
+        ],
+        "overlaps": []
+      },
+      "method": "Rigid assumed plug boxes against actual solids at deepest insertion. Sweeping away along -Y is clear outside the body; vendor plug and retention strain remain unverified."
+    },
+    {
+      "id": "display_full_vendor_outline",
+      "status": "BLOCKED",
+      "summary": "原厂LCD外形已回写 / 两接插件精确实体待核",
+      "measurement": {
+        "status": "BLOCKED",
+        "component_id": "display",
+        "geometry": "Original113-solid CAD displayed;111 exact tessellated solids plus two connector bounding proxies checked",
+        "bounds_xyz_mm": [
+          [
+            -27.5,
+            27.5
+          ],
+          [
+            36.964111328125,
+            54.66704559326172
+          ],
+          [
+            203.59422302246094,
+            257.88018798828125
+          ]
+        ],
+        "intersections": [],
+        "source_sha256": "da8b3fca5ffd30c89d12bf488203741baaa1bd390732b62d92b23b279fb1dd9d",
+        "supersedes": "V1.2-M1 full55x55 rectangle conditional conflict; actual product outline is circular",
+        "limits": "No exact all-connector fit claim. PDF9.1ref vs CAD9.35, post centers, purchased revision, mating plugs/FFC and tool access still require confirmation."
+      },
+      "method": "111 original CAD subsolids and two conservative connector proxies against actual structure; zero overlap does not certify the full exact hardware."
+    },
+    {
+      "id": "actual_board_antennas_microphones",
+      "status": "BLOCKED",
+      "summary": "CAM37×37板框已核；两颗板载麦克风已示意，坐标与厚度仍为照片估计，精确PCB装件CAD和FPC尺寸缺失",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "purchased_dimension_provenance",
+      "status": "PASS",
+      "summary": "采购件尺寸来源、原厂CAD比例与未知项标签",
+      "measurement": {
+        "source_hashes": [
+          {
+            "source": "LCD35079_STEP",
+            "unchanged": true
+          },
+          {
+            "source": "LCD35079_DRAWING",
+            "unchanged": true
+          },
+          {
+            "source": "CAM33700_DRAWING",
+            "unchanged": true
+          },
+          {
+            "source": "S288_DRAWING",
+            "unchanged": true
+          },
+          {
+            "source": "SCS0009_DRAWING",
+            "unchanged": true
+          },
+          {
+            "source": "CMS4017_DRAWING",
+            "unchanged": true
+          },
+          {
+            "source": "WEACT_V11",
+            "unchanged": true
+          },
+          {
+            "source": "TENERGY31013",
+            "unchanged": true
+          },
+          {
+            "source": "BEARING686ZZ",
+            "unchanged": true
+          }
+        ],
+        "CAD_vs_original_bound_error_mm": 3.0517578125e-05,
+        "source_scale_factor": 1.0,
+        "unsupported_MEASURED_objects": [],
+        "unlabeled_reference_objects": [],
+        "hardware_contract_provenance": {
+          "revision": "V1.2-H0.4-P4",
+          "sha256": "4af1df9445662c26f1c483509b20f9b4775a7bb7acf932c1bac606d94023a33b",
+          "mechanically_reviewed_revision": "V1.2-H0.4-P4",
+          "populated_assembly_fit": "BLOCKED",
+          "note": "Read P4 contract, mechanical handoff and layout README on M1.16 hole repair. Current assembly retains frozen P2 populated motion/IMU references, 80x55 power capacity and previous24x14 rear-board allocation; it does not integrate or qualify P4 populated assemblies. P4 rear24x25 conflicts with the old rear allocation; PH mated envelopes/lead bends and revised switch/USB axes require a separate mechanical integration. P4 routing acceptance is FAIL per its owner; bare STEP is not populated CAD. Hardware files remain read-only.",
+          "matches_reviewed_input": true
+        }
+      },
+      "method": "Source-file hashes; rigid1:1 CAD transform; original vs imported bounds; no unsupported MEASURED or complete real-fit flags."
+    },
+    {
+      "id": "all_purchased_parts_dimensioned",
+      "status": "BLOCKED",
+      "summary": "尚未选定/缺少完整尺寸的采购件保持橙色占位，不能宣称全部按实物建模",
+      "measurement": {
+        "missing": "purchased_geometry_audit.json",
+        "unselected": [
+          "speaker",
+          "battery",
+          "battery_protection",
+          "usb_charge",
+          "user_button",
+          "wheel_couplers",
+          "head_bearings",
+          "harness",
+          "fasteners",
+          "usb_adapter",
+          "usb_charge_cable",
+          "p1_dump_wheel",
+          "p1_dump_head",
+          "p4_001",
+          "p4_002",
+          "p4_003",
+          "p4_004",
+          "p4_009",
+          "p4_022",
+          "p4_024",
+          "p4_025",
+          "p4_029",
+          "p4_042",
+          "p4_050",
+          "p4_external_master_fuse",
+          "p4_assembly_service",
+          "p4_motion_module_sockets",
+          "p4_phr_2",
+          "p4_phr_3",
+          "p4_phr_4",
+          "p4_phr_5",
+          "p4_phr_8",
+          "p4_ph_contacts"
+        ]
+      },
+      "method": null
+    },
+    {
+      "id": "current_pcb_revision_fit",
+      "status": "BLOCKED",
+      "summary": "已收到P4交接：后接口板24×25尚未适配当前24×14座，完整装件与PH插合空间仍待集成",
+      "measurement": {
+        "rear_P4_outline_mm": [
+          24,
+          25
+        ],
+        "current_rear_allocation_mm": [
+          24,
+          14
+        ],
+        "rear_PH5_overhang_mm": 4.25,
+        "PH_mated_height_excluding_wire_bend_mm": 8,
+        "whole_populated_fit": "BLOCKED",
+        "P4_routing_acceptance": "FAIL"
+      },
+      "method": "Read-only handoff review; no full P4 populated CAD or mating-cable fit is claimed by this local mounting-hole repair."
+    },
+    {
+      "id": "face_rim_on_sphere",
+      "status": "PASS",
+      "summary": "黑色圆脸外缘与头球面接齐，消除倾斜造成的非对称凹台",
+      "measurement": {
+        "rim_vertices": 64,
+        "radial_surface_error_min_max_mm": [
+          -9.730569004773315e-06,
+          3.6685154043425428e-06
+        ],
+        "outer_rim_plane_distance_mm": 51.96152422706632,
+        "mount_pitch_deg": 10,
+        "flat_hardware_unscaled": true,
+        "surface": "Mother sphere, radial circle rim; inner display/cover remain flat",
+        "active_center_lift_mm": 8.797286987304688
+      },
+      "method": "Actual mask front-rim mesh vertices versus analytic mother sphere; 0.03mm tessellation tolerance, not a manufacturing flushness guarantee."
+    },
+    {
+      "id": "load_frame_uncut_side_lands",
+      "status": "PASS",
+      "summary": "托板左右整边收窄，轮窝附近底面仍保留完整4mm平板",
+      "measurement": {
+        "full_side_width_mm": 104,
+        "side_wall_min_x_abs_mm": 52.6,
+        "minimum_frame_tire_gap_mm": 8.0,
+        "samples": [
+          {
+            "x_mm": -51.8,
+            "y_mm": -26,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -24,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -22,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -20,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -18,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -16,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -14,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -12,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -10,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -8,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -6,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -4,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": -2,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 0,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 2,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 4,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 6,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 8,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 10,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 12,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 14,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 16,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 18,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 20,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 22,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 24,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": -51.8,
+            "y_mm": 26,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -26,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -24,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -22,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -20,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -18,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -16,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -14,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -12,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -10,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -8,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -6,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -4,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": -2,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 0,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 2,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 4,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 6,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 8,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 10,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 12,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 14,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 16,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 18,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 20,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 22,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 24,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          },
+          {
+            "x_mm": 51.8,
+            "y_mm": 26,
+            "top_z_mm": 115.0,
+            "bottom_z_mm": 111.0,
+            "thickness_mm": 4.0
+          }
+        ]
+      },
+      "method": "54 paired ray intersections at x=+/-51.8mm, y=-26..26 step2; actual solid tyre gap. Shell/assembly collision and strength are separate checks."
+    },
+    {
+      "id": "imu_underside_rigid_mount",
+      "status": "PASS",
+      "summary": "原生20×16 IMU装到主托板底面，器件向下；检查电池及插头空间",
+      "measurement": {
+        "board_bounds_mm": [
+          [
+            -35.0,
+            -15.0
+          ],
+          [
+            -48.0,
+            -32.0
+          ],
+          [
+            102.605,
+            108.4
+          ]
+        ],
+        "deck_underside_plane_z_mm": 111.0,
+        "battery_actual_solid_gap_mm": 11.783127768126764,
+        "plug_allocation_mm": [
+          14,
+          7,
+          10
+        ],
+        "plug_conflicts": [],
+        "axis_transform": "imu_mount_transform.json"
+      },
+      "method": "Actual P2 library CAD at1:1. P3 component changes, mating plug and ICM die-to-board axes require verification; PCB normal is -Z, not an automatic firmware calibration."
+    },
+    {
+      "id": "removed_redundant_parts",
+      "status": "PASS",
+      "summary": "移除独立功能键；两侧短板与主托板合并，删除独立电源托板",
+      "measurement": {
+        "unexpected_objects": [],
+        "changes": "layout_cleanup_changes.json"
+      },
+      "method": null
+    },
+    {
+      "id": "level_head_independent_optics",
+      "status": "PASS",
+      "summary": "头底切面保持水平，屏幕/相机单独固定上仰",
+      "measurement": {
+        "head_default_pitch_deg": 0,
+        "head_bottom_cut_plane_z_mm": 175.5,
+        "screen_fixed_mount_pitch_deg": 10,
+        "camera_fixed_mount_pitch_deg": 10,
+        "display_rigid_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9848077297210693,
+            -0.1736481487751007,
+            39.98920822143555
+          ],
+          [
+            0.0,
+            0.1736481487751007,
+            0.9848077297210693,
+            3.626471519470215
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "camera_rigid_transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.9848077297210693,
+            -0.1736481487751007,
+            46.930023193359375
+          ],
+          [
+            0.0,
+            0.1736481487751007,
+            0.9848077297210693,
+            -1.6363849639892578
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "geometry_scaled": false,
+        "main_frame_axes": "unchanged; horizontal/vertical",
+        "screen_active_center_mm": [
+          0.0,
+          49.89186096191406,
+          230.7972869873047
+        ]
+      },
+      "method": "Applied rigid mounting transforms only to optics, with a new upright screen fork; mechanical controller zero is unchanged. Full assembly/ray/motion checks are separate."
+    },
+    {
+      "id": "new_PCB_bench_tool_access",
+      "status": "PASS",
+      "summary": "IMU底面与后接口板的台面装配工具杆空间",
+      "measurement": [
+        {
+          "screw": "IMU_Screw_0",
+          "direction": "-Z",
+          "bench_prerequisite": "IMU before battery/drive; interface PCB on detached upper shell",
+          "failures": []
+        },
+        {
+          "screw": "IMU_Screw_1",
+          "direction": "-Z",
+          "bench_prerequisite": "IMU before battery/drive; interface PCB on detached upper shell",
+          "failures": []
+        },
+        {
+          "screw": "Rear_Interface_Screw_0",
+          "direction": "-Z",
+          "bench_prerequisite": "IMU before battery/drive; interface PCB on detached upper shell",
+          "failures": []
+        },
+        {
+          "screw": "Rear_Interface_Screw_1",
+          "direction": "-Z",
+          "bench_prerequisite": "IMU before battery/drive; interface PCB on detached upper shell",
+          "failures": []
+        }
+      ],
+      "method": "4.2mm diameter30mm shafts, prescribed bench sequence. Not a whole-hand/driver-handle proof."
+    },
+    {
+      "id": "rear_interface_double_sided_selection",
+      "status": "BLOCKED",
+      "summary": "后接口板已生成板框、壳体安装座及上下开口；双面侧出器件待另任务选型",
+      "measurement": {
+        "revision": "V1.2-M1.18",
+        "status": "MECHANICAL_REQUIREMENTS_ONLY",
+        "PCB": [
+          [
+            -12.0,
+            12.0
+          ],
+          [
+            -72.0,
+            -58.0
+          ],
+          [
+            114.19999694824219,
+            115.80000305175781
+          ]
+        ],
+        "shell_integral_mounts": 2,
+        "new_printed_brackets": 0,
+        "fasteners": 2,
+        "screw_access_direction": "-Z, through open underside of detached upper shell",
+        "board_top_z_mm": 115.8,
+        "board_bottom_z_mm": 114.2,
+        "USB_axis_z_mm": 112,
+        "switch_actuator_axis_z_mm": 123,
+        "USB_and_switch_toward": "-Y rear",
+        "limits": [
+          "Exact SMT/through-hole parts must be chosen for these side exits; generic board-face flip alone does not align ports",
+          "Simultaneous finger access while USB plugged in NOT_TESTED",
+          "Board thickness, mounting pilots and enclosure fit require coupon and real connectors",
+          "No charger or high-current circuit design implied"
+        ]
+      },
+      "method": "Nominal interfaces are requirements. No exact purchased switch/USB CAD or electrical pin assignment is claimed."
+    },
+    {
+      "id": "native_P3_handoff",
+      "status": "BLOCKED",
+      "summary": "P2原生基板/IMU已1:1摆入，电源80×55容量已纳入；P3原生坐标已交接，完整装件与插头适配仍未完成",
+      "measurement": {
+        "mechanical_design_dimensions_changed": false,
+        "P2_reference_files": [
+          "mechanical/studies/pcb_P2_fit/motion_mesh.json",
+          "mechanical/studies/pcb_P2_fit/imu_mesh.json"
+        ],
+        "power_capacity": "config/geometry.json#/layout_cleanup/power_bay"
+      },
+      "method": "No edits to KiCad files. P2 library CAD is a reference, never labeled final P3 physical hardware."
+    },
+    {
+      "id": "imu_three_anchor_recommendation",
+      "status": "BLOCKED",
+      "summary": "P3交接指出IMU两孔与厂家至少三固定点建议仍需结构适配",
+      "measurement": {
+        "handoff": "hardware/v1_2/handoff/mechanical_P3.json",
+        "current_holes": 2,
+        "physical_response": "NOT_TESTED"
+      },
+      "method": "This revision retains the two native holes; rigid mesh fit does not certify PCB strain/vibration. No unapproved board hole added."
+    },
+    {
+      "id": "static_same_group_wire_passages",
+      "status": "PASS",
+      "summary": "全部已画线束预留与同组实体的通孔/槽检查",
+      "measurement": {
+        "failures": [],
+        "volume_threshold_mm3": 0.05
+      },
+      "method": "Triangle-solid intersections of the actual routing tubes, including same-group parts. Does not certify real connectors, minimum cable bend radius or strain relief."
+    },
+    {
+      "id": "merged_frame_and_rear_PCB_removal",
+      "status": "PASS",
+      "summary": "一体短侧板主框与后接口板的规定台面拆出路径",
+      "measurement": {
+        "cases": [
+          {
+            "case": "Rear_interface_bench",
+            "moving": [
+              "Rear_Interface_PCB",
+              "Power_Switch",
+              "USB_Receptacle"
+            ],
+            "obstacles": [
+              "Body_Upper"
+            ],
+            "direction": [
+              0,
+              1,
+              0
+            ],
+            "travel_mm": 50,
+            "step_mm": 2,
+            "failures": []
+          },
+          {
+            "case": "Load_frame_bench",
+            "moving": [
+              "Load_Frame",
+              "Body_IMU",
+              "IMU_Screw_0",
+              "IMU_Screw_1",
+              "IMU_Insert_0",
+              "IMU_Insert_1"
+            ],
+            "obstacles": [
+              "Drive_Bridge",
+              "Drive_Motor_L",
+              "Drive_Motor_R",
+              "Tire_L",
+              "Tire_R",
+              "Motor_Retainer"
+            ],
+            "direction": [
+              0,
+              0,
+              1
+            ],
+            "travel_mm": 54,
+            "step_mm": 2,
+            "failures": []
+          }
+        ],
+        "prerequisites": [
+          "Rear PCB: upper shell detached, wires disconnected and two underside screws removed; slide toward+Y",
+          "Main frame: remove shells, battery/tray, head/yaw bridge, top electronics and four lower drive joints first; lift frame with underside IMU"
+        ]
+      },
+      "method": "Finite2mm translation samples with listed actual solids. No hand/cable-flex or arbitrary-order assembly claim."
+    },
+    {
+      "id": "physical_part_consolidation",
+      "status": "PASS",
+      "summary": "本体打印件最终数量与合并实体检查；保留固定/转动分组",
+      "measurement": {
+        "print_before": 26,
+        "print_after": 18,
+        "fasteners_before": 82,
+        "fasteners_after": 98,
+        "parts": [
+          {
+            "id": "Head_Front",
+            "motion_group": "pitch",
+            "positive_solids": 1,
+            "cavity_components": 0,
+            "volume_mm3": 39851.197583485075
+          },
+          {
+            "id": "Pitch_Yoke",
+            "motion_group": "yaw",
+            "positive_solids": 1,
+            "cavity_components": 0,
+            "volume_mm3": 50046.36082374259
+          },
+          {
+            "id": "Yaw_Base",
+            "motion_group": "body",
+            "positive_solids": 1,
+            "cavity_components": 0,
+            "volume_mm3": 47014.21489568023
+          },
+          {
+            "id": "Wheel_Hub_L",
+            "motion_group": "wheel_L",
+            "positive_solids": 1,
+            "cavity_components": 0,
+            "volume_mm3": 82541.47950163027
+          },
+          {
+            "id": "Wheel_Hub_R",
+            "motion_group": "wheel_R",
+            "positive_solids": 1,
+            "cavity_components": 0,
+            "volume_mm3": 82541.47950163027
+          }
+        ]
+      },
+      "method": "Connected solid meshes, object inventory and correct rigid motion groups only; service paths, FOV and motion have separate checks. No print/strength qualification."
+    },
+    {
+      "id": "wheel_positive_drive_and_axial_stack",
+      "status": "PASS",
+      "summary": "双扁位实体止转、轴肩止挡与端部锁紧座",
+      "measurement": [
+        {
+          "side": "L",
+          "key_length_mm": 12.200000000000003,
+          "neutral_overlap_mm3": 0,
+          "first_relative_D_contact_deg": [
+            -0.7,
+            0.7
+          ],
+          "inner_bearing_into_shoulder_0_2mm_witness_volume_mm3": 2.4038025169253143,
+          "shaft_tip_below_washer_seat_mm": 0.20000000000000284
+        },
+        {
+          "side": "R",
+          "key_length_mm": 12.200000000000003,
+          "neutral_overlap_mm3": 1.8041124150158794e-15,
+          "first_relative_D_contact_deg": [
+            -0.7,
+            0.7
+          ],
+          "inner_bearing_into_shoulder_0_2mm_witness_volume_mm3": 2.403802516925314,
+          "shaft_tip_below_washer_seat_mm": 0.20000000000000284
+        }
+      ],
+      "method": "Actual shaft/hub intersection under relative0.1deg increments; positive interference is an intentional stop witness, not an assembled collision. This bounds nominal geometric take-up only; elastic twist, thread forces, creep and purchased tolerances are NOT_TESTED."
+    },
+    {
+      "id": "s288_six_hole_flange_installation",
+      "status": "PASS",
+      "summary": "两侧六孔连接、螺钉伸入量及装轴承前的工具通道",
+      "measurement": {
+        "screws": 12,
+        "engagement_mm": 2.5,
+        "maximum_vendor_depth_mm": 3,
+        "failed_fasteners": 0,
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Actual root/head envelope translated each1mm over35mm and2.5mm x30mm tool shank; use only the documented S288 M2 self-tapping family. Head/thread/tip geometry still a procurement requirement; no tightening or pull-out qualification."
+    },
+    {
+      "id": "complete_wheel_drive_sweep",
+      "status": "PASS",
+      "summary": "法兰、螺钉、整轴、隔套和轮毂共同旋转一周",
+      "measurement": {
+        "poses_each": 73,
+        "step_deg": 5,
+        "failed_pairs": 0,
+        "minimum_nonbearing_gap": {
+          "deg": 110,
+          "moving": "Wheel_Spacer_R_0",
+          "fixed": "Drive_Bridge",
+          "gap_mm_capped2": 0.4946331262569505
+        },
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Closed-solid intersections and distances against fixed drive/frame/shell/cap bolts each5deg. Bearings are intended journal contacts and checked separately. Finite samples are not a continuous proof or tolerance/deflection simulation."
+    },
+    {
+      "id": "wheel_drive_service_sequence",
+      "status": "PASS",
+      "summary": "下壳、共用底盖与两套电机/轴承组件的顺序拆装",
+      "measurement": {
+        "cases": 4,
+        "failed_cases": 0,
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Actual solid translation each1mm after explicit preceding removals. Motors disabled and chassis supported. Disconnect real motor leads first; human grip and cable plugs remain NOT_TESTED."
+    },
+    {
+      "id": "wheel_cap_tools",
+      "status": "PASS",
+      "summary": "共用底盖四枚螺钉的下方工具通道",
+      "measurement": [
+        {
+          "index": 0,
+          "hits": []
+        },
+        {
+          "index": 1,
+          "hits": []
+        },
+        {
+          "index": 2,
+          "hits": []
+        },
+        {
+          "index": 3,
+          "hits": []
+        }
+      ],
+      "method": "5mm x30mm straight tool shank with lower shell removed; tool handles and exact drive recess are not modeled."
+    },
+    {
+      "id": "wheel_shell_local_walls",
+      "status": "PASS",
+      "summary": "轮窝指定区域的真实壁厚与独立算法交叉核对",
+      "measurement": [
+        {
+          "side": -1,
+          "y_mm": -50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.3211424770579683,
+          "independent_triangle_error_mm": 3.712384561538329e-06
+        },
+        {
+          "side": -1,
+          "y_mm": -51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217159897264928,
+          "independent_triangle_error_mm": 3.49568765756203e-06
+        },
+        {
+          "side": -1,
+          "y_mm": 50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.321141076562334,
+          "independent_triangle_error_mm": 3.714803717969062e-06
+        },
+        {
+          "side": -1,
+          "y_mm": 51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217158729977271,
+          "independent_triangle_error_mm": 4.925743866124321e-06
+        },
+        {
+          "side": 1,
+          "y_mm": -50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.3211424770579683,
+          "independent_triangle_error_mm": 3.712384561538329e-06
+        },
+        {
+          "side": 1,
+          "y_mm": -51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217155114658418,
+          "independent_triangle_error_mm": 3.49568765756203e-06
+        },
+        {
+          "side": 1,
+          "y_mm": 50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.321141076562334,
+          "independent_triangle_error_mm": 3.714803717969062e-06
+        },
+        {
+          "side": 1,
+          "y_mm": 51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.2171530506105555,
+          "independent_triangle_error_mm": 4.925743866124321e-06
+        }
+      ],
+      "method": "Float64 Manifold ray entry/exit, cross-checked with independent barycentric triangle intersections at8 stations. Blender BVH near-edge repeated-hit false positives excluded by this independent evidence, not by lowering a thickness threshold. No global minimum-wall or FDM strength claim."
+    },
+    {
+      "id": "wheel_drive_strength_and_fit",
+      "status": "NOT_TESTED",
+      "summary": "轮驱载荷粗算与试配边界",
+      "measurement": {
+        "assumed_mass_kg": 1.5,
+        "assumed_dynamic_factor": 3.0,
+        "wheel_radial_load_N": 22.1,
+        "bearing_span_mm": 10.0,
+        "wheel_overhang_mm": 20.0,
+        "inner_bearing_reaction_magnitude_N": 44.1,
+        "outer_bearing_reaction_magnitude_N": 66.2,
+        "screening_torque_Nm": 0.6,
+        "output_screw_tangential_force_each_N": 19.0,
+        "smooth_6mm_shaft_bending_MPa": 21,
+        "smooth_6mm_shaft_torsion_MPa": 14,
+        "nominal_von_Mises_MPa": 32,
+        "qualification": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+      },
+      "method": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+    },
+    {
+      "id": "flush_yaw_bridge_mount",
+      "status": "PASS",
+      "summary": "承重桥无外伸耳或竖槽；底面螺钉装入与嵌件名义啮合",
+      "measurement": {
+        "outer_width_mm": 96.0,
+        "side_face_rays": [
+          {
+            "side": -1,
+            "y_mm": -12,
+            "z_mm": 116,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": -12,
+            "z_mm": 122,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": -12,
+            "z_mm": 134,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": -12,
+            "z_mm": 143,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 116,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 122,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 134,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 143,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 12,
+            "z_mm": 116,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 12,
+            "z_mm": 122,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 12,
+            "z_mm": 134,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": -1,
+            "y_mm": 12,
+            "z_mm": 143,
+            "outer_x_mm": -48.0
+          },
+          {
+            "side": 1,
+            "y_mm": -12,
+            "z_mm": 116,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": -12,
+            "z_mm": 122,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": -12,
+            "z_mm": 134,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": -12,
+            "z_mm": 143,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 116,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 122,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 134,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 143,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 12,
+            "z_mm": 116,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 12,
+            "z_mm": 122,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 12,
+            "z_mm": 134,
+            "outer_x_mm": 48.0
+          },
+          {
+            "side": 1,
+            "y_mm": 12,
+            "z_mm": 143,
+            "outer_x_mm": 48.0
+          }
+        ],
+        "mounts": [
+          {
+            "id": "Yaw_Base_-1_Screw",
+            "xy_mm": [
+              -45.0,
+              -17.0
+            ],
+            "head_recess_below_deck_margin_mm": 0.29999542236328125,
+            "insert_engagement_mm": 4.0,
+            "screw_insertion_failures": []
+          },
+          {
+            "id": "Yaw_Base_1_Screw",
+            "xy_mm": [
+              45.0,
+              -17.0
+            ],
+            "head_recess_below_deck_margin_mm": 0.29999542236328125,
+            "insert_engagement_mm": 4.0,
+            "screw_insertion_failures": []
+          }
+        ],
+        "removed_first": [
+          "Battery",
+          "Battery_Retainer_Insert_-1",
+          "Battery_Retainer_Insert_1",
+          "Battery_Retainer_Screw_-1",
+          "Battery_Retainer_Screw_1",
+          "Battery_Tray",
+          "Body_Lower",
+          "Body_Upper"
+        ],
+        "minimum_nominal_insert_side_wall_mm": 1.3
+      },
+      "method": "Actual mesh side rays; complete screw solids translated each1mm,20mm approach; screw heads within deck lower surface. Smooth thread envelope only; insert pull-out/creep/printing unqualified."
+    },
+    {
+      "id": "other_fastener_feature_cleanup",
+      "status": "PASS",
+      "summary": "其余打印件安装特征巡检；喇叭、底盖与夹口收进主体轮廓",
+      "measurement": {
+        "speaker_max_outer_ellipse_value": 1.0000011237151671,
+        "speaker_insertion": [
+          {
+            "side": -1,
+            "screw_insertion_failures": []
+          },
+          {
+            "side": 1,
+            "screw_insertion_failures": []
+          }
+        ],
+        "cap_recesses": [
+          {
+            "id": "Wheel_Cap_Clamp_Screw_0",
+            "head_above_plate_bottom_mm": 0.20000000000000284
+          },
+          {
+            "id": "Wheel_Cap_Clamp_Screw_1",
+            "head_above_plate_bottom_mm": 0.20000000000000284
+          },
+          {
+            "id": "Wheel_Cap_Clamp_Screw_2",
+            "head_above_plate_bottom_mm": 0.20000000000000284
+          },
+          {
+            "id": "Wheel_Cap_Clamp_Screw_3",
+            "head_above_plate_bottom_mm": 0.20000000000000284
+          }
+        ],
+        "reaction_clamp_max_radius_mm": {
+          "Yaw_Reaction_Link": 12.000000147573889,
+          "Yaw_Reaction_Clamp_Screw": 10.623087847813528,
+          "Yaw_Reaction_Clamp_Nut": 10.993179278716047
+        },
+        "printed_part_feature_audit": [
+          {
+            "id": "Battery_Tray",
+            "review": "Changed: both insert and screw pilot sites move with side recesses; existing continuous rails and extraction direction retained.",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Body_Lower",
+            "review": "Retained: enclosed shell-seam seats and vertical axle removal slots; slots serve wheel service, not screwdriver relief",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Body_Upper",
+            "review": "Changed: matching speaker blind bosses inside shell; exterior remains closed",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Display_Frame",
+            "review": "Retained: exact vendor rear-post seats and local optical-angle seats; side joints inside head outline",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Drive_Bridge",
+            "review": "Changed: bolt seats move to existing cage corners; bearing wings retained for radial load",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Head_Front",
+            "review": "Retained: local internal shell and camera seats; no external screw bosses",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Head_Rear",
+            "review": "Retained: inside seam seats, no exterior tabs",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Load_Frame",
+            "review": "Changed: underside bridge head pockets; M1.16 battery side recesses moved inward to close the edge; M1.17 long power rails replaced by four local seats with diagonal fasteners. Dedicated bearing-ring and access checks required.",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Mic_Duct_L",
+            "review": "Retained: independent acoustic tube, no fastener features",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Mic_Duct_R",
+            "review": "Retained: independent acoustic tube, no fastener features",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Motor_Retainer",
+            "review": "Changed: simple rectangular central plate; inset screw positions and recessed heads",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Pitch_Cradle",
+            "review": "Retained: bearing/optical support faces and short shell locating tabs; no exterior screwdriver grooves",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Pitch_Yoke",
+            "review": "Retained: bilateral bearing seats, real servo-ear seats and cable strain relief; required different functions",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Speaker_Mount",
+            "review": "Changed: continuous oval outline; rear recessed screws, no side ears/tool grooves",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Wheel_Hub_L",
+            "review": "Retained: wheel shaft and washer recess inside hub silhouette",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Wheel_Hub_R",
+            "review": "Retained: wheel shaft and washer recess inside hub silhouette",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Yaw_Base",
+            "review": "Changed: straight legs; underside recessed screws and blind inserts",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          },
+          {
+            "id": "Yaw_Reaction_Link",
+            "review": "Changed: round collar; clamp screw/nut recessed within it",
+            "scope": "Visual/source feature review; not an automatic semantics proof"
+          }
+        ],
+        "limits": "No claim that every functional boss should disappear: vendor post seats, bearing housings, shell-inside attachments and separate cable/acoustic features remain. Fits, preload, FDM fatigue, acoustic sealing and global walls are not qualified."
+      },
+      "method": "Actual speaker local-frame silhouette,30mm screw insertion each1mm, cap head heights and radial clamp silhouette; all robot hard printed parts explicitly reviewed."
+    },
+    {
+      "id": "battery_retention_closed_edges",
+      "status": "PASS",
+      "summary": "电池托盘两侧固定孔的闭合孔边、螺钉支承面与装入路径",
+      "measurement": {
+        "mounts": [
+          {
+            "side": -1,
+            "centre_yz_mm": [
+              0.0,
+              79.0
+            ],
+            "minimum_closed_ligament_mm": 10.199996948242188,
+            "missing_head_backing_mm3": 0.0,
+            "minimum_head_backing_mm": 1.7999992370605469,
+            "head_recess_margin_mm": 0.20000076293945312,
+            "nominal_insert_engagement_mm": 3.0,
+            "screw_insertion_failures": [],
+            "tool_failures": []
+          },
+          {
+            "side": 1,
+            "centre_yz_mm": [
+              0.0,
+              79.0
+            ],
+            "minimum_closed_ligament_mm": 10.199996948242188,
+            "missing_head_backing_mm3": 0.0,
+            "minimum_head_backing_mm": 1.7999992370605469,
+            "head_recess_margin_mm": 0.20000076293945312,
+            "nominal_insert_engagement_mm": 3.0,
+            "screw_insertion_failures": [],
+            "tool_failures": []
+          }
+        ],
+        "details": "battery_retention_validation.json"
+      },
+      "method": "Actual Manifold triangle solids: 180 radial rays per side at outer-face depth0.1mm; annular head-backing containment; full screw insertion every1mm over25mm; diameter4.2x30mm straight tool."
+    },
+    {
+      "id": "short_power_board_mounts",
+      "status": "PASS",
+      "summary": "取消两条长托边，四个一体矮座与对角双螺钉；板底间隙及规定台面装配路径",
+      "measurement": {
+        "revision": "V1.2-M1.18",
+        "status": "PASS",
+        "sites": [
+          {
+            "ref": "H1",
+            "xy_mm": [
+              -37.0,
+              27.5
+            ],
+            "native_xy_mm": [
+              3.0,
+              3.0
+            ],
+            "hole_diameter_mm": 2.2,
+            "fastened": false,
+            "support_missing_mm3": 0,
+            "tool_obstacles": [],
+            "insertion_obstacles": []
+          },
+          {
+            "ref": "H2",
+            "xy_mm": [
+              -37.0,
+              -21.5
+            ],
+            "native_xy_mm": [
+              3.0,
+              52.0
+            ],
+            "hole_diameter_mm": 2.2,
+            "fastened": true,
+            "support_missing_mm3": 0,
+            "tool_obstacles": [],
+            "insertion_obstacles": [],
+            "screw_axis_error_mm": 0.0,
+            "insert_engagement_mm": 3.200000000000003
+          },
+          {
+            "ref": "H3",
+            "xy_mm": [
+              37.0,
+              27.5
+            ],
+            "native_xy_mm": [
+              77.0,
+              3.0
+            ],
+            "hole_diameter_mm": 2.2,
+            "fastened": true,
+            "support_missing_mm3": 0,
+            "tool_obstacles": [],
+            "insertion_obstacles": [],
+            "screw_axis_error_mm": 0.0,
+            "insert_engagement_mm": 3.200000000000003
+          },
+          {
+            "ref": "H4",
+            "xy_mm": [
+              37.0,
+              -21.5
+            ],
+            "native_xy_mm": [
+              77.0,
+              52.0
+            ],
+            "hole_diameter_mm": 2.2,
+            "fastened": false,
+            "support_missing_mm3": 0,
+            "tool_obstacles": [],
+            "insertion_obstacles": []
+          }
+        ],
+        "old_rail_midsection_material_mm3": [
+          0,
+          0
+        ],
+        "PCB_lift_failures": [],
+        "seat_height_mm": 4.5,
+        "component_underside_gap_mm": 1.5,
+        "nominal_insert_side_wall_mm": 1.1999999999999997,
+        "method": "Actual closed triangle solids; seat bearing annuli0.2mm deep; M2 screw lift25mm step1; driver shaft diameter4.2 x30; PCB lift40mm step2; old rail middle-volume probes.",
+        "prerequisites": "Install board and screws BEFORE fixed yaw bridge/head. For service remove upper shell/speaker and bridge/head; disconnect leads and remove two board screws.",
+        "limits": [
+          "Power_Module is a capacity envelope with PROPOSED local component keepouts, not verified populated hardware.",
+          "P4 native hole coordinates only; P5 in progress. Top/underside keepouts, plugs and leads require hardware-owner review.",
+          "Two diagonal screw retention and nominal1.2mm insert wall are unqualified for vibration/creep/pullout; print coupon and real board required.",
+          "Finite samples only; hand/driver handle and real cable movement NOT_TESTED."
+        ]
+      },
+      "method": "Actual closed triangle solids; seat bearing annuli0.2mm deep; M2 screw lift25mm step1; driver shaft diameter4.2 x30; PCB lift40mm step2; old rail middle-volume probes."
+    },
+    {
+      "id": "wide_battery_tray_flat_sides",
+      "status": "PASS",
+      "summary": "加宽托盘配合平侧板，取消局部凸块；底部实际承托与抽取间隙",
+      "measurement": {
+        "revision": "V1.2-M1.18",
+        "status": "PASS",
+        "width_before_mm": 90,
+        "width_after_mm": 94.19999694824219,
+        "side_clearance_mm": 0.3,
+        "inside_battery_channel_mm": 81.0,
+        "frame_side_thickness_mm": 3.6,
+        "flat_inner_faces": [
+          {
+            "side": -1,
+            "y_mm": -16,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -16,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -16,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -16,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -8,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -8,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -8,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": -8,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 0,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 8,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 8,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 8,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 8,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 16,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 16,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 16,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": -1,
+            "y_mm": 16,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -16,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -16,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -16,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -16,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -8,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -8,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -8,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": -8,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 0,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 8,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 8,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 8,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 8,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 16,
+            "z_mm": 75,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 16,
+            "z_mm": 84.5,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 16,
+            "z_mm": 90,
+            "inner_x_abs_mm": 47.400001525878906
+          },
+          {
+            "side": 1,
+            "y_mm": 16,
+            "z_mm": 100,
+            "inner_x_abs_mm": 47.400001525878906
+          }
+        ],
+        "actual_slide_gaps": [
+          {
+            "side": -1,
+            "y_mm": -20,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": -20,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": -12,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": -12,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": 12,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": 12,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": 20,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": -1,
+            "y_mm": 20,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": -20,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": -20,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": -12,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": -12,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": 12,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": 12,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": 20,
+            "z_mm": 76,
+            "gap_mm": 0.3000030517578125
+          },
+          {
+            "side": 1,
+            "y_mm": 20,
+            "z_mm": 82,
+            "gap_mm": 0.3000030517578125
+          }
+        ],
+        "bearing_plane_samples": [
+          {
+            "side": -1,
+            "x_mm": -41,
+            "y_mm": -18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -41,
+            "y_mm": -12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -41,
+            "y_mm": 0,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -41,
+            "y_mm": 12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -41,
+            "y_mm": 18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -43.5,
+            "y_mm": -18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -43.5,
+            "y_mm": -12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -43.5,
+            "y_mm": 0,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -43.5,
+            "y_mm": 12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -43.5,
+            "y_mm": 18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -46,
+            "y_mm": -18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -46,
+            "y_mm": -12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -46,
+            "y_mm": 0,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -46,
+            "y_mm": 12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": -1,
+            "x_mm": -46,
+            "y_mm": 18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 41,
+            "y_mm": -18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 41,
+            "y_mm": -12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 41,
+            "y_mm": 0,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 41,
+            "y_mm": 12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 41,
+            "y_mm": 18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 43.5,
+            "y_mm": -18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 43.5,
+            "y_mm": -12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 43.5,
+            "y_mm": 0,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 43.5,
+            "y_mm": 12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 43.5,
+            "y_mm": 18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 46,
+            "y_mm": -18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 46,
+            "y_mm": -12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 46,
+            "y_mm": 0,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 46,
+            "y_mm": 12,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          },
+          {
+            "side": 1,
+            "x_mm": 46,
+            "y_mm": 18,
+            "seat_z_mm": 72.5,
+            "vertical_gap_mm": 0.0
+          }
+        ],
+        "equivalent_bearing_area_each_side_mm2": [
+          363.93553707796497,
+          363.9355370779623
+        ],
+        "new_parts": 0,
+        "new_fasteners": 0,
+        "method": "40 actual-solid cheek rays away from bores;16 tray/frame side gap ray pairs;30 downward bearing-plane rays;0.1mm downward diagnostic overlap divided by0.1 estimates nominal flat contact area.",
+        "load_path": "Battery/pad -> tray floor -> existing raised lower shelves -> drive frame. Two lateralM2 screws retain extraction; no inward local retention land.",
+        "related_checks": [
+          "battery_retention_closed_edges",
+          "battery_extraction",
+          "module_screwdriver_access",
+          "static_rigid_solids"
+        ],
+        "limits": "Nominal candidate surfaces, no preload/deflection/strength model.0.3mm trial slides, inserts and actual pack/strap fit require printing/measurement. The full report covers extraction/tool paths; no continuous-space proof."
+      },
+      "method": "40 actual-solid cheek rays away from bores;16 tray/frame side gap ray pairs;30 downward bearing-plane rays;0.1mm downward diagnostic overlap divided by0.1 estimates nominal flat contact area."
+    }
+  ],
+  "counts": {
+    "PASS": 60,
+    "FAIL": 0,
+    "NOT_TESTED": 13,
+    "BLOCKED": 15
+  },
+  "limits": "Geometry evidence only. No manufacturing, cost, electrical, balance or product safety approval."
+}

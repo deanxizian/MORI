@@ -1,0 +1,135 @@
+{
+  "status": "BLOCKED",
+  "scope": "Known five-segment bare-housing route with closed/raised shell; raised shell endpoint vs installed head only",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+    "mechanical/reports/build_manifest.json": "fe96a9eb6604d65d3bcae09983487b2e03febb2a9d41e5140478cee69f1b308c",
+    "config/geometry.json": "3af8a61411825ba12a315c9377a117f5923e822c5f219ad8de13eae87da5225d",
+    "contracts/mechanical_interfaces.json": "4957dc15dfbec31e07e0a37a2b7a7a0de681ca5ce40e600c2c00fe2217c15d95",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "a5450cf9342cea2a5ccdd702c457e152900ead75eb46c65b0790c001b0acd0fe",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "inputs": {
+    "mechanical/reports/assembly_issue_validation.json": "8e314e18dfbfe20502d5bc6d09dff033f82f8ed4af26fbd3ad19d525fbf485ab",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_simple/review.json": "c5dedd9a3aced181636396388e81d3a23596b30f7311cbe840d33baea81b1a16",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_simple/path.npz": "08c0ef0886fc64c89c6e7dc243eb4baa887c142bd51d7a01aa58832a7f3ff06e",
+    "mechanical/reports/head_retention_body_sequence.json": "686f23461b0ad914cb6c4acfbe83635c3f03477d8695d9500cc32f38cc0fdbf3",
+    "mechanical/studies/prearrival_closure/dual_body_sequence.py": "f4290d435a51d1d8586834a56635c39937be27444743aa634624c4cf6555195d"
+  },
+  "moved_shell_module": [
+    "Body_Upper",
+    "Frame_Insert_0",
+    "Frame_Insert_1",
+    "Frame_Insert_2",
+    "Frame_Insert_3",
+    "Power_Switch",
+    "Rear_Interface_Insert_0",
+    "Rear_Interface_Insert_1",
+    "Rear_Interface_PCB",
+    "Rear_Interface_Screw_0",
+    "Rear_Interface_Screw_1",
+    "Shell_Insert_0",
+    "Shell_Insert_1",
+    "Shell_Insert_2",
+    "Shell_Insert_3",
+    "Speaker",
+    "Speaker_Gasket",
+    "Speaker_Insert_-1",
+    "Speaker_Insert_1",
+    "Speaker_Screw_-1",
+    "Speaker_Screw_1",
+    "USB_Receptacle"
+  ],
+  "raised_transform": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.9659258127212524,
+      -0.25881898403167725,
+      25.881898880004883
+    ],
+    [
+      0.0,
+      0.25881898403167725,
+      0.9659258127212524,
+      17.40741729736328
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "path_checks": [
+    {
+      "pose": "closed",
+      "status": "BLOCKED",
+      "path_hits": [
+        {
+          "segment": 4,
+          "target": "Body_Upper",
+          "overlap_mm3": 231.59322978859615,
+          "gap_mm": 0.0
+        }
+      ]
+    },
+    {
+      "pose": "prepositioned_15deg_14up",
+      "status": "BLOCKED",
+      "path_hits": [
+        {
+          "segment": 4,
+          "target": "Body_Upper",
+          "overlap_mm3": 176.37330435782718,
+          "gap_mm": 0.0
+        }
+      ]
+    }
+  ],
+  "raised_shell_vs_head_intersections": [
+    {
+      "moving": "Body_Upper",
+      "head_part": "Head_Front",
+      "overlap_mm3": 789.5254958845251
+    },
+    {
+      "moving": "Body_Upper",
+      "head_part": "Head_Rear",
+      "overlap_mm3": 284.1738929800847
+    },
+    {
+      "moving": "Body_Upper",
+      "head_part": "Pitch_Yoke",
+      "overlap_mm3": 2155.028330430436
+    },
+    {
+      "moving": "Body_Upper",
+      "head_part": "Head_Yaw_Ear_1_Screw",
+      "overlap_mm3": 7.79881347909191
+    }
+  ],
+  "matching_old_body_sequence": "Rigid-only sequence uses shell 15deg and +14mm; full head/soft-wire dependency not thereby qualified",
+  "body_shell_transition_with_head": "NOT_TESTED",
+  "shell_carried_wire_reshaping": "NOT_TESTED",
+  "J18_attached_wires": "NOT_TESTED",
+  "main_changed": false,
+  "approved": false,
+  "full_harness": "BLOCKED",
+  "Yaw_Reaction_Link_present": true,
+  "script_sha256": "8df639538d842137823348bac4c8a94c6b13be7a6a153f4ff5e6449b9ecaf803",
+  "elapsed_s": 6.8370680809021
+}

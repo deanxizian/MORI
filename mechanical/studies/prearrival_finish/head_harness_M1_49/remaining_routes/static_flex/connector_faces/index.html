@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M1.49 排线座方向复核</title><style>body{font:16px/1.7 system-ui;background:#f4f6f7;color:#22313b;margin:0}main{max-width:1120px;margin:auto;padding:30px 22px}h1{font-size:30px}h2{margin-top:36px}a{color:#17648d}.note{background:#fff5df;border-left:5px solid #d39324;padding:14px 18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}figure{margin:0;background:white;padding:12px;border-radius:12px}img{width:100%;height:auto}figcaption{font-size:14px;margin-top:10px}table{width:100%;border-collapse:collapse;background:white}th,td{padding:12px;text-align:left;border-bottom:1px solid #dce2e7}.small{font-size:14px}</style><main>
+<p><a href="../index.html">返回屏幕排线容量研究</a> · <a href="../../index.html#flex-connectors">线束总进展</a></p>
+<h1>先核对入口方向，再连接整根排线</h1>
+<p class="note">主模型仍为 M1.49 C5＋K1。以下转向图只用于比较，未应用到主模型。相机座有明确照片方向差异；CAM 屏幕座不能据此一起翻转。</p>
+<h2>1. 相机：官方已接线照片显示向上出线</h2>
+<div class="grid"><figure><a href="../../../../../../sources/waveshare_detail/ESP32-S3-CAM-OVxxxx-details-5-2.jpg"><img src="../../../../../../sources/waveshare_detail/ESP32-S3-CAM-OVxxxx-details-5-2.jpg" alt="官方OV3660已插线照片"></a><figcaption>官方照片：橙色排线由座上缘向 SD 卡方向伸出，即 +V／整机 +Z。</figcaption></figure>
+<figure><a href="orientation/current_SD.png"><img src="orientation/current_SD.png" alt="当前CAM相机座槽向下"></a><figcaption>当前重建：槽和黑色示意盖朝下，方向与照片相反。</figcaption></figure>
+<figure><a href="orientation/camera_180_SD.png"><img src="orientation/camera_180_SD.png" alt="只将相机座重建几何转向上方的比较"></a><figcaption>独立候选：只转相机座的重建几何，板卡和其他元件不动。仍是照片估算，未应用。</figcaption></figure></div>
+<h2>2. CAM 屏幕座：向板外出线，保留正确的黑白布局</h2>
+<figure><a href="../../../../../../../hardware/v1_2/cam_fpc_exit_review_20261006/sources/use_msg_01.webp"><img src="../../../../../../../hardware/v1_2/cam_fpc_exit_review_20261006/sources/use_msg_01.webp" alt="微雪官方CAM接屏实拍，排线从板边向外伸出"></a><figcaption>官方已接线实拍：USB朝右，把板转回USB朝下后，排线向照片右／主板−U／零位−X出线。示例使用其他尺寸屏幕，仅支持CAM端方向，不证明本项目整链路兼容。<a href="https://docs.waveshare.com/ESP32-S3-CAM-OVxxxx/Instructions-For-Use">微雪原始使用说明</a>。</figcaption></figure>
+<div class="grid"><figure><a href="../../../../../../sources/waveshare_detail/esp32-s3-cam-ovxxxx-3_1.jpg"><img src="../../../../../../sources/waveshare_detail/esp32-s3-cam-ovxxxx-3_1.jpg" alt="官方CAM IC面照片"></a><figcaption>官方 IC 面照片。与 SD 面相比左右翻转：白色主体在板边，黑盖在板内。</figcaption></figure>
+<figure><a href="orientation/current_IC.png"><img src="orientation/current_IC.png" alt="当前CAM屏幕座重建"></a><figcaption>当前模型黑白布局正确，但模拟入口在内侧，应单独改为板外方向。准确槽高、插深和触点仍未知。</figcaption></figure>
+<figure><a href="orientation/both_180_IC.png"><img src="orientation/both_180_IC.png" alt="屏幕座也翻转的假设对照"></a><figcaption>若屏幕座也转，黑白布局反而与照片相反。此图仅作排除误改的对照，未推荐采用。</figcaption></figure></div>
+<h2>3. LCD 原厂 CAD：从 −X 侧接近入口</h2>
+<div class="grid"><figure><a href="Connector_108_minus_x.png"><img src="Connector_108_minus_x.png" alt="LCD原厂Connector108负X侧"></a><figcaption>原厂 CAD 的 −X 侧可见入口指片。原三角面原尺寸提取。</figcaption></figure>
+<figure><a href="Connector_108_plus_x.png"><img src="Connector_108_plus_x.png" alt="LCD原厂Connector108正X侧"></a><figcaption>+X 侧是 SMT 焊脚。不是另一处排线入口。</figcaption></figure></div>
+<h2>此前两端各 15 mm 的长度预算需要调整</h2>
+<p>中央段末端朝 −X，进入 LCD 时需朝 +X。沿用 R7.5 mm 的容量假设，仅转向180°就至少需要23.56 mm，已超过15 mm。R5假设也至少15.71 mm。这里还没有计入插深和两端的位置偏差。</p>
+<p>CAM端也要从−X反向接到原中央段的+X切向。R7.5假设下，两端合计至少47.12 mm，中央段最多152.88 mm；这个上限还没扣除插入、补强和位置偏差，不代表新路径已通过。</p>
+<p class="note">旧中央段的空间检查仍有效，但不能把它直接当成完整排线。需要重新分配中央段与端部长度；这不是“200 mm 原配线不够长”的结论。R5／R7.5 也不是厂家给定的弯曲限制。</p>
+<table><tr><th>已经确定</th><th>仍未确定</th></tr><tr><td>同一俯仰组；官方已插线照片中的相机+Z及CAM屏幕−X方向；LCD原CAD入口侧；旧15 mm预算不足</td><td>所购批次、接触面／针1、完整型号、线宽厚、补强、插深及允许弯曲数据</td></tr></table>
+<p>硬件 CAM-FPC-EXIT-R1 已正式接收并核对31份文件哈希。完整屏幕排线、相机FPC、固定及带线装配仍为 BLOCKED。没有修改打印件、孔位、BOM或视频。</p>
+<p><a href="direction_receipt.json">硬件证据接收记录</a> · <a href="../../../../../../../hardware/v1_2/cam_fpc_exit_review_20261006/handoff.json">原始交接</a> · <a href="../../../../../../../hardware/v1_2/cam_fpc_exit_review_20261006/missing_fields.csv">明确缺失的字段</a></p>
+<p><a href="orientation/MORI_M1_49_CAM_FPC_orientation_hypotheses.blend">可编辑三组方向对照</a> · <a href="README.md">详细判断与限制</a> · <a href="pair_terminal_length_audit.json">双端长度必要条件</a> · <a href="terminal_length_audit.json">先前LCD单端计算</a></p>
+<p class="small"><a href="review.json">原始模型提取</a> · <a href="orientation/review.json">几何变更范围</a> · <a href="commands.json">实际命令与日志</a> · <a href="main_integrity.json">主文件保留检查</a></p>
+<!-- CAM_FPC_CORRECTION --><section><h2>后续：CAM 入口修正模型</h2><p>相机入口朝 SD 卡、屏幕入口朝板外；保留包体外包络和其余元件。262 组同板比较、130 个姿态未检出新增相交，真实插接仍未完成。主模型未替换。</p><p><a href="correction/index.html">查看入口侧前后对比</a></p></section><!-- /CAM_FPC_CORRECTION --></main></html>

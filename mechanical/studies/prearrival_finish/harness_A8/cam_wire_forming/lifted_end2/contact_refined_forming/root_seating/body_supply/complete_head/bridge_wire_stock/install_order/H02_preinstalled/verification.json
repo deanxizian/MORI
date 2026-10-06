@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "scope": "Two static H02 curves, saved geometry and finite body/head positions only",
+  "script_sha256": "6a55b29ab139ec584f492012e9dde49501edda057acff79cc88cdf7e96da8b96",
+  "screen_sha256": "bcb9cecff9c14146e30553490c2d1fc4cb4eaccf2ff5e146508d3e717224811e",
+  "wire_solids_sha256": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/screen_H02_preinstalled_route.py": "72fe1b272640716ae8769ee0a5929d4f798b539d71debd358401aec8f3438b63",
+    "mechanical/studies/prearrival_finish/harness_A2/ecowire_joint.json": "5e05824e102cb46c566127e5b23991d023bca4f8a1b008910380198f8fe500ae",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/full_wires.npz": "0b8464d2fc192ffc322dcf6ac5f2cc8c2018051e2cca5351332331167a0098f6"
+  },
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "source_objects": 209,
+  "static_mating_allocations": 29,
+  "other_fixed_body_wire_count": 12,
+  "solids": [
+    {
+      "id": "H02_1",
+      "status": "PASS",
+      "connected_components": 1,
+      "sag_bound_mm": 0.006961963446764927,
+      "faceting_bound_mm": 0.00693327510814175,
+      "radial_inflation_mm": 0.02
+    },
+    {
+      "id": "H02_2",
+      "status": "PASS",
+      "connected_components": 1,
+      "sag_bound_mm": 0.008661769657432964,
+      "faceting_bound_mm": 0.00693327510814175,
+      "radial_inflation_mm": 0.02
+    }
+  ],
+  "static": [
+    {
+      "id": "H02_1",
+      "status": "PASS",
+      "overlaps": [],
+      "clearance_failure": null
+    },
+    {
+      "id": "H02_2",
+      "status": "PASS",
+      "overlaps": [],
+      "clearance_failure": null
+    }
+  ],
+  "pair": {
+    "status": "PASS",
+    "polyline_distance_mm": 1.6686792144068476,
+    "inflated_capsule_gap_lower_bound_mm": 0.6125792144068476,
+    "intersection_mm3": 0.0
+  },
+  "body_stages": [
+    {
+      "stage": "bridge_lift_shell_held",
+      "status": "PASS",
+      "checked_positions": 37,
+      "planned_positions": 37,
+      "failure": null
+    },
+    {
+      "stage": "body_bridge_back",
+      "status": "PASS",
+      "checked_positions": 57,
+      "planned_positions": 57,
+      "failure": null
+    },
+    {
+      "stage": "body_bridge_bench",
+      "status": "PASS",
+      "checked_positions": 253,
+      "planned_positions": 253,
+      "failure": null
+    },
+    {
+      "stage": "body_shell_settle",
+      "status": "PASS",
+      "checked_positions": 61,
+      "planned_positions": 61,
+      "failure": null
+    }
+  ],
+  "body_source_objects": 122,
+  "body_installed_harnesses": [
+    "H02",
+    "H03"
+  ],
+  "body_deferred_harnesses": [
+    "H01",
+    "H04"
+  ],
+  "head_poses": 130,
+  "head_solid_intersections": [],
+  "terminal_and_wire_selection": "ASSUMED_NOT_SELECTED",
+  "body_continuous_motion": "NOT_TESTED",
+  "installing_H02_on_open_deck": "NOT_TESTED",
+  "H01_H04_attached_installation": "NOT_TESTED",
+  "later_yaw_stock": "NOT_TESTED",
+  "source_routing_lengths_not_supplier_cut_lengths": true,
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "elapsed_s": 51.93251395225525
+}

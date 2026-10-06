@@ -1,0 +1,33 @@
+firmware/motion/v1_2/test_motion.c: In function 'protocols':
+firmware/motion/v1_2/test_motion.c:21:2: error: this 'for' clause does not guard... [-Werror=misleading-indentation]
+   21 |  for(size_t n=0;n<26;n++)CHECK(!s288_decode(b,n,0,&f));CHECK(!s288_decode(b,27,0,&f));CHECK(!s288_decode(b,26,1,&f));
+      |  ^~~
+firmware/motion/v1_2/test_motion.c:9:18: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+    9 | #define CHECK(x) do { checks++; if(!(x)){fprintf(stderr,"check %u failed %s:%d: %s\n",checks,__FILE__,__LINE__,#x);assert(x);} } while(0)
+      |                  ^~
+firmware/motion/v1_2/test_motion.c:21:56: note: in expansion of macro 'CHECK'
+   21 |  for(size_t n=0;n<26;n++)CHECK(!s288_decode(b,n,0,&f));CHECK(!s288_decode(b,27,0,&f));CHECK(!s288_decode(b,26,1,&f));
+      |                                                        ^~~~~
+firmware/motion/v1_2/test_motion.c:25:2: error: this 'for' clause does not guard... [-Werror=misleading-indentation]
+   25 |  for(unsigned i=0;i<26;i++)frames+=s288_feed(&stream,b[i],0,&f);CHECK(frames==1&&stream.discarded>0);
+      |  ^~~
+firmware/motion/v1_2/test_motion.c:9:18: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'for'
+    9 | #define CHECK(x) do { checks++; if(!(x)){fprintf(stderr,"check %u failed %s:%d: %s\n",checks,__FILE__,__LINE__,#x);assert(x);} } while(0)
+      |                  ^~
+firmware/motion/v1_2/test_motion.c:25:65: note: in expansion of macro 'CHECK'
+   25 |  for(unsigned i=0;i<26;i++)frames+=s288_feed(&stream,b[i],0,&f);CHECK(frames==1&&stream.discarded>0);
+      |                                                                 ^~~~~
+cc1: all warnings being treated as errors
+firmware/motion/v1_2/s288.c: In function 'mori_wheel_velocity':
+firmware/motion/v1_2/s288.c:74:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+   74 |  if(!isfinite(value))return false;*speed=value;return true;
+      |  ^~
+firmware/motion/v1_2/s288.c:74:35: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   74 |  if(!isfinite(value))return false;*speed=value;return true;
+      |                                   ^
+cc1: all warnings being treated as errors
+firmware/motion/v1_2/timing.c: In function 'mori_timing_mark':
+firmware/motion/v1_2/timing.c:5:14: error: comparison is always false due to limited range of data type [-Werror=type-limits]
+    5 |  if(!t||stage<0||stage>=T_STAGES)return false;
+      |              ^
+cc1: all warnings being treated as errors

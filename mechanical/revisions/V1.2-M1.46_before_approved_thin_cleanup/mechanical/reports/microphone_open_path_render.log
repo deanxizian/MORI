@@ -1,0 +1,9 @@
+00:00.304  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+/Users/dean/Documents/MORI/mechanical/scripts/render.py:109: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new(PREFIX+'mic_open_'+n);mat.use_nodes=True;nodes=mat.node_tree.nodes;nodes.clear();out=nodes.new('ShaderNodeOutputMaterial');mix=nodes.new('ShaderNodeMixShader');mix.inputs[0].default_value=alpha;solid=nodes.new('ShaderNodeBsdfDiffuse');solid.inputs['Color'].default_value=(.8,.86,.9,1);clear=nodes.new('ShaderNodeBsdfTransparent');mat.node_tree.links.new(solid.outputs[0],mix.inputs[1]);mat.node_tree.links.new(clear.outputs[0],mix.inputs[2]);mat.node_tree.links.new(mix.outputs[0],out.inputs[0]);ob=bpy.data.objects[PREFIX+n];ob.data.materials.clear();ob.data.materials.append(mat)
+RENDER mic_open_path
+00:17.909  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/mic_open_path.png'
+RENDER_COMPLETE
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

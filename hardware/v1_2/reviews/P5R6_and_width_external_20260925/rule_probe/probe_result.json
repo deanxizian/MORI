@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "scope": "Expected failure proves width-rule matching and precedence for these six specific segments only. This is NOT the current board DRC result.",
+  "current_board_unchanged": true,
+  "current_pcb_sha256": "3e6a76409928e96840aef31cfa43985a6ad00db0c0abed68a6fcb3c2a9f816dc",
+  "temporary_probe_sha256": "2427939953efbad7fea4140ce9ad9ba350233785ec54b7e83bcb5f7ae80ca503",
+  "temporary_copy_deleted_after_test": true,
+  "commands": [
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "pcb",
+        "drc",
+        "--format",
+        "json",
+        "--severity-all",
+        "--all-track-errors",
+        "--exit-code-violations",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/v1_2/reviews/P5R6_and_width_external_20260925/rule_probe/expected_failures_drc.json",
+        "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/MORI_RULE_PROBE_NOT_A_DESIGN_2l4o1_bm/MORI_power_P5R6/MORI_power_P5R6.kicad_pcb"
+      ],
+      "returncode": 5,
+      "stdout": "发现 44 条违规项\n发现 0 个未连接的项目\n保存 DRC 报告到 /Users/dean/Documents/MORI/hardware/v1_2/reviews/P5R6_and_width_external_20260925/rule_probe/expected_failures_drc.json\n",
+      "stderr": ""
+    }
+  ],
+  "probes": [
+    {
+      "uuid": "035b88ff-a811-41f9-963c-3c2bf659ab85",
+      "net": "/ARM_Q",
+      "original_mm": 0.2,
+      "probe_mm": 0.15,
+      "expected_native_rule": "R09 signal width",
+      "native_findings": [
+        {
+          "description": "走线宽度 (规则 'R09 signal width' 最小宽度 0.2000 mm; 实际 0.1500 mm)",
+          "items": [
+            {
+              "description": "走线 [/ARM_Q] (F.Cu), 长度: 2.3368 mm",
+              "pos": {
+                "x": 46.1264,
+                "y": 46.3296
+              },
+              "uuid": "035b88ff-a811-41f9-963c-3c2bf659ab85"
+            }
+          ],
+          "severity": "error",
+          "type": "track_width"
+        }
+      ],
+      "expected_rule_detected": true
+    },
+    {
+      "uuid": "02ba0947-df59-4ea9-8c0f-b506dcc0db02",
+      "net": "/FAULT_N",
+      "original_mm": 0.2,
+      "probe_mm": 2.1,
+      "expected_native_rule": "R09 signal width",
+      "native_findings": [
+        {
+          "description": "走线宽度 (规则 'R09 signal width' 最大宽度 2.0000 mm; 实际 2.1000 mm)",
+          "items": [
+            {
+              "description": "走线 [/FAULT_N] (F.Cu), 长度: 1.2932 mm",
+              "pos": {
+                "x": 60.452,
+                "y": 22.148799
+              },
+              "uuid": "02ba0947-df59-4ea9-8c0f-b506dcc0db02"
+            }
+          ],
+          "severity": "error",
+          "type": "track_width"
+        }
+      ],
+      "expected_rule_detected": true
+    },
+    {
+      "uuid": "d0ed0b52-db04-4387-92c8-d3ef30ca561e",
+      "net": "/BAT_REV",
+      "original_mm": 0.2,
+      "probe_mm": 0.15,
+      "expected_native_rule": "R08 power and return width",
+      "native_findings": [
+        {
+          "description": "走线宽度 (规则 'R08 power and return width' 最小宽度 0.2000 mm; 实际 0.1500 mm)",
+          "items": [
+            {
+              "description": "走线 [/BAT_REV] (F.Cu), 长度: 1.2500 mm",
+              "pos": {
+                "x": 30.0375,
+                "y": 13.35
+              },
+              "uuid": "d0ed0b52-db04-4387-92c8-d3ef30ca561e"
+            }
+          ],
+          "severity": "error",
+          "type": "track_width"
+        }
+      ],
+      "expected_rule_detected": true
+    },
+    {
+      "uuid": "159109f0-c3d4-4338-875d-b83cf1a2fbc8",
+      "net": "/H6_IN",
+      "original_mm": 1.0,
+      "probe_mm": 5.1,
+      "expected_native_rule": "R08 power and return width",
+      "native_findings": [
+        {
+          "description": "走线宽度 (规则 'R08 power and return width' 最大宽度 5.0000 mm; 实际 5.1000 mm)",
+          "items": [
+            {
+              "description": "走线 [/H6_IN] (F.Cu), 长度: 1.0776 mm",
+              "pos": {
+                "x": 48.1584,
+                "y": 45.059599
+              },
+              "uuid": "159109f0-c3d4-4338-875d-b83cf1a2fbc8"
+            }
+          ],
+          "severity": "error",
+          "type": "track_width"
+        }
+      ],
+      "expected_rule_detected": true
+    },
+    {
+      "uuid": "291d70bf-1aa7-4b23-8cdc-6a50c34ed883",
+      "net": "/KELVIN_P",
+      "original_mm": 0.381,
+      "probe_mm": 0.3,
+      "expected_native_rule": "R39 differential geometry",
+      "native_findings": [
+        {
+          "description": "走线宽度 (规则 'R39 differential geometry' 最小宽度 0.3810 mm; 实际 0.3000 mm)",
+          "items": [
+            {
+              "description": "走线 [/KELVIN_P] (F.Cu), 长度: 1.9500 mm",
+              "pos": {
+                "x": 31.55,
+                "y": 17.0
+              },
+              "uuid": "291d70bf-1aa7-4b23-8cdc-6a50c34ed883"
+            }
+          ],
+          "severity": "error",
+          "type": "track_width"
+        }
+      ],
+      "expected_rule_detected": true
+    },
+    {
+      "uuid": "106ef97f-c39a-467e-9240-c05fef8269ee",
+      "net": "/KELVIN_N",
+      "original_mm": 0.381,
+      "probe_mm": 0.4,
+      "expected_native_rule": "R39 differential geometry",
+      "native_findings": [
+        {
+          "description": "走线宽度 (规则 'R39 differential geometry' 最大宽度 0.3810 mm; 实际 0.4000 mm)",
+          "items": [
+            {
+              "description": "走线 [/KELVIN_N] (F.Cu), 长度: 1.6250 mm",
+              "pos": {
+                "x": 38.0,
+                "y": 17.325
+              },
+              "uuid": "106ef97f-c39a-467e-9240-c05fef8269ee"
+            }
+          ],
+          "severity": "error",
+          "type": "track_width"
+        }
+      ],
+      "expected_rule_detected": true
+    }
+  ]
+}

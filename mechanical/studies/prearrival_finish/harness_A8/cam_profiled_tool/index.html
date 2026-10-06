@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · 剪尾工具与装配顺序</title>
+<style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;background:#f3f6f5;color:#243b3c;max-width:1080px;margin:32px auto;padding:0 24px 60px}h1{font-size:30px}a{color:#08727b}.note{padding:18px;background:#fff0d9;border-radius:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}figure{margin:0}img{width:100%;border-radius:8px}figcaption{font-size:14px}td,th{text-align:left;padding:10px;border-bottom:1px solid #ccd8d4}table{width:100%;border-collapse:collapse}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+<p><a href="../index.html">← A8研究</a> · <a href="../../index.html">当前未完成项</a> · <a href="../cam_wired_cradle/index.html">上一步：42mm下放检查</a></p>
+<h1>剪尾工具与装配顺序：有了一个局部可行方向</h1>
+<p class="note">Yaw侧30°的工具工作区在本次名义几何检查中通过，扩大包络后仍有余量。完整线束仍为BLOCKED；主模型M1.47、正式动画均未修改。</p>
+<p>供应商按图制作已确定。<a href="../TOOLING_DETAILS.md">端子完整料号的公开工艺数据</a>已经取得；MORI自己的路线、装配顺序和长度还需要由项目完成。</p>
+<h2>厂家资料补齐了什么</h2><p>官方资料给出125×60×19mm、钳头A=11mm、刀口B=10mm、关节D=6.5mm。旧包络把宽手柄放在距刀尖10mm处；这个过渡位置没有厂家依据。</p>
+<div class="grid"><figure><a href="sources/official_top.png"><img src="sources/official_top.png" alt="官方照片：宽手柄前有细颈过渡。图片来自KNIPEX产品页。"></a><figcaption>官方照片：宽手柄前有细颈过渡。图片来自KNIPEX产品页。</figcaption></figure><figure><a href="sources/official_head_dimensions.png"><img src="sources/official_head_dimensions.png" alt="厂家A/B/D尺寸示意；未标轮廓不能视为精确尺寸。"></a><figcaption>厂家A/B/D尺寸示意；未标轮廓不能视为精确尺寸。</figcaption></figure>
+</div><p>新工具形状是参考照片的分段工作包络，仍标为ASSUMED；不是完整厂家CAD或实测工具。</p><figure><a href="profile_comparison.svg"><img src="profile_comparison.svg" alt="相同尺寸基准，修正过早变宽的简化方式。"></a><figcaption>相同尺寸基准，修正过早变宽的简化方式。</figcaption></figure>
+<h2>Yaw侧30°方向有余量</h2><div class="grid"><figure><a href="yaw30_local.png"><img src="yaw30_local.png" alt="30°局部图。橙色为工作占用区；局部图省略Z278mm以上工具。"></a><figcaption>30°局部图。橙色为工作占用区；局部图省略Z278mm以上工具。</figcaption></figure><figure><a href="yaw30_full.png"><img src="yaw30_full.png" alt="完整125mm工具均参加了检查，另检查沿其长轴60mm的进出体积。"></a><figcaption>完整125mm工具均参加了检查，另检查沿其长轴60mm的进出体积。</figcaption></figure>
+</div><table><tr><th>方向</th><th>参考轮廓</th><th>扩大包络复核</th></tr><tr><td>30°</td><td>PASS；线表面余量下界1.34mm</td><td>PASS；余量下界0.66mm</td></tr><tr><td>45°</td><td>PASS</td><td>BLOCKED；过渡靠近头托</td></tr></table>
+<p>扩大包络：宽度+2mm、厚度+2mm，中间过渡提前3mm。它是敏感性检查，不是厂家公差。后续优先研究30°。刀片开合、夹紧力、手部和真实工具仍未验证。</p>
+<details><summary>查看旧/新45°包络对照</summary><div class="grid"><figure><a href="old45.png"><img src="old45.png" alt="旧大盒状包络，45°被结构挡住。"></a><figcaption>旧大盒状包络，45°被结构挡住。</figcaption></figure><figure><a href="new45.png"><img src="new45.png" alt="细化参考轮廓45°通过，但扩大后不通过。"></a><figcaption>细化参考轮廓45°通过，但扩大后不通过。</figcaption></figure>
+</div></details><h2>CAM端还差尾端操作和完整顺序</h2><figure><a href="connector_work.png"><img src="connector_work.png" alt="橙色工具在0°可避开结构与四线；红色是旧110mm直向操作区，与Pitch_Servo相交。"></a><figcaption>橙色工具在0°可避开结构与四线；红色是旧110mm直向操作区，与Pitch_Servo相交。</figcaption></figure>
+<p>这不证明真实柔软扎带一定相交。即使暂缓两只舵机，旧直向操作区仍靠近颈部引线；随后按既有路径装舵机，也遇到引线或扎带头。不能把局部工具通过当成整段装配通过。</p>
+<p>这轮另试的等长侧向展开路径也未通过，<a href="../cam_sequence_loose/screen.json">检查记录</a>保留。下一步需要把CAM端预绑扎、Yaw端暂不锁紧和身体端松线暂存放到同一条装入路径中。当前未新增孔、台阶或零件。</p>
+<p>七根其余头部线、FPC及身体侧固定还未完成。图中颜色仅区别几何线路，不是供应商线色或已确认针序。裁线长度仍未放行。</p>
+<p><a href="README.md">完整说明及官方来源链接</a> · <a href="review.blend">独立Blender</a> · <a href="screen.json">轮廓对照</a> · <a href="both_anchors.json">两处工具检查</a> · <a href="sensitivity.json">敏感性检查</a> · <a href="late_servo_sequence.json">后装舵机检查</a> · <a href="sources/receipt.json">来源记录</a> · <a href="commands.json">复现命令</a> · <a href="review_manifest.json">交付记录</a></p></html>

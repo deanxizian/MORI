@@ -1,0 +1,292 @@
+
+=== motion ===
+stackup ['stackup', ['layer', 'F.SilkS', ['type', 'Top Silk Screen']], ['layer', 'F.Paste', ['type', 'Top Solder Paste']], ['layer', 'F.Mask', ['type', 'Top Solder Mask'], ['thickness', '0.01']], ['layer', 'F.Cu', ['type', 'copper'], ['thickness', '0.035']], ['layer', 'dielectric 1', ['type', 'prepreg'], ['thickness', '0.2'], ['material', 'FR4'], ['epsilon_r', '4.5'], ['loss_tangent', '0.02']], ['layer', 'In1.Cu', ['type', 'copper'], ['thickness', '0.035']], ['layer', 'dielectric 2', ['type', 'core'], ['thickness', '1.04'], ['material', 'FR4'], ['epsilon_r', '4.5'], ['loss_tangent', '0.02']], ['layer', 'In2.Cu', ['type', 'copper'], ['thickness', '0.035']], ['layer', 'dielectric 3', ['type', 'prepreg'], ['thickness', '0.2'], ['material', 'FR4'], ['epsilon_r', '4.5'], ['loss_tangent', '0.02']], ['layer', 'B.Cu', ['type', 'copper'], ['thickness', '0.035']], ['layer', 'B.Mask', ['type', 'Bottom Solder Mask'], ['thickness', '0.01']], ['layer', 'B.Paste', ['type', 'Bottom Solder Paste']], ['layer', 'B.SilkS', ['type', 'Bottom Silk Screen']], ['copper_finish', 'ENIG'], ['dielectric_constraints', 'no']]
+counts 53 footprints 214 pads 455 segments 96 vias 211 zones
+tracks layers: Counter({'B.Cu': 299, 'F.Cu': 156})
+track widths: Counter({('B.Cu', 0.2): 292, ('F.Cu', 0.2): 156, ('B.Cu', 0.5): 7})
+via sizes: Counter({(0.8, 0.3): 96})
+zones [('/GND', ['F.Cu'], 7, ['connect_pads', 'thru_hole_only', ['clearance', '0.299999']]), ('/GND', ['B.Cu'], 11, ['connect_pads', 'thru_hole_only', ['clearance', '0.299999']]), ('/GND', ['In1.Cu'], 1, ['connect_pads', 'thru_hole_only', ['clearance', '0.399999']]), ('/+3V3', ['In2.Cu'], 1, ['connect_pads', 'thru_hole_only', ['clearance', '0.399999']])]
+keepouts 207
+BOM:
+C1 100n [32.0, 11.75, 90.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/+3V3; 2=/GND
+C2 100n [24.25, 22.75] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/+3V3; 2=/GND
+C3 100n [22.5, 12.25] B.Cu MORI_Custom:C_0603_1608Metric__P5_C3 1=/+3V3; 2=/GND
+C4 100n [42.5, 9.25, 90.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/+3V3; 2=/GND
+C5 100n [14.5, 10.25] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/+3V3; 2=/GND
+C6 100n [8.0, 15.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/+3V3; 2=/GND
+C7 100n [42.5, 12.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/CAM_3V3; 2=/GND
+C8 10u [45.5, 7.6, -90.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/+5V_MOTION; 2=/GND
+C9 10n [11.9, 28.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/BAT_ADC; 2=/GND
+C10 10n [15.0, 28.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/WHEEL_ADC; 2=/GND
+C11 10n [18.4, 28.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/CURRENT_ADC; 2=/GND
+C12 100n [8.0, 21.0, 180.0] B.Cu Capacitor_SMD:C_0603_1608Metric 1=/CLR_N; 2=/GND
+D1 BAT54H,115 [30.0, 21.0, 90.0] B.Cu Diode_SMD:D_SOD-123 1=/NRST; 2=/CLR_N
+D2 BAT54H,115 [13.0, 15.5, 90.0] B.Cu Diode_SMD:D_SOD-123 1=/FAULT_N; 2=/CLR_N
+D3 BAT54H,115 [27.0, 17.5, 90.0] B.Cu MORI_Custom:D_SOD-123__P5_D3 1=/CHG_N; 2=/CLR_N
+H1 M2 clearance [2.5, 2.5] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+H2 M2 clearance [2.5, 32.5] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+H3 M2 clearance [67.5, 2.5] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+H4 M2 clearance [67.5, 32.5] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+J1 MOTION 5V IN [58.5, 3.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J1 1=/+5V_MOTION; 2=/GND
+J2 S288 DATA ONLY [51.0, 3.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS 1=/S288_BUS; 2=/GND
+J3 HEAD DATA ONLY [62.0, 18.0] F.Cu MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS 1=/HEAD_BUS; 2=/GND; 3=unconnected-(J3-Pad3)
+J4 BODY IMU SPI [50.5, 25.0] F.Cu MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J4 1=/+3V3; 2=/GND; 3=/IMU_SCK; 4=/IMU_MOSI; 5=/IMU_MISO; 6=/IMU_CS; 7=/IMU_DRDY; 8=/GND
+J5 CAM J11 MATCH [50.5, 18.0] F.Cu MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_PH_ANNULUS 1=/CAM_RX; 2=/CAM_TX; 3=/CAM_3V3; 4=/GND
+J6 INTERNAL SERVICE KEY [51.0, 31.3] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS 1=/USER_KEY_N; 2=/GND
+J7 POWER CONTROL [50.5, 10.0] F.Cu MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J7 1=/+3V3; 2=/ARM_Q; 3=/FAULT_N; 4=/CHG_N; 5=/BAT_ADC_IN; 6=/WHEEL_ADC_IN; 7=/CURRENT_ADC_IN; 8=/GND
+J8 LATCHED ENABLE LOOP [58.5, 31.3] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS 1=/LOOP_3V3; 2=/CLR_N
+R1 68 [32.299999, 8.75] B.Cu Resistor_SMD:R_0603_1608Metric 1=/S288_TX_BUF; 2=/S288_BUS
+R2 68 [24.5, 19.0, 90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/HEAD_TX_BUF; 2=/HEAD_BUS
+R3 10k [15.0, 7.5, -90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/S288_OE_REQ_N; 2=/+3V3
+R4 10k [17.5, 7.5] B.Cu Resistor_SMD:R_0603_1608Metric 1=/HEAD_OE_REQ_N; 2=/+3V3
+R5 10k [7.0, 10.25, 180.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/ARM_CLK; 2=/GND
+R6 1k [42.0, 26.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/+3V3; 2=/LOOP_3V3
+R7 10k [11.5, 21.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/CLR_N; 2=/GND
+R8 10k [47.0, 29.0, 90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/USER_KEY_N; 2=/+3V3
+R9 47 [45.0, 13.75] B.Cu Resistor_SMD:R_0603_1608Metric 1=/CAM_RX_BUF; 2=/CAM_RX
+R10 33 [26.5, 27.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/IMU_SCK_M; 2=/IMU_SCK
+R11 33 [29.5, 27.0, 90.0] B.Cu MORI_Custom:R_0603_1608Metric__P5_R11 1=/IMU_MOSI_M; 2=/IMU_MOSI
+R12 33 [23.5, 27.0, 90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/IMU_CS_M; 2=/IMU_CS
+R13 10k [45.5, 19.5, 90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/IMU_CS; 2=/+3V3
+R14 1k [11.125, 25.0, -90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/BAT_ADC_IN; 2=/BAT_ADC
+R15 1k [14.225, 25.0, -90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/WHEEL_ADC_IN; 2=/WHEEL_ADC
+R16 1k [17.625, 25.0, -90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/CURRENT_ADC_IN; 2=/CURRENT_ADC
+R17 10k [16.0, 17.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/FAULT_N; 2=/+3V3
+R18 10k [28.0, 21.5, -90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/CHG_N; 2=/+3V3
+R19 1k [33.0, 16.0, -90.0] B.Cu Resistor_SMD:R_0603_1608Metric 1=/ARM_Q; 2=/ARM_FEEDBACK
+U1 SN74LVC2G125DCUR [28.0, 9.0] B.Cu MORI_Custom:TI_DCU0008A_0p85x0p30 1=/S288_OE_N; 2=/S288_TX; 3=/S288_RX; 4=/GND; 5=/S288_BUS; 6=/S288_TX_BUF; 7=/GND; 8=/+3V3
+U2 SN74LVC2G125DCUR [21.0, 23.5, 90.0] B.Cu MORI_Custom:TI_DCU0008A_0p85x0p30__P5_U2 1=/HEAD_OE_N; 2=/HEAD_TX; 3=/HEAD_RX; 4=/GND; 5=/HEAD_BUS; 6=/HEAD_TX_BUF; 7=/GND; 8=/+3V3
+U3 SN74LVC2G32DCUR [19.0, 11.5, 90.0] B.Cu MORI_Custom:TI_DCU0008A_0p85x0p30__P5_U3 1=/S288_OE_REQ_N; 2=/ARM_Q_N; 3=/HEAD_OE_N; 4=/GND; 5=/HEAD_OE_REQ_N; 6=/ARM_Q_N; 7=/S288_OE_N; 8=/+3V3
+U4 TXU0202DCUR [39.0, 10.0] B.Cu MORI_Custom:TI_DCU0008A_0p85x0p30 1=/CAM_TX; 2=/GND; 3=/+3V3; 4=/LINK_RX; 5=/LINK_TX; 6=/+3V3; 7=/CAM_3V3; 8=/CAM_RX_BUF
+U5 SN74LVC1G74DCUR [11.0, 9.5, -90.0] B.Cu MORI_Custom:TI_DCU0008A_0p85x0p30__P5_U5 1=/ARM_CLK; 2=/+3V3; 3=/ARM_Q_N; 4=/GND; 5=/ARM_Q; 6=/CLR_N; 7=/+3V3; 8=/+3V3
+U6 TLV803EA29DBZR [8.0, 18.0, 180.0] B.Cu Package_TO_SOT_SMD:SOT-23 1=/GND; 2=/CLR_N; 3=/+3V3
+U100 WeAct STM32F412RET6 64Pin V1.1 [6.0, 0.89] F.Cu MORI_Custom:WeAct_F4_64Pin_V11 A1=unconnected-(U100-A.1_VB-PadA1); A2=/GND; A3=unconnected-(U100-A.3_PC14-PadA3); A4=/USER_KEY_N; A5=/BAT_ADC; A6=unconnected-(U100-A.6_PC15-PadA6); A7=/CURRENT_ADC; A8=/WHEEL_ADC; A9=unconnected-(U100-A.9_PA0-PadA9); A10=unconnected-(U100-A.10_PC3-PadA10); A11=/HEAD_TX; A12=unconnected-(U100-A.12_PA1-PadA12); A13=/IMU_CS_M; A14=/HEAD_RX; A15=/IMU_MISO; A16=/IMU_SCK_M; A17=/CHG_N; A18=/IMU_MOSI_M; A19=/IMU_DRDY; A20=/ARM_FEEDBACK; A21=unconnected-(U100-A.21_PB2-PadA21); A22=unconnected-(U100-A.22_PB1-PadA22); A23=unconnected-(U100-A.23_PB11_NC_VCAP-PadA23); A24=unconnected-(U100-A.24_PB10-PadA24); B1=unconnected-(U100-B.1_PB9-PadB1); B2=/GND; B3=/ARM_CLK; B4=/CLR_N; B5=/S288_OE_REQ_N; B6=/HEAD_OE_REQ_N; B7=/FAULT_N; B8=unconnected-(U100-B.8_PB4-PadB8); B9=unconnected-(U100-B.9_PC12-PadB9); B10=unconnected-(U100-B.10_PD2-PadB10); B11=unconnected-(U100-B.11_PC10-PadB11); B12=unconnected-(U100-B.12_PC11-PadB12); B13=unconnected-(U100-B.13_PA12-PadB13); B14=unconnected-(U100-B.14_PA15-PadB14); B15=/S288_RX; B16=unconnected-(U100-B.16_PA11-PadB16); B17=unconnected-(U100-B.17_PA8-PadB17); B18=/S288_TX; B19=unconnected-(U100-B.19_PC8-PadB19); B20=unconnected-(U100-B.20_PC9-PadB20); B21=/LINK_TX; B22=/LINK_RX; B23=unconnected-(U100-B.23_PB14-PadB23); B24=unconnected-(U100-B.24_PB15-PadB24); C1=/+3V3; C2=/GND; C3=/+3V3; C4=/GND; C5=/+3V3; C6=/GND; D1=unconnected-(U100-D.1_PB12-PadD1); D2=unconnected-(U100-D.2_PB13-PadD2); D3=/+5V_MOTION; D4=/+5V_MOTION; D5=/GND; D6=/GND; E1=unconnected-(U100-E.1_GND-PadE1); E2=unconnected-(U100-E.2_GND-PadE2); E3=unconnected-(U100-E.3_PA10-PadE3); E4=unconnected-(U100-E.4_PA14_SWCLK-PadE4); E5=unconnected-(U100-E.5_PA9-PadE5); E6=unconnected-(U100-E.6_PA13_SWDIO-PadE6); E7=/NRST; E8=unconnected-(U100-E.8_3V3-PadE8)
+SCH TEXT:
+MORI / MOTION CARRIER / S2
+Manually composed circuits. Same electrical interfaces. PROTOTYPE / UNVALIDATED.
+01  STM32 module / GPIO map
+NC pins are intentionally unused. SWD probe connects on the module top.
+WeAct F412RET6 / V1.1
+02  Wheel TTL / 6 Mbps target
+3.3 V logic; actuator thresholds and timing remain bench items.
+03  Head TTL / separate bus
+3.3 V logic; actuator thresholds and timing remain bench items.
+04  Explicit ARM latch / physical disable loop
+CLR_N dominates. Re-arm requires a new ARM_CLK edge; this is not a watchdog.
+05  Transmit-enable gating
+OE_N = request_N OR ARM_Q_N. Pull-ups disable TX by default.
+06  Body IMU connector / source damping
+SPI and DRDY belong to the rigid body IMU, not the head.
+07  Interaction UART / power-domain isolation
+CAM_3V3 powers translator B only. It does not power the motion MCU.
+08  Power monitor / RC filters
+1k / 10nF filters at the ADC inputs. Scaling is on the power board.
+09  Input / user button / supply boundaries
+J6 is a user button. Physical disable is J8; reset can cause a fall.
+Supply boundary
+Supply boundary
+Supply boundary
+
+=== power ===
+stackup ['stackup', ['layer', 'F.SilkS', ['type', 'Top Silk Screen']], ['layer', 'F.Paste', ['type', 'Top Solder Paste']], ['layer', 'F.Mask', ['type', 'Top Solder Mask'], ['thickness', '0.01']], ['layer', 'F.Cu', ['type', 'copper'], ['thickness', '0.07']], ['layer', 'dielectric 1', ['type', 'prepreg'], ['thickness', '0.18'], ['material', 'FR4'], ['epsilon_r', '4.5'], ['loss_tangent', '0.02']], ['layer', 'In1.Cu', ['type', 'copper'], ['thickness', '0.035']], ['layer', 'dielectric 2', ['type', 'core'], ['thickness', '1.01'], ['material', 'FR4'], ['epsilon_r', '4.5'], ['loss_tangent', '0.02']], ['layer', 'In2.Cu', ['type', 'copper'], ['thickness', '0.035']], ['layer', 'dielectric 3', ['type', 'prepreg'], ['thickness', '0.18'], ['material', 'FR4'], ['epsilon_r', '4.5'], ['loss_tangent', '0.02']], ['layer', 'B.Cu', ['type', 'copper'], ['thickness', '0.07']], ['layer', 'B.Mask', ['type', 'Bottom Solder Mask'], ['thickness', '0.01']], ['layer', 'B.Paste', ['type', 'Bottom Solder Paste']], ['layer', 'B.SilkS', ['type', 'Bottom Silk Screen']], ['copper_finish', 'None'], ['dielectric_constraints', 'no']]
+counts 112 footprints 280 pads 807 segments 130 vias 435 zones
+tracks layers: Counter({'F.Cu': 521, 'B.Cu': 286})
+track widths: Counter({('F.Cu', 0.2): 387, ('B.Cu', 0.2): 208, ('F.Cu', 0.8): 56, ('B.Cu', 2.0): 36, ('B.Cu', 1.0): 25, ('F.Cu', 1.0): 22, ('F.Cu', 1.5): 18, ('F.Cu', 0.6): 15, ('B.Cu', 1.5): 13, ('F.Cu', 2.0): 9, ('F.Cu', 1.2): 7, ('F.Cu', 0.381): 7, ('B.Cu', 0.8): 4})
+via sizes: Counter({(0.8, 0.3): 108, (1.0, 0.45): 12, (0.6, 0.3): 9, (0.5, 0.25): 1})
+zones [('/GND', ['F.Cu'], 19, ['connect_pads', 'thru_hole_only', ['clearance', '0.299999']]), ('/GND', ['B.Cu'], 7, ['connect_pads', 'thru_hole_only', ['clearance', '0.299999']]), ('/GND', ['In1.Cu'], 1, ['connect_pads', 'thru_hole_only', ['clearance', '0.399999']]), ('/GND', ['In2.Cu'], 1, ['connect_pads', 'thru_hole_only', ['clearance', '0.399999']])]
+keepouts 431
+BOM:
+C1 100n [38.5, 21.5, 90.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/+3V3; 2=/GND
+C2 1u 25V [38.0, 11.0, 90.0] F.Cu MORI_Custom:C_0603_1608Metric__P3_C2 1=/BAT_MON; 2=/GND
+C10 Panasonic EEU-FR1C102 1000uF 16V [52.0, 22.0] F.Cu MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P2_C10__P3_C10__P5_C10 1=/W_VM; 2=/GND
+C20 100n [71.0, 14.0, 90.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/W_VM; 2=/GND
+C21 10n [70.5, 22.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/W_OVSENSE; 2=/GND
+C30 Panasonic EEU-FR1C102 1000uF 16V [53.0, 44.0] F.Cu MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P3_C30__P5_C30 1=/H_VM; 2=/GND
+C40 100n [70.5, 32.595] F.Cu MORI_Custom:C_0603_1608Metric__P5_C40 1=/H_VM; 2=/GND
+C41 10n [71.0, 38.5] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/H_OVSENSE; 2=/GND
+C60 22u / 25V / X7R [19.5, 30.5, -90.0] F.Cu MORI_Custom:C_1210_3225Metric__P3_C60__P3R1_C60 1=/M5_VIN; 2=/GND
+C61 100n / 50V / X7R [22.0, 27.5, -90.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/M5_VIN; 2=/GND
+C62 100n / 50V / X7R [26.0, 23.0, 180.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/M5_BOOT; 2=/M5_SW
+C63 22u / 25V / X7R [10.0, 23.0, 90.0] F.Cu MORI_Custom:C_1210_3225Metric__P5_C63 1=/+5V_MOTION; 2=/GND
+C64 22u / 25V / X7R [10.0, 28.0, -90.0] F.Cu Capacitor_SMD:C_1210_3225Metric 1=/+5V_MOTION; 2=/GND
+C65 75p / 50V / C0G [29.0, 29.0, 90.0] F.Cu MORI_Custom:C_0603_1608Metric__P5_C65 1=/+5V_MOTION; 2=/M5_FB
+C66 22u / 25V / X7R [26.0, 31.0, -90.0] F.Cu Capacitor_SMD:C_1210_3225Metric 1=/M5_VIN; 2=/GND
+C70 22u / 25V / X7R [19.5, 45.0, 180.0] F.Cu MORI_Custom:C_1210_3225Metric__P3_C70 1=/C5_VIN; 2=/GND
+C71 100n / 50V / X7R [22.0, 41.5, -90.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/C5_VIN; 2=/GND
+C72 100n / 50V / X7R [26.0, 37.0, 180.0] F.Cu Capacitor_SMD:C_0603_1608Metric 1=/C5_BOOT; 2=/C5_SW
+C73 22u / 25V / X7R [10.0, 37.0, 90.0] F.Cu Capacitor_SMD:C_1210_3225Metric 1=/+5V_CAM; 2=/GND
+C74 22u / 25V / X7R [10.0, 42.0, -90.0] F.Cu MORI_Custom:C_1210_3225Metric__P3_C74 1=/+5V_CAM; 2=/GND
+C75 75p / 50V / C0G [29.5, 43.0, 90.0] F.Cu MORI_Custom:C_0603_1608Metric__P3R1_C75 1=/+5V_CAM; 2=/C5_FB
+C76 22u / 25V / X7R [26.0, 45.0] F.Cu Capacitor_SMD:C_1210_3225Metric 1=/C5_VIN; 2=/GND
+D1 BZT52H-C10,115 [26.0, 17.5, 180.0] F.Cu Diode_SMD:D_SOD-123F 1=/BAT_REV; 2=/REV_GATE
+D10 B540C-13-F [44.0, 13.5, 180.0] F.Cu MORI_Custom:D_SMC__P3_D10__P5_D10 1=/W_PRE; 2=/W9_IN
+D20 BZT52H-C10,115 [73.0, 9.5] F.Cu Diode_SMD:D_SOD-123F 1=/W_BRAKE_GATE; 2=/GND
+D30 B540C-13-F [36.0, 35.0, -90.0] F.Cu MORI_Custom:D_SMC__P5_D30 1=/H_PRE; 2=/H6_IN
+D40 BZT52H-C10,115 [59.5, 51.0] F.Cu MORI_Custom:D_SOD-123F__P5_D40 1=/H_BRAKE_GATE; 2=/GND
+D90 BZT52H-C10,115 [8.5, 10.5, 180.0] F.Cu Diode_SMD:D_SOD-123F 1=/PACK_FUSED; 2=/MASTER_GATE
+F60 1A / 125V / very fast [34.0, 23.0, 180.0] F.Cu Fuse:Fuse_Littelfuse-NANO2-451_453 1=/BAT_MON; 2=/M5_VIN
+F70 2A / 125V / very fast [30.5, 37.0, -90.0] F.Cu Fuse:Fuse_Littelfuse-NANO2-451_453 1=/BAT_MON; 2=/C5_VIN
+H1 M2 mounting / POSITION TBD [3.0, 3.0] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+H2 M2 mounting / POSITION TBD [3.0, 52.0] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+H3 M2 mounting / POSITION TBD [77.0, 3.0] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+H4 M2 mounting / POSITION TBD [77.0, 52.0] F.Cu MountingHole:MountingHole_2.2mm_M2 =
+J1 PACK AFTER 6.3A FUSE [9.0, 6.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J1 1=/GND; 2=/PACK_FUSED
+J2 WHEEL BUCK VIN [22.0, 6.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J2__P5_J2 1=/GND; 2=/BAT_MON
+J3 WHEEL BUCK 9V RETURN [35.0, 6.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3R1_J3 1=/GND; 2=/W9_IN
+J4 HEAD BUCK VIN [25.0, 50.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J4__P3_J4__P3R1_J4 1=/GND; 2=/BAT_MON
+J5 HEAD BUCK 6V RETURN [40.0, 50.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J5__P3_J5__P5_J5 1=/GND; 2=/H6_IN
+J6 RAW BAT SERVICE / DNP [48.0, 6.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J6__P3R1_J6 1=/GND; 2=/BAT_MON
+J7 S288 L [75.0, 19.0, 90.0] F.Cu MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J7__P3_J7__P5_J7 1=/GND; 2=/W_VM; 3=/W_BUS
+J8 S288 R [63.0, 26.0] F.Cu MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J8__P5_J8 1=/GND; 2=/W_VM; 3=/W_BUS
+J9 SCS0009 CHAIN [64.0, 42.5] F.Cu MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P5_J9 1=/GND; 2=/H_VM; 3=/H_BUS
+J10 MOTION CONTROL [44.5, 27.0, -90.0] F.Cu MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J10 1=/+3V3; 2=/ARM_Q; 3=/FAULT_N; 4=/CHG_N; 5=/BAT_ADC; 6=/WHEEL_ADC; 7=/CURRENT_ADC; 8=/GND
+J11 WHEEL DUMP 5R6 EXTERNAL [61.0, 6.0] F.Cu Connector_AMASS:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical 1=/W_DUMP_D; 2=/W_VM
+J12 HEAD DUMP 10R EXTERNAL [65.0, 50.0] F.Cu MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J12__P5_J12 1=/H_DUMP_D; 2=/H_VM
+J13 S288 DATA [75.0, 34.0, 90.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS 1=/W_BUS; 2=/GND
+J14 HEAD DATA [75.0, 43.0, 90.0] F.Cu MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS 1=/H_BUS; 2=/GND; 3=unconnected-(J14-Pad3)
+J15 CHARGE INTERLOCK [4.5, 31.0, 90.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J15 1=/CHG_N; 2=/GND
+J16 CHARGER RAW VBUS SENSE [4.5, 46.0, 90.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J16 1=/VBUS_CHARGE; 2=/GND
+J17 MOTION 5V OUT / 1+ 2GND [4.5, 24.0, 90.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS 1=/+5V_MOTION; 2=/GND
+J18 CAM 5V OUT / 1+ 2GND [13.0, 50.0] F.Cu Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical 1=/+5V_CAM; 2=/GND
+J19 REAR MASTER / 1RETURN 2GND [4.5, 17.0, 90.0] F.Cu MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J19 1=/MASTER_RETURN; 2=/GND
+JP60 SERVICE OFF / OPEN=ON [5.0, 39.5, -90.0] F.Cu MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P3_JP60__P3R1_JP60 1=/M5_EN; 2=/GND
+JP70 SERVICE OFF / OPEN=ON [36.5, 44.5, 90.0] F.Cu MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P5_JP70 1=/C5_EN; 2=/GND
+L60 10uH / SRP7050TA-100M [16.5, 24.0, 180.0] F.Cu MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap 1=/M5_SW; 2=/+5V_MOTION
+L70 10uH / SRP7050TA-100M [16.5, 38.0, 180.0] F.Cu MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap 1=/C5_SW; 2=/+5V_CAM
+Q1 AO4407A [23.0, 12.0, 180.0] F.Cu MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_Q1 1=/BAT_REV; 2=/BAT_REV; 3=/BAT_REV; 4=/REV_GATE; 5=/BAT_IN; 6=/BAT_IN; 7=/BAT_IN; 8=/BAT_IN
+Q10 AO4407A [53.0, 12.5] F.Cu Package_SO:SOIC-8_3.9x4.9mm_P1.27mm 1=/W_PRE; 2=/W_PRE; 3=/W_PRE; 4=/W_GATE; 5=/W_VM; 6=/W_VM; 7=/W_VM; 8=/W_VM
+Q11 AO3400A [42.0, 19.0, 90.0] F.Cu MORI_Custom:SOT-23__P5_Q11 1=/ARM_Q; 2=/GND; 3=/W_GATE_LOW
+Q20 AO3400A [71.5, 6.5, 180.0] F.Cu Package_TO_SOT_SMD:SOT-23 1=/W_BRAKE_GATE; 2=/GND; 3=/W_DUMP_D
+Q30 AO4407A [51.0, 34.0, -90.0] F.Cu MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_Q30 1=/H_PRE; 2=/H_PRE; 3=/H_PRE; 4=/H_GATE; 5=/H_VM; 6=/H_VM; 7=/H_VM; 8=/H_VM
+Q31 AO3400A [56.0, 36.0, 90.0] F.Cu Package_TO_SOT_SMD:SOT-23 1=/ARM_Q; 2=/GND; 3=/H_GATE_LOW
+Q40 AO3400A [55.5, 51.5, -90.0] F.Cu Package_TO_SOT_SMD:SOT-23 1=/H_BRAKE_GATE; 2=/GND; 3=/H_DUMP_D
+Q50 MMBT3904LT1G [13.5, 44.0, 90.0] F.Cu MORI_Custom:SOT-23__P5_Q50 1=/CHG_BASE; 2=/GND; 3=/CHG_N
+Q90 AO4407A [14.5, 12.0] F.Cu Package_SO:SOIC-8_3.9x4.9mm_P1.27mm 1=/PACK_FUSED; 2=/PACK_FUSED; 3=/PACK_FUSED; 4=/MASTER_GATE; 5=/BAT_IN; 6=/BAT_IN; 7=/BAT_IN; 8=/BAT_IN
+R1 10k [22.0, 17.5, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/REV_GATE; 2=/GND
+R2 WSL2512R0100FEA 10mR 1% 1W [33.0, 12.0] F.Cu Resistor_SMD:R_2512_6332Metric 1=/BAT_REV; 2=/BAT_MON
+R3 0 [30.0, 16.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/BAT_REV; 2=/KELVIN_P
+R4 0 [38.0, 16.5, -90.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/BAT_MON; 2=/KELVIN_N
+R10 10k [47.0, 18.7, 90.0] F.Cu MORI_Custom:R_0603_1608Metric__P5_R10 1=/W_GATE; 2=/W_PRE
+R11 100 [45.0, 18.5, 90.0] F.Cu MORI_Custom:R_0603_1608Metric__P5_R11 1=/W_GATE; 2=/W_GATE_LOW
+R20 2.2k [60.5, 10.0, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_VM; 2=/W_REF
+R21 33.2k 0.1% [62.0, 18.8, -90.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_VM; 2=/W_SENSE
+R22 10k 0.1% [62.0, 21.3] F.Cu MORI_Custom:R_0603_1608Metric__P5_R22 1=/W_SENSE; 2=/GND
+R23 1M 0.1% [70.5, 18.25, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_BRAKE_GATE; 2=/W_SENSE
+R24 2.2k [69.0, 19.8, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_VM; 2=/W_BRAKE_GATE
+R25 37.4k 0.1% [65.5, 21.2] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_VM; 2=/W_OVSENSE
+R26 10k 0.1% [75.0, 25.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_OVSENSE; 2=/GND
+R30 10k [49.0, 29.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_GATE; 2=/H_PRE
+R31 100 [48.5, 39.0] F.Cu MORI_Custom:R_0603_1608Metric__P5_R31 1=/H_GATE; 2=/H_GATE_LOW
+R40 2.2k [58.0, 28.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_VM; 2=/H_REF
+R41 16.5k 0.1% [62.0, 38.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_VM; 2=/H_SENSE
+R42 10k 0.1% [66.5, 38.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_SENSE; 2=/GND
+R43 1M 0.1% [64.0, 30.7] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_BRAKE_GATE; 2=/H_SENSE
+R44 2.2k [72.6, 28.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_VM; 2=/H_BRAKE_GATE
+R45 18.7k 0.1% [70.5, 36.5, 180.0] F.Cu MORI_Custom:R_0603_1608Metric__P5_R45 1=/H_VM; 2=/H_OVSENSE
+R46 10k 0.1% [54.5, 28.8, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/H_OVSENSE; 2=/GND
+R50 100k 0.1% [39.5, 24.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/BAT_MON; 2=/BAT_ADC
+R51 27k 0.1% [41.0, 22.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/BAT_ADC; 2=/GND
+R52 100k 0.1% [45.5, 21.0, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/W_VM; 2=/WHEEL_ADC
+R53 27k 0.1% [47.5, 24.5, -90.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/WHEEL_ADC; 2=/GND
+R54 10k [46.0, 45.5, 180.0] F.Cu MORI_Custom:R_0603_1608Metric__P5_R54 1=/ARM_Q; 2=/GND
+R55 47k [10.0, 45.5] F.Cu Resistor_SMD:R_0603_1608Metric 1=/VBUS_CHARGE; 2=/CHG_BASE
+R56 100k [16.2, 44.0, 90.0] F.Cu MORI_Custom:R_0603_1608Metric__P5_R56 1=/CHG_BASE; 2=/GND
+R60 100k / 0.1% [32.0, 29.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/+5V_MOTION; 2=/M5_FB
+R61 13.3k / 0.1% [30.5, 31.5, 180.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/M5_FB; 2=/GND
+R70 100k / 0.1% [32.0, 43.0, 90.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/+5V_CAM; 2=/C5_FB
+R71 13.3k / 0.1% [30.5, 45.5] F.Cu MORI_Custom:R_0603_1608Metric__P3_R71 1=/C5_FB; 2=/GND
+R90 100k [5.5, 11.0, 90.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/PACK_FUSED; 2=/MASTER_GATE
+R91 10k [9.0, 17.5, -90.0] F.Cu Resistor_SMD:R_0603_1608Metric 1=/MASTER_GATE; 2=/MASTER_RETURN
+TP60 +5V_MOTION [9.5, 32.0] F.Cu MORI_Custom:TestPoint_Pad_D1.5mm__P3_TP60 1=/+5V_MOTION
+TP61 GND [12.5, 32.0] F.Cu TestPoint:TestPoint_Pad_D1.5mm 1=/GND
+TP70 +5V_CAM [35.0, 51.0] F.Cu MORI_Custom:TestPoint_Pad_D1.5mm__P3R1_TP70 1=/+5V_CAM
+TP71 GND [34.5, 48.0] F.Cu TestPoint:TestPoint_Pad_D1.5mm 1=/GND
+U1 INA180A1IDBVR [34.0, 18.5] F.Cu MORI_Custom:SOT-23-5__P5_U1 1=/CURRENT_ADC; 2=/GND; 3=/KELVIN_P; 4=/KELVIN_N; 5=/+3V3
+U20 LM393BDR [66.0, 14.0, -90.0] F.Cu MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_U20 1=/W_BRAKE_GATE; 2=/W_REF; 3=/W_SENSE; 4=/GND; 5=/W_REF; 6=/W_OVSENSE; 7=/FAULT_N; 8=/W_VM
+U21 TL431BIDBZR [59.5, 13.5, -90.0] F.Cu Package_TO_SOT_SMD:SOT-23 1=/W_REF; 2=/W_REF; 3=/GND
+U40 LM393BDR [65.0, 34.5] F.Cu MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_U40 1=/H_BRAKE_GATE; 2=/H_REF; 3=/H_SENSE; 4=/GND; 5=/H_REF; 6=/H_OVSENSE; 7=/FAULT_N; 8=/H_VM
+U41 TL431BIDBZR [58.5, 32.0, 180.0] F.Cu MORI_Custom:SOT-23__P5_U41 1=/H_REF; 2=/H_REF; 3=/GND
+U60 TPS54302DDCR [25.0, 26.0] F.Cu MORI_Custom:TI_DDC0006A_TPS54302 1=/GND; 2=/M5_SW; 3=/M5_VIN; 4=/M5_FB; 5=/M5_EN; 6=/M5_BOOT
+U70 TPS54302DDCR [25.0, 40.0] F.Cu MORI_Custom:TI_DDC0006A_TPS54302 1=/GND; 2=/C5_SW; 3=/C5_VIN; 4=/C5_FB; 5=/C5_EN; 6=/C5_BOOT
+SCH TEXT:
+MORI / POWER CONDITIONER / P4
+Power flows left to right. Supplies above, returns below. PROTOTYPE / UNVALIDATED.
+01  Pack input / reverse protection / shunt
+Q90 master stage precedes BAT_IN. No charger on this PCB.
+10mR / 1% / 1W
+02  Kelvin current sense
+Sense from the shunt pads. Discharge-only nominal transfer: 0.2 V/A.
+03  Wheel 9 V conditioning
+External buck return. Inrush, brake energy and thermal performance: NOT_TESTED.
+1000u / 16V
+04  Head 6 V conditioning
+External buck return. Inrush, brake energy and thermal performance: NOT_TESTED.
+1000u / 16V
+05  External converter input distribution
+J2 -> wheel buck; J4 -> head buck; J6 -> two independent 5 V converters.
+06  Wheel rail / brake and overvoltage
+Two comparators share one LM393B. External dump resistor needs pulse qualification.
+LM393B / brake + fault
+5R6 / 5W external
+07  Head rail / brake and overvoltage
+Two comparators share one LM393B. External dump resistor needs pulse qualification.
+LM393B / brake + fault
+10R / 5W external
+08  Voltage monitor / motion connector
+Divider ratio 27 / 127. Current_ADC comes from block 02.
+09  Charge insertion / VBUS sense
+Sense and interlock only; no CC / PD / CC-CV charger implementation.
+10  Supply boundaries / board mounting
+80 x 45 mm PCB; populated assembly and thermal performance are not qualified.
+Supply boundary
+Supply boundary
+Supply boundary
+Supply boundary
+Supply boundary
+11  Motion 5 V / independent fused buck
+Prototype: verify stability, temperature, cable drop and concurrent load. No PCB placement frozen.
+1A input fuse
+22u/25V
+22u/25V
+100n
+100n BOOT
+10uH / 4A rms
+MOTION 5V
+22u/25V
+22u/25V
+100k 0.1%
+13.3k 0.1%
+75p C0G
+OPEN=ON / SHORT=OFF
+5V probe
+GND probe
+Post-fuse power
+Post-fuse power declaration only
+EN is internally pulled up; never connect to raw battery.
+Setpoint 5.077V. MCU 3V3 remains local.
+12  Interaction 5 V / independent fused buck
+Prototype: verify stability, temperature, cable drop and concurrent load. No PCB placement frozen.
+2A input fuse
+22u/25V
+22u/25V
+100n
+100n BOOT
+10uH / 4A rms
+CAM 5V
+22u/25V
+22u/25V
+100k 0.1%
+13.3k 0.1%
+75p C0G
+OPEN=ON / SHORT=OFF
+5V probe
+GND probe
+Post-fuse power
+Post-fuse power declaration only
+EN is internally pulled up; never connect to raw battery.
+Setpoint 5.077V. MCU 3V3 remains local.
+13  Physical master power / low-current rear switch
+OFF opens Q90 and the separate motion latch loop. No automatic ARM. Existing Q1 retains reverse-polarity protection.
+Q90 SO-8: peak loss / inrush SOA / OFF leakage / thermal: NOT_TESTED.
+Rear switch only sinks gate current. Do not connect a motor here.
+SW1 second pole connects motion J8: LOOP_3V3 to CLR_N.

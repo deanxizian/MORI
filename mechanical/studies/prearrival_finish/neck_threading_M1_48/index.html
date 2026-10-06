@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI M1.48 · 颈部走线复查</title><style>body{background:#f0f4f2;color:#263a33;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;margin:0}main{max-width:1140px;margin:auto;padding:30px 22px 70px}a{color:#126954}h1{font-size:32px}h2{margin-top:32px}.note{background:#fff1d2;border:1px solid #d0b582;padding:17px}figure{margin:24px 0;background:white;border:1px solid #c3d2cb}img{width:100%;display:block}figcaption{padding:12px}table{border-collapse:collapse;width:100%}td,th{padding:13px;border-bottom:1px solid #c3d2cb;text-align:left;vertical-align:top}.links{display:flex;flex-wrap:wrap;gap:16px}@media(max-width:700px){h1{font-size:25px}main{padding:20px 13px}}</style><main><aside id="M1-48-outer-harness" class="notice"><b>四根身体至颈部候选已接通。</b> 补入对插包络后调整了下部线路，四线同时排布和130个头部姿态检查通过；上方活动段及完整装配仍未完成。<a href="../outer_harness_M1_48/index.html">查看当前原模型检查与独立预览</a>。</aside><nav><a href="../index.html">到货前复核</a> · <a href="../../../index.html?revision=V1.2-M1.48#camera-cam">当前主模型</a></nav>
+<h1>颈部走线：来源更正与当前实体复查</h1>
+<p class="note"><b>完整线束仍为 BLOCKED。</b> 主模型没有采用任何通道候选。本页没有改模型或更新装配动作。</p>
+<h2>旧研究中“原桥座”的来源标签有误</h2><p>初始化脚本加载了未采用的两处切槽候选。保存剖面与候选完全对应，与主模型不同。历史数值保留，来源声明已在原页面显著更正。</p>
+<figure><img src="bridge_comparison.png" alt="左侧主模型，下弯路线穿入材料；右侧是未采用的切槽候选"><figcaption>左：当前主模型。右：旧研究实际使用的独立候选。红线仅示意原来R8下弯中心线。</figcaption></figure>
+<p>重新检查主模型，原下弯中心线确实穿入桥座。桥座直接下套时的端子碰撞也仍存在：局部相交约2.718mm³。中央小孔用于舵盘锁紧工具，未改成走线孔。这些结果只排除具体路径，不证明所有装法均不可行。</p>
+<h2>现有零件仍有外侧局部通路</h2><p>456条局部候选中，72条在零位满足所设线径与间隙。把固定段上端从Z172mm收低至Z168mm并调整外侧半径后，选定的4段固定局部路径，在130个头部姿态下未检出间隙失败；<b>两端尚未接到PCB和头部服务环，不能当成整条线束通过。</b></p>
+<figure><img src="outer_corridor.png" alt="绕轴承外侧的局部通路，上下两端都未连接"><figcaption>蓝线绕过原轴承外侧。圆圈表示尚未连接的两端；打印件保持原样。</figcaption></figure>
+<table><thead><tr><th>检查</th><th>结论与边界</th></tr></thead><tbody>
+<tr><td>主模型来源</td><td>PASS：直接读取M1.48保存实体，无研究候选替换。</td></tr>
+<tr><td>原R8内侧下弯</td><td>FAIL：四个方位的线中心均进入桥座材料。</td></tr>
+<tr><td>外侧局部段</td><td>零位连续线段间隙PASS；选定四段头部130姿态检查PASS。不是完整线束。</td></tr>
+<tr><td>采购与制造</td><td>BLOCKED：真实压接端子、服务环、固定和完整装配顺序未完成。无采购或制作放行。</td></tr>
+</tbody></table>
+<p class="links"><a href="README.md">完整说明</a><a href="source_audit.json">来源差分</a><a href="native_threading_screen.json">主模型碰撞</a><a href="outer_corridor_screen.json">外侧候选</a><a href="outer_corridor_motion_lowest.json">姿态检查</a><a href="publication.json">命令与哈希</a><a href="native_neck_context.png">整体剖面</a></p></main></html>

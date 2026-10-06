@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M1.49 屏幕排线收纳预检</title><style>body{font:16px/1.75 system-ui;margin:0;background:#f4f6f7;color:#20303b}main{max-width:1050px;margin:auto;padding:32px 24px}h1{font-size:30px}h2{margin-top:34px}a{color:#1e658c}img{max-width:100%;border-radius:12px}figure{margin:24px 0}figcaption{color:#4c6070}table{border-collapse:collapse;width:100%;background:white}td,th{text-align:left;padding:12px;border-bottom:1px solid #d9e1e6}.note{border-left:5px solid #d79726;background:#fff7e8;padding:15px 20px}.small{font-size:14px}</style><main>
+<p><a href="../index.html#static-flex">返回线束总进展</a></p><h1>头内排线有收纳空间；两端尚未连接</h1>
+<p class="note">主模型 M1.49 C5＋K1 未改动。橙色是未应用的170 mm中央段容量模型；红点是未连接端部。两端共30 mm只作长度预算，图中未建模。</p>
+<figure><img src="review/central_span.png" alt="橙色静态收纳段，红点标示未连接的两端"><figcaption>连续圆弧收纳，不增加打印件。宽厚和允许弯曲半径仍需确认，排线的固定与端部插入尚未完成。</figcaption></figure>
+<table><tr><th>这次完成</th><th>检查范围</th></tr>
+<tr><td>屏幕／相机端点的运动关系</td><td>同属俯仰组，130姿态保持相对位置；不需要因头部运动而在端点间反复弯折。</td></tr>
+<tr><td>中央段收纳容量</td><td>170 mm，假定宽10.5、厚0.2、R7.5 mm；8种参数组合预检通过。</td></tr>
+<tr><td>运动中的中央段空间</td><td>130姿态，对当前刚体及已有11条候选线的1430个组合通过有限检查。</td></tr>
+<tr><td>前后壳指定平移路径</td><td>各273个位置与该中央段无新增干涉；不是完整带线装配通过。</td></tr></table>
+<h2>尚未完成</h2><p>两端触点面、插入深度和过渡形状；实际线宽、厚度、补强和允许弯曲半径；固定、应力释放和插拔过程。完整屏幕排线及完整线束仍为 BLOCKED。</p>
+<p>200 mm随屏线的规格来自<a href="https://www.waveshare.com/catalog/product/view/id/8439/s/1.85inch-touch-lcd-module/category/346/">微雪产品资料</a>。没有用容量假设代替厂家尺寸，也未将该模型加入主模型或装配视频。</p>
+<figure><img src="review/top.png" alt="静态收纳段俯视图"><figcaption>从上方看中央段形状。它避开了相机支架和舵机，但暂时没有用于保持形状的固定设计。</figcaption></figure>
+<p><a href="README.md">范围、假设与剩余工作</a> · <a href="review/MORI_M1_49_static_FFC_capacity.blend">可编辑 Blender 候选</a> · <a href="sections.png">当前头部剖面</a></p>
+<p class="small"><a href="endpoints.json">接口与运动组</a> · <a href="core_screen/review.json">容量组合</a> · <a href="motion/review.json">姿态检查</a> · <a href="review/review.json">壳体路径</a> · <a href="main_integrity.json">主文件保留检查</a> · <a href="commands.json">命令记录</a> · <a href="documentation_sources.json">资料来源</a></p>
+<!-- CONNECTOR_DIRECTION_UPDATE --><section><h2>后续复核：入口方向与旧长度预算</h2><p>相机座重建朝向与已接线照片相反；CAM屏幕座不能一起翻转。LCD原CAD支持从−X接近，原先分配给屏幕端的15 mm不足以完成转向，需要重做完整路径。</p><p><a href="connector_faces/index.html">查看官方照片、当前模型与方向对照</a></p></section><!-- /CONNECTOR_DIRECTION_UPDATE --><!-- FULL_FLEX_UPDATE --><section id="full-flex"><h2>后续：完整排线空间候选</h2><p>194 mm屏幕自由段已通过130个姿态、候选导线与头壳拆装空间检查。CAM端补强长度和允许弯曲仍未知；相机通道末段仅约0.3 mm名义侧隙，完整排线及线束均未完成。</p><p><a href="full_route/index.html">查看最新空间候选、失败记录和选型条件</a></p></section><!-- /FULL_FLEX_UPDATE --></main></html>

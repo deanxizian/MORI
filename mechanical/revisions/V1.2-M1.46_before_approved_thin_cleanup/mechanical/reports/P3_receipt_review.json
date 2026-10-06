@@ -1,0 +1,152 @@
+{
+  "revision": "V1.2-M1.12",
+  "hardware_revision_read": "V1.2-H0.3-P3",
+  "contract_sha256": "44b218530456b3373922ddccb0360f9ceb84ffddb7037f543fc062bba623a3d8",
+  "handoff_sha256": "e67287f9d9066a433f770417afde1051617d73f38d60373b0e01841d25d55221",
+  "read_documents": [
+    "hardware/v1_2/layout_P3/README.md",
+    "hardware/v1_2/handoff/mechanical_P3.json",
+    "contracts/components.json"
+  ],
+  "boards": {
+    "MORI_motion_P3": {
+      "outline_xy_mm": [
+        70.0,
+        35.0
+      ],
+      "board_thickness_mm": 1.6,
+      "holes": [
+        {
+          "id": "H4",
+          "xy_mm": [
+            67.5,
+            32.5
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H2",
+          "xy_mm": [
+            2.5,
+            32.5
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H1",
+          "xy_mm": [
+            2.5,
+            2.5
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H3",
+          "xy_mm": [
+            67.5,
+            2.5
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        }
+      ],
+      "connector_count": 9
+    },
+    "MORI_imu_P3": {
+      "outline_xy_mm": [
+        20.0,
+        16.0
+      ],
+      "board_thickness_mm": 1.6,
+      "holes": [
+        {
+          "id": "H1",
+          "xy_mm": [
+            2.5,
+            12.5
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H2",
+          "xy_mm": [
+            17.5,
+            12.5
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        }
+      ],
+      "connector_count": 1
+    },
+    "MORI_power_P3": {
+      "outline_xy_mm": [
+        80.0,
+        55.0
+      ],
+      "board_thickness_mm": 1.6,
+      "holes": [
+        {
+          "id": "H2",
+          "xy_mm": [
+            3.0,
+            52.0
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H3",
+          "xy_mm": [
+            77.0,
+            3.0
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H4",
+          "xy_mm": [
+            77.0,
+            52.0
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        },
+        {
+          "id": "H1",
+          "xy_mm": [
+            3.0,
+            3.0
+          ],
+          "diameter_mm": 2.2,
+          "assembly_keepout_radius_mm": 2.7,
+          "hardware_radius_status": "ASSUMED 2.2 mm plus source 0.5 mm; verify actual screw/washer"
+        }
+      ],
+      "connector_count": 20
+    }
+  },
+  "fit_status": {
+    "power_fit": "BLOCKED: user-approved80x55x1.6 outline; M1.11 incorporates this capacity but not the populated P3 assembly. Proposed +16/-3mm component limits exclude mating plugs. Native P3 holes, populated height, sockets, cable bends and service path require mechanical review.",
+    "motion_fit": "70x35 outline only; WeAct stack and bottom-facing J6/J8 connector approach remain unqualified.",
+    "imu_fit": "20x16 outline only; M1.11 proposes components-down mounting under Load_Frame using P2 references; recheck the P3 assembly and sensor-to-body transform. Mating plug height unresolved. TDK AN000393 recommends at least three mechanical anchors; current two-hole interface is an unresolved mechanical deviation."
+  },
+  "scope": "Read-only receipt audit; no P3 populated CAD integration in this face/frame correction. Delivered STEP contains bare boards. P2 geometry labels retained. Two-hole IMU anchoring deviation remains BLOCKED.",
+  "previous_contract_sha256": "c7745db2eca40f59d74c0f6a26e925539f47981ffa02efa7c5f560a5cbf6b8ff",
+  "review_snapshot": "mechanical/sources/hardware_review/components_P3_44b218530456.json",
+  "final_receipt_note": "Re-read latest contract and native handoff. All mechanical product dimensions and P3 outlines/holes unchanged; reviewed latest hardware metadata. No P3 populated fit claim."
+}

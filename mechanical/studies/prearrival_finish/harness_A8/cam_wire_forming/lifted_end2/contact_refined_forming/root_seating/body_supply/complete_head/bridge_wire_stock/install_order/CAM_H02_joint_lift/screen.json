@@ -1,0 +1,3668 @@
+{
+  "status": "PASS",
+  "scope": "Joint six-wire finite bridge lift only; H02 installation and other phases must be rechecked",
+  "script_sha256": "26eccb94086cfecedbdb48b40b462cbdeea406121e8d61d5200fc850fa910090",
+  "helper_sha256": "26c02e50bf07f59d39a73f22be6623a04287b83aaee8295366c312c546d6df07",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/packing.json": "28fa0bd015cc75aedbddea887c7317538403476811a249ee75762c36cb073fd6",
+    "mechanical/studies/prearrival_finish/harness_A8/joined_entry_screen.json": "59a7ce329df097bd7f4f7b4e3467b6e26907200cb91239cd8fbe711ed17a9556",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/body_to_yaw_motion.json": "c3fbc70e18fae3716923cb0f81f041f29fdb0acd77caee0f03539768453e3235",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_port/lower_staging/body_partial_curves.npz": "fb278de629417a9a67ea73776f8ffd5c63d0dad1371d6511bf193dd8a283e72f",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_connector_install/route_datums.json": "11b95c43807f387158bf47922472363b709651f30685ee595697024652f89120",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/wire_solids.json": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/verification.json": "351a78dd466e5f008192ae6dcda4c2f7ccff106a2b03695480b5596e738e2bf0",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/curvature_paths.py": "314851bea1a2160efb913ea6d242d14833f5e227b0ca3108e4ca55b9af202ae8",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/split_assembly/screen.json": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_pose_packing/lift18/screen.json": "bf7c0ee4652eb5d9f1d5613850df1764b11ff4224316ec105bd23ee7acad16e4",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_pose_packing/lift18/verification.json": "d259abd8eff1a219ea69a2f788f5ecaf93df2c2dd2de00024fbc7973bbd1f209",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_lift_transition/screen.json": "2e8d4637cca6cb020759ff086e8c5abf3821d9fc13f79d5c93c2a8ba9a76f0c6",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/screen.json": "bcb9cecff9c14146e30553490c2d1fc4cb4eaccf2ff5e146508d3e717224811e",
+    "mechanical/studies/prearrival_finish/harness_A8/screen_CAM_feed_lift_schedule.py": "b29c4c1c40d0b4dc076fab41fbfd8ff9dc6906c06288cb0063984bbe09a8725f",
+    "mechanical/studies/prearrival_finish/harness_A2/select_joint.py": "5917732dfb052102ae91bf470276efc7b58d1fad5f0def22e093aa3754643722"
+  },
+  "planned_positions": 37,
+  "sample_spacing_mm": 0.5,
+  "bridge_lift_mm": 18.0,
+  "shell_transform": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.9659258127212524,
+      -0.25881898403167725,
+      25.881898880004883
+    ],
+    [
+      0.0,
+      0.25881898403167725,
+      0.9659258127212524,
+      17.40741729736328
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "source_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "fixed_body_wires_total": 14,
+  "replaced_h02_routes": 2,
+  "cam_wires": 4,
+  "native_endpoints_unchanged": true,
+  "H02_radius_mm": 5.08,
+  "H02_OD_mm": 1.016,
+  "CAM_minimum_radius_mm": 7.0,
+  "CAM_OD_mm": 0.6604,
+  "pin4_results": [
+    {
+      "candidate_id": "pin4_3",
+      "pin": 4,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 4.107566127815289,
+      "maximum_polyline_length_error_mm": 0.000432579762275509
+    },
+    {
+      "candidate_id": "pin4_6",
+      "pin": 4,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 15.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 4.274818856908155,
+      "maximum_polyline_length_error_mm": 0.0004171350832962162
+    },
+    {
+      "candidate_id": "pin4_7",
+      "pin": 4,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": -15.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.9331638356881626,
+      "maximum_polyline_length_error_mm": 0.00044802658032949694
+    },
+    {
+      "candidate_id": "pin4_11",
+      "pin": 4,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 30.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 4.433968744814877,
+      "maximum_polyline_length_error_mm": 0.0004002632917945448
+    },
+    {
+      "candidate_id": "pin4_12",
+      "pin": 4,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": -15.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 4.0518181362875225,
+      "maximum_polyline_length_error_mm": 0.0005105229260493616
+    },
+    {
+      "candidate_id": "pin4_17",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 30.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSL",
+        "elevation_fraction": 0.25
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 1,
+      "planned_positions": 37,
+      "first_failure_index": 1,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          40.79835926624304,
+          -21.594815908883803,
+          142.26499938964844
+        ],
+        "obstacle": "Yaw_Base",
+        "centreline_distance_mm": 0.6669278144836426,
+        "required_bound_mm": 0.6903906299546508
+      },
+      "maximum_sampled_material_motion_mm": 2.262992568159802,
+      "maximum_polyline_length_error_mm": 0.00037181148275067244
+    },
+    {
+      "candidate_id": "pin4_22",
+      "pin": 4,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": -30.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.8791247847256614,
+      "maximum_polyline_length_error_mm": 0.0005289404913355611
+    },
+    {
+      "candidate_id": "pin4_23",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 30.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSL",
+        "elevation_fraction": 0.25
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 1,
+      "planned_positions": 37,
+      "first_failure_index": 1,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          40.75502264473424,
+          -21.520291253824823,
+          142.26499938964844
+        ],
+        "obstacle": "Yaw_Base",
+        "centreline_distance_mm": 0.6242671608924866,
+        "required_bound_mm": 0.6903252830467536
+      },
+      "maximum_sampled_material_motion_mm": 2.230487487415341,
+      "maximum_polyline_length_error_mm": 0.0003723610143424594
+    }
+  ],
+  "cam_pool_sizes": {
+    "1": 7,
+    "2": 8,
+    "3": 2,
+    "4": 6
+  },
+  "h02_pool_sizes": {
+    "H02_1": 42,
+    "H02_2": 41
+  },
+  "search_nodes": 5,
+  "node_limit": 20000,
+  "search_budget_exceeded": false,
+  "selected": {
+    "cam": [
+      {
+        "candidate_id": "pin3_1",
+        "pin": 3,
+        "status": "PASS",
+        "endpoint_parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "starting_parameters": {
+          "entry_azimuth_deg": 15,
+          "planar_radius_mm": 7.0,
+          "family": "LRL-1"
+        },
+        "passing_positions": 37,
+        "planned_positions": 37,
+        "first_failure_index": null,
+        "failure": null,
+        "maximum_sampled_material_motion_mm": 7.217209987596377,
+        "maximum_polyline_length_error_mm": 0.0009117644851812656
+      },
+      {
+        "candidate_id": "pin4_3",
+        "pin": 4,
+        "status": "PASS",
+        "endpoint_parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "starting_parameters": {
+          "entry_azimuth_deg": 0,
+          "planar_radius_mm": 12.0,
+          "family": "LSL"
+        },
+        "passing_positions": 37,
+        "planned_positions": 37,
+        "first_failure_index": null,
+        "failure": null,
+        "maximum_sampled_material_motion_mm": 4.107566127815289,
+        "maximum_polyline_length_error_mm": 0.000432579762275509
+      },
+      {
+        "candidate_id": "pin1_0",
+        "pin": 1,
+        "status": "PASS",
+        "endpoint_parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "starting_parameters": {
+          "entry_azimuth_deg": 105,
+          "planar_radius_mm": 7.0,
+          "family": "LSR"
+        },
+        "passing_positions": 37,
+        "planned_positions": 37,
+        "first_failure_index": null,
+        "failure": null,
+        "maximum_sampled_material_motion_mm": 3.981523212945357,
+        "maximum_polyline_length_error_mm": 0.0006625287857673356
+      },
+      {
+        "candidate_id": "pin2_0",
+        "pin": 2,
+        "status": "PASS",
+        "endpoint_parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "starting_parameters": {
+          "entry_azimuth_deg": 105,
+          "planar_radius_mm": 7.0,
+          "family": "LSR"
+        },
+        "passing_positions": 37,
+        "planned_positions": 37,
+        "first_failure_index": null,
+        "failure": null,
+        "maximum_sampled_material_motion_mm": 1.9345323085347355,
+        "maximum_polyline_length_error_mm": 0.0005530059690386224
+      }
+    ],
+    "h02": [
+      {
+        "key": "H02_1_pool0",
+        "source_pool_index": 0,
+        "id": "H02_1",
+        "harness": "H02",
+        "pin": 1,
+        "from_port": "motion_J2",
+        "to_port": "power_J13",
+        "curve_mm": [
+          [
+            16.0,
+            -30.02500057220459,
+            130.63999938964844
+          ],
+          [
+            16.0,
+            -30.02500057220459,
+            135.63999938964844
+          ],
+          [
+            16.0,
+            -30.02500057220459,
+            135.72
+          ],
+          [
+            16.0164971911219,
+            -30.002588896454874,
+            136.25100459339967
+          ],
+          [
+            16.06580801780941,
+            -29.93559941621519,
+            136.7761913893542
+          ],
+          [
+            16.147392220326385,
+            -29.824766082249493,
+            137.28980633142473
+          ],
+          [
+            16.260355945077457,
+            -29.671303207758072,
+            137.78622214682505
+          ],
+          [
+            16.403461537855076,
+            -29.476892164108033,
+            138.26
+          ],
+          [
+            16.575141103838,
+            -29.243662959376728,
+            138.70594908164577
+          ],
+          [
+            16.773513685775065,
+            -28.974170901537548,
+            139.119183480303
+          ],
+          [
+            16.99640587214643,
+            -28.671368601971007,
+            139.49517571342517
+          ],
+          [
+            17.24137560951502,
+            -28.33857362603662,
+            139.82980633142472
+          ],
+          [
+            17.50573895817502,
+            -27.979432145132545,
+            140.11940905122495
+          ],
+          [
+            17.78659949795692,
+            -27.597878988478758,
+            140.36081092482442
+          ],
+          [
+            18.080880062013023,
+            -27.198094532304683,
+            140.55136710277938
+          ],
+          [
+            18.385356450901362,
+            -26.78445889877245,
+            140.68898981172774
+          ],
+          [
+            18.696692757589496,
+            -26.361503966441845,
+            140.77217122847082
+          ],
+          [
+            19.011477916350042,
+            -25.9338637180605,
+            140.8
+          ],
+          [
+            32.51352360952887,
+            -7.591136898847573,
+            140.8
+          ],
+          [
+            32.82830876828941,
+            -7.163496650466228,
+            140.77217122847085
+          ],
+          [
+            33.13964507497755,
+            -6.740541718135624,
+            140.68898981172774
+          ],
+          [
+            33.44412146386589,
+            -6.326906084603385,
+            140.55136710277938
+          ],
+          [
+            33.73840202792199,
+            -5.927121628429312,
+            140.36081092482442
+          ],
+          [
+            34.01926256770389,
+            -5.545568471775523,
+            140.11940905122495
+          ],
+          [
+            34.283625916363896,
+            -5.186426990871447,
+            139.82980633142475
+          ],
+          [
+            34.52859565373249,
+            -4.853632014937059,
+            139.49517571342517
+          ],
+          [
+            34.75148784010385,
+            -4.550829715370519,
+            139.119183480303
+          ],
+          [
+            34.94986042204091,
+            -4.281337657531334,
+            138.70594908164577
+          ],
+          [
+            35.12153998802384,
+            -4.0481084528000295,
+            138.26000000000002
+          ],
+          [
+            35.26464558080146,
+            -3.8536974091499894,
+            137.78622214682508
+          ],
+          [
+            35.37760930555253,
+            -3.70023453465857,
+            137.28980633142473
+          ],
+          [
+            35.45919350806951,
+            -3.589401200692871,
+            136.7761913893542
+          ],
+          [
+            35.50850433475702,
+            -3.522411720453186,
+            136.25100459339967
+          ],
+          [
+            35.52500152587892,
+            -3.500000044703471,
+            135.72
+          ],
+          [
+            35.525001525878906,
+            -3.5000000447034836,
+            134.13999938964844
+          ],
+          [
+            35.525001525878906,
+            -3.5000000447034836,
+            129.13999938964844
+          ]
+        ],
+        "controls_mm": [
+          [
+            16.0,
+            -30.02500057220459,
+            135.63999938964844
+          ],
+          [
+            16.0,
+            -30.02500057220459,
+            140.8
+          ],
+          [
+            35.525001525878906,
+            -3.5000000447034836,
+            140.8
+          ],
+          [
+            35.525001525878906,
+            -3.5000000447034836,
+            134.13999938964844
+          ]
+        ],
+        "wire_OD_max_mm": 1.016,
+        "analytic_bend_radius_mm": 5.08,
+        "terminal_straight_mm": 5.0,
+        "geometric_centerline_length_mm": 50.38832314932732,
+        "analytic_length_mm": 50.395614366714184
+      },
+      {
+        "key": "H02_2_pool21",
+        "source_pool_index": 21,
+        "id": "H02_2",
+        "harness": "H02",
+        "pin": 2,
+        "from_port": "motion_J2",
+        "to_port": "power_J13",
+        "curve_mm": [
+          [
+            18.0,
+            -30.02500057220459,
+            130.63999938964844
+          ],
+          [
+            18.0,
+            -30.02500057220459,
+            135.63999938964844
+          ],
+          [
+            18.0,
+            -30.02500057220459,
+            136.22
+          ],
+          [
+            18.022423424735567,
+            -30.008519354168563,
+            136.75100459339967
+          ],
+          [
+            18.08944802320847,
+            -29.959256271734194,
+            137.2761913893542
+          ],
+          [
+            18.20033945989203,
+            -29.877751061541602,
+            137.78980633142473
+          ],
+          [
+            18.353882785000426,
+            -29.76489671172972,
+            138.28622214682505
+          ],
+          [
+            18.54839574573276,
+            -29.621929678171373,
+            138.76
+          ],
+          [
+            18.781747217386794,
+            -29.450416337604004,
+            139.20594908164577
+          ],
+          [
+            19.051380552407153,
+            -29.252235826078344,
+            139.619183480303
+          ],
+          [
+            19.354341591550956,
+            -29.029559450750607,
+            139.99517571342517
+          ],
+          [
+            19.68731103027466,
+            -28.784826900586907,
+            140.32980633142472
+          ],
+          [
+            20.04664078572928,
+            -28.520719516620417,
+            140.61940905122495
+          ],
+          [
+            20.42839396591947,
+            -28.2401309146179,
+            140.86081092482442
+          ],
+          [
+            20.828388003116075,
+            -27.94613528201983,
+            141.05136710277938
+          ],
+          [
+            21.242240478943437,
+            -27.641953696499503,
+            141.18898981172774
+          ],
+          [
+            21.66541713907219,
+            -27.33091883516196,
+            141.27217122847082
+          ],
+          [
+            22.09328157145856,
+            -27.016438461036245,
+            141.3
+          ],
+          [
+            31.28464463592715,
+            -20.26078625802916,
+            141.3
+          ],
+          [
+            31.675273496933332,
+            -19.942673654270877,
+            141.3
+          ],
+          [
+            32.03247387116563,
+            -19.58743510291535,
+            141.3
+          ],
+          [
+            32.35273296158396,
+            -19.198564107950073,
+            141.3
+          ],
+          [
+            32.632901260892076,
+            -18.779884923151428,
+            141.3
+          ],
+          [
+            32.8702235245731,
+            -18.335514943424872,
+            141.3
+          ],
+          [
+            33.062365866647234,
+            -17.869824213322662,
+            141.3
+          ],
+          [
+            33.207438711685114,
+            -17.387392450942244,
+            141.3
+          ],
+          [
+            33.30401537736106,
+            -16.89296400984305,
+            141.3
+          ],
+          [
+            34.79954220260645,
+            -6.52793289730574,
+            141.3
+          ],
+          [
+            34.87537335083132,
+            -6.002370802810275,
+            141.27217122847085
+          ],
+          [
+            34.95037367712754,
+            -5.482566876603042,
+            141.18898981172774
+          ],
+          [
+            35.02372146222539,
+            -4.9742161992755305,
+            141.05136710277938
+          ],
+          [
+            35.09461309244233,
+            -4.48288836722776,
+            140.86081092482442
+          ],
+          [
+            35.16227186424268,
+            -4.013966471004605,
+            140.61940905122495
+          ],
+          [
+            35.22595649396408,
+            -3.5725881170293,
+            140.32980633142475
+          ],
+          [
+            35.28496923947644,
+            -3.1635891389123594,
+            139.99517571342517
+          ],
+          [
+            35.33866354479071,
+            -2.7914506150465686,
+            139.619183480303
+          ],
+          [
+            35.38645112386162,
+            -2.460249772974395,
+            139.20594908164577
+          ],
+          [
+            35.42780840597267,
+            -2.173615318429814,
+            138.76000000000002
+          ],
+          [
+            35.46228227208648,
+            -1.934687678478932,
+            138.28622214682508
+          ],
+          [
+            35.489495019311796,
+            -1.7460845943438708,
+            137.78980633142473
+          ],
+          [
+            35.509148499095375,
+            -1.6098724408821496,
+            137.2761913893542
+          ],
+          [
+            35.52102738379996,
+            -1.527543586951321,
+            136.75100459339967
+          ],
+          [
+            35.525001525878906,
+            -1.5000000447034694,
+            136.22
+          ],
+          [
+            35.525001525878906,
+            -1.5000000447034836,
+            134.13999938964844
+          ],
+          [
+            35.525001525878906,
+            -1.5000000447034836,
+            129.13999938964844
+          ]
+        ],
+        "controls_mm": [
+          [
+            18.0,
+            -30.02500057220459,
+            135.63999938964844
+          ],
+          [
+            18.0,
+            -30.02500057220459,
+            141.3
+          ],
+          [
+            33.0,
+            -19.0,
+            141.3
+          ],
+          [
+            35.525001525878906,
+            -1.5000000447034836,
+            141.3
+          ],
+          [
+            35.525001525878906,
+            -1.5000000447034836,
+            134.13999938964844
+          ]
+        ],
+        "wire_OD_max_mm": 1.016,
+        "analytic_bend_radius_mm": 5.08,
+        "terminal_straight_mm": 5.0,
+        "geometric_centerline_length_mm": 54.52156114081655,
+        "analytic_length_mm": 54.530505595171064
+      }
+    ],
+    "h02_pair": {
+      "status": "PASS",
+      "surface_gap_bound_mm": 0.3806456363397046,
+      "segment_indices": [
+        22,
+        29
+      ]
+    },
+    "cam_pairs": [
+      {
+        "a": "pin3_1",
+        "b": "pin4_3",
+        "status": "PASS",
+        "failure": null,
+        "surface_gap_lower_bound_mm": 0.7648336336486135
+      },
+      {
+        "a": "pin3_1",
+        "b": "pin1_0",
+        "status": "PASS",
+        "failure": null,
+        "surface_gap_lower_bound_mm": 3.219052156370301
+      },
+      {
+        "a": "pin3_1",
+        "b": "pin2_0",
+        "status": "PASS",
+        "failure": null,
+        "surface_gap_lower_bound_mm": 1.219004097382564
+      },
+      {
+        "a": "pin4_3",
+        "b": "pin1_0",
+        "status": "PASS",
+        "failure": null,
+        "surface_gap_lower_bound_mm": 5.21914739816194
+      },
+      {
+        "a": "pin4_3",
+        "b": "pin2_0",
+        "status": "PASS",
+        "failure": null,
+        "surface_gap_lower_bound_mm": 3.2191059896793175
+      },
+      {
+        "a": "pin1_0",
+        "b": "pin2_0",
+        "status": "PASS",
+        "failure": null,
+        "surface_gap_lower_bound_mm": 0.43891066468349244
+      }
+    ],
+    "route_cam_pairs": [
+      {
+        "h02": "H02_1_pool0",
+        "cam": "pin3_1",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 0.901873889467121,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_1_pool0",
+        "cam": "pin4_3",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 1.292687916585175,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_1_pool0",
+        "cam": "pin1_0",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 6.3711182273585845,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_1_pool0",
+        "cam": "pin2_0",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 5.088351796080906,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_2_pool21",
+        "cam": "pin3_1",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 0.4831359950023565,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_2_pool21",
+        "cam": "pin4_3",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 0.40204777087681925,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_2_pool21",
+        "cam": "pin1_0",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": null,
+        "complete_minimum": false
+      },
+      {
+        "h02": "H02_2_pool21",
+        "cam": "pin2_0",
+        "status": "PASS",
+        "failure": null,
+        "minimum_near_sample_gap_bound_mm": 6.158837977887199,
+        "complete_minimum": false
+      }
+    ]
+  },
+  "curves_sha256": "971bf572eb8d55d5f03cbf3d7d537b0d2b814b911abfeb809715640b7db09bd0",
+  "cam_pair_diagnostics": [
+    {
+      "a": "pin3_1",
+      "b": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "surface_gap_lower_bound_mm": 0.7648336336486135
+    },
+    {
+      "a": "pin3_1",
+      "b": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "surface_gap_lower_bound_mm": 3.219052156370301
+    },
+    {
+      "a": "pin4_3",
+      "b": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "surface_gap_lower_bound_mm": 5.21914739816194
+    },
+    {
+      "a": "pin3_1",
+      "b": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "surface_gap_lower_bound_mm": 1.219004097382564
+    },
+    {
+      "a": "pin4_3",
+      "b": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "surface_gap_lower_bound_mm": 3.2191059896793175
+    },
+    {
+      "a": "pin1_0",
+      "b": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "surface_gap_lower_bound_mm": 0.43891066468349244
+    }
+  ],
+  "h02_cam_diagnostics": [
+    {
+      "h02": "H02_1_pool0",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.901873889467121,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool1",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.701917949220539,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool2",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40199917843043886,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool3",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9020427670788275,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool4",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6126783437007951,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool5",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9017094923567534,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool6",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7021097150158392,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool7",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4833358809367397,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool8",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4022381511044012,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool9",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9022671240046567,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool10",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7710391171148355,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool11",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7023502844050473,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool12",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9016220193567012,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool13",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6513871659606499,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool14",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.35288086249619355,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool15",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7016311507882808,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool16",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6393069621430987,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool17",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9022055803629228,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool18",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40251221830397305,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool19",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4987081708203309,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool20",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9016120181358969,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool21",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40164049679658154,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool22",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.746832008366737,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool23",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9024089834342149,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool24",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7016193614281332,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool25",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7025163433203844,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool26",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.3446072267916155,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool27",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4016250119484579,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool28",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5900852360925151,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool29",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7365549973712665,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool30",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4027279874930528,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool31",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.36029724680556047,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool32",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6798213196795662,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool33",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9016576323679534,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool34",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9016576323679534,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool35",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.36479446812235594,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool36",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7016746316126433,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool37",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5319590468413375,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool38",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6896038828536202,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool39",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4017000708750334,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool40",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40239850187415216,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool41",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4734699559911049,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool0",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9396197066768437,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool1",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7408441768153935,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool2",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4433345065578251,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool3",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6941898548950514,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool4",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9826831652768607,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool5",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9810838397375583,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool6",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7853282525189872,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool7",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.56593578933543,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool8",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9694313110112452,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool9",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4893127514966483,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool10",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8508880432091842,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool11",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7719549239873195,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool12",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6999179144444986,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool13",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9760556784587774,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool14",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4392298398628909,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool15",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9401464900921858,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool16",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7788179484325323,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool17",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4756279290913844,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool18",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7242427153693368,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool19",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.928771520860906,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool20",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5431755276286963,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool21",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4831359950023565,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool22",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7290771257955984,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool23",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7966539876199411,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool24",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.946173421956543,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool25",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.3874036421915644,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool26",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7481732293143311,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool27",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.42969348550629166,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool28",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6977250426901958,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool29",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.6548474057059851,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool30",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.452237121678833,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool31",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.42964385391653176,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool32",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9017003915004429,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool33",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9017003915004429,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool34",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7522371092735864,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool35",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7017233512096104,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool36",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5179559455741095,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool37",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7107928788956555,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool38",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40176130744740335,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool39",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4167869532686984,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool40",
+      "cam": "pin3_1",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5144332510987286,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool0",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.292687916585175,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool1",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.1066537140094914,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool2",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8333492515766302,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool3",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.0140451010053533,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool4",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5968783056485611,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool5",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9935226602142484,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool6",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8219760473554509,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool7",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9223056926617273,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool8",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5345294292753118,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool9",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9648864136883235,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool10",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.33620030647959376,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool11",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7690371142574763,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool12",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9020145367320185,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool13",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5880683977448418,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool14",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.29833160645689905
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29833160645689905,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool15",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7020618151362543,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool16",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.2797008957247759
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2797008957247759,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool17",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9473064689006546,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool18",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4774317609020686,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool19",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8908656866316224,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool20",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9413320377618856,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool21",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.402149720066369,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool22",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.29837997370195424
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29837997370195424,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool23",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.901897417557579,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool24",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.743113096073348,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool25",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7019326558235702,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool26",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.2980155484577042
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2980155484577042,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool27",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4465200260431355,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool28",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.2987642415334553
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2987642415334553,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool29",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5870717546681536,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool30",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4019960036400375,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool31",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.29406321541378794
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29406321541378794,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool32",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.28654717627864856
+      },
+      "minimum_near_sample_gap_bound_mm": 0.28654717627864856,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool33",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9265840175792691,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool34",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9265840175792691,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool35",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5380969605495531,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool36",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7280981662914273,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool37",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8754761922836715,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool38",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.29846684013982616
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29846684013982616,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool39",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4304546240016935,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool40",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4016714056020085,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool41",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.2866235059571916
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2866235059571916,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool0",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.0761482790448367,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool1",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8831396177746951,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool2",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.5969771221615969,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool3",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5372951322419872,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool4",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9177861852766898,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool5",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9110644365653903,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool6",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7189909858824637,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool7",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8430202203154836,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool8",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9027211577170069,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool9",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4208059949995901,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool10",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.29869436273141314
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29869436273141314,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool11",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7028534323446924,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool12",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5518830646094277,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool13",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.90194405879491,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool14",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.2952632454523195
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2952632454523195,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool15",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9018739512388654,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool16",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7019810852002445,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool17",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40311633651186773,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool18",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.28644092208896355
+      },
+      "minimum_near_sample_gap_bound_mm": 0.28644092208896355,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool19",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9016654353690967,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool20",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8456791938382421,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool21",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40204777087681925,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool22",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7016770701957569,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool23",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.29668434717360315
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29668434717360315,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool24",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9015835766208544,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool25",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.2953211029186273
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2953211029186273,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool26",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7015900854480639,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool27",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40169166141279794,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool28",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 1.5639628826744607,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool29",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.29474598893623194
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29474598893623194,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool30",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4015938286197558,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool31",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.29603853757249887
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29603853757249887,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool32",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9017860641644565,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool33",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.9017860641644565,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool34",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 5,
+        "bridge_z_mm": 2.5,
+        "sampled_gap_bound_mm": 0.29738731202495405
+      },
+      "minimum_near_sample_gap_bound_mm": 0.29738731202495405,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool35",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.7018097391293613,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool36",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.8499665335518438,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool37",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 7,
+        "bridge_z_mm": 3.4999999999999996,
+        "sampled_gap_bound_mm": 0.2977426653673473
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2977426653673473,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool38",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.4018492450879184,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool39",
+      "cam": "pin4_3",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 0.40162880863949185,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool40",
+      "cam": "pin4_3",
+      "status": "BLOCKED",
+      "failure": {
+        "index": 6,
+        "bridge_z_mm": 3.0,
+        "sampled_gap_bound_mm": 0.2862172436841391
+      },
+      "minimum_near_sample_gap_bound_mm": 0.2862172436841391,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool0",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.3711182273585845,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool1",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.246587435122256,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool2",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.066345373507266,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool3",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.449253338232777,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool4",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.269203237326363,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool5",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.4564911646993615,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool6",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.3296148952396125,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool7",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.199612404391714,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool8",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.147348282224014,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool9",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.467095397642736,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool10",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.387709841848496,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool11",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.343666576079015,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool12",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.4624479603074025,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool13",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.2973031480719355,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool15",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.3403023075364064,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool17",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.472921600811915,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool18",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.165058635405187,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool19",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.212208309921667,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool20",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.466343493830862,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool21",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.163703281810088,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool23",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.468882702895964,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool24",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.340179534327688,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool25",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.344124459335173,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool27",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.157295794856252,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool29",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.280198230535408,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool30",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.163436554977263,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool33",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.4389406923066925,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool34",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.4389406923066925,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool35",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.0278237782136825,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool36",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.310934234024222,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool37",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.186631904944444,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool39",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.125189948440726,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool40",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.153572471961511,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool0",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool1",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool2",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool3",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool4",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool5",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool6",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool7",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool8",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool9",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool11",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool12",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool13",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool15",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool16",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool17",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool19",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool20",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool21",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool22",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool24",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool26",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool27",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool28",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool30",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool32",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool33",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool35",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool36",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool38",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool39",
+      "cam": "pin1_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": null,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool0",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.088351796080906,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool1",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.951264927794774,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool2",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.746072361876805,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool3",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.158369330346971,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool4",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.947207989053594,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool5",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.162544908583576,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool6",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.0174410619143535,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool7",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.862788474173144,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool8",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.806030539453416,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool9",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.165863069749607,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool10",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.079778428719771,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool11",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.02452615187241,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool12",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.165134757017545,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool13",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.960633713092624,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool15",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.023813574766568,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool17",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.153105881327961,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool18",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.812716993547214,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool19",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.864959765750462,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool20",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.137411124719221,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool21",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.812031119322232,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool23",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.160696564863425,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool24",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.006948478234846,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool25",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.02017990075967,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool27",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.797112565931628,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool29",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.896436263950624,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool30",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.8086024852933615,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool33",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.063285911085677,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool34",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 5.063285911085677,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool35",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.634418827639889,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool36",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.931420409681868,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool37",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.802741763025436,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool39",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.74070891142137,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_1_pool40",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 4.786692541987083,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool0",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.327119880632242,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool1",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.204393917039713,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool2",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.027016693071207,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool3",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.276319008132123,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool4",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.437824265192094,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool5",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.447107794114461,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool6",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.319360272119584,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool7",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.19653350700726,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool8",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.462552252158778,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool9",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.127570262068564,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool11",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.340406599387782,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool12",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.313802515069265,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool13",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.455988019066149,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool15",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.470660881976718,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool16",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.335085480766589,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool17",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.16380852733578,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool19",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.471919355624162,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool20",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.218035918277267,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool21",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.158837977887199,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool22",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.345852194064103,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool24",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.4720725069868275,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool26",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.347368146024913,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool27",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.16311388992592,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool28",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.308284180973654,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool30",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.166762257658214,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool32",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.444129036619839,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool33",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.444129036619839,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool35",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.31621222372311,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool36",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.200343926020654,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool38",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.130605267241177,
+      "complete_minimum": false
+    },
+    {
+      "h02": "H02_2_pool39",
+      "cam": "pin2_0",
+      "status": "PASS",
+      "failure": null,
+      "minimum_near_sample_gap_bound_mm": 6.154305773063082,
+      "complete_minimum": false
+    }
+  ],
+  "h02_pair_diagnostics": [
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool0",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -1.0360999999999412,
+      "segment_indices": [
+        17,
+        17
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool1",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.8361000000000114,
+      "segment_indices": [
+        17,
+        17
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool2",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.5361,
+      "segment_indices": [
+        17,
+        17
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool3",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.8139256368387688,
+      "segment_indices": [
+        23,
+        26
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool4",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.47627784253225003,
+      "segment_indices": [
+        21,
+        24
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool5",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.423159638321562,
+      "segment_indices": [
+        21,
+        24
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool6",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.3408625500853635,
+      "segment_indices": [
+        20,
+        23
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool7",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.3771700093580387,
+      "segment_indices": [
+        21,
+        25
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool8",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.32563049532780786,
+      "segment_indices": [
+        22,
+        26
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool9",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.12083229608583734,
+      "segment_indices": [
+        20,
+        23
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool11",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.19151105190285397,
+      "segment_indices": [
+        21,
+        26
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool12",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.6798093048975385,
+      "segment_indices": [
+        24,
+        30
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool13",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": 0.012446640278371175,
+      "segment_indices": [
+        23,
+        29
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool15",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.25518960428866955,
+      "segment_indices": [
+        22,
+        28
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool16",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": 0.1594098073328212,
+      "segment_indices": [
+        23,
+        29
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool17",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": 0.025788615821096712,
+      "segment_indices": [
+        20,
+        25
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool19",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.22671613251255493,
+      "segment_indices": [
+        22,
+        29
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool20",
+      "status": "BLOCKED",
+      "surface_gap_bound_mm": -0.2152812173537156,
+      "segment_indices": [
+        22,
+        29
+      ]
+    },
+    {
+      "a": "H02_1_pool0",
+      "b": "H02_2_pool21",
+      "status": "PASS",
+      "surface_gap_bound_mm": 0.3806456363397046,
+      "segment_indices": [
+        22,
+        29
+      ]
+    }
+  ],
+  "H02_open_deck_recheck": "NOT_TESTED",
+  "H02_full_head_recheck": "NOT_TESTED",
+  "remaining_bridge_stages": "NOT_TESTED",
+  "continuous_movement": "NOT_TESTED",
+  "actual_wire_terminal_and_hands": "NOT_TESTED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "elapsed_s": 41.65051889419556
+}

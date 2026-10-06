@@ -1,0 +1,214 @@
+{
+  "status": "PASS",
+  "scope": "Move only the lower temporary contact track inward after passing the collar; final wire routes unchanged",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+    "mechanical/reports/build_manifest.json": "fe96a9eb6604d65d3bcae09983487b2e03febb2a9d41e5140478cee69f1b308c",
+    "config/geometry.json": "3af8a61411825ba12a315c9377a117f5923e822c5f219ad8de13eae87da5225d",
+    "contracts/mechanical_interfaces.json": "4957dc15dfbec31e07e0a37a2b7a7a0de681ca5ce40e600c2c00fe2217c15d95",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "a5450cf9342cea2a5ccdd702c457e152900ead75eb46c65b0790c001b0acd0fe",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_side_fans/c6_join/join_review.json": "bffe99ce82e87ae566319e5ef7ff05143b7cf0bae6a7481b29b16cfcec102f02",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/screen_cam_contact_collar_follow.py": "647c572c78a8d45bdab9f879a9a4830e39d6d95ad8964dc34c5126d4692796bf",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/CAM_PH_RECEIPT.json": "9c77e737e32b5120f04e7d3981a7a9e041537343d9e4c91aac18e001c2d27cc9",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/head.npz": "082a1df3d3d2c8c707617dd79a4d4a06dcb4df6c25c9f99892386ab908bc926e",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/c6_left_slot_entry/Yaw_Base_candidate.npz": "46d54714f72d10eb5c80c211bdd75d7a4b4a05bcea81cf79b142725c2fd67975",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_side_fans/c6_join/candidate_curves.npz": "9abf98d1d6519c46a08ce50bc8f6a49b82265ed2fb286d0b3c04a1b80778c1be",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/contact_collar_follow/review.json": "b891d132fb55e7229f7a99b6eaeb7d65370a7b0ffef563fd3ad2612fb8d83c46",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/bench_preassembly_v2/review.json": "c03d662a449a91c314f7e7d7252e0c75f1607688901be02c645b39184e112df5",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/sliding_guide_v4/Pitch_Yoke_candidate.npz": "831fbe6d9d409b08f25117c519e0a373e9fd28318649c5a462c2eb1bba3c2eb9",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/sliding_guide_v4/review.json": "56ffe1bc9cd295f8a29d43d82d617222c970fd98f37d65c13fd1801968d536f2",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/band.npz": "58fdf83e073f48e567f29bee37e35d79c59cd5b40802fa7eebbbbc9b59d5b7a3",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/Pitch_Cradle_candidate.npz": "1c8cee6e733a88b4d0d977f8e30bc1b69902cd42c318b42e0fa95fd6586889cc",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/review.json": "cfed9305f369e55864756d8cb13c96583af3458bff4f3218a3bde9e517ff3fd1"
+  },
+  "rows": [
+    {
+      "variant": "lower-0.30",
+      "status": "PASS",
+      "checked_positions": 1048,
+      "planned_positions": 1048,
+      "path_length_mm": 104.62460329529472,
+      "maximum_position_step_mm": 0.09992798786561635,
+      "last_rear_z_mm": 136.5,
+      "first_failure": null
+    },
+    {
+      "variant": "lower-0.60",
+      "status": "BLOCKED",
+      "checked_positions": 881,
+      "planned_positions": 1048,
+      "path_length_mm": 104.6132999832103,
+      "maximum_position_step_mm": 0.09991719196105464,
+      "last_rear_z_mm": 152.99833351362494,
+      "first_failure": {
+        "index": 880,
+        "station_mm": 87.9271289257164,
+        "rear_mm": [
+          -9.369210275768104,
+          4.278847585998034,
+          152.99833351362494
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "x_axis": [
+          0.4154208468912143,
+          0.9096293310839236,
+          0.0
+        ],
+        "hits": [
+          {
+            "target": "Yaw_Base",
+            "overlap_mm3": 0.0,
+            "gap_mm": 0.2983335155541308
+          }
+        ]
+      }
+    },
+    {
+      "variant": "lower-0.90",
+      "status": "BLOCKED",
+      "checked_positions": 882,
+      "planned_positions": 1048,
+      "path_length_mm": 104.61499208120338,
+      "maximum_position_step_mm": 0.09991880810049279,
+      "last_rear_z_mm": 152.91077092690824,
+      "first_failure": {
+        "index": 881,
+        "station_mm": 88.02846993652358,
+        "rear_mm": [
+          -9.090822922277372,
+          4.170445541107069,
+          152.91077092690824
+        ],
+        "tangent": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "x_axis": [
+          0.4169701786522605,
+          0.9089201670744808,
+          0.0
+        ],
+        "hits": [
+          {
+            "target": "Yaw_Base",
+            "overlap_mm3": 0.0,
+            "gap_mm": 0.2107709269082534
+          }
+        ]
+      }
+    }
+  ],
+  "radial_profile_z_mm": [
+    142.5,
+    148.0,
+    173.0,
+    178.0,
+    183.0,
+    188.0,
+    189.0,
+    190.0,
+    192.0,
+    194.0,
+    196.0,
+    198.0,
+    200.0,
+    202.0,
+    207.0
+  ],
+  "radial_profile_r_mm": [
+    11.0,
+    11.0,
+    10.5,
+    10.5,
+    11.5,
+    13.0,
+    13.3,
+    13.6,
+    14.15,
+    14.7,
+    14.8,
+    14.8,
+    14.4,
+    14.2,
+    14.2
+  ],
+  "radial_offsets_mm": [
+    0.0
+  ],
+  "radial_lean_degrees": [
+    16
+  ],
+  "lower_offsets_mm": [
+    -0.3,
+    -0.6,
+    -0.9
+  ],
+  "terminal_mm": [
+    2.08,
+    1.5,
+    5.7
+  ],
+  "not_yet_installed": [
+    "Camera_Lens",
+    "Camera_PCB",
+    "Display_Frame",
+    "Display_PCB",
+    "Face_Joint_-1_0.0_Nut",
+    "Face_Joint_-1_0.0_Screw",
+    "Face_Joint_-1_7.0_Nut",
+    "Face_Joint_-1_7.0_Screw",
+    "Face_Joint_1_0.0_Nut",
+    "Face_Joint_1_0.0_Screw",
+    "Face_Joint_1_7.0_Nut",
+    "Face_Joint_1_7.0_Screw",
+    "Head_Cradle_Screw_-1",
+    "Head_Cradle_Screw_1",
+    "Head_Front",
+    "Head_Rear",
+    "Head_Seam_Insert_-1",
+    "Head_Seam_Insert_1",
+    "Head_Seam_Screw_-1",
+    "Head_Seam_Screw_1",
+    "LCD_Mount_Screw_0",
+    "LCD_Mount_Screw_1",
+    "LCD_Mount_Screw_2",
+    "Pitch_Horn",
+    "Pitch_Lock_Screw",
+    "Pitch_Output",
+    "Pitch_Trunnion_L",
+    "Pitch_Trunnion_R",
+    "Plug_motion_J5"
+  ],
+  "Yaw_Reaction_Link_present": true,
+  "free_wire_shape": "NOT_TESTED",
+  "peer_CAM_wires": "NOT_TESTED",
+  "continuous_sweep": "NOT_TESTED",
+  "actual_crimped_envelope": "BLOCKED",
+  "full_harness": "BLOCKED",
+  "main_changed": false,
+  "approved": false,
+  "C6_main_applied": false,
+  "output_geometry": {
+    "paths.npz": "fb09f61358278b6d1684c87729a200268e22737c9a72dabc9217a92b2e8230e3",
+    "blocked_lower-0.90.npz": "aad8fa03be4873885c3b1fd86daa1a955504a26eddc66b19cb4f00cf4af63bf3",
+    "blocked_lower-0.60.npz": "76fb038efc269f3468403af9d6bd4b59b6ab89a28d9b18a482697bb9e4a7b6ee"
+  },
+  "script_sha256": "6acc9896ea4d57d135ef018d8adab3606f65a9d0b9b88576ef2a1d35432304f0",
+  "elapsed_s": 27.43984580039978
+}

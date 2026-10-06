@@ -1,0 +1,676 @@
+{
+  "status": "BLOCKED",
+  "scope": "Finite bridge-lift bend-timing candidate; no continuous or complete assembly proof",
+  "script_sha256": "b29c4c1c40d0b4dc076fab41fbfd8ff9dc6906c06288cb0063984bbe09a8725f",
+  "helper_sha256": "26c02e50bf07f59d39a73f22be6623a04287b83aaee8295366c312c546d6df07",
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/packing.json": "28fa0bd015cc75aedbddea887c7317538403476811a249ee75762c36cb073fd6",
+    "mechanical/studies/prearrival_finish/harness_A8/joined_entry_screen.json": "59a7ce329df097bd7f4f7b4e3467b6e26907200cb91239cd8fbe711ed17a9556",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/body_to_yaw_motion.json": "c3fbc70e18fae3716923cb0f81f041f29fdb0acd77caee0f03539768453e3235",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_port/lower_staging/body_partial_curves.npz": "fb278de629417a9a67ea73776f8ffd5c63d0dad1371d6511bf193dd8a283e72f",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_connector_install/route_datums.json": "11b95c43807f387158bf47922472363b709651f30685ee595697024652f89120",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/wire_solids.json": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/verification.json": "351a78dd466e5f008192ae6dcda4c2f7ccff106a2b03695480b5596e738e2bf0",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/curvature_paths.py": "314851bea1a2160efb913ea6d242d14833f5e227b0ca3108e4ca55b9af202ae8",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/split_assembly/screen.json": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_pose_packing/lift18/screen.json": "bf7c0ee4652eb5d9f1d5613850df1764b11ff4224316ec105bd23ee7acad16e4",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_pose_packing/lift18/verification.json": "d259abd8eff1a219ea69a2f788f5ecaf93df2c2dd2de00024fbc7973bbd1f209",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_lift_transition/screen.json": "2e8d4637cca6cb020759ff086e8c5abf3821d9fc13f79d5c93c2a8ba9a76f0c6"
+  },
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "source_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "planned_positions": 37,
+  "sample_spacing_mm": 0.5,
+  "bridge_lift_mm": 18.0,
+  "shell_transform": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.9659258127212524,
+      -0.25881898403167725,
+      25.881898880004883
+    ],
+    [
+      0.0,
+      0.25881898403167725,
+      0.9659258127212524,
+      17.40741729736328
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "fixed_body_wires": 14,
+  "CAM_wires": 4,
+  "body_connection_preserved": true,
+  "wire_OD_mm": 0.6604,
+  "clearance_mm": 0.3,
+  "minimum_nominal_radius_mm": 7.0,
+  "minimum_upright_stock_mm": 5.0,
+  "analytic_length_conserved": true,
+  "terminal_dimensions_ASSUMED_mm": [
+    1.0,
+    1.8,
+    4.1
+  ],
+  "results": [
+    {
+      "candidate_id": "pin1_0",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.981523212945357,
+      "maximum_polyline_length_error_mm": 0.0006625287857673356
+    },
+    {
+      "candidate_id": "pin1_4",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.75
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.4435386180158067,
+      "maximum_polyline_length_error_mm": 0.000645353047957542
+    },
+    {
+      "candidate_id": "pin1_21",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.5
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 2.808145852116716,
+      "maximum_polyline_length_error_mm": 0.0006446964832207414
+    },
+    {
+      "candidate_id": "pin1_22",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 90.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 4.1010083062893115,
+      "maximum_polyline_length_error_mm": 0.0006649648789789353
+    },
+    {
+      "candidate_id": "pin1_29",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 90.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.75
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.5599142382963156,
+      "maximum_polyline_length_error_mm": 0.0006436974346115676
+    },
+    {
+      "candidate_id": "pin1_31",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 90.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSR",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 4.117460631981414,
+      "maximum_polyline_length_error_mm": 0.0006567868177853597
+    },
+    {
+      "candidate_id": "pin1_44",
+      "pin": 1,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 90.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.5
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.0434716835408286,
+      "maximum_polyline_length_error_mm": 0.0006524254889086478
+    },
+    {
+      "candidate_id": "pin2_0",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 1.9345323085347355,
+      "maximum_polyline_length_error_mm": 0.0005530059690386224
+    },
+    {
+      "candidate_id": "pin2_2",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.75
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 2.8306899055365307,
+      "maximum_polyline_length_error_mm": 0.0005448929271096858
+    },
+    {
+      "candidate_id": "pin2_3",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSR",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 1.937763679628765,
+      "maximum_polyline_length_error_mm": 0.0005273169961697022
+    },
+    {
+      "candidate_id": "pin2_6",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSR",
+        "elevation_fraction": 0.75
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 2.7168499883347295,
+      "maximum_polyline_length_error_mm": 0.000509709270033909
+    },
+    {
+      "candidate_id": "pin2_8",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.5
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 2.9887700772704875,
+      "maximum_polyline_length_error_mm": 0.0005448934234095759
+    },
+    {
+      "candidate_id": "pin2_13",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 8.0,
+        "family": "LSR",
+        "elevation_fraction": 0.5
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.0499759118487555,
+      "maximum_polyline_length_error_mm": 0.0005099670163986048
+    },
+    {
+      "candidate_id": "pin2_18",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 90.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.5
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.072478475026411,
+      "maximum_polyline_length_error_mm": 0.0005850162476690457
+    },
+    {
+      "candidate_id": "pin2_21",
+      "pin": 2,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 105.0,
+        "planar_radius_mm": 7.0,
+        "family": "LSR",
+        "elevation_fraction": 0.25
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 105,
+        "planar_radius_mm": 7.0,
+        "family": "LSR"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 3.866170476170721,
+      "maximum_polyline_length_error_mm": 0.0005385395061807685
+    },
+    {
+      "candidate_id": "pin3_1",
+      "pin": 3,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 15.0,
+        "planar_radius_mm": 7.0,
+        "family": "LRL-1",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 15,
+        "planar_radius_mm": 7.0,
+        "family": "LRL-1"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 7.217209987596377,
+      "maximum_polyline_length_error_mm": 0.0009117644851812656
+    },
+    {
+      "candidate_id": "pin3_6",
+      "pin": 3,
+      "status": "PASS",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 15.0,
+        "planar_radius_mm": 8.0,
+        "family": "LRL-1",
+        "elevation_fraction": 1.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 15,
+        "planar_radius_mm": 7.0,
+        "family": "LRL-1"
+      },
+      "passing_positions": 37,
+      "planned_positions": 37,
+      "first_failure_index": null,
+      "failure": null,
+      "maximum_sampled_material_motion_mm": 7.283940743888389,
+      "maximum_polyline_length_error_mm": 0.0007350096221898639
+    },
+    {
+      "candidate_id": "pin4_schedule_2p0",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 7,
+      "planned_positions": 37,
+      "first_failure_index": 7,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          34.91685865576032,
+          -7.261515815083886,
+          142.63999938964844
+        ],
+        "obstacle": "fixed_wire_H02_2",
+        "centreline_distance_mm": 0.6395221948623657,
+        "required_bound_mm": 0.6902597124070584
+      },
+      "maximum_sampled_material_motion_mm": 4.037617348750302,
+      "maximum_polyline_length_error_mm": 0.00036803761344117447,
+      "schedule_exponent": 2.0
+    },
+    {
+      "candidate_id": "pin4_schedule_3p0",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 7,
+      "planned_positions": 37,
+      "first_failure_index": 7,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          34.98839292561637,
+          -7.185159822533315,
+          142.63999938964844
+        ],
+        "obstacle": "fixed_wire_H02_2",
+        "centreline_distance_mm": 0.6805687546730042,
+        "required_bound_mm": 0.6904184732999396
+      },
+      "maximum_sampled_material_motion_mm": 4.007634179342233,
+      "maximum_polyline_length_error_mm": 0.00036803761344117447,
+      "schedule_exponent": 3.0
+    },
+    {
+      "candidate_id": "pin4_schedule_4p0",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 7,
+      "planned_positions": 37,
+      "first_failure_index": 7,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          34.988831238215546,
+          -7.110134202614336,
+          142.63999938964844
+        ],
+        "obstacle": "fixed_wire_H02_2",
+        "centreline_distance_mm": 0.660079300403595,
+        "required_bound_mm": 0.6904313903614956
+      },
+      "maximum_sampled_material_motion_mm": 3.9990724205089805,
+      "maximum_polyline_length_error_mm": 0.00036803761344117447,
+      "schedule_exponent": 4.0
+    },
+    {
+      "candidate_id": "pin4_schedule_0p5",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 5,
+      "planned_positions": 37,
+      "first_failure_index": 5,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          35.47903672728815,
+          -5.033708858832899,
+          142.63999938964844
+        ],
+        "obstacle": "fixed_wire_H02_2",
+        "centreline_distance_mm": 0.6720632910728455,
+        "required_bound_mm": 0.6904300377859368
+      },
+      "maximum_sampled_material_motion_mm": 2.4488854397287128,
+      "maximum_polyline_length_error_mm": 0.00037324015374906594,
+      "schedule_exponent": 0.5
+    },
+    {
+      "candidate_id": "pin4_schedule_0p25",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 4,
+      "planned_positions": 37,
+      "first_failure_index": 4,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          35.465801232981796,
+          -5.191033903425112,
+          142.63999938964844
+        ],
+        "obstacle": "fixed_wire_H02_2",
+        "centreline_distance_mm": 0.671303391456604,
+        "required_bound_mm": 0.6903491092579546
+      },
+      "maximum_sampled_material_motion_mm": 3.4145427065995477,
+      "maximum_polyline_length_error_mm": 0.00038319142504406045,
+      "schedule_exponent": 0.25
+    },
+    {
+      "candidate_id": "pin4_schedule_1p0",
+      "pin": 4,
+      "status": "BLOCKED",
+      "endpoint_parameters": {
+        "entry_azimuth_deg": 0.0,
+        "planar_radius_mm": 10.0,
+        "family": "LSL",
+        "elevation_fraction": 0.0
+      },
+      "starting_parameters": {
+        "entry_azimuth_deg": 0,
+        "planar_radius_mm": 12.0,
+        "family": "LSL"
+      },
+      "passing_positions": 6,
+      "planned_positions": 37,
+      "first_failure_index": 6,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 4,
+        "point_mm": [
+          35.4160338679694,
+          -5.516798107982023,
+          142.63999938964844
+        ],
+        "obstacle": "fixed_wire_H02_2",
+        "centreline_distance_mm": 0.6720616221427917,
+        "required_bound_mm": 0.6903699232935637
+      },
+      "maximum_sampled_material_motion_mm": 2.8461247458657795,
+      "maximum_polyline_length_error_mm": 0.00036803761344117447,
+      "schedule_exponent": 1.0
+    }
+  ],
+  "search_nodes": 0,
+  "selected": null,
+  "selected_pairs": [],
+  "pair_diagnostics": [],
+  "curves_sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+  "continuous_movement": "NOT_TESTED",
+  "remaining_bridge_back_and_bench": "NOT_TESTED",
+  "hands_and_fixture": "NOT_TESTED",
+  "actual_wire_and_terminal": "NOT_TESTED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "elapsed_s": 4.9609198570251465
+}

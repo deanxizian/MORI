@@ -1,0 +1,26 @@
+{
+  "completed_utc": "2026-09-27T16:19:44.776857+00:00",
+  "revision": "V1.2-M1.39",
+  "main_pipeline": "mechanical/reports/prearrival_commands.json",
+  "main_validation": "mechanical/reports/validation.json",
+  "local_validation": "mechanical/reports/prearrival_validation.json",
+  "delivery_check": "mechanical/reports/delivery_consistency.json",
+  "package_validation": "delivery_check.json",
+  "IMU": "Original20x16 PCB/two mounting points retained; expansion withdrawn by user and electrical task acknowledged",
+  "commands_executed": [
+    "python3 mechanical/scripts/finalize_prearrival.py",
+    "python3 mechanical/studies/prearrival_preparation/package_review.py",
+    "python3 mechanical/studies/prearrival_preparation/check_delivery.py"
+  ],
+  "studies_before_acceptance_are_baseline": "V1.2-M1.38",
+  "still_required_design": [
+    "Head horn and trunnion transmission/axial retention",
+    "Remaining nominal insert seats and supplier selection",
+    "WeAct socket/mating connector detailed interfaces",
+    "Electrical charging/power cut interface handoff",
+    "Harness after mounts and connectors finalized"
+  ],
+  "pending_question": "Whether to evaluate Waveshare SC09 plus original horn as a complete alternative; no substitution made",
+  "manufacturing_release": false,
+  "orders": 0
+}

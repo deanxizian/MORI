@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-21",
+  "actual_executed_commands": [
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "10.0.6\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "sch",
+        "erc",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "Usage: sch erc [--help] [--output OUTPUT_FILE] [--define-var KEY=VALUE]... [--format VAR] [--units VAR] [--severity-all] [--severity-error] [--severity-warning] [--severity-exclusions] [--exit-code-violations] INPUT_FILE\n\nRuns the Electrical Rules Check (ERC) on the schematic and creates a report\n\nPositional arguments:\n  INPUT_FILE              Input file \n\nOptional arguments:\n  -h, --help              Shows help message and exits \n  -o, --output            Output file [nargs=0..1] [default: \"\"]\n  -D, --define-var        Overrides or adds project variables, can be used multiple times to declare multiple variables.\n                          Use in the format of '--define-var key=value' or '-D key=value' [nargs=0..1] [default: {}] [may be repeated]\n  --format                Output file format, options: json, report [nargs=0..1] [default: \"report\"]\n  --units                 Report units; valid options: in, mm, mils [nargs=0..1] [default: \"mm\"]\n  --severity-all          Report all ERC violations, this is equivalent to including all the other severity arguments \n  --severity-error        Report all ERC error level violations, this can be combined with the other severity arguments \n  --severity-warning      Report all ERC warning level violations, this can be combined with the other severity arguments \n  --severity-exclusions   Report all excluded ERC violations, this can be combined with the other severity arguments \n  --exit-code-violations  Return a nonzero exit code if ERC violations exist \n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "pcb",
+        "drc",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "Usage: pcb drc [--help] [--output OUTPUT_FILE] [--define-var KEY=VALUE]... [--format FORMAT] [--all-track-errors] [--schematic-parity] [--units UNITS] [--severity-all] [--severity-error] [--severity-warning] [--severity-exclusions] [--exit-code-violations] [--refill-zones] [--save-board] INPUT_FILE\n\nRuns the Design Rules Check (DRC) on the PCB and creates a report\n\nPositional arguments:\n  INPUT_FILE              Input file \n\nOptional arguments:\n  -h, --help              Shows help message and exits \n  -o, --output            Output file [nargs=0..1] [default: \"\"]\n  -D, --define-var        Overrides or adds project variables, can be used multiple times to declare multiple variables.\n                          Use in the format of '--define-var key=value' or '-D key=value' [nargs=0..1] [default: {}] [may be repeated]\n  --format                Output file format, options: json, report [nargs=0..1] [default: \"report\"]\n  --all-track-errors      Report all errors for each track \n  --schematic-parity      Test for parity between PCB and schematic \n  --units                 Report units; valid options: in, mm, mils [nargs=0..1] [default: \"mm\"]\n  --severity-all          Report all DRC violations, this is equivalent to including all the other severity arguments \n  --severity-error        Report all DRC error level violations, this can be combined with the other severity arguments \n  --severity-warning      Report all DRC warning level violations, this can be combined with the other severity arguments \n  --severity-exclusions   Report all excluded DRC violations, this can be combined with the other severity arguments \n  --exit-code-violations  Return a nonzero exit code if DRC violations exist \n  --refill-zones          Refill zones before running DRC \n  --save-board            Save the board after DRC, must be used with --refill-zones \n",
+      "stderr": ""
+    }
+  ],
+  "note": "Only version/help checks; no V1 ERC/DRC execution."
+}

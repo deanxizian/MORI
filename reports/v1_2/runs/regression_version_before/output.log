@@ -1,0 +1,26 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______________ test_health_version_matches_telemetry_and_profile _______________
+
+tmp_path = PosixPath('/private/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/pytest-of-dean/pytest-38/test_health_version_matches_te0')
+
+    def test_health_version_matches_telemetry_and_profile(tmp_path):
+        with TestClient(create_app(str(tmp_path))) as client:
+>           assert client.get('/health').json()['version']==PROFILE['software_version']
+E           AssertionError: assert '1.0.0-dev.1' == '1.2.0-dev.1'
+E             
+E             - 1.2.0-dev.1
+E             ?   ^
+E             + 1.0.0-dev.1
+E             ?   ^
+
+simulation/tests/test_v1_2.py:23: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /Users/dean/Documents/MORI/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED simulation/tests/test_v1_2.py::test_health_version_matches_telemetry_and_profile
+1 failed, 1 warning in 0.49s

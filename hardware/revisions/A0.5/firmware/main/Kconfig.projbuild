@@ -1,0 +1,23 @@
+menu "MORI hardware validation"
+config MORI_POWER_STAGE_VERIFIED
+    bool "Independent electrical gate, limit and clamp checks signed off (permits bench unlock)"
+    default n
+    help
+        Enable only after the emergency stop, sleep pull-down, heartbeat timeout,
+        current-limit modification and bus clamp have passed physical checks.
+config MORI_ENABLE_BALANCE
+    bool "Compile experimental balance arming support"
+    default n
+    help
+        Requires measured axes/signs, calibrated IMU, explicit serial arming,
+        nonzero reviewed gains, local fall protection and hardware verification.
+config MORI_LCD_ENABLE
+    bool "Enable low-priority GC9A01 display test"
+    default y
+config MORI_HEAD_VERIFIED
+    bool "SER0037 centre, direction, linkage and safe pulse range physically verified"
+    default n
+    help
+        Required for any head PWM. The nominal 270 degree mapping is only a
+        commissioning starting point. Remove the linkage for first centring.
+endmenu

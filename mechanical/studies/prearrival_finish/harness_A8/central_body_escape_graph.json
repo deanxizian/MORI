@@ -1,0 +1,52 @@
+{
+  "status": "BLOCKED",
+  "scope": "Finite cylindrical graph; zero-pose or named finite-pose union, not an exhaustive free-space or full wire route proof",
+  "coordinate_frame": "body",
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "source_mesh_sha256": "38b9406402e9c48985500a6be5d29b272932aa86495240f1ff8bf0da97e0c265",
+  "steps": {
+    "radial_mm": 0.4,
+    "angle_deg": 5,
+    "z_mm": 0.5
+  },
+  "root_mm": [
+    6.800000000000001,
+    0.0,
+    150.0
+  ],
+  "target": "radius>=30 mm OR Z<=136 mm",
+  "wire_od_max_mm": 0.6604,
+  "project_gap_mm": 0.3,
+  "required_centreline_clearance_mm": 0.6302,
+  "widest_grid_path_clearance_bound_mm": null,
+  "path_mm": [],
+  "expanded_nodes": 11510,
+  "queried_nodes": 18435,
+  "threshold_witness": {
+    "expanded_nodes_before_threshold_loss": 3449,
+    "best_remaining_clearance_bound_mm": 0.6084902899169922
+  },
+  "reachable_with_wire_radius_and_project_gap": {
+    "node_count": 3448,
+    "radial_range_mm": [
+      5.2,
+      14.000000000000002
+    ],
+    "z_range_mm": [
+      148.0,
+      160.0
+    ]
+  },
+  "reachable_nodes_file": "central_body_reachable_nodes.npz",
+  "reachable_nodes_sha256": "1bcbeaa6a303ba3342da03212aec261a4884d047ae5098ea8aafeb62eefe011f",
+  "main_geometry_changed": false,
+  "elapsed_s": 3.277665853500366,
+  "minimum_bend": "NOT_TESTED",
+  "finite_pose_obstacles_included": true,
+  "continuous_motion": "NOT_TESTED",
+  "limits": [
+    "Clearance lower bounds cover the edges in this graph, but do not upper-bound every possible continuous path.",
+    "The search begins in a previously checked exterior point. Positive edge bounds prevent entering a solid without crossing its surface.",
+    "Corners in a graph route are not cable bends or an installable harness."
+  ]
+}

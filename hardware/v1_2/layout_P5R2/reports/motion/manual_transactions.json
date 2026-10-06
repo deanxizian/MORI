@@ -1,0 +1,2050 @@
+[
+  {
+    "removed": [
+      "05f69651-6e74-4d41-8be7-84bbf34d7140",
+      "27f3c4ed-b714-4eec-8eaa-a8bb8831b860",
+      "420a77f7-e709-4ce6-ad82-438ced028c2b",
+      "4971b3c8-b532-47db-8f1a-3f6caa89619a",
+      "9ca581b4-d76e-47bd-9ae2-d348fbd3426c",
+      "b2e0eaf6-507b-49ab-a12b-2ca50ae8c70a",
+      "b799cb49-50b7-4a12-b490-941a8d2cad39",
+      "e2d5288a-bf2e-4628-a452-280382f560e2",
+      "ff72c39a-e2f0-4a4c-9a6a-6080954cbb91",
+      "ffaa8e8b-5434-4816-9376-2cbea653c0e0",
+      "3caf889c-b803-4520-8d17-74af3f20cdbf"
+    ],
+    "routes": [
+      {
+        "net": "/IMU_CS",
+        "layer": "B.Cu",
+        "points": [
+          [
+            37.592,
+            21.336
+          ],
+          [
+            46.464,
+            21.336
+          ],
+          [
+            46.825,
+            20.975
+          ],
+          [
+            58.160599,
+            20.975
+          ],
+          [
+            59.943999,
+            22.7584
+          ],
+          [
+            59.943999,
+            24.485599
+          ],
+          [
+            60.452,
+            24.9936
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "6375daae-be47-4c49-aaed-079eae256138",
+          "55f4df51-c173-423d-93f4-8f50ceecbdfa",
+          "61d5273e-b540-4091-99e5-8c3029b742bc",
+          "453ad1b7-37b4-4bec-8a11-be49f2066ae5",
+          "5c0ac35c-b797-4c4b-9618-bddd68c7f3db",
+          "2e420e3a-b79e-4d9a-9a56-124acf3ba757"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "R13",
+        "old": [
+          [
+            46.0,
+            20.0
+          ],
+          180.0
+        ],
+        "new": [
+          [
+            46,
+            20.975
+          ],
+          180
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "R13 placement trial: bring pull-up onto CS corridor to remove small roof-shaped detour",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 0.5105 mm",
+            "pos": {
+              "x": 46.464,
+              "y": 21.336
+            },
+            "uuid": "55f4df51-c173-423d-93f4-8f50ceecbdfa"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 8.8720 mm",
+            "pos": {
+              "x": 37.592,
+              "y": 21.336
+            },
+            "uuid": "6375daae-be47-4c49-aaed-079eae256138"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /IMU_CS 和 /+3V3)",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 8.8720 mm",
+            "pos": {
+              "x": 37.592,
+              "y": 21.336
+            },
+            "uuid": "6375daae-be47-4c49-aaed-079eae256138"
+          },
+          {
+            "description": "B.Cu 上 R13 的焊盘 2 [/+3V3]",
+            "pos": {
+              "x": 45.175,
+              "y": 20.975
+            },
+            "uuid": "b79dc56b-e01a-48f7-8ad9-ab50b3c6c0d6"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.0080 mm)",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 8.8720 mm",
+            "pos": {
+              "x": 37.592,
+              "y": 21.336
+            },
+            "uuid": "6375daae-be47-4c49-aaed-079eae256138"
+          },
+          {
+            "description": "过孔 [/IMU_MOSI] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 46.228,
+              "y": 21.843999
+            },
+            "uuid": "9266d243-364a-488b-b25a-d949495ff5d2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "孔间距违规 (规则 'R05-R07 hole to copper' 间距 0.3000 mm; 实际 0.2580 mm)",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 8.8720 mm",
+            "pos": {
+              "x": 37.592,
+              "y": 21.336
+            },
+            "uuid": "6375daae-be47-4c49-aaed-079eae256138"
+          },
+          {
+            "description": "过孔 [/IMU_MOSI] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 46.228,
+              "y": 21.843999
+            },
+            "uuid": "9266d243-364a-488b-b25a-d949495ff5d2"
+          }
+        ],
+        "severity": "error",
+        "type": "hole_clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.0601 mm)",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 0.5105 mm",
+            "pos": {
+              "x": 46.464,
+              "y": 21.336
+            },
+            "uuid": "55f4df51-c173-423d-93f4-8f50ceecbdfa"
+          },
+          {
+            "description": "过孔 [/IMU_MOSI] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 46.228,
+              "y": 21.843999
+            },
+            "uuid": "9266d243-364a-488b-b25a-d949495ff5d2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1145 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 R13 的焊盘 1 [/IMU_CS]",
+            "pos": {
+              "x": 46.825,
+              "y": 20.975
+            },
+            "uuid": "8480d434-33ad-4424-a0e9-cb304d7894eb"
+          },
+          {
+            "description": "过孔 [/IMU_MOSI] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 46.228,
+              "y": 21.843999
+            },
+            "uuid": "9266d243-364a-488b-b25a-d949495ff5d2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R01 via-pad physical any net' 间距 0.2000 mm; 实际 0.1145 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 R13 的焊盘 1 [/IMU_CS]",
+            "pos": {
+              "x": 46.825,
+              "y": 20.975
+            },
+            "uuid": "8480d434-33ad-4424-a0e9-cb304d7894eb"
+          },
+          {
+            "description": "过孔 [/IMU_MOSI] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 46.228,
+              "y": 21.843999
+            },
+            "uuid": "9266d243-364a-488b-b25a-d949495ff5d2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "底层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/IMU_CS] (B.Cu), 长度: 8.8720 mm",
+            "pos": {
+              "x": 37.592,
+              "y": 21.336
+            },
+            "uuid": "6375daae-be47-4c49-aaed-079eae256138"
+          },
+          {
+            "description": "B.Cu 上 R13 的焊盘 2 [/+3V3]",
+            "pos": {
+              "x": 45.175,
+              "y": 20.975
+            },
+            "uuid": "b79dc56b-e01a-48f7-8ad9-ab50b3c6c0d6"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "Via is not connected or connected on only one layer",
+        "items": [
+          {
+            "description": "过孔 [/+3V3] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 43.9674,
+              "y": 19.9898
+            },
+            "uuid": "05a0ea58-3529-47cb-bedf-56dd8212719b"
+          }
+        ],
+        "severity": "warning",
+        "type": "via_dangling"
+      }
+    ],
+    "unconnected": [
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "过孔 [/+3V3] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 43.9674,
+              "y": 19.9898
+            },
+            "uuid": "05a0ea58-3529-47cb-bedf-56dd8212719b"
+          },
+          {
+            "description": "B.Cu 上 R13 的焊盘 2 [/+3V3]",
+            "pos": {
+              "x": 45.175,
+              "y": 20.975
+            },
+            "uuid": "b79dc56b-e01a-48f7-8ad9-ab50b3c6c0d6"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      }
+    ]
+  },
+  {
+    "removed": [
+      "21e6e7ae-193c-4a19-bc6c-50e879a9ae10",
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.725,
+            12
+          ],
+          [
+            42.7298,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "15a5586f-80e0-4df4-a8ba-6706e9e9a535",
+          "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [],
+    "reason": "CAM_3V3: eliminate small raise/lower jog between C7 and J5, preserve local U4 decoupling connection",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 1.4210 mm",
+            "pos": {
+              "x": 41.725,
+              "y": 12.0
+            },
+            "uuid": "15a5586f-80e0-4df4-a8ba-6706e9e9a535"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.4766 mm",
+            "pos": {
+              "x": 42.7298,
+              "y": 13.0048
+            },
+            "uuid": "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "不允许的项目 (规则 'P3R1 R9 unrelated nets outside body')",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.4766 mm",
+            "pos": {
+              "x": 42.7298,
+              "y": 13.0048
+            },
+            "uuid": "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CAM_RX_BUF 和 /CAM_3V3)",
+        "items": [
+          {
+            "description": "B.Cu 上 R9 的焊盘 1 [/CAM_RX_BUF]",
+            "pos": {
+              "x": 44.175,
+              "y": 13.5
+            },
+            "uuid": "1c836745-95e3-42bd-bf80-2c6e963b05d4"
+          },
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.4766 mm",
+            "pos": {
+              "x": 42.7298,
+              "y": 13.0048
+            },
+            "uuid": "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CAM_RX 和 /CAM_3V3)",
+        "items": [
+          {
+            "description": "B.Cu 上 R9 的焊盘 2 [/CAM_RX]",
+            "pos": {
+              "x": 45.825,
+              "y": 13.5
+            },
+            "uuid": "1d897b77-1d74-4693-b89c-7b95b3560e79"
+          },
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.4766 mm",
+            "pos": {
+              "x": 42.7298,
+              "y": 13.0048
+            },
+            "uuid": "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "底层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.4766 mm",
+            "pos": {
+              "x": 42.7298,
+              "y": 13.0048
+            },
+            "uuid": "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+          },
+          {
+            "description": "B.Cu 上 R9 的焊盘 1 [/CAM_RX_BUF]",
+            "pos": {
+              "x": 44.175,
+              "y": 13.5
+            },
+            "uuid": "1c836745-95e3-42bd-bf80-2c6e963b05d4"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "底层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.4766 mm",
+            "pos": {
+              "x": 42.7298,
+              "y": 13.0048
+            },
+            "uuid": "e7ad0bcc-50fd-4957-a790-63fb37fc863a"
+          },
+          {
+            "description": "B.Cu 上 R9 的焊盘 2 [/CAM_RX]",
+            "pos": {
+              "x": 45.825,
+              "y": 13.5
+            },
+            "uuid": "1d897b77-1d74-4693-b89c-7b95b3560e79"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "05f69651-6e74-4d41-8be7-84bbf34d7140",
+      "27f3c4ed-b714-4eec-8eaa-a8bb8831b860",
+      "420a77f7-e709-4ce6-ad82-438ced028c2b",
+      "4971b3c8-b532-47db-8f1a-3f6caa89619a",
+      "9ca581b4-d76e-47bd-9ae2-d348fbd3426c",
+      "b799cb49-50b7-4a12-b490-941a8d2cad39",
+      "e2d5288a-bf2e-4628-a452-280382f560e2",
+      "3caf889c-b803-4520-8d17-74af3f20cdbf"
+    ],
+    "routes": [
+      {
+        "net": "/IMU_CS",
+        "layer": "B.Cu",
+        "points": [
+          [
+            37.592,
+            21.336
+          ],
+          [
+            45.35,
+            21.336
+          ],
+          [
+            45.7564,
+            20.9296
+          ],
+          [
+            58.115199,
+            20.9296
+          ],
+          [
+            59.943999,
+            22.7584
+          ],
+          [
+            59.943999,
+            24.485599
+          ],
+          [
+            60.452,
+            24.9936
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "12044a69-1de7-4e89-8602-7e907ec27343",
+          "cf5953f9-40b7-4ef9-9e9c-ceb52459eccf",
+          "f4ce7433-7e96-422c-a99f-7a772aed0292",
+          "c7dbfc95-674d-43bd-8963-2287f40f7439",
+          "3f970d69-b095-4705-930c-90983970daa1",
+          "fd61574e-8a33-4344-bf2f-6c93ee74abb6"
+        ]
+      },
+      {
+        "net": "/IMU_CS",
+        "layer": "B.Cu",
+        "points": [
+          [
+            46,
+            20.325
+          ],
+          [
+            46,
+            20.9296
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "c956317b-7fb5-4a20-bb3a-f5f40524b19a"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "R13",
+        "old": [
+          [
+            46.0,
+            20.0
+          ],
+          180.0
+        ],
+        "new": [
+          [
+            46,
+            19.5
+          ],
+          90
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "R13 rotation and slight translation: CS straight corridor with outward perpendicular pull-up branch",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/CLR_N] (F.Cu), 长度: 3.8795 mm",
+            "pos": {
+              "x": 45.211999,
+              "y": 17.779999
+            },
+            "uuid": "bbc4c95b-a178-4135-b99e-8f03756009c9"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "不允许的项目 (规则 'P5 R13 opposite projection')",
+        "items": [
+          {
+            "description": "走线 [/CLR_N] (F.Cu), 长度: 3.8795 mm",
+            "pos": {
+              "x": 45.211999,
+              "y": 17.779999
+            },
+            "uuid": "bbc4c95b-a178-4135-b99e-8f03756009c9"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "Via is not connected or connected on only one layer",
+        "items": [
+          {
+            "description": "过孔 [/+3V3] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 43.9674,
+              "y": 19.9898
+            },
+            "uuid": "05a0ea58-3529-47cb-bedf-56dd8212719b"
+          }
+        ],
+        "severity": "warning",
+        "type": "via_dangling"
+      }
+    ],
+    "unconnected": [
+      {
+        "description": "Missing connection between items",
+        "items": [
+          {
+            "description": "过孔 [/+3V3] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 43.9674,
+              "y": 19.9898
+            },
+            "uuid": "05a0ea58-3529-47cb-bedf-56dd8212719b"
+          },
+          {
+            "description": "B.Cu 上 R13 的焊盘 2 [/+3V3]",
+            "pos": {
+              "x": 46.0,
+              "y": 18.675
+            },
+            "uuid": "b79dc56b-e01a-48f7-8ad9-ab50b3c6c0d6"
+          }
+        ],
+        "severity": "error",
+        "type": "unconnected_items"
+      }
+    ]
+  },
+  {
+    "removed": [
+      "1fa80444-752b-42b2-95d2-b168ddf36fc5",
+      "32437f1a-c237-4483-8b5a-7abc68267bbc",
+      "683504a0-db60-4a6c-880c-149e175cf303",
+      "7bb122cf-ee4b-474c-98f1-8de22302ba66",
+      "b9364ea3-d416-4bdc-aede-b151f5a475d2",
+      "cd3c107f-d4e1-4a63-bcf5-926d8615543c"
+    ],
+    "routes": [
+      {
+        "net": "/BAT_ADC",
+        "layer": "B.Cu",
+        "points": [
+          [
+            11.125,
+            25.825
+          ],
+          [
+            11.125,
+            26.8
+          ],
+          [
+            11.425,
+            27.1
+          ],
+          [
+            11.425,
+            28
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "a7d20e3d-962b-41a9-9f6e-927e6a47d8fa",
+          "d907f565-b3a1-41ee-a746-91795dad3f4c",
+          "d9ad451a-6d9b-48cc-b3fc-7fb9e600505a"
+        ]
+      },
+      {
+        "net": "/BAT_ADC",
+        "layer": "B.Cu",
+        "points": [
+          [
+            11.425,
+            28
+          ],
+          [
+            11.18,
+            28.245
+          ],
+          [
+            11.18,
+            31.47
+          ],
+          [
+            12.45,
+            32.74
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "4e1d9f47-e892-413e-959f-fdbff88bcfac",
+          "a74fc03f-b276-4bd0-aa88-23ad8fd97c16",
+          "9772fd58-64da-4548-a1e3-132e2bc998e4"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "C9",
+        "old": [
+          [
+            11.9,
+            28.0
+          ],
+          0.0
+        ],
+        "new": [
+          [
+            12.2,
+            28
+          ],
+          0
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "C9 small placement trial: align ADC corridor between header pads, remove S-shaped offset",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "间距违规 (规则 'R06 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1750 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 C9 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 12.975,
+              "y": 28.0
+            },
+            "uuid": "7f00125f-e06b-4500-9c16-e2ba95bc765b"
+          },
+          {
+            "description": "走线 [/WHEEL_ADC] (B.Cu), 长度: 0.5250 mm",
+            "pos": {
+              "x": 13.7,
+              "y": 28.0
+            },
+            "uuid": "a7238eef-23b0-4c67-a825-e644867904e4"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R01 via-pad physical any net' 间距 0.2000 mm; 实际 0.1287 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 C9 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 12.975,
+              "y": 28.0
+            },
+            "uuid": "7f00125f-e06b-4500-9c16-e2ba95bc765b"
+          },
+          {
+            "description": "过孔 [/GND] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 13.275,
+              "y": 27.0
+            },
+            "uuid": "a3d35be6-82ae-4a2f-8101-1fdc28d75ac1"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "封装 C10",
+            "pos": {
+              "x": 15.0,
+              "y": 28.0
+            },
+            "uuid": "8ddf9ce6-fbf4-47b0-91d5-f26157489643"
+          },
+          {
+            "description": "封装 C9",
+            "pos": {
+              "x": 12.2,
+              "y": 28.0
+            },
+            "uuid": "ffae7d91-dc29-493f-ab79-48918c9ab989"
+          }
+        ],
+        "severity": "error",
+        "type": "courtyards_overlap"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "1fa80444-752b-42b2-95d2-b168ddf36fc5",
+      "32437f1a-c237-4483-8b5a-7abc68267bbc",
+      "683504a0-db60-4a6c-880c-149e175cf303",
+      "7bb122cf-ee4b-474c-98f1-8de22302ba66",
+      "b9364ea3-d416-4bdc-aede-b151f5a475d2",
+      "cd3c107f-d4e1-4a63-bcf5-926d8615543c"
+    ],
+    "routes": [
+      {
+        "net": "/BAT_ADC",
+        "layer": "B.Cu",
+        "points": [
+          [
+            11.18,
+            25.825
+          ],
+          [
+            11.18,
+            31.47
+          ],
+          [
+            12.45,
+            32.74
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "20b21e8e-bf9b-458e-a65a-98c5ee6bfee8",
+          "3de20e98-c314-4023-87ae-e5e2486afb21"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "C9",
+        "old": [
+          [
+            11.9,
+            28.0
+          ],
+          0.0
+        ],
+        "new": [
+          [
+            11.955,
+            28
+          ],
+          0
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "C9 align by 0.055 mm: one continuous ADC corridor and outward header entry; remove entire S jog",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "间距违规 (规则 'R01 via-pad physical any net' 间距 0.2000 mm; 实际 0.1904 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 C9 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 12.73,
+              "y": 28.0
+            },
+            "uuid": "7f00125f-e06b-4500-9c16-e2ba95bc765b"
+          },
+          {
+            "description": "过孔 [/GND] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 13.275,
+              "y": 27.0
+            },
+            "uuid": "a3d35be6-82ae-4a2f-8101-1fdc28d75ac1"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "05f69651-6e74-4d41-8be7-84bbf34d7140",
+      "27f3c4ed-b714-4eec-8eaa-a8bb8831b860",
+      "420a77f7-e709-4ce6-ad82-438ced028c2b",
+      "4971b3c8-b532-47db-8f1a-3f6caa89619a",
+      "9ca581b4-d76e-47bd-9ae2-d348fbd3426c",
+      "b799cb49-50b7-4a12-b490-941a8d2cad39",
+      "e2d5288a-bf2e-4628-a452-280382f560e2",
+      "3caf889c-b803-4520-8d17-74af3f20cdbf"
+    ],
+    "routes": [
+      {
+        "net": "/IMU_CS",
+        "layer": "B.Cu",
+        "points": [
+          [
+            37.592,
+            21.336
+          ],
+          [
+            45.719999,
+            21.336
+          ],
+          [
+            46.126399,
+            20.9296
+          ],
+          [
+            58.115199,
+            20.9296
+          ],
+          [
+            59.943999,
+            22.7584
+          ],
+          [
+            59.943999,
+            24.485599
+          ],
+          [
+            60.452,
+            24.9936
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "ed444f85-46d4-4f91-83fc-1e3d44669d9f",
+          "a21bd223-a0e2-4123-8f52-6d11aedfe7a7",
+          "b8ff6053-dc34-44fb-b299-a20382d54c1a",
+          "f19577a1-e26b-4a60-a40b-e8da29279020",
+          "71a3f410-ce6e-4f9f-8a47-578e41fe9c24",
+          "d3b945dc-fab4-43dd-bae7-c403b748e5f4"
+        ]
+      },
+      {
+        "net": "/IMU_CS",
+        "layer": "B.Cu",
+        "points": [
+          [
+            45.5,
+            20.325
+          ],
+          [
+            45.5,
+            21.336
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "d7a0865f-652c-4a7b-a293-9fd936d2fa5e"
+        ]
+      },
+      {
+        "net": "/+3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            45.5,
+            18.675
+          ],
+          [
+            44.7,
+            18.675
+          ],
+          [
+            43.9674,
+            19.4076
+          ],
+          [
+            43.9674,
+            19.9898
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "025a3130-8515-4e3c-bf7f-0cd34a938eb8",
+          "d876f0ab-ae80-44f5-ad86-fbfdaf52f834",
+          "7993c845-54e3-4263-b045-e539cdcd9cf8"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "R13",
+        "old": [
+          [
+            46.0,
+            20.0
+          ],
+          180.0
+        ],
+        "new": [
+          [
+            45.5,
+            19.5
+          ],
+          90
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "R13 rotate and translate left: outward T branch for CS, clear diagonal CLR on opposite face, reconnect 3V3 via",
+    "accepted": true,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 0,
+    "violations": [],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.265601,
+            12.7
+          ],
+          [
+            46.228,
+            12.7
+          ],
+          [
+            46.532799,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "8a363173-003e-4cdb-9025-d3dc79644db3",
+          "07764352-8585-4f5f-9d08-053afb4eeab0",
+          "4f51ca49-6a90-4d39-b867-a443f5dd2b33",
+          "7ae13215-33ac-4f3b-936a-c7413711ebcc"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [],
+    "reason": "C7 onward rail: continuous 12.7 mm corridor above R9; remove 0.1 mm raise/lower kink while retaining own-pad outward exit",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1250 mm)",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 3.9624 mm",
+            "pos": {
+              "x": 42.265601,
+              "y": 12.7
+            },
+            "uuid": "07764352-8585-4f5f-9d08-053afb4eeab0"
+          },
+          {
+            "description": "B.Cu 上 C7 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 43.275,
+              "y": 12.0
+            },
+            "uuid": "a3550a1b-b697-4f41-81f1-37edc9d10037"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "1fa80444-752b-42b2-95d2-b168ddf36fc5",
+      "32437f1a-c237-4483-8b5a-7abc68267bbc",
+      "683504a0-db60-4a6c-880c-149e175cf303",
+      "7bb122cf-ee4b-474c-98f1-8de22302ba66",
+      "b9364ea3-d416-4bdc-aede-b151f5a475d2",
+      "cd3c107f-d4e1-4a63-bcf5-926d8615543c"
+    ],
+    "routes": [
+      {
+        "net": "/BAT_ADC",
+        "layer": "B.Cu",
+        "points": [
+          [
+            11.18,
+            25.825
+          ],
+          [
+            11.18,
+            31.47
+          ],
+          [
+            12.45,
+            32.74
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "d42c04c8-6263-45df-94bc-43ae8eb33977",
+          "99bb1840-0dfe-445b-b952-6eb998c2a1f2"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [],
+    "reason": "ADC: aligned corridor within unchanged C9/R14 pad lands; remove S jog without disturbing same-net via clearance",
+    "accepted": true,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 0,
+    "violations": [],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.265601,
+            12.7
+          ],
+          [
+            46.228,
+            12.7
+          ],
+          [
+            46.532799,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "ddc275af-ecc8-4401-9e54-6c0592a7a82f",
+          "cd1f72c5-8c00-404c-8eed-35657d24c793",
+          "278210fa-2637-4b58-90ba-247601b39d98",
+          "b738c74b-1bca-42fa-a142-4d4df1ed30b2"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "C7",
+        "old": [
+          [
+            42.5,
+            12.0
+          ],
+          0.0
+        ],
+        "new": [
+          [
+            42.5,
+            11.9
+          ],
+          0
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "C7 move 0.1 mm upward: clear its ground pad and straighten downstream 3V3 corridor",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "封装 C7",
+            "pos": {
+              "x": 42.5,
+              "y": 11.9
+            },
+            "uuid": "55378f8b-e0b1-4126-a2a9-a55f33eff5bd"
+          },
+          {
+            "description": "封装 U4",
+            "pos": {
+              "x": 39.0,
+              "y": 10.0
+            },
+            "uuid": "67092923-2a41-49d6-999f-ae4b8adfb960"
+          }
+        ],
+        "severity": "error",
+        "type": "courtyards_overlap"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.265601,
+            12.7
+          ],
+          [
+            46.228,
+            12.7
+          ],
+          [
+            46.532799,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "603f3dab-69ce-4ed8-9ef7-d3086627e4a1",
+          "72bb20ea-952d-457a-a818-a13c12ca2372",
+          "d4f0f428-5ba2-4ee2-bb33-ffcd4c12a1ac",
+          "189fb8bf-25d3-48c4-bc13-31d2c1267300"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "C7",
+        "old": [
+          [
+            42.5,
+            12.0
+          ],
+          0.0
+        ],
+        "new": [
+          [
+            42.7,
+            11.9
+          ],
+          0
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "C7 translate right/up within free area: remove 0.1 mm bus jog while maintaining U4 assembly courtyard",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "间距违规 (规则 'R01 via-pad physical any net' 间距 0.2000 mm; 实际 0.1504 mm)",
+        "items": [
+          {
+            "description": "过孔 [/GND] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 44.4754,
+              "y": 11.9888
+            },
+            "uuid": "2a177542-c73e-491d-9112-e00ef2969a18"
+          },
+          {
+            "description": "B.Cu 上 C7 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 43.475,
+              "y": 11.9
+            },
+            "uuid": "a3550a1b-b697-4f41-81f1-37edc9d10037"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "Courtyards overlap",
+        "items": [
+          {
+            "description": "封装 C7",
+            "pos": {
+              "x": 42.7,
+              "y": 11.9
+            },
+            "uuid": "55378f8b-e0b1-4126-a2a9-a55f33eff5bd"
+          },
+          {
+            "description": "封装 U4",
+            "pos": {
+              "x": 39.0,
+              "y": 10.0
+            },
+            "uuid": "67092923-2a41-49d6-999f-ae4b8adfb960"
+          }
+        ],
+        "severity": "error",
+        "type": "courtyards_overlap"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.570401,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "a0b36171-4093-482a-a31f-983e34d70e66",
+          "90d1393b-c601-4232-a778-df08264c16d0"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [],
+    "reason": "Remove CAM_3V3 0.1 mm bus offset by using one long lower corridor; preserve C7 placement and decoupling connection",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.6360 mm",
+            "pos": {
+              "x": 42.570401,
+              "y": 13.0048
+            },
+            "uuid": "90d1393b-c601-4232-a778-df08264c16d0"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "不允许的项目 (规则 'P3R1 R9 unrelated nets outside body')",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.6360 mm",
+            "pos": {
+              "x": 42.570401,
+              "y": 13.0048
+            },
+            "uuid": "90d1393b-c601-4232-a778-df08264c16d0"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CAM_RX 和 /CAM_3V3)",
+        "items": [
+          {
+            "description": "B.Cu 上 R9 的焊盘 2 [/CAM_RX]",
+            "pos": {
+              "x": 45.825,
+              "y": 13.5
+            },
+            "uuid": "1d897b77-1d74-4693-b89c-7b95b3560e79"
+          },
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.6360 mm",
+            "pos": {
+              "x": 42.570401,
+              "y": 13.0048
+            },
+            "uuid": "90d1393b-c601-4232-a778-df08264c16d0"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CAM_RX_BUF 和 /CAM_3V3)",
+        "items": [
+          {
+            "description": "B.Cu 上 R9 的焊盘 1 [/CAM_RX_BUF]",
+            "pos": {
+              "x": 44.175,
+              "y": 13.5
+            },
+            "uuid": "1c836745-95e3-42bd-bf80-2c6e963b05d4"
+          },
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.6360 mm",
+            "pos": {
+              "x": 42.570401,
+              "y": 13.0048
+            },
+            "uuid": "90d1393b-c601-4232-a778-df08264c16d0"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "底层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.6360 mm",
+            "pos": {
+              "x": 42.570401,
+              "y": 13.0048
+            },
+            "uuid": "90d1393b-c601-4232-a778-df08264c16d0"
+          },
+          {
+            "description": "B.Cu 上 R9 的焊盘 1 [/CAM_RX_BUF]",
+            "pos": {
+              "x": 44.175,
+              "y": 13.5
+            },
+            "uuid": "1c836745-95e3-42bd-bf80-2c6e963b05d4"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "底层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 8.6360 mm",
+            "pos": {
+              "x": 42.570401,
+              "y": 13.0048
+            },
+            "uuid": "90d1393b-c601-4232-a778-df08264c16d0"
+          },
+          {
+            "description": "B.Cu 上 R9 的焊盘 2 [/CAM_RX]",
+            "pos": {
+              "x": 45.825,
+              "y": 13.5
+            },
+            "uuid": "1d897b77-1d74-4693-b89c-7b95b3560e79"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "b033a119-5dc5-4bc7-ab7c-c59f4db44233",
+      "cb54b838-c749-4c90-be77-9a4735fc3be2",
+      "e46cde24-b7b0-4bed-95ae-85f2231974c4"
+    ],
+    "routes": [
+      {
+        "net": "/S288_OE_REQ_N",
+        "layer": "B.Cu",
+        "points": [
+          [
+            12.45,
+            4.8
+          ],
+          [
+            12.45,
+            6.205601
+          ],
+          [
+            12.949999,
+            6.7056
+          ],
+          [
+            15,
+            6.7056
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "2f9aaab0-51a4-447e-ba73-47de4779ae7a",
+          "38fe771e-7992-4ab4-90f5-2a6ca82dc71c",
+          "e07cf0e2-09d3-474e-8440-e72de58f5944"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [],
+    "reason": "S288_OE_REQ_N outward exit with one bevel and a continuous via-to-R3 centreline instead of overlapping parallel stubs",
+    "accepted": true,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 0,
+    "violations": [],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.3672,
+            12.801599
+          ],
+          [
+            46.329598,
+            12.801599
+          ],
+          [
+            46.532799,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "f6556c91-dc8c-452a-9095-31195df9d9cd",
+          "bfc2462b-d47f-416d-9631-e9930ceebf67",
+          "8f05e3ae-814e-4c2e-8f6c-82f90b76206d",
+          "f91481fa-2a2d-4417-b1d2-85b49a255e52"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [],
+    "reason": "CAM_3V3 eliminate S-shaped 0.1 mm jog while preserving the cleared C7/R9 corridor",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1234 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 R9 的焊盘 2 [/CAM_RX]",
+            "pos": {
+              "x": 45.825,
+              "y": 13.5
+            },
+            "uuid": "1d897b77-1d74-4693-b89c-7b95b3560e79"
+          },
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 3.9624 mm",
+            "pos": {
+              "x": 42.3672,
+              "y": 12.801599
+            },
+            "uuid": "bfc2462b-d47f-416d-9631-e9930ceebf67"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1234 mm)",
+        "items": [
+          {
+            "description": "B.Cu 上 R9 的焊盘 1 [/CAM_RX_BUF]",
+            "pos": {
+              "x": 44.175,
+              "y": 13.5
+            },
+            "uuid": "1c836745-95e3-42bd-bf80-2c6e963b05d4"
+          },
+          {
+            "description": "走线 [/CAM_3V3] (B.Cu), 长度: 3.9624 mm",
+            "pos": {
+              "x": 42.3672,
+              "y": 12.801599
+            },
+            "uuid": "bfc2462b-d47f-416d-9631-e9930ceebf67"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      }
+    ],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "24ff1e78-8d0b-4b15-9def-b58ba8a089bb",
+      "724d16f5-ff2e-47f7-b7a0-fb18ceda3afd",
+      "7ea6594a-0cc3-4113-a2c6-8d04905d1af5",
+      "d091f7e7-9b1f-44d3-88a5-a7799dcaa6ac",
+      "d4cc7eb2-8bfc-4e01-95db-f40ac1728710",
+      "f73c82dd-cec9-4464-8319-74d4b521c753"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.3672,
+            12.801599
+          ],
+          [
+            46.329598,
+            12.801599
+          ],
+          [
+            46.532799,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "8ea0eb38-5cc6-4b97-ac29-d1ea6d102425",
+          "07e065f8-ed97-4273-8c8c-69e0addc697a",
+          "fd610cc7-692a-43e9-8eb5-72b6e3b45233",
+          "d5d307b9-793f-4e74-9380-6504516ded3e"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "R9",
+        "old": [
+          [
+            45.0,
+            13.5
+          ],
+          0.0
+        ],
+        "new": [
+          [
+            45,
+            13.75
+          ],
+          0.0
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "Move R9 down 0.25 mm to open a straight CAM_3V3 corridor and eliminate the clearance-induced S jog; C7 unchanged",
+    "accepted": true,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 0,
+    "violations": [],
+    "unconnected": []
+  },
+  {
+    "removed": [
+      "07e065f8-ed97-4273-8c8c-69e0addc697a",
+      "8ea0eb38-5cc6-4b97-ac29-d1ea6d102425",
+      "d5d307b9-793f-4e74-9380-6504516ded3e",
+      "fd610cc7-692a-43e9-8eb5-72b6e3b45233"
+    ],
+    "routes": [
+      {
+        "net": "/CAM_3V3",
+        "layer": "B.Cu",
+        "points": [
+          [
+            41.656,
+            12.090399
+          ],
+          [
+            42.570401,
+            13.0048
+          ],
+          [
+            51.206399,
+            13.0048
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "8a6e9935-a471-4606-8255-41dec9d6966c",
+          "f865ddfa-b174-4081-84f4-efa36ff61344"
+        ]
+      }
+    ],
+    "placements": [
+      {
+        "ref": "R9",
+        "old": [
+          [
+            45.0,
+            13.75
+          ],
+          0.0
+        ],
+        "new": [
+          [
+            45,
+            13.9
+          ],
+          0.0
+        ]
+      }
+    ],
+    "vias": [],
+    "reason": "R9 final placement at y13.9: one CAM_3V3 horizontal corridor instead of the remaining 0.2 mm lateral offset",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/motion/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R2/MORI_motion_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "Items not allowed",
+        "items": [
+          {
+            "description": "走线 [/HEAD_BUS] (F.Cu), 长度: 13.5128 mm",
+            "pos": {
+              "x": 48.4632,
+              "y": 14.3256
+            },
+            "uuid": "96d1bb59-24b3-4452-bc85-cfa33070286a"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      {
+        "description": "不允许的项目 (规则 'P5 R9 opposite projection')",
+        "items": [
+          {
+            "description": "走线 [/HEAD_BUS] (F.Cu), 长度: 13.5128 mm",
+            "pos": {
+              "x": 48.4632,
+              "y": 14.3256
+            },
+            "uuid": "96d1bb59-24b3-4452-bc85-cfa33070286a"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      }
+    ],
+    "unconnected": []
+  }
+]

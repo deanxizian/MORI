@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "publication_sha256": "ac82dc6f0e23935a62991712e07eecffaf2b0c2755f8cb64aded26195565e3aa",
+  "links": [
+    "index.html",
+    "README.md",
+    "../harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/PH_rotated_entry/screen.json",
+    "../harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/PH_rotated_entry_fast/screen.json",
+    "../index.html"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/harness_A8/plan_CAM_PH_rotated_entry.py"
+      ],
+      "exit_code": 0,
+      "log": "mechanical/studies/prearrival_finish/verification_logs/CAM_PH_rotated_entry.log",
+      "log_sha256": "cc1de17ba0fe482695fe0f78b9022dbe9d3dd6a2af4698b0aec1fcbef8002ec2"
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/harness_A8/plan_CAM_PH_rotated_entry_fast.py"
+      ],
+      "exit_code": 0,
+      "log": "mechanical/studies/prearrival_finish/verification_logs/CAM_PH_rotated_entry_fast.log",
+      "log_sha256": "82508b497c654ce680bbe60f4e067ba16c513d3ad51276b461cf7a5c63209dd0"
+    }
+  ],
+  "search_status": "BLOCKED",
+  "main_applied": false,
+  "manufacturing_release": false
+}

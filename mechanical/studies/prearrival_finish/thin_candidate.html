@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI · 三处薄边修正候选</title>
+<style>body{font:16px/1.8 system-ui,sans-serif;background:#f0f3f1;color:#263c35;margin:0}main{max-width:1080px;margin:auto;padding:32px 24px}h1{font-size:30px}h2{margin-top:36px}img{width:100%;background:white;border:1px solid #cbd6d0;border-radius:8px}.notice{padding:16px;background:#fff0d3;border-radius:8px}a{color:#176c57}table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #c5d1c9;text-align:left;vertical-align:top}</style>
+<main><a href="index.html">到货前收尾</a>
+<h1>历史三处候选 · 第1、3项已应用</h1>
+<p class="notice">这是M1.46时的完整独立候选。当前M1.47仅采用下述第1、3项，反力夹第2项未采用。没有增加打印件或螺钉，所有采购件、轴线及孔位保持。改变4件打印件：Pitch_Yoke、Yaw_Reaction_Link、Motor_Retainer，以及配套让出装入间隙的 Drive_Bridge。</p>
+<p class="notice"><b>新增拆装复查发现反力夹口初装阻挡。</b>主模型也存在，当前薄边修正没有解决它。轮驱和防脱压板的专项检查通过，但整套候选不能据此称为可完整装配；<a href="reaction_assembly_review.html">查看阻挡剖面与下一步</a>。用户已确认只先采用第1、3项；<a href="index.html">查看当前交付</a>。</p>
+<h2>1. 填实已废弃的两处螺母通道</h2>
+<p>这是旧版转台与U托的连接孔，两个零件早已合并，对应螺钉和螺母也已取消；构造过程中却仍留下了通道。候选从源构造阶段取消旧孔，不再用局部补丁填一部分。原约0.04 mm的残边消失，承重轴颈、轴承配合和限位不动。</p>
+<img src="candidate_yoke.png" alt="旧螺母通道前后剖面；左为当前，右为填实后的候选">
+<h2>2. 反力夹口底边加厚</h2>
+<p>现有横向螺钉沉孔下方约0.4 mm。把圆形夹口下缘整体下延1 mm，名义底边达到约1.4 mm；同时让既有夹缝接通中心孔，去掉夹缝末端约0.4 mm的薄片。外径、螺钉轴线及上侧舵盘座不变。舵盘最终尺寸及传动强度仍待厂家资料和试件。</p>
+<img src="candidate_reaction.png" alt="反力夹口螺钉沉孔下边由约0.4增加到约1.4毫米">
+<h2>3. 轮驱底盖鞍座加宽</h2>
+<p>底盖鞍座深度18→19.2 mm，两侧各增加0.6 mm，使法兰旋转让位旁的约0.8 mm薄边达到约1.4 mm。对应上座的装入间隙随之调整，保留原0.3 mm总间隙；底盖仍是一件、直边，没有新凸耳。整个底盖抽样最小值约1.25 mm，出现在既有轴承挡边。</p>
+<img src="candidate_cap.png" alt="轮驱底盖鞍座加宽后的剖面">
+<h2>已检查与仍待检查</h2>
+<table><tr><th>项目</th><th>结果</th></tr><tr><td>改动范围</td><td>仅上述4件打印件；无新增/减少零件，所有硬件保持</td></tr><tr><td>当前实体相交</td><td>修正部位对其余零件未检出相交</td></tr><tr><td>联合头部运动</td><td>130个Yaw/Pitch姿态未检出修正部位新增干涉</td></tr><tr><td>实体连续性</td><td>4件均为单个连通实体</td></tr><tr><td>量产/强度</td><td>未放行；当前是候选检查，第1、3项已纳入M1.47检查和交付，夹口仍未闭合</td></tr></table>
+<p>补充拆装专项：轮驱底盖取出、两侧轮驱抽出、底盖工具与防脱压板功能检查 PASS；反力夹口螺钉/螺母装入、直柄工具和预装穿入为 FAIL。头座总成从身体取出通过，不等于内部反力件可以最初装入。本次复查未改动候选或主模型。</p>
+<p><a href="thin_candidate_check.json">候选局部几何数据</a> · <a href="thin_candidate_service.json">补充拆装专项</a> · <a href="reaction_assembly_review.html">反力夹口未闭合项</a> · <a href="thin_candidate_workspace/mechanical/mori_v1_2.blend">独立候选 Blender</a> · <a href="thin_sections.json">当前薄壁采样的剖面数据</a></p>
+</main></html>

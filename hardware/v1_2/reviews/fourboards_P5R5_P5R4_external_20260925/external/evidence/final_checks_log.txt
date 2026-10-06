@@ -1,0 +1,185 @@
+power keepout overlaps 0 []
+motion keepout overlaps 0 []
+imu keepout overlaps 0 []
+rear keepout overlaps 0 []
+interfaces [
+  {
+    "a": "power.J17",
+    "b": "motion.J1",
+    "pins": [
+      {
+        "pin": "1",
+        "a_net": "+5V_MOTION",
+        "b_net": "+5V_MOTION"
+      },
+      {
+        "pin": "2",
+        "a_net": "GND",
+        "b_net": "GND"
+      }
+    ]
+  },
+  {
+    "a": "power.J10",
+    "b": "motion.J7",
+    "pins": [
+      {
+        "pin": "1",
+        "a_net": "+3V3",
+        "b_net": "+3V3"
+      },
+      {
+        "pin": "2",
+        "a_net": "ARM_Q",
+        "b_net": "ARM_Q"
+      },
+      {
+        "pin": "3",
+        "a_net": "FAULT_N",
+        "b_net": "FAULT_N"
+      },
+      {
+        "pin": "4",
+        "a_net": "CHG_N",
+        "b_net": "CHG_N"
+      },
+      {
+        "pin": "5",
+        "a_net": "BAT_ADC",
+        "b_net": "BAT_ADC_IN"
+      },
+      {
+        "pin": "6",
+        "a_net": "WHEEL_ADC",
+        "b_net": "WHEEL_ADC_IN"
+      },
+      {
+        "pin": "7",
+        "a_net": "CURRENT_ADC",
+        "b_net": "CURRENT_ADC_IN"
+      },
+      {
+        "pin": "8",
+        "a_net": "GND",
+        "b_net": "GND"
+      }
+    ]
+  },
+  {
+    "a": "power.J13",
+    "b": "motion.J2",
+    "pins": [
+      {
+        "pin": "1",
+        "a_net": "W_BUS",
+        "b_net": "S288_BUS"
+      },
+      {
+        "pin": "2",
+        "a_net": "GND",
+        "b_net": "GND"
+      }
+    ]
+  },
+  {
+    "a": "power.J14",
+    "b": "motion.J3",
+    "pins": [
+      {
+        "pin": "1",
+        "a_net": "H_BUS",
+        "b_net": "HEAD_BUS"
+      },
+      {
+        "pin": "2",
+        "a_net": "GND",
+        "b_net": "GND"
+      },
+      {
+        "pin": "3",
+        "a_net": "unconnected-(J14-Pad3)",
+        "b_net": "unconnected-(J3-Pad3)"
+      }
+    ]
+  },
+  {
+    "a": "motion.J4",
+    "b": "imu.J1",
+    "pins": [
+      {
+        "pin": "1",
+        "a_net": "+3V3",
+        "b_net": "+3V3"
+      },
+      {
+        "pin": "2",
+        "a_net": "GND",
+        "b_net": "GND"
+      },
+      {
+        "pin": "3",
+        "a_net": "IMU_SCK",
+        "b_net": "SCK"
+      },
+      {
+        "pin": "4",
+        "a_net": "IMU_MOSI",
+        "b_net": "MOSI"
+      },
+      {
+        "pin": "5",
+        "a_net": "IMU_MISO",
+        "b_net": "MISO"
+      },
+      {
+        "pin": "6",
+        "a_net": "IMU_CS",
+        "b_net": "CS_N"
+      },
+      {
+        "pin": "7",
+        "a_net": "IMU_DRDY",
+        "b_net": "DRDY"
+      },
+      {
+        "pin": "8",
+        "a_net": "GND",
+        "b_net": "GND"
+      }
+    ]
+  },
+  {
+    "a": "rear.J3.1/2",
+    "a_pins": {
+      "1": "MASTER_RETURN",
+      "2": "GND",
+      "3": "LOOP_3V3",
+      "4": "CLR_N"
+    },
+    "b": "power.J19.1/2",
+    "b_pins": {
+      "1": "MASTER_RETURN",
+      "2": "GND"
+    }
+  },
+  {
+    "a": "rear.J3.3/4",
+    "b": "motion.J8.1/2",
+    "b_pins": {
+      "1": "LOOP_3V3",
+      "2": "CLR_N"
+    }
+  },
+  {
+    "connector": "rear.J2",
+    "pins": {
+      "1": "VBUS_FUSED",
+      "2": "GND",
+      "3": "CC1",
+      "4": "CC2",
+      "5": "VBUS_RAW"
+    },
+    "note": "external PD/charger and harness not supplied; pin5 is unfused raw VBUS"
+  }
+]
+paste {'margin_absolute': 0, 'margin_ratio': -0.05, 'interpretation': 'per-edge ratio', 'copper_pad_mm': [0.475, 0.25], 'predicted_paste_mm': [0.4275, 0.225], 'paste_area_vs_copper': 0.81, 'assumed_stencil_mm': 0.1, 'rectangular_area_ratio': 0.7370689655172413, 'note': 'Calculated from uploaded settings; not actual Gerber/stencil inspection. Footprint describes provisional100um. Supplier must confirm.'}

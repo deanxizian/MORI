@@ -1,0 +1,16 @@
+{
+  "diff": [
+    "--- \n",
+    "+++ \n",
+    "@@ -1004,7 +1004,7 @@\n",
+    " ",
+    " (rule \"P5 R17 In1.Cu plane clearance\" (layer In1.Cu) (condition \"A.Type == 'Zone' || B.Type == 'Zone'\") (constraint clearance (min 0.3999992mm)))",
+    " (rule \"P5 R10 In1.Cu connection\" (layer In1.Cu) (constraint zone_connection thermal_reliefs) (constraint thermal_relief_gap (opt 0.254mm)) (constraint thermal_spoke_width (opt 0.2999994mm)) (constraint min_resolved_spokes 4))",
+    "-(rule \"P5 R13 In1.Cu no tracks\" (layer In1.Cu) (condition \"A.Type == 'Track' || A.Type == 'Arc'\") (constraint disallow track))",
+    "+(rule \"P5 R13 In1.Cu localized FB ground return\" (layer In1.Cu) (condition \"(A.Type == 'Track' || A.Type == 'Arc') && !(A.NetName == '/GND' && (A.intersectsArea('P5R5_QUIET_60_Ireturn') || A.intersectsArea('P5R5_QUIET_70_Ireturn')))\") (constraint disallow track))",
+    " ",
+    " (rule \"P5 R17 In2.Cu plane clearance\" (layer In2.Cu) (condition \"A.Type == 'Zone' || B.Type == 'Zone'\") (constraint clearance (min 0.3999992mm)))",
+    " (rule \"P5 R10 In2.Cu connection\" (layer In2.Cu) (constraint zone_connection thermal_reliefs) (constraint thermal_relief_gap (opt 0.254mm)) (constraint thermal_spoke_width (opt 0.2999994mm)) (constraint min_resolved_spokes 4))"
+  ],
+  "reason": "Two isolated GND feedback returns only; source R13 deviation explicitly documented. Other native rules unchanged."
+}

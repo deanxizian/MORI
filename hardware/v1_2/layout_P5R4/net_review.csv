@@ -1,0 +1,17 @@
+﻿board,net,source_sha256,segments,length_before_mm,length_after_mm,widths_mm,note,diagnostic_view,native_DRC,physical_tests,strict_style_equivalence
+rear,/CC1,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,14,37.7568,45.7335,[0.2],D2输出沿左侧/下沿通道到J2.3，为D1/C1重排让出位置；无盲目等长。,net_review/rear/CC1.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/CC2,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,12,20.3343,24.0163,[0.2],"D3.1先保护再输出；专项同网旁路检查PASS；(13.25,8.5)保留R14例外。",net_review/rear/CC2.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/CLR_N,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,5,5.6642,5.6642,[0.2],原有SW1/J3.4逻辑回路保留；恢复开关不得自动ARM。,net_review/rear/CLR_N.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/GND,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,10,0,7.0077,"[0.3, 0.5]",D3新近端过孔、D2明确地短线、D1外侧倒角和C1地过孔；填铜有效连接已列证据，高频回流未验证。,net_review/rear/GND.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/LOOP_3V3,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,4,5.3367,5.3367,[0.2],原有SW1/J3.3逻辑解锁回路保留。,net_review/rear/LOOP_3V3.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/MASTER_RETURN,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,7,11.7406,11.7406,[0.2],原有SW1→J3.1信号通道保留；非电机电源。,net_review/rear/MASTER_RETURN.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/VBUS_FUSED,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,14,41.3698,36.695,"[0.3, 0.6]",F1输出逃线简化；D1移位旋转；主路0.6mm与两颗1/.45过孔；C1支路0.3mm。,net_review/rear/VBUS_FUSED.svg,PASS,NOT_TESTED,NOT_TESTED
+rear,/VBUS_RAW,a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3,20,40.2939,39.8272,"[0.2, 0.5, 0.6]",USB右侧汇流过孔上移并重连检测支路；J2.5仍未加源端限流，BLOCKED。,net_review/rear/VBUS_RAW.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/+3V3,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,20,26.4802,32.2636,[0.2],C1/C2重排，VDD8→C1.1显式路径1.58mm；C3保留。,net_review/imu/PLUS3V3.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/CS_N,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,7,9.9159,9.9159,[0.2],原上拉与铜线保持。,net_review/imu/CS_N.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/DRDY,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,12,15.7237,17.439,[0.2],绕至重新摆放C1/C2的外侧；不跨过电容本体。,net_review/imu/DRDY.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/GND,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,18,9.2447,12.7623,"[0.2, 0.25]",C1地在芯片外侧明确连向GND6；C2加入；原LGA两处短转角保留例外。,net_review/imu/GND.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/MISO,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,10,12.6772,12.6772,[0.2],串阻外侧原走线/换层保持；按实际线束做时序验证。,net_review/imu/MISO.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/MISO_IC,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,3,2.1953,2.1953,[0.2],U1到R1近源33Ω保持原铜线，非新加重复串阻。,net_review/imu/MISO_IC.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/MOSI,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,3,5.3946,5.3946,[0.2],原铜线保持；无蛇形等长。,net_review/imu/MOSI.svg,PASS,NOT_TESTED,NOT_TESTED
+imu,/SCK,b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68,4,7.8076,7.8076,[0.2],原铜线保持；无蛇形等长。,net_review/imu/SCK.svg,PASS,NOT_TESTED,NOT_TESTED

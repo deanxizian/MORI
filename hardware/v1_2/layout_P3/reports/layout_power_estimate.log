@@ -1,0 +1,151 @@
+{
+  "revision": "V1.2-H0.3-P3",
+  "status": "DESIGN_ESTIMATE",
+  "physical_tests": "NOT_TESTED",
+  "boards": [
+    {
+      "board": "motion",
+      "outline_mm": [
+        70,
+        35
+      ],
+      "finished_thickness_mm": 1.6,
+      "copper_nominal_mm": 0.035,
+      "FR4_density_g_cm3": 1.85,
+      "assumed_copper_coverage_fraction": [
+        0.3,
+        0.8
+      ],
+      "bare_board_mass_estimate_g": [
+        7.305,
+        8.073
+      ],
+      "excludes": "Components, connectors, solder and cables; hole/mask effects omitted. Not a populated fit or measured mass."
+    },
+    {
+      "board": "imu",
+      "outline_mm": [
+        20,
+        16
+      ],
+      "finished_thickness_mm": 1.6,
+      "copper_nominal_mm": 0.035,
+      "FR4_density_g_cm3": 1.85,
+      "assumed_copper_coverage_fraction": [
+        0.3,
+        0.8
+      ],
+      "bare_board_mass_estimate_g": [
+        0.954,
+        1.054
+      ],
+      "excludes": "Components, connectors, solder and cables; hole/mask effects omitted. Not a populated fit or measured mass."
+    },
+    {
+      "board": "power",
+      "outline_mm": [
+        80,
+        55
+      ],
+      "finished_thickness_mm": 1.6,
+      "copper_nominal_mm": 0.07,
+      "FR4_density_g_cm3": 1.85,
+      "assumed_copper_coverage_fraction": [
+        0.3,
+        0.8
+      ],
+      "bare_board_mass_estimate_g": [
+        13.377,
+        16.137
+      ],
+      "excludes": "Components, connectors, solder and cables; hole/mask effects omitted. Not a populated fit or measured mass."
+    }
+  ],
+  "power_extra_area_mm2": 800,
+  "power_area_increase_percent": 22.22222222222222,
+  "power_bare_mass_increase_estimate_g": [
+    2.432,
+    2.934
+  ],
+  "track_comparisons": [
+    {
+      "role": "battery",
+      "nominal_width_mm": 2,
+      "nominal_copper_um": 70,
+      "illustrative_length_mm": 50,
+      "assumed_current_A": 6,
+      "resistance_20C_ohm": 0.006157,
+      "voltage_drop_V": 0.03694,
+      "copper_dissipation_W": 0.22166,
+      "scope": "50mm comparison, not extraction of the whole board current path or a qualified continuous-current rating."
+    },
+    {
+      "role": "wheel",
+      "nominal_width_mm": 1.5,
+      "nominal_copper_um": 70,
+      "illustrative_length_mm": 50,
+      "assumed_current_A": 3,
+      "resistance_20C_ohm": 0.00821,
+      "voltage_drop_V": 0.02463,
+      "copper_dissipation_W": 0.07389,
+      "scope": "50mm comparison, not extraction of the whole board current path or a qualified continuous-current rating."
+    },
+    {
+      "role": "head",
+      "nominal_width_mm": 1,
+      "nominal_copper_um": 70,
+      "illustrative_length_mm": 50,
+      "assumed_current_A": 2,
+      "resistance_20C_ohm": 0.012314,
+      "voltage_drop_V": 0.02463,
+      "copper_dissipation_W": 0.04926,
+      "scope": "50mm comparison, not extraction of the whole board current path or a qualified continuous-current rating."
+    },
+    {
+      "role": "5V_CAM",
+      "nominal_width_mm": 0.8,
+      "nominal_copper_um": 70,
+      "illustrative_length_mm": 50,
+      "assumed_current_A": 1.5,
+      "resistance_20C_ohm": 0.015393,
+      "voltage_drop_V": 0.02309,
+      "copper_dissipation_W": 0.03463,
+      "scope": "50mm comparison, not extraction of the whole board current path or a qualified continuous-current rating."
+    },
+    {
+      "role": "5V_motion",
+      "nominal_width_mm": 0.8,
+      "nominal_copper_um": 70,
+      "illustrative_length_mm": 50,
+      "assumed_current_A": 0.5,
+      "resistance_20C_ohm": 0.015393,
+      "voltage_drop_V": 0.0077,
+      "copper_dissipation_W": 0.00385,
+      "scope": "50mm comparison, not extraction of the whole board current path or a qualified continuous-current rating."
+    }
+  ],
+  "battery_parallel_via_estimate": [
+    {
+      "finished_drill_mm": 0.45,
+      "assumed_plating_um": 20,
+      "count_parallel": 2,
+      "equivalent_resistance_20C_ohm": 0.00048779221669409357,
+      "total_loss_at_6A_W": 0.01756051980098737,
+      "note": "Two native1.0/0.45mm BAT_MON vias. PCB foil thickness is NOT the via plating thickness. Current sharing/temperature require measurement."
+    },
+    {
+      "finished_drill_mm": 0.45,
+      "assumed_plating_um": 25,
+      "count_parallel": 2,
+      "equivalent_resistance_20C_ohm": 0.0003902337733552748,
+      "total_loss_at_6A_W": 0.014048415840789894,
+      "note": "Two native1.0/0.45mm BAT_MON vias. PCB foil thickness is NOT the via plating thickness. Current sharing/temperature require measurement."
+    }
+  ],
+  "limitations": [
+    "No measured assembled mass, temperatures, transient ripple or regenerative braking results.",
+    "These DC estimates omit connector/contact resistance, temperature rise, current crowding, copper removal and component losses.",
+    "The planned copper stack needs a supplier quote and verification; cost remains UNKNOWN.",
+    "No update to measured robot COM or60-minute runtime acceptance is implied."
+  ]
+}

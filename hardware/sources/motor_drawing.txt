@@ -1,0 +1,11665 @@
+Micro Metal Gearmotors 
+ 
+ 
+February 2026 – Rev 6.2 
+ 
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA           
+ 
+1 
+ 
+ 
+The Pololu Micro Metal Gearmotor family consists of small, bidirectional, brushed DC metal gearmotors with nitride-
+hardened martensitic stainless steel gears.  They are available in a wide range of gear ratios, motor windings, brushes, 
+and encoder configurations: 
+Gear ratio options 
+Motor winding/brush options 
+Encoder options 
+ 
+ 
+•  5:1 
+•  10:1 
+•  15:1 
+•  30:1 
+•  50:1 
+• 75:1 
+•  100:1 
+•  150:1 
+•  210:1 
+•  250:1 
+•  298:1 
+•  380:1 
+•  1000:1 
+ 
+•  HPCB 12V: high-power 12V with 
+long-life carbon brushes 
+•  HPCB 6V: high-power 6V with 
+long-life carbon brushes 
+•  HP 6V: high-power 6V with 
+precious metal brushes 
+•  MP 6V: medium power 6V with 
+precious metal brushes 
+•  LP 6V: low-power 6V with 
+precious metal brushes 
+•  Integrated 12 CPR quadrature 
+encoder with back connector 
+•  Integrated 12 CPR quadrature 
+encoder with side connector 
+•  Encoder-compatible (extended 
+motor shaft for adding an 
+encoder) 
+•  No encoder 
+Motor winding and brush options 
+The 6V and 12V HPCB are high-power motors 
+with long-life carbon brushes. They offer nearly 
+the same performance at their respective 
+nominal voltages, just with the 12 V motor 
+drawing half the current of the 6 V motor.  
+The HP, MP, and LP motors are intended for operation around 
+6V and offer three different power levels, with the lowest-power 
+LP versions drawing the least current and the highest-power HP 
+versions drawing the most current. These motors have shorter-
+life precious metal brushes, which are lower-friction than carbon 
+brushes and generally preferred for lower-current applications. 
+The HPCB versions can be differentiated from versions with 
+precious metal brushes by their copper-colored terminals. Note 
+that the HPCB terminals are 0.5 mm wider than those on the 
+HP/MP/LP versions (2 mm vs. 1.5 mm), and they are 
+approximately 1 mm closer together (6 mm vs. 7 mm). 
+ 
+carbon 
+brushes 
+ 
+precious metal 
+brushes 
+
+Micro Metal Gearmotors 
+ 
+ 
+February 2026 – Rev 6.2 
+ 
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA           
+ 
+2 
+side connector 
+Encoder options 
+Each motor/gearbox combination is optionally available with an integrated incremental 
+quadrature encoder on the motor shaft (i.e. the input to the gearbox). The two-channel Hall 
+effect encoder senses the rotation of a 6-pole magnetic disc on a rear protrusion of the motor 
+shaft, providing a resolution of 12 counts per revolution (CPR) of the motor shaft when counting 
+both edges of both channels. To compute the gearbox output CPR, multiply 12 by the gearbox 
+reduction factor. For example, for a 50:1 gearbox, the encoder would provide approximately 
+617 CPR of the gearbox output shaft (see exact gear ratios below). 
+The encoders are available in two styles—Back Connector, which has a connector 
+oriented parallel to the motor, and Side Connector, which has a connector perpendicular 
+to the motor—and work with Pololu’s assortment of 6-pin JST SH-style cables and 6-pin 
+JST SH-style connector boards. More generally, the encoder connectors are compatible 
+with JST part number SHR-06V-S. A plastic snap-on housing covers the encoder disc and 
+electronics. 
+Motor versions are also optionally available with an extended motor shaft but no encoder. These are intended for those 
+who want to implement their own encoder solutions or who want to assemble them with separately available encoder 
+modules. 
+Using the encoder (for versions with encoders) 
+ 
+ 
+The table above shows the encoder connector pinout and the corresponding cable colors when used with Pololu JST 
+cables. Note that the connector side with pin 1 is different for the two different connector styles, but they are drop-in 
+compatible with each other when using Pololu cables. For consistency, pin 6 (M1, red wire) always connects to the 
+motor terminal marked with a “+” on the end cap. This mark gets covered by the encoder, but it can be seen on the 
+versions without encoders. (Note that this is just an identifying mark, and the motor is intended to be operated in both 
+directions by alternating the polarity of the power to the motor leads.) 
+Pin 
+Wire Color 
+Function 
+1 
+Green 
+Encoder GND 
+2 
+White 
+Encoder channel B output 
+3 
+Yellow 
+Encoder channel A output 
+4 
+Blue 
+Encoder Vcc (2.7 V to 18 V) 
+5 
+Black 
+Motor power M2 
+6 
+Red 
+Motor power M1 (“+” terminal) 
+back connector 
+Encoder with 
+back connector 
+Encoder with 
+side connector 
+Encoder-compatible 
+(extended motor shaft) 
+No encoder 
+
+Micro Metal Gearmotors 
+ 
+ 
+February 2026 – Rev 6.2 
+ 
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA           
+ 
+3 
+The encoder is powered through the Vcc and GND pins. Vcc should be between 2.7 V and 18 V. The quadrature 
+outputs A and B are digital signals that are either driven low (0 V) or pulled to Vcc through 10 kΩ pull-up resistors, 
+depending on the orientation of the motor. The sensors’ comparators have built-in hysteresis, which prevents spurious 
+signals in cases where the motor is near a transition point. The A and B signals are square waves with roughly 50% 
+duty cycles that are approximately 90° out of phase. The order of the A and B transitions indicates motor direction (B 
+will always lead A when the positive supply is connected to M1 and trail A when polarity is flipped), and the frequency 
+indicates motor speed. 
+Gearbox options 
+Nominal 
+Exact 
+ 
+Nominal 
+              Exact 
+ 
+5 : 1 
+27 × 37
+20 × 10 
+= 4.995 : 1 
+150 : 1 
+25 × 32 × 34 × 35 × 38
+12 × 11 × 14 × 13 × 10 
+≈ 150.5828 : 1 
+10 : 1 
+35 × 37
+13 × 10 
+≈ 9.9615 : 1 
+210 : 1 
+25 × 34 × 34 × 35 × 38
+12 × 9 × 13 × 13 × 10  
+≈ 210.5906 : 1 
+15 : 1 
+25 × 34 × 31
+12 × 9 × 16  
+≈ 15.2488 : 1 
+250 : 1 
+25 × 34 × 37 × 35 × 38
+12 × 10 × 10 × 14 × 10 
+≈ 248.9792 : 1 
+30 : 1 
+31 × 33 × 35 × 34
+16 × 14 × 13 × 14 
+≈ 29.8609 : 1 
+298 : 1 
+25 × 34 × 37 × 35 × 38
+12 × 9 × 10 × 13 × 10  
+≈ 297.9238 : 1 
+50 : 1 
+32 × 33 × 35 × 38
+15 × 14 × 13 × 10 
+≈ 51.4462: 1 
+380 : 1 
+25 × 35 × 39 × 36 × 39
+12 × 9 × 9 × 13 × 10  
+= 379.16 : 1 
+75 : 1 
+34 × 34 × 35 × 38
+13 × 12 × 13 × 10 
+≈ 75.8126 : 1 
+1000 : 1 
+25 × 34 × 35 × 34 × 34 × 34 × 27
+12 × 9 × 12 × 14 × 14 × 14 × 9  
+≈ 986.4064 : 1 
+100 : 1 
+35 × 37 × 35 × 38
+12 × 11 × 13 × 10 
+≈ 100.3700 : 1 
+ 
+ 
+ 
+The table above shows the exact gear ratios for the available options.  All 
+gearboxes have the same overall dimensions except for 1000:1, which is 
+3.5 mm longer than the others. Gearbox plates are brass on all versions 
+except 380:1, which has steel plates for increased durability and 
+resistance to wear from radial loads. 
+Note that the highest gear ratios can generate enough torque to damage 
+themselves if exposed to loads beyond what they are rated for (25 kg⋅mm 
+for 1000:1 and 380:1, 20 kg⋅mm for everything else). The point of these highest gear ratios is not to deliver more overall 
+torque but rather to allow for slower speeds at a given voltage and to draw less current for a given torque within its 
+rated operating range. 
+Example of encoder A and B outputs with Vcc = 6V,  
+HP 6V version running at 6V, no load. 
+Encoder schematic diagram. 
+1000:1 gear ratio 
+380:1 gear ratio 
+
+Micro Metal Gearmotors 
+ 
+ 
+February 2026 – Rev 6.2 
+ 
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA           
+ 
+4 
+Performance summary and graph table of contents 
+Motor 
+Type 
+Rated 
+Voltage 
+Pololu 
+Item #(4) 
+ 
+A       B       C       D 
+Approx 
+Gear 
+Ratio 
+No Load 
+At Maximum Efficiency 
+Max 
+Power 
+Stall 
+Extrapolation(2) 
+Graph 
+Page 
+Speed 
+Current 
+Speed 
+Torque 
+Current 
+Output 
+Eff. 
+Torque 
+Current 
+:1 
+RPM 
+(±20%) 
+mA 
+(±50%) 
+RPM 
+kg⋅mm 
+A 
+W 
+% 
+W 
+kg⋅mm 
+A 
+Low-Power 
+(LP 6V) 
+6 V 
+1100, 2200, 5100, 5101 
+4.995  
+2500    
+50 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+0.37 
+0.5 
+0.36 
+  
+1099, 2201, 5102, 5103 
+9.96  
+1300   
+40 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+0.37 
+1.0 
+  
+4780, 4781, 5104, 5105 
+15.25  
+860   
+640 
+0.40 
+0.11 
+0.27 
+40 
+0.37 
+1.7 
+ 9 
+993, 2202, 5106, 5107 
+29.86  
+450   
+320 
+0.66 
+0.11 
+0.22 
+34 
+0.31 
+2.9 
+10 
+1098, 2203, 5108, 5109 
+51.45  
+270   
+200 
+1.0 
+0.10 
+0.20 
+34 
+0.29 
+4.4 
+11 
+2360, 2209, 5110, 5111 
+75.81  
+180   
+140 
+1.3 
+0.10 
+0.19 
+33 
+0.29 
+6.4 
+12 
+992, 2204, 5112, 5113 
+100.37  
+130   
+100 
+1.7 
+0.10 
+0.17 
+28 
+0.25 
+7.4 
+13 
+1097, 2205, 5114, 5115 
+150.58  
+90   
+67 
+2.6 
+0.11 
+0.18 
+28 
+0.25 
+11 
+14 
+1096, 2206, 5116, 5117 
+210.59  
+65   
+46 
+4.1 
+0.12 
+0.19 
+27 
+0.25 
+16 
+15 
+1095, 2207, 5118, 5119 
+248.98  
+54   
+39 
+4.2 
+0.11 
+0.17 
+26 
+0.23 
+17 
+16 
+1094, 2208, 5120, 5121 
+297.92  
+45   
+34 
+4.4 
+0.09 
+0.15 
+27 
+0.22 
+20 
+17 
+4790, 4791, 5122, 5123 
+379.17  
+36   
+29 
+5.4 
+0.08 
+0.16 
+34 
+0.27 
+29 
+18 
+1596, 3058, 5124, 5125 
+986.41  
+13   
+10 
+12 
+0.09 
+0.12 
+24 
+- (3) 
+55 
+19 
+Medium-Power 
+(MP 6V) 
+6 V 
+2362, 2376, 5126, 5127 
+4.995  
+4400   
+80 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+0.70 
+0.6 
+0.67 
+  
+2363, 2377, 5128, 5129 
+9.96  
+2200   
+70 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+0.70 
+1.1 
+ 
+4782, 4783, 5130, 5131 
+15.25  
+1400   
+1000 
+0.47 
+0.21 
+0.50 
+39 
+0.70 
+2.0 
+20 
+2364, 2378, 5132, 5133 
+29.86  
+720   
+510 
+0.80 
+0.21 
+0.41 
+33 
+0.57 
+3.3 
+21 
+2365, 2379, 5134, 5135 
+51.45  
+420   
+310 
+1.2 
+0.19 
+0.38 
+33 
+0.55 
+5.4 
+22 
+2366, 2380, 5136, 5137 
+75.81 
+290   
+220 
+1.6 
+0.17 
+0.35 
+34 
+0.54 
+7.8 
+23 
+2367, 2381, 5138, 5139 
+100.37  
+220   
+170 
+1.9 
+0.17 
+0.32 
+33 
+0.50 
+9.4 
+24 
+2368, 2382, 5140, 5141 
+150.58  
+150   
+110 
+2.6 
+0.15 
+0.30 
+33 
+0.48 
+13 
+25 
+2369, 2383, 5142, 5143 
+210.59  
+100   
+83 
+3.4 
+0.16 
+0.29 
+31 
+0.46 
+17 
+26 
+2370, 2384, 5144, 5145 
+248.98  
+88   
+69 
+4.5 
+0.17 
+0.31 
+31 
+0.48 
+22 
+27 
+2371, 2385, 5146, 5147 
+297.92  
+73   
+56 
+5.0 
+0.17 
+0.29 
+29 
+0.44 
+24 
+28 
+4792, 4793, 5148, 5149 
+379.17  
+57   
+46 
+6.9 
+0.16 
+0.33 
+34 
+0.53 
+36 
+29 
+2372, 3059, 5150, 5151 
+986.41  
+22   
+17 
+13 
+0.16 
+0.23 
+24 
+- (3) 
+67 
+30 
+High-Power 
+(HP 6V) 
+6 V 
+1000, 2210, 5152, 5153 
+4.995  
+6100   
+120 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+1.6 
+1.1 
+1.6 
+  
+999, 2211, 5154, 5155 
+9.96  
+3100   
+100 
+2300  
+0.46 
+0.42 
+1.1 
+43 
+1.6 
+2.2 
+31 
+4784, 4785, 5156, 5157 
+15.25  
+2000   
+1600 
+0.58 
+0.37 
+0.95 
+42 
+1.5 
+3.0 
+32 
+1093, 2212, 5158, 5159 
+29.86  
+1000   
+830 
+1.0 
+0.36 
+0.89 
+41 
+1.5 
+5.7 
+33 
+998, 2213, 5160, 5161 
+51.45  
+590   
+490 
+1.5 
+0.32 
+0.75 
+38 
+1.3 
+8.6 
+34 
+2361, 2215, 5162, 5163 
+75.81  
+410   
+340 
+2.3 
+0.34 
+0.80 
+40 
+1.4 
+13 
+35 
+1101, 2214, 5164, 5165 
+100.37  
+310   
+250 
+2.9 
+0.33 
+0.73 
+37 
+1.3 
+17 
+36 
+997, 2386, 5166, 5167 
+150.58  
+210   
+170 
+3.9 
+0.31 
+0.68 
+37 
+1.2 
+24 
+37 
+996, 2216, 5168, 5169 
+210.59  
+150   
+120 
+5.0 
+0.32 
+0.62 
+32 
+1.1 
+30 
+38 
+995, 2217, 5170, 5171 
+248.98  
+120   
+100 
+5.5 
+0.30 
+0.59 
+32 
+1.1 
+34 
+39 
+994, 2218, 5172, 5173 
+297.92  
+100   
+87 
+6.5 
+0.31 
+0.58 
+31 
+1.1 
+40 
+40 
+4794, 4795, 5174, 5175 
+379.17  
+84   
+70 
+8.4 
+0.28 
+0.61 
+36 
+- (3) 
+55 
+41 
+1595, 2373, 5176, 5177 
+986.41  
+31   
+26 
+20 
+0.32 
+0.53 
+28 
+- (3) 
+120 
+42 
+High-Power, Carbon Brushes 
+(HPCB 6V) 
+6 V 
+3060, 3082, 5178, 5179 
+4.995  
+6500   
+170 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+1.3 
+0.9 
+1.5 
+  
+3061, 3071, 5180, 5181 
+9.96  
+3300   
+150 
+ 2300 
+0.42 
+0.51 
+1.0 
+33 
+1.3 
+1.7 
+43 
+4786, 4787, 5182, 5183 
+15.25  
+2100   
+1500 
+0.60 
+0.49 
+0.94 
+32 
+1.3 
+2.5 
+44 
+3062, 3072, 5184, 5185 
+29.86  
+1100   
+840 
+1.0 
+0.43 
+0.85 
+33 
+1.2 
+4.5 
+45 
+3063, 3073, 5186, 5187 
+51.45  
+650   
+490 
+1.6 
+0.42 
+0.80 
+32 
+1.2 
+7.4 
+46 
+3064, 3074, 5188, 5189 
+75.81  
+430   
+330 
+2.5 
+0.43 
+0.87 
+34 
+1.3 
+11 
+47 
+3065, 3075, 5190, 5191 
+100.37  
+330   
+260 
+3.3 
+0.44 
+0.86 
+33 
+1.3 
+16 
+48 
+3066, 3076, 5192, 5193 
+150.58  
+220   
+170 
+4.1 
+0.39 
+0.73 
+31 
+1.1 
+20 
+49 
+3067, 3077, 5194, 5195 
+210.59  
+160   
+120 
+5.9 
+0.40 
+0.74 
+31 
+1.1 
+28 
+50 
+3068, 3078, 5196, 5197 
+248.98  
+130   
+100 
+6.6 
+0.40 
+0.71 
+29 
+1.1 
+32 
+51 
+3069, 3079, 5198, 5199 
+297.92  
+110   
+85 
+7.4 
+0.42 
+0.65 
+26 
+1.0 
+34 
+52 
+4796, 4797, 5200, 5201 
+379.17  
+85   
+68 
+10 
+0.40 
+0.71 
+30 
+- (3) 
+50 
+53 
+3070, 3080, 5202, 5203 
+986.41  
+33   
+26 
+22 
+0.39 
+0.59 
+25 
+- (3) 
+110 
+54 
+High-Power, Carbon Brushes 
+(HPCB 12V) 
+12 V 
+3036, 3047, 5204, 5205 
+4.995  
+6800   
+100 
+ - (1) 
+ - (1) 
+ - (1) 
+ - (1) 
+- (1) 
+1.5 
+0.9 
+0.75 
+  
+3037, 3048, 5206, 5207 
+9.96  
+3400   
+80 
+2500  
+0.43 
+0.25 
+1.1 
+37 
+1.5 
+1.7 
+55 
+4788, 4789, 5208, 5209 
+15.25  
+2200   
+1700 
+0.59 
+0.23 
+1.0 
+37 
+1.4 
+2.5 
+56 
+3038, 3049, 5210, 5211 
+29.86  
+1100   
+840 
+1.0 
+0.23 
+0.82 
+30 
+1.1 
+3.9 
+57 
+3039, 3050, 5212, 5213 
+51.45  
+650   
+500 
+1.5 
+0.22 
+0.79 
+31 
+1.1 
+6.7 
+58 
+3040, 3051, 5214, 5215 
+75.81  
+450   
+350 
+2.1 
+0.20 
+0.76 
+31 
+1.1 
+10 
+59 
+3041, 3052, 5216, 5217 
+100.37  
+330   
+260 
+2.9 
+0.21 
+0.78 
+31 
+1.1 
+13 
+60 
+3042, 3053, 5218, 5219 
+150.58  
+220   
+170 
+4.2 
+0.22 
+0.73 
+28 
+1.0 
+18 
+61 
+3043, 3054, 5220, 5221 
+210.59  
+160   
+120 
+5.6 
+0.21 
+0.71 
+28 
+1.0 
+25 
+62 
+3044, 3055, 5222, 5223 
+248.98  
+130   
+110 
+6.6 
+0.21 
+0.72 
+29 
+1.1 
+30 
+63 
+3045, 3056, 5224, 5225 
+297.92  
+110   
+87 
+7.3 
+0.21 
+0.65 
+26 
+1.0 
+33 
+64 
+4798, 4799, 5226, 5227 
+379.17  
+85   
+67 
+11 
+0.20 
+0.75 
+31 
+- (3) 
+50 
+65 
+3046, 3057, 5228, 5229 
+986.41  
+35   
+27 
+21 
+0.19 
+0.59 
+25 
+- (3) 
+100 
+66 
+Notes: 
+(1) 
+Max efficiency data and performance graphs are currently unavailable for 5:1 gear ratios and LP and MP 10:1 gear ratios.  
+(2) 
+Listed stall torques and currents are theoretical extrapolations; units will typically stall well before these points as the motors heat up. Stalling or overloading 
+gearmotors can greatly decrease their lifetimes and even result in immediate damage. The recommended upper limit for instantaneous torque is 25 kg⋅mm for the 
+380:1 and 1000:1 gearboxes, and 20 kg⋅mm for all other gear ratios; we strongly advise keeping applied loads well under these limits. Stalls can also result in rapid 
+(potentially on the order of seconds) thermal damage to the motor windings and brushes, especially for the versions that use high-power (HP and HPCB) motors; a 
+general recommendation for brushed DC motor operation is 25% or less of the stall current. 
+(3) 
+Operating these versions at maximum power is likely to damage the gearboxes. 
+(4) 
+A = no encoder; B = encoder-compatible (extended motor shaft); C = integrated encoder, back connector; D = integrated encoder, side connector. 
+
+13.6
+ 
+ 
+0.54
+ 
+4.5
+ 
+ 
+0.18
+12.0
+ 
+10.0
+0.39
+ 
+0.47
+4.5
+ 
+0.18
+ 
+  
+13
+0.51
+ 
+ 2×M1.6 
+A
+0.03
+ 
+ 
+ 15
+0.16
+0.7
+10
+3.0
+0.6
+ 
+0.12
+ 
+0.10
+ L 
+ 
+ OL 
+4.0
+ 
+0.4
+ 2.5
+ 
+8
+0.3
+ 
+ 
+0.13
+3.3
+0.49
+ 
+ 
+12.5
+ 
+ 4.3
+0.17
+ 
+Detail A
+Scale 5:1
+ 
+5.1
+ 
+0.12
+ 
+0.20
+ 
+3
+ 1.3
+0.05
+ 
+Pin 1
+ 9.6
+0.38
+ 
+®
+R
+https://www.pololu.com/category/60
+[in]
+Material:
+Micro Metal Gearmotors with 12 CPR Encoder, Back Connector
+02 April 2024
+2.
+Scale 2:1
+Name:
+Units:
+Drawing date:
+mm
+© 2024 Pololu Corporation
+mixed
+This connector is compatible with JST part number SHR-06V-S 
+1.
+and Pololu 6-Pin Female JST SH-Style Cables.
+To get the specified scale, select 100% in print settings.
+1.
+Gear Ratio
+L
+OL max. (overall length 
+maximum)
+1000:1
+12.5 mm [0.5 in]
+36 mm [1.42 in]
+All others
+9 mm [0.35 in]
+32.5 mm [1.28 in]
+1.
+
+®
+R
+https://www.pololu.com/category/60
+Drawing date:
+02 April 2024
+[in]
+Material:
+2.
+Scale 2:1
+Name:
+Units:
+© 2024 Pololu Corporation
+mixed
+Micro Metal Gearmotors with 12 CPR Encoder, Side Connector
+mm
+This connector is compatible with JST part number SHR-06V-S 
+1.
+and Pololu 6-Pin Female JST SH-Style Cables.
+To get the specified scale, select 100% in print settings.
+1.
+Gear Ratio
+L
+OL max. (overall length 
+maximum)
+1000:1
+12.5 mm [0.5 in]
+36 mm [1.42 in]
+All others
+9 mm [0.35 in]
+32.5 mm [1.28 in]
+1.
+Detail B
+Scale 5:1
+0.17
+4
+ 
+2.7  
+ 
+0.10
+ 
+ 3.7
+0.15
+ 
+Pin 1
+ 
+0.49
+12.5
+ 
+ 
+0.13
+ 3.3
+ 4.3
+0.17
+ 
+ 9.6
+0.38
+ 
+B
+0.10
+ OL 
+ 
+ 
+0.16
+0.7
+10
+3.0
+4.0
+ 
+ L 
+ 
+0.03
+ 
+0.12
+ 
+ 
+0.6
+15
+0.4
+ 2.5
+ 
+8
+0.3
+ 
+0.18
+4.5
+10.0
+0.39
+4.5
+ 
+ 
+0.18
+ 
+ 
+0.47
+ 
+ 12.0
+ 13.6
+0.54
+ 
+ 
+ 
+ 
+14
+0.57
+ 
+ 2×M1.6 
+
+®
+R
+https://www.pololu.com/category/60
+mixed
+Micro Metal Gearmotors with carbon brushes (HPCB) and no 
+encoder
+Material:
+02 April 2024
+[in]
+mm
+© 2024 Pololu Corporation
+Name:
+Units:
+Scale 2:1
+Drawing date:
+To get the specified scale, select 100% in print settings.
+1.
+The dashed line indicates the location of the Rear motor Shaft 
+2.
+which is present on "Extended Motor Shaft" versions.
+These dimensions apply to all Micro Metal Gearmotors that are 
+3.
+labeled "HPCB" (i.e. all ones with carbon brushes).
+Gear Ratio
+L
+OL max. (overall length 
+maximum)
+1000:1
+12.5 mm [0.5 in]
+29.1 mm [1.15 in]
+All others
+9 mm [0.35 in]
+25.6 mm [1.01 in]
+C
+ 
+0.03
+ 
+ L 
+0.20
+ 
+3.0
+4.0
+0.16
+ 
+0.8
+5
+0.12
+2.5
+0.10
+ 
+ 
+0.61
+15.4
+0.4
+ 
+ 
+ 
+10
+0.7
+0.03
+ 
+ 
+5
+0.2
+ 
+ OL 
+0.24
+ 
+6.2
+ 
+12.0
+0.47
+ 
+ 
+1.0
+0.04
+Detail C
+Scale 5:1
+2.0  
+0.08
+ 
+ 1.8
+0.07
+ 
+4.5
+10.0
+ 
+4.5
+ 
+0.18
+ 
+ 
+ 
+0.18
+ 
+0.39
+ 
+ 12.0
+0.47
+ 2×M1.6 
+
+®
+R
+https://www.pololu.com/category/60
+Name:
+mm
+Drawing date:
+Material:
+Scale 2:1
+Micro Metal Gearmotors with precious metal brushes (LP, MP, and 
+HP) and no encoder
+02 April 2024
+© 2024 Pololu Corporation
+[in]
+mixed
+Units:
+To get the specified scale, select 100% in print settings.
+1.
+The dashed line indicates the location of the Rear motor Shaft 
+2.
+which is present on "Extended Motor Shaft" versions.
+These dimensions apply to all Micro Metal Gearmotors that are 
+3.
+not labeled "HPCB" (i.e. all ones with precious metal brushes).
+Gear Ratio
+L
+OL max. (overall length 
+maximum)
+1000:1
+12.5 mm [0.5 in]
+29.1 mm [1.15 in]
+All others
+9 mm [0.35 in]
+25.6 mm [1.01 in]
+0.04
+1.0
+0.47
+ 
+ 
+12.0
+ 6.9
+0.27
+ 
+4.5
+10.0  
+ 
+0.18
+0.39
+ 4.5
+ 
+ 
+ 
+0.18
+ 
+ 12.0
+0.47
+ 2×M1.6 
+D
+2.5
+0.05
+15
+ 
+4.0
+3.0
+ 
+0.20
+0.12
+0.16
+1.2
+0.4
+5
+0.59
+0.10
+ 
+10  
+ 
+ L 
+ 
+0.7
+ 
+ 
+ 
+0.03
+ 
+ 
+5
+0.2
+ 
+ OL 
+Detail D
+Scale 5:1
+ 
+0.06
+1.5  
+ 1.8
+0.07
+ 
+
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+max power: 0.37 W
+at 0.85 kg⋅mm,
+31% efficiency,
+420 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 40%
+at 0.40 kg⋅mm, 0.27 W,
+640 rpm, 0.11 A
+Pololu Items #4780, #4781, #5104, #5105 (15:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+max power: 0.37 W
+at 0.85 kg⋅mm,
+31% efficiency,
+420 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 40%
+at 0.40 kg⋅mm, 0.27 W,
+640 rpm, 0.11 A
+Pololu Items #4780, #4781, #5104, #5105 (15:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+0.50
+0.55
+0.60
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 850 − 500τ
+f(τ) = 0.035 + 0.19τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 860 rpm
+no-load current: 0.028 A
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 850 − 500τ
+f(τ) = 0.035 + 0.19τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 860 rpm
+no-load current: 0.028 A
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 850 − 500τ
+f(τ) = 0.035 + 0.19τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 860 rpm
+no-load current: 0.028 A
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 850 − 500τ
+f(τ) = 0.035 + 0.19τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 860 rpm
+no-load current: 0.028 A
+speed (rpm)
+current (A)
+f(τ) = 850 − 500τ
+f(τ) = 0.035 + 0.19τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.36 A
+no-load current: 0.028 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+9
+
+0
+0.5
+1
+1.5
+2
+2.5
+max power: 0.31 W
+at 1.4 kg⋅mm,
+26% efficiency,
+210 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 0.66 kg⋅mm, 0.22 W,
+320 rpm, 0.11 A
+Pololu Items #993, #2202, #5106, #5107 (30:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+2.5
+max power: 0.31 W
+at 1.4 kg⋅mm,
+26% efficiency,
+210 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 0.66 kg⋅mm, 0.22 W,
+320 rpm, 0.11 A
+Pololu Items #993, #2202, #5106, #5107 (30:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+0.50
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 420 − 150τ
+f(τ) = 0.032 + 0.11τ
+τstall≈
+2.9 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 450 rpm
+no-load current: 0.033 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 420 − 150τ
+f(τ) = 0.032 + 0.11τ
+τstall≈
+2.9 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 450 rpm
+no-load current: 0.033 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 420 − 150τ
+f(τ) = 0.032 + 0.11τ
+τstall≈
+2.9 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 450 rpm
+no-load current: 0.033 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 420 − 150τ
+f(τ) = 0.032 + 0.11τ
+τstall≈
+2.9 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 450 rpm
+no-load current: 0.033 A
+speed (rpm)
+current (A)
+f(τ) = 420 − 150τ
+f(τ) = 0.032 + 0.11τ
+τstall≈
+2.9 kg⋅mm
+Istall≈ 0.36 A
+no-load current: 0.033 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+10
+
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+max power: 0.29 W
+at 2.2 kg⋅mm,
+25% efficiency,
+130 rpm, 0.19 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 0.95 kg⋅mm, 0.20 W,
+200 rpm, 0.10 A
+Pololu Items #1098, #2203, #5108, #5109 (50:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+max power: 0.29 W
+at 2.2 kg⋅mm,
+25% efficiency,
+130 rpm, 0.19 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 0.95 kg⋅mm, 0.20 W,
+200 rpm, 0.10 A
+Pololu Items #1098, #2203, #5108, #5109 (50:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 260 − 59τ
+f(τ) = 0.027 + 0.075τ
+τstall≈
+4.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 270 rpm
+no-load current: 0.028 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 260 − 59τ
+f(τ) = 0.027 + 0.075τ
+τstall≈
+4.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 270 rpm
+no-load current: 0.028 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 260 − 59τ
+f(τ) = 0.027 + 0.075τ
+τstall≈
+4.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 270 rpm
+no-load current: 0.028 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 260 − 59τ
+f(τ) = 0.027 + 0.075τ
+τstall≈
+4.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 270 rpm
+no-load current: 0.028 A
+speed (rpm)
+current (A)
+f(τ) = 260 − 59τ
+f(τ) = 0.027 + 0.075τ
+τstall≈
+4.4 kg⋅mm
+Istall≈ 0.36 A
+no-load current: 0.028 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+11
+
+0
+1
+2
+3
+4
+5
+6
+max power: 0.29 W
+at 3.2 kg⋅mm,
+24% efficiency,
+88 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.3 kg⋅mm, 0.19 W,
+140 rpm, 0.10 A
+Pololu Items #2360, #2209, #5110, #5111 (75:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+6
+max power: 0.29 W
+at 3.2 kg⋅mm,
+24% efficiency,
+88 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.3 kg⋅mm, 0.19 W,
+140 rpm, 0.10 A
+Pololu Items #2360, #2209, #5110, #5111 (75:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 180 − 27τ
+f(τ) = 0.025 + 0.054τ
+τstall≈
+6.4 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 180 rpm
+no-load current: 0.027 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 180 − 27τ
+f(τ) = 0.025 + 0.054τ
+τstall≈
+6.4 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 180 rpm
+no-load current: 0.027 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 180 − 27τ
+f(τ) = 0.025 + 0.054τ
+τstall≈
+6.4 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 180 rpm
+no-load current: 0.027 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+200
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 180 − 27τ
+f(τ) = 0.025 + 0.054τ
+τstall≈
+6.4 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 180 rpm
+no-load current: 0.027 A
+speed (rpm)
+current (A)
+f(τ) = 180 − 27τ
+f(τ) = 0.025 + 0.054τ
+τstall≈
+6.4 kg⋅mm
+Istall≈ 0.37 A
+no-load current: 0.027 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+12
+
+0
+1
+2
+3
+4
+5
+6
+7
+max power: 0.25 W
+at 3.7 kg⋅mm,
+21% efficiency,
+65 rpm, 0.19 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 1.7 kg⋅mm, 0.17 W,
+100 rpm, 0.10 A
+Pololu Items #992, #2204, #5112, #5113 (100:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+6
+7
+max power: 0.25 W
+at 3.7 kg⋅mm,
+21% efficiency,
+65 rpm, 0.19 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 1.7 kg⋅mm, 0.17 W,
+100 rpm, 0.10 A
+Pololu Items #992, #2204, #5112, #5113 (100:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 130 − 17τ
+f(τ) = 0.031 + 0.044τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 130 rpm
+no-load current: 0.028 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 130 − 17τ
+f(τ) = 0.031 + 0.044τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 130 rpm
+no-load current: 0.028 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 130 − 17τ
+f(τ) = 0.031 + 0.044τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 130 rpm
+no-load current: 0.028 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 130 − 17τ
+f(τ) = 0.031 + 0.044τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 0.36 A
+no-load speed: 130 rpm
+no-load current: 0.028 A
+speed (rpm)
+current (A)
+f(τ) = 130 − 17τ
+f(τ) = 0.031 + 0.044τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 0.36 A
+no-load current: 0.028 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+13
+
+0
+2
+4
+6
+8
+10
+max power: 0.25 W
+at 5.7 kg⋅mm,
+21% efficiency,
+43 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 2.6 kg⋅mm, 0.18 W,
+67 rpm, 0.11 A
+Pololu Items #1097, #2205, #5114, #5115 (150:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+max power: 0.25 W
+at 5.7 kg⋅mm,
+21% efficiency,
+43 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 2.6 kg⋅mm, 0.18 W,
+67 rpm, 0.11 A
+Pololu Items #1097, #2205, #5114, #5115 (150:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 87 − 7.6τ
+f(τ) = 0.032 + 0.029τ
+τstall≈
+11 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 90 rpm
+no-load current: 0.029 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 87 − 7.6τ
+f(τ) = 0.032 + 0.029τ
+τstall≈
+11 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 90 rpm
+no-load current: 0.029 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 87 − 7.6τ
+f(τ) = 0.032 + 0.029τ
+τstall≈
+11 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 90 rpm
+no-load current: 0.029 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 87 − 7.6τ
+f(τ) = 0.032 + 0.029τ
+τstall≈
+11 kg⋅mm
+Istall≈ 0.37 A
+no-load speed: 90 rpm
+no-load current: 0.029 A
+speed (rpm)
+current (A)
+f(τ) = 87 − 7.6τ
+f(τ) = 0.032 + 0.029τ
+τstall≈
+11 kg⋅mm
+Istall≈ 0.37 A
+no-load current: 0.029 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+14
+
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 0.25 W
+at 8.1 kg⋅mm,
+21% efficiency,
+30 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 27%
+at 4.1 kg⋅mm, 0.19 W,
+46 rpm, 0.12 A
+Pololu Items #1096, #2206, #5116, #5117 (210:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 0.25 W
+at 8.1 kg⋅mm,
+21% efficiency,
+30 rpm, 0.20 A
+torque (kg⋅mm)
+max efficiency: 27%
+at 4.1 kg⋅mm, 0.19 W,
+46 rpm, 0.12 A
+Pololu Items #1096, #2206, #5116, #5117 (210:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 61 − 3.7τ
+f(τ) = 0.040 + 0.019τ
+τstall≈
+16 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 65 rpm
+no-load current: 0.027 A
+0
+10
+20
+30
+40
+50
+60
+70
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 61 − 3.7τ
+f(τ) = 0.040 + 0.019τ
+τstall≈
+16 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 65 rpm
+no-load current: 0.027 A
+0
+10
+20
+30
+40
+50
+60
+70
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 61 − 3.7τ
+f(τ) = 0.040 + 0.019τ
+τstall≈
+16 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 65 rpm
+no-load current: 0.027 A
+0
+10
+20
+30
+40
+50
+60
+70
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+speed (rpm)
+current (A)
+f(τ) = 61 − 3.7τ
+f(τ) = 0.040 + 0.019τ
+τstall≈
+16 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 65 rpm
+no-load current: 0.027 A
+speed (rpm)
+current (A)
+f(τ) = 61 − 3.7τ
+f(τ) = 0.040 + 0.019τ
+τstall≈
+16 kg⋅mm
+Istall≈ 0.35 A
+no-load current: 0.027 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+15
+
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 0.23 W
+at 8.6 kg⋅mm,
+21% efficiency,
+26 rpm, 0.19 A
+torque (kg⋅mm)
+max efficiency: 26%
+at 4.2 kg⋅mm, 0.17 W,
+39 rpm, 0.11 A
+Pololu Items #1095, #2207, #5118, #5119 (250:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 0.23 W
+at 8.6 kg⋅mm,
+21% efficiency,
+26 rpm, 0.19 A
+torque (kg⋅mm)
+max efficiency: 26%
+at 4.2 kg⋅mm, 0.17 W,
+39 rpm, 0.11 A
+Pololu Items #1095, #2207, #5118, #5119 (250:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 51 − 3.0τ
+f(τ) = 0.035 + 0.017τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.34 A
+no-load speed: 54 rpm
+no-load current: 0.027 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 51 − 3.0τ
+f(τ) = 0.035 + 0.017τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.34 A
+no-load speed: 54 rpm
+no-load current: 0.027 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 51 − 3.0τ
+f(τ) = 0.035 + 0.017τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.34 A
+no-load speed: 54 rpm
+no-load current: 0.027 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 51 − 3.0τ
+f(τ) = 0.035 + 0.017τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.34 A
+no-load speed: 54 rpm
+no-load current: 0.027 A
+speed (rpm)
+current (A)
+f(τ) = 51 − 3.0τ
+f(τ) = 0.035 + 0.017τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.34 A
+no-load current: 0.027 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+16
+
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+max power: 0.22 W
+at 10 kg⋅mm,
+21% efficiency,
+22 rpm, 0.18 A
+torque (kg⋅mm)
+max efficiency: 27%
+at 4.4 kg⋅mm, 0.15 W,
+34 rpm, 0.094 A
+Pololu Items #1094, #2208, #5120, #5121 (298:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+max power: 0.22 W
+at 10 kg⋅mm,
+21% efficiency,
+22 rpm, 0.18 A
+torque (kg⋅mm)
+max efficiency: 27%
+at 4.4 kg⋅mm, 0.15 W,
+34 rpm, 0.094 A
+Pololu Items #1094, #2208, #5120, #5121 (298:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 44 − 2.2τ
+f(τ) = 0.027 + 0.015τ
+τstall≈
+20 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 45 rpm
+no-load current: 0.028 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 44 − 2.2τ
+f(τ) = 0.027 + 0.015τ
+τstall≈
+20 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 45 rpm
+no-load current: 0.028 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 44 − 2.2τ
+f(τ) = 0.027 + 0.015τ
+τstall≈
+20 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 45 rpm
+no-load current: 0.028 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 44 − 2.2τ
+f(τ) = 0.027 + 0.015τ
+τstall≈
+20 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 45 rpm
+no-load current: 0.028 A
+speed (rpm)
+current (A)
+f(τ) = 44 − 2.2τ
+f(τ) = 0.027 + 0.015τ
+τstall≈
+20 kg⋅mm
+Istall≈ 0.33 A
+no-load current: 0.028 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+17
+
+0
+5
+10
+15
+20
+25
+max power: 0.27 W
+at 15 kg⋅mm,
+24% efficiency,
+18 rpm, 0.18 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 5.4 kg⋅mm, 0.16 W,
+29 rpm, 0.080 A
+Pololu Items #4790, #4791, #5122, #5123 (380:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+max power: 0.27 W
+at 15 kg⋅mm,
+24% efficiency,
+18 rpm, 0.18 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 5.4 kg⋅mm, 0.16 W,
+29 rpm, 0.080 A
+Pololu Items #4790, #4791, #5122, #5123 (380:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 36 − 1.2τ
+f(τ) = 0.018 + 0.011τ
+τstall≈
+29 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 36 rpm
+no-load current: 0.025 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 36 − 1.2τ
+f(τ) = 0.018 + 0.011τ
+τstall≈
+29 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 36 rpm
+no-load current: 0.025 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 36 − 1.2τ
+f(τ) = 0.018 + 0.011τ
+τstall≈
+29 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 36 rpm
+no-load current: 0.025 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+speed (rpm)
+current (A)
+f(τ) = 36 − 1.2τ
+f(τ) = 0.018 + 0.011τ
+τstall≈
+29 kg⋅mm
+Istall≈ 0.35 A
+no-load speed: 36 rpm
+no-load current: 0.025 A
+speed (rpm)
+current (A)
+f(τ) = 36 − 1.2τ
+f(τ) = 0.018 + 0.011τ
+τstall≈
+29 kg⋅mm
+Istall≈ 0.35 A
+no-load current: 0.025 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+18
+
+0
+10
+20
+30
+40
+50
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 24%
+at 12 kg⋅mm, 0.12 W,
+10 rpm, 0.088 A
+Pololu Items #1596, #3058, #5124, #5125 (1000:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0
+10
+20
+30
+40
+50
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 24%
+at 12 kg⋅mm, 0.12 W,
+10 rpm, 0.088 A
+Pololu Items #1596, #3058, #5124, #5125 (1000:1 Micro Metal Gearmotor LP 6V) Performance at 6 V
+0.000
+0.025
+0.050
+0.075
+0.100
+0.125
+0.150
+0.175
+0.200
+0.225
+0.250
+0.275
+0.300
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+2
+4
+6
+8
+10
+12
+14
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 13 − 0.24τ
+f(τ) = 0.023 + 0.0056τ
+τstall≈
+55 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 13 rpm
+no-load current: 0.028 A
+0
+2
+4
+6
+8
+10
+12
+14
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 13 − 0.24τ
+f(τ) = 0.023 + 0.0056τ
+τstall≈
+55 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 13 rpm
+no-load current: 0.028 A
+0
+2
+4
+6
+8
+10
+12
+14
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 13 − 0.24τ
+f(τ) = 0.023 + 0.0056τ
+τstall≈
+55 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 13 rpm
+no-load current: 0.028 A
+0
+2
+4
+6
+8
+10
+12
+14
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+speed (rpm)
+current (A)
+f(τ) = 13 − 0.24τ
+f(τ) = 0.023 + 0.0056τ
+τstall≈
+55 kg⋅mm
+Istall≈ 0.33 A
+no-load speed: 13 rpm
+no-load current: 0.028 A
+speed (rpm)
+current (A)
+f(τ) = 13 − 0.24τ
+f(τ) = 0.023 + 0.0056τ
+τstall≈
+55 kg⋅mm
+Istall≈ 0.33 A
+no-load current: 0.028 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+19
+
+0
+0.5
+1
+1.5
+2
+max power: 0.70 W
+at 1.0 kg⋅mm,
+31% efficiency,
+680 rpm, 0.38 A
+torque (kg⋅mm)
+max efficiency: 39%
+at 0.47 kg⋅mm, 0.50 W,
+1000 rpm, 0.21 A
+Pololu Items #4782, #4783, #5130, #5131 (15:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+max power: 0.70 W
+at 1.0 kg⋅mm,
+31% efficiency,
+680 rpm, 0.38 A
+torque (kg⋅mm)
+max efficiency: 39%
+at 0.47 kg⋅mm, 0.50 W,
+1000 rpm, 0.21 A
+Pololu Items #4782, #4783, #5130, #5131 (15:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 1400 − 670τ
+f(τ) = 0.066 + 0.31τ
+τstall≈
+2.0 kg⋅mm
+Istall≈ 0.69 A
+no-load speed: 1400 rpm
+no-load current: 0.053 A
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 1400 − 670τ
+f(τ) = 0.066 + 0.31τ
+τstall≈
+2.0 kg⋅mm
+Istall≈ 0.69 A
+no-load speed: 1400 rpm
+no-load current: 0.053 A
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 1400 − 670τ
+f(τ) = 0.066 + 0.31τ
+τstall≈
+2.0 kg⋅mm
+Istall≈ 0.69 A
+no-load speed: 1400 rpm
+no-load current: 0.053 A
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 1400 − 670τ
+f(τ) = 0.066 + 0.31τ
+τstall≈
+2.0 kg⋅mm
+Istall≈ 0.69 A
+no-load speed: 1400 rpm
+no-load current: 0.053 A
+speed (rpm)
+current (A)
+f(τ) = 1400 − 670τ
+f(τ) = 0.066 + 0.31τ
+τstall≈
+2.0 kg⋅mm
+Istall≈ 0.69 A
+no-load current: 0.053 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+20
+
+0
+0.5
+1
+1.5
+2
+2.5
+3
+max power: 0.57 W
+at 1.7 kg⋅mm,
+26% efficiency,
+330 rpm, 0.37 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 0.80 kg⋅mm, 0.41 W,
+510 rpm, 0.21 A
+Pololu Items #2364, #2378, #5132, #5133 (30:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+2.5
+3
+max power: 0.57 W
+at 1.7 kg⋅mm,
+26% efficiency,
+330 rpm, 0.37 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 0.80 kg⋅mm, 0.41 W,
+510 rpm, 0.21 A
+Pololu Items #2364, #2378, #5132, #5133 (30:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+100
+200
+300
+400
+500
+600
+700
+800
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 660 − 200τ
+f(τ) = 0.066 + 0.18τ
+τstall≈
+3.3 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 720 rpm
+no-load current: 0.064 A
+0
+100
+200
+300
+400
+500
+600
+700
+800
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 660 − 200τ
+f(τ) = 0.066 + 0.18τ
+τstall≈
+3.3 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 720 rpm
+no-load current: 0.064 A
+0
+100
+200
+300
+400
+500
+600
+700
+800
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 660 − 200τ
+f(τ) = 0.066 + 0.18τ
+τstall≈
+3.3 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 720 rpm
+no-load current: 0.064 A
+0
+100
+200
+300
+400
+500
+600
+700
+800
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 660 − 200τ
+f(τ) = 0.066 + 0.18τ
+τstall≈
+3.3 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 720 rpm
+no-load current: 0.064 A
+speed (rpm)
+current (A)
+f(τ) = 660 − 200τ
+f(τ) = 0.066 + 0.18τ
+τstall≈
+3.3 kg⋅mm
+Istall≈ 0.67 A
+no-load current: 0.064 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+21
+
+0
+1
+2
+3
+4
+5
+max power: 0.55 W
+at 2.7 kg⋅mm,
+25% efficiency,
+200 rpm, 0.36 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.2 kg⋅mm, 0.38 W,
+310 rpm, 0.19 A
+Pololu Items #2365, #2379, #5134, #5135 (50:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+max power: 0.55 W
+at 2.7 kg⋅mm,
+25% efficiency,
+200 rpm, 0.36 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.2 kg⋅mm, 0.38 W,
+310 rpm, 0.19 A
+Pololu Items #2365, #2379, #5134, #5135 (50:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 390 − 72τ
+f(τ) = 0.053 + 0.11τ
+τstall≈
+5.4 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 420 rpm
+no-load current: 0.052 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 390 − 72τ
+f(τ) = 0.053 + 0.11τ
+τstall≈
+5.4 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 420 rpm
+no-load current: 0.052 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 390 − 72τ
+f(τ) = 0.053 + 0.11τ
+τstall≈
+5.4 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 420 rpm
+no-load current: 0.052 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 390 − 72τ
+f(τ) = 0.053 + 0.11τ
+τstall≈
+5.4 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 420 rpm
+no-load current: 0.052 A
+speed (rpm)
+current (A)
+f(τ) = 390 − 72τ
+f(τ) = 0.053 + 0.11τ
+τstall≈
+5.4 kg⋅mm
+Istall≈ 0.67 A
+no-load current: 0.052 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+22
+
+0
+1
+2
+3
+4
+5
+6
+7
+max power: 0.54 W
+at 3.9 kg⋅mm,
+25% efficiency,
+140 rpm, 0.36 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 1.6 kg⋅mm, 0.35 W,
+220 rpm, 0.17 A
+Pololu Items #2366, #2380, #5136, #5137 (75:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+6
+7
+max power: 0.54 W
+at 3.9 kg⋅mm,
+25% efficiency,
+140 rpm, 0.36 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 1.6 kg⋅mm, 0.35 W,
+220 rpm, 0.17 A
+Pololu Items #2366, #2380, #5136, #5137 (75:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 270 − 35τ
+f(τ) = 0.044 + 0.080τ
+τstall≈
+7.8 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 290 rpm
+no-load current: 0.054 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 270 − 35τ
+f(τ) = 0.044 + 0.080τ
+τstall≈
+7.8 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 290 rpm
+no-load current: 0.054 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 270 − 35τ
+f(τ) = 0.044 + 0.080τ
+τstall≈
+7.8 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 290 rpm
+no-load current: 0.054 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+275
+300
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 270 − 35τ
+f(τ) = 0.044 + 0.080τ
+τstall≈
+7.8 kg⋅mm
+Istall≈ 0.67 A
+no-load speed: 290 rpm
+no-load current: 0.054 A
+speed (rpm)
+current (A)
+f(τ) = 270 − 35τ
+f(τ) = 0.044 + 0.080τ
+τstall≈
+7.8 kg⋅mm
+Istall≈ 0.67 A
+no-load current: 0.054 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+23
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+max power: 0.50 W
+at 4.7 kg⋅mm,
+24% efficiency,
+100 rpm, 0.35 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.9 kg⋅mm, 0.32 W,
+170 rpm, 0.17 A
+Pololu Items #2367, #2381, #5138, #5139 (100:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+max power: 0.50 W
+at 4.7 kg⋅mm,
+24% efficiency,
+100 rpm, 0.35 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.9 kg⋅mm, 0.32 W,
+170 rpm, 0.17 A
+Pololu Items #2367, #2381, #5138, #5139 (100:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 210 − 22τ
+f(τ) = 0.042 + 0.065τ
+τstall≈
+9.4 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 220 rpm
+no-load current: 0.048 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 210 − 22τ
+f(τ) = 0.042 + 0.065τ
+τstall≈
+9.4 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 220 rpm
+no-load current: 0.048 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 210 − 22τ
+f(τ) = 0.042 + 0.065τ
+τstall≈
+9.4 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 220 rpm
+no-load current: 0.048 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 210 − 22τ
+f(τ) = 0.042 + 0.065τ
+τstall≈
+9.4 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 220 rpm
+no-load current: 0.048 A
+speed (rpm)
+current (A)
+f(τ) = 210 − 22τ
+f(τ) = 0.042 + 0.065τ
+τstall≈
+9.4 kg⋅mm
+Istall≈ 0.66 A
+no-load current: 0.048 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+24
+
+0
+2
+4
+6
+8
+10
+12
+max power: 0.48 W
+at 6.5 kg⋅mm,
+24% efficiency,
+71 rpm, 0.33 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 2.6 kg⋅mm, 0.30 W,
+110 rpm, 0.15 A
+Pololu Items #2368, #2382, #5140, #5141 (150:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+max power: 0.48 W
+at 6.5 kg⋅mm,
+24% efficiency,
+71 rpm, 0.33 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 2.6 kg⋅mm, 0.30 W,
+110 rpm, 0.15 A
+Pololu Items #2368, #2382, #5140, #5141 (150:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 140 − 11τ
+f(τ) = 0.038 + 0.045τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.63 A
+no-load speed: 150 rpm
+no-load current: 0.051 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 140 − 11τ
+f(τ) = 0.038 + 0.045τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.63 A
+no-load speed: 150 rpm
+no-load current: 0.051 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 140 − 11τ
+f(τ) = 0.038 + 0.045τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.63 A
+no-load speed: 150 rpm
+no-load current: 0.051 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 140 − 11τ
+f(τ) = 0.038 + 0.045τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.63 A
+no-load speed: 150 rpm
+no-load current: 0.051 A
+speed (rpm)
+current (A)
+f(τ) = 140 − 11τ
+f(τ) = 0.038 + 0.045τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.63 A
+no-load current: 0.051 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+25
+
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 0.46 W
+at 8.7 kg⋅mm,
+23% efficiency,
+52 rpm, 0.34 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 3.4 kg⋅mm, 0.29 W,
+83 rpm, 0.16 A
+Pololu Items #2369, #2383, #5142, #5143 (210:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 0.46 W
+at 8.7 kg⋅mm,
+23% efficiency,
+52 rpm, 0.34 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 3.4 kg⋅mm, 0.29 W,
+83 rpm, 0.16 A
+Pololu Items #2369, #2383, #5142, #5143 (210:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 100 − 6.0τ
+f(τ) = 0.039 + 0.035τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 100 rpm
+no-load current: 0.049 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 100 − 6.0τ
+f(τ) = 0.039 + 0.035τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 100 rpm
+no-load current: 0.049 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 100 − 6.0τ
+f(τ) = 0.039 + 0.035τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 100 rpm
+no-load current: 0.049 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 100 − 6.0τ
+f(τ) = 0.039 + 0.035τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 100 rpm
+no-load current: 0.049 A
+speed (rpm)
+current (A)
+f(τ) = 100 − 6.0τ
+f(τ) = 0.039 + 0.035τ
+τstall≈
+17 kg⋅mm
+Istall≈ 0.64 A
+no-load current: 0.049 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+26
+
+0
+5
+10
+15
+20
+max power: 0.48 W
+at 11 kg⋅mm,
+23% efficiency,
+43 rpm, 0.35 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 4.5 kg⋅mm, 0.31 W,
+69 rpm, 0.17 A
+Pololu Items #2370, #2384, #5144, #5145 (250:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+max power: 0.48 W
+at 11 kg⋅mm,
+23% efficiency,
+43 rpm, 0.35 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 4.5 kg⋅mm, 0.31 W,
+69 rpm, 0.17 A
+Pololu Items #2370, #2384, #5144, #5145 (250:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 87 − 4.0τ
+f(τ) = 0.043 + 0.028τ
+τstall≈
+22 kg⋅mm
+Istall≈ 0.65 A
+no-load speed: 88 rpm
+no-load current: 0.055 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 87 − 4.0τ
+f(τ) = 0.043 + 0.028τ
+τstall≈
+22 kg⋅mm
+Istall≈ 0.65 A
+no-load speed: 88 rpm
+no-load current: 0.055 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 87 − 4.0τ
+f(τ) = 0.043 + 0.028τ
+τstall≈
+22 kg⋅mm
+Istall≈ 0.65 A
+no-load speed: 88 rpm
+no-load current: 0.055 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 87 − 4.0τ
+f(τ) = 0.043 + 0.028τ
+τstall≈
+22 kg⋅mm
+Istall≈ 0.65 A
+no-load speed: 88 rpm
+no-load current: 0.055 A
+speed (rpm)
+current (A)
+f(τ) = 87 − 4.0τ
+f(τ) = 0.043 + 0.028τ
+τstall≈
+22 kg⋅mm
+Istall≈ 0.65 A
+no-load current: 0.055 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+27
+
+0
+5
+10
+15
+20
+max power: 0.44 W
+at 12 kg⋅mm,
+21% efficiency,
+35 rpm, 0.34 A
+torque (kg⋅mm)
+max efficiency: 29%
+at 5.0 kg⋅mm, 0.29 W,
+56 rpm, 0.17 A
+Pololu Items #2371, #2385, #5146, #5147 (298:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+max power: 0.44 W
+at 12 kg⋅mm,
+21% efficiency,
+35 rpm, 0.34 A
+torque (kg⋅mm)
+max efficiency: 29%
+at 5.0 kg⋅mm, 0.29 W,
+56 rpm, 0.17 A
+Pololu Items #2371, #2385, #5146, #5147 (298:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 70 − 2.9τ
+f(τ) = 0.043 + 0.025τ
+τstall≈
+24 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 73 rpm
+no-load current: 0.057 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 70 − 2.9τ
+f(τ) = 0.043 + 0.025τ
+τstall≈
+24 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 73 rpm
+no-load current: 0.057 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 70 − 2.9τ
+f(τ) = 0.043 + 0.025τ
+τstall≈
+24 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 73 rpm
+no-load current: 0.057 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 70 − 2.9τ
+f(τ) = 0.043 + 0.025τ
+τstall≈
+24 kg⋅mm
+Istall≈ 0.64 A
+no-load speed: 73 rpm
+no-load current: 0.057 A
+speed (rpm)
+current (A)
+f(τ) = 70 − 2.9τ
+f(τ) = 0.043 + 0.025τ
+τstall≈
+24 kg⋅mm
+Istall≈ 0.64 A
+no-load current: 0.057 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+28
+
+0
+5
+10
+15
+20
+25
+30
+35
+max power: 0.53 W
+at 18 kg⋅mm,
+24% efficiency,
+28 rpm, 0.36 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 6.9 kg⋅mm, 0.33 W,
+46 rpm, 0.16 A
+Pololu Items #4792, #4793, #5148, #5149 (380:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+30
+35
+max power: 0.53 W
+at 18 kg⋅mm,
+24% efficiency,
+28 rpm, 0.36 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 6.9 kg⋅mm, 0.33 W,
+46 rpm, 0.16 A
+Pololu Items #4792, #4793, #5148, #5149 (380:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 56 − 1.6τ
+f(τ) = 0.038 + 0.018τ
+τstall≈
+36 kg⋅mm
+Istall≈ 0.68 A
+no-load speed: 57 rpm
+no-load current: 0.054 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 56 − 1.6τ
+f(τ) = 0.038 + 0.018τ
+τstall≈
+36 kg⋅mm
+Istall≈ 0.68 A
+no-load speed: 57 rpm
+no-load current: 0.054 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 56 − 1.6τ
+f(τ) = 0.038 + 0.018τ
+τstall≈
+36 kg⋅mm
+Istall≈ 0.68 A
+no-load speed: 57 rpm
+no-load current: 0.054 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 56 − 1.6τ
+f(τ) = 0.038 + 0.018τ
+τstall≈
+36 kg⋅mm
+Istall≈ 0.68 A
+no-load speed: 57 rpm
+no-load current: 0.054 A
+speed (rpm)
+current (A)
+f(τ) = 56 − 1.6τ
+f(τ) = 0.038 + 0.018τ
+τstall≈
+36 kg⋅mm
+Istall≈ 0.68 A
+no-load current: 0.054 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+29
+
+0
+10
+20
+30
+40
+50
+60
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 24%
+at 13 kg⋅mm, 0.23 W,
+17 rpm, 0.16 A
+Pololu Items #2372, #3059, #5150, #5151 (1000:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0
+10
+20
+30
+40
+50
+60
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 24%
+at 13 kg⋅mm, 0.23 W,
+17 rpm, 0.16 A
+Pololu Items #2372, #3059, #5150, #5151 (1000:1 Micro Metal Gearmotor MP 6V) Performance at 6 V
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+0.40
+0.45
+0.50
+0.55
+0.60
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+2.5
+5
+7.5
+10
+12.5
+15
+17.5
+20
+22.5
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 21 − 0.32τ
+f(τ) = 0.037 + 0.0093τ
+τstall≈
+67 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 22 rpm
+no-load current: 0.054 A
+0
+2.5
+5
+7.5
+10
+12.5
+15
+17.5
+20
+22.5
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 21 − 0.32τ
+f(τ) = 0.037 + 0.0093τ
+τstall≈
+67 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 22 rpm
+no-load current: 0.054 A
+0
+2.5
+5
+7.5
+10
+12.5
+15
+17.5
+20
+22.5
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 21 − 0.32τ
+f(τ) = 0.037 + 0.0093τ
+τstall≈
+67 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 22 rpm
+no-load current: 0.054 A
+0
+2.5
+5
+7.5
+10
+12.5
+15
+17.5
+20
+22.5
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+speed (rpm)
+current (A)
+f(τ) = 21 − 0.32τ
+f(τ) = 0.037 + 0.0093τ
+τstall≈
+67 kg⋅mm
+Istall≈ 0.66 A
+no-load speed: 22 rpm
+no-load current: 0.054 A
+speed (rpm)
+current (A)
+f(τ) = 21 − 0.32τ
+f(τ) = 0.037 + 0.0093τ
+τstall≈
+67 kg⋅mm
+Istall≈ 0.66 A
+no-load current: 0.054 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+30
+
+0
+0.5
+1
+1.5
+2
+max power: 1.6 W
+at 1.1 kg⋅mm,
+32% efficiency,
+1500 rpm, 0.85 A
+torque (kg⋅mm)
+max efficiency: 43%
+at 0.46 kg⋅mm, 1.1 W,
+2300 rpm, 0.42 A
+Pololu Items #999, #2211, #5154, #5155 (10:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+max power: 1.6 W
+at 1.1 kg⋅mm,
+32% efficiency,
+1500 rpm, 0.85 A
+torque (kg⋅mm)
+max efficiency: 43%
+at 0.46 kg⋅mm, 1.1 W,
+2300 rpm, 0.42 A
+Pololu Items #999, #2211, #5154, #5155 (10:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+2.25
+2.50
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 2900 − 1400τ
+f(τ) = 0.11 + 0.68τ
+τstall≈
+2.2 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 3100 rpm
+no-load current: 0.085 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 2900 − 1400τ
+f(τ) = 0.11 + 0.68τ
+τstall≈
+2.2 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 3100 rpm
+no-load current: 0.085 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 2900 − 1400τ
+f(τ) = 0.11 + 0.68τ
+τstall≈
+2.2 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 3100 rpm
+no-load current: 0.085 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 2900 − 1400τ
+f(τ) = 0.11 + 0.68τ
+τstall≈
+2.2 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 3100 rpm
+no-load current: 0.085 A
+speed (rpm)
+current (A)
+f(τ) = 2900 − 1400τ
+f(τ) = 0.11 + 0.68τ
+τstall≈
+2.2 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.085 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+31
+
+0
+0.5
+1
+1.5
+2
+2.5
+3
+max power: 1.5 W
+at 1.5 kg⋅mm,
+31% efficiency,
+990 rpm, 0.83 A
+torque (kg⋅mm)
+max efficiency: 42%
+at 0.58 kg⋅mm, 0.95 W,
+1600 rpm, 0.37 A
+Pololu Items #4784, #4785, #5156, #5157 (15:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+2.5
+3
+max power: 1.5 W
+at 1.5 kg⋅mm,
+31% efficiency,
+990 rpm, 0.83 A
+torque (kg⋅mm)
+max efficiency: 42%
+at 0.58 kg⋅mm, 0.95 W,
+1600 rpm, 0.37 A
+Pololu Items #4784, #4785, #5156, #5157 (15:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 650τ
+f(τ) = 0.090 + 0.49τ
+τstall≈
+3.0 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 2000 rpm
+no-load current: 0.084 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 650τ
+f(τ) = 0.090 + 0.49τ
+τstall≈
+3.0 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 2000 rpm
+no-load current: 0.084 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 650τ
+f(τ) = 0.090 + 0.49τ
+τstall≈
+3.0 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 2000 rpm
+no-load current: 0.084 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 650τ
+f(τ) = 0.090 + 0.49τ
+τstall≈
+3.0 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 2000 rpm
+no-load current: 0.084 A
+speed (rpm)
+current (A)
+f(τ) = 2000 − 650τ
+f(τ) = 0.090 + 0.49τ
+τstall≈
+3.0 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.084 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+32
+
+0
+1
+2
+3
+4
+5
+max power: 1.5 W
+at 2.8 kg⋅mm,
+29% efficiency,
+510 rpm, 0.86 A
+torque (kg⋅mm)
+max efficiency: 41%
+at 1.0 kg⋅mm, 0.89 W,
+830 rpm, 0.36 A
+Pololu Items #1093, #2212, #5158, #5159 (30:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+max power: 1.5 W
+at 2.8 kg⋅mm,
+29% efficiency,
+510 rpm, 0.86 A
+torque (kg⋅mm)
+max efficiency: 41%
+at 1.0 kg⋅mm, 0.89 W,
+830 rpm, 0.36 A
+Pololu Items #1093, #2212, #5158, #5159 (30:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+200
+400
+600
+800
+1000
+1200
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 1000 − 180τ
+f(τ) = 0.081 + 0.27τ
+τstall≈
+5.7 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 1000 rpm
+no-load current: 0.088 A
+0
+200
+400
+600
+800
+1000
+1200
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 1000 − 180τ
+f(τ) = 0.081 + 0.27τ
+τstall≈
+5.7 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 1000 rpm
+no-load current: 0.088 A
+0
+200
+400
+600
+800
+1000
+1200
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 1000 − 180τ
+f(τ) = 0.081 + 0.27τ
+τstall≈
+5.7 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 1000 rpm
+no-load current: 0.088 A
+0
+200
+400
+600
+800
+1000
+1200
+0.00
+0.25
+0.50
+0.75
+1.00
+1.25
+1.50
+1.75
+2.00
+speed (rpm)
+current (A)
+f(τ) = 1000 − 180τ
+f(τ) = 0.081 + 0.27τ
+τstall≈
+5.7 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 1000 rpm
+no-load current: 0.088 A
+speed (rpm)
+current (A)
+f(τ) = 1000 − 180τ
+f(τ) = 0.081 + 0.27τ
+τstall≈
+5.7 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.088 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+33
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+max power: 1.3 W
+at 4.3 kg⋅mm,
+27% efficiency,
+300 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 38%
+at 1.5 kg⋅mm, 0.75 W,
+490 rpm, 0.32 A
+Pololu Items #998, #2213, #5160, #5161 (50:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+6
+7
+8
+max power: 1.3 W
+at 4.3 kg⋅mm,
+27% efficiency,
+300 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 38%
+at 1.5 kg⋅mm, 0.75 W,
+490 rpm, 0.32 A
+Pololu Items #998, #2213, #5160, #5161 (50:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 590 − 68τ
+f(τ) = 0.067 + 0.17τ
+τstall≈
+8.6 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 590 rpm
+no-load current: 0.084 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 590 − 68τ
+f(τ) = 0.067 + 0.17τ
+τstall≈
+8.6 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 590 rpm
+no-load current: 0.084 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 590 − 68τ
+f(τ) = 0.067 + 0.17τ
+τstall≈
+8.6 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 590 rpm
+no-load current: 0.084 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 590 − 68τ
+f(τ) = 0.067 + 0.17τ
+τstall≈
+8.6 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 590 rpm
+no-load current: 0.084 A
+speed (rpm)
+current (A)
+f(τ) = 590 − 68τ
+f(τ) = 0.067 + 0.17τ
+τstall≈
+8.6 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.084 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+34
+
+0
+2
+4
+6
+8
+10
+12
+max power: 1.4 W
+at 6.5 kg⋅mm,
+28% efficiency,
+210 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 40%
+at 2.3 kg⋅mm, 0.80 W,
+340 rpm, 0.34 A
+Pololu Items #2361, #2215, #5162, #5163 (75:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+max power: 1.4 W
+at 6.5 kg⋅mm,
+28% efficiency,
+210 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 40%
+at 2.3 kg⋅mm, 0.80 W,
+340 rpm, 0.34 A
+Pololu Items #2361, #2215, #5162, #5163 (75:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 410 − 32τ
+f(τ) = 0.073 + 0.11τ
+τstall≈
+13 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 410 rpm
+no-load current: 0.10 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 410 − 32τ
+f(τ) = 0.073 + 0.11τ
+τstall≈
+13 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 410 rpm
+no-load current: 0.10 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 410 − 32τ
+f(τ) = 0.073 + 0.11τ
+τstall≈
+13 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 410 rpm
+no-load current: 0.10 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 410 − 32τ
+f(τ) = 0.073 + 0.11τ
+τstall≈
+13 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 410 rpm
+no-load current: 0.10 A
+speed (rpm)
+current (A)
+f(τ) = 410 − 32τ
+f(τ) = 0.073 + 0.11τ
+τstall≈
+13 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.10 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+35
+
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 1.3 W
+at 8.4 kg⋅mm,
+26% efficiency,
+150 rpm, 0.84 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 2.9 kg⋅mm, 0.73 W,
+250 rpm, 0.33 A
+Pololu Items #1101, #2214, #5164, #5165 (100:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 1.3 W
+at 8.4 kg⋅mm,
+26% efficiency,
+150 rpm, 0.84 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 2.9 kg⋅mm, 0.73 W,
+250 rpm, 0.33 A
+Pololu Items #1101, #2214, #5164, #5165 (100:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 300 − 18τ
+f(τ) = 0.067 + 0.091τ
+τstall≈
+17 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 310 rpm
+no-load current: 0.10 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 300 − 18τ
+f(τ) = 0.067 + 0.091τ
+τstall≈
+17 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 310 rpm
+no-load current: 0.10 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 300 − 18τ
+f(τ) = 0.067 + 0.091τ
+τstall≈
+17 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 310 rpm
+no-load current: 0.10 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 300 − 18τ
+f(τ) = 0.067 + 0.091τ
+τstall≈
+17 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 310 rpm
+no-load current: 0.10 A
+speed (rpm)
+current (A)
+f(τ) = 300 − 18τ
+f(τ) = 0.067 + 0.091τ
+τstall≈
+17 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.10 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+36
+
+0
+5
+10
+15
+20
+max power: 1.2 W
+at 12 kg⋅mm,
+26% efficiency,
+100 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 3.9 kg⋅mm, 0.68 W,
+170 rpm, 0.31 A
+Pololu Items #997, #2386, #5166, #5167 (150:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+max power: 1.2 W
+at 12 kg⋅mm,
+26% efficiency,
+100 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 3.9 kg⋅mm, 0.68 W,
+170 rpm, 0.31 A
+Pololu Items #997, #2386, #5166, #5167 (150:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 200 − 8.5τ
+f(τ) = 0.060 + 0.063τ
+τstall≈
+24 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 210 rpm
+no-load current: 0.087 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 200 − 8.5τ
+f(τ) = 0.060 + 0.063τ
+τstall≈
+24 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 210 rpm
+no-load current: 0.087 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 200 − 8.5τ
+f(τ) = 0.060 + 0.063τ
+τstall≈
+24 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 210 rpm
+no-load current: 0.087 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 200 − 8.5τ
+f(τ) = 0.060 + 0.063τ
+τstall≈
+24 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 210 rpm
+no-load current: 0.087 A
+speed (rpm)
+current (A)
+f(τ) = 200 − 8.5τ
+f(τ) = 0.060 + 0.063τ
+τstall≈
+24 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.087 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+37
+
+0
+5
+10
+15
+20
+25
+max power: 1.1 W
+at 15 kg⋅mm,
+22% efficiency,
+72 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 5.0 kg⋅mm, 0.62 W,
+120 rpm, 0.32 A
+Pololu Items #996, #2216, #5168, #5169 (210:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+max power: 1.1 W
+at 15 kg⋅mm,
+22% efficiency,
+72 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 5.0 kg⋅mm, 0.62 W,
+120 rpm, 0.32 A
+Pololu Items #996, #2216, #5168, #5169 (210:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 140 − 4.9τ
+f(τ) = 0.066 + 0.051τ
+τstall≈
+30 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 150 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 140 − 4.9τ
+f(τ) = 0.066 + 0.051τ
+τstall≈
+30 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 150 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 140 − 4.9τ
+f(τ) = 0.066 + 0.051τ
+τstall≈
+30 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 150 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 140 − 4.9τ
+f(τ) = 0.066 + 0.051τ
+τstall≈
+30 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 150 rpm
+no-load current: 0.081 A
+speed (rpm)
+current (A)
+f(τ) = 140 − 4.9τ
+f(τ) = 0.066 + 0.051τ
+τstall≈
+30 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.081 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+38
+
+0
+5
+10
+15
+20
+25
+30
+max power: 1.1 W
+at 17 kg⋅mm,
+22% efficiency,
+62 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 5.5 kg⋅mm, 0.59 W,
+100 rpm, 0.30 A
+Pololu Items #995, #2217, #5170, #5171 (250:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+30
+max power: 1.1 W
+at 17 kg⋅mm,
+22% efficiency,
+62 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 5.5 kg⋅mm, 0.59 W,
+100 rpm, 0.30 A
+Pololu Items #995, #2217, #5170, #5171 (250:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 120 − 3.7τ
+f(τ) = 0.059 + 0.044τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 120 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 120 − 3.7τ
+f(τ) = 0.059 + 0.044τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 120 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 120 − 3.7τ
+f(τ) = 0.059 + 0.044τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 120 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 120 − 3.7τ
+f(τ) = 0.059 + 0.044τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 120 rpm
+no-load current: 0.081 A
+speed (rpm)
+current (A)
+f(τ) = 120 − 3.7τ
+f(τ) = 0.059 + 0.044τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.081 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+39
+
+0
+5
+10
+15
+20
+25
+30
+35
+40
+max power: 1.1 W
+at 20 kg⋅mm,
+21% efficiency,
+52 rpm, 0.83 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 6.5 kg⋅mm, 0.58 W,
+87 rpm, 0.31 A
+Pololu Items #994, #2218, #5172, #5173 (298:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+30
+35
+40
+max power: 1.1 W
+at 20 kg⋅mm,
+21% efficiency,
+52 rpm, 0.83 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 6.5 kg⋅mm, 0.58 W,
+87 rpm, 0.31 A
+Pololu Items #994, #2218, #5172, #5173 (298:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 100 − 2.6τ
+f(τ) = 0.059 + 0.038τ
+τstall≈
+40 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 100 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 100 − 2.6τ
+f(τ) = 0.059 + 0.038τ
+τstall≈
+40 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 100 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 100 − 2.6τ
+f(τ) = 0.059 + 0.038τ
+τstall≈
+40 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 100 rpm
+no-load current: 0.081 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 100 − 2.6τ
+f(τ) = 0.059 + 0.038τ
+τstall≈
+40 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 100 rpm
+no-load current: 0.081 A
+speed (rpm)
+current (A)
+f(τ) = 100 − 2.6τ
+f(τ) = 0.059 + 0.038τ
+τstall≈
+40 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.081 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+40
+
+0
+10
+20
+30
+40
+50
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 36%
+at 8.4 kg⋅mm, 0.61 W,
+70 rpm, 0.28 A
+Pololu Items #4794, #4795, #5174, #5175 (380:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+10
+20
+30
+40
+50
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 36%
+at 8.4 kg⋅mm, 0.61 W,
+70 rpm, 0.28 A
+Pololu Items #4794, #4795, #5174, #5175 (380:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 83 − 1.5τ
+f(τ) = 0.052 + 0.028τ
+τstall≈
+55 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 84 rpm
+no-load current: 0.077 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 83 − 1.5τ
+f(τ) = 0.052 + 0.028τ
+τstall≈
+55 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 84 rpm
+no-load current: 0.077 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 83 − 1.5τ
+f(τ) = 0.052 + 0.028τ
+τstall≈
+55 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 84 rpm
+no-load current: 0.077 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 83 − 1.5τ
+f(τ) = 0.052 + 0.028τ
+τstall≈
+55 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 84 rpm
+no-load current: 0.077 A
+speed (rpm)
+current (A)
+f(τ) = 83 − 1.5τ
+f(τ) = 0.052 + 0.028τ
+τstall≈
+55 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.077 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+41
+
+0
+20
+40
+60
+80
+100
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 28%
+at 20 kg⋅mm, 0.53 W,
+26 rpm, 0.32 A
+Pololu Items #1595, #2373, #5176, #5177 (1000:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0
+20
+40
+60
+80
+100
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 28%
+at 20 kg⋅mm, 0.53 W,
+26 rpm, 0.32 A
+Pololu Items #1595, #2373, #5176, #5177 (1000:1 Micro Metal Gearmotor HP 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 31 − 0.26τ
+f(τ) = 0.063 + 0.013τ
+τstall≈
+120 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 31 rpm
+no-load current: 0.084 A
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 31 − 0.26τ
+f(τ) = 0.063 + 0.013τ
+τstall≈
+120 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 31 rpm
+no-load current: 0.084 A
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 31 − 0.26τ
+f(τ) = 0.063 + 0.013τ
+τstall≈
+120 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 31 rpm
+no-load current: 0.084 A
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 31 − 0.26τ
+f(τ) = 0.063 + 0.013τ
+τstall≈
+120 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 31 rpm
+no-load current: 0.084 A
+speed (rpm)
+current (A)
+f(τ) = 31 − 0.26τ
+f(τ) = 0.063 + 0.013τ
+τstall≈
+120 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.084 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+42
+
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+max power: 1.3 W
+at 0.84 kg⋅mm,
+26% efficiency,
+1500 rpm, 0.85 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 0.42 kg⋅mm, 1.0 W,
+2300 rpm, 0.51 A
+Pololu Items #3061, #3071, #5180, #5181 (10:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+max power: 1.3 W
+at 0.84 kg⋅mm,
+26% efficiency,
+1500 rpm, 0.85 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 0.42 kg⋅mm, 1.0 W,
+2300 rpm, 0.51 A
+Pololu Items #3061, #3071, #5180, #5181 (10:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 3100 − 1800τ
+f(τ) = 0.17 + 0.82τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 3300 rpm
+no-load current: 0.14 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 3100 − 1800τ
+f(τ) = 0.17 + 0.82τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 3300 rpm
+no-load current: 0.14 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 3100 − 1800τ
+f(τ) = 0.17 + 0.82τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 3300 rpm
+no-load current: 0.14 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 3100 − 1800τ
+f(τ) = 0.17 + 0.82τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 3300 rpm
+no-load current: 0.14 A
+speed (rpm)
+current (A)
+f(τ) = 3100 − 1800τ
+f(τ) = 0.17 + 0.82τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.14 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+43
+
+0
+0.5
+1
+1.5
+2
+max power: 1.3 W
+at 1.2 kg⋅mm,
+25% efficiency,
+1000 rpm, 0.85 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 0.60 kg⋅mm, 0.94 W,
+1500 rpm, 0.49 A
+Pololu Items #4786, #4787, #5182, #5183 (15:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+max power: 1.3 W
+at 1.2 kg⋅mm,
+25% efficiency,
+1000 rpm, 0.85 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 0.60 kg⋅mm, 0.94 W,
+1500 rpm, 0.49 A
+Pololu Items #4786, #4787, #5182, #5183 (15:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 820τ
+f(τ) = 0.16 + 0.56τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 2100 rpm
+no-load current: 0.13 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 820τ
+f(τ) = 0.16 + 0.56τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 2100 rpm
+no-load current: 0.13 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 820τ
+f(τ) = 0.16 + 0.56τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 2100 rpm
+no-load current: 0.13 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 2000 − 820τ
+f(τ) = 0.16 + 0.56τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 2100 rpm
+no-load current: 0.13 A
+speed (rpm)
+current (A)
+f(τ) = 2000 − 820τ
+f(τ) = 0.16 + 0.56τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.13 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+44
+
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+max power: 1.2 W
+at 2.2 kg⋅mm,
+25% efficiency,
+540 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.0 kg⋅mm, 0.85 W,
+840 rpm, 0.43 A
+Pololu Items #3062, #3072, #5184, #5185 (30:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+max power: 1.2 W
+at 2.2 kg⋅mm,
+25% efficiency,
+540 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 1.0 kg⋅mm, 0.85 W,
+840 rpm, 0.43 A
+Pololu Items #3062, #3072, #5184, #5185 (30:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 240τ
+f(τ) = 0.12 + 0.31τ
+τstall≈
+4.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 1100 rpm
+no-load current: 0.13 A
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 240τ
+f(τ) = 0.12 + 0.31τ
+τstall≈
+4.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 1100 rpm
+no-load current: 0.13 A
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 240τ
+f(τ) = 0.12 + 0.31τ
+τstall≈
+4.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 1100 rpm
+no-load current: 0.13 A
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 240τ
+f(τ) = 0.12 + 0.31τ
+τstall≈
+4.5 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 1100 rpm
+no-load current: 0.13 A
+speed (rpm)
+current (A)
+f(τ) = 1100 − 240τ
+f(τ) = 0.12 + 0.31τ
+τstall≈
+4.5 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.13 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+45
+
+0
+1
+2
+3
+4
+5
+6
+7
+max power: 1.2 W
+at 3.7 kg⋅mm,
+24% efficiency,
+310 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 1.6 kg⋅mm, 0.80 W,
+490 rpm, 0.42 A
+Pololu Items #3063, #3073, #5186, #5187 (50:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+1
+2
+3
+4
+5
+6
+7
+max power: 1.2 W
+at 3.7 kg⋅mm,
+24% efficiency,
+310 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 32%
+at 1.6 kg⋅mm, 0.80 W,
+490 rpm, 0.42 A
+Pololu Items #3063, #3073, #5186, #5187 (50:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 620 − 85τ
+f(τ) = 0.11 + 0.19τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 650 rpm
+no-load current: 0.13 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 620 − 85τ
+f(τ) = 0.11 + 0.19τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 650 rpm
+no-load current: 0.13 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 620 − 85τ
+f(τ) = 0.11 + 0.19τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 650 rpm
+no-load current: 0.13 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 620 − 85τ
+f(τ) = 0.11 + 0.19τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 650 rpm
+no-load current: 0.13 A
+speed (rpm)
+current (A)
+f(τ) = 620 − 85τ
+f(τ) = 0.11 + 0.19τ
+τstall≈
+7.4 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.13 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+46
+
+0
+2
+4
+6
+8
+10
+max power: 1.3 W
+at 5.7 kg⋅mm,
+26% efficiency,
+220 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 2.5 kg⋅mm, 0.87 W,
+330 rpm, 0.43 A
+Pololu Items #3064, #3074, #5188, #5189 (75:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+max power: 1.3 W
+at 5.7 kg⋅mm,
+26% efficiency,
+220 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 34%
+at 2.5 kg⋅mm, 0.87 W,
+330 rpm, 0.43 A
+Pololu Items #3064, #3074, #5188, #5189 (75:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 430 − 38τ
+f(τ) = 0.12 + 0.12τ
+τstall≈
+11 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 430 rpm
+no-load current: 0.13 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 430 − 38τ
+f(τ) = 0.12 + 0.12τ
+τstall≈
+11 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 430 rpm
+no-load current: 0.13 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 430 − 38τ
+f(τ) = 0.12 + 0.12τ
+τstall≈
+11 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 430 rpm
+no-load current: 0.13 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 430 − 38τ
+f(τ) = 0.12 + 0.12τ
+τstall≈
+11 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 430 rpm
+no-load current: 0.13 A
+speed (rpm)
+current (A)
+f(τ) = 430 − 38τ
+f(τ) = 0.12 + 0.12τ
+τstall≈
+11 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.13 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+47
+
+0
+2
+4
+6
+8
+10
+12
+14
+max power: 1.3 W
+at 7.9 kg⋅mm,
+25% efficiency,
+160 rpm, 0.89 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 3.3 kg⋅mm, 0.86 W,
+260 rpm, 0.44 A
+Pololu Items #3065, #3075, #5190, #5191 (100:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+2
+4
+6
+8
+10
+12
+14
+max power: 1.3 W
+at 7.9 kg⋅mm,
+25% efficiency,
+160 rpm, 0.89 A
+torque (kg⋅mm)
+max efficiency: 33%
+at 3.3 kg⋅mm, 0.86 W,
+260 rpm, 0.44 A
+Pololu Items #3065, #3075, #5190, #5191 (100:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 320 − 21τ
+f(τ) = 0.11 + 0.10τ
+τstall≈
+16 kg⋅mm
+Istall≈ 1.7 A
+no-load speed: 330 rpm
+no-load current: 0.13 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 320 − 21τ
+f(τ) = 0.11 + 0.10τ
+τstall≈
+16 kg⋅mm
+Istall≈ 1.7 A
+no-load speed: 330 rpm
+no-load current: 0.13 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 320 − 21τ
+f(τ) = 0.11 + 0.10τ
+τstall≈
+16 kg⋅mm
+Istall≈ 1.7 A
+no-load speed: 330 rpm
+no-load current: 0.13 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 320 − 21τ
+f(τ) = 0.11 + 0.10τ
+τstall≈
+16 kg⋅mm
+Istall≈ 1.7 A
+no-load speed: 330 rpm
+no-load current: 0.13 A
+speed (rpm)
+current (A)
+f(τ) = 320 − 21τ
+f(τ) = 0.11 + 0.10τ
+τstall≈
+16 kg⋅mm
+Istall≈ 1.7 A
+no-load current: 0.13 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+48
+
+0
+5
+10
+15
+20
+max power: 1.1 W
+at 10 kg⋅mm,
+23% efficiency,
+110 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 4.1 kg⋅mm, 0.73 W,
+170 rpm, 0.39 A
+Pololu Items #3066, #3076, #5192, #5193 (150:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+5
+10
+15
+20
+max power: 1.1 W
+at 10 kg⋅mm,
+23% efficiency,
+110 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 4.1 kg⋅mm, 0.73 W,
+170 rpm, 0.39 A
+Pololu Items #3066, #3076, #5192, #5193 (150:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 11τ
+f(τ) = 0.10 + 0.071τ
+τstall≈
+20 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 220 rpm
+no-load current: 0.13 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 11τ
+f(τ) = 0.10 + 0.071τ
+τstall≈
+20 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 220 rpm
+no-load current: 0.13 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 11τ
+f(τ) = 0.10 + 0.071τ
+τstall≈
+20 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 220 rpm
+no-load current: 0.13 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 11τ
+f(τ) = 0.10 + 0.071τ
+τstall≈
+20 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 220 rpm
+no-load current: 0.13 A
+speed (rpm)
+current (A)
+f(τ) = 220 − 11τ
+f(τ) = 0.10 + 0.071τ
+τstall≈
+20 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.13 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+49
+
+0
+5
+10
+15
+20
+25
+max power: 1.1 W
+at 14 kg⋅mm,
+23% efficiency,
+78 rpm, 0.80 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 5.9 kg⋅mm, 0.74 W,
+120 rpm, 0.40 A
+Pololu Items #3067, #3077, #5194, #5195 (210:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+max power: 1.1 W
+at 14 kg⋅mm,
+23% efficiency,
+78 rpm, 0.80 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 5.9 kg⋅mm, 0.74 W,
+120 rpm, 0.40 A
+Pololu Items #3067, #3077, #5194, #5195 (210:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 5.5τ
+f(τ) = 0.10 + 0.050τ
+τstall≈
+28 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 160 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 5.5τ
+f(τ) = 0.10 + 0.050τ
+τstall≈
+28 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 160 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 5.5τ
+f(τ) = 0.10 + 0.050τ
+τstall≈
+28 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 160 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 5.5τ
+f(τ) = 0.10 + 0.050τ
+τstall≈
+28 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 160 rpm
+no-load current: 0.12 A
+speed (rpm)
+current (A)
+f(τ) = 160 − 5.5τ
+f(τ) = 0.10 + 0.050τ
+τstall≈
+28 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.12 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+50
+
+0
+5
+10
+15
+20
+25
+30
+max power: 1.1 W
+at 16 kg⋅mm,
+22% efficiency,
+66 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 29%
+at 6.6 kg⋅mm, 0.71 W,
+100 rpm, 0.40 A
+Pololu Items #3068, #3078, #5196, #5197 (250:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+30
+max power: 1.1 W
+at 16 kg⋅mm,
+22% efficiency,
+66 rpm, 0.82 A
+torque (kg⋅mm)
+max efficiency: 29%
+at 6.6 kg⋅mm, 0.71 W,
+100 rpm, 0.40 A
+Pololu Items #3068, #3078, #5196, #5197 (250:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.1τ
+f(τ) = 0.11 + 0.045τ
+τstall≈
+32 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 130 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.1τ
+f(τ) = 0.11 + 0.045τ
+τstall≈
+32 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 130 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.1τ
+f(τ) = 0.11 + 0.045τ
+τstall≈
+32 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 130 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.1τ
+f(τ) = 0.11 + 0.045τ
+τstall≈
+32 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 130 rpm
+no-load current: 0.12 A
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.1τ
+f(τ) = 0.11 + 0.045τ
+τstall≈
+32 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.12 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+51
+
+0
+5
+10
+15
+20
+25
+30
+max power: 1.0 W
+at 17 kg⋅mm,
+20% efficiency,
+54 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 26%
+at 7.4 kg⋅mm, 0.65 W,
+85 rpm, 0.42 A
+Pololu Items #3069, #3079, #5198, #5199 (298:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+30
+max power: 1.0 W
+at 17 kg⋅mm,
+20% efficiency,
+54 rpm, 0.81 A
+torque (kg⋅mm)
+max efficiency: 26%
+at 7.4 kg⋅mm, 0.65 W,
+85 rpm, 0.42 A
+Pololu Items #3069, #3079, #5198, #5199 (298:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.2τ
+f(τ) = 0.11 + 0.041τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 110 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.2τ
+f(τ) = 0.11 + 0.041τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 110 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.2τ
+f(τ) = 0.11 + 0.041τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 110 rpm
+no-load current: 0.12 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.2τ
+f(τ) = 0.11 + 0.041τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 110 rpm
+no-load current: 0.12 A
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.2τ
+f(τ) = 0.11 + 0.041τ
+τstall≈
+34 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.12 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+52
+
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 30%
+at 10 kg⋅mm, 0.71 W,
+68 rpm, 0.40 A
+Pololu Items #4796, #4797, #5200, #5201 (380:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 30%
+at 10 kg⋅mm, 0.71 W,
+68 rpm, 0.40 A
+Pololu Items #4796, #4797, #5200, #5201 (380:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 85 − 1.7τ
+f(τ) = 0.10 + 0.029τ
+τstall≈
+50 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 85 rpm
+no-load current: 0.12 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 85 − 1.7τ
+f(τ) = 0.10 + 0.029τ
+τstall≈
+50 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 85 rpm
+no-load current: 0.12 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 85 − 1.7τ
+f(τ) = 0.10 + 0.029τ
+τstall≈
+50 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 85 rpm
+no-load current: 0.12 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 85 − 1.7τ
+f(τ) = 0.10 + 0.029τ
+τstall≈
+50 kg⋅mm
+Istall≈ 1.5 A
+no-load speed: 85 rpm
+no-load current: 0.12 A
+speed (rpm)
+current (A)
+f(τ) = 85 − 1.7τ
+f(τ) = 0.10 + 0.029τ
+τstall≈
+50 kg⋅mm
+Istall≈ 1.5 A
+no-load current: 0.12 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+53
+
+0
+20
+40
+60
+80
+100
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 25%
+at 22 kg⋅mm, 0.59 W,
+26 rpm, 0.39 A
+Pololu Items #3070, #3080, #5202, #5203 (1000:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0
+20
+40
+60
+80
+100
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 25%
+at 22 kg⋅mm, 0.59 W,
+26 rpm, 0.39 A
+Pololu Items #3070, #3080, #5202, #5203 (1000:1 Micro Metal Gearmotor HPCB 6V) Performance at 6 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 33 − 0.30τ
+f(τ) = 0.10 + 0.013τ
+τstall≈
+110 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 33 rpm
+no-load current: 0.12 A
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 33 − 0.30τ
+f(τ) = 0.10 + 0.013τ
+τstall≈
+110 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 33 rpm
+no-load current: 0.12 A
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 33 − 0.30τ
+f(τ) = 0.10 + 0.013τ
+τstall≈
+110 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 33 rpm
+no-load current: 0.12 A
+0
+5
+10
+15
+20
+25
+30
+35
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+speed (rpm)
+current (A)
+f(τ) = 33 − 0.30τ
+f(τ) = 0.10 + 0.013τ
+τstall≈
+110 kg⋅mm
+Istall≈ 1.6 A
+no-load speed: 33 rpm
+no-load current: 0.12 A
+speed (rpm)
+current (A)
+f(τ) = 33 − 0.30τ
+f(τ) = 0.10 + 0.013τ
+τstall≈
+110 kg⋅mm
+Istall≈ 1.6 A
+no-load current: 0.12 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+54
+
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+max power: 1.5 W
+at 0.86 kg⋅mm,
+29% efficiency,
+1700 rpm, 0.42 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 0.43 kg⋅mm, 1.1 W,
+2500 rpm, 0.25 A
+Pololu Items #3037, #3048, #5206, #5207 (10:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+max power: 1.5 W
+at 0.86 kg⋅mm,
+29% efficiency,
+1700 rpm, 0.42 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 0.43 kg⋅mm, 1.1 W,
+2500 rpm, 0.25 A
+Pololu Items #3037, #3048, #5206, #5207 (10:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+2.2
+2.4
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+4000
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+speed (rpm)
+current (A)
+f(τ) = 3300 − 1900τ
+f(τ) = 0.084 + 0.38τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 3400 rpm
+no-load current: 0.070 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+4000
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+speed (rpm)
+current (A)
+f(τ) = 3300 − 1900τ
+f(τ) = 0.084 + 0.38τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 3400 rpm
+no-load current: 0.070 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+4000
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+speed (rpm)
+current (A)
+f(τ) = 3300 − 1900τ
+f(τ) = 0.084 + 0.38τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 3400 rpm
+no-load current: 0.070 A
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+4000
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+speed (rpm)
+current (A)
+f(τ) = 3300 − 1900τ
+f(τ) = 0.084 + 0.38τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 3400 rpm
+no-load current: 0.070 A
+speed (rpm)
+current (A)
+f(τ) = 3300 − 1900τ
+f(τ) = 0.084 + 0.38τ
+τstall≈
+1.7 kg⋅mm
+Istall≈ 0.75 A
+no-load current: 0.070 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+55
+
+0
+0.5
+1
+1.5
+2
+max power: 1.4 W
+at 1.2 kg⋅mm,
+29% efficiency,
+1100 rpm, 0.40 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 0.59 kg⋅mm, 1.0 W,
+1700 rpm, 0.23 A
+Pololu Items #4788, #4789, #5208, #5209 (15:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+0.5
+1
+1.5
+2
+max power: 1.4 W
+at 1.2 kg⋅mm,
+29% efficiency,
+1100 rpm, 0.40 A
+torque (kg⋅mm)
+max efficiency: 37%
+at 0.59 kg⋅mm, 1.0 W,
+1700 rpm, 0.23 A
+Pololu Items #4788, #4789, #5208, #5209 (15:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 2200 − 880τ
+f(τ) = 0.070 + 0.27τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 0.73 A
+no-load speed: 2200 rpm
+no-load current: 0.073 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 2200 − 880τ
+f(τ) = 0.070 + 0.27τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 0.73 A
+no-load speed: 2200 rpm
+no-load current: 0.073 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 2200 − 880τ
+f(τ) = 0.070 + 0.27τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 0.73 A
+no-load speed: 2200 rpm
+no-load current: 0.073 A
+0
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+2250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 2200 − 880τ
+f(τ) = 0.070 + 0.27τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 0.73 A
+no-load speed: 2200 rpm
+no-load current: 0.073 A
+speed (rpm)
+current (A)
+f(τ) = 2200 − 880τ
+f(τ) = 0.070 + 0.27τ
+τstall≈
+2.5 kg⋅mm
+Istall≈ 0.73 A
+no-load current: 0.073 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+56
+
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+max power: 1.1 W
+at 2.0 kg⋅mm,
+24% efficiency,
+560 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 30%
+at 0.95 kg⋅mm, 0.82 W,
+840 rpm, 0.23 A
+Pololu Items #3038, #3049, #5210, #5211 (30:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+max power: 1.1 W
+at 2.0 kg⋅mm,
+24% efficiency,
+560 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 30%
+at 0.95 kg⋅mm, 0.82 W,
+840 rpm, 0.23 A
+Pololu Items #3038, #3049, #5210, #5211 (30:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 280τ
+f(τ) = 0.073 + 0.16τ
+τstall≈
+3.9 kg⋅mm
+Istall≈ 0.71 A
+no-load speed: 1100 rpm
+no-load current: 0.070 A
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 280τ
+f(τ) = 0.073 + 0.16τ
+τstall≈
+3.9 kg⋅mm
+Istall≈ 0.71 A
+no-load speed: 1100 rpm
+no-load current: 0.070 A
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 280τ
+f(τ) = 0.073 + 0.16τ
+τstall≈
+3.9 kg⋅mm
+Istall≈ 0.71 A
+no-load speed: 1100 rpm
+no-load current: 0.070 A
+0
+200
+400
+600
+800
+1000
+1200
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 1100 − 280τ
+f(τ) = 0.073 + 0.16τ
+τstall≈
+3.9 kg⋅mm
+Istall≈ 0.71 A
+no-load speed: 1100 rpm
+no-load current: 0.070 A
+speed (rpm)
+current (A)
+f(τ) = 1100 − 280τ
+f(τ) = 0.073 + 0.16τ
+τstall≈
+3.9 kg⋅mm
+Istall≈ 0.71 A
+no-load current: 0.070 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+57
+
+0
+1
+2
+3
+4
+5
+6
+max power: 1.1 W
+at 3.4 kg⋅mm,
+24% efficiency,
+320 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 1.5 kg⋅mm, 0.79 W,
+500 rpm, 0.22 A
+Pololu Items #3039, #3050, #5212, #5213 (50:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+1
+2
+3
+4
+5
+6
+max power: 1.1 W
+at 3.4 kg⋅mm,
+24% efficiency,
+320 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 1.5 kg⋅mm, 0.79 W,
+500 rpm, 0.22 A
+Pololu Items #3039, #3050, #5212, #5213 (50:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 650 − 97τ
+f(τ) = 0.065 + 0.10τ
+τstall≈
+6.7 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 650 rpm
+no-load current: 0.071 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 650 − 97τ
+f(τ) = 0.065 + 0.10τ
+τstall≈
+6.7 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 650 rpm
+no-load current: 0.071 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 650 − 97τ
+f(τ) = 0.065 + 0.10τ
+τstall≈
+6.7 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 650 rpm
+no-load current: 0.071 A
+0
+100
+200
+300
+400
+500
+600
+700
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 650 − 97τ
+f(τ) = 0.065 + 0.10τ
+τstall≈
+6.7 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 650 rpm
+no-load current: 0.071 A
+speed (rpm)
+current (A)
+f(τ) = 650 − 97τ
+f(τ) = 0.065 + 0.10τ
+τstall≈
+6.7 kg⋅mm
+Istall≈ 0.72 A
+no-load current: 0.071 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+58
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+max power: 1.1 W
+at 4.9 kg⋅mm,
+24% efficiency,
+220 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 2.1 kg⋅mm, 0.76 W,
+350 rpm, 0.20 A
+Pololu Items #3040, #3051, #5214, #5215 (75:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+max power: 1.1 W
+at 4.9 kg⋅mm,
+24% efficiency,
+220 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 2.1 kg⋅mm, 0.76 W,
+350 rpm, 0.20 A
+Pololu Items #3040, #3051, #5214, #5215 (75:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 440 − 46τ
+f(τ) = 0.056 + 0.069τ
+τstall≈
+10 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 450 rpm
+no-load current: 0.075 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 440 − 46τ
+f(τ) = 0.056 + 0.069τ
+τstall≈
+10 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 450 rpm
+no-load current: 0.075 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 440 − 46τ
+f(τ) = 0.056 + 0.069τ
+τstall≈
+10 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 450 rpm
+no-load current: 0.075 A
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 440 − 46τ
+f(τ) = 0.056 + 0.069τ
+τstall≈
+10 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 450 rpm
+no-load current: 0.075 A
+speed (rpm)
+current (A)
+f(τ) = 440 − 46τ
+f(τ) = 0.056 + 0.069τ
+τstall≈
+10 kg⋅mm
+Istall≈ 0.72 A
+no-load current: 0.075 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+59
+
+0
+2
+4
+6
+8
+10
+12
+max power: 1.1 W
+at 6.4 kg⋅mm,
+24% efficiency,
+170 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 2.9 kg⋅mm, 0.78 W,
+260 rpm, 0.21 A
+Pololu Items #3041, #3052, #5216, #5217 (100:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+2
+4
+6
+8
+10
+12
+max power: 1.1 W
+at 6.4 kg⋅mm,
+24% efficiency,
+170 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 31%
+at 2.9 kg⋅mm, 0.78 W,
+260 rpm, 0.21 A
+Pololu Items #3041, #3052, #5216, #5217 (100:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 340 − 26τ
+f(τ) = 0.060 + 0.051τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 330 rpm
+no-load current: 0.065 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 340 − 26τ
+f(τ) = 0.060 + 0.051τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 330 rpm
+no-load current: 0.065 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 340 − 26τ
+f(τ) = 0.060 + 0.051τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 330 rpm
+no-load current: 0.065 A
+0
+50
+100
+150
+200
+250
+300
+350
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 340 − 26τ
+f(τ) = 0.060 + 0.051τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 330 rpm
+no-load current: 0.065 A
+speed (rpm)
+current (A)
+f(τ) = 340 − 26τ
+f(τ) = 0.060 + 0.051τ
+τstall≈
+13 kg⋅mm
+Istall≈ 0.72 A
+no-load current: 0.065 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+60
+
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 1.0 W
+at 9.0 kg⋅mm,
+22% efficiency,
+110 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 4.2 kg⋅mm, 0.73 W,
+170 rpm, 0.22 A
+Pololu Items #3042, #3053, #5218, #5219 (150:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+2
+4
+6
+8
+10
+12
+14
+16
+max power: 1.0 W
+at 9.0 kg⋅mm,
+22% efficiency,
+110 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 4.2 kg⋅mm, 0.73 W,
+170 rpm, 0.22 A
+Pololu Items #3042, #3053, #5218, #5219 (150:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 12τ
+f(τ) = 0.066 + 0.036τ
+τstall≈
+18 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 220 rpm
+no-load current: 0.064 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 12τ
+f(τ) = 0.066 + 0.036τ
+τstall≈
+18 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 220 rpm
+no-load current: 0.064 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 12τ
+f(τ) = 0.066 + 0.036τ
+τstall≈
+18 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 220 rpm
+no-load current: 0.064 A
+0
+25
+50
+75
+100
+125
+150
+175
+200
+225
+250
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 220 − 12τ
+f(τ) = 0.066 + 0.036τ
+τstall≈
+18 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 220 rpm
+no-load current: 0.064 A
+speed (rpm)
+current (A)
+f(τ) = 220 − 12τ
+f(τ) = 0.066 + 0.036τ
+τstall≈
+18 kg⋅mm
+Istall≈ 0.72 A
+no-load current: 0.064 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+61
+
+0
+5
+10
+15
+20
+25
+max power: 1.0 W
+at 13 kg⋅mm,
+22% efficiency,
+80 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 5.6 kg⋅mm, 0.71 W,
+120 rpm, 0.21 A
+Pololu Items #3043, #3054, #5220, #5221 (210:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+5
+10
+15
+20
+25
+max power: 1.0 W
+at 13 kg⋅mm,
+22% efficiency,
+80 rpm, 0.39 A
+torque (kg⋅mm)
+max efficiency: 28%
+at 5.6 kg⋅mm, 0.71 W,
+120 rpm, 0.21 A
+Pololu Items #3043, #3054, #5220, #5221 (210:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 6.3τ
+f(τ) = 0.060 + 0.026τ
+τstall≈
+25 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 160 rpm
+no-load current: 0.070 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 6.3τ
+f(τ) = 0.060 + 0.026τ
+τstall≈
+25 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 160 rpm
+no-load current: 0.070 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 6.3τ
+f(τ) = 0.060 + 0.026τ
+τstall≈
+25 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 160 rpm
+no-load current: 0.070 A
+0
+20
+40
+60
+80
+100
+120
+140
+160
+180
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 160 − 6.3τ
+f(τ) = 0.060 + 0.026τ
+τstall≈
+25 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 160 rpm
+no-load current: 0.070 A
+speed (rpm)
+current (A)
+f(τ) = 160 − 6.3τ
+f(τ) = 0.060 + 0.026τ
+τstall≈
+25 kg⋅mm
+Istall≈ 0.72 A
+no-load current: 0.070 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+62
+
+0
+5
+10
+15
+20
+25
+30
+max power: 1.1 W
+at 15 kg⋅mm,
+22% efficiency,
+67 rpm, 0.40 A
+torque (kg⋅mm)
+max efficiency: 29%
+at 6.6 kg⋅mm, 0.72 W,
+110 rpm, 0.21 A
+Pololu Items #3044, #3055, #5222, #5223 (250:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+5
+10
+15
+20
+25
+30
+max power: 1.1 W
+at 15 kg⋅mm,
+22% efficiency,
+67 rpm, 0.40 A
+torque (kg⋅mm)
+max efficiency: 29%
+at 6.6 kg⋅mm, 0.72 W,
+110 rpm, 0.21 A
+Pololu Items #3044, #3055, #5222, #5223 (250:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.4τ
+f(τ) = 0.058 + 0.023τ
+τstall≈
+30 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 130 rpm
+no-load current: 0.066 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.4τ
+f(τ) = 0.058 + 0.023τ
+τstall≈
+30 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 130 rpm
+no-load current: 0.066 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.4τ
+f(τ) = 0.058 + 0.023τ
+τstall≈
+30 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 130 rpm
+no-load current: 0.066 A
+0
+20
+40
+60
+80
+100
+120
+140
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.4τ
+f(τ) = 0.058 + 0.023τ
+τstall≈
+30 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 130 rpm
+no-load current: 0.066 A
+speed (rpm)
+current (A)
+f(τ) = 130 − 4.4τ
+f(τ) = 0.058 + 0.023τ
+τstall≈
+30 kg⋅mm
+Istall≈ 0.75 A
+no-load current: 0.066 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+63
+
+0
+5
+10
+15
+20
+25
+30
+max power: 0.95 W
+at 17 kg⋅mm,
+20% efficiency,
+56 rpm, 0.40 A
+torque (kg⋅mm)
+max efficiency: 26%
+at 7.3 kg⋅mm, 0.65 W,
+87 rpm, 0.21 A
+Pololu Items #3045, #3056, #5224, #5225 (298:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+5
+10
+15
+20
+25
+30
+max power: 0.95 W
+at 17 kg⋅mm,
+20% efficiency,
+56 rpm, 0.40 A
+torque (kg⋅mm)
+max efficiency: 26%
+at 7.3 kg⋅mm, 0.65 W,
+87 rpm, 0.21 A
+Pololu Items #3045, #3056, #5224, #5225 (298:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.4τ
+f(τ) = 0.060 + 0.021τ
+τstall≈
+33 kg⋅mm
+Istall≈ 0.74 A
+no-load speed: 110 rpm
+no-load current: 0.065 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.4τ
+f(τ) = 0.060 + 0.021τ
+τstall≈
+33 kg⋅mm
+Istall≈ 0.74 A
+no-load speed: 110 rpm
+no-load current: 0.065 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.4τ
+f(τ) = 0.060 + 0.021τ
+τstall≈
+33 kg⋅mm
+Istall≈ 0.74 A
+no-load speed: 110 rpm
+no-load current: 0.065 A
+0
+20
+40
+60
+80
+100
+120
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.4τ
+f(τ) = 0.060 + 0.021τ
+τstall≈
+33 kg⋅mm
+Istall≈ 0.74 A
+no-load speed: 110 rpm
+no-load current: 0.065 A
+speed (rpm)
+current (A)
+f(τ) = 110 − 3.4τ
+f(τ) = 0.060 + 0.021τ
+τstall≈
+33 kg⋅mm
+Istall≈ 0.74 A
+no-load current: 0.065 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+64
+
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 31%
+at 11 kg⋅mm, 0.75 W,
+67 rpm, 0.20 A
+Pololu Items #4798, #4799, #5226, #5227 (380:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 31%
+at 11 kg⋅mm, 0.75 W,
+67 rpm, 0.20 A
+Pololu Items #4798, #4799, #5226, #5227 (380:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 86 − 1.7τ
+f(τ) = 0.056 + 0.013τ
+τstall≈
+50 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 85 rpm
+no-load current: 0.064 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 86 − 1.7τ
+f(τ) = 0.056 + 0.013τ
+τstall≈
+50 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 85 rpm
+no-load current: 0.064 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 86 − 1.7τ
+f(τ) = 0.056 + 0.013τ
+τstall≈
+50 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 85 rpm
+no-load current: 0.064 A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+speed (rpm)
+current (A)
+f(τ) = 86 − 1.7τ
+f(τ) = 0.056 + 0.013τ
+τstall≈
+50 kg⋅mm
+Istall≈ 0.72 A
+no-load speed: 85 rpm
+no-load current: 0.064 A
+speed (rpm)
+current (A)
+f(τ) = 86 − 1.7τ
+f(τ) = 0.056 + 0.013τ
+τstall≈
+50 kg⋅mm
+Istall≈ 0.72 A
+no-load current: 0.064 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+65
+
+0
+20
+40
+60
+80
+100
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 25%
+at 21 kg⋅mm, 0.59 W,
+27 rpm, 0.19 A
+Pololu Items #3046, #3057, #5228, #5229 (1000:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0
+20
+40
+60
+80
+100
+theoretical max power
+torque (kg⋅mm)
+max efficiency: 25%
+at 21 kg⋅mm, 0.59 W,
+27 rpm, 0.19 A
+Pololu Items #3046, #3057, #5228, #5229 (1000:1 Micro Metal Gearmotor HPCB 12V) Performance at 12 V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+power (W)
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+efficiency (%)
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 35 − 0.34τ
+f(τ) = 0.051 + 0.0069τ
+τstall≈
+100 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 35 rpm
+no-load current: 0.069 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 35 − 0.34τ
+f(τ) = 0.051 + 0.0069τ
+τstall≈
+100 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 35 rpm
+no-load current: 0.069 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 35 − 0.34τ
+f(τ) = 0.051 + 0.0069τ
+τstall≈
+100 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 35 rpm
+no-load current: 0.069 A
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+speed (rpm)
+current (A)
+f(τ) = 35 − 0.34τ
+f(τ) = 0.051 + 0.0069τ
+τstall≈
+100 kg⋅mm
+Istall≈ 0.75 A
+no-load speed: 35 rpm
+no-load current: 0.069 A
+speed (rpm)
+current (A)
+f(τ) = 35 − 0.34τ
+f(τ) = 0.051 + 0.0069τ
+τstall≈
+100 kg⋅mm
+Istall≈ 0.75 A
+no-load current: 0.069 A
+February 2026 – Rev 6.2
+© Pololu Corporation | www.pololu.com | 920 Pilot Rd., Las Vegas, NV 89119, USA
+66

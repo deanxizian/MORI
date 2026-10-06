@@ -1,0 +1,38 @@
+03:37:51 AM: Debug: Adding duplicate image handler for 'PNG file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'JPEG file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'TIFF file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'GIF file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'PNM file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'PCX file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'IFF file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'Windows icon file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'TGA file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'XPM file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'PNG file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'JPEG file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'TIFF file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'GIF file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'PNM file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'PCX file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'IFF file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'Windows icon file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'TGA file'
+03:37:51 AM: Debug: Adding duplicate image handler for 'XPM file'
+wx._core.wxAssertionError: C++ assertion ""false"" failed at /Volumes/KiCadBuilder/remoteroot/workspace/build-macos-kicad-release/kicad-mac-builder/build/kicad/src/kicad/pcbnew/pcb_track.cpp(387) in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/receive_A7_J10_C4.py", line 51, in <module>
+    assert vias(old) == vias(new) and len(vias(new)) == 147
+  File "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/receive_A7_J10_C4.py", line 47, in vias
+    rows = [dict(xy=xy(t.GetPosition()), diameter=t.GetWidth(), drill=t.GetDrillValue(),
+  File "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/receive_A7_J10_C4.py", line 47, in <listcomp>
+    rows = [dict(xy=xy(t.GetPosition()), diameter=t.GetWidth(), drill=t.GetDrillValue(),
+  File "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pcbnew.py", line 16340, in GetWidth
+    return _pcbnew.PCB_VIA_GetWidth(self, *args)
+SystemError: <built-in function PCB_VIA_GetWidth> returned a result with an error set

@@ -1,0 +1,6074 @@
+{
+  "status": "PASS",
+  "scope": "Incoming shell release and six-wire lift prefix only; continuations separately reported",
+  "script_sha256": "d966b8cc73baf7a517db7f8f7b82c194ab4c0024fd1cb4c5ccf0ff4a840dfc37",
+  "helper_sha256": "63f4cef43c583a4866e2cdb4631c6c204accdf3e4b2d9df7bab9581cf5d8b9e0",
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/packing.json": "28fa0bd015cc75aedbddea887c7317538403476811a249ee75762c36cb073fd6",
+    "mechanical/studies/prearrival_finish/harness_A8/joined_entry_screen.json": "59a7ce329df097bd7f4f7b4e3467b6e26907200cb91239cd8fbe711ed17a9556",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/body_to_yaw_motion.json": "c3fbc70e18fae3716923cb0f81f041f29fdb0acd77caee0f03539768453e3235",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_port/lower_staging/body_partial_curves.npz": "fb278de629417a9a67ea73776f8ffd5c63d0dad1371d6511bf193dd8a283e72f",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_connector_install/route_datums.json": "11b95c43807f387158bf47922472363b709651f30685ee595697024652f89120",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/wire_solids.json": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/verification.json": "351a78dd466e5f008192ae6dcda4c2f7ccff106a2b03695480b5596e738e2bf0",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/curvature_paths.py": "314851bea1a2160efb913ea6d242d14833f5e227b0ca3108e4ca55b9af202ae8",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/split_assembly/screen.json": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_pose_packing/lift18/screen.json": "bf7c0ee4652eb5d9f1d5613850df1764b11ff4224316ec105bd23ee7acad16e4",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_pose_packing/lift18/verification.json": "d259abd8eff1a219ea69a2f788f5ecaf93df2c2dd2de00024fbc7973bbd1f209",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/feed_lift_transition/screen.json": "2e8d4637cca6cb020759ff086e8c5abf3821d9fc13f79d5c93c2a8ba9a76f0c6",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/screen.json": "bcb9cecff9c14146e30553490c2d1fc4cb4eaccf2ff5e146508d3e717224811e",
+    "mechanical/studies/prearrival_finish/harness_A8/screen_CAM_feed_lift_schedule.py": "b29c4c1c40d0b4dc076fab41fbfd8ff9dc6906c06288cb0063984bbe09a8725f",
+    "mechanical/studies/prearrival_finish/harness_A2/select_joint.py": "5917732dfb052102ae91bf470276efc7b58d1fad5f0def22e093aa3754643722",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/screen.json": "ccf3e2bed22075ec3417d32f816aa4c7d02b924336433d39ff19eea33acfd7cc",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/verification.json": "3f0a11b2ada8e320d73364b6d216cbf24c501ff0417ffd35dc9da632a76667cc",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/rear_plug_shell_angles/screen.json": "46a611ae994cd22f38335c13e689a0befd5f06727a90af602f6c52ac791e711e",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/curves.npz": "971bf572eb8d55d5f03cbf3d7d537b0d2b814b911abfeb809715640b7db09bd0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0"
+  },
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "installed_body_plugs": [
+    "imu_J1",
+    "motion_J1",
+    "motion_J2",
+    "motion_J3",
+    "motion_J4",
+    "motion_J5",
+    "motion_J6",
+    "motion_J7",
+    "motion_J8",
+    "power_J1",
+    "power_J10",
+    "power_J11",
+    "power_J12",
+    "power_J13",
+    "power_J14",
+    "power_J15",
+    "power_J16",
+    "power_J17",
+    "power_J18",
+    "power_J19",
+    "power_J2",
+    "power_J3",
+    "power_J4",
+    "power_J5",
+    "power_J7",
+    "power_J8",
+    "power_J9"
+  ],
+  "installed_upper_plugs": [
+    "rear_J2",
+    "rear_J3"
+  ],
+  "body_wire_count": 14,
+  "prefix_stages": [
+    {
+      "stage": "shell_release",
+      "status": "PASS",
+      "planned_positions": 61,
+      "checked_positions": 61,
+      "failure": null,
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 0.0,
+            "y": 0.0,
+            "sz": 0.0,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 0.26666666666666666,
+            "y": 0.0,
+            "sz": 0.23333333333333334,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 0.5333333333333333,
+            "y": 0.0,
+            "sz": 0.4666666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 0.8,
+            "y": 0.0,
+            "sz": 0.7000000000000001,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "pose": {
+            "a": 1.0666666666666667,
+            "y": 0.0,
+            "sz": 0.9333333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "pose": {
+            "a": 1.3333333333333333,
+            "y": 0.0,
+            "sz": 1.1666666666666665,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "pose": {
+            "a": 1.6,
+            "y": 0.0,
+            "sz": 1.4000000000000001,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "pose": {
+            "a": 1.8666666666666667,
+            "y": 0.0,
+            "sz": 1.6333333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "pose": {
+            "a": 2.1333333333333333,
+            "y": 0.0,
+            "sz": 1.8666666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "pose": {
+            "a": 2.4,
+            "y": 0.0,
+            "sz": 2.1,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "pose": {
+            "a": 2.6666666666666665,
+            "y": 0.0,
+            "sz": 2.333333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "pose": {
+            "a": 2.933333333333333,
+            "y": 0.0,
+            "sz": 2.5666666666666664,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "pose": {
+            "a": 3.2,
+            "y": 0.0,
+            "sz": 2.8000000000000003,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "pose": {
+            "a": 3.466666666666667,
+            "y": 0.0,
+            "sz": 3.033333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "pose": {
+            "a": 3.7333333333333334,
+            "y": 0.0,
+            "sz": 3.2666666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "pose": {
+            "a": 4.0,
+            "y": 0.0,
+            "sz": 3.5,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "pose": {
+            "a": 4.266666666666667,
+            "y": 0.0,
+            "sz": 3.7333333333333334,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "pose": {
+            "a": 4.533333333333333,
+            "y": 0.0,
+            "sz": 3.966666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "pose": {
+            "a": 4.8,
+            "y": 0.0,
+            "sz": 4.2,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "pose": {
+            "a": 5.066666666666666,
+            "y": 0.0,
+            "sz": 4.433333333333334,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "pose": {
+            "a": 5.333333333333333,
+            "y": 0.0,
+            "sz": 4.666666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "pose": {
+            "a": 5.6,
+            "y": 0.0,
+            "sz": 4.8999999999999995,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "pose": {
+            "a": 5.866666666666666,
+            "y": 0.0,
+            "sz": 5.133333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "pose": {
+            "a": 6.133333333333333,
+            "y": 0.0,
+            "sz": 5.366666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "pose": {
+            "a": 6.4,
+            "y": 0.0,
+            "sz": 5.6000000000000005,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "pose": {
+            "a": 6.666666666666667,
+            "y": 0.0,
+            "sz": 5.833333333333334,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "pose": {
+            "a": 6.933333333333334,
+            "y": 0.0,
+            "sz": 6.066666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "pose": {
+            "a": 7.2,
+            "y": 0.0,
+            "sz": 6.3,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "pose": {
+            "a": 7.466666666666667,
+            "y": 0.0,
+            "sz": 6.533333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "pose": {
+            "a": 7.733333333333333,
+            "y": 0.0,
+            "sz": 6.766666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "pose": {
+            "a": 8.0,
+            "y": 0.0,
+            "sz": 7.0,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "pose": {
+            "a": 8.266666666666666,
+            "y": 0.0,
+            "sz": 7.2333333333333325,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 32,
+          "pose": {
+            "a": 8.533333333333333,
+            "y": 0.0,
+            "sz": 7.466666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 33,
+          "pose": {
+            "a": 8.8,
+            "y": 0.0,
+            "sz": 7.700000000000001,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 34,
+          "pose": {
+            "a": 9.066666666666666,
+            "y": 0.0,
+            "sz": 7.933333333333334,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 35,
+          "pose": {
+            "a": 9.333333333333334,
+            "y": 0.0,
+            "sz": 8.166666666666668,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 36,
+          "pose": {
+            "a": 9.6,
+            "y": 0.0,
+            "sz": 8.4,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 37,
+          "pose": {
+            "a": 9.866666666666667,
+            "y": 0.0,
+            "sz": 8.633333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 38,
+          "pose": {
+            "a": 10.133333333333333,
+            "y": 0.0,
+            "sz": 8.866666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 39,
+          "pose": {
+            "a": 10.4,
+            "y": 0.0,
+            "sz": 9.1,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 40,
+          "pose": {
+            "a": 10.666666666666666,
+            "y": 0.0,
+            "sz": 9.333333333333332,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 41,
+          "pose": {
+            "a": 10.933333333333334,
+            "y": 0.0,
+            "sz": 9.566666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 42,
+          "pose": {
+            "a": 11.2,
+            "y": 0.0,
+            "sz": 9.799999999999999,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 43,
+          "pose": {
+            "a": 11.466666666666667,
+            "y": 0.0,
+            "sz": 10.033333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 44,
+          "pose": {
+            "a": 11.733333333333333,
+            "y": 0.0,
+            "sz": 10.266666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 45,
+          "pose": {
+            "a": 12.0,
+            "y": 0.0,
+            "sz": 10.5,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 46,
+          "pose": {
+            "a": 12.266666666666666,
+            "y": 0.0,
+            "sz": 10.733333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 47,
+          "pose": {
+            "a": 12.533333333333333,
+            "y": 0.0,
+            "sz": 10.966666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 48,
+          "pose": {
+            "a": 12.8,
+            "y": 0.0,
+            "sz": 11.200000000000001,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 49,
+          "pose": {
+            "a": 13.066666666666666,
+            "y": 0.0,
+            "sz": 11.433333333333334,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 50,
+          "pose": {
+            "a": 13.333333333333334,
+            "y": 0.0,
+            "sz": 11.666666666666668,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 51,
+          "pose": {
+            "a": 13.6,
+            "y": 0.0,
+            "sz": 11.9,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 52,
+          "pose": {
+            "a": 13.866666666666667,
+            "y": 0.0,
+            "sz": 12.133333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 53,
+          "pose": {
+            "a": 14.133333333333333,
+            "y": 0.0,
+            "sz": 12.366666666666667,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 54,
+          "pose": {
+            "a": 14.4,
+            "y": 0.0,
+            "sz": 12.6,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 55,
+          "pose": {
+            "a": 14.666666666666666,
+            "y": 0.0,
+            "sz": 12.833333333333332,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 56,
+          "pose": {
+            "a": 14.933333333333334,
+            "y": 0.0,
+            "sz": 13.066666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 57,
+          "pose": {
+            "a": 15.2,
+            "y": 0.0,
+            "sz": 13.299999999999999,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 58,
+          "pose": {
+            "a": 15.466666666666667,
+            "y": 0.0,
+            "sz": 13.533333333333333,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 59,
+          "pose": {
+            "a": 15.733333333333333,
+            "y": 0.0,
+            "sz": 13.766666666666666,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 60,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "bridge_lift",
+      "status": "PASS",
+      "planned_positions": 37,
+      "checked_positions": 37,
+      "failure": null,
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 0.0,
+            "lift_index": 0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647999398456815
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219286269484416
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219009700058411
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219299853688133
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023284262127
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6584772032792201
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 0.5,
+            "lift_index": 1
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.764781327981948
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190168748424908
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190914356346039
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.218996850215285
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190714110073966
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.6121761957677214
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 1.0,
+            "lift_index": 2
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.764727338048101
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2189943487124
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2189507639414894
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219000794405093
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189572096341807
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5918648338543898
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 1.5,
+            "lift_index": 3
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647371613974216
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219073985855628
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219004751245398
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2190221078043315
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189528731941004
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5758601837210338
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 2.0,
+            "lift_index": 4
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648510730128069
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193688689108266
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191770337272638
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2192122052524335
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219020370068869
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5629884776276571
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 2.5,
+            "lift_index": 5
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647452731017285
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219035966977401
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2189757169235447
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.218997863159425
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.218937613105567
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.549953384610331
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 3.0,
+            "lift_index": 6
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.764789542483953
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219295115527614
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190425445932276
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219324770453146
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219072199518759
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5391770471977363
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 3.5,
+            "lift_index": 7
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.76481792897363
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2191065711010447
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191000886332581
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.21903022621412
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219023743746333
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5289442141818542
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 4.0,
+            "lift_index": 8
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648772796912078
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219392253150803
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219185142743647
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219186932326749
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189798219195915
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5203584228129653
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 4.5,
+            "lift_index": 9
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648002379594336
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2191499524792904
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191374422411843
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219101243793491
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190887335553837
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.5114013139047101
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 5.0,
+            "lift_index": 10
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647865975815002
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219012644071492
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219013890560022
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219085192085299
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190864385738283
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.503028571451456
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 5.5,
+            "lift_index": 11
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.764660954871634
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.218965887040319
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2189458546789647
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.218967842126476
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189478097651207
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4958347483882751
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 6.0,
+            "lift_index": 12
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648125249113142
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2189908538133585
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2189182362474278
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219149436509874
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190768189439423
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.49001378050590016
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 6.5,
+            "lift_index": 13
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647400318737747
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190769834615303
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190008742523755
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2191329795405785
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190568703314226
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4832018377425438
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 7.0,
+            "lift_index": 14
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647458407049659
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2192027416500726
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2189593982329254
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219190370388291
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189470269711427
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.47679729186888775
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 7.5,
+            "lift_index": 15
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648440652814181
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190889341010123
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190548548376783
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219062242643138
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219028163379803
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.47129065323974245
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 8.0,
+            "lift_index": 16
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648850536192942
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193548862505343
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191350212232832
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219222878399224
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190030133719723
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4672797565180451
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 8.5,
+            "lift_index": 17
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650314143253331
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219333161927273
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191845823063856
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219171130831076
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190225512101875
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4628282308113354
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 9.0,
+            "lift_index": 18
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.76477340242161
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219088317245781
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219126056720144
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219019405548665
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219057145023027
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4590170679343579
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 9.5,
+            "lift_index": 19
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649477451555966
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219184853083193
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191710870283272
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.21903811534489
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190243492900232
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4556662376054996
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 10.0,
+            "lift_index": 20
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647431064399102
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2189814015503315
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190061019315988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219055639281258
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190803396625243
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.45184780194824015
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 10.5,
+            "lift_index": 21
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648948267974656
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2191975405518405
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191966922801876
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.21908621324993
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219085364978276
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4484757929279036
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 11.0,
+            "lift_index": 22
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7646566380989925
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219107837348763
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190187414826243
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.21910757497281
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190184791066705
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4457053102991914
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 11.5,
+            "lift_index": 23
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648080695696897
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2189771514819925
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190265410121213
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219056467495248
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191058570253763
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4436799930300873
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 12.0,
+            "lift_index": 24
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648557357263842
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2191729706929073
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190275627672758
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219146474539795
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219001066614162
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4416877378447248
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 12.5,
+            "lift_index": 25
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7647777733884603
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219004620049006
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190553817815177
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.218973688432134
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219024450164645
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.44036414796807477
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 13.0,
+            "lift_index": 26
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648136593246
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2192503396001086
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190626725477687
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219120676301631
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.21893300924929
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43966655308070834
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 13.5,
+            "lift_index": 27
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7646907485111214
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219139008222732
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2189864233445369
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219108624274379
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189560393961827
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4390483725941229
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 14.0,
+            "lift_index": 28
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649359824015267
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219146296390217
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219017800353835
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 14.5,
+            "lift_index": 29
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649223740780432
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2191326880667335
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219004192030351
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 15.0,
+            "lift_index": 30
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649473819014928
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219157695890183
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190291998538005
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 15.5,
+            "lift_index": 31
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649024611142364
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219112775102927
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189842790665444
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 32,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 16.0,
+            "lift_index": 32
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648821938553074
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219092507843997
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.218964011807615
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 33,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 16.5,
+            "lift_index": 33
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649076196590078
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219117933647698
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189894376113157
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 34,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 17.0,
+            "lift_index": 34
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649402317295487
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2191505457182386
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2190220496818567
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 35,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 17.5,
+            "lift_index": 35
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648823455666247
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219092659555314
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2189641635189328
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        },
+        {
+          "index": 36,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 18.0,
+            "lift_index": 36
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649119165135531
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219309186372934
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191806903365532
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219122230502243
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.218993734465861
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43882288527617114
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "continuation_diagnostics": [
+    {
+      "stage": "bridge_only",
+      "status": "BLOCKED",
+      "planned_positions": 156,
+      "checked_positions": 5,
+      "failure": {
+        "kind": "rigid_overlap",
+        "a": "Body_Upper",
+        "b": "Yaw_Base",
+        "intersection_mm3": 4.387727427352832
+      },
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 18.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 18.5
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 19.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 19.5
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 20.0
+          },
+          "status": "BLOCKED",
+          "failure": {
+            "kind": "rigid_overlap",
+            "a": "Body_Upper",
+            "b": "Yaw_Base",
+            "intersection_mm3": 4.387727427352832
+          },
+          "pairs": []
+        }
+      ]
+    },
+    {
+      "stage": "together_vertical",
+      "status": "BLOCKED",
+      "planned_positions": 118,
+      "checked_positions": 3,
+      "failure": {
+        "kind": "rigid_overlap",
+        "a": "Plug_rear_J2",
+        "b": "Load_Frame",
+        "intersection_mm3": 0.07184812543262353
+      },
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.0,
+            "bz": 18.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 14.5,
+            "bz": 18.5
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": 0.0,
+            "sz": 15.0,
+            "bz": 19.0
+          },
+          "status": "BLOCKED",
+          "failure": {
+            "kind": "rigid_overlap",
+            "a": "Plug_rear_J2",
+            "b": "Load_Frame",
+            "intersection_mm3": 0.07184812543262353
+          },
+          "pairs": []
+        }
+      ]
+    },
+    {
+      "stage": "diagonal_back14_up2",
+      "status": "BLOCKED",
+      "planned_positions": 57,
+      "checked_positions": 11,
+      "failure": {
+        "kind": "wire_clearance",
+        "pin": 2,
+        "point_mm": [
+          -5.238426407837077,
+          -8.13945232173948,
+          142.63999938964844
+        ],
+        "obstacle": "Yaw_Base",
+        "centreline_distance_mm": 0.6853712797164917,
+        "required_bound_mm": 0.6905490338575568
+      },
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": -0.0,
+            "by": -0.0,
+            "sz": 14.0,
+            "bz": 18.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": -0.25,
+            "by": -0.25,
+            "sz": 14.035714285714286,
+            "bz": 18.035714285714285
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650734599032262
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2192795826168346
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219225207345658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219197619587515
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191432443163377
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43214582050589845
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": -0.5,
+            "by": -0.5,
+            "sz": 14.071428571428571,
+            "bz": 18.071428571428573
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648934004053421
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190228859597485
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191563408362287
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219146333813916
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219279788690395
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4253476172928981
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 16.0,
+            "y": -0.75,
+            "by": -0.75,
+            "sz": 14.107142857142858,
+            "bz": 18.107142857142858
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7651246150838765
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219435700075187
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2193383015173658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2193535384101395
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219256139852319
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4181142343117085
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "pose": {
+            "a": 16.0,
+            "y": -1.0,
+            "by": -1.0,
+            "sz": 14.142857142857142,
+            "bz": 18.142857142857142
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.765052897801035
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219259393873877
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191813679146122
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219274812253139
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219196786293874
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4104966117963432
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "pose": {
+            "a": 16.0,
+            "y": -1.2499999999999998,
+            "by": -1.2499999999999998,
+            "sz": 14.178571428571429,
+            "bz": 18.178571428571427
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649346845540754
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190444068373267
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190521377852737
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219198189322199
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219205920270146
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.403166888433525
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "pose": {
+            "a": 16.0,
+            "y": -1.5,
+            "by": -1.5,
+            "sz": 14.214285714285714,
+            "bz": 18.214285714285715
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650244037385088
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219374498519162
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219107380634733
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219429434402267
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219162316517836
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3971923114678628
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "pose": {
+            "a": 16.0,
+            "y": -1.75,
+            "by": -1.75,
+            "sz": 14.25,
+            "bz": 18.25
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650588748849142
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219337036892279
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192294468976075
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219348276258693
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2192406862640213
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3892675159883673
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "pose": {
+            "a": 16.0,
+            "y": -2.0,
+            "by": -2.0,
+            "sz": 14.285714285714286,
+            "bz": 18.285714285714285
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649140671254072
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219126756407142
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190237247958633
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219273478624794
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219170447013514
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3810548978080066
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "pose": {
+            "a": 16.0,
+            "y": -2.25,
+            "by": -2.25,
+            "sz": 14.321428571428571,
+            "bz": 18.321428571428573
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649599504914795
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219114089410464
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191018622497203
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219205502196378
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191932750356336
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3731264476155075
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "pose": {
+            "a": 16.0,
+            "y": -2.4999999999999996,
+            "by": -2.4999999999999996,
+            "sz": 14.357142857142858,
+            "bz": 18.357142857142858
+          },
+          "status": "BLOCKED",
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 2,
+            "point_mm": [
+              -5.238426407837077,
+              -8.13945232173948,
+              142.63999938964844
+            ],
+            "obstacle": "Yaw_Base",
+            "centreline_distance_mm": 0.6853712797164917,
+            "required_bound_mm": 0.6905490338575568
+          },
+          "pairs": []
+        }
+      ]
+    },
+    {
+      "stage": "diagonal_back14_up4",
+      "status": "BLOCKED",
+      "planned_positions": 57,
+      "checked_positions": 10,
+      "failure": {
+        "kind": "rigid_overlap",
+        "a": "Plug_rear_J2",
+        "b": "Load_Frame",
+        "intersection_mm3": 0.0005171728241827201
+      },
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": -0.0,
+            "by": -0.0,
+            "sz": 14.0,
+            "bz": 18.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": -0.25,
+            "by": -0.25,
+            "sz": 14.071428571428571,
+            "bz": 18.071428571428573
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650734599032262
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2192795826168346
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219225207345658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219197619587515
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191432443163377
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43214582050589845
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": -0.5,
+            "by": -0.5,
+            "sz": 14.142857142857142,
+            "bz": 18.142857142857142
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648934004053421
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190228859597485
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191563408362287
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219146333813916
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219279788690395
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4253476172928981
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 16.0,
+            "y": -0.75,
+            "by": -0.75,
+            "sz": 14.214285714285714,
+            "bz": 18.214285714285715
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7651246150838765
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219435700075187
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2193383015173658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2193535384101395
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219256139852319
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4181142343117085
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "pose": {
+            "a": 16.0,
+            "y": -1.0,
+            "by": -1.0,
+            "sz": 14.285714285714286,
+            "bz": 18.285714285714285
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.765052897801035
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219259393873877
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191813679146122
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219274812253139
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219196786293874
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4104966117963432
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "pose": {
+            "a": 16.0,
+            "y": -1.2499999999999998,
+            "by": -1.2499999999999998,
+            "sz": 14.357142857142858,
+            "bz": 18.357142857142858
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649346845540754
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190444068373267
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190521377852737
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219198189322199
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219205920270146
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.403166888433525
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "pose": {
+            "a": 16.0,
+            "y": -1.5,
+            "by": -1.5,
+            "sz": 14.428571428571429,
+            "bz": 18.428571428571427
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650244037385088
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219374498519162
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219107380634733
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219429434402267
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219162316517836
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3971923114678628
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "pose": {
+            "a": 16.0,
+            "y": -1.75,
+            "by": -1.75,
+            "sz": 14.5,
+            "bz": 18.5
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650588748849142
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219337036892279
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192294468976075
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219348276258693
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2192406862640213
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3892675159883673
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "pose": {
+            "a": 16.0,
+            "y": -2.0,
+            "by": -2.0,
+            "sz": 14.571428571428571,
+            "bz": 18.571428571428573
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7649140671254072
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219126756407142
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2190237247958633
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219273478624794
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219170447013514
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.3810548978080066
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "pose": {
+            "a": 16.0,
+            "y": -2.25,
+            "by": -2.25,
+            "sz": 14.642857142857142,
+            "bz": 18.642857142857142
+          },
+          "status": "BLOCKED",
+          "failure": {
+            "kind": "rigid_overlap",
+            "a": "Plug_rear_J2",
+            "b": "Load_Frame",
+            "intersection_mm3": 0.0005171728241827201
+          },
+          "pairs": []
+        }
+      ]
+    },
+    {
+      "stage": "diagonal_back14_up8",
+      "status": "BLOCKED",
+      "planned_positions": 57,
+      "checked_positions": 6,
+      "failure": {
+        "kind": "rigid_overlap",
+        "a": "Plug_rear_J2",
+        "b": "Load_Frame",
+        "intersection_mm3": 0.005155398423416474
+      },
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": -0.0,
+            "by": -0.0,
+            "sz": 14.0,
+            "bz": 18.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": -0.25,
+            "by": -0.25,
+            "sz": 14.142857142857142,
+            "bz": 18.142857142857142
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650734599032262
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2192795826168346
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219225207345658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219197619587515
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191432443163377
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43214582050589845
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": -0.5,
+            "by": -0.5,
+            "sz": 14.285714285714286,
+            "bz": 18.285714285714285
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648934004053421
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190228859597485
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191563408362287
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219146333813916
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219279788690395
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4253476172928981
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 16.0,
+            "y": -0.75,
+            "by": -0.75,
+            "sz": 14.428571428571429,
+            "bz": 18.428571428571427
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7651246150838765
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219435700075187
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2193383015173658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.2193535384101395
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219256139852319
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4181142343117085
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "pose": {
+            "a": 16.0,
+            "y": -1.0,
+            "by": -1.0,
+            "sz": 14.571428571428571,
+            "bz": 18.571428571428573
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.765052897801035
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.219259393873877
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191813679146122
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219274812253139
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219196786293874
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4104966117963432
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "pose": {
+            "a": 16.0,
+            "y": -1.2499999999999998,
+            "by": -1.2499999999999998,
+            "sz": 14.714285714285714,
+            "bz": 18.714285714285715
+          },
+          "status": "BLOCKED",
+          "failure": {
+            "kind": "rigid_overlap",
+            "a": "Plug_rear_J2",
+            "b": "Load_Frame",
+            "intersection_mm3": 0.005155398423416474
+          },
+          "pairs": []
+        }
+      ]
+    },
+    {
+      "stage": "diagonal_back14_up14",
+      "status": "BLOCKED",
+      "planned_positions": 57,
+      "checked_positions": 4,
+      "failure": {
+        "kind": "rigid_overlap",
+        "a": "Plug_rear_J2",
+        "b": "Load_Frame",
+        "intersection_mm3": 0.009279649475782498
+      },
+      "rows": [
+        {
+          "index": 0,
+          "pose": {
+            "a": 16.0,
+            "y": -0.0,
+            "by": -0.0,
+            "sz": 14.0,
+            "bz": 18.0
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650760647294224
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2193970564646506
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2192674612176988
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219287387244288
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191577919973353
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43891066468349244
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "pose": {
+            "a": 16.0,
+            "y": -0.25,
+            "by": -0.25,
+            "sz": 14.25,
+            "bz": 18.25
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7650734599032262
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2192795826168346
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.219225207345658
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219197619587515
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.2191432443163377
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.43214582050589845
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "pose": {
+            "a": 16.0,
+            "y": -0.5,
+            "by": -0.5,
+            "sz": 14.5,
+            "bz": 18.5
+          },
+          "status": "PASS",
+          "failure": null,
+          "pairs": [
+            {
+              "a": 3,
+              "b": 4,
+              "surface_gap_lower_bound_mm": 0.7648934004053421
+            },
+            {
+              "a": 3,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 3.2190228859597485
+            },
+            {
+              "a": 3,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 1.2191563408362287
+            },
+            {
+              "a": 4,
+              "b": 1,
+              "surface_gap_lower_bound_mm": 5.219146333813916
+            },
+            {
+              "a": 4,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 3.219279788690395
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "surface_gap_lower_bound_mm": 0.4253476172928981
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "pose": {
+            "a": 16.0,
+            "y": -0.75,
+            "by": -0.75,
+            "sz": 14.75,
+            "bz": 18.75
+          },
+          "status": "BLOCKED",
+          "failure": {
+            "kind": "rigid_overlap",
+            "a": "Plug_rear_J2",
+            "b": "Load_Frame",
+            "intersection_mm3": 0.009279649475782498
+          },
+          "pairs": []
+        }
+      ]
+    }
+  ],
+  "curves_sha256": "42ddda9f98723cf3e633856a83af99a95e3f7268330d7541a69011267bed03d6",
+  "full_nominal_wire_allocations_preserved": true,
+  "conservative_plug_envelopes_unchanged": true,
+  "continuous_assembly": "NOT_TESTED",
+  "complete_attached_assembly": "BLOCKED",
+  "physical_hands_support": "NOT_TESTED",
+  "main_applied": false,
+  "manufacturing_release": false,
+  "elapsed_s": 111.25036907196045
+}

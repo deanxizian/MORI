@@ -1,0 +1,42 @@
+{
+  "source_pcb_sha256": "e40d1967304aaeed70f6b7e5d7bd83bed3200863f0db1e50aa3ceb321a541a29",
+  "source_schematic_sha256": "c0d316177ad61661ec2c095218f8a8c656ad07f83849fb0deabd031ac3d49ae9",
+  "bare_STEP_is_populated_assembly": false,
+  "manufacturing_outputs": false,
+  "commands": [
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "/Users/dean/Documents/MORI/hardware/v1_2/tools/export_track_views_P5.py",
+        "power"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "sch",
+        "export",
+        "pdf",
+        "--output",
+        "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5/previews/MORI_power_P5/MORI_power_P5.pdf",
+        "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_power_P5/MORI_power_P5.kicad_sch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "pcb",
+        "export",
+        "step",
+        "--board-only",
+        "--force",
+        "--output",
+        "/Users/dean/Documents/MORI/hardware/v1_2/mechanical/MORI_power_P5_BARE_BOARD.step",
+        "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_power_P5/MORI_power_P5.kicad_pcb"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

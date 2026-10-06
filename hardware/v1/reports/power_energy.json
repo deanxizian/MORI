@@ -1,0 +1,141 @@
+{
+  "status": "NOT_TESTED",
+  "states": [
+    {
+      "state": "stand_eyes",
+      "wheel_battery_W": 2.0,
+      "motion_3V3_W": 0.33,
+      "interaction_including_camera_W": 0.9,
+      "screen_W": 0.15,
+      "servo_5V_W": 0.15,
+      "audio_5V_W": 0.15,
+      "battery_W": 3.982,
+      "battery_A_at_6V4": 0.622,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "move_eyes",
+      "wheel_battery_W": 4,
+      "motion_3V3_W": 0.33,
+      "interaction_including_camera_W": 0.9,
+      "screen_W": 0.15,
+      "servo_5V_W": 0.15,
+      "audio_5V_W": 0.15,
+      "battery_W": 5.982,
+      "battery_A_at_6V4": 0.935,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "disturbance",
+      "wheel_battery_W": 14,
+      "motion_3V3_W": 0.45,
+      "interaction_including_camera_W": 1.2,
+      "screen_W": 0.15,
+      "servo_5V_W": 0.3,
+      "audio_5V_W": 0.15,
+      "battery_W": 16.625,
+      "battery_A_at_6V4": 2.598,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "turn_two_servos",
+      "wheel_battery_W": 2,
+      "motion_3V3_W": 0.33,
+      "interaction_including_camera_W": 0.9,
+      "screen_W": 0.15,
+      "servo_5V_W": 4.0,
+      "audio_5V_W": 0.15,
+      "battery_W": 8.259,
+      "battery_A_at_6V4": 1.291,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "vision_tracking",
+      "wheel_battery_W": 2,
+      "motion_3V3_W": 0.33,
+      "interaction_including_camera_W": 1.5,
+      "screen_W": 0.15,
+      "servo_5V_W": 0.2,
+      "audio_5V_W": 0.15,
+      "battery_W": 4.719,
+      "battery_A_at_6V4": 0.737,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "record_play_network",
+      "wheel_battery_W": 2,
+      "motion_3V3_W": 0.33,
+      "interaction_including_camera_W": 1.8,
+      "screen_W": 0.15,
+      "servo_5V_W": 0.2,
+      "audio_5V_W": 0.55,
+      "battery_W": 5.504,
+      "battery_A_at_6V4": 0.86,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "maintenance_logic",
+      "wheel_battery_W": 0,
+      "motion_3V3_W": 0.25,
+      "interaction_including_camera_W": 1.2,
+      "screen_W": 0.15,
+      "servo_5V_W": 0,
+      "audio_5V_W": 0,
+      "battery_W": 1.898,
+      "battery_A_at_6V4": 0.297,
+      "status": "ASSUMED_NOT_TESTED"
+    },
+    {
+      "state": "concurrent_peak",
+      "wheel_battery_W": 18,
+      "motion_3V3_W": 0.6,
+      "interaction_including_camera_W": 2.31,
+      "screen_W": 0.15,
+      "servo_5V_W": 10,
+      "audio_5V_W": 1.0,
+      "battery_W": 33.779,
+      "battery_A_at_6V4": 5.278,
+      "status": "ASSUMED_NOT_TESTED"
+    }
+  ],
+  "battery_nominal_Wh": 24.12,
+  "usable_Wh": 17.366400000000002,
+  "endurance": [
+    {
+      "case": "light",
+      "mean_battery_W": 5.34,
+      "usable_Wh": 17.37,
+      "estimated_minutes": 195.2,
+      "energy_margin_for_60min_Wh": 12.03,
+      "status": "NOT_TESTED"
+    },
+    {
+      "case": "medium",
+      "mean_battery_W": 7.34,
+      "usable_Wh": 17.37,
+      "estimated_minutes": 142.0,
+      "energy_margin_for_60min_Wh": 10.03,
+      "status": "NOT_TESTED"
+    },
+    {
+      "case": "heavy",
+      "mean_battery_W": 11.34,
+      "usable_Wh": 17.37,
+      "estimated_minutes": 91.9,
+      "energy_margin_for_60min_Wh": 6.03,
+      "status": "NOT_TESTED"
+    }
+  ],
+  "requirements_1S_2S": {
+    "example_20W_battery_A_1S_3V2": 7.352941176470588,
+    "example_20W_battery_A_2S_6V4": 3.472222222222222,
+    "decision": "2S conditional: halves battery current, separately regulated 5V servo and 3V3 logic. Charger/protection/balance not yet matched."
+  },
+  "regen": {
+    "translation_plus_wheel_energy_at_0p5ms_J": 0.18922372381271488,
+    "minimum_C_8p4_to_8p8V_F": 0.05500689645718448,
+    "energy_1000uF_8p4_to_8p8V_J": 0.003440000000000005,
+    "note": "8.8V is an illustrative bound, NOT an approved driver or battery voltage. Add body/rotor/inductor energy; buck reverse path must be measured."
+  },
+  "peak_warning": "Concurrent modeled peak may exceed pack 5A and safe voltage headroom; firmware cannot replace hardware current limit. Characterize and reduce allowed concurrent loads."
+}

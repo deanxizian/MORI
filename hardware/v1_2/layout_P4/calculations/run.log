@@ -1,0 +1,93 @@
+{
+  "status": "ESTIMATE_NOT_TESTED",
+  "assumptions": {
+    "copper_thickness_mm": 0.035,
+    "via_barrel_plating_mm": 0.025,
+    "temperature_C": 20,
+    "does_not_include": "contact resistance, solder necks, copper plating tolerances, hot resistance, convection, thermal vias or board thermal coupling"
+  },
+  "rear": {
+    "design_continuous_input_A": 1,
+    "series_fuse_A": 1.5,
+    "USB_neck": {
+      "length_mm": 1.355,
+      "width_mm": 0.4,
+      "current_A": 1,
+      "resistance_mohm": 1.6685857142857141,
+      "drop_mV": 1.6685857142857141,
+      "loss_W": 0.0016685857142857141
+    },
+    "interconnect_example": {
+      "length_mm": 20,
+      "width_mm": 0.6,
+      "current_A": 1,
+      "resistance_mohm": 16.41904761904762,
+      "drop_mV": 16.41904761904762,
+      "loss_W": 0.01641904761904762
+    },
+    "via_example": {
+      "drill_mm": 0.25,
+      "parallel_count": 1,
+      "total_current_A": 1,
+      "resistance_mohm": 1.2771287127990811,
+      "loss_W": 0.001277128712799081,
+      "assumed_uniform_current_share": true
+    },
+    "warning": "Individual neck conservatively carries full1A; no assumed perfect USB-pin current sharing. The fuse is not an electronic1A limit."
+  },
+  "master": {
+    "pack_max_V": 12.6,
+    "gate_return_resistor_ohm": 10000,
+    "gate_pullup_ohm": 100000,
+    "maximum_static_switch_current_mA": 1.26,
+    "unclamped_divider_Vgs_at_full_pack": -11.454545454545455,
+    "Rds_on_design_example_ohm": 0.017,
+    "Rds_condition": "Use AO4407A datasheet stated gate voltage and junction temperature; hot value not established",
+    "loss_at_3A_W": 0.15300000000000002,
+    "loss_at_6p5A_W": 0.71825,
+    "loss_hot_2x_sensitivity_at_6p5A_W": 1.4365,
+    "loss_2x_is_assumption_not_vendor_rating": true,
+    "source_via_array": {
+      "drill_mm": 0.45,
+      "parallel_count": 3,
+      "total_current_A": 6.5,
+      "resistance_mohm": 0.24646343580333147,
+      "loss_W": 0.010413080162690753,
+      "assumed_uniform_current_share": true
+    },
+    "capacitor_inrush_J_per_1000uF": 0.07937999999999999,
+    "qualification": "NOT_TESTED: inrush, MOSFET SOA, transient Vgs, hot drop, OFF leakage and reverse supply"
+  },
+  "limits": "Resistance estimates do not establish allowable current, temperature rise or continuous motor capability. Validate using real copper stack-up, representative load and thermal measurement; scope/appropriate electronic load required for transients.",
+  "power_board_native_copper_intent_um": 70,
+  "power_conservative_calculation_copper_um": 35,
+  "head_output": {
+    "trunk_20mm_example": {
+      "length_mm": 20,
+      "width_mm": 1,
+      "current_A": 2,
+      "resistance_mohm": 9.851428571428572,
+      "drop_mV": 19.702857142857145,
+      "loss_W": 0.03940571428571429
+    },
+    "parallel_transition": {
+      "drill_mm": 0.45,
+      "parallel_count": 2,
+      "total_current_A": 2,
+      "resistance_mohm": 0.36969515370499717,
+      "loss_W": 0.0014787806148199886,
+      "assumed_uniform_current_share": true
+    },
+    "actual_via_centers_mm": [
+      [
+        49.3,
+        44.2
+      ],
+      [
+        49.3,
+        45.4
+      ]
+    ],
+    "qualification": "Two1.0mm lands with0.45mm drills;2A is an estimate scenario, not a verified continuous rail rating. Copper, plating, terminal heating and current sharing NOT_TESTED."
+  }
+}

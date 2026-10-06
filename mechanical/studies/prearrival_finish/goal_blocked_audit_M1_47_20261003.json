@@ -1,0 +1,144 @@
+{
+  "objective": "在拿到实物之前，先把能做的都做了",
+  "revision": "V1.2-M1.47",
+  "audit_kind": "Current remaining-work dependency audit, not manufacturing completion",
+  "prior_goal_turn_classification": "progress",
+  "prior_progress": "Completed sourced tyre outer-envelope/clearance study and manufacturer drawing audit.",
+  "current_goal_turn_classification": "no progress: authoritative inputs unchanged; no live work remains to await",
+  "repeated_blocker": "Actual harness construction and supplier-defined mating/tail geometry remain unconfirmed; remaining final routing, attachment and assembly design cannot be frozen from study allocations.",
+  "recurrence_turns": [
+    {
+      "turn_id": "01a0fe02-0a51-73e0-a862-c554c5b4ea94",
+      "classification": "progress on independent work; blocker persisted",
+      "evidence": "Final explicitly records full harness requiring construction-method choice and actual matched tails; A7 still lists unknown mated wire geometry."
+    },
+    {
+      "turn_id": "01a0fe2b-c7d4-7f71-8a85-d1fca923e8ba",
+      "classification": "progress on independent work; blocker persisted",
+      "evidence": "Tyre/source review completed, while work_status and final retain full harness and supplier-interface gaps."
+    },
+    {
+      "turn_id": "01a0fe3f-8e2b-71e1-81d4-16e479b4aa9e",
+      "classification": "no progress; same dependency revalidated",
+      "evidence": "Hardware chat is idle/completed at unchanged revision26; A7 latest handoff unchanged. Pending harness choice and required actual interfaces still absent."
+    }
+  ],
+  "consecutive_recurrences": 3,
+  "threshold_interpretation": "Three consecutive turns with the same unresolved external input condition; the earlier two also completed independent work. This does not claim three no-progress turns.",
+  "hardware_state": {
+    "thread_id": "01a0c24f-ddc2-7f03-a9d4-d09dff26d30f",
+    "status": "idle",
+    "latest_turn": "01a0fdfd-272e-7de3-9bdf-5cf4976046b0",
+    "latest_turn_status": "completed",
+    "cursor": "aa5e1c86-6a63-4d77-8f76-de94e31ee94d:26",
+    "changed": false
+  },
+  "current_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "current_impasse": [
+    {
+      "item": "Complete harness",
+      "needed": "Pending user construction-method choice and selected/matched tail, terminal, wire and FPC dimensions.",
+      "why": "Body candidate wires and local loops are already screened; actual connector exits, minimum bends, all eleven conductors, pitch segments and installation sequence remain unqualified. Alpha5853 cannot directly crimp into the current SH catalogue candidate."
+    },
+    {
+      "item": "Head transmission / reaction clamp",
+      "needed": "SCS0009 matching horn and axial stack drawing; subsequent concrete structural candidate approval.",
+      "why": "Vendor spline/horn geometry is unknown and internally conflicting. Current clamp first-assembly approaches fail. Changing the clamp around an assumed horn would not close the final interface."
+    },
+    {
+      "item": "Wheel replacement",
+      "needed": "Matched wheel/hub interface dimensions, delivered sourcing and reviewed diameter/axial changes.",
+      "why": "Outer-fit study is complete. Nearest catalogue wheel reduces nominal belly clearance and cannot use the present double-D hub without an interface design."
+    },
+    {
+      "item": "Electrical service and unselected components",
+      "needed": "Actual mated wire package/removal data, final selections and formal revised handoff; electrical power-cut implementation.",
+      "why": "C4/PHC1 remain independent candidates. Full installed JP70/TP71 access and brake-resistor installation/thermal spacing cannot be frozen by their bare envelopes."
+    },
+    {
+      "item": "Load/drive closure",
+      "needed": "Settled complete BOM masses, selected installation geometry and supplier continuous operating data.",
+      "why": "Existing nominal mass/torque calculations already expose the remaining deficit; missing components and performance data cannot be marked PASS by recalculation."
+    }
+  ],
+  "decisions_not_reasked": [
+    "Existing harness build-method question remains pending; no duplicate question sent."
+  ],
+  "preserved_scope": [
+    "No primary geometry or hardware changes",
+    "No manufacturing/purchase release",
+    "No external vendor contact",
+    "No claim only physical validation remains",
+    "No completion claim"
+  ],
+  "evidence": [
+    "work_status.json",
+    "SUPPLIER_DATA_REQUEST.md",
+    "head_harness/HEAD_HARNESS_REQUIREMENTS.md",
+    "hardware_A7_J10_C4_receipt.json",
+    "tyre_selection/outer_fit.json",
+    "reaction_service_sections_M1_47.json"
+  ],
+  "recent_turn_evidence": {
+    "thread": "01a0c226-811d-75d2-8f93-350cad266a22",
+    "turns": [
+      {
+        "id": "01a0fe3f-8e2b-71e1-81d4-16e479b4aa9e",
+        "status": "inProgress",
+        "startedAt": 1790971973,
+        "completedAt": null,
+        "finals": [],
+        "hardware_messages": []
+      },
+      {
+        "id": "01a0fe2b-c7d4-7f71-8a85-d1fca923e8ba",
+        "status": "completed",
+        "startedAt": 1790970677,
+        "completedAt": 1790971973,
+        "finals": [
+          "三项已按推荐推进，结果见[审阅页](http://127.0.0.1:58201/mechanical/studies/prearrival_finish/index.html)。\n\n- **结构修正**：已应用到 M1.47，Blender、STL 和装配视频已同步。\n- **现成软轮**：已完成筛选与空间检查。最近尺寸候选会减少离地间隙，轮毂接口也需调整，尚未替换主模型。\n- **电气交接**：已发送需求、收到硬件回复并完成接口核对。\n\n反力夹初次装配、完整线束及部分厂家接口资料仍未解决，还不是只等实物验证。"
+        ],
+        "hardware_messages": []
+      },
+      {
+        "id": "01a0fe02-0a51-73e0-a862-c554c5b4ea94",
+        "status": "completed",
+        "startedAt": 1790967941,
+        "completedAt": 1790970677,
+        "finals": [
+          "本轮继续完成了：\n\n- **C4 电源板交接复核**：安装接口保持不变。\n- **头部进线通道检查**：三组线各自有通道，但合束、弯曲和固定尚未完成。\n- **制动电阻尺寸包络**：已建独立参考模型，安装和热间距仍待定。:codex-file-citation{path=\"/Users/dean/Documents/MORI/hardware/v1_2/prearrival_20261002/sources/vishay_ac.pdf\" purpose=\"source\"}\n\n[查看最新检查页](http://127.0.0.1:58201/mechanical/studies/prearrival_finish/index.html)。主模型保持 M1.47；完整线束仍需确定制作方式和实际配套尾线，不能算全部收尾。"
+        ],
+        "hardware_messages": []
+      },
+      {
+        "id": "01a0fdc2-945f-7dd3-97e4-d5fac201b851",
+        "status": "completed",
+        "startedAt": 1790963782,
+        "completedAt": 1790967941,
+        "finals": [
+          "已按推荐推进：结构修正已同步到 M1.47 模型、STL 和动画；软轮胎候选已比较；扩展电气要求已交硬件对话继续处理。\n\n[最新线束检查](http://127.0.0.1:58201/mechanical/studies/prearrival_finish/head_harness/index.html#yaw-loops)：两组局部活动环通过，UART、进头路径和实际固定仍未完成，目前还不能说只剩实物验证。"
+        ],
+        "hardware_messages": [
+          {
+            "id": "exec-5a1cad00-ea97-41a2-93ac-1b3008e18961",
+            "arguments": {
+              "threadId": "01a0c24f-ddc2-7f03-a9d4-d09dff26d30f",
+              "hostId": "local",
+              "prompt": "请继续完成之前已授权的第 7 项及扩展电气交接工作。你上次说明 C3 整板逐线视觉复核尚未完成：请实际逐项检查 39 条形态提示，记录每项是需修正、合理例外还是误报，并核查用户的向外引出、器件旋转/位置优化与减少碎折线要求；不要把 0 DRC 或与 C2 安装几何一致作为视觉复核完成的依据。结果仍作为独立候选交接，保留正式板与当前主模型。\n\n同时请继续补齐已交接的头部线束输入：OV3660 完整 FPC 长度/料号及厂家支持的兼容加长方案；CAM 的 USB、SH、SPK 以及 SCS0009 实际尾线、端视线序、完整插头和出线尺寸。能从官方资料确定的先落实，无法确定的逐字段列出缺失项，勿用任意 24P 排线代替兼容性证据。机械本轮已找到供电/喇叭 4 线与舵机 3 线的两组局部 Yaw 活动环占位，130 姿态和已有固定线间隙检查通过，但 UART 4 线、进入头部的路径、实际固定点与逐线长度仍未完成；这些研究没有改主模型或选定线材。\n\n请以完成审查和可核验资料为交付，而不是只回复收到。如需要人类决策，给出具体问题与候选依据。研究页为 http://127.0.0.1:58201/mechanical/studies/prearrival_finish/head_harness/index.html ，最新机械报告为 mechanical/studies/prearrival_finish/head_harness/loop_source_solids.json。"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "verified_utc": "2026-10-02T20:16:21.522898+00:00",
+  "evidence_hashes": {
+    "work_status.json": "aaebe82b404b78654a1c0744670e23fdf5243abd8ed4a6b8fbe3048dfbe4395f",
+    "SUPPLIER_DATA_REQUEST.md": "29434ee1251bd726ec6f130393d87b7adce0ea8492829ab8c143bbc363e701a7",
+    "head_harness/HEAD_HARNESS_REQUIREMENTS.md": "caf8ede21503dc5f60b439ecc1ac60545a0b814e4e934ce82745f6d91d64e7be",
+    "hardware_A7_J10_C4_receipt.json": "237745c7ff1b10a5000d4387bfc806fc0868601179a30138c5970e2898aca7a4",
+    "tyre_selection/outer_fit.json": "661889869c5e26c6883a4f0a4de875c394ddd49a929036e3bf1c7e9c0bc848d2",
+    "reaction_service_sections_M1_47.json": "3d713a049c2a6ef45dfeb1f8751e7520acc1814ab04d2ffb11eb7def3fa3aab4"
+  },
+  "latest_handoff_sha256": "acb171b0d7a84770b651bfb6151bc9f0152207fa711a10b341492cbd17602e82"
+}

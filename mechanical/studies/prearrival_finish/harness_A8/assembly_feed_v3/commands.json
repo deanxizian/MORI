@@ -1,0 +1,69 @@
+{
+  "cwd": "/Users/dean/Documents/MORI",
+  "actual_runs": [
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python mechanical/studies/prearrival_finish/harness_A8/check_coupled_terminal_feed.py > mechanical/studies/prearrival_finish/harness_A8/coupled_feed.log 2>&1",
+      "log": "../coupled_feed.log",
+      "evidence": "Script terminal marker and written result checked; these historical runs did not set --python-exit-code"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python mechanical/studies/prearrival_finish/harness_A8/build_coupled_feed_candidate.py > mechanical/studies/prearrival_finish/harness_A8/coupled_candidate_with_relaxation.log 2>&1",
+      "log": "../coupled_candidate_with_relaxation.log",
+      "evidence": "Script terminal marker and written result checked; these historical runs did not set --python-exit-code"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/candidate.blend -t 4 --python mechanical/studies/prearrival_finish/harness_A8/clean_coupled_feed_candidate.py > mechanical/studies/prearrival_finish/harness_A8/coupled_storage_with_relaxation.log 2>&1",
+      "log": "../coupled_storage_with_relaxation.log",
+      "evidence": "Script terminal marker and written result checked; these historical runs did not set --python-exit-code"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python mechanical/studies/prearrival_finish/harness_A8/verify_coupled_feed_candidate.py > mechanical/studies/prearrival_finish/harness_A8/coupled_verification.log 2>&1",
+      "log": "../coupled_verification.log",
+      "evidence": "Script terminal marker and written result checked; these historical runs did not set --python-exit-code"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python mechanical/studies/prearrival_finish/harness_A8/check_coupled_feed_relaxation.py > mechanical/studies/prearrival_finish/harness_A8/coupled_relaxation.log 2>&1",
+      "log": "../coupled_relaxation.log",
+      "evidence": "Script terminal marker and written result checked; these historical runs did not set --python-exit-code"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_feed_wire_order.py > mechanical/studies/prearrival_finish/harness_A8/coupled_wire_order.log 2>&1",
+      "log": "../coupled_wire_order.log",
+      "evidence": "Process completion and written result checked"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/inspect_coupled_feed_sections.py > mechanical/studies/prearrival_finish/harness_A8/coupled_sections_classified.log 2>&1",
+      "log": "../coupled_sections_classified.log",
+      "evidence": "Process completion and written result checked"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/inspect_upper_feed_mouth.py --python mechanical/studies/prearrival_finish/harness_A8/inspect_coupled_feed_sections.py > mechanical/studies/prearrival_finish/harness_A8/coupled_inspection_clarification.log 2>&1",
+      "log": "../coupled_inspection_clarification.log",
+      "evidence": "First inspection completed; second script failed because shared bootstrap state was reused. Reran sections in a fresh process; never treated failed combined process as PASS."
+    }
+  ],
+  "reproduction_commands_in_order_separate_processes": [
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_coupled_terminal_feed.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/build_coupled_feed_candidate.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/clean_coupled_feed_candidate.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/verify_coupled_feed_candidate.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_coupled_feed_relaxation.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_feed_wire_order.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/inspect_upper_feed_mouth.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/inspect_coupled_feed_sections.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/plot_coupled_feed_review.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/publish_coupled_feed.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/verify_delivery.py"
+  ],
+  "versions": {
+    "blender": "5.2.2 LTS d13f752e3b9c",
+    "plot_python": "3.12.14"
+  },
+  "history": [
+    "Initial NameError feed run retained in coupled_feed_initial_error.log.",
+    "Initial overlapping straight sweep faces failed storage checks; history_initial_storage_fins preserves failures.",
+    "Feed-only candidate failed intermediate wire relaxation; history_feed_only preserves the failure and source hashes.",
+    "An existing entry chamfer is excluded only from cylindrical-land thickness, not silently dropped from the area calculation."
+  ],
+  "main_model_applied": false
+}

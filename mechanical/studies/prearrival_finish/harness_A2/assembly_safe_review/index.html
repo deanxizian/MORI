@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · 固定线装配候选</title><style>*{box-sizing:border-box}body{margin:0;background:#edf1f0;color:#243a33;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1080px;margin:auto;padding:30px 22px 60px}h1{font-size:30px}a{color:#146c53}h2{margin-top:34px}img{width:100%;border-radius:10px;background:#dbe0de}figure{margin:24px 0}figcaption{font-size:14px;color:#4c615a}table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #c6d2cd;text-align:left}.notice{background:#fff1d7;padding:16px;border:1px solid #ddc494;border-radius:8px}.ok{background:#daeae1;border-color:#a3c5b4}code{overflow-wrap:anywhere}summary{cursor:pointer;font-weight:600}details{background:white;padding:14px;margin:16px 0;border-radius:8px}@media(max-width:700px){h1{font-size:24px}td,th{padding:7px;font-size:13px}}</style><main>
+<a href="../index.html">返回走线研究</a><h1>固定线束：八根IMU线与原六根线的联合候选</h1>
+<p>保持主模型 M1.47、原针脚对应、所有板卡和打印件。未新增开孔，没有把研究线束写入正式装配或视频。</p>
+<p class="notice">H01–H04 共14根固定线通过本页声明的名义几何检查。整机线束仍未完成：其余分支、绑束、应力释放、真实出线、松量与带线插拔还需继续落实。这不是裁线单或生产放行。</p>
+<table><tr><th>检查</th><th>结果</th><th>范围</th></tr>
+<tr><td>针序、端点、曲线与弯曲半径</td><td>PASS</td><td>2203条筛后曲线复核；选中8条保留原编号与5mm端后直段</td></tr>
+<tr><td>14根线实体及静态间隙</td><td>PASS</td><td>14个连续实体，91组线间检查；保守线间下界0.302mm、近邻硬件下界0.488mm</td></tr>
+<tr><td>头部运动</td><td>PASS</td><td>130个组合姿态，未检出相交</td></tr>
+<tr><td>身体与承重桥装配</td><td>PASS</td><td>407个位置及两处横向螺钉/工具路径，未检出相交</td></tr></table>
+<p>以上是离散位置和明确公差分配下的检查；不代表连续运动、制造误差、线束柔性或实物装配已经验证。</p>
+<img src="fourteen_rear_upper.png" alt="十四根固定线候选，上后视图" style="max-width:100%;height:auto"><img src="fourteen_rear_lower.png" alt="十四根固定线候选，下后视图" style="max-width:100%;height:auto">
+<p>橙色为尚未选定的线材及名义插头。外壳、电池等仅在预览中隐藏，实体检查仍包含它们。</p>
+<h2>八根IMU线</h2><table><tr><th>线号</th><th>通过方向</th><th>最小名义弯曲半径</th><th>几何中心线长</th></tr><tr><td>H04_1</td><td>左侧</td><td>5.13 mm</td><td>128.2 mm</td></tr><tr><td>H04_2</td><td>左侧</td><td>7.60 mm</td><td>146.4 mm</td></tr><tr><td>H04_3</td><td>左侧</td><td>7.51 mm</td><td>134.5 mm</td></tr><tr><td>H04_4</td><td>右侧</td><td>5.69 mm</td><td>137.0 mm</td></tr><tr><td>H04_5</td><td>右侧</td><td>6.19 mm</td><td>127.4 mm</td></tr><tr><td>H04_6</td><td>右侧</td><td>5.27 mm</td><td>115.0 mm</td></tr><tr><td>H04_7</td><td>右侧</td><td>5.63 mm</td><td>123.4 mm</td></tr><tr><td>H04_8</td><td>右侧</td><td>5.23 mm</td><td>117.3 mm</td></tr></table>
+<p>几何长度未加入压接、插入、松量或制作余量，不能用于裁线。Alpha6711/6712仍是有厂家数据的未选定候选；实际端子横向出线及5mm直段分配为ASSUMED。</p>
+<h2>与前次检查的关系</h2><p>前一组14线通过静态检查，但在身体装配中实际碰到了壳体或后板，失败记录保留。本次组合采用3根IMU线的两端转弯细化候选，并重新选择其余曲线，解决了本组14线在规定装配路径中的相交。此前空腔误判的修正与回归记录也保留，不能把有限候选搜索的失败当作结构无解。</p>
+<p><a href="MORI_H01_H04_CANDIDATE_NOT_ADOPTED.blend">独立候选 Blender</a> · <a href="fourteen_validation.json">实体与头部运动</a> · <a href="fourteen_body_sequence.json">身体装配与工具</a> · <a href="../imu_axial_curve_datums.json">针脚及曲线数据复核</a> · <a href="../imu_axial_complete_joint_diagnostic.json">八线联合选择</a> · <a href="../assembly_screen_review.html">此前筛选修正记录</a></p>
+<p>PROTOTYPE / UNVALIDATED。主模型与 M1.47-A1 装配视频未改变。</p></main></html>

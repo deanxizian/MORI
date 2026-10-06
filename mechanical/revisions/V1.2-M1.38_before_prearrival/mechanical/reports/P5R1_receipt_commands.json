@@ -1,0 +1,92 @@
+[
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-23T14:18:04.665286+00:00",
+    "finished_utc": "2026-09-23T14:18:33.928887+00:00",
+    "returncode": 0,
+    "log": "reports/M1_22_P5R1_build.log"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-23T14:18:33.929387+00:00",
+    "finished_utc": "2026-09-23T14:19:03.665572+00:00",
+    "returncode": 0,
+    "log": "reports/M1_22_P5R1_validate.log"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-23T14:19:03.666479+00:00",
+    "finished_utc": "2026-09-23T14:19:05.770799+00:00",
+    "returncode": 0,
+    "log": "reports/M1_22_P5R1_delivery_check.log"
+  },
+  {
+    "stage": "animation_source_equivalence",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/refresh_animation_provenance.py"
+    ],
+    "started_utc": "2026-09-23T14:23:24.986718+00:00",
+    "finished_utc": "2026-09-23T14:23:31.928554+00:00",
+    "returncode": 0,
+    "log": "reports/M1_22_P5R1_animation_source_equivalence.log"
+  },
+  {
+    "stage": "animation_revalidate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_assembly_animation.py"
+    ],
+    "started_utc": "2026-09-23T14:23:31.929537+00:00",
+    "finished_utc": "2026-09-23T14:23:34.467881+00:00",
+    "returncode": 0,
+    "log": "reports/M1_22_P5R1_animation_revalidate.log"
+  },
+  {
+    "stage": "publish",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-23T14:24:45.482846+00:00",
+    "finished_utc": "2026-09-23T14:24:46.916076+00:00",
+    "returncode": 0,
+    "log": "reports/M1_22_P5R1_publish.log"
+  }
+]

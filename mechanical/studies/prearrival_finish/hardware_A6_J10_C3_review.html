@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI J10 C3 机械接收</title><style>body{background:#f3f5f4;color:#253b3c;font:16px/1.75 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:960px;margin:auto;padding:30px 22px 60px}h1{font-size:30px}h2{margin-top:30px}a{color:#166b70}aside{padding:16px 20px;background:#e0eee8;border-left:4px solid #4f8972}table{width:100%;border-collapse:collapse}td,th{padding:12px;border-bottom:1px solid #cdd8d4;text-align:left}code{overflow-wrap:anywhere}.pending{background:#fff0d5;border-color:#b58a33}</style><main>
+<p><a href="index.html">返回打样前工作</a> · M1.47 独立候选接收</p><h1>J10 侧出线 C3：连通与原生规则检查通过</h1>
+<aside>机械已从原生文件复核：112 个封装、280 个焊盘，以及板框、厚度、元件位置、面别、孔位和模型变换均与已检查的 C2/A3 相同。仍是独立候选，没有替换正式电源板或主模型。</aside>
+<h2>这次完成了什么</h2><table><tr><th>项目</th><th>结果与范围</th></tr>
+<tr><td>电气布线</td><td>收到 KiCad 10.0.6 原始 ERC / DRC 报告：0 / 0；未连接、原理图差异、忽略项均为 0。机械核对了报告输入的源文件哈希，没有重复宣称电气或温升认证。</td></tr>
+<tr><td>走线视觉复核</td><td>硬件对话最新澄清：整板逐线、逐器件放大复核尚未全部完成，39 项形态提示尚未全部形成具体结论。提示数量不等于错误数量；DRC 清零不能代替用户要求的向外出线、无抖动和器件本体避让复核。</td></tr>
+<tr><td>机械接口</td><td>原生逐项比对通过；80×55×1.6 mm 板框、孔位和 J10 1–8 针保持。D30/F70/R50 背面以及 JP70/TP71 位置保持 A3。</td></tr>
+<tr><td>之前的空间检查</td><td>A3 背面包络、裸插头退出和局部工具占位检查的几何依据保持。带线取件、实际抓握和完整安装顺序尚未通过。</td></tr>
+<tr><td>版本边界</td><td>正式电源板仍为 P5R6。PHC1 其他 PH 孔修正仍是独立候选，C3 未合并它。</td></tr></table>
+<h2>还不能应用为已完成线束</h2><aside class="pending">需要实际插合后的出线高度、端子后直段、带线拔出与夹持空间。JP70/TP71 的装后直进维护通道仍受阻；装桥前可操作不等于装后可维护。背面器件的热与装配公差仍未实测。</aside>
+<p>旧 A3/C2 的 26 处未连接和 14 条 DRC 警告属于历史源，保留记录；当前 C3 的原生布线报告已清零。旧 A3 的局部导线法线筛查也不被沿用为“路线不存在”的证明。</p>
+<details><summary>模型来源检查的限制</summary><p>100 个模型引用及变换保持；90 个引用在本机可解析为相同数据。10 个原库引用两版均未解析（J3, F60, J5, J2, J4, J1, J12, J6, J11, F70），已逐项记录，不能据此声称全部器件获得精确厂家模型。此前主模型的已记录替代包络保持原有精度标签。</p></details>
+<p><a href="hardware_A6_J10_C3_receipt.json">机械独立接收记录</a> · <a href="hardware_A6_followup.json">硬件后续澄清与回报记录</a> · <a href="../../../hardware/v1_2/j10_routing_C3_20261002/README.md">硬件 C3 原始交接</a> · <a href="J10_A3_review/index.html">保留的 A3 空间检查</a></p>
+<p><small>PROTOTYPE / UNVALIDATED；采购和制造未放行。ERC/DRC 及名义几何通过不等于实际载流、温升、连接或整机安全验证。</small></p></main></html>

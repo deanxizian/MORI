@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>J3 带线穿装 · MORI 独立研究</title>
+<style>*{box-sizing:border-box}body{font:16px/1.8 system-ui,-apple-system,sans-serif;max-width:1120px;margin:28px auto;padding:0 24px 50px;background:#f3f6f5;color:#2d4047}a{color:#087484}h1{font-size:30px;line-height:1.4}h2{font-size:23px;margin-top:30px}img{width:100%;height:auto;border-radius:8px}.note{background:#fff0d8;border-left:4px solid #bf7e23;padding:14px 18px}.pass{background:#e5f0e6;padding:14px 18px}table{border-collapse:collapse;width:100%}th,td{padding:10px;border-bottom:1px solid #cbd8d9;text-align:left;vertical-align:top}code{overflow-wrap:anywhere}@media(max-width:650px){body{padding:0 14px}th,td{padding:7px;font-size:14px}}</style>
+<p><a href="../index.html">← A8 原厂资料与线束研究</a> · <a href="../../index.html">完整工作状态</a></p>
+<h1>端子与尾线一起穿过偏航关节</h1><p class="note">J3独立候选。主模型M1.47、STL与装配视频未改；头侧出口仍有待清理的薄边。完整线束为BLOCKED，这不是加工放行。</p>
+<p class="pass">H06局部端子与随行软线的连续穿入包络、穿出后22个理线阶段、与另外3根已就位UART线的装入顺序检查通过；J3保存重载后的130个头部姿态也通过。两件打印候选仍未应用；头侧出口还留有薄边，完整固定、身体松散尾线操作、俯仰段/CAM和其余7根活动线未完成。主模型保持M1.47。</p>
+<h2>资料已找到，逐线尺寸仍需由项目设计</h2><p>采用<a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH官方目录</a>的名义端子外形，结合已收到的<a href="../TOOLING_DETAILS.md">完整料号压接参考</a>与<a href="../amass_mating/index.html">AMASS插合图</a>。真实压接外形和公差仍未给齐；本地来源和限制均保留。</p>
+<h2>穿入时软线始终接在端子后面</h2><img src="coupled_feed_sections.png" alt="实际源实体剖面，端子尾部连着R8软线穿过下端与上端，图中保留未清理的上端薄边">
+<p>穿入使用R8弯曲，尾部中心经过半径7.6mm通道；随后移到装后的6.8mm位置。内部长度增加5.10mm，由未固定的尾线补入。下端从弯前3mm暂存位置开始，尚未包括PH胶壳操作。</p>
+<table><tr><th>已验证范围</th><th>结果</th></tr><tr><td>4方向连续端子／随行线／第一次理线包络</td><td>PASS；对实际重载实体复核</td></tr><tr><td>名义端子／软线净空下界</td><td>0.306／0.302mm</td></tr><tr><td>穿出后规定线形调整</td><td>88项PASS；松量引入仍为有限样本</td></tr><tr><td>逐根穿线避开其余3根已就位线</td><td>12组有向检查PASS</td></tr><tr><td>装后头部姿态</td><td>130组合／520线姿态实例PASS</td></tr><tr><td>真实手工操作、完整固定及加工长度</td><td>尚未完成</td></tr></table>
+<h2>局部材料变薄，尚不建议直接应用</h2><img src="journal_comparison.png" alt="原模型与J3轴颈截面对比，最小径向壁厚样本从2.25降到1.60毫米">
+<p>圆柱段16个截面共11520条射线；入口倒角另720条列为不适用。截面积统计使用全部17个截面。这些值不能代替全件壁厚或PA12承载结论。</p>
+<p class="note">头侧出口还留有一片薄边：45°剖面宽约0.277mm，侧向约1mm后与主体连上。它来自早期J1开通道，并非独立零件或显示褶皱。已定位来源，下一步需整理开口并复核局部材料；当前没有删除它或改动主模型。</p>
+<h2>还需现在继续做</h2><p>出口薄边、身体端固定与松散尾线操作、俯仰段与CAM实际连接、其他7根活动线和FPC、完整装配与逐线加工长度。上述局部PASS没有关闭这些事项。</p>
+<p><a href="README.md">详细范围与尺寸依据</a> · <a href="cleaned/candidate.blend">独立Blender候选</a> · <a href="reloaded_verification.json">回读及运动检查</a> · <a href="relaxation_screen.json">理线检查</a> · <a href="local_wire_order.json">穿线顺序</a> · <a href="upper_mouth_inspection.json">薄边来源</a> · <a href="journal_sections.json">截面采样</a> · <a href="commands.json">命令记录</a> · <a href="review_manifest.json">来源清单</a></p></html>

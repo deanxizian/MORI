@@ -1,0 +1,163 @@
+{
+  "generated_utc": "2026-09-21T06:01:14.347052+00:00",
+  "requirements_basis": "HW-SW-0.2 user prompt",
+  "actual_extracted_baseline": "HW-SW-0.3",
+  "observed_latest_handoff": "HW-SW-0.4",
+  "software_implementation": "PASS",
+  "host_unit_and_simulation": "PASS",
+  "idf_builds": {
+    "default_locked": "PASS",
+    "no_screen": "PASS",
+    "gated_code_compile_only_DO_NOT_FLASH": "PASS"
+  },
+  "c_assertions": {
+    "original_core": 163,
+    "simulated_engine": 2211,
+    "motor_adapter": 22,
+    "default_locked_adapter": 10
+  },
+  "behavioral_regression_checks": 4,
+  "python_tests": 19,
+  "current_hardware_handoff_compatibility": "FAIL",
+  "compatibility_reason": "User prompt requests #5216 and 1204.44 counts/turn; mutable upstream 0.4 requests #4863 and 979.616 counts/turn plus changed electrical/USB interfaces. No silent merge. Manual baseline choice and integration required before power-on.",
+  "physical_validation": "NOT_TESTED",
+  "physical_timing_max_us": null,
+  "free_balance": "NOT_TESTED",
+  "power_on_or_flash_performed": false,
+  "git": "NOT_APPLICABLE",
+  "commands": {
+    "baseline_host": {
+      "argv": [
+        "/bin/bash",
+        "-c",
+        "mkdir -p software/reports/bin && cc --version && cc -std=c11 -Wall -Wextra -Werror -fsanitize=address,undefined -g -Isoftware/firmware_work/firmware/components/mori_core/include software/firmware_work/firmware/components/mori_core/mori_core.c software/firmware_work/tests/test_core.c -lm -o software/reports/bin/baseline_core && software/reports/bin/baseline_core"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:25:10.045226+00:00",
+      "end_utc": "2026-09-21T05:25:10.885366+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "1483b7299d8b88c3ac45439cc7fd0325b86cc4cfe13f51395219eaa0fff7292f"
+    },
+    "baseline_idf": {
+      "argv": [
+        "/bin/bash",
+        "software/scripts/idf_build.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:25:10.940765+00:00",
+      "end_utc": "2026-09-21T05:25:37.171782+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "d6474a5e6cda7205723fd6064fa66ca47c2c54834d521512264abeebc72a92c9"
+    },
+    "release_default_build": {
+      "argv": [
+        "/bin/bash",
+        "software/scripts/idf_build.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:58:50.678466+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T05:58:57.721582+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "b2febeaed7f84f87c3c530e3ef70555c840c9b4deac23770f5d07dc44350154c"
+    },
+    "release_variant_build": {
+      "argv": [
+        "/bin/bash",
+        "software/scripts/build_variants.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:59:32.754728+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T05:59:49.271527+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "ea4c2cbdded16bc8da76f056aa1f1e6a66a2f40582e2bfe92679009d29978943"
+    },
+    "SIMULATED_release_host": {
+      "argv": [
+        "/bin/bash",
+        "software/scripts/test_host.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:58:51.843824+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T05:58:54.440049+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "cb47d974cdc23a0965e2ef1f1b1234bce3fdd0653e3498a38bebec879c17e59b"
+    },
+    "SIMULATED_release_python": {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "software/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:58:51.844587+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T05:58:52.864732+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "7ebc40b4a0978d066e1b81c3a0a4c8bfc6fad65a8d06a0e4d1b4f0bcc06a6403"
+    },
+    "SIMULATED_release_demo": {
+      "argv": [
+        "/bin/bash",
+        "software/scripts/simulation_demo.sh",
+        "release"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:58:51.855389+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T05:58:53.471413+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "638af6b2d4aa6a5bd42db3093f41d242f91c747986d3d27d040b95b6a07b646d"
+    },
+    "release_upstream_preflight": {
+      "argv": [
+        "python3",
+        "software/scripts/verify_delivery.py",
+        "--require-current-handoff"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T05:59:33.871933+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T05:59:33.907151+00:00",
+      "exit_code": 1,
+      "status": "FAIL",
+      "log_sha256": "6e23d6a7ff550417117227fb0eb4ff1fb84cc82f1298122a93a433ec876ae3c6"
+    }
+  },
+  "known_warnings": [
+    "Pinned GC9A01 component includes deprecated intr_types.h; retained dependency lock.",
+    "ESP-IDF bash completion warning on macOS bash 3.2; builds succeed."
+  ],
+  "hardware_decisions_pending": [
+    "Handoff motor/encoder scale and 5V level translation / USB harness version",
+    "Measured mount rotation and four wheel direction signs",
+    "Power-stage emergency-stop/watchdog/current-limit and regeneration path",
+    "Final display interface/envelope",
+    "Head centre/direction/effective travel and cable load",
+    "Battery/BMS/fuse/charger and actual torque/thermal margin"
+  ],
+  "evidence_note": "All SIMULATED time values are injected virtual-clock inputs, never hardware measurements. User was asked about 0.4 integration; in absence of a changed requirement this deliverable preserves the explicit 0.2 parameters.",
+  "offline_delivery_audit": {
+    "status": "PASS",
+    "checks_passed": 138,
+    "checks_total": 138,
+    "command_record": "release_delivery_audit/command.json",
+    "exit_code": 0,
+    "log_sha256": "ee2db5a0bffa66cbc24691bd776c302f456f90a9e7aa097640be69bf5b615d80"
+  }
+}

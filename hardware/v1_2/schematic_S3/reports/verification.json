@@ -1,0 +1,101 @@
+{
+  "revision": "V1.2-H0.3-S3",
+  "status": "PASS",
+  "kicad_version": "10.0.6",
+  "scope": "Schematic and exported netlist only; PCB DRC not applicable to this revision, board/frame intentionally not generated.",
+  "checks": {
+    "all_declared_ref_pins_match_native_netlist": "PASS",
+    "inherited_circuit_pin_nets_preserved": "PASS",
+    "two_5V_rails_are_distinct": "PASS",
+    "raw_service_J6_is_DNP": "PASS",
+    "no_new_PCB_file": "PASS",
+    "board_outline_unfrozen": "PASS",
+    "M5_physical_pin_mapping": "PASS",
+    "M5_BOOT_to_SW_not_ground": "PASS",
+    "M5_fused_input": "PASS",
+    "M5_output_after_inductor": "PASS",
+    "M5_disable_not_tied_to_battery": "PASS",
+    "C5_physical_pin_mapping": "PASS",
+    "C5_BOOT_to_SW_not_ground": "PASS",
+    "C5_fused_input": "PASS",
+    "C5_output_after_inductor": "PASS",
+    "C5_disable_not_tied_to_battery": "PASS",
+    "existing_P2_CAD_unchanged": "PASS",
+    "native_ERC_zero_violations": "PASS",
+    "native_netlist_export_ok": "PASS"
+  },
+  "ERC": {
+    "violations": 0,
+    "types": {},
+    "inherited_ignored_rules": {
+      "footprint_filter": "ignore",
+      "four_way_junction": "ignore",
+      "simulation_model_issue": "ignore",
+      "single_global_label": "ignore"
+    },
+    "exclusions": []
+  },
+  "netlist_differences": [],
+  "extra_connected_pins": [],
+  "inherited_pin_differences": [],
+  "preserved_files": {
+    "hardware/v1_2/kicad/MORI_power_P2/MORI.kicad_sym": true,
+    "hardware/v1_2/kicad/MORI_power_P2/MORI_power_P2.kicad_prl": true,
+    "hardware/v1_2/kicad/MORI_power_P2/MORI_power_P2.kicad_dru": true,
+    "hardware/v1_2/kicad/MORI_power_P2/MORI_power_P2.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_power_P2/~MORI_power_P2.kicad_sch.lck": true,
+    "hardware/v1_2/kicad/MORI_power_P2/MORI_power_P2.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_power_P2/MORI_power_P2.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_motion_P2/MORI.kicad_sym": true,
+    "hardware/v1_2/kicad/MORI_motion_P2/MORI_motion_P2.kicad_prl": true,
+    "hardware/v1_2/kicad/MORI_motion_P2/MORI_motion_P2.kicad_dru": true,
+    "hardware/v1_2/kicad/MORI_motion_P2/MORI_motion_P2.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_motion_P2/MORI_motion_P2.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_motion_P2/MORI_motion_P2.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/~MORI_imu_P2.kicad_pro.lck": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/MORI.kicad_sym": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/MORI_imu_P2.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/MORI_imu_P2.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/~MORI_imu_P2.kicad_pcb.lck": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/MORI_imu_P2.kicad_dru": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/MORI_imu_P2.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_imu_P2/MORI_imu_P2.kicad_prl": true,
+    "contracts/mechanical_interfaces.json": false,
+    "config/geometry.json": false
+  },
+  "schematic_sha256": "574d6fe5cd695bdd505d294f9429e4f5d630767fd9a1c6c9e61a0f4b05338818",
+  "physical_tests": "NOT_TESTED",
+  "commands": [
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "sch",
+        "erc",
+        "--format",
+        "json",
+        "--severity-all",
+        "--exit-code-violations",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/v1_2/schematic_S3/reports/erc.json",
+        "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_power_S3/MORI_power_S3.kicad_sch"
+      ],
+      "returncode": 0,
+      "utc": "2026-09-22T10:58:54.398364+00:00"
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/v1_2/schematic_S3/reports/netlist.xml",
+        "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_power_S3/MORI_power_S3.kicad_sch"
+      ],
+      "returncode": 0,
+      "utc": "2026-09-22T10:58:54.617749+00:00"
+    }
+  ]
+}

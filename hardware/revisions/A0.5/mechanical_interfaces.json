@@ -1,0 +1,456 @@
+{
+  "schema_version": 2,
+  "status": "PROTOTYPE / UNVALIDATED",
+  "units": "mm",
+  "source": "../../../params.json + ../../../reports/derived.json; revision proposals do not modify root CAD",
+  "coordinates": {
+    "handedness": "right",
+    "x": "lateral (control left)",
+    "y": "fore/aft; front=-Y",
+    "z": "up",
+    "origin": "ground below axle midpoint",
+    "control_transform": "[x,y,z]_control=[-Y,X,Z]_Blender",
+    "status": "PASS coordinate definition; sensor mounting NOT_TESTED"
+  },
+  "parameters": {
+    "head_diameter": 100,
+    "body_diameter": 140,
+    "wheel_diameter": 95,
+    "wheel_width": 18,
+    "ground_clearance": 20,
+    "wheel_body_gap": 4,
+    "shell_thickness": 2.4,
+    "head_yaw_limit_deg": 60
+  },
+  "derived_layout_assumptions": {
+    "wheel_axis_z": 47.5,
+    "body_sphere_center": [
+      0,
+      0,
+      90.0
+    ],
+    "head_sphere_center": [
+      0,
+      0,
+      186.0
+    ],
+    "side_cut_x_abs": 56,
+    "wheel_centers": [
+      [
+        69,
+        0,
+        47.5
+      ],
+      [
+        -69,
+        0,
+        47.5
+      ]
+    ],
+    "track_width": 138.0,
+    "body_top_cut_z": 148.0,
+    "visible_black_mask_diameter": 58,
+    "motor_centers": [
+      [
+        5,
+        -20,
+        90.5
+      ],
+      [
+        -5,
+        20,
+        90.5
+      ]
+    ],
+    "drive_type": "1:1 belt to independent 6mm axles; pitch/teeth/tension not selected"
+  },
+  "parts": {
+    "wheel_motor": {
+      "mpn": "Pololu4863 25D MP12V 20.408667:1",
+      "quantity": 2,
+      "source": "motor25; motor25_drawing",
+      "catalog_case_box": [
+        25,
+        25,
+        65
+      ],
+      "catalog_case_box_excludes_encoder_overhang": false,
+      "shaft": {
+        "diameter": 4,
+        "shape": "D",
+        "usable_length": 12.5,
+        "projection_envelope": 12.5
+      },
+      "full_keepout_local": [
+        29,
+        29,
+        88
+      ],
+      "keepout_is_not_actual_part_size": true,
+      "encoder_full_outline_status": "PASS: manufacturer drawing page5 read; physical fit NOT_TESTED",
+      "mounting": {
+        "thread": "2 x M3",
+        "hole_pitch_mm": 17,
+        "max_engagement_mm": 6,
+        "centres_local_mm": [
+          [
+            -8.5,
+            0
+          ],
+          [
+            8.5,
+            0
+          ]
+        ],
+        "view": "gearbox face; centers +/-8.5mm from shaft, page2 drawing"
+      },
+      "shaft_axis_global": "X",
+      "connector_exit": "factory20cm six-wire cable with2.54mm female header; custom XH6 retermination, reserve measured exit/bend space",
+      "fit_status": "NOT_TESTED; diameter25 and total65 incl encoder within length72 reservation, encoder OD25 exceeds23 placeholder; output shaft12.5 shorter than14; bracket and leads require review",
+      "actual_max_case_box": [
+        25,
+        25,
+        65
+      ],
+      "reserved_case": "diameter25 length60 + encoder23x12 + shaft4x14",
+      "target_shaft_axis_centres_yz": [
+        [
+          -20,
+          90.5
+        ],
+        [
+          20,
+          90.5
+        ]
+      ]
+    },
+    "display": {
+      "mpn": "Waveshare 19192 / 1.28inch LCD Module",
+      "source": "display; display_docs",
+      "active_diameter": 32.4,
+      "pcb_outline": [
+        40.4,
+        37.5
+      ],
+      "glass_outline": null,
+      "assembly_thickness": null,
+      "keepout": [
+        43,
+        41,
+        15
+      ],
+      "mount_holes": null,
+      "connector_exit": "PH2.0 8P; trailing harness in head; reserve 15 mm bend; >=120 degree total sweep",
+      "front_center": [
+        0,
+        -37.5632799419859,
+        186
+      ],
+      "front_normal": [
+        0,
+        -1,
+        0
+      ],
+      "fit_status": "FAIL optical match: active32.4mm vs required60mm / aperture58mm; proposed smaller inner mask requires mechanical revision",
+      "reserved": {
+        "active_diameter": 60,
+        "pcb_diameter": 65,
+        "glass_thickness": 2.8,
+        "bare_pcb_thickness": 1.6
+      }
+    },
+    "battery": {
+      "mpn": "ANSMANN 2447-0105",
+      "envelope": [
+        39,
+        71,
+        18
+      ],
+      "mass_g": 99,
+      "nominal_V": 7.2,
+      "capacity_Ah": 3.35,
+      "max_discharge_A": 5,
+      "fit_status": "FAIL nominal length71>70; tray inner70.6 still short0.4mm before clearance; propose internal length>=72 plus lead relief, requires mechanical review",
+      "source": "ansmann_candidate manufacturer product sheet, hosted by distributor",
+      "charge_current_A": null,
+      "cell_balance": null,
+      "regen_path": null,
+      "status": "HOLD procurement/charging; mass and energy used only for provisional budgets until manufacturer confirms full electrical spec",
+      "center": [
+        0,
+        0,
+        63
+      ],
+      "keepout": [
+        42,
+        76,
+        22
+      ],
+      "connector_exit": "factory12cm open leads; ask factory keyed termination and strain relief; no bare-cell soldering",
+      "mount_holes": [],
+      "retention": "padded tray+strap; no pressure into cells",
+      "trial_tray_cavity": [
+        40.6,
+        73.0
+      ],
+      "procurement_hold": "Official product sheet has internally inconsistent product/packaged dimensions; charging/BMS/regen documentation absent. Trial STL not a release."
+    },
+    "mcu": {
+      "mpn": "ESP32-S3-DevKitC-1-N8R8 v1.1",
+      "module": "ESP32-S3-WROOM-1-N8R8",
+      "source": "sources/esp_dimensions.pdf + sources/esp_dimensions.dxf; PDF62.74 vs DXF62.865 discrepancy retained; antenna and USB included in projected estimate",
+      "actual_outline": null,
+      "keepout": [
+        65,
+        30,
+        18
+      ],
+      "mount_holes": null,
+      "connector_exit": "two micro-USB service ports; reserve 15 mm plug access",
+      "antenna_keepout": {
+        "beyond_board_end": 15,
+        "below_antenna": "no copper/metal/battery; final manufacturer clearance review required"
+      },
+      "fit_status": "FAIL conservative full-assembly envelope overlaps existing Load_Frame640.179mm3; height18 unmeasured, inner-sphere corner margin0.182mm. External bench first.",
+      "reserved": [
+        55,
+        24,
+        7
+      ],
+      "full_keepout_provisional": [
+        71,
+        28,
+        18
+      ]
+    },
+    "imu": {
+      "mpn": "Adafruit 4438 LSM6DSOX",
+      "envelope": [
+        25.6,
+        17.8,
+        4.6
+      ],
+      "mass_g": 1.7,
+      "mount_holes": null,
+      "center": [
+        35,
+        0,
+        115
+      ],
+      "orientation": "raw sensor-to-control rotation must be measured; no implicit identity",
+      "connector_exit": "body fixed; short I2C harness <=100 mm",
+      "source": "Adafruit LSM6DSOX official Eagle CAD; product enclosure25.6x17.8x4.6",
+      "fit_status": "FAIL25.6x17.8x4.6 vs16x16x4",
+      "reserved": [
+        16,
+        16,
+        4
+      ],
+      "catalog_pcb": [
+        25.4,
+        17.78
+      ],
+      "mount_holes_relative_board_center": [
+        [
+          -10.16,
+          6.35
+        ],
+        [
+          10.16,
+          6.35
+        ]
+      ],
+      "hole_drill_mm": 2.5,
+      "proposed_center": [
+        0,
+        30,
+        120.7
+      ]
+    },
+    "driver": {
+      "mpn": "Pololu 2130 DRV8833 carrier",
+      "envelope": [
+        20.3,
+        17.8,
+        3
+      ],
+      "height_status": "3 mm allocation excludes headers; measure",
+      "mount_holes": null,
+      "source": "driver_module",
+      "connector_exit": "separate motor power pair and signals",
+      "fit_status": "NOT_TESTED; bare20.3x17.8 planar size fits36x20 but headers/terminals/current-sense changes may exceed7 high"
+    },
+    "head_servo": {
+      "mpn": "DFRobot SER0037 270 degree positional PWM",
+      "envelope": [
+        22.9,
+        12.3,
+        22.6
+      ],
+      "mass_g": 11.2,
+      "flange_outline": null,
+      "mount_holes": null,
+      "yaw_axis": [
+        0,
+        0,
+        1
+      ],
+      "center": [
+        -22,
+        0,
+        122
+      ],
+      "connector_exit": "JR 3-pin 275mm cable into body",
+      "support": "separate bearing/turntable takes axial and radial head load",
+      "source": "servo270",
+      "required_total_travel_deg": 210,
+      "nominal_travel_deg": 270,
+      "fit_status": "NOT_TESTED; body width exceeds12mm reservation but fits12.6mm aperture with0.15mm/side; ears/spline/full height pending",
+      "gear_ratio_servo_to_head": 1.75
+    },
+    "carrier": {
+      "mpn": "MORI carrier RevA proposal",
+      "outline": [
+        96,
+        92,
+        1.6
+      ],
+      "center": [
+        0,
+        0,
+        117
+      ],
+      "mount_holes_local": [
+        [
+          40,
+          42
+        ],
+        [
+          -40,
+          42
+        ],
+        [
+          40,
+          -42
+        ],
+        [
+          -40,
+          -42
+        ]
+      ],
+      "hole_diameter": 3.4,
+      "hole_status": "PASS in CAD XY: copied deck holes +/-40,+/-42; standoff height/load/thread NOT_TESTED",
+      "connector_exit": "upward from top; service loops and head/yaw clearance unverified",
+      "placement_status": "A0.5 native routing candidate; final DRC report controls. Tall-component stack and mounting NOT_TESTED; bench use proposed, not verified installed fit.",
+      "outline_description": "intersection of +/-48 X, +/-46 Y and radius61 circle, polygon approximated clipped corners",
+      "cutouts": [
+        {
+          "rect_xy_mm": [
+            -38,
+            -6,
+            -12,
+            12
+          ],
+          "reason": "servo envelope + bracket keepout"
+        },
+        {
+          "center": [
+            14,
+            -7
+          ],
+          "diameter": 10
+        },
+        {
+          "center": [
+            14,
+            7
+          ],
+          "diameter": 10
+        }
+      ]
+    },
+    "battery_near_fit_candidate": {
+      "mpn": "ANSMANN 2447-0105",
+      "envelope": [
+        39,
+        71,
+        18
+      ],
+      "mass_g": 99,
+      "nominal_V": 7.2,
+      "capacity_Ah": 3.35,
+      "max_discharge_A": 5,
+      "fit_status": "FAIL nominal length71>70; tray inner70.6 still short0.4mm before clearance; propose internal length>=72 plus lead relief, requires mechanical review",
+      "source": "ansmann_candidate manufacturer product sheet, hosted by distributor",
+      "charge_current_A": null,
+      "cell_balance": null,
+      "regen_path": null,
+      "status": "HOLD procurement/charging; mass and energy used only for provisional budgets until manufacturer confirms full electrical spec"
+    },
+    "rejected_battery_legacy": {
+      "mpn": "BatterySpace5893 PL-605060S2-WR",
+      "envelope": [
+        66,
+        54,
+        20
+      ],
+      "center": [
+        0,
+        0,
+        63
+      ],
+      "mass_g": 95,
+      "fit_status": "FAIL: cannot fit40x70x20; withdrawn",
+      "source": "battery",
+      "procurement_hold": "Do not purchase for current tray"
+    },
+    "wheel_bearing": {
+      "mpn": "NSK686ZZ",
+      "quantity": 4,
+      "nominal_id_od_width": [
+        6,
+        13,
+        5
+      ],
+      "catalog_mass_g": 2.69,
+      "fit_status": "PASS nominal dimensions only; physical fit NOT_TESTED. Printed13.6mm hole must be fitted, not used as precision clearance.",
+      "source": "NSK bearing guide, 600 series table"
+    },
+    "head_bearing": {
+      "mpn": "NSK6805ZZ candidate",
+      "quantity": 1,
+      "nominal_id_od_width": [
+        25,
+        37,
+        7
+      ],
+      "reserved_id_od_width": [
+        24,
+        36,
+        6
+      ],
+      "fit_status": "FAIL direct substitution; all three dimensions +1mm; HOLD revised bearing seat/shaft/preload and axial stack",
+      "source": "NSK6805ZZ product/calculation page"
+    }
+  },
+  "mechanical_source_sha256": {
+    "params.json": "15274cb22039a3964adc89a76167d62c7b770437e9ce0ab555dc3b1b62cd86d6",
+    "reports/derived.json": "9767421b5e1e80ace0c8ea6c509e514647110b3c266278a1cfa272a34b265d9a",
+    "reports/export_manifest.json": "1cf5a7f61ed577840254672097c5fc7d537d2929ce9df694ac77758819660a88"
+  },
+  "unresolved_mechanical": [
+    "actual pulleys and belt tooth profile/length/tension",
+    "head bearing candidate NSK6805ZZ25x37x7 does not fit24x36x6 placeholder",
+    "motor clamp,4mm D-shaft pulley engagement and shorter12.5mm shaft",
+    "servo ears/spline/centre",
+    "screen active area mismatch",
+    "battery fit/connector/PCM",
+    "MCU and IMU brackets",
+    "carrier z stack and emergency stop integration"
+  ],
+  "model_names_to_control": {
+    "control_left": "Blender Wheel_R / Motor_R; X positive; motor center[-5,20,90.5]",
+    "control_right": "Blender Wheel_L / Motor_L; X negative; motor center[5,-20,90.5]"
+  },
+  "revision": "A0.5"
+}

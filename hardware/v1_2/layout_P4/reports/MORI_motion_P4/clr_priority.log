@@ -1,0 +1,14 @@
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+Connecting motion 0 /CLR_N clusters 3 32
+local route /CLR_N segments 7 vias 0 nodes 2442
+Connecting motion 1 /CLR_N clusters 4 42
+local route /CLR_N segments 13 vias 1 nodes 21230
+Connecting motion 2 /CLR_N clusters 1 60
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/hardware/v1_2/tools/close_networks_P4.py", line 61, in <module>
+    result=connect(b,net,aa,zz,list(al),list(zl),size,step=(.05 if "--fine" in sys.argv else .2),width=.2,vd=.8,dr=.3,max_nodes=350000,time_limit=25,heuristic_weight=2.0)
+  File "/Users/dean/Documents/MORI/hardware/v1_2/tools/route_local_P4.py", line 98, in connect
+    neigh.append((v,math.hypot(dx,dy)*step+penalty+soft_cost(x+dx,y+dy,l),d))
+  File "/Users/dean/Documents/MORI/hardware/v1_2/tools/route_local_P4.py", line 56, in soft_cost
+    return soft_cache[key]
+KeyboardInterrupt

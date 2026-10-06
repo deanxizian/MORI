@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M1.49 完整排线空间复核</title><style>body{font:16px/1.7 system-ui;margin:0;background:#f3f6f7;color:#243743}main{max-width:1100px;margin:auto;padding:28px 24px}h1{font-size:30px}h2{margin-top:36px}a{color:#126894}.note{padding:14px 18px;background:#fff1d5;border-left:5px solid #cc8720}figure{margin:18px 0;background:white;padding:14px;border-radius:10px}img{width:100%;height:auto}figcaption{font-size:14px}table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:11px;border-bottom:1px solid #d8e1e5}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}</style><main>
+<p><a href="../../index.html">线束总进展</a> · <a href="../connector_faces/index.html">官方入口方向证据</a></p>
+<h1>屏幕完整自由段已通过空间检查，实际排线仍待定型</h1>
+<p class="note">主模型 M1.49 C5＋K1 保持。这里是通道容量研究，未采用新打印结构、未选定排线、未发生产图；完整线束仍为 BLOCKED。</p>
+<figure><a href="review/overview.png"><img src="review/overview.png" alt="头部完整排线路径空间候选"></a><figcaption>金色：194 mm屏幕自由段；紫色：相机通道假设；蓝色：四根CAM导线候选。路径颜色用于诊断，均不表示已采购或已验证实物。外壳隐藏，部分原壳螺钉因此单独可见。</figcaption></figure>
+<h2>屏幕：避开舵机，也避开左侧导线</h2>
+<p>后侧回弯采用R5容量假设，收在CAM四根线的内侧；剩余弯为R7.5。原厂200 mm长度按194 mm自由段＋6 mm两端预算研究，端部实际插深和补强长度仍未知。</p>
+<table><tr><th>检查</th><th>结果与范围</th></tr><tr><td>头部130个姿态</td><td>PASS：3408组邻近刚性对象，1430组候选导线；导线净距下界约0.409 mm。</td></tr><tr><td>排线自身与头壳</td><td>PASS：66组非相邻分段；前后壳各273个平移位置。</td></tr><tr><td>真实端部与材料</td><td>BLOCKED：插座/线材型号、补强区、触点面、允许弯曲及固定、装入尚未确认。</td></tr></table>
+<figure><a href="review/rear_return.png"><img src="review/rear_return.png" alt="后侧屏幕回弯与CAM导线之间的空间"></a><figcaption>这是收在导线内侧的独立候选。先前较外侧回弯虽避开舵机，却会穿过四根CAM导线，失败记录保留。</figcaption></figure>
+<p class="note">最关键的选型条件：当前基准后只有2 mm直线，约在插座包络边外2.6 mm处开始弯曲。补强片如果延伸到这里，候选就不成立。R5不是厂家的允许弯曲半径，空间检查不证明材料可承受。</p>
+<h2>相机：通道约81.98 mm，末段侧隙仍很紧</h2>
+<p>末端增加2 mm直线，可避免早期圆弯直接碰座边。但按6.6 mm宽的假定细尾，名义侧隙仅0.3 mm，加入离散误差后的保守检查未通过。原配FPC完整长度、宽窄变化和出尾细节尚不完整；没有改卡座或选任意延长线。</p>
+<div class="grid"><figure><a href="../camera_corridor/entry/side.png"><img src="../camera_corridor/entry/side.png" alt="相机上方通道的早期定位图"></a><figcaption>早期定位图：利用CAM板上方的既有空间；镜头端圆弯贴近卡座，不能直接作为最终线。</figcaption></figure><figure><a href="review/top.png"><img src="review/top.png" alt="两类排线空间候选的俯视图"></a><figcaption>最新整体俯视。两类排线的空间候选之间未检出相交，具体线材及约束仍未确定。</figcaption></figure></div>
+<h2>完整线束尚未完成</h2><p>除了真实排线接口，还需完成固定和带线装入；C6及导线约束结构未采用，CAM穿线和反力连杆装配仍有未解决项。这些没有被改称为“只等实物”。</p>
+<p><a href="review/MORI_M1_49_full_FFC_capacity.blend">可编辑 Blender 候选</a> · <a href="interface_requirements.json">给选型/供应商核对的尺寸条件（非生产图）</a> · <a href="README.md">详细结论</a></p>
+<p><a href="short_motion/review.json">130姿态与导线检查</a> · <a href="review/review.json">壳路径与自身检查</a> · <a href="../camera_corridor/terminal/review.json">相机边界检查</a> · <a href="commands.json">12次执行与保留失败</a> · <a href="main_integrity.json">主文件保留检查</a></p>
+<p><a href="obstructions/review.json">最初刚性碰撞定位</a> · <a href="motion/review.json">较外侧回弯的导线碰撞</a> · <a href="short_lead/review.json">回弯内收的有限比较</a></p>
+</main></html>

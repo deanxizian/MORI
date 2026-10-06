@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/dean/Documents/MORI",
+  "reproduction_commands_in_separate_processes": [
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_cam_uart_mating_allocation.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_uart_departure.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_cam_departure_coexistence.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_uart_departure_v2.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_cam_lower_staging.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/open_mouth/cleaned/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/render_cam_departure.py"
+  ],
+  "versions": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "Python": "3.12.14"
+  },
+  "first_run_note": "First connector test repeated same-body transforms and created near-contact numerical overlaps. Exact identity for co-moving parts fixes that arithmetic; no collision threshold was relaxed. Initial results preserved in history_first_relative_transform."
+}

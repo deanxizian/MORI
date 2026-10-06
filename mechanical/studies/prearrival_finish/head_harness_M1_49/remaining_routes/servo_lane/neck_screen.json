@@ -1,0 +1,3537 @@
+{
+  "status": "PASS",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+    "mechanical/reports/build_manifest.json": "fe96a9eb6604d65d3bcae09983487b2e03febb2a9d41e5140478cee69f1b308c",
+    "config/geometry.json": "3af8a61411825ba12a315c9377a117f5923e822c5f219ad8de13eae87da5225d",
+    "contracts/mechanical_interfaces.json": "4957dc15dfbec31e07e0a37a2b7a7a0de681ca5ce40e600c2c00fe2217c15d95",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "a5450cf9342cea2a5ccdd702c457e152900ead75eb46c65b0790c001b0acd0fe",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/front_neck_candidates.npz": "486c85320b0501e547e0ed7e4fd88fc0ee6f8b546dfd0bfa2bbf4555afc900b0",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/route_family.py": "c5c64e495e99b64cdec34562eb8f93c512961669b41d1275893af8b40f9769f5",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/curve_clearance.py": "83a81227a82d3022d251b8e5b95c52dbd1ab53f65095841b796b66f0d297f79e",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/sources/alpha_2622_facts.json": "9019e144c43ac6af480f1bcabee02140cbb2664cf9c9920c74f9ed5d27b046c2"
+  },
+  "results": [
+    {
+      "dip_mm": 0.6,
+      "phase_deg": -10.75,
+      "status": "BLOCKED",
+      "checks": 156,
+      "hits": [
+        {
+          "yaw": 60,
+          "pitch": 0,
+          "group": "yaw",
+          "object": "Pitch_Yoke",
+          "point_mm": [
+            5.64106819105393,
+            -8.263341852385453,
+            156.1952777777778
+          ],
+          "surface_distance_mm": 0.8889262676239014,
+          "required_bound_mm": 0.8890020101802144
+        }
+      ],
+      "pair_checks": [
+        {
+          "yaw": -60,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3510369389923778,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.677746233274868,
+            -6.407200073154697,
+            169.52527777777777
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.927404794064399,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.779935149703311,
+            -6.282723061413012,
+            169.01722222222222
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.361736776530645,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.594016527029182,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.543477065637315,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5238890975388252,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.6143525704444555,
+            -6.482409654824809,
+            169.83527777777778
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.78687321218574,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.841200517010504,
+            -6.206091721207011,
+            168.7072222222222
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.615870631632028,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.016754568204323,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.718702664700387,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.815775911527095,
+            -6.238080385887376,
+            168.83638888888888
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.414199198922621,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.870206973092447,
+            -4.617296639214565,
+            172.55638888888888
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.012398089608657,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.976157125640068,
+            -4.407788930498037,
+            171.74694444444444
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.900945494637156,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.767483610727982,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.647434556851067,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5752058879942762,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.825453267318823,
+            -4.702273346624113,
+            172.88361111111112
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.882960124215593,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.04229638353934,
+            -4.270465561532067,
+            171.21305555555557
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.443999336476544,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.327593421815369,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.810669703683365,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.014924308101774,
+            -4.327948673355049,
+            171.43694444444446
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4533452381399754,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.599197087105955,
+            -2.802751377289203,
+            172.92666666666668
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.077907263210166,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.648908785098868,
+            -2.62651085222237,
+            172.21194444444444
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 10.233570403346263,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.987586568457335,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.65732280658688,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5991464247015601,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.583645164095458,
+            -2.856766388749919,
+            173.14194444444445
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.038948382072193,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.885427089977071,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.057824698711936,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.884079592159142,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.666828721570022,
+            -2.5597700029160606,
+            171.93638888888887
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4883827936384204,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.934461286485051,
+            -1.145473007575371,
+            173.1247222222222
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.138137794706536,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.947646795318951,
+            -1.0219213451047053,
+            172.55638888888888
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.716521510267459,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.232487271463075,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.601703805110123,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6185295355054855,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.931441777426507,
+            -1.1839172965339104,
+            173.29694444444445
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.7101473055645258,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.860213962526732,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.421594631495854,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.9217690582456892,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.518664338963977,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.993953438645182,
+            0.3732608479870455,
+            173.21944444444443
+          ]
+        },
+        {
+          "yaw": -20,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.8613556633230046,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.380963967765723,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.21581004243243,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.76131725880613,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6307413367209351,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.99886994109405,
+            0.6790894775639554,
+            155.65277777777777
+          ]
+        },
+        {
+          "yaw": -20,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.192205865040578,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.76427325900319,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.452122579729945,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.517119857218118,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5001413711947853,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.932269549918775,
+            1.2158187584833038,
+            156.135
+          ]
+        },
+        {
+          "yaw": -10,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.2707744060286674,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.835576754970358,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.033511093675415,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.594761366509154,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6143439897937231,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.956412887731933,
+            1.1339779574131401,
+            155.6786111111111
+          ]
+        },
+        {
+          "yaw": -10,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 4.878522185230764,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.398007019447405,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.283600109697673,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.9713850622732787,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.466020802146093,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.873786613618517,
+            1.6117364354045736,
+            156.23833333333334
+          ]
+        },
+        {
+          "yaw": 0,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.3418913121185665,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.333517463513875,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.775695803236186,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.19325626992316,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5955886637030996,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.900675306290736,
+            1.5155318740900807,
+            155.79916666666668
+          ]
+        },
+        {
+          "yaw": 0,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.9496390913206625,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.076447543439148,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.02578481925844,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.042501968363177,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4308870050006424,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.813579749833094,
+            1.9339640921633554,
+            156.39333333333335
+          ]
+        },
+        {
+          "yaw": 10,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.44492378861999216,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.935191919647444,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.430861834700792,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.594420108604787,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5758435937457598,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.83967870248501,
+            1.8358418203489673,
+            156.00583333333333
+          ]
+        },
+        {
+          "yaw": 10,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.2672098536325125,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.731613574903758,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.68095085072305,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.1455344448646025,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.396873839667115,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.757223517926235,
+            2.192548337377233,
+            156.63444444444445
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.999237664511476,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.707262735478215,
+            2.4018847150510765,
+            157.38361111111112
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.513942468472699,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.009612383526047,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.83823172844455,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5560804684665538,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.783710428424724,
+            2.0880604258631927,
+            156.26416666666665
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3955364753553514,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.310364123729013,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.259701399548305,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.155588461016147,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3658533718317565,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.711811805100648,
+            2.3834247751440985,
+            156.9788888888889
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.947539153310639,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.64433028240393,
+            2.6432732367098395,
+            157.84
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.074210967490686,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.569880882544037,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.033554666582848,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5370851185053406,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.738879601963745,
+            2.272981267564919,
+            156.6172222222222
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.924611919407786,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.870632622747,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.819969898566292,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.741332789632661,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.618591066271454,
+            2.7354535089894987,
+            158.15
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.339779649126478,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.678404804488562,
+            2.515647121607625,
+            157.55583333333334
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.905545268404433,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.602369681409886,
+            2.7918625506174504,
+            158.42555555555555
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.678303432088068,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.17397334714142,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.301458751265596,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5196518043159922,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.715265890879113,
+            2.369305524731002,
+            157.09944444444446
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.761045924532365,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.55128461423655,
+            2.9619186717140145,
+            158.96805555555557
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.474725087344382,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.42406236316367,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.694201938021133,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.573509813956507,
+            2.8892749682365704,
+            158.73555555555555
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3193949392829056,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.562537672701447,
+            2.925384292390582,
+            159.6913888888889
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.8784886530432825,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.50923253153949,
+            3.0942683563503373,
+            160.21666666666667
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.426433923874171,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.922103838927523,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.836828881262214,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5029314688239216,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.58603125959327,
+            2.8474558275942847,
+            159.45027777777779
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.730321000913158,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.477366506710965,
+            3.1905366472543744,
+            160.51805555555555
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.222855579130485,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.103087898326386,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.664897035459055,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.489309522130041,
+            3.154838314908097,
+            160.4061111111111
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.278072827717609,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.299020526766006,
+            3.67807249014813,
+            165.71916666666667
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.846155160328694,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.264201678487723,
+            3.76491264975766,
+            166.00333333333333
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.785779707029018,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.28144962208237,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.537418190986084,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.4570418533294865,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.276950592225841,
+            3.7333882344862834,
+            165.9
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.703604649922202,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.237324995179318,
+            3.8303820871337853,
+            166.2186111111111
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.582201362285332,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.53153863810462,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.635847043415852,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.24920305529406,
+            3.8016105589524836,
+            166.1238888888889
+          ]
+        }
+      ],
+      "length_mm": 64.13036782839269,
+      "minimum_sampled_bend_mm": 11.311035382158476,
+      "chord_error_mm": 1.914817451792302e-06
+    },
+    {
+      "dip_mm": 0.9,
+      "phase_deg": -10.75,
+      "status": "BLOCKED",
+      "checks": 156,
+      "hits": [
+        {
+          "yaw": 60,
+          "pitch": 0,
+          "group": "yaw",
+          "object": "Pitch_Yoke",
+          "point_mm": [
+            5.773343808465792,
+            -7.794773449429135,
+            157.34055555555557
+          ],
+          "surface_distance_mm": 0.888653576374054,
+          "required_bound_mm": 0.8889998423635059
+        }
+      ],
+      "pair_checks": [
+        {
+          "yaw": -60,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.343595865770541,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.439881669284827,
+            -6.223998774665656,
+            169.52527777777777
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.85389268736478,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.534150382432357,
+            -6.109548102347204,
+            169.04305555555555
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.361922972075469,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.594188348461486,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.543572925221785,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5722591910802944,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.367974580234739,
+            -6.308957963484517,
+            169.88694444444445
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.673067888780796,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.5937369361121325,
+            -6.035325951854325,
+            168.73305555555555
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.616055632099396,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.01689597091497,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.6221254678213235,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.567354424847386,
+            -6.068372682090534,
+            168.87083333333334
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4575247412001398,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.582481196801345,
+            -4.520068197112885,
+            172.4875
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.9874105100905215,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.677226733154908,
+            -4.335404966254222,
+            171.74694444444444
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.916993426101673,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.778446680440606,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.652305674076867,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6724462156569269,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.543529369046617,
+            -4.593267455770231,
+            172.78027777777777
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.814503115681344,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.738035092797187,
+            -4.2115012426740215,
+            171.2475
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.457805513647031,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.335522782220682,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.760951441792183,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.712131316474352,
+            -4.264829178819107,
+            171.46277777777777
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.506340747977141,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.296867591179923,
+            -2.767354872810569,
+            172.82333333333332
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.060909992361907,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.339364450771853,
+            -2.6203571618500656,
+            172.20333333333332
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 10.049280290736416,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.725319092268517,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.364420877147673,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.680263048315886,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.42263252858747,
+            -1.9309922770509325,
+            139.8686111111111
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.0773715094090357,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.652552989962562,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.776939045008174,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.8415763017185975,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.356076193688123,
+            -2.5600465343236083,
+            171.945
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5438458671584847,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.629144750812259,
+            -1.1704151075258216,
+            173.03
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.122205232621742,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.641610157251089,
+            -1.0627104853122566,
+            172.51333333333332
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.493266704394586,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.951768606180181,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.296548058570032,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.678095435144019,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.451288769445352,
+            -1.7693397236442392,
+            141.75444444444443
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.7905370711032815,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.601042699567493,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.126561919527877,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.0021588237844448,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5604436690893477,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.694232653306148,
+            0.6444628213115401,
+            155.9713888888889
+          ]
+        },
+        {
+          "yaw": -20,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.9762747061835162,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.14836411902579,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.941105170742947,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.47320871561537,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6734856660452192,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.49000337855853,
+            -1.523098525319558,
+            143.38194444444446
+          ]
+        },
+        {
+          "yaw": -20,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.30712490790109,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.505748544221813,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.166052130494023,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.6320389000786295,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5294815366727645,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.649748269627777,
+            1.1084542295833908,
+            156.03166666666667
+          ]
+        },
+        {
+          "yaw": -10,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.413227291779349,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.593400928673724,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.758055476888902,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.319087525315236,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.666652805135899,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.532310626204822,
+            -1.1960070539645589,
+            144.95777777777778
+          ]
+        },
+        {
+          "yaw": -10,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.0209750709814465,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.136365160503644,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.00792626850376,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 4.113837948023961,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4932297470762697,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.593146446526324,
+            1.495921830537291,
+            156.15222222222224
+          ]
+        },
+        {
+          "yaw": 0,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.5057087021622189,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.086938890789419,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.513566527995536,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.931126994682515,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6578829291059934,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.56902199831098,
+            -0.809798739946253,
+            146.47333333333333
+          ]
+        },
+        {
+          "yaw": 0,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 4.113456481364316,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.814318268198502,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.763655544017794,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.2063193584068297,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.454333478045485,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.532388775271198,
+            1.8191394718463998,
+            156.34166666666667
+          ]
+        },
+        {
+          "yaw": 10,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6248458084696651,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.686409636043162,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.182079551096514,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.345637825000505,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6375034390211323,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.130502977372458,
+            0.9728729358741562,
+            152.8713888888889
+          ]
+        },
+        {
+          "yaw": 10,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.369264701469119,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.48283129129948,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.43216856711877,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3254564647142755,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.414661560670092,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.474300767218173,
+            2.0845635027332463,
+            156.6172222222222
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.950156841889576,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.430626179671183,
+            2.2700858704684466,
+            157.3061111111111
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.277615987178372,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.773285902231724,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.601905247150224,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6167697054302236,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.07166544907896,
+            1.1344452553988515,
+            153.06944444444446
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.314405942665729,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.074037642434686,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.023374918253978,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.1127274888302094,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.375629127099858,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.427449057675734,
+            2.2832449410395275,
+            156.9788888888889
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.891462743356573,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.368498367665637,
+            2.5142072975485212,
+            157.7711111111111
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.849112187108009,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.34478210216136,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.808455886200175,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.596625626161443,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.994878063589553,
+            1.2458397822502252,
+            153.37083333333334
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.7864826109855623,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.645533842364323,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.59487111818361,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.661939042642463,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.344798852865335,
+            2.6009103020840065,
+            158.0725
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3383428213178212,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.397879174606913,
+            2.4020547494779674,
+            157.48694444444445
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.838935768324048,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.327655224380234,
+            2.661737781054348,
+            158.33083333333335
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.462486186760994,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.958156101814346,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.085641505938522,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5732944366513781,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.432962858791857,
+            2.260356543701308,
+            157.03055555555557
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.654355877119215,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.279806118770031,
+            2.8240393761486935,
+            158.8647222222222
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.258907842017308,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.208245117836597,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.604696148115307,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.29863206874387,
+            2.761420223386518,
+            158.65805555555556
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.300649701714931,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.271104454650951,
+            2.852476501384594,
+            159.73444444444445
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.794647990823209,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.22349982524888,
+            3.002840484213882,
+            160.21666666666667
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.216120072737993,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.711789987791345,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.626515030126036,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.540269552827297,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.288344784214729,
+            2.7958274570421926,
+            159.5536111111111
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.607122199654997,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.197935387591656,
+            3.080257230441818,
+            160.4663888888889
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.012541727994307,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.892774047190212,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.558503883004605,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.206819856301733,
+            3.053599209720896,
+            160.3802777777778
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.1947519936729405,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.934165993906422,
+            3.7776550918957663,
+            166.21
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.699208513753508,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.928800741075333,
+            3.7903188950499334,
+            166.25305555555556
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.546554530411793,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.042224445465148,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.29819301436886,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.43257953311691016,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.873170764329137,
+            3.91878049743216,
+            166.69222222222223
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.52007791759262,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.909353388579277,
+            3.8358078937051734,
+            166.40805555555556
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.34297618566811,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.2923134614874,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.4677593445945725,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.919102867729762,
+            3.813083271429393,
+            166.33055555555555
+          ]
+        }
+      ],
+      "length_mm": 64.19073192819019,
+      "minimum_sampled_bend_mm": 8.84987355758486,
+      "chord_error_mm": 2.1981521581376296e-06
+    },
+    {
+      "dip_mm": 1.2,
+      "phase_deg": -10.75,
+      "status": "PASS",
+      "checks": 156,
+      "hits": [],
+      "pair_checks": [
+        {
+          "yaw": -60,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3589879126599076,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.198090904498101,
+            -6.0454517887897925,
+            169.5511111111111
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.790290698533322,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.289661243119244,
+            -5.9347147328717655,
+            169.0688888888889
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.362083038990262,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.594336055813143,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.543655316032373,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6373368353893994,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.664168994956286,
+            -2.6709605702856902,
+            152.90583333333333
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.565302196030881,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.3427573083024305,
+            -5.868893857565602,
+            168.78472222222223
+          ]
+        },
+        {
+          "yaw": -60,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.616214671427029,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.017017522637166,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -60,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.533023181443478,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.323525709554413,
+            -5.892874611044725,
+            168.88805555555555
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5210194730018882,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.29032191194066,
+            -4.430639073135677,
+            172.46166666666667
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.971007838175229,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.378700285517308,
+            -4.261147911710198,
+            171.75555555555556
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.928083216178523,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.78603029926587,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.655682387175736,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.680599107668331,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.413974215890402,
+            -1.977154781692587,
+            138.0
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.750987978861264,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.434308145533016,
+            -4.149993506765452,
+            171.29055555555556
+          ]
+        },
+        {
+          "yaw": -50,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.467350154637531,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.341012199890509,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -50,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.717533083841734,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.410876486214862,
+            -4.19727968256083,
+            171.4886111111111
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5790038368838544,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.99194039609804,
+            -2.73952695059206,
+            172.76305555555555
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.052388455643011,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.02982467136257,
+            -2.6119468609548435,
+            172.20333333333332
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 9.865741593570926,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.460900296020883,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.06882298206597,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6805321238177537,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.413974215890402,
+            -1.977154781692587,
+            138.0
+          ]
+        },
+        {
+          "yaw": -40,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.1121628225304483,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.41855198189261,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.49344541629465,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -40,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.805325253738715,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.046419983623723,
+            -2.55387655925132,
+            171.945
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.6187884228584,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.323800902941551,
+            -1.1944608500517369,
+            172.9438888888889
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 6.1147469895240505,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.334431531350532,
+            -1.108326660569419,
+            172.51333333333332
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.2716246260231,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.671172496574615,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.99141239595944,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6804043667670914,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.418619821343333,
+            -1.9525268290888598,
+            139.2313888888889
+          ]
+        },
+        {
+          "yaw": -30,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.866751641007077,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.342447898205661,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.831503163105218,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -30,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.0783733936882394,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.6094821092734475,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.431251958109607,
+            0.5298381776023008,
+            155.62694444444443
+          ]
+        },
+        {
+          "yaw": -20,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.0871192548361004,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.916230520244978,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.665977917705277,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.183984044342573,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6792203781256809,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.44122899173223,
+            -1.8277683502594935,
+            140.9622222222222
+          ]
+        },
+        {
+          "yaw": -20,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.417969456553675,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.247056769010152,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.879521663659986,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -20,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.7428834487312144,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5785350904512803,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.388554543047743,
+            0.9714297191670747,
+            155.71305555555554
+          ]
+        },
+        {
+          "yaw": -10,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5519239321553853,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.351387637097089,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.482149814086192,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 18.041944847239442,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6762793169069683,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.474698997892927,
+            -1.6250172009984574,
+            142.495
+          ]
+        },
+        {
+          "yaw": -10,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.159671711357483,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.874524920052574,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.730783590427965,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": -10,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 4.252534588399997,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.5409741516178665,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.327443935682103,
+            1.3522604685598758,
+            155.9025
+          ]
+        },
+        {
+          "yaw": 0,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.6662169010817,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.840656621543994,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.24978228407052,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.6673427507575,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6713408346241531,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.514966616458642,
+            -1.3399541241252582,
+            144.045
+          ]
+        },
+        {
+          "yaw": 0,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 4.273964680283798,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.550534024273484,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.499871300092778,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 0,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.3668275573263107,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.499203998768825,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.2588926864466,
+            1.6838670818392536,
+            156.18666666666667
+          ]
+        },
+        {
+          "yaw": 10,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.7074149458289001,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.43595644309942,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.931626358152771,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.095184632056764,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6641391107683372,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.557278274234378,
+            -0.9507236403807153,
+            145.75861111111112
+          ]
+        },
+        {
+          "yaw": 10,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 3.394483731942158,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.232378098355733,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 17.181715374175027,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 10,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4080256020735105,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4546617804240913,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.193679520579764,
+            1.9676048945812903,
+            156.55694444444444
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.911024266309712,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.151724312411078,
+            2.1461458733329257,
+            157.24583333333334
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.039770187989218,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.53544010304257,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.364059447961075,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.649825745649311,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.31603899209267,
+            0.7127514511262382,
+            151.70027777777779
+          ]
+        },
+        {
+          "yaw": 20,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.2487918223900825,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.836191843245532,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.785529119064826,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 20,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 1.09750025228454,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.4082677874535583,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.144392259087601,
+            2.1771852003495655,
+            156.95305555555555
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.8456383261651075,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.092239147603202,
+            2.3856209428137936,
+            157.69361111111112
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.622291560374679,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.11796147542803,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.581635259466845,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6259655270546938,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.269175354352637,
+            0.7787100600385073,
+            151.88111111111112
+          ]
+        },
+        {
+          "yaw": 30,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6680382673533218,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.418713215630993,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.368050491450283,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 30,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.590369233605293,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.069839509169052,
+            2.4694151692083093,
+            157.995
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3604193054420426,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.1159369567369,
+            2.2934021454595266,
+            157.42666666666668
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.782917770026394,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.048299088167084,
+            2.54721094750213,
+            158.27916666666667
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.243424448293277,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.739094363346632,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.866579767470808,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.6017879568321183,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.217546410959153,
+            0.7580326390652847,
+            152.0963888888889
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.554335822699736,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.004867551627994,
+            2.6967314248247343,
+            158.78722222222223
+          ]
+        },
+        {
+          "yaw": 40,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.039846103549595,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.989183379368887,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 40,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.5233213802558865,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            9.023546140993282,
+            2.633555589192156,
+            158.57194444444445
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.3061897833717553,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.982238778903143,
+            2.7711706044140527,
+            159.75166666666667
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.7217447836769315,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.940208437333194,
+            2.9039065234673695,
+            160.19083333333333
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 11.998247195466407,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.493917110519762,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.408642152854453,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.5750908930671899,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            10.1662714103489,
+            0.5825535844982972,
+            152.3375
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.490871156967948,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.91374857440685,
+            2.9841391308482734,
+            160.45777777777778
+          ]
+        },
+        {
+          "yaw": 50,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 13.794668850722724,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.674901169918625,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 50,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.460543360031913,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.92321526370619,
+            2.9557113116068803,
+            160.36305555555555
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 0,
+          "status": "PASS",
+          "gap_lower_bound_mm": 2.138761063612811,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.580170707443013,
+            3.8393581014457148,
+            166.6147222222222
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 2,
+          "status": "PASS",
+          "gap_lower_bound_mm": 5.564508696593159,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.601802055278762,
+            3.7906465677773302,
+            166.4425
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 3,
+          "status": "PASS",
+          "gap_lower_bound_mm": 12.291335849342824,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 4,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.787005764396175,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 5,
+          "status": "PASS",
+          "gap_lower_bound_mm": 15.04297433329989,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 6,
+          "status": "PASS",
+          "gap_lower_bound_mm": 0.4364505014790221,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            7.636156726753655,
+            6.512007227204364,
+            176.42277777777778
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 7,
+          "status": "PASS",
+          "gap_lower_bound_mm": 8.344572283781881,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.587768725645859,
+            3.822332836739748,
+            166.55444444444444
+          ]
+        },
+        {
+          "yaw": 60,
+          "slot": 8,
+          "status": "PASS",
+          "gap_lower_bound_mm": 14.087757504599137,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 9,
+          "status": "PASS",
+          "gap_lower_bound_mm": 16.037094780418432,
+          "method": "global bounding box separation"
+        },
+        {
+          "yaw": 60,
+          "slot": 10,
+          "status": "PASS",
+          "gap_lower_bound_mm": 7.309248187102193,
+          "method": "global nearest samples minus both half-steps and chord-error bounds",
+          "point_mm": [
+            8.593178097495842,
+            3.81015618901873,
+            166.5113888888889
+          ]
+        }
+      ],
+      "length_mm": 64.28135374926156,
+      "minimum_sampled_bend_mm": 7.294318406158987,
+      "chord_error_mm": 2.480889371418143e-06
+    }
+  ],
+  "curve_sha256": "6edac937eaa5aefccf9bbe7fec23c39f2508b563c71210b585ecf7afe6e25a5b",
+  "changed_slot": 1,
+  "OD_mm": 1.1684,
+  "scope": "Unselected wire lane only; native finite motion and local strand spacing",
+  "main_changed": false,
+  "body_prefix": "NOT_TESTED",
+  "upper_endpoint": "BLOCKED",
+  "wire_selection": "BLOCKED",
+  "full_harness": "BLOCKED",
+  "script_sha256": "e171407e53c3bc13738ea4eb450294caf6adb14a0ff5a0f7829dda40687ce5cd",
+  "elapsed_s": 16.58608603477478
+}

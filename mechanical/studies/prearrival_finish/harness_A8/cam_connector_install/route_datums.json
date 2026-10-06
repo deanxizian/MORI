@@ -1,0 +1,4506 @@
+{
+  "status": "PASS",
+  "scope": "Source-backed nominal routed length and anchor datums, not supplier manufacture or installed-flex evidence",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "script_sha256": "fefc6e97214b1933c9003d87a39f16ff77871ff6c983eea662110ad070da671f",
+  "sources": {
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/body_to_yaw_motion.json": "c3fbc70e18fae3716923cb0f81f041f29fdb0acd77caee0f03539768453e3235",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/body_to_yaw_curves.npz": "6fa3efbd682fb1df889024140a79b5fdb6d56fbeaacfda294ee3a8994ce1f16f",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_port/lower_staging/body_partial_curves.npz": "fb278de629417a9a67ea73776f8ffd5c63d0dad1371d6511bf193dd8a283e72f",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_port/lower_staging/coexistence_screen.json": "190f7b590ff48298c58c842efb30108ed19be3ed5d3ab27fe8a02f9a41a6bad8",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/four_bend_transition/pool.json": "dd437af8fa21bca0e75895c98579ede36ffaedb876a0a713c9bb0d4c76787039",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/four_bend_transition/packing.json": "a098f315cca497d373dfa7865c1a77d36fcbc727f8f2281acc847da3d55329f0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/four_bend_transition/math_bounds.json": "f3b6c8a940148bdeec6c16acae78b9ffe750b547e657931fd99ea346aaea793a",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/four_bend_transition/curves.npz": "40b4d6bf96d42dbf37703c8416ce6260572c54bd4e262cafaf666b72da24dc81",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/short_tail_v2/screen.json": "81a1417c2456835336c2ff827b24c34c9dedd54318b337bb3ca89ba5c463a708",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/short_tail_v2/curves.npz": "a683b200ac5be6ea4b134ea222c3499071da33f52868a44794102846c032c6e1",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/short_tail_v2/tails.npz": "f4c8e7421f119fb8bdcb72c2a28d7a000a83c4def479677a538f90f1228189f4",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_fan_in/joins.json": "6d92f18a8f4306db50ec8d84f1429547c2d5f29bc73f596121e2c9e9f3f65377",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "units": "mm",
+  "origin": "MORI frame, +X right +Y forward +Z up; head mechanical zero",
+  "rows": [
+    {
+      "geometry_slot": "H06-G1",
+      "body_pin_reference": "Motion J5.1",
+      "CAM_pin_assignment": "BLOCKED; geometry slot does not establish the real mating cavity",
+      "body_prefix_model_mm": 134.14208044584325,
+      "yaw_transition_model_mm": 40.79933887667397,
+      "pitch_core_model_mm": 72.61068858133858,
+      "CAM_tail_model_mm": 39.738614086706455,
+      "total_routed_model_mm": 287.29072199056225,
+      "fan_tail_numerical_interval_contribution_mm": [
+        80.53785854195955,
+        80.5380473848012
+      ],
+      "numeric_interval_note": "Curve-integration precision only, not product or manufacturing tolerance",
+      "between_candidate_clamp_centres_model_mm": 107.7492965645294,
+      "CAM_exit_to_clamp_centre_model_mm": 2.600006103515625,
+      "datums": [
+        {
+          "name": "body_exit",
+          "distance_from_body_exit_model_mm": 0.0,
+          "zero_pose_xyz_mm": [
+            15.5,
+            -45.025001525878906,
+            130.63999938964844
+          ],
+          "rigid_group": "body",
+          "basis": "allocated housing wire-exit face"
+        },
+        {
+          "name": "yaw_upper_staging",
+          "distance_from_body_exit_model_mm": 134.14208044584325,
+          "zero_pose_xyz_mm": [
+            -10.465180361560906,
+            -10.465180361560902,
+            193.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "mathematical seam, not a physical clamp"
+        },
+        {
+          "name": "yaw_clamp_centre",
+          "distance_from_body_exit_model_mm": 176.94141932251722,
+          "zero_pose_xyz_mm": [
+            -9.712500143051148,
+            -1.5,
+            232.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_clamp_centre",
+          "distance_from_body_exit_model_mm": 284.6907158870466,
+          "zero_pose_xyz_mm": [
+            -11.600000143051147,
+            -20.800000190734863,
+            212.0
+          ],
+          "rigid_group": "pitch",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_exit",
+          "distance_from_body_exit_model_mm": 287.29072199056225,
+          "zero_pose_xyz_mm": [
+            -11.600000143051147,
+            -20.800000190734863,
+            214.60000610351562
+          ],
+          "rigid_group": "pitch",
+          "basis": "photo/catalogue allocated wire exit"
+        }
+      ],
+      "cut_length_mm": null,
+      "cut_length_status": "BLOCKED",
+      "cut_length_equation": "L_cut = L_routed + signed_body_terminal_end_correction + signed_CAM_terminal_end_correction; all corrections and production tolerance unresolved"
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "body_pin_reference": "Motion J5.2",
+      "CAM_pin_assignment": "BLOCKED; geometry slot does not establish the real mating cavity",
+      "body_prefix_model_mm": 173.52028813734813,
+      "yaw_transition_model_mm": 41.98946252087562,
+      "pitch_core_model_mm": 72.61068858133858,
+      "CAM_tail_model_mm": 39.738614086706455,
+      "total_routed_model_mm": 327.8590533262688,
+      "fan_tail_numerical_interval_contribution_mm": [
+        81.72792999492383,
+        81.72822462800892
+      ],
+      "numeric_interval_note": "Curve-integration precision only, not product or manufacturing tolerance",
+      "between_candidate_clamp_centres_model_mm": 107.7492965645294,
+      "CAM_exit_to_clamp_centre_model_mm": 2.600006103515625,
+      "datums": [
+        {
+          "name": "body_exit",
+          "distance_from_body_exit_model_mm": 0.0,
+          "zero_pose_xyz_mm": [
+            17.5,
+            -45.025001525878906,
+            130.63999938964844
+          ],
+          "rigid_group": "body",
+          "basis": "allocated housing wire-exit face"
+        },
+        {
+          "name": "yaw_upper_staging",
+          "distance_from_body_exit_model_mm": 173.52028813734813,
+          "zero_pose_xyz_mm": [
+            -10.465180361560902,
+            10.465180361560904,
+            193.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "mathematical seam, not a physical clamp"
+        },
+        {
+          "name": "yaw_clamp_centre",
+          "distance_from_body_exit_model_mm": 217.50975065822377,
+          "zero_pose_xyz_mm": [
+            -8.712500143051148,
+            -1.5,
+            232.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_clamp_centre",
+          "distance_from_body_exit_model_mm": 325.25904722275317,
+          "zero_pose_xyz_mm": [
+            -10.600000143051147,
+            -20.800000190734863,
+            212.0
+          ],
+          "rigid_group": "pitch",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_exit",
+          "distance_from_body_exit_model_mm": 327.8590533262688,
+          "zero_pose_xyz_mm": [
+            -10.600000143051147,
+            -20.800000190734863,
+            214.60000610351562
+          ],
+          "rigid_group": "pitch",
+          "basis": "photo/catalogue allocated wire exit"
+        }
+      ],
+      "cut_length_mm": null,
+      "cut_length_status": "BLOCKED",
+      "cut_length_equation": "L_cut = L_routed + signed_body_terminal_end_correction + signed_CAM_terminal_end_correction; all corrections and production tolerance unresolved"
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "body_pin_reference": "Motion J5.3",
+      "CAM_pin_assignment": "BLOCKED; geometry slot does not establish the real mating cavity",
+      "body_prefix_model_mm": 124.40469099159608,
+      "yaw_transition_model_mm": 48.339316417563836,
+      "pitch_core_model_mm": 72.61068858133858,
+      "CAM_tail_model_mm": 39.738614086706455,
+      "total_routed_model_mm": 285.09331007720493,
+      "fan_tail_numerical_interval_contribution_mm": [
+        88.07777746152708,
+        88.07808355175396
+      ],
+      "numeric_interval_note": "Curve-integration precision only, not product or manufacturing tolerance",
+      "between_candidate_clamp_centres_model_mm": 107.7492965645294,
+      "CAM_exit_to_clamp_centre_model_mm": 2.600006103515625,
+      "datums": [
+        {
+          "name": "body_exit",
+          "distance_from_body_exit_model_mm": 0.0,
+          "zero_pose_xyz_mm": [
+            19.5,
+            -45.025001525878906,
+            130.63999938964844
+          ],
+          "rigid_group": "body",
+          "basis": "allocated housing wire-exit face"
+        },
+        {
+          "name": "yaw_upper_staging",
+          "distance_from_body_exit_model_mm": 124.40469099159608,
+          "zero_pose_xyz_mm": [
+            10.4651803615609,
+            -10.465180361560906,
+            193.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "mathematical seam, not a physical clamp"
+        },
+        {
+          "name": "yaw_clamp_centre",
+          "distance_from_body_exit_model_mm": 174.7440074091599,
+          "zero_pose_xyz_mm": [
+            -7.712500143051147,
+            -1.5,
+            232.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_clamp_centre",
+          "distance_from_body_exit_model_mm": 282.4933039736893,
+          "zero_pose_xyz_mm": [
+            -9.600000143051147,
+            -20.800000190734863,
+            212.0
+          ],
+          "rigid_group": "pitch",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_exit",
+          "distance_from_body_exit_model_mm": 285.09331007720493,
+          "zero_pose_xyz_mm": [
+            -9.600000143051147,
+            -20.800000190734863,
+            214.60000610351562
+          ],
+          "rigid_group": "pitch",
+          "basis": "photo/catalogue allocated wire exit"
+        }
+      ],
+      "cut_length_mm": null,
+      "cut_length_status": "BLOCKED",
+      "cut_length_equation": "L_cut = L_routed + signed_body_terminal_end_correction + signed_CAM_terminal_end_correction; all corrections and production tolerance unresolved"
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "body_pin_reference": "Motion J5.4",
+      "CAM_pin_assignment": "BLOCKED; geometry slot does not establish the real mating cavity",
+      "body_prefix_model_mm": 177.87630698763377,
+      "yaw_transition_model_mm": 49.388919541177536,
+      "pitch_core_model_mm": 72.61068858133858,
+      "CAM_tail_model_mm": 39.738614086706455,
+      "total_routed_model_mm": 339.6145291968563,
+      "fan_tail_numerical_interval_contribution_mm": [
+        89.12740808953832,
+        89.12765916654085
+      ],
+      "numeric_interval_note": "Curve-integration precision only, not product or manufacturing tolerance",
+      "between_candidate_clamp_centres_model_mm": 107.7492965645294,
+      "CAM_exit_to_clamp_centre_model_mm": 2.600006103515625,
+      "datums": [
+        {
+          "name": "body_exit",
+          "distance_from_body_exit_model_mm": 0.0,
+          "zero_pose_xyz_mm": [
+            21.5,
+            -45.025001525878906,
+            130.63999938964844
+          ],
+          "rigid_group": "body",
+          "basis": "allocated housing wire-exit face"
+        },
+        {
+          "name": "yaw_upper_staging",
+          "distance_from_body_exit_model_mm": 177.87630698763377,
+          "zero_pose_xyz_mm": [
+            10.465180361560904,
+            10.465180361560902,
+            193.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "mathematical seam, not a physical clamp"
+        },
+        {
+          "name": "yaw_clamp_centre",
+          "distance_from_body_exit_model_mm": 229.2652265288113,
+          "zero_pose_xyz_mm": [
+            -6.712500143051147,
+            -1.5,
+            232.0
+          ],
+          "rigid_group": "yaw",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_clamp_centre",
+          "distance_from_body_exit_model_mm": 337.0145230933407,
+          "zero_pose_xyz_mm": [
+            -8.600000143051147,
+            -20.800000190734863,
+            212.0
+          ],
+          "rigid_group": "pitch",
+          "basis": "candidate tie centre"
+        },
+        {
+          "name": "CAM_exit",
+          "distance_from_body_exit_model_mm": 339.6145291968563,
+          "zero_pose_xyz_mm": [
+            -8.600000143051147,
+            -20.800000190734863,
+            214.60000610351562
+          ],
+          "rigid_group": "pitch",
+          "basis": "photo/catalogue allocated wire exit"
+        }
+      ],
+      "cut_length_mm": null,
+      "cut_length_status": "BLOCKED",
+      "cut_length_equation": "L_cut = L_routed + signed_body_terminal_end_correction + signed_CAM_terminal_end_correction; all corrections and production tolerance unresolved"
+    }
+  ],
+  "pose_rows": [
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.2902383437619,
+      "difference_from_source_model_mm": -0.000483646800319093,
+      "maximum_seam_error_mm": 7.657449531865655e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.2902391695358,
+      "difference_from_source_model_mm": -0.0004828210264236077,
+      "maximum_seam_error_mm": 2.304020086137569e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023986686815,
+      "difference_from_source_model_mm": -0.00048212369409839084,
+      "maximum_seam_error_mm": 2.7117813605393463e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29024047126074,
+      "difference_from_source_model_mm": -0.00048151930150197586,
+      "maximum_seam_error_mm": 1.0540841294897016e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.29024101898005,
+      "difference_from_source_model_mm": -0.00048097158219206904,
+      "maximum_seam_error_mm": 3.580361673049448e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.29024149654737,
+      "difference_from_source_model_mm": -0.00048049401488015064,
+      "maximum_seam_error_mm": 7.481304856089674e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.29024192345577,
+      "difference_from_source_model_mm": -0.0004800671064799644,
+      "maximum_seam_error_mm": 3.3745573043989876e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902423109643,
+      "difference_from_source_model_mm": -0.0004796795979586932,
+      "maximum_seam_error_mm": 2.9478135530712616e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29024267381834,
+      "difference_from_source_model_mm": -0.0004793167439061108,
+      "maximum_seam_error_mm": 6.533795126673052e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.29024300017477,
+      "difference_from_source_model_mm": -0.0004789903874780066,
+      "maximum_seam_error_mm": 2.162052917421244e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023626658085,
+      "difference_from_source_model_mm": -0.000485723981398678,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.29023709235474,
+      "difference_from_source_model_mm": -0.0004848982075031927,
+      "maximum_seam_error_mm": 2.3040200853743185e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023778968707,
+      "difference_from_source_model_mm": -0.00048420087517797583,
+      "maximum_seam_error_mm": 2.711781360762591e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29023839407967,
+      "difference_from_source_model_mm": -0.00048359648258156085,
+      "maximum_seam_error_mm": 1.0540841298702873e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.290238941799,
+      "difference_from_source_model_mm": -0.000483048763271654,
+      "maximum_seam_error_mm": 1.5543122344752192e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902394193663,
+      "difference_from_source_model_mm": -0.00048257119595973563,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902398462747,
+      "difference_from_source_model_mm": -0.0004821442875595494,
+      "maximum_seam_error_mm": 3.3745573045830517e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902402337832,
+      "difference_from_source_model_mm": -0.0004817567790382782,
+      "maximum_seam_error_mm": 2.9478135524029666e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29024059663726,
+      "difference_from_source_model_mm": -0.0004813939249856958,
+      "maximum_seam_error_mm": 6.533795124552888e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902409229937,
+      "difference_from_source_model_mm": -0.0004810675685575916,
+      "maximum_seam_error_mm": 2.1620529190350786e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.2902346450024,
+      "difference_from_source_model_mm": -0.00048734555986129635,
+      "maximum_seam_error_mm": 7.657449532203667e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.2902354707763,
+      "difference_from_source_model_mm": -0.000486519785965811,
+      "maximum_seam_error_mm": 2.30402008480973e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.2902361681086,
+      "difference_from_source_model_mm": -0.0004858224536405942,
+      "maximum_seam_error_mm": 2.711781360907658e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.2902367725012,
+      "difference_from_source_model_mm": -0.0004852180610441792,
+      "maximum_seam_error_mm": 1.054084129797454e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902373202205,
+      "difference_from_source_model_mm": -0.00048467034173427237,
+      "maximum_seam_error_mm": 1.3322676295501878e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902377977878,
+      "difference_from_source_model_mm": -0.000484192774422354,
+      "maximum_seam_error_mm": 7.48130485570631e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902382246962,
+      "difference_from_source_model_mm": -0.00048376586602216776,
+      "maximum_seam_error_mm": 3.374557304435062e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.29023861220475,
+      "difference_from_source_model_mm": -0.00048337835750089653,
+      "maximum_seam_error_mm": 2.947813554187784e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.2902389750588,
+      "difference_from_source_model_mm": -0.0004830155034483141,
+      "maximum_seam_error_mm": 6.53379512501204e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902393014152,
+      "difference_from_source_model_mm": -0.00048268914702020993,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023343060163,
+      "difference_from_source_model_mm": -0.0004885599606154756,
+      "maximum_seam_error_mm": 7.657449532116605e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.2902342563755,
+      "difference_from_source_model_mm": -0.00048773418671999025,
+      "maximum_seam_error_mm": 2.3040200854357385e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.2902349537079,
+      "difference_from_source_model_mm": -0.00048703685433793,
+      "maximum_seam_error_mm": 2.7117813609525933e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.2902355581005,
+      "difference_from_source_model_mm": -0.000486432461741515,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.29023610581976,
+      "difference_from_source_model_mm": -0.0004858847424884516,
+      "maximum_seam_error_mm": 2.220446049250313e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902365833871,
+      "difference_from_source_model_mm": -0.0004854071751196898,
+      "maximum_seam_error_mm": 7.48130485883908e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902370102955,
+      "difference_from_source_model_mm": -0.00048498026671950356,
+      "maximum_seam_error_mm": 3.3745573047183644e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.29023739780405,
+      "difference_from_source_model_mm": -0.00048459275819823233,
+      "maximum_seam_error_mm": 2.9478135536375442e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29023776065804,
+      "difference_from_source_model_mm": -0.00048422990420249334,
+      "maximum_seam_error_mm": 6.533795126437526e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902380870145,
+      "difference_from_source_model_mm": -0.00048390354777438915,
+      "maximum_seam_error_mm": 2.162052917169643e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023258758895,
+      "difference_from_source_model_mm": -0.000489402973300912,
+      "maximum_seam_error_mm": 7.657449532775594e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.29023341336284,
+      "difference_from_source_model_mm": -0.0004885771994054267,
+      "maximum_seam_error_mm": 2.3040200847653653e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023411069517,
+      "difference_from_source_model_mm": -0.0004878798670802098,
+      "maximum_seam_error_mm": 2.7117813609509852e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29023471508776,
+      "difference_from_source_model_mm": -0.0004872754744837948,
+      "maximum_seam_error_mm": 1.0540841289640391e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902352628071,
+      "difference_from_source_model_mm": -0.000486727755173888,
+      "maximum_seam_error_mm": 8.881784197001252e-16
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902357403744,
+      "difference_from_source_model_mm": -0.0004862501878619696,
+      "maximum_seam_error_mm": 7.481304860052203e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902361672828,
+      "difference_from_source_model_mm": -0.0004858232794617834,
+      "maximum_seam_error_mm": 3.3745573046776263e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902365547913,
+      "difference_from_source_model_mm": -0.00048543577094051216,
+      "maximum_seam_error_mm": 2.9478135537587314e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29023691764536,
+      "difference_from_source_model_mm": -0.00048507291688792975,
+      "maximum_seam_error_mm": 6.533795124497635e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902372440018,
+      "difference_from_source_model_mm": -0.00048474656045982556,
+      "maximum_seam_error_mm": 2.162052920054792e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023209136176,
+      "difference_from_source_model_mm": -0.000489899200488253,
+      "maximum_seam_error_mm": 7.657449532659967e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.29023291713565,
+      "difference_from_source_model_mm": -0.0004890734265927676,
+      "maximum_seam_error_mm": 2.304020086135672e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.290233614468,
+      "difference_from_source_model_mm": -0.0004883760942675508,
+      "maximum_seam_error_mm": 2.711781360933247e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.2902342188606,
+      "difference_from_source_model_mm": -0.0004877717016711358,
+      "maximum_seam_error_mm": 1.0540841304728975e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902347665799,
+      "difference_from_source_model_mm": -0.000487223982361229,
+      "maximum_seam_error_mm": 3.552713678800501e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902352441472,
+      "difference_from_source_model_mm": -0.0004867464150493106,
+      "maximum_seam_error_mm": 7.481304850564302e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902356710556,
+      "difference_from_source_model_mm": -0.0004863195066491244,
+      "maximum_seam_error_mm": 3.374557303758526e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902360585641,
+      "difference_from_source_model_mm": -0.00048593199812785315,
+      "maximum_seam_error_mm": 2.9478135520821317e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.2902364214182,
+      "difference_from_source_model_mm": -0.00048556914407527074,
+      "maximum_seam_error_mm": 6.533795125696533e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": -10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902367477746,
+      "difference_from_source_model_mm": -0.00048524278764716655,
+      "maximum_seam_error_mm": 2.162052917702218e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.2902319275312,
+      "difference_from_source_model_mm": -0.0004900630310658016,
+      "maximum_seam_error_mm": 7.657449531871056e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.290232753305,
+      "difference_from_source_model_mm": -0.0004892372572271597,
+      "maximum_seam_error_mm": 2.3040200869359643e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023345063734,
+      "difference_from_source_model_mm": -0.0004885399249019429,
+      "maximum_seam_error_mm": 2.7117813604965e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29023405503,
+      "difference_from_source_model_mm": -0.00048793553224868447,
+      "maximum_seam_error_mm": 1.054084130478498e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.29023460274925,
+      "difference_from_source_model_mm": -0.00048738781299562106,
+      "maximum_seam_error_mm": 0.0
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902350803166,
+      "difference_from_source_model_mm": -0.00048691024562685925,
+      "maximum_seam_error_mm": 7.481304848569122e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.290235507225,
+      "difference_from_source_model_mm": -0.00048648333722667303,
+      "maximum_seam_error_mm": 3.3745573046856905e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.29023589473354,
+      "difference_from_source_model_mm": -0.0004860958287054018,
+      "maximum_seam_error_mm": 2.9478135518174208e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29023625758754,
+      "difference_from_source_model_mm": -0.0004857329747096628,
+      "maximum_seam_error_mm": 6.533795124799047e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 0,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.29023658394397,
+      "difference_from_source_model_mm": -0.0004854066182815586,
+      "maximum_seam_error_mm": 2.162052917995868e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023209136176,
+      "difference_from_source_model_mm": -0.000489899200488253,
+      "maximum_seam_error_mm": 7.657449532165693e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.29023291713565,
+      "difference_from_source_model_mm": -0.0004890734265927676,
+      "maximum_seam_error_mm": 2.304020086135672e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.290233614468,
+      "difference_from_source_model_mm": -0.0004883760942675508,
+      "maximum_seam_error_mm": 2.7117813606845887e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.2902342188606,
+      "difference_from_source_model_mm": -0.0004877717016711358,
+      "maximum_seam_error_mm": 1.0540841295982294e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902347665799,
+      "difference_from_source_model_mm": -0.000487223982361229,
+      "maximum_seam_error_mm": 3.972054645195637e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902352441472,
+      "difference_from_source_model_mm": -0.0004867464150493106,
+      "maximum_seam_error_mm": 7.481304866663462e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902356710556,
+      "difference_from_source_model_mm": -0.0004863195066491244,
+      "maximum_seam_error_mm": 3.374557304332117e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902360585641,
+      "difference_from_source_model_mm": -0.00048593199812785315,
+      "maximum_seam_error_mm": 2.9478135523475317e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.2902364214182,
+      "difference_from_source_model_mm": -0.00048556914407527074,
+      "maximum_seam_error_mm": 6.533795125800614e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902367477746,
+      "difference_from_source_model_mm": -0.00048524278764716655,
+      "maximum_seam_error_mm": 2.162052917827319e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023258758895,
+      "difference_from_source_model_mm": -0.000489402973300912,
+      "maximum_seam_error_mm": 7.657449532196457e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.29023341336284,
+      "difference_from_source_model_mm": -0.0004885771994054267,
+      "maximum_seam_error_mm": 2.3040200860550107e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023411069517,
+      "difference_from_source_model_mm": -0.0004878798670802098,
+      "maximum_seam_error_mm": 2.7117813608000766e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29023471508776,
+      "difference_from_source_model_mm": -0.0004872754744837948,
+      "maximum_seam_error_mm": 1.054084130215937e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902352628071,
+      "difference_from_source_model_mm": -0.000486727755173888,
+      "maximum_seam_error_mm": 8.188600426433445e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902357403744,
+      "difference_from_source_model_mm": -0.0004862501878619696,
+      "maximum_seam_error_mm": 7.481304858131866e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902361672828,
+      "difference_from_source_model_mm": -0.0004858232794617834,
+      "maximum_seam_error_mm": 3.3745573047868597e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902365547913,
+      "difference_from_source_model_mm": -0.00048543577094051216,
+      "maximum_seam_error_mm": 2.9478135523225277e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29023691764536,
+      "difference_from_source_model_mm": -0.00048507291688792975,
+      "maximum_seam_error_mm": 6.533795125419101e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902372440018,
+      "difference_from_source_model_mm": -0.00048474656045982556,
+      "maximum_seam_error_mm": 2.1620529183312324e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.2902334306017,
+      "difference_from_source_model_mm": -0.0004885599605586322,
+      "maximum_seam_error_mm": 7.657449531865655e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.2902342563756,
+      "difference_from_source_model_mm": -0.00048773418666314683,
+      "maximum_seam_error_mm": 2.304020086137569e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.2902349537079,
+      "difference_from_source_model_mm": -0.00048703685433793,
+      "maximum_seam_error_mm": 2.7117813606213463e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.2902355581005,
+      "difference_from_source_model_mm": -0.000486432461741515,
+      "maximum_seam_error_mm": 1.054084129681994e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902361058198,
+      "difference_from_source_model_mm": -0.0004858847424316082,
+      "maximum_seam_error_mm": 6.217248937900877e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902365833871,
+      "difference_from_source_model_mm": -0.0004854071751196898,
+      "maximum_seam_error_mm": 7.481304855083321e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902370102955,
+      "difference_from_source_model_mm": -0.00048498026671950356,
+      "maximum_seam_error_mm": 3.3745573047183644e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.29023739780405,
+      "difference_from_source_model_mm": -0.00048459275819823233,
+      "maximum_seam_error_mm": 2.9478135516452673e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.2902377606581,
+      "difference_from_source_model_mm": -0.0004842299041456499,
+      "maximum_seam_error_mm": 6.533795125474291e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.29023808701453,
+      "difference_from_source_model_mm": -0.00048390354771754573,
+      "maximum_seam_error_mm": 2.162052917421244e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.2902346450024,
+      "difference_from_source_model_mm": -0.00048734555986129635,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.2902354707763,
+      "difference_from_source_model_mm": -0.000486519785965811,
+      "maximum_seam_error_mm": 2.304020084245142e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.2902361681086,
+      "difference_from_source_model_mm": -0.0004858224536405942,
+      "maximum_seam_error_mm": 2.711781360762591e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29023677250126,
+      "difference_from_source_model_mm": -0.0004852180609873358,
+      "maximum_seam_error_mm": 1.0540841298702873e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.2902373202205,
+      "difference_from_source_model_mm": -0.00048467034173427237,
+      "maximum_seam_error_mm": 2.8435583831733384e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902377977879,
+      "difference_from_source_model_mm": -0.00048419277436551056,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902382246963,
+      "difference_from_source_model_mm": -0.00048376586596532434,
+      "maximum_seam_error_mm": 3.3745573045830517e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.29023861220475,
+      "difference_from_source_model_mm": -0.00048337835750089653,
+      "maximum_seam_error_mm": 2.9478135524029666e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.2902389750588,
+      "difference_from_source_model_mm": -0.0004830155034483141,
+      "maximum_seam_error_mm": 6.533795124552888e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902393014152,
+      "difference_from_source_model_mm": -0.00048268914702020993,
+      "maximum_seam_error_mm": 2.1620529190350786e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.29023626658085,
+      "difference_from_source_model_mm": -0.000485723981398678,
+      "maximum_seam_error_mm": 7.657449532265529e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.29023709235474,
+      "difference_from_source_model_mm": -0.0004848982075031927,
+      "maximum_seam_error_mm": 2.304020086720019e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023778968707,
+      "difference_from_source_model_mm": -0.00048420087517797583,
+      "maximum_seam_error_mm": 2.711781360520814e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29023839407967,
+      "difference_from_source_model_mm": -0.00048359648258156085,
+      "maximum_seam_error_mm": 1.0540841300829034e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.290238941799,
+      "difference_from_source_model_mm": -0.000483048763271654,
+      "maximum_seam_error_mm": 1.3322676295501878e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.2902394193663,
+      "difference_from_source_model_mm": -0.00048257119595973563,
+      "maximum_seam_error_mm": 7.481304855253655e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.2902398462747,
+      "difference_from_source_model_mm": -0.0004821442875595494,
+      "maximum_seam_error_mm": 3.374557304486385e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902402337832,
+      "difference_from_source_model_mm": -0.0004817567790382782,
+      "maximum_seam_error_mm": 2.9478135519689787e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29024059663726,
+      "difference_from_source_model_mm": -0.0004813939249856958,
+      "maximum_seam_error_mm": 6.5337951248194024e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.2902409229937,
+      "difference_from_source_model_mm": -0.0004810675685575916,
+      "maximum_seam_error_mm": 2.16205291871474e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 287.2902383437619,
+      "difference_from_source_model_mm": -0.000483646800319093,
+      "maximum_seam_error_mm": 7.657449531430998e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 287.2902391695358,
+      "difference_from_source_model_mm": -0.0004828210264236077,
+      "maximum_seam_error_mm": 2.304020086957075e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 287.29023986686815,
+      "difference_from_source_model_mm": -0.00048212369409839084,
+      "maximum_seam_error_mm": 2.711781360826346e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 287.29024047126074,
+      "difference_from_source_model_mm": -0.00048151930150197586,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 287.29024101898005,
+      "difference_from_source_model_mm": -0.00048097158219206904,
+      "maximum_seam_error_mm": 3.1086244689504383e-15
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 287.29024149654737,
+      "difference_from_source_model_mm": -0.00048049401488015064,
+      "maximum_seam_error_mm": 7.481304847706631e-07
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 287.29024192345577,
+      "difference_from_source_model_mm": -0.0004800671064799644,
+      "maximum_seam_error_mm": 3.374557304165187e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 287.2902423109643,
+      "difference_from_source_model_mm": -0.0004796795979586932,
+      "maximum_seam_error_mm": 2.9478135536375442e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 287.29024267381834,
+      "difference_from_source_model_mm": -0.0004793167439061108,
+      "maximum_seam_error_mm": 6.5337951244361336e-06
+    },
+    {
+      "geometry_slot": "H06-G1",
+      "yaw_deg": 60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 287.29024300017477,
+      "difference_from_source_model_mm": -0.0004789903874780066,
+      "maximum_seam_error_mm": 2.162052919547079e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854940816455,
+      "difference_from_source_model_mm": -0.0005039181042434393,
+      "maximum_seam_error_mm": 7.657449531865655e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585502339384,
+      "difference_from_source_model_mm": -0.0005030923304047974,
+      "maximum_seam_error_mm": 2.3040200860424856e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.85855093127077,
+      "difference_from_source_model_mm": -0.0005023949980227371,
+      "maximum_seam_error_mm": 2.711781360553013e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.85855153566337,
+      "difference_from_source_model_mm": -0.0005017906054263221,
+      "maximum_seam_error_mm": 1.054084129681994e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585520833826,
+      "difference_from_source_model_mm": -0.0005012428861732587,
+      "maximum_seam_error_mm": 0.0
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.85855256095,
+      "difference_from_source_model_mm": -0.0005007653188044969,
+      "maximum_seam_error_mm": 7.481304856089674e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585529878584,
+      "difference_from_source_model_mm": -0.0005003384104043107,
+      "maximum_seam_error_mm": 3.3745573043989876e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585533753669,
+      "difference_from_source_model_mm": -0.0004999509018830395,
+      "maximum_seam_error_mm": 2.9478135537330675e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585537382209,
+      "difference_from_source_model_mm": -0.0004995880478873005,
+      "maximum_seam_error_mm": 6.533795125474291e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85855406457733,
+      "difference_from_source_model_mm": -0.0004992616914591963,
+      "maximum_seam_error_mm": 2.162052918862097e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.8585473309834,
+      "difference_from_source_model_mm": -0.0005059952853798677,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585481567573,
+      "difference_from_source_model_mm": -0.0005051695114843824,
+      "maximum_seam_error_mm": 2.3040200853743185e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.85854885408963,
+      "difference_from_source_model_mm": -0.0005044721791591655,
+      "maximum_seam_error_mm": 2.711781360762591e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585494584823,
+      "difference_from_source_model_mm": -0.0005038677865059071,
+      "maximum_seam_error_mm": 1.0540841298702873e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.85855000620154,
+      "difference_from_source_model_mm": -0.0005033200672528437,
+      "maximum_seam_error_mm": 1.897149936107019e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.8585504837689,
+      "difference_from_source_model_mm": -0.0005028424998840819,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585509106773,
+      "difference_from_source_model_mm": -0.0005024155914838957,
+      "maximum_seam_error_mm": 3.37455730470538e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.85855129818583,
+      "difference_from_source_model_mm": -0.0005020280829626245,
+      "maximum_seam_error_mm": 2.947813553385388e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585516610398,
+      "difference_from_source_model_mm": -0.0005016652289668855,
+      "maximum_seam_error_mm": 6.533795124552888e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85855198739625,
+      "difference_from_source_model_mm": -0.0005013388725387813,
+      "maximum_seam_error_mm": 2.1620529190350786e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854570940495,
+      "difference_from_source_model_mm": -0.0005076168638424861,
+      "maximum_seam_error_mm": 7.657449532588144e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.85854653517885,
+      "difference_from_source_model_mm": -0.0005067910899470007,
+      "maximum_seam_error_mm": 2.3040200861554307e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585472325112,
+      "difference_from_source_model_mm": -0.0005060937575649405,
+      "maximum_seam_error_mm": 2.711781360520814e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585478369038,
+      "difference_from_source_model_mm": -0.0005054893649685255,
+      "maximum_seam_error_mm": 1.0540841300829034e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585483846231,
+      "difference_from_source_model_mm": -0.0005049416457154621,
+      "maximum_seam_error_mm": 3.0201331455116262e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.85854886219045,
+      "difference_from_source_model_mm": -0.0005044640783467003,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.85854928909885,
+      "difference_from_source_model_mm": -0.000504037169946514,
+      "maximum_seam_error_mm": 3.3745573044094006e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585496766073,
+      "difference_from_source_model_mm": -0.0005036496614820862,
+      "maximum_seam_error_mm": 2.9478135519689787e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.85855003946136,
+      "difference_from_source_model_mm": -0.0005032868074295038,
+      "maximum_seam_error_mm": 6.5337951248194024e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.8585503658178,
+      "difference_from_source_model_mm": -0.0005029604510013996,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.8585444950042,
+      "difference_from_source_model_mm": -0.0005088312645966653,
+      "maximum_seam_error_mm": 7.657449532116605e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585453207781,
+      "difference_from_source_model_mm": -0.00050800549070118,
+      "maximum_seam_error_mm": 2.3040200854357385e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585460181105,
+      "difference_from_source_model_mm": -0.0005073081583191197,
+      "maximum_seam_error_mm": 2.7117813609525933e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.85854662250307,
+      "difference_from_source_model_mm": -0.0005067037657227047,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585471702223,
+      "difference_from_source_model_mm": -0.0005061560464696413,
+      "maximum_seam_error_mm": 1.3322676295501878e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.8585476477897,
+      "difference_from_source_model_mm": -0.0005056784791008795,
+      "maximum_seam_error_mm": 7.481304859778019e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585480746981,
+      "difference_from_source_model_mm": -0.0005052515707006933,
+      "maximum_seam_error_mm": 3.37455730463852e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585484622066,
+      "difference_from_source_model_mm": -0.000504864062179422,
+      "maximum_seam_error_mm": 2.9478135535659013e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585488250606,
+      "difference_from_source_model_mm": -0.000504501208183683,
+      "maximum_seam_error_mm": 6.533795126456256e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85854915141704,
+      "difference_from_source_model_mm": -0.0005041748517555789,
+      "maximum_seam_error_mm": 2.162052917028935e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854365199157,
+      "difference_from_source_model_mm": -0.0005096742772252583,
+      "maximum_seam_error_mm": 7.65744953230396e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585444777654,
+      "difference_from_source_model_mm": -0.0005088485033866164,
+      "maximum_seam_error_mm": 2.3040200855907384e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585451750978,
+      "difference_from_source_model_mm": -0.0005081511710045561,
+      "maximum_seam_error_mm": 2.7117813609509852e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585457794904,
+      "difference_from_source_model_mm": -0.0005075467784081411,
+      "maximum_seam_error_mm": 1.0540841306332364e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.85854632720964,
+      "difference_from_source_model_mm": -0.0005069990591550777,
+      "maximum_seam_error_mm": 1.9860273225978185e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.858546804777,
+      "difference_from_source_model_mm": -0.0005065214917863159,
+      "maximum_seam_error_mm": 7.481304860052203e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585472316854,
+      "difference_from_source_model_mm": -0.0005060945833861297,
+      "maximum_seam_error_mm": 3.3745573046776263e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585476191939,
+      "difference_from_source_model_mm": -0.0005057070748648584,
+      "maximum_seam_error_mm": 2.947813553889415e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585479820479,
+      "difference_from_source_model_mm": -0.0005053442208691195,
+      "maximum_seam_error_mm": 6.533795124497635e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85854830840435,
+      "difference_from_source_model_mm": -0.0005050178644410153,
+      "maximum_seam_error_mm": 2.1620529173468738e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.8585431557643,
+      "difference_from_source_model_mm": -0.0005101705044694427,
+      "maximum_seam_error_mm": 7.657449532659967e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585439815382,
+      "difference_from_source_model_mm": -0.0005093447305739573,
+      "maximum_seam_error_mm": 2.3040200854231944e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.85854467887054,
+      "difference_from_source_model_mm": -0.0005086473982487405,
+      "maximum_seam_error_mm": 2.711781360977092e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585452832632,
+      "difference_from_source_model_mm": -0.0005080430055954821,
+      "maximum_seam_error_mm": 1.05408413031867e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.85854583098245,
+      "difference_from_source_model_mm": -0.0005074952863424187,
+      "maximum_seam_error_mm": 3.552713678800501e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.8585463085498,
+      "difference_from_source_model_mm": -0.0005070177189736569,
+      "maximum_seam_error_mm": 7.481304850564302e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.85854673545816,
+      "difference_from_source_model_mm": -0.0005065908106303141,
+      "maximum_seam_error_mm": 3.374557303758526e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585471229667,
+      "difference_from_source_model_mm": -0.0005062033021090429,
+      "maximum_seam_error_mm": 2.9478135520821317e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.85854748582074,
+      "difference_from_source_model_mm": -0.0005058404480564604,
+      "maximum_seam_error_mm": 6.533795125696533e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": -10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85854781217716,
+      "difference_from_source_model_mm": -0.0005055140916283563,
+      "maximum_seam_error_mm": 2.162052917702218e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854299193375,
+      "difference_from_source_model_mm": -0.0005103343350469913,
+      "maximum_seam_error_mm": 7.657449531871056e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585438177076,
+      "difference_from_source_model_mm": -0.0005095085612083494,
+      "maximum_seam_error_mm": 2.3040200869359643e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585445150399,
+      "difference_from_source_model_mm": -0.0005088112288831326,
+      "maximum_seam_error_mm": 2.7117813604965e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.85854511943256,
+      "difference_from_source_model_mm": -0.0005082068362298742,
+      "maximum_seam_error_mm": 1.054084130478498e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585456671518,
+      "difference_from_source_model_mm": -0.0005076591169768108,
+      "maximum_seam_error_mm": 0.0
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.8585461447192,
+      "difference_from_source_model_mm": -0.000507181549608049,
+      "maximum_seam_error_mm": 7.481304848569122e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585465716276,
+      "difference_from_source_model_mm": -0.0005067546412078627,
+      "maximum_seam_error_mm": 3.3745573046856905e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585469591361,
+      "difference_from_source_model_mm": -0.0005063671326865915,
+      "maximum_seam_error_mm": 2.9478135518174208e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585473219901,
+      "difference_from_source_model_mm": -0.0005060042786908525,
+      "maximum_seam_error_mm": 6.533795124799047e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 0,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85854764834653,
+      "difference_from_source_model_mm": -0.0005056779222627483,
+      "maximum_seam_error_mm": 2.162052917995868e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.8585431557643,
+      "difference_from_source_model_mm": -0.0005101705044694427,
+      "maximum_seam_error_mm": 7.657449532351045e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585439815382,
+      "difference_from_source_model_mm": -0.0005093447305739573,
+      "maximum_seam_error_mm": 2.304020085703172e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.85854467887054,
+      "difference_from_source_model_mm": -0.0005086473982487405,
+      "maximum_seam_error_mm": 2.7117813606845887e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585452832632,
+      "difference_from_source_model_mm": -0.0005080430055954821,
+      "maximum_seam_error_mm": 1.0540841304728975e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.85854583098245,
+      "difference_from_source_model_mm": -0.0005074952863424187,
+      "maximum_seam_error_mm": 6.4047456679787536e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.8585463085498,
+      "difference_from_source_model_mm": -0.0005070177189736569,
+      "maximum_seam_error_mm": 7.481304866663462e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.85854673545816,
+      "difference_from_source_model_mm": -0.0005065908106303141,
+      "maximum_seam_error_mm": 3.374557304332117e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585471229667,
+      "difference_from_source_model_mm": -0.0005062033021090429,
+      "maximum_seam_error_mm": 2.9478135538526885e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.85854748582074,
+      "difference_from_source_model_mm": -0.0005058404480564604,
+      "maximum_seam_error_mm": 6.533795125800614e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85854781217716,
+      "difference_from_source_model_mm": -0.0005055140916283563,
+      "maximum_seam_error_mm": 2.162052917827319e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854365199157,
+      "difference_from_source_model_mm": -0.0005096742772252583,
+      "maximum_seam_error_mm": 7.657449532432273e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585444777654,
+      "difference_from_source_model_mm": -0.0005088485033866164,
+      "maximum_seam_error_mm": 2.30402008569391e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585451750978,
+      "difference_from_source_model_mm": -0.0005081511710045561,
+      "maximum_seam_error_mm": 2.71178136091871e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585457794904,
+      "difference_from_source_model_mm": -0.0005075467784081411,
+      "maximum_seam_error_mm": 1.0540841297986376e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.85854632720964,
+      "difference_from_source_model_mm": -0.0005069990591550777,
+      "maximum_seam_error_mm": 0.0
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.858546804777,
+      "difference_from_source_model_mm": -0.0005065214917863159,
+      "maximum_seam_error_mm": 7.481304865190383e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585472316854,
+      "difference_from_source_model_mm": -0.0005060945833861297,
+      "maximum_seam_error_mm": 3.3745573047868597e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585476191939,
+      "difference_from_source_model_mm": -0.0005057070748648584,
+      "maximum_seam_error_mm": 2.9478135523225277e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585479820479,
+      "difference_from_source_model_mm": -0.0005053442208691195,
+      "maximum_seam_error_mm": 6.533795124292634e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85854830840435,
+      "difference_from_source_model_mm": -0.0005050178644410153,
+      "maximum_seam_error_mm": 2.162052916977273e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854449500425,
+      "difference_from_source_model_mm": -0.0005088312645398219,
+      "maximum_seam_error_mm": 7.657449531363756e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.85854532077815,
+      "difference_from_source_model_mm": -0.0005080054906443365,
+      "maximum_seam_error_mm": 2.304020086137569e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585460181105,
+      "difference_from_source_model_mm": -0.0005073081583191197,
+      "maximum_seam_error_mm": 2.71178136060768e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585466225031,
+      "difference_from_source_model_mm": -0.0005067037656658613,
+      "maximum_seam_error_mm": 1.054084129681994e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585471702224,
+      "difference_from_source_model_mm": -0.0005061560464127979,
+      "maximum_seam_error_mm": 2.220446049250313e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.85854764778975,
+      "difference_from_source_model_mm": -0.0005056784790440361,
+      "maximum_seam_error_mm": 7.481304855083321e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585480746981,
+      "difference_from_source_model_mm": -0.0005052515707006933,
+      "maximum_seam_error_mm": 3.3745573047183644e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585484622066,
+      "difference_from_source_model_mm": -0.000504864062179422,
+      "maximum_seam_error_mm": 2.9478135529688795e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.85854882506067,
+      "difference_from_source_model_mm": -0.0005045012081268396,
+      "maximum_seam_error_mm": 6.533795125474291e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.8585491514171,
+      "difference_from_source_model_mm": -0.0005041748516987354,
+      "maximum_seam_error_mm": 2.162052918862097e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854570940495,
+      "difference_from_source_model_mm": -0.0005076168638424861,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.85854653517885,
+      "difference_from_source_model_mm": -0.0005067910899470007,
+      "maximum_seam_error_mm": 2.3040200853743185e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585472325112,
+      "difference_from_source_model_mm": -0.0005060937575649405,
+      "maximum_seam_error_mm": 2.711781360762591e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585478369038,
+      "difference_from_source_model_mm": -0.0005054893649685255,
+      "maximum_seam_error_mm": 1.0540841298702873e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585483846231,
+      "difference_from_source_model_mm": -0.0005049416457154621,
+      "maximum_seam_error_mm": 3.8778423131653425e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.85854886219045,
+      "difference_from_source_model_mm": -0.0005044640783467003,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585492890988,
+      "difference_from_source_model_mm": -0.0005040371700033575,
+      "maximum_seam_error_mm": 3.37455730470538e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585496766073,
+      "difference_from_source_model_mm": -0.0005036496614820862,
+      "maximum_seam_error_mm": 2.9478135524029666e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.85855003946136,
+      "difference_from_source_model_mm": -0.0005032868074295038,
+      "maximum_seam_error_mm": 6.5337951260939846e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.8585503658178,
+      "difference_from_source_model_mm": -0.0005029604510013996,
+      "maximum_seam_error_mm": 2.1620529190350786e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.85854733098347,
+      "difference_from_source_model_mm": -0.0005059952853230243,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585481567573,
+      "difference_from_source_model_mm": -0.0005051695114843824,
+      "maximum_seam_error_mm": 2.3040200853743185e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.8585488540897,
+      "difference_from_source_model_mm": -0.0005044721791023221,
+      "maximum_seam_error_mm": 2.711781360907658e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.8585494584823,
+      "difference_from_source_model_mm": -0.0005038677865059071,
+      "maximum_seam_error_mm": 1.054084130225628e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.85855000620154,
+      "difference_from_source_model_mm": -0.0005033200672528437,
+      "maximum_seam_error_mm": 6.661338147750939e-16
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.8585504837689,
+      "difference_from_source_model_mm": -0.0005028424998840819,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585509106773,
+      "difference_from_source_model_mm": -0.0005024155914838957,
+      "maximum_seam_error_mm": 3.374557304512046e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.85855129818583,
+      "difference_from_source_model_mm": -0.0005020280829626245,
+      "maximum_seam_error_mm": 2.947813554064981e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585516610398,
+      "difference_from_source_model_mm": -0.0005016652289668855,
+      "maximum_seam_error_mm": 6.5337951248194024e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85855198739625,
+      "difference_from_source_model_mm": -0.0005013388725387813,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 327.8585494081645,
+      "difference_from_source_model_mm": -0.0005039181043002827,
+      "maximum_seam_error_mm": 7.657449531430998e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 327.8585502339384,
+      "difference_from_source_model_mm": -0.0005030923304047974,
+      "maximum_seam_error_mm": 2.304020086957075e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 327.85855093127077,
+      "difference_from_source_model_mm": -0.0005023949980227371,
+      "maximum_seam_error_mm": 2.711781360826346e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 327.85855153566337,
+      "difference_from_source_model_mm": -0.0005017906054263221,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 327.8585520833826,
+      "difference_from_source_model_mm": -0.0005012428861732587,
+      "maximum_seam_error_mm": 3.9968028886505635e-15
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 327.85855256095,
+      "difference_from_source_model_mm": -0.0005007653188044969,
+      "maximum_seam_error_mm": 7.481304846767691e-07
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 327.8585529878584,
+      "difference_from_source_model_mm": -0.0005003384104043107,
+      "maximum_seam_error_mm": 3.374557304165187e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 327.8585533753669,
+      "difference_from_source_model_mm": -0.0004999509018830395,
+      "maximum_seam_error_mm": 2.9478135535897826e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 327.8585537382209,
+      "difference_from_source_model_mm": -0.0004995880478873005,
+      "maximum_seam_error_mm": 6.533795124473595e-06
+    },
+    {
+      "geometry_slot": "H06-G2",
+      "yaw_deg": 60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 327.85855406457733,
+      "difference_from_source_model_mm": -0.0004992616914591963,
+      "maximum_seam_error_mm": 2.162052919749699e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09268210602363,
+      "difference_from_source_model_mm": -0.0006279711813022004,
+      "maximum_seam_error_mm": 7.657449531865655e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.0926829317975,
+      "difference_from_source_model_mm": -0.0006271454074067151,
+      "maximum_seam_error_mm": 2.3040200863752776e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.09268362912985,
+      "difference_from_source_model_mm": -0.0006264480750814982,
+      "maximum_seam_error_mm": 2.711781360662346e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926842335225,
+      "difference_from_source_model_mm": -0.0006258436824282398,
+      "maximum_seam_error_mm": 1.054084129681994e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.09268478124176,
+      "difference_from_source_model_mm": -0.0006252959631751764,
+      "maximum_seam_error_mm": 4.3737714791252564e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926852588091,
+      "difference_from_source_model_mm": -0.0006248183958064146,
+      "maximum_seam_error_mm": 7.481304856089674e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926856857175,
+      "difference_from_source_model_mm": -0.0006243914874062284,
+      "maximum_seam_error_mm": 3.3745573043989876e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.092686073226,
+      "difference_from_source_model_mm": -0.0006240039789418006,
+      "maximum_seam_error_mm": 2.9478135524094553e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268643608004,
+      "difference_from_source_model_mm": -0.0006236411248892182,
+      "maximum_seam_error_mm": 6.5337951244361336e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926867624365,
+      "difference_from_source_model_mm": -0.000623314768461114,
+      "maximum_seam_error_mm": 2.162052919389486e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09268002884255,
+      "difference_from_source_model_mm": -0.0006300483623817854,
+      "maximum_seam_error_mm": 7.657449532203667e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.09268085461645,
+      "difference_from_source_model_mm": -0.0006292225884863001,
+      "maximum_seam_error_mm": 2.304020085542531e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926815519488,
+      "difference_from_source_model_mm": -0.0006285252561610832,
+      "maximum_seam_error_mm": 2.711781360738414e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926821563414,
+      "difference_from_source_model_mm": -0.0006279208635078248,
+      "maximum_seam_error_mm": 1.0540841299128107e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926827040607,
+      "difference_from_source_model_mm": -0.0006273731442547614,
+      "maximum_seam_error_mm": 2.4424906541753444e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.09268318162805,
+      "difference_from_source_model_mm": -0.0006268955768859996,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.09268360853645,
+      "difference_from_source_model_mm": -0.0006264686684858134,
+      "maximum_seam_error_mm": 3.37455730470538e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.0926839960449,
+      "difference_from_source_model_mm": -0.0006260811600213856,
+      "maximum_seam_error_mm": 2.947813553385388e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268435889896,
+      "difference_from_source_model_mm": -0.0006257183059688032,
+      "maximum_seam_error_mm": 6.533795124552888e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926846852554,
+      "difference_from_source_model_mm": -0.000625391949540699,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.0926784072641,
+      "difference_from_source_model_mm": -0.0006316699408444038,
+      "maximum_seam_error_mm": 7.657449532588144e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.092679233038,
+      "difference_from_source_model_mm": -0.0006308441669489184,
+      "maximum_seam_error_mm": 2.304020086437725e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926799303703,
+      "difference_from_source_model_mm": -0.0006301468346237016,
+      "maximum_seam_error_mm": 2.711781360520814e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.09268053476296,
+      "difference_from_source_model_mm": -0.0006295424419704432,
+      "maximum_seam_error_mm": 1.0540841300829034e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926810824822,
+      "difference_from_source_model_mm": -0.0006289947227173798,
+      "maximum_seam_error_mm": 2.3603665272841412e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926815600496,
+      "difference_from_source_model_mm": -0.000628517155348618,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.092681986958,
+      "difference_from_source_model_mm": -0.0006280902469484317,
+      "maximum_seam_error_mm": 3.3745573044607232e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.09268237446645,
+      "difference_from_source_model_mm": -0.0006277027384840039,
+      "maximum_seam_error_mm": 2.9478135531397824e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.0926827373205,
+      "difference_from_source_model_mm": -0.0006273398844314215,
+      "maximum_seam_error_mm": 6.53379512501204e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.09268306367693,
+      "difference_from_source_model_mm": -0.0006270135280033173,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.0926771928634,
+      "difference_from_source_model_mm": -0.0006328843415417396,
+      "maximum_seam_error_mm": 7.657449532116605e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.0926780186373,
+      "difference_from_source_model_mm": -0.0006320585676462542,
+      "maximum_seam_error_mm": 2.3040200854357385e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926787159696,
+      "difference_from_source_model_mm": -0.0006313612353210374,
+      "maximum_seam_error_mm": 2.71178136088947e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926793203622,
+      "difference_from_source_model_mm": -0.0006307568427246224,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926798680815,
+      "difference_from_source_model_mm": -0.0006302091234147156,
+      "maximum_seam_error_mm": 4.3737714791252564e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.09268034564883,
+      "difference_from_source_model_mm": -0.0006297315561027972,
+      "maximum_seam_error_mm": 7.481304859778019e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.09268077255723,
+      "difference_from_source_model_mm": -0.000629304647702611,
+      "maximum_seam_error_mm": 3.3745573046584813e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.09268116006575,
+      "difference_from_source_model_mm": -0.0006289171391813397,
+      "maximum_seam_error_mm": 2.9478135535659013e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.0926815229198,
+      "difference_from_source_model_mm": -0.0006285542851287573,
+      "maximum_seam_error_mm": 6.533795126437526e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.09268184927623,
+      "difference_from_source_model_mm": -0.0006282279287006531,
+      "maximum_seam_error_mm": 2.1620529169839083e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09267634985065,
+      "difference_from_source_model_mm": -0.0006337273542840194,
+      "maximum_seam_error_mm": 7.65744953230396e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.09267717562454,
+      "difference_from_source_model_mm": -0.0006329015803885341,
+      "maximum_seam_error_mm": 2.3040200855907384e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.09267787295687,
+      "difference_from_source_model_mm": -0.0006322042480633172,
+      "maximum_seam_error_mm": 2.7117813609509852e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926784773495,
+      "difference_from_source_model_mm": -0.0006315998554100588,
+      "maximum_seam_error_mm": 1.0540841306332364e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926790250688,
+      "difference_from_source_model_mm": -0.0006310521361569954,
+      "maximum_seam_error_mm": 6.4047456679787536e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926795026361,
+      "difference_from_source_model_mm": -0.000630574568845077,
+      "maximum_seam_error_mm": 7.481304861336747e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926799295445,
+      "difference_from_source_model_mm": -0.0006301476604448908,
+      "maximum_seam_error_mm": 3.3745573046776263e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.092680317053,
+      "difference_from_source_model_mm": -0.0006297601519236196,
+      "maximum_seam_error_mm": 2.947813553889415e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268067990706,
+      "difference_from_source_model_mm": -0.0006293972978710372,
+      "maximum_seam_error_mm": 6.533795124395135e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926810062635,
+      "difference_from_source_model_mm": -0.000629070941442933,
+      "maximum_seam_error_mm": 2.162052917408474e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09267585362346,
+      "difference_from_source_model_mm": -0.0006342235814713604,
+      "maximum_seam_error_mm": 7.657449532325675e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.09267667939736,
+      "difference_from_source_model_mm": -0.000633397807575875,
+      "maximum_seam_error_mm": 2.3040200854231944e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926773767297,
+      "difference_from_source_model_mm": -0.0006327004752506582,
+      "maximum_seam_error_mm": 2.711781360728434e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926779811223,
+      "difference_from_source_model_mm": -0.0006320960826542432,
+      "maximum_seam_error_mm": 1.05408413031867e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926785288416,
+      "difference_from_source_model_mm": -0.0006315483633443364,
+      "maximum_seam_error_mm": 3.552713678800501e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.09267900640896,
+      "difference_from_source_model_mm": -0.0006310707959755746,
+      "maximum_seam_error_mm": 7.481304850564302e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926794333173,
+      "difference_from_source_model_mm": -0.0006306438876322318,
+      "maximum_seam_error_mm": 3.374557304387576e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.0926798208258,
+      "difference_from_source_model_mm": -0.0006302563791109606,
+      "maximum_seam_error_mm": 2.9478135535872885e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.0926801836799,
+      "difference_from_source_model_mm": -0.0006298935250583781,
+      "maximum_seam_error_mm": 6.533795125696533e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": -10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926805100363,
+      "difference_from_source_model_mm": -0.000629567168630274,
+      "maximum_seam_error_mm": 2.162052917827319e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.0926756897929,
+      "difference_from_source_model_mm": -0.000634387412048909,
+      "maximum_seam_error_mm": 7.657449531871056e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.0926765155667,
+      "difference_from_source_model_mm": -0.0006335616382102671,
+      "maximum_seam_error_mm": 2.3040200869359643e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.09267721289905,
+      "difference_from_source_model_mm": -0.0006328643058850503,
+      "maximum_seam_error_mm": 2.7117813604965e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926778172917,
+      "difference_from_source_model_mm": -0.0006322599132317919,
+      "maximum_seam_error_mm": 1.054084130478498e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.092678365011,
+      "difference_from_source_model_mm": -0.000631712193921885,
+      "maximum_seam_error_mm": 0.0
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926788425783,
+      "difference_from_source_model_mm": -0.0006312346266099667,
+      "maximum_seam_error_mm": 7.481304848569122e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926792694867,
+      "difference_from_source_model_mm": -0.0006308077182097804,
+      "maximum_seam_error_mm": 3.3745573046856905e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.09267965699524,
+      "difference_from_source_model_mm": -0.0006304202096885092,
+      "maximum_seam_error_mm": 2.9478135518174208e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268001984924,
+      "difference_from_source_model_mm": -0.0006300573556927702,
+      "maximum_seam_error_mm": 6.533795124799047e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 0,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926803462057,
+      "difference_from_source_model_mm": -0.0006297309992078226,
+      "maximum_seam_error_mm": 2.162052917995868e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.0926758536235,
+      "difference_from_source_model_mm": -0.000634223581414517,
+      "maximum_seam_error_mm": 7.657449532598183e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.09267667939736,
+      "difference_from_source_model_mm": -0.000633397807575875,
+      "maximum_seam_error_mm": 2.3040200864407173e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.09267737672974,
+      "difference_from_source_model_mm": -0.0006327004751938148,
+      "maximum_seam_error_mm": 2.7117813606845887e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.09267798112234,
+      "difference_from_source_model_mm": -0.0006320960825973998,
+      "maximum_seam_error_mm": 1.0540841304728975e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926785288416,
+      "difference_from_source_model_mm": -0.0006315483633443364,
+      "maximum_seam_error_mm": 3.972054645195637e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.09267900640896,
+      "difference_from_source_model_mm": -0.0006310707959755746,
+      "maximum_seam_error_mm": 7.481304849259941e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926794333173,
+      "difference_from_source_model_mm": -0.0006306438876322318,
+      "maximum_seam_error_mm": 3.374557304332117e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.0926798208258,
+      "difference_from_source_model_mm": -0.0006302563791109606,
+      "maximum_seam_error_mm": 2.9478135523475317e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.0926801836799,
+      "difference_from_source_model_mm": -0.0006298935250583781,
+      "maximum_seam_error_mm": 6.533795124620065e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926805100363,
+      "difference_from_source_model_mm": -0.000629567168630274,
+      "maximum_seam_error_mm": 2.1620529192462825e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09267634985065,
+      "difference_from_source_model_mm": -0.0006337273542840194,
+      "maximum_seam_error_mm": 7.657449532368117e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.09267717562454,
+      "difference_from_source_model_mm": -0.0006329015803885341,
+      "maximum_seam_error_mm": 2.3040200862097682e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926778729569,
+      "difference_from_source_model_mm": -0.0006322042480064738,
+      "maximum_seam_error_mm": 2.7117813608000766e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926784773495,
+      "difference_from_source_model_mm": -0.0006315998554100588,
+      "maximum_seam_error_mm": 1.0540841306332364e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926790250688,
+      "difference_from_source_model_mm": -0.0006310521361569954,
+      "maximum_seam_error_mm": 7.944109290391274e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.09267950263614,
+      "difference_from_source_model_mm": -0.0006305745687882336,
+      "maximum_seam_error_mm": 7.481304858131866e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.09267992954454,
+      "difference_from_source_model_mm": -0.0006301476603880474,
+      "maximum_seam_error_mm": 3.3745573047868597e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.09268031705307,
+      "difference_from_source_model_mm": -0.0006297601518667761,
+      "maximum_seam_error_mm": 2.9478135537587314e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268067990706,
+      "difference_from_source_model_mm": -0.0006293972978710372,
+      "maximum_seam_error_mm": 6.533795124292634e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926810062635,
+      "difference_from_source_model_mm": -0.000629070941442933,
+      "maximum_seam_error_mm": 2.162052916977273e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.0926771928634,
+      "difference_from_source_model_mm": -0.0006328843415417396,
+      "maximum_seam_error_mm": 7.657449531865655e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.0926780186373,
+      "difference_from_source_model_mm": -0.0006320585676462542,
+      "maximum_seam_error_mm": 2.3040200860900274e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926787159696,
+      "difference_from_source_model_mm": -0.0006313612353210374,
+      "maximum_seam_error_mm": 2.71178136060768e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926793203622,
+      "difference_from_source_model_mm": -0.0006307568427246224,
+      "maximum_seam_error_mm": 1.054084129297409e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926798680815,
+      "difference_from_source_model_mm": -0.0006302091234147156,
+      "maximum_seam_error_mm": 6.0402662910232525e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926803456489,
+      "difference_from_source_model_mm": -0.0006297315560459538,
+      "maximum_seam_error_mm": 7.481304855083321e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.09268077255723,
+      "difference_from_source_model_mm": -0.000629304647702611,
+      "maximum_seam_error_mm": 3.3745573047183644e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.09268116006575,
+      "difference_from_source_model_mm": -0.0006289171391813397,
+      "maximum_seam_error_mm": 2.9478135529688795e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.0926815229198,
+      "difference_from_source_model_mm": -0.0006285542851287573,
+      "maximum_seam_error_mm": 6.533795125474291e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.09268184927623,
+      "difference_from_source_model_mm": -0.0006282279287006531,
+      "maximum_seam_error_mm": 2.1620529181416706e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09267840726415,
+      "difference_from_source_model_mm": -0.0006316699407875603,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.092679233038,
+      "difference_from_source_model_mm": -0.0006308441669489184,
+      "maximum_seam_error_mm": 2.304020085542531e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926799303703,
+      "difference_from_source_model_mm": -0.0006301468346237016,
+      "maximum_seam_error_mm": 2.711781360738414e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.09268053476296,
+      "difference_from_source_model_mm": -0.0006295424419704432,
+      "maximum_seam_error_mm": 1.0540841299128107e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926810824823,
+      "difference_from_source_model_mm": -0.0006289947226605364,
+      "maximum_seam_error_mm": 2.8435583831733384e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926815600496,
+      "difference_from_source_model_mm": -0.000628517155348618,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.092681986958,
+      "difference_from_source_model_mm": -0.0006280902469484317,
+      "maximum_seam_error_mm": 3.37455730470538e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.09268237446645,
+      "difference_from_source_model_mm": -0.0006277027384840039,
+      "maximum_seam_error_mm": 2.9478135524029666e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.0926827373205,
+      "difference_from_source_model_mm": -0.0006273398844314215,
+      "maximum_seam_error_mm": 6.5337951260939846e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.092683063677,
+      "difference_from_source_model_mm": -0.0006270135279464739,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09268002884255,
+      "difference_from_source_model_mm": -0.0006300483623817854,
+      "maximum_seam_error_mm": 7.657449532265529e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.09268085461645,
+      "difference_from_source_model_mm": -0.0006292225884863001,
+      "maximum_seam_error_mm": 2.3040200861554307e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.0926815519488,
+      "difference_from_source_model_mm": -0.0006285252561610832,
+      "maximum_seam_error_mm": 2.711781360520814e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926821563414,
+      "difference_from_source_model_mm": -0.0006279208635078248,
+      "maximum_seam_error_mm": 1.0540841301542657e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.0926827040607,
+      "difference_from_source_model_mm": -0.0006273731442547614,
+      "maximum_seam_error_mm": 2.094764613337708e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.092683181628,
+      "difference_from_source_model_mm": -0.000626895576942843,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926836085364,
+      "difference_from_source_model_mm": -0.0006264686685426568,
+      "maximum_seam_error_mm": 3.374557304563369e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.0926839960449,
+      "difference_from_source_model_mm": -0.0006260811600213856,
+      "maximum_seam_error_mm": 2.9478135528941775e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268435889896,
+      "difference_from_source_model_mm": -0.0006257183059688032,
+      "maximum_seam_error_mm": 6.53379512501204e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926846852554,
+      "difference_from_source_model_mm": -0.000625391949540699,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 285.09268210602363,
+      "difference_from_source_model_mm": -0.0006279711813022004,
+      "maximum_seam_error_mm": 7.657449531430998e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 285.0926829317975,
+      "difference_from_source_model_mm": -0.0006271454074067151,
+      "maximum_seam_error_mm": 2.3040200861964067e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 285.09268362912985,
+      "difference_from_source_model_mm": -0.0006264480750814982,
+      "maximum_seam_error_mm": 2.711781360389013e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 285.0926842335225,
+      "difference_from_source_model_mm": -0.0006258436824282398,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 285.09268478124176,
+      "difference_from_source_model_mm": -0.0006252959631751764,
+      "maximum_seam_error_mm": 2.220446049250313e-15
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 285.0926852588091,
+      "difference_from_source_model_mm": -0.0006248183958064146,
+      "maximum_seam_error_mm": 7.481304859778019e-07
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 285.0926856857175,
+      "difference_from_source_model_mm": -0.0006243914874062284,
+      "maximum_seam_error_mm": 3.3745573041352457e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 285.092686073226,
+      "difference_from_source_model_mm": -0.0006240039789418006,
+      "maximum_seam_error_mm": 2.9478135535897826e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 285.09268643608004,
+      "difference_from_source_model_mm": -0.0006236411248892182,
+      "maximum_seam_error_mm": 6.5337951244361336e-06
+    },
+    {
+      "geometry_slot": "H06-G3",
+      "yaw_deg": 60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 285.0926867624365,
+      "difference_from_source_model_mm": -0.000623314768461114,
+      "maximum_seam_error_mm": 2.162052919659646e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141350183816,
+      "difference_from_source_model_mm": -0.0003941784747212296,
+      "maximum_seam_error_mm": 7.657449532333935e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141358441555,
+      "difference_from_source_model_mm": -0.00039335270082574425,
+      "maximum_seam_error_mm": 2.3040200872773923e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.6141365414879,
+      "difference_from_source_model_mm": -0.000392655368443684,
+      "maximum_seam_error_mm": 2.711781360662346e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141371458805,
+      "difference_from_source_model_mm": -0.000392050975847269,
+      "maximum_seam_error_mm": 1.0540841305701553e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413769359973,
+      "difference_from_source_model_mm": -0.0003915032565942056,
+      "maximum_seam_error_mm": 4.440892098500626e-16
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.6141381711671,
+      "difference_from_source_model_mm": -0.0003910256892254438,
+      "maximum_seam_error_mm": 7.481304856089674e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.6141385980755,
+      "difference_from_source_model_mm": -0.00039059878082525756,
+      "maximum_seam_error_mm": 3.3745573047183644e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.614138985584,
+      "difference_from_source_model_mm": -0.00039021127230398633,
+      "maximum_seam_error_mm": 2.9478135524094553e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.614139348438,
+      "difference_from_source_model_mm": -0.00038984841830824735,
+      "maximum_seam_error_mm": 6.5337951244361336e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.6141396747945,
+      "difference_from_source_model_mm": -0.00038952206182329974,
+      "maximum_seam_error_mm": 2.162052919389486e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141329412005,
+      "difference_from_source_model_mm": -0.00039625565580081457,
+      "maximum_seam_error_mm": 7.65744953188105e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141337669744,
+      "difference_from_source_model_mm": -0.00039542988190532924,
+      "maximum_seam_error_mm": 2.304020085542531e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413446430674,
+      "difference_from_source_model_mm": -0.0003947325495801124,
+      "maximum_seam_error_mm": 2.711781360738414e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141350686994,
+      "difference_from_source_model_mm": -0.000394128156926854,
+      "maximum_seam_error_mm": 1.0540841299128107e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413561641865,
+      "difference_from_source_model_mm": -0.0003935804376737906,
+      "maximum_seam_error_mm": 1.790180836524724e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413609398596,
+      "difference_from_source_model_mm": -0.0003931028703618722,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413652089436,
+      "difference_from_source_model_mm": -0.00039267596196168597,
+      "maximum_seam_error_mm": 3.37455730470538e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141369084029,
+      "difference_from_source_model_mm": -0.00039228845344041474,
+      "maximum_seam_error_mm": 2.947813553385388e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.61413727125694,
+      "difference_from_source_model_mm": -0.00039192559938783234,
+      "maximum_seam_error_mm": 6.533795124552888e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413759761336,
+      "difference_from_source_model_mm": -0.00039159924295972814,
+      "maximum_seam_error_mm": 2.162052919586957e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.61413131962206,
+      "difference_from_source_model_mm": -0.0003978772342634329,
+      "maximum_seam_error_mm": 7.657449532588144e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.61413214539596,
+      "difference_from_source_model_mm": -0.0003970514603679476,
+      "maximum_seam_error_mm": 2.3040200857648748e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413284272834,
+      "difference_from_source_model_mm": -0.0003963541279858873,
+      "maximum_seam_error_mm": 2.711781360480239e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.61413344712093,
+      "difference_from_source_model_mm": -0.00039574973538947233,
+      "maximum_seam_error_mm": 1.0540841300829034e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.6141339948402,
+      "difference_from_source_model_mm": -0.00039520201613640893,
+      "maximum_seam_error_mm": 2.094764613337708e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413447240756,
+      "difference_from_source_model_mm": -0.0003947244487676471,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413489931596,
+      "difference_from_source_model_mm": -0.0003942975403674609,
+      "maximum_seam_error_mm": 3.3745573044607232e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141352868244,
+      "difference_from_source_model_mm": -0.0003939100319030331,
+      "maximum_seam_error_mm": 2.9478135528941775e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.6141356496785,
+      "difference_from_source_model_mm": -0.0003935471778504507,
+      "maximum_seam_error_mm": 6.53379512501204e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413597603496,
+      "difference_from_source_model_mm": -0.00039322082136550307,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141301052213,
+      "difference_from_source_model_mm": -0.00039909163501761213,
+      "maximum_seam_error_mm": 7.657449532116605e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141309309952,
+      "difference_from_source_model_mm": -0.0003982658611221268,
+      "maximum_seam_error_mm": 2.3040200849965668e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.6141316283276,
+      "difference_from_source_model_mm": -0.00039756852874006654,
+      "maximum_seam_error_mm": 2.71178136088947e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141322327202,
+      "difference_from_source_model_mm": -0.00039696413614365156,
+      "maximum_seam_error_mm": 1.0540841301260747e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.6141327804395,
+      "difference_from_source_model_mm": -0.00039641641683374473,
+      "maximum_seam_error_mm": 4.440892098500626e-16
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.6141332580068,
+      "difference_from_source_model_mm": -0.00039593884952182634,
+      "maximum_seam_error_mm": 7.48130485930855e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.6141336849152,
+      "difference_from_source_model_mm": -0.0003955119411216401,
+      "maximum_seam_error_mm": 3.3745573046584813e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141340724237,
+      "difference_from_source_model_mm": -0.0003951244326003689,
+      "maximum_seam_error_mm": 2.9478135536375442e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.6141344352777,
+      "difference_from_source_model_mm": -0.0003947615786046299,
+      "maximum_seam_error_mm": 6.5337951265124485e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.6141347616342,
+      "difference_from_source_model_mm": -0.0003944352221196823,
+      "maximum_seam_error_mm": 2.162052916893855e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141292622086,
+      "difference_from_source_model_mm": -0.00039993464770304854,
+      "maximum_seam_error_mm": 7.657449532775594e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141300879825,
+      "difference_from_source_model_mm": -0.0003991088738075632,
+      "maximum_seam_error_mm": 2.3040200864161114e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413078531484,
+      "difference_from_source_model_mm": -0.00039841154148234637,
+      "maximum_seam_error_mm": 2.7117813607137186e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141313897075,
+      "difference_from_source_model_mm": -0.00039780714882908796,
+      "maximum_seam_error_mm": 1.0540841306332364e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413193742675,
+      "difference_from_source_model_mm": -0.00039725942957602456,
+      "maximum_seam_error_mm": 8.881784197001252e-16
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413241499406,
+      "difference_from_source_model_mm": -0.00039678186226410617,
+      "maximum_seam_error_mm": 7.481304847219714e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413284190246,
+      "difference_from_source_model_mm": -0.00039635495386391995,
+      "maximum_seam_error_mm": 3.3745573052505505e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.614133229411,
+      "difference_from_source_model_mm": -0.0003959674453426487,
+      "maximum_seam_error_mm": 2.9478135524532113e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.61413359226503,
+      "difference_from_source_model_mm": -0.0003956045912900663,
+      "maximum_seam_error_mm": 6.533795124446384e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413391862146,
+      "difference_from_source_model_mm": -0.0003952782348619621,
+      "maximum_seam_error_mm": 2.1620529173622737e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.61412876598143,
+      "difference_from_source_model_mm": -0.00040043087489038953,
+      "maximum_seam_error_mm": 7.657449532078538e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.61412959175533,
+      "difference_from_source_model_mm": -0.0003996051009949042,
+      "maximum_seam_error_mm": 2.3040200854231944e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413028908765,
+      "difference_from_source_model_mm": -0.00039890776866968736,
+      "maximum_seam_error_mm": 2.711781360728434e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.61413089348025,
+      "difference_from_source_model_mm": -0.0003983033760732724,
+      "maximum_seam_error_mm": 1.05408413031867e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413144119956,
+      "difference_from_source_model_mm": -0.00039775565676336555,
+      "maximum_seam_error_mm": 2.5121479338940403e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413191876693,
+      "difference_from_source_model_mm": -0.00039727808939460374,
+      "maximum_seam_error_mm": 7.481304850564302e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.6141323456753,
+      "difference_from_source_model_mm": -0.00039685118105126094,
+      "maximum_seam_error_mm": 3.374557304387576e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141327331838,
+      "difference_from_source_model_mm": -0.0003964636725299897,
+      "maximum_seam_error_mm": 2.9478135535872885e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.61413309603785,
+      "difference_from_source_model_mm": -0.0003961008184774073,
+      "maximum_seam_error_mm": 6.533795125748574e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": -10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.6141334223943,
+      "difference_from_source_model_mm": -0.0003957744620493031,
+      "maximum_seam_error_mm": 2.1620529176396676e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.61412860215086,
+      "difference_from_source_model_mm": -0.0004005947054679382,
+      "maximum_seam_error_mm": 7.657449531871056e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141294279247,
+      "difference_from_source_model_mm": -0.0003997689316292963,
+      "maximum_seam_error_mm": 2.3040200869359643e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.614130125257,
+      "difference_from_source_model_mm": -0.00039907159930407943,
+      "maximum_seam_error_mm": 2.7117813604965e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141307296497,
+      "difference_from_source_model_mm": -0.000398467206650821,
+      "maximum_seam_error_mm": 1.054084130478498e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.614131277369,
+      "difference_from_source_model_mm": -0.0003979194873409142,
+      "maximum_seam_error_mm": 0.0
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.6141317549363,
+      "difference_from_source_model_mm": -0.0003974419200289958,
+      "maximum_seam_error_mm": 7.481304848569122e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.6141321818447,
+      "difference_from_source_model_mm": -0.0003970150116288096,
+      "maximum_seam_error_mm": 3.3745573046856905e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141325693532,
+      "difference_from_source_model_mm": -0.00039662750310753836,
+      "maximum_seam_error_mm": 2.9478135518174208e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.6141329322072,
+      "difference_from_source_model_mm": -0.00039626464911179937,
+      "maximum_seam_error_mm": 6.533795124799047e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 0,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.6141332585637,
+      "difference_from_source_model_mm": -0.00039593829262685176,
+      "maximum_seam_error_mm": 2.162052917995868e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.61412876598143,
+      "difference_from_source_model_mm": -0.00040043087489038953,
+      "maximum_seam_error_mm": 7.657449532140322e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.61412959175533,
+      "difference_from_source_model_mm": -0.0003996051009949042,
+      "maximum_seam_error_mm": 2.304020086135672e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413028908765,
+      "difference_from_source_model_mm": -0.00039890776866968736,
+      "maximum_seam_error_mm": 2.711781360977092e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.61413089348025,
+      "difference_from_source_model_mm": -0.0003983033760732724,
+      "maximum_seam_error_mm": 1.0540841294440019e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413144119956,
+      "difference_from_source_model_mm": -0.00039775565676336555,
+      "maximum_seam_error_mm": 1.7763568394002505e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413191876693,
+      "difference_from_source_model_mm": -0.00039727808939460374,
+      "maximum_seam_error_mm": 7.481304851868663e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.6141323456753,
+      "difference_from_source_model_mm": -0.00039685118105126094,
+      "maximum_seam_error_mm": 3.374557303703067e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141327331838,
+      "difference_from_source_model_mm": -0.0003964636725299897,
+      "maximum_seam_error_mm": 2.9478135523475317e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.61413309603785,
+      "difference_from_source_model_mm": -0.0003961008184774073,
+      "maximum_seam_error_mm": 6.533795124620065e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 10,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.6141334223943,
+      "difference_from_source_model_mm": -0.0003957744620493031,
+      "maximum_seam_error_mm": 2.1620529192462825e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141292622086,
+      "difference_from_source_model_mm": -0.00039993464770304854,
+      "maximum_seam_error_mm": 7.65744953263341e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141300879825,
+      "difference_from_source_model_mm": -0.0003991088738075632,
+      "maximum_seam_error_mm": 2.3040200860974928e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413078531484,
+      "difference_from_source_model_mm": -0.00039841154148234637,
+      "maximum_seam_error_mm": 2.71178136091871e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141313897075,
+      "difference_from_source_model_mm": -0.00039780714882908796,
+      "maximum_seam_error_mm": 1.0540841297986376e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413193742675,
+      "difference_from_source_model_mm": -0.00039725942957602456,
+      "maximum_seam_error_mm": 1.7763568394002505e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413241499406,
+      "difference_from_source_model_mm": -0.00039678186226410617,
+      "maximum_seam_error_mm": 7.48130485107335e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413284190246,
+      "difference_from_source_model_mm": -0.00039635495386391995,
+      "maximum_seam_error_mm": 3.3745573047868597e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.614133229411,
+      "difference_from_source_model_mm": -0.0003959674453426487,
+      "maximum_seam_error_mm": 2.9478135537587314e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.61413359226503,
+      "difference_from_source_model_mm": -0.0003956045912900663,
+      "maximum_seam_error_mm": 6.533795125419101e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 20,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413391862146,
+      "difference_from_source_model_mm": -0.0003952782348619621,
+      "maximum_seam_error_mm": 2.162052916977273e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.61413010522136,
+      "difference_from_source_model_mm": -0.0003990916349607687,
+      "maximum_seam_error_mm": 7.657449532082985e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.61413093099526,
+      "difference_from_source_model_mm": -0.0003982658610652834,
+      "maximum_seam_error_mm": 2.3040200869921417e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.6141316283276,
+      "difference_from_source_model_mm": -0.00039756852874006654,
+      "maximum_seam_error_mm": 2.71178136060768e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141322327202,
+      "difference_from_source_model_mm": -0.00039696413614365156,
+      "maximum_seam_error_mm": 1.054084129297409e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.6141327804395,
+      "difference_from_source_model_mm": -0.00039641641683374473,
+      "maximum_seam_error_mm": 3.580361673049448e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413325800686,
+      "difference_from_source_model_mm": -0.0003959388494649829,
+      "maximum_seam_error_mm": 7.481304855083321e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.6141336849152,
+      "difference_from_source_model_mm": -0.0003955119411216401,
+      "maximum_seam_error_mm": 3.3745573047183644e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141340724237,
+      "difference_from_source_model_mm": -0.0003951244326003689,
+      "maximum_seam_error_mm": 2.9478135529688795e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.6141344352778,
+      "difference_from_source_model_mm": -0.0003947615785477865,
+      "maximum_seam_error_mm": 6.533795125474291e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 30,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.6141347616342,
+      "difference_from_source_model_mm": -0.0003944352221196823,
+      "maximum_seam_error_mm": 2.1620529181416706e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.61413131962206,
+      "difference_from_source_model_mm": -0.0003978772342634329,
+      "maximum_seam_error_mm": 7.657449532203667e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.61413214539596,
+      "difference_from_source_model_mm": -0.0003970514603679476,
+      "maximum_seam_error_mm": 2.3040200849779426e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413284272834,
+      "difference_from_source_model_mm": -0.0003963541279858873,
+      "maximum_seam_error_mm": 2.711781360738414e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.61413344712093,
+      "difference_from_source_model_mm": -0.00039574973538947233,
+      "maximum_seam_error_mm": 1.0540841299128107e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.6141339948402,
+      "difference_from_source_model_mm": -0.00039520201613640893,
+      "maximum_seam_error_mm": 2.673771110915334e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413447240756,
+      "difference_from_source_model_mm": -0.0003947244487676471,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413489931596,
+      "difference_from_source_model_mm": -0.0003942975403674609,
+      "maximum_seam_error_mm": 3.37455730470538e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141352868244,
+      "difference_from_source_model_mm": -0.0003939100319030331,
+      "maximum_seam_error_mm": 2.9478135524029666e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.6141356496785,
+      "difference_from_source_model_mm": -0.0003935471778504507,
+      "maximum_seam_error_mm": 6.533795124552888e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 40,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413597603496,
+      "difference_from_source_model_mm": -0.00039322082136550307,
+      "maximum_seam_error_mm": 2.1620529166308743e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141329412005,
+      "difference_from_source_model_mm": -0.00039625565580081457,
+      "maximum_seam_error_mm": 7.657449532042358e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141337669744,
+      "difference_from_source_model_mm": -0.00039542988190532924,
+      "maximum_seam_error_mm": 2.30402008480973e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.61413446430674,
+      "difference_from_source_model_mm": -0.0003947325495801124,
+      "maximum_seam_error_mm": 2.711781360907658e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141350686994,
+      "difference_from_source_model_mm": -0.000394128156926854,
+      "maximum_seam_error_mm": 1.0540841301542657e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413561641865,
+      "difference_from_source_model_mm": -0.0003935804376737906,
+      "maximum_seam_error_mm": 3.3893637946200144e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413609398596,
+      "difference_from_source_model_mm": -0.0003931028703618722,
+      "maximum_seam_error_mm": 7.481304855404541e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413652089436,
+      "difference_from_source_model_mm": -0.00039267596196168597,
+      "maximum_seam_error_mm": 3.374557304563369e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.6141369084029,
+      "difference_from_source_model_mm": -0.00039228845344041474,
+      "maximum_seam_error_mm": 2.9478135528941775e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.61413727125694,
+      "difference_from_source_model_mm": -0.00039192559938783234,
+      "maximum_seam_error_mm": 6.533795124626765e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 50,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413759761336,
+      "difference_from_source_model_mm": -0.00039159924295972814,
+      "maximum_seam_error_mm": 2.1620529184832e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": -20,
+      "polyline_length_mm": 339.6141350183816,
+      "difference_from_source_model_mm": -0.0003941784747212296,
+      "maximum_seam_error_mm": 7.657449531430998e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": -15,
+      "polyline_length_mm": 339.6141358441555,
+      "difference_from_source_model_mm": -0.00039335270082574425,
+      "maximum_seam_error_mm": 2.304020085976821e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": -10,
+      "polyline_length_mm": 339.6141365414878,
+      "difference_from_source_model_mm": -0.0003926553685005274,
+      "maximum_seam_error_mm": 2.711781360389013e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": -5,
+      "polyline_length_mm": 339.6141371458805,
+      "difference_from_source_model_mm": -0.000392050975847269,
+      "maximum_seam_error_mm": 1.0540841300150546e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": 0,
+      "polyline_length_mm": 339.61413769359973,
+      "difference_from_source_model_mm": -0.0003915032565942056,
+      "maximum_seam_error_mm": 3.9968028886505635e-15
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": 5,
+      "polyline_length_mm": 339.61413817116704,
+      "difference_from_source_model_mm": -0.0003910256892822872,
+      "maximum_seam_error_mm": 7.481304860130122e-07
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": 10,
+      "polyline_length_mm": 339.61413859807544,
+      "difference_from_source_model_mm": -0.000390598780882101,
+      "maximum_seam_error_mm": 3.374557304105304e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": 15,
+      "polyline_length_mm": 339.61413898558396,
+      "difference_from_source_model_mm": -0.00039021127236082975,
+      "maximum_seam_error_mm": 2.9478135537330675e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": 20,
+      "polyline_length_mm": 339.614139348438,
+      "difference_from_source_model_mm": -0.00038984841830824735,
+      "maximum_seam_error_mm": 6.5337951244361336e-06
+    },
+    {
+      "geometry_slot": "H06-G4",
+      "yaw_deg": 60,
+      "pitch_deg": 25,
+      "polyline_length_mm": 339.61413967479444,
+      "difference_from_source_model_mm": -0.00038952206188014316,
+      "maximum_seam_error_mm": 2.162052919749699e-06
+    }
+  ],
+  "pose_wire_instances": 520,
+  "maximum_polyline_source_length_difference_mm": 0.000634387412048909,
+  "manufacturing_tolerances": "NOT_TESTED",
+  "cut_lengths_released": false,
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "outputs": {
+    "route_reference_only.csv": "25ad9e6d513854e57bc3e07625bdf40d2160e8d2f4ab3875de4357fea4876663",
+    "length_datums_REFERENCE_ONLY.csv": "633a3bfcc6810acb13fe79c5098bca671ae31b2d0232b98ee9742da448d67aa5"
+  }
+}

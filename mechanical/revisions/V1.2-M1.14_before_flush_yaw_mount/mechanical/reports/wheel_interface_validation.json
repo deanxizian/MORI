@@ -1,0 +1,628 @@
+{
+  "revision": "V1.2-M1.14",
+  "status": "PASS_GEOMETRY_ONLY",
+  "checks": [
+    {
+      "id": "wheel_positive_drive_and_axial_stack",
+      "status": "PASS",
+      "measurement": [
+        {
+          "side": "L",
+          "key_length_mm": 12.200000000000003,
+          "neutral_overlap_mm3": 0,
+          "first_relative_D_contact_deg": [
+            -0.7,
+            0.7
+          ],
+          "inner_bearing_into_shoulder_0_2mm_witness_volume_mm3": 2.4038025169253143,
+          "shaft_tip_below_washer_seat_mm": 0.20000000000000284
+        },
+        {
+          "side": "R",
+          "key_length_mm": 12.200000000000003,
+          "neutral_overlap_mm3": 1.8041124150158794e-15,
+          "first_relative_D_contact_deg": [
+            -0.7,
+            0.7
+          ],
+          "inner_bearing_into_shoulder_0_2mm_witness_volume_mm3": 2.403802516925314,
+          "shaft_tip_below_washer_seat_mm": 0.20000000000000284
+        }
+      ],
+      "method": "Actual shaft/hub intersection under relative0.1deg increments; positive interference is an intentional stop witness, not an assembled collision. This bounds nominal geometric take-up only; elastic twist, thread forces, creep and purchased tolerances are NOT_TESTED."
+    },
+    {
+      "id": "s288_six_hole_flange_installation",
+      "status": "PASS",
+      "measurement": {
+        "screws": 12,
+        "engagement_mm": 2.5,
+        "maximum_vendor_depth_mm": 3,
+        "failed_fasteners": 0,
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Actual root/head envelope translated each1mm over35mm and2.5mm x30mm tool shank; use only the documented S288 M2 self-tapping family. Head/thread/tip geometry still a procurement requirement; no tightening or pull-out qualification."
+    },
+    {
+      "id": "complete_wheel_drive_sweep",
+      "status": "PASS",
+      "measurement": {
+        "poses_each": 73,
+        "step_deg": 5,
+        "failed_pairs": 0,
+        "minimum_nonbearing_gap": {
+          "deg": 110,
+          "moving": "Wheel_Spacer_R_0",
+          "fixed": "Drive_Bridge",
+          "gap_mm_capped2": 0.4946331262569505
+        },
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Closed-solid intersections and distances against fixed drive/frame/shell/cap bolts each5deg. Bearings are intended journal contacts and checked separately. Finite samples are not a continuous proof or tolerance/deflection simulation."
+    },
+    {
+      "id": "wheel_drive_service_sequence",
+      "status": "PASS",
+      "measurement": {
+        "cases": 4,
+        "failed_cases": 0,
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Actual solid translation each1mm after explicit preceding removals. Motors disabled and chassis supported. Disconnect real motor leads first; human grip and cable plugs remain NOT_TESTED."
+    },
+    {
+      "id": "wheel_cap_tools",
+      "status": "PASS",
+      "measurement": [
+        {
+          "index": 0,
+          "hits": []
+        },
+        {
+          "index": 1,
+          "hits": []
+        },
+        {
+          "index": 2,
+          "hits": []
+        },
+        {
+          "index": 3,
+          "hits": []
+        }
+      ],
+      "method": "5mm x30mm straight tool shank with lower shell removed; tool handles and exact drive recess are not modeled."
+    },
+    {
+      "id": "wheel_shell_local_walls",
+      "status": "PASS",
+      "measurement": [
+        {
+          "side": -1,
+          "y_mm": -50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.3211424770579683,
+          "independent_triangle_error_mm": 3.712384561538329e-06
+        },
+        {
+          "side": -1,
+          "y_mm": -51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217159897264928,
+          "independent_triangle_error_mm": 3.49568765756203e-06
+        },
+        {
+          "side": -1,
+          "y_mm": 50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.321141076562334,
+          "independent_triangle_error_mm": 3.714803717969062e-06
+        },
+        {
+          "side": -1,
+          "y_mm": 51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217158729977271,
+          "independent_triangle_error_mm": 4.925743866124321e-06
+        },
+        {
+          "side": 1,
+          "y_mm": -50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.3211424770579683,
+          "independent_triangle_error_mm": 3.712384561538329e-06
+        },
+        {
+          "side": 1,
+          "y_mm": -51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217155114658418,
+          "independent_triangle_error_mm": 3.49568765756203e-06
+        },
+        {
+          "side": 1,
+          "y_mm": 50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.321141076562334,
+          "independent_triangle_error_mm": 3.714803717969062e-06
+        },
+        {
+          "side": 1,
+          "y_mm": 51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.2171530506105555,
+          "independent_triangle_error_mm": 4.925743866124321e-06
+        }
+      ],
+      "method": "Float64 Manifold ray entry/exit, cross-checked with independent barycentric triangle intersections at8 stations. Blender BVH near-edge repeated-hit false positives excluded by this independent evidence, not by lowering a thickness threshold. No global minimum-wall or FDM strength claim."
+    },
+    {
+      "id": "wheel_drive_strength_and_fit",
+      "status": "NOT_TESTED",
+      "measurement": {
+        "assumed_mass_kg": 1.5,
+        "assumed_dynamic_factor": 3.0,
+        "wheel_radial_load_N": 22.1,
+        "bearing_span_mm": 10.0,
+        "wheel_overhang_mm": 20.0,
+        "inner_bearing_reaction_magnitude_N": 44.1,
+        "outer_bearing_reaction_magnitude_N": 66.2,
+        "screening_torque_Nm": 0.6,
+        "output_screw_tangential_force_each_N": 19.0,
+        "smooth_6mm_shaft_bending_MPa": 21,
+        "smooth_6mm_shaft_torsion_MPa": 14,
+        "nominal_von_Mises_MPa": 32,
+        "qualification": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+      },
+      "method": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+    }
+  ],
+  "output_screw_tools": [
+    {
+      "id": "Wheel_Output_Screw_L_0",
+      "side": "L",
+      "axis_world": [
+        -1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        5.25,
+        52.5
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_L_1",
+      "side": "L",
+      "axis_world": [
+        -1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        2.6250000000000004,
+        57.0466333698683
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_L_2",
+      "side": "L",
+      "axis_world": [
+        -1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        -2.624999999999999,
+        57.0466333698683
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_L_3",
+      "side": "L",
+      "axis_world": [
+        -1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        -5.25,
+        52.5
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_L_4",
+      "side": "L",
+      "axis_world": [
+        -1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        -2.625000000000002,
+        47.9533666301317
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_L_5",
+      "side": "L",
+      "axis_world": [
+        -1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        2.6250000000000004,
+        47.9533666301317
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_R_0",
+      "side": "R",
+      "axis_world": [
+        1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        5.25,
+        52.5
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_R_1",
+      "side": "R",
+      "axis_world": [
+        1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        2.6250000000000004,
+        57.0466333698683
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_R_2",
+      "side": "R",
+      "axis_world": [
+        1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        -2.624999999999999,
+        57.0466333698683
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_R_3",
+      "side": "R",
+      "axis_world": [
+        1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        -5.25,
+        52.5
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_R_4",
+      "side": "R",
+      "axis_world": [
+        1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        -2.625000000000002,
+        47.9533666301317
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    },
+    {
+      "id": "Wheel_Output_Screw_R_5",
+      "side": "R",
+      "axis_world": [
+        1,
+        0,
+        0
+      ],
+      "head_face_abs_x_mm": 34.1,
+      "yz_mm": [
+        2.6250000000000004,
+        47.9533666301317
+      ],
+      "engagement_mm": 2.5,
+      "tool_diameter_mm": 2.5,
+      "tool_hits": [],
+      "screw_insertion_hits": []
+    }
+  ],
+  "sweep_failures": [],
+  "sweep_minimum": {
+    "deg": 110,
+    "moving": "Wheel_Spacer_R_0",
+    "fixed": "Drive_Bridge",
+    "gap_mm_capped2": 0.4946331262569505
+  },
+  "service_cases": [
+    {
+      "case": "Body_lower_open_axle_slots",
+      "moving": [
+        "Body_Lower"
+      ],
+      "removed_first": [
+        "Shell_Insert_0",
+        "Shell_Insert_1",
+        "Shell_Insert_2",
+        "Shell_Insert_3",
+        "Shell_Screw_0",
+        "Shell_Screw_1",
+        "Shell_Screw_2",
+        "Shell_Screw_3",
+        "Tire_L",
+        "Tire_R",
+        "Wheel_End_Screw_L",
+        "Wheel_End_Screw_R",
+        "Wheel_End_Washer_L",
+        "Wheel_End_Washer_R",
+        "Wheel_Hub_L",
+        "Wheel_Hub_R",
+        "Wheel_Spacer_L_1",
+        "Wheel_Spacer_R_1"
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "travel_mm": 90,
+      "step_mm": 1,
+      "failures": []
+    },
+    {
+      "case": "Common_motor_bearing_cap",
+      "moving": [
+        "Motor_Retainer",
+        "Motor_Retainer_Pad_-1",
+        "Motor_Retainer_Pad_1"
+      ],
+      "removed_first": [
+        "Body_Lower",
+        "Shell_Insert_0",
+        "Shell_Insert_1",
+        "Shell_Insert_2",
+        "Shell_Insert_3",
+        "Shell_Screw_0",
+        "Shell_Screw_1",
+        "Shell_Screw_2",
+        "Shell_Screw_3",
+        "Tire_L",
+        "Tire_R",
+        "Wheel_Cap_Clamp_Screw_0",
+        "Wheel_Cap_Clamp_Screw_1",
+        "Wheel_Cap_Clamp_Screw_2",
+        "Wheel_Cap_Clamp_Screw_3",
+        "Wheel_End_Screw_L",
+        "Wheel_End_Screw_R",
+        "Wheel_End_Washer_L",
+        "Wheel_End_Washer_R",
+        "Wheel_Hub_L",
+        "Wheel_Hub_R",
+        "Wheel_Spacer_L_1",
+        "Wheel_Spacer_R_1"
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "travel_mm": 45,
+      "step_mm": 1,
+      "failures": []
+    },
+    {
+      "case": "Motor_shaft_bearing_cartridge_L",
+      "moving": [
+        "Drive_Motor_L",
+        "Wheel_Axle_L",
+        "Wheel_Bearing_L_Inner",
+        "Wheel_Bearing_L_Outer",
+        "Wheel_Spacer_L_0",
+        "S288_Output_L_Inner",
+        "S288_Output_L_Outer",
+        "Wheel_Output_Screw_L_0",
+        "Wheel_Output_Screw_L_1",
+        "Wheel_Output_Screw_L_2",
+        "Wheel_Output_Screw_L_3",
+        "Wheel_Output_Screw_L_4",
+        "Wheel_Output_Screw_L_5"
+      ],
+      "removed_first": [
+        "Body_Lower",
+        "Motor_Retainer",
+        "Motor_Retainer_Pad_-1",
+        "Motor_Retainer_Pad_1",
+        "Shell_Insert_0",
+        "Shell_Insert_1",
+        "Shell_Insert_2",
+        "Shell_Insert_3",
+        "Shell_Screw_0",
+        "Shell_Screw_1",
+        "Shell_Screw_2",
+        "Shell_Screw_3",
+        "Tire_L",
+        "Tire_R",
+        "Wheel_Cap_Clamp_Screw_0",
+        "Wheel_Cap_Clamp_Screw_1",
+        "Wheel_Cap_Clamp_Screw_2",
+        "Wheel_Cap_Clamp_Screw_3",
+        "Wheel_End_Screw_L",
+        "Wheel_End_Screw_R",
+        "Wheel_End_Washer_L",
+        "Wheel_End_Washer_R",
+        "Wheel_Hub_L",
+        "Wheel_Hub_R",
+        "Wheel_Spacer_L_1",
+        "Wheel_Spacer_R_1"
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "travel_mm": 60,
+      "step_mm": 1,
+      "failures": []
+    },
+    {
+      "case": "Motor_shaft_bearing_cartridge_R",
+      "moving": [
+        "Drive_Motor_R",
+        "Wheel_Axle_R",
+        "Wheel_Bearing_R_Inner",
+        "Wheel_Bearing_R_Outer",
+        "Wheel_Spacer_R_0",
+        "S288_Output_R_Inner",
+        "S288_Output_R_Outer",
+        "Wheel_Output_Screw_R_0",
+        "Wheel_Output_Screw_R_1",
+        "Wheel_Output_Screw_R_2",
+        "Wheel_Output_Screw_R_3",
+        "Wheel_Output_Screw_R_4",
+        "Wheel_Output_Screw_R_5"
+      ],
+      "removed_first": [
+        "Body_Lower",
+        "Motor_Retainer",
+        "Motor_Retainer_Pad_-1",
+        "Motor_Retainer_Pad_1",
+        "Shell_Insert_0",
+        "Shell_Insert_1",
+        "Shell_Insert_2",
+        "Shell_Insert_3",
+        "Shell_Screw_0",
+        "Shell_Screw_1",
+        "Shell_Screw_2",
+        "Shell_Screw_3",
+        "Tire_L",
+        "Tire_R",
+        "Wheel_Cap_Clamp_Screw_0",
+        "Wheel_Cap_Clamp_Screw_1",
+        "Wheel_Cap_Clamp_Screw_2",
+        "Wheel_Cap_Clamp_Screw_3",
+        "Wheel_End_Screw_L",
+        "Wheel_End_Screw_R",
+        "Wheel_End_Washer_L",
+        "Wheel_End_Washer_R",
+        "Wheel_Hub_L",
+        "Wheel_Hub_R",
+        "Wheel_Spacer_L_1",
+        "Wheel_Spacer_R_1"
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "travel_mm": 60,
+      "step_mm": 1,
+      "failures": []
+    }
+  ],
+  "cap_tools": [
+    {
+      "index": 0,
+      "hits": []
+    },
+    {
+      "index": 1,
+      "hits": []
+    },
+    {
+      "index": 2,
+      "hits": []
+    },
+    {
+      "index": 3,
+      "hits": []
+    }
+  ],
+  "load_screening": {
+    "assumed_mass_kg": 1.5,
+    "assumed_dynamic_factor": 3.0,
+    "wheel_radial_load_N": 22.1,
+    "bearing_span_mm": 10.0,
+    "wheel_overhang_mm": 20.0,
+    "inner_bearing_reaction_magnitude_N": 44.1,
+    "outer_bearing_reaction_magnitude_N": 66.2,
+    "screening_torque_Nm": 0.6,
+    "output_screw_tangential_force_each_N": 19.0,
+    "smooth_6mm_shaft_bending_MPa": 21,
+    "smooth_6mm_shaft_torsion_MPa": 14,
+    "nominal_von_Mises_MPa": 32,
+    "qualification": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+  },
+  "sources": [
+    "mechanical/sources/v1_2/unitree_servo_manual.pdf p2 S288 only",
+    "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/686ZZ-miniature-bearing-6x13x5mm.pdf"
+  ],
+  "physical_qualification": false
+}

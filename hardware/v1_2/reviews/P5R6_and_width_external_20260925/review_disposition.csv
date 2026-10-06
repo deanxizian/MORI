@@ -1,0 +1,13 @@
+﻿id,source,opinion,decision,status,action,evidence,boundary
+W01,线宽审查 §1,R09 最大值未提供,修正说明,PASS,原项目实际最大 2.00000108 mm；完整规则入包，原生错误宽度检出验证,evidence/source_rules_R08_R09_R39.json,不修改源规则数值
+W02,线宽审查 §2,四板 1502 段在允许范围内,采纳并独立复核,PASS,逐段导出实际宽度与适用线宽规则，原生 ERC/DRC 复查,all_1502_segments.csv,不包括铺铜窄颈、热焊盘辐条或载流温升资格
+W03,线宽审查 §3,R39 范围与前级五段 0.20 mm 应明确,采纳范围澄清，保留铜线,PASS,按实际 R39 条件明确只匹配命名差分对；四个功能区段共十二段全部检查,evidence/kelvin_complete_sense_paths.json,原规则没有跨 R3/R4 自动延伸功能链要求；未声称实测精度
+W04,线宽审查 §4,同一网最小宽度不等于主电流瓶颈,采纳,PASS,关联精确同源的 27 条主负载通路检查，区分检测/自举支路,evidence/reused_geometry_evidence.json,载流/温升仍 NOT_TESTED
+P01,P5R6复审 §1,自举长度与旧报告有差异,修正度量说明,PASS,复算线段端点与附加焊盘中心连接两种口径；U70 差值 0.175 mm,evidence/bootstrap_length_definitions.json,不是连接缺陷；不是寄生电感实测
+P02,P5R6复审 §1,SW 四组有效并联孔已修改,采纳，保留 P5R6,PASS,外部对象与原生 PCB 哈希一致；沿用每组双 0.30 mm 孔的实际铜连通证据,evidence/reused_geometry_evidence.json,不宣称电流翻倍；孔铜与温升待实测
+P03,P5R6复审 §1/剩余工作,R61/R71 经地层返回，仍可优化,补充原生证据，不再次切地,PASS,明确已有隔离 In1 地走线返回芯片 GND，11 段/4 孔，检查源哈希相同,../../layout_P5R6/reports/power/buck_returns.json,保留 R13 局部例外，纹波/动态 NOT_TESTED
+P04,P5R6复审 §2/§4,BAT54H/IMU 需核对实际 Paste 输出,完成原生检查预览,PASS,6 个 BAT54H 与 14 个 IMU 开口逐个核对，直接检查 SVG 轮廓,paste_preview/apertures.json,不是钢网制造文件；工艺/焊接 NOT_TESTED
+P05,P5R6复审 §3,J6/J15/后板标识保留，RAW/FUSED 不得桥接,采纳,PASS,接口与原理图/PCB 不改，保留现有丝印与连接器表,../../layout_P5R6/connector_pinmap.csv,外部 PD/3S 模块未选定，系统校核 BLOCKED
+P06,P5R6复审 放行前,完整工程重跑原生 ERC/DRC,完成,PASS,四板 10.0.6 全严重级别、重新填铜、parity 均 0；未增加忽略,verification.json,DRC 不证明全部布线风格及电气/机械性能合格
+P07,P5R6复审 放行前,板厂 DFM/Gerber/钻孔/CPL/钢网放行审核,保留后续验收,BLOCKED,更新范围说明，局部 Paste 预览已做；本轮不发布制造包,README.md,供应商工艺/完整装配/充电系统尚未闭合，未授权下单
+P08,P5R6复审 样板,启动/阶跃/纹波/温升/联锁实测,采纳测试要求,NOT_TESTED,保留现有测试计划及空白记录，设备能力边界明确,../../layout_P5R6/test_plan.md,无实物；未生成任何测试通过记录

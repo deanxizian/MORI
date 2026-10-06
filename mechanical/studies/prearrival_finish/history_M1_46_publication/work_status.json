@@ -1,0 +1,104 @@
+{
+  "objective": "在拿到实物之前，先把能做的都做了",
+  "revision": "V1.2-M1.46",
+  "source_blend_sha256": "fcaca70cf1bd9d1a19443395279c06c10758fcc5811a0d1c399e83497ad36a08",
+  "updated_utc": "2026-10-01T20:31:01.811458+00:00",
+  "geometry_equivalence": "interface_sync/source_equivalence.json",
+  "status": "BLOCKED",
+  "status_scope": "Remaining design/data decisions; this is not goal status or a claim all digital work is complete",
+  "manufacturing_release": false,
+  "completed": [
+    {
+      "id": "rear_mesh",
+      "status": "PASS",
+      "detail": "Head_Rear旧接缝残面已修复；21/21候选STL拓扑通过，独立范围审计通过。"
+    },
+    {
+      "id": "geometry_delivery",
+      "status": "PASS",
+      "detail": "主模型、电子细模、STL与渲染同源；原有检查集123 PASS、0 FAIL、17 BLOCKED、19 NOT_TESTED，不包含新增反力夹口专项失败。"
+    },
+    {
+      "id": "animation",
+      "status": "PASS",
+      "detail": "M1.46-A1，82.5秒、1980帧、22章；源模型一致，仍是无完整线束的装配示意。"
+    },
+    {
+      "id": "engineering_calculation",
+      "status": "PASS",
+      "detail": "209个当前实体质量覆盖、390姿态、惯量及载荷情景已计算；目标/能力未获放行。"
+    },
+    {
+      "id": "interface_document",
+      "status": "PASS",
+      "detail": "轮轴及已完成事项的旧交接信息已修正；两次重建218个零件几何/位置保持，216个源对象及211个动画对象严格对比通过。"
+    }
+  ],
+  "additional_checks": {
+    "report": "thin_candidate_service.json",
+    "counts": {
+      "PASS": 9,
+      "FAIL": 3,
+      "NOT_TESTED": 1
+    },
+    "scope": "Independent candidate service checks; main reaction-link failure reproduced in reaction_service_sections.json and reaction_link_entry_baseline.json. Not merged into the earlier general validation count."
+  },
+  "remaining": [
+    {
+      "id": "reaction_assembly",
+      "item": "反力夹口初次装配",
+      "status": "BLOCKED",
+      "owner": "机械；依赖舵盘接口定型",
+      "detail": "现有主模型的夹口螺钉装入、直柄工具与预装件直线穿入路线受Pitch_Yoke阻挡。离机组合搜索仍未找到完整路径。局部削平/移孔C1可改善工具路径，但仍撞后侧耳座，未应用；继续削小会切入夹持结构，需结合最终舵盘定型。",
+      "evidence": "reaction_assembly_review.html"
+    },
+    {
+      "id": "thin_features",
+      "item": "三处薄边修正",
+      "status": "BLOCKED",
+      "owner": "机械；待用户确认",
+      "detail": "转台旧螺母通道残边约0.04mm、反力夹口约0.4mm、轮驱鞍座约0.8mm。独立候选通过130姿态及轮驱拆装检查，尚未应用；夹口完整装配仍未闭合。",
+      "evidence": "thin_candidate.html"
+    },
+    {
+      "id": "harness",
+      "item": "完整线束",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件线材输入",
+      "detail": "IMU两半束各有18条独立可行候选，但324个配对均未满足3.1mm预留间距；完整线束仍未闭合。J10端约5.3mm轴向空间未找到满足预设6mm弯曲半径的路线。头部服务环、FFC、固定点和拆装余量仍缺。",
+      "evidence": "HARDWARE_INPUT_REQUEST.md"
+    },
+    {
+      "id": "hardware_selection",
+      "item": "未定采购件与安装",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件；路线/扩展交接待确认",
+      "detail": "轮胎105×18mm仍是占位，商品、胎圈和防滑脱配合未定；采购路线已提问。充电模块、制动电阻、保险及座、断电/物理急停、维护托架联锁、端子和线材仍待硬件确定。",
+      "evidence": "MECHANICAL_PURCHASE_REQUIREMENTS.md"
+    },
+    {
+      "id": "supplier_interfaces",
+      "item": "传动与插接资料",
+      "status": "BLOCKED",
+      "owner": "厂家资料＋机械/硬件",
+      "detail": "SCS0009匹配舵盘及短轴/锁紧叠层、S288输出自攻螺钉规格、WeAct E成品孔/针与有效插接长度仍缺。已整理可在到货前询问的清单，尚未联系供应商。",
+      "evidence": "SUPPLIER_DATA_REQUEST.md"
+    },
+    {
+      "id": "load_budget",
+      "item": "质量与驱动预算",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件工作点",
+      "detail": "当前名义估算约1.323kg，超过1.0–1.2kg目标，且缺未选模块和完整线束。现有390姿态与载荷情景计算已更新；S288在9V的连续能力仍无资料，不能用堵转转矩放行。",
+      "evidence": "ENGINEERING.md"
+    },
+    {
+      "id": "physical_validation",
+      "item": "实物与打印验证",
+      "status": "NOT_TESTED",
+      "owner": "到货/试件后",
+      "detail": "CAM/相机照片估计细节、喇叭安装耳、电池与出线、排针排母实际插接、PA12配合和紧固、承载/蠕变/冲击、声学、温升与平衡需实物。",
+      "evidence": "../../reports/组装与打印.md"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM弯线与板卡下降</title><style>
+body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;background:#f4f6f5;color:#253b3d;max-width:1050px;margin:28px auto;padding:0 24px 60px}a{color:#096a74}h1{font-size:30px}.note{background:#fff0d9;padding:18px;border-radius:10px}.good{background:#e5f1e9;padding:18px;border-radius:10px}img{width:100%;border-radius:8px}figure{margin:20px 0}figcaption{font-size:14px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){.pair{display:block}}</style>
+<p><a href="../terminals/index.html">← 端子与前一版连续检查</a> · <a href="../../../index.html">当前待办</a></p>
+<h1>四根CAM线的规定成形动作已连续通过</h1>
+<p class="good">最后一根改从负侧小角度绕开，再逐步回正。四段动作共8681个自适应区间覆盖全过程，8个步骤边界与保留的线和端子一致。其余导线始终在场，线径和机器人零件未改。</p>
+<p class="note">通过的是从假定初始姿态到临时落座姿态的几何子步骤。颈部初次穿线、端子入壳、扎带操作、其他七根活动线与排线仍未连成完整工序；完整线束仍为BLOCKED，尚无最终裁线图。端子是目录尺寸重建包络，实物未验证。</p>
+<div class="pair"><figure><img src="contact_refined_forming/negative_return_branch/side6.png" alt="最后一根青色线从负侧绕开"><figcaption>参数0.8025：从负侧6°绕开已放好的三根线。</figcaption></figure><figure><img src="contact_refined_forming/negative_return_branch/side3.png" alt="最后一根线逐步回正"><figcaption>参数0.825：逐步回正至负侧3°。</figcaption></figure></div>
+<figure><img src="contact_refined_forming/negative_return_branch/returned.png" alt="最后一根线回到零侧转角度，仍在弯曲途中"><figcaption>参数0.875：侧转角归零，仍在成形途中；后续到1.0的1032个区间也已通过。</figcaption></figure>
+<p>普通线间及线对结构保留0.3mm裕量。裸端子只证明名义不相交，通用0.3mm操作裕量未闭合。板卡8→2mm下降的既有1057个连续区间保持通过。主模型M1.47、STL与正式动画未改。</p>
+<p><a href="contact_refined_forming/negative_complete/screen.json">完整四段路径与覆盖</a> · <a href="contact_refined_forming/negative_complete/junctions.json">步骤衔接检查</a> · <a href="contact_refined_forming/first_three_continuous/screen.json">前三根连续记录</a> · <a href="contact_refined_forming/negative_tail/screen.json">最后一根连续记录</a> · <a href="contact_refined_forming/negative_return_branch/review.blend">归位阶段Blender</a> · <a href="README.md">完整说明</a></p>
+<h2>空胶壳的外部接近空间已检查</h2>
+<p>空胶壳从上方8mm沿轴线接近，完整扫掠体对219个当时结构实体及12组非接合导线检查通过。图中头托半透明仅方便查看，完整实体仍参与计算。配套端子及其最后2mm压接邻域不在这项外部空间证明内；针腔、锁舌和实际装壳操作仍未验证。</p>
+<div class="pair"><figure><img src="contact_refined_forming/housing_approach/initial.png" alt="橙色胶壳外形分配在导线端子上方"><figcaption>空胶壳从上方接近。图中橙色只是目录外形分配。</figcaption></figure><figure><img src="contact_refined_forming/housing_approach/final.png" alt="胶壳外形分配接近最终位置，内部配合未验证"><figcaption>外形分配到位；不代表端子已锁住或完成电气装配。</figcaption></figure></div>
+<p><a href="contact_refined_forming/housing_approach/screen.json">外部接近检查</a> · <a href="contact_refined_forming/housing_approach/SOURCE_NOTE.md">资料与范围说明</a> · <a href="contact_refined_forming/housing_approach/review.blend">独立Blender</a></p>
+<h2>根部扎带：剪尾空间已补查，初次装入仍需完成</h2>
+<p>219 个结构实体、12 段导线和 4 个散端子均参与检查。工具从上方直线接近 60 mm、扎带尾朝外 110 mm 的空间分配名义通过；工具与扎带头及带身约 0.25 mm 的间隔没有达到通用 0.3 mm 余量。工具仅为目录尺寸方盒，实际钳口、抓持和剪断未验证。</p>
+<div class="pair"><figure><img src="contact_refined_forming/root_tie_access/complete_tool.png" alt="完整剪尾工具与四根未成形线尾"><figcaption>绿色：工具；橙色：扎带尾操作空间。计算使用完整实体。</figcaption></figure><figure><img src="contact_refined_forming/root_tie_access/root_detail.png" alt="根部扎带与剪尾工具局部"><figcaption>剪尾工具可名义接近，不能据此宣称扎带已能安装或收紧。</figcaption></figure></div>
+<p class="note">不能先收紧再沿所查竖直轴穿端子：四个目录端子包络都碰到打印座和带身。下方已补齐未装扎带时的绝缘线局部入座动作；散端子初次穿入并到达该起点的路线，以及扎带穿绕收紧，仍未完成。未为此修改主模型。</p>
+<p><a href="contact_refined_forming/root_tie_access/README.md">完整说明</a> · <a href="contact_refined_forming/root_tie_access/screen.json">工具与尾部空间检查</a> · <a href="contact_refined_forming/root_tie_access/contact_feed.json">收紧后穿端子的失败记录</a> · <a href="contact_refined_forming/root_tie_access/review.blend">独立 Blender</a></p><section id="root-seating"><h2>新补齐：四根导线先放入固定槽</h2>
+<p class="good">扎带尚未安装时，四根线从前方 1.5 mm 移入槽内。21 个位置和 256 个连续区间均通过；下方端点、线径、总线长保持，末端剩余直线段全程大于 5.2 mm。</p>
+<div class="pair"><figure><img src="contact_refined_forming/root_seating/aligned_tails/before_seating.png" alt="四根绝缘线位于固定槽前方，根部扎带尚未安装"><figcaption>入座前：根部暂时抬高约 0.86 mm。</figcaption></figure><figure><img src="contact_refined_forming/root_seating/aligned_tails/seated.png" alt="四根绝缘线移入固定槽，扎带仍未安装"><figcaption>入座后：恢复原有根部位置。</figcaption></figure></div>
+<p>这只补齐了局部入座动作。初次穿线到达起点、扎带穿绕收紧、端子入壳和其他线路仍未完成；主模型未改。</p>
+<p><a href="contact_refined_forming/root_seating/aligned_tails/README.md">范围与完整线尾图</a> · <a href="contact_refined_forming/root_seating/aligned_tails/continuous.json">连续记录</a> · <a href="contact_refined_forming/root_seating/aligned_tails/verification.json">独立复核</a></p>
+<p class="note">新找到的同料号 JST 端子图显示，底部锁止弹片位于 1.35 mm 尺寸线之外。已有简化方盒检查不包括完整弹片；不能视为真实端子已通过。<a href="../../ssh_catalogue_addendum/README.md">官方原图与新增尺寸说明</a>。</p></section><section class="note"><h2>最新：统一端子预留尺寸的连续检查</h2><p>新增 JST APSH 同料号端子细节图及 M5Stack 官方摇臂参考。同样较大端子预留尺寸下，穿入1228、回位256、入座256、四段弯线1735个连续区间通过；身体侧材料暂存、真实端子入壳和扎带仍未完成。<a href="contact_refined_forming/root_seating/large_contact_downstream/index.html">查看后续复核</a> · <a href="../../supplier_source_update/index.html">公开资料与来源</a>。</p></section><details><summary>查看旧路线的碰撞、搜索记录及此前子步骤</summary><h2>旧路线：连续检查发现中途相交</h2>
+<p class="note">之前644个位置通过的候选，在最后一根线归位途中仍会与上游另一根线相交。中心线距离约0.268451mm，小于两线半径之和0.6604mm。完整工序仍为BLOCKED；主模型未改。</p>
+<div class="pair"><figure><img src="contact_refined_forming/continuous/conflict_context.png" alt="保持四根导线与头部结构的中间姿态"><figcaption>遗漏位置：最后一根线归位途中，参数0.846875。</figcaption></figure><figure><img src="contact_refined_forming/continuous/conflict_closeup.png" alt="青色活动线穿过橙色上游线"><figcaption>两线局部隔离显示，线径保持0.6604mm；相交已作线段距离复核。</figcaption></figure></div>
+<p>加密后的局部路线也在连接动作中遇到问题。后续改为每段动作先通过连续界限再接受；最新关键中段搜索状态BLOCKED，只对应最后一根线的0.75→0.875，不能当成完整四线装配通过。端子入壳、初始穿线、扎带与其他线路仍需完成。</p>
+<p><a href="contact_refined_forming/continuous/first_failure_segment_distance.json">相交证据</a> · <a href="contact_refined_forming/continuous/screen.json">连续失败记录</a> · <a href="contact_refined_forming/return_corridor/continuous/screen.json">加密局部路线检查</a> · <a href="contact_refined_forming/critical_return_continuous/screen.json">关键中段连续搜索</a> · <a href="README.md">完整说明</a></p><hr><h2>此前有限筛查记录</h2><h2>旧候选的644个有限位置</h2>
+<p class="good">按几何槽位3→2→1→0逐根操作，最后一根先侧绕、临时抬高再归位。四段路径共644个检查位置已通过线/结构筛查及名义端子不相交检查；最终线形和M1.47主模型保持不变。</p>
+<p class="note">这是有限位置证据。连续弯线、真实端子入壳、扎带安装和完整装配尚未完成。相邻目录端子的0.2mm名义间隔也没有被改写为通用0.3mm裕量通过；尚无供应商裁线图或制造放行。</p>
+<figure><img src="contact_refined_forming/start.png" alt="四根导线和名义端子的初始竖直状态"><figcaption>起始假定：四根线已穿过颈部并接续；初始穿入、暂放、固定仍需补齐。</figcaption></figure>
+<div class="pair"><figure><img src="contact_refined_forming/last_wire_sideways.png" alt="青色的最后一根导线绕开已放好的另外三根线"><figcaption>最后一根暂时侧绕48°并抬高，其他三根保持在位。</figcaption></figure><figure><img src="contact_refined_forming/all_four_positioned.png" alt="四根线均到达最终位置上方2毫米"><figcaption>四根线均到+2mm状态；不代表端子入壳和紧固已完成。</figcaption></figure></div>
+<p>只检查导线时曾得到一条不完整的候选；加入全部散端子后发现局部问题，已调整最后一根线的临时抬高量并重查644处。各类早期失败保留，未改变线径、零件或孔位。</p>
+<p><a href="contact_refined_forming/screen.json">新路径与检查记录</a> · <a href="contact_refined_forming/review.blend">独立Blender</a> · <a href="outer_first_forming/contacts.json">修正前端子问题</a> · <a href="README.md">完整证据边界</a></p><hr>
+<h2>此前完成和保留的问题</h2><h2>板卡下降通过；原同步弯线失败</h2>
+<p class="note">新加入上游导线后，确认原候选在弯线途中与另一根线相交。完整工序仍为BLOCKED，主模型M1.47未改。以下PASS只对应板卡从8mm下降到2mm这一子步骤。</p>
+<h2>已完成：固定插头，板卡下降6mm</h2><p class="good">1057个区间覆盖整个行程。导线、当时已装结构件和插头均参与检查；不是把25个截图当成连续证明。</p>
+<div class="pair"><figure><img src="board_at8.png" alt="CAM板位于上方8毫米"><figcaption>开始：CAM板在+8mm，插头与导线在+2mm。</figcaption></figure><figure><img src="board_at2.png" alt="CAM板下降到上方2毫米"><figcaption>结束：CAM板到+2mm，插头和导线保持原位。</figcaption></figure></div>
+<p>贴合面的检查使用完整凸插头直线扫掠体，没有删面或缩小插头。几乎为零的名义面间距不是制造余量；真实插座识别、端子入壳和插合深度仍待确认。</p>
+<h2>确认的障碍：两根导线在途中相交</h2><figure><img src="upstream_collision.png" alt="青色弯曲导线与橙色上游导线相交"><figcaption>隔离显示相关两根线：参数0.8，中心距离上界0.527150mm，小于两线半径之和0.6604mm。并非只有安全余量不足。</figcaption></figure>
+<p>提高回环、侧转整组线、先折尾段、逐根弯线的本轮具体候选仍有冲突，失败记录全部保留。已经停止对原失败路线继续计算只有结构件参与的连续检查；其全过程未覆盖，不能声称通过。</p>
+<p>上方新顺序补齐了有限位置候选，接下来仍需连续过程及完整装配核查，不为早期失败直接给支架开孔。其余七根跨关节线和排线等仍需完成，最终裁线图尚未发布。</p>
+<p><a href="README.md">完整说明与候选表</a> · <a href="board_descent_continuous.json">连续下降结果</a> · <a href="packing_collision_witness.json">相交证据</a> · <a href="one_wire_at_a_time/screen.json">逐根弯线记录</a> · <a href="review.blend">独立Blender</a> · <a href="commands.json">命令</a> · <a href="review_manifest.json">交付清单</a></p></details></html>

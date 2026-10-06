@@ -1,0 +1,24 @@
+00:00.271  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+RENDER face_detail
+00:04.676  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/face_detail.png'
+RENDER face_surface_side
+00:06.646  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/face_surface_side.png'
+RENDER frame_underside
+00:08.220  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/frame_underside.png'
+RENDER rear_interface_detail
+00:09.940  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/rear_interface_detail.png'
+RENDER rear_interface_section
+00:11.325  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/rear_interface_section.png'
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/mechanical/scripts/render.py", line 179, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/render.py", line 172, in main
+    rows.append(dict(default_pitch_deg=P['head_joint'].get('default_pitch_deg',0) if name in ['45_assembled','front','side','rear','top','bottom','face_detail','docked'] else 0,view=name,geometry_sha256=dig.hexdigest(),visibility_mode=name,ortho_scale_mm=sc.camera.data.ortho_scale,camera_mm=list(sc.camera.location),target_mm=list(views[name][1]),resolution=a.size,samples=a.samples))
+                                                                                                                                                                                                                                                                                                                                                                       ^^^^^^
+AttributeError: 'tuple' object has no attribute 'size'
+
+Error: script failed, file: 'mechanical/scripts/render.py', exiting.
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

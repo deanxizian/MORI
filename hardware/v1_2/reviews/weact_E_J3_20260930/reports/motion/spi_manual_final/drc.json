@@ -1,0 +1,178 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T23:51:06",
+    "ignored_checks": [],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "MORI_motion_P5R7.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1456 mm)",
+            "items": [
+                {
+                    "description": "走线 [/CHG_N] (B.Cu), 长度: 4.2672 mm",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 20.9296
+                    },
+                    "uuid": "65379008-dbbc-45ee-b075-5cf238e943e3"
+                },
+                {
+                    "description": "过孔 [/IMU_SCK] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 29.5,
+                        "y": 24.25
+                    },
+                    "uuid": "d4bf2439-85aa-472e-810b-599683482d56"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1835 mm)",
+            "items": [
+                {
+                    "description": "走线 [/CHG_N] (F.Cu), 长度: 6.4008 mm",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 25.1968
+                    },
+                    "uuid": "9cb6132a-e98a-4bf2-b7af-284f89867331"
+                },
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 6.5620 mm",
+                    "pos": {
+                        "x": 28.6,
+                        "y": 24.4
+                    },
+                    "uuid": "d77711f8-fc00-455f-aa76-cd3dceff8055"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "短路了两个不同网络的项目 (网络 /CHG_N 和 /IMU_CS)",
+            "items": [
+                {
+                    "description": "过孔 [/CHG_N] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 25.1968
+                    },
+                    "uuid": "0e2f0cf8-a2d7-4576-8e54-f327b7682edf"
+                },
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 6.5620 mm",
+                    "pos": {
+                        "x": 28.6,
+                        "y": 24.4
+                    },
+                    "uuid": "d77711f8-fc00-455f-aa76-cd3dceff8055"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "孔间距违规 (规则 'R05-R07 hole to copper' 间距 0.3000 mm; 实际 0.1335 mm)",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 6.5620 mm",
+                    "pos": {
+                        "x": 28.6,
+                        "y": 24.4
+                    },
+                    "uuid": "d77711f8-fc00-455f-aa76-cd3dceff8055"
+                },
+                {
+                    "description": "过孔 [/CHG_N] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 25.1968
+                    },
+                    "uuid": "0e2f0cf8-a2d7-4576-8e54-f327b7682edf"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "短路了两个不同网络的项目 (网络 /CHG_N 和 /IMU_SCK)",
+            "items": [
+                {
+                    "description": "走线 [/CHG_N] (B.Cu), 长度: 4.2672 mm",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 20.9296
+                    },
+                    "uuid": "65379008-dbbc-45ee-b075-5cf238e943e3"
+                },
+                {
+                    "description": "走线 [/IMU_SCK] (B.Cu), 长度: 2.0860 mm",
+                    "pos": {
+                        "x": 27.325,
+                        "y": 25.725
+                    },
+                    "uuid": "f901d9b5-2ca0-471f-9240-5011260d043f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "走线 [/IMU_SCK] (B.Cu), 长度: 0.7000 mm",
+                    "pos": {
+                        "x": 28.8,
+                        "y": 24.25
+                    },
+                    "uuid": "372c6030-4706-4ea7-9814-e9ff5713f343"
+                },
+                {
+                    "description": "走线 [/CHG_N] (B.Cu), 长度: 4.2672 mm",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 20.9296
+                    },
+                    "uuid": "65379008-dbbc-45ee-b075-5cf238e943e3"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "顶层阻焊开窗区域与不同网络的项目相连",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 6.5620 mm",
+                    "pos": {
+                        "x": 28.6,
+                        "y": 24.4
+                    },
+                    "uuid": "d77711f8-fc00-455f-aa76-cd3dceff8055"
+                },
+                {
+                    "description": "过孔 [/CHG_N] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 28.8544,
+                        "y": 25.1968
+                    },
+                    "uuid": "0e2f0cf8-a2d7-4576-8e54-f327b7682edf"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+  "revision": "V1.2-M1.51",
+  "status": "PROTOTYPE / UNVALIDATED",
+  "source": "config/geometry.json#/head_axial_retention",
+  "changed_existing": [
+    "Pitch_Yoke",
+    "Yaw_Base",
+    "Yaw_Bearing"
+  ],
+  "added": [
+    "Yaw_Anti_Lift_Keeper",
+    "Yaw_Keeper_Screw_0",
+    "Yaw_Keeper_Screw_1",
+    "Yaw_Keeper_Insert_0",
+    "Yaw_Keeper_Insert_1"
+  ],
+  "bearing_center_z_mm": 152.5,
+  "construction_center_z_mm": 157.0,
+  "bearing_shift_mm": -4.5,
+  "keeper_z_mm": [
+    159.6,
+    163.6
+  ],
+  "assembly": {
+    "keeper_bench_side_travel_mm": 60,
+    "vertical_pair_travel_mm": 90,
+    "tool_yaw_deg": 60,
+    "tool_AF_mm": 2,
+    "tool_long_leg_mm": 70,
+    "tool_cross_leg_mm": 20,
+    "sequence": [
+      "Preinstall two inserts on detached bridge; bearing seated before head insertion.",
+      "Side-load C keeper onto detached yaw drive seat.",
+      "Lower keeper and yaw drive seat together; pitch cradle/head absent, reaction link released/travelling together.",
+      "Turn yaw seat +60deg to expose both screw axes; install two M3x8 screws downward with long-leg2AF key.",
+      "Return yaw to zero, then fit pitch cradle/head.",
+      "Removal: remove pitch assembly, undo keeper screws, release reaction connection and lift keeper with yaw seat."
+    ]
+  },
+  "limits": [
+    "Nominal0.4mm upward-stop clearance, not bearing preload or zero backlash.",
+    "SCS0009 horn, center screw and final transmission axial stack remain BLOCKED by manufacturer evidence.",
+    "Full harness routing must account for new ring; NOT_TESTED.",
+    "PA12 shrinkage, insert installation/strength, bearing fits, creep and physical assembly remain NOT_TESTED."
+  ]
+}

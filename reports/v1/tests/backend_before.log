@@ -1,0 +1,28 @@
+...F.                                                                    [100%]
+=================================== FAILURES ===================================
+___________ test_gateway_cross_client_memory_collision_leaks_nothing ___________
+
+tmp_path = PosixPath('/private/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/pytest-of-dean/pytest-20/test_gateway_cross_client_memo0')
+
+    def test_gateway_cross_client_memory_collision_leaks_nothing(tmp_path):
+     g=Gateway(tmp_path,Clock());r=Rig();r.d=g.device
+     a=g.auth.create('owner',['memory']);b=g.auth.create('owner',['memory']);r.p=a
+     c=r.cmd('MEMORY_REMEMBER',{'text':'private','category':'fact','confirmed':True,'sensitive':False,'source_id':'manual'},client=a['client_id'])
+     asyncio.run(g.dispatch(c,a))
+     q=r.cmd('MEMORY_QUERY',{'query':''},client=a['client_id']);out=asyncio.run(g.dispatch(q,a));assert out['data']
+>    copied=dict(q,client_id=b['client_id']);res=asyncio.run(g.dispatch(copied,b));assert res['status']=='REJECTED' and not res.get('data')
+E    AssertionError: assert ('COMPLETED' == 'REJECTED'
+E      
+E      - REJECTED
+E      + COMPLETED)
+
+backend/tests/test_storage_gateway.py:45: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /Users/dean/Documents/MORI/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/test_storage_gateway.py::test_gateway_cross_client_memory_collision_leaks_nothing
+1 failed, 4 passed, 1 warning in 0.56s

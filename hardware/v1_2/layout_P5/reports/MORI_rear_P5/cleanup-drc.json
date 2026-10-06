@@ -1,0 +1,384 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-23T15:06:17",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "MORI_rear_P5.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_F.Cu' [/GND]在 F.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3daa9025-510d-4d7b-b852-bfbabcb47c9e"
+                },
+                {
+                    "description": "填充区 'P5_GND_B.Cu' [/GND]在 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "51ea3b32-23d7-40ca-90cb-bef9087ee5c4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_B.Cu' [/GND]在 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "51ea3b32-23d7-40ca-90cb-bef9087ee5c4"
+                },
+                {
+                    "description": "填充区 'P5_GND_B.Cu' [/GND]在 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "51ea3b32-23d7-40ca-90cb-bef9087ee5c4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+            "items": [
+                {
+                    "description": "走线 [/VBUS_FUSED] (B.Cu), 长度: 1.8000 mm",
+                    "pos": {
+                        "x": 17.2,
+                        "y": 15.7
+                    },
+                    "uuid": "3ba9e4fb-a676-4d69-9776-77b3f6595e7c"
+                },
+                {
+                    "description": "走线 [/VBUS_FUSED] (B.Cu), 长度: 0.7071 mm",
+                    "pos": {
+                        "x": 17.32,
+                        "y": 15.2
+                    },
+                    "uuid": "ab6829b7-4cdf-4342-ad9e-895dfc06273a"
+                }
+            ],
+            "severity": "error",
+            "type": "track_angle"
+        },
+        {
+            "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+            "items": [
+                {
+                    "description": "走线 [/VBUS_FUSED] (B.Cu), 长度: 0.7071 mm",
+                    "pos": {
+                        "x": 17.32,
+                        "y": 15.2
+                    },
+                    "uuid": "ab6829b7-4cdf-4342-ad9e-895dfc06273a"
+                },
+                {
+                    "description": "走线 [/VBUS_FUSED] (B.Cu), 长度: 1.8000 mm",
+                    "pos": {
+                        "x": 17.2,
+                        "y": 15.7
+                    },
+                    "uuid": "3ba9e4fb-a676-4d69-9776-77b3f6595e7c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_angle"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 F.Cu; 2 条引线与死铜相连)",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_F.Cu' [/GND]在 F.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3daa9025-510d-4d7b-b852-bfbabcb47c9e"
+                },
+                {
+                    "description": "J3 的PTH 焊盘 2 [/GND]",
+                    "pos": {
+                        "x": 10.45,
+                        "y": 19.5
+                    },
+                    "uuid": "d7c435d4-12bf-49ec-8476-61a570785caf"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 B.Cu; 焊盘 最小引线数量 4; 实际 2)",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_B.Cu' [/GND]在 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "51ea3b32-23d7-40ca-90cb-bef9087ee5c4"
+                },
+                {
+                    "description": "USB1 的PTH 焊盘 SH [/GND]",
+                    "pos": {
+                        "x": 7.68,
+                        "y": 1.95
+                    },
+                    "uuid": "63318841-d05e-41dc-9069-31722e571f89"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 F.Cu; 焊盘 最小引线数量 4; 实际 3)",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_F.Cu' [/GND]在 F.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3daa9025-510d-4d7b-b852-bfbabcb47c9e"
+                },
+                {
+                    "description": "USB1 的PTH 焊盘 SH [/GND]",
+                    "pos": {
+                        "x": 7.68,
+                        "y": 1.95
+                    },
+                    "uuid": "63318841-d05e-41dc-9069-31722e571f89"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 F.Cu; 焊盘 最小引线数量 4; 实际 1)",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_F.Cu' [/GND]在 F.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3daa9025-510d-4d7b-b852-bfbabcb47c9e"
+                },
+                {
+                    "description": "USB1 的PTH 焊盘 SH [/GND]",
+                    "pos": {
+                        "x": 7.68,
+                        "y": 6.13
+                    },
+                    "uuid": "6048e57e-f42b-4625-9740-e960e40c2284"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 B.Cu; 2 条引线与死铜相连)",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_B.Cu' [/GND]在 B.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "51ea3b32-23d7-40ca-90cb-bef9087ee5c4"
+                },
+                {
+                    "description": "J2 的PTH 焊盘 2 [/GND]",
+                    "pos": {
+                        "x": 19.0,
+                        "y": 17.7
+                    },
+                    "uuid": "318d5160-cd25-4526-ac80-9e1e1358a9b6"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 F.Cu; 焊盘 最小引线数量 4; 实际 3)",
+            "items": [
+                {
+                    "description": "填充区 'P5_GND_F.Cu' [/GND]在 F.Cu 上, 优先级 0",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3daa9025-510d-4d7b-b852-bfbabcb47c9e"
+                },
+                {
+                    "description": "USB1 的PTH 焊盘 SH [/GND]",
+                    "pos": {
+                        "x": 16.32,
+                        "y": 6.13
+                    },
+                    "uuid": "5874cbd4-a18b-4fe9-a5f2-70e60da94503"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Edge.Cuts 上的 线段",
+                    "pos": {
+                        "x": 24.0,
+                        "y": 25.0
+                    },
+                    "uuid": "1fbfaf85-c465-4870-a7a7-e2d55b5108da"
+                },
+                {
+                    "description": "J2 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 17.54,
+                        "y": 25.76
+                    },
+                    "uuid": "68c426f3-2cf7-4b38-8e06-9cbb662c73fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Edge.Cuts 上的 线段",
+                    "pos": {
+                        "x": 24.0,
+                        "y": 25.0
+                    },
+                    "uuid": "1fbfaf85-c465-4870-a7a7-e2d55b5108da"
+                },
+                {
+                    "description": "J2 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 19.14,
+                        "y": 25.76
+                    },
+                    "uuid": "fcdccdcd-73c7-4c4e-a750-3e7ccded6b47"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "丝印间距 (规则 'R43 silk-to-silk' 间距 0.0500 mm; 实际 0.0100 mm)",
+            "items": [
+                {
+                    "description": "D3 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 12.69,
+                        "y": 10.85
+                    },
+                    "uuid": "71ee7dc8-b0b7-4d37-be6a-e4cfa2d41386"
+                },
+                {
+                    "description": "D2 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 12.56,
+                        "y": 9.0
+                    },
+                    "uuid": "a0559059-620d-4579-b9de-b9cbdd622e34"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "丝印间距 (规则 'R43 silk-to-silk' 间距 0.0500 mm; 实际 0.0100 mm)",
+            "items": [
+                {
+                    "description": "D2 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 12.56,
+                        "y": 9.0
+                    },
+                    "uuid": "a0559059-620d-4579-b9de-b9cbdd622e34"
+                },
+                {
+                    "description": "D3 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 12.69,
+                        "y": 9.15
+                    },
+                    "uuid": "cd28591f-7048-42e7-9494-75913ae26000"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "丝印间距 (规则 'R43 silk-to-silk' 间距 0.0500 mm; 实际 0.0100 mm)",
+            "items": [
+                {
+                    "description": "D2 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 12.56,
+                        "y": 10.7
+                    },
+                    "uuid": "260fcac2-66e5-4904-8ec6-95642727ae2d"
+                },
+                {
+                    "description": "D3 的 线段, 位于 B.Silkscreen",
+                    "pos": {
+                        "x": 12.69,
+                        "y": 10.85
+                    },
+                    "uuid": "71ee7dc8-b0b7-4d37-be6a-e4cfa2d41386"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

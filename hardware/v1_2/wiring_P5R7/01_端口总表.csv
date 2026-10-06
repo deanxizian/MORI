@@ -1,0 +1,35 @@
+﻿板,接口,用途,连接器,板座完整型号,针脚定义,对接对象,安装面,插入方向,配套端壳,端子,装配,注意,board_id
+电源板,J1,电池输入,AMASS XT30 2P,AMASS XT30UPB-M,1=GND；2=PACK_FUSED,成品3S电池，经外部总保险,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,1=GND，2=正极；电池及保险精确型号待确认,MORI_power_P5R6
+电源板,J2,轮降压器输入供电,AMASS XT30 2P,AMASS XT30UPB-M,1=GND；2=BAT_MON,外部9V降压器 VIN/GND,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,这里输出3S电池母线；不可直接接9V电机,MORI_power_P5R6
+电源板,J3,轮降压器输出回接,AMASS XT30 2P,AMASS XT30UPB-M,1=GND；2=W9_IN,外部9V降压器 VOUT/GND,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,接稳压9V输出；不可与J2直接短接,MORI_power_P5R6
+电源板,J4,头部降压器输入供电,AMASS XT30 2P,AMASS XT30UPB-M,1=GND；2=BAT_MON,外部6V降压器 VIN/GND,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,这里输出3S电池母线；不可直接接6V舵机,MORI_power_P5R6
+电源板,J5,头部降压器输出回接,AMASS XT30 2P,AMASS XT30UPB-M,1=GND；2=H6_IN,外部6V降压器 VOUT/GND,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,接稳压6V输出；不可与J4直接短接,MORI_power_P5R6
+电源板,J6,电池母线维护预留,AMASS XT30 2P,AMASS XT30UPB-M,1=GND；2=BAT_MON,不接线，DNP,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,DNP不装,默认不装；不是5V输出,MORI_power_P5R6
+电源板,J7,左轮电机电源及总线,JST XH 3P / 2.50mm,B3B-XH-A(LF)(SN),1=GND；2=W_VM；3=W_BUS,左 S288,F,垂直插入,XHP-3（同系列对插待实物核）,具体端子料号按线规确认,已定义，未实测,3脚为单线半双工数据；电机端针序待核,MORI_power_P5R6
+电源板,J8,右轮电机电源及总线,JST XH 3P / 2.50mm,B3B-XH-A(LF)(SN),1=GND；2=W_VM；3=W_BUS,右 S288,F,垂直插入,XHP-3（同系列对插待实物核）,具体端子料号按线规确认,已定义，未实测,与左轮共总线；两电机必须分配不同ID,MORI_power_P5R6
+电源板,J9,双轴头部舵机链,JST XH 3P / 2.50mm,B3B-XH-A(LF)(SN),1=GND；2=H_VM；3=H_BUS,SCS0009 yaw/pitch链,F,垂直插入,XHP-3（同系列对插待实物核）,具体端子料号按线规确认,已定义，未实测,两舵机共头部总线；连接顺序/厂配线待确认,MORI_power_P5R6
+电源板,J10,运动控制及监测,JST PH 8P / 2.00mm,B8B-PH-K-S(LF)(SN),1=+3V3；2=ARM_Q；3=FAULT_N；4=CHG_N；5=BAT_ADC；6=WHEEL_ADC；7=CURRENT_ADC；8=GND,运动板 J7，同号接线,F,垂直插入,PHR-8,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6
+电源板,J11,轮母线制动电阻,AMASS XT30 2P,AMASS XT30UPB-M,1=W_DUMP_D；2=W_VM,外部5.6Ω制动电阻,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,1=W_DUMP_D开关漏极，不是GND；电阻跨1、2,MORI_power_P5R6
+电源板,J12,头母线制动电阻,AMASS XT30 2P,AMASS XT30UPB-M,1=H_DUMP_D；2=H_VM,外部10Ω制动电阻,F,垂直插入,AMASS XT30配对母线端（精确型号待确认）,焊接杯型线端，型号待确认,已定义，未实测,1=H_DUMP_D开关漏极，不是GND；电阻跨1、2,MORI_power_P5R6
+电源板,J13,轮数据输入,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=W_BUS；2=GND,运动板 J2，同号接线,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,仅数据和参考地，不给电机供电,MORI_power_P5R6
+电源板,J14,头数据输入,JST PH 3P / 2.00mm,B3B-PH-K-S(LF)(SN),1=H_BUS；2=GND；3=NC,运动板 J3，1→1、2→2,F,垂直插入,PHR-3,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,两端3号孔均不装端子，保持NC,MORI_power_P5R6
+电源板,J15,附加托架禁驱接点,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=CHG_N；2=GND,可选托架干接点,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,闭合1–2拉低CHG_N禁驱；断线开路不能自诊断,MORI_power_P5R6
+电源板,J16,USB原始VBUS检测,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=VBUS_CHARGE；2=GND,后板 J2.5→1、J2.2→2,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,只检测，不是充电功率输入；RAW源端保护未闭合,MORI_power_P5R6
+电源板,J17,运动5V输出,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=+5V_MOTION；2=GND,运动板 J1，同号接线,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,1=+5V，2=GND；与电池XT30针序不同,MORI_power_P5R6
+电源板,J18,交互5V输出,JST XH 2P / 2.50mm,B2B-XH-A(LF)(SN),1=+5V_CAM；2=GND,CAM33700 稳压5V USB供电尾线,F,垂直插入,XHP-2（同系列对插待实物核）,具体端子料号按线规确认,已定义，未实测,1=+5V，2=GND；不得接CAM单节BAT口,MORI_power_P5R6
+电源板,J19,物理总开关控制,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=MASTER_RETURN；2=GND,后板 J3.1→1、J3.2→2,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,1脚OFF时可能接近电池电位；不可混插其他PH2,MORI_power_P5R6
+电源板,JP60,运动5V维护关闭,2.54mm 1×2排针,61300211121,1=M5_EN；2=GND,正常开路；托架上才可短接,F,垂直接近,正常不装短路帽,维护时使用匹配绝缘短路帽,已定义，未实测,短接1–2关闭运动5V，会失去平衡,MORI_power_P5R6
+电源板,JP70,交互5V维护关闭,2.54mm 1×2排针,61300211121,1=C5_EN；2=GND,正常开路；托架上才可短接,F,垂直接近,正常不装短路帽,维护时使用匹配绝缘短路帽,已定义，未实测,短接1–2仅关闭交互5V；不是外部供电口,MORI_power_P5R6
+运动板,J1,运动5V输入,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=+5V_MOTION；2=GND,电源板 J17，同号接线,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,MCU本地生成3.3V；不得直接接3S,MORI_motion_P5R7
+运动板,J2,轮半双工总线,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=S288_BUS；2=GND,电源板 J13，同号接线,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,只接信号及地；不是两轮电源口,MORI_motion_P5R7
+运动板,J3,头半双工总线,JST PH 3P / 2.00mm,B3B-PH-K-S(LF)(SN),1=HEAD_BUS；2=GND；3=NC,电源板 J14，1→1、2→2,F,垂直插入,PHR-3,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,两端3号孔均不装端子,MORI_motion_P5R7
+运动板,J4,身体IMU SPI,JST PH 8P / 2.00mm,B8B-PH-K-S(LF)(SN),1=+3V3；2=GND；3=IMU_SCK；4=IMU_MOSI；5=IMU_MISO；6=IMU_CS；7=IMU_DRDY；8=GND,IMU板 J1，1–8同号,F,垂直插入,PHR-8,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R7
+运动板,J5,CAM UART及参考电源,JST PH 4P / 2.00mm,B4B-PH-K-S(LF)(SN),1=CAM_RX；2=CAM_TX；3=CAM_3V3；4=GND,CAM33700 J11，1–4同号,F,垂直插入,PHR-4,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,RX/TX按CAM端命名，不再交叉；3脚仅供U4 VCCB,MORI_motion_P5R7
+运动板,J6,机内维护按键,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=USER_KEY_N；2=GND,可选无源瞬时按键,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,1–2闭合为低有效；不是RESET，也不是急停,MORI_motion_P5R7
+运动板,J7,电源控制及ADC,JST PH 8P / 2.00mm,B8B-PH-K-S(LF)(SN),1=+3V3；2=ARM_Q；3=FAULT_N；4=CHG_N；5=BAT_ADC_IN；6=WHEEL_ADC_IN；7=CURRENT_ADC_IN；8=GND,电源板 J10，1–8同号,F,垂直插入,PHR-8,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,PH8，但不可与J4的IMU线互换,MORI_motion_P5R7
+运动板,J8,硬件解锁许可环路,JST PH 2P / 2.00mm,B2B-PH-K-S(LF)(SN),1=LOOP_3V3；2=CLR_N,后板 J3.3→1、J3.4→2,F,垂直插入,PHR-2,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,开路清除ARM；恢复闭合不能自动重新解锁,MORI_motion_P5R7
+IMU板,J1,身体IMU SPI及供电,JST PH 8P / 2.00mm,B8B-PH-K-S(LF)(SN),1=+3V3；2=GND；3=SCK；4=MOSI；5=MISO；6=CS_N；7=DRDY；8=GND,运动板 J4，1–8同号,F,垂直插入,PHR-8,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4
+后接口板,J2,PD/充电器及VBUS检测,JST PH 5P / 2.00mm,S5B-PH-K-S(LF)(SN),1=VBUS_FUSED；2=GND；3=CC1；4=CC2；5=VBUS_RAW,1–4外部PD；5分支至电源J16,B,侧向插入,PHR-5,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,后装侧插PH5；1=FUSED、5=RAW，禁止桥接,MORI_rear_P5R7
+后接口板,J3,总开关及禁驱分叉线,JST PH 4P / 2.00mm,B4B-PH-K-S(LF)(SN),1=MASTER_RETURN；2=GND；3=LOOP_3V3；4=CLR_N,1/2至电源J19；3/4至运动J8,B,从板背面向板插入；拔出方向 −Z，须结合机械安装变换,PHR-4,SPH-002T-P0.5S，线径/绝缘外径按厂商,已定义，未实测,必须一分二线束；两条控制回路不可短接；P5R7 顶视图左到右4/3/2/1，按针号确认，不按旧板孔位置或线色接线。,MORI_rear_P5R7
+后接口板,SW1,双刀物理电源开关,DPDT双刀滑动开关,MS-202V-G3,1=MASTER_RETURN；2=GND；3=NC；4=LOOP_3V3；5=CLR_N；6=NC,板载器件，无独立外接线,F,触点组合已定义，拨杆方向待测,板载，不接线,无,板载开关,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R7
+后接口板,USB1,唯一外部USB-C充电接口,USB Type-C 16电接点+外壳,TYPE-C-31-M-12,A1=GND；A4=VBUS_RAW；A5=CC1；A6=NC；A7=NC；A8=NC；A9=VBUS_RAW；A12=GND；B1=GND；B4=VBUS_RAW；B5=CC2；B6=NC；B7=NC；B8=NC；B9=VBUS_RAW；B12=GND；SH=GND,USB-C电源，经外部PD/3S充电器,B,板边水平插入,USB-C插头,成品USB线,已定义，未实测,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R7

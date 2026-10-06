@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "scope": "Connectivity inventory and rigid-group classification only",
+  "revision": "V1.2-M1.47",
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "sources": {
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/electrical_interfaces.json": "3805ea355d3060173c1c8e7fc440adf75b26248a578a632bc9d93134ee0b652c",
+    "hardware/v1_2/prearrival_20261002/harness_detail.csv": "01e4e3fc5228c4e40c821ed621ba417d97d893b9d9188cbefeaac1d191a8d0be",
+    "hardware/v1_2/handoff/mechanical_P5R7_prearrival_A5_harness.json": "fe9f1610b558665a1575ef24bfea5f309d2f8b052e894f1ef7a8e49ab0f8d5d8",
+    "mechanical/sources/waveshare_detail/source_manifest.json": "f37a2275f117d5cc373e0c314a53cb6d322136c3132a4611c70b9bf94db28c61",
+    "mechanical/sources/waveshare_detail/cam_schematic.pdf": "fab4de042457257753cd919b1bd57753308ec81edd0e8e993b127c24125fa4de",
+    "mechanical/sources/v1_2_verified_dimensions/1.85inch_touch_lcd_module-3d.stp": "da8b3fca5ffd30c89d12bf488203741baaa1bd390732b62d92b23b279fb1dd9d"
+  },
+  "minimum_functional_conductors_crossing_yaw": 11,
+  "minimum_functional_conductors_crossing_pitch": 8,
+  "physical_bundle_size": "BLOCKED; cable construction, shields, gauges, jackets and anchors unselected",
+  "branches": [
+    {
+      "id": "H06",
+      "name": "运动板 J5 → CAM UART",
+      "conductors": 4,
+      "a": "body",
+      "b": "pitch",
+      "crosses": [
+        "yaw",
+        "pitch"
+      ],
+      "source": "hardware/v1_2/prearrival_20261002/harness_detail.csv",
+      "notes": "板端 PH；CAM 厂配 SH 尾线及接续未定。3V3 线只供逻辑电平转换参考。"
+    },
+    {
+      "id": "P_J18",
+      "name": "电源板 J18 → CAM USB 5V",
+      "conductors": 2,
+      "a": "body",
+      "b": "pitch",
+      "crosses": [
+        "yaw",
+        "pitch"
+      ],
+      "source": "hardware/v1_2/prearrival_20261002/harness_detail.csv",
+      "notes": "USB 供电尾线完整型号未定；屏蔽/备用芯线不在此最小计数中。"
+    },
+    {
+      "id": "SPK",
+      "name": "CAM SPK → 肚子外壳上的 SP3040",
+      "conductors": 2,
+      "a": "pitch",
+      "b": "body",
+      "crosses": [
+        "yaw",
+        "pitch"
+      ],
+      "source": "mechanical/sources/waveshare_detail/cam_schematic.pdf + selected SP3040 drawing",
+      "notes": "厂配 200mm / 1.25 标注不能确认完整插头系列；BTL 双线均不能接地。"
+    },
+    {
+      "id": "P_J9",
+      "name": "电源板 J9 → 头部舵机链",
+      "conductors": 3,
+      "a": "body",
+      "b": "yaw",
+      "crosses": [
+        "yaw"
+      ],
+      "source": "hardware/v1_2/prearrival_20261002/harness_detail.csv",
+      "notes": "两只舵机机身均在 yaw 组；原厂端视图、线序和线材仍需核实。"
+    },
+    {
+      "id": "SERVO_LINK",
+      "name": "Yaw 舵机 ↔ Pitch 舵机机身",
+      "conductors": 3,
+      "a": "yaw",
+      "b": "yaw",
+      "crosses": [],
+      "source": "head_hardware_groups.json + FEETECH A/0",
+      "notes": "相对固定；首只/次只连接次序、原配端子仍未定。"
+    },
+    {
+      "id": "LCD_FFC",
+      "name": "CAM DISPLAY → LCD 外接 18 针插座",
+      "conductors": 18,
+      "a": "pitch",
+      "b": "pitch",
+      "crosses": [],
+      "source": "hardware/v1_2/handoff/mechanical_P5R7_prearrival_A5_harness.json",
+      "notes": "原配 18P / 0.5mm / 200mm / 同面接触有厂家依据；宽厚、折弯半径及 CAM 配对方向待核。"
+    },
+    {
+      "id": "CAMERA_FPC",
+      "name": "CAM CAMERA → OV3660",
+      "conductors": 24,
+      "a": "pitch",
+      "b": "pitch",
+      "crosses": [],
+      "source": "mechanical/sources/waveshare_detail/cam_schematic.pdf",
+      "notes": "完整 FPC 长度和供应料号未知；10.5mm 只是模型参考照片的可见段。"
+    }
+  ],
+  "actual_cable_route": "NOT_TESTED",
+  "strain_relief": "NOT_TESTED",
+  "dynamic_fatigue": "NOT_TESTED",
+  "main_geometry_changed": false
+}

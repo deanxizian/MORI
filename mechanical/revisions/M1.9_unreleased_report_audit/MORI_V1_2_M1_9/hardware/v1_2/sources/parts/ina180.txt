@@ -1,0 +1,2676 @@
+INAx180 Low- and High-Side Voltage Output, Current-Sense Amplifiers
+1 Features
+• Common-mode range (VCM): –0.2 V to +26 V
+• High bandwidth: 350 kHz (A1 devices)
+• Offset voltage:
+– ±150 µV (maximum) at VCM = 0 V
+– ±500 µV (maximum) at VCM = 12 V
+• Output slew rate: 2 V/µs
+• Accuracy:
+– ±1% gain error (maximum)
+– 1-µV/°C offset drift (maximum)
+• Gain options:
+– 20 V/V (A1 devices)
+– 50 V/V (A2 devices)
+– 100 V/V (A3 devices)
+– 200 V/V (A4 devices)
+• Quiescent current: 260 µA maximum (INA180)
+2 Applications
+• Motor control
+• Battery monitoring
+• Power management
+• Lighting control
+• Overcurrent detection
+• Solar inverters
+INA4180 (quad-channel)
+INA2180 (dual-channel)
+INA180 (single-channel)
+Power Supply, VS
+2.7 V to 5.5 V
+ADC
+Microcontroller
+Bus Voltage, VCM
+Up To 26 V
+RSENSE
+GND
+VS
+Load
+IN±
+IN+
+OUT
++
+±
+CBYPASS
+0.1 µF
+Copyright © 2017, Texas Instruments Incorporated
+Typical Application Circuit
+3 Description
+The INA180, INA2180, and INA4180 (INAx180) 
+current sense amplifiers are designed for cost-
+optimized applications. These devices are part of a 
+family of current-sense amplifiers (also called current-
+shunt monitors) that sense voltage drops across 
+current-sense resistors at common-mode voltages 
+from –0.2 V to +26 V, independent of the supply 
+voltage. The INAx180 integrate a matched resistor 
+gain network in four, fixed-gain device options: 20 
+V/V, 50 V/V, 100 V/V, or 200 V/V. This matched gain 
+resistor network minimizes gain error and reduces the 
+temperature drift.
+All these devices operate from a single 2.7-V to 5.5-
+V power supply. The single-channel INA180 draws 
+a maximum supply current of 260 µA; whereas, 
+the dual-channel INA2180 draws a maximum supply 
+current of 500 µA, and the quad channel draws a 
+maximum supply current of 900 µA.
+The INA180 is available in a 5-pin, SOT-23 package 
+with two different pin configurations. The INA2180 is 
+available in 8-pin, VSSOP and WSON packages . The 
+INA4180 is available in a 14-pin, TSSOP package. 
+All device options are specified over the extended 
+operating temperature range of –40°C to +125°C.
+Packaging Information(1) 
+PART NUMBER PACKAGE BODY SIZE (NOM)
+INA180 SOT-23 (5) 2.90 mm × 1.60 mm
+INA2180
+VSSOP (8) 3.00 mm × 3.00 mm
+WSON (8) 2.00 mm × 2.00 mm
+INA4180 TSSOP (14) 5.00 mm × 4.40 mm
+(1) For all available packages, see the package option 
+addendum at the end of the data sheet.
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, 
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+Table of Contents
+1 Features............................................................................1
+2 Applications.....................................................................1
+3 Description.......................................................................1
+4 Revision History.............................................................. 2
+5 Device Comparison ........................................................4
+6 Pin Configuration and Functions...................................4
+7 Specifications.................................................................. 7
+7.1 Absolute Maximum Ratings........................................ 7
+7.2 ESD Ratings............................................................... 7
+7.3 Recommended Operating Conditions.........................7
+7.4 Thermal Information....................................................7
+7.5 Electrical Characteristics.............................................8
+7.6 Typical Characteristics................................................9
+8 Detailed Description......................................................16
+8.1 Overview...................................................................16
+8.2 Functional Block Diagrams....................................... 16
+8.3 Feature Description...................................................18
+8.4 Device Functional Modes..........................................19
+9 Application and Implementation..................................21
+9.1 Application Information............................................. 21
+9.2 Typical Application.................................................... 25
+9.3 Power Supply Recommendations.............................26
+9.4 Layout....................................................................... 27
+10 Device and Documentation Support..........................31
+10.1 Documentation Support.......................................... 31
+10.2 Receiving Notification of Documentation Updates..31
+10.3 Support Resources................................................. 31
+10.4 Trademarks.............................................................31
+10.5 Electrostatic Discharge Caution..............................31
+10.6 Glossary..................................................................31
+4 Revision History
+Changes from Revision G (April 2020) to Revision H (July 2022) Page
+• Updated the numbering format for tables, figures, and cross-references throughout the document..................1
+• Moved the Power Supply Recommendations and Layout sections to the Application and Implementation 
+section.............................................................................................................................................................. 26
+• Changed pin 3 in Figure 9-9 from: IN+2 to: IN+1..............................................................................................28
+Changes from Revision F (March 2019) to Revision G (April 2020) Page
+• Added INA2180 8-pin WSON package to the data sheet...................................................................................1
+Changes from Revision E (July 2018) to Revision F (March 2019) Page
+• Added new paragraph regarding phase reversal to end of Input Differential Overload section....................... 19
+Changes from Revision D (March 2018) to Revision E (July 2018) Page
+• Added B version devices to Device Comparison table.......................................................................................4
+Changes from Revision C (December 2017) to Revision D (March 2018) Page
+• Changed INA4180 device from preview to production data (active)...................................................................1
+• Added new Figure 25 for INA4180 .................................................................................................................... 9
+• Added new Figure 28 for INA4180 .................................................................................................................... 9
+Changes from Revision B (November 2017) to Revision C (December 2017) Page
+• Changed INA2180 device from preview to production data (active)...................................................................1
+• Added "Both Inputs" to Figure 21 title ................................................................................................................9
+• Added new Figure 24 for INA2180..................................................................................................................... 9
+• Added new Figure 25 placeholder for INA4180..................................................................................................9
+• Added new Figure 27 for INA2180..................................................................................................................... 9
+• Added new Figure 28 placeholder for INA4180..................................................................................................9
+• Changed Figure 29.............................................................................................................................................9
+• Added "(A3 Devices)" to end of Figure 29 title................................................................................................... 9
+• Added new Figure 38 for INA2180..................................................................................................................... 9
+• Changed "less than 150 µV" to "within ±150 µV" regarding offset voltage in Precise Low-Side Current 
+Sensing section................................................................................................................................................ 18
+• Added text regarding RC filter and reference to application report to note at the bottom of Figure 45............ 21
+• Deleted VS from Equation 2 .............................................................................................................................22
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+2 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+• Added equation and curve for f-3dB to Figure 46...............................................................................................23
+• Added link to reference design TIDA-00302 to end of Common-Mode Transients Greater Than 26 V section...
+26
+• Added new bullet to Layout Guidelines section................................................................................................27
+Changes from Revision A (August 2017) to Revision B (November 2017) Page
+• Added INA4180 preview device and associated content to data sheet..............................................................1
+• Changed design parameter name in Table 3 from "Accuracy" to "Current sensing error" for clarity ............... 25
+• Changed "RMS" to "RSS" in reference to equation 7.......................................................................................25
+Changes from Revision * (April 2017) to Revision A (August 2017) Page
+• Added INA2180 preview device and associated content to data sheet..............................................................1
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 3
+Product Folder Links: INA180 INA2180 INA4180
+5 Device Comparison
+Table 5-1. Device Comparison
+PRODUCT NUMBER OF CHANNELS GAIN (V/V)
+INA180A1(1) 1 20
+INA180A2(1) 1 50
+INA180A3(1) 1 100
+INA180A4(1) 1 200
+INA180B1(1) 1 20
+INA180B2(1) 1 50
+INA180B3(1) 1 100
+INA180B4(1) 1 200
+INA2180A1 2 20
+INA2180A2 2 50
+INA2180A3 2 100
+INA2180A4 2 200
+INA4180A1 4 20
+INA4180A2 4 50
+INA4180A3 4 100
+INA4180A4 4 200
+(1) INA180A devices use pinout A. INA180B devices use pinout B. See the Pin Configuration and Functions section for more information.
+6 Pin Configuration and Functions
+1OUT
+2GND
+3IN+ 4 IN ±
+5 VS
+Not to scale
+Figure 6-1. INA180: DBV Package 5-Pin SOT-23 
+(Pinout A) Top View 
+1IN+
+2GND
+3IN± 4 OUT
+5 VS
+Not to scale
+Figure 6-2. INA180: DBV Package 5-Pin SOT-23 
+(Pinout B) Top View 
+Table 6-1. Pin Functions: INA180 (Single Channel)
+PIN
+TYPE DESCRIPTION
+NAME SOT-23 
+Pinout A
+SOT-23 
+Pinout B
+GND 2 2 Analog Ground
+IN– 4 3 Analog input
+Current-sense amplifier negative input. For high-side applications, connect 
+to load side of sense resistor. For low-side applications, connect to ground 
+side of sense resistor.
+IN+ 3 1 Analog input
+Current-sense amplifier positive input. For high-side applications, connect 
+to bus-voltage side of sense resistor. For low-side applications, connect to 
+load side of sense resistor.
+OUT 1 4 Analog output Output voltage
+VS 5 5 Analog Power supply, 2.7 V to 5.5 V
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+4 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+1OUT1 8  VS
+2IN±1 7  OUT2
+3IN+1 6  IN ±2
+4GND 5  IN+2
+Not to scale
+Figure 6-3. INA2180: DGK Package 8-Pin VSSOP 
+Top View 
+1OUT1 8  VS
+2IN±1 7  OUT2
+3IN+1 6  IN ±2
+4GND 5  IN+2
+Not to scale
+Thermal
+Pad A. Thermal Pad can be left floating or connected to GND.
+Figure 6-4. INA2180: DSG Package 8-Pin WSON 
+Top View 
+1OUT1 14  OUT4
+2IN±1 13  IN ±4
+3IN+1 12  IN+4
+4VS 11  GND
+5IN+2 10  IN+3
+6IN±2 9  IN ±3
+7OUT2 8  OUT3
+Not to scale
+Figure 6-5. INA4180: PW Package 14-Pin TSSOP Top View 
+Table 6-2. Pin Functions: INA2180 (Dual Channel) and INA4180 (Quad Channel)
+PIN
+TYPE DESCRIPTION
+NAME INA2180 INA4180
+GND 4 11 Analog Ground
+IN–1 2 2 Analog input
+Current-sense amplifier negative input for channel 1. For high-side 
+applications, connect to load side of channel-1 sense resistor. For low-
+side applications, connect to ground side of channel-1 sense resistor.
+IN+1 3 3 Analog input
+Current-sense amplifier positive input for channel 1. For high-side 
+applications, connect to bus-voltage side of channel-1 sense resistor. For 
+low-side applications, connect to load side of channel-1 sense resistor.
+IN–2 6 6 Analog input
+Current-sense amplifier negative input for channel 2. For high-side 
+applications, connect to load side of channel-2 sense resistor. For low-
+side applications, connect to ground side of channel-2 sense resistor.
+IN+2 5 5 Analog input
+Current-sense amplifier positive input for channel 2. For high-side 
+applications, connect to bus-voltage side of channel-2 sense resistor. For 
+low-side applications, connect to load side of channel-2 sense resistor.
+IN–3 — 9 Analog input
+Current-sense amplifier negative input for channel 3. For high-side 
+applications, connect to load side of channel-3 sense resistor. For low-
+side applications, connect to ground side of channel-3 sense resistor.
+IN+3 — 10 Analog input
+Current-sense amplifier positive input for channel 3. For high-side 
+applications, connect to bus-voltage side of channel-3 sense resistor. For 
+low-side applications, connect to load side of channel-3 sense resistor.
+IN–4 — 13 Analog input
+Current-sense amplifier negative input for channel 4. For high-side 
+applications, connect to load side of channel-4 sense resistor. For low-
+side applications, connect to ground side of channel-4 sense resistor.
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 5
+Product Folder Links: INA180 INA2180 INA4180
+Table 6-2. Pin Functions: INA2180 (Dual Channel) and INA4180 (Quad Channel) (continued)
+PIN
+TYPE DESCRIPTION
+NAME INA2180 INA4180
+IN+4 — 12 Analog input
+Current-sense amplifier positive input for channel 4. For high-side 
+applications, connect to bus-voltage side of channel-4 sense resistor. For 
+low-side applications, connect to load side of channel-4 sense resistor.
+OUT1 1 1 Analog output Channel 1 output voltage
+OUT2 7 7 Analog output Channel 2 output voltage
+OUT3 — 8 Analog output Channel 3 output voltage
+OUT4 — 14 Analog output Channel 4 output voltage
+VS 8 4 Analog Power supply, 2.7 V to 5.5 V
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+6 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+7 Specifications
+7.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted) (1)
+MIN MAX UNIT
+Supply voltage, VS 6 V
+Analog inputs, IN+, IN– (2) Differential (VIN+) – (VIN–) –26 26 V
+Common-mode (3) GND – 0.3 26 V
+Output Voltage GND – 0.3 VS + 0.3 V
+Maximum output current, IOUT 8 mA
+Operating free-air temperature, TA –55 150 °C
+Junction temperature, TJ 150 °C
+Storage temperature, Tstg –65 150 °C
+(1) Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress 
+ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under 
+Recommended Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device 
+reliability.
+(2) VIN+ and VIN– are the voltages at the IN+ and IN– pins, respectively.
+(3) Input voltage at any pin can exceed the voltage shown if the current at that terminal is limited to 5 mA.
+7.2 ESD Ratings
+MIN MAX UNIT
+V(ESD) Electrostatic discharge
+Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001(1) ±3000
+V
+Charged-device model (CDM), per JEDEC specification JESD22-C101(2) ±1000
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+7.3 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+MIN NOM MAX UNIT
+VCM Common-mode input voltage (IN+ and IN–) –0.2 12 26 V
+VS Operating supply voltage 2.7 5 5.5 V
+TA Operating free-air temperature –40 125 °C
+7.4 Thermal Information
+THERMAL METRIC (1)
+INA180 INA2180 INA4180
+UNITDBV (SOT23) DSG 
+(WSON) DGK (VSSOP) PW (TSSOP)
+5 PINS 8 PINS 8 PINS 14 PINS
+RθJA Junction-to-ambient thermal resistance 197.1 74.9 177.9 115.9 °C/W
+RθJC(top) Junction-to-case (top) thermal resistance 95.8 90.8 65.6 44.3 °C/W
+RθJB Junction-to-board thermal resistance 53.1 40.8 99.3 59.2 °C/W
+ψJT Junction-to-top characterization parameter 23.4 3.7 10.5 4.7 °C/W
+ψJB Junction-to-board characterization parameter 52.7 40.8 97.9 58.6 °C/W
+RθJC(bot) Junction-to-case (bottom) thermal resistance N/A 16.8 N/A N/A °C/W
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+report.
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 7
+Product Folder Links: INA180 INA2180 INA4180
+7.5 Electrical Characteristics
+at TA = 25°C, VS = 5 V, VIN+ = 12 V, and VSENSE = VIN+ – VIN–  (unless otherwise noted)
+PARAMETER CONDITIONS MIN TYP MAX UNIT
+INPUT
+CMRR Common-mode rejection ratio, RTI (1) VIN+ = 0 V to 26 V, VSENSE = 10 mV,
+TA = –40°C to +125°C 84 100 dB
+VOS Offset voltage(2), RTI
+VIN+ = 0 V ±25 ±150 μV
+±100 ±500 μV
+dVOS/dT Offset drift, RTI TA = –40°C to +125°C 0.2 1 μV/°C
+PSRR Power supply rejection ratio, RTI VS = 2.7 V to 5.5 V, VSENSE = 10 mV ±8 ±40 μV/V
+IIB Input bias current
+VSENSE = 0 mV, VIN+ = 0 V 0.1
+μA
+VSENSE = 0 mV 80
+IIO Input offset current VSENSE = 0 mV ±0.05 μA
+OUTPUT
+G Gain
+A1 devices 20
+V/V
+A2 devices 50
+A3 devices 100
+A4 devices 200
+EG Gain error VOUT = 0.5 V to VS – 0.5 V,
+TA = –40°C to +125°C ±0.1% ±1%
+Gain error vs temperature TA = –40°C to +125°C 1.5 20 ppm/°C
+Nonlinearity error VOUT = 0.5 V to VS – 0.5 V ±0.01%
+Maximum capacitive load No sustained oscillation 1 nF
+VOLTAGE OUTPUT(3)
+VSP Swing to VS power-supply rail (4) RL = 10 kΩ to GND, TA = –40°C to +125°C (VS) – 0.02 (VS) – 0.03 V
+VSN Swing to GND (4) RL = 10 kΩ to GND, TA = –40°C to +125°C (VGND) + 
+0.0005
+(VGND) + 
+0.005 V
+FREQUENCY RESPONSE
+BW Bandwidth
+A1 devices, CLOAD = 10 pF 350 kHz
+A2 devices, CLOAD = 10 pF 210 kHz
+A3 devices, CLOAD = 10 pF 150 kHz
+A4 devices, CLOAD = 10 pF 105 kHz
+SR Slew rate 2 V/μs
+NOISE, RTI
+Voltage noise density 40 nV/√ Hz
+POWER SUPPLY
+IQ
+Quiescent 
+current
+INA180
+VSENSE = 10 mV 197 260 μA
+VSENSE = 10 mV, TA = –40°C to +125°C 300 μA
+INA2180
+VSENSE = 10 mV 355 500 μA
+VSENSE = 10 mV, TA = –40°C to +125°C 520 μA
+INA4180
+VSENSE = 10 mV 690 900 μA
+VSENSE = 10 mV, TA = –40°C to +125°C 1000 μA
+(1) RTI = referred-to-input.
+(2) Offset voltage is obtained by linear extrapolation to VSENSE = 0 V with VSENSE = 10% to 90% of full-scale-range.
+(3) See Figure 7-19.
+(4) Swing specifications are tested with an overdriven input condition.
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+8 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Population
+-165
+-150
+-135
+-120
+-105
+-90
+-75
+-60
+-45
+-30
+-15
+0
+15
+30
+45
+60
+75
+90
+105
+120
+135
+150
+Input Offset Voltage (PV) D001
+VIN+ = 0 V
+Figure 7-1. Input Offset Voltage Production Distribution A1
+Population
+-95
+-85
+-75
+-65
+-55
+-45
+-35
+-25
+-15
+-5
+5
+15
+25
+35
+45
+55
+65
+75
+85
+95
+105
+115
+Input Offset Voltage (PV) D002
+VIN+ = 0 V
+Figure 7-2. Input Offset Voltage Production Distribution A2
+Population
+-80
+-70
+-60
+-50
+-40
+-30
+-20
+-10
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+130
+Input Offset Voltage (PV) D003
+VIN+ = 0 V
+Figure 7-3. Input Offset Voltage Production Distribution A3
+Population
+-80
+-70
+-60
+-50
+-40
+-30
+-20
+-10
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+130
+Input Offset Voltage (PV) D004
+VIN+ = 0 V
+Figure 7-4. Input Offset Voltage Production Distribution A4
+Temperature (qC)
+Offset Voltage (PV)
+-50 -25 0 25 50 75 100 125 150
+-100
+-50
+0
+50
+100
+D005 D005 D005
+A1
+A2
+A3
+A4
+VIN+ = 0 V
+Figure 7-5. Offset Voltage vs. Temperature
+Population
+-55
+-50
+-45
+-40
+-35
+-30
+-25
+-20
+-15
+-10
+-5
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+Common-Mode Rejection Ratio (PV/V) D006
+Figure 7-6. Common-Mode Rejection Production Distribution 
+A1
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 9
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Population
+-32
+-29
+-26
+-23
+-20
+-17
+-14
+-11
+-8
+-5
+-2
+1
+4
+7
+10
+13
+16
+19
+22
+25
+28
+31
+Common-Mode Rejection Ratio (PV/V) D007
+Figure 7-7. Common-Mode Rejection Production Distribution 
+A2
+Population
+-11
+-10
+-9
+-8
+-7
+-6
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Common-Mode Rejection Ratio (PV/V) D008
+Figure 7-8. Common-Mode Rejection Production Distribution 
+A3
+Population
+-10
+-9
+-8
+-7
+-6
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+Common-Mode Rejection Ratio (PV/V) D009
+Figure 7-9. Common-Mode Rejection Production Distribution 
+A4
+Temperature (qC)
+Common-Mode Rejection Ratio (PV/V)
+-50 -25 0 25 50 75 100 125 150
+-10
+-8
+-6
+-4
+-2
+0
+2
+4
+6
+8
+10
+D010
+A1
+A2
+A3
+A4
+Figure 7-10. Common-Mode Rejection Ratio vs. Temperature
+Population
+-0.125
+-0.115
+-0.105
+-0.095
+-0.085
+-0.075
+-0.065
+-0.055
+-0.045
+-0.035
+-0.025
+-0.015
+-0.005
+0.005
+0.015
+0.025
+0.035
+0.045
+0.055
+0.065
+0.075
+0.085
+Gain Error (%)
+D011
+Figure 7-11. Gain Error Production Distribution A1
+Population
+-0.11
+-0.1
+-0.09
+-0.08
+-0.07
+-0.06
+-0.05
+-0.04
+-0.03
+-0.02
+-0.01
+0
+0.01
+0.02
+0.03
+0.04
+0.05
+0.06
+0.07
+0.08
+0.09
+0.1
+Gain Error (%)
+D012 Figure 7-12. Gain Error Production Distribution A2
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+10 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Population
+-0.12
+-0.11
+-0.1
+-0.09
+-0.08
+-0.07
+-0.06
+-0.05
+-0.04
+-0.03
+-0.02
+-0.01
+0
+0.01
+0.02
+0.03
+0.04
+0.05
+0.06
+0.07
+0.08
+0.09
+Gain Error (%)
+D013
+Figure 7-13. Gain Error Production Distribution A3
+Population
+-0.23
+-0.21
+-0.19
+-0.17
+-0.15
+-0.13
+-0.11
+-0.09
+-0.07
+-0.05
+-0.03
+-0.01
+0.01
+0.03
+0.05
+0.07
+0.09
+0.11
+0.13
+0.15
+0.17
+0.19
+Gain Error (%)
+D014 Figure 7-14. Gain Error Production Distribution A4
+Temperature (qC)
+Gain Error (%)
+-50 -25 0 25 50 75 100 125 150
+-0.4
+-0.3
+-0.2
+-0.1
+0
+0.1
+0.2
+0.3
+0.4
+D015
+A1
+A2
+A3
+A4
+Figure 7-15. Gain Error vs. Temperature
+Frequency (Hz)
+Gain (dB)
+-10
+0
+10
+20
+30
+40
+50
+10 100 1k 10k 100k 1M 10M
+D016
+A1
+A2
+A3
+A4 Figure 7-16. Gain vs. Frequency
+Frequency (Hz)
+Power-Supply Rejection Ratio (dB)
+0
+20
+40
+60
+80
+100
+120
+10 100 1k 10k 100k 1M
+D017
+Figure 7-17. Power-Supply Rejection Ratio vs. Frequency
+Frequency (Hz)
+Common-Mode Rejection Ratio (dB)
+20
+40
+60
+80
+100
+120
+140
+10 100 1k 10k 100k 1M
+D018
+A1
+A2
+A3
+A4 Figure 7-18. Common-Mode Rejection Ratio vs. Frequency
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 11
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Output Current (mA)
+0 5 10 15 20 25 30 35 40 45 50 55 60
+VS
+V – 1S
+GND
+GND + 1
+GND + 2
+Output Swing (V)
+D019
+125°C
+25 C °
+–40°C
+V – 2S
+.
+Figure 7-19. Output Voltage Swing vs. Output Current
+Common-Mode Voltage (V)
+Input Bias Current (PA)
+-5 0 5 10 15 20 25 30
+-20
+0
+20
+40
+60
+80
+100
+120
+D020 Supply voltage = 5 V
+Figure 7-20. Input Bias Current vs. Common-Mode Voltage
+Common-Mode Voltage (V)
+Input Bias Current (PA)
+-5 0 5 10 15 20 25 30
+-20
+0
+20
+40
+60
+80
+100
+120
+D021
+Supply voltage = 0 V
+Figure 7-21. Input Bias Current vs. Common-Mode Voltage 
+(Both Inputs, Shutdown)
+Temperature (qC)
+Input Bias Current (PA)
+-50 -25 0 25 50 75 100 125 150
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+D022
+.
+Figure 7-22. Input Bias Current vs. Temperature
+Temperature (qC)
+Quiescent Current (PA)
+-50 -25 0 25 50 75 100 125 150
+190
+195
+200
+205
+210
+D023
+Figure 7-23. Quiescent Current vs. Temperature (INA180)
+Temperature (qC)
+Quiescent Current (PA)
+-50 -25 0 25 50 75 100 125 150
+340
+345
+350
+355
+360
+365
+370
+375
+380
+D023 Figure 7-24. Quiescent Current vs. Temperature (INA2180)
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+12 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Temperature (qC)
+Quiescent Current (PA)
+-50 -25 0 25 50 75 100 125 150
+685
+690
+695
+700
+705
+710
+715
+720
+D038
+Figure 7-25. Quiescent Current vs. Temperature (INA4180)
+Common-mode Voltage (V)
+Quiescent Current (PA)
+-5 0 5 10 15 20 25 30
+150
+200
+250
+300
+350
+400
+D031 Figure 7-26. Quiescent Current vs. Common-Mode Voltage 
+(INA180)
+Common-Mode Voltage (V)
+Quiescent Current (PA)
+-5 0 5 10 15 20 25 30
+300
+350
+400
+450
+500
+550
+600
+650
+700
+750
+D031
+Figure 7-27. Quiescent Current vs. Common-Mode Voltage for 
+All Amplifiers (INA2180)
+Common-Mode Voltage (V)
+Quiescent Current (PA)
+-5 0 5 10 15 20 25 30
+550
+650
+750
+850
+950
+1050
+1150
+1250
+1350
+1450
+D039
+Figure 7-28. Quiescent Current vs. Common-Mode Voltage for 
+All Amplifiers (INA4180)
+Frequency (Hz)
+Input-Referred Voltage Noise (nV/Hz)
+10
+20
+30
+40
+50
+60
+70
+80
+100
+10 100 1k 10k 100k 1M
+D024
+Figure 7-29. Input-Referred Voltage Noise vs. Frequency (A3 
+Devices)
+Time (1 s/div)
+Referred-to-Input 
+ Voltage Noise (200 nV/div)
+D025
+Figure 7-30. 0.1-Hz to 10-Hz Voltage Noise (Referred-to-Input)
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 13
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Time (10 Ps/div)
+Input Voltage
+  40 mV/div
+Output Voltage 
+    2 V/div
+D026
+80-mVPP input step
+Figure 7-31. Step Response
+Time (25 Ps/div)
+Common-Mode Voltage (5 V/div)
+VOUT (100 mV/div)
+D027
+VCM
+VOUT
+.
+Figure 7-32. Common-Mode Voltage Transient Response
+Time (250 Ps/div)
+Voltage (2 V/div)
+0 V
+D028
+Inverting Input
+Output
+Figure 7-33. Inverting Differential Input Overload
+Time (250 Ps/div)
+Voltage (2 V/div)
+0 V
+D029
+Noninverting Input
+Output Figure 7-34. Noninverting Differential Input Overload
+Time (10 Ps/div)
+Voltage (1 V/div)
+0 V
+D030
+Supply Voltage
+Output Voltage
+Figure 7-35. Start-Up Response
+Time (100 Ps/div)
+Voltage (1 V/div)
+0 V
+D032
+Supply Voltage
+Output Voltage Figure 7-36. Brownout Recovery
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+14 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+7.6 Typical Characteristics (continued)
+at TA = 25°C, VS = 5 V, and VIN+ = 12 V (unless otherwise noted)
+Frequency (Hz)
+Output Impedance (:)
+0.1
+0.2
+0.5
+1
+2
+5
+10
+20
+50
+100
+200
+500
+1000
+10 100 1k 10k 100k 1M 10M
+D033
+A1
+A2
+A3
+A4
+Figure 7-37. Output Impedance vs. Frequency
+Frequency (Hz)
+Channel Separation (dB)
+70
+80
+90
+100
+110
+120
+130
+140
+100 1k 10k 100k 1M
+D034
+Ch1 onto Ch2
+Ch2 onto Ch1 Figure 7-38. Channel Separation vs. Frequency (INA2180)
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 15
+Product Folder Links: INA180 INA2180 INA4180
+8 Detailed Description
+8.1 Overview
+The INA180, INA2180, and INA4180 (INAx180) are 26-V, common-mode, current-sensing amplifiers used in 
+both low-side and high-side configurations. These specially-designed, current-sensing amplifiers accurately 
+measures voltages developed across current-sensing resistors on common-mode voltages that far exceed the 
+supply voltage powering the device. Current can be measured on input voltage rails as high as 26 V, and the 
+devices can be powered from supply voltages as low as 2.7 V.
+8.2 Functional Block Diagrams
+IN±
+IN+
+GND
+VS
+OUT
+Single-Channel
+TI Device
++
+±
+Figure 8-1. INA180 Functional Block Diagram
+IN±2
+IN+2
+VS
+OUT2
+IN±1
+IN+1
+OUT1
++
+±
+GND
++
+±
+Dual-Channel 
+TI Device
+Figure 8-2. INA2180 Functional Block Diagram
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+16 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+Quad-Channel 
+TI Device
+IN±2
+IN+2
+VS
+OUT2
+IN±1
+IN+1
+OUT1
++
+±
+GND
++
+±
+IN±4
+IN+4
+OUT4
+IN±3
+IN+3
+OUT3
++
+±
++
+±
+Figure 8-3. INA4180 Functional Block Diagram
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 17
+Product Folder Links: INA180 INA2180 INA4180
+8.3 Feature Description
+8.3.1 High Bandwidth and Slew Rate
+The INAx180 support small-signal bandwidths as high as 350 kHz, and large-signal slew rates of 2 V/µs. The 
+ability to detect rapid changes in the sensed current, as well as the ability to quickly slew the output, make the 
+INAx180 a good choice for applications that require a quick response to input current changes. One application 
+that requires high bandwidth and slew rate is low-side motor control, where the ability to follow rapid changing 
+current in the motor allows for more accurate control over a wider operating range. Another application that 
+requires higher bandwidth and slew rates is system fault detection, where the INAx180 are used with an external 
+comparator and a reference to quickly detect when the sensed current is out of range.
+8.3.2 Wide Input Common-Mode Voltage Range
+The INAx180 support input common-mode voltages from –0.2 V to +26 V. Because of the internal topology, 
+the common-mode range is not restricted by the power-supply voltage (V S) as long as V S stays within the 
+operational range of 2.7 V to 5.5 V. The ability to operate with common-mode voltages greater or less than V S 
+allow the INAx180 to be used in high-side, as well as low-side, current-sensing applications, as shown in Figure 
+8-4.
+Bus Supply
+±0.2 V to +26 V
+High-Side Sensing
+Low-Side Sensing
+LOAD
+Common-mode voltage (VCM) 
+is bus-voltage dependent.
+Common-mode voltage (VCM) 
+is always near ground and is 
+isolated from bus-voltage spikes.
+Direction of Positive 
+Current Flow
+IN+Direction of Positive 
+Current Flow
+RSENSE
+RSENSE
+IN±
+IN+
+IN±
+Figure 8-4. High-Side and Low-Side Sensing Connections
+8.3.3 Precise Low-Side Current Sensing
+When used in low-side current sensing applications the offset voltage of the INAx180 is within ±150 µV. The 
+low offset performance of the INAx180 has several benefits. First, the low offset allows the device to be used 
+in applications that must measure current over a wide dynamic range. In this case, the low offset improves the 
+accuracy when the sensed currents are on the low end of the measurement range. Another advantage of low 
+offset is the ability to sense lower voltage drop across the sense resistor accurately, thus allowing a lower-value 
+shunt resistor. Lower-value shunt resistors reduce power loss in the current sense circuit, and help improve the 
+power efficiency of the end application.
+The gain error of the INAx180 is specified to be within 1% of the actual value. As the sensed voltage becomes 
+much larger than the offset voltage, this voltage becomes the dominant source of error in the current sense 
+measurement.
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+18 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+8.3.4 Rail-to-Rail Output Swing
+The INAx180 allow linear current sensing operation with the output close to the supply rail and GND. The 
+maximum specified output swing to the positive rail is 30 mV, and the maximum specified output swing to 
+GND is only 5 mV. To compare the output swing of the INAx180 to an equivalent operational amplifier (op 
+amp), the inputs are overdriven to approximate the open-loop condition specified in op amp data sheets. The 
+current-sense amplifier is a closed-loop system; therefore, the output swing to GND can be limited by the 
+product of the offset voltage and amplifier gain.
+For devices that have positive offset voltages, the swing to GND is limited by the larger of either the offset 
+voltage multiplied by the gain or the swing to GND specified in the Electrical Characteristics table.
+For example, in an application where the INA180A4 (gain = 200 V/V) is used for low-side current sensing and 
+the device has an offset of 40 µV, the product of the device offset and gain results in a value of 8 mV, greater 
+than the specified negative swing value. Therefore, the swing to GND for this example is 8 mV. If the same 
+device has an offset of –40 µV, then the calculated zero differential signal is –8 mV. In this case, the offset helps 
+overdrive the swing in the negative direction, and swing performance is consistent with the value specified in the 
+Electrical Characteristics table.
+The offset voltage is a function of the common-mode voltage as determined by the CMRR specification; 
+therefore, the offset voltage increases when higher common-mode voltages are present. The increase in offset 
+voltage limits how low the output voltage can go during a zero-current condition when operating at higher 
+common-mode voltages. Figure 8-5 shows the typical limitation of the zero-current output voltage vs common-
+mode voltage for each gain option.
+Common Mode Voltage (V)
+Zero Current Output Voltage (V)
+0 2 4 6 8 10 12 14 16 18 20 22 24 26
+0
+0.006
+0.012
+0.018
+0.024
+0.03
+0.036
+0.042
+0.048
+0.054
+0.06
+D033
+A1
+A2
+A3
+A4
+Figure 8-5. Zero-Current Output Voltage vs Common-Mode Voltage
+8.4 Device Functional Modes
+8.4.1 Normal Mode
+The INAx180 is in normal operation when the following conditions are met:
+• The power supply voltage (VS) is between 2.7 V and 5.5 V.
+• The common-mode voltage (VCM) is within the specified range of –0.2 V to +26 V.
+• The maximum differential input signal times gain is less than VS minus the output voltage swing to VS.
+• The minimum differential input signal times gain is greater than the swing to GND (see the Rail-to-Rail Output 
+Swing section).
+During normal operation, the device produces an output voltage that is the gained-up representation of the 
+difference voltage from IN+ to IN–.
+8.4.2 Input Differential Overload
+If the differential input voltage (V IN+ – V IN–) times gain exceeds the voltage swing specification, the INAx180 
+drive the output as close as possible to the positive supply, and does not provide accurate measurement of the 
+differential input voltage. If this input overload occurs during normal circuit operation, then reduce the value of 
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 19
+Product Folder Links: INA180 INA2180 INA4180
+the shunt resistor or use a lower-gain version with the chosen sense resistor to avoid this mode of operation. 
+If a differential overload occurs in a fault event, then the output of the INAx180 return to the expected value 
+approximately 20 µs after the fault condition is removed.
+When the INAx180 output is driven to either the supply rail or ground, increasing the differential input voltage 
+does not damage the device as long as the absolute maximum ratings are not violated. Following these 
+guidelines, the INAx180 output maintains polarity, and does not suffer from phase reversal.
+8.4.3 Shutdown Mode
+Although the INAx180 do not have a shutdown pin, the low power consumption of the device allows the output 
+of a logic gate or transistor switch to power the INAx180. This gate or switch turns on and off the INAx180 
+power-supply quiescent current.
+However, in current shunt monitoring applications, there is also a concern for how much current is drained 
+from the shunt circuit in shutdown conditions. Evaluating this current drain involves considering the simplified 
+schematic of the INAx180 in shutdown mode, as shown in Figure 8-6.
+CBYPASS
+0.1 µF
+VS
+2.7 V to 5.5 V
+Shutdown
+RPULL-UP
+10 k
+Single-Channel 
+TI Device
+RSENSE
+GND
+VS
+Load
+IN±
+IN+
+OUT
++
+±
+Bus Voltage
+±0.2 V to +26 V
+RSENSE
+Load
+Output
+Figure 8-6. Basic Circuit to Shut Down the INxA180
+There is typically more than 500 kΩ of impedance (from the combination of 500-kΩ feedback and
+input gain set resistors) from each input of the INAx180 to the OUT pin and to the GND pin. The amount of 
+current flowing through these pins depends on the voltage at the connection.
+Regarding the 500-kΩ path to the output pin, the output stage of a disabled INAx180 does constitute a good path 
+to ground. Consequently, this current is directly proportional to a shunt common-mode voltage present across a 
+500-kΩ resistor.
+As a final note, as long as the shunt common-mode voltage is greater than V S when the device is powered up, 
+there is an additional and well-matched 55-µA typical current that flows in each of the inputs. If less than V S, the 
+common-mode input currents are negligible, and the only current effects are the result of the 500-kΩ resistors.
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+20 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+9 Application and Implementation
+Note
+Information in the following applications sections is not part of the TI component specification, 
+and TI does not warrant its accuracy or completeness. TI’s customers are responsible for 
+determining suitability of components for their purposes, as well as validating and testing their design 
+implementation to confirm system functionality.
+9.1 Application Information
+The INAx180 amplify the voltage developed across a current-sensing resistor as current flows through the 
+resistor to the load or ground.
+9.1.1 Basic Connections
+Figure 9-1  shows the basic connections of the INA180. Connect the input pins (IN+ and IN–) as closely as 
+possible to the shunt resistor to minimize any resistance in series with the shunt resistor.
+Power Supply, VS
+2.7 V to 5.5 V
+ADC
+Microcontroller
+Bus Voltage
+±0.2 V to +26 V
+RSENSE
+GND
+VS
+Load
+IN±
+IN+
+OUT
++
+±
+CBYPASS
+0.1 µF
+Single-Channel 
+TI Device
+NOTE: For best measurement accuracy, connect analog-to-digital converter (ADC) reference or microcontroller ground as closely as 
+possible to the INAx180 GND pin, and add an RC filter between the output of the INAx180 and the ADC. See Closed-Loop Analysis of 
+Load-Induced Amplifier Stability Issues Using ZOUT for more details.
+Figure 9-1. Basic Connections for the INA180
+A power-supply bypass capacitor of at least 0.1 µF is required for proper operation. Applications with noisy 
+or high-impedance power supplies may require additional decoupling capacitors to reject power-supply noise. 
+Connect bypass capacitors close to the device pins.
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 21
+Product Folder Links: INA180 INA2180 INA4180
+9.1.2 RSENSE and Device Gain Selection
+The accuracy of the INAx180 is maximized by choosing the current-sense resistor to be as large as possible. 
+A large sense resistor maximizes the differential input signal for a given amount of current flow and reduces 
+the error contribution of the offset voltage. However, there are practical limits as to how large the current-sense 
+resistor can be in a given application. The INAx180 have a typical input bias currents of 80 µA for each input 
+when operated at a 12-V common-mode voltage input. When large current-sense resistors are used, these 
+bias currents cause increased offset error and reduced common-mode rejection. Therefore, using current-sense 
+resistors larger than a few ohms is generally not recommended for applications that require current-monitoring 
+accuracy. A second common restriction on the value of the current-sense resistor is the maximum allowable 
+power dissipation that is budgeted for the resistor. Equation 1 gives the maximum value for the current sense 
+resistor for a given power dissipation budget:
+MAX
+SENSE 2
+MAX
+PDR
+I
+
+(1)
+where:
+• PDMAX is the maximum allowable power dissipation in RSENSE.
+• IMAX is the maximum current that will flow through RSENSE.
+An additional limitation on the size of the current-sense resistor and device gain is due to the power-supply 
+voltage, VS, and device swing to rail limitations. In order to make sure that the current-sense signal is properly 
+passed to the output, both positive and negative output swing limitations must be examined. Equation 2 provides 
+the maximum values of RSENSE and GAIN to keep the device from hitting the positive swing limitation.
+MAX SENSE SPI R GAIN Vu u 
+(2)
+where:
+• IMAX is the maximum current that will flow through RSENSE.
+• GAIN is the gain of the current sense-amplifier.
+• VSP is the positive output swing as specified in the data sheet.
+To avoid positive output swing limitations when selecting the value of R SENSE, there is always a trade-off 
+between the value of the sense resistor and the gain of the device under consideration. If the sense resistor 
+selected for the maximum power dissipation is too large, then it is possible to select a lower-gain device in order 
+to avoid positive swing limitations.
+The negative swing limitation places a limit on how small of a sense resistor can be used in a given application. 
+Equation 3 provides the limit on the minimum size of the sense resistor.
+MIN SENSE SNI R GAIN > Vu u 
+(3)
+where:
+• IMIN is the minimum current that will flow through RSENSE.
+• GAIN is the gain of the current sense amplifier.
+• VSN is the negative output swing of the device (see Rail-to-Rail Output Swing).
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+22 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+9.1.3 Signal Filtering
+Provided that the INAx180 output is connected to a high impedance input, the best location to filter is at the 
+device output using a simple RC network from OUT to GND. Filtering at the output attenuates high-frequency 
+disturbances in the common-mode voltage, differential input signal, and INAx180 power-supply voltage. If 
+filtering at the output is not possible, or filtering of only the differential input signal is required, it is possible 
+to apply a filter at the input pins of the device. Figure 9-2 provides an example of how a filter can be used on the 
+input pins of the device.
+VOUT
+VS
+2.7 V to 5.5 V
+Bias
+IN±
+IN+
+VS
+OUT
+Single-Channel 
+TI DeviceRF < 10  RINT
+CF
+RF < 10  RINT
++
+±
+Bus Voltage
+±0.2 V to +26 V
+RSENSE
+Load
+GND
+f±3dB
+3dB
+F F F
+1f 2 (R R )C  S  
+Figure 9-2. Filter at Input Pins
+The addition of external series resistance creates an additional error in the measurement; therefore, the value 
+of these series resistors must be kept to 10 Ω (or less, if possible) to reduce impact to accuracy. The internal 
+bias network shown in Figure 9-2 present at the input pins creates a mismatch in input bias currents when a 
+differential voltage is applied between the input pins. If additional external series filter resistors are added to 
+the circuit, the mismatch in bias currents results in a mismatch of voltage drops across the filter resistors. This 
+mismatch creates a differential error voltage that subtracts from the voltage developed across the shunt resistor. 
+This error results in a voltage at the device input pins that is different than the voltage developed across the 
+shunt resistor. Without the additional series resistance, the mismatch in input bias currents has little effect on 
+device operation. The amount of error these external filter resistors add to the measurement can be calculated 
+using Equation 5, where the gain error factor is calculated using Equation 4.
+The amount of variance in the differential voltage present at the device input relative to the voltage developed 
+at the shunt resistor is based both on the external series resistance (R F) value as well as internal input resistor 
+RINT, as shown in Figure 9-2. The reduction of the shunt voltage reaching the device input pins appears as a 
+gain error when comparing the output voltage relative to the voltage across the shunt resistor. A factor can be 
+calculated to determine the amount of gain error that is introduced by the addition of external series resistance. 
+Calculate the expected deviation from the shunt voltage to what is measured at the device input pins is given 
+using Equation 4:
+INT
+F INT F INT
+1250 RGain Error Factor (1250 R ) (1250 R ) (R R )
+u u  u  u
+(4)
+where:
+• RINT is the internal input resistor.
+• RF is the external series resistance.
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 23
+Product Folder Links: INA180 INA2180 INA4180
+With the adjustment factor from Equation 4, including the device internal input resistance, this factor varies with 
+each gain version, as shown in Table 9-1. Each individual device gain error factor is shown in Table 9-2.
+Table 9-1. Input Resistance
+PRODUCT GAIN RINT (kΩ)
+INAx180A1 20 25
+INAx180A2 50 10
+INAx180A3 100 5
+INAx180A4 200 2.5
+Table 9-2. Device Gain Error Factor
+PRODUCT SIMPLIFIED GAIN ERROR FACTOR
+INAx180A1
+F
+25000
+(21 R ) 25000u  
+INAx180A2
+F
+10000
+(9 R ) 10000u  
+INAx180A3
+F
+1000
+R 1000
+INAx180A4
+F
+2500
+(3 R ) 2500u  
+The gain error that can be expected from the addition of the external series resistors can then be calculated 
+based on Equation 5:
+Gain Error (%) = 100 (100 Gain Error Factor)/c45 /c180
+(5)
+For example, using an INA180A2 and the corresponding gain error equation from Table 9-2, a series resistance 
+of
+10 Ω results in a gain error factor of 0.991. The corresponding gain error is then calculated using Equation 5, 
+resulting in an additional gain error of approximately 0.89% solely because of the external 10-Ω series resistors.
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+24 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+9.2 Typical Application
+Power Supply, VS
+2.7 V to 5.5 V
+Load 
+Supply
+RSENSE
+GND
+VS
+Load
+IN±
+IN+
+OUT
++
+±
+CBYPASS
+0.1 µF
+VOUT
+Single-Channel 
+TI Device
+Figure 9-3. Low-Side Sensing
+9.2.1 Design Requirements
+The design requirements for the circuit shown in Figure 9-3, are listed in Table 9-3
+Table 9-3. Design Parameters
+DESIGN PARAMETER EXAMPLE VALUE
+Power-supply voltage, VS 5 V
+Low-side current sensing VCM = 0 V
+RSENSE power loss < 900 mW
+Maximum sense current, IMAX 40 A
+Current sensing error Less than 1.5% at maximum current, TJ = 25°C
+Small-signal bandwidth > 80 kHz
+9.2.2 Detailed Design Procedure
+The maximum value of the current sense resistor is calculated based on the maximum power loss requirement. 
+By applying Equation 1, the maximum value of the current-sense resistor is calculated to be 0.563 m Ω. This is 
+the maximum value for sense resistor R SENSE; therefore, select R SENSE to be 0.5 m Ω because it is the closest 
+standard resistor value that meets the power-loss requirement.
+The next step is to select the appropriate gain and reduce R SENSE, if needed, to keep the output signal swing 
+within the V S range. Using Equation 2 , and given that I MAX = 40 A and R SENSE = 0.5 m Ω, the maximum 
+current-sense gain calculated to avoid the positive swing-to-rail limitations on the output is 248.5. To maximize 
+the output signal range, the INA180A4 (gain = 200) device is selected for this application.
+To calculate the accuracy at peak current, the two factors that must be determined are the gain error and the 
+offset error. The gain error of the INAx180 is specified to be a maximum of 1%. The error due to the offset is 
+constant, and is specified to be 125 µV (maximum) for the conditions where V CM = 0 V and V S = 5 V. Using 
+Equation 6, the percentage error contribution of the offset voltage is calculated to be 0.75%, with total offset error 
+= 150 µV, RSENSE = 0.5 mΩ, and ISENSE = 40 A.
+SENSE SENSE
+Total Offset Error (V)Total Offset Error (%) = 100%I R uu
+(6)
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 25
+Product Folder Links: INA180 INA2180 INA4180
+One method of calculating the total error is to add the gain error to the percentage contribution of the offset error. 
+However, in this case, the gain error and the offset error do not have an influence or correlation to each other. A 
+more statistically accurate method of calculating the total error is to use the RSS sum of the errors, as shown in 
+Equation 7:
+2 2 Total Error (%) = Total Gain Error (%)  + Total Offse t Error (%)
+(7)
+After applying Equation 7, the total current sense error at maximum current is calculated to be 1.25%, and that is 
+less than the design example requirement of 1.5%.
+The INA180A4 (gain = 200) also has a bandwidth of 105 kHz that meets the small-signal bandwidth requirement 
+of 80 kHz. If higher bandwidth is required, lower-gain devices can be used at the expense of either reduced 
+output voltage range or an increased value of RSENSE.
+9.2.3 Application Curve
+Figure 9-4  shows an example output response of a unidirectional configuration. The device output swing is 
+limited by ground; therefore, the output is biased to this zero output level. The output rises above ground for 
+positive differential input signals, but cannot fall below ground for negative differential input signals.
+Output Voltage (1 V/div)
+Time (500 µs/div)
+Output
+Ground
+0 V
+Figure 9-4. Output Response
+9.3 Power Supply Recommendations
+The input circuitry of the INAx180 accurately measures beyond the power-supply voltage, V S. For example, V S 
+can be 5 V, whereas the bus supply voltage at IN+ and IN– can be as high as 26 V. However, the output voltage 
+range of the OUT pin is limited by the voltages on the VS pin. The INAx180 also withstand the full differential 
+input signal range up to 26 V at the IN+ and IN– input pins, regardless of whether or not the device has power 
+applied at the VS pin.
+9.3.1 Common-Mode Transients Greater Than 26 V
+With a small amount of additional circuitry, the INAx180 can be used in circuits subject to transients higher than 
+26 V, such as automotive applications. Use only Zener diodes or Zener-type transient absorbers (sometimes 
+referred to as transzorbs)—any other type of transient absorber has an unacceptable time delay. Start by adding 
+a pair of resistors as a working impedance for the Zener diode, as shown Figure 9-5. Keep these resistors as 
+small as possible; most often, around 10 Ω. Larger values can be used with an effect on gain that is discussed 
+in the Signal Filtering  section. This circuit limits only short-term transients; therefore, many applications are 
+satisfied with a 10- Ω resistor along with conventional Zener diodes of the lowest acceptable power rating. This 
+combination uses the least amount of board space. These diodes can be found in packages as small as
+SOT-523 or SOD-523.
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+26 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+IN±
+IN+
+GND
+VS
+OUT
++
+±
+Single-Channel 
+TI Device
+VS
+2.7 V to 5.5 V
+OutputRPROTECT
+< 10 
+RSENSE
+Bus Supply
+±0.2 V to +26 V
+Load
+CBYPASS
+0.1 µF
+Figure 9-5. Transient Protection Using Dual Zener Diodes
+In the event that low-power Zener diodes do not have sufficient transient absorption capability, a higher-power 
+transzorb must be used. The most package-efficient solution involves using a single transzorb and back-to-back 
+diodes between the device inputs, as shown in Figure 9-6. The most space-efficient solutions are dual, series-
+connected diodes in a single SOT-523 or SOD-523 package. In either of the examples shown in Figure 9-5 and 
+Figure 9-6, the total board area required by the INAx180 with all protective components is less than that of an 
+SO-8 package, and only slightly greater than that of an MSOP-8 package.
+Transorb Output
+IN±
+IN+
+GND
+OUT
++
+±
+< 10 
+< 10 
+VS
+VS
+2.7 V to 5.5 V CBYPASS
+0.1 µF
+RSENSE
+Bus Supply
+±0.2 V to +26 V
+Load
+Single-Channel 
+TI Device
+Figure 9-6. Transient Protection Using a Single Transzorb and Input Clamps
+For a reference design example, see Current Shunt Monitor With Transient Robustness Reference Design.
+9.4 Layout
+9.4.1 Layout Guidelines
+• Connect the input pins to the sensing resistor using a Kelvin or 4-wire connection. This connection technique 
+makes sure that only the current-sensing resistor impedance is detected between the input pins. Poor routing 
+of the current-sensing resistor commonly results in additional resistance present between the input pins. 
+Given the very low ohmic value of the current resistor, any additional high-current carrying impedance can 
+cause significant measurement errors.
+• Place the power-supply bypass capacitor as close as possible to the device power supply and ground pins. 
+The recommended value of this bypass capacitor is 0.1 µF. Additional decoupling capacitance can be added 
+to compensate for noisy or high-impedance power supplies.
+• When routing the connections from the current sense resistor to the device, keep the trace lengths as close 
+as possible in order to minimize any impedance mismatch.
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 27
+Product Folder Links: INA180 INA2180 INA4180
+9.4.2 Layout Examples
+1
+2
+3
+5
+4
+GND
+IN± IN+
+Current 
+SenseOUTVS
+RSHUNT
+Direction Current Flow
+VIA to Ground 
+Plane
+Power Supply, VS:
+2.7 V to 5.5 V 
+CBYPASS
+Bus Voltage:
+±0.2 V to +26 V 
+Figure 9-7. Single-Channel Recommended Layout (Pinout A)
+1
+2
+3
+8
+6
+IN–1
+IN–2 IN+1
+Current Sense 
+Output 1
+OUT1VS
+RSHUNT1
+Load 1
+VIA to Ground 
+Plane
+Power Supply, VS: 
+2.7 V to 5.5 V  
+CBYPASS
+45IN+2 GND
+7OUT2
+RSHUNT2
+Current Sense 
+Output 2
+Load 2
+Direction of 
+Current Flow Direction of 
+Current Flow
+Bus Voltage: 
+–0.2 V to +26 V
+Figure 9-8. Dual-Channel Recommended Layout (VSSOP)
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+28 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+1
+2
+3
+8
+6
+IN±1
+IN±2 IN+1
+Current Sense 
+Output 1
+OUT1VS
+RSHUNT1
+Load 1
+VIA to Ground 
+Plane
+Power Supply, VS: 
+2.7 V to 5.5 V 
+CBYPASS
+45IN+2 GND
+7OUT2
+RSHUNT2
+Current Sense 
+Output 2
+Load 2
+Direction of 
+Current Flow Direction of 
+Current Flow
+Bus Voltage: 
+±0.2 V to +26 V
+Figure 9-9. Dual-Channel Recommended Layout (WSON)
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 29
+Product Folder Links: INA180 INA2180 INA4180
+1
+2
+3
+14
+12
+IN±1
+IN+4 IN+1
+OUT1OUT4
+RSHUNT2
+Load1
+VIA to 
+Ground 
+Plane
+CBYPASS
+411GND VS
+13IN±4
+RSHUNT4
+Load 1
+Direction of 
+Current Flow
+Bus Voltage 1:  
+±0.2 V to +26 V
+5
+69
+IN+2
+IN±3 IN±2
+78OUT3 OUT2
+10IN+3
+Load 4
+Load 2Load 3
+Current Sense 
+Output 4
+Current Sense 
+Output 3
+Current Sense 
+Output 2
+Bus Voltage 2:  
+±0.2 V to +26 VBus Voltage 3:  
+±0.2 V to +26 V
+Bus Voltage 4:  
+±0.2 V to +26 V
+RSHUNT1
+RSHUNT3
+Current Sense 
+Output 1
+VIA to 
+Ground 
+Plane
+Direction of 
+Current Flow
+Direction of 
+Current Flow
+Direction of 
+Current Flow
+Power Supply, VS:
+2.7 V to 5.5 V 
+Figure 9-10. Quad-Channel Recommended Layout
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022 www.ti.com
+30 Submit Document Feedback Copyright © 2022 Texas Instruments Incorporated
+Product Folder Links: INA180 INA2180 INA4180
+10 Device and Documentation Support
+10.1 Documentation Support
+10.1.1 Related Documentation
+For related documentation see the following:
+• Texas Instruments, INA180-181EVM User's Guide
+• Texas Instruments, INA2180-2181EVM User's Guide
+• Texas Instruments, INA4180-4181EVM User's Guide
+10.2 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on 
+Subscribe to updates  to register and receive a weekly digest of any product information that has changed. For 
+change details, review the revision history included in any revised document.
+10.3 Support Resources
+TI E2E ™ support forums  are an engineer's go-to source for fast, verified answers and design help — straight 
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do 
+not necessarily reflect TI's views; see TI's Terms of Use.
+10.4 Trademarks
+TI E2E™ is a trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+10.5 Electrostatic Discharge Caution
+This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled 
+with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may 
+be more susceptible to damage because very small parametric changes could cause the device not to meet its published 
+specifications.
+10.6 Glossary
+TI Glossary This glossary lists and explains terms, acronyms, and definitions.
+Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most 
+current data available for the designated devices. This data is subject to change without notice and revision of 
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+www.ti.com
+INA180, INA2180, INA4180
+SBOS741H – APRIL 2017 – REVISED JULY 2022
+Copyright © 2022 Texas Instruments Incorporated Submit Document Feedback 31
+Product Folder Links: INA180 INA2180 INA4180
+PACKAGE OPTION ADDENDUM
+www.ti.com 5-Sep-2026
+PACKAGING INFORMATION
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+INA180A1IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 18ID
+INA180A1IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 18ID
+INA180A1IDBVT Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 18ID
+INA180A1IDBVT.B Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 18ID
+INA180A2IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1A8D
+INA180A2IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1A8D
+INA180A2IDBVT Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1A8D
+INA180A2IDBVT.B Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1A8D
+INA180A3IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 1A9D
+INA180A3IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 1A9D
+INA180A3IDBVT Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes SN Level-1-260C-UNLIM -40 to 125 1A9D
+INA180A3IDBVT.B Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes SN Level-1-260C-UNLIM -40 to 125 1A9D
+INA180A4IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1AAD
+INA180A4IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1AAD
+INA180A4IDBVT Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1AAD
+INA180A4IDBVT.B Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1AAD
+INA180B1IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 18RD
+INA180B1IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 18RD
+INA180B1IDBVT Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 18RD
+INA180B1IDBVT.B Active Production SOT-23 (DBV) | 5 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 18RD
+INA180B2IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1ABD
+INA180B2IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1ABD
+INA180B2IDBVT Obsolete Production SOT-23 (DBV) | 5 - - Call TI Call TI -40 to 125 1ABD
+INA180B3IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1ACD
+INA180B3IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1ACD
+INA180B3IDBVT Obsolete Production SOT-23 (DBV) | 5 - - Call TI Call TI -40 to 125 1ACD
+INA180B4IDBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 1ADD
+INA180B4IDBVR.B Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 1ADD
+INA180B4IDBVT Obsolete Production SOT-23 (DBV) | 5 - - Call TI Call TI -40 to 125 1ADD
+Addendum-Page 1
+PACKAGE OPTION ADDENDUM
+www.ti.com 5-Sep-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+INA2180A1IDGKR Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU | SN
+| NIPDAUAG
+Level-2-260C-1 YEAR -40 to 125 1CX6
+INA2180A1IDGKR.B Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 1CX6
+INA2180A1IDGKT Obsolete Production VSSOP (DGK) | 8 - - Call TI Call TI -40 to 125 1CX6
+INA2180A1IDSGR Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 25EY
+INA2180A1IDSGR.B Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 25EY
+INA2180A1IDSGT Obsolete Production WSON (DSG) | 8 - - Call TI Call TI -40 to 125 25EY
+INA2180A2IDGKR Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU | SN
+| NIPDAUAG
+Level-2-260C-1 YEAR -40 to 125 1CZ6
+INA2180A2IDGKR.B Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 1CZ6
+INA2180A2IDGKT Obsolete Production VSSOP (DGK) | 8 - - Call TI Call TI -40 to 125 1CZ6
+INA2180A2IDSGR Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 25FY
+INA2180A2IDSGR.B Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 25FY
+INA2180A3IDGKR Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU | SN
+| NIPDAUAG
+Level-2-260C-1 YEAR -40 to 125 1D16
+INA2180A3IDGKR.B Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 1D16
+INA2180A3IDSGR Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 25GY
+INA2180A3IDSGR.B Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 25GY
+INA2180A3IDSGT Obsolete Production WSON (DSG) | 8 - - Call TI Call TI -40 to 125 25GY
+INA2180A4IDGKR Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU | SN
+| NIPDAUAG
+Level-2-260C-1 YEAR -40 to 125 1D26
+INA2180A4IDGKR.B Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 1D26
+INA2180A4IDGKT Obsolete Production VSSOP (DGK) | 8 - - Call TI Call TI -40 to 125 1D26
+INA2180A4IDSGR Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 25HY
+INA2180A4IDSGR.B Active Production WSON (DSG) | 8 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 25HY
+INA2180A4IDSGT Obsolete Production WSON (DSG) | 8 - - Call TI Call TI -40 to 125 25HY
+INA4180A1IPWR Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU | SN Level-2-260C-1 YEAR -40 to 125 4180A1
+INA4180A1IPWR.B Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 4180A1
+INA4180A2IPWR Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU | SN Level-2-260C-1 YEAR -40 to 125 4180A2
+INA4180A2IPWR.B Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 4180A2
+INA4180A3IPWR Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU | SN Level-2-260C-1 YEAR -40 to 125 4180A3
+INA4180A3IPWR.B Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 4180A3
+Addendum-Page 2
+PACKAGE OPTION ADDENDUM
+www.ti.com 5-Sep-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+INA4180A4IPWR Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU | SN Level-2-260C-1 YEAR -40 to 125 4180A4
+INA4180A4IPWR.B Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 4180A4
+INA4180A4IPWRG4 Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 4180A4
+INA4180A4IPWRG4.B Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 4180A4
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+ OTHER QUALIFIED VERSIONS OF INA180, INA2180, INA4180 :
+• Automotive : INA180-Q1, INA2180-Q1, INA4180-Q1
+Addendum-Page 3
+PACKAGE OPTION ADDENDUM
+www.ti.com 5-Sep-2026
+ NOTE: Qualified Version Definitions:
+• Automotive - Q100 devices qualified for high-reliability automotive applications targeting zero defects
+Addendum-Page 4
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0B0K0WDimension designed to accommodate the component lengthDimension designed to accommodate the component thicknessOverall width of the carrier tapePitch between successive cavity centersDimension designed to accommodate the component width
+TAPE DIMENSIONSK0 P1B0WA0Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket QuadrantsSprocket HolesQ1Q1Q2Q2Q3Q3Q4Q4User Direction of Feed
+P1ReelDiameter
+ 
+*All dimensions are nominal
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+INA180A1IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A1IDBVT SOT-23 DBV 5 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A2IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A2IDBVT SOT-23 DBV 5 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A3IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A3IDBVT SOT-23 DBV 5 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A4IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A4IDBVT SOT-23 DBV 5 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180A4IDBVT SOT-23 DBV 5 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180B1IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180B1IDBVT SOT-23 DBV 5 250 180.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180B2IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180B3IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA180B4IDBVR SOT-23 DBV 5 3000 178.0 8.4 3.2 3.2 1.4 4.0 8.0 Q3
+INA2180A1IDSGR WSON DSG 8 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+INA2180A2IDSGR WSON DSG 8 3000 178.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+Pack Materials-Page 1
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+INA2180A3IDSGR WSON DSG 8 3000 178.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+INA2180A4IDGKR VSSOP DGK 8 2500 330.0 12.4 5.3 3.4 1.4 8.0 12.0 Q1
+INA2180A4IDSGR WSON DSG 8 3000 180.0 8.4 2.3 2.3 1.15 4.0 8.0 Q2
+INA4180A1IPWR TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+INA4180A2IPWR TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+INA4180A2IPWR TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+INA4180A3IPWR TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+INA4180A3IPWR TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+INA4180A4IPWR TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+INA4180A4IPWRG4 TSSOP PW 14 2000 330.0 12.4 6.9 5.6 1.6 8.0 12.0 Q1
+Pack Materials-Page 2
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W LH
+ 
+*All dimensions are nominal
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+INA180A1IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180A1IDBVT SOT-23 DBV 5 250 210.0 185.0 35.0
+INA180A2IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180A2IDBVT SOT-23 DBV 5 250 210.0 185.0 35.0
+INA180A3IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180A3IDBVT SOT-23 DBV 5 250 210.0 185.0 35.0
+INA180A4IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180A4IDBVT SOT-23 DBV 5 250 210.0 185.0 35.0
+INA180A4IDBVT SOT-23 DBV 5 250 210.0 185.0 35.0
+INA180B1IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180B1IDBVT SOT-23 DBV 5 250 210.0 185.0 35.0
+INA180B2IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180B3IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA180B4IDBVR SOT-23 DBV 5 3000 208.0 191.0 35.0
+INA2180A1IDSGR WSON DSG 8 3000 210.0 185.0 35.0
+INA2180A2IDSGR WSON DSG 8 3000 208.0 191.0 35.0
+INA2180A3IDSGR WSON DSG 8 3000 208.0 191.0 35.0
+INA2180A4IDGKR VSSOP DGK 8 2500 353.0 353.0 32.0
+Pack Materials-Page 3
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+INA2180A4IDSGR WSON DSG 8 3000 210.0 185.0 35.0
+INA4180A1IPWR TSSOP PW 14 2000 356.0 356.0 35.0
+INA4180A2IPWR TSSOP PW 14 2000 353.0 353.0 32.0
+INA4180A2IPWR TSSOP PW 14 2000 356.0 356.0 35.0
+INA4180A3IPWR TSSOP PW 14 2000 353.0 353.0 32.0
+INA4180A3IPWR TSSOP PW 14 2000 356.0 356.0 35.0
+INA4180A4IPWR TSSOP PW 14 2000 356.0 356.0 35.0
+INA4180A4IPWRG4 TSSOP PW 14 2000 353.0 353.0 32.0
+Pack Materials-Page 4
+www.ti.com
+GENERIC PACKAGE VIEW
+This image is a representation of the package family, actual package may vary.
+Refer to the product data sheet for package details.
+WSON - 0.8 mm max heightDSG 8
+PLASTIC SMALL OUTLINE - NO LEAD2 x 2, 0.5 mm pitch
+4224783/A
+www.ti.com
+PACKAGE OUTLINE
+C
+8X 0.32
+0.18
+1.6 0.1
+2X
+1.5
+0.9 0.1
+6X 0.5
+8X 0.4
+0.2
+0.05
+0.00
+0.8
+0.7
+A 2.1
+1.9
+B
+2.1
+1.9
+0.32
+0.18
+0.4
+0.2
+(DIM A) TYP
+WSON - 0.8 mm max heightDSG0008A
+PLASTIC SMALL OUTLINE - NO LEAD
+4218900/E   08/2022
+SIDE WALL 
+METAL THICKNESS
+DIM A
+OPTION 1
+OPTION 2
+0.1 0.2
+PIN 1 INDEX AREA
+SEATING PLANE
+0.08 C
+1
+4 5
+8
+X 0.25)(45
+PIN 1 ID
+0.1 C A B
+0.05 C
+THERMAL PAD
+EXPOSED
+9
+NOTES:
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+SCALE  5.500
+ALTERNATIVE TERMINAL SHAPE
+TYPICAL
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MIN
+ALL AROUND
+0.07 MAX
+ALL AROUND
+8X (0.25)
+(1.6)
+(1.9)
+6X (0.5)
+(0.9) ( 0.2) VIA
+TYP
+(0.55)
+8X (0.5)
+(R0.05) TYP
+WSON - 0.8 mm max heightDSG0008A
+PLASTIC SMALL OUTLINE - NO LEAD
+4218900/E   08/2022
+SYMM
+1
+4 5
+8
+LAND PATTERN EXAMPLE
+SCALE:20X
+SYMM 9
+NOTES: (continued)
+ 
+4. This package is designed to be soldered to a thermal pad on the board. For more information, see Texas Instruments literature
+    number SLUA271 (www.ti.com/lit/slua271).
+5. Vias are optional depending on application, refer to device data sheet. If any vias are implemented, refer to their locations shown
+    on this view. It is recommended that vias under paste be filled, plugged or tented. 
+ 
+SOLDER MASK
+OPENING
+SOLDER MASK
+METAL UNDER
+SOLDER MASK
+DEFINED
+METALSOLDER MASK
+OPENING
+SOLDER MASK DETAILS
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(R0.05) TYP
+8X (0.25)
+8X (0.5)
+(0.9)
+(0.7)
+(1.9)
+(0.45)
+6X (0.5)
+WSON - 0.8 mm max heightDSG0008A
+PLASTIC SMALL OUTLINE - NO LEAD
+4218900/E   08/2022
+NOTES: (continued)
+ 
+6. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations. 
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+ 
+EXPOSED PAD 9:
+ 87% PRINTED SOLDER COVERAGE BY AREA UNDER PACKAGE
+SCALE:25X
+SYMM
+1
+4
+5
+8
+METAL
+SYMM
+9
+www.ti.com
+PACKAGE OUTLINE
+C
+12X 0.65
+2X
+3.9
+14X 0.30
+0.17
+6.6
+6.2 TYP
+1.2 MAX
+0.15
+0.05
+0.25
+GAGE PLANE
+0 -8
+4X (0 -12 )
+B 4.5
+4.3
+NOTE 4
+A
+5.1
+4.9
+NOTE 3
+0.75
+0.50
+(0.15) TYP
+TSSOP - 1.2 mm max heightPW0014A
+SMALL OUTLINE PACKAGE
+4220202/B   12/2023
+1
+7
+8
+14
+0.1 C A B
+PIN 1 INDEX AREA
+SEE DETAIL  A
+0.1 C
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-153.
+ 
+SEATING
+PLANE
+A  20
+DETAIL A
+TYPICAL
+SCALE  2.500
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+14X (1.5)
+14X (0.45)
+12X (0.65)
+(5.8)
+(R0.05) TYP
+TSSOP - 1.2 mm max heightPW0014A
+SMALL OUTLINE PACKAGE
+4220202/B   12/2023
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE: 10X
+SYMM
+SYMM
+1
+7 8
+14
+15.000
+METALSOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+OPENING
+EXPOSED METALEXPOSED METAL
+SOLDER MASK DETAILS
+NON-SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK
+DEFINED
+www.ti.com
+EXAMPLE STENCIL DESIGN
+14X (1.5)
+14X (0.45)
+12X (0.65)
+(5.8)
+(R0.05) TYP
+TSSOP - 1.2 mm max heightPW0014A
+SMALL OUTLINE PACKAGE
+4220202/B   12/2023
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE: 10X
+SYMM
+SYMM
+1
+7 8
+14
+www.ti.com
+PACKAGE OUTLINE
+C
+0.22
+0.08 TYP
+0.25
+3.0
+2.6
+2X 0.95
+1.9
+1.45
+0.90
+0.15
+0.00 TYP
+5X 0.5
+0.3
+0.6
+0.3 TYP
+8
+0  TYP
+1.9
+(0.1)
+(0.15)
+4X 0 -15
+4X 4 -15
+A
+3.05
+2.75
+B1.75
+1.45
+(1.1)
+SOT-23 - 1.45 mm max heightDBV0005A
+SMALL OUTLINE TRANSISTOR
+4214839/K   08/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Refernce JEDEC MO-178.
+4. Body dimensions do not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.25 mm per side.
+5. Support pin may differ or may not be present.
+0.2 C A B
+1
+3
+4
+5
+2
+INDEX AREA
+PIN 1
+ NOTE 5
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  4.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ARROUND
+0.07 MIN
+ARROUND
+5X (1.1)
+5X (0.6)
+(2.6)
+(1.9)
+2X (0.95)
+(R0.05) TYP
+4214839/K   08/2024
+SOT-23 - 1.45 mm max heightDBV0005A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:15X
+PKG
+1
+3 4
+5
+2
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED METAL
+METALSOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+EXPOSED METAL
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.6)
+(1.9)
+2X(0.95)
+5X (1.1)
+5X (0.6)
+(R0.05) TYP
+SOT-23 - 1.45 mm max heightDBV0005A
+SMALL OUTLINE TRANSISTOR
+4214839/K   08/2024
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+     design recommendations. 
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:15X
+SYMM
+PKG
+1
+3 4
+5
+2
+www.ti.com
+PACKAGE OUTLINE
+C
+6X 0.65
+2X
+1.95
+8X 0.38
+0.25
+5.05
+4.75 TYP
+SEATING
+PLANE
+0.15
+0.05
+0.25
+GAGE PLANE
+0 -8
+1.1 MAX
+0.23
+0.13
+B 3.1
+2.9
+NOTE 4
+A
+3.1
+2.9
+NOTE 3
+0.7
+0.4
+VSSOP - 1.1 mm max heightDGK0008A
+SMALL OUTLINE PACKAGE
+4214862/A   04/2023
+1
+4
+5
+8
+0.13 C A B
+PIN 1 INDEX AREA
+SEE DETAIL  A
+0.1 C
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-187.
+ 
+PowerPAD is a trademark of Texas Instruments.
+A  20
+DETAIL A
+TYPICAL
+SCALE  4.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+8X (1.4)
+8X (0.45)
+6X (0.65)
+(4.4)
+(R0.05) TYP
+VSSOP - 1.1 mm max heightDGK0008A
+SMALL OUTLINE PACKAGE
+4214862/A   04/2023
+NOTES: (continued)
+ 
+  6. Publication IPC-7351 may have alternate designs. 
+  7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+  8. Vias are optional depending on application, refer to device data sheet. If any vias are implemented, refer to their locations shown
+      on this view. It is recommended that vias under paste be filled, plugged or tented.
+  9. Size of metal pad may vary due to creepage requirement.
+ 
+TM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE: 15X
+SYMM
+SYMM
+1
+4
+5
+8
+SEE DETAILS
+15.000
+METALSOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+OPENING
+EXPOSED METALEXPOSED METAL
+SOLDER MASK DETAILS
+NON-SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK
+DEFINED
+www.ti.com
+EXAMPLE STENCIL DESIGN
+8X (1.4)
+8X (0.45)
+6X (0.65)
+(4.4)
+(R0.05) TYP
+VSSOP - 1.1 mm max heightDGK0008A
+SMALL OUTLINE PACKAGE
+4214862/A   04/2023
+NOTES: (continued)
+ 
+11. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+      design recommendations.   
+12. Board assembly site may have different recommendations for stencil design.
+ 
+TM
+SOLDER PASTE EXAMPLE
+ SCALE: 15X
+SYMM
+SYMM
+1
+4
+5
+8
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

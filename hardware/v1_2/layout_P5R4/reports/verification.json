@@ -1,0 +1,206 @@
+{
+  "revision": "V1.2-H0.5-P5R4",
+  "scope": "Rear and IMU review corrections only; motion and power retain P5R3",
+  "native_checks": {
+    "rear": {
+      "board": "MORI_rear_P5R4",
+      "status": "PASS",
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "ignored_ERC_checks": [],
+      "ignored_DRC_checks": [],
+      "source_sha256": "a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3",
+      "tool": "10.0.6",
+      "report": "hardware/v1_2/layout_P5R4/reports/rear/drc.json"
+    },
+    "imu": {
+      "board": "MORI_imu_P5R4",
+      "status": "PASS",
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "ignored_ERC_checks": [],
+      "ignored_DRC_checks": [],
+      "source_sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68",
+      "tool": "10.0.6",
+      "report": "hardware/v1_2/layout_P5R4/reports/imu/drc.json"
+    }
+  },
+  "source_projects_preserved": true,
+  "circuit_revision": "V1.2-H0.5-P5",
+  "invariants": {
+    "rear": {
+      "pad_nets_sizes_drills_identical": true,
+      "schematic_net_topology_identical": true,
+      "custom_DRC_rule_file_unchanged": true
+    },
+    "imu": {
+      "pad_nets_sizes_drills_identical": true,
+      "schematic_net_topology_identical": true,
+      "custom_DRC_rule_file_unchanged": true
+    }
+  },
+  "deltas": {
+    "rear": {
+      "source_pcb_sha256": "20f9fc8a637444e4d373a988eba8bf8b45d7fc85557be88c2de6fe25771c7b2c",
+      "output_pcb_sha256": "a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3",
+      "before": {
+        "tracks": 75,
+        "vias": 15,
+        "track_length_mm": 162.496
+      },
+      "after": {
+        "tracks": 86,
+        "vias": 16,
+        "track_length_mm": 176.021
+      },
+      "pad_net_footprint_map_identical": false,
+      "changed_placements": {
+        "D3": {
+          "before": {
+            "position": [
+              14.3,
+              10.0
+            ],
+            "angle": 0.0,
+            "layer": "B.Cu"
+          },
+          "after": {
+            "position": [
+              14.3,
+              9.5
+            ],
+            "angle": 0.0,
+            "layer": "B.Cu"
+          }
+        },
+        "D1": {
+          "before": {
+            "position": [
+              19.5,
+              6.0
+            ],
+            "angle": 90.0,
+            "layer": "B.Cu"
+          },
+          "after": {
+            "position": [
+              3.9,
+              17.7
+            ],
+            "angle": 180.0,
+            "layer": "B.Cu"
+          }
+        },
+        "C1": {
+          "before": {
+            "position": [
+              4.6,
+              15.5
+            ],
+            "angle": -90.0,
+            "layer": "B.Cu"
+          },
+          "after": {
+            "position": [
+              4.3,
+              22.3
+            ],
+            "angle": -90.0,
+            "layer": "B.Cu"
+          }
+        }
+      },
+      "edge_geometry_identical": true,
+      "holes_connectors_and_module_poses_identical": true,
+      "copper_layers_unchanged": true,
+      "inner_signal_tracks": 0,
+      "drc_exclusions": []
+    },
+    "imu": {
+      "source_pcb_sha256": "bd7cc8ba0b131e1313f7a95b35776cd2dc516efa3ff3483b18a784ee9e933faf",
+      "output_pcb_sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68",
+      "before": {
+        "tracks": 70,
+        "vias": 9,
+        "track_length_mm": 89.439
+      },
+      "after": {
+        "tracks": 77,
+        "vias": 9,
+        "track_length_mm": 100.456
+      },
+      "pad_net_footprint_map_identical": true,
+      "changed_placements": {
+        "C2": {
+          "before": {
+            "position": [
+              12.5,
+              12.9
+            ],
+            "angle": 0.0,
+            "layer": "F.Cu"
+          },
+          "after": {
+            "position": [
+              12.5,
+              14.25
+            ],
+            "angle": 180.0,
+            "layer": "F.Cu"
+          }
+        },
+        "C1": {
+          "before": {
+            "position": [
+              13.2,
+              9.9
+            ],
+            "angle": 90.0,
+            "layer": "F.Cu"
+          },
+          "after": {
+            "position": [
+              12.5,
+              11.7
+            ],
+            "angle": -90.0,
+            "layer": "F.Cu"
+          }
+        }
+      },
+      "edge_geometry_identical": true,
+      "holes_connectors_and_module_poses_identical": true,
+      "copper_layers_unchanged": true,
+      "inner_signal_tracks": 0,
+      "drc_exclusions": []
+    }
+  },
+  "rules_source": {
+    "path": "/Users/dean/Documents/KiCad/Rules/pcb-rules.json",
+    "sha256": "5d49d0134ca8c32acc41736591db9e839c347a40a2baa061d32c9ce64a7c25b0",
+    "total": 47,
+    "enabled": 44,
+    "full_equivalence": "NOT_TESTED"
+  },
+  "foreign_body_crossing_candidates": 0,
+  "R14_local_exceptions": [
+    "rear CC2 F.Cu at (13.25,8.5): exact 0.5mm bevel conflicts with body/clearance",
+    "IMU GND F.Cu at (11.62,8.85) and (11.62,9.85): 0.4575mm escape legs cannot meet full 0.5mm setback"
+  ],
+  "style_limits": "Own-pad/connector housing escape is itemized in body_review_final.json. Zero DRC is not strict style approval.",
+  "CC2_flowthrough": "reports/rear/CC2_flowthrough.json",
+  "interface_pairs": "reports/interface_pairs.json",
+  "bench_tests": "NOT_TESTED",
+  "manufacturing_release": false,
+  "mechanical_fit": "BLOCKED",
+  "unresolved": [
+    "External PD/3S charger remains unselected (user confirmed 2026-09-24)",
+    "J2.5 raw VBUS source-side current limiting absent; source/wire short-fault protection BLOCKED",
+    "TVS/CC electrical ratings must be coordinated with external module",
+    "100um IMU stencil proposal requires assembly supplier confirmation"
+  ]
+}

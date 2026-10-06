@@ -1,0 +1,28 @@
+{
+  "cwd": "/Users/dean/Documents/MORI",
+  "versions": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "Python": "3.12.14"
+  },
+  "commands": [
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_short_tail_v2.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_cam_short_tail_bundle.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/audit_cam_short_tail_arc.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/prepare_fan_curvature_v4.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_yaw_fan_v4.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_yaw_fan_four_bends.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/audit_cam_fan_math.py four_bend_transition",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/pack_cam_fan_transitions.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/verify_cam_fan_joins.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/open_mouth/cleaned/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/render_cam_fan_review.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/publish_cam_fan_review.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/verify_delivery.py"
+  ],
+  "execution_notes": [
+    "Existing original tail, body-prefix and J3M source studies are dependencies; their hashes are retained.",
+    "Broad cubic search was explicitly terminated without a completed pool; it contributes no passing evidence.",
+    "The initial pack assertion failed on overwritten search metadata. The final pack script independently replayed all12 candidates; fan_pack_replay.log records the completed check.",
+    "Fixed-anchor, high-anchor and sidepass failures remain in their separate study directories.",
+    "The review render was rerun to add the full-route overview; geometry and selected route were unchanged."
+  ]
+}

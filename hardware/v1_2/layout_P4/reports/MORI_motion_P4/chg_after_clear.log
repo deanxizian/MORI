@@ -1,0 +1,16 @@
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+Connecting motion 1 /CHG_N clusters 1 1
+local route /CHG_N segments 20 vias 5 nodes 179595
+Connecting motion 2 /CHG_N clusters 1 27
+local route /CHG_N segments 3 vias 0 nodes 3442
+Connecting motion 3 /CHG_N clusters 1 31
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/hardware/v1_2/tools/close_networks_P4.py", line 61, in <module>
+    result=connect(b,net,aa,zz,list(al),list(zl),size,step=((.1 if distance>12 else .05) if "--fine" in sys.argv else .2),width=.2,vd=.8,dr=.3,max_nodes=350000,time_limit=25,heuristic_weight=2.0)
+  File "/Users/dean/Documents/MORI/hardware/v1_2/tools/route_local_P4.py", line 100, in connect
+    if allow_new_vias and clear(x,y,l,True) and clear(x,y,other,True):neigh.append(((x,y,other),5.0+soft_cost(x,y,l,True)+soft_cost(x,y,other,True),None))
+  File "/Users/dean/Documents/MORI/hardware/v1_2/tools/route_local_P4.py", line 71, in clear
+    if shape.Collide(p,mm(dist)):
+  File "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/pcbnew.py", line 24183, in FromMM
+    if type(mm) in [int,float]:
+KeyboardInterrupt

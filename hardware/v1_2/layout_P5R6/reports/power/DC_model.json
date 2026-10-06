@@ -1,0 +1,504 @@
+{
+  "status": "NOT_TESTED",
+  "copper_um_outer": 70,
+  "barrel_length_mm": 1.6,
+  "neck_width_mm": 1,
+  "neck_length_mm": 2.713,
+  "source_current_targets": "schematic_S3/README.md and schematic_S3/reports/logic5v_calculations.json",
+  "assumptions": "Uniform current sharing, finished-drill thin-wall approximation, temperatures and 15/20/25um plating are inputs, not measurements. Ripple +0.5A is an explicit stress assumption. No inferred allowed temperature rise; PCB maker must confirm plating.",
+  "excludes": "Contact, fuse, spreading resistance, AC loss/inductance, regulator IC and inductor heating, plane constrictions. Does not qualify 3A output.",
+  "scenarios": [
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 3.0,
+      "scenario": "illustrative_continuous_not_system_rating",
+      "neck_mOhm": 0.6681731428571429,
+      "via_bank_mOhm": 0.3251948111293957,
+      "total_drop_mV": 2.9801038619596163,
+      "power_mW": 8.940311585878849
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 6.48,
+      "scenario": "budget_concurrent_peak",
+      "neck_mOhm": 0.6681731428571429,
+      "via_bank_mOhm": 0.3251948111293957,
+      "total_drop_mV": 6.437024341832771,
+      "power_mW": 41.71191773507636
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 0.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.9511688667763738,
+      "barrel_drop_mV": 0.9755844333881869,
+      "barrel_power_mW": 0.48779221669409345
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 0.75,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.9511688667763738,
+      "barrel_drop_mV": 1.4633766500822802,
+      "barrel_power_mW": 1.0975324875617103
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 1.25,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.9511688667763738,
+      "barrel_drop_mV": 2.4389610834704674,
+      "barrel_power_mW": 3.048701354338084
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 1.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.9511688667763738,
+      "barrel_drop_mV": 2.9267533001645605,
+      "barrel_power_mW": 4.390129950246841
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 2.0,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.9511688667763738,
+      "barrel_drop_mV": 3.9023377335527476,
+      "barrel_power_mW": 7.804675467105495
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 15.0,
+      "current_A": 2.5,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.9511688667763738,
+      "barrel_drop_mV": 4.877922166940935,
+      "barrel_power_mW": 12.194805417352336
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 3.0,
+      "scenario": "illustrative_continuous_not_system_rating",
+      "neck_mOhm": 0.6681731428571429,
+      "via_bank_mOhm": 0.24389610834704673,
+      "total_drop_mV": 2.7362077536125686,
+      "power_mW": 8.208623260837706
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 6.48,
+      "scenario": "budget_concurrent_peak",
+      "neck_mOhm": 0.6681731428571429,
+      "via_bank_mOhm": 0.24389610834704673,
+      "total_drop_mV": 5.910208747803148,
+      "power_mW": 38.29815268576441
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 0.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.4633766500822805,
+      "barrel_drop_mV": 0.7316883250411402,
+      "barrel_power_mW": 0.3658441625205701
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 0.75,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.4633766500822805,
+      "barrel_drop_mV": 1.0975324875617105,
+      "barrel_power_mW": 0.8231493656712827
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 1.25,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.4633766500822805,
+      "barrel_drop_mV": 1.8292208126028506,
+      "barrel_power_mW": 2.2865260157535636
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 1.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.4633766500822805,
+      "barrel_drop_mV": 2.195064975123421,
+      "barrel_power_mW": 3.292597462685131
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 2.0,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.4633766500822805,
+      "barrel_drop_mV": 2.926753300164561,
+      "barrel_power_mW": 5.853506600329122
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 20.0,
+      "current_A": 2.5,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.4633766500822805,
+      "barrel_drop_mV": 3.6584416252057013,
+      "barrel_power_mW": 9.146104063014254
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 3.0,
+      "scenario": "illustrative_continuous_not_system_rating",
+      "neck_mOhm": 0.6681731428571429,
+      "via_bank_mOhm": 0.19511688667763738,
+      "total_drop_mV": 2.589870088604341,
+      "power_mW": 7.769610265813022
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 6.48,
+      "scenario": "budget_concurrent_peak",
+      "neck_mOhm": 0.6681731428571429,
+      "via_bank_mOhm": 0.19511688667763738,
+      "total_drop_mV": 5.594119391385377,
+      "power_mW": 36.24989365617724
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 0.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.1707013200658243,
+      "barrel_drop_mV": 0.5853506600329121,
+      "barrel_power_mW": 0.29267533001645607
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 0.75,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.1707013200658243,
+      "barrel_drop_mV": 0.8780259900493682,
+      "barrel_power_mW": 0.6585194925370261
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 1.25,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.1707013200658243,
+      "barrel_drop_mV": 1.4633766500822802,
+      "barrel_power_mW": 1.8292208126028504
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 1.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.1707013200658243,
+      "barrel_drop_mV": 1.7560519800987364,
+      "barrel_power_mW": 2.6340779701481045
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 2.0,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.1707013200658243,
+      "barrel_drop_mV": 2.3414026401316486,
+      "barrel_power_mW": 4.682805280263297
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 20,
+      "plating_um": 25.0,
+      "current_A": 2.5,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.1707013200658243,
+      "barrel_drop_mV": 2.9267533001645605,
+      "barrel_power_mW": 7.316883250411402
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 3.0,
+      "scenario": "illustrative_continuous_not_system_rating",
+      "neck_mOhm": 0.8257283699428571,
+      "via_bank_mOhm": 0.4018757475937072,
+      "total_drop_mV": 3.682812352609693,
+      "power_mW": 11.04843705782908
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 6.48,
+      "scenario": "budget_concurrent_peak",
+      "neck_mOhm": 0.8257283699428571,
+      "via_bank_mOhm": 0.4018757475937072,
+      "total_drop_mV": 7.954874681636938,
+      "power_mW": 51.547587937007364
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 0.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 2.411254485562243,
+      "barrel_drop_mV": 1.2056272427811214,
+      "barrel_power_mW": 0.6028136213905607
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 0.75,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 2.411254485562243,
+      "barrel_drop_mV": 1.8084408641716823,
+      "barrel_power_mW": 1.3563306481287618
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 1.25,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 2.411254485562243,
+      "barrel_drop_mV": 3.014068106952804,
+      "barrel_power_mW": 3.767585133691005
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 1.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 2.411254485562243,
+      "barrel_drop_mV": 3.6168817283433645,
+      "barrel_power_mW": 5.425322592515047
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 2.0,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 2.411254485562243,
+      "barrel_drop_mV": 4.822508971124486,
+      "barrel_power_mW": 9.645017942248971
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 15.0,
+      "current_A": 2.5,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 2.411254485562243,
+      "barrel_drop_mV": 6.028136213905608,
+      "barrel_power_mW": 15.07034053476402
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 3.0,
+      "scenario": "illustrative_continuous_not_system_rating",
+      "neck_mOhm": 0.8257283699428571,
+      "via_bank_mOhm": 0.30140681069528036,
+      "total_drop_mV": 3.3814055419144124,
+      "power_mW": 10.144216625743237
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 6.48,
+      "scenario": "budget_concurrent_peak",
+      "neck_mOhm": 0.8257283699428571,
+      "via_bank_mOhm": 0.30140681069528036,
+      "total_drop_mV": 7.303835970535132,
+      "power_mW": 47.32885708906766
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 0.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.8084408641716825,
+      "barrel_drop_mV": 0.9042204320858412,
+      "barrel_power_mW": 0.4521102160429206
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 0.75,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.8084408641716825,
+      "barrel_drop_mV": 1.3563306481287618,
+      "barrel_power_mW": 1.0172479860965713
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 1.25,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.8084408641716825,
+      "barrel_drop_mV": 2.260551080214603,
+      "barrel_power_mW": 2.825688850268254
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 1.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.8084408641716825,
+      "barrel_drop_mV": 2.7126612962575236,
+      "barrel_power_mW": 4.068991944386285
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 2.0,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.8084408641716825,
+      "barrel_drop_mV": 3.616881728343365,
+      "barrel_power_mW": 7.23376345668673
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 20.0,
+      "current_A": 2.5,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.8084408641716825,
+      "barrel_drop_mV": 4.521102160429206,
+      "barrel_power_mW": 11.302755401073016
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 3.0,
+      "scenario": "illustrative_continuous_not_system_rating",
+      "neck_mOhm": 0.8257283699428571,
+      "via_bank_mOhm": 0.2411254485562243,
+      "total_drop_mV": 3.2005614554972444,
+      "power_mW": 9.601684366491732
+    },
+    {
+      "part": "R2.2 neck + BAT_MON 4-barrel bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 6.48,
+      "scenario": "budget_concurrent_peak",
+      "neck_mOhm": 0.8257283699428571,
+      "via_bank_mOhm": 0.2411254485562243,
+      "total_drop_mV": 6.913212743874048,
+      "power_mW": 44.79761858030384
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 0.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.4467526913373459,
+      "barrel_drop_mV": 0.7233763456686729,
+      "barrel_power_mW": 0.36168817283433646
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 0.75,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.4467526913373459,
+      "barrel_drop_mV": 1.0850645185030094,
+      "barrel_power_mW": 0.813798388877257
+    },
+    {
+      "part": "M5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 1.25,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.4467526913373459,
+      "barrel_drop_mV": 1.8084408641716823,
+      "barrel_power_mW": 2.260551080214603
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 1.5,
+      "scenario": "continuous_design_target",
+      "via_pair_mOhm": 1.4467526913373459,
+      "barrel_drop_mV": 2.170129037006019,
+      "barrel_power_mW": 3.255193555509028
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 2.0,
+      "scenario": "peak_design_target",
+      "via_pair_mOhm": 1.4467526913373459,
+      "barrel_drop_mV": 2.8935053826746917,
+      "barrel_power_mW": 5.787010765349383
+    },
+    {
+      "part": "C5 SW two serial banks / two parallel barrels per bank",
+      "temperature_C": 80,
+      "plating_um": 25.0,
+      "current_A": 2.5,
+      "scenario": "peak_plus_assumed_half_ripple",
+      "via_pair_mOhm": 1.4467526913373459,
+      "barrel_drop_mV": 3.6168817283433645,
+      "barrel_power_mW": 9.042204320858412
+    }
+  ]
+}

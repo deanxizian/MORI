@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM整段装配检查</title>
+<style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;background:#f3f6f5;color:#243b3c;max-width:1080px;margin:32px auto;padding:0 24px 60px}h1{font-size:30px}a{color:#08727b}.note{padding:18px;background:#fff0d9;border-radius:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}figure{margin:0}img{width:100%;border-radius:8px}figcaption{font-size:14px}td,th{text-align:left;padding:10px;border-bottom:1px solid #ccd8d4}table{width:100%;border-collapse:collapse}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+<p><a href="../index.html">← A8研究</a> · <a href="../../index.html">当前未完成项</a> · <a href="../cam_connector_install/index.html">上一步：工具与长度</a></p>
+<h1>CAM整段装配：下放路径与工序检查</h1><p class="note">查出一处装配顺序卡点：当前规定线形不能随头托从42mm高度直接下放。完整线束仍为BLOCKED；主模型M1.47、正式动画均未修改。</p>
+<p>CAM板、插头、头托与插头侧扎带一起移动，身体端和yaw侧保持不动。每根线的活动段始终为72.610689mm，没有人为拉长导线。</p>
+<div class="grid"><figure><a href="seated.png"><img src="seated.png" alt="零位：本次候选局部线路检查通过。屏幕、头壳及短轴尚未装入本工序。"></a><figcaption>零位：本次候选局部线路检查通过。屏幕、头壳及短轴尚未装入本工序。</figcaption></figure><figure><a href="raised42.png"><img src="raised42.png" alt="抬高42mm：同一根线在红点处自相交，不能直接套用原来的无完整线束动画。"></a><figcaption>抬高42mm：同一根线在红点处自相交，不能直接套用原来的无完整线束动画。</figcaption></figure>
+</div><h2>刚性零件能动，带上线以后有阻碍</h2>
+<table><tr><th>检查</th><th>结果</th><th>结论范围</th></tr>
+<tr><td>0–42mm，15个刚性位置</td><td>PASS</td><td>间隔3mm，包含完整CAM板和候选固定结构</td></tr>
+<tr><td>四线在0、3、6mm</td><td>PASS</td><td>只限三个离散位置，连续运动未验证</td></tr>
+<tr><td>9mm起的该组带线位置</td><td>BLOCKED</td><td>先后出现线间余量不足、靠近头座及回碰</td></tr>
+<tr><td>42mm交叠见证</td><td>BLOCKED</td><td>规定曲线的两段实体包络确实交叠</td></tr></table>
+<div class="grid"><figure><a href="wire_conflict42.png"><img src="wire_conflict42.png" alt="42mm：红点为同一根线的两段交叉。局部图隐藏舵机、头托和CAM板以看清线路。"></a><figcaption>42mm：红点为同一根线的两段交叉。局部图隐藏舵机、头托和CAM板以看清线路。</figcaption></figure><figure><a href="neck_gap9.png"><img src="neck_gap9.png" alt="9mm：CAM尾线靠近另一根颈部引线，低于0.3mm设计余量；此图不代表两线已相交。"></a><figcaption>9mm：CAM尾线靠近另一根颈部引线，低于0.3mm设计余量；此图不代表两线已相交。</figcaption></figure>
+</div><p>图中为规定曲线，不是软线自然弯曲仿真。不能据此判断所有安装方式都不可行，也不能将离散位置的PASS称为完整装配通过。</p>
+<h2>工具方向也已对照检查</h2><p>同一剪钳包络检查了8个方向×3个高度×2种舵机工序，共48组。没有一组同时避开结构、既定线路和尾端工作区。只晚装yaw舵机还不够；“先剪尾、后理线”的顺序仍需完整的松线暂存方案。</p>
+<h2>下一步调整装配顺序</h2><p>比较整体离机预装、身体端暂不固定和CAM板分步就位，先得到可检查的完整路径，再选用。当前未为避让冲突增加孔、凸台或零件。其余七根头部导线、FPC和身体侧固定仍未闭合。</p>
+<p>供应商按图制作已经确定。四根线的<a href="../cam_connector_install/length_datums_REFERENCE_ONLY.csv">模型长度表</a>仍仅供参考，裁线列未放行。</p>
+<p><a href="README.md">完整说明</a> · <a href="review.blend">独立Blender</a> · <a href="screen.json">装入位置检查</a> · <a href="sequence_tools.json">工具检查</a> · <a href="witnesses.json">相交见证</a> · <a href="commands.json">复现命令</a> · <a href="review_manifest.json">交付记录</a></p></html>

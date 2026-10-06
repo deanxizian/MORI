@@ -1,0 +1,122 @@
+"""Publish continuous seating/packing and the separate forming candidate."""
+from pathlib import Path
+import json,hashlib,shutil,platform
+SCRIPT=Path(__file__).resolve();A8=SCRIPT.parent;ROOT=A8.parents[3];OUT=A8/'cam_wire_forming'
+read=lambda p:json.loads(p.read_text());sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+pack=read(A8/'cam_board_last/continuous_packing.json');solids=read(A8/'cam_board_last/continuous_wire_solids.json')
+direct=read(OUT/'screen.json');raised=read(OUT/'raised/screen.json');witness=read(OUT/'collision_witness.json');render=read(OUT/'render_manifest.json')
+contacts=read(OUT/'terminals/review_manifest.json');continuous=read(OUT/'continuous/screen.json')
+assert contacts['status']=='PASS' and continuous['status']=='BLOCKED'
+assert contacts['source_continuous_sha256']==sha(OUT/'continuous/screen.json')
+assert not continuous['complete_coverage'] and continuous['unproved_intervals']
+assert pack['status']==solids['status']==raised['status']==witness['status']==render['status']=='PASS'
+assert direct['status']=='BLOCKED' and witness['rejected_path_status']=='FAIL'
+assert raised['selected_amplitude_mm']==9 and raised['continuous_motion']=='NOT_TESTED'
+assert len(pack['adaptive_intervals'])==8 and len(solids['passed_intervals'])==128
+assert render['source_raised_screen_sha256']==sha(OUT/'raised/screen.json')
+assert render['script_sha256']==sha(A8/'render_CAM_wire_forming.py')
+assert sha(ROOT/'mechanical/mori_v1_2.blend')==pack['source_main_sha256']
+for item in render['images']:assert item['sha256']==sha(OUT/item['file'])
+gaps=[]
+def collect(obj):
+    if isinstance(obj,dict):
+        if 'gap_bound_mm' in obj:gaps.append(obj['gap_bound_mm'])
+        for value in obj.values():collect(value)
+    elif isinstance(obj,list):
+        for value in obj:collect(value)
+collect(pack)
+gap=min(gaps);assert gap>=.3
+md='''# CAM四线：插合、落座与成形工序
+
+本页新增的是独立线束候选的装配研究。M1.47主模型、硬件、STL及正式装配视频均未改；颈部通道、扎带座和内六角螺钉候选尚未全部采用。供应商按图制作已确定，本页不是下料图。
+
+## 插合与板卡落座：连续几何检查通过
+
+CAM板先保持在安装位置上方6mm，四芯插头从下方插合，然后板和插头一起下落6mm。头内曲线按规定方式变形，四根线各自的总长度保持不变。
+
+| 检查 | 结果和证据 |
+|---|---|
+| 对该工序已安装实体 | PASS；两个行程共128个自适应区间，用位移上界覆盖连续过程，保留0.3mm名义表面间隙 |
+| 四线相互间隙、非相邻线段自接近 | PASS；14组固定/包围路线、解析分离界限与8个连续参数区间；最小已证间隙下界约0.306mm |
+| 对原有汇线段和身体引线 | PASS；沿用固定前缀，额外比较13个存档yaw姿态；不是所有运动导线的动态验证 |
+| 弯曲半径下界 | 保持约7.145mm；不把目录静态弯曲要求当作动态寿命认证 |
+| 真实插合、线材力学和手部操作 | NOT_TESTED；实际CAM插座及针腔视图仍未确认 |
+
+[连续对实体结果](../cam_board_last/continuous_wire_solids.json)和[连续线间结果](../cam_board_last/continuous_packing.json)分开保存。原16个位置检查没有被改写成连续检查。完整连续成形仍需另行完成。
+
+线间证明按几何分段：变形回环各自X坐标固定；尾段用能包含全过程的共同曲线包围，尾段横移区域与回环在Y向分开。回环与固定前缀使用连续位移界限。检查同一根线的非相邻段时，使用固定材料弧长的速度上界1mm/mm，并把数值弧长排除范围从2mm收紧为1.95mm，覆盖离散误差。包围线比实际任一位置长，不能把它当成新增线长或下料长度。
+
+## 新发现：散线不能直接折成最终线环
+
+![直接成形时的碰撞](direct_bend_conflict.png)
+
+把上方散线直接弯成最终线环，41个位置中有8个未通过。相交并不只是间隙下界不够：在成形参数0.825处，线中心落在反力连接件实体内，已保存[内部点证据](collision_witness.json)。图中橙色是被碰到的现有反力件，没有改它。
+
+![保持线长，先抬高回环的候选](raised_bend_candidate.png)
+
+候选在成形中增加临时上方直段，同时等量缩短回程直段；各弯曲段逐渐转向，X方向过渡保持。这样3D总长不变，也不新增孔或打印件。额外抬高量按9×sin(πf)mm变化，最大9mm；上图f=0.825时约4.70mm，最终恢复原位置。
+
+最大抬高6mm的试验仍受阻；9mm候选的41个位置全部通过原0.3mm线对实体间隙检查。**这只是有限位置筛查，连续成形、线间距离和压接端子还未验证，不能称为可执行的完整装配路线。**
+
+![形成线环之前的竖直自由端](upright_start.png)
+
+此时CAM板、显示支架及头壳尚未安装，CAM侧扎带未收紧。图只画出Yaw固定点以上四根线；黄色是Yaw侧的候选扎带，未收紧CAM扎带的最终闭环被明确排除。这一临时姿态允许导线伸到机器人上方，不是正常使用外形。末端压接金属件尚未加入本次成形筛查；四色仅区分几何线号，不能当作电气针序。
+
+## 装配还欠哪几步
+
+1. 把已检查的颈部逐根端子穿入，连接到本页的竖直自由端初态；需要完整松线形态及身体共同插头的操作。
+2. 复核9mm候选的连续过程、四线之间和实际端子包络。模型中CAM针腔位置含照片估计，不冻结插壳线序。
+3. 补CAM侧扎带初次穿入、收紧与尾端剪切的连贯工序。既有剪钳和柔软尾端局部通过不等于这一整步通过。
+4. 形成线路后，按已验证的6mm插合/落座过程装CAM板；四枚内六角螺钉方案仍待用户确认。
+5. 其余七根跨关节功能线、USB完整尾线、LCD排线、相机FPC及身体固定继续完成后，才能生成正式线束分支和裁线图。
+
+主模型未修改，没有采购或制造放行。实物压接、夹持力、PA12配合和弯折寿命仍需到货验证；上述未完成的数字工作不能统称为等实物。
+
+[独立Blender](review.blend) · [直接成形筛查](screen.json) · [抬高候选](raised/screen.json) · [螺钉待确认方案](../cam_socket_tool/index.html) · [命令](commands.json) · [交付记录](review_manifest.json)
+'''
+notice=f'''## 最新补充：端子与连续成形对结构件
+
+[端子与连续成形结果](terminals/index.html)：按JST目录0.8×1.35×3.9mm跨度加入散端子包络后，连续检查发现接近最终位置时端子对头托间隙不足0.3mm。{len(continuous['passed_intervals'])}个区间已证明，另31个末段区间未通过，完整覆盖未完成，原路线为BLOCKED。新“线端暂留上方2mm”候选的有限位置通过，连续过程及装壳仍待完成。以下保留最初41位置记录及其对比图，不能将它们理解为整段路线通过。
+
+'''
+notice=notice.replace('新“线端暂留上方2mm”候选的有限位置通过，连续过程及装壳仍待完成。','[当前路线](lifted_end2/index.html)：最后一根从负侧绕开原相交位置，四线规定成形动作与步骤衔接的连续检查通过；板卡8→2mm连续下降也已通过。初次穿线、端子入壳、扎带及完整工序未完成。')
+md=md.replace('## 插合与板卡落座：连续几何检查通过',notice+'## 插合与板卡落座：连续几何检查通过')
+md=md.replace('完整连续成形仍需另行完成。','最新连续检查发现末段端子间隙不足，路线仍需修正。')
+md=md.replace('**这只是有限位置筛查，连续成形、线间距离和压接端子还未验证，不能称为可执行的完整装配路线。**','**这份原始记录只是有限位置筛查；后续散端子与连续对实体结果见页首。线间、装壳和完整装配路线仍未完成。**')
+md=md.replace('末端压接金属件尚未加入本次成形筛查；','本组早期图未画末端压接件，后续已另加入目录尺寸包络；')
+md=md.replace('2. 复核9mm候选的连续过程、四线之间和实际端子包络。','2. 修正连续检查发现的末段端子间隙不足，继续核对2mm临时抬高候选、四线之间、端子对线和装壳工序。')
+(OUT/'README.md').write_text(md)
+html='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM四线装入研究</title><style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;max-width:1060px;margin:30px auto;padding:0 24px 60px;background:#f4f6f5;color:#253b3d}a{color:#096a74}.note{padding:18px;background:#fff0d9;border-radius:10px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:20px 0}img{width:100%;border-radius:8px}figcaption{font-size:14px}td,th{text-align:left;padding:12px;border-bottom:1px solid #cad7d2}table{width:100%;border-collapse:collapse}@media(max-width:700px){.pair{display:block}}</style>
+<p><a href="../../index.html">← 当前未完成项</a> · <a href="../cam_socket_tool/index.html">CAM螺钉待确认方案</a></p><h1>CAM四线：连续落座通过，初次成形还在完善</h1>
+<p class="note">独立候选，主模型M1.47未改。CAM板插合、下落时的连续线对结构件、线间和自接近检查通过。先穿线再形成线环的完整工序还未通过，尚不能提供下料图。</p>
+<table><tr><th>已完成</th><th>证据范围</th></tr><tr><td>插合与落座，各6mm</td><td>连续线对实体：128个带位移界限的区间；连续线间：14组包围/固定检查、解析分离界限及8个参数区间。</td></tr><tr><td>线径、长度和间隙</td><td>最大单线外径0.6604mm不变；各根总长度不变；保留0.3mm名义间隙，线间下界约0.306mm。</td></tr><tr><td>证据边界</td><td>规定线形的几何检查，不是实际线材变形、插合力、动态寿命或全部11根活动导线的装配认证。</td></tr></table>
+<h2>直接弯下去会碰到反力件</h2><div class="pair"><figure><img src="direct_bend_conflict.png" alt="直接弯折路线进入橙色反力件"><figcaption>直接形成：41个位置有8处未通过，另有线中心进入反力件的实体证据。</figcaption></figure><figure><img src="raised_bend_candidate.png" alt="临时抬高回环的独立候选"><figcaption>先举高回环：最大额外抬高9mm，图中约4.7mm。41个位置通过，连续成形与端子仍待查。</figcaption></figure></div>
+<p>临时增加上方直段、等量缩短回程直段，保持总长；最终恢复原线路。没有给反力件开孔，也没有加打印件。CAM板、显示支架和头壳在这一步尚未安装，CAM扎带暂不收紧。</p>
+<figure><img src="upright_start.png" alt="Yaw固定点上方的四根散线初态"><figcaption>成形候选的起点。黄色为Yaw侧候选扎带；图只显示其上方线段，末端压接件还未纳入这项筛查。颜色不是电气针序。</figcaption></figure>
+<h2>仍需完成</h2><p>颈部穿线到此初态、带实际端子的连续成形、CAM扎带穿入/收紧/剪尾，以及其余头部线路和排线。四枚M2×5内六角螺钉仍待确认。全部闭合后再整理分支及裁线尺寸。</p>
+<p><a href="README.md">完整装配说明</a> · <a href="../cam_board_last/continuous_packing.json">连续线间结果</a> · <a href="../cam_board_last/continuous_wire_solids.json">连续对实体结果</a> · <a href="raised/screen.json">41位置候选</a> · <a href="collision_witness.json">原路线碰撞证据</a> · <a href="review.blend">独立Blender</a> · <a href="commands.json">实际命令</a> · <a href="review_manifest.json">交付记录</a></p></html>'''
+html=html.replace('<h2>直接弯下去会碰到反力件</h2>',f'<section class="note"><h2>最新：连续检查发现末段端子间隙不足</h2><p>JST目录端子包络已加入；{len(continuous["passed_intervals"])}个区间已证，31个末段区间未通过。原路线完整覆盖未完成，不能沿用41位置初筛作通过结论。2mm临时抬高候选有限位置通过，连续过程仍待查。<a href="terminals/index.html">查看新结果和局部图</a></p></section><h2>直接弯下去会碰到反力件</h2>')
+html=html.replace('41个位置通过，连续成形与端子仍待查。','早期41位置筛查；后续散端子与连续对实体检查见上方新记录。')
+html=html.replace('2mm临时抬高候选有限位置通过，连续过程仍待查。','新路线已从负侧绕开相交位置，四线规定成形动作与步骤衔接连续通过；板卡8→2mm下降也已通过。完整穿线和端子入壳仍需完成，见<a href="lifted_end2/index.html">当前结果</a>。')
+html=html.replace('CAM四线：连续落座通过，初次成形还在完善','CAM四线：规定成形与落座通过，完整工序待补齐')
+html=html.replace('末端压接件还未纳入这项筛查。','本张早期图未显示后续加入的端子包络。')
+(OUT/'index.html').write_text(html)
+commands=[]
+for script,log,dest in [('check_CAM_board_continuous_packing.py','/tmp/mori_CAM_board_continuous_packing.log',A8/'cam_board_last/continuous_packing.log'),
+    ('screen_CAM_wire_forming.py','/tmp/mori_CAM_wire_forming.log',OUT/'screen.log'),
+    ('screen_CAM_wire_forming_raised.py','/tmp/mori_CAM_wire_forming_raised.log',OUT/'raised/screen.log'),
+    ('check_CAM_forming_collision_witness.py','/tmp/mori_CAM_forming_collision_witness.log',OUT/'collision_witness.log'),
+    ('render_CAM_wire_forming.py','/tmp/mori_CAM_wire_forming_render.log',OUT/'render.log')]:
+    if Path(log).is_file():shutil.copyfile(log,dest)
+    else:assert dest.is_file(),f'Missing preserved execution log: {dest}'
+    commands.append('/Applications/Blender.app/Contents/MacOS/Blender --background mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/'+script)
+(OUT/'commands.json').write_text(json.dumps({'cwd':str(ROOT),'commands':commands,'versions':{'Python':platform.python_version(),'Blender':'5.2.2 LTS d13f752e3b9c'}},indent=2)+'\n')
+files=[p for p in OUT.rglob('*') if p.is_file() and p.name!='review_manifest.json' and not p.name.endswith('.blend1')]
+(OUT/'review_manifest.json').write_text(json.dumps({'status':'PASS','scope':'Source-linked candidate delivery, not completed harness assembly',
+ 'script_sha256':sha(SCRIPT),'source_main_sha256':pack['source_main_sha256'],
+ 'packing_sha256':sha(A8/'cam_board_last/continuous_packing.json'),'wire_solids_sha256':sha(A8/'cam_board_last/continuous_wire_solids.json'),
+ 'files':{str(p.relative_to(ROOT)):sha(p) for p in files},'images_visually_reviewed':True,
+ 'minimum_packing_gap_bound_mm':gap,'forming_continuous_to_stage_solids':continuous['status'],
+ 'forming_continuous_intervals':len(continuous['passed_intervals']),'forming_contacts_delivery_sha256':sha(OUT/'terminals/review_manifest.json'),
+ 'forming_wire_packing':'BLOCKED','main_applied':False,'whole_harness':'BLOCKED','manufacturing_release':False},ensure_ascii=False,indent=2)+'\n')
+print('CAM_INSTALLATION_PUBLISHED',len(files),'packing_gap',gap,flush=True)

@@ -1,0 +1,25 @@
+None __init__(self, vert_properties: ndarray[dtype=float64, shape=(*, *), order='C'], tri_verts: ndarray[dtype=uint64, shape=(*, 3), order='C'], merge_from_vert: ndarray[dtype=uint64, shape=(*), order='C'] | None = None, merge_to_vert: ndarray[dtype=uint64, shape=(*), order='C'] | None = None, run_index: ndarray[dtype=uint64, shape=(*), order='C'] | None = None, run_original_id: ndarray[dtype=uint32, shape=(*), order='C'] | None = None, run_transform: ndarray[dtype=float64, shape=(*, 4, 3), order='C'] | None = None, run_flags: ndarray[dtype=uint8, shape=(*), order='C'] | None = None, face_id: ndarray[dtype=uint64, shape=(*), order='C'] | None = None, halfedge_tangent: ndarray[dtype=float64, shape=(*, 3, 4), order='C'] | None = None, tolerance: float = 0) -> None merge(self) -> bool
+
+Updates the mergeFromVert and mergeToVert vectors in order to create a
+manifold solid. If the Mesh is already manifold, no change will occur and
+the function will return false. Otherwise, this will merge verts along open
+edges within tolerance (the maximum of the Mesh tolerance and the
+baseline bounding-box tolerance), keeping any from the existing merge
+vectors, and return true.
+There is no guarantee the result will be manifold - this is a best-effort
+helper function designed primarily to aid in the case where a manifold
+multi-material Mesh was produced, but its merge vectors were lost due to
+a round-trip through a file format. Constructing a Manifold from the result
+will report an error status if it is not manifold. set_tolerance(self, arg: float, /) -> manifold3d.Manifold
+
+Return a copy of the manifold with the set tolerance value.
+This performs mesh simplification when the tolerance value is increased. simplify(self, arg: float, /) -> manifold3d.Manifold
+
+Return a copy of the manifold simplified to the given tolerance, but with its
+actual tolerance value unchanged. If the tolerance is not given or is less
+than the current tolerance, the current tolerance is used for simplification.
+The result will contain a subset of the original verts and all surfaces will
+have moved by less than tolerance.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

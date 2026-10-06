@@ -1,0 +1,1 @@
+First A2 render stopped before completion after the initial shell/bridge review frame showed subtitle overlap. Camera field widened; no geometry or path change. The final animation was regenerated and validated.

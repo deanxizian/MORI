@@ -1,0 +1,392 @@
+{
+  "size": [
+    20,
+    16
+  ],
+  "layers": 2,
+  "clearance": 0.15,
+  "description": "MORI body IMU daughterboard / ICM-42688-P / SPI 6MHz initial target / rigid body mounting",
+  "components": [
+    {
+      "ref": "U1",
+      "value": "ICM-42688-P",
+      "footprint": "Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y",
+      "pins": {
+        "1": {
+          "name": "SDO",
+          "net": "MISO_IC",
+          "type": "output"
+        },
+        "2": {
+          "name": "RESV",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "RESV",
+          "net": "GND",
+          "type": "passive"
+        },
+        "4": {
+          "name": "INT1",
+          "net": "DRDY",
+          "type": "output"
+        },
+        "5": {
+          "name": "VDDIO",
+          "net": "+3V3",
+          "type": "power_in"
+        },
+        "6": {
+          "name": "GND",
+          "net": "GND",
+          "type": "power_in"
+        },
+        "7": {
+          "name": "RESV",
+          "net": "GND",
+          "type": "passive"
+        },
+        "8": {
+          "name": "VDD",
+          "net": "+3V3",
+          "type": "power_in"
+        },
+        "9": {
+          "name": "FSYNC",
+          "net": "GND",
+          "type": "input"
+        },
+        "10": {
+          "name": "RESV",
+          "net": "GND",
+          "type": "passive"
+        },
+        "11": {
+          "name": "RESV",
+          "net": "GND",
+          "type": "passive"
+        },
+        "12": {
+          "name": "CS_N",
+          "net": "CS_N",
+          "type": "input"
+        },
+        "13": {
+          "name": "SCLK",
+          "net": "SCK",
+          "type": "input"
+        },
+        "14": {
+          "name": "SDI",
+          "net": "MOSI",
+          "type": "input"
+        }
+      },
+      "at": [
+        10,
+        9,
+        0
+      ],
+      "side": "F",
+      "auto": false,
+      "note": "Prototype based on vendor DS-000347 pinout. No raw cell welding; IC requires reflow. Assembly pad review required.",
+      "source": "https://www.lcsc.com/datasheet/C1850418.pdf",
+      "uuid": "39a25afa-ee53-5e8c-bd90-34ca196454ff"
+    },
+    {
+      "ref": "J1",
+      "value": "BODY RIGID IMU",
+      "footprint": "Connector_JST:JST_GH_BM08B-GHS-TBT_1x08-1MP_P1.25mm_Vertical",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+3V3",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "SCK",
+          "type": "passive"
+        },
+        "4": {
+          "name": "4",
+          "net": "MOSI",
+          "type": "passive"
+        },
+        "5": {
+          "name": "5",
+          "net": "MISO",
+          "type": "passive"
+        },
+        "6": {
+          "name": "6",
+          "net": "CS_N",
+          "type": "passive"
+        },
+        "7": {
+          "name": "7",
+          "net": "DRDY",
+          "type": "passive"
+        },
+        "8": {
+          "name": "8",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "at": [
+        10,
+        3.5,
+        0
+      ],
+      "side": "F",
+      "auto": false,
+      "note": "Pin numbers are PCB connector numbers; harness mating view must be continuity checked.",
+      "source": "",
+      "uuid": "4f2a837d-a954-50b8-a2a9-c98e64e6f058"
+    },
+    {
+      "ref": "C1",
+      "value": "100n",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+3V3",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "at": [
+        13,
+        8,
+        0
+      ],
+      "side": "F",
+      "auto": true,
+      "note": "",
+      "source": "",
+      "uuid": "8b06a6a1-b1d7-5c48-ad2c-f0ffb3ccb8de",
+      "placed_at": [
+        14.0,
+        8.0,
+        0
+      ]
+    },
+    {
+      "ref": "C2",
+      "value": "2.2u",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+3V3",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "at": [
+        14,
+        11,
+        0
+      ],
+      "side": "F",
+      "auto": true,
+      "note": "",
+      "source": "",
+      "uuid": "ac257425-9447-514c-a532-a32f71f13423",
+      "placed_at": [
+        13.5,
+        11.0,
+        90
+      ]
+    },
+    {
+      "ref": "C3",
+      "value": "10n",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+3V3",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "at": [
+        8,
+        11,
+        0
+      ],
+      "side": "F",
+      "auto": true,
+      "note": "",
+      "source": "",
+      "uuid": "ff7bd0ff-2a94-5006-80f8-e7b68247c72a",
+      "placed_at": [
+        8.0,
+        12.0,
+        0
+      ]
+    },
+    {
+      "ref": "R1",
+      "value": "33",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "MISO_IC",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "MISO",
+          "type": "passive"
+        }
+      },
+      "at": [
+        6,
+        8,
+        0
+      ],
+      "side": "F",
+      "auto": true,
+      "note": "",
+      "source": "",
+      "uuid": "6472bf60-f253-549b-a760-02a2850ceb23",
+      "placed_at": [
+        5.5,
+        8.0,
+        0
+      ]
+    },
+    {
+      "ref": "R2",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "CS_N",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "+3V3",
+          "type": "passive"
+        }
+      },
+      "at": [
+        6,
+        12,
+        0
+      ],
+      "side": "F",
+      "auto": true,
+      "note": "",
+      "source": "",
+      "uuid": "d20e3f78-b8e4-5dc2-a0f8-70c3b63b1e5b",
+      "placed_at": [
+        7.0,
+        14.0,
+        0
+      ]
+    },
+    {
+      "ref": "H1",
+      "value": "M2 clearance",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pins": {},
+      "at": [
+        2.5,
+        12.5,
+        0
+      ],
+      "side": "F",
+      "auto": false,
+      "note": "",
+      "source": "",
+      "uuid": "6c7c86fb-edb7-5d9c-8e2b-5438ea1abc3b"
+    },
+    {
+      "ref": "H2",
+      "value": "M2 clearance",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pins": {},
+      "at": [
+        17.5,
+        12.5,
+        0
+      ],
+      "side": "F",
+      "auto": false,
+      "note": "",
+      "source": "",
+      "uuid": "0fdb8c1d-af6b-5592-a769-613ed75c5e70"
+    },
+    {
+      "ref": "#FLG1",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "+3V3",
+          "type": "power_out"
+        }
+      },
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "side": "F",
+      "auto": false,
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "896813ef-ddf4-5d9e-8ac5-a9581a642975"
+    },
+    {
+      "ref": "#FLG2",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "GND",
+          "type": "power_out"
+        }
+      },
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "side": "F",
+      "auto": false,
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "382c5b20-f788-5da8-a1d0-d9ce86aade2d"
+    }
+  ],
+  "module_outlines": []
+}

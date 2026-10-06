@@ -1,0 +1,5373 @@
+{
+  "status": "PASS",
+  "scope": "Four-wire finite-pose configuration search only; no transition or complete assembly proof",
+  "script_sha256": "0bb96a9648d91a9c48d76fc2062c6ed2bdb2bc5ad7d75995a333cc007e60a6e6",
+  "helper_sha256": "337a3e6f4e496084ccc348a7a22c25c426a3637d0fa661162b795d6375b4d9d2",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/packing.json": "28fa0bd015cc75aedbddea887c7317538403476811a249ee75762c36cb073fd6",
+    "mechanical/studies/prearrival_finish/harness_A8/joined_entry_screen.json": "59a7ce329df097bd7f4f7b4e3467b6e26907200cb91239cd8fbe711ed17a9556",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/body_to_yaw_motion.json": "c3fbc70e18fae3716923cb0f81f041f29fdb0acd77caee0f03539768453e3235",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_port/lower_staging/body_partial_curves.npz": "fb278de629417a9a67ea73776f8ffd5c63d0dad1371d6511bf193dd8a283e72f",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_connector_install/route_datums.json": "11b95c43807f387158bf47922472363b709651f30685ee595697024652f89120",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/wire_solids.json": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/verification.json": "351a78dd466e5f008192ae6dcda4c2f7ccff106a2b03695480b5596e738e2bf0",
+    "mechanical/studies/prearrival_finish/harness_A8/body_prefix_v2/curvature_paths.py": "314851bea1a2160efb913ea6d242d14833f5e227b0ca3108e4ca55b9af202ae8",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/split_assembly/screen.json": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2"
+  },
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "pose": {
+    "bridge": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        18.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "shell": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.9659258127212524,
+        -0.25881898403167725,
+        25.881898880004883
+      ],
+      [
+        0.0,
+        0.25881898403167725,
+        0.9659258127212524,
+        17.40741729736328
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "rows": [
+    {
+      "pin": 1,
+      "status": "PASS",
+      "counts": {
+        "controls": 1200,
+        "individual_pass": 277,
+        "geometry_reject": 609,
+        "tangent_family_unavailable": 270,
+        "insufficient_upright_end_stock": 44
+      },
+      "retained_candidates": 64,
+      "blockers": {
+        "fixed_wire_H01_1": 441,
+        "Yaw_Base": 165,
+        "Body_Upper": 3
+      },
+      "examples": {
+        "fixed_wire_H01_1": {
+          "parameters": {
+            "entry_azimuth_deg": 75.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 1,
+            "point_mm": [
+              18.467301059586198,
+              -44.47024689139323,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_1",
+            "centreline_distance_mm": 0.6582087278366089,
+            "required_bound_mm": 0.6905533958095751
+          }
+        },
+        "Yaw_Base": {
+          "parameters": {
+            "entry_azimuth_deg": 75.0,
+            "planar_radius_mm": 7.0,
+            "family": "LSL",
+            "elevation_fraction": 0.75
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 1,
+            "point_mm": [
+              0.5703613080871577,
+              -9.561054465187787,
+              138.13999938964844
+            ],
+            "obstacle": "Yaw_Base",
+            "centreline_distance_mm": 0.6897633671760559,
+            "required_bound_mm": 0.6905084187990683
+          }
+        },
+        "Body_Upper": {
+          "parameters": {
+            "entry_azimuth_deg": 120.0,
+            "planar_radius_mm": 14.0,
+            "family": "LRL1",
+            "elevation_fraction": 1.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 1,
+            "point_mm": [
+              -41.57541921847843,
+              -32.79745691512494,
+              157.0733351034636
+            ],
+            "obstacle": "Body_Upper",
+            "centreline_distance_mm": 0.6849418878555298,
+            "required_bound_mm": 0.6905336574839358
+          }
+        }
+      }
+    },
+    {
+      "pin": 2,
+      "status": "PASS",
+      "counts": {
+        "controls": 1200,
+        "individual_pass": 173,
+        "geometry_reject": 483,
+        "tangent_family_unavailable": 544
+      },
+      "retained_candidates": 40,
+      "blockers": {
+        "fixed_wire_H01_1": 244,
+        "Yaw_Base": 218,
+        "fixed_wire_H01_2": 3,
+        "Speaker": 18
+      },
+      "examples": {
+        "fixed_wire_H01_1": {
+          "parameters": {
+            "entry_azimuth_deg": 75.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 2,
+            "point_mm": [
+              20.253650870098994,
+              -43.965329097491626,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_1",
+            "centreline_distance_mm": 0.6472557783126831,
+            "required_bound_mm": 0.6905326376533847
+          }
+        },
+        "Yaw_Base": {
+          "parameters": {
+            "entry_azimuth_deg": 75.0,
+            "planar_radius_mm": 7.0,
+            "family": "LSL",
+            "elevation_fraction": 0.75
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 2,
+            "point_mm": [
+              9.342146174488747,
+              2.014528811444592,
+              138.13999938964844
+            ],
+            "obstacle": "Yaw_Base",
+            "centreline_distance_mm": 0.6678416728973389,
+            "required_bound_mm": 0.6904227425626576
+          }
+        },
+        "fixed_wire_H01_2": {
+          "parameters": {
+            "entry_azimuth_deg": 75.0,
+            "planar_radius_mm": 10.0,
+            "family": "LSR",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 2,
+            "point_mm": [
+              -33.77499791860992,
+              5.559666157851186,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_2",
+            "centreline_distance_mm": 0.6145363450050354,
+            "required_bound_mm": 0.6904331464113046
+          }
+        },
+        "Speaker": {
+          "parameters": {
+            "entry_azimuth_deg": 75.0,
+            "planar_radius_mm": 14.0,
+            "family": "LSL",
+            "elevation_fraction": 1.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 2,
+            "point_mm": [
+              -2.6750922933503256,
+              50.9628405196044,
+              134.62983482916422
+            ],
+            "obstacle": "Speaker",
+            "centreline_distance_mm": 0.676787793636322,
+            "required_bound_mm": 0.6904771417410337
+          }
+        }
+      }
+    },
+    {
+      "pin": 3,
+      "status": "PASS",
+      "counts": {
+        "controls": 1200,
+        "individual_pass": 122,
+        "geometry_reject": 778,
+        "tangent_family_unavailable": 235,
+        "insufficient_upright_end_stock": 65
+      },
+      "retained_candidates": 43,
+      "blockers": {
+        "fixed_wire_H02_2": 8,
+        "fixed_wire_H01_1": 363,
+        "fixed_wire_H01_2": 1,
+        "Body_Upper": 272,
+        "fixed_wire_H04_3": 3,
+        "Yaw_Base": 131
+      },
+      "examples": {
+        "fixed_wire_H02_2": {
+          "parameters": {
+            "entry_azimuth_deg": -15.0,
+            "planar_radius_mm": 7.0,
+            "family": "LSR",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 3,
+            "point_mm": [
+              31.39876359558,
+              -11.95359908568089,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H02_2",
+            "centreline_distance_mm": 0.6641761064529419,
+            "required_bound_mm": 0.6904618941381269
+          }
+        },
+        "fixed_wire_H01_1": {
+          "parameters": {
+            "entry_azimuth_deg": -15.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 3,
+            "point_mm": [
+              19.01355685463818,
+              -44.45393119563417,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_1",
+            "centreline_distance_mm": 0.6864678263664246,
+            "required_bound_mm": 0.6903839283296277
+          }
+        },
+        "fixed_wire_H01_2": {
+          "parameters": {
+            "entry_azimuth_deg": -15.0,
+            "planar_radius_mm": 7.0,
+            "family": "LRL-1",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 3,
+            "point_mm": [
+              26.76660257486253,
+              -32.626916568185074,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_2",
+            "centreline_distance_mm": 0.6765665411949158,
+            "required_bound_mm": 0.6902645362765331
+          }
+        },
+        "Body_Upper": {
+          "parameters": {
+            "entry_azimuth_deg": -15.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.25
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 3,
+            "point_mm": [
+              41.34186784488294,
+              -46.495897453028824,
+              146.76759177858676
+            ],
+            "obstacle": "Body_Upper",
+            "centreline_distance_mm": 0.6587201356887817,
+            "required_bound_mm": 0.6904627607752567
+          }
+        },
+        "fixed_wire_H04_3": {
+          "parameters": {
+            "entry_azimuth_deg": -15.0,
+            "planar_radius_mm": 10.0,
+            "family": "LRL1",
+            "elevation_fraction": 0.25
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 3,
+            "point_mm": [
+              14.668033295745266,
+              -54.43673489911329,
+              147.13999938964844
+            ],
+            "obstacle": "fixed_wire_H04_3",
+            "centreline_distance_mm": 0.5993891358375549,
+            "required_bound_mm": 0.6905243038628404
+          }
+        },
+        "Yaw_Base": {
+          "parameters": {
+            "entry_azimuth_deg": 0.0,
+            "planar_radius_mm": 12.0,
+            "family": "RLR-1",
+            "elevation_fraction": 0.25
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 3,
+            "point_mm": [
+              42.33076087284836,
+              -21.657391206835086,
+              129.13999938964844
+            ],
+            "obstacle": "Yaw_Base",
+            "centreline_distance_mm": 0.6573905944824219,
+            "required_bound_mm": 0.690553846233359
+          }
+        }
+      }
+    },
+    {
+      "pin": 4,
+      "status": "PASS",
+      "counts": {
+        "controls": 1200,
+        "geometry_reject": 669,
+        "tangent_family_unavailable": 484,
+        "individual_pass": 47
+      },
+      "retained_candidates": 26,
+      "blockers": {
+        "fixed_wire_H02_2": 31,
+        "fixed_wire_H01_1": 28,
+        "Yaw_Base": 194,
+        "Body_Upper": 334,
+        "fixed_wire_H01_2": 79,
+        "Speaker": 3
+      },
+      "examples": {
+        "fixed_wire_H02_2": {
+          "parameters": {
+            "entry_azimuth_deg": -30.0,
+            "planar_radius_mm": 7.0,
+            "family": "LSL",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 4,
+            "point_mm": [
+              34.685919744919765,
+              -8.118435875733283,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H02_2",
+            "centreline_distance_mm": 0.676482617855072,
+            "required_bound_mm": 0.6905314046949039
+          }
+        },
+        "fixed_wire_H01_1": {
+          "parameters": {
+            "entry_azimuth_deg": -30.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 4,
+            "point_mm": [
+              19.15953632506395,
+              -44.40263189763196,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_1",
+            "centreline_distance_mm": 0.6790284514427185,
+            "required_bound_mm": 0.6905198339471318
+          }
+        },
+        "Yaw_Base": {
+          "parameters": {
+            "entry_azimuth_deg": -30.0,
+            "planar_radius_mm": 7.0,
+            "family": "LSL",
+            "elevation_fraction": 0.25
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 4,
+            "point_mm": [
+              40.89727002902601,
+              -21.60812718557229,
+              129.13999938964844
+            ],
+            "obstacle": "Yaw_Base",
+            "centreline_distance_mm": 0.6410287618637085,
+            "required_bound_mm": 0.6905482884217206
+          }
+        },
+        "Body_Upper": {
+          "parameters": {
+            "entry_azimuth_deg": -30.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.25
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 4,
+            "point_mm": [
+              39.76472228542307,
+              -47.499081991156096,
+              147.03639422015135
+            ],
+            "obstacle": "Body_Upper",
+            "centreline_distance_mm": 0.6644967198371887,
+            "required_bound_mm": 0.6905518121652009
+          }
+        },
+        "fixed_wire_H01_2": {
+          "parameters": {
+            "entry_azimuth_deg": 15.0,
+            "planar_radius_mm": 7.0,
+            "family": "RSL",
+            "elevation_fraction": 0.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 4,
+            "point_mm": [
+              23.945078301370323,
+              -43.40008639883584,
+              142.63999938964844
+            ],
+            "obstacle": "fixed_wire_H01_2",
+            "centreline_distance_mm": 0.641884982585907,
+            "required_bound_mm": 0.690528596662743
+          }
+        },
+        "Speaker": {
+          "parameters": {
+            "entry_azimuth_deg": 15.0,
+            "planar_radius_mm": 14.0,
+            "family": "LSR",
+            "elevation_fraction": 1.0
+          },
+          "failure": {
+            "kind": "wire_clearance",
+            "pin": 4,
+            "point_mm": [
+              2.6242177466247654,
+              50.94585112403587,
+              134.63438712321977
+            ],
+            "obstacle": "Speaker",
+            "centreline_distance_mm": 0.6902629137039185,
+            "required_bound_mm": 0.6904397500937278
+          }
+        }
+      }
+    }
+  ],
+  "pools": {
+    "1": [
+      {
+        "curve_chord_error_mm": 0.00025556069105414636,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 127.88102140328957,
+        "prefix_analytic_mm": 159.40970058727268,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900594617765,
+        "planar_family": "LSR",
+        "planar_length_mm": 44.42969010072241,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.0802887163755623,
+          3.12748626757216
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin1_0"
+      },
+      {
+        "curve_chord_error_mm": 0.0002554531063641008,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 106.49176427969945,
+        "prefix_analytic_mm": 180.7989577108628,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29005804773294,
+        "planar_family": "LSL",
+        "planar_length_mm": 65.81894722431252,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          0.7935000329937205,
+          4.442487722989267
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin1_1"
+      },
+      {
+        "curve_chord_error_mm": 0.0002569320410175102,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 91.98523620362889,
+        "prefix_analytic_mm": 195.30548578693336,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2898751385911,
+        "planar_family": "RSR",
+        "planar_length_mm": 80.32547530038309,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.003677226255341,
+          2.3267056321208432
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin1_2"
+      },
+      {
+        "curve_chord_error_mm": 0.00025645033278276497,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 63.413557516699086,
+        "prefix_analytic_mm": 223.87716447386316,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28963520501645,
+        "planar_family": "RSL",
+        "planar_length_mm": 108.8971539873129,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.598177772226597,
+          4.550980221029999
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin1_3"
+      },
+      {
+        "curve_chord_error_mm": 0.0002549957163040517,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 142.36512678462668,
+        "prefix_analytic_mm": 144.92559520593556,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900766375143,
+        "planar_family": "LSR",
+        "planar_length_mm": 39.84124074951811,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.0597585869222046,
+          3.1069561381188024
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_4"
+      },
+      {
+        "curve_chord_error_mm": 0.00025664962124183344,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 141.30812232685767,
+        "prefix_analytic_mm": 145.98259966370458,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900174133206,
+        "planar_family": "RLR1",
+        "planar_length_mm": 40.898245207287104,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          0.04793234610956709,
+          2.3977044534936374,
+          3.396969658580668
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RLR1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_5"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 117.52044679495648,
+        "prefix_analytic_mm": 169.77027519560576,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899938245364,
+        "planar_family": "LRL1",
+        "planar_length_mm": 54.7902647090555,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.734602361753327,
+          3.9479903199142674,
+          0.16619040696434284
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_6"
+      },
+      {
+        "curve_chord_error_mm": 0.00025581519933159935,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 117.25555657148857,
+        "prefix_analytic_mm": 170.03516541907368,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900705240754,
+        "planar_family": "LSL",
+        "planar_length_mm": 64.95081096265622,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          0.6364652481302713,
+          4.599522507852717
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_7"
+      },
+      {
+        "curve_chord_error_mm": 0.0002560832147828762,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 104.80825563289318,
+        "prefix_analytic_mm": 182.48246635766907,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2898905660453,
+        "planar_family": "RSR",
+        "planar_length_mm": 77.39811190125161,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.132265426542335,
+          2.1981174318338494
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_8"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 100.98887027438246,
+        "prefix_analytic_mm": 186.30185171617978,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2901116921812,
+        "planar_family": "LSL",
+        "planar_length_mm": 71.32184122962953,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          0.7606072017961931,
+          4.4753805541867955
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_9"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 93.05968965990297,
+        "prefix_analytic_mm": 194.23103233065927,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28976285238963,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 79.251021844109,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          1.9282046954288525,
+          2.3351949872653184,
+          5.6429780478194544
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_10"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 84.40843940355512,
+        "prefix_analytic_mm": 202.88228258700713,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899554503374,
+        "planar_family": "RSR",
+        "planar_length_mm": 87.90227210045686,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          4.970411920319874,
+          2.3599709380563096
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_11"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 76.74283339546014,
+        "prefix_analytic_mm": 210.5478885951021,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2896099420106,
+        "planar_family": "RLR1",
+        "planar_length_mm": 95.56787810855184,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          6.124312396618073,
+          2.3078009525963985,
+          3.5138714143545084
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RLR1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_12"
+      },
+      {
+        "curve_chord_error_mm": 0.0002568554047730487,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 73.7593355982331,
+        "prefix_analytic_mm": 213.53138639232915,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2896249128199,
+        "planar_family": "RSL",
+        "planar_length_mm": 108.4470319359117,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.722530586245323,
+          4.675333035048726
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_13"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 51.62026615272376,
+        "prefix_analytic_mm": 235.6704558378385,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2897373263212,
+        "planar_family": "RSL",
+        "planar_length_mm": 120.69044535128822,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.633536865728679,
+          4.586339314532082
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin1_14"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 125.68687315272717,
+        "prefix_analytic_mm": 161.60384883783507,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899893354923,
+        "planar_family": "LRL1",
+        "planar_length_mm": 56.51949438141761,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.632562418792731,
+          4.056067174436899,
+          0.37630720444757126
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin1_15"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 111.60564662839113,
+        "prefix_analytic_mm": 175.68507536217112,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2901241741852,
+        "planar_family": "LSL",
+        "planar_length_mm": 70.60072090575366,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          0.6045288315742812,
+          4.631458924408707
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin1_16"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 104.68457536239788,
+        "prefix_analytic_mm": 182.60614662816437,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.289792491216,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 77.5217921717469,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          1.7180878979456247,
+          2.227118132742687,
+          5.745017990780051
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin1_17"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 97.35545578475546,
+        "prefix_analytic_mm": 189.93526620580678,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899679554464,
+        "planar_family": "RSR",
+        "planar_length_mm": 84.85091174938931,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.094304868190462,
+          2.2360779901857217
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin1_18"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 92.85425418751021,
+        "prefix_analytic_mm": 194.43646780305204,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28968026933455,
+        "planar_family": "RLR1",
+        "planar_length_mm": 89.35211334663458,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          6.053962695678747,
+          1.9193156549765693,
+          3.1957358176740067
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RLR1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin1_19"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 61.81129269681202,
+        "prefix_analytic_mm": 225.47942929375023,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28973129734203,
+        "planar_family": "RSL",
+        "planar_length_mm": 120.39507483733277,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.754741715456435,
+          4.707544164259836
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin1_20"
+      },
+      {
+        "curve_chord_error_mm": 0.00025636211631452355,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 133.46125286327262,
+        "prefix_analytic_mm": 153.82946912728963,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.290077294079,
+        "planar_family": "LSR",
+        "planar_length_mm": 45.61086263821197,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          1.999604401741851,
+          3.0468019529384485
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_21"
+      },
+      {
+        "curve_chord_error_mm": 0.00025455553766251526,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 120.44456475022852,
+        "prefix_analytic_mm": 166.84615724033372,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29005963661916,
+        "planar_family": "LSR",
+        "planar_length_mm": 51.86614675378345,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.2165364748101712,
+          3.001934638207619
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_22"
+      },
+      {
+        "curve_chord_error_mm": 0.00025704486159328077,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 112.16624219001707,
+        "prefix_analytic_mm": 175.12447980054517,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29006087242067,
+        "planar_family": "LSL",
+        "planar_length_mm": 66.90587331146753,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.8227028525682196,
+          4.413284903414769
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_23"
+      },
+      {
+        "curve_chord_error_mm": 0.00025641620404182053,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 101.03624706114198,
+        "prefix_analytic_mm": 186.25447492942027,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29003481235407,
+        "planar_family": "LSL",
+        "planar_length_mm": 71.27446444286998,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          1.2010008500506788,
+          4.296786293731459
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_24"
+      },
+      {
+        "curve_chord_error_mm": 0.0002559882753989662,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 97.3830713782657,
+        "prefix_analytic_mm": 189.90765061229655,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28988376502303,
+        "planar_family": "RSR",
+        "planar_length_mm": 81.68904412321889,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.994478934306763,
+          2.335903924069421
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_25"
+      },
+      {
+        "curve_chord_error_mm": 0.00025561208640800803,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 88.10184727164622,
+        "prefix_analytic_mm": 199.18887471891603,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899012845166,
+        "planar_family": "RSR",
+        "planar_length_mm": 84.20886423236576,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          4.76861423572709,
+          2.2999692348499448
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_26"
+      },
+      {
+        "curve_chord_error_mm": 0.00025711564490016325,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 69.1902059490503,
+        "prefix_analytic_mm": 218.10051604151195,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.289645203228,
+        "planar_family": "RSL",
+        "planar_length_mm": 109.88190955243428,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.572686214983635,
+          4.525488663787037
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_27"
+      },
+      {
+        "curve_chord_error_mm": 0.00025562580660498657,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 59.933368487534295,
+        "prefix_analytic_mm": 227.35735350302795,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28966944742217,
+        "planar_family": "RSL",
+        "planar_length_mm": 112.37734301647768,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.280664121882003,
+          4.495265958484554
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin1_28"
+      },
+      {
+        "curve_chord_error_mm": 0.00025688951549407424,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 134.86744050586628,
+        "prefix_analytic_mm": 152.42328148469596,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29007829312764,
+        "planar_family": "LSR",
+        "planar_length_mm": 47.33892702827849,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.1589423054004797,
+          2.944340468797928
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_29"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 127.32169997846515,
+        "prefix_analytic_mm": 159.9690220120971,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29002445094386,
+        "planar_family": "LRL1",
+        "planar_length_mm": 51.750415523019434,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.669724904476535,
+          3.7579997457870133,
+          0.041077290113880616
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_30"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 115.67327606464687,
+        "prefix_analytic_mm": 171.61744592591538,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900709393549,
+        "planar_family": "LSR",
+        "planar_length_mm": 56.63743543936511,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.5058283495838714,
+          3.2912265129813196
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_31"
+      },
+      {
+        "curve_chord_error_mm": 0.00025619290373579684,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 112.49575870326788,
+        "prefix_analytic_mm": 174.79496328729437,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29004733108764,
+        "planar_family": "LSL",
+        "planar_length_mm": 69.71060883087688,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          1.0659824799297222,
+          4.431804663852415
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_32"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 111.03475757582277,
+        "prefix_analytic_mm": 176.25596441473948,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2898746482849,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 68.03735792566184,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.5439570855093674,
+          3.7287360947555666,
+          4.231976560442796
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_33"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 106.692051640459,
+        "prefix_analytic_mm": 180.59867035010325,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2901174015599,
+        "planar_family": "LSL",
+        "planar_length_mm": 72.3800638610256,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.7907250315830285,
+          4.44526272439996
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_34"
+      },
+      {
+        "curve_chord_error_mm": 0.00025664169855410535,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 100.86698191159849,
+        "prefix_analytic_mm": 186.42374007896376,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28991088651355,
+        "planar_family": "RSR",
+        "planar_length_mm": 81.33938562254627,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          4.87643037817388,
+          2.1921530924031547
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_35"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 96.78124447133953,
+        "prefix_analytic_mm": 190.5094775192227,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2897393182099,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 82.29087103014507,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.0533178122793148,
+          2.5251855613925724,
+          5.707855505096246
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_36"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 89.79812706666584,
+        "prefix_analytic_mm": 197.4925949238964,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899589222924,
+        "planar_family": "RSR",
+        "planar_length_mm": 89.27398843481876,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.962774345311171,
+          2.3676085130650124
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_37"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 79.5578652356908,
+        "prefix_analytic_mm": 207.73285675487145,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2895766622334,
+        "planar_family": "RLR1",
+        "planar_length_mm": 99.51425026579379,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          6.239998951523181,
+          2.5544492124240197,
+          3.6448331192770222
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RLR1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_38"
+      },
+      {
+        "curve_chord_error_mm": 0.00025599059711323147,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 70.57581168209856,
+        "prefix_analytic_mm": 216.7149103084637,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28966280518,
+        "planar_family": "RSL",
+        "planar_length_mm": 111.63055585204623,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.386497224799729,
+          4.601099061402281
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_39"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 57.43216234565446,
+        "prefix_analytic_mm": 229.85855964490779,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28974782127653,
+        "planar_family": "RSL",
+        "planar_length_mm": 121.63995315583011,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.60788381927148,
+          4.560686268074883
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin1_40"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 130.0640610291392,
+        "prefix_analytic_mm": 157.22666096142305,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900593105966,
+        "planar_family": "LSR",
+        "planar_length_mm": 52.14230650500558,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.6545117158816787,
+          3.439909879279127
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.5,
+        "candidate_id": "pin1_41"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 94.5625936887536,
+        "prefix_analytic_mm": 192.72812830180865,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2896968164443,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 87.6437738453912,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.406118408351566,
+          2.7288422934458803,
+          5.820511028876452
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.5,
+        "candidate_id": "pin1_42"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 81.35458216414838,
+        "prefix_analytic_mm": 205.93613982641386,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28957060525465,
+        "planar_family": "LRL1",
+        "planar_length_mm": 100.8517853699964,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.818868768495479,
+          3.554343013733706,
+          6.233261389020365
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.5,
+        "candidate_id": "pin1_43"
+      },
+      {
+        "curve_chord_error_mm": 0.00025508723307998693,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 126.16973233967667,
+        "prefix_analytic_mm": 161.12098965088558,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29006956507334,
+        "planar_family": "LSR",
+        "planar_length_mm": 52.90238316180792,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.1855040896980804,
+          2.9709022530955282
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.0,
+        "candidate_id": "pin1_44"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 91.13317764729115,
+        "prefix_analytic_mm": 196.1575443432711,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900159766125,
+        "planar_family": "LRL1",
+        "planar_length_mm": 81.17753385672083,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.987982862251518,
+          4.582475468434341,
+          0.5472950549862249
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin1_45"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 85.93663716927719,
+        "prefix_analytic_mm": 201.35408482128506,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.289985801384,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 86.37407433473479,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          1.5471000474069705,
+          1.7007098387452455,
+          5.389597547321263
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin1_46"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 65.31556613326563,
+        "prefix_analytic_mm": 221.9751558572966,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.289862296811,
+        "planar_family": "RLR1",
+        "planar_length_mm": 106.99514537074634,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.74798963012659,
+          1.6845658393492253,
+          3.26695906759882
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin1_47"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 100.37419120446799,
+        "prefix_analytic_mm": 186.91653078609426,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900253477548,
+        "planar_family": "LRL1",
+        "planar_length_mm": 81.8321763296768,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.8510907833955916,
+          4.615207592082139,
+          0.7169192574899501
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin1_48"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 96.48693567236597,
+        "prefix_analytic_mm": 190.80378631819627,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900014601629,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 85.71943186177882,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          1.3774758449032454,
+          1.6679777150974466,
+          5.52648962617719
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin1_49"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 79.85075133141723,
+        "prefix_analytic_mm": 207.43997065914502,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28990358757585,
+        "planar_family": "RLR1",
+        "planar_length_mm": 102.35561620272756,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.7459953740641545,
+          1.4525893809482864,
+          3.0369768652603164
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin1_50"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 99.4437664591508,
+        "prefix_analytic_mm": 187.84695553141145,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.290032289688,
+        "planar_family": "LRL1",
+        "planar_length_mm": 79.62834904233381,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.9809071120794943,
+          4.505016227714989,
+          0.47691156443889693
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_51"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 92.98845663670124,
+        "prefix_analytic_mm": 194.302265353861,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900277746197,
+        "planar_family": "LRL1",
+        "planar_length_mm": 79.32225486731075,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          3.3104027455164453,
+          4.358811825064262,
+          0.26301091615036787
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_52"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 91.14885635236277,
+        "prefix_analytic_mm": 196.14186563819948,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899823391548,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 87.92325914912182,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          1.6174835379542984,
+          1.778169079464597,
+          5.396673297493287
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_53"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 78.8453704238841,
+        "prefix_analytic_mm": 208.44535156667814,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28994455001305,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 93.46534108012787,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.093183574041977,
+          1.9243734821153247,
+          5.328977051855485
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 10.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_54"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 78.77106592764054,
+        "prefix_analytic_mm": 208.5196560629217,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899078659483,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 100.30104957384407,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.863611139858051,
+          4.491453703093905,
+          4.675040114432452
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_55"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 69.93365483600914,
+        "prefix_analytic_mm": 217.3570671545531,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28985677960515,
+        "planar_family": "RLR1",
+        "planar_length_mm": 109.13846066547546,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.796935397533525,
+          1.7917316040856814,
+          3.3251790649283404
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_56"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 57.83392304887434,
+        "prefix_analytic_mm": 229.4567989416879,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.28981691328795,
+        "planar_family": "RLR1",
+        "planar_length_mm": 114.47678845513764,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.802389241605349,
+          2.1895476874683646,
+          3.4557419164400507
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin1_57"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 91.98791083859365,
+        "prefix_analytic_mm": 195.3028111519686,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899887743657,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 87.08420466289095,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.3996723676025473,
+          3.9615111514458237,
+          4.347236947240725
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 4.25,
+        "candidate_id": "pin1_58"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 82.97429302637289,
+        "prefix_analytic_mm": 204.31642896418936,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.289932593805,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 96.31770037166314,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.7998685529626419,
+          4.292286242984858,
+          4.539615241218814
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 4.5,
+        "candidate_id": "pin1_59"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 97.10594845747582,
+        "prefix_analytic_mm": 190.18477353308643,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2900170347579,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 82.18604494056021,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.3070203843350394,
+          3.7166031653292864,
+          4.194980944391695
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 5.5,
+        "candidate_id": "pin1_60"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 98.92040174921422,
+        "prefix_analytic_mm": 188.37032024134803,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29000268617233,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 87.35847179534989,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.8343586580162619,
+          3.844324814169196,
+          4.057163707349532
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 6.25,
+        "candidate_id": "pin1_61"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 101.2563975492676,
+        "prefix_analytic_mm": 186.03432444129464,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.29003106629386,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 80.94996998487717,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          0.22933375327514538,
+          3.785699111444709,
+          4.079964133767863
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 75.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 6.5,
+        "candidate_id": "pin1_62"
+      },
+      {
+        "curve_chord_error_mm": 0.0002538143505864676,
+        "pin": 1,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 50.66019947409862,
+        "prefix_analytic_mm": 236.63052251646363,
+        "analytic_total_mm": 287.29072199056225,
+        "sampled_total_mm": 287.2899748477189,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 128.41191602738598,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.9721665244803095,
+          4.826897725542784,
+          4.901928752259071
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 12.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 7.25,
+        "candidate_id": "pin1_63"
+      }
+    ],
+    "2": [
+      {
+        "curve_chord_error_mm": 0.00025665990162460073,
+        "pin": 2,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 140.0956494788275,
+        "prefix_analytic_mm": 187.76340384744128,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585003202998,
+        "planar_family": "LSR",
+        "planar_length_mm": 72.78339336089101,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          0.6532255695688418,
+          3.271219447560336
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin2_0"
+      },
+      {
+        "curve_chord_error_mm": 0.0002564218055437495,
+        "pin": 2,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 96.67287625479423,
+        "prefix_analytic_mm": 231.18617707147456,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85807292077476,
+        "planar_family": "RSR",
+        "planar_length_mm": 116.2061665849243,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.683460681619652,
+          3.2177185035514286
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin2_1"
+      },
+      {
+        "curve_chord_error_mm": 0.0002564440079917407,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 154.526810153531,
+        "prefix_analytic_mm": 173.3322431727378,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585084333417,
+        "planar_family": "LSR",
+        "planar_length_mm": 68.24788871632033,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          0.6676643448898341,
+          3.2856582228813282
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin2_2"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 136.59555269916265,
+        "prefix_analytic_mm": 191.26350062710614,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85853364293337,
+        "planar_family": "LSR",
+        "planar_length_mm": 76.28349014055588,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          0.7026353697451804,
+          3.3206292477366746
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin2_3"
+      },
+      {
+        "curve_chord_error_mm": 0.0002557935834616165,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 111.1319860228401,
+        "prefix_analytic_mm": 216.7270673034287,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8580883480432,
+        "planar_family": "RSR",
+        "planar_length_mm": 111.64271284701124,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.6764942560706135,
+          3.2246849291004667
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin2_4"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 87.10078378600042,
+        "prefix_analytic_mm": 240.75826954026837,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85816736888654,
+        "planar_family": "RSR",
+        "planar_length_mm": 125.7782590537181,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.650054539616198,
+          3.2511246455548823
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin2_5"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 150.98807949744207,
+        "prefix_analytic_mm": 176.87097382882672,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85854361699876,
+        "planar_family": "LSR",
+        "planar_length_mm": 71.78661937240925,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          0.7231963638598482,
+          3.341190241851342
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin2_6"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 101.54460624807123,
+        "prefix_analytic_mm": 226.31444707819756,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8581821187817,
+        "planar_family": "RSR",
+        "planar_length_mm": 121.2300926217801,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.6401394875141495,
+          3.2610396976569307
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin2_7"
+      },
+      {
+        "curve_chord_error_mm": 0.0002568247415507541,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 144.53165146727778,
+        "prefix_analytic_mm": 183.327401858991,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585084328454,
+        "planar_family": "LSR",
+        "planar_length_mm": 75.10879536991337,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.6371435760000836,
+          3.2551374539915776
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin2_8"
+      },
+      {
+        "curve_chord_error_mm": 0.0002554064248514454,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 139.94259714397555,
+        "prefix_analytic_mm": 187.91645618229325,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585285206818,
+        "planar_family": "LSL",
+        "planar_length_mm": 79.69784969321559,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.09444106580678091,
+          3.5707503633813107
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin2_9"
+      },
+      {
+        "curve_chord_error_mm": 0.00025590986723000864,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 101.07364119457446,
+        "prefix_analytic_mm": 226.78541213169433,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8580815432418,
+        "planar_family": "RSR",
+        "planar_length_mm": 118.56680564261667,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.694886144727173,
+          3.206293040443908
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin2_10"
+      },
+      {
+        "curve_chord_error_mm": 0.00025583002072615546,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 95.96222940006746,
+        "prefix_analytic_mm": 231.89682392620134,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85800720422776,
+        "planar_family": "RSL",
+        "planar_length_mm": 123.67821743712368,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          6.189871306773073,
+          3.5718774287815775
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin2_11"
+      },
+      {
+        "curve_chord_error_mm": 0.0002562098908872601,
+        "pin": 2,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 93.41659162396283,
+        "prefix_analytic_mm": 234.44246170230596,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85809615429474,
+        "planar_family": "RSR",
+        "planar_length_mm": 119.46245121575569,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          5.373099611227694,
+          3.2662801861442365
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin2_12"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 141.07013173540193,
+        "prefix_analytic_mm": 186.78892159086686,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585433592524,
+        "planar_family": "LSR",
+        "planar_length_mm": 78.5703151017892,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.683691921146494,
+          3.301685799137988
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin2_13"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 135.92223902686683,
+        "prefix_analytic_mm": 191.93681429940196,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85856591949357,
+        "planar_family": "LSL",
+        "planar_length_mm": 83.71820781032432,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.05941595104742475,
+          3.6057754781406675
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin2_14"
+      },
+      {
+        "curve_chord_error_mm": 0.0002568577431767416,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 107.85355947215209,
+        "prefix_analytic_mm": 220.0054938541167,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8581086585491,
+        "planar_family": "RSR",
+        "planar_length_mm": 114.92113939769925,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          5.362755170125389,
+          3.2766246272465414
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin2_15"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 91.52343484086848,
+        "prefix_analytic_mm": 236.33561848540032,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8581730776559,
+        "planar_family": "RSR",
+        "planar_length_mm": 128.11701199632267,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.662726827737879,
+          3.238452357433201
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin2_16"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 85.65730861158974,
+        "prefix_analytic_mm": 242.20174471467905,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8581034635306,
+        "planar_family": "RSL",
+        "planar_length_mm": 133.98313822560138,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          6.22427951802406,
+          3.6062856400325662
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin2_17"
+      },
+      {
+        "curve_chord_error_mm": 0.00025662654372771154,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 140.11756809396658,
+        "prefix_analytic_mm": 187.7414852323022,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8584683100211,
+        "planar_family": "LSR",
+        "planar_length_mm": 79.52287874322457,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          1.0004408220207437,
+          3.3566353122130885
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.0,
+        "candidate_id": "pin2_18"
+      },
+      {
+        "curve_chord_error_mm": 0.00025535086181294187,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 138.43605457060903,
+        "prefix_analytic_mm": 189.42299875565976,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85850544673326,
+        "planar_family": "LSL",
+        "planar_length_mm": 81.20439226658212,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.45912730984759054,
+          3.46786350713965
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.0,
+        "candidate_id": "pin2_19"
+      },
+      {
+        "curve_chord_error_mm": 0.00025640374965885115,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 94.65964512541441,
+        "prefix_analytic_mm": 233.19940820085438,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8580420785446,
+        "planar_family": "RSL",
+        "planar_length_mm": 124.9808017117767,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.848318459232034,
+          3.492123969039688
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.0,
+        "candidate_id": "pin2_20"
+      },
+      {
+        "curve_chord_error_mm": 0.00025645571952226387,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 140.12823831476575,
+        "prefix_analytic_mm": 187.73081501150304,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585160061916,
+        "planar_family": "LSR",
+        "planar_length_mm": 79.73208641897682,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.6005641483753874,
+          3.2185580263668814
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin2_21"
+      },
+      {
+        "curve_chord_error_mm": 0.0002561131549841944,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 135.23321257163485,
+        "prefix_analytic_mm": 192.62584075463394,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85852888090017,
+        "planar_family": "LSL",
+        "planar_length_mm": 84.62711216210772,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.10661272319164777,
+          3.5585787059964438
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin2_22"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 134.60001330860155,
+        "prefix_analytic_mm": 193.25904001766725,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585474633717,
+        "planar_family": "LSL",
+        "planar_length_mm": 85.0404335285896,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.42473916758800706,
+          3.502251649399234
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin2_23"
+      },
+      {
+        "curve_chord_error_mm": 0.00025630245975694077,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 91.25368906540908,
+        "prefix_analytic_mm": 236.60536426085972,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.858008052526,
+        "planar_family": "RSL",
+        "planar_length_mm": 128.60663566833352,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          6.177887502006764,
+          3.5598936240152694
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin2_24"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 84.52021269102264,
+        "prefix_analytic_mm": 243.33884063524616,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8581377640246,
+        "planar_family": "RSL",
+        "planar_length_mm": 135.1202341461685,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.8821248373790755,
+          3.5259303471867307
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin2_25"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 131.2387017218277,
+        "prefix_analytic_mm": 196.62035160444108,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585664706293,
+        "planar_family": "LSL",
+        "planar_length_mm": 88.62162301191486,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.07442110852791978,
+          3.590770320660172
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin2_26"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 80.97430189686642,
+        "prefix_analytic_mm": 246.88475142940237,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85810616703344,
+        "planar_family": "RSL",
+        "planar_length_mm": 138.88602283687618,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          6.209496419573377,
+          3.591502541581883
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin2_27"
+      },
+      {
+        "curve_chord_error_mm": 0.0002565668866774118,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 133.91643777381546,
+        "prefix_analytic_mm": 193.94261555245333,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8585059360764,
+        "planar_family": "LSL",
+        "planar_length_mm": 85.94388695992713,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.45087978464143025,
+          3.476111032345811
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin2_28"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 127.68556476974649,
+        "prefix_analytic_mm": 200.1734885565223,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85861973527636,
+        "planar_family": "RSL",
+        "planar_length_mm": 91.95488206744466,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          0.009090926534526922,
+          3.6742823557226183
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin2_29"
+      },
+      {
+        "curve_chord_error_mm": 0.0002563672248632187,
+        "pin": 2,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 90.13066837617075,
+        "prefix_analytic_mm": 237.72838495009805,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85804262075453,
+        "planar_family": "RSL",
+        "planar_length_mm": 129.72965635757186,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          5.854026123526604,
+          3.497831633334259
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin2_30"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 64.85371419616223,
+        "prefix_analytic_mm": 263.00533913010656,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8582438318972,
+        "planar_family": "LSL",
+        "planar_length_mm": 154.78673264102895,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          6.274109324577209,
+          3.674267411790469
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin2_31"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 94.55915331744134,
+        "prefix_analytic_mm": 233.29990000882745,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8583134446489,
+        "planar_family": "LRL1",
+        "planar_length_mm": 128.21554555241,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          1.9200567373701012,
+          3.378818989523463,
+          5.385753069140604
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 12.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 7.5,
+        "candidate_id": "pin2_32"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 87.72577992452253,
+        "prefix_analytic_mm": 240.13327340174627,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8582850289987,
+        "planar_family": "LRL1",
+        "planar_length_mm": 135.0489189453288,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.3915469359005295,
+          3.5326431869955037,
+          5.329886455881366
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 75.0,
+          "planar_radius_mm": 12.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 10.5,
+        "candidate_id": "pin2_33"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 62.789324176779985,
+        "prefix_analytic_mm": 265.0697291494888,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8583569737309,
+        "planar_family": "LRL1",
+        "planar_length_mm": 159.98537469307132,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          1.727180658278029,
+          3.881167667301359,
+          5.819178438211422
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 14.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 12.5,
+        "candidate_id": "pin2_34"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 50.309683726799506,
+        "prefix_analytic_mm": 277.5493695994693,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8583187738094,
+        "planar_family": "LRL1",
+        "planar_length_mm": 172.4650151430518,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.2532018330632546,
+          4.195969418043944,
+          5.869758401967931
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 14.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 13.5,
+        "candidate_id": "pin2_35"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 90.07591651368418,
+        "prefix_analytic_mm": 237.78313681258462,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85844366341166,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 129.56453032350697,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          1.5515527971808922,
+          2.663809245917343,
+          5.039247265723692
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 14.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 14.25,
+        "candidate_id": "pin2_36"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 63.32004568402698,
+        "prefix_analytic_mm": 264.5390076422418,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.8583617871941,
+        "planar_family": "LRL1",
+        "planar_length_mm": 156.3204011531642,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.0293362048533425,
+          3.619376061262243,
+          5.5170306733961425
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 90.0,
+          "planar_radius_mm": 14.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 14.25,
+        "candidate_id": "pin2_37"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 91.01582811287099,
+        "prefix_analytic_mm": 236.8432252133978,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.858446421978,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 128.62461872432016,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          1.8476354274363842,
+          2.499341280618239,
+          4.840496057968246
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 75.0,
+          "planar_radius_mm": 14.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 17.25,
+        "candidate_id": "pin2_38"
+      },
+      {
+        "curve_chord_error_mm": 0.0002550260231380941,
+        "pin": 2,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 55.04975122646391,
+        "prefix_analytic_mm": 272.8093020998049,
+        "analytic_total_mm": 327.8590533262688,
+        "sampled_total_mm": 327.85833652935577,
+        "planar_family": "LRL1",
+        "planar_length_mm": 164.59069561072718,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.489886800407938,
+          3.7838440265613467,
+          5.4827474309398
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 75.0,
+          "planar_radius_mm": 14.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 17.25,
+        "candidate_id": "pin2_39"
+      }
+    ],
+    "3": [
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 127.33916708771977,
+        "prefix_analytic_mm": 157.75414298948516,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928380551253,
+        "planar_family": "LSR",
+        "planar_length_mm": 42.77413250293489,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.5320494751747757,
+          0.43765437278158004
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin3_0"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 113.13044835014938,
+        "prefix_analytic_mm": 171.96286172705555,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923988864596,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 56.9828512405053,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          3.9963261492088926,
+          3.023006108839495,
+          1.1210750620237973
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin3_1"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 109.81002509714102,
+        "prefix_analytic_mm": 175.2832849800639,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923591863217,
+        "planar_family": "LRL1",
+        "planar_length_mm": 60.30327449351365,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          4.114912693959191,
+          3.2601791983400914,
+          1.2396616067740955
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin3_2"
+      },
+      {
+        "curve_chord_error_mm": 0.0002569569337833588,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 83.51944199531383,
+        "prefix_analytic_mm": 201.5738680818911,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09237321325236,
+        "planar_family": "LSL",
+        "planar_length_mm": 86.59385759534084,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.4848230947891454,
+          5.892757314783636
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.0,
+        "candidate_id": "pin3_3"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 133.01741094681586,
+        "prefix_analytic_mm": 152.07589913038908,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.092864525559,
+        "planar_family": "LSR",
+        "planar_length_mm": 46.99154467397158,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.459048752171996,
+          0.3646536497788013
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin3_4"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 125.27655619158134,
+        "prefix_analytic_mm": 159.8167538856236,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928567174551,
+        "planar_family": "LSR",
+        "planar_length_mm": 44.83674339907333,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.6263662897131086,
+          0.5319711873199142
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin3_5"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 119.72518880700011,
+        "prefix_analytic_mm": 165.36812127020482,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0926204522867,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 50.38811078365454,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          3.5977025234641413,
+          2.1020593727818113,
+          0.5987519517108651
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin3_6"
+      },
+      {
+        "curve_chord_error_mm": 0.00025701371433173303,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 89.13435652519044,
+        "prefix_analytic_mm": 195.9589535520145,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923857247488,
+        "planar_family": "LSL",
+        "planar_length_mm": 90.87459909559703,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.430484724094969,
+          5.947095685477812
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin3_7"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 86.46012382114469,
+        "prefix_analytic_mm": 198.63318625606024,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923103645406,
+        "planar_family": "LRL1",
+        "planar_length_mm": 83.65317576950997,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          4.637235804272123,
+          4.181125934397775,
+          1.6382852325188475
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin3_8"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 1.0,
+        "lift_mm": 18.0,
+        "stock_mm": 75.31873286461496,
+        "prefix_analytic_mm": 209.77457721258997,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0924631798264,
+        "planar_family": "LSL",
+        "planar_length_mm": 94.7945667260397,
+        "elevator_analytic_mm": 25.991148575128552,
+        "offset_analytic_mm": 10.328162650903689,
+        "planar_angles_rad": [
+          2.5466728370732357,
+          5.830907572499546
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 1.0
+        },
+        "selection_score": 0.25,
+        "candidate_id": "pin3_9"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 131.115597206912,
+        "prefix_analytic_mm": 153.97771287029292,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928829834518,
+        "planar_family": "LSR",
+        "planar_length_mm": 48.893358413875454,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.5306863819748657,
+          0.4362912795816707
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin3_10"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 114.704250549725,
+        "prefix_analytic_mm": 170.38905952747993,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09249466578876,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 65.30470507106246,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          4.0009375679707055,
+          3.0343465157448057,
+          1.1278040501672955
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin3_11"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 111.27237413868542,
+        "prefix_analytic_mm": 173.8209359385195,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0924611622717,
+        "planar_family": "LRL1",
+        "planar_length_mm": 68.73658148210204,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          4.1081837058156925,
+          3.24883879143478,
+          1.2350501880122826
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin3_12"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 81.03430825743524,
+        "prefix_analytic_mm": 204.0590018197697,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0924756900796,
+        "planar_family": "LSL",
+        "planar_length_mm": 98.97464736335223,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.4837643100983025,
+          5.893816099474479
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 0.5,
+        "candidate_id": "pin3_13"
+      },
+      {
+        "curve_chord_error_mm": 0.00025657253834632243,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 136.30570455526203,
+        "prefix_analytic_mm": 148.7876055219429,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928428295862,
+        "planar_family": "LSR",
+        "planar_length_mm": 40.568999032865264,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.53961619735416,
+          0.44522109496096474
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin3_14"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 129.557213168888,
+        "prefix_analytic_mm": 155.53609690831692,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09252448417783,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 47.31749041923927,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          3.652882161881978,
+          2.332623193034779,
+          0.7741361335459955
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin3_15"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 106.90606827334761,
+        "prefix_analytic_mm": 178.18724180385732,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0922449699133,
+        "planar_family": "LRL1",
+        "planar_length_mm": 69.96863531477966,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.461851622436993,
+          3.950562114144807,
+          1.58310559410101
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin3_16"
+      },
+      {
+        "curve_chord_error_mm": 0.0002566067116867021,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 92.49109229082359,
+        "prefix_analytic_mm": 192.60221778638135,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923818331181,
+        "planar_family": "LSL",
+        "planar_length_mm": 84.3836112973037,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.4865705653645893,
+          5.891009844208193
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.0,
+        "candidate_id": "pin3_17"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 134.21612215366162,
+        "prefix_analytic_mm": 150.87718792354332,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09285765228515,
+        "planar_family": "LSR",
+        "planar_length_mm": 42.65858143446567,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.6470533688210383,
+          0.5526582664278437
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin3_18"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 130.49390051257348,
+        "prefix_analytic_mm": 154.59940956463146,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0926645413277,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 46.38080307555381,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          3.47957254048781,
+          1.8516026410255153,
+          0.4664252029309005
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin3_19"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 126.54361269736705,
+        "prefix_analytic_mm": 158.54969737983788,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928616634749,
+        "planar_family": "LSR",
+        "planar_length_mm": 53.465342923420415,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.6070410065112535,
+          0.25084651631890864
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin3_20"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 89.2142201105166,
+        "prefix_analytic_mm": 195.87908996668833,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0922776185015,
+        "planar_family": "LRL1",
+        "planar_length_mm": 87.66048347761068,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.769562553052088,
+          4.43158266615407,
+          1.7564152154951786
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin3_21"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 84.28277169879726,
+        "prefix_analytic_mm": 200.81053837840767,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0924711245893,
+        "planar_family": "LSL",
+        "planar_length_mm": 92.59193188933003,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.553771219975053,
+          5.823809189597728
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin3_22"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 82.5954309140046,
+        "prefix_analytic_mm": 202.49787916320034,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923654138427,
+        "planar_family": "LSL",
+        "planar_length_mm": 97.41352470678288,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.5951785650908485,
+          6.0442012322810825
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.25,
+        "candidate_id": "pin3_23"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 124.38820566723925,
+        "prefix_analytic_mm": 160.70510440996568,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928812195799,
+        "planar_family": "LSR",
+        "planar_length_mm": 55.62074995354821,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.665664389343111,
+          0.3094698991507667
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.5,
+        "candidate_id": "pin3_24"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 74.1935098495332,
+        "prefix_analytic_mm": 210.89980022767173,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09245727912133,
+        "planar_family": "LSL",
+        "planar_length_mm": 105.81544577125428,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.6449525762320603,
+          5.994427221139871
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 1.5,
+        "candidate_id": "pin3_25"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 138.13532820653248,
+        "prefix_analytic_mm": 146.95798187067246,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09262350012995,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 38.959253278146235,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          3.3168978548783974,
+          1.7356062543852766,
+          0.5131035019000738
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin3_26"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 119.14137110034909,
+        "prefix_analytic_mm": 165.95193897685584,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0925590671479,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 57.733332487778185,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          3.9042725231411803,
+          2.4302360353899646,
+          0.8821580024411284
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin3_27"
+      },
+      {
+        "curve_chord_error_mm": 0.0002568750367212269,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 112.69813539295987,
+        "prefix_analytic_mm": 172.39517468424506,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.092664426217,
+        "planar_family": "RSL",
+        "planar_length_mm": 64.39644609171886,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.62617456391528,
+          0.43738435912888785
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin3_28"
+      },
+      {
+        "curve_chord_error_mm": 0.00025689756707159006,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 98.767709028806,
+        "prefix_analytic_mm": 186.32560104839894,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09214128142366,
+        "planar_family": "LRL1",
+        "planar_length_mm": 78.32687245587272,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.722884254082915,
+          4.54757905279431,
+          1.9190899011045905
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin3_29"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 96.37795931795458,
+        "prefix_analytic_mm": 188.71535075925036,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.092344105854,
+        "planar_family": "LRL1",
+        "planar_length_mm": 80.49674427017271,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.615629141341009,
+          3.852949271789622,
+          1.5935146206409572
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin3_30"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 68.88432966237693,
+        "prefix_analytic_mm": 216.208980414828,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09220237541314,
+        "planar_family": "RSR",
+        "planar_length_mm": 108.21025182230181,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.588409711682349,
+          5.883565800283629
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.25,
+        "candidate_id": "pin3_31"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 137.2473799490755,
+        "prefix_analytic_mm": 147.84593012812942,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0927272783007,
+        "planar_family": "LRL-1",
+        "planar_length_mm": 39.847201535603205,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          3.2515778750882833,
+          1.4432525447786027,
+          0.28606977208351503
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL-1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin3_32"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 107.03810825645084,
+        "prefix_analytic_mm": 178.0552018207541,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0927131563735,
+        "planar_family": "RSL",
+        "planar_length_mm": 70.05647322822787,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.666570490260778,
+          0.4777802854743862
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin3_33"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 82.90049646711742,
+        "prefix_analytic_mm": 202.1928136100875,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0922159252054,
+        "planar_family": "LRL1",
+        "planar_length_mm": 94.19408501756129,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.949917983899473,
+          4.839932762400983,
+          1.9844098808947055
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LRL1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin3_34"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 57.015921998033804,
+        "prefix_analytic_mm": 228.07738807917113,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0923131985146,
+        "planar_family": "RSR",
+        "planar_length_mm": 120.07865948664494,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.617195748079588,
+          5.854779763886389
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 2.5,
+        "candidate_id": "pin3_35"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 147.8255245469811,
+        "prefix_analytic_mm": 137.26778553022385,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09289697800955,
+        "planar_family": "RLR1",
+        "planar_length_mm": 36.255937084225714,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.08529117601305725,
+          2.859994405407883,
+          0.6803081270016309
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 6.25,
+        "candidate_id": "pin3_36"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 136.5615946197047,
+        "prefix_analytic_mm": 148.53171545750024,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09282976656954,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 47.519867011502114,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.3668894241949672,
+          3.4231909017717035,
+          0.9619063751835408
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 10.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 6.25,
+        "candidate_id": "pin3_37"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 120.5016880037968,
+        "prefix_analytic_mm": 164.59162207340813,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928482800506,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 63.579773627410006,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.39483680770599583,
+          3.827254479571589,
+          1.0762231816732488
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 12.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 11.25,
+        "candidate_id": "pin3_38"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 129.7819051934022,
+        "prefix_analytic_mm": 155.31140488380274,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928872432771,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 54.2995564378046,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.07486941398444347,
+          3.571478457237605,
+          0.8786151652616678
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -15.0,
+          "planar_radius_mm": 12.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 14.25,
+        "candidate_id": "pin3_39"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 100.20091993452166,
+        "prefix_analytic_mm": 184.89239014268327,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.09285598422815,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 83.88054169668511,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.5934805576405081,
+          4.173830877120641,
+          1.224155829287788
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 14.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 17.25,
+        "candidate_id": "pin3_40"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 107.58709330129861,
+        "prefix_analytic_mm": 177.50621677590632,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928849369967,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 69.50748818338012,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          0.011272741723449498,
+          3.791407231259323,
+          1.162140611544379
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -15.0,
+          "planar_radius_mm": 14.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 18.5,
+        "candidate_id": "pin3_41"
+      },
+      {
+        "curve_chord_error_mm": 0.00025656921722949644,
+        "pin": 3,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 107.68149840460671,
+        "prefix_analytic_mm": 177.41181167259822,
+        "analytic_total_mm": 285.09331007720493,
+        "sampled_total_mm": 285.0928798594332,
+        "planar_family": "RLR-1",
+        "planar_length_mm": 76.39996322660008,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.33785955186025785,
+          4.037567054231465,
+          1.081713624379712
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -15.0,
+          "planar_radius_mm": 14.0,
+          "family": "RLR-1",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 20.25,
+        "candidate_id": "pin3_42"
+      }
+    ],
+    "4": [
+      {
+        "curve_chord_error_mm": 0.00017946670837321044,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 98.49758415794918,
+        "prefix_analytic_mm": 241.11694503890715,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6139042586806,
+        "planar_family": "LSR",
+        "planar_length_mm": 133.11821644638096,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          2.268945651511265,
+          4.62514014170361
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 3.25,
+        "candidate_id": "pin4_0"
+      },
+      {
+        "curve_chord_error_mm": 0.0002241457106144651,
+        "pin": 4,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 113.75472855009616,
+        "prefix_analytic_mm": 225.85980064676016,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61379418414754,
+        "planar_family": "LSR",
+        "planar_length_mm": 120.7754461903427,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.3598379518790025,
+          4.716032442071347
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 4.25,
+        "candidate_id": "pin4_1"
+      },
+      {
+        "curve_chord_error_mm": 0.00017957900060761034,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 90.88912344937438,
+        "prefix_analytic_mm": 248.72540574748194,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.613891164317,
+        "planar_family": "LSR",
+        "planar_length_mm": 140.72667715495572,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          2.5082198385409207,
+          4.602614940934116
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -15.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 4.25,
+        "candidate_id": "pin4_2"
+      },
+      {
+        "curve_chord_error_mm": 0.00017928256690113997,
+        "pin": 4,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 151.0024444256718,
+        "prefix_analytic_mm": 188.61208477118453,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61409661709405,
+        "planar_family": "LSL",
+        "planar_length_mm": 87.60023632518639,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          1.5928185840256044,
+          2.334172232961637
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 5.0,
+        "candidate_id": "pin4_3"
+      },
+      {
+        "curve_chord_error_mm": 0.00022405484487020288,
+        "pin": 4,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 110.9289779286633,
+        "prefix_analytic_mm": 228.68555126819302,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6138034591554,
+        "planar_family": "LSR",
+        "planar_length_mm": 120.46694477911534,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.2541024652705564,
+          4.610296955462902
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 5.0,
+        "candidate_id": "pin4_4"
+      },
+      {
+        "curve_chord_error_mm": 0.0002244013498016173,
+        "pin": 4,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 121.43698810820342,
+        "prefix_analytic_mm": 218.1775410886529,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6138084882582,
+        "planar_family": "LSR",
+        "planar_length_mm": 113.09318663223544,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.1271694740324363,
+          4.74516335202393
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 5.25,
+        "candidate_id": "pin4_5"
+      },
+      {
+        "curve_chord_error_mm": 0.00017982790855519681,
+        "pin": 4,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 155.07000815672552,
+        "prefix_analytic_mm": 184.5445210401308,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.614112061773,
+        "planar_family": "LSL",
+        "planar_length_mm": 83.53267259413266,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          1.271393703430495,
+          2.3937977257575977
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 6.0,
+        "candidate_id": "pin4_6"
+      },
+      {
+        "curve_chord_error_mm": 0.00017947462646383805,
+        "pin": 4,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 146.12836519165364,
+        "prefix_analytic_mm": 193.48616400520268,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.614081170276,
+        "planar_family": "LSL",
+        "planar_length_mm": 92.47431555920453,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          1.9001341042734547,
+          2.288656100512936
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -15.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 6.0,
+        "candidate_id": "pin4_7"
+      },
+      {
+        "curve_chord_error_mm": 0.00022467328076469784,
+        "pin": 4,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 118.57288834310572,
+        "prefix_analytic_mm": 221.0416408537506,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61381906784175,
+        "planar_family": "LSR",
+        "planar_length_mm": 112.8230343646729,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          2.008544824633819,
+          4.626538702625313
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 6.0,
+        "candidate_id": "pin4_8"
+      },
+      {
+        "curve_chord_error_mm": 0.0002245589662566161,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 112.5142216512229,
+        "prefix_analytic_mm": 227.10030754563343,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61381290647427,
+        "planar_family": "LSR",
+        "planar_length_mm": 119.10157895310724,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          2.184359505117392,
+          4.540553995309737
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 6.25,
+        "candidate_id": "pin4_9"
+      },
+      {
+        "curve_chord_error_mm": 0.00025646990247996104,
+        "pin": 4,
+        "elevation_fraction": 0.75,
+        "lift_mm": 13.5,
+        "stock_mm": 121.06894636022076,
+        "prefix_analytic_mm": 218.54558283663556,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6137261212551,
+        "planar_family": "LSR",
+        "planar_length_mm": 113.46122838021812,
+        "elevator_analytic_mm": 21.49104222155545,
+        "offset_analytic_mm": 4.932612974343991,
+        "planar_angles_rad": [
+          2.3176918809484524,
+          4.673886371140798
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 0.75
+        },
+        "selection_score": 6.5,
+        "candidate_id": "pin4_10"
+      },
+      {
+        "curve_chord_error_mm": 0.0001784574000640582,
+        "pin": 4,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 158.1538341546476,
+        "prefix_analytic_mm": 181.46069504220873,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61412893356453,
+        "planar_family": "LSL",
+        "planar_length_mm": 80.44884659621057,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          0.9420036927399786,
+          2.461388348648964
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 9.0,
+        "candidate_id": "pin4_11"
+      },
+      {
+        "curve_chord_error_mm": 0.00022426332250091718,
+        "pin": 4,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 151.10286015320236,
+        "prefix_analytic_mm": 188.51166904365397,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6140186739303,
+        "planar_family": "LSL",
+        "planar_length_mm": 87.49982059765581,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          1.9125204467291377,
+          2.2762697580572535
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -15.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 9.0,
+        "candidate_id": "pin4_12"
+      },
+      {
+        "curve_chord_error_mm": 0.00022429611242635872,
+        "pin": 4,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 116.06513577734592,
+        "prefix_analytic_mm": 223.5493934195104,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61375631066204,
+        "planar_family": "RSL",
+        "planar_length_mm": 115.33078693043272,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.181887577936996,
+          2.3020943121463517
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 9.0,
+        "candidate_id": "pin4_13"
+      },
+      {
+        "curve_chord_error_mm": 0.0002243029175783562,
+        "pin": 4,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 85.63149457220965,
+        "prefix_analytic_mm": 253.98303462464668,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6136305384219,
+        "planar_family": "RSR",
+        "planar_length_mm": 145.76442813556898,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.804735334738034,
+          4.358243238232197
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 9.0,
+        "candidate_id": "pin4_14"
+      },
+      {
+        "curve_chord_error_mm": 0.00025554886976586477,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 118.00742599882562,
+        "prefix_analytic_mm": 221.6071031980307,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61369499248417,
+        "planar_family": "RSL",
+        "planar_length_mm": 113.60837460550448,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.956011151209809,
+          2.338017273218314
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 9.5,
+        "candidate_id": "pin4_15"
+      },
+      {
+        "curve_chord_error_mm": 0.0002565491592093627,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 92.90491527238242,
+        "prefix_analytic_mm": 246.7096139244739,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6135550510447,
+        "planar_family": "RSR",
+        "planar_length_mm": 138.71088533194768,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.6403622876744315,
+          4.260816897496649
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 9.5,
+        "candidate_id": "pin4_16"
+      },
+      {
+        "curve_chord_error_mm": 0.00022396052767525987,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 160.12908030029678,
+        "prefix_analytic_mm": 179.48544889655955,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61406297522274,
+        "planar_family": "LSL",
+        "planar_length_mm": 71.4867203040333,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          1.2034862199177583,
+          2.199905821471184
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 10.25,
+        "candidate_id": "pin4_17"
+      },
+      {
+        "curve_chord_error_mm": 0.00022417329006518827,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 113.29106400841044,
+        "prefix_analytic_mm": 226.32346518844588,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61374630860655,
+        "planar_family": "RSL",
+        "planar_length_mm": 118.32473659591965,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          5.255330864532191,
+          2.375537598741546
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 10.25,
+        "candidate_id": "pin4_18"
+      },
+      {
+        "curve_chord_error_mm": 0.00022477093921313696,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 84.60677221110433,
+        "prefix_analytic_mm": 255.007756985752,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61363108525063,
+        "planar_family": "RSR",
+        "planar_length_mm": 147.00902839322578,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.872529284662049,
+          4.2904492883081815
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 8.0,
+          "family": "RSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 10.25,
+        "candidate_id": "pin4_19"
+      },
+      {
+        "curve_chord_error_mm": 0.0002570612188363963,
+        "pin": 4,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 123.65240425933479,
+        "prefix_analytic_mm": 215.96212493752154,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.61368079933607,
+        "planar_family": "RSL",
+        "planar_length_mm": 107.74351844844384,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          5.142056431062429,
+          2.262263165271784
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 11.25,
+        "candidate_id": "pin4_20"
+      },
+      {
+        "curve_chord_error_mm": 0.0002568735961115953,
+        "pin": 4,
+        "elevation_fraction": 0.5,
+        "lift_mm": 9.0,
+        "stock_mm": 96.72678902024347,
+        "prefix_analytic_mm": 242.88774017661285,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6135312648934,
+        "planar_family": "RSR",
+        "planar_length_mm": 134.66913368753515,
+        "elevator_analytic_mm": 16.878247477063418,
+        "offset_analytic_mm": 12.67965975149621,
+        "planar_angles_rad": [
+          4.810959890566069,
+          4.35201868240416
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.5
+        },
+        "selection_score": 11.25,
+        "candidate_id": "pin4_21"
+      },
+      {
+        "curve_chord_error_mm": 0.00022363126090318985,
+        "pin": 4,
+        "elevation_fraction": 0.0,
+        "lift_mm": 0.0,
+        "stock_mm": 146.42138808997225,
+        "prefix_analytic_mm": 193.19314110688407,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.614000256365,
+        "planar_family": "LSL",
+        "planar_length_mm": 92.18129266088589,
+        "elevator_analytic_mm": 0.0,
+        "offset_analytic_mm": 22.351149185480114,
+        "planar_angles_rad": [
+          2.1924841618598023,
+          2.2581054307257387
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": -30.0,
+          "planar_radius_mm": 8.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "selection_score": 12.0,
+        "candidate_id": "pin4_22"
+      },
+      {
+        "curve_chord_error_mm": 0.00025364357224566536,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 161.78086631411963,
+        "prefix_analytic_mm": 177.8336628827367,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6140283151814,
+        "planar_family": "LSL",
+        "planar_length_mm": 69.83493429021048,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          1.22408117135602,
+          2.1793108700329222
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 12.5,
+        "candidate_id": "pin4_23"
+      },
+      {
+        "curve_chord_error_mm": 0.0002559986594862229,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 121.04245122543398,
+        "prefix_analytic_mm": 218.57207797142235,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6136722047497,
+        "planar_family": "RSL",
+        "planar_length_mm": 110.57334937889614,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          5.216941682418415,
+          2.3371484166277714
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSL",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 12.5,
+        "candidate_id": "pin4_24"
+      },
+      {
+        "curve_chord_error_mm": 0.00025675877146236203,
+        "pin": 4,
+        "elevation_fraction": 0.25,
+        "lift_mm": 4.5,
+        "stock_mm": 95.66699770828507,
+        "prefix_analytic_mm": 243.94753148857126,
+        "analytic_total_mm": 339.6145291968563,
+        "sampled_total_mm": 339.6135318160619,
+        "planar_family": "RSR",
+        "planar_length_mm": 135.94880289604504,
+        "elevator_analytic_mm": 11.549724343177362,
+        "offset_analytic_mm": 17.788304988830824,
+        "planar_angles_rad": [
+          4.880453107091956,
+          4.282525465878274
+        ],
+        "source_radius_reused": true,
+        "parameters": {
+          "entry_azimuth_deg": 30.0,
+          "planar_radius_mm": 7.0,
+          "family": "RSR",
+          "elevation_fraction": 0.25
+        },
+        "selection_score": 12.5,
+        "candidate_id": "pin4_25"
+      }
+    ]
+  },
+  "selected": [
+    "pin4_0",
+    "pin2_0",
+    "pin3_0",
+    "pin1_0"
+  ],
+  "selected_pairs": [
+    {
+      "a": "pin4_0",
+      "b": "pin2_0",
+      "status": "PASS",
+      "surface_gap_lower_bound_mm": 3.2191419544198507,
+      "complete_minimum": true
+    },
+    {
+      "a": "pin4_0",
+      "b": "pin3_0",
+      "status": "PASS",
+      "surface_gap_lower_bound_mm": 0.7649576394540851,
+      "complete_minimum": true
+    },
+    {
+      "a": "pin4_0",
+      "b": "pin1_0",
+      "status": "PASS",
+      "surface_gap_lower_bound_mm": 5.219271549666803,
+      "complete_minimum": true
+    },
+    {
+      "a": "pin2_0",
+      "b": "pin3_0",
+      "status": "PASS",
+      "surface_gap_lower_bound_mm": 1.2191648735198468,
+      "complete_minimum": true
+    },
+    {
+      "a": "pin2_0",
+      "b": "pin1_0",
+      "status": "PASS",
+      "surface_gap_lower_bound_mm": 0.4389106646834924,
+      "complete_minimum": true
+    },
+    {
+      "a": "pin3_0",
+      "b": "pin1_0",
+      "status": "PASS",
+      "surface_gap_lower_bound_mm": 3.219294468766799,
+      "complete_minimum": true
+    }
+  ],
+  "pair_calls": 6,
+  "search_nodes": 5,
+  "node_limit": 100000,
+  "search_exhausted": true,
+  "curves_sha256": "599c9c454be9f0f63442fbaf83a0cc68a3099fa710294e42c7eb52e905b4b86f",
+  "fixed_body_wires": 14,
+  "wire_OD_mm": 0.6604,
+  "minimum_analytic_radius_mm": 7.0,
+  "clearance_mm": 0.3,
+  "original_nominal_allocations_mm": [
+    287.29072199056225,
+    327.8590533262688,
+    285.09331007720493,
+    339.6145291968563
+  ],
+  "self_clearance": "NOT_TESTED",
+  "terminal_space_and_hands": "NOT_TESTED",
+  "transition_from_settled": "NOT_TESTED",
+  "continuous_assembly": "NOT_TESTED",
+  "no_universal_impossibility_claim": true,
+  "main_applied": false,
+  "manufacturing_release": false,
+  "whole_harness": "BLOCKED",
+  "elapsed_s": 100.18952107429504
+}

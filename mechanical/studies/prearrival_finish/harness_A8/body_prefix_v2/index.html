@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>H06四线身体端 · MORI独立候选</title>
+<style>body{font:16px/1.8 system-ui,-apple-system,sans-serif;max-width:1120px;margin:28px auto;padding:0 24px 50px;background:#f3f6f5;color:#2d4047}a{color:#087484}h1{font-size:30px}h2{font-size:23px;margin-top:30px}img{width:100%;border-radius:8px}.note{background:#fff0d8;border-left:4px solid #bf7e23;padding:14px 18px}.pass{background:#e5f0e6;padding:14px 18px}table{border-collapse:collapse;width:100%}th,td{padding:10px;border-bottom:1px solid #cbd8d9;text-align:left}</style>
+<p><a href="../index.html">← A8线束设计与原厂资料</a></p><h1>四根线已从身体接到偏航段</h1>
+<p class="note">独立候选 · 主模型M1.47未改 · 尚未固定，也未接到CAM。完整线束仍为BLOCKED，不是加工图。</p>
+<p class="pass">H06四根UART线已从Motion J5分配出线面接到偏航上方暂存点；四线成组、209源实体/代理、29个插头包络及14根静态线的130头部姿态检查通过，四线间隙保守下界0.738mm。与另外两组局部Yaw线束包络也通过。尚缺固定、穿线/带线拆装、俯仰段与CAM连接，J2打印改动未采用；主模型保持M1.47。</p><h2>俯视走线</h2><img src="body_prefix_top.png" alt="四根UART候选线保留原运动板针序，绕开已有线束后分别进入偏航段">
+<p>这一视图隐藏承重桥、转台和反力件；不同高度的线可能在图上交叉，三维间隙已独立检查。琥珀色为候选导线及插头包络。</p>
+<h2>保留结构的斜后视图</h2><img src="body_prefix_rear.png" alt="保留承重桥与转台后的身体到偏航候选线束">
+<table><tr><th>已经检查</th><th>结果</th></tr><tr><td>4根线成组、全部6对间隙</td><td>PASS</td></tr><tr><td>209源实体/代理、29个对插包络、14根静态线</td><td>130个头部姿态；520个线/姿态实例PASS</td></tr><tr><td>四线间隙保守下界</td><td>0.738mm</td></tr><tr><td>与另外两组局部Yaw环</td><td>104项PASS；另外7根活动线尚未完整设计</td></tr></table>
+<h2>上端暂存，不能按这些长度下料</h2><p>上方竖直线段到Z206mm暂存点结束，俯仰段与CAM实际插头还没连接。这里的逐线长度只用于继续设计，未含端子内部、固定、拆装松量及剥线。</p>
+<h2>接下来仍需处理</h2><p>固定与应力释放、带线穿入/拆装、俯仰段和其余活动线、实际插头与热缩管、J2改动后的局部壁厚。两件打印结构的候选改动尚未请求正式应用。</p>
+<p><a href="README.md">完整范围与长度基准</a> · <a href="H06_BODY_TO_YAW_CANDIDATE_NOT_ADOPTED.blend">独立可编辑Blender</a> · <a href="body_to_yaw_motion.json">姿态检查</a> · <a href="packing.json">四线成组检查</a> · <a href="other_loop_coexistence.json">与其他预留环检查</a> · <a href="commands.json">命令记录</a></p></html>

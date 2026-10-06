@@ -1,0 +1,74 @@
+{
+  "observed_utc": "2026-09-21T05:54:09.652066+00:00",
+  "baseline_version": "HW-SW-0.3",
+  "observed_upstream_version": "HW-SW-0.4",
+  "compatibility": "FAIL",
+  "software_action": "Retain explicit user HW-SW-0.2 parameters pending clarification; do not silently change scale or wiring",
+  "changed_members": {
+    "firmware/main/Kconfig.projbuild": {
+      "baseline_sha256": "0ad016d040b2940e6aeb45de7da9932660c9f123e8445ff0080736053fd30100",
+      "upstream_sha256": "9ce3f64a075b445f337e1ecec0ec54acd10a5d7cb0adf605526d0fca44c89a04"
+    },
+    "firmware/sdkconfig": {
+      "baseline_sha256": "00f47e18f180439c71acc5da3352dd3ba9ace2f049f900f311b06f01716e6814",
+      "upstream_sha256": "6658fd3750ea8f00a1cd8f8a8fc6146ea81e84810b14c8a2a10a654aebe506fe"
+    },
+    "firmware/sdkconfig.defaults": {
+      "baseline_sha256": "81b63f22b6b036c9c28ee134121bea2a19ec7541b3e21cf6f518323ca75e8523",
+      "upstream_sha256": "4645887948db78d7c69ae097bd1fb41e9473b364cac7599fdec27ac19fc62270"
+    },
+    "tests/run_host_tests.sh": {
+      "baseline_sha256": "ec129c05c05b2f522b537f750b6be4bcd55a94dfabf1709e51829212125419fc",
+      "upstream_sha256": "7dc9aac5901925fa516866da6beb66cdb7fb17237f533b9a05ebb6d470f93ccd"
+    },
+    "wiring.csv": {
+      "baseline_sha256": "9b3efb0e8b5d19348ffecb3aca1a1becc4453d440f093875657373e289617765",
+      "upstream_sha256": "6083415c31ee092b77200561be134d3603a29589e46ddfae3b5e9cce34bfbb36"
+    }
+  },
+  "new_members": [
+    "firmware/README.md",
+    "tests/physical_test_record.csv"
+  ],
+  "original_source_hashes": {
+    "AGENTS.md": "6c8add6cde1914d0de89011325c3c1217c98c8dc328aaee4bbc3dda90e7b9cdb",
+    "params.json": "15274cb22039a3964adc89a76167d62c7b770437e9ce0ab555dc3b1b62cd86d6",
+    "reports/derived.json": "9767421b5e1e80ace0c8ea6c509e514647110b3c266278a1cfa272a34b265d9a",
+    "hardware/dimensions/MORI_硬件尺寸要求.md": "b7dd73d9b64b3ca36d32228b96d5fb16dd8dfb3d85abc7db194926e9eca70596",
+    "hardware/handoff/firmware_baseline.zip": "c14ecb4dbf117cb5a2d82be14c06cd7ca76fa8175ee388a27c534c16f76b64ea",
+    "hardware/handoff/baseline_manifest.json": "a0978b19f2f64697f55a99a7b84eda6a2f25c5ddb2a36b77eb6839e5e366739b"
+  },
+  "upstream_files_sha256": {
+    "hardware/handoff/并行软件更新提示.md": "f9a1a960c0a6a56c9badee360a4dcf4e69ce4dc0a7a743fcc25622fb117d8259",
+    "hardware/handoff/软件调试任务提示词.md": "5229072a2b2c17b7dabefdf9ccb98e79b65beb5a22bce356d0f17e96977b5fd7",
+    "hardware/handoff/firmware_baseline.zip": "ac080b55b44162a5417a18242d6d43f0266416dbb5ee6135920cdf7a687c2a4d",
+    "hardware/handoff/baseline_manifest.json": "faca8db99cf3fbce4c5ee982c15471a5657ec5cf27f6bdf0e0cae153f876f3a5",
+    "hardware/handoff/CHANGELOG.md": "51da6daf1bcc0bfaef090072aac254cdb456f6179075d80e4b4db923bc0af88c"
+  },
+  "request_basis": "HW-SW-0.2",
+  "archived_member_checks": {
+    "firmware/CMakeLists.txt": true,
+    "firmware/components/mori_core/CMakeLists.txt": true,
+    "firmware/components/mori_core/include/mori_core.h": true,
+    "firmware/components/mori_core/mori_core.c": true,
+    "firmware/dependencies.lock": true,
+    "firmware/main/CMakeLists.txt": true,
+    "firmware/main/Kconfig.projbuild": true,
+    "firmware/main/board.h": true,
+    "firmware/main/display.c": true,
+    "firmware/main/encoders.c": true,
+    "firmware/main/idf_component.yml": true,
+    "firmware/main/main.c": true,
+    "firmware/main/motor.c": true,
+    "firmware/main/peripherals.h": true,
+    "firmware/main/sensors.c": true,
+    "firmware/sdkconfig": true,
+    "firmware/sdkconfig.defaults": true,
+    "pinmap.csv": true,
+    "tests/run_host_tests.sh": true,
+    "tests/test_core.c": true,
+    "wiring.csv": true
+  },
+  "archived_container_sha256": "a97e026f73148c4c07287517bddec5918c0f1585158cc22a7b3b2aa8d43cb5d7",
+  "clarification": "First read: 0.2 manifest. Actual extraction already 0.3, captured at 05:25 UTC. Archived 0.3 manifest and all 21 member hashes match; ZIP container hash differs. Software keeps explicit user 0.2 wheel parameters pending clarification of 0.4 update."
+}

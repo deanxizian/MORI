@@ -1,0 +1,48 @@
+[
+  {
+    "stage": "before",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/revisions/V1.2-M1.15_before_battery_mount_repair/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "battery_retention_open",
+      "--size",
+      "1200",
+      "--samples",
+      "32"
+    ],
+    "started_utc": "2026-09-23T05:13:21.228698+00:00",
+    "finished_utc": "2026-09-23T05:13:56.862935+00:00",
+    "returncode": 0,
+    "log": "reports/battery_retention_before_render.log"
+  },
+  {
+    "stage": "after",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "battery_retention_detail,battery_retention_open",
+      "--size",
+      "1200",
+      "--samples",
+      "32"
+    ],
+    "started_utc": "2026-09-23T05:13:56.866183+00:00",
+    "finished_utc": "2026-09-23T05:15:02.756683+00:00",
+    "returncode": 0,
+    "log": "reports/battery_retention_after_render.log"
+  }
+]

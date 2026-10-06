@@ -1,0 +1,78 @@
+{
+  "status": "ASSUMED",
+  "units": "mm",
+  "frame_id": "body_axle",
+  "timestamp_utc": "2026-09-22T05:54:13.300917+00:00",
+  "head_center_in_body_axle_mm": [
+    0,
+    0,
+    179.5
+  ],
+  "head_center_in_assembly_ground_mm": [
+    0,
+    0,
+    227.0
+  ],
+  "nominal_T_body_axle_camera_mm": [
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      49
+    ],
+    [
+      0,
+      -1,
+      0,
+      206.5
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "yaw_axis_body": [
+    0,
+    0,
+    1
+  ],
+  "pitch_axis_yaw": [
+    1,
+    0,
+    0
+  ],
+  "pupil_in_pitch": [
+    0,
+    49,
+    27
+  ],
+  "camera_CV_axes_in_pitch": {
+    "x_right": [
+      1,
+      0,
+      0
+    ],
+    "y_image_down": [
+      0,
+      0,
+      -1
+    ],
+    "z_optical": [
+      0,
+      1,
+      0
+    ]
+  },
+  "transform": "T_body_axle_camera = T(0,0,head_z-wheel_radius) Rz(yaw_rad) Rx(pitch_rad) T(pupil) R_CV; T_world_camera = T_world_body_axle * T_body_axle_camera",
+  "angle_feedback": "estimated unless measured joint feedback is added",
+  "timestamp_requirement": "Frame and monotonic capture timestamp required for observations and joint estimates",
+  "calibration": "Intrinsics, distortion, window refraction, servo zero/backlash and actual extrinsics NOT_TESTED"
+}

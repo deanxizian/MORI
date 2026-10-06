@@ -1,0 +1,60 @@
+{
+  "status": "FAIL",
+  "date": "2026-09-23",
+  "scope": "User routing requirements, separate from native ERC/DRC",
+  "source_rules": "/Users/dean/Documents/KiCad/Rules/pcb-rules.json",
+  "source_rules_sha256": "5d49d0134ca8c32acc41736591db9e839c347a40a2baa061d32c9ce64a7c25b0",
+  "failure_modes": [
+    "Shortest topology R11 not verified",
+    "45-degree and exact corner setback R14 not fully implemented",
+    "Outward-only fanout R35-R37 not fully reviewed",
+    "Avoidable jogs/backtracking not screened",
+    "Opposite-layer and connector-own-net routes automatically classified instead of reviewing full paths"
+  ],
+  "marked_regions": [
+    {
+      "id": "A",
+      "net": "ARM_CLK",
+      "area_mm": [
+        5.5,
+        6.5,
+        8,
+        9.5
+      ]
+    },
+    {
+      "id": "B",
+      "net": "LINK_RX",
+      "area_mm": [
+        32,
+        5.5,
+        35.5,
+        9.3
+      ]
+    },
+    {
+      "id": "C",
+      "net": "5V_MOTION / FAULT_N",
+      "area_mm": [
+        39.8,
+        3,
+        51.5,
+        10.2
+      ]
+    },
+    {
+      "id": "D",
+      "net": "ARM_Q",
+      "area_mm": [
+        38.5,
+        15.5,
+        42.8,
+        19.7
+      ]
+    }
+  ],
+  "native_electrical_checks": "Separate evidence; not withdrawn or misrepresented as routing qualification",
+  "physical_tests": "NOT_TESTED",
+  "layout_release": false,
+  "remediation": "User explicitly requested a complete new P5 placement and routing. Local P4 patch abandoned; original P4 PCB restored as rejected reference."
+}

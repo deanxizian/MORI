@@ -1,0 +1,207 @@
+{
+  "created_at": "2026-09-26T20:07:51.629701+08:00",
+  "revision": "V1.2-M1.37",
+  "hardware_revision": "V1.2-H0.5-P5R6",
+  "scope": "Read-only review of existing reports and received contracts; no rebuild, CAD/electrical edits, physical tests or manufacturing release. Only this audit and its Markdown report were written.",
+  "runtime": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "source_files": [
+    {
+      "path": "config/geometry.json",
+      "sha256": "f5ddcb2be57f74cc988113ea2bcbf070cb56e622abd25f7b9f171c03bd23d975",
+      "bytes": 139817
+    },
+    {
+      "path": "contracts/mechanical_interfaces.json",
+      "sha256": "1ae15a7222e359ea1d6a9eb9ba0dee29005f8f981685ecfcbc04188ad94ee850",
+      "bytes": 56697
+    },
+    {
+      "path": "contracts/components.json",
+      "sha256": "f97b95addee1708530ba05247e3012e7525fa2666af5c31d970c37b037433b36",
+      "bytes": 227747
+    },
+    {
+      "path": "hardware/v1_2/handoff/mechanical_P5R6.json",
+      "sha256": "90851be7c164260a347f00aecdd4d47ca3cee8aa7e173800785383626cfd5f57",
+      "bytes": 214560
+    },
+    {
+      "path": "mechanical/reports/validation.json",
+      "sha256": "8d0bfd5e926afd67d87e7b850589098eb69b11f959ad257152a82efb3daa6255",
+      "bytes": 231172
+    },
+    {
+      "path": "mechanical/reports/static_interference.json",
+      "sha256": "6e1b8c64808baaf4c23c1aad744c7fee5fd9ad5a7206014ae39071673bfc2dd3",
+      "bytes": 7765
+    },
+    {
+      "path": "mechanical/reports/assembly_completion_progress.json",
+      "sha256": "1336e0d787607c37e0f1785eb75e976c3d70ffd020fff294edbf71b1f97f2be6",
+      "bytes": 4682
+    },
+    {
+      "path": "mechanical/reports/manufacturing_classification.json",
+      "sha256": "4ef5999428e6fe83d9ea37186057f83a3b71ea1c2e2d363a2908bd3b9d614704",
+      "bytes": 18474
+    },
+    {
+      "path": "mechanical/reports/purchased_geometry_audit.json",
+      "sha256": "f5427826de62d2d719330f67ac460f3d989fc1cc65e641745905020170e91988",
+      "bytes": 107516
+    },
+    {
+      "path": "mechanical/reports/wheel_interface_design.json",
+      "sha256": "3fa0828958ab0f8b40f3cd544a296ebaedf9be5654a898215580c1a89865a5fd",
+      "bytes": 7034
+    },
+    {
+      "path": "mechanical/reports/wheel_interface_validation.json",
+      "sha256": "51042b686c5f119c7368c4edf8ce205638b527e3789e93ecbac0d51f8b98c2dc",
+      "bytes": 16702
+    },
+    {
+      "path": "mechanical/reports/组装与打印.md",
+      "sha256": "1729ad5ebfaacaebdc35261cd9edd57d255921fa5d2314de2def379e89f006c0",
+      "bytes": 1550
+    },
+    {
+      "path": "mechanical/reports/打印件审查.md",
+      "sha256": "5e8544c9a5abc2d58ddfd337f169e44ce196dcf16673a5210845d2fc7ccf7350",
+      "bytes": 3029
+    },
+    {
+      "path": "mechanical/reports/SP3040薄喇叭_M1_37.md",
+      "sha256": "0071c92a9052ded9035921391d78015eeeb635b4d7492f600c471232d1373487",
+      "bytes": 7749
+    },
+    {
+      "path": "mechanical/INTERFACE_PCB_REQUIREMENTS.md",
+      "sha256": "257f1c704bf4f4233b098993c2cd2693ba73e314b757f1674aff7a844b84affc",
+      "bytes": 845
+    },
+    {
+      "path": "hardware/v1_2/procurement/lcsc_cart_20260923/MORI_BOM与采购结果.md",
+      "sha256": "44ed04b2abba70391e0b143f6becbbd895577216715c4dd89dcdbd3db73724e7",
+      "bytes": 12120
+    },
+    {
+      "path": "mechanical/reports/打样前问题清单_M1_37.md",
+      "sha256": "93c74c29a4ff393064a27cc26d0a8d964fa8883464c3c5be258d77a166317d14",
+      "bytes": 9752
+    }
+  ],
+  "existing_validation_counts": {
+    "PASS": 89,
+    "FAIL": 0,
+    "NOT_TESTED": 18,
+    "BLOCKED": 17
+  },
+  "existing_key_checks": [
+    {
+      "id": "static_rigid_solids",
+      "status": "BLOCKED",
+      "summary": "刚性实体采样 / 原厂两接插件仅完成保守代理检查",
+      "measurement": {
+        "failures": 0,
+        "details": "static_interference.json",
+        "vendor_proxy_details": "vendor_lcd_import.json"
+      },
+      "method": "Manifold triangle-solid intersections; LCD111 CAD solids plus two connector bounds. Even zero overlaps is not reported as full exact-hardware PASS."
+    },
+    {
+      "id": "combined_yaw_pitch",
+      "status": "BLOCKED",
+      "summary": "Yaw/Pitch 联合采样 / 两接插件精确网格待核",
+      "measurement": {
+        "poses": 130,
+        "yaw_step_deg": 10,
+        "pitch_step_deg": 5,
+        "failures": 0,
+        "bounds_xyz_mm": [
+          [
+            -79.23107147216797,
+            79.23095703125
+          ],
+          [
+            -78.87885284423828,
+            78.87886047363281
+          ],
+          [
+            0.0,
+            281.9991213285223
+          ]
+        ]
+      },
+      "method": "Solid-volume intersection with two declared connector proxies; no continuous or complete as-built proof"
+    },
+    {
+      "id": "structure_mass_targets",
+      "status": "BLOCKED",
+      "summary": "当前结构的估算质量与V1.2工程目标",
+      "measurement": {
+        "whole_g_rounded": 1435,
+        "whole_target_g": [
+          1000,
+          1200
+        ],
+        "pitch_g_rounded": 190,
+        "pitch_target_g": [
+          150,
+          200
+        ],
+        "uncertainty_percent": 35
+      },
+      "method": "Engineering target only. Mass exceeding targets requires a new actuator/dynamics budget; do not reduce assumed wall density simply to pass."
+    },
+    {
+      "id": "imu_three_anchor_recommendation",
+      "status": "BLOCKED",
+      "summary": "P3交接指出IMU两孔与厂家至少三固定点建议仍需结构适配",
+      "measurement": {
+        "handoff": "hardware/v1_2/handoff/mechanical_P3.json",
+        "current_holes": 2,
+        "physical_response": "NOT_TESTED"
+      },
+      "method": "This revision retains the two native holes; rigid mesh fit does not certify PCB strain/vibration. No unapproved board hole added."
+    },
+    {
+      "id": "head_servo_horn_engagement",
+      "status": "BLOCKED",
+      "summary": "输出轴按厂图定位；现有舵盘仍为占位，不可据此加工花键配合",
+      "measurement": {
+        "documented_spline": "20T / nominal diameter3.95mm / M2x0.4 lock",
+        "parts": [
+          "Yaw_Horn",
+          "Pitch_Horn"
+        ],
+        "status": "Horn family/revision, tooth profile, engagement length and lock screw must match bought units."
+      },
+      "method": null
+    }
+  ],
+  "classification_counts": {
+    "robot_print": 15,
+    "auxiliary_print": 5,
+    "fasteners": 118,
+    "custom_pcb": 4,
+    "assemblies": 11,
+    "assembly_details": 10,
+    "transmission": 11,
+    "custom_metal": 6,
+    "soft_sheet": 19,
+    "interface_components": 2
+  },
+  "hardware_status": {
+    "status": "PROTOTYPE_ROUTED_UNVALIDATED",
+    "physical_tests": "NOT_TESTED",
+    "procurement_release": false,
+    "manufacturing_release": false
+  },
+  "audit_stage_status": {
+    "full_mechanical_assembly": "BLOCKED",
+    "powered_whole_robot": "BLOCKED",
+    "physical_fit_coupons": "NOT_TESTED"
+  },
+  "note": "Mechanical SP3040 selection supersedes stale hardware speaker-selection text. Unknown flags in broad component contracts are not counted as distinct unresolved selections. Local fit coupons can precede closure of full assembly issues."
+}

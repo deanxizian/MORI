@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM 逐根穿线候选</title>
+<style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;max-width:1060px;margin:30px auto;padding:0 22px 60px;color:#223d3e;background:#f4f7f6}a{color:#006574}section{background:white;padding:22px;margin:22px 0;border-radius:12px}.note{background:#fff0dc}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}img{width:100%}td,th{padding:10px;text-align:left;border-bottom:1px solid #ccd8d5}table{width:100%;border-collapse:collapse}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+<p><a href="../../../../../supplier_source_update/index.html">← 供应商资料与设计进度</a></p><h1>CAM 四线逐根穿入，再回到固定位置</h1>
+<section class="note"><p>独立装配候选，主模型 M1.47 未改。上部穿入、回位、入座与四段弯线已按同样较大端子预留尺寸通过连续名义几何检查；身体侧完整供线、扎带和真实端子入壳仍未完成，制造图未放行。</p></section>
+<section><h2>现在接通了哪些步骤</h2><table><tr><th>步骤</th><th>结果与限制</th></tr>
+<tr><td>从暂存位置退回，再转入弯曲路线</td><td>4 组整段端子扫掠与微小初始转向通过；需要下方余线能退让</td></tr>
+<tr><td>按槽位 3 → 2 → 1 → 0 逐根穿入</td><td>4205 个有限位置及 1228 个连续区间通过，其他导线保留；编号不是电气针脚号</td></tr>
+<tr><td>全部穿出后回位</td><td>41 个位置及 256 个连续区间通过；另有全程曲率、长度与平行线间距界限</td></tr>
+<tr><td>接到入座与弯线动作</td><td>名义坐标衔接通过；同样较大预留盒的入座 256 个连续区间、弯线 1735 个连续区间通过。<a href="../large_contact_downstream/index.html">查看后续复核</a></td></tr></table></section>
+<section><h2>回位前后</h2><div class="grid"><figure><img src="after_feed.png" alt="四根完整导线穿入后，上方保持竖直"><figcaption>1. 全部穿出，上端暂不收拢</figcaption></figure><figure><img src="ready_to_seat.png" alt="上方过渡恢复后准备侧向入座"><figcaption>2. 恢复上方过渡，准备侧向入座</figcaption></figure></div><img src="root_detail.png" alt="四根导线经过头部舵机附近的局部视图"></section>
+<section><h2>尺寸证据与还没完成的内容</h2><p>导线外径 0.6604 mm。金色端子为 1 × 1.8 × 4.1 mm 请求空间，ASSUMED，不是厂家完整最大尺寸。普通结构及线间留 0.3 mm；端子之间仅检查不穿透。</p><p>末端直线至少保留 5.025 mm，长度差由自由直线补偿。当前分配不是供应商裁线尺寸。真实端子、下方供线、扎带及其余跨关节线路/FPC 仍需完成。</p><p><a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH 官方图纸</a> · <a href="https://www.jst-mfg.com/product/pdf/eng/eAPSH.pdf">同料号 APSH 细节图</a></p></section>
+<section><h2>下一步：补全身体侧供线</h2><p>当前上部检查没有放置身体侧尚未送入的材料，每根约需处理 140–162 mm 的暂存段，随工序变化。它不是给最终线束额外加长。</p><p>接下来评估头部在机身外先穿线，身体端保持松散，再核对完整带线总成落位与身体侧理线。旧桥/轴承装配检查不能直接代替。</p><p><a href="../body_supply/README.md">材料账与装配依赖</a></p></section>
+<p><a href="review.blend">独立 Blender 文件</a> · <a href="README.md">完整说明</a> · <a href="../ordered_feed_continuous/screen.json">上部连续穿入</a> · <a href="../ordered_feed_continuous/BOUND_METHOD.md">运动界限推导</a> · <a href="continuous.json">连续回位</a> · <a href="math_bounds.json">全程曲率与长度</a> · <a href="../ordered_feed_retraction/screen.json">回退衔接</a> · <a href="publication.json">来源校验</a></p></html>

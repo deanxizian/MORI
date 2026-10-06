@@ -1,0 +1,728 @@
+{
+  "status": "FAIL",
+  "applied_to_main": false,
+  "source_blend_sha256": "f6a8bcb0e441737cd923abf37d223bb85972724da8c37dc12408dccd966e8154",
+  "candidate_blend_sha256": "53d75e6d022a57f95ebd261084a4995f874e512b62e9f33edcc10fd6b2431d35",
+  "blender_version": "5.2.2 LTS",
+  "checks": [
+    {
+      "id": "wheel_positive_drive_and_axial_stack",
+      "status": "PASS",
+      "summary": "双扁位实体止转、轴肩止挡与端部锁紧座",
+      "measurement": [
+        {
+          "side": "L",
+          "key_length_mm": 12.200000000000003,
+          "neutral_overlap_mm3": 0,
+          "first_relative_D_contact_deg": [
+            -0.7,
+            0.7
+          ],
+          "inner_bearing_into_shoulder_0_2mm_witness_volume_mm3": 2.403802516925315,
+          "shaft_tip_below_washer_seat_mm": 0.20000000000000284
+        },
+        {
+          "side": "R",
+          "key_length_mm": 12.200000000000003,
+          "neutral_overlap_mm3": 1.8041124150158794e-15,
+          "first_relative_D_contact_deg": [
+            -0.7,
+            0.7
+          ],
+          "inner_bearing_into_shoulder_0_2mm_witness_volume_mm3": 2.403802516925315,
+          "shaft_tip_below_washer_seat_mm": 0.20000000000000284
+        }
+      ],
+      "method": "Actual shaft/hub intersection under relative0.1deg increments; positive interference is an intentional stop witness, not an assembled collision. This bounds nominal geometric take-up only; elastic twist, thread forces, creep and purchased tolerances are NOT_TESTED."
+    },
+    {
+      "id": "s288_six_hole_flange_installation",
+      "status": "PASS",
+      "summary": "两侧六孔连接、螺钉伸入量及装轴承前的工具通道",
+      "measurement": {
+        "screws": 12,
+        "engagement_mm": 2.5,
+        "maximum_vendor_depth_mm": 3,
+        "failed_fasteners": 0,
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Actual root/head envelope translated each1mm over35mm and2.5mm x30mm tool shank; use only the documented S288 M2 self-tapping family. Head/thread/tip geometry still a procurement requirement; no tightening or pull-out qualification."
+    },
+    {
+      "id": "complete_wheel_drive_sweep",
+      "status": "PASS",
+      "summary": "法兰、螺钉、整轴、隔套和轮毂共同旋转一周",
+      "measurement": {
+        "poses_each": 73,
+        "step_deg": 5,
+        "failed_pairs": 0,
+        "minimum_nonbearing_gap": {
+          "deg": 110,
+          "moving": "Wheel_Spacer_R_0",
+          "fixed": "Drive_Bridge",
+          "gap_mm_capped2": 0.49463312625694916
+        },
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Closed-solid intersections and distances against fixed drive/frame/shell/cap bolts each5deg. Bearings are intended journal contacts and checked separately. Finite samples are not a continuous proof or tolerance/deflection simulation."
+    },
+    {
+      "id": "wheel_drive_service_sequence",
+      "status": "FAIL",
+      "summary": "下壳、共用底盖与两套电机/轴承组件的顺序拆装",
+      "measurement": {
+        "cases": 4,
+        "failed_cases": 4,
+        "details": "wheel_interface_validation.json"
+      },
+      "method": "Actual solid translation each1mm after explicit preceding removals. Motors disabled and chassis supported. Disconnect real motor leads first; human grip and cable plugs remain NOT_TESTED."
+    },
+    {
+      "id": "wheel_cap_tools",
+      "status": "PASS",
+      "summary": "共用底盖四枚螺钉的下方工具通道",
+      "measurement": [
+        {
+          "index": 0,
+          "hits": []
+        },
+        {
+          "index": 1,
+          "hits": []
+        },
+        {
+          "index": 2,
+          "hits": []
+        },
+        {
+          "index": 3,
+          "hits": []
+        }
+      ],
+      "method": "5mm x30mm straight tool shank with lower shell removed; tool handles and exact drive recess are not modeled."
+    },
+    {
+      "id": "wheel_shell_local_walls",
+      "status": "PASS",
+      "summary": "轮窝指定区域的真实壁厚与独立算法交叉核对",
+      "measurement": [
+        {
+          "side": -1,
+          "y_mm": -50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.3211424770579683,
+          "independent_triangle_error_mm": 3.712384561538329e-06
+        },
+        {
+          "side": -1,
+          "y_mm": -51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217158511976308,
+          "independent_triangle_error_mm": 4.452921231745677e-06
+        },
+        {
+          "side": -1,
+          "y_mm": 50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.321141076562334,
+          "independent_triangle_error_mm": 3.714803717969062e-06
+        },
+        {
+          "side": -1,
+          "y_mm": 51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217157899739867,
+          "independent_triangle_error_mm": 3.941710417620925e-06
+        },
+        {
+          "side": 1,
+          "y_mm": -50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.3211424770579683,
+          "independent_triangle_error_mm": 3.712384561538329e-06
+        },
+        {
+          "side": 1,
+          "y_mm": -51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217152620045702,
+          "independent_triangle_error_mm": 4.452921231745677e-06
+        },
+        {
+          "side": 1,
+          "y_mm": 50,
+          "z_mm": 88,
+          "ray_wall_mm": 3.321141076562334,
+          "independent_triangle_error_mm": 3.714803717969062e-06
+        },
+        {
+          "side": 1,
+          "y_mm": 51,
+          "z_mm": 88,
+          "ray_wall_mm": 4.217153298726473,
+          "independent_triangle_error_mm": 3.941710417620925e-06
+        }
+      ],
+      "method": "Float64 Manifold ray entry/exit, cross-checked with independent barycentric triangle intersections at8 stations. Blender BVH near-edge repeated-hit false positives excluded by this independent evidence, not by lowering a thickness threshold. No global minimum-wall or FDM strength claim."
+    },
+    {
+      "id": "wheel_drive_strength_and_fit",
+      "status": "NOT_TESTED",
+      "summary": "轮驱载荷粗算与试配边界",
+      "measurement": {
+        "assumed_mass_kg": 1.5,
+        "assumed_dynamic_factor": 3.0,
+        "wheel_radial_load_N": 22.1,
+        "bearing_span_mm": 9.5,
+        "wheel_overhang_mm": 20.0,
+        "inner_bearing_reaction_magnitude_N": 46.5,
+        "outer_bearing_reaction_magnitude_N": 68.5,
+        "screening_torque_Nm": 0.6,
+        "output_screw_tangential_force_each_N": 19.0,
+        "smooth_6mm_shaft_bending_MPa": 21,
+        "smooth_6mm_shaft_torsion_MPa": 14,
+        "nominal_von_Mises_MPa": 32,
+        "qualification": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+      },
+      "method": "NOT_TESTED; static equilibrium and smooth-shaft screening only. Excludes impact direction, thread/flat/scallop stress concentration, fatigue, plastic flange pull-out, FDM anisotropy, clamp creep, bearing preload and S288 life.0.6Nm is a peak screening case, not continuous rating."
+    },
+    {
+      "id": "head_retention_functional_checks",
+      "status": "PASS",
+      "summary": "Candidate service, capture and tool checks; historical shape identity is not waived",
+      "measurement": {
+        "head_static": true,
+        "head_motion": true,
+        "axial_capture": true,
+        "keeper_side_entry": true,
+        "yoke_keeper_vertical_entry": true,
+        "keeper_tools": true,
+        "keeper_screw_entry": true,
+        "keeper_pilots": true,
+        "head_connected": true,
+        "yaw_stops": true,
+        "bearing_abutment": true
+      },
+      "method": null
+    },
+    {
+      "id": "reaction_link_extraction",
+      "status": "PASS",
+      "summary": "Modified link rises 90 mm with yaw subassembly, lower retaining screw removed",
+      "measurement": {
+        "samples": 181,
+        "fixed_parts": [
+          "Battery",
+          "Battery_Pad_-38.0",
+          "Battery_Pad_38.0",
+          "Battery_Pad_Base",
+          "Battery_Pad_Top",
+          "Battery_Retainer_Insert_-1",
+          "Battery_Retainer_Insert_1",
+          "Battery_Retainer_Screw_-1",
+          "Battery_Retainer_Screw_1",
+          "Battery_Strap",
+          "Battery_Tray",
+          "Body_IMU",
+          "Body_Lower",
+          "Body_Upper",
+          "Carrier_Insert_0",
+          "Carrier_Insert_1",
+          "Carrier_Insert_2",
+          "Carrier_Insert_3",
+          "Carrier_Screw_0",
+          "Carrier_Screw_1",
+          "Carrier_Screw_2",
+          "Carrier_Screw_3",
+          "Drive_Bridge",
+          "Drive_L_-8_Nut",
+          "Drive_L_-8_Screw",
+          "Drive_L_8_Nut",
+          "Drive_L_8_Screw",
+          "Drive_Motor_L",
+          "Drive_Motor_R",
+          "Drive_R_-8_Nut",
+          "Drive_R_-8_Screw",
+          "Drive_R_8_Nut",
+          "Drive_R_8_Screw",
+          "E_Straight_Header",
+          "Frame_Insert_0",
+          "Frame_Insert_1",
+          "Frame_Insert_2",
+          "Frame_Insert_3",
+          "Frame_Screw_0",
+          "Frame_Screw_1",
+          "Frame_Screw_2",
+          "Frame_Screw_3",
+          "Head_Buck",
+          "Head_Buck_Insert_0",
+          "Head_Buck_Insert_1",
+          "Head_Buck_Screw_0",
+          "Head_Buck_Screw_1",
+          "IMU_Insert_0",
+          "IMU_Insert_1",
+          "IMU_Screw_0",
+          "IMU_Screw_1",
+          "Load_Frame",
+          "MCU_Carrier",
+          "MCU_Motion",
+          "Motor_Retainer",
+          "Motor_Retainer_Pad_-1",
+          "Motor_Retainer_Pad_1",
+          "Motor_Top_Pad_L",
+          "Motor_Top_Pad_R",
+          "Power_Board_H2_Insert",
+          "Power_Board_H2_Screw",
+          "Power_Board_H3_Insert",
+          "Power_Board_H3_Screw",
+          "Power_Module",
+          "Power_Switch",
+          "Rear_Interface_Insert_0",
+          "Rear_Interface_Insert_1",
+          "Rear_Interface_PCB",
+          "Rear_Interface_Screw_0",
+          "Rear_Interface_Screw_1",
+          "S288_Output_L_Inner",
+          "S288_Output_L_Outer",
+          "S288_Output_R_Inner",
+          "S288_Output_R_Outer",
+          "Shell_Insert_0",
+          "Shell_Insert_1",
+          "Shell_Insert_2",
+          "Shell_Insert_3",
+          "Shell_Screw_0",
+          "Shell_Screw_1",
+          "Shell_Screw_2",
+          "Shell_Screw_3",
+          "Socket_AC",
+          "Socket_BD",
+          "Socket_E",
+          "Speaker",
+          "Speaker_Gasket",
+          "Speaker_Insert_-1",
+          "Speaker_Insert_1",
+          "Speaker_Screw_-1",
+          "Speaker_Screw_1",
+          "Tire_L",
+          "Tire_R",
+          "USB_Receptacle",
+          "Wheel_Axle_L",
+          "Wheel_Axle_R",
+          "Wheel_Bearing_L_Inner",
+          "Wheel_Bearing_L_Outer",
+          "Wheel_Bearing_R_Inner",
+          "Wheel_Bearing_R_Outer",
+          "Wheel_Buck",
+          "Wheel_Buck_Insert_1",
+          "Wheel_Buck_Insert_2",
+          "Wheel_Buck_Screw_1",
+          "Wheel_Buck_Screw_2",
+          "Wheel_Cap_Clamp_Nut_0",
+          "Wheel_Cap_Clamp_Nut_1",
+          "Wheel_Cap_Clamp_Nut_2",
+          "Wheel_Cap_Clamp_Nut_3",
+          "Wheel_Cap_Clamp_Screw_0",
+          "Wheel_Cap_Clamp_Screw_1",
+          "Wheel_Cap_Clamp_Screw_2",
+          "Wheel_Cap_Clamp_Screw_3",
+          "Wheel_End_Screw_L",
+          "Wheel_End_Screw_R",
+          "Wheel_End_Washer_L",
+          "Wheel_End_Washer_R",
+          "Wheel_Hub_L",
+          "Wheel_Hub_R",
+          "Wheel_Output_Screw_L_0",
+          "Wheel_Output_Screw_L_1",
+          "Wheel_Output_Screw_L_2",
+          "Wheel_Output_Screw_L_3",
+          "Wheel_Output_Screw_L_4",
+          "Wheel_Output_Screw_L_5",
+          "Wheel_Output_Screw_R_0",
+          "Wheel_Output_Screw_R_1",
+          "Wheel_Output_Screw_R_2",
+          "Wheel_Output_Screw_R_3",
+          "Wheel_Output_Screw_R_4",
+          "Wheel_Output_Screw_R_5",
+          "Wheel_Spacer_L_0",
+          "Wheel_Spacer_L_1",
+          "Wheel_Spacer_R_0",
+          "Wheel_Spacer_R_1",
+          "Yaw_Base",
+          "Yaw_Base_-1_Nut",
+          "Yaw_Base_-1_Screw",
+          "Yaw_Base_1_Nut",
+          "Yaw_Base_1_Screw",
+          "Yaw_Bearing"
+        ],
+        "hits": []
+      },
+      "method": "0.5 mm finite translation samples; cables disconnected; no hand-grip qualification"
+    },
+    {
+      "id": "reaction_clamp_fastener_entry",
+      "status": "FAIL",
+      "summary": "Unchanged trial screw/nut installation through the thicker collar",
+      "measurement": [
+        {
+          "id": "Yaw_Reaction_Clamp_Screw",
+          "direction_y": 1,
+          "samples": 61,
+          "hits": [
+            {
+              "travel_mm": 5.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.10879231641899077
+            },
+            {
+              "travel_mm": 5.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.5636443850155581
+            },
+            {
+              "travel_mm": 6.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 1.5392020088528
+            },
+            {
+              "travel_mm": 6.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 3.029915526020852
+            },
+            {
+              "travel_mm": 7.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.544117615298438
+            },
+            {
+              "travel_mm": 7.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 5.678555524925131
+            },
+            {
+              "travel_mm": 8.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 6.370727587554172
+            },
+            {
+              "travel_mm": 8.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 6.659230776483827
+            },
+            {
+              "travel_mm": 9.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 6.915266604791193
+            },
+            {
+              "travel_mm": 9.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 7.171302433098556
+            },
+            {
+              "travel_mm": 10.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 7.427338261405921
+            },
+            {
+              "travel_mm": 10.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 7.683374089713237
+            },
+            {
+              "travel_mm": 11.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 7.939409918020604
+            },
+            {
+              "travel_mm": 11.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 8.195445746327959
+            },
+            {
+              "travel_mm": 12.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 8.577572674959127
+            },
+            {
+              "travel_mm": 12.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 9.085791665916712
+            },
+            {
+              "travel_mm": 13.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 9.594010656874145
+            },
+            {
+              "travel_mm": 13.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 8.92944262055121
+            },
+            {
+              "travel_mm": 14.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 7.356925024943008
+            },
+            {
+              "travel_mm": 14.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 5.78440742933472
+            },
+            {
+              "travel_mm": 15.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.840896272101877
+            },
+            {
+              "travel_mm": 15.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.840896272101883
+            },
+            {
+              "travel_mm": 16.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.840896272101895
+            },
+            {
+              "travel_mm": 16.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.840896272101861
+            },
+            {
+              "travel_mm": 17.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.8376873930927715
+            },
+            {
+              "travel_mm": 17.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.6089658021031115
+            },
+            {
+              "travel_mm": 18.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 4.051328965114512
+            },
+            {
+              "travel_mm": 18.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 3.4790480031678426
+            },
+            {
+              "travel_mm": 19.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 2.9700157060353165
+            },
+            {
+              "travel_mm": 19.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 2.713979877727961
+            },
+            {
+              "travel_mm": 20.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 2.4579440494205884
+            },
+            {
+              "travel_mm": 20.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 2.2019082211131993
+            },
+            {
+              "travel_mm": 21.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 1.9458723928058523
+            },
+            {
+              "travel_mm": 21.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 1.6898365644984623
+            },
+            {
+              "travel_mm": 22.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 1.4338007361911447
+            },
+            {
+              "travel_mm": 22.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 1.1777649078837666
+            },
+            {
+              "travel_mm": 23.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.9217290795764368
+            },
+            {
+              "travel_mm": 23.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.6656932512690439
+            },
+            {
+              "travel_mm": 24.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.4096574229617044
+            },
+            {
+              "travel_mm": 24.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.1536215946543353
+            }
+          ]
+        },
+        {
+          "id": "Yaw_Reaction_Clamp_Nut",
+          "direction_y": -1,
+          "samples": 61,
+          "hits": [
+            {
+              "travel_mm": 5.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.16566550434762417
+            },
+            {
+              "travel_mm": 5.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.7805401835365304
+            },
+            {
+              "travel_mm": 6.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 1.8632029127916623
+            },
+            {
+              "travel_mm": 6.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 3.4733182360685975
+            },
+            {
+              "travel_mm": 7.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 5.678060013767004
+            },
+            {
+              "travel_mm": 7.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 7.75280044572321
+            },
+            {
+              "travel_mm": 8.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 9.345511809281014
+            },
+            {
+              "travel_mm": 8.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 10.47435828630384
+            },
+            {
+              "travel_mm": 9.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 11.245959087153519
+            },
+            {
+              "travel_mm": 9.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 11.82103272596899
+            },
+            {
+              "travel_mm": 10.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 12.36068857730942
+            },
+            {
+              "travel_mm": 10.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 12.900344428649838
+            },
+            {
+              "travel_mm": 11.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 13.440000279990198
+            },
+            {
+              "travel_mm": 11.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 13.655862671991992
+            },
+            {
+              "travel_mm": 12.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 13.440000537318227
+            },
+            {
+              "travel_mm": 12.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 12.9003446859778
+            },
+            {
+              "travel_mm": 13.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 12.360688834637346
+            },
+            {
+              "travel_mm": 13.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 10.898907579412539
+            },
+            {
+              "travel_mm": 14.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 8.053936019840709
+            },
+            {
+              "travel_mm": 14.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 5.532757919607527
+            },
+            {
+              "travel_mm": 15.0,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 3.227442211376066
+            },
+            {
+              "travel_mm": 15.5,
+              "fixed": "Pitch_Yoke",
+              "overlap_mm3": 0.9221265031446131
+            }
+          ]
+        }
+      ],
+      "method": null
+    },
+    {
+      "id": "reaction_clamp_driver_allocation",
+      "status": "FAIL",
+      "summary": "Assumed diameter2.5 x30 mm straight shank allocation on detached yaw assembly",
+      "measurement": {
+        "start_mm": [
+          6.999999761581421,
+          5.850000190734863,
+          191.5
+        ],
+        "hits": [
+          {
+            "fixed": "Pitch_Yoke",
+            "overlap_mm3": 9.262089535694505
+          }
+        ]
+      },
+      "method": "Final horn/fastener and driver selection remain BLOCKED; no assertion of matched bit"
+    },
+    {
+      "id": "source_files_unchanged",
+      "status": "PASS",
+      "summary": "Read-only scene inspection; no .blend saved",
+      "measurement": null,
+      "method": null
+    }
+  ],
+  "historical_retention_scope": "FAIL",
+  "historical_scope_note": "Expected mismatch: candidate modifies Pitch_Yoke away from M1.44 accepted geometry; no historical validator or approval was changed.",
+  "candidate_head_retention_report": "thin_candidate_workspace/mechanical/reports/head_axial_retention_validation.json",
+  "limits": [
+    "Finite geometry samples only, no continuous sweep proof",
+    "Complete wiring, hand access, print strength and final horn-dependent interfaces remain unqualified",
+    "This report does not apply the candidate or release main STL files"
+  ]
+}

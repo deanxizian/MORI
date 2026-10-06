@@ -1,0 +1,2415 @@
+TLV803E, TLV809E, TLV810E Low Power 250-nA IQ and Small Size Supply Voltage
+Supervisors
+1 Features
+• Ensured RESET/RESET for VDD = 0.7 V to 6 V
+• Fixed time delay: 40 µs, 10 ms, 50 ms, 100 ms,
+200 ms, 400 ms
+• Supply current (IDD): 250 nA (typical)
+– 1 µA (maximum for VDD = 3.3 V)
+• Output topology:
+– TLV809E: push-pull, active-low
+– TLV803E: open-drain, active-low
+– TLV810E: push-pull, active-high
+• Under voltage detection:
+– High accuracy: ±0.5% (typical)
+– (V IT–): 1.7 V, 1.8 V, 1.9 V, 2.25V, 2.4 V, 2.64 V,
+2.93 V, 3.08 V, 3.3V, 4.2V, 4.38 V, 4.55V, 4.63 V
+• Package:
+– SOT23-3 (DBZ) (with pin 1 = GND)
+– SOT23-3 (DBZ) (with pin 1 = RESET/RESET)
+– SOT23-3 (DBZ) (with pin 3 = GND)
+– SC-70 (DCK)
+– X2SON-5 (DPW)
+• Temperature range:  –40°C to +125°C
+• Pin-to-pin compatible with MAX803/809/810,
+APX803/809/810
+2 Applications
+• Electricity meters
+• Factory Automation
+• Portable, battery-powered equipment
+• Set-top boxes and TVs
+• Building automation
+• Notebook/desktop computers, servers
+3 Description
+The TLV803E, TLV809E, and TLV810E are enhanced
+alternatives to the TLV803, TLV853, TLV809, LM809,
+TPS3809 and TLV810. TLV80xE and TLV81xE offer
+low quiescent current I Q, higher accuracy, wider
+temperature range, and lower power-on-reset (V POR)
+for increased system reliability.
+The TLV80xE and TLV81xE family are low I Q (250 nA
+typical, 1 µA max), voltage supervisory circuits (reset
+IC) that monitor VDD voltage level. These devices
+initiate a reset signal whenever supply voltage VDD
+drops below the factory programmed falling threshold
+voltage, VIT–. The reset output remains low for a fixed
+reset time delay t D after the VDD voltage rises above
+the rising voltage threshold (V IT+) which is equivalent
+to the falling threshold voltage (VIT-) plus hysteresis
+(VHYS).
+These devices have integrated glitch immunity to
+ignore fast transients on the VDD pin. The low
+IQ and high accuracy (±0.5% typical) makes these
+voltage supervisors ideal for use in low-power and
+portable applications. The TLV80xE and TLV81xE
+devices are specified to have the defined output logic
+state for supply voltages down to V POR = 0.7 V.
+The TLV80xE and TLV81xE devices are available
+in industry standard 3-pin SOT23 (DBZ) and SC70
+(DCK) packages and very compact X2SON (DPW)
+package.
+Device Information (1)
+PART NUMBER PACKAGE BODY SIZE (NOM)
+TLV803E, TLV809E,
+TLV810E
+SOT-23 (3) 2.90 mm × 1.30 mm
+SC-70 (3) 2.00 mm × 1.25 mm
+X2SON (5) 0.8 mm x 0.8 mm
+(1) For all available packages, see the orderable addendum at
+the end of the data sheet.
+TLV803E
+VDD
+GND
+FPGA, ASIC, DSP
+VDD
+LDO
+*Rpull-up
+GND
+*Pull-up resistor not required for TLV809E, TLV810E
+RESET RESETIN OUT
+Typical Application
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+intellectual property matters and other important disclaimers. UNLESS OTHERWISE NOTED, this document contains PRODUCTION
+DATA.
+Table of Contents
+1 Features............................................................................1
+2 Applications.....................................................................1
+3 Description.......................................................................1
+4 Revision History.............................................................. 2
+5 Device Comparison.........................................................3
+6 Pin Configuration and Functions...................................4
+7 Specifications.................................................................. 6
+7.1 Absolute Maximum Ratings ....................................... 6
+7.2 ESD Ratings .............................................................. 6
+7.3 Recommended Operating Conditions ........................6
+7.4 Thermal Information ...................................................7
+7.5 Electrical Characteristics ............................................8
+7.6 Timing Requirements .................................................9
+7.7 Timing Diagrams.......................................................10
+7.8 Typical Characteristics.............................................. 11
+8 Detailed Description......................................................16
+8.1 Overview...................................................................16
+8.2 Functional Block Diagram.........................................16
+8.3 Feature Description...................................................16
+8.4 Device Functional Modes..........................................19
+9 Application and Implementation..................................20
+9.1 Application Information............................................. 20
+9.2 Typical Application - Voltage Rail Monitoring............20
+9.3 Typical Application - Overvoltage Monitoring............22
+10 Power Supply Recommendations..............................23
+11 Layout...........................................................................24
+11.1 Layout Guidelines................................................... 24
+11.2 Layout Example...................................................... 24
+12 Device and Documentation Support..........................26
+12.1 Device Support....................................................... 26
+12.2 Documentation Support.......................................... 27
+12.3 Receiving Notification of Documentation Updates..27
+12.4 Support Resources................................................. 27
+12.5 Trademarks.............................................................27
+12.6 Electrostatic Discharge Caution..............................27
+12.7 Glossary..................................................................27
+13 Mechanical, Packaging, and Orderable
+Information.................................................................... 27
+4 Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+Changes from Revision I (Feb 2021) to Revision J (May 2021) Page
+• Updated Device Naming Nomenclature figure by adding Pinout Indicator (DBZ Package Only) from Pinout
+Indicator .............................................................................................................................................................3
+• Updated pin numbering of Figure 6-5 (X2SON) package and updated Pin Functions Table............................. 4
+• Updated X2SON (DPW) Layout Example........................................................................................................ 24
+Changes from Revision H (December 2020) to Revision I (February 2021) Page
+• Remove duplicate package.............................................................................................................................. 27
+Changes from Revision G (October 2020) to Revision H (December 2020) Page
+• Added Reset time delay variant F specification.................................................................................................. 9
+Changes from Revision F (June 2020) to Revision G (October 2020) Page
+• Updated the numbering format for tables, figures and cross-references throughout the document................... 1
+• Added additional threshold voltages (V IT-) and new package information .........................................................1
+• Updated Device Naming Nomenclature figure to include (DBZ) V pinout option .............................................. 3
+• Added new (DBZ) package option (Pin 3 = GND, V pinout) and updated Pin Functions Table.......................... 4
+• Added layout example for (DBZ) V pinout package.......................................................................................... 24
+• Modified Device Naming Convention table to include additional threshold voltages (V IT-), reset time delay
+options and pinout indicator options................................................................................................................. 26
+Changes from Revision E (April 2020) to Revision F (June 2020) Page
+• Changed DPW package from Advanced Information to Production Data.......................................................... 1
+• Changed DPW package Information ................................................................................................................. 4
+Changes from Revision D (February 2020) to Revision E (April 2020) Page
+• Added X2SON (DPW) package option .............................................................................................................. 3
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+2 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+Changes from Revision C (November 2019) to Revision D (February 2020) Page
+• Added device nomenclature figure .................................................................................................................... 3
+• Added timing diagram for TLV810E ................................................................................................................. 10
+• Added Figure 6, Figure 23, Figure 24 .............................................................................................................. 11
+• Added typical application for TLV810E ............................................................................................................ 22
+Changes from Revision B (July 2019) to Revision C (November 2019) Page
+• Changed device status from Advance Information to Production Data.............................................................. 1
+5 Device Comparison
+Figure 5-1 shows the device naming nomenclature to compare the difference device variants. See Table 12-1 for
+a more detailed explanation.
+OUTPUT TYPE 
+803E: Open-Drain Ac
+
+ve-Low
+809E: Push-Pull Ac
+ 
+ve-Low
+810E: Push-Pull Ac
+
+ve-High  
+THRESHOLD VOLTAGE
+17: 1.7 V
+...
+46: 4.63 V
+PINOUT INDICATOR (DBZ PACKAGE ONLY)
+R: Pin 1 = RESET, Pin 2 = GND
+V: Pin 1 = RESET, Pin 3 = GND
+DELAY OPTIONS
+A: 200 ms
+B: 40 µs
+C: 10 ms
+D: 50 ms
+E: 100 ms
+F: 400 ms
+Package
+DBZ: SOT23
+DCK: SC70
+DPW: X2SON
+TLV XXXX X X XX XXX
+Figure 5-1. Device Naming Nomenclature
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 3
+Product Folder Links: TLV803E TLV809E TLV810E
+6 Pin Configuration and Functions
+GND
+RESET
+VDD
+1
+2
+3
+RESET 
+(TLV810E)
+Figure 6-1. DBZ Package
+(Pin 1 = GND)
+3-Pin SOT-23
+Top View
+GND
+RESET
+VDD
+1
+2
+3
+Figure 6-2. DCK Package
+3-Pin SC-70
+Top View
+RESET
+GND
+VDD
+1
+2
+3
+Figure 6-3. DBZ Package
+(Pin 1 = RESET, R pinout)
+3-Pin SOT-23
+Top View
+RESET
+VDD
+GND
+1
+2
+3
+Figure 6-4. DBZ Package
+(Pin 3 = GND, V pinout)
+3-Pin SOT-23
+Top View
+PAD
+VDD
+GNDMR
+Top View
+3
+RESET 
+(TLV810E)
+1 5
+42
+RESET
+Figure 6-5. DPW Package
+5-Pin X2SON
+See Table 6-1
+Top View
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+4 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+Table 6-1. Pin Functions
+PIN
+I/O DESCRIPTION
+NAME DCK, DBZ DBZ
+(V PINOUT)
+DBZ
+(R PINOUT) DPW
+GND 1 3 2 4 — Ground
+RESET 2 1 1 1 O
+Active-low output reset signal: This pin is driven
+low logic when VDD voltage falls below the
+negative voltage threshold (VIT–). RESET remains
+low (asserted) for the delay time period (tD) after
+VDD voltage rise above VIT+.
+RESET 2 1 1 1 O
+Active-High output reset signal (TLV810E only):
+This pin is driven high logic when VDD voltage falls
+below the negative voltage threshold (VIT–). RESET
+remains high (asserted) for the delay time period (tD)
+after VDD voltage rise above VIT+.
+VDD 3 2 3 5 I Input supply voltage. TLV803E, TLV809E,
+TLV810E monitor VDD voltage.
+MR N/A N/A N/A 2 I
+Active-low manual reset input. Pull this pin to a
+logic low (VMR_L) to assert a reset signal in the output
+pin. After the MR pin is left floating or pulled to VMR_H
+the output goes to the nominal state after the reset
+delay time (tD) expires. MR can be left floating when
+not in use.
+PAD N/A N/A N/A 3 —
+No Connection. Thermal pad helps with thermal
+dissipation. PAD does not need to be soldered down.
+PAD can be connected to GND.
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 5
+Product Folder Links: TLV803E TLV809E TLV810E
+7 Specifications
+7.1 Absolute Maximum Ratings
+over operating free-air temperature range, unless otherwise noted(1)
+MIN MAX UNIT
+Voltage
+VDD pin –0.3 6.5 V
+RESET (TLV809E), RESET (TLV810E) –0.3 VDD + 0.3 (2) V
+RESET (TLV803E) –0.3 6.5 V
+Voltage MR –0.3 VDD + 0.3(2) V
+Current Output sink and source current -20 20 mA
+Temperature(3) Operating ambient, TA –40 125
+°C
+Storage, Tstg –65 150
+(1) Stresses beyond those listed under Absolute Maximum Rating may cause permanent damage to the device. These are stress
+ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated
+under Recommended Operating Condition. Exposure to absolute-maximum-rated conditions (above the Recommended Operating
+Conditions) for extended periods may affect device reliability.
+(2) The absolute maximum rating is (V DD + 0.3) V or 6.5 V, whichever is smaller.
+(3) As a result of the low dissipated power in this device, the junction temperature is assumed to be equal to the ambient temperature.
+7.2 ESD Ratings
+VALUE UNIT
+V(ESD) Electrostatic discharge
+Human body model (HBM), per ANSI/ESDA/JEDEC
+JS-001(1) ± 2000
+V
+Charged device model (CDM), per JEDEC specification
+JESD22-C101(2) ± 500
+(1) JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2) JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+7.3 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+MIN NOM MAX UNIT
+VDD Input supply voltage 1.7 6 V
+VRESET, VRESET RESET pin and RESET pin voltage 0 6 V
+IRESET, IRESET RESET pin and RESET pin current 0 ±5 mA
+TJ Junction temperature (free air temperature) –40 125 °C
+VMR Manual reset pin voltage 0 VDD V
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+6 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+7.4 Thermal Information
+THERMAL METRIC(1)
+TLV803E, TLV809E, TLV810E
+UNITDPW (X2SON) DCK (SC70-3) DBZ (SOT23-3)
+5 PINS 3 PINS 3 PINS
+RθJA Junction-to-ambient thermal resistance 457.1 300.5 254.8 °C/W
+RθJC(top) Junction-to-case (top) thermal resistance 201.6 178.2 150.5 °C/W
+RθJB Junction-to-board thermal resistance  320.4 166.5 140.1 °C/W
+ψJT Junction-to-top characterization parameter  22.8 70 48.1 °C/W
+ψJB Junction-to-board characterization parameter  318.8 165.2 139.1 °C/W
+RθJC(bot) Junction-to-case (bottom) thermal resistance N/A N/A N/A °C/W
+(1) For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+report.
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 7
+Product Folder Links: TLV803E TLV809E TLV810E
+7.5 Electrical Characteristics
+over operating range (TA = –40℃ to 125℃), 1.7 V ≤ VDD ≤ 6 V, Rpull-up = 10 kΩ to 6 V, 10 pF load at RESET pin, unless
+otherwise noted. Typical values are at 25℃, VDD = 3.3V and VIT– = 2.93 V. 
+ 
+PARAMETER TEST CONDITIONS MIN TYP MAX UNIT
+COMMON PARAMETERS
+VDD Input supply voltage 1.7 6 V
+VIT– Input threshold voltage accuracy TA= –40℃ to 125℃ –2 0.5 2 %
+VHYS Hysteresis voltage Hysteresis from VIT– 0.9 1.2 1.5 %
+IDD Supply current into VDD pin
+VDD = 3.3 V; VDD > VIT+ (1) 0.25 1 µA
+VDD = 6 V 0.4 1.2 µA
+RMR
+Manual reset pin internal pull-up
+resistance
+X2SON (DPW) package only
+100 kΩ
+VMR_L Manual reset pin logic low input 0.4 V
+VMR_H Manual reset pin logic high input 0.8VDD V
+TLV809E (Push-Pull Active-Low)
+VPOR Power on reset voltage (2) VOL ≤ 300 mV, IOUT(Sink) = 15 µA 700 mV
+VOL
+Low level output voltage
+ 
+VDD = 1.7 V, VDD < VIT–, IOUT(Sink) = 500 µA 300 mV
+VDD = 3.3 V, VDD < VIT–, IOUT(Sink) = 2 mA 300 mV
+VOH
+High level output voltage
+ 
+VDD = 6 V, VDD > VIT+, IOUT(Source) = 4 mA 0.8VDD V
+VDD = 3.3 V, VDD > VIT+, IOUT(Source) = 2 mA 0.8VDD V
+TLV803E (Open-Drain Active-Low)
+VPOR Power on reset voltage (2) VOL ≤ 300 mV, IOUT(Sink) = 15 µA 700 mV
+VOL
+Low level output voltage
+ 
+VDD = 1.7 V, VDD < VIT–, IOUT(Sink) = 500 µA 300 mV
+VDD = 3.3 V, VDD < VIT–, IOUT(Sink) = 2 mA 300 mV
+Ilkg(OD) Open drain output leakage current VDD = VPULLUP = 6 V, VDD > VIT+ 100 350 nA
+TLV810E (Push-Pull Active-High)
+VOH
+High level output voltage
+ 
+VDD = 3.3 V, VDD < VIT–, IOUT(Source) = 2 mA 0.8VDD V
+VDD = 1.7 V, VDD < VIT–, IOUT(Source) = 500 µA 0.8VDD V
+VPOR Power on Reset Voltage VOH ≥ 720 mV, IOUT(Source) = 15 µA 900 mV
+VOL
+Low level output voltage
+ 
+VDD = 6 V, VDD > VIT+,  IOUT(Sink) = 2 mA 300 mV
+VDD = 3.3 V, VDD > VIT+, IOUT(Sink) = 500 µA 300 mV
+(1) V IT+ = VIT– + VHYS
+(2) Minimum V DD voltage for a controlled output state. Below VPOR, the output cannot be determined.
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+8 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+7.6 Timing Requirements
+over operating range (TA = –40℃ to 125℃), 1.7 V ≤ VDD ≤ 6 V, Rpull-up = 10 kΩ to 6 V (Open Drain only), 10 pF load at
+RESET pin, Overdrive = 10%, unless otherwise noted. Typical values are at 25℃, VDD = 3.3 V and VIT– = 2.93 V.
+PARAMETER TEST CONDITIONS MIN TYP MAX UNIT
+tGI Glitch immunity 5 % Overdrive(1) 10 µs
+tPD_HL
+Propagation delay from VDD falling below
+VIT– to RESET
+VDD = (VIT+ + 30%) to (VIT– –
+10%) 30 50 µs
+tD Release time or reset timeout period
+Reset time delay variant A (2)
+ 130 200 270 ms
+Reset time delay variant B (2);
+RUP = 100 kΩ, CL = 100 pF, 30%
+Overdrive (3)
+ 
+45 90 µs
+Reset time delay variant B (2) 40 80 µs
+Reset time delay variant C (2)
+ 6.5 10 13.5 ms
+Reset time delay variant D (2)
+ 33 50 67 ms
+Reset time delay variant F (2)
+ 260 400 540 ms
+tMR_PW (4) MR pin pulse duration to initiate RESET,
+RESET 500 ns
+tMR_RES (4) Propagation delay from MR low to RESET,
+RESET
+VDD = 4.5 V, VMR :  VMR_H to
+VMR_L
+700 ns
+tMR_tD (4) Delay from release MR to deasert RESET,
+RESET
+VDD = 4.5 V, VMR :  VMR_L to
+VMR_H
+tD_MIN tD_TYP tD_MAX ms
+(1) Overdrive = [(V DD/ VIT–) - 1] × 100%. Refer to section on VDD glitch immunity
+(2) Refer to Device nomenclature table. VDD: (VIT--10%) to (VIT+ + 10%)
+(3) Specified by design
+(4) X2SON Package only
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 9
+Product Folder Links: TLV803E TLV809E TLV810E
+7.7 Timing Diagrams
+tD
+tPD_HL
+VDD
+VPOR
+VIT+ 
+VDD(MIN)
+VIT- 
+RESET
+tPD_HL
+Undefined output VDD < VPOR Diagram not to scale
+VHYS 
+Figure 7-1. TLV803E, TLV809E Timing Diagram
+tPD_HL
+VDD
+VPOR
+VIT+ 
+VDD(MIN)
+VIT- 
+RESET
+tPD_HL
+Undefined output VDD < VPOR Diagram not to scale
+VHYS 
+tD tD
+Figure 7-2. TLV810E Timing Diagram
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+10 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+7.8 Typical Characteristics
+Typical characteristics show the typical performance of the TLV803E, TLV809E, and TLV810E devices. Test conditions are
+TA = 25°C, VDD = 3.3 V, VIT- = 2.93 V, Rpull-up = 10 kΩ to 6 V, CLoad = 50 pF, unless otherwise noted.
+VDD (V)
+IDD (µA)
+1.5 2 2.5 3 3.5 4 4.5 5 5.5 6
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+IDD_
+25°C
+-40°C
+125°C
+Figure 7-3. Supply Current Versus Supply Voltage for
+TLV803EA29
+VDD (V)
+IDD (µA)
+1.5 2 2.5 3 3.5 4 4.5 5 5.5 6
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+0.5
+IDD_
+25°C
+-40°C
+125°C
+Figure 7-4. Supply Current Versus Supply Voltage for
+TLV809EA29
+VDD (V)
+IDD (µA)
+1.5 2 2.5 3 3.5 4 4.5 5 5.5 6
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+IDDv
+25°C
+-40°C
+125°C
+Figure 7-5. Supply Current Versus Supply Voltage for
+TLV810EA29
+Temperature (°C)
+IDD (µA)
+-40 -20 0 20 40 60 80 100 120 140
+0.2
+0.21
+0.22
+0.23
+0.24
+0.25
+0.26
+0.27
+0.28
+0.29
+0.3
+0.31
+0.32
+IDD_
+TLV803EA29 Figure 7-6. Supply Current Verses Temperature for
+TLV803EA29, VDD = 3.3 V
+Temperature (°C)
+IDD (µA)
+-40 -20 0 20 40 60 80 100 120 140
+0.2
+0.21
+0.22
+0.23
+0.24
+0.25
+0.26
+0.27
+0.28
+0.29
+0.3
+0.31
+0.32
+IDD_
+TLV809EA29
+Figure 7-7. Supply Current Verses Temperature for
+TLV809EA29, VDD = 3.3 V
+Temperature (°C)
+ILKG (nA)
+-40 -20 0 20 40 60 80 100 120 140
+0
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+ILKG
+TLV803EA29 Figure 7-8. Leakage Current Verses Temperature for
+TLV803EA29
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 11
+Product Folder Links: TLV803E TLV809E TLV810E
+7.8 Typical Characteristics (continued)
+Typical characteristics show the typical performance of the TLV803E, TLV809E, and TLV810E devices. Test conditions are
+TA = 25°C, VDD = 3.3 V, VIT- = 2.93 V, Rpull-up = 10 kΩ to 6 V, CLoad = 50 pF, unless otherwise noted.
+Temperature (°C)
+VIT- Accuracy (%)
+-40 -20 0 20 40 60 80 100 120 140
+0.2
+0.28
+0.36
+0.44
+0.52
+0.6
+0.68
+0.76
+0.84
+0.92
+1
+VIT-
+TLV803EA29
+Figure 7-9. Voltage Threshold Accuracy Verses Temperature for
+TLV803EA29
+Temperature (°C)
+VIT- Accuracy (%)
+-40 -20 0 20 40 60 80 100 120 140
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+1.1
+1.2
+1.3
+VIT-
+TLV809EA29
+Figure 7-10. Voltage Threshold Accuracy Verses Temperature
+for TLV809EA29
+IRESET (A)
+VOL (V)
+0 0.002 0.004 0.006 0.008 0.01
+0
+0.08
+0.16
+0.24
+0.32
+0.4
+0.48
+0.56
+0.64
+0.72
+0.8
+VOLx
+-40°C
+-20°C
+85°C
+105°C
+125°C
+Figure 7-11. Low Voltage Output Versus Output Current for
+TLV803EA29, VDD = 1.7 V
+IRESET (A)
+VOL (V)
+0 0.002 0.004 0.006 0.008 0.01
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+0.5
+0.55
+VOLx
+-40°C
+-20°C
+85°C
+105°C
+125°C
+Figure 7-12. Low Voltage Output Versus Output Current for
+TLV809EA29, VDD = 1.7 V
+Temperature (qC)
+VOL (mV)
+-40 -20 0 20 40 60 80 100 120 140
+21
+21.5
+22
+22.5
+23
+23.5
+24
+24.5
+25
+VOLx
+TLV803EA29
+Figure 7-13. Low Voltage Output Verses Temperature for
+TLV803EA29, VDD = 1.7 V
+Temperature (qC)
+VOL (mV)
+-40 -20 0 20 40 60 80 100 120 140
+21
+21.5
+22
+22.5
+23
+23.5
+24
+24.5
+25
+VOLx
+TLV809EA29
+Figure 7-14. Low Voltage Output Verses Temperature for
+TLV809EA29, VDD = 1.7 V
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+12 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+7.8 Typical Characteristics (continued)
+Typical characteristics show the typical performance of the TLV803E, TLV809E, and TLV810E devices. Test conditions are
+TA = 25°C, VDD = 3.3 V, VIT- = 2.93 V, Rpull-up = 10 kΩ to 6 V, CLoad = 50 pF, unless otherwise noted.
+IRESET (A)
+VOH (V)
+0 0.002 0.004 0.006 0.008 0.01
+5
+5.1
+5.2
+5.3
+5.4
+5.5
+5.6
+5.7
+5.8
+5.9
+6
+VOHx
+-40°C
+-20°C
+25°C
+85°C
+105°C
+125°C
+Figure 7-15. High Voltage Output Versus Output Current for
+TLV809EA29, VDD = 6 V
+Temperature (qC)
+VOH (V)
+-40 -20 0 20 40 60 80 100 120 140
+3.065
+3.07
+3.075
+3.08
+3.085
+3.09
+3.095
+3.1
+3.105
+3.11
+3.115
+3.12
+VOHx
+TLV809EA29
+Figure 7-16. High Voltage Output Verses Temperature for
+TLV809EA29, VDD = 3.3 V
+VDD (V)
+VRESET (V)
+0 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+5.5
+6
+VCC_
+TLV803EA29
+Figure 7-17. Reset Voltage Output Versus Voltage Input for
+TLV803EA29, Vpull-up = VDD, Rpull-up = 10 kΩ
+VDD (V)
+VRESET (V)
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+Vpor
+25°C
+Figure 7-18. Reset Voltage Output Versus Voltage Input for
+TLV803EA29, Rpull-up = 10 kΩ
+Time (µs)
+Voltage (V)
+0 6 12 18 24 30
+0
+0.4
+0.8
+1.2
+1.6
+2
+VRES
+VDD
+RESET
+Figure 7-19. Transient Power-on-Reset Voltage for TLV809EA30,
+IRESET = 15 µA
+Temperature (°C)
+tD (ms)
+-40 -20 0 20 40 60 80 100 120 140
+167
+168
+169
+170
+171
+172
+173
+Rese
+TLV803EA29
+Figure 7-20. Reset Delay Time Verses Temperature for
+TLV803EA29
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 13
+Product Folder Links: TLV803E TLV809E TLV810E
+7.8 Typical Characteristics (continued)
+Typical characteristics show the typical performance of the TLV803E, TLV809E, and TLV810E devices. Test conditions are
+TA = 25°C, VDD = 3.3 V, VIT- = 2.93 V, Rpull-up = 10 kΩ to 6 V, CLoad = 50 pF, unless otherwise noted.
+Temperature (°C)
+tD (ms)
+-40 -20 0 20 40 60 80 100 120 140
+166
+166.5
+167
+167.5
+168
+168.5
+169
+169.5
+170
+170.5
+171
+171.5
+tD__
+TLV809EA29
+Figure 7-21. Reset Delay Time Verses Temperature for
+TLV809EA29
+Temperature (°C)
+tD (µs)
+-40 -20 0 20 40 60 80 100 120 140
+15.6
+15.65
+15.7
+15.75
+15.8
+15.85
+15.9
+15.95
+16
+16.05
+16.1
+16.15
+16.2
+16.25
+Rese
+TLV803EB29 Figure 7-22. Reset Delay Time Verses Temperature for
+TLV803EB29
+Temperature (°C)
+tD (ms)
+-40 -20 0 20 40 60 80 100 120 140
+8
+8.2
+8.4
+8.6
+8.8
+9
+Rese
+TLV803EC29
+Figure 7-23. Reset Delay Time Verses Temperature for
+TLV803EC29
+Temperature (°C)
+tPHL (µs)
+-40 -20 0 20 40 60 80 100 120 140
+22.5
+22.75
+23
+23.25
+23.5
+23.75
+24
+24.25
+24.5
+24.75
+25
+tPHL
+TLV803EA29
+Figure 7-24. High-to-Low Propagation Delay Verses
+Temperature for TLV803EA29
+Temperature (°C)
+tPHL (µs)
+-40 -20 0 20 40 60 80 100 120 140
+22
+22.5
+23
+23.5
+24
+24.5
+25
+25.5
+26
+tPHL
+TLV809EA29
+Figure 7-25. High-to-Low Propagation Delay Verses
+Temperature for TLV809EA29
+Overdrive (%)
+Glitch Immunity (µs)
+5 10 15 20 25 30 35 40 45 50
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+tGI_
+25°C
+-40°C
+125°C Figure 7-26. Glitch Immunity Versus Overdrive for TLV803EA29
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+14 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+7.8 Typical Characteristics (continued)
+Typical characteristics show the typical performance of the TLV803E, TLV809E, and TLV810E devices. Test conditions are
+TA = 25°C, VDD = 3.3 V, VIT- = 2.93 V, Rpull-up = 10 kΩ to 6 V, CLoad = 50 pF, unless otherwise noted.
+Overdrive (%)
+Glitch Immunity (µs)
+5 10 15 20 25 30 35 40 45 50
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+tGI_
+25°C
+-40°C
+125°C
+Figure 7-27. Glitch Immunity Versus Overdrive for TLV809EA29
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 15
+Product Folder Links: TLV803E TLV809E TLV810E
+8 Detailed Description
+8.1 Overview
+The TLV803E, TLV809E, TLV810E is a family of easy to implement low power, small size voltage supervisors
+(Reset ICs) with fixed threshold voltage and fixed reset delay. The TLV803E has open-drain active-low output
+topology which requires an external pull-up resistor, TLV809E has push-pull active-low output topology and
+TLV810E has push-pull active-high output topology. This family of devices features include integrated resistor
+divider threshold with hysteresis and a glitch immunity filter.
+These devices are available in SOT-23 (3) and SC70 (3) industry standard package and pinout as well as a very
+small X2SON (5) package.
+8.2 Functional Block Diagram
++
+±
+Reference
+Voltage
+GND
+VDD
+GND
+VDD
+RESET
+LOGIC
+TIMER
+Push-pull TLV809E, 
+TLV810E variants
+RESET
+(TLV803E, TLV809E)
+(TLV810E)
+RMR
+VDD
+DPW package only
+MR
+RESET
+8.3 Feature Description
+8.3.1 Input Voltage (VDD)
+VDD pin is monitored by the internal comparator with integrated reference to indicate when VDD falls below the
+fixed threshold voltage. VDD also functions as the supply for the following:
+• Internal bandgap (reference voltage)
+• Internal regulator
+• State machine
+• Buffers
+• Other control logic blocks
+Good design practice involves placing a 0.1-µF to 1-µF bypass capacitor at VDD input for noisy applications and
+to ensure enough charge is available for the device to power up correctly. The reset output is undefined when
+VDD is below VPOR.
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+16 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+8.3.2 VDD Hysteresis
+The internal comparator has built-in hysteresis to avoid erroneous output reset release. If the voltage at the
+VDD pin falls below the falling voltage threshold V IT–, the output reset is asserted. When the voltage at the VDD
+pin rises above the rising voltage threshold (V IT+) equivalent to V IT– plus hysteresis (V HYS), the output reset is
+deasserted after tD reset time delay.
+8.3.3 VDD Glitch Immunity
+These devices are immune to quick voltage transient or excursion on VDD. Sensitivity to transients depends on
+both pulse duration (t GI) found in Section 7.6 and transient overdrive. Overdrive is defined by how much VDD
+exceeds the specified threshold. Threshold overdrive is calculated as a percent of the threshold in question, as
+shown in Equation 1.
+Overdrive = | (VDD / (VIT– – 1)) × 100% | (1)
+where
+• V IT– is the threshold voltage
+• VDD is the input voltage crossing V IT–
+Overdrive
+Pulse 
+Duration
+VDD
+VIT-
+VIT+ 
+Figure 8-1. Overdrive Versus Pulse Duration
+TLV803E, TLV809E, and TLV810E devices have built-in glitch immunity (tGI) of 10 µs typical as shown in
+Section 7.6. Figure 8-2 shows that VDD must fall below V IT- for t GI, otherwise the faling transistion is ignored.
+When VDD falls below V IT- for tGI, RESET transitions low to indicate a fault condition after the propagation delay
+high-to-low (tPDHL). When VDD rises above V IT+, RESET only deasserts to logic high indicating there is no more
+fault condition only if VDD remains above VIT+ for longer than the reset delay (tD).
+VDD
+RESET
+VDD transition to above VIT+ ignored when less than 
+Reset Delay (tD) so RESET remains unchanged
+VDD remains above VIT+ for only 199 ms
+VDD drops below VIT- so 
+RESET transitions low after 
+Propagation Delay (tPDHL)
+VIT+
+VIT-
+Figure 8-2. Glitch Immunity when VDD Rises Above VIT+ for Less than RESET Delay (TLV803EA29)
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 17
+Product Folder Links: TLV803E TLV809E TLV810E
+8.3.4 Manual Reset (MR) Input for X2SON (DPW) Package Only
+The manual reset (MR) input allows a processor GPIO or other logic circuits to initiate a reset. A logic low on MR
+with pulse duration longer than tMR_RES will cause reset output to assert. After MR returns to a logic high
+(VMR_H) and VDD is above VIT+, reset is deasserted after the user programmed reset time delay (tD) expires.
+If MR is not controlled externally, then MR can be left disconnected. MR is internally connected to VDD through
+a pull-up resistor R MR shown in Section 8.2. If the logic signal controlling MR is less than VDD, then additional
+current flows from VDD into MR internally. For minimum current consumption, drive MR to either VDD or GND.
+VMR should not be higher than VDD voltage.
+VIT+
+tP_HL
+VHYS
+VIT-
+tD
+VIT+
+VHYS
+VIT-
+tMR_tD
+VMR_L
+Time
+tMR_RES
+tMR_PW
+(1)
+MR 
+VDD
+RESET
+VMR_H
+(2)
+(1)  MR pulse width too small to assert RESET
+(2)  MR voltage not low enough to assert RESET
+Figure 8-3. Timing Diagram MR and RESET for X2SON (DPW) Package
+8.3.5 Output Logic
+8.3.5.1 RESET Output, Active-Low
+RESET remains high (deasserted) as long as VDD is above the negative threshold (V IT–). If VDD falls below the
+negative threshold (VIT–), then reset is asserted and RESET transistions to logic low (VOL).
+When VDD rises above V IT+, the delay circuit holds RESET active and logic low for the specified reset delay
+period (tD). When the reset delay has elapsed, the RESET pin transistions to high voltage (VOH).
+The open-drain version requires an external pull-up resistor to hold the RESET pin high because the internal
+MOSFET turns off causing RESET output to pull-up to the pull-up voltage. Connect the pull-up resistor to the
+desired interface voltage logic. RESET can be pulled up to any voltage up to maximum voltage independent
+of the VDD voltage. To ensure proper voltage levels, take care when choosing the pull-up resistor values.
+The pull-up resistor value is determined by V OL, the output capacitive loading, and the output leakage current
+(Ilkg(OD)).
+The push-pull variant does not require an external pull-up resistor.
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+18 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+8.3.5.2 RESET Output, Active-High
+RESET remains logic low (deasserted) as long as VDD is above the positive threshold (V IT+). If VDD falls below
+the negative threshold (VIT–), then reset is asserted and RESET transistions to logic high (VOH).
+When VDD rises above V IT+, the delay circuit holds RESET active and logic high for the specified reset delay
+period (tD). When the reset delay has elapsed the RESET pin transistions to low voltage (VOL).
+8.4 Device Functional Modes
+Table 8-1 summarizes the various functional modes of the device.
+Table 8-1. Truth Table
+VDD MR (X2SON package only) RESET (Active-High) RESET(Active-Low)
+VDD < VPOR N/A Undefined Undefined
+VPOR < VDD < VIT– (1) N/A H L
+VDD ≥ VIT– L H L
+VDD ≥ VIT– H L H
+(1) When V DD falls below VDD(MIN), output reset is held asserted until VDD falls below VPOR.
+8.4.1 Normal Operation (VDD > VDD(min))
+When VDD voltage is greater than V DD(min), the reset signal is determined by the voltage on the VDD pin with
+respect to the trip point (VIT–) and the MR pin voltage (X2SON package only).
+8.4.2 VDD Between VPOR and VDD(min)
+When the voltage on VDD is less than the V DD(min) voltage and greater than the power-on-reset voltage (V POR),
+the reset signal is asserted.
+8.4.3 Below Power-On-Reset (VDD < VPOR)
+When the voltage on VDD is lower than VPOR, the device does not have enough bias voltage to internally pull the
+asserted output low or high and reset voltage level is undefined.
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 19
+Product Folder Links: TLV803E TLV809E TLV810E
+9 Application and Implementation
+Note
+Information in the following applications sections is not part of the TI component specification,
+and TI does not warrant its accuracy or completeness. TI’s customers are responsible for
+determining suitability of components for their purposes, as well as validating and testing their design
+implementation to confirm system functionality.
+9.1 Application Information
+The TLV803E, TLV809E, and TLV810E devices are used for voltage monitoring. These devices have only three
+pins: VDD, GND, and RESET (or RESET for TLV810E). There are at the most two external components: a
+capacitor on the VDD pin and a pull-up resistor on the RESET/RESET to VDD or another pull-up voltage for
+the open-drain variants. The design involves choosing the device with the desired voltage threshold and output
+topology and adding these components, if needed, as explained in the following sections.
+9.2 Typical Application - Voltage Rail Monitoring
+A typical application for TLV803E, TLV809E, and TLV810E devices is voltage rail monitoring. This rail can be the
+input power supply or the output of an LDO or DC/DC converter. Figure 9-1 shows the TLV803EA29 monitoring
+the supply rail for a DSP, FPGA, or ASIC. This rail is at 3.3 V and generated by an LDO with an input power
+supply of 5 V. The supervisor is needed to make sure that the supply to the MCU/ASIC/FPGA/DSP is above
+a certain voltage threshold. If the supply voltage drops below a certain threshold, supervisor generates a reset
+output to indicate to the MCU that the supply is going down so that the MCU can take actions to save register
+data before supply enters brown-out conditions.
+TLV803E
+VDD
+GND
+FPGA, ASIC, 
+DSP
+VDD
+LDO
+IN                OUT
+5 V 3.3 V
+10 k
+GND
+RESET RESET
+Figure 9-1. The Output of LDO Powering the MCU is Monitored by the TLV803EA29
+9.2.1 Design Requirements
+This design monitors a 3.3-V rail and flags an undervoltage fault at the RESET output when supply rail falls
+approximately 12% below the nominal rail voltage. The TLV803E device has an open-drain output topology so
+an external pull-up resistor is required and is calculated to ensure that VOL does not exceed max limit given the
+IRESET/RESET spec of ±5 mA is not violated at the expected supply voltage. Section 7.5 table provides 500 µA
+Isink for 1.7 V VDD, which is the closest voltage to this design example. Using 500 µA of Isink and 300 mV
+max VOL, gives us 5.36kΩ for the external pull-up resistor. Any value greater than 5.36k Ω would ensure that VOL
+will not exceed 300 mV max specification. If you are using the TLV809E device variant, no pull-up resistor is
+required because TLV809E has push-pull output topology.
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+20 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+9.2.2 Detailed Design Procedure
+Select the TLV803EA29DBZR to satisfy the voltage threshold requirement for 3.3-V rail monitoring. As
+mentioned in Table 12-1, the TLV803EA29DBZR triggers an undervoltage fault at the RESET output when
+VDD falls below V IT- which is 2.93 V for this device variant. Place a pull-up resistor on RESET to VDD to satisfy
+the output logic requirement while not violating the IRESET recommended limit.
+9.2.3 Application Curves
+Figure 9-2  and Figure 9-3  show the TLV803EA29 functionality. In Figure 9-2 , the VDD supply voltage drops
+from 30% above V IT- = 3.8 V to 10% below V IT- = 2.6 V with a 0.1-µF capacitor on VDD. The RESET output
+is connected to VDD through the pull-up resistor so when the VDD supply voltage drops. The RESET output
+discharges down to the VDD supply voltage through the pull-up resistor and RESET pin capacitance. Once the
+high-to-low propagation delay t PD_HL expires, the internal MOSFET turns on and asserts RESET to logic low.
+Note that t PD_HL varies with VDD specifically on how much VDD drops and how quickly in addition to the VDD
+and RESET pin capacitances. In Figure 9-3, VDD rises from 2 V to 4 V and the RESET output deasserts to logic
+high after the reset delay time (tD) expires.
+VDD
+RESET
+Propagation Delay from VDD falling below VIT- to Reset 
+(tPD_HL) = 25 µs
+Figure 9-2. Propagation Delay when Fault Occurs
+after VDD Falls Below VIT- (TLV803EA29 No
+Load) (1) (2)
+VDD
+RESET
+Reset Delay (tD) = 200 ms
+Figure 9-3. RESET Delay when Returning from
+Fault after VDD Rises Above VIT+ (TLV803EA29)
+1. Typical t PD_HL= 30 µs for VDD falling from (VIT+ + 30%) to (VIT- - 10%).
+2. VDD does not fall all the way to 0 V so RESET momentarily discharges to VDD until tPD_HL expires.
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 21
+Product Folder Links: TLV803E TLV809E TLV810E
+9.3 Typical Application - Overvoltage Monitoring
+A typical use case for the push-pull active-high device variant TLV810E is overvoltage monitoring. The TLV810E
+can monitor a power supply, a MCU power rail, or a battery during charging for example. The VDD pin monitors
+the voltage rail and once VDD rises above VIT+, the RESET output deactivates to logic low after the reset delay
+time t D. If VDD falls below V IT-, the RESET output activates to logic high after the propagation delay (t PD_HL).
+The voiltage thresholds and the reset delay time depends on the device variant. See Section 5 for device variant
+naming nomenclature.
+TLV810EA29
+VDD
+GND
+RESET
+VDD
+GND
+ENABLE
+Battery Charger
+3 V
+Figure 9-4. TLV810E Overvoltage Monitor Circuit for Battery Charger
+9.3.1 Design Requirements
+In this application design, the TLV810E device is monitoring a 3 V battery connected to a battery charger. The
+battery charger turns on when the battery voltage is below 2.93 V and turns off once the battery charges to
+2.96 V and remains above 2.96 V for at least 200 ms. The design must be low power and not consume more
+than 500 nA typical.
+9.3.2 Detailed Design Procedure
+Select the TLV810EA29 to accomplish this design. The TLV810EA29 is a push-pull active-high device with a
+VIT- = 2.9 V and V IT+ = 2.9 + 1.2% = 2.93 V. Because the device is a push-pull output and the device threshold
+meets the design requirements, no external resistors are needed. The TLV810EA29 device variant comes with
+200 ms reset delay time meaning VDD must be above V IT+ for at least 200 ms for the RESET output to
+transistion to logic low to turn off the battery charger. This device meets the low power requirement because the
+TLV810E only consumes 250 nA typical.
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+22 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+10 Power Supply Recommendations
+These devices are designed to operate from an input supply range of 1.7 V to 6 V. An input supply capacitor
+is recommended between the VDD pin and GND pin. If the voltage supply that provides power to VDD is
+susceptible to any large voltage transient that can exceed VDD maximum, the user must take additional
+precautions.
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 23
+Product Folder Links: TLV803E TLV809E TLV810E
+11 Layout
+11.1 Layout Guidelines
+Make sure that the connection to the VDD pin is low impedance. Good analog design practice recommends
+placing a minimum 0.1-µF ceramic capacitor as close to the VDD pin as possible. A pull-up resistor is required
+for the open-drain output. Place the pull-up resistor on the RESET pin as close to the pin as possible.
+11.2 Layout Example
+CIN
+Rpull-up
+Pull-up resistor required for Open-Drain output
+GND 
+VDD
+RESET
+1
+2
+3
+GND
+RESET
+VDD
+RESETRESET
+(TLV803E, TLV809E)
+(TLV810E)
+Figure 11-1. TLV803E, TLV809E, and TLV810E SOT23 (DBZ) Layout Example
+Rpull-up
+Pull-up resistor required for Open-Drain output
+1
+2
+3
+VDD
+RESETRESET
+(TLV803E, TLV809E)
+(TLV810E)
+RESET
+GND
+RESET
+CIN
+Pinout Option V
+Figure 11-2. TLV803E, TLV809E, and TLV810E SOT23 (DBZ) V pinout Layout Example
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+24 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+TI Gray CIN
+Top View
+Pull-up resistor required for Open-Drain output
+Connection between PAD and GND is optional
+RESET
+GND
+VDD
+Rpull-up
+PAD
+1
+2 4MR
+5
+3
+Figure 11-3. TLV803E, TLV809E, and TLV810E X2SON (DPW) Layout Example
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 25
+Product Folder Links: TLV803E TLV809E TLV810E
+12 Device and Documentation Support
+12.1 Device Support
+12.1.1 Device Nomenclature
+Table 12-1  shows how to decode the function of the device based on its part number. For example:
+TLV803EA29DBZR is open-drain, active-low, 200 ms reset delay, 2.93 V threshold voltage, Pin 1 = GND,
+SOT23-3 pin package, and large reel option.
+Table 12-1  shows all the possible variants of the TLV80xE and TLV81xE. Refer to the orderable device
+information table for the options available to order. Contact Texas Instruments for the details and availability
+of devices not in the orderable device information table.
+Table 12-1. Device Naming Convention
+DESCRIPTION NOMENCLATURE VALUE
+Part Number TLV803E Open-Drain, Active-Low
+TLV809E Push-Pull, Active-Low
+TLV810E Push-Pull, Active-High
+Reset Time Delay Option A 200 ms
+B 40 µs
+C 10 ms
+D 50 ms
+F 400 ms
+Threshold Voltage Option 17 1.7 V
+18 1.8 V
+19 1.9 V
+22 2.25 V
+24 2.4 V
+26 2.64 V
+29 2.93 V
+30 3.08 V
+33 3.3 V
+42 4.2 V
+43 4.38 V
+45 4.55 V
+46 4.63 V
+Pinout Indicator (DBZ Package Only) R Pin 1 = RESET, Pin 2 = GND, Pin 3 = VDD
+V Pin 1 = RESET, Pin 2 = VDD, Pin 3 = GND
+Package Option DBZ SOT23-3 pin
+DCK SC70-3 pin
+DPW X2SON-5 pin
+Reel R Large reel
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021 www.ti.com
+26 Submit Document Feedback Copyright © 2021 Texas Instruments Incorporated
+Product Folder Links: TLV803E TLV809E TLV810E
+12.2 Documentation Support
+12.2.1 Related Documentation
+For related documentation see the following:
+• Texas Instruments, TLV803EA29EVM User Guide
+• Texas Instruments, Voltage Supervisors (Reset ICs): Frequenctly Asked Questions (FAQs)
+12.3 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on
+Subscribe to updates  to register and receive a weekly digest of any product information that has changed. For
+change details, review the revision history included in any revised document.
+12.4 Support Resources
+TI E2E ™ support forums  are an engineer's go-to source for fast, verified answers and design help — straight
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do
+not necessarily reflect TI's views; see TI's Terms of Use.
+12.5 Trademarks
+TI E2E™ is a trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+12.6 Electrostatic Discharge Caution
+This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled
+with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may
+be more susceptible to damage because very small parametric changes could cause the device not to meet its published
+specifications.
+12.7 Glossary
+TI Glossary This glossary lists and explains terms, acronyms, and definitions.
+13 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+www.ti.com
+TLV803E, TLV809E, TLV810E
+SLVSES2J – AUGUST 2018 – REVISED MAY 2021
+Copyright © 2021 Texas Instruments Incorporated Submit Document Feedback 27
+Product Folder Links: TLV803E TLV809E TLV810E
+PACKAGE OPTION ADDENDUM
+www.ti.com 23-Jan-2026
+PACKAGING INFORMATION
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TLV803EA17DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IT)
+TLV803EA17DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IT)
+TLV803EA18DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IV)
+TLV803EA18DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IV)
+TLV803EA22DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 322A
+TLV803EA22DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 322A
+TLV803EA22DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 3FA
+TLV803EA22DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 3FA
+TLV803EA24DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 34A
+TLV803EA24DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 34A
+TLV803EA26DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 326A
+TLV803EA26DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 326A
+TLV803EA26DBZRG4 Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 326A
+TLV803EA26DBZRG4.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 326A
+TLV803EA26DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 32A
+TLV803EA26DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 32A
+TLV803EA26DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IW)
+TLV803EA26DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IW)
+TLV803EA26RDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 36AR
+TLV803EA26RDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 36AR
+TLV803EA29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 329A
+TLV803EA29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 329A
+TLV803EA29DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 39A
+TLV803EA29DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 39A
+TLV803EA29DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IX)
+TLV803EA29DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IX)
+TLV803EA29RDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 39AR
+TLV803EA29RDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 39AR
+TLV803EA29VDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 39AV
+Addendum-Page 1
+PACKAGE OPTION ADDENDUM
+www.ti.com 23-Jan-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TLV803EA29VDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 39AV
+TLV803EA30DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 330A
+TLV803EA30DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 330A
+TLV803EA30DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 30A
+TLV803EA30DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 30A
+TLV803EA30DCKRG4 Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 30A
+TLV803EA30DCKRG4.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 30A
+TLV803EA30DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 9
+TLV803EA36DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 D
+TLV803EA38DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 8
+TLV803EA42RDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 3DAR
+TLV803EA42RDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 3DAR
+TLV803EA43DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 343A
+TLV803EA43DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 343A
+TLV803EA43DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 33A
+TLV803EA43DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 33A
+TLV803EA43RDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 34AR
+TLV803EA43RDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 34AR
+TLV803EA43VDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 34AV
+TLV803EA43VDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 34AV
+TLV803EB22DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 32B
+TLV803EB22DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 32B
+TLV803EB26RDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 36BR
+TLV803EB26RDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 36BR
+TLV803EB29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 329B
+TLV803EB29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 329B
+TLV803EB29RDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 39BR
+TLV803EB29RDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 39BR
+TLV803EB33VDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 3CBV
+TLV803EB33VDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 3CBV
+TLV803EB42VDBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 3DBV
+Addendum-Page 2
+PACKAGE OPTION ADDENDUM
+www.ti.com 23-Jan-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TLV803EB42VDBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 3DBV
+TLV803EB46DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 36B
+TLV803EB46DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 36B
+TLV803EC29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 329C
+TLV803EC29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 329C
+TLV803EC29DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 39C
+TLV803EC29DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 39C
+TLV803EC30DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 330C
+TLV803EC30DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 330C
+TLV803EC43DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 343C
+TLV803EC43DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 343C
+TLV803ED17DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IS)
+TLV803ED17DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IS)
+TLV803ED18DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IU)
+TLV803ED18DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IU)
+TLV803ED29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 329D
+TLV803ED29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 329D
+TLV803EF26DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 326F
+TLV803EF26DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 326F
+TLV803EF29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 329F
+TLV803EF29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 329F
+TLV809EA17DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 917A
+TLV809EA17DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 917A
+TLV809EA22DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 (322A, 922A)
+TLV809EA22DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 (322A, 922A)
+TLV809EA24DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 B
+TLV809EA26DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 926A
+TLV809EA26DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 926A
+TLV809EA26DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 92A
+TLV809EA26DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 92A
+TLV809EA26DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IZ)
+Addendum-Page 3
+PACKAGE OPTION ADDENDUM
+www.ti.com 23-Jan-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TLV809EA26DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (I, IZ)
+TLV809EA29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 929A
+TLV809EA29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 929A
+TLV809EA29DBZRG4 Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 929A
+TLV809EA29DBZRG4.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 929A
+TLV809EA29DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 99A
+TLV809EA29DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 99A
+TLV809EA29DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (J, J1)
+TLV809EA29DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (J, J1)
+TLV809EA30DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 930A
+TLV809EA30DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 930A
+TLV809EA30DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 90A
+TLV809EA30DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 90A
+TLV809EA43DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 943A
+TLV809EA43DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 943A
+TLV809EA45DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 945A
+TLV809EA45DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 945A
+TLV809EA45DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 95A
+TLV809EA45DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 95A
+TLV809EA46DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 946A
+TLV809EA46DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 125 946A
+TLV809EA46DCKR Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 96A
+TLV809EA46DCKR.A Active Production SC70 (DCK) | 3 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 96A
+TLV809EA46DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (J, J2)
+TLV809EA46DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (J, J2)
+TLV809EC26DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 926C
+TLV809EC26DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 926C
+TLV809EC46DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 946C
+TLV809EC46DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 946C
+TLV809ED29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 929D
+TLV809ED29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 929D
+Addendum-Page 4
+PACKAGE OPTION ADDENDUM
+www.ti.com 23-Jan-2026
+Orderable part number Status
+(1)
+Material type
+(2)
+Package | Pins Package qty | Carrier RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C) Part marking
+(6)
+TLV809EF30DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 930F
+TLV809EF30DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 930F
+TLV810EA29DBZR Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 029A
+TLV810EA29DBZR.A Active Production SOT-23 (DBZ) | 3 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 029A
+TLV810EA29DPWR Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (J, J3)
+TLV810EA29DPWR.A Active Production X2SON (DPW) | 5 3000 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 (J, J3)
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+Addendum-Page 5
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0B0K0WDimension designed to accommodate the component lengthDimension designed to accommodate the component thicknessOverall width of the carrier tapePitch between successive cavity centersDimension designed to accommodate the component width
+TAPE DIMENSIONSK0 P1B0WA0Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket QuadrantsSprocket HolesQ1Q1Q2Q2Q3Q3Q4Q4User Direction of Feed
+P1ReelDiameter
+ 
+*All dimensions are nominal
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TLV803EA17DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803EA18DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803EA22DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA22DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA24DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA26DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA26DBZRG4 SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA26DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA26DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803EA26RDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EA26RDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EA26RDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA29DBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EA29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA29DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA29DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+Pack Materials-Page 1
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TLV803EA29RDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EA29RDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA29RDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EA29VDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA29VDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EA30DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA30DBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EA30DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA30DCKRG4 SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA30DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803EA36DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803EA38DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803EA42RDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA42RDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EA42RDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EA43DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA43DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EA43RDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EA43RDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EA43VDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EA43VDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EA43VDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EB22DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EB26RDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EB26RDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EB26RDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EB29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EB29RDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EB29RDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EB33VDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EB33VDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EB33VDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EB42VDBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV803EB42VDBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EB42VDBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EB46DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EC29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EC29DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV803EC30DBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV803EC43DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EC43DBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+Pack Materials-Page 2
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package
+Type
+Package
+Drawing
+Pins SPQ Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TLV803ED17DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803ED18DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV803ED29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EF26DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV803EF29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA17DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA22DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA24DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV809EA26DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA26DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV809EA26DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV809EA29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA29DBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV809EA29DBZRG4 SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA29DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV809EA29DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV809EA30DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EA30DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV809EA43DBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV809EA45DBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV809EA45DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV809EA46DBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV809EA46DBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV809EA46DCKR SC70 DCK 3 3000 178.0 9.0 2.4 2.5 1.2 4.0 8.0 Q3
+TLV809EA46DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+TLV809EC26DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EC46DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809ED29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809ED29DBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV809EF30DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV809EF30DBZR SOT-23 DBZ 3 3000 180.0 8.4 3.2 2.85 1.3 4.0 8.0 Q3
+TLV809EF30DBZR SOT-23 DBZ 3 3000 178.0 9.0 3.15 2.77 1.22 4.0 8.0 Q3
+TLV810EA29DBZR SOT-23 DBZ 3 3000 180.0 8.4 2.9 3.35 1.35 4.0 8.0 Q3
+TLV810EA29DPWR X2SON DPW 5 3000 180.0 8.4 0.91 0.91 0.5 2.0 8.0 Q2
+Pack Materials-Page 3
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W LH
+ 
+*All dimensions are nominal
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+TLV803EA17DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA18DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA22DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA22DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA24DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA26DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA26DBZRG4 SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA26DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA26DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA26RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA26RDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EA26RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA29DBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EA29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA29DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA29DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA29RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA29RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+Pack Materials-Page 4
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+TLV803EA29RDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EA29VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA29VDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EA30DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA30DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA30DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA30DCKRG4 SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA30DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA36DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA38DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803EA42RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA42RDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EA42RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA43DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA43DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EA43RDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EA43RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA43VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA43VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EA43VDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EB22DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EB26RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB26RDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EB26RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB29RDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EB29RDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB33VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB33VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB33VDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EB42VDBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803EB42VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB42VDBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EB46DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EC29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EC29DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV803EC30DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EC43DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EC43DBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV803ED17DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803ED18DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV803ED29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV803EF26DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+Pack Materials-Page 5
+PACKAGE MATERIALS INFORMATION
+  
+www.ti.com 3-Sep-2026
+Device Package Type Package Drawing Pins SPQ Length (mm) Width (mm) Height (mm)
+TLV803EF29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA17DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA22DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA24DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV809EA26DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA26DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV809EA26DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV809EA29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA29DBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV809EA29DBZRG4 SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA29DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV809EA29DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV809EA30DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA30DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV809EA43DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA45DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA45DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV809EA46DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EA46DBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV809EA46DCKR SC70 DCK 3 3000 180.0 180.0 18.0
+TLV809EA46DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+TLV809EC26DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EC46DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809ED29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809ED29DBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV809EF30DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EF30DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV809EF30DBZR SOT-23 DBZ 3 3000 180.0 180.0 18.0
+TLV810EA29DBZR SOT-23 DBZ 3 3000 210.0 185.0 35.0
+TLV810EA29DPWR X2SON DPW 5 3000 210.0 185.0 35.0
+Pack Materials-Page 6
+www.ti.com
+PACKAGE OUTLINE
+C
+0.20
+0.08 TYP
+0.25
+2.64
+2.10
+1.12 MAX
+0.10
+0.01 TYP
+3X 0.5
+0.3
+0.6
+0.2 TYP
+1.9
+0.95
+0 -8  TYP
+4X 0 -15
+4X 4 -15
+A
+3.04
+2.80
+B1.4
+1.2
+(0.95)
+(0.15)
+(0.125)
+SOT-23 - 1.12 mm max heightDBZ0003A
+SMALL OUTLINE TRANSISTOR
+4214838/F   08/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Reference JEDEC registration TO-236, except minimum foot length.
+4. Support pin may differ or may not be present.
+5. Body dimensions do not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not exceed
+    0.25mm per side
+ 
+0.2 C A B
+1
+3
+2
+INDEX AREA
+PIN 1
+NOTE 4
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  4.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ALL AROUND
+0.07 MIN
+ALL AROUND
+3X (1.3)
+3X (0.6)
+(2.1)
+2X (0.95)
+(R0.05) TYP
+4214838/F   08/2024
+SOT-23 - 1.12 mm max heightDBZ0003A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+5. Publication IPC-7351 may have alternate designs. 
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+SCALE:15X
+PKG
+1
+3
+2
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+METALSOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.1)
+2X(0.95)
+3X (1.3)
+3X (0.6)
+(R0.05) TYP
+SOT-23 - 1.12 mm max heightDBZ0003A
+SMALL OUTLINE TRANSISTOR
+4214838/F   08/2024
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations. 
+8. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 THICK STENCIL
+SCALE:15X
+SYMM
+PKG
+1
+3
+2
+
+www.ti.com
+PACKAGE OUTLINE
+C
+4X 0.27
+0.17
+3X 0.288
+0.188
+0.4 MAX
+0.05
+0.00
+2X
+0.48
+0.239
+0.139
+ 0.25 0.1
+B 0.85
+0.75
+A
+0.85
+0.75
+(0.1)
+4X (0.05) (0.324)
+2X (0.26)
+X2SON - 0.4 mm max heightDPW0005A
+PLASTIC SMALL OUTLINE - NO LEAD
+4223102/D   03/2022
+PIN 1 INDEX AREA
+SEATING PLANE
+NOTE 3
+1
+2
+3
+4
+0.1 C A B
+0.05 C
+5
+NOTES:
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. The size and shape of this feature may vary.
+NOTE 3
+SCALE  12.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MIN
+ALL AROUND
+TYP
+(0.21) TYP
+EXPOSED METAL
+CLEARANCE
+(0.48)
+(0.78)
+4X (0.42)
+4X (0.22)
+( 0.25)
+4X (0.26)
+4X (0.06)
+( 0.1)
+VIA
+(R0.05) TYP
+X2SON - 0.4 mm max heightDPW0005A
+PLASTIC SMALL OUTLINE - NO LEAD
+4223102/D   03/2022
+SYMM
+1
+2
+3
+4
+SYMM
+LAND PATTERN EXAMPLE
+SOLDER MASK DEFINED
+SCALE:60X
+SOLDER MASK
+OPENING, TYP
+METAL UNDER
+SOLDER MASK
+TYP
+5
+NOTES: (continued)
+ 
+4. This package is designed to be soldered to a thermal pad on the board. For more information, refer to QFN/SON PCB application note
+    in literature No. SLUA271 (www.ti.com/lit/slua271).
+ 
+ 
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(0.48)
+(0.78)
+4X (0.42)
+4X (0.22)
+4X (0.26)
+4X (0.06)
+( 0.24)
+(0.21)
+TYP
+(R0.05) TYP
+X2SON - 0.4 mm max heightDPW0005A
+PLASTIC SMALL OUTLINE - NO LEAD
+4223102/D   03/2022
+NOTES: (continued)
+ 
+5. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+   design recommendations. 
+ 
+ SOLDER PASTE EXAMPLE
+BASED ON 0.1 mm THICK STENCIL
+ 
+EXPOSED PAD 3
+92%  PRINTED SOLDER COVERAGE BY AREA UNDER PACKAGE
+SCALE:100X
+SYMM
+1
+2
+3
+4
+SYMM
+EDGE
+SOLDER MASK
+5
+www.ti.com
+PACKAGE OUTLINE
+C
+2X (0.36)
+4X 0.27
+0.17
+ 0.35
+0.15
+4X 0.27
+0.17
+2X (0.26)
+0.4 MAX
+0.05
+0.00
+(0.1) TYP
+2X 0.48
+B 0.85
+0.75
+A
+0.85
+0.75
+X2SON - 0.4 mm max heightDPW0005B
+PLASTIC SMALL OUTLINE - NO LEAD
+4228233/D   09/2023
+PIN 1 INDEX AREA
+SEATING PLANE
+NOTE 3
+1
+2
+3
+4
+0.1 C A B
+0.05 C
+5
+PIN 1 ID
+NOTES:
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. The size and shape of this feature may vary.
+NOTE 3
+SCALE  12.000
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MIN
+ALL AROUND
+TYP
+(0.21) TYP
+EXPOSED METAL
+CLEARANCE
+(R0.05) TYP
+4X (0.42)
+4X (0.22)
+4X (0.26)
+( 0.25)
+( 0.1) VIA
+(0.78)
+(0.48)
+4X (0.06)
+X2SON - 0.4 mm max heightDPW0005B
+PLASTIC SMALL OUTLINE - NO LEAD
+4228233/D   09/2023
+SYMM
+1
+2
+3
+4
+SYMM
+LAND PATTERN EXAMPLE
+SOLDER MASK DEFINED
+SCALE:60X
+5
+SOLDER MASK
+OPENING, TYP
+METAL UNDER
+SOLDER MASK, TYP
+NOTES: (continued)
+ 
+4. This package is designed to be soldered to a thermal pad on the board. For more information, refer to QFN/SON PCB application note
+    in literature No. SLUA271 (www.ti.com/lit/slua271).
+ 
+ 
+www.ti.com
+EXAMPLE STENCIL DESIGN
+4X (0.22)
+4X (0.42)
+4X (0.06)
+(R0.05) TYP
+( 0.24)
+(0.21)
+TYP
+(0.78)
+(0.48)
+X2SON - 0.4 mm max heightDPW0005B
+PLASTIC SMALL OUTLINE - NO LEAD
+4228233/D   09/2023
+NOTES: (continued)
+ 
+5. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+   design recommendations. 
+ 
+ SOLDER PASTE EXAMPLE
+BASED ON 0.1 mm THICK STENCIL
+ 
+EXPOSED PAD 5
+92%  PRINTED SOLDER COVERAGE BY AREA UNDER PACKAGE
+SCALE:60X
+SYMM
+1
+2
+3
+4
+SYMM
+5
+SOLDER MASK
+EDGE
+www.ti.com
+PACKAGE OUTLINE
+C
+0.22
+0.08 TYP
+0.15
+2.4
+1.8
+0.65
+1.1 MAX
+0.1
+0.0 TYP
+3X 0.30
+0.15
+0.46
+0.26 TYP
+8
+0  TYP
+1.3
+4X 0 -12
+4X 4 -15
+A
+2.15
+1.85
+B1.4
+1.1
+(0.9)
+SOT-SC70 - 1.1 max heightDCK0003A
+SMALL OUTLINE TRANSISTOR SC70
+4220745/F   11/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Body dimensions do not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not exceed
+    0.25mm per side
+0.1 C A B
+1
+3
+2
+INDEX AREA
+PIN 1
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  5.600
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ARROUND
+0.07 MIN
+ARROUND
+3X (0.95)3X (0.4)
+(2.2)
+(1.3)
+(0.65)
+(R0.05) TYP
+4220745/F   11/2024
+SOT-SC70 - 1.1 max heightDCK0003A
+SMALL OUTLINE TRANSISTOR SC70
+NOTES: (continued)
+ 
+4. Publication IPC-7351 may have alternate designs. 
+5. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:18X
+PKG
+1
+3
+2
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED METAL
+METALSOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+EXPOSED METAL
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.2)
+(1.3)
+(0.65)
+3X (0.95)3X (0.4)
+(R0.05) TYP
+SOT-SC70 - 1.1 max heightDCK0003A
+SMALL OUTLINE TRANSISTOR SC70
+4220745/F   11/2024
+NOTES: (continued)
+ 
+6. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+     design recommendations. 
+7. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 THICK STENCIL
+SCALE:18X
+SYMM
+PKG
+1
+3
+2
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

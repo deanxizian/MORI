@@ -1,0 +1,13 @@
+﻿revision,id,from,to,nets,connector,length_mm,wire_gauge,rated_current_A,view_direction,status,notes
+V1.2-H0.1,H01,factory 3S pack,power entry,polarity/protection/temp,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,先核成品电池/BMS，防呆、高电流线规与额定未选
+V1.2-H0.1,H02,protected wheel domain,S288 L/R,VCC/GND/TTL,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,PH2.0资料待针序/观察方向与电流核验；电机不串经开发板
+V1.2-H0.1,H03,6V head domain + head PHY,SCS0009 yaw/pitch,1GND/2VCC/3TTL per old spec,5264-3P,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,A/0资料，实际版本/端面/电平/线规未验
+V1.2-H0.1,H04,5V protected branch,CAM regulated power entry,5V/GND,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,绝不接BAT；正确5V输入与USB倒灌未定
+V1.2-H0.1,H05,motion inter-MCU UART,CAM J11,STM_TX→1 RX44; STM_RX←2 TX43; GND→4; pin3 DNP,SH1.0-4P,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,DOCUMENTED_PINOUT_NOT_RELEASED,端面观察方向/接触件未确认；TTL3.3V；不装TF
+V1.2-H0.1,H06,CAM L3,LCD35079 FFC,18P see display_ffc_review.csv,FFC18P,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,接触面/方向/针距/长度待核；不能由针数推断直连
+V1.2-H0.1,H07,CAM J5,body speaker,1PA_OUTL+;2PA_OUTL-,GH1.25-2P,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,DOCUMENTED_PINOUT_NOT_RELEASED,BTL两个输出均不能接地；跨轴线缆影响头部阻力
+V1.2-H0.1,H08,carrier local rail/SPI,body ICM42688 module,3V3/GND/SPI/DRDY,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,模块未选，长度/防呆/轴变换待核
+V1.2-H0.1,H09,external charge USB-C,3S charger/power path,CC/PD/VBUS/GND,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,仅充电入口，不自动下载两MCU；普通5V降级行为待定义
+V1.2-H0.1,H10,internal service access,motion SWD + CAM USB/UART,debug signals,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,在托架且禁驱，调试电源互斥/防倒灌待设计
+V1.2-H0.1,H11,accessible function button,controller input,button+return,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,不触发复位/断驱；不能拿内部BOOT算外部按钮
+V1.2-H0.1,H12,physical disable/power control,actuator power/control,independent physical operation,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNCONFIRMED_DO_NOT_WIRE,BLOCKED,开关直流额定/失效行为待核；断驱可能倒下

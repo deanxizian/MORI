@@ -1,0 +1,124 @@
+﻿板,接口,针号,信号,功能,电压域,相对本板方向,安装面,板端坐标mm,对接对象,原生针表检查,实物,注意,board_id,native_net
+电源板,J1,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[9.0, 6.0]]",成品3S电池，经外部总保险,PASS,NOT_TESTED,1=GND，2=正极；电池及保险精确型号待确认,MORI_power_P5R6,/GND
+电源板,J1,2,PACK_FUSED,外部总保险后的成品3S电池正极,3S母线，设计上限12.6V,输入,F,"[[14.0, 6.0]]",成品3S电池，经外部总保险,PASS,NOT_TESTED,1=GND，2=正极；电池及保险精确型号待确认,MORI_power_P5R6,/PACK_FUSED
+电源板,J2,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[22.0, 6.0]]",外部9V降压器 VIN/GND,PASS,NOT_TESTED,这里输出3S电池母线；不可直接接9V电机,MORI_power_P5R6,/GND
+电源板,J2,2,BAT_MON,开关/反接保护/分流器后的电池母线,3S母线，设计上限12.6V,输出,F,"[[27.0, 6.0]]",外部9V降压器 VIN/GND,PASS,NOT_TESTED,这里输出3S电池母线；不可直接接9V电机,MORI_power_P5R6,/BAT_MON
+电源板,J3,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[35.0, 6.0]]",外部9V降压器 VOUT/GND,PASS,NOT_TESTED,接稳压9V输出；不可与J2直接短接,MORI_power_P5R6,/GND
+电源板,J3,2,W9_IN,外部轮降压器9V输出回接,外部稳压9V,输入,F,"[[40.0, 6.0]]",外部9V降压器 VOUT/GND,PASS,NOT_TESTED,接稳压9V输出；不可与J2直接短接,MORI_power_P5R6,/W9_IN
+电源板,J4,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[25.0, 50.0]]",外部6V降压器 VIN/GND,PASS,NOT_TESTED,这里输出3S电池母线；不可直接接6V舵机,MORI_power_P5R6,/GND
+电源板,J4,2,BAT_MON,开关/反接保护/分流器后的电池母线,3S母线，设计上限12.6V,输出,F,"[[30.0, 50.0]]",外部6V降压器 VIN/GND,PASS,NOT_TESTED,这里输出3S电池母线；不可直接接6V舵机,MORI_power_P5R6,/BAT_MON
+电源板,J5,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[40.0, 50.0]]",外部6V降压器 VOUT/GND,PASS,NOT_TESTED,接稳压6V输出；不可与J4直接短接,MORI_power_P5R6,/GND
+电源板,J5,2,H6_IN,外部头降压器6V输出回接,外部稳压6V,输入,F,"[[45.0, 50.0]]",外部6V降压器 VOUT/GND,PASS,NOT_TESTED,接稳压6V输出；不可与J4直接短接,MORI_power_P5R6,/H6_IN
+电源板,J6,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[48.0, 6.0]]",不接线，DNP,PASS,NOT_TESTED,默认不装；不是5V输出,MORI_power_P5R6,/GND
+电源板,J6,2,BAT_MON,开关/反接保护/分流器后的电池母线,3S母线，设计上限12.6V,输出,F,"[[53.0, 6.0]]",不接线，DNP,PASS,NOT_TESTED,默认不装；不是5V输出,MORI_power_P5R6,/BAT_MON
+电源板,J7,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[75.0, 19.0]]",左 S288,PASS,NOT_TESTED,3脚为单线半双工数据；电机端针序待核,MORI_power_P5R6,/GND
+电源板,J7,2,W_VM,受ARM控制的轮电机供电,轮母线，9V经保护后；含制动瞬态,输出,F,"[[75.0, 16.5]]",左 S288,PASS,NOT_TESTED,3脚为单线半双工数据；电机端针序待核,MORI_power_P5R6,/W_VM
+电源板,J7,3,W_BUS,两轮共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[75.0, 14.0]]",左 S288,PASS,NOT_TESTED,3脚为单线半双工数据；电机端针序待核,MORI_power_P5R6,/W_BUS
+电源板,J8,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[63.0, 26.0]]",右 S288,PASS,NOT_TESTED,与左轮共总线；两电机必须分配不同ID,MORI_power_P5R6,/GND
+电源板,J8,2,W_VM,受ARM控制的轮电机供电,轮母线，9V经保护后；含制动瞬态,输出,F,"[[65.5, 26.0]]",右 S288,PASS,NOT_TESTED,与左轮共总线；两电机必须分配不同ID,MORI_power_P5R6,/W_VM
+电源板,J8,3,W_BUS,两轮共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[68.0, 26.0]]",右 S288,PASS,NOT_TESTED,与左轮共总线；两电机必须分配不同ID,MORI_power_P5R6,/W_BUS
+电源板,J9,1,GND,信号/电源参考地,0V参考地,参考地,F,"[[64.0, 42.5]]",SCS0009 yaw/pitch链,PASS,NOT_TESTED,两舵机共头部总线；连接顺序/厂配线待确认,MORI_power_P5R6,/GND
+电源板,J9,2,H_VM,受ARM控制的头舵机供电,头母线，6V经保护后；含制动瞬态,输出,F,"[[66.5, 42.5]]",SCS0009 yaw/pitch链,PASS,NOT_TESTED,两舵机共头部总线；连接顺序/厂配线待确认,MORI_power_P5R6,/H_VM
+电源板,J9,3,H_BUS,双头舵机共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[69.0, 42.5]]",SCS0009 yaw/pitch链,PASS,NOT_TESTED,两舵机共头部总线；连接顺序/厂配线待确认,MORI_power_P5R6,/H_BUS
+电源板,J10,1,+3V3,运动MCU本地3.3V，供IMU及电源板控制域,3.3V逻辑/电源域,输入,F,"[[44.5, 27.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/+3V3
+电源板,J10,2,ARM_Q,运动硬件锁存的执行器使能,3.3V逻辑/电源域,输入,F,"[[44.5, 29.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/ARM_Q
+电源板,J10,3,FAULT_N,低有效电源故障，清除ARM,3.3V逻辑/电源域,输出,F,"[[44.5, 31.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/FAULT_N
+电源板,J10,4,CHG_N,低有效充电/托架禁驱信号,3.3V逻辑/电源域,低有效禁驱节点,F,"[[44.5, 33.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/CHG_N
+电源板,J10,5,BAT_ADC,电池分压采样,3.3V ADC域的模拟信号,输出,F,"[[44.5, 35.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/BAT_ADC
+电源板,J10,6,WHEEL_ADC,轮母线分压采样,3.3V ADC域的模拟信号,输出,F,"[[44.5, 37.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/WHEEL_ADC
+电源板,J10,7,CURRENT_ADC,电池分流电流检测输出,3.3V ADC域的模拟信号,输出,F,"[[44.5, 39.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/CURRENT_ADC
+电源板,J10,8,GND,信号/电源参考地,0V参考地,参考地,F,"[[44.5, 41.0]]",运动板 J7，同号接线,PASS,NOT_TESTED,PH8，但不可与IMU用的PH8互换,MORI_power_P5R6,/GND
+电源板,J11,1,W_DUMP_D,轮制动MOS漏极；外置电阻另一端接W_VM,轮母线，9V经保护后；含制动瞬态,输出,F,"[[61.0, 6.0]]",外部5.6Ω制动电阻,PASS,NOT_TESTED,1=W_DUMP_D开关漏极，不是GND；电阻跨1、2,MORI_power_P5R6,/W_DUMP_D
+电源板,J11,2,W_VM,受ARM控制的轮电机供电,轮母线，9V经保护后；含制动瞬态,输出,F,"[[66.0, 6.0]]",外部5.6Ω制动电阻,PASS,NOT_TESTED,1=W_DUMP_D开关漏极，不是GND；电阻跨1、2,MORI_power_P5R6,/W_VM
+电源板,J12,1,H_DUMP_D,头制动MOS漏极；外置电阻另一端接H_VM,头母线，6V经保护后；含制动瞬态,输出,F,"[[65.0, 50.0]]",外部10Ω制动电阻,PASS,NOT_TESTED,1=H_DUMP_D开关漏极，不是GND；电阻跨1、2,MORI_power_P5R6,/H_DUMP_D
+电源板,J12,2,H_VM,受ARM控制的头舵机供电,头母线，6V经保护后；含制动瞬态,输出,F,"[[70.0, 50.0]]",外部10Ω制动电阻,PASS,NOT_TESTED,1=H_DUMP_D开关漏极，不是GND；电阻跨1、2,MORI_power_P5R6,/H_VM
+电源板,J13,1,W_BUS,两轮共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[75.0, 34.0]]",运动板 J2，同号接线,PASS,NOT_TESTED,仅数据和参考地，不给电机供电,MORI_power_P5R6,/W_BUS
+电源板,J13,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[75.0, 32.0]]",运动板 J2，同号接线,PASS,NOT_TESTED,仅数据和参考地，不给电机供电,MORI_power_P5R6,/GND
+电源板,J14,1,H_BUS,双头舵机共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[75.0, 43.0]]",运动板 J3，1→1、2→2,PASS,NOT_TESTED,两端3号孔均不装端子，保持NC,MORI_power_P5R6,/H_BUS
+电源板,J14,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[75.0, 41.0]]",运动板 J3，1→1、2→2,PASS,NOT_TESTED,两端3号孔均不装端子，保持NC,MORI_power_P5R6,/GND
+电源板,J14,3,NC,不连接；线束孔位不装端子,不连接,不连接,F,"[[75.0, 39.0]]",运动板 J3，1→1、2→2,PASS,NOT_TESTED,两端3号孔均不装端子，保持NC,MORI_power_P5R6,unconnected-(J14-Pad3)
+电源板,J15,1,CHG_N,低有效充电/托架禁驱信号,3.3V逻辑/电源域,低有效禁驱节点,F,"[[4.5, 31.0]]",可选托架干接点,PASS,NOT_TESTED,闭合1–2拉低CHG_N禁驱；断线开路不能自诊断,MORI_power_P5R6,/CHG_N
+电源板,J15,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[4.5, 29.0]]",可选托架干接点,PASS,NOT_TESTED,闭合1–2拉低CHG_N禁驱；断线开路不能自诊断,MORI_power_P5R6,/GND
+电源板,J16,1,VBUS_CHARGE,USB保险前VBUS存在检测，经板内电阻驱动Q50,USB VBUS；允许电压待PD方案确认,输入,F,"[[4.5, 46.0]]",后板 J2.5→1、J2.2→2,PASS,NOT_TESTED,只检测，不是充电功率输入；RAW源端保护未闭合,MORI_power_P5R6,/VBUS_CHARGE
+电源板,J16,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[4.5, 44.0]]",后板 J2.5→1、J2.2→2,PASS,NOT_TESTED,只检测，不是充电功率输入；RAW源端保护未闭合,MORI_power_P5R6,/GND
+电源板,J17,1,+5V_MOTION,电源J17输出/运动J1输入，模块本地生成3.3V,标称5V；设定计算约5.077V,输出,F,"[[4.5, 24.0]]",运动板 J1，同号接线,PASS,NOT_TESTED,1=+5V，2=GND；与电池XT30针序不同,MORI_power_P5R6,/+5V_MOTION
+电源板,J17,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[4.5, 22.0]]",运动板 J1，同号接线,PASS,NOT_TESTED,1=+5V，2=GND；与电池XT30针序不同,MORI_power_P5R6,/GND
+电源板,J18,1,+5V_CAM,CAM稳压5V供电；不用CAM BAT口,标称5V；设定计算约5.077V,输出,F,"[[13.0, 50.0]]",CAM33700 稳压5V USB供电尾线,PASS,NOT_TESTED,1=+5V，2=GND；不得接CAM单节BAT口,MORI_power_P5R6,/+5V_CAM
+电源板,J18,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[15.5, 50.0]]",CAM33700 稳压5V USB供电尾线,PASS,NOT_TESTED,1=+5V，2=GND；不得接CAM单节BAT口,MORI_power_P5R6,/GND
+电源板,J19,1,MASTER_RETURN,经后板开关接地控制Q90，非大电流回线,开关控制，OFF时可接近3S电压,控制回路,F,"[[4.5, 17.0]]",后板 J3.1→1、J3.2→2,PASS,NOT_TESTED,1脚OFF时可能接近电池电位；不可混插其他PH2,MORI_power_P5R6,/MASTER_RETURN
+电源板,J19,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[4.5, 15.0]]",后板 J3.1→1、J3.2→2,PASS,NOT_TESTED,1脚OFF时可能接近电池电位；不可混插其他PH2,MORI_power_P5R6,/GND
+电源板,JP60,1,M5_EN,运动5V降压EN；正常开路，维护拉低关闭,EN内部上拉；仅允许拉GND关闭,触点/维护,F,"[[5.0, 39.5]]",正常开路；托架上才可短接,PASS,NOT_TESTED,短接1–2关闭运动5V，会失去平衡,MORI_power_P5R6,/M5_EN
+电源板,JP60,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[2.46, 39.5]]",正常开路；托架上才可短接,PASS,NOT_TESTED,短接1–2关闭运动5V，会失去平衡,MORI_power_P5R6,/GND
+电源板,JP70,1,C5_EN,交互5V降压EN；正常开路，维护拉低关闭,EN内部上拉；仅允许拉GND关闭,触点/维护,F,"[[36.5, 44.5]]",正常开路；托架上才可短接,PASS,NOT_TESTED,短接1–2仅关闭交互5V；不是外部供电口,MORI_power_P5R6,/C5_EN
+电源板,JP70,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[39.04, 44.5]]",正常开路；托架上才可短接,PASS,NOT_TESTED,短接1–2仅关闭交互5V；不是外部供电口,MORI_power_P5R6,/GND
+运动板,J1,1,+5V_MOTION,电源J17输出/运动J1输入，模块本地生成3.3V,标称5V；设定计算约5.077V,输入,F,"[[58.5, 3.0]]",电源板 J17，同号接线,PASS,NOT_TESTED,MCU本地生成3.3V；不得直接接3S,MORI_motion_P5R6,/+5V_MOTION
+运动板,J1,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[60.5, 3.0]]",电源板 J17，同号接线,PASS,NOT_TESTED,MCU本地生成3.3V；不得直接接3S,MORI_motion_P5R6,/GND
+运动板,J2,1,S288_BUS,两轮共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[51.0, 3.0]]",电源板 J13，同号接线,PASS,NOT_TESTED,只接信号及地；不是两轮电源口,MORI_motion_P5R6,/S288_BUS
+运动板,J2,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[53.0, 3.0]]",电源板 J13，同号接线,PASS,NOT_TESTED,只接信号及地；不是两轮电源口,MORI_motion_P5R6,/GND
+运动板,J3,1,HEAD_BUS,双头舵机共用半双工数据,板端3.3V TTL；执行器阈值待核,双向数据,F,"[[62.0, 18.0]]",电源板 J14，1→1、2→2,PASS,NOT_TESTED,两端3号孔均不装端子,MORI_motion_P5R6,/HEAD_BUS
+运动板,J3,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[64.0, 18.0]]",电源板 J14，1→1、2→2,PASS,NOT_TESTED,两端3号孔均不装端子,MORI_motion_P5R6,/GND
+运动板,J3,3,NC,不连接；线束孔位不装端子,不连接,不连接,F,"[[66.0, 18.0]]",电源板 J14，1→1、2→2,PASS,NOT_TESTED,两端3号孔均不装端子,MORI_motion_P5R6,unconnected-(J3-Pad3)
+运动板,J4,1,+3V3,运动MCU本地3.3V，供IMU及电源板控制域,3.3V逻辑/电源域,输出,F,"[[50.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/+3V3
+运动板,J4,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[52.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/GND
+运动板,J4,3,IMU_SCK,SPI时钟，运动主机输出,3.3V逻辑/电源域,输出,F,"[[54.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/IMU_SCK
+运动板,J4,4,IMU_MOSI,SPI数据，运动主机输出,3.3V逻辑/电源域,输出,F,"[[56.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/IMU_MOSI
+运动板,J4,5,IMU_MISO,SPI数据，IMU输出,3.3V逻辑/电源域,输入,F,"[[58.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/IMU_MISO
+运动板,J4,6,IMU_CS,SPI片选，低有效,3.3V逻辑/电源域,输出,F,"[[60.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/IMU_CS
+运动板,J4,7,IMU_DRDY,IMU数据就绪，IMU输出,3.3V逻辑/电源域,输入,F,"[[62.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/IMU_DRDY
+运动板,J4,8,GND,信号/电源参考地,0V参考地,参考地,F,"[[64.5, 25.0]]",IMU板 J1，1–8同号,PASS,NOT_TESTED,3.3V供电；两个GND都接；不与J7互换,MORI_motion_P5R6,/GND
+运动板,J5,1,CAM_RX,STM PC6 TX经U4/R9到CAM GPIO44 RX,3.3V逻辑/电源域,输出,F,"[[50.5, 18.0]]",CAM33700 J11，1–4同号,PASS,NOT_TESTED,RX/TX按CAM端命名，不再交叉；3脚仅供U4 VCCB,MORI_motion_P5R6,/CAM_RX
+运动板,J5,2,CAM_TX,CAM GPIO43 TX经U4到STM PC7 RX,3.3V逻辑/电源域,输入,F,"[[52.5, 18.0]]",CAM33700 J11，1–4同号,PASS,NOT_TESTED,RX/TX按CAM端命名，不再交叉；3脚仅供U4 VCCB,MORI_motion_P5R6,/CAM_TX
+运动板,J5,3,CAM_3V3,来自CAM J11.3，仅供U4 VCCB；不并联运动3.3V,3.3V逻辑/电源域,输入,F,"[[54.5, 18.0]]",CAM33700 J11，1–4同号,PASS,NOT_TESTED,RX/TX按CAM端命名，不再交叉；3脚仅供U4 VCCB,MORI_motion_P5R6,/CAM_3V3
+运动板,J5,4,GND,信号/电源参考地,0V参考地,参考地,F,"[[56.5, 18.0]]",CAM33700 J11，1–4同号,PASS,NOT_TESTED,RX/TX按CAM端命名，不再交叉；3脚仅供U4 VCCB,MORI_motion_P5R6,/GND
+运动板,J6,1,USER_KEY_N,PC13维护输入，短接GND有效，非RESET,3.3V逻辑/电源域,输入,F,"[[51.0, 31.3]]",可选无源瞬时按键,PASS,NOT_TESTED,1–2闭合为低有效；不是RESET，也不是急停,MORI_motion_P5R6,/USER_KEY_N
+运动板,J6,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[53.0, 31.3]]",可选无源瞬时按键,PASS,NOT_TESTED,1–2闭合为低有效；不是RESET，也不是急停,MORI_motion_P5R6,/GND
+运动板,J7,1,+3V3,运动MCU本地3.3V，供IMU及电源板控制域,3.3V逻辑/电源域,输出,F,"[[50.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/+3V3
+运动板,J7,2,ARM_Q,运动硬件锁存的执行器使能,3.3V逻辑/电源域,输出,F,"[[52.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/ARM_Q
+运动板,J7,3,FAULT_N,低有效电源故障，清除ARM,3.3V逻辑/电源域,输入,F,"[[54.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/FAULT_N
+运动板,J7,4,CHG_N,低有效充电/托架禁驱信号,3.3V逻辑/电源域,输入,F,"[[56.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/CHG_N
+运动板,J7,5,BAT_ADC_IN,电池分压采样入板,3.3V ADC域的模拟信号,输入,F,"[[58.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/BAT_ADC_IN
+运动板,J7,6,WHEEL_ADC_IN,轮母线分压采样入板,3.3V ADC域的模拟信号,输入,F,"[[60.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/WHEEL_ADC_IN
+运动板,J7,7,CURRENT_ADC_IN,电池电流采样入板,3.3V ADC域的模拟信号,输入,F,"[[62.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/CURRENT_ADC_IN
+运动板,J7,8,GND,信号/电源参考地,0V参考地,参考地,F,"[[64.5, 10.0]]",电源板 J10，1–8同号,PASS,NOT_TESTED,PH8，但不可与J4的IMU线互换,MORI_motion_P5R6,/GND
+运动板,J8,1,LOOP_3V3,运动3.3V经限流电阻送往物理许可环路,3.3V逻辑/电源域,输出,F,"[[58.5, 31.3]]",后板 J3.3→1、J3.4→2,PASS,NOT_TESTED,开路清除ARM；恢复闭合不能自动重新解锁,MORI_motion_P5R6,/LOOP_3V3
+运动板,J8,2,CLR_N,硬件锁存清除端；断开许可环路将撤销ARM,3.3V逻辑/电源域,输入,F,"[[60.5, 31.3]]",后板 J3.3→1、J3.4→2,PASS,NOT_TESTED,开路清除ARM；恢复闭合不能自动重新解锁,MORI_motion_P5R6,/CLR_N
+IMU板,J1,1,+3V3,运动MCU本地3.3V，供IMU及电源板控制域,3.3V逻辑/电源域,输入,F,"[[3.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/+3V3
+IMU板,J1,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[5.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/GND
+IMU板,J1,3,SCK,SPI时钟，运动主机输出,3.3V逻辑/电源域,输入,F,"[[7.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/SCK
+IMU板,J1,4,MOSI,SPI数据，运动主机输出,3.3V逻辑/电源域,输入,F,"[[9.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/MOSI
+IMU板,J1,5,MISO,SPI数据，IMU输出,3.3V逻辑/电源域,输出,F,"[[11.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/MISO
+IMU板,J1,6,CS_N,SPI片选，低有效,3.3V逻辑/电源域,输入,F,"[[13.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/CS_N
+IMU板,J1,7,DRDY,IMU数据就绪，IMU输出,3.3V逻辑/电源域,输出,F,"[[15.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/DRDY
+IMU板,J1,8,GND,信号/电源参考地,0V参考地,参考地,F,"[[17.0, 3.5]]",运动板 J4，1–8同号,PASS,NOT_TESTED,刚性装在身体，SPI线长按实际布置测量,MORI_imu_P5R4,/GND
+后接口板,J2,1,VBUS_FUSED,后板保险后VBUS，送外部PD/充电器功率输入,USB VBUS；允许电压待PD方案确认,接口透传/触点,B,"[[19.0, 15.7]]",1–4外部PD；5分支至电源J16,PASS,NOT_TESTED,后装侧插PH5；1=FUSED、5=RAW，禁止桥接,MORI_rear_P5R6,/VBUS_FUSED
+后接口板,J2,2,GND,信号/电源参考地,0V参考地,参考地,B,"[[19.0, 17.7]]",1–4外部PD；5分支至电源J16,PASS,NOT_TESTED,后装侧插PH5；1=FUSED、5=RAW，禁止桥接,MORI_rear_P5R6,/GND
+后接口板,J2,3,CC1,Type-C CC1，外部受电端提供独立Rd/协商,USB-C CC信号，由外部受电控制器处理,接口透传/触点,B,"[[19.0, 19.7]]",1–4外部PD；5分支至电源J16,PASS,NOT_TESTED,后装侧插PH5；1=FUSED、5=RAW，禁止桥接,MORI_rear_P5R6,/CC1
+后接口板,J2,4,CC2,Type-C CC2，外部受电端提供独立Rd/协商,USB-C CC信号，由外部受电控制器处理,接口透传/触点,B,"[[19.0, 21.7]]",1–4外部PD；5分支至电源J16,PASS,NOT_TESTED,后装侧插PH5；1=FUSED、5=RAW，禁止桥接,MORI_rear_P5R6,/CC2
+后接口板,J2,5,VBUS_RAW,USB保险前VBUS；仅供定义后的检测分支,USB VBUS；允许电压待PD方案确认,接口透传/触点,B,"[[19.0, 23.7]]",1–4外部PD；5分支至电源J16,PASS,NOT_TESTED,后装侧插PH5；1=FUSED、5=RAW，禁止桥接,MORI_rear_P5R6,/VBUS_RAW
+后接口板,J3,1,MASTER_RETURN,经后板开关接地控制Q90，非大电流回线,开关控制，OFF时可接近3S电压,接口透传/触点,F,"[[8.45, 19.5]]",1/2至电源J19；3/4至运动J8,PASS,NOT_TESTED,必须一分二线束；两条控制回路不可短接,MORI_rear_P5R6,/MASTER_RETURN
+后接口板,J3,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[10.45, 19.5]]",1/2至电源J19；3/4至运动J8,PASS,NOT_TESTED,必须一分二线束；两条控制回路不可短接,MORI_rear_P5R6,/GND
+后接口板,J3,3,LOOP_3V3,运动3.3V经限流电阻送往物理许可环路,3.3V逻辑/电源域,接口透传/触点,F,"[[12.45, 19.5]]",1/2至电源J19；3/4至运动J8,PASS,NOT_TESTED,必须一分二线束；两条控制回路不可短接,MORI_rear_P5R6,/LOOP_3V3
+后接口板,J3,4,CLR_N,硬件锁存清除端；断开许可环路将撤销ARM,3.3V逻辑/电源域,接口透传/触点,F,"[[14.45, 19.5]]",1/2至电源J19；3/4至运动J8,PASS,NOT_TESTED,必须一分二线束；两条控制回路不可短接,MORI_rear_P5R6,/CLR_N
+后接口板,SW1,1,MASTER_RETURN,经后板开关接地控制Q90，非大电流回线,开关控制，OFF时可接近3S电压,触点/维护,F,"[[9.5, 10.1]]",板载器件，无独立外接线,PASS,NOT_TESTED,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R6,/MASTER_RETURN
+后接口板,SW1,2,GND,信号/电源参考地,0V参考地,参考地,F,"[[12.0, 10.1]]",板载器件，无独立外接线,PASS,NOT_TESTED,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R6,/GND
+后接口板,SW1,3,NC,不连接；线束孔位不装端子,不连接,不连接,F,"[[14.5, 10.1]]",板载器件，无独立外接线,PASS,NOT_TESTED,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R6,unconnected-(SW1-B1-Pad3)
+后接口板,SW1,4,LOOP_3V3,运动3.3V经限流电阻送往物理许可环路,3.3V逻辑/电源域,触点/维护,F,"[[9.5, 15.7]]",板载器件，无独立外接线,PASS,NOT_TESTED,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R6,/LOOP_3V3
+后接口板,SW1,5,CLR_N,硬件锁存清除端；断开许可环路将撤销ARM,3.3V逻辑/电源域,触点/维护,F,"[[12.0, 15.7]]",板载器件，无独立外接线,PASS,NOT_TESTED,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R6,/CLR_N
+后接口板,SW1,6,NC,不连接；线束孔位不装端子,不连接,不连接,F,"[[14.5, 15.7]]",板载器件，无独立外接线,PASS,NOT_TESTED,ON接通1–2和4–5；拨杆方向须实测,MORI_rear_P5R6,unconnected-(SW1-B2-Pad6)
+后接口板,USB1,A1,GND,信号/电源参考地,0V参考地,参考地,B,"[[8.75, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/GND
+后接口板,USB1,A4,VBUS_RAW,USB保险前VBUS；仅供定义后的检测分支,USB VBUS；允许电压待PD方案确认,接口透传/触点,B,"[[9.55, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/VBUS_RAW
+后接口板,USB1,A5,CC1,Type-C CC1，外部受电端提供独立Rd/协商,USB-C CC信号，由外部受电控制器处理,接口透传/触点,B,"[[10.75, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/CC1
+后接口板,USB1,A6,NC,不连接；线束孔位不装端子,不连接,不连接,B,"[[11.75, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,unconnected-(USB1-PadA6)
+后接口板,USB1,A7,NC,不连接；线束孔位不装端子,不连接,不连接,B,"[[12.25, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,unconnected-(USB1-PadA7)
+后接口板,USB1,A8,NC,不连接；线束孔位不装端子,不连接,不连接,B,"[[13.25, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,unconnected-(USB1-PadA8)
+后接口板,USB1,A9,VBUS_RAW,USB保险前VBUS；仅供定义后的检测分支,USB VBUS；允许电压待PD方案确认,接口透传/触点,B,"[[14.45, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/VBUS_RAW
+后接口板,USB1,A12,GND,信号/电源参考地,0V参考地,参考地,B,"[[15.25, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/GND
+后接口板,USB1,B1,GND,信号/电源参考地,0V参考地,参考地,B,"[[15.25, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/GND
+后接口板,USB1,B4,VBUS_RAW,USB保险前VBUS；仅供定义后的检测分支,USB VBUS；允许电压待PD方案确认,接口透传/触点,B,"[[14.45, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/VBUS_RAW
+后接口板,USB1,B5,CC2,Type-C CC2，外部受电端提供独立Rd/协商,USB-C CC信号，由外部受电控制器处理,接口透传/触点,B,"[[13.75, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/CC2
+后接口板,USB1,B6,NC,不连接；线束孔位不装端子,不连接,不连接,B,"[[12.75, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,unconnected-(USB1-PadB6)
+后接口板,USB1,B7,NC,不连接；线束孔位不装端子,不连接,不连接,B,"[[11.25, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,unconnected-(USB1-PadB7)
+后接口板,USB1,B8,NC,不连接；线束孔位不装端子,不连接,不连接,B,"[[10.25, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,unconnected-(USB1-PadB8)
+后接口板,USB1,B9,VBUS_RAW,USB保险前VBUS；仅供定义后的检测分支,USB VBUS；允许电压待PD方案确认,接口透传/触点,B,"[[9.55, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/VBUS_RAW
+后接口板,USB1,B12,GND,信号/电源参考地,0V参考地,参考地,B,"[[8.75, 7.045]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/GND
+后接口板,USB1,SH,GND,信号/电源参考地,0V参考地,参考地,B,"[[7.68, 1.95], [7.68, 6.13], [16.32, 1.95], [16.32, 6.13]]",USB-C电源，经外部PD/3S充电器,PASS,NOT_TESTED,无USB数据；本板没有PD协商/3S充电控制,MORI_rear_P5R6,/GND

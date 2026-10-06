@@ -1,0 +1,1902 @@
+{
+  "status": "PASS",
+  "scope": "Four connected fixed J5-to-neck curves with 252 zero-pose targets and 130 native head poses",
+  "source_main_sha256": "d060e2a72114c9d1e9fba5e481a95997fa9b2fd202d0629005409614bc3ff7e7",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "d060e2a72114c9d1e9fba5e481a95997fa9b2fd202d0629005409614bc3ff7e7",
+    "mechanical/studies/prearrival_finish/neck_threading_M1_48/outer_corridor_motion_lowest.json": "35855b233d070cf4d6686ae55f94db74739d3fb72ecbae3b3636042e7f4e3751",
+    "config/geometry.json": "66a7e7305766c73a60e5bd1ed6f6616df9ada0a9c8c86fe70fc70e32f0ff8fc8",
+    "contracts/mechanical_interfaces.json": "0324a37da01910648a1bd0a1905a6492b6b0e8d61aad3f28db60dc2dde74cc0b",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/studies/prearrival_finish/outer_harness_M1_48/native_context.py": "526ab2c09b3ced57691a405c8bf741174cd66243e46d2ef750ec2718e1780547",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "native_parts": 209,
+  "substituted_prints": [],
+  "mating_allocations": 29,
+  "fixed_candidate_wires": 14,
+  "board_sources": {
+    "motion": {
+      "file": "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pcb",
+      "sha256": "0f7dfd337522c602ecb11e56dab266f54589b256585332075e2b57a84a82e24e"
+    },
+    "imu": {
+      "file": "hardware/v1_2/kicad/MORI_imu_P5R4/MORI_imu_P5R4.kicad_pcb",
+      "sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68"
+    },
+    "power": {
+      "file": "hardware/v1_2/kicad/MORI_power_P5R6/MORI_power_P5R6.kicad_pcb",
+      "sha256": "3e6a76409928e96840aef31cfa43985a6ad00db0c0abed68a6fcb3c2a9f816dc"
+    },
+    "rear": {
+      "file": "hardware/v1_2/kicad/MORI_rear_P5R7/MORI_rear_P5R7.kicad_pcb",
+      "sha256": "4c44796c21883d3b16ce1212651ffbed90b62edbe0c878175f78eadbe02686f6"
+    }
+  },
+  "AMASS_allocations": [
+    {
+      "id": "power_J5",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -2.5999999046325684,
+        -22.299999237060547,
+        121.0999984741211,
+        7.599999904632568,
+        -16.700000762939453,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -2.75,
+        -22.450000762939453,
+        121.0999984741211,
+        7.75,
+        -16.549999237060547,
+        139.0
+      ],
+      "base_world_mm": [
+        2.5,
+        -19.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J4",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -17.600000381469727,
+        -22.299999237060547,
+        121.0999984741211,
+        -7.400000095367432,
+        -16.700000762939453,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -17.75,
+        -22.450000762939453,
+        121.0999984741211,
+        -7.25,
+        -16.549999237060547,
+        139.0
+      ],
+      "base_world_mm": [
+        -12.500000238418579,
+        -19.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J3",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -7.599999904632568,
+        21.700000762939453,
+        121.0999984741211,
+        2.5999999046325684,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -7.75,
+        21.549999237060547,
+        121.0999984741211,
+        2.75,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        -2.5,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J2",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -20.600000381469727,
+        21.700000762939453,
+        121.0999984741211,
+        -10.399999618530273,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -20.75,
+        21.549999237060547,
+        121.0999984741211,
+        -10.25,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        -15.5,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J12",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        22.399999618530273,
+        -22.299999237060547,
+        121.0999984741211,
+        32.599998474121094,
+        -16.700000762939453,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        22.25,
+        -22.450000762939453,
+        121.0999984741211,
+        32.75,
+        -16.549999237060547,
+        139.0
+      ],
+      "base_world_mm": [
+        27.499999046325684,
+        -19.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J11",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        18.399999618530273,
+        21.700000762939453,
+        121.0999984741211,
+        28.600000381469727,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        18.25,
+        21.549999237060547,
+        121.0999984741211,
+        28.75,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        23.5,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J1",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -33.599998474121094,
+        21.700000762939453,
+        121.0999984741211,
+        -23.399999618530273,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -33.75,
+        21.549999237060547,
+        121.0999984741211,
+        -23.25,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        -28.499999046325684,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    }
+  ],
+  "limitations": [
+    "Native board/vendor proxy limitations remain; no physical fit claim.",
+    "14 existing wire solids are candidates, not an adopted or proven-installed harness.",
+    "Mating shapes, crimp exits and solder/heat-shrink still include explicit allocations."
+  ],
+  "script_sha256": "14acdc314b72d7ac25275cac4e827056e1fe68af0a16895aa4b8f7991dad65a8",
+  "selection_sha256": "182fb60d669573efd3f295abc3c2a17816735d7a7c0afe836560832d9cf36890",
+  "selected_curves_sha256": "04db003fbc5dd1accf47d9cfba1c5df8a3b74ef4e47f60cd298de55024062c81",
+  "zero_pose_checks": [
+    {
+      "pin": 1,
+      "status": "PASS",
+      "root_exception": "Own mating housing only, first straight 5 mm; every other target checked",
+      "root_hit": null,
+      "remainder_hit": null,
+      "source_start_mm": [
+        15.5,
+        -45.025001525878906,
+        130.63999938964844
+      ],
+      "neck_end_mm": [
+        -20.930360723121805,
+        20.930360723121808,
+        168.0
+      ],
+      "source_pin_identity_preserved": true,
+      "minimum_three_point_radius_mm": 6.999999998835099,
+      "analytic_minimum_radius_mm": 7.0,
+      "analytic_length_mm": 140.19901113071916,
+      "polygon_length_mm": 140.19842116810815,
+      "polygon_chord_error_bound_mm": 0.0002467388416826921,
+      "maximum_sample_step_mm": 0.15000000000000568
+    },
+    {
+      "pin": 2,
+      "status": "PASS",
+      "root_exception": "Own mating housing only, first straight 5 mm; every other target checked",
+      "root_hit": null,
+      "remainder_hit": null,
+      "source_start_mm": [
+        17.5,
+        -45.025001525878906,
+        130.63999938964844
+      ],
+      "neck_end_mm": [
+        -20.93036072312181,
+        -20.930360723121805,
+        168.0
+      ],
+      "source_pin_identity_preserved": true,
+      "minimum_three_point_radius_mm": 6.999999998825778,
+      "analytic_minimum_radius_mm": 7.0,
+      "analytic_length_mm": 105.4771895000566,
+      "polygon_length_mm": 105.47670038072465,
+      "polygon_chord_error_bound_mm": 0.0002467388416826921,
+      "maximum_sample_step_mm": 0.15000000000000568
+    },
+    {
+      "pin": 3,
+      "status": "PASS",
+      "root_exception": "Own mating housing only, first straight 5 mm; every other target checked",
+      "root_hit": null,
+      "remainder_hit": null,
+      "source_start_mm": [
+        19.5,
+        -45.025001525878906,
+        130.63999938964844
+      ],
+      "neck_end_mm": [
+        20.930360723121808,
+        20.930360723121805,
+        168.0
+      ],
+      "source_pin_identity_preserved": true,
+      "minimum_three_point_radius_mm": 6.999999998835099,
+      "analytic_minimum_radius_mm": 7.0,
+      "analytic_length_mm": 145.85726357114538,
+      "polygon_length_mm": 145.85670895587725,
+      "polygon_chord_error_bound_mm": 0.0002467388416826921,
+      "maximum_sample_step_mm": 0.15000000000000568
+    },
+    {
+      "pin": 4,
+      "status": "PASS",
+      "root_exception": "Own mating housing only, first straight 5 mm; every other target checked",
+      "root_hit": null,
+      "remainder_hit": null,
+      "source_start_mm": [
+        21.5,
+        -45.025001525878906,
+        130.63999938964844
+      ],
+      "neck_end_mm": [
+        14.800000000000004,
+        -25.634351952019383,
+        168.0
+      ],
+      "source_pin_identity_preserved": true,
+      "minimum_three_point_radius_mm": 6.999999997825112,
+      "analytic_minimum_radius_mm": 7.0,
+      "analytic_length_mm": 112.05782796682591,
+      "polygon_length_mm": 112.05708357692936,
+      "polygon_chord_error_bound_mm": 0.00025616718926724236,
+      "maximum_sample_step_mm": 0.148648648648674
+    }
+  ],
+  "zero_pose_target_count": 252,
+  "moving_native_parts": 55,
+  "nearby_moving_parts": [
+    "Head_Front",
+    "Head_Rear",
+    "Pitch_Yoke"
+  ],
+  "poses": [
+    {
+      "yaw_deg": -60,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -60,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -50,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -40,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -30,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -20,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": -10,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 0,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 10,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 20,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 30,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 40,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 50,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": -20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": -15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": -10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Front",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": -5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": 0,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": 5,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": 10,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": 15,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": 20,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    },
+    {
+      "yaw_deg": 60,
+      "pitch_deg": 25,
+      "status": "PASS",
+      "failures": [],
+      "nearby_parts": [
+        "Head_Rear",
+        "Pitch_Yoke"
+      ]
+    }
+  ],
+  "failed_poses": [],
+  "interwire_source_sha256": "182fb60d669573efd3f295abc3c2a17816735d7a7c0afe836560832d9cf36890",
+  "wire_OD_mm": 0.6604,
+  "surface_gap_mm": 0.3,
+  "main_unchanged": true,
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "assembly": "NOT_TESTED",
+  "upper_service_loop": "NOT_TESTED",
+  "continuous_between_head_poses": "NOT_TESTED",
+  "supplier_cut_lengths_released": false,
+  "elapsed_s": 5.231867074966431
+}

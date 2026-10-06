@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI · A8细线候选与局部通道</title><style>*{box-sizing:border-box}body{margin:0;background:#f0f4f3;color:#263c36;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1150px;margin:auto;padding:32px 24px 70px}h1{line-height:1.4}a{color:#146c53}.note{background:#fff1d6;padding:18px 22px;border-radius:10px;border:1px solid #e1ca9d}.pass{background:#dcece3;padding:18px 22px;border-radius:10px}img{width:100%;height:auto;border:1px solid #c9d7d2;border-radius:8px;background:#fff}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #cfdbd5;padding:12px}h2{margin-top:30px}code{overflow-wrap:anywhere}@media(max-width:700px){th,td{padding:7px;font-size:14px}h1{font-size:25px}main{padding:24px 16px}}</style>
+<main><p><a href="../index.html">← 打样前工作状态</a> · <a href="../supplier_made_harness/index.html">已找到的CAD与压接线图</a></p>
+<h1>A8：细线资料已核对，完整线束仍未闭合</h1>
+<p class="note">供应商按图制作已经确定。本页是M1.47的独立研究；主模型、PCB与装配视频保持。没有最终下料长度或制造发布。</p>
+<h2>可以减少中间接头的端子组合</h2>
+<table><tr><th>项目</th><th>已确认资料</th><th>边界</th></tr>
+<tr><td>PH细线端子</td><td>SPH-004T-P0.5S<br>AWG32–28，OD0.5–0.9 mm</td><td rowspan="2">两端共同外径0.5–0.8 mm；只是目录适配，不等于实际压接或CAM插合已验证。</td></tr>
+<tr><td>SH端子</td><td>SSH-003T-P0.2-H<br>AWG32–28，OD0.4–0.8 mm</td></tr>
+<tr><td>细线筛查参考</td><td>Alpha2841/7，OD0.5588–0.6604 mm<br>目录10D参考：最大6.604 mm</td><td>完整订货型号、压接、价格和连续弯折寿命未确认，未作采购替换。</td></tr></table>
+<p>H06保留四根线，第三根是CAM本地3V3电平参考。针序和正式电路板均未改变。</p>
+<section id="crimp-guides"><h2>新取得：JST压接工艺参考表</h2>
+<p>已下载并查看PH、SH/SHL两份原厂指导表，补齐30 AWG对应的剥线长度、导体压接尺寸和拉力参考。原表日期为2001年，按端子系列列值；不是当前实际线材和完整端子型号的已批准工艺。</p>
+<p><a href="CRIMP_REFERENCE.md">数值、来源、适用边界及供应商回签要求</a> · <a href="sources/JST_SPH004_crimp.pdf">PH原始PDF</a> · <a href="sources/JST_SSH003_crimp.pdf">SH/SHL原始PDF</a> · <a href="crimp_guide_sources.json">下载记录</a></p>
+<p><strong>后续补查：</strong>已取得按完整料号查询的PH/SH工艺数据及JST官方的-H后缀说明。查询实际来自厂商公开的test-jst主机，生产站接口本次返回403；新旧数值差异和版本限制均已记录。<a href="TOOLING_DETAILS.md">完整料号、逐线规数据与仍缺事项</a> · <a href="tooling_lookup_sources.json">原始查询记录</a></p></section>
+<h2>中间段通过，端部直行受阻</h2>
+<img src="central_uart_review.png" alt="现有中心通道剖面及负60、零位、正60度四根候选线；中间段通过，两个端部直行受阻">
+<p class="pass">局部几何：4根线各33.2 mm，最小抽样弯曲半径7.96 mm。130个头部组合姿态检查中，未检出这段曲线与当前实体、已有14根固定线候选的干涉；也检查了与两组外圈的间隔。</p>
+<p class="note">下端直行遇到Yaw_Base，上端直行遇到Yaw_Reaction_Link。侧向进出、真实固定点、装入路径、俯仰段与插头连接尚未解决。33.2 mm只是局部几何长度，不能交供应商下料。当前检查也不验证连续运动寿命。</p>
+<section id="threading-update"><h2>最新：完整装配与颈部补查</h2><p>上部穿入/回位/入座/弯线与颈部R10独立候选已通过各自连续检查，未应用主模型。新顺序先装22件偏航与舵盘、再装14件头托与CAM，有限刚体路径通过。四根名义全长、153–162mm上方暂存线尾及共同PH插头已建入，身体段供线动作仍有间隙/相交问题。扎带、真实端子入壳、另7根跨关节线/FFC、完整连续顺序仍未完成。CAM内六角螺钉待确认；裁线图未放行。</p><p><a href="cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/index.html">查看剖面和检查范围</a></p></section>
+<section id="joined-entry"><h2>历史阶段：J1连续局部路线</h2><p>四根线已将上下进出与中央活动段接通；独立副本修改两件打印件，导线姿态与间隙检查通过。端子参考包络装入仍未通过，完整固定、俯仰段和下料长度未完成。</p><p><a href="joined_entry_candidate/index.html">查看连续路线、剖面和装入问题</a>。以下原局部段和折线结果为此前研究，主模型未改。</p></section>
+<section id="endpoint-review"><h2>三维出口复核：上端有折线，下端尚未接出</h2>
+<img src="endpoint_review.png" alt="有限姿态障碍物下的出口搜索：下端未连通，上端存在尚未处理弯曲的折线路径">
+<p>108条径向直线没有通过。继续三维搜索后，上端找到单线折线通路，中心线间隙下界0.684 mm；弯曲、四线同时通过和固定未完成。下端在本次有限图内未找到身体出口。</p>
+<p class="note">这不是所有路线无解的证明。完整机械路线仍需要设计，不能把这一项归为只能等实物；也不能把折线或33.2 mm局部长度交给供应商下料。</p>
+<p><a href="ENTRY_REVIEW.md">方法、范围和下一项工作</a> · <a href="central_body_escape_graph.json">下端结果</a> · <a href="central_yaw_escape_graph.json">上端结果</a> · <a href="central_route_unions.json">实体与姿态来源</a></p></section>
+<h2>仍需完成</h2><ol><li>完成符合弯曲与装入要求的进出路线；涉及结构改变时另提完整候选确认。</li><li>补齐端部固定、运动板到CAM整条路径、俯仰余量及逐线加工基准。</li><li>实际CAM插合面、端子压接工艺、其他分支和相机完整FPC资料。</li></ol>
+<p><a href="README.md">完整说明</a> · <a href="receipt.json">A8接收记录</a> · <a href="central_uart_curves.json">四根曲线</a> · <a href="central_uart_source_check.json">源实体检查</a> · <a href="central_exit_check.json">端部限制</a> · <a href="delivery.json">交付检查</a></p>
+<p><a href="../../../../hardware/v1_2/head_harness_A8_20261003/README.md">硬件A8与原厂资料</a> · <a href="../head_harness/index.html">此前头部线束研究</a></p></main></html>

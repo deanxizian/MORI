@@ -1,0 +1,40 @@
+[
+  {
+    "name": "host_tests",
+    "argv": [
+      "sh",
+      "hardware/tests/run_host_tests.sh"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:18.212049+00:00",
+    "exit_code": 0,
+    "log": "reports/host_tests.log",
+    "log_sha256": "239cbf4491f171119f72bcd0b2359a6839e438fbd4d0ad96aac845d0a1634aa7"
+  },
+  {
+    "name": "toolchain_versions",
+    "argv": [
+      "/bin/bash",
+      "-c",
+      "source /Users/dean/esp/esp-idf/export.sh && idf.py --version && xtensa-esp-elf-gcc --version && git -C /Users/dean/esp/esp-idf rev-parse HEAD && git -C /Users/dean/esp/esp-idf status --porcelain"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:18.783651+00:00",
+    "exit_code": 0,
+    "log": "reports/toolchain_versions.log",
+    "log_sha256": "59c269b31e2b1d5e18744578f5fbde90b305d53ded866369364142f199af9bcf"
+  },
+  {
+    "name": "idf_build",
+    "argv": [
+      "/bin/bash",
+      "-c",
+      "source /Users/dean/esp/esp-idf/export.sh && idf.py -C hardware/firmware reconfigure && idf.py -C hardware/firmware build"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:22.165555+00:00",
+    "exit_code": 0,
+    "log": "reports/idf_build.log",
+    "log_sha256": "23357b4db3fe216197190479dd4e8c0ba3e525998950049fb2bad6fd0d43b6a8"
+  }
+]

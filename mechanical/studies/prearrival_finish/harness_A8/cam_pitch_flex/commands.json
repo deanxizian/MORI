@@ -1,0 +1,25 @@
+{
+  "cwd": "/Users/dean/Documents/MORI",
+  "separate_Blender_processes_required": true,
+  "commands": [
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/inspect_pitch_routing_space.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_pitch_flex.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_pitch_flex_side.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_cam_pitch_flex_packing.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/refine_cam_pitch_flex_bundle.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/diagnose_pitch_flex_pairs.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_pitch_early_turn.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/audit_cam_pitch_flex_math.py",
+    "\"/Applications/Blender.app/Contents/MacOS/Blender\" -b mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/open_mouth/cleaned/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/render_pitch_flex_review.py"
+  ],
+  "versions": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "CAD_Python": "3.12.14"
+  },
+  "execution_notes": [
+    "Initial diagnostic output used a helper-overwritten directory; correct source/result regenerated, initial copy retained.",
+    "First packing execution was stopped to remove repeated remote/self queries; same conservative criteria retained.",
+    "First completed packing run failed JSON serialization of NumPy sample indices; typed indices fixed and full run repeated successfully.",
+    "check_cam_pitch_bundle.py was prepared but not run: its required refined-pool PASS is not met."
+  ]
+}

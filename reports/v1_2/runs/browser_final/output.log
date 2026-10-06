@@ -1,0 +1,88 @@
+Already up to date
+Done in 145ms using pnpm v11.19.0
+
+Running 2 tests using 1 worker
+
+(node:85686) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:85686) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [desktop] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory (6.2s)
+(node:85713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:85713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [mobile-chromium] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory (6.2s)
+
+
+  1) [desktop] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 6[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "level": "error",[39m
+    [31m+     "text": "Failed to load resource: the server responded with a status of 409 (Conflict)",[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      34 |  await page.setViewportSize({width:844,height:390});await page.getByRole('button',{name:'⌘ 控制台'}).click();await expect(page.getByText('禁止',{exact:true})).toBeVisible()
+      35 |  expect(errors).toEqual([])
+    > 36 |  expect(consoleMessages).toEqual([])
+         |                          ^
+      37 |  const evidence=resolve(globalThis.process.env.MORI_REPORT_ROOT ?? 'reports/v1','design');mkdirSync(evidence,{recursive:true});writeFileSync(resolve(evidence,testInfo.project.name+'-qa.json'),JSON.stringify({url:page.url(),title:await page.title(),pageErrors:errors,consoleMessages,source:'HOST_TEST',viewport:testInfo.project.use.viewport,rotatedViewport:page.viewportSize(),physical:'NOT_TESTED'},null,2))
+      38 | })
+      39 |
+        at /Users/dean/Documents/MORI/apps/console/tests/e2e/console.spec.ts:36:26
+
+    Error Context: test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-chromium] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 6[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "level": "error",[39m
+    [31m+     "text": "Failed to load resource: the server responded with a status of 409 (Conflict)",[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      34 |  await page.setViewportSize({width:844,height:390});await page.getByRole('button',{name:'⌘ 控制台'}).click();await expect(page.getByText('禁止',{exact:true})).toBeVisible()
+      35 |  expect(errors).toEqual([])
+    > 36 |  expect(consoleMessages).toEqual([])
+         |                          ^
+      37 |  const evidence=resolve(globalThis.process.env.MORI_REPORT_ROOT ?? 'reports/v1','design');mkdirSync(evidence,{recursive:true});writeFileSync(resolve(evidence,testInfo.project.name+'-qa.json'),JSON.stringify({url:page.url(),title:await page.title(),pageErrors:errors,consoleMessages,source:'HOST_TEST',viewport:testInfo.project.use.viewport,rotatedViewport:page.viewportSize(),physical:'NOT_TESTED'},null,2))
+      38 | })
+      39 |
+        at /Users/dean/Documents/MORI/apps/console/tests/e2e/console.spec.ts:36:26
+
+    Error Context: test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-mobile-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-mobile-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-mobile-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 
+    [mobile-chromium] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 

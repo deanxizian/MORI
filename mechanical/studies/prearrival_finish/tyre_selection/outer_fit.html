@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · 软轮候选外形适配</title><style>body{margin:0;background:#f2f5f3;color:#253d34;font:16px/1.75 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1120px;margin:auto;padding:30px 24px 60px}h1{font-size:30px}h2{margin-top:28px}a{color:#166957}aside{background:#fff0d6;border-left:4px solid #b38542;padding:16px 20px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;padding:11px;border-bottom:1px solid #ced8d2}img{width:100%;border:1px solid #d1dbd5}code{word-break:break-all}.table{overflow-x:auto}</style><main>
+<p><a href="index.html">返回产品筛选</a> · <a href="../index.html">打样前工作</a></p>
+<h1>最近尺寸候选还不能直接替换</h1>
+<aside>101.6 × 20.32 mm 候选会使轮壳最小间隙变为约2.84 mm，名义腹部离地变为18.3 mm。每侧向外移1.16 mm可恢复约4 mm轮壳间隙，但不会恢复20 mm离地目标。主模型、轮轴、轮毂与装配视频均未因本研究改变。</aside>
+<p>研究对象为 <a href="https://banebots.com/banebots-compliant-wheel-4-x-0-8-hub-mount-60a-black/">BaneBots T81P-406BB 官方尺寸</a>：4 × 0.8 in，换算101.6 × 20.32 mm。它是成品轮；T81圆＋方中心和卡簧接口不同于当前双D轮毂。下列数据是原主模型与目录外包络的计算，不是实测。</p>
+<img src="outer_fit.png" alt="三种位置的轮壳间隙与离地间隙对比">
+<div class="table"><table><tr><th>方案</th><th>轮径×轮宽/mm</th><th>轮壳最小间隙/mm</th><th>腹部离地/mm</th><th>双轮外侧跨度/mm</th><th>结论</th></tr><tr><td>现有设计</td><td>105 × 18</td><td>4.00</td><td>20.0</td><td>154.00</td><td>保留当前设计</td></tr><tr><td>候选：轮宽中心不动</td><td>101.6 × 20.32</td><td>2.84</td><td>18.3</td><td>156.32</td><td>轮壳间隙与20 mm离地目标均不满足</td></tr><tr><td>候选：每侧向外移 1.16 mm</td><td>101.6 × 20.32</td><td>4.00</td><td>18.3</td><td>158.64</td><td>恢复轮壳间隙；离地与轴端接口仍待处理</td></tr></table></div>
+<h2>已检查的范围</h2>
+<p>对当前209件装配中的身体外壳和下部结构，以512边外包圆柱检查候选轮胎的整体旋转占用；最大径向多包约0.001 mm。六类邻近结构的实体未与该外包络相交。原轮胎、轮毂、轮轴、隔圈及轴端锁紧共14件从接口适配判断中剔除，明确保留为待设计项；共用电机底盖的螺钉和螺母仍参与检查。</p>
+<p>130个组合头部姿态的包围盒与轮胎保持分离。前后倾斜−15°至+15°的31个离散位置中，候选最低离地约16.98 mm，现有约18.68 mm，最低处均为下壳。该检查只表示给定几何未触地，不是平衡、稳定性或断电站立验证。</p>
+<h2>采用前仍要处理</h2>
+<ul><li>取得匹配T81轮毂的完整尺寸、公差、轴端锁紧及装配资料，才能形成可安装的方案。</li><li>若采用该轮径，需处理减少的1.7 mm离地间隙，再检查轴承、电机、底盖和电池相关接口；本研究未移动这些部件。</li><li>轮胎受压半径、跳动、工作范围及重量范围仍未确认。厂家成品轮约90.7 g与现有“仅胎圈”估重不可直接相减。</li><li>国内可交付渠道和含运价仍未确认；轮径及轮毂结构变化须先提交用户审阅。</li></ul>
+<p><a href="outer_fit.json">逐项计算结果</a> · <a href="check_outer_fit.py">可重复运行脚本</a> · <a href="outer_fit.log">实际运行记录</a> · <a href="outer_fit.svg">矢量图</a></p>
+<p>PROTOTYPE / UNVALIDATED。外形筛查完成，完整替换方案 BLOCKED。<br><small>主模型SHA256：<code>bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f</code></small></p></main></html>

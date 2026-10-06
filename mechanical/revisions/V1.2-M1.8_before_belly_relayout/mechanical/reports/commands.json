@@ -1,0 +1,355 @@
+[
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-22T10:41:07.471766+00:00",
+    "finished_utc": "2026-09-22T10:41:23.692299+00:00",
+    "returncode": 0,
+    "log": "reports/build.log"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-22T10:41:23.697476+00:00",
+    "finished_utc": "2026-09-22T10:41:40.008003+00:00",
+    "returncode": 0,
+    "log": "reports/validate.log"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py"
+    ],
+    "started_utc": "2026-09-22T10:41:40.012689+00:00",
+    "finished_utc": "2026-09-22T10:44:07.860624+00:00",
+    "returncode": 0,
+    "log": "reports/render.log"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-22T10:44:07.861326+00:00",
+    "finished_utc": "2026-09-22T10:44:09.477013+00:00",
+    "returncode": 0,
+    "log": "reports/export.log"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-22T10:44:09.477492+00:00",
+    "finished_utc": "2026-09-22T10:44:41.037510+00:00",
+    "returncode": 0,
+    "log": "reports/check_rebuild.log"
+  },
+  {
+    "stage": "body_head_envelope",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/body_head_envelope.py"
+    ],
+    "started_utc": "2026-09-22T10:44:41.037797+00:00",
+    "finished_utc": "2026-09-22T10:45:22.088975+00:00",
+    "returncode": 0,
+    "log": "reports/body_head_envelope.log"
+  },
+  {
+    "stage": "servo_orientation_study",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/servo_orientation_study.py"
+    ],
+    "started_utc": "2026-09-22T10:45:22.089277+00:00",
+    "finished_utc": "2026-09-22T10:45:23.406668+00:00",
+    "returncode": 0,
+    "log": "reports/servo_orientation_study.log"
+  },
+  {
+    "stage": "compare_variants",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/compare_variants.py"
+    ],
+    "started_utc": "2026-09-22T10:45:23.406928+00:00",
+    "finished_utc": "2026-09-22T10:46:06.256315+00:00",
+    "returncode": 0,
+    "log": "reports/compare_variants.log"
+  },
+  {
+    "stage": "compare_structure",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/compare_structure.py"
+    ],
+    "started_utc": "2026-09-22T10:46:06.256785+00:00",
+    "finished_utc": "2026-09-22T10:46:18.545170+00:00",
+    "returncode": 0,
+    "log": "reports/compare_structure.log"
+  },
+  {
+    "stage": "appearance_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/appearance_comparison.py"
+    ],
+    "started_utc": "2026-09-22T10:46:18.545615+00:00",
+    "finished_utc": "2026-09-22T10:46:46.005763+00:00",
+    "returncode": 0,
+    "log": "reports/appearance_comparison.log"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py"
+    ],
+    "started_utc": "2026-09-22T10:46:46.006123+00:00",
+    "finished_utc": "2026-09-22T10:47:31.390075+00:00",
+    "returncode": 0,
+    "log": "reports/catalog.log"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-22T10:47:31.390416+00:00",
+    "finished_utc": "2026-09-22T10:47:32.704113+00:00",
+    "returncode": 0,
+    "log": "reports/delivery_check.log"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-22T10:47:32.704458+00:00",
+    "finished_utc": "2026-09-22T10:47:33.331832+00:00",
+    "returncode": 0,
+    "log": "reports/report.log"
+  },
+  {
+    "stage": "reconcile_check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-22T10:54:15.075815+00:00",
+    "finished_utc": "2026-09-22T10:54:48.486536+00:00",
+    "returncode": 0,
+    "log": "reports/reconcile_check_rebuild.log",
+    "reason": "Read-only hardware input advanced to S3 during original pipeline; refresh actual build and validation; reuse renders/STLs only if repeated geometry/world transforms are identical."
+  },
+  {
+    "stage": "reconcile_validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-22T10:54:48.487271+00:00",
+    "finished_utc": "2026-09-22T10:55:03.251291+00:00",
+    "returncode": 0,
+    "log": "reports/reconcile_validate.log",
+    "reason": "Read-only hardware input advanced to S3 during original pipeline; refresh actual build and validation; reuse renders/STLs only if repeated geometry/world transforms are identical."
+  },
+  {
+    "stage": "hardware_refresh2_check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-22T10:56:28.932108+00:00",
+    "finished_utc": "2026-09-22T10:57:00.806535+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_check_rebuild.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence.",
+    "check_status": "PASS"
+  },
+  {
+    "stage": "hardware_refresh2_validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-22T10:57:00.807531+00:00",
+    "finished_utc": "2026-09-22T10:57:14.602174+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_validate.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence.",
+    "check_counts": {
+      "PASS": 30,
+      "FAIL": 0,
+      "NOT_TESTED": 12,
+      "BLOCKED": 10
+    }
+  },
+  {
+    "stage": "hardware_refresh2_servo_orientation_study",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/servo_orientation_study.py"
+    ],
+    "started_utc": "2026-09-22T10:57:14.603059+00:00",
+    "finished_utc": "2026-09-22T10:57:16.056369+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_servo_orientation_study.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence."
+  },
+  {
+    "stage": "hardware_refresh2_compare_structure",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/compare_structure.py"
+    ],
+    "started_utc": "2026-09-22T10:57:16.056766+00:00",
+    "finished_utc": "2026-09-22T10:57:28.142517+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_compare_structure.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence."
+  },
+  {
+    "stage": "hardware_refresh2_appearance_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/appearance_comparison.py"
+    ],
+    "started_utc": "2026-09-22T10:57:28.143307+00:00",
+    "finished_utc": "2026-09-22T10:57:55.342117+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_appearance_comparison.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence."
+  },
+  {
+    "stage": "hardware_refresh2_delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-22T10:57:55.343042+00:00",
+    "finished_utc": "2026-09-22T10:57:56.716115+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_delivery_check.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence.",
+    "check_status": "PASS"
+  },
+  {
+    "stage": "hardware_refresh2_report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-22T10:57:56.716695+00:00",
+    "finished_utc": "2026-09-22T10:57:57.368344+00:00",
+    "returncode": 0,
+    "log": "reports/hardware_refresh2_report.log",
+    "reason": "Hardware owner additionally set S3 power-board dimensions to null; reviewed and preserved. Exact geometry identity required to reuse render/STL evidence."
+  }
+]

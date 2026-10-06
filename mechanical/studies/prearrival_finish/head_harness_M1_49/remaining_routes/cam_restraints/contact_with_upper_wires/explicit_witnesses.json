@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "scope": "Explicit collision/clearance diagnosis, not route release or global-minimum certification",
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/contact_continuous/path.npz": "b780fbccc20ceb1fd437c8017cdad1ffaa1d5a04972a606128dd1e109de9aeac",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_side_fans/c6_join/candidate_curves.npz": "9abf98d1d6519c46a08ce50bc8f6a49b82265ed2fb286d0b3c04a1b80778c1be",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/wire_body_arrival_refined/state.npz": "d6f8cfa6f65072a65452b17952554a2a0e12be24393983a7a98c898e08226f12",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/wire_body_arrival_refined/review.json": "58ecb6c340de4579beb9707e0ce13a5cf6df06d0c8ad3afb807ba18b24c86400"
+  },
+  "continuous_path_sample_witnesses": [
+    {
+      "wire": "P_J9_1",
+      "best_observed": null,
+      "clearance_status": "NOT_TESTED"
+    },
+    {
+      "wire": "P_J9_2",
+      "best_observed": null,
+      "clearance_status": "NOT_TESTED"
+    },
+    {
+      "wire": "P_J9_3",
+      "best_observed": null,
+      "clearance_status": "NOT_TESTED"
+    },
+    {
+      "wire": "P_J18_1",
+      "best_observed": {
+        "path_index": 423,
+        "terminal_rear_mm": [
+          -8.176214342215804,
+          -12.237412238266744,
+          194.34999352219737
+        ],
+        "wire_point_mm": [
+          -7.214360161211101,
+          -12.614474468264007,
+          190.8625
+        ],
+        "box_closest_point_mm": [
+          -7.214360111774023,
+          -12.614474516709956,
+          190.86249923287724
+        ],
+        "wire_radius_mm": 0.5842,
+        "centre_inside_box": true,
+        "sampled_surface_gap_mm": -0.5842,
+        "gap_upper_bound_with_curve_error_mm": -0.5838800000000001
+      },
+      "clearance_status": "FAIL"
+    },
+    {
+      "wire": "P_J18_2",
+      "best_observed": {
+        "path_index": 954,
+        "terminal_rear_mm": [
+          -9.38722536807479,
+          5.135166582988098,
+          145.64806727135453
+        ],
+        "wire_point_mm": [
+          -8.732806581598267,
+          5.958199489807307,
+          140.00275017673306
+        ],
+        "box_closest_point_mm": [
+          -8.73280645887201,
+          5.958199543665449,
+          140.0027488307845
+        ],
+        "wire_radius_mm": 0.5842,
+        "centre_inside_box": true,
+        "sampled_surface_gap_mm": -0.5842,
+        "gap_upper_bound_with_curve_error_mm": -0.5838800000000001
+      },
+      "clearance_status": "FAIL"
+    },
+    {
+      "wire": "SPK_reservation_3",
+      "best_observed": null,
+      "clearance_status": "NOT_TESTED"
+    },
+    {
+      "wire": "SPK_reservation_6",
+      "best_observed": null,
+      "clearance_status": "NOT_TESTED"
+    }
+  ],
+  "arrival_pair_witness": {
+    "cam_point_mm": [
+      -8.905473253195385,
+      5.877214103860013,
+      139.61033333333333
+    ],
+    "neighbor_point_mm": [
+      -8.803367160961905,
+      5.8359849813379885,
+      139.60941119631968
+    ],
+    "centre_distance_mm": 0.11011968466990855,
+    "sampled_surface_gap_mm": -0.8042803153300915,
+    "surface_gap_upper_bound_with_curve_error_mm": -0.8036603153300914,
+    "clearance_status": "FAIL"
+  },
+  "main_changed": false,
+  "full_harness": "BLOCKED",
+  "script_sha256": "9732e22634b3b3cc8961e52e299e2637b0a41b69b4af136e10bad06e94501246",
+  "actual_command": [
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/diagnose_cam_contact_neighbors.py"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "objective": "在拿到实物之前，先把能做的都做了",
+  "revision": "V1.2-M1.47",
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "updated_utc": "2026-10-02T11:45:50.127157+00:00",
+  "status": "BLOCKED",
+  "status_scope": "Remaining project design/data gaps; this is not the goal tool status",
+  "manufacturing_release": false,
+  "completed": [
+    {
+      "id": "approved_cleanup",
+      "status": "PASS",
+      "detail": "取消废弃转台孔槽；轮驱底盖轴承座18→19.2mm且上座同步。3件与审核候选完全一致，206件其余实体几何和位置保持，零件数量不变。"
+    },
+    {
+      "id": "geometry_delivery",
+      "status": "PASS",
+      "detail": "主模型、STL、当前全部渲染及电子细模同步；主检查124 PASS / 0 FAIL，17 BLOCKED / 19 NOT_TESTED仍保留。21/21候选STL拓扑通过。"
+    },
+    {
+      "id": "animation",
+      "status": "PASS",
+      "detail": "M1.47-A1，82.5秒、1980帧、22章，源模型及路径回读通过；反力夹按预装总成演示的限制保留。"
+    },
+    {
+      "id": "engineering",
+      "status": "PASS",
+      "detail": "209实体质量覆盖及390姿态计算已基于M1.47重算；质量目标与执行器资格未获放行。"
+    },
+    {
+      "id": "tyre_research",
+      "status": "PASS",
+      "detail": "4类具名厂家产品已比对，尺寸及未知接口分开记录；没有套用其他产品尺寸或改变主轮径。"
+    },
+    {
+      "id": "hardware_handoff",
+      "status": "PASS",
+      "detail": "扩展电气输入清单已发送到既有硬件对话，并收到A2分项资料；16个正式原生PCB文件哈希保持。J10失败候选的独立机械包络筛查已完成，未应用。"
+    }
+  ],
+  "additional_checks": {
+    "report": "thin_candidate_service.json",
+    "counts": {
+      "PASS": 9,
+      "FAIL": 3,
+      "NOT_TESTED": 1
+    },
+    "scope": "Historical isolated candidate service checks retained; two explicit failed reaction approaches rechecked on M1.47, not included in general validation count.",
+    "current_main_recheck": "reaction_service_sections_M1_47.json"
+  },
+  "remaining": [
+    {
+      "id": "reaction_assembly",
+      "item": "反力夹口初次装配",
+      "status": "BLOCKED",
+      "owner": "机械；依赖舵盘接口定型",
+      "detail": "反力夹口局部薄边及初装仍未修复。M1.47当前实体复核：直柄工具与头座相交约9.26mm³，反力件上移2mm与头座相交约18.13mm³；只是两条具体路线失败，不表示不存在其他方案。未采用失败的夹口候选；最终舵盘资料仍缺。",
+      "evidence": "reaction_assembly_review.html"
+    },
+    {
+      "id": "harness",
+      "item": "完整线束",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件线材输入",
+      "detail": "完整线束尚未闭合。A2已补线规和外径/弯曲参考；旧R6分束搜索不代表新线材符合。J10侧出插合、12mm直拔及5mm出线分配扫到板上器件；还需联合布置。头部FFC厚度、弯曲和应力释放待完成。",
+      "evidence": "J10_A2_REVIEW.md"
+    },
+    {
+      "id": "hardware_selection",
+      "item": "未定采购件与安装",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件对话；现成软轮胎路线已确认",
+      "detail": "厂家目录筛选已完成：BaneBots101.6×20.32mm外形接近，但金属转接/定位接口、重量范围及国内交付未定，尚未替换105×18mm占位轮。扩展电气问题单已发送，并收到A2分项资料；J10侧出候选电气FAIL、机械包络也有阻挡，未替换正式板卡。",
+      "evidence": "tyre_selection/index.html"
+    },
+    {
+      "id": "supplier_interfaces",
+      "item": "传动与插接资料",
+      "status": "BLOCKED",
+      "owner": "厂家资料＋机械/硬件",
+      "detail": "SCS0009匹配舵盘及短轴/锁紧叠层、S288输出自攻螺钉规格、WeAct E成品孔/针与有效插接长度仍缺。已整理可在到货前询问的清单，尚未联系供应商。",
+      "evidence": "SUPPLIER_DATA_REQUEST.md"
+    },
+    {
+      "id": "load_budget",
+      "item": "质量与驱动预算",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件工作点",
+      "detail": "当前名义估算1.324kg，超过1.0–1.2kg工程目标，尚缺未选模块及完整线束。已按M1.47重算390姿态和载荷情景；S288在9V连续能力仍缺资料。",
+      "evidence": "ENGINEERING.md"
+    },
+    {
+      "id": "physical_validation",
+      "item": "实物与打印验证",
+      "status": "NOT_TESTED",
+      "owner": "到货/试件后",
+      "detail": "CAM/相机照片估计细节、喇叭安装耳、电池与出线、排针排母实际插接、PA12配合和紧固、承载/蠕变/冲击、声学、温升与平衡需实物。",
+      "evidence": "../../reports/组装与打印.md"
+    }
+  ],
+  "approved_scope": {
+    "local_cleanups": "PASS",
+    "stock_tyre_screening": "PASS",
+    "tyre_selection": "BLOCKED",
+    "hardware_request_sent": true,
+    "hardware_thread_id": "01a0c24f-ddc2-7f03-a9d4-d09dff26d30f"
+  }
+}

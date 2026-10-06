@@ -1,0 +1,101 @@
+{
+  "pcb_sha256": "20f9fc8a637444e4d373a988eba8bf8b45d7fc85557be88c2de6fe25771c7b2c",
+  "native_width_inventory": {
+    "/CC1": {
+      "0.2": 14
+    },
+    "/CC2": {
+      "0.2": 11
+    },
+    "/CLR_N": {
+      "0.2": 5
+    },
+    "/LOOP_3V3": {
+      "0.2": 4
+    },
+    "/MASTER_RETURN": {
+      "0.2": 7
+    },
+    "/VBUS_FUSED": {
+      "0.6": 14
+    },
+    "/VBUS_RAW": {
+      "0.2": 7,
+      "0.6": 7,
+      "0.5": 6
+    }
+  },
+  "foil_mm_assumed": 0.035,
+  "via_plating_mm_assumed": 0.02,
+  "scenario_source": "S3 logic budgets 0.75A / 2A; 30W/9V wheel and 12W/6V head; 6.48A aggregate. Branch BAT_MON values are conservative engineering scenarios, not measured simultaneous currents. Rear1A from P4 input limit. IMU20mA is an engineering allowance.",
+  "method": "Native copper-shape adjacency after filtering narrow tracks, shortest resistance-weighted single path; sums full segment lengths even at mid-segment junctions. No IC internal conduction inferred. Copper zones, parallel current sharing, contact/connector/pad resistance and return network excluded.",
+  "qualification": "NOT_TESTED: this is drawn-path and DC resistance estimation only. It does not establish allowable continuous current or temperature rise. Converter SW currents have ripple, so DC scenarios are not RMS loss qualifications.",
+  "paths": [
+    {
+      "net": "/VBUS_RAW",
+      "source": "USB1",
+      "destination": "F1",
+      "design_scenario_A": 1,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.49,
+      "minimum_path_width_mm": 0.5,
+      "widest_complete_path_minimum_width_mm": 0.5,
+      "complete_segment_length_mm": 7.650585119378489,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 6.941453239981731,
+      "drop20_mV": 6.941453239981731,
+      "loss20_W": 0.006941453239981731,
+      "path_uuids": [
+        "04128062-0bbf-4690-bfbc-68ed4c4e4f03",
+        "5728804c-3cdd-4c91-937b-3a35488b4307",
+        "841b33ac-3c5c-483f-a819-480d17680ee5",
+        "4c5f6df3-5b66-4ff2-a45e-9bd88795e586",
+        "fde457b4-1839-4613-a3ef-94b74722dcb2",
+        "918e7ac8-84b2-468f-85e8-08db4986a856",
+        "6528d96b-4ea6-43b8-8b50-46a029f9252a"
+      ]
+    },
+    {
+      "net": "/VBUS_FUSED",
+      "source": "F1",
+      "destination": "J2",
+      "design_scenario_A": 1,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.6,
+      "widest_complete_path_minimum_width_mm": 0.6,
+      "complete_segment_length_mm": 28.689533905932738,
+      "single_path_vias": [
+        {
+          "xy": [
+            6.096,
+            16.1036
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            7.0104,
+            3.81
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 25.420881572849904,
+      "drop20_mV": 25.420881572849904,
+      "loss20_W": 0.025420881572849902,
+      "path_uuids": [
+        "5d738229-48fc-4010-a96c-9a1b76d0c5b9",
+        "3ba9e4fb-a676-4d69-9776-77b3f6595e7c",
+        "dbbcc545-b76f-4706-8d88-7b4bec8fccb9",
+        "2fa62ca9-d0ef-49b8-8b30-e360f6760b05",
+        "ab1ae713-cacb-4134-80ac-684f960da7f9",
+        "0e58109d-34a3-4950-89fb-cbd0bf52af7d",
+        "4dbd4d62-26d8-49ba-9a8d-c621d50d6e9b",
+        "10097b77-3553-4adb-8e73-667b56e7edd8",
+        "487f7a28-a33e-4774-a0c4-83f7afd9952d",
+        "6f140dac-f519-4fce-8d81-a4a18bd9205d"
+      ]
+    }
+  ]
+}

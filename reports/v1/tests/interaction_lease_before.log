@@ -1,0 +1,15 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______ test_conversation_and_button_stop_do_not_depend_on_motion_lease ________
+
+    def test_conversation_and_button_stop_do_not_depend_on_motion_lease():
+>    r=Rig();assert r.issue('VOICE_SESSION',{'action':'start','text':''})['status']=='COMPLETED'
+E    AssertionError: assert 'REJECTED' == 'COMPLETED'
+E      
+E      - COMPLETED
+E      + REJECTED
+
+simulation/tests/test_device.py:68: AssertionError
+=========================== short test summary info ============================
+FAILED simulation/tests/test_device.py::test_conversation_and_button_stop_do_not_depend_on_motion_lease
+1 failed in 0.08s

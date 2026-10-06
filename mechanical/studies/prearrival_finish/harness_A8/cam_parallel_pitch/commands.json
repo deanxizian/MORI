@@ -1,0 +1,23 @@
+{
+  "cwd": "/Users/dean/Documents/MORI",
+  "versions": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "Python": "3.12.14"
+  },
+  "commands": [
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/screen_parallel_pitch_tails.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/screen_parallel_shifted_tails.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/plan_cam_following_arc.py",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/check_cam_parallel_bundle.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/audit_parallel_tail_math.py",
+    "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python mechanical/studies/prearrival_finish/harness_A8/audit_cam_following_arc.py"
+  ],
+  "render_command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/open_mouth/cleaned/candidate.blend -t 4 --python-exit-code 1 --python mechanical/studies/prearrival_finish/harness_A8/render_cam_parallel_review.py",
+  "execution_notes": [
+    "The original R11 forward-tail failure and the X shift1.9mm failure are preserved in history directories.",
+    "A7.2mm candidate passed but was superseded by a7.5mm recipe to increase curvature margin; both are preserved.",
+    "High-anchor fixed-column search was stopped after repeated display-frame failures; its partial log is retained as incomplete.",
+    "The subsequent lower-anchor fixed-column search completed with no accepted configuration; the following-column family passed.",
+    "Only independent study outputs and status pages changed; no main geometry, hardware or production drawing changes."
+  ]
+}

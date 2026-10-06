@@ -1,0 +1,85 @@
+{
+  "revision": "V1.2-M1.11",
+  "before_revision": "V1.2-M1.10",
+  "mass_data_status": "ASSUMED",
+  "before": {
+    "ground_clearance_mm": 20,
+    "wheel_diameter_mm": 105,
+    "wheel_axis_ground_z_mm": 52.5,
+    "wheel_axis_relative_body_z_mm": -47.5,
+    "body_center_ground_z_mm": 100.0,
+    "head_center_ground_z_mm": 222.0,
+    "derived_normal_height_mm": 282.0,
+    "mass_g_rounded": 1285,
+    "estimated_COM_ground_mm": [
+      -0.4,
+      0.4,
+      115.6
+    ],
+    "estimated_COM_above_axle_mm": 63.1,
+    "estimated_inertia_at_axle_kg_m2": [
+      [
+        0.0116569,
+        7.5e-06,
+        6.88e-05
+      ],
+      [
+        7.5e-06,
+        0.0126882,
+        -5.69e-05
+      ],
+      [
+        6.88e-05,
+        -5.69e-05,
+        0.0033117
+      ]
+    ]
+  },
+  "after": {
+    "ground_clearance_mm": 20,
+    "wheel_diameter_mm": 105,
+    "wheel_axis_ground_z_mm": 52.5,
+    "wheel_axis_relative_body_z_mm": -47.5,
+    "body_center_ground_z_mm": 100.0,
+    "head_center_ground_z_mm": 222.0,
+    "derived_normal_height_mm": 282.0,
+    "mass_g_rounded": 1290,
+    "estimated_COM_ground_mm": [
+      -0.4,
+      -0.5,
+      116.0
+    ],
+    "estimated_COM_above_axle_mm": 63.5,
+    "estimated_inertia_at_axle_kg_m2": [
+      [
+        0.0117984,
+        -2.2e-06,
+        7.25e-05
+      ],
+      [
+        -2.2e-06,
+        0.0127965,
+        3.03e-05
+      ],
+      [
+        7.25e-05,
+        3.03e-05,
+        0.0033516
+      ]
+    ]
+  },
+  "changes": {
+    "wheel_rise_relative_body_mm": 0.0,
+    "body_lowering_mm": 0.0,
+    "head_lowering_mm": 0.0,
+    "estimated_COM_lowering_mm": -0.4
+  },
+  "battery_center_mm": [
+    0,
+    0,
+    91
+  ],
+  "yaw_bearing_ground_z_mm": 157.0,
+  "method": "Signed triangle-solid volume moments. Compare archivedM1.9 with currentM1.10. Unknown power board stays30g in both. Current battery changes from190g assumption to vendor nominal150g and speaker20g assumption to vendor nominal25g; differences include selected products and geometry, not a geometry-only COM claim. Inertia recomputed about wheel axis.",
+  "limits": "At least35% mass uncertainty; missing complete populated boards (including S3 power circuits), plugs and real cables. COM estimate is not a measured balance point or proof of improved control. Lower ground clearance reduces obstacle margin. No physical dynamics/strength qualification."
+}

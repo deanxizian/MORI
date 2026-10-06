@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "cases": [
+    {
+      "id": "cavity_next_to_rear_seat",
+      "object": "Body_Upper",
+      "expected_reject": false,
+      "rejected": false,
+      "nearest_surface_mm": 14.882802963256836,
+      "containment_fraction": 0.0,
+      "status": "PASS"
+    },
+    {
+      "id": "entire_curve_inside_existing_deck",
+      "object": "Load_Frame",
+      "expected_reject": true,
+      "rejected": true,
+      "nearest_surface_mm": 1.9000015258789062,
+      "containment_fraction": 0.9999999999999293,
+      "status": "PASS"
+    },
+    {
+      "id": "curve_crosses_existing_deck",
+      "object": "Load_Frame",
+      "expected_reject": true,
+      "rejected": true,
+      "nearest_surface_mm": 0.0,
+      "containment_fraction": null,
+      "status": "PASS"
+    },
+    {
+      "id": "within_allocated_surface_margin",
+      "object": "Load_Frame",
+      "expected_reject": true,
+      "rejected": true,
+      "nearest_surface_mm": 0.6999969482421875,
+      "containment_fraction": null,
+      "status": "PASS"
+    }
+  ],
+  "main_modified": false,
+  "method": "Scene-derived empty cavity / solid interior / crossing / margin cases; no nearest-face normal sign used"
+}

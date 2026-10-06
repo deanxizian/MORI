@@ -1,0 +1,9 @@
+# MORI V1.2-M1.50
+
+CAM相机与屏幕排线入口按官方照片修正；仅两个重建插座变化，另外208件实体及130组板内元件保持。C5＋K1、全部打印件与安装孔保持；21件STL与M1.49逐文件相同。
+
+主模型、电子细模、预览及V1.2-M1.50-A1已同步。主检查126 PASS / 0 FAIL；未确认接口仍为BLOCKED/NOT_TESTED。排线接触面、插深、补强片和实物版本尚未确认。
+
+完整线束、反力连接初装、部分供应商接口和质量预算尚未完成。前后分壳、C6及导线约束仍是未采用候选。PROTOTYPE / UNVALIDATED。
+
+[本轮详情](studies/prearrival_finish/cam_entry_adoption/index.html) · [装配动画](animation/index.html) · [未完成工作](studies/prearrival_finish/work_status.json)

@@ -1,0 +1,1758 @@
+{
+  "status": "HOST_CALCULATION_ONLY",
+  "mechanical_mass_sha256": "88fb3aaa4271cd80fe5f9bd5c6d2609c6c06e003c2b5cb9da4213e2d2087e0b1",
+  "geometry_revision": "V1.2-M1.1",
+  "assumptions": {
+    "mass_scale_uncertain": [
+      0.75,
+      1,
+      1.35
+    ],
+    "extra_power_wiring_mass_g": [
+      50,
+      90,
+      160
+    ],
+    "power_mechanical_relayout_required": true,
+    "inertia": "raw inertia is about world origin; parallel-axis removed before rigid transforms; published precision is computational, not measured",
+    "balance_equations": "[M+Jw/r², m*l*cos(theta); m*l*cos(theta), Jb+m*l²] [xdd,thetadd] = [tau/r+m*l*thetad²*sin(theta)-friction, m*g*l*sin(theta)-tau-damping]",
+    "torque_port": "tau is summed physical wheel torque in SI; Unitree command conversion must be empirically identified",
+    "controller": "offline LQR diagnostic only, not production firmware gains",
+    "head_joint_m": [
+      0.0,
+      0.0,
+      0.227
+    ],
+    "exclusions": "floor compliance, pitch/yaw cross coupling, gearbox elasticity, IMU noise and time-varying cable routing not fully modeled"
+  },
+  "scenarios": {
+    "light": [
+      {
+        "pitch_deg": -20,
+        "yaw_deg": -60,
+        "body_mass": 0.7020842529368938,
+        "total_mass": 0.8507418059161977,
+        "wheel_mass": 0.14865755297930366,
+        "l": 0.0858180139080703,
+        "Jbody": 0.003209628230342095,
+        "Jwheels": 0.00016613593105170268,
+        "center_m": [
+          0.0002458323067376334,
+          -0.0015659729694895393,
+          0.11832228205650284
+        ],
+        "body_center_m": [
+          0.00029788422020498976,
+          -0.0018975482179554451,
+          0.1333180139080703
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.004279720882714466,
+            7.1895235070882195e-06,
+            1.0377105782532067e-05
+          ],
+          [
+            7.189523507088226e-06,
+            0.004855062121730025,
+            -2.7737027147511526e-05
+          ],
+          [
+            1.0377105782532067e-05,
+            -2.7737027147511526e-05,
+            0.0021393304683920734
+          ]
+        ],
+        "head_pitch_mass": 0.11654822017343279,
+        "head_pitch_gravity_Nm": 0.0026019649845886663,
+        "head_pitch_inertia_joint": 0.0002239465928515286,
+        "head_yaw_mass": 0.1503100638780449,
+        "head_yaw_inertia_joint": 0.00026803194590722896,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 5.185441422223545e-05
+      },
+      {
+        "pitch_deg": 0,
+        "yaw_deg": 0,
+        "body_mass": 0.7020842529368938,
+        "total_mass": 0.8507418059161977,
+        "wheel_mass": 0.14865755297930366,
+        "l": 0.08587206009685829,
+        "Jbody": 0.0032083769630751,
+        "Jwheels": 0.00016613593105170268,
+        "center_m": [
+          -9.775578241811102e-05,
+          -0.002176475446399977,
+          0.11836688428224916
+        ],
+        "body_center_m": [
+          -0.00011845434633728973,
+          -0.0026373169530473878,
+          0.13337206009685829
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.004280019564629423,
+            3.835298679935788e-06,
+            3.416909105575918e-05
+          ],
+          [
+            3.835298679935788e-06,
+            0.004863162339753432,
+            2.4310763756460385e-05
+          ],
+          [
+            3.416909105575918e-05,
+            2.4310763756460385e-05,
+            0.0021436223394716092
+          ]
+        ],
+        "head_pitch_mass": 0.11654822017343279,
+        "head_pitch_gravity_Nm": 0.0004916066163664086,
+        "head_pitch_inertia_joint": 0.00022394659285152838,
+        "head_yaw_mass": 0.1503100638780449,
+        "head_yaw_inertia_joint": 0.00027422428629748436,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.0005496221928292084
+      },
+      {
+        "pitch_deg": 25,
+        "yaw_deg": 60,
+        "body_mass": 0.7020842529368938,
+        "total_mass": 0.8507418059161977,
+        "wheel_mass": 0.14865755297930366,
+        "l": 0.08571997993863258,
+        "Jbody": 0.00319062598550564,
+        "Jwheels": 0.00016613593105170268,
+        "center_m": [
+          0.0006473744241443924,
+          -0.002632616218737185,
+          0.11824137841956331
+        ],
+        "body_center_m": [
+          0.0007844478551035856,
+          -0.0031900398246783594,
+          0.13321997993863258
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.004259462272623766,
+            -9.421307375469763e-09,
+            -2.238752815856763e-05
+          ],
+          [
+            -9.421307375469763e-09,
+            0.004838839368256559,
+            6.089042265086787e-05
+          ],
+          [
+            -2.2387528158567602e-05,
+            6.0890422650867885e-05,
+            0.0021376501959152893
+          ]
+        ],
+        "head_pitch_mass": 0.11654822017343279,
+        "head_pitch_gravity_Nm": 0.004231494311806732,
+        "head_pitch_inertia_joint": 0.00022394659285152844,
+        "head_yaw_mass": 0.1503100638780449,
+        "head_yaw_inertia_joint": 0.0002704667599834825,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.0005298733409215174
+      }
+    ],
+    "nominal": [
+      {
+        "pitch_deg": -20,
+        "yaw_deg": -60,
+        "body_mass": 0.9376456705825251,
+        "total_mass": 1.1358557412215968,
+        "wheel_mass": 0.1982100706390715,
+        "l": 0.08620582079748566,
+        "Jbody": 0.004161557384611662,
+        "Jwheels": 0.00022151457473560356,
+        "center_m": [
+          0.0002667585590617057,
+          -0.002048819584104736,
+          0.11866265882474668
+        ],
+        "body_center_m": [
+          0.00032314897815545213,
+          -0.0024819221463485528,
+          0.13370582079748566
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.005600026388691254,
+            8.407504701966849e-06,
+            8.876087861231778e-06
+          ],
+          [
+            8.407504701966839e-06,
+            0.006358096259244577,
+            -2.505950351190988e-05
+          ],
+          [
+            8.876087861231778e-06,
+            -2.505950351190988e-05,
+            0.0028543395077130812
+          ]
+        ],
+        "head_pitch_mass": 0.15539762689791037,
+        "head_pitch_gravity_Nm": 0.003469286646118222,
+        "head_pitch_inertia_joint": 0.00029859545713537125,
+        "head_yaw_mass": 0.19601341850405993,
+        "head_yaw_inertia_joint": 0.00035497357841531794,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 1.3622962916278344e-05
+      },
+      {
+        "pitch_deg": 0,
+        "yaw_deg": 0,
+        "body_mass": 0.9376456705825251,
+        "total_mass": 1.1358557412215968,
+        "wheel_mass": 0.1982100706390715,
+        "l": 0.08625977860446225,
+        "Jbody": 0.004161298270411334,
+        "Jwheels": 0.00022151457473560356,
+        "center_m": [
+          -3.357811568305146e-05,
+          -0.0025843876376234333,
+          0.11870720084031224
+        ],
+        "body_center_m": [
+          -4.0676235367155726e-05,
+          -0.0031307045888954864,
+          0.13375977860446225
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.005601885725764945,
+            4.970957940894959e-06,
+            3.494385574504879e-05
+          ],
+          [
+            4.970957940894959e-06,
+            0.006367161574522095,
+            3.4510809301223354e-05
+          ],
+          [
+            3.494385574504879e-05,
+            3.4510809301223354e-05,
+            0.0028598569986347674
+          ]
+        ],
+        "head_pitch_mass": 0.15539762689791037,
+        "head_pitch_gravity_Nm": 0.000655475488488547,
+        "head_pitch_inertia_joint": 0.00029859545713537136,
+        "head_yaw_mass": 0.19601341850405993,
+        "head_yaw_inertia_joint": 0.0003632300322689919,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.0005673052266807015
+      },
+      {
+        "pitch_deg": 25,
+        "yaw_deg": 60,
+        "body_mass": 0.9376456705825251,
+        "total_mass": 1.1358557412215968,
+        "wheel_mass": 0.1982100706390715,
+        "l": 0.0861079471431412,
+        "Jbody": 0.004136120679172068,
+        "Jwheels": 0.00022151457473560356,
+        "center_m": [
+          0.0006677586200336774,
+          -0.002965802365096663,
+          0.11858186440259455
+        ],
+        "body_center_m": [
+          0.0008089169348317228,
+          -0.003592747044355007,
+          0.1336079471431412
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.005572934307331188,
+            6.655688066777563e-07,
+            -3.465692719598259e-05
+          ],
+          [
+            6.655688066777733e-07,
+            0.006336509588595482,
+            7.35883967049759e-05
+          ],
+          [
+            -3.465692719598259e-05,
+            7.35883967049759e-05,
+            0.0028519372438370856
+          ]
+        ],
+        "head_pitch_mass": 0.15539762689791037,
+        "head_pitch_gravity_Nm": 0.005641992415742309,
+        "head_pitch_inertia_joint": 0.0002985954571353712,
+        "head_yaw_mass": 0.19601341850405993,
+        "head_yaw_inertia_joint": 0.00035821999718365586,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.0007892599697743404
+      }
+    ],
+    "heavy": [
+      {
+        "pitch_deg": -20,
+        "yaw_deg": -60,
+        "body_mass": 1.2814316552864078,
+        "total_mass": 1.5490152506491544,
+        "wheel_mass": 0.26758359536274656,
+        "l": 0.08640817326950419,
+        "Jbody": 0.0054990220825910565,
+        "Jwheels": 0.0002990446758930648,
+        "center_m": [
+          0.0002804378000729162,
+          -0.0025823233354291737,
+          0.11898165156633356
+        ],
+        "body_center_m": [
+          0.0003389977348314978,
+          -0.003121554164725896,
+          0.1339081732695042
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.007452980276843901,
+            1.0022298485341517e-05,
+            6.813573122505175e-06
+          ],
+          [
+            1.002229848534151e-05,
+            0.008463077558220617,
+            -2.0177656102647652e-05
+          ],
+          [
+            6.8135731225051205e-06,
+            -2.0177656102647652e-05,
+            0.003859611872403024
+          ]
+        ],
+        "head_pitch_mass": 0.20978679631217909,
+        "head_pitch_gravity_Nm": 0.004683536972259599,
+        "head_pitch_inertia_joint": 0.00040310386713275116,
+        "head_yaw_mass": 0.25999811498048087,
+        "head_yaw_inertia_joint": 0.00047669186392664225,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.00010529129091019751
+      },
+      {
+        "pitch_deg": 0,
+        "yaw_deg": 0,
+        "body_mass": 1.2814316552864078,
+        "total_mass": 1.5490152506491544,
+        "wheel_mass": 0.26758359536274656,
+        "l": 0.08646147377933706,
+        "Jbody": 0.0055000680845473295,
+        "Jwheels": 0.0002990446758930648,
+        "center_m": [
+          1.6071600369824126e-05,
+          -0.003055433812714891,
+          0.11902574471552244
+        ],
+        "body_center_m": [
+          1.9427609177998043e-05,
+          -0.003693457739555003,
+          0.13396147377933706
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.00745692865665147,
+            6.50166055427279e-06,
+            3.607607987314383e-05
+          ],
+          [
+            6.50166055427279e-06,
+            0.008473477732618027,
+            4.992740727894596e-05
+          ],
+          [
+            3.607607987314383e-05,
+            4.992740727894596e-05,
+            0.0038667478474047664
+          ]
+        ],
+        "head_pitch_mass": 0.20978679631217909,
+        "head_pitch_gravity_Nm": 0.0008848919094595406,
+        "head_pitch_inertia_joint": 0.00040310386713275116,
+        "head_yaw_mass": 0.25999811498048087,
+        "head_yaw_inertia_joint": 0.0004878380766291021,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.0005920614740727917
+      },
+      {
+        "pitch_deg": 25,
+        "yaw_deg": 60,
+        "body_mass": 1.2814316552864078,
+        "total_mass": 1.5490152506491544,
+        "wheel_mass": 0.26758359536274656,
+        "l": 0.08631149188143315,
+        "Jbody": 0.005464420250521346,
+        "Jwheels": 0.0002990446758930648,
+        "center_m": [
+          0.0006773968350128225,
+          -0.0033759444240767608,
+          0.11890167133947696
+        ],
+        "body_center_m": [
+          0.0008188482180532908,
+          -0.004080896135466532,
+          0.13381149188143315
+        ],
+        "inertia_COM_kg_m2": [
+          [
+            0.0074162115150735375,
+            1.4370961848481903e-06,
+            -5.176104405595154e-05
+          ],
+          [
+            1.43709618484817e-06,
+            0.008434000356313063,
+            9.255785326346656e-05
+          ],
+          [
+            -5.1761044055951596e-05,
+            9.255785326346656e-05,
+            0.0038560808851652944
+          ]
+        ],
+        "head_pitch_mass": 0.20978679631217909,
+        "head_pitch_gravity_Nm": 0.007616689761252126,
+        "head_pitch_inertia_joint": 0.00040310386713275116,
+        "head_yaw_mass": 0.25999811498048087,
+        "head_yaw_inertia_joint": 0.0004810745292638987,
+        "head_yaw_gravity_at_up_to_10deg_body_lean_Nm": 0.0011524012501682936
+      }
+    ]
+  },
+  "wheel_speeds": [
+    {
+      "speed_m_s": 0.1,
+      "wheel_rad_s": 2.1052631578947367,
+      "wheel_rpm": 20.10378228529204,
+      "output_encoder_counts_s": 2744.83640801854
+    },
+    {
+      "speed_m_s": 0.3,
+      "wheel_rad_s": 6.315789473684211,
+      "wheel_rpm": 60.31134685587613,
+      "output_encoder_counts_s": 8234.50922405562
+    },
+    {
+      "speed_m_s": 0.5,
+      "wheel_rad_s": 10.526315789473685,
+      "wheel_rpm": 100.51891142646022,
+      "output_encoder_counts_s": 13724.182040092703
+    }
+  ],
+  "output_encoder": "8192 distinct states/rev; absolute encoder, NOT A/B quadrature x4",
+  "printing": {
+    "PLA_robot_g": 571.5161235915266,
+    "PLA_with_35percent_process_waste_g": 771.546766848561,
+    "process_waste_fraction_assumed": 0.35,
+    "cradle_and_trial_print_mass_g": null,
+    "note": "Robot volume-based estimate only, not slicer or purchase weight. Cradle/trial coupons and minimum spool purchase still need pricing. Tyres remain separate; no double-counted TPU."
+  },
+  "simulations": [
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.108,
+      "saturation_fraction": 0.735,
+      "travel_m": 0.034,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.02,
+      "peak_speed_m_s": 0.208,
+      "saturation_fraction": 0.76,
+      "travel_m": 0.093,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.06,
+      "peak_speed_m_s": 0.154,
+      "saturation_fraction": 0.922,
+      "travel_m": 0.033,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.2,
+      "peak_speed_m_s": 0.247,
+      "saturation_fraction": 0.913,
+      "travel_m": 0.093,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.3,
+      "peak_speed_m_s": 0.24,
+      "saturation_fraction": 0.961,
+      "travel_m": 0.028,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.86,
+      "peak_speed_m_s": 0.325,
+      "saturation_fraction": 0.968,
+      "travel_m": 0.094,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.127,
+      "saturation_fraction": 0.766,
+      "travel_m": 0.032,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.01,
+      "peak_speed_m_s": 0.213,
+      "saturation_fraction": 0.781,
+      "travel_m": 0.078,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.05,
+      "peak_speed_m_s": 0.23,
+      "saturation_fraction": 0.915,
+      "travel_m": 0.023,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.12,
+      "peak_speed_m_s": 0.304,
+      "saturation_fraction": 0.937,
+      "travel_m": 0.059,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 8.1,
+      "peak_speed_m_s": 0.431,
+      "saturation_fraction": 0.975,
+      "travel_m": 0.027,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.58,
+      "peak_speed_m_s": 0.48,
+      "saturation_fraction": 0.973,
+      "travel_m": 0.049,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.164,
+      "saturation_fraction": 0.741,
+      "travel_m": 0.028,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.0,
+      "peak_speed_m_s": 0.253,
+      "saturation_fraction": 0.759,
+      "travel_m": 0.066,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.04,
+      "peak_speed_m_s": 0.373,
+      "saturation_fraction": 0.927,
+      "travel_m": 0.018,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.09,
+      "peak_speed_m_s": 0.456,
+      "saturation_fraction": 0.928,
+      "travel_m": 0.038,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "speed_over_assumed_no_load",
+      "peak_tilt_deg": 5.22,
+      "peak_speed_m_s": 0.57,
+      "saturation_fraction": 0.962,
+      "travel_m": 0.006,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "speed_over_assumed_no_load",
+      "peak_tilt_deg": 10.48,
+      "peak_speed_m_s": 0.561,
+      "saturation_fraction": 1.0,
+      "travel_m": 0.006,
+      "scenario": "light"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.01,
+      "peak_speed_m_s": 0.104,
+      "saturation_fraction": 0.655,
+      "travel_m": 0.039,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.04,
+      "peak_speed_m_s": 0.226,
+      "saturation_fraction": 0.623,
+      "travel_m": 0.113,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.08,
+      "peak_speed_m_s": 0.138,
+      "saturation_fraction": 0.895,
+      "travel_m": 0.038,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.29,
+      "peak_speed_m_s": 0.267,
+      "saturation_fraction": 0.9,
+      "travel_m": 0.12,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.35,
+      "peak_speed_m_s": 0.205,
+      "saturation_fraction": 0.948,
+      "travel_m": 0.035,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 11.28,
+      "peak_speed_m_s": 0.366,
+      "saturation_fraction": 0.955,
+      "travel_m": 0.156,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.118,
+      "saturation_fraction": 0.674,
+      "travel_m": 0.035,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.01,
+      "peak_speed_m_s": 0.205,
+      "saturation_fraction": 0.681,
+      "travel_m": 0.085,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.05,
+      "peak_speed_m_s": 0.193,
+      "saturation_fraction": 0.896,
+      "travel_m": 0.027,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.14,
+      "peak_speed_m_s": 0.272,
+      "saturation_fraction": 0.896,
+      "travel_m": 0.072,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.27,
+      "peak_speed_m_s": 0.337,
+      "saturation_fraction": 0.957,
+      "travel_m": 0.021,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.67,
+      "peak_speed_m_s": 0.403,
+      "saturation_fraction": 0.96,
+      "travel_m": 0.061,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.145,
+      "saturation_fraction": 0.671,
+      "travel_m": 0.031,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.01,
+      "peak_speed_m_s": 0.236,
+      "saturation_fraction": 0.682,
+      "travel_m": 0.074,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.04,
+      "peak_speed_m_s": 0.307,
+      "saturation_fraction": 0.89,
+      "travel_m": 0.02,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.1,
+      "peak_speed_m_s": 0.384,
+      "saturation_fraction": 0.891,
+      "travel_m": 0.045,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "speed_over_assumed_no_load",
+      "peak_tilt_deg": 5.23,
+      "peak_speed_m_s": 0.555,
+      "saturation_fraction": 0.933,
+      "travel_m": 0.008,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "speed_over_assumed_no_load",
+      "peak_tilt_deg": 10.53,
+      "peak_speed_m_s": 0.562,
+      "saturation_fraction": 0.969,
+      "travel_m": 0.009,
+      "scenario": "nominal"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.01,
+      "peak_speed_m_s": 0.103,
+      "saturation_fraction": 0.462,
+      "travel_m": 0.044,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "tilt_over_30deg",
+      "peak_tilt_deg": 30.25,
+      "peak_speed_m_s": 0.338,
+      "saturation_fraction": 1.0,
+      "travel_m": 0.187,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.1,
+      "peak_speed_m_s": 0.13,
+      "saturation_fraction": 0.861,
+      "travel_m": 0.045,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "tilt_over_30deg",
+      "peak_tilt_deg": 30.08,
+      "peak_speed_m_s": 0.199,
+      "saturation_fraction": 1.0,
+      "travel_m": 0.057,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.43,
+      "peak_speed_m_s": 0.183,
+      "saturation_fraction": 0.937,
+      "travel_m": 0.045,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.06,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "tilt_over_30deg",
+      "peak_tilt_deg": 30.08,
+      "peak_speed_m_s": 0.125,
+      "saturation_fraction": 1.0,
+      "travel_m": 0.022,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.111,
+      "saturation_fraction": 0.519,
+      "travel_m": 0.039,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.02,
+      "peak_speed_m_s": 0.204,
+      "saturation_fraction": 0.506,
+      "travel_m": 0.095,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.06,
+      "peak_speed_m_s": 0.167,
+      "saturation_fraction": 0.865,
+      "travel_m": 0.032,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.19,
+      "peak_speed_m_s": 0.252,
+      "saturation_fraction": 0.872,
+      "travel_m": 0.088,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.3,
+      "peak_speed_m_s": 0.274,
+      "saturation_fraction": 0.946,
+      "travel_m": 0.026,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.83,
+      "peak_speed_m_s": 0.348,
+      "saturation_fraction": 0.945,
+      "travel_m": 0.081,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.0,
+      "peak_speed_m_s": 0.132,
+      "saturation_fraction": 0.543,
+      "travel_m": 0.035,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 2,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": true,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.01,
+      "peak_speed_m_s": 0.217,
+      "saturation_fraction": 0.545,
+      "travel_m": 0.082,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 5.05,
+      "peak_speed_m_s": 0.252,
+      "saturation_fraction": 0.854,
+      "travel_m": 0.023,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 10,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.12,
+      "peak_speed_m_s": 0.329,
+      "saturation_fraction": 0.856,
+      "travel_m": 0.055,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 5,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "speed_over_assumed_no_load",
+      "peak_tilt_deg": 13.19,
+      "peak_speed_m_s": 0.557,
+      "saturation_fraction": 0.973,
+      "travel_m": 0.035,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.24,
+      "delay_ms": 25,
+      "lag_ms": 6,
+      "deadband_Nm_per_wheel": 0.006,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": "tilt_over_30deg",
+      "peak_tilt_deg": 30.16,
+      "peak_speed_m_s": 0.537,
+      "saturation_fraction": 0.992,
+      "travel_m": 0.078,
+      "scenario": "heavy"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 15,
+      "deadband_Nm_per_wheel": 0.015,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 10.37,
+      "peak_speed_m_s": 0.279,
+      "saturation_fraction": 0.899,
+      "travel_m": 0.094,
+      "scenario": "heavy_extra_reversal_loss"
+    },
+    {
+      "limit_Nm_per_wheel": 0.12,
+      "delay_ms": 10,
+      "lag_ms": 30,
+      "deadband_Nm_per_wheel": 0.03,
+      "initial_tilt_deg": 10,
+      "assumed_motor_voltage": 8.5,
+      "criterion_met": false,
+      "stop_reason": null,
+      "peak_tilt_deg": 11.02,
+      "peak_speed_m_s": 0.327,
+      "saturation_fraction": 0.912,
+      "travel_m": 0.129,
+      "scenario": "heavy_extra_reversal_loss"
+    }
+  ],
+  "head_loads": [
+    {
+      "scenario": "light",
+      "pitch_deg": -20,
+      "yaw_deg": -60,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.013721697948846309,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 4.645432747290535,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.01139201414375838,
+      "yaw_rated_ratio": 5.59543064076378,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "light",
+      "pitch_deg": -20,
+      "yaw_deg": -60,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.04372169794884631,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.4579311415256233,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04139201414375838,
+      "yaw_rated_ratio": 1.5399884813194582,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "light",
+      "pitch_deg": 0,
+      "yaw_deg": 0,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.01161133958062405,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 5.489739108687244,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.01192074362431663,
+      "yaw_rated_ratio": 5.347252403782331,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "light",
+      "pitch_deg": 0,
+      "yaw_deg": 0,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.04161133958062405,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.5318714956651254,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04192074362431663,
+      "yaw_rated_ratio": 1.5205652259237352,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "light",
+      "pitch_deg": 25,
+      "yaw_deg": 60,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.015351227276064375,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 4.152321104605649,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.01188220714083893,
+      "yaw_rated_ratio": 5.364594661956001,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "light",
+      "pitch_deg": 25,
+      "yaw_deg": 60,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.045351227276064374,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.4055457553988318,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04188220714083893,
+      "yaw_rated_ratio": 1.5219643221200874,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "nominal",
+      "pitch_deg": -20,
+      "yaw_deg": -60,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.014962263931795079,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 4.260266046005545,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.011788490854992869,
+      "yaw_rated_ratio": 5.407242180876982,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "nominal",
+      "pitch_deg": -20,
+      "yaw_deg": -60,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.04496226393179508,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.4177049691424448,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.041788490854992866,
+      "yaw_rated_ratio": 1.5253775308897999,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "nominal",
+      "pitch_deg": 0,
+      "yaw_deg": 0,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.012148452774165404,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 5.247024142494487,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.012383455388025662,
+      "yaw_rated_ratio": 5.147450610726738,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "nominal",
+      "pitch_deg": 0,
+      "yaw_deg": 0,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.0421484527741654,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.5123502953131167,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04238345538802566,
+      "yaw_rated_ratio": 1.503964799859357,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "nominal",
+      "pitch_deg": 25,
+      "yaw_deg": 60,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.017134969701419166,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 3.7200663970080208,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.01258035995569262,
+      "yaw_rated_ratio": 5.066884033883001,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "nominal",
+      "pitch_deg": 25,
+      "yaw_deg": 60,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.047134969701419165,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.3523552768525655,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04258035995569262,
+      "yaw_rated_ratio": 1.497010008048983,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "heavy",
+      "pitch_deg": -20,
+      "yaw_deg": -60,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.016699056307923354,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 3.817175283716791,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.012488750610543409,
+      "yaw_rated_ratio": 5.104051396957667,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "heavy",
+      "pitch_deg": -20,
+      "yaw_deg": -60,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.046699056307923356,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.3649788676604324,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04248875061054341,
+      "yaw_rated_ratio": 1.500237688424342,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "heavy",
+      "pitch_deg": 0,
+      "yaw_deg": 0,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.012900411245123297,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 4.941177749205217,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.013031251857218302,
+      "yaw_rated_ratio": 4.891565729710857,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "heavy",
+      "pitch_deg": 0,
+      "yaw_deg": 0,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.042900411245123296,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.4858418171281753,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.0430312518572183,
+      "yaw_rated_ratio": 1.4813239738296704,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "heavy",
+      "pitch_deg": 25,
+      "yaw_deg": 60,
+      "cable_friction_Nm": 0.01,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.019632209096915883,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 3.246869707088324,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.013557773896487787,
+      "yaw_rated_ratio": 4.701599649520119,
+      "version_match": "NOT_TESTED"
+    },
+    {
+      "scenario": "heavy",
+      "pitch_deg": 25,
+      "yaw_deg": 60,
+      "cable_friction_Nm": 0.04,
+      "acceleration_rad_s2": 5,
+      "total_pitch_Nm": 0.04963220909691588,
+      "vendor_2020_A0_rated_Nm_at6V": 0.073549875,
+      "conservative_4p8V_rated_Nm": 0.063743225,
+      "rated_ratio": 1.2843116629269877,
+      "total_yaw_Nm_at_up_to_10deg_body_lean": 0.04355777389648779,
+      "yaw_rated_ratio": 1.4634178769438866,
+      "version_match": "NOT_TESTED"
+    }
+  ],
+  "power_states": [
+    {
+      "state": "balance",
+      "wheel_W": 4.0,
+      "head6V_W": 0.5,
+      "interaction5V_W": 2.0,
+      "battery_W": 7.84,
+      "battery_A_at_9p9V": 0.79,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "moving",
+      "wheel_W": 7.0,
+      "head6V_W": 0.7,
+      "interaction5V_W": 2.0,
+      "battery_W": 11.47,
+      "battery_A_at_9p9V": 1.16,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "disturbance_peak",
+      "wheel_W": 22.0,
+      "head6V_W": 2.0,
+      "interaction5V_W": 3.0,
+      "battery_W": 31.11,
+      "battery_A_at_9p9V": 3.14,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "head_motion",
+      "wheel_W": 5.0,
+      "head6V_W": 4.8,
+      "interaction5V_W": 2.0,
+      "battery_W": 13.86,
+      "battery_A_at_9p9V": 1.4,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "display_on",
+      "wheel_W": 4.0,
+      "head6V_W": 0.5,
+      "interaction5V_W": 2.7,
+      "battery_W": 8.61,
+      "battery_A_at_9p9V": 0.87,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "vision_tracking",
+      "wheel_W": 5.0,
+      "head6V_W": 1.0,
+      "interaction5V_W": 4.0,
+      "battery_W": 11.76,
+      "battery_A_at_9p9V": 1.19,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "audio_record_play",
+      "wheel_W": 5.0,
+      "head6V_W": 0.8,
+      "interaction5V_W": 5.0,
+      "battery_W": 12.65,
+      "battery_A_at_9p9V": 1.28,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "network_tx",
+      "wheel_W": 5.0,
+      "head6V_W": 0.5,
+      "interaction5V_W": 4.5,
+      "battery_W": 11.75,
+      "battery_A_at_9p9V": 1.19,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "concurrent_peak",
+      "wheel_W": 30.0,
+      "head6V_W": 12.0,
+      "interaction5V_W": 10.0,
+      "battery_W": 59.34,
+      "battery_A_at_9p9V": 5.99,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    },
+    {
+      "state": "maintenance_charge",
+      "wheel_W": 0.0,
+      "head6V_W": 0.0,
+      "interaction5V_W": 2.0,
+      "battery_W": 2.72,
+      "battery_A_at_9p9V": 0.27,
+      "status": "ASSUMED_NOT_TESTED",
+      "efficiency_wheel": 0.88,
+      "efficiency_head": 0.88,
+      "efficiency_logic": 0.9
+    }
+  ],
+  "energy": [
+    {
+      "capacity_mAh": 2200,
+      "nominal_Wh": 24.42,
+      "usable_Wh": 19.536,
+      "max_average_input_W_for_60min_with_15percent_reserve": 16.6056,
+      "average_input_W": 8.0,
+      "estimated_minutes": 124.542
+    },
+    {
+      "capacity_mAh": 2200,
+      "nominal_Wh": 24.42,
+      "usable_Wh": 19.536,
+      "max_average_input_W_for_60min_with_15percent_reserve": 16.6056,
+      "average_input_W": 12.0,
+      "estimated_minutes": 83.028
+    },
+    {
+      "capacity_mAh": 2200,
+      "nominal_Wh": 24.42,
+      "usable_Wh": 19.536,
+      "max_average_input_W_for_60min_with_15percent_reserve": 16.6056,
+      "average_input_W": 18.0,
+      "estimated_minutes": 55.352000000000004
+    },
+    {
+      "capacity_mAh": 2200,
+      "nominal_Wh": 24.42,
+      "usable_Wh": 19.536,
+      "max_average_input_W_for_60min_with_15percent_reserve": 16.6056,
+      "average_input_W": 25.0,
+      "estimated_minutes": 39.85344
+    },
+    {
+      "capacity_mAh": 2600,
+      "nominal_Wh": 28.86,
+      "usable_Wh": 23.088,
+      "max_average_input_W_for_60min_with_15percent_reserve": 19.6248,
+      "average_input_W": 8.0,
+      "estimated_minutes": 147.186
+    },
+    {
+      "capacity_mAh": 2600,
+      "nominal_Wh": 28.86,
+      "usable_Wh": 23.088,
+      "max_average_input_W_for_60min_with_15percent_reserve": 19.6248,
+      "average_input_W": 12.0,
+      "estimated_minutes": 98.12400000000001
+    },
+    {
+      "capacity_mAh": 2600,
+      "nominal_Wh": 28.86,
+      "usable_Wh": 23.088,
+      "max_average_input_W_for_60min_with_15percent_reserve": 19.6248,
+      "average_input_W": 18.0,
+      "estimated_minutes": 65.416
+    },
+    {
+      "capacity_mAh": 2600,
+      "nominal_Wh": 28.86,
+      "usable_Wh": 23.088,
+      "max_average_input_W_for_60min_with_15percent_reserve": 19.6248,
+      "average_input_W": 25.0,
+      "estimated_minutes": 47.099520000000005
+    }
+  ],
+  "regen": {
+    "assumed_worst_speed_m_s": 0.5,
+    "assumed_pitch_rate_rad_s": 3,
+    "tilt_deg": 30,
+    "energy_J": 0.4236187482729036,
+    "doubled_design_pulse_J": 0.8472374965458072,
+    "cap_uF": 1000,
+    "cap_energy_9p5_to_10p8V_J": 0.013195000000000007,
+    "dump_ohm": 5.6,
+    "dump_power_at_10p8V_W": 20.828571428571433,
+    "pulse_seconds": 0.04067669736502503,
+    "note": "No capacitor/TVS-only solution. External pulse-rated resistor and analog brake required; no indefinitely sustained backdrive guarantee."
+  },
+  "bearing": {
+    "static_load_per_wheel_N": 7.5953252038892645,
+    "outer_reaction_N": 44.30606368935404,
+    "inner_reaction_N": -36.71073848546478,
+    "three_g_outer_N": 132.91819106806216,
+    "shaft_4mm_static_bending_MPa": 35.056172967093595,
+    "shaft_4mm_3g_bending_MPa": 105.16851890128079,
+    "status": "CALCULATED_REQUIREMENT; bearing rating, shaft grade, press fit and printed supports NOT_QUALIFIED"
+  },
+  "conclusion": "Continuous S288 torque remains unknown. Simulation success is conditional and is not evidence that S288 can supply the hypothesized torque or that MORI stands."
+}

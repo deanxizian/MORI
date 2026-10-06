@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.2",
+  "revision": "V1.2-M1",
+  "owner": "mechanical",
+  "units": "mm",
+  "coordinates": {
+    "x": "right",
+    "y": "forward",
+    "z": "up",
+    "yaw_positive": "left about +Z",
+    "pitch_positive": "face up about +X"
+  },
+  "component_truth_source": "contracts/components.json (hardware-owned; read-only)",
+  "data_status": "ASSUMED",
+  "verification_status": "GEOMETRY_PRESTUDY",
+  "no_final_vendor_holes": true,
+  "components": {
+    "wheel_servo": {
+      "requested_model": "Unitree YS-342026-S288",
+      "max_xyz_mm": [
+        26,
+        20,
+        34
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "Vendor manual body20x34x20, opposed outputs overall26; rotated axes X axial, Y20, Z34. Output axis9.5 from lower end.",
+      "final_mount_holes_mm": null
+    },
+    "yaw_servo": {
+      "requested_model": "FEETECH SCS0009",
+      "max_xyz_mm": [
+        23.3,
+        12.1,
+        25.25
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "Vendor nominal23.2 vs drawing23.3; ears32.5 overall, hole pitch28.5, spline20T OD3.95; max depth28.45 including output. Verify current purchased revision.",
+      "final_mount_holes_mm": null
+    },
+    "pitch_servo": {
+      "requested_model": "FEETECH SCS0009",
+      "max_xyz_mm": [
+        25.25,
+        12.1,
+        23.3
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "yaw",
+      "notes": "Rotated X output. Ear and horn separately modeled from 2020 A/0 drawing; current revision and attachment trials required.",
+      "final_mount_holes_mm": null
+    },
+    "display": {
+      "requested_model": "Waveshare 35079",
+      "max_xyz_mm": [
+        55,
+        8,
+        55
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "pitch",
+      "notes": "Vendor55x55 and active45.68; thickness8 is ASSUMED allocation; true circular outline/connectors missing. Full55x55 rectangular limiting volume is now retained in KEEP_OUT and evaluated explicitly; circle behind active layer is a construction template, not a claimed manufacturer PCB outline.",
+      "final_mount_holes_mm": null
+    },
+    "cam_board": {
+      "requested_model": "Waveshare 33700 OV3660",
+      "max_xyz_mm": [
+        50,
+        12,
+        45
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "pitch",
+      "notes": "Whole-board ASSUMED limiting allocation, not verified board size. Manufacturer dimension image blocked retrieval.",
+      "final_mount_holes_mm": null
+    },
+    "battery": {
+      "requested_model": "finished protected 3S2200-2600mAh",
+      "max_xyz_mm": [
+        80,
+        65,
+        30
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "ASSUMED allocation, not selected pack; may require alternative package or geometry.",
+      "final_mount_holes_mm": null
+    },
+    "motion_mcu": {
+      "requested_model": "STM32F413RGT6 carrier",
+      "max_xyz_mm": [
+        70,
+        35,
+        12
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "Target board limit; final board unknown, no scaled dev board. Current rear shelf permits70x35 not full70x50. Hardware must select/carrier-design within this limit or request geometry revision; no real board scaled.",
+      "final_mount_holes_mm": null
+    },
+    "power_module": {
+      "requested_model": "protected3S /6V/5V",
+      "max_xyz_mm": [
+        44,
+        16,
+        10
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "ASSUMED integration allocation; complete power solution unselected.",
+      "final_mount_holes_mm": null
+    },
+    "usb_power": {
+      "requested_model": "USB-C 3S charger",
+      "max_xyz_mm": [
+        28,
+        20,
+        10
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "ASSUMED allocation, no compatibility approval. CAM 3.7V charge input must not receive3S.",
+      "final_mount_holes_mm": null
+    },
+    "speaker": {
+      "requested_model": "4ohm3W",
+      "max_xyz_mm": [
+        36,
+        10,
+        36
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "ASSUMED diameter/depth; matching supplier missing.",
+      "final_mount_holes_mm": null
+    }
+  },
+  "wheel_mounting": {
+    "vendor_documented_body_hole_pitch_mm": [
+      30,
+      16
+    ],
+    "vendor_documented_holes": "6 x diameter1.7 blind depth3 max, M2 self-tapping per S288 drawing",
+    "load_path": "wheel ->4mm trial axle ->two independent bearings ->frame; motor horn torque coupling only",
+    "bearing_fit": "ASSUMED 10OD/4ID/4width; not released machining dimensions"
+  },
+  "head_interfaces": {
+    "yaw": "body frame, bearing carrier, 32OD/20ID bearing, rotor, pitch yoke",
+    "pitch": "paired12OD/5ID bearings,5mm trunnions, cradle, head/CAM/display",
+    "scs_drawing_date": "2020-11-23 A/0; body dimension mismatch23.2/23.3 requires variant confirmation",
+    "joint_range_deg": {
+      "yaw": [
+        -60,
+        60
+      ],
+      "pitch": [
+        -20,
+        25
+      ]
+    },
+    "cross_joint_wires": [
+      "power",
+      "UART",
+      "body speaker"
+    ],
+    "dvp_qspi": "same pitch moving group; cable lengths and connector directions unverified",
+    "minimum_bend_radius_assumed_mm": 8
+  },
+  "hardware_handoff": {
+    "pending_components_json": false,
+    "budget_status": "BLOCKED: <=1000 CNY unverified; no procurement/PCB release",
+    "legacy_reference": "mechanical/revisions/V1-A4_before_V1_2/contracts/mechanical_interfaces.json",
+    "no_extra_motor_driver": true,
+    "no_duplicate_audio": true
+  },
+  "mechanical_allocation_parameters": {
+    "battery": "config/geometry.json#/layout/battery_max_xyz_mm",
+    "motion_mcu": "config/geometry.json#/layout/mcu_max_xyz_mm",
+    "cam_board": "config/geometry.json#/layout/cam_board_allocation_xyz_mm",
+    "power_module": "config/geometry.json#/layout/power_allocation_xyz_mm"
+  },
+  "poses_source": "mechanical/reports/assembly_instances.json derived from build.py; do not hand-edit as a second truth",
+  "source_documents": {
+    "spec": "MORI_SPEC_V1_2.md",
+    "task": "01_CODEX_MECHANICAL.md",
+    "S288": "mechanical/sources/v1_2/unitree_servo_manual.pdf p2",
+    "SCS0009": "mechanical/sources/v1_2/scs0009_spec.pdf p4/p6",
+    "CAM33700": "https://docs.waveshare.com/ESP32-S3-CAM-OVxxxx",
+    "LCD35079": "https://www.waveshare.com/product/1.85inch-touch-lcd-module.htm"
+  },
+  "service": {
+    "battery_removal_direction": "+Y",
+    "tray_travel_mm": 120,
+    "prerequisites": [
+      "DISARM and reliable cradle/support",
+      "unplug battery",
+      "wheel cap/wheel and axle release to free lower shell",
+      "both body shells and four hangers removed"
+    ],
+    "tools_all_verified": false,
+    "usb_plug_body_mm": [
+      16,
+      34,
+      10
+    ],
+    "usb_plug_nose_mm": [
+      8.4,
+      6,
+      2.6
+    ]
+  },
+  "required_hardware_measurements": [
+    "CAM exact XY board boundary and connector/mic/antenna coordinates",
+    "CAM original DVP FPC length and minimum bend radius",
+    "LCD exact circular boundary, height, connector orientations and hole pattern",
+    "SCS0009 purchased version/horn/locking screw and ear tolerances",
+    "S288 output mating/spline/fasteners and bearing permissible loads",
+    "3S finished pack, protection/charger/buck dimensions and thermal clearances",
+    "speaker/baffle and button/switch/USB modules",
+    "all mounting hardware and driver-tool access"
+  ],
+  "hardware_component_revision_read": "V1.2-H0.1",
+  "hardware_component_sha256": "485168475aece0b9fcf00bdec0423c22e209321a7f73786bee7c1d76d7b87d22"
+}

@@ -1,0 +1,23 @@
+00:00.266  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/mechanical/scripts/inspect_native_electronics.py", line 11, in <module>
+    apply_native_electronics();bpy.context.view_layer.update()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/native_electronics.py", line 135, in apply_native_electronics
+    result['rear_mount']=mount_rear(c,r,t)
+                         ~~~~~~~~~~^^^^^^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/native_electronics.py", line 88, in mount_rear
+    hardware(ins,'P5后接口板M2试配嵌件 / 原生孔位')
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/structural_simplification.py", line 32, in hardware
+    finish(o,'PLACEHOLDER',label,'metal',group,False,note='Trial fastener envelope; supplier, thread/engagement and printing fits not released')
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/common.py", line 214, in finish
+    move_collection(o,category); o.data.materials.clear(); o.data.materials.append(MATS[mat])
+                                                                                   ~~~~^^^^^
+KeyError: 'metal'
+
+Error: script failed, file: 'mechanical/scripts/inspect_native_electronics.py', exiting.
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

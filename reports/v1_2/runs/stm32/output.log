@@ -1,0 +1,33 @@
+Activating ESP-IDF 5.5
+Setting IDF_PATH to '/Users/dean/esp/esp-idf'.
+* Checking python version ... 3.9.6
+* Checking python dependencies ... OK
+* Deactivating the current ESP-IDF environment (if any) ... OK
+* Establishing a new ESP-IDF environment ... OK
+* Identifying shell ... bash
+* Detecting outdated tools in system ... Found tools that are not used by active ESP-IDF version.
+For removing old versions of riscv32-esp-elf, xtensa-esp-elf, xtensa-esp-elf-gdb use command 'python /Users/dean/esp/esp-idf/tools/idf_tools.py uninstall'
+To free up even more space, remove installation packages of those tools.
+Use option python /Users/dean/esp/esp-idf/tools/idf_tools.py uninstall --remove-archives.
+* Shell completion ... Autocompletion code generated
+arm-none-eabi-gcc (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 14.2.1 20241119
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+cmake version 4.4.0
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/dean/Documents/MORI/firmware/motion/build_stm32
+[1/1] Linking C executable mori_motion.elf
+FAILED: [code=1] mori_motion.elf 
+: && /Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -nostartfiles --specs=nano.specs --specs=nosys.specs -T/Users/dean/Documents/MORI/firmware/motion/v1_2/stm32/STM32F413RG.ld -Wl,--gc-sections -Wl,-Map=mori_motion.map -Wl,--print-memory-usage CMakeFiles/mori_motion.elf.dir/v1_2/stm32/main.c.obj CMakeFiles/mori_motion.elf.dir/v1_2/s288.c.obj CMakeFiles/mori_motion.elf.dir/v1_2/bus.c.obj CMakeFiles/mori_motion.elf.dir/v1_2/sensors.c.obj CMakeFiles/mori_motion.elf.dir/v1_2/motion.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/cmsis-device-f4/Source/Templates/gcc/startup_stm32f413xx.s.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/cmsis-device-f4/Source/Templates/system_stm32f4xx.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_cortex.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc_ex.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_gpio.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_dma.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_uart.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_spi.c.obj CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/contracts/wire.c.obj -o mori_motion.elf  -lm && cd /Users/dean/Documents/MORI/firmware/motion/build_stm32 && arm-none-eabi-objcopy -O binary /Users/dean/Documents/MORI/firmware/motion/build_stm32/mori_motion.elf mori_motion.bin && arm-none-eabi-size /Users/dean/Documents/MORI/firmware/motion/build_stm32/mori_motion.elf
+/Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/bin/ld: /Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o): in function `__libc_init_array':
+init.c:(.text.__libc_init_array+0x10): undefined reference to `_init'
+Memory region         Used Size  Region Size  %age Used
+           FLASH:        1168 B         1 MB      0.11%
+             RAM:        5344 B       128 KB      4.08%
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.

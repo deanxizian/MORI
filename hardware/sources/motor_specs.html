@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_32x32-f40058cd34e1fec5906522ec0c9eb39b303192067c0e353a30796e859ce41106.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_192x192-52532413e1c353491bfa0a2dd977aacf020e8ca4104064094121739bad21c4bf.png" sizes="192x192" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_96x96-fcf7f6d6568f76d479e5ae1822ded335e0bbd75ab7efd0de7e010bb41fd83e41.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_16x16-13632635dc6dd0e11ba9a38071e8218d26d62e71f8ebafacd9929c3136117372.png" sizes="16x16" />
+<link rel="apple-touch-icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_96x96-fcf7f6d6568f76d479e5ae1822ded335e0bbd75ab7efd0de7e010bb41fd83e41.png" />
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' integrity='sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=' media='all' rel='stylesheet'>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css' integrity='sha256-2RdmDD1veq0y68SwASxtC7hKE+IBoBLjNLzKS59Ghsk=' media='all' rel='stylesheet'>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css' integrity='sha256-etrwgFLGpqD4oNAFW08ZH9Bzif5ByXK2lXNHKy7LQGo=' media='all' rel='stylesheet'>
+<link rel="stylesheet" crossorigin="anonymous" href="https://a.pololu-files.com/assets/application-e635e160a355d4b2b19403e60b42c30abb9ae25ace89aaf7631693e2034b8c9f.css" media="all" integrity="sha256-RyjKAGsMQf/lcOuc4ZBHf+4fcBjG1BkZ+QGNQM70/3c=" />
+<script crossorigin='anonymous' integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=' src='https://a.pololu-files.com/mirror/code.jquery.com/jquery-1.12.4.min.js'></script>
+<script crossorigin='anonymous' integrity='sha256-4Cr335oZDYg4Di3OwgUOyqSTri0jUm2+7Gf2kH3zp1I=' src='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+<script crossorigin='anonymous' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' src='https://a.pololu-files.com/mirror/code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' integrity='sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A' media='all' rel='stylesheet'>
+<script class='braintree-gateway' src='https://js.braintreegateway.com/web/3.88.4/js/client.min.js'></script>
+<script class='braintree-gateway' src='https://js.braintreegateway.com/web/3.88.4/js/hosted-fields.min.js'></script>
+<script src="https://a.pololu-files.com/assets/application-e7b04321302c7b1cd29ca6232c9f00526fecf7e6f46a7ac51612c2f93c60ac63.js" crossorigin="anonymous" integrity="sha256-BU4VCJxbUORyOkyc5zk/oZBh8QNcA9rlggAmD7jCqkE="></script>
+<script type="importmap" data-turbo-track="reload">{
+  "integrity":
+{"https://a.pololu-files.com/assets/application_module-765f0f526c59caa9c9857c01889e68833710c17121ab6f9093f3a0a809af7bd4.js":"sha256-s+WZHcA06TsuXtPz2xeDSGgG6j+QSXvT2ghPYhJLLow=","https://a.pololu-files.com/assets/price_notification-f64b0ae30b1bb595d10d8954f34036fbff24e2c81e1c7a9e581f03692cc149c3.js":"sha256-nL1KwUBafy6EPV1yoK+yXM1O5GODfiG083pcMsXgCxs=","https://a.pololu-files.com/assets/stock_notification-87bb320c31885d5b381c69e4a05013db3f11fb479d693729b0e5de58ae356892.js":"sha256-yqOxxloFhGTJ98f3K+XH50QttcrJOBxnARzUT78kLCc=","https://a.pololu-files.com/assets/payment_handler-49a20512068cb88565bc275464d6002af52baec06430fbdc9480f530a2c5b9a7.js":"sha256-PmVdEt5BorGjsZxOo7BfGw8aes3BCxnDQvw55paraHo="},
+  "imports": {
+    "application": "https://a.pololu-files.com/assets/application_module-765f0f526c59caa9c9857c01889e68833710c17121ab6f9093f3a0a809af7bd4.js",
+    "price_notification": "https://a.pololu-files.com/assets/price_notification-f64b0ae30b1bb595d10d8954f34036fbff24e2c81e1c7a9e581f03692cc149c3.js",
+    "stock_notification": "https://a.pololu-files.com/assets/stock_notification-87bb320c31885d5b381c69e4a05013db3f11fb479d693729b0e5de58ae356892.js",
+    "payment_handler": "https://a.pololu-files.com/assets/payment_handler-49a20512068cb88565bc275464d6002af52baec06430fbdc9480f530a2c5b9a7.js",
+    "braintree": "https://js.braintreegateway.com/web/dropin/1.46.1/js/dropin.js"
+  }
+}</script>
+
+<script type="module">import "application"</script>
+<script>
+  if(document.domain.indexOf("pololu-files.com") == -1) {
+    $.ajax({
+    url: "https://www.googletagmanager.com/gtag/js?id=G-G4ENPJ5RV1",
+    dataType: "script"
+    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', "G-G4ENPJ5RV1");
+  }
+</script>
+
+<link rel="stylesheet" href="https://a.pololu-files.com/assets/print-ac5d562ac93a31ac3e5c942e261bf17032bf5da61b940dea46300fe83f1e72dc.css" media="print" />
+
+<title>Pololu - 100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector</title>
+
+<meta name="description" content="This is a miniature brushed DC metal gearmotor with a gearbox cross section of 10×12 mm and a 9 mm long, 3 mm diameter D-shaped gearbox output shaft.
+Cables sold separately.
+
+
+	
+		motor/brush type
+		gearbox
+		encoder
+	
+	
+		HPCB 12V: high-power 12V with carbon brushes 
+		100.37:1 with brass plates 
+		 
+		12 CPR incremental quadrature with back connector 
+	
+
+
+
+	
+		voltage
+		no-load performance
+		stall extrapolation*
+	
+	
+		12 V 
+		330 RPM, 80 mA 
+		1.3 kg⋅cm (18 oz⋅in), 0.75 A 
+	
+	
+		* Note: Stall torque and stall current specifications are theoretical values; stalls could damage the motor or gearbox.
+	
+
+" />
+<meta name="keywords" content="Pololu,robotics,robot electronics,robot kits,robot parts,ir beacon,servo controller,motor controller,robot sensors,robot chassis,robot gearboxes,robot tires, ball casters, tamiya parts,elenco kits" />
+<meta property="og:url" content="https://www.pololu.com/product/5216/specs" />
+<meta property="og:title" content="Pololu - 100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector" />
+<meta property="og:description" content="This is a miniature brushed DC metal gearmotor with a gearbox cross section of 10×12 mm and a 9 mm long, 3 mm diameter D-shaped gearbox output shaft.
+Cables sold separately.
+
+
+	
+		motor/brush type
+		gearbox
+		encoder
+	
+	
+		HPCB 12V: high-power 12V with carbon brushes 
+		100.37:1 with brass plates 
+		 
+		12 CPR incremental quadrature with back connector 
+	
+
+
+
+	
+		voltage
+		no-load performance
+		stall extrapolation*
+	
+	
+		12 V 
+		330 RPM, 80 mA 
+		1.3 kg⋅cm (18 oz⋅in), 0.75 A 
+	
+	
+		* Note: Stall torque and stall current specifications are theoretical values; stalls could damage the motor or gearbox.
+	
+
+" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:image" content="https://a.pololu-files.com/picture/0J12415.1200x627.jpg?db3264e9c34370e00c87132ede2e701a" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Pololu" />
+<meta name="twitter:title" content="Pololu - 100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector" />
+<meta name="twitter:description" content="This is a miniature brushed DC metal gearmotor with a gearbox cross section of 10×12 mm and a 9 mm long, 3 mm diameter D-shaped gearbox output shaft.
+Cables sold separately.
+
+
+	
+		motor/brush type
+		gearbox
+		encoder
+	
+	
+		HPCB 12V: high-power 12V with carbon brushes 
+		100.37:1 with brass plates 
+		 
+		12 CPR incremental quadrature with back connector 
+	
+
+
+
+	
+		voltage
+		no-load performance
+		stall extrapolation*
+	
+	
+		12 V 
+		330 RPM, 80 mA 
+		1.3 kg⋅cm (18 oz⋅in), 0.75 A 
+	
+	
+		* Note: Stall torque and stall current specifications are theoretical values; stalls could damage the motor or gearbox.
+	
+
+" />
+<meta name="twitter:image" content="https://a.pololu-files.com/picture/0J12415.1200x627.jpg?db3264e9c34370e00c87132ede2e701a" />
+<script class='structured_data' type='application/ld+json'>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Pololu Metal DC Gearmotors","item":"https://www.pololu.com/category/51/pololu-metal-dc-gearmotors"},{"@type":"ListItem","position":2,"name":"Micro Metal Gearmotors","item":"https://www.pololu.com/category/60/micro-metal-gearmotors"},{"@type":"ListItem","position":3,"name":"12V High-Power Carbon Brush (HPCB) Micro Metal Gearmotors","item":"https://www.pololu.com/category/200/12v-high-power-carbon-brush-hpcb-micro-metal-gearmotors"}]}
+</script>
+<script class='structured_data' type='application/ld+json'>
+{"@context":"https://schema.org","@type":"Product","image":"https://a.pololu-files.com/picture/0J12415.600x480.jpg?db3264e9c34370e00c87132ede2e701a","name":"100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector","description":"This is a miniature brushed DC metal gearmotor with a gearbox cross section of 10×12 mm and a 9 mm long, 3 mm diameter D-shaped gearbox output shaft.\nCables sold separately.\n\n\n\t\n\t\tmotor/brush type\n\t\tgearbox\n\t\tencoder\n\t\n\t\n\t\tHPCB 12V: high-power 12V with carbon brushes \n\t\t100.37:1 with brass plates \n\t\t \n\t\t12 CPR incremental quadrature with back connector \n\t\n\n\n\n\t\n\t\tvoltage\n\t\tno-load performance\n\t\tstall extrapolation*\n\t\n\t\n\t\t12 V \n\t\t330 RPM, 80 mA \n\t\t1.3 kg⋅cm (18 oz⋅in), 0.75 A \n\t\n\t\n\t\t* Note: Stall torque and stall current specifications are theoretical values; stalls could damage the motor or gearbox.\n\t\n\n","sku":5216,"brand":"Pololu","offers":{"@type":"Offer","price":"32.45","priceCurrency":"USD","URL":"https://www.pololu.com/product/5216","availability":"InStock"}}
+</script>
+
+<script src="https://a.pololu-files.com/assets/syntaxhighlight-91017fb9868118fd42306075e0164112dd3d3e16331dc462f55ad4497e7fca3d.js" defer="defer"></script>
+</head>
+
+<body class='math_ignore' onload='externalLinksNewWindow(); if(document.onLoadHandler){document.onLoadHandler();}  productInit(&#39;/product/5216/specs&#39;);'>
+
+<div id='main'>
+<h2 id="breadcrumbs"><a href="/category/51/pololu-metal-dc-gearmotors">Pololu Metal DC Gearmotors</a> &raquo; <a href="/category/60/micro-metal-gearmotors">Micro Metal Gearmotors</a> &raquo; <a href="/category/200/12v-high-power-carbon-brush-hpcb-micro-metal-gearmotors">12V High-Power Carbon Brush (HPCB) Micro Metal Gearmotors</a> &raquo;</h2>
+<h1 id="page_title">100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector</h1>
+<div data-url='/product/5216/specs' id='contents'>
+<!-- CONTENTS_BEGIN /product/5216/specs -->
+<div data-javascript-not-loaded-message='&lt;!-- javascript_not_loaded_message --&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Your browser failed to load our JavaScript files, which are required for checkout.  Please check that you are not blocking or disabling our scripts and &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; if you are still unable to proceed.' id='javascript_not_loaded_message' style='display:none;'></div>
+<div data-braintree-not-loaded-message='&lt;!-- braintree_not_loaded_message --&gt;&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Your browser failed to connect to our secure payment processor, Braintree Payments.  You will be unable to enter your credit card information at  the payment step of checkout unless this is fixed.&lt;/p&gt;
+&lt;p&gt;Some things to try:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Check for network problems or things like script blockers that could be blocking &lt;a href=&quot;https://js.braintreegateway.com/web/3.58.0/js/client.min.js&quot;&gt;this file&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Try completing checkout on a device on a different network, such as a phone with Wi-Fi disabled.&lt;/li&gt;
+	&lt;li&gt;Select the option to pay with PayPal and enter your credit card on their site. (You don&amp;#8217;t need a PayPal account.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; if you continue to have trouble with checkout!&lt;/p&gt;' id='braintree_not_loaded_message' style='display:none;'></div>
+
+<div class='product_top'><span class='product_top_pictures'>
+<div>
+<a class="noscript-fallback" href="https://a.pololu-files.com/picture/0J12415.1200.jpg?db3264e9c34370e00c87132ede2e701a"><img alt="" title="Click to zoom" id="main_picture_img" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J12415&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, back connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12415.98x98.jpg?db3264e9c34370e00c87132ede2e701a&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12415.600x480.jpg?db3264e9c34370e00c87132ede2e701a&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12415.1200.jpg?db3264e9c34370e00c87132ede2e701a&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12417&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, side connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12417.98x98.jpg?61cf841ab8d9f37214d5ef97f5eb6345&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12417.600x480.jpg?61cf841ab8d9f37214d5ef97f5eb6345&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12417.1200.jpg?61cf841ab8d9f37214d5ef97f5eb6345&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12416&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, back connector (cable not included).\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12416.98x98.jpg?24ae99dd41ad8868afe8c366d9a0cd9c&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12416.600x480.jpg?24ae99dd41ad8868afe8c366d9a0cd9c&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12416.1200.jpg?24ae99dd41ad8868afe8c366d9a0cd9c&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12418&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, side connector (cable not included).\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12418.98x98.jpg?8f026fe1675b1109ea574290d3d26081&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12418.600x480.jpg?8f026fe1675b1109ea574290d3d26081&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12418.1200.jpg?8f026fe1675b1109ea574290d3d26081&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12481&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, back connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12481.98x98.jpg?7ce5a9e994cd252fa81a71ddd111b8f9&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12481.600x480.jpg?7ce5a9e994cd252fa81a71ddd111b8f9&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12481.1200.jpg?7ce5a9e994cd252fa81a71ddd111b8f9&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12482&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, side connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12482.98x98.jpg?e97d9742d8c829e365ef7029b1858d2e&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12482.600x480.jpg?e97d9742d8c829e365ef7029b1858d2e&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12482.1200.jpg?e97d9742d8c829e365ef7029b1858d2e&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12485&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12485.98x98.jpg?725800868046619146591d8b2bd57426&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12485.600x480.jpg?725800868046619146591d8b2bd57426&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12485.1200.jpg?725800868046619146591d8b2bd57426&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12486&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, back connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12486.98x98.jpg?25a81ee93435f81c4a074990e472ca9c&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12486.600x480.jpg?25a81ee93435f81c4a074990e472ca9c&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12486.1200.jpg?25a81ee93435f81c4a074990e472ca9c&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12487&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, side connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12487.98x98.jpg?685256da043254e3830584531721474c&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12487.600x480.jpg?685256da043254e3830584531721474c&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12487.1200.jpg?685256da043254e3830584531721474c&quot;,&quot;longest_side&quot;:1199},{&quot;id&quot;:&quot;0J12488&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, back connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12488.98x98.jpg?9078580d2adac1c55472b0be7292fa04&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12488.600x480.jpg?9078580d2adac1c55472b0be7292fa04&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12488.1200.jpg?9078580d2adac1c55472b0be7292fa04&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12489&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with 12 CPR encoder, side connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12489.98x98.jpg?ee67dc0f832ef97fbeb29b7cfc447ecd&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12489.600x480.jpg?ee67dc0f832ef97fbeb29b7cfc447ecd&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12489.1200.jpg?ee67dc0f832ef97fbeb29b7cfc447ecd&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12483&quot;,&quot;caption&quot;:&quot;\u003cp\u003eRear view of Micro Metal Gearmotor with 12 CPR encoder, back connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12483.98x98.jpg?7c6f698cd52e43fa53f2ecffce2b68c7&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12483.600x480.jpg?7c6f698cd52e43fa53f2ecffce2b68c7&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12483.1200.jpg?7c6f698cd52e43fa53f2ecffce2b68c7&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12484&quot;,&quot;caption&quot;:&quot;\u003cp\u003eRear view of Micro Metal Gearmotor with 12 CPR encoder, side connector.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12484.98x98.jpg?97ef3e8fc05e4356971c017b6c67708b&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12484.600x480.jpg?97ef3e8fc05e4356971c017b6c67708b&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12484.1200.jpg?97ef3e8fc05e4356971c017b6c67708b&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12480&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePin 1 (GND) on the Micro Metal Gearmotors with encoders.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12480.98x98.jpg?e747702849a35b50832b2ab09fb52f53&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12480.600x480.jpg?e747702849a35b50832b2ab09fb52f53&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12480.1200.jpg?e747702849a35b50832b2ab09fb52f53&quot;,&quot;longest_side&quot;:1600},{&quot;id&quot;:&quot;0J5831&quot;,&quot;caption&quot;:&quot;\u003cp\u003eA and B outputs of the magnetic encoder on a high-power (HP) 6V Micro Metal Gearmotor running at 6\u0026nbsp;V.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J5831.98x98.jpg?b37c879d2899289012b77d9281c4dc51&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J5831.600x480.jpg?b37c879d2899289012b77d9281c4dc51&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J5831.1200.png?b37c879d2899289012b77d9281c4dc51&quot;,&quot;longest_side&quot;:800},{&quot;id&quot;:&quot;0J12497&quot;,&quot;caption&quot;:&quot;\u003cp\u003eSchematic diagram of the integrated Micro Metal Gearmotor encoder.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12497.98x98.jpg?861fd16106ce3cada7e2d3eff202295a&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12497.600x480.jpg?861fd16106ce3cada7e2d3eff202295a&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12497.1200.png?861fd16106ce3cada7e2d3eff202295a&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12476&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor next to a US quarter dollar for size reference.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12476.98x98.jpg?69c415d3139845b75101ff4491a09cd8&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12476.600x480.jpg?69c415d3139845b75101ff4491a09cd8&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12476.1200.jpg?69c415d3139845b75101ff4491a09cd8&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12496&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor size comparison of 1000:1 (bottom) vs other gear ratios (top).\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12496.98x98.jpg?2c789119e5b8348445c059b815cf305e&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12496.600x480.jpg?2c789119e5b8348445c059b815cf305e&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12496.1200.jpg?2c789119e5b8348445c059b815cf305e&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12477&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor (standard version without encoder or extended motor shaft).\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12477.98x98.jpg?4c91aeac1932e69a79d496bb79a41e6f&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12477.600x480.jpg?4c91aeac1932e69a79d496bb79a41e6f&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12477.1200.jpg?4c91aeac1932e69a79d496bb79a41e6f&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J12478&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor with extended motor shaft.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J12478.98x98.jpg?567e81f6f9e0f794ac70fd41793e2f13&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J12478.600x480.jpg?567e81f6f9e0f794ac70fd41793e2f13&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J12478.1200.jpg?567e81f6f9e0f794ac70fd41793e2f13&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6412&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor HPCB long-life carbon brushes (left) next to Micro Metal Gearmotor HP precious metal brushes (right).\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6412.98x98.jpg?c1e7666a800f45ae438bf8afec5b4998&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6412.600x480.jpg?c1e7666a800f45ae438bf8afec5b4998&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6412.1200.jpg?c1e7666a800f45ae438bf8afec5b4998&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J10238&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu Wheel 32×7mm on a Micro Metal Gearmotor.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J10238.98x98.jpg?e86664538f598332c8989f2325016dd7&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J10238.600x480.jpg?e86664538f598332c8989f2325016dd7&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J10238.1200.jpg?e86664538f598332c8989f2325016dd7&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6116&quot;,&quot;caption&quot;:&quot;\u003cp\u003e12mm Hex Wheel Adapter for 3mm Shaft on a Micro Metal Gearmotor.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6116.98x98.jpg?e726e84dfd21fa9aa93f8966d6836de3&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6116.600x480.jpg?e726e84dfd21fa9aa93f8966d6836de3&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6116.1200.jpg?e726e84dfd21fa9aa93f8966d6836de3&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J770&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor mounted to a piece of acrylic with black mounting bracket version.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J770.98x98.jpg?ef090a765eb846ece7c0279f32bd1149&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J770.600x480.jpg?ef090a765eb846ece7c0279f32bd1149&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J770.1200.jpg?ef090a765eb846ece7c0279f32bd1149&quot;,&quot;longest_side&quot;:800},{&quot;id&quot;:&quot;0J769&quot;,&quot;caption&quot;:&quot;\u003cp\u003eMicro Metal Gearmotor mounted to a piece of acrylic with black mounting bracket version.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J769.98x98.jpg?22d80c04fe95bf0fa0b3537f66f19882&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J769.600x480.jpg?22d80c04fe95bf0fa0b3537f66f19882&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J769.1200.jpg?22d80c04fe95bf0fa0b3537f66f19882&quot;,&quot;longest_side&quot;:800},{&quot;id&quot;:&quot;0J902&quot;,&quot;caption&quot;:&quot;\u003cp\u003e37D mm Metal Gearmotor next to a Micro Metal Gearmotor for size comparison.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J902.98x98.jpg?ce900e2320a7ad0750120fb516e668bf&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J902.600x480.jpg?ce900e2320a7ad0750120fb516e668bf&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J902.1200.jpg?ce900e2320a7ad0750120fb516e668bf&quot;,&quot;longest_side&quot;:600}]" data-picture-id="0J12415" data-picture-longest-side="1200" data-gallery-id="main-pictures" src="https://a.pololu-files.com/picture/0J12415.600x480.jpg?db3264e9c34370e00c87132ede2e701a" /></a>
+<div id='related_pictures_gallery'></div>
+</div>
+
+</span><span class='order_form_section'>
+<div class='order_form_with_price_notification'>
+<form action='/cart/add' data-product-id='5216' data-product-ui='short_order_form' enctype='multipart/form-data' method='post'>
+<fieldset class='hidden'>
+<input type="hidden" name="session_id" value="53450b828c2be71467d4df7439263162" />
+<input name='product[id]' type='hidden' value='5216'>
+</fieldset>
+<div>
+<div>
+<span data-product-ui='short_order_form_on_sale' style='display: none'></span>
+<span class='message_positive' data-product-ui='short_order_form_new' style='display: none'>
+<!-- product_recently_added_to_website -->New!
+</span>
+</div>
+<table class='part_number_and_stock text_left'>
+<tr>
+<td class='part_number' style='white-space: nowrap'>
+<span class='label'>Pololu item #:</span>
+<span class='value'>5216</span>
+</td>
+<td class="td_right" data-product-ui="order_form_stock"><span></span></td>
+</tr>
+<tr>
+<td style='white-space: nowrap'>
+<span class='label'>Brand:</span>
+<span class='value'><a href="/brands/pololu">Pololu</a></span>
+</td>
+<td class='td_right'>
+<a data-lightbox-link="true" data-lightbox-height="25rem" data-lightbox-width="34rem" href="/product/5216/supply-outlook">supply outlook</a>
+</td>
+</tr>
+<tr>
+<td colspan='2'>
+<div class='stock-notification-display-div'>
+<div class='stock-notification-label-and-button-div' data-available-stock='21' data-product-id='0J5216'>
+<span class='label'>
+</span>
+<button class='enable-stock-notification-button btn-small btn-link' data-logged-in='false' type='button'>
+Get stock notification
+</button>
+<a class="fa fa-question-circle" data-lightbox-link="true" data-lightbox-height="21rem" data-lightbox-width="27rem" href="/ordering/stock-notifications"></a>
+</div>
+</div>
+
+<tr>
+<td colspan='2'>
+<div class='stock-notification-form-div' style='display: none;'>
+<hr>
+<div class='spaced-row'>
+<div>
+<label>Notify me when stock is at least</label>
+<input class='stock_quantity' name='wishlist_product[notify_stock_quantity]' size='2' type='text'>
+</div>
+<button class='disable-stock-notification-button btn-small btn-link' style='display: none; margin-left: 8px;' type='button'>Cancel</button>
+</div>
+<div>
+<label>Optional: desired quantity</label>
+<input class='desired_quantity' name='wishlist_product[quantity_desired]' size='2' type='text'>
+</div>
+<div class='spaced-row'>
+<div>
+<button class='remove-stock-notification-button btn-small btn-red' type='button'>Remove</button>
+</div>
+<button class='save-stock-notification-button btn-small btn-green' type='button'>Save</button>
+</div>
+<hr>
+</div>
+
+</td>
+</tr>
+
+</td>
+</tr>
+<tr>
+<td colspan='2'>
+<span class='label'>Status:</span>
+<span class='value'>Active and Preferred&nbsp;<a class="fa fa-question-circle" data-lightbox-link="true" data-lightbox-height="21rem" data-lightbox-width="27rem" href="/product-status-overview"></a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a title="RoHS 3 compliant" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/compliance/rohs3-compliant"><img style="width: 76px; height: 16px; min-width: 76px;" alt="RoHS 3 compliant" src="https://a.pololu-files.com/assets/rohs3_compliant_yes-cde9d1a22538fcb174660dfa52f6fb93f93fcdfcf99e282ad9cf792ffa8f3124.png" /></a>
+</td>
+<td class='td_right'></td>
+</tr>
+<tr class='free_shipping_info' style='display: none'>
+<td colspan='2'>
+<a class="shipping_info_popup_link " title="Free add-on shipping in USA" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/free-add-on-shipping-usa"><img style="width: 16px; height: 16px; min-width: 16px;" alt="" src="https://a.pololu-files.com/assets/free_add_on_shipping_usa-6090726d172668d9cb8985f6e646312e37d8bde4dafc6dddbdc77aff8069a03a.png" /></a>&nbsp;Free add-on shipping in USA&nbsp;<a class="shipping_info_popup_link " title="Free add-on shipping in USA" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/free-add-on-shipping-usa"><span class="fa fa-question-circle" /></a>
+</td>
+</tr>
+
+<tr class='free_shipping_info' style='display: none'>
+<td colspan='2'>
+<a class="shipping_info_popup_link " title="This item could qualify for free shipping" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/potential-free-shipping-usa"><img style="width: 16px; height: 11px; min-width: 16px;" alt="This item could qualify for free shipping" src="https://a.pololu-files.com/assets/free_shipping_usa_gray-7c9ae1b4621ead73c8493cff1b11345529bb7604d4584577749f53b7c7a0628f.png" /></a>&nbsp;Free shipping in USA over $75&nbsp;<a class="shipping_info_popup_link " title="This item could qualify for free shipping" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/potential-free-shipping-usa"><span class="fa fa-question-circle" /></a>
+</td>
+</tr>
+
+</table>
+
+
+</div>
+<hr>
+<table class='pricing'>
+<tr>
+<th>
+Price break
+</th>
+<th>
+Unit price (US$)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td class=''>
+32.45
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td class=''>
+29.85
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td class=''>
+27.47
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td class=''>
+25.27
+</td>
+</tr>
+</table>
+<hr>
+
+<table class='add_to_cart'>
+<tr>
+<td class='add_to_cart'>
+<label for='product_quantity'>Quantity:</label>
+<input id='product_quantity' name='product[quantity]' size='2' type='text' value='1'>
+<br>
+<span class='allow_backorders'><!-- allow_backorders --><a href="/ordering#backorders">backorders</a> allowed</span>
+</td>
+<td class='td_right'>
+<div>
+<button alt="Add to cart" name="submit" value="add_to_cart" title="Adds 100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector to your cart." data-add-to-cart="true" data-freeze-cart="false" class="btn-medium btn-green">Add to cart</button><br/>
+<button alt="Add to list" name="submit" value="add_to_list" title="Adds 100:1 Micro Metal Gearmotor HPCB 12V with 12 CPR Encoder, Back Connector to your list." class="btn-small btn-link">Add to list</button>
+</div>
+</td>
+
+</tr>
+</table>
+</form>
+<div>
+<div class='price-notification-container'>
+<div class='price-notification-display-div' style='display: flex; align-items: center;
+margin-top: 0.3em; margin-bottom: 0.3em;'>
+<span class='label price-notification-label'>
+</span>
+<span class='right-span'>
+<button class='enable-price-notification-button btn-small btn-link' data-logged-in='false' type='button'>
+Get price notification
+</button>
+<a class="fa fa-question-circle" data-lightbox-link="true" data-lightbox-height="21rem" data-lightbox-width="27rem" href="/ordering/price-change-notifications"></a>
+</span>
+</div>
+<div class='price-notification-form-div' style='display: none;'>
+<form action='https://www.pololu.com/wishlist_product/set_price_notification' enctype='multipart/form-data' method='post' style='width: 100%'>
+<input type="hidden" name="wishlist_product[id]" id="wishlist_product_id" autocomplete="off" />
+<input type="hidden" name="product_id" id="product_id" value="0J5216" autocomplete="off" />
+<input type="hidden" name="session_id" value="53450b828c2be71467d4df7439263162" />
+<hr>
+<div class='spaced-row'>
+<label>Notify me</label>
+<button class='disable-price-notification-button btn-small btn-link' type='button'>Cancel</button>
+</div>
+<div class='align-center indent-radio'>
+<input checked class='notify-any-price-change' id='notify-any-price-change' name='wishlist_product[price_notification]' type='radio' value='notify-any-price-change'>
+<label for='notify-any-price-change'>&nbspon any price change</label>
+</div>
+<div class='align-center indent-radio'>
+<input class='notify-any-price-drop' id='notify-any-price-drop' name='wishlist_product[price_notification]' type='radio' value='notify-any-price-drop'>
+<label for='notify-any-price-drop'>&nbspon any price drop</label>
+</div>
+<div class='align-center indent-radio'>
+<input class='notify-at-target-price' id='notify-at-target-price' name='wishlist_product[price_notification]' type='radio' value='notify-at-target-price'>
+<label for='notify-at-target-price'>&nbspat or below $</label>
+<input class='target-price' name='wishlist_product[target_price]' placeholder='price' size='3' type='text' value=''>
+<label for='notify-at-target-price'>&nbspat qty&nbsp</label>
+<input class='quantity' name='wishlist_product[target_quantity]' placeholder='qty' size='2' type='text' value=''>
+</div>
+<div class='spaced-row'>
+<div>
+</div>
+<button class='save-price-notification-button btn-small btn-green' type='submit'>Save</button>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+<script type='module'>
+import {PriceNotification} from 'price_notification'
+new PriceNotification();
+import {StockNotification} from 'stock_notification'
+new StockNotification();
+</script>
+
+</span>
+<div id='short_description'>
+<p>This is a miniature brushed DC metal gearmotor with a gearbox cross section of 10×12&nbsp;mm and a 9&nbsp;mm long, 3&nbsp;mm diameter D-shaped gearbox output shaft.
+<a href="/category/277/6-pin-jst-sh-style-cables-for-micro-metal-gearmotor-encoders"><strong>Cables sold separately.</strong></a></p>
+<p><small></p>
+<table class="reference">
+	<tr>
+		<th>motor/brush type</th>
+		<th>gearbox</th>
+		<th colspan="2">encoder</th>
+	</tr>
+	<tr>
+		<td style="text-align:center;">HPCB 12V: high-power 12V with carbon brushes </td>
+		<td style="text-align:center;">100.37:1 with brass plates </td>
+		<td style="border-right: none;"><i class="fa fa-check fa-lg" style="color: green"></i> </td>
+		<td style="border-left: none;">12&nbsp;CPR incremental quadrature with back connector </td>
+	</tr>
+</table>
+<p></small><p><small></p>
+<table class="reference">
+	<tr>
+		<th>voltage</th>
+		<th>no-load performance</th>
+		<th>stall extrapolation*</th>
+	</tr>
+	<tr>
+		<td style="text-align:center;">12 V </td>
+		<td style="text-align:center;">330 RPM, 80 mA </td>
+		<td style="text-align:center;">1.3 kg⋅cm (18 oz⋅in), 0.75 A </td>
+	</tr>
+	<tr>
+		<td style="border: none;" colspan="3"><small>* Note: Stall torque and stall current specifications are theoretical values; stalls could damage the motor or gearbox.</td>
+	</tr>
+</table>
+<p></small></p></p>
+
+</div>
+<p>Alternatives available with variations in these parameter(s):
+<a class="select_by_specification_link" data-lightbox-link="true" data-lightbox-height="20rem" data-lightbox-width="50rem" href="/catalog/select-by-specification?parameters=0J9%2C0J151%2C0J208&amp;product=5216&amp;products=992%2C5100"><span class='select_by_specification_parameter'>gear ratio</span> <span class='select_by_specification_parameter'>motor type</span> <span class='select_by_specification_parameter'>encoder</span>
+<span class="select_by_specification_main_link">Select variant&#8230;</span>
+</a></p><p class='compare_link'>
+<span class="compare"><a href="/search/compare/200"><img alt="" src="https://a.pololu-files.com/assets/compare-cd658e4a1effbb8bf041401c86b9bef3949f6946b740d13b04703d381ec5594b.png" /></a><a title="Compare all products in 12V High-Power Carbon Brush (HPCB) Micro Metal Gearmotors" href="/search/compare/200">Compare all products in 12V High-Power Carbon Brush (HPCB) Micro Metal Gearmotors</a></span>.
+</p></div>
+
+<a name="tabs"></a><table class="tabs"><tr><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/5216&#39;);" href="/product/5216"><span id="name">Description</span></a></th><td>&nbsp;</td><th class="selected "><span id="name">Specs</span> <span id="count">(20)</span></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/5216/pictures&#39;);" href="/product/5216/pictures"><span id="name">Pictures</span> <span id="count">(26)</span></a></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/5216/resources&#39;);" href="/product/5216/resources"><span id="name">Resources</span> <span id="count">(3)</span></a></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/5216/faqs&#39;);" href="/product/5216/faqs"><span id="name">FAQs</span> <span id="count">(2)</span></a></th><td>&nbsp;</td><th class="empty"><span id="name">On the blog</span> <span id="count">(0)</span></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/5216/distributors&#39;);" href="/product/5216/distributors"><span id="name">Distributors</span> <span id="count">(59)</span></a></th><td class="last">&nbsp;</td></tr></table><div class="tab_page"><h2>Dimensions</h2>
+<table class='specifications'>
+<tr class='even'>
+<th>
+Size:
+</th>
+<td>
+10 × 12 × 32 mm<sup><a href="#note1">1</a></sup>
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Weight:
+</th>
+<td>
+11 g
+</td>
+</tr>
+<tr class='even'>
+<th>
+Shaft diameter:
+</th>
+<td>
+3 mm<sup><a href="#note2">2</a></sup>
+</td>
+</tr>
+</table>
+<h2>General specifications</h2>
+<table class='specifications'>
+<tr class='even'>
+<th>
+Gear ratio:
+</th>
+<td>
+100.37:1
+</td>
+</tr>
+<tr class='odd'>
+<th>
+No-load speed @ 12V:
+</th>
+<td>
+330 rpm<sup><a href="#note3">3</a></sup>
+</td>
+</tr>
+<tr class='even'>
+<th>
+No-load current @ 12V:
+</th>
+<td>
+0.08 A<sup><a href="#note4">4</a></sup>
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Stall current @ 12V:
+</th>
+<td>
+0.75 A
+</td>
+</tr>
+<tr class='even'>
+<th>
+Stall torque @ 12V:
+</th>
+<td>
+1.3 kg·cm
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Max output power @ 12V:
+</th>
+<td>
+1.1 W
+</td>
+</tr>
+<tr class='even'>
+<th>
+No-load speed @ 6V:
+</th>
+<td>
+165 rpm<sup><a href="#note5">5</a></sup>
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Stall current @ 6V:
+</th>
+<td>
+0.38 A<sup><a href="#note5">5</a></sup>
+</td>
+</tr>
+<tr class='even'>
+<th>
+Stall torque @ 6V:
+</th>
+<td>
+0.65 kg·cm<sup><a href="#note5">5</a></sup>
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Encoder:
+</th>
+<td>
+12 CPR encoder with back connector
+</td>
+</tr>
+<tr class='even'>
+<th>
+Long-life carbon brushes?:
+</th>
+<td>
+Y
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Motor type:
+</th>
+<td>
+0.75A stall @ 12V (HPCB 12V - carbon brush)
+</td>
+</tr>
+</table>
+<h2>Performance at maximum efficiency</h2>
+<table class='specifications'>
+<tr class='even'>
+<th>
+Max efficiency @ 12V:
+</th>
+<td>
+31 %
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Speed at max efficiency:
+</th>
+<td>
+260 rpm
+</td>
+</tr>
+<tr class='even'>
+<th>
+Torque at max efficiency:
+</th>
+<td>
+0.29 kg·cm
+</td>
+</tr>
+<tr class='odd'>
+<th>
+Current at max efficiency:
+</th>
+<td>
+0.21 A
+</td>
+</tr>
+<tr class='even'>
+<th>
+Output power at max efficiency:
+</th>
+<td>
+0.78 W
+</td>
+</tr>
+</table>
+<h2>Notes:</h2><dl class="specification_notes"><dt><a name="note1"></a>1<dd>Output shaft adds 10&nbsp;mm to the 32&nbsp;mm length, and the encoder extends past the 10 × 12 gearbox cross section on three of the four sides.  See dimension diagram for details.</dd></dt><dt><a name="note2"></a>2<dd>D shaft.</dd></dt><dt><a name="note3"></a>3<dd>Typical; ±20%.</dd></dt><dt><a name="note4"></a>4<dd>Typical, ±50%; no-load current depends on internal friction, which is affected by many factors, including ambient temperature and duration of motor operation.</dd></dt><dt><a name="note5"></a>5<dd>This motor will run at 6&nbsp;V but is intended for operation at 12&nbsp;V.</dd></dt></dl>
+</div>
+
+
+<div id="small_related_items"><div><h2>Related products</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/product/4767"><img alt="" src="https://a.pololu-files.com/picture/0J10983.50x40.jpg?0910ee3116de355895bd358747685897" /></a>
+</td>
+<td><a href="/product/4767">JST SH-Style Cable for Micro Metal Gearmotor Encoders, 6-Pin, Female-Female, 25cm</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4763"><img alt="" src="https://a.pololu-files.com/picture/0J10620.50x40.jpg?11fb8d7dc41c0d05b602b31467467a8d" /></a>
+</td>
+<td><a href="/product/4763">JST SH-Style Cable for Micro Metal Gearmotor Encoders, 6-Pin, Single-Ended Female, 30cm</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4770"><img alt="" src="https://a.pololu-files.com/picture/0J10955.50x40.jpg?52669ed8988039fa6586f1def7d99ae1" /></a>
+</td>
+<td><a href="/product/4770">Breakout for JST SH-Style Connector, 6-Pin Male Top-Entry (Individually Packaged)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4772"><img alt="" src="https://a.pololu-files.com/picture/0J10964.50x40.jpg?45ca06190f20645049ab4176ded879a4" /></a>
+</td>
+<td><a href="/product/4772">Breakout for JST SH-Style Connector, 6-Pin Male Side-Entry (Individually Packaged)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4733"><img alt="" src="https://a.pololu-files.com/picture/0J11867.50x40.jpg?ef919591f71859f55cfe6c44d517ddcb" /></a>
+</td>
+<td><a href="/product/4733">MP6550 Single Brushed DC Motor Driver Carrier</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4040"><img alt="" src="https://a.pololu-files.com/picture/0J12199.50x40.jpg?c3ec992c7ff4c0f109c77d86bc1fceb6" /></a>
+</td>
+<td><a href="/product/4040">ACS724LLCTR-2P5AB Current Sensor Carrier -2.5A to +2.5A</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1089"><img alt="" src="https://a.pololu-files.com/picture/0J1130.50x40.jpg?3fdc80555b0c3046dff4cb558c06e578" /></a>
+</td>
+<td><a href="/product/1089">Pololu Micro Metal Gearmotor Bracket Extended Pair</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/989"><img alt="" src="https://a.pololu-files.com/picture/0J1128.50x40.jpg?da2a3bb5266037b46895d14801aacbaa" /></a>
+</td>
+<td><a href="/product/989">Pololu Micro Metal Gearmotor Bracket Pair - Black</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1086"><img alt="" src="https://a.pololu-files.com/picture/0J1129.50x40.jpg?69196bc32969a42c3777dd222537e220" /></a>
+</td>
+<td><a href="/product/1086">Pololu Micro Metal Gearmotor Bracket Pair - White</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1996"><img alt="" src="https://a.pololu-files.com/picture/0J1103.50x40.jpg?7db91a2dc3cc8350a70604b81e06be32" /></a>
+</td>
+<td><a href="/product/1996">Pololu Universal Aluminum Mounting Hub for 3mm Shaft, M3 Holes (2-Pack)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1079"><img alt="" src="https://a.pololu-files.com/picture/0J1103.50x40.jpg?7db91a2dc3cc8350a70604b81e06be32" /></a>
+</td>
+<td><a href="/product/1079">Pololu Universal Aluminum Mounting Hub for 3mm Shaft, #2-56 Holes (2-Pack)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2682"><img alt="" src="https://a.pololu-files.com/picture/0J6113.50x40.jpg?6663aad5c9fab9215566a44f0e5c4b97" /></a>
+</td>
+<td><a href="/product/2682">12mm Hex Wheel Adapter for 3mm Shaft (2-Pack)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2599"><img alt="" src="https://a.pololu-files.com/picture/0J5835.50x40.jpg?0e43d67a8774df8e29ef7328b53f184a" /></a>
+</td>
+<td><a href="/product/2599">Magnetic Encoder Disc for Micro Metal Gearmotors, OD 7.65 mm, ID 1.0 mm, 12 CPR (Bulk)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1954"><img alt="" src="https://a.pololu-files.com/picture/0J4268.50x40.jpg?cb07a21a22375f47cf69f3f9b18de5cf" /></a>
+</td>
+<td><a href="/product/1954">Machine Screw: M1.6, 3mm Length, Phillips (6-pack)</a></td>
+</tr>
+</table>
+</div>
+</div><div><h2>Related categories</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/category/200/12v-high-power-carbon-brush-hpcb-micro-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J10263.50x40.jpg?49a1846d74699d85af6d4e507490e07b" /></a>
+</td>
+<td><a href="/category/200/12v-high-power-carbon-brush-hpcb-micro-metal-gearmotors">12V High-Power Carbon Brush (HPCB) Micro Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/60/micro-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J6410.50x40.jpg?7b215efad0f55f0963d9f951be03d3d1" /></a>
+</td>
+<td><a href="/category/60/micro-metal-gearmotors">Micro Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/233/pololu-wheels-and-tracks-for-3mm-d-shafts"><img alt="" src="https://a.pololu-files.com/picture/0J1132.50x40.jpg?976b81a847404be17258afa6f141c321" /></a>
+</td>
+<td><a href="/category/233/pololu-wheels-and-tracks-for-3mm-d-shafts">Pololu Wheels and Tracks for 3mm D-Shafts</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/277/6-pin-jst-sh-style-cables-for-micro-metal-gearmotor-encoders"><img alt="" src="https://a.pololu-files.com/picture/0J10981.50x40.jpg?1c65bb2c4be87e6d218aa1222707a857" /></a>
+</td>
+<td><a href="/category/277/6-pin-jst-sh-style-cables-for-micro-metal-gearmotor-encoders">6-Pin JST SH-Style Cables for Micro Metal Gearmotor Encoders</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/278/6-pin-jst-sh-style-connector-boards"><img alt="" src="https://a.pololu-files.com/picture/0J10962.50x40.jpg?73dba083d4edaa4e7bc51c178705c7fa" /></a>
+</td>
+<td><a href="/category/278/6-pin-jst-sh-style-connector-boards">6-Pin JST SH-Style Connector Boards</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/157/encoders-for-micro-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J10611.50x40.jpg?c5604fe587296f96f06195d3fa81426c" /></a>
+</td>
+<td><a href="/category/157/encoders-for-micro-metal-gearmotors">Encoders for Micro Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/11/brushed-dc-motor-drivers"><img alt="" src="https://a.pololu-files.com/picture/0J11303.50x40.jpg?260342e93c318aca14f3c1a6258bbe4d" /></a>
+</td>
+<td><a href="/category/11/brushed-dc-motor-drivers">Brushed DC Motor Drivers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/302/motoron-m1x550-single-motor-controllers"><img alt="" src="https://a.pololu-files.com/picture/0J12124.50x40.jpg?4962047dac795206d2c41c84bf41cc2a" /></a>
+</td>
+<td><a href="/category/302/motoron-m1x550-single-motor-controllers">Motoron M1x550 Single Motor Controllers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/303/motoron-m2x550-dual-motor-controllers"><img alt="" src="https://a.pololu-files.com/picture/0J12132.50x40.jpg?2667087c328f69799d337715174360ba" /></a>
+</td>
+<td><a href="/category/303/motoron-m2x550-dual-motor-controllers">Motoron M2x550 Dual Motor Controllers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/304/motoron-m3s550-triple-motor-controller-shield-for-arduino"><img alt="" src="https://a.pololu-files.com/picture/0J12104.50x40.jpg?6f9a5bff323a0b8bcd96efb891ab5fa2" /></a>
+</td>
+<td><a href="/category/304/motoron-m3s550-triple-motor-controller-shield-for-arduino">Motoron M3S550 Triple Motor Controller Shield for Arduino</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/305/motoron-m3h550-triple-motor-controller-for-raspberry-pi"><img alt="" src="https://a.pololu-files.com/picture/0J12114.50x40.jpg?645598a790454efe15ee2d0d9a53ba21" /></a>
+</td>
+<td><a href="/category/305/motoron-m3h550-triple-motor-controller-for-raspberry-pi">Motoron M3H550 Triple Motor Controller for Raspberry Pi</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/10/brushed-dc-motor-controllers"><img alt="" src="https://a.pololu-files.com/picture/0J8655.50x40.jpg?8286fb950ea760e72ec0eb6c049b2ef8" /></a>
+</td>
+<td><a href="/category/10/brushed-dc-motor-controllers">Brushed DC Motor Controllers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/118/current-sensors"><img alt="" src="https://a.pololu-files.com/picture/0J12516.50x40.jpg?663bf5b25ee5ae40ca001a94a0af9cb0" /></a>
+</td>
+<td><a href="/category/118/current-sensors">Current Sensors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/56/plastic-dc-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J11313.50x40.jpg?b0c35c6e9236cdca992e5b3abaa9ee96" /></a>
+</td>
+<td><a href="/category/56/plastic-dc-gearmotors">Plastic DC Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/167/20d-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J7474.50x40.jpg?0157d52ce89f0ed9ff3b279e72b632fa" /></a>
+</td>
+<td><a href="/category/167/20d-metal-gearmotors">20D Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/115/25d-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J9890.50x40.jpg?c6dfea6448bb8ef0cef701de2d59b4d6" /></a>
+</td>
+<td><a href="/category/115/25d-metal-gearmotors">25D Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/116/37d-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J10683.50x40.jpg?fc49b84b3c9921b0a478ee18a69f6257" /></a>
+</td>
+<td><a href="/category/116/37d-metal-gearmotors">37D Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/129/zumo-robots-and-accessories"><img alt="" src="https://a.pololu-files.com/picture/0J12327.50x40.jpg?ed09e59ebe4ce0f23fc4baa207abbadb" /></a>
+</td>
+<td><a href="/category/129/zumo-robots-and-accessories">Zumo Robots and Accessories</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/76/3pi-robots-and-accessories"><img alt="" src="https://a.pololu-files.com/picture/0J12003.50x40.jpg?afe1131c6d71cc10bc34d0244f259d84" /></a>
+</td>
+<td><a href="/category/76/3pi-robots-and-accessories">3pi Robots and Accessories</a></td>
+</tr>
+</table>
+</div>
+</div></div>
+<script>
+product_ui.update();
+</script>
+
+
+<!-- CONTENTS_END -->
+<div id='footer'>
+<p class='share'>
+<span class="image_text_link"><a href="/product/5216/specs?print=1"><img alt="" src="https://a.pololu-files.com/assets/printer-448cebb2a5016700db2565421ada6e98f90fabe5885d8cd3cca1a3854748e146.png" /></a><a href="/product/5216/specs?print=1">Print</a></span>
+<span class="image_text_link"><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs&amp;subject"><img alt="" src="https://a.pololu-files.com/assets/email-f2957b324fa09a7d81ed64679a6b9454647ad40514cd7b1ce501aefd946f5593.png" /></a><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs&amp;subject">Email a friend</a></span>
+<span class="image_text_link"><a href="/feeds"><img alt="" src="https://a.pololu-files.com/assets/feed-icon-12x12-ad0e7f1965647f9414a76a1f32fb46dc73c1b2d295201b0abb56f2b2cf88bfb2.png" /></a><a href="/feeds">Feeds</a></span>
+</p>
+<p class='links'>
+<a href="/">Home</a>
+|
+<a href="https://forum.pololu.com/">Forum</a>
+|
+<a href="/blog">Blog</a>
+|
+<a href="/support">Support</a>
+|
+<a href="/ordering">Ordering Information</a>
+|
+<a href="/list">Lists</a>
+|
+<a href="/distributors">Distributors</a>
+|
+<a href="/catalog/bigorderform">BIG Order Form</a>
+|
+<a href="/about">About</a>
+|
+<a href="/contact">Contact</a>
+</p>
+<p id='copyright'>&copy; 2001<a rel="nofollow" style="text-decoration: none; color: inherit;" href="/pot/0?from=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs">–</a>2026 Pololu Corporation</p>
+</div>
+</div>
+</div>
+<div id='right_col'>
+<div class='menu' data-my-quotes='1'></div>
+<script>quote.display_list()</script>
+<div class='menu' data-mini-cart='1'></div>
+<script>cart.display_mini_cart_content()</script>
+<div><h2>Related Products</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/product/4767"><img alt="" src="https://a.pololu-files.com/picture/0J10983.50x40.jpg?0910ee3116de355895bd358747685897" /></a>
+</td>
+<td><a href="/product/4767">JST SH-Style Cable for Micro Metal Gearmotor Encoders, 6-Pin, Female-Female, 25cm</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4763"><img alt="" src="https://a.pololu-files.com/picture/0J10620.50x40.jpg?11fb8d7dc41c0d05b602b31467467a8d" /></a>
+</td>
+<td><a href="/product/4763">JST SH-Style Cable for Micro Metal Gearmotor Encoders, 6-Pin, Single-Ended Female, 30cm</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4770"><img alt="" src="https://a.pololu-files.com/picture/0J10955.50x40.jpg?52669ed8988039fa6586f1def7d99ae1" /></a>
+</td>
+<td><a href="/product/4770">Breakout for JST SH-Style Connector, 6-Pin Male Top-Entry (Individually Packaged)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4772"><img alt="" src="https://a.pololu-files.com/picture/0J10964.50x40.jpg?45ca06190f20645049ab4176ded879a4" /></a>
+</td>
+<td><a href="/product/4772">Breakout for JST SH-Style Connector, 6-Pin Male Side-Entry (Individually Packaged)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4733"><img alt="" src="https://a.pololu-files.com/picture/0J11867.50x40.jpg?ef919591f71859f55cfe6c44d517ddcb" /></a>
+</td>
+<td><a href="/product/4733">MP6550 Single Brushed DC Motor Driver Carrier</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/4040"><img alt="" src="https://a.pololu-files.com/picture/0J12199.50x40.jpg?c3ec992c7ff4c0f109c77d86bc1fceb6" /></a>
+</td>
+<td><a href="/product/4040">ACS724LLCTR-2P5AB Current Sensor Carrier -2.5A to +2.5A</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1089"><img alt="" src="https://a.pololu-files.com/picture/0J1130.50x40.jpg?3fdc80555b0c3046dff4cb558c06e578" /></a>
+</td>
+<td><a href="/product/1089">Pololu Micro Metal Gearmotor Bracket Extended Pair</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/989"><img alt="" src="https://a.pololu-files.com/picture/0J1128.50x40.jpg?da2a3bb5266037b46895d14801aacbaa" /></a>
+</td>
+<td><a href="/product/989">Pololu Micro Metal Gearmotor Bracket Pair - Black</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1086"><img alt="" src="https://a.pololu-files.com/picture/0J1129.50x40.jpg?69196bc32969a42c3777dd222537e220" /></a>
+</td>
+<td><a href="/product/1086">Pololu Micro Metal Gearmotor Bracket Pair - White</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1996"><img alt="" src="https://a.pololu-files.com/picture/0J1103.50x40.jpg?7db91a2dc3cc8350a70604b81e06be32" /></a>
+</td>
+<td><a href="/product/1996">Pololu Universal Aluminum Mounting Hub for 3mm Shaft, M3 Holes (2-Pack)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1079"><img alt="" src="https://a.pololu-files.com/picture/0J1103.50x40.jpg?7db91a2dc3cc8350a70604b81e06be32" /></a>
+</td>
+<td><a href="/product/1079">Pololu Universal Aluminum Mounting Hub for 3mm Shaft, #2-56 Holes (2-Pack)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2682"><img alt="" src="https://a.pololu-files.com/picture/0J6113.50x40.jpg?6663aad5c9fab9215566a44f0e5c4b97" /></a>
+</td>
+<td><a href="/product/2682">12mm Hex Wheel Adapter for 3mm Shaft (2-Pack)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2599"><img alt="" src="https://a.pololu-files.com/picture/0J5835.50x40.jpg?0e43d67a8774df8e29ef7328b53f184a" /></a>
+</td>
+<td><a href="/product/2599">Magnetic Encoder Disc for Micro Metal Gearmotors, OD 7.65 mm, ID 1.0 mm, 12 CPR (Bulk)</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1954"><img alt="" src="https://a.pololu-files.com/picture/0J4268.50x40.jpg?cb07a21a22375f47cf69f3f9b18de5cf" /></a>
+</td>
+<td><a href="/product/1954">Machine Screw: M1.6, 3mm Length, Phillips (6-pack)</a></td>
+</tr>
+</table>
+</div>
+</div><div><h2>Related Categories</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/category/200/12v-high-power-carbon-brush-hpcb-micro-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J10263.50x40.jpg?49a1846d74699d85af6d4e507490e07b" /></a>
+</td>
+<td><a href="/category/200/12v-high-power-carbon-brush-hpcb-micro-metal-gearmotors">12V High-Power Carbon Brush (HPCB) Micro Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/60/micro-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J6410.50x40.jpg?7b215efad0f55f0963d9f951be03d3d1" /></a>
+</td>
+<td><a href="/category/60/micro-metal-gearmotors">Micro Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/233/pololu-wheels-and-tracks-for-3mm-d-shafts"><img alt="" src="https://a.pololu-files.com/picture/0J1132.50x40.jpg?976b81a847404be17258afa6f141c321" /></a>
+</td>
+<td><a href="/category/233/pololu-wheels-and-tracks-for-3mm-d-shafts">Pololu Wheels and Tracks for 3mm D-Shafts</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/277/6-pin-jst-sh-style-cables-for-micro-metal-gearmotor-encoders"><img alt="" src="https://a.pololu-files.com/picture/0J10981.50x40.jpg?1c65bb2c4be87e6d218aa1222707a857" /></a>
+</td>
+<td><a href="/category/277/6-pin-jst-sh-style-cables-for-micro-metal-gearmotor-encoders">6-Pin JST SH-Style Cables for Micro Metal Gearmotor Encoders</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/278/6-pin-jst-sh-style-connector-boards"><img alt="" src="https://a.pololu-files.com/picture/0J10962.50x40.jpg?73dba083d4edaa4e7bc51c178705c7fa" /></a>
+</td>
+<td><a href="/category/278/6-pin-jst-sh-style-connector-boards">6-Pin JST SH-Style Connector Boards</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/157/encoders-for-micro-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J10611.50x40.jpg?c5604fe587296f96f06195d3fa81426c" /></a>
+</td>
+<td><a href="/category/157/encoders-for-micro-metal-gearmotors">Encoders for Micro Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/11/brushed-dc-motor-drivers"><img alt="" src="https://a.pololu-files.com/picture/0J11303.50x40.jpg?260342e93c318aca14f3c1a6258bbe4d" /></a>
+</td>
+<td><a href="/category/11/brushed-dc-motor-drivers">Brushed DC Motor Drivers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/302/motoron-m1x550-single-motor-controllers"><img alt="" src="https://a.pololu-files.com/picture/0J12124.50x40.jpg?4962047dac795206d2c41c84bf41cc2a" /></a>
+</td>
+<td><a href="/category/302/motoron-m1x550-single-motor-controllers">Motoron M1x550 Single Motor Controllers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/303/motoron-m2x550-dual-motor-controllers"><img alt="" src="https://a.pololu-files.com/picture/0J12132.50x40.jpg?2667087c328f69799d337715174360ba" /></a>
+</td>
+<td><a href="/category/303/motoron-m2x550-dual-motor-controllers">Motoron M2x550 Dual Motor Controllers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/304/motoron-m3s550-triple-motor-controller-shield-for-arduino"><img alt="" src="https://a.pololu-files.com/picture/0J12104.50x40.jpg?6f9a5bff323a0b8bcd96efb891ab5fa2" /></a>
+</td>
+<td><a href="/category/304/motoron-m3s550-triple-motor-controller-shield-for-arduino">Motoron M3S550 Triple Motor Controller Shield for Arduino</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/305/motoron-m3h550-triple-motor-controller-for-raspberry-pi"><img alt="" src="https://a.pololu-files.com/picture/0J12114.50x40.jpg?645598a790454efe15ee2d0d9a53ba21" /></a>
+</td>
+<td><a href="/category/305/motoron-m3h550-triple-motor-controller-for-raspberry-pi">Motoron M3H550 Triple Motor Controller for Raspberry Pi</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/10/brushed-dc-motor-controllers"><img alt="" src="https://a.pololu-files.com/picture/0J8655.50x40.jpg?8286fb950ea760e72ec0eb6c049b2ef8" /></a>
+</td>
+<td><a href="/category/10/brushed-dc-motor-controllers">Brushed DC Motor Controllers</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/118/current-sensors"><img alt="" src="https://a.pololu-files.com/picture/0J12516.50x40.jpg?663bf5b25ee5ae40ca001a94a0af9cb0" /></a>
+</td>
+<td><a href="/category/118/current-sensors">Current Sensors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/56/plastic-dc-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J11313.50x40.jpg?b0c35c6e9236cdca992e5b3abaa9ee96" /></a>
+</td>
+<td><a href="/category/56/plastic-dc-gearmotors">Plastic DC Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/167/20d-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J7474.50x40.jpg?0157d52ce89f0ed9ff3b279e72b632fa" /></a>
+</td>
+<td><a href="/category/167/20d-metal-gearmotors">20D Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/115/25d-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J9890.50x40.jpg?c6dfea6448bb8ef0cef701de2d59b4d6" /></a>
+</td>
+<td><a href="/category/115/25d-metal-gearmotors">25D Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/116/37d-metal-gearmotors"><img alt="" src="https://a.pololu-files.com/picture/0J10683.50x40.jpg?fc49b84b3c9921b0a478ee18a69f6257" /></a>
+</td>
+<td><a href="/category/116/37d-metal-gearmotors">37D Metal Gearmotors</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/129/zumo-robots-and-accessories"><img alt="" src="https://a.pololu-files.com/picture/0J12327.50x40.jpg?ed09e59ebe4ce0f23fc4baa207abbadb" /></a>
+</td>
+<td><a href="/category/129/zumo-robots-and-accessories">Zumo Robots and Accessories</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/76/3pi-robots-and-accessories"><img alt="" src="https://a.pololu-files.com/picture/0J12003.50x40.jpg?afe1131c6d71cc10bc34d0244f259d84" /></a>
+</td>
+<td><a href="/category/76/3pi-robots-and-accessories">3pi Robots and Accessories</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+<div id='lightbox_holder'>
+<div id='lightbox_gray_screen'></div>
+<div id='lightbox'>
+<div id='lightbox_gallery'></div>
+<div id='lightbox_content'></div>
+<div id='lightbox_right'><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+<div id='lightbox_left'><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+<div id='lightbox_close'>
+<a href='#' title='Close'><i class="fa fa-times" aria-hidden="true"></i></a>
+</div>
+<div id='lightbox_full'>
+<a href='#' title='View image'><i class="fa fa-expand" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+
+<div id='header_small_top'>
+<!-- / this has to go first since it takes up 100% of the width and would block clicking on other parts -->
+<div id='header_center_right'>
+<span data-login-ui='login'>
+<a href="/account/login?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs">Log In</a>
+</span>
+<span data-login-ui='my_account'>
+<a title="My account" data-login-ui="my_account_link" href="/account"></a>
+</span>
+
+</div>
+<div id='header_small_left'>
+<a href="/"><img width="118" height="30" alt="Pololu Robotics &amp; Electronics" class="logo_pololu_only" src="https://a.pololu-files.com/assets/header_pololu_only-fff6349c8769e6b2e59624d6dceacac4422156c5ac8b8b23532f0e93678bb981.png" /></a>
+</div>
+<div id='header_small_right'>
+<a href="/cart"><img width="30" height="30" alt="Shopping cart" src="https://a.pololu-files.com/assets/cart-bf4bf66669c9b9288e6e972718067855ecdcdfc80622cfea29ac04b29478f873.png" /></a>
+</div>
+</div>
+<div id='header_small_bottom'>
+<div id='header_small_right'>
+(702) 262-6648<br/>
+<a href="/ordering">Same-day shipping, worldwide</a>
+</div>
+<div id='header_small_left'>
+<a id="menu_button" onclick="return false;" href="/catalog/menu"><img width="30" height="30" alt="Menu" src="https://a.pololu-files.com/assets/menu-2023bba099d8fd2a25d8e1803c5bdf0aa0a024d9d585000ff9aec2c8a436b29a.png" /></a>
+</div>
+</div>
+<div id='header_small_menu'>
+<div class='header_small_menu_columns'>
+<a href="/catalog/menu">Shop</a>
+<a href="/blog">Blog</a>
+<a href="https://forum.pololu.com/">Forum</a>
+<a href="/support">Support</a>
+</div>
+<!-- / specify local variable id to set an id for the form, mainly for use with testing -->
+<form action='/search' id='header_small_search'>
+<div class='search'><input autocomplete='off' class='search_input mini_search_input' data-autocomplete-search='true' id='header_small_search_input' name='query' placeholder='Search' type='text'><input alt='' class='search_button' src='https://a.pololu-files.com/assets/magglass-d28c6b7b9d1f35858a702b71e13b678bfdee962d795c7ad2426ed9b19ccac5e8.png' type='image' value='go'>
+</div>
+</form>
+
+<a title="My account" href="/account">My account</a>
+<a data-feedback="true" href="/feedback/new?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs">Comments or questions?</a>
+<a href="/about">About Pololu</a>
+<a href="/contact">Contact</a>
+<a href="/ordering">Ordering information</a>
+<a href="/distributors">Distributors</a>
+</div>
+<div id='gray_screen'></div>
+<script>
+menuInit();
+</script>
+
+<div id='header_holder'>
+<table id='header'>
+<tr id='header_top'>
+<td id='header_logo' rowspan='2'>
+<a href="/"><img width="219" height="69" alt="Pololu Robotics and Electronics" class="logo" style="max-width: 230px;" src="https://a.pololu-files.com/assets/header_pololu_no_padding-e37eb899d2ec2ded9153a53ad9e0e6e12861f762e2c3bafb4ca40e79a85d149e.png" /></a>
+</td>
+<td colspan='16' id='header_address'>
+<div id='header_account_links'>
+<span data-login-ui='login'>
+<a href="/account/login?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs">Log In</a>
+</span>
+<span data-login-ui='my_account'>
+<a title="My account" data-login-ui="my_account_link" href="/account"></a>
+|
+<a href="/account">My Account</a>
+|
+</span>
+<div data-login-ui='logout'>
+<form data-login-ui="logout" action="https://www.pololu.com/account/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="utf8" value="✓" /><input type="hidden" name="session_id" value="**SESSION_ID_STUB**" /><button class="btn-link" name="log-out-button">Log Out</button></form>
+</div>
+
+|
+<a href="/cart">Shopping Cart <img width="16" height="16" alt="" src="https://a.pololu-files.com/assets/cart-bf4bf66669c9b9288e6e972718067855ecdcdfc80622cfea29ac04b29478f873.png" /></a>
+<script>dynamic_user_login.init()</script>
+</div>
+<p class='phone_number'>
+US toll free: 1-877-7-POLOLU ~
+(702) 262-6648<br/>
+<a href="/ordering">Same-day shipping, worldwide</a>
+</p>
+</td>
+</tr>
+<tr id='header_links'>
+<th class='selected'>
+<a href="/">Catalog</a>
+</th>
+<td>&nbsp;</td>
+<th>
+<a href="https://forum.pololu.com/">Forum</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/blog">Blog</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/support">Support</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/ordering">Ordering</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/distributors">Distributors</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/about">About</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/contact">Contact</a>
+</th>
+<td class='last'></td>
+</tr>
+</table>
+</div>
+<div id='left_col'>
+<div class='menu' id='menu_search'>
+<div>
+<!-- / specify local variable id to set an id for the form, mainly for use with testing -->
+<form action='/search' id='sidebar_search'>
+<div class='search'><input autocomplete='off' class='search_input mini_search_input' data-autocomplete-search='true' id='sidebar_search_input' name='query' placeholder='Search' type='text'><input alt='' class='search_button' src='https://a.pololu-files.com/assets/magglass-d28c6b7b9d1f35858a702b71e13b678bfdee962d795c7ad2426ed9b19ccac5e8.png' type='image' value='go'>
+</div>
+</form>
+
+</div>
+</div>
+<div class='menu'>
+<h2><a data-feedback="true" href="">Feedback</a></h2>
+<div>
+<a class="menu_visible_link" data-feedback="true" href="">Comments or questions?</a>
+</div>
+</div>
+<div class='menu'>
+<h2><a href="/category/31/services">Services</a></h2>
+<div>
+<ul>
+<li>
+<a href="/product/749">Custom Laser Cutting</a>
+</li>
+<li>
+<a href="/product/446">SMT Stencils</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='menu'>
+<h2><a href="/">Products</a></h2>
+<div>
+<!-- sidebar_categories --><h3><a href="/category/42/new-products">New Products</a></h3>
+<h3><span class="specials_category"><a href="/specials">Specials!</a></span></h3>
+<hr />
+<h3><a href="/category/2/robot-kits">Robots</a></h3>
+<ul>
+	<li><a href="/category/76/3pi-robots-and-accessories">3pi</a></li>
+	<li><a href="/category/210/balboa-robot-and-accessories">Balboa</a></li>
+	<li><a href="/category/327/collaborative-robots">Cobot</a></li>
+	<li><a href="/category/202/romi-chassis-and-accessories">Romi</a></li>
+	<li><a href="/category/129/zumo-robots-and-accessories">Zumo</a></li>
+	<li><a href="/category/3/robot-kits-with-soldering">Kits, Soldering</a></li>
+	<li><a href="/category/4/robot-kits-without-soldering">Kits, No Soldering</a></li>
+</ul>
+<h3><a href="/category/6/electronics">Electronics</a></h3>
+<ul>
+	<li><a href="/category/125/arduino-compatible">Arduino</a></li>
+	<li><a href="/category/39/cables-and-wire">Cables and Wires</a></li>
+	<li><a href="/category/13/computer-interface">Computer Interface</a></li>
+	<li><a href="/category/19/connectors">Connectors</a></li>
+	<li><a href="/category/64/development-boards-programmable-controllers">Development Boards</a></li>
+	<li><a href="/category/334/isolation">Isolation</a></li>
+	<li><a href="/category/20/leds">LEDs</a></li>
+	<li><a href="/category/9/motion-control-modules">Motor Control</a></li>
+	<li><a href="/category/321/power">Power</a></li>
+	<li><a href="/category/14/electronics-prototyping">Prototyping</a></li>
+	<li><a href="/category/150/raspberry-pi">Raspberry Pi</a></li>
+	<li><a href="/category/135/relay-modules">Relays</a></li>
+	<li><a href="/category/7/sensors">Sensors</a></li>
+	<li><a href="/category/102/maestro-usb-servo-controllers">Servo Control</a></li>
+	<li><a href="/category/136/voltage-regulators">Voltage Regulators</a></li>
+</ul>
+<h3><a href="/category/21/mechanical-components">Mechanical</a></h3>
+<ul>
+	<li><a href="/category/231/ball-casters">Ball Casters</a></li>
+	<li><a href="/category/230/brackets">Brackets</a></li>
+	<li><a href="/category/26/chassis">Chassis</a></li>
+	<li><a href="/category/25/hardware">Hardware</a></li>
+	<li><a href="/category/127/linear-actuators">Linear Actuators</a></li>
+	<li><a href="/category/22/motors-and-gearboxes">Motors</a></li>
+	<li><a href="/category/179/motor-shaft-adapters">Motor Shaft Adapters</a></li>
+	<li><a href="/category/205/servos">Servos</a></li>
+	<li><a href="/category/87/stepper-motors">Stepper Motors</a></li>
+	<li><a href="/category/61/tamiya-products">Tamiya Products</a></li>
+	<li><a href="/category/5/tools">Tools</a></li>
+	<li><a href="/category/232/tracks">Tracks</a></li>
+	<li><a href="/category/234/wheels">Wheels</a></li>
+</ul>
+<h3><a href="/category/109/shirts">Shirts</a></h3>
+<ul>
+	<li><a href="/category/237/pololu-balboa-t-shirts">Balboa T-Shirts</a></li>
+	<li><a href="/category/194/pololu-zumo-t-shirts">Zumo T-Shirts</a></li>
+	<li><a href="/category/193/pololu-circuit-logo-t-shirts">Logo T-Shirts</a></li>
+</ul>
+</div>
+</div>
+
+<div class='menu'>
+<h2>Community</h2>
+<div>
+<ul>
+<li>
+<a data-lightbox-link="true" data-lightbox-height="34rem" data-lightbox-width="36rem" href="/account/communication-preferences">Mailing list</a>
+</li>
+<li>
+<a href="/blog">Pololu Blog</a>
+</li>
+<li>
+<a href="/blog/engage-your-brain">Engage Your Brain</a>
+</li>
+<li>
+<a href="/blog/community-projects">Community Projects</a>
+</li>
+<li>
+<span class="image_text_link"><a href="/feeds"><img alt="" src="https://a.pololu-files.com/assets/feed-icon-12x12-ad0e7f1965647f9414a76a1f32fb46dc73c1b2d295201b0abb56f2b2cf88bfb2.png" /></a><a href="/feeds">Feeds</a></span>
+</li>
+<li>
+<span class="image_text_link"><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs&amp;subject"><img alt="" src="https://a.pololu-files.com/assets/email-f2957b324fa09a7d81ed64679a6b9454647ad40514cd7b1ce501aefd946f5593.png" /></a><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F5216%2Fspecs&amp;subject">Email a friend</a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='mathjax'></div>
+</body>
+</html>

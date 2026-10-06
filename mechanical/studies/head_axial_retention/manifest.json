@@ -1,0 +1,76 @@
+{
+  "candidate_id": "A5",
+  "status": "PASS",
+  "scope": "Named finite nominal geometry checks only",
+  "user_approval": "BLOCKED",
+  "main_replaced": false,
+  "source_sha256": "e81df3f1f7ba1d832b17341ae244c75a582f9ba91341356a62c80a26b04d9b25",
+  "source_unchanged": true,
+  "physical_validation": "NOT_TESTED",
+  "horn_interfaces": "BLOCKED",
+  "body_sequence_samples": 407,
+  "commands": [
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "mechanical/mori_v1_2.blend",
+        "--python",
+        "mechanical/studies/head_axial_retention/audit_current.py"
+      ],
+      "log": "audit_current.log"
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "mechanical/mori_v1_2.blend",
+        "--python",
+        "mechanical/studies/head_axial_retention/candidate.py"
+      ],
+      "log": "candidate.log"
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "mechanical/studies/head_axial_retention/candidate.blend",
+        "--python",
+        "mechanical/studies/head_axial_retention/readback.py"
+      ],
+      "log": "readback.log"
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "mechanical/studies/head_axial_retention/candidate.blend",
+        "--python",
+        "mechanical/studies/head_axial_retention/body_sequence_check.py"
+      ],
+      "log": "body_sequence.log"
+    },
+    {
+      "argv": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "mechanical/studies/head_axial_retention/publish.py"
+      ]
+    }
+  ],
+  "files": {
+    "candidate.blend": "f6679b5fa29e1940cb24b04a076bc126fd4614136cb0c664a4cc73429cd10bde",
+    "candidate.py": "5b21276f5287a7ca4879a407a68344c36d87cf06029dd959e7d35a92ae9971fb",
+    "candidate.json": "9f6d69c67e05abd518531b82fce060b7a321b084f141059f314a50ea28775556",
+    "readback.json": "ac1c000db09caff8cbca30524b85f8f42d2615557abb1b3ebc964eed5d14e8f4",
+    "body_sequence.json": "3263bdf086f2738c39e153a31d0603c59920f664b33e6f8856006a8b7b703bca",
+    "section.png": "1e378a574e0138021eba2ab13dc88963fc5362a95e58d71765f96b58eb4c7cfb",
+    "comparison.png": "d3ca526cc52a0ce1963c8121a5fceba6b0f32c8ecb4c5f9cb7960595ff8ba3ff",
+    "index.html": "876cc68f2e24a9e3f5483c3a703da51c03c02e6d1b74b16cbaadbb09e11c3286",
+    "README.md": "aec1647d9bd39efc5420b2a911e105530c128cb8645fae18164bc266e33ac5da",
+    "readback.py": "49841a7e7e86ed889a3d455c6643c1ab12127a581b168e55cd3474259b6c29e4",
+    "body_sequence_check.py": "328990bc865b437c42332b2badbee6ce94a59dc65e028ca7713a9e9ec92fae68",
+    "publish.py": "9c3a1a97a068eb0ed2913c871b7f4d20aface1b68840b3abb4365f22ae0a7ece",
+    "inspection.json": "498799f95d1d72e20dc3757f4aeca98731fd5af6bf93d61dfda717a5a2f15134",
+    "sections.json": "cad36486ccb903d3b9fb62f5c023421e0584b38b23f7ef075d1acc535ea07595"
+  }
+}

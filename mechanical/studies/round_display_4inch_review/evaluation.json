@@ -1,0 +1,119 @@
+{
+  "date": "2026-09-26",
+  "baseline_revision": "V1.2-M1.36",
+  "units": "mm",
+  "scope": "Independent numerical sizing study; no replacement selected; production CAD/PCB unchanged.",
+  "sources": {
+    "waveshare_hdmi": "https://www.waveshare.com/wiki/4inch_720x720_LCD",
+    "waveshare_p4": "https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-XC",
+    "waveshare_p4_cad": "https://files.waveshare.com/wiki/ESP32-P4-WIFI6-Touch-LCD-XC/ESP32-P4-WIFI6-TOUCH-LCD-4C-3D.zip",
+    "zhunyi_raw": "https://www.zhunyidisplay.com/products/z40054-4-inch-720720-lcd-display-mipi-interface-500-cd-m2-round-tft-lcm/",
+    "espressif_s3_rgb": "https://docs.espressif.com/projects/esp-iot-solution/en/latest/display/lcd/rgb_lcd.html"
+  },
+  "source_hashes": {
+    "waveshare_4C_3D.zip": "8bbd1515fe38d5a509029ef4f8603df459c138435c250faad362f8bc8c675b56",
+    "ESP32-P4-WIFI6-TOUCH-LCD-4C.stp": "98a3fd7a717a7105867043e5bb60191e647332f0dd4f1e7c332dcbfef2b2cfc9",
+    "ESP32-P4-WIFI6-TOUCH-LCD-4C.pdf": "a945e5328508f84a0f1c9d3f4d316ea9b548ff522d38250690742361f77b093a"
+  },
+  "input_hashes": {
+    "config/geometry.json": "f861adb5da8aef607368a87223b1b7ea9ffab692a5e4fe6f960c2748f3cb8b0a",
+    "contracts/mechanical_interfaces.json": "171814b74ea3de1d1696e7a791897bef7e2df709a77cb053a3f022ccbd5310c2",
+    "contracts/components.json": "f97b95addee1708530ba05247e3012e7525fa2666af5c31d970c37b037433b36",
+    "mechanical/reports/mass_budget.json": "ea3e3b8b7a108898f5611c37e9b2b6dcde8bd9afebc23ba6d67aad6603fa532f"
+  },
+  "baseline": {
+    "head_diameter": 120,
+    "active_diameter": 45.68,
+    "mask_diameter": 60,
+    "whole_mass_g_assumed": 1435,
+    "com_z_mm_assumed": 111.1,
+    "mass_uncertainty": "At least +/-35%; uniform density approximation; screws/connector internals/cable actual masses incomplete. Not measured. Mass placement must be revisited in control model."
+  },
+  "candidates": [
+    {
+      "model": "Waveshare 4inch 720x720 LCD HDMI",
+      "evidence": "VENDOR_DOCUMENTED",
+      "active_diameter": 101.52,
+      "module_xyz": [
+        126,
+        126,
+        17
+      ],
+      "power_W_typical": 1.8,
+      "interface": "HDMI display; USB touch/power",
+      "unchanged_head_fit": "FAIL"
+    },
+    {
+      "model": "Waveshare ESP32-P4-WIFI6-Touch-LCD-4C SKU31522",
+      "evidence": "VENDOR_DOCUMENTED",
+      "active_diameter": 101.52,
+      "drawing_outer_diameter": 126,
+      "drawing_thickness": 15.1,
+      "official_STEP_AABB_xyz": [
+        126,
+        126,
+        15.5000001
+      ],
+      "dimension_discrepancy": "Drawing thickness15.1 versus full vendor STEP bound15.5; revision/feature must be confirmed.",
+      "interface": "Integrated P4/C6; 2-lane MIPI display/camera; different camera/audio integration",
+      "unchanged_head_fit": "FAIL"
+    },
+    {
+      "model": "Zhunyi Z40054 bare LCD",
+      "evidence": "VENDOR_DOCUMENTED per-field webpage",
+      "active_diameter": 101.52,
+      "LCM_xyz_without_FPC": [
+        105.6,
+        109.87,
+        2.22
+      ],
+      "interface": "MIPI",
+      "fit": "NOT_TESTED",
+      "unknown": "Installed FPC/controller/backlight supply/fastening/tolerances/mass/quote; no vendor 3D received"
+    }
+  ],
+  "computed": {
+    "active_diameter_ratio": 2.222416812609457,
+    "active_area_ratio": 4.9391364889691785,
+    "active_fraction_of_head_diameter": 0.846,
+    "projected_side_margin_before_bezel_mm": 9.240000000000002,
+    "ideal_sphere_chord_plane": {
+      "existing_60mm_mask_normal_distance": 51.96152422706632,
+      "new_active_only_normal_distance": 31.990973726974932,
+      "inward_difference": 19.970550500091388,
+      "limitation": "Mother sphere chord calculation only, not actual collision detection; existing mask compared with new active aperture only. Tilt rotates this normal; it is not global Y."
+    },
+    "framebuffer_RGB565_bytes_720square": 1036800,
+    "framebuffer_ratio_vs_360square": 4,
+    "COM_sensitivity_assumed_net_added_mass_at_z230mm": [
+      {
+        "net_added_g": 25,
+        "com_rise_mm": 2.035958904109589
+      },
+      {
+        "net_added_g": 50,
+        "com_rise_mm": 4.0033670033670035
+      },
+      {
+        "net_added_g": 100,
+        "com_rise_mm": 7.745928338762215
+      }
+    ]
+  },
+  "checks": {
+    "production_input_unchanged": "PASS",
+    "numerical_diameter_screening": "PASS",
+    "full_candidate_solid_collision": "NOT_TESTED",
+    "camera_FOV": "NOT_TESTED",
+    "combined_joint_motion": "NOT_TESTED",
+    "electrical_compatibility": "BLOCKED",
+    "measured_mass_and_torque": "NOT_TESTED",
+    "power_and_thermal": "NOT_TESTED",
+    "procurement_and_1000CNY_budget": "BLOCKED"
+  },
+  "tools": {
+    "python": "3.12.14",
+    "matplotlib": "3.11.2",
+    "CAD_method": "OCP STEPControl_Reader.TransferRoots; BRepBndLib.AddOptimal_s(False,False) on official STEP; mm dimensions cross-checked with drawing"
+  }
+}

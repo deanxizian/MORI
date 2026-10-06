@@ -1,0 +1,182 @@
+{
+  "status": "PASS",
+  "scope": "Read-only receipt and published-board hash preservation; no product adoption or full fit",
+  "received_utc": "2026-10-02T11:28:31.953293+00:00",
+  "source": "hardware/v1_2/handoff/mechanical_P5R7_prearrival_A2.json",
+  "sha256": "b7ee51734472dd4a4cab364447354422f3af690250e0d9349caa64c2842945b9",
+  "base_handoff_hash_match": true,
+  "native_hash_checks": {
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_dru": true,
+    "hardware/v1_2/kicad/MORI_rear_P5R7/MORI_rear_P5R7.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_rear_P5R7/MORI_rear_P5R7.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_rear_P5R7/MORI_rear_P5R7.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_rear_P5R7/MORI_rear_P5R7.kicad_dru": true,
+    "hardware/v1_2/kicad/MORI_power_P5R6/MORI_power_P5R6.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_power_P5R6/MORI_power_P5R6.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_power_P5R6/MORI_power_P5R6.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_power_P5R6/MORI_power_P5R6.kicad_dru": true,
+    "hardware/v1_2/kicad/MORI_imu_P5R4/MORI_imu_P5R4.kicad_pcb": true,
+    "hardware/v1_2/kicad/MORI_imu_P5R4/MORI_imu_P5R4.kicad_sch": true,
+    "hardware/v1_2/kicad/MORI_imu_P5R4/MORI_imu_P5R4.kicad_pro": true,
+    "hardware/v1_2/kicad/MORI_imu_P5R4/MORI_imu_P5R4.kicad_dru": true
+  },
+  "main_modified": false,
+  "J10_candidate_status": "FAIL",
+  "formal_board_revisions_unchanged": true,
+  "next_action": "Independent side-entry envelope and removal review; keep failed electrical candidate out of main",
+  "built_contract_snapshot": "mechanical/studies/prearrival_finish/thin_candidate_workspace/contracts/components.json",
+  "built_contract_sha256": "19e93b76f0aa75e625cd9e7b828dbe12088854104a9bafe2044fd6b1a0f5f236",
+  "live_contract_sha256": "63ce556f4444ac7f788873be7379e3e311253c4d1892af32299cd29059eb3805",
+  "live_contract_diff": [
+    {
+      "path": "/components/13/data_status",
+      "before": "ASSUMED",
+      "after": "VENDOR_DOCUMENTED"
+    },
+    {
+      "path": "/components/13/missing",
+      "before": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "after": [
+        "cable thickness/strip/stiffener/bend specification",
+        "pin1 physical mating orientation",
+        "CAM3V3 current margin",
+        "CN order inclusion/quote"
+      ]
+    },
+    {
+      "path": "/components/13/per_field_evidence",
+      "change": "added"
+    },
+    {
+      "path": "/components/13/source_date",
+      "before": "2026-09-22",
+      "after": "2026-10-02"
+    },
+    {
+      "path": "/components/15/notes",
+      "before": "主电流通过电源板Q90/Q1；小开关不承载电机电流。OFF会失去平衡；托架使用。故障恢复不得自动ARM。",
+      "after": "主电流通过电源板Q90/Q1；小开关不承载电机电流。OFF会失去平衡；托架使用。故障恢复不得自动ARM。 A2: exterior switch and opening cancelled by user M1.38. Robot emergency-stop implementation remains BLOCKED; native SW1 is not proof of accessible operation."
+    },
+    {
+      "path": "/components/15/selection_status",
+      "before": "REQUIRED_UNSELECTED",
+      "after": "NATIVE_SW1_RETAINED_EXTERNAL_OPERATION_CANCELLED"
+    },
+    {
+      "path": "/components/27/data_status",
+      "before": "ASSUMED",
+      "after": "VENDOR_DOCUMENTED"
+    },
+    {
+      "path": "/components/27/dimensions_mm",
+      "before": null,
+      "after": {
+        "body_max_diameter": 7.5,
+        "body_max_length": 18,
+        "lead_diameter": 0.8,
+        "lead_diameter_tolerance": 0.03,
+        "lead_span": 63,
+        "lead_span_tolerance": 1
+      }
+    },
+    {
+      "path": "/components/27/mass_g",
+      "before": null,
+      "after": 1.9
+    },
+    {
+      "path": "/components/27/missing",
+      "before": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "after": [
+        "repetitive pulse/thermal qualification",
+        "complete heat-isolated mount",
+        "CN landed quote"
+      ]
+    },
+    {
+      "path": "/components/27/per_field_evidence",
+      "change": "added"
+    },
+    {
+      "path": "/components/27/selection_status",
+      "before": "PULSE_CURVE_AND_CN_QUOTE_PENDING",
+      "after": "CANDIDATE_REPETITIVE_PULSE_AND_MOUNTING_PENDING"
+    },
+    {
+      "path": "/components/27/source_date",
+      "before": "2026-09-22",
+      "after": "2026-10-02"
+    },
+    {
+      "path": "/components/28/data_status",
+      "before": "ASSUMED",
+      "after": "VENDOR_DOCUMENTED"
+    },
+    {
+      "path": "/components/28/dimensions_mm",
+      "before": null,
+      "after": {
+        "body_max_diameter": 7.5,
+        "body_max_length": 18,
+        "lead_diameter": 0.8,
+        "lead_diameter_tolerance": 0.03,
+        "lead_span": 63,
+        "lead_span_tolerance": 1
+      }
+    },
+    {
+      "path": "/components/28/mass_g",
+      "before": null,
+      "after": 1.9
+    },
+    {
+      "path": "/components/28/missing",
+      "before": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "after": [
+        "repetitive pulse/thermal qualification",
+        "complete heat-isolated mount",
+        "CN landed quote"
+      ]
+    },
+    {
+      "path": "/components/28/per_field_evidence",
+      "change": "added"
+    },
+    {
+      "path": "/components/28/selection_status",
+      "before": "PULSE_CURVE_AND_CN_QUOTE_PENDING",
+      "after": "CANDIDATE_REPETITIVE_PULSE_AND_MOUNTING_PENDING"
+    },
+    {
+      "path": "/components/28/source_date",
+      "before": "2026-09-22",
+      "after": "2026-10-02"
+    },
+    {
+      "path": "/components/88/candidate_A2",
+      "change": "added"
+    },
+    {
+      "path": "/components/88/shaft_hole_interface",
+      "before": "Capacitor_SMD:C_0603_1608Metric",
+      "after": null
+    },
+    {
+      "path": "/prearrival_A2",
+      "change": "added"
+    }
+  ],
+  "main_geometry_source_policy": "Current geometry derives from immutable received native/component mesh sources and mechanical geometry.json; contracts/components.json is audited as provenance, not used to size these newly documented components. New A2 options are not adopted."
+}

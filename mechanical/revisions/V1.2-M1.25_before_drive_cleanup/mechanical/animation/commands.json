@@ -1,0 +1,56 @@
+[
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/assembly_animation.py",
+      "--",
+      "--width",
+      "1280",
+      "--render",
+      "stills"
+    ],
+    "started_utc": "2026-09-24T09:32:27.123667+00:00",
+    "finished_utc": "2026-09-24T09:32:38.932725+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_build.log"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "-S",
+      "MORI_Assembly_Animation",
+      "-a"
+    ],
+    "started_utc": "2026-09-24T09:32:38.934073+00:00",
+    "finished_utc": "2026-09-24T09:40:34.438723+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_render.log"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_assembly_animation.py"
+    ],
+    "started_utc": "2026-09-24T09:40:34.444807+00:00",
+    "finished_utc": "2026-09-24T09:40:39.326005+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_validate.log"
+  }
+]

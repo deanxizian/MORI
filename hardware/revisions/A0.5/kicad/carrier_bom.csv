@@ -1,0 +1,81 @@
+ref,value,footprint,section,note
+J1,VMAIN_from_protected_pack,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal",POWER,
+J2,DevKit_v1.1_N8R8_HARNESS,Connector_IDC:IDC-Header_2x13_P2.54mm_Vertical,IO,Remote board represented with functional pin directions
+J3,DRV8833_Pololu2130_HARNESS,Connector_JST:JST_XH_B14B-XH-A_1x14_P2.50mm_Vertical,IO,
+J4,Motor4863_CUSTOM_XH6,Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical,IO,CUSTOM retermination:1 green GND;2 white B;3 yellow A;4 blue Vcc 5V;5 black M2;6 red M1. NOT factory header order. LVC14 level shifts required.
+J5,Motor4863_CUSTOM_XH6,Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical,IO,CUSTOM retermination:1 green GND;2 white B;3 yellow A;4 blue Vcc 5V;5 black M2;6 red M1. NOT factory header order. LVC14 level shifts required.
+J6,Adafruit4438_IMU,Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical,IO,
+J7,INA219_LOGIC,Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical,IO,
+J8,INA219_SHUNT_IN_OUT,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal",POWER,
+J9,Waveshare19192_LCD,Connector_JST:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical,IO,
+J10,SER0037_JR_GND_5V_SIGNAL,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,IO,A0.5: PWM via SN74LVC1T45; HEAD_5V from switched NC2. Both rails power-off behavior must be tested.
+J11,ESTOP_2NC_EXTERNAL,Connector_JST:JST_VH_B4P-VH_1x04_P3.96mm_Vertical,SAFETY,
+J12,BUCK_LOGIC_UNPLUG_FOR_USB,Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,POWER,UNPLUG whole J12 logic-buck harness before USB; manufacturer power modes mutually exclusive. Keep J14 connected so USB also supplies encoder 5V. Battery may power motors/head separately.
+J13,BUCK_SERVO_D24V22F5,Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,POWER,
+J14,DevKit_5V_KEEP_FOR_ENCODERS,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,POWER,KEEP J14 connected in both supply modes: DevKit 5V and encoder bus. Disconnect J12 logic buck before USB; do not cut encoder power by unplugging J14.
+J15,10k_B3380_ON_MOTOR,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,IO,
+J16,10k_B3380_ON_MOTOR,Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,IO,
+J17,DUMP_RESISTOR_HS25_5R6J,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal",CLAMP,
+U1,CD74HC123E,Package_DIP:DIP-16_W7.62mm,SAFETY,
+U2,SN74HC08N,Package_DIP:DIP-14_W7.62mm,SAFETY,
+U5,SN74LVC14AD,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,ENCODER,
+C13,100nF,Capacitor_SMD:C_0805_2012Metric,ENCODER,
+U3,LM393P,Package_DIP:DIP-8_W7.62mm,CLAMP,
+U4,TL431BCLP,Package_TO_SOT_THT:TO-92_Inline,CLAMP,
+Q1,IRLZ44NPBF_DUMP,Package_TO_SOT_THT:TO-220-3_Vertical,CLAMP,
+D1,SS34_USB_ISOLATION,Diode_SMD:D_SMA,POWER,
+R1,10k,Resistor_SMD:R_0805_2012Metric,SAFETY,
+R2,10k,Resistor_SMD:R_0805_2012Metric,SAFETY,
+R3,10k,Resistor_SMD:R_0805_2012Metric,SAFETY,
+R4,10k,Resistor_SMD:R_0805_2012Metric,SAFETY,
+R5,10k,Resistor_SMD:R_0805_2012Metric,SAFETY,
+R6,47k,Resistor_SMD:R_0805_2012Metric,SAFETY,
+R7,30k_1pct,Resistor_SMD:R_0805_2012Metric,ADC,
+R8,10k_1pct,Resistor_SMD:R_0805_2012Metric,ADC,
+R9,1k,Resistor_SMD:R_0805_2012Metric,ADC,
+R10,10k_1pct,Resistor_SMD:R_0805_2012Metric,ADC,
+R11,10k_1pct,Resistor_SMD:R_0805_2012Metric,ADC,
+R12,1k,Resistor_SMD:R_0805_2012Metric,ADC,
+R13,1k,Resistor_SMD:R_0805_2012Metric,ADC,
+R14,25k5_0.1pct,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R15,10k_0.1pct,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R16,2M2_1pct,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R17,2k2,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R18,4k7,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R19,100R,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R20,100k,Resistor_SMD:R_0805_2012Metric,CLAMP,
+R21,100k,Resistor_SMD:R_0805_2012Metric,ENCODER,
+R22,100k,Resistor_SMD:R_0805_2012Metric,ENCODER,
+R23,100k,Resistor_SMD:R_0805_2012Metric,ENCODER,
+R24,100k,Resistor_SMD:R_0805_2012Metric,ENCODER,
+C1,1uF_50V_X7R,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C2,100nF,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C3,100nF,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C4,100nF,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C5,100nF,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C6,100nF,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C7,100nF_25V,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C8,1nF_C0G,Capacitor_SMD:C_0805_2012Metric,DECOUPLING,
+C9,1000uF_16V,Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,POWER,
+C10,470uF_10V,Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,POWER,
+C11,100uF_10V,Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,POWER,
+C12,100uF_16V,Capacitor_THT:CP_Radial_D10.0mm_P5.00mm,POWER,
+TP1,GND,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP2,VMAIN,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP3,VM_MOTOR,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP4,DEVKIT_5V,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP5,3V3,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP6,ARM,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP7,WD_OK,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP8,NSLEEP,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP9,NFAULT,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP10,BUS_DIV,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+TP11,CLAMP_OUT,TestPoint:TestPoint_Pad_D1.5mm,TESTPOINT,
+U6,SN74LVC1T45DBVR,Package_TO_SOT_SMD:SOT-23-6,HEAD_ISOLATION,PROTOTYPE / UNVALIDATED
+R25,100k,Resistor_SMD:R_0805_2012Metric,HEAD_ISOLATION,PROTOTYPE / UNVALIDATED
+C14,100nF,Capacitor_SMD:C_0805_2012Metric,HEAD_ISOLATION,PROTOTYPE / UNVALIDATED
+C15,100nF,Capacitor_SMD:C_0805_2012Metric,HEAD_ISOLATION,PROTOTYPE / UNVALIDATED
+H1,M3_deck_hole_3.4mm,MORI_Mech:MountingHole_3.4mm_M3,MECHANICAL,"copied deck XY, standoff Z pending"
+H2,M3_deck_hole_3.4mm,MORI_Mech:MountingHole_3.4mm_M3,MECHANICAL,"copied deck XY, standoff Z pending"
+H3,M3_deck_hole_3.4mm,MORI_Mech:MountingHole_3.4mm_M3,MECHANICAL,"copied deck XY, standoff Z pending"
+H4,M3_deck_hole_3.4mm,MORI_Mech:MountingHole_3.4mm_M3,MECHANICAL,"copied deck XY, standoff Z pending"

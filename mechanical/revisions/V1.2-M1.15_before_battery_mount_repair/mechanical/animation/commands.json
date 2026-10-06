@@ -1,0 +1,63 @@
+{
+  "working_directory": "/Users/dean/Documents/MORI",
+  "blender": "5.2.1 LTS",
+  "commands": [
+    {
+      "stage": "build_animation_and_stills",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "--python-exit-code",
+        "1",
+        "mechanical/mori_v1_2.blend",
+        "--python",
+        "mechanical/scripts/assembly_animation.py",
+        "--",
+        "--width",
+        "1280",
+        "--render",
+        "stills"
+      ],
+      "returncode": 0,
+      "log": "../reports/assembly_animation_build.log"
+    },
+    {
+      "stage": "render_video",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "--python-exit-code",
+        "1",
+        "mechanical/mori_assembly_animation.blend",
+        "-S",
+        "MORI_Assembly_Animation",
+        "-a"
+      ],
+      "returncode": 0,
+      "log": "../reports/assembly_animation_render.log"
+    },
+    {
+      "stage": "validate_animation_and_video",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "--python-exit-code",
+        "1",
+        "mechanical/mori_assembly_animation.blend",
+        "--python",
+        "mechanical/scripts/check_assembly_animation.py"
+      ],
+      "returncode": 0,
+      "log": "../reports/assembly_animation_validation.log"
+    },
+    {
+      "stage": "publish_preview",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "mechanical/scripts/report.py"
+      ],
+      "returncode": 0,
+      "log": "../reports/assembly_animation_publish.log"
+    }
+  ]
+}

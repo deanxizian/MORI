@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "Recorded failed design screening, valid data publication and source preservation; candidate engineering status remains FAIL",
+  "recorded_utc": "2026-10-01T20:31:02.204291+00:00",
+  "source_blend_sha256": "fcaca70cf1bd9d1a19443395279c06c10758fcc5811a0d1c399e83497ad36a08",
+  "main_applied": false,
+  "generated_candidate_blend": false,
+  "source_geometry_modified": false,
+  "commands": [
+    {
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "mechanical/studies/prearrival_finish/reaction_access_candidate.py"
+      ],
+      "log": "../reaction_access_candidate.log",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "mechanical/studies/prearrival_finish/reaction_candidate_diagnostics.py"
+      ],
+      "log": "../reaction_candidate_diagnostics.log",
+      "returncode": 0
+    }
+  ],
+  "results": {
+    "screening.json": "9978846a5de353570ff6274b58523b072a0e6347b0c13954ce115251fd5841de",
+    "diagnostics.json": "d7b08a85f55387e3f91b05ba7cfa925e90a999b5efa21a6634f0db6957f00b22"
+  },
+  "publication_audit": "../interface_sync/publication_audit.json",
+  "next_action": "Matching SCS0009 horn/clamp interface data is required before this connection can be finalized. Existing thin-candidate, tyre-route and expanded hardware-handoff questions remain unanswered. Do not apply failed C1 or continue shaving the clamp merely to pass entry."
+}

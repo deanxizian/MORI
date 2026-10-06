@@ -1,0 +1,1466 @@
+{
+  "status": "PASS",
+  "scope": "Simplified continuous straight-segment J18 housing path; no attached J18 wires or mating contact qualification",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+    "mechanical/reports/build_manifest.json": "fe96a9eb6604d65d3bcae09983487b2e03febb2a9d41e5140478cee69f1b308c",
+    "config/geometry.json": "3af8a61411825ba12a315c9377a117f5923e822c5f219ad8de13eae87da5225d",
+    "contracts/mechanical_interfaces.json": "4957dc15dfbec31e07e0a37a2b7a7a0de681ca5ce40e600c2c00fe2217c15d95",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "a5450cf9342cea2a5ccdd702c457e152900ead75eb46c65b0790c001b0acd0fe",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_search/review.json": "10e98b9aef3df04707ae4bc1585aec8aeb4ec55963d3918b5da7820ce1008919",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_search/path.npz": "cedda0e298c64a011703b5e6c0207c1795d98f4392e5b016b84149a033de9db2",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_side_fans/c6_join/candidate_curves.npz": "9abf98d1d6519c46a08ce50bc8f6a49b82265ed2fb286d0b3c04a1b80778c1be",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/upper_pack_geometry.py": "558d6f9c2d124f333b4784ecdd96557d434a2f98207b045ad7a7204fc255713d",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/plan_cam_power_plug_access.py": "e1715049c8746be72414882a22615c539dd0a5aac406598defd19c1ea3b84b32"
+  },
+  "method": "Greedy farthest-visible chords; exact swept convex hull and bounded wire-polyline clearance",
+  "waypoints_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      12.0
+    ],
+    [
+      -4.0,
+      -6.0,
+      14.0
+    ],
+    [
+      -4.0,
+      -4.0,
+      26.0
+    ],
+    [
+      -12.0,
+      10.0,
+      26.0
+    ],
+    [
+      -12.0,
+      90.0,
+      26.0
+    ]
+  ],
+  "source_indices": [
+    0,
+    6,
+    13,
+    24,
+    64
+  ],
+  "initial_release_evidence": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_search/review.json",
+  "nominal_plug_bounds_mm": [
+    -29.399999618530273,
+    -22.875,
+    123.44000244140625,
+    -22.100000381469727,
+    -17.174999237060547,
+    130.94000244140625
+  ],
+  "deferred_parts": [
+    "Body_Lower",
+    "Body_Upper"
+  ],
+  "retained_upper_wires": [
+    "CAM_1",
+    "CAM_2",
+    "CAM_3",
+    "CAM_4",
+    "P_J9_1",
+    "P_J9_2",
+    "P_J9_3",
+    "SPK_reservation_3",
+    "SPK_reservation_6"
+  ],
+  "retained_fixed_wire_solids": 14,
+  "attempts": [
+    {
+      "start": 0,
+      "end": 64,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 370.6841538117515,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 63,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 380.4737392193917,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 62,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 390.11683488763003,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 61,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 399.5960891894988,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 60,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 408.89655553496556,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 59,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 418.0703901166765,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 58,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 427.1620015988122,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 57,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 436.1999532026288,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 56,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 445.2101181130822,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 55,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 454.23474696510146,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 54,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 463.3097457326413,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 53,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 472.46321560769877,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 52,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 481.72028801995896,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 51,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 491.10705443764124,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 50,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 500.6519835606742,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 49,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 510.3880081051438,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 48,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 520.4152015642085,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 47,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 530.925330963192,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 46,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 542.1427922134126,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 45,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 553.8053287200788,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 44,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 563.9515001386746,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 43,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 572.6119372418055,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 42,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 579.9134340245993,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 41,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 583.6222879901309,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 40,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 582.6576623242723,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 39,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 577.2779330688511,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 38,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 571.4773104062357,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 37,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 562.6257091398819,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 36,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 549.7591176943118,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 35,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 535.1416652974291,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 34,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 520.8276097176649,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 33,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 506.30287079017023,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 32,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 491.0621340416383,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 31,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 473.7526272474573,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 30,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 455.15819753018854,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 29,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 435.2937905858658,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 28,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 414.04590032085633,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 27,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 391.47466584115233,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 26,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 368.23682534346074,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 25,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 347.84803996119945,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 24,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 328.9454015629244,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 23,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 309.7639450819361,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 22,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 290.0739903388474,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 21,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 264.1184844091137,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 20,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 232.34530221116702,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 19,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 190.5393447170644,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 18,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 171.74989807706368,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 17,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 124.42634477626794,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 16,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 99.79264266506176,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 15,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 88.78790945381733,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 14,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 67.37249853133922,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 13,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 61.47177774303096,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 12,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 44.49523754077618,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 11,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 38.84066917172368,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 10,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 30.712560643474077,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 9,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 18.35139816737961,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 8,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 6.065772453245387,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 0,
+      "end": 7,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 0.0,
+        "gap_mm": 0.008318048367913345
+      }
+    },
+    {
+      "start": 0,
+      "end": 6,
+      "hit": null
+    },
+    {
+      "start": 6,
+      "end": 64,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 632.015054180917,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 63,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 637.6534141388771,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 62,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 643.3984560425808,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 61,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 649.2590811414295,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 60,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 655.2447269879323,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 59,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 661.365111222394,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 58,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 667.6306562235626,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 57,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 674.0531562356854,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 56,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 680.6456463667055,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 55,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 687.4225435739473,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 54,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 694.3994646807141,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 53,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 701.5951467973078,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 52,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 709.0523527573927,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 51,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 716.8551350452574,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 50,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 725.0939974650909,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 49,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 733.8620323654013,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 48,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 742.6252334820421,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 47,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 750.6147916642165,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 46,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 757.9740121035892,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 45,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 764.5975320998614,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 44,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 769.3541232895253,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 43,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 771.3032373750957,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 42,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 769.8112659011997,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 41,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 764.3148041388553,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 40,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 754.1123414113658,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 39,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 741.3075117376296,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 38,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 726.6010421328502,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 37,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 708.1071938583292,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 36,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 685.863646698225,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 35,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 662.1030630546296,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 34,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 637.1447824728064,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 33,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 610.1844794329196,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 32,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 580.8347404096025,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 31,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 549.5772079509976,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 30,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 516.6859021178731,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 29,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 482.43717499185215,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 28,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 446.9722846210728,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 27,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 410.93733065034877,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 26,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 373.7969177014879,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 25,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 335.64174234334797,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 24,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 296.4766811468633,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 23,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 255.87592528236894,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 22,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 241.06330240694544,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 21,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 200.28428958559505,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 20,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 157.14590863476207,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 19,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 112.14625361928404,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 18,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 105.41199289772985,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 17,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 64.0230066276562,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 16,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 23.81570058288594,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 15,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 22.985598576736525,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 6,
+      "end": 14,
+      "hit": {
+        "target": "fixed_wire_H01_1",
+        "overlap_mm3": 0.0,
+        "gap_mm": 0.29489764967857923
+      }
+    },
+    {
+      "start": 6,
+      "end": 13,
+      "hit": null
+    },
+    {
+      "start": 13,
+      "end": 64,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 625.7335884919987,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 63,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 619.5355061040947,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 62,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 613.0877446469825,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 61,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 606.3726312989709,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 60,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 599.3712423878092,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 59,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 592.0607382006268,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 58,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 584.4110817782044,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 57,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 576.3799769392654,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 56,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 567.8885125826022,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 55,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 559.0121699738775,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 54,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 549.7472180090897,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 53,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 540.0700987080177,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 52,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 529.9554950229135,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 51,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 519.3746718072902,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 50,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 508.2946587157524,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 49,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 496.68200602753996,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 48,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 484.5036573658143,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 47,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 471.71752913865754,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 46,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 458.28133304869203,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 45,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 444.15322349774783,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 44,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 429.2814804361988,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 43,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 413.61755663298356,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 42,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 397.10384158451126,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 41,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 379.6876311046159,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 40,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 361.30392263047116,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 39,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 341.89563106029084,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 38,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 321.4012331024116,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 37,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 299.7648699010665,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 36,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 276.93759040545274,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 35,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 252.88791604160662,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 34,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 227.60418532937766,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 33,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 200.68798946951893,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 32,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 171.42650839815343,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 31,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 142.09878472524537,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 30,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 112.85276478684449,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 29,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 83.72824414220418,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 28,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 54.79574156780811,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 27,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 27.27998294327976,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 26,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 7.240195797102929,
+        "gap_mm": 0.0
+      }
+    },
+    {
+      "start": 13,
+      "end": 25,
+      "hit": {
+        "target": "Yaw_Base",
+        "overlap_mm3": 0.0,
+        "gap_mm": 0.11441483461760255
+      }
+    },
+    {
+      "start": 13,
+      "end": 24,
+      "hit": null
+    },
+    {
+      "start": 24,
+      "end": 64,
+      "hit": null
+    }
+  ],
+  "continuous_translation": "PASS",
+  "mating_interface": "BLOCKED",
+  "attached_J18_wires": "NOT_TESTED",
+  "complete_sequence": "BLOCKED",
+  "main_changed": false,
+  "approved": false,
+  "full_harness": "BLOCKED",
+  "Yaw_Reaction_Link_present": true,
+  "path_sha256": "08c0ef0886fc64c89c6e7dc243eb4baa887c142bd51d7a01aa58832a7f3ff06e",
+  "script_sha256": "e60bed04b9ccd02b952a6ac40388baa0b0b6a4d74e5eab683113d64b70bf32c3",
+  "elapsed_s": 8.962970972061157
+}

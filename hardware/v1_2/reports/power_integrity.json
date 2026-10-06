@@ -1,0 +1,131 @@
+{
+  "wheel": {
+    "brake_on_V_range": [
+      10.705433597542461,
+      11.004202701841841
+    ],
+    "brake_off_V_range": [
+      10.386850646213787,
+      10.672034943803801
+    ],
+    "ovp_fault_V_range": [
+      11.670649373626373,
+      11.982421044044042
+    ],
+    "absolute_motor_limit_V": 12.6,
+    "condition": "static tolerance only, gate capacitance/line inductance and startup NOT_TESTED"
+  },
+  "head": {
+    "brake_on_V_range": [
+      6.560924378296704,
+      6.738533421096097
+    ],
+    "brake_off_V_range": [
+      6.460986217250533,
+      6.6290703860033195
+    ],
+    "ovp_fault_V_range": [
+      7.068349686813187,
+      7.253185522022021
+    ],
+    "absolute_motor_limit_V": 7.4,
+    "condition": "static tolerance only, gate capacitance/line inductance and startup NOT_TESTED"
+  },
+  "trace_estimates": [
+    {
+      "width_mm": 1,
+      "copper_um": 35,
+      "estimate_A_at_20C_rise": 3.2444036291288856,
+      "length_mm": 50,
+      "dc_milliohm_at20C": 24.62857142857143
+    },
+    {
+      "width_mm": 1,
+      "copper_um": 70,
+      "estimate_A_at_20C_rise": 5.362676823028493,
+      "length_mm": 50,
+      "dc_milliohm_at20C": 12.314285714285715
+    },
+    {
+      "width_mm": 2,
+      "copper_um": 35,
+      "estimate_A_at_20C_rise": 5.362676823028493,
+      "length_mm": 50,
+      "dc_milliohm_at20C": 12.314285714285715
+    },
+    {
+      "width_mm": 2,
+      "copper_um": 70,
+      "estimate_A_at_20C_rise": 8.863971933100231,
+      "length_mm": 50,
+      "dc_milliohm_at20C": 6.1571428571428575
+    }
+  ],
+  "rails": {
+    "wheel9V_module_4percent_tolerance": [
+      8.64,
+      9.36
+    ],
+    "wheel_at_load_after_assumed_0p2_to_0p55V_diode": [
+      8.09,
+      9.16
+    ],
+    "head6V_module_4percent_tolerance": [
+      5.76,
+      6.24
+    ],
+    "head_after_assumed_0p2_to_0p55V_diode": [
+      5.21,
+      6.04
+    ],
+    "heads_continuous_torque_basis": "use4.8V rated0.65kgcm until actual bus/temperature measured",
+    "low_battery": "request cradle at10.8V sustained500ms; <=10.2V sustained100ms reject new travel/request immediate support. Candidate thresholds depend selected pack/dropout; NO hard disarm merely to show low battery."
+  },
+  "loss_examples": {
+    "shunt_6A_W": 0.36,
+    "each_B540C_3p5A_at0p5V_W": 1.75,
+    "AO4407A_3p5A_at0p017ohm_W": 0.20825000000000002,
+    "assumptions": "Rds@-6V before temperature rise; diode Vf and regulator efficiencies require measured load/thermal curves."
+  },
+  "adc": {
+    "ratio": 0.2125984251968504,
+    "V_at12p6V": 2.678740157480315,
+    "V_at14V": 2.9763779527559056,
+    "battery_V_per_12bit_count_at3p3V": 0.003790530457197124,
+    "current_A_per_count": 0.004029304029304029,
+    "current_A_at3V": 15.0,
+    "max_poweroff_injection_uA_per_voltage_channel_bound": 126.0,
+    "note": "Absolute voltage accuracy needs VREFINT calibration, divider tolerance and loading; passive dividers may inject limited current with MCU off. Supervisor must keep latch clear. No signed charge-current claim."
+  },
+  "1S_vs_2S_vs_3S": [
+    {
+      "cells": 1,
+      "nominal_V": 3.7,
+      "assumed_peak_input_A_at60W_90percent_efficiency": 18.01801801801802,
+      "wheel_path": "boost needed",
+      "head_path": "boost6V",
+      "charge": "1S CC/CV"
+    },
+    {
+      "cells": 2,
+      "nominal_V": 7.4,
+      "assumed_peak_input_A_at60W_90percent_efficiency": 9.00900900900901,
+      "wheel_path": "boost needed",
+      "head_path": "buck6V",
+      "charge": "2S matched CC/CV + protection/balance independently"
+    },
+    {
+      "cells": 3,
+      "nominal_V": 11.100000000000001,
+      "assumed_peak_input_A_at60W_90percent_efficiency": 6.006006006006005,
+      "wheel_path": "9V buck + blocking + brake",
+      "head_path": "buck6V",
+      "charge": "3S matched CC/CV + protection/balance independently"
+    }
+  ],
+  "status": "HOST_CALCULATION_ONLY",
+  "BENCH": "NOT_TESTED",
+  "charging_implementation": "External3S USB-C charger SKU unresolved; power board is NOT a charger",
+  "brake_resistor_status": "5R6 and10R external pulse/thermal qualification REQUIRED; 5W label alone does not qualify20W pulses",
+  "protection_limitations": "OVP removes commanded drive but braking/backdrive may remain; loss of torque causes fall. Independent rail-powered dump is necessary but does not guarantee unlimited downhill energy absorption."
+}

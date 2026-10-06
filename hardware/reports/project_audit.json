@@ -1,0 +1,87 @@
+{
+  "date_utc": "2026-09-21T05:53:49.566446+00:00",
+  "checks": [
+    {
+      "check": "mechanical_sources",
+      "status": "PASS",
+      "detail": "params, derived report and export manifest match recorded mechanical SHA256"
+    },
+    {
+      "check": "STL_volume_sources",
+      "status": "PASS",
+      "detail": "19 installed STL volume sources; coupons excluded"
+    },
+    {
+      "check": "GPIO_firmware_to_pinmap",
+      "status": "PASS",
+      "detail": "24 physical GPIO mappings, not chip-only capabilities"
+    },
+    {
+      "check": "GPIO_unique_and_reserved",
+      "status": "PASS",
+      "detail": "N8R8 PSRAM, USB, console, boot and v1.1 RGB pins reserved"
+    },
+    {
+      "check": "encoder_units",
+      "status": "PASS",
+      "detail": "48 CPR already x4; 20.4086667 gear ratio; 1:1 belt; 979.616 output counts/rev"
+    },
+    {
+      "check": "compiled_safety_defaults",
+      "status": "PASS",
+      "detail": "All three hardware/balance/head gates disabled in the actual build config"
+    },
+    {
+      "check": "schematic_connectivity",
+      "status": "PASS",
+      "detail": "230 connected component pins agree with native exported netlist"
+    },
+    {
+      "check": "PCB_pad_connectivity",
+      "status": "PASS",
+      "detail": "Every intended schematic component pin has its matching native PCB pad/net"
+    },
+    {
+      "check": "deck_hole_alignment",
+      "status": "PASS",
+      "detail": "4 holes at Blender ±40,±42; actual native drill 3.4mm; Z/assembly untested"
+    },
+    {
+      "check": "unrouted_prototype_marked",
+      "status": "PASS",
+      "detail": "0 tracks / 0 copper zones; no fabrication release"
+    },
+    {
+      "check": "USB_and_encoder_power_path",
+      "status": "PASS",
+      "detail": "Disconnect J12 for USB; retain J14 and both encoder 5V feeds; physical backfeed test NOT_TESTED"
+    },
+    {
+      "check": "clamp_revision",
+      "status": "PASS",
+      "detail": "25.5k/10k divider with2.2M hysteresis; arithmetic only, overshoot NOT_TESTED"
+    },
+    {
+      "check": "software_snapshot_integrity",
+      "status": "PASS",
+      "detail": "ZIP entries match manifest and current hardware firmware/pinmap/wiring/test sources"
+    },
+    {
+      "check": "no_fabricated_physical_pass",
+      "status": "PASS",
+      "detail": "30 physical checks remain NOT_TESTED"
+    },
+    {
+      "check": "BOM_budget",
+      "status": "PASS",
+      "detail": "Quantity-aware USD totals; quoted prices vs allowances remain distinct"
+    },
+    {
+      "check": "verification_log_hashes",
+      "status": "PASS",
+      "detail": "Recorded command logs still match their execution records"
+    }
+  ],
+  "status": "PASS",
+  "scope": "Cross-file integrity only. PCB DRC FAIL (unrouted); hardware NOT_TESTED."
+}

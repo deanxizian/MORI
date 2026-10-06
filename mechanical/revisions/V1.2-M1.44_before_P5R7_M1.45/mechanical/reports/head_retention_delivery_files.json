@@ -1,0 +1,122 @@
+{
+  "revision": "V1.2-M1.44",
+  "status": "PASS",
+  "scope": "Approved A5 integration and current delivery consistency only",
+  "checked_utc": "2026-10-01T13:28:57.194395+00:00",
+  "source_blend_sha256": "d6427fe7d0e7dec1b68af323d305186c62471867794ed7f7806dd95b57dee299",
+  "hardware_unchanged": {
+    "status": "PASS",
+    "checked_files": 15493,
+    "changes": [],
+    "additions": []
+  },
+  "stl": {
+    "passed": 20,
+    "total": 21,
+    "failed_ids": [
+      "Head_Rear"
+    ],
+    "unresolved": "Head_Rear has six coincident nonmanifold STL edges already present before M1.44; source shape not changed in this task."
+  },
+  "animation_revision": "V1.2-M1.44-A1",
+  "manufacturing_release": false,
+  "commands": [
+    {
+      "command": "python3 mechanical/scripts/run_retention_delivery.py",
+      "log": "reports/head_retention_delivery_commands.json"
+    },
+    {
+      "command": "python3 mechanical/scripts/run_animation.py --defer-publish",
+      "log": "animation/commands.json"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/scripts/check_stl_exact_readback.py",
+      "log": "reports/stl_exact_readback_diagnostic.log"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/scripts/export.py",
+      "log": "reports/retention_export.log",
+      "note": "Rerun after fixing decimal vertex rounding in the reader."
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/scripts/delivery_check.py",
+      "log": "reports/retention_delivery_check.log"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_assembly_animation.blend --python-exit-code 1 --python mechanical/scripts/render_retention_access_frame.py",
+      "log": "reports/retention_access_frame.log"
+    },
+    {
+      "command": "python3 mechanical/scripts/report_head_retention.py",
+      "log": "reports/retention_publish.log"
+    },
+    {
+      "command": "python3 mechanical/scripts/publish_animation_update.py",
+      "log": "reports/retention_animation_publish.log"
+    },
+    {
+      "command": "python3 mechanical/scripts/finalize_head_retention_delivery.py",
+      "log": "reports/retention_final_audit.log"
+    }
+  ],
+  "files": {
+    "config/geometry.json": "7ef2d2b6c0ca31952ce865b7500a2afd4459d70775ac451c3cb3163b998d2eba",
+    "contracts/mechanical_interfaces.json": "d61408d57e17e6e8a1b642353514b16649bc3b3a255bdc123d2515a31b5b1ecc",
+    "AGENTS.md": "f58b2ad58bda6ea0e8562d9fc01579f16755c11055acf9fb2ac89fc650c545fe",
+    "mechanical/mori_v1_2.blend": "d6427fe7d0e7dec1b68af323d305186c62471867794ed7f7806dd95b57dee299",
+    "mechanical/mori_assembly_animation.blend": "3727613501d9d32a751b4d59234c3908b0ea9e4e3ffeb8be5f585d278d849b1d",
+    "mechanical/mori_electronics_detail.blend": "d5392bdb94ee87335d5d397871233a30835a8a02a192d7cccc225055c62e6e5f",
+    "mechanical/index.html": "1d34951aadcc924dc77bea8c3172d28d4983cbfd10081e83c2247c61a61b78f4",
+    "mechanical/manufacturing.html": "218e32e7dea2f24d6f4be378c30e6902d3cdedbe778fd5869f76db3b3a165567",
+    "mechanical/parts.html": "e34e50553aec4db2c15d35f199988f13b45e9efe56041c3bbe63bf9f0881b8da",
+    "mechanical/README.md": "50fba2edd89430e859d3d053066191b057b6880cc606a93a0b79d1f71ea578c0",
+    "mechanical/animation/index.html": "89d4ab4c6440f03c1f2def268c01210cd7585da323dba9b65ef03d18c98b6d37",
+    "mechanical/animation/MORI_assembly.mp4": "fe7bc82939541a7e3b54bdb047e34405a00dd53e48ca6232430b104f1b84dfc2",
+    "mechanical/animation/manifest.json": "61ceec010adfcd874e15441862208715adf0046d5b5c2e7388b14a5341a91c1f",
+    "mechanical/animation/validation.json": "5d1a8c31e37e56bc564dbe0778791e75e0220d9fe69901ff8fc52bcb87817029",
+    "mechanical/animation/delivery.json": "f19cdf885f1163b141ae34ef28582271102f57b0eb347f3d88cefa86c6b7288e",
+    "mechanical/animation/head_retention_path_validation.json": "60fe2cbb4d10de85ecd87aebc0830a217f859a97a5563389a99b3fe172231548",
+    "mechanical/reports/头身防脱_M1_44.md": "0811f4d1e3de474a47091ef1dc8909ed3b2a0e2d15576d6a1e4146a8e25c52ea",
+    "mechanical/reports/delivery_consistency.json": "6e9c8dcfcc0372390fc0594eadb62ccd0c1b03916a3bbfb679c454af55c12463",
+    "mechanical/reports/export_manifest.json": "490d95e5ef027bf9b7cfc55488578c0c94dcc49dcd6cbf02a33ff7d4ba2417ff",
+    "mechanical/reports/head_axial_retention_validation.json": "155b00fabd56a2e1299bed7b49373802fba5e58abbd3014b705787ecbf653c6c",
+    "mechanical/reports/head_retention_body_sequence.json": "ecff0d9e78bea2b9d7a50559b74fc3194bb912b05566b732dab74a039e12ea0c",
+    "mechanical/reports/head_axial_retention_delivery.json": "e93d5a6f22edb7601a1cfa331f06f54cfd35af270664a3ab54ca6193b067ee3b",
+    "mechanical/reports/interface_printability.json": "80cdb4efd995479f30e038e970147eea731f86a94a2cdc35caf87dcacb139a4b",
+    "mechanical/reports/validation.json": "7b8b1de61d326dddd7f664043c5c3e451c0c964bec2b465c9ce628db19b5a139",
+    "mechanical/reports/rebuild_check.json": "baef8be6d9f471dafe84b7e9052f4a4df2a2294a4c0e9f5cda6ba561e61cba40",
+    "mechanical/exports/stl/Battery_Tray.stl": "1f045918581c9d66f5d4690d472d0eaae40cba5236a697d8c4e7b159b4287d7d",
+    "mechanical/exports/stl/Body_Lower.stl": "3470ebb2f09a9a2f67ab8dd733bdbb548f00cddcd300e300e1118f0d15e852f4",
+    "mechanical/exports/stl/Body_Upper.stl": "6f427d7d23db44d537a13ab09515c2ea8cc8e635af1d4cc07a544f82859139f6",
+    "mechanical/exports/stl/Coupon_Insert.stl": "0447c6d3c6d0800ec5a4a813a9dd1ce6bbf9696f1b2048909d15d7c2d7401e2a",
+    "mechanical/exports/stl/Coupon_Mating_Tab.stl": "1b4685bfbd028e66b946a492737839ff7652b7c8e4340c11eb86853a35108661",
+    "mechanical/exports/stl/Coupon_Plane_Fit.stl": "ba8bac12268effca7691601aff71d6b8493d2dd3724e6e4c258cbd8b977f511c",
+    "mechanical/exports/stl/Coupon_Wheel_Fit.stl": "9a6d4663e90b68235956fbe154e68ca7686aa341d2033c331b2818ad63f5e5f0",
+    "mechanical/exports/stl/Display_Frame.stl": "29d6fe828ac92ab3189e9fa7ea15e9cce6e085b3c52ea74eef9601fa33ac4b5e",
+    "mechanical/exports/stl/Drive_Bridge.stl": "c3a1a19e9bf1aa6544d9effe4e173cc9e7d98db141e4dda5c6abcd1e7bc824fb",
+    "mechanical/exports/stl/Head_Front.stl": "35022d9dec09af67533c5c6c2ae1ac3eb9418ac2996a05b95ebae04c5f722332",
+    "mechanical/reports/quarantined_stl/Head_Rear.stl": "3284a4242d4168bd5df239c095ca7da5fc27e1e849a0b3ac50d80f21884ba029",
+    "mechanical/exports/stl/Load_Frame.stl": "00a4718bdce739321a629150a4be55d45ba8d6f492d9c2053e7dad59351c8806",
+    "mechanical/exports/stl/Motor_Retainer.stl": "960c2047fcc18bf157abffc19c43620bcb3d7daadb9b3855de89f08709c9927b",
+    "mechanical/exports/stl/Parking_Cradle.stl": "103b7aa00c3d87e660ca19ee7964ff2e30d4249755818b679adbea78376b8953",
+    "mechanical/exports/stl/Pitch_Cradle.stl": "650a2a79ad76c09fed892c824a045523808359d17687c4ada8ee6ca0eb7153c1",
+    "mechanical/exports/stl/Pitch_Yoke.stl": "867f81bd945bd70a85aaf52ffd5be4172d92b8a4d6ca1f94756d63f4daddb957",
+    "mechanical/exports/stl/Wheel_Hub_L.stl": "d2677da310be44b1d1f67baf8eedab7025a910cc0b91ce684e52837928de0729",
+    "mechanical/exports/stl/Wheel_Hub_R.stl": "39e0a4ceb9a9298770833bbccfe25c949131a4a498be6d1a2692d9447e88488d",
+    "mechanical/exports/stl/Yaw_Anti_Lift_Keeper.stl": "d0f543e70e9f0b347fdd39b00252587721ae473700f2b248e9d8b690a0bf0f53",
+    "mechanical/exports/stl/Yaw_Base.stl": "e63ac947a4c001657047726aaec38aa82e95589010a9e6f95bb10402982c9a77",
+    "mechanical/exports/stl/Yaw_Reaction_Link.stl": "f6402589f39fd8c60b51a82bdba0c7ed9934e3a96e1aa25870aaa64e948cfee9",
+    "mechanical/studies/head_axial_retention/adopted/section.png": "e614742b1558e5c152ad474b242cd794c467c719f9ac0710603c16b87ca75ee7",
+    "mechanical/studies/head_axial_retention/adopted/assembly.png": "fdf36c96c872c688eef7231d36157bf8e11d302a89950134962635f6ad4bcf7b",
+    "mechanical/studies/head_axial_retention/adopted/access_60deg.png": "acee8bd585af2b22647618fb235c0302d4159677e026d3f46b58bd5fa5828324",
+    "mechanical/studies/head_axial_retention/adopted/keeper.png": "06bcc14c3266b0c815edfe33deddcb86417d445a0b52d9f5316f94191ab86cc3",
+    "mechanical/scripts/head_axial_retention.py": "57fa3456bd5979e2fefa4beeba95c6e53b145219c95dfcd8301131cd70516894",
+    "mechanical/scripts/validate_head_retention.py": "2ddee9928da726272f1cc9d04396f49d76700b0b47af50a3ba58a837b5d88685",
+    "mechanical/scripts/assembly_animation.py": "a274c25e4dd2a73ceb69132e61a1e2400d1f6a93c11f4b6d1aedac333f34f7ff",
+    "mechanical/scripts/check_assembly_animation.py": "9e902b68a61dacecc4afa603e7c7d12cf27abfea2323f2e586d81b6326eb4a60",
+    "mechanical/scripts/export.py": "6254d4f5eda35e169d777763ed7a162d2893c145d1cdcbafa68b135cbcc47fb7",
+    "mechanical/scripts/delivery_check.py": "dddac214930f8ef508538c0e2c595e9dec240e39a56abebce0ca263978177305",
+    "mechanical/scripts/report_head_retention.py": "9b97f4bf5d40d0f8fc6c8afa9b82793606ecc586ab1e4a26e32045ce77ce2f7d",
+    "mechanical/scripts/finalize_head_retention_delivery.py": "06ac5b15343d381ea74bab53feeffa4c97f482b550fbef680a265e9b300c2ad5"
+  }
+}

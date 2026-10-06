@@ -1,0 +1,83 @@
+﻿revision,status,domain,module,module_pad,gpio,signal,peripheral,logic_voltage,notes
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,39,1,VBAT_ADC,ADC1,3.3V unless explicit protected translation,100k/33k 1% +100nF; calibrate; max8.4=>2.084V
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,38,2,YAW_FB,ADC1,3.3V unless explicit protected translation,20k/10k +10nF +clamps; 5V=>1.667V
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,4,4,PITCH_FB,ADC1,3.3V unless explicit protected translation,as yaw; calibrated voltage-angle table
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,5,5,IMU_CS_N,SPI2,3.3V unless explicit protected translation,10k pull-up
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,6,6,IMU_SCLK,SPI2,3.3V unless explicit protected translation,"8MHz target, short rigid-body route"
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,7,7,IMU_MOSI,SPI2,3.3V unless explicit protected translation,3.3V
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,12,8,IMU_MISO,SPI2,3.3V unless explicit protected translation,3.3V
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,17,9,IMU_INT1,interrupt,3.3V unless explicit protected translation,DRDY latch hardware timestamp; 833Hz candidate ODR
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,18,10,ESTOP_N,input,3.3V unless explicit protected translation,"NC actuator power-cut auxiliary status, pull-up own rail"
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,19,11,ACTUATOR_ALLOW,output,3.3V unless explicit protected translation,"pull-down; AND hardware watchdog, maintenance inhibit and latched local unlock"
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,20,12,ALT_WHEEL_L_PWM,MCPWM,3.3V unless explicit protected translation,BRUSH only; PH/EN mode
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,21,13,ALT_WHEEL_R_PH,GPIO,3.3V unless explicit protected translation,BRUSH only
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,22,14,ALT_WHEEL_R_PWM,MCPWM,3.3V unless explicit protected translation,BRUSH only
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,8,15,YAW_PWM,LEDC,3.3V unless explicit protected translation,50Hz provisional; 1500us neutral; level shift5V
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,9,16,PITCH_PWM,LEDC,3.3V unless explicit protected translation,same; physical software endstops before enable
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,10,17,LINK_TX,UART1,3.3V unless explicit protected translation,460800 8N1 -> interactionGPIO47 via Ioff translator
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,11,18,LINK_RX,UART1,3.3V unless explicit protected translation,<-interactionGPIO44 via Ioff translator; 10k idle pullup
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,23,21,POWER_SDA,I2C0,3.3V unless explicit protected translation,400kHz max;3.3V 4.7k pullup; INA2190x45
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,31,38,POWER_SCL,I2C0,3.3V unless explicit protected translation,own motion rail pullup
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,32,39,FOC_TX_OR_ALT_ENC_L_A,UART2 / PCNT0,3.3V unless explicit protected translation,mutually exclusive profile; FOC physical level unverified
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,33,40,FOC_RX_OR_ALT_ENC_L_B,UART2 / PCNT0,3.3V unless explicit protected translation,mutually exclusive profile; x4 PPR not frozen
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,34,41,FOC_DIR_RESERVED_OR_ALT_ENC_R_A,GPIO / PCNT1,3.3V unless explicit protected translation,FOC half/full duplex unverified
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,35,42,ALT_ENC_R_B,PCNT1,3.3V unless explicit protected translation,3.3V encoder; open-drain/pushpull confirmation pending
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,37,43,ALT_WHEEL_L_PH,GPIO,3.3V unless explicit protected translation,ROM UART0 TX can pulse; hardware ACTUATOR_ALLOW stays low
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,36,44,WATCHDOG_KICK,GPIO,3.3V unless explicit protected translation,ROM UART0 RX input; external pulldown; supervisor timing unselected
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,24,47,HW_PERMIT_N,input,3.3V unless explicit protected translation,wired inhibit/status: USB/cradle/driver fault; exact gate circuit not frozen
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,25,48,LOCAL_ARM_BUTTON_N,input,3.3V unless explicit protected translation,pull-up/debounce; local unlock only; never automatic rearm
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,13,19,USB_D_MINUS,USB Serial/JTAG,3.3V / USB,Separate hidden pogo connector; no extra exterior USB. BOOT low only in supported maintenance.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,14,20,USB_D_PLUS,USB Serial/JTAG,3.3V / USB,Separate hidden pogo connector; no extra exterior USB. BOOT low only in supported maintenance.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,27,0,BOOT_N_TESTPOINT,strap,3.3V / USB,Separate hidden pogo connector; no extra exterior USB. BOOT low only in supported maintenance.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,3,EN,CHIP_EN,reset,3.3V own domain,"10k/1uF EN timing candidate; interaction LCD_RST follows EN, runtime GC9A01 software reset (no extra GPIO); confirm vendor reset timings."
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,1,,GND,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,2,,3V3,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,40,,GND,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,41,,GND_EXPOSED_PAD,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,15,3,RESERVED_BOOT_STRAP,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,28,35,RESERVED_PSRAM_NC,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,29,36,RESERVED_PSRAM_NC,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,30,37,RESERVED_PSRAM_NC,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,26,45,RESERVED_BOOT_STRAP,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,MOTION,ESP32-S3-WROOM-1-N16R8,16,46,RESERVED_BOOT_STRAP,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,39,1,CAM_SCCB_SDA,SCCB,3.3V unless explicit protected translation,pullup to camera IO rail; electrical translation pending
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,38,2,CAM_SCCB_SCL,SCCB,3.3V unless explicit protected translation,camera IO voltage pending
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,4,4,CAM_D0,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,5,5,CAM_D1,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,6,6,CAM_D2,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,7,7,CAM_D3,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,12,8,CAM_D4,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,17,9,CAM_D5,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,18,10,CAM_D6,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,19,11,CAM_D7,LCD_CAM,3.3V unless explicit protected translation,OV2640 DVP data; FPC pad UNKNOWN
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,20,12,CAM_XCLK,LEDC,3.3V unless explicit protected translation,20MHz provisional; translate to camera IO voltage
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,21,13,CAM_PCLK,LCD_CAM,3.3V unless explicit protected translation,clock from sensor
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,22,14,CAM_VSYNC,LCD_CAM,3.3V unless explicit protected translation,frame timestamp
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,8,15,CAM_HREF,LCD_CAM,3.3V unless explicit protected translation,line valid
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,9,16,LCD_SCLK,SPI2,3.3V unless explicit protected translation,20MHz initial; 40MHz only after signal check
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,10,17,LCD_MOSI,SPI2,3.3V unless explicit protected translation,RGB565 eyes
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,11,18,LCD_DC,GPIO,3.3V unless explicit protected translation,3.3V
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,23,21,LCD_CS_N,SPI2,3.3V unless explicit protected translation,10k pull-up
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,31,38,AMP_ENABLE,GPIO,3.3V unless explicit protected translation,hardware pull-down; amp off through boot ROM UART43 output
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,32,39,LCD_BACKLIGHT,LEDC,3.3V unless explicit protected translation,3.3V BL input; waveform/current method verify
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,33,40,AUDIO_BCLK,I2S0,3.3V unless explicit protected translation,shared TX/RX synchronous clock
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,34,41,AUDIO_WS,I2S0,3.3V unless explicit protected translation,"16kHz stereo slots, 32-bit slot initial"
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,35,42,MIC_SD,I2S0 RX,3.3V unless explicit protected translation,single microphone LR strapped to GND
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,37,43,AMP_DIN,I2S0 TX,3.3V unless explicit protected translation,UART0 boot prints masked by AMP_ENABLE low
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,36,44,LINK_TX,UART1,3.3V unless explicit protected translation,->motionGPIO18; no UART0 console after boot
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,24,47,LINK_RX,UART1,3.3V unless explicit protected translation,<-motionGPIO17; isolated power domains
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,25,48,FUNCTION_BUTTON_N,input,3.3V unless explicit protected translation,"short dialogue, double goal-cancel, long settings only supported maintenance"
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,13,19,USB_D_MINUS,USB Serial/JTAG,3.3V / USB,Separate hidden pogo connector; no extra exterior USB. BOOT low only in supported maintenance.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,14,20,USB_D_PLUS,USB Serial/JTAG,3.3V / USB,Separate hidden pogo connector; no extra exterior USB. BOOT low only in supported maintenance.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,27,0,BOOT_N_TESTPOINT,strap,3.3V / USB,Separate hidden pogo connector; no extra exterior USB. BOOT low only in supported maintenance.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,3,EN,CHIP_EN_AND_LCD_RESET,reset,3.3V own domain,"10k/1uF EN timing candidate; interaction LCD_RST follows EN, runtime GC9A01 software reset (no extra GPIO); confirm vendor reset timings."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,1,,GND,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,2,,3V3,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,40,,GND,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,41,,GND_EXPOSED_PAD,POWER,own domain 3.3V / shared GND,Pad2 local10uF+100nF candidate; pads1/40/41 to solid ground; exposed pad land/stencil per manufacturer.
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,15,3,RESERVED_BOOT_STRAP,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,28,35,RESERVED_PSRAM_NC,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,29,36,RESERVED_PSRAM_NC,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,30,37,RESERVED_PSRAM_NC,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,26,45,RESERVED_BOOT_STRAP,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."
+V1-H0.1,CANDIDATE_NOT_RELEASED,INTERACTION,ESP32-S3-WROOM-1-N16R8,16,46,RESERVED_BOOT_STRAP,RESERVED,Do not externally drive,"N16R8 internal octalPSRAM occupies35/36/37; strap3/45/46 left to documented default boot configuration, no peripheral attached."

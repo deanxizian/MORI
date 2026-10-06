@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI P5R3 · 审查修改对照</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif;background:#10151c;color:#edf1f6}body{max-width:1480px;margin:auto;padding:32px}h1{font-size:34px;margin:12px 0}h2{font-size:23px;margin-top:36px}p{line-height:1.7;color:#c4cedb}a{color:#82c8ff}small{color:#a4b1c0}select{font:inherit;padding:9px 14px;background:#1c2632;color:#fff;border:1px solid #526174;border-radius:7px;margin:0 12px 8px 0}.tag{color:#e8c578;font-size:13px;letter-spacing:.08em}.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0;border:1px solid #354252;border-radius:10px;overflow:hidden;background:#10151c}figcaption{padding:12px 16px;background:#1a2531;display:flex;justify-content:space-between}figure img{display:block;width:100%;height:100%;max-height:620px;object-fit:contain}figure>a{display:block;height:500px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:11px;border-bottom:1px solid #344050;vertical-align:top}th{color:#94a6bb}.note{background:#1a2531;border-left:3px solid #88c6ec;padding:10px 18px;margin:18px 0}nav{display:flex;gap:20px;flex-wrap:wrap;margin:18px 0}footer{margin-top:40px;border-top:1px solid #344050;padding-top:18px}@media(max-width:800px){body{padding:18px}.compare{grid-template-columns:1fr}figure>a{height:auto}figure img{height:auto}}
+</style>
+<header><div class="tag">MORI / V1.2-H0.5-P5R3 / PROTOTYPE</div><h1>审查意见已逐项核对并修正</h1><p>保留 P5R2。电源板修正分流取样、局部回流与功率换层；四板取消锡膏全局正扩张；后接口板恢复检查并修正 CC2 过孔落点。器件、板框、孔位、摆位和针序不变。</p>
+<nav><a href="README.md">修订说明</a><a href="review_disposition.md">逐项采纳／保留理由</a><a href="reports/verification.json">原生检查</a><a href="copper_changes.csv">实际铜线差异</a><a href="via_budget.md">换层计算</a><a href="../handoff/mechanical_P5R3.json">机械交接</a></nav></header>
+<table><thead><tr><th>重点</th><th>原 P5R2</th><th>P5R3</th></tr></thead><tbody>
+<tr><td>R2 电流采样</td><td>从两侧载流支路取样</td><td>各自从分流焊盘独立引出</td></tr>
+<tr><td>C61 / C71 地接入</td><td>同顶层铜区最近接入内层地约 14.00 / 8.29 mm</td><td>约 1.225 / 1.172 mm；实际填铜确认</td></tr>
+<tr><td>5 处主功率换层</td><td>各依赖单颗过孔</td><td>就近并联 4 / 3 / 2 / 3 / 3 孔；临时删除原孔仍连通</td></tr>
+<tr><td>运动 DCU 锡膏包络</td><td>0.95 × 0.40 mm</td><td>0.85 × 0.30 mm；Mask 扩张保留</td></tr>
+</tbody></table>
+<p class="note">距离为实际铜区接点的直线距离，并非高频路径求解。过孔是依据明示假设的原型设计，温升、噪声、实际均流及焊接仍为 NOT_TESTED。</p>
+<h2>四板前后对照</h2><label>电路板 <select id="board"><option value="power">电源 80×55</option><option value="motion">运动 70×35</option><option value="imu">IMU 20×16</option><option value="rear">Type-C / 开关 24×25</option></select></label><label>显示 <select id="layer"><option value="combined">双面叠加</option><option value="front">F.Cu 正面</option><option value="back">B.Cu 底层</option></select></label>
+<div class="compare" id="boards"><figure><figcaption>P5R2 <a class="source">打开原图</a></figcaption><a class="open"><img alt="P5R2原生布线"></a></figure><figure><figcaption>P5R3 <a class="source">打开原图</a></figcaption><a class="open"><img alt="P5R3原生布线"></a></figure></div>
+<p><small>KiCad 原生导出；此处暂时隐藏铜区以看清走线，原工程保留填铜。所有图均按顶视坐标，底层未镜像。红为F.Cu、蓝为B.Cu，点击可放大。</small></p>
+<h2>电源关键区</h2><label>检查项 <select id="critical"><option value="BAT_REV">R2 正端载流网与独立采样出口</option><option value="BAT_MON">R2 负端载流网与独立采样出口</option><option value="KELVIN_P">R3 后 KELVIN_P</option><option value="KELVIN_N">R4 后 KELVIN_N</option><option value="ground_front_U60">U60 顶层真实填铜</option><option value="ground_inner_U60">U60 内层 GND</option><option value="ground_front_U70">U70 顶层真实填铜</option><option value="ground_inner_U70">U70 内层 GND</option><option value="M5_FB">运动 5V 反馈</option><option value="C5_FB">相机 5V 反馈</option></select></label>
+<div class="compare" id="details"><figure><figcaption>P5R2 <a class="source">打开原图</a></figcaption><a class="open"><img alt="P5R2关键区"></a></figure><figure><figcaption>P5R3 <a class="source">打开原图</a></figcaption><a class="open"><img alt="P5R3关键区"></a></figure></div><p id="explain"></p>
+<p><small>单网图在临时副本中隐藏其他铜网及填铜，所选焊盘与铜线使用原生形状；接地图保留实际填铜。并联孔的完整连接铜区请以原工程或接地/全层视图为准。</small></p>
+<h2>锡膏与检查记录</h2><nav><a href="critical/motion_paste_back.svg">运动板 B.Paste</a><a href="critical/power_paste_front.svg">电源板 F.Paste</a><a href="critical/imu_paste_front.svg">IMU F.Paste</a><a href="critical/rear_paste_back.svg">后接口 B.Paste</a><a href="reports/interface_pairs.json">15 个针位对应</a><a href="reports/power/parallel_topology_test.json">去掉原过孔后的连通性</a></nav>
+<footer><p>KiCad 10.0.6 原生 ERC / DRC / 未连接 / 原理图一致性均 0。既有局部布线例外仍明确保留，详见修订说明。实物 NOT_TESTED；没有采购、下单或制造释放。</p></footer>
+<script>
+function pair(id,url){document.querySelectorAll('#'+id+' figure').forEach((f,i)=>{let p=url(i?'after':'before');f.querySelector('img').src=p+'.png';f.querySelectorAll('a').forEach(a=>a.href=p+'.svg')})}
+function boards(){pair('boards',phase=>'previews/'+document.getElementById('board').value+'/'+phase+'/'+document.getElementById('layer').value)}
+const notes={BAT_REV:'R3.1 独立从 R2.1 焊盘向下引出；Q1 至 D1 的偏置支路已与采样入口分开。',BAT_MON:'R4.1 独立从 R2.2 外侧分出。主负载出口留 1.0 mm 短颈，随后进入并联换层铜区；不能将整段称为全程 2 mm。',KELVIN_P:'R3 之后到 INA180 的接口保持原样，关键修正发生在 R3 之前的实际取点。',KELVIN_N:'R4 之后到 INA180 的接口保持原样，关键修正发生在 R4 之前的实际取点。',M5_FB:'相邻冗余过孔从 3 颗减至 2 颗，整理引脚出口。总中心线含焊盘内段，不声称整个网络变短。',C5_FB:'复核后保留原有 9.159 mm、0 过孔路线，不为形式一致而重绕。'};
+function details(){let key=document.getElementById('critical').value;pair('details',phase=>'critical/'+phase+'_'+key);document.getElementById('explain').textContent=notes[key]||'保留连续内层 GND。IC 与电容各自通过就近接点进入同一内层铜区；并未称它们合为同一个顶层铜岛。白色圆孔不一定都是 GND，接点及网络以原生工程和填铜证据 JSON 为准。'}
+document.getElementById('board').onchange=boards;document.getElementById('layer').onchange=boards;document.getElementById('critical').onchange=details;boards();details();
+</script></html>

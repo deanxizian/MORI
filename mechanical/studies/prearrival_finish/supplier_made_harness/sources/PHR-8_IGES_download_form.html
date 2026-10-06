@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="../style_common.css?20261003112120">
+  <link rel="stylesheet" type="text/css" href="style.css?20261003112120">
+  <script type="text/javascript" src="../jquery/jquery-3.5.1.min.js"></script>
+  <script src="../javascript.js?ymd=20261003112120"></script>
+  <title>日本圧着端子製造株式会社</title>
+</head>
+<body>
+
+    <table cellpadding='0' cellspacing='0'>
+      <tr>
+        <td>
+          <a href='../index.php'>
+            <img border='0' src='../images/header.jpg' alt='header'>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+      <div class='font12'>
+        <a href='../profile/index.php?lang=ja_JP'>会社情報</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href='../company/officeall.php?type=1'>拠点情報</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href='../recruit/index.php'>求人情報</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href='https://order.jst-mfg.com/WiredContactSales/'>圧着加工依頼</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href='../inquiry/inquiry.php'>お問い合わせ</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href='../index_j.php'>HOME</a>
+      </div></td>
+      </tr>
+    </table><!--//階層 -->
+<a href="../index_j.php">HOME</a> > 製品情報<br>
+
+<!-- コンテンツ -->
+<div id="div_result">
+  
+      <div class='title_bar'>使用許諾</div>
+      <style>
+        .license_item{
+          display: inline-block;
+          text-align: right;
+          width: 150px;;
+        }
+        .license_data{
+          margin-left:20px;
+        }
+      </style>
+      <div style='margin:20px;text-align:center;font-size:11pt;'>
+        <div style='margin:0 auto;display:inline-block;text-align:left;'>
+          <div>
+        1. 本ダウンロード資料（以下、本資料）に含まれる情報は、全て当社に帰属します。<br>
+        2. 本資料の全部または一部を複製および、第三者に開示することは固くお断りいたします。<br>
+        3. 本資料の内容は、予告なく変更する場合があります。あらかじめご了承ください。<br>
+        4. 同業他社の方からのダウンロードはご遠慮ください。<br>
+        5. CADデータは、お客様の図面設計を支援するためのものです。<br>&nbsp;&nbsp;&nbsp;&nbsp;そのため、データに含まれる情報や形状は簡略な仕様であり、実際の製品仕様や形状を保証するものではありません。<br>&nbsp;&nbsp;&nbsp;&nbsp;また、当社はこのデータに関連して直接または間接的に発生した、いかなる損害に対しても一切の責任を負いません。<br><br>
+        使用許諾に同意される場合は、以下の項目にご入力いただき、ダウンロードを開始してください。<br>
+        なお、ご提供いただいた情報はJSTグループの営業活動に利用させていただく場合があります。<br><br>
+      
+        <div class='font_red'>
+          2025年4月より、直接ダウンロード方式からメール添付ダウンロード方式へ変更させていただいております。<br>
+          メールアドレス宛にデータを送付いたしますので、メールをご確認していただきますようお願い申し上げます。
+        </div><br>
+      </div>
+          <span class='license_item'>会社名 <span class='font_red font9'>(必須)</span></span>
+          <span class='license_data'><input type='text' id='company' value="" onkeyup='' class='' title='' style='width:500px'></span><br>
+          <span class='license_item'>部署名 <span class='font_red font9'>(必須)</span></span>
+          <span class='license_data'><input type='text' id='section' value="" onkeyup='' class='' title='' style='width:500px'></span><br>
+          <span class='license_item'>氏名 <span class='font_red font9'>(必須)</span></span>
+          <span class='license_data'><input type='text' id='name' value="" onkeyup='' class='' title='' style='width:300px'></span><br>
+          <span class='license_item'>住所 <span class='font_red font9'>(必須)</span></span>
+          <span class='license_data'><input type='text' id='address' value="" onkeyup='' class='' title='' style='width:500px'></span><br>
+          <span class='license_item'>電話番号 <span class='font_red font9'>(必須)</span></span>
+          <span class='license_data'><input type='text' id='tel' value="" onkeyup='' class='' title='' style='width:100px'></span><br>
+          <span class='license_item'>メールアドレス <span class='font_red font9'>(必須)</span></span>
+          <span class='license_data'><input type='text' id='email' value="" onkeyup='' class='' title='' style='width:500px'></span><br>
+          <span class='license_item'>URL</span>
+          <span class='license_data'><input type='text' id='url' value="" onkeyup='' class='' title='' style='width:500px'></span><br>
+        </div>
+        
+        <div style='margin:30px;'>
+          <input type='button' value='キャンセル' onclick='history.back()' class='buttonBig'>
+          <input type='button' value='使用許諾に同意してダウンロード' onclick='download()' class='buttonBig2'>
+        </div>
+        
+      </div>
+      <div id='overflow'>
+        <div class='wait'>
+          Please wait ...
+        </div>
+      </div>
+    </div>
+
+<div id="footer">
+    <table width='900px' background='../images/footer.jpg' class='marginTop20'>
+      <tr>
+        <td class='font11'>日本圧着端子製造株式会社</td>
+        <td align='right' class='font9'>
+          Copyright(C) 1999-2026 J.S.T. Mfg. Co., Ltd.
+        </td>
+      </tr>
+    </table></div>
+
+</body>
+</html>

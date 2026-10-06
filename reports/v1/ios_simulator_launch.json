@@ -1,0 +1,48 @@
+{
+  "source": "HOST_SIMULATOR",
+  "status": "FAIL",
+  "commands": [
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "bootstatus",
+        "771F6F1E-E8CA-48BF-8CFD-045DBD16C4B9",
+        "-b"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "771F6F1E-E8CA-48BF-8CFD-045DBD16C4B9",
+        "/Users/dean/Documents/MORI/.state/ios-build/Build/Products/Debug-iphonesimulator/App.app"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "771F6F1E-E8CA-48BF-8CFD-045DBD16C4B9",
+        "dev.mori.console"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "io",
+        "771F6F1E-E8CA-48BF-8CFD-045DBD16C4B9",
+        "screenshot",
+        "reports/v1/design/ios-simulator.png"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "reason": "Process launch exit 0 was followed by iOS 27 UIScene lifecycle crash. Screenshot/log inspection detected it."
+}

@@ -1,0 +1,21 @@
+FF
+======================================================================
+FAIL: test_distance_per_count_matches_handoff (__main__.BaselineInterface)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/software/tests/test_baseline_interface.py", line 17, in test_distance_per_count_matches_handoff
+    self.assertAlmostEqual(float(match[1]), math.pi*.095/1204.44, places=10)
+AssertionError: 0.000304661522567 != 0.0002477925858415781 within 10 places (5.6868936725421905e-05 difference)
+
+======================================================================
+FAIL: test_legacy_parser_rejects_extra_fields (__main__.BaselineInterface)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/software/tests/test_baseline_interface.py", line 34, in test_legacy_parser_rejects_extra_fields
+    self.assertEqual(subprocess.run([str(exe)],check=False).returncode,0,'trailing command fields were accepted')
+AssertionError: 1 != 0 : trailing command fields were accepted
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.365s
+
+FAILED (failures=2)

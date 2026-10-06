@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI M1.48 · CAM 四线连续候选</title>
+<style>body{margin:0;background:#f3f5f4;color:#253c35;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1080px;margin:auto;padding:28px 22px 60px}h1{font-size:31px;line-height:1.35}h2{margin-top:32px}a{color:#176950}.note{padding:16px 20px;background:#fff1d4;border:1px solid #d9b46b}figure{margin:24px 0;background:white;border:1px solid #c7d2cc}img{display:block;width:100%}figcaption{padding:12px 16px}table{border-collapse:collapse;width:100%;background:white}td,th{padding:12px;border-bottom:1px solid #ccd7d1;text-align:left;vertical-align:top}.links{display:flex;gap:16px;flex-wrap:wrap}details{border:1px solid #c7d2cc;padding:14px 18px;margin-top:24px}@media(max-width:650px){main{padding:18px 12px}h1{font-size:25px}}</style>
+<main><aside id="socket-support-followup" class="note"><b>后续支座复核：此候选暂不能采用。</b> 反力固定座顶部被通道局部切开，需先修正。下方 PASS 仅适用于所列线路、固定或局部装配检查，未覆盖固定座承载。<a href="../whole_head_harness_M1_48/index.html">查看新增截面对比</a>。</aside><nav><a href="../index.html">到货前待办</a> · <a href="../../../index.html?revision=V1.2-M1.48#camera-cam">主模型 M1.48</a></nav>
+<h1>四根 CAM 候选已接通，完整线束还未完成</h1>
+<p class="note"><b>本次完成连续路线的数字检查。</b> 路线使用两件独立的颈部通道候选，尚未应用主模型。固定、带线装配、另 7 根跨关节线和 FFC 仍待完成，完整线束为 BLOCKED。</p>
+<figure><img src="complete_route.png" alt="M1.48 内部的四根 CAM 连续候选线"><figcaption>从基板 J5 到 CAM 出线预留位置的四根候选。部分实体在图中隐藏，检查时仍包含；末端不是已经确认的实物插合模型。</figcaption></figure>
+<h2>这次检查通过的范围</h2>
+<table><thead><tr><th>检查</th><th>当前结果与范围</th></tr></thead><tbody>
+<tr><td>实体间隙</td><td>PASS · 以当前 209 件实体为基础，仅替换两件候选；包含 29 个对插包络及 14 根已有候选线。</td></tr>
+<tr><td>头部姿态</td><td>PASS · 偏航 −60°～+60°、俯仰 −20°～+25°，130 个组合姿态，共 520 条线路记录。</td></tr>
+<tr><td>线间与自接近</td><td>PASS · 780 组线间、520 组非局部自接近检查；线间保守下界最小 0.300060 mm，要求 0.3 mm。</td></tr>
+<tr><td>弯曲半径</td><td>PASS · 匹配到原数学曲线的名义最小半径 7 mm，要求 6.9342 mm。未模拟导线弹性、磨损或寿命。</td></tr>
+<tr><td>固定与整套装配</td><td>NOT_TESTED / BLOCKED · 当前候选的固定、端子装入和完整带线装配尚未完成。</td></tr>
+</tbody></table>
+<p>线径保持 0.6604 mm；检查没有调小线径或降低间隙要求。细化了粗采样不能判定的区间，仍保留曲线误差与数值余量。姿态本身是离散检查，不能据此保证全部连续运动。</p>
+<h2>两件通道尚未批准</h2>
+<p>Yaw_Base、Pitch_Yoke 分别移除约 124.8、436.5 mm³ 材料。没有增加打印件、紧固件，也没有带入旧候选的凸起固定座。</p>
+<p><b>轴颈采样最薄壁从 2.25 mm 降至 1.48 mm。</b> 这是需要进一步复核的结构代价，不能仅凭导线放得下就采用。采样覆盖 17 个截面、各 720 个方向，不是全件壁厚或强度认证。</p>
+<figure><img src="channel_sections.png" alt="两件颈部通道的原件与候选剖面，以及轴颈壁厚对比"><figcaption>红色表示相对主模型移除的材料。两件候选都是单个连通实体；制造导出和强度尚未放行。</figcaption></figure>
+<h2>距离到货前工作完成，还剩五类</h2>
+<table><thead><tr><th>类别</th><th>未完成内容</th></tr></thead><tbody>
+<tr><td>完整线束</td><td>固定、应力释放、完整带线装配；另 7 根跨关节线与 FFC，最终裁线图。</td></tr>
+<tr><td>反力夹初装</td><td>夹口薄边、工具与装入路径，需要结合最终舵盘接口完成。</td></tr>
+<tr><td>采购件及安装</td><td>软轮胎定型，以及充电、制动部件与真实出线的安装和维护。</td></tr>
+<tr><td>供应商接口资料</td><td>SCS0009 配套舵盘/轴/锁紧；S288 螺钉、WeAct 插接、CAM/FFC/压接配套资料。</td></tr>
+<tr><td>质量与驱动预算</td><td>当前名义质量约 1.324 kg，高于 1.0～1.2 kg 工程目标，且完整线束等尚未计全。</td></tr>
+</tbody></table>
+<p>目前还不是“只等实物”。主模型仍为 M1.48；这次候选未进入正式 STL 或装配动画。插合包络与出线细节含估计，几何通过不等于实物装配合格。本页不提供供应商裁线尺寸。</p>
+<p class="links"><a href="review.blend">独立 Blender</a><a href="upper_route.png">头部路线近景</a><a href="README.md">完整说明</a><a href="../work_status.json">完整状态记录</a></p>
+<details><summary>原始检查与来源</summary><p class="links"><a href="refined_adaptive_all.json">实体与姿态</a><a href="curve_packing_refined.json">线间检查</a><a href="radius_evidence.json">曲率与来源</a><a href="section_checks.json">拓扑与壁厚</a><a href="refined_construction.json">实体差异</a><a href="publication.json">文件哈希</a><a href="delivery.json">交付核对</a></p><p>早期失败报告保留作为过程记录，当前结论以这五份报告为准。相同曲线的数学证据可复用，旧实体间隙结果没有直接沿用。</p></details>
+</main></html>

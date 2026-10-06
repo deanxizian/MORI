@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI M1.48 · 跨颈线束与固定座复核</title><style>body{margin:0;background:#f3f5f4;color:#233c35;font:16px/1.85 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1100px;margin:auto;padding:26px 22px 65px}h1{font-size:30px;line-height:1.4}a{color:#146c53}.note{padding:18px;background:#fff0dc;border:1px solid #d9b16a}figure{margin:24px 0;background:white;border:1px solid #cad4ce}img{display:block;width:100%}figcaption{padding:14px}td,th{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #cbd6cf}table{border-collapse:collapse;width:100%;background:white}.links{display:flex;flex-wrap:wrap;gap:15px}</style>
+<main><aside id="C5-followup" class="note"><b>最新C5候选：</b>局部11线、运动净距与过渡壁厚检查已通过，尚待结构确认；完整线束仍未完成。<a href="../neck_bearing_capacity_M1_48/C5_index.html">查看候选与检查范围</a>。下方保留之前研究。</aside><aside id="C4-followup" class="note"><b>后续 C4 结果：</b>局部11线通过，净距与过渡壁厚仍需修正，尚未采用。<a href="../neck_bearing_capacity_M1_48/C4_status.html">查看当前状态</a>。下方保留此前研究。</aside><aside id="larger-bearing-followup" class="note"><b>后续整体复核：</b> 较大内孔轴承候选保留了固定座孔壁，局部11线通过；但支撑与压板碰到头壳，仍未采用。<a href="../neck_bearing_capacity_M1_48/index.html">查看最新结果</a>。下方为原轴承切槽研究。</aside><nav><a href="../index.html">到货前待办</a> · <a href="../../../index.html?revision=V1.2-M1.48#camera-cam">主模型 M1.48</a></nav>
+<h1>集中穿颈会损伤固定座，通道需要重做</h1>
+<p class="note"><b>这两种通道均未采用。</b> 新的 11 线方案虽通过局部线路筛查，但会切穿反力固定座的孔壁。补查发现，之前的四线候选在固定座顶部也有同类问题。主模型和正式打印文件没有带入这些通道。</p>
+<figure><a href="socket_comparison.png"><img src="socket_comparison.png" alt="原固定座、旧四线通道和新十一线通道在两个高度的真实截面对比，红色为移除材料"></a><figcaption>灰绿是保留的打印材料，深绿是固定反力轴，红色是通道移除的材料。点击查看大图。固定座顶部原孔壁被局部切开，不能仅依据导线间隙检查放行。</figcaption></figure>
+<table><tr><th>检查对象</th><th>本轮结果</th></tr>
+<tr><td>11 根局部路线</td><td>130 姿态及线间检查通过；仅上下临时截面之间，未接至所有接口。4 根按 0.6604 mm，另 7 根按 1.4224 mm 预留，后者尚未选型。</td></tr>
+<tr><td>新通道的支座</td><td>BLOCKED：反力固定座部分孔壁被切穿，且出现两个微小悬空残片。</td></tr>
+<tr><td>之前的四线通道</td><td>BLOCKED：此次补查发现固定座顶部也有孔壁开口。此前路线与轴颈的检查结果不能替代本项。</td></tr>
+<tr><td>轴承轴颈</td><td>采样最薄壁：原件 2.25 mm、四线 1.48 mm、11 线 1.68 mm。该局部结果不解决固定座问题，也不证明强度。</td></tr>
+<tr><td>外绕第一轮</td><td>保留中心 R18 内的原始材料后，288 条局部候选仍未通过，主要碰到防脱压板，另有电源板冲突。仅这两组曲线族失败。</td></tr></table>
+<h2>接下来要完成什么</h2><p>分开通道，把转动余量段放到防脱压板上方；先保护固定座和轴承支撑，再完成端部连接、固定、带线装配和供应商制作图。目前没有可直接应用的通道候选。</p>
+<p>到货前的剩余工作仍为五类：<b>完整线束、反力夹初装、未定采购件及安装、厂家接口资料、最终质量与驱动复核</b>。部分工作依赖厂家或硬件输入；还不是只等实物验证。</p>
+<p class="links"><a href="README.md">完整范围与命令</a><a href="review.json">本轮状态</a><a href="section_checks.json">11 线支座</a><a href="section_checks_four_line.json">四线支座补查</a><a href="outside_bearing_screen.json">外绕筛查</a><a href="delivery.json">来源与交付核对</a><a href="../work_status.json">全部剩余工作</a></p>
+<p>PROTOTYPE / UNVALIDATED · 主模型 M1.48、STL 和装配视频保持；无制造或采购放行。</p></main></html>

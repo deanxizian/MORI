@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · 公开资料与CAM后装</title>
+<style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;background:#f4f6f5;color:#253b3d;max-width:1040px;margin:28px auto;padding:0 24px 60px}a{color:#096a74}h1{font-size:30px}.note{background:#fff0d9;padding:18px;border-radius:10px}img{width:100%;border-radius:8px}figure{margin:24px 0}figcaption{font-size:14px}td,th{padding:12px;border-bottom:1px solid #cad7d2;text-align:left}table{border-collapse:collapse;width:100%}</style>
+<p><a href="../../index.html">← 当前未完成项</a> · <a href="../index.html">A8研究</a> · <a href="../cam_tail_ribbon/index.html">上轮：临时扎带尾端</a></p>
+<h1>资料可以查到；完整线束设计还要继续完成</h1>
+<p class="note">供应商按图制作已确定。标准连接器与压接参考已取得；本轮CAM后装候选的16个导线位置检查通过，但一枚固定螺钉的直柄工具仍受阻。主模型M1.47未改，最终线束图未放行。</p>
+<h2>已取得的公开资料</h2>
+<p><a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">JST SH</a>、<a href="https://www.jst-mfg.com/product/pdf/eng/ePH.pdf">JST PH</a>的胶壳、端子、线规和尺寸已找到；<a href="../CRIMP_REFERENCE.md">压接指导</a>及<a href="../TOOLING_DETAILS.md">完整料号查询记录</a>也已保留。微雪<a href="https://files.waveshare.com/wiki/ESP32-S3-CAM-OVxxxx/ESP32-S3-CAM-OVxxxx_Rev1.1.pdf">CAM V1.1原理图</a>写明SH1.0四针UART，但未提供完整插座厂牌料号及线端针腔视图。</p>
+<p>SCS0009有规格书和参考STEP；原配舵盘图、采购版次及部分互配细节仍未取得。详见<a href="../../supplier_made_harness/recheck_20261004/README.md">资料复查</a>。线长、固定点和完整装配工序由MORI项目设计，不能一并归为等厂家资料。</p>
+<h2>先装头托，再装CAM板</h2><p>板卡暂抬6mm，插头从下方进入，再让板卡落座。头部线环变窄以补偿插头直线段增长，每根线总长度保持不变。四枚CAM螺钉留到最后锁紧，原有嵌件不动。</p>
+<figure><img src="board_raised6.png" alt="CAM板抬高6毫米的独立装配候选"><figcaption>只展示头部四线候选段；颜色不代表电气针序。头托、舵机及支座位置不变。</figcaption></figure>
+<table><tr><th>检查</th><th>结果与范围</th></tr><tr><td>导线</td><td>16个位置通过；逐根等长，曲率半径下界7.145mm，表面间距下界0.306mm</td></tr><tr><td>板卡/插头落座</td><td>6mm连续刚性路径通过；不代表连续柔性运动或实际插合认证</td></tr><tr><td>固定工具</td><td>3处通过；下方CAM_Mount_Screw_0被俯仰舵机挡住</td></tr></table>
+<figure><img src="screw_tool_obstruction.png" alt="CAM固定螺钉的直柄刀杆与俯仰舵机相交"><figcaption>红色为直柄刀杆检查体。两种已检查直柄工具受阻；没有删除舵机或为它新增避让孔。</figcaption></figure>
+<h2>尚未完成的设计</h2><p>先解决这枚螺钉的工具或工序，再接通裸端穿线、线形形成与两处扎带收紧。其余头部导线、USB、相机FPC和最终裁线图也仍未完成。本候选尚未采用。</p>
+<p>另一个42mm滑动路线的上部导线检查通过，但身体侧共同PH插头和余线暂存未闭合，因此也不能作为完整工序。所有实物压接、动态寿命与打印配合保持待验证。</p>
+<p><a href="README.md">完整说明与来源</a> · <a href="screen.json">16个位置</a> · <a href="verification.json">刚性路径和工具检查</a> · <a href="review.blend">独立Blender</a> · <a href="commands.json">实际命令</a> · <a href="review_manifest.json">交付清单</a></p></html>

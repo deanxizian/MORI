@@ -1,0 +1,37 @@
+[
+  {
+    "stage": "square_corner_trial",
+    "commands": "See retained Blender build/validate logs and geometry snapshot",
+    "evidence": "studies/drive_cleanup/square_corner_trial",
+    "outcome": "Rejected: Body_Lower versus Motor_Retainer 1.3216 mm3 overlap"
+  },
+  {
+    "stage": "outer_saddle_corner_trial",
+    "commands": "See drive_cap_collision_location.log and geometry snapshot",
+    "evidence": "studies/drive_cleanup/saddle_corner_trial",
+    "outcome": "Rejected: four lower outer saddle-edge penetrations, total 0.7173 mm3"
+  },
+  {
+    "stage": "full_height_cap_chamfer_trial",
+    "commands": "drive_cleanup_commands.json in evidence directory records complete run",
+    "evidence": "studies/drive_cleanup/full_height_corner_trial",
+    "outcome": "Geometry passed; visual review identified unnecessary corner steps at case/cap seam"
+  },
+  {
+    "stage": "bottom_corner_refinement",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/studies/drive_cleanup/test_bottom_corners.py"
+    ],
+    "log": "reports/drive_bottom_corner_trial.log",
+    "result": "reports/drive_bottom_corner_trial.json",
+    "outcome": "Zero cap/shell nominal solid overlap; gap unchanged; functional underside cuts only",
+    "source_snapshot": "studies/drive_cleanup/full_height_corner_trial/mori_v1_2.blend",
+    "source_sha256": "e85cf37d7ed2754ba4cf531e0ffb1295a1a7ab342c5ce19714710ae3213b85ae"
+  }
+]

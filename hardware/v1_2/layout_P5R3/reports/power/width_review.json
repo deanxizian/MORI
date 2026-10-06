@@ -1,0 +1,881 @@
+{
+  "pcb_sha256": "18e153d63d0aff6c7ff63f317b6c2b0d408e59c07c4cc7bbf81fd4ae068bbd9f",
+  "native_width_inventory": {
+    "/+3V3": {
+      "0.2": 17
+    },
+    "/+5V_CAM": {
+      "0.8": 9,
+      "0.2": 18
+    },
+    "/+5V_MOTION": {
+      "0.2": 17,
+      "0.8": 6
+    },
+    "/ARM_Q": {
+      "0.2": 41
+    },
+    "/BAT_ADC": {
+      "0.2": 11
+    },
+    "/BAT_IN": {
+      "1.2": 2,
+      "2.0": 1
+    },
+    "/BAT_MON": {
+      "1.0": 2,
+      "0.8": 8,
+      "2.0": 30,
+      "0.4": 2,
+      "0.2": 3
+    },
+    "/BAT_REV": {
+      "0.2": 7,
+      "1.2": 1,
+      "2.0": 2
+    },
+    "/C5_BOOT": {
+      "0.2": 3
+    },
+    "/C5_EN": {
+      "0.2": 12
+    },
+    "/C5_FB": {
+      "0.2": 7
+    },
+    "/C5_SW": {
+      "0.6": 7,
+      "0.8": 1
+    },
+    "/C5_VIN": {
+      "0.8": 13,
+      "0.2": 1
+    },
+    "/CHG_BASE": {
+      "0.2": 6
+    },
+    "/CHG_N": {
+      "0.2": 28
+    },
+    "/CURRENT_ADC": {
+      "0.2": 40
+    },
+    "/FAULT_N": {
+      "0.2": 29
+    },
+    "/GND": {
+      "0.2": 51,
+      "0.8": 3,
+      "0.3": 2,
+      "0.5": 1
+    },
+    "/H6_IN": {
+      "1.0": 6
+    },
+    "/H_BRAKE_GATE": {
+      "0.2": 23
+    },
+    "/H_BUS": {
+      "0.2": 7
+    },
+    "/H_DUMP_D": {
+      "1.0": 4
+    },
+    "/H_GATE": {
+      "0.2": 8
+    },
+    "/H_GATE_LOW": {
+      "0.2": 12
+    },
+    "/H_OVSENSE": {
+      "0.2": 17
+    },
+    "/H_PRE": {
+      "1.0": 11,
+      "1.2": 1
+    },
+    "/H_REF": {
+      "0.2": 18
+    },
+    "/H_SENSE": {
+      "0.2": 22
+    },
+    "/H_VM": {
+      "0.2": 17,
+      "1.2": 1,
+      "1.0": 19,
+      "0.8": 1
+    },
+    "/KELVIN_N": {
+      "0.381": 3
+    },
+    "/KELVIN_P": {
+      "0.381": 4
+    },
+    "/M5_BOOT": {
+      "0.2": 3
+    },
+    "/M5_EN": {
+      "0.2": 13
+    },
+    "/M5_FB": {
+      "0.2": 12
+    },
+    "/M5_SW": {
+      "0.6": 8,
+      "0.8": 1
+    },
+    "/M5_VIN": {
+      "0.8": 15,
+      "0.2": 1
+    },
+    "/MASTER_GATE": {
+      "0.2": 8
+    },
+    "/MASTER_RETURN": {
+      "0.2": 4
+    },
+    "/PACK_FUSED": {
+      "0.2": 6,
+      "2.0": 10
+    },
+    "/REV_GATE": {
+      "0.2": 6
+    },
+    "/VBUS_CHARGE": {
+      "0.2": 7
+    },
+    "/W9_IN": {
+      "1.5": 7
+    },
+    "/WHEEL_ADC": {
+      "0.2": 26
+    },
+    "/W_BRAKE_GATE": {
+      "0.2": 12
+    },
+    "/W_BUS": {
+      "0.2": 16
+    },
+    "/W_DUMP_D": {
+      "1.0": 7
+    },
+    "/W_GATE": {
+      "0.2": 7
+    },
+    "/W_GATE_LOW": {
+      "0.2": 2
+    },
+    "/W_OVSENSE": {
+      "0.2": 7
+    },
+    "/W_PRE": {
+      "0.2": 4,
+      "1.2": 1,
+      "1.5": 1
+    },
+    "/W_REF": {
+      "0.2": 15
+    },
+    "/W_SENSE": {
+      "0.2": 19
+    },
+    "/W_VM": {
+      "0.2": 14,
+      "1.5": 23,
+      "0.8": 5,
+      "1.2": 1
+    }
+  },
+  "foil_mm_assumed": 0.07,
+  "via_plating_mm_assumed": 0.02,
+  "scenario_source": "S3 logic budgets 0.75A / 2A; 30W/9V wheel and 12W/6V head; 6.48A aggregate. Branch BAT_MON values are conservative engineering scenarios, not measured simultaneous currents. Rear1A from P4 input limit. IMU20mA is an engineering allowance.",
+  "method": "Native copper-shape adjacency after filtering narrow tracks, shortest resistance-weighted single path; sums full segment lengths even at mid-segment junctions. No IC internal conduction inferred. Copper zones, parallel current sharing, contact/connector/pad resistance and return network excluded.",
+  "qualification": "NOT_TESTED: this is drawn-path and DC resistance estimation only. It does not establish allowable continuous current or temperature rise. Converter SW currents have ripple, so DC scenarios are not RMS loss qualifications.",
+  "paths": [
+    {
+      "net": "/PACK_FUSED",
+      "source": "J1",
+      "destination": "Q90",
+      "design_scenario_A": 6.48,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 2.0,
+      "widest_complete_path_minimum_width_mm": 2.0,
+      "complete_segment_length_mm": 18.282017350490555,
+      "single_path_vias": [
+        {
+          "xy": [
+            10.3124,
+            12.7
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 3.1853700530548728,
+      "drop20_mV": 20.641197943795575,
+      "loss20_W": 0.13375496267579534,
+      "path_uuids": [
+        "3776c3d3-5086-4f0f-9aa5-97372fb2d733",
+        "67818f67-1c0f-45a9-999d-e30ace41f044",
+        "231a39ff-7302-4438-92c7-2a8057e3ff45",
+        "8fd145df-c296-436f-816d-5a4d86f7de06",
+        "42791d97-f1f1-444c-a329-90e2b364cb3c",
+        "1b9182a3-a8a0-4ba4-80f1-b9309e39c646",
+        "de8d741c-3600-4ddb-9ba2-166d3212d33e",
+        "46f472d1-4147-41b7-8893-307f1116e8dd"
+      ]
+    },
+    {
+      "net": "/BAT_IN",
+      "source": "Q90",
+      "destination": "Q1",
+      "design_scenario_A": 6.48,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 2.0,
+      "widest_complete_path_minimum_width_mm": 2.0,
+      "complete_segment_length_mm": 1.75,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 0.21549999999999997,
+      "drop20_mV": 1.39644,
+      "loss20_W": 0.0090489312,
+      "path_uuids": [
+        "00a1f35a-8dab-425c-a055-7c91f49f0b0c",
+        "43407018-3905-4c74-bfdc-cdfcdfa8b5bd",
+        "92c7f6ca-7e79-454f-aac3-ab30bf98bb74"
+      ]
+    },
+    {
+      "net": "/BAT_REV",
+      "source": "Q1",
+      "destination": "R2",
+      "design_scenario_A": 6.48,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 2.0,
+      "widest_complete_path_minimum_width_mm": 2.0,
+      "complete_segment_length_mm": 2.340001,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 0.28815440885714283,
+      "drop20_mV": 1.867240569394286,
+      "loss20_W": 0.012099718889674973,
+      "path_uuids": [
+        "320280d8-b057-4cf0-8e25-ea98bd40b734",
+        "79f312a4-5fb9-48ce-8315-00a9cc9968ea",
+        "00c3efee-7951-490a-8d0d-355a1c70394d"
+      ]
+    },
+    {
+      "net": "/BAT_MON",
+      "source": "R2",
+      "destination": "J2",
+      "design_scenario_A": 3.8,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.0,
+      "widest_complete_path_minimum_width_mm": 1.0,
+      "complete_segment_length_mm": 19.483789675251764,
+      "single_path_vias": [
+        {
+          "xy": [
+            30.6324,
+            5.3024
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            35.7632,
+            14.6304
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 4.5668025329413595,
+      "drop20_mV": 17.353849625177165,
+      "loss20_W": 0.06594462857567322,
+      "path_uuids": [
+        "9ac33008-c874-4421-b6d0-067da89a8a7b",
+        "8606a0a0-ef56-47cf-a6e7-48fea0e8df5d",
+        "1115b114-887e-457d-8f98-c47346809d5e",
+        "058b4dc8-af61-405f-bc27-09164c0b6a2d",
+        "38ffed52-4ce4-4920-8b06-fa17e8515cb9",
+        "ca878613-ffba-4c80-b3ec-2dee0a26278a",
+        "d11a85f4-d05f-4d04-9a8d-b407c8cb8b21",
+        "e3bec9dc-31ca-4085-a935-d2148b91c14f",
+        "dac19e6b-de0c-4fee-88e6-028d5635fece",
+        "93f45fa9-266d-4fc0-ab39-861f468d3d7c"
+      ]
+    },
+    {
+      "net": "/BAT_MON",
+      "source": "R2",
+      "destination": "J4",
+      "design_scenario_A": 1.6,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.0,
+      "widest_complete_path_minimum_width_mm": 1.0,
+      "complete_segment_length_mm": 50.1834002967126,
+      "single_path_vias": [
+        {
+          "xy": [
+            35.7632,
+            14.6304
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 7.413170095861074,
+      "drop20_mV": 11.86107215337772,
+      "loss20_W": 0.01897771544540435,
+      "path_uuids": [
+        "2ba1a827-1998-4ecc-a90a-241eb302cd0d",
+        "d0cadff5-d8f3-4d8e-80b3-763511ad17f0",
+        "220454fd-491d-4567-94ed-4395cc484bf2",
+        "64a86cc9-8e11-497f-be25-e941c9c3b43c",
+        "11048970-a34d-4365-b42c-3084f146671f",
+        "3000fd07-8c15-4f05-844d-a3d1b1a2b6cc",
+        "c06795c2-24a1-4a8e-aec4-f1ab64168f25",
+        "8327b31e-1f9f-42c7-bd84-e34112de0ad2",
+        "ec33fb72-71fa-4f11-b9b2-0c2678e0b14a",
+        "a28e5d2c-ceb3-4072-b705-be55cb76b5ac",
+        "1c6f6782-d17d-42f1-82bd-1b0d21ece8a2",
+        "d11a85f4-d05f-4d04-9a8d-b407c8cb8b21",
+        "e3bec9dc-31ca-4085-a935-d2148b91c14f",
+        "dac19e6b-de0c-4fee-88e6-028d5635fece",
+        "93f45fa9-266d-4fc0-ab39-861f468d3d7c"
+      ]
+    },
+    {
+      "net": "/BAT_MON",
+      "source": "R2",
+      "destination": "F60",
+      "design_scenario_A": 0.55,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 17.298883344096037,
+      "single_path_vias": [
+        {
+          "xy": [
+            32.003999,
+            20.7264
+          ],
+          "drill_mm": 0.3
+        },
+        {
+          "xy": [
+            35.7632,
+            14.6304
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 5.529692675156919,
+      "drop20_mV": 3.0413309713363055,
+      "loss20_W": 0.001672732034234968,
+      "path_uuids": [
+        "f05e8189-5cec-4fb3-8b21-493fd161ff2e",
+        "30de37f8-65bb-43e3-a7e2-e74428fd1c41",
+        "b95a3eb0-6fce-4ac6-85f9-4231eb6698da",
+        "3d180543-e8a0-4fc7-b323-69215a973e2e",
+        "1c6f6782-d17d-42f1-82bd-1b0d21ece8a2",
+        "d11a85f4-d05f-4d04-9a8d-b407c8cb8b21",
+        "e3bec9dc-31ca-4085-a935-d2148b91c14f",
+        "dac19e6b-de0c-4fee-88e6-028d5635fece",
+        "93f45fa9-266d-4fc0-ab39-861f468d3d7c"
+      ]
+    },
+    {
+      "net": "/BAT_MON",
+      "source": "R2",
+      "destination": "F70",
+      "design_scenario_A": 1.35,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 27.51641469311329,
+      "single_path_vias": [
+        {
+          "xy": [
+            32.105599,
+            32.512
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            35.7632,
+            14.6304
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 6.653626174275462,
+      "drop20_mV": 8.982395335271873,
+      "loss20_W": 0.01212623370261703,
+      "path_uuids": [
+        "3879030d-2a84-46fa-9dfb-e522b6dab4ea",
+        "8c67640a-eee1-4587-af18-29ac37e738dd",
+        "5660322b-eb2f-4fd9-92e3-e1cbf6d56fb3",
+        "833c8251-9a4a-40d5-bd5e-6f1f015f55b0",
+        "764d1dc5-1e9e-4fd1-bfce-8af1fb7798e7",
+        "ec33fb72-71fa-4f11-b9b2-0c2678e0b14a",
+        "a28e5d2c-ceb3-4072-b705-be55cb76b5ac",
+        "1c6f6782-d17d-42f1-82bd-1b0d21ece8a2",
+        "d11a85f4-d05f-4d04-9a8d-b407c8cb8b21",
+        "e3bec9dc-31ca-4085-a935-d2148b91c14f",
+        "dac19e6b-de0c-4fee-88e6-028d5635fece",
+        "93f45fa9-266d-4fc0-ab39-861f468d3d7c"
+      ]
+    },
+    {
+      "net": "/W9_IN",
+      "source": "J3",
+      "destination": "D10",
+      "design_scenario_A": 3.34,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.5,
+      "widest_complete_path_minimum_width_mm": 1.5,
+      "complete_segment_length_mm": 8.9568,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 1.470621257142857,
+      "drop20_mV": 4.911874998857142,
+      "loss20_W": 0.016405662496182853,
+      "path_uuids": [
+        "3cc50370-7244-43a0-903d-e0432e1faeec",
+        "88fe1434-918a-4f5f-8960-154a7a5cebbc",
+        "eb95c55d-61fe-42fe-99d6-7ca8f13ccc97",
+        "39164fa9-5cce-477b-84a7-c167b1b6b7ae",
+        "992d84aa-fc7e-452c-9c12-d82f0b1b5b8e",
+        "4b73408c-6020-4dc8-a198-2531ef28f139"
+      ]
+    },
+    {
+      "net": "/W_PRE",
+      "source": "D10",
+      "destination": "Q10",
+      "design_scenario_A": 3.34,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.5,
+      "widest_complete_path_minimum_width_mm": 1.5,
+      "complete_segment_length_mm": 1.86,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 0.3053942857142857,
+      "drop20_mV": 1.020016914285714,
+      "loss20_W": 0.003406856493714285,
+      "path_uuids": [
+        "9e0f633c-6026-4770-a091-1f3166d151f6",
+        "f06767d6-51fa-4b76-9ae8-3bac03fb5265",
+        "968e4fd1-c046-4f98-bf7b-a099982d2f39"
+      ]
+    },
+    {
+      "net": "/W_VM",
+      "source": "Q10",
+      "destination": "J7",
+      "design_scenario_A": 3.34,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.5,
+      "widest_complete_path_minimum_width_mm": 1.5,
+      "complete_segment_length_mm": 25.35186324576118,
+      "single_path_vias": [
+        {
+          "xy": [
+            58.3184,
+            10.6172
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 5.096604700817538,
+      "drop20_mV": 17.02265970073058,
+      "loss20_W": 0.056855683400440137,
+      "path_uuids": [
+        "2b3104ce-3511-4c48-bf0c-df22859340be",
+        "c38bd671-ad54-4a29-b525-fd4dac1656e0",
+        "de96842b-a73e-4e75-b751-610c47bcbf81",
+        "25448e3d-afda-4991-900f-0c282c5936d3",
+        "8bdac883-e2b8-475b-9ee6-32bd1fb85ce0",
+        "434ab4d5-f514-42d6-bac8-d6c3348d6dcf",
+        "270b68a8-0a36-4a25-a418-0e5bec08d88c",
+        "2e03fab9-18cc-4e9d-b96f-cee17739e03a"
+      ]
+    },
+    {
+      "net": "/W_VM",
+      "source": "Q10",
+      "destination": "J8",
+      "design_scenario_A": 3.34,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 42.41124979212595,
+      "single_path_vias": [
+        {
+          "xy": [
+            61.2648,
+            22.86
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            58.3184,
+            10.6172
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 9.290075303562752,
+      "drop20_mV": 31.02885151389959,
+      "loss20_W": 0.10363636405642462,
+      "path_uuids": [
+        "70421892-2d52-42c8-8d79-c91c5a7090e3",
+        "b03dfe20-21fc-4452-95aa-d0a6630c194e",
+        "bcd7d38b-84f9-411b-8fd7-e9071ea59099",
+        "d2ddef6f-0e6f-4b15-ac84-ccafcdf3fb60",
+        "c8d0b161-4f10-4d3a-b801-cb909bd2b0e4",
+        "afbdaaa7-2270-498c-b6b4-d8115d434a6f",
+        "ce18f77a-3112-426f-aa08-a24981e4c566",
+        "cf98fe77-fd23-43c4-8c01-1f09cbf823ee",
+        "de96842b-a73e-4e75-b751-610c47bcbf81",
+        "25448e3d-afda-4991-900f-0c282c5936d3",
+        "8bdac883-e2b8-475b-9ee6-32bd1fb85ce0",
+        "434ab4d5-f514-42d6-bac8-d6c3348d6dcf",
+        "270b68a8-0a36-4a25-a418-0e5bec08d88c",
+        "2e03fab9-18cc-4e9d-b96f-cee17739e03a"
+      ]
+    },
+    {
+      "net": "/H6_IN",
+      "source": "J5",
+      "destination": "D30",
+      "design_scenario_A": 2,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.0,
+      "widest_complete_path_minimum_width_mm": 1.0,
+      "complete_segment_length_mm": 19.196161071182534,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 4.727740240959812,
+      "drop20_mV": 9.455480481919624,
+      "loss20_W": 0.01891096096383925,
+      "path_uuids": [
+        "aa6aabe9-29e3-4308-92c3-863d193ba7db",
+        "908c7005-3347-4da9-800e-4206e96933e0",
+        "9b27e1ec-a5da-48c9-856d-761b629979eb",
+        "159109f0-c3d4-4338-875d-b83cf1a2fbc8",
+        "20861aa4-64f8-419a-9461-4e05d150d6a1",
+        "4d71f7b9-49d0-4dd7-aff5-338de1368b0b",
+        "c9f9a801-7f8e-4351-ba25-f6edb6d25a1f"
+      ]
+    },
+    {
+      "net": "/H_PRE",
+      "source": "D30",
+      "destination": "Q30",
+      "design_scenario_A": 2,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.0,
+      "widest_complete_path_minimum_width_mm": 1.0,
+      "complete_segment_length_mm": 25.363425093647784,
+      "single_path_vias": [
+        {
+          "xy": [
+            49.1744,
+            24.485599
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            40.0,
+            28.549599
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 8.114789670281612,
+      "drop20_mV": 16.229579340563223,
+      "loss20_W": 0.03245915868112645,
+      "path_uuids": [
+        "b6c8d482-52bd-434a-9c6c-479a92b8fa19",
+        "509db4ed-fc47-42be-8f12-7058fc987473",
+        "cdec2d41-4a4f-420a-9672-ea36e680acc0",
+        "1402345f-2beb-4123-bc07-e3cbc8df322d",
+        "3ba7af3e-2c8c-4488-be3b-2c5a9041d1e8",
+        "45b9f50a-68cf-4623-a088-79dd0b9b79e6",
+        "2d6bb1b7-9b0f-4efc-8751-f5ce2907c54a",
+        "9b231ce3-f27a-4a6f-849a-717bebed8c17",
+        "d223b4b5-a6d0-43b0-99cd-d5f0bfa60b3f",
+        "696904ff-04c2-45aa-96f2-5da134ae045d",
+        "5cce49d7-f200-4a0e-b144-c83354687220",
+        "16401396-87a3-42f8-980a-5e400a79a137"
+      ]
+    },
+    {
+      "net": "/H_VM",
+      "source": "Q30",
+      "destination": "J9",
+      "design_scenario_A": 2,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 36.19440735131039,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 9.09887975337987,
+      "drop20_mV": 18.19775950675974,
+      "loss20_W": 0.036395519013519485,
+      "path_uuids": [
+        "6586ab04-8a0b-48e4-b369-2f4320dae2a7",
+        "06f2b40f-6c72-4fa2-96b7-f4a3913b300d",
+        "5cfa2dd6-5a0f-485a-82de-0429edabf86f",
+        "b0a72515-d85e-4c00-8ac6-5038eab6a3ec",
+        "be2a8219-aeda-43d1-9eaa-cd07932830f9",
+        "619c4040-91d0-4f2c-9adb-a301e7880715",
+        "08adbfde-12a7-4e30-b7fa-88ef88306e42",
+        "69e054cd-690d-4072-bfe5-5494566f4f1f",
+        "55ac5673-2fbc-4ba4-80e3-9f9b2723ac7f",
+        "1ea17071-e549-4428-82ec-87d01b09ddef",
+        "b2614091-b872-4b45-b098-f33b0cd16525",
+        "56c38d32-804b-4826-8ecd-bf6140189abe",
+        "8efe39bf-862e-42f4-94bd-6739de04fba0",
+        "7e74dc1f-dec6-47eb-9af2-a937677b5e25"
+      ]
+    },
+    {
+      "net": "/W_DUMP_D",
+      "source": "Q20",
+      "destination": "J11",
+      "design_scenario_A": 3,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.0,
+      "widest_complete_path_minimum_width_mm": 1.0,
+      "complete_segment_length_mm": 18.492439547283002,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 4.554423682787984,
+      "drop20_mV": 13.663271048363953,
+      "loss20_W": 0.040989813145091855,
+      "path_uuids": [
+        "b26b31db-d45c-48bc-82af-693dd8b0bfa9",
+        "b0717590-98a1-4cdc-9031-dcf21023f66e",
+        "05ec9955-b808-4349-bbdf-77b45e376aec",
+        "839adefa-586f-4120-a182-f850023950a7",
+        "a1d696ea-4c8e-457f-883b-8b38f9271afd",
+        "e2397fde-5131-4043-9670-4bfff76a6abf",
+        "0354f110-a3b2-4018-9ca6-1acb42f4490b"
+      ]
+    },
+    {
+      "net": "/H_DUMP_D",
+      "source": "Q40",
+      "destination": "J12",
+      "design_scenario_A": 2,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 1.0,
+      "widest_complete_path_minimum_width_mm": 1.0,
+      "complete_segment_length_mm": 11.75863567738817,
+      "single_path_vias": [
+        {
+          "xy": [
+            61.874399,
+            49.9872
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            60.6552,
+            52.9336
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 4.7641243911913875,
+      "drop20_mV": 9.528248782382775,
+      "loss20_W": 0.01905649756476555,
+      "path_uuids": [
+        "476afd66-30a6-4f4e-8fb0-a6b248e1d74d",
+        "3ae95368-2e5e-43e6-a75a-f2184f466547",
+        "5c1e6748-2e18-42a3-be92-52bfced6ab83",
+        "64865b57-8eee-4406-b184-76219a00abd2",
+        "8669ebdd-585f-4587-b0cc-e1396cb38e1a",
+        "19e14020-9d3c-4506-9e47-ae386df4b4c3",
+        "33f1fa6d-cdff-4611-945a-231708a0223e",
+        "6489ce89-bd76-4cc2-bb2e-e598c0b53c2f"
+      ]
+    },
+    {
+      "net": "/+5V_MOTION",
+      "source": "L60",
+      "destination": "J17",
+      "design_scenario_A": 0.75,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 8.569645604304945,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 2.6382266110395944,
+      "drop20_mV": 1.9786699582796958,
+      "loss20_W": 0.0014840024687097718,
+      "path_uuids": [
+        "71855173-af29-47ca-8e59-aefb71808a46",
+        "c4e3b733-2e3b-4b8f-86ba-e3a75fae21a9",
+        "23201c41-3a92-4412-89db-6251ca414549",
+        "eba2f775-a1c2-4fab-a99f-ca8acbaf3629",
+        "b6ee5186-d587-4a5b-a4a6-fd27a5fc6288",
+        "4295d4c6-235e-44e1-bfa8-ee9ab16372f4"
+      ]
+    },
+    {
+      "net": "/+5V_CAM",
+      "source": "L70",
+      "destination": "J18",
+      "design_scenario_A": 2,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 17.47871310748399,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 5.380946678089714,
+      "drop20_mV": 10.761893356179428,
+      "loss20_W": 0.021523786712358856,
+      "path_uuids": [
+        "f135857d-877b-4875-9d59-f720c682befc",
+        "60fc93d7-19cb-439f-8348-6873764b9135",
+        "7715c5db-c945-42da-a07e-9ed204ae608c",
+        "a662cb4e-644f-4080-a698-aea12fd811db",
+        "ee6e3f15-09f8-47f0-82d7-fe42dc7b7223",
+        "c6c2dffa-ce1b-4aad-a4ea-0fa52258f895",
+        "4f3c7a8b-950a-45b3-83c0-801219b41b80",
+        "6c4093a0-cddc-4c41-8737-9ab45be6218e",
+        "2b389020-8e5b-46fa-a91e-2a3a1e6c5b68"
+      ]
+    },
+    {
+      "net": "/M5_VIN",
+      "source": "F60",
+      "destination": "U60",
+      "design_scenario_A": 0.55,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 10.668252352560273,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 3.284297688538198,
+      "drop20_mV": 1.806363728696009,
+      "loss20_W": 0.000993500050782805,
+      "path_uuids": [
+        "0e020af3-1849-4dcf-a536-68b395da6a03",
+        "234f67e6-aef3-490d-acdb-0d4bfafa6852",
+        "246ff608-25a3-4d11-ad2f-6ca80cf75750",
+        "a0d3e8dc-5d9f-417b-81ca-3e935e38f129",
+        "42d41a6c-7382-4137-b1f6-04d249f84756",
+        "068c7e71-b1a7-4924-a55b-e0a5a14954f4"
+      ]
+    },
+    {
+      "net": "/C5_VIN",
+      "source": "F70",
+      "destination": "U70",
+      "design_scenario_A": 1.35,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.8,
+      "widest_complete_path_minimum_width_mm": 0.8,
+      "complete_segment_length_mm": 9.246836840176513,
+      "single_path_vias": [
+        {
+          "xy": [
+            27.939999,
+            42.5704
+          ],
+          "drill_mm": 0.45
+        },
+        {
+          "xy": [
+            31.089599,
+            41.2496
+          ],
+          "drill_mm": 0.45
+        }
+      ],
+      "conservative_complete_segment_path_R20_mohm": 4.71484517444327,
+      "drop20_mV": 6.365040985498415,
+      "loss20_W": 0.008592805330422861,
+      "path_uuids": [
+        "99862189-074d-4a2b-bd17-94184ffe2ece",
+        "f05175b3-cb7e-4d0b-990a-d8617755ca31",
+        "9b847fff-2ad1-4266-9b32-47a15bbb7a68",
+        "f50c76a2-d586-437f-8f45-a3d19885d654",
+        "09379bbe-bb65-442c-867d-31460fc15204",
+        "283c20be-96ab-47bf-b471-3d7e8ea6549f",
+        "56077b8a-3f9a-4d6c-89d7-26cd1458cf13",
+        "d28f7aef-efdc-46be-b061-427cbb1cec79",
+        "c00d1bc2-1a2f-4d49-9f68-87377c0bd532"
+      ]
+    },
+    {
+      "net": "/M5_SW",
+      "source": "U60",
+      "destination": "L60",
+      "design_scenario_A": 0.75,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.6,
+      "widest_complete_path_minimum_width_mm": 0.6,
+      "complete_segment_length_mm": 4.0375043669729855,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 1.6572994115860538,
+      "drop20_mV": 1.2429745586895404,
+      "loss20_W": 0.0009322309190171553,
+      "path_uuids": [
+        "8bf10852-e0d6-4b00-9713-581ce6054dc7",
+        "3fe51292-7cac-4927-8d1b-4c1df3400ba0",
+        "de4c0607-f0c3-48d5-8ac7-ddf63c77ff3c",
+        "bdbde466-14ed-4062-ab4f-fde75bbdd347",
+        "464b34f8-75fb-4a39-b578-39a8be0e41f2",
+        "c6162065-5bf3-44a1-a6f8-ed1317977dc7"
+      ]
+    },
+    {
+      "net": "/C5_SW",
+      "source": "U70",
+      "destination": "L70",
+      "design_scenario_A": 2,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.59,
+      "minimum_path_width_mm": 0.6,
+      "widest_complete_path_minimum_width_mm": 0.6,
+      "complete_segment_length_mm": 5.791818834302138,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 2.3774037310325915,
+      "drop20_mV": 4.754807462065183,
+      "loss20_W": 0.009509614924130366,
+      "path_uuids": [
+        "3774e71b-8964-4499-b399-6c9f1919ae75",
+        "2b718790-b2ea-487e-8ed5-25e58dfdb3f2",
+        "9e01d4b8-0256-4a98-a37d-079141421833",
+        "fe1bc276-9db7-4521-a517-aeebb221622c",
+        "3391d4bd-c9b1-4f55-8984-2482b410f569",
+        "92b20d11-ac89-4385-9ca0-aa5c1416c2aa"
+      ]
+    }
+  ]
+}

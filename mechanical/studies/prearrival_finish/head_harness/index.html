@@ -1,0 +1,41 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI 头部线束核对</title><style>body{margin:0;background:#f3f5f5;color:#203239;font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}main{max-width:1050px;margin:auto;padding:36px 24px 70px}h1{font-size:32px;line-height:1.3}h2{font-size:22px;margin-top:36px}p{max-width:900px}a{color:#17637b}img{max-width:100%;height:auto;background:white;border:1px solid #d9e1e3;border-radius:10px}table{width:100%;border-collapse:collapse;background:white}td,th{padding:12px;text-align:left;border-bottom:1px solid #dce3e5}aside{background:#fff4dd;border-left:5px solid #c58b20;padding:16px 20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}small{color:#62747c} @media(max-width:760px){.grid{grid-template-columns:1fr}}</style><main><section id="A8-central-update"><h2>后续A8：细线与中心间隙</h2><p><a href="../harness_A8/index.html">四根UART细线的局部候选与端部限制</a>已有新结果：中间段通过，完整进出与俯仰仍未完成。下列外圈试算保留为此前研究，不代表最终方案。</p></section><p><a href="../index.html">返回打样前工作</a> · M1.47 独立资料核对</p>
+<h1>头部布线：固定排线与跨关节线</h1>
+<aside><b>分类与名义尺寸核对完成；完整线束仍未完成。</b><br>相机原配排线长度、LCD排线折弯参数，以及动态线束/插头和固定点仍需定型。没有修改主模型或增加走线孔。</aside>
+<h2>相机需要多长的排线</h2><p>当前插座与模组包络的最短距离为 <b>58.23 mm</b>。直线会穿过 CAM 板和 Display frame，实际走线还要更长。CAM/相机部分尺寸来自官方照片估算，这不是实物量测。</p>
+<img src="camera_reach.png" alt="X零剖面，显示相机插座到模组至少58.23毫米，直线被结构阻挡">
+<p>原配 FPC 的完整长度尚未查到。历史模型的 <b>10.5 mm 只是可见段</b>，不能作为总长或直接判定原配排线必然不足。优先取得完整料号/图纸，再评估原配、加长模组或厂家支持的延长方案；板位和镜头不动。</p>
+<h2>哪些线需要活动余量</h2><table><thead><tr><th>连接</th><th>功能导线数</th><th>跨越关节</th></tr></thead><tbody><tr><td>运动板 J5 → CAM UART</td><td>4</td><td>yaw＋pitch</td></tr><tr><td>电源板 J18 → CAM USB 5V</td><td>2</td><td>yaw＋pitch</td></tr><tr><td>CAM SPK → 肚子外壳上的 SP3040</td><td>2</td><td>yaw＋pitch</td></tr><tr><td>电源板 J9 → 头部舵机链</td><td>3</td><td>yaw</td></tr><tr><td>Yaw 舵机 ↔ Pitch 舵机机身</td><td>3</td><td>同一刚体内固定</td></tr><tr><td>CAM DISPLAY → LCD 外接 18 针插座</td><td>18</td><td>同一刚体内固定</td></tr><tr><td>CAM CAMERA → OV3660</td><td>24</td><td>同一刚体内固定</td></tr></tbody></table>
+<p>Yaw 边界至少 <b>11 根功能导线</b>，其中 <b>8 根</b>还跨 pitch；不含未知线缆的屏蔽层和备用芯线。不能用这个计数直接推出总束径。两只舵机机身都在 yaw 组；CAM、LCD、相机都在 pitch 组，头内排线可按静态布置，前提是固定点也在同一刚体。</p>
+<h2>颈部通道：零位能放下，还不能直接采用</h2>
+<p>反力轴与转动轴套之间最窄名义环隙约 <b>1.6 mm</b>。按项目试算每侧保留 0.3 mm，单根导线外径上限约 <b>1.0 mm</b>；当前 1.4224 mm 样本虽不裸碰实体，计入该余量就不通过。这个间隙不能直接当作整束通道。</p>
+<img src="neck_motion.png" alt="颈部后侧剖面：3毫米固定圆束试算在零位通过，抬头20度时被后壳扫到">
+<p>轴承外侧有一条 <b>3 mm 圆束规划段</b>在零位实体检查通过，包含每侧 0.3 mm 余量；最小曲率半径约 22.73 mm。它固定在身体坐标中，130 姿态里 57 个会被后壳扫到，<b>不能作为实际方案</b>。将同一曲线每 5° 转到其他方位的 72 个有限试算也未找到通过者。</p>
+<p>这只排除了这些固定占位曲线，<b>没有证明活动线束无路可走</b>。下一步需用真实线材、固定点和两侧活动余量设计动态段；路线与固定方式未确认前，不新增打印孔。3 mm 是研究尺寸，不是选定束径。</p>
+<details><summary>各高度通道与详细证据</summary><img src="neck_sections.png" alt="10个高度的现有关节实体切面"><p><a href="central_gap_check.json">中心间隙单线检查</a> · <a href="outer_neck_turn.json">外侧固定曲线与130姿态</a> · <a href="neck_azimuths.json">72个方位试算</a> · <a href="neck_side.png">后侧纵剖面</a></p></details>
+<h2 id="yaw-loops">Yaw 活动环：两组局部占位通过，完整线束未完成</h2>
+<p>已把跨 Yaw 的 11 根功能导线分组研究，检查环段在 −60°～+60° 转动时的长度和间隙。下图显示的是两组未选型圆束占位；端点还没有实际固定结构。</p>
+<img src="yaw_loop_review.png" alt="供电喇叭与舵机两组局部活动环在正负60度和零位的形状，对应不同高度，UART及完整路径仍未完成">
+<table><thead><tr><th>分组</th><th>规划占位</th><th>本次结果</th></tr></thead><tbody>
+<tr><td>CAM 供电＋喇叭，4 根</td><td>Ø3.505 mm；平面 Z151.5；环段中心线约261.0 mm</td><td>PASS，仅局部占位</td></tr>
+<tr><td>头部舵机上游，3 根</td><td>Ø3.123 mm；平面 Z155.2；环段中心线约340.1 mm</td><td>PASS，仅局部占位</td></tr>
+<tr><td>UART，4 根</td><td>圆束平面环、抬升环、四根分层排列的有限试算</td><td>BLOCKED，尚无通过的完整局部候选</td></tr>
+</tbody></table>
+<p>两组通过的占位已核对当前实体、已有14根固定线，以及13个Yaw角×10个Pitch角。两组外表面的全局间隙下界约 <b>0.386 mm</b>，比项目试算的0.3 mm只多约0.086 mm；这不是实物公差或耐久保证。</p>
+<p>环段中心线长度保持，并不证明圆束内每根线的长度、滑移和扭转都合适，以上数字也不能作为下料长度。UART的失败仅针对列出的有限路线，不能推断所有路线都无解。</p>
+<aside>仍需完成：UART路径、板端到环段、环段进入头部、俯仰活动段、真实固定点、插头出线及拆装松量。已确认供应商按图制作；实际线材和最终逐线图仍待完成。本次没有新增打印孔、夹具或正式线束，也没有修改主模型与装配视频。</aside>
+<details><summary>可核验的局部研究与失败记录</summary><p>
+<a href="yaw_loop_progress.json">当前研究状态</a> · <a href="loop_source_solids.json">两组环段的实体与130姿态检查</a> ·
+<a href="split_planar_loops_refined.json">固定长度曲线与有限搜索</a> · <a href="rising_loop_source.json">抬升UART第一批源实体余量不足</a> ·
+<a href="uart_rising_loops_refined.json">抬升UART后续有限试算</a> · <a href="uart_flat_planar_loop.json">四根分层排列试算</a> ·
+<a href="hardware_followup_loop_review.json">继续补齐硬件审查和线缆资料的交接记录</a></p></details>
+<h2 id="head-entry">进入头部：现有空隙有路，折弯与合束尚未完成</h2>
+<p>按当前实体和有限组合姿态建立通道图后，供电／喇叭、舵机、UART三个规划束径各自找到了连续折线路径。对应名义表面间隙下界约为0.347、0.322、0.329 mm。起止点只是研究位置，还没有连接到活动环或插头。</p>
+<img src="head_entry_review.png" alt="三种束径各自的进入头部折线路径，部分重叠，尚不是最终线束">
+<aside>三条路线分别检查，空间有重叠，不能说11根线已经全部排下。折线尖角还不是允许的导线弯曲；25,000个有限五次曲线试算尚未找到通过候选。这只排除了该曲线族，没有证明必须开孔或改变结构。</aside>
+<p>新收到的硬件资料还确认：SH候选端子允许的绝缘外径0.4–0.8 mm，小于此前Alpha5853研究样本0.889–1.0922 mm。需要先定厂配细尾线及接续，或实际兼容线材；不能继续把样本直压到CAM接头。实际SH/GH型号、相机完整FPC和舵机物理针号视图仍待确认。</p>
+<details><summary>通道证据与原生剖面</summary><img src="lateral_neck_sections.png" alt="不同俯仰角和侧向位置的头颈结构实体剖面"><p><a href="head_entry_space.json">扫掠实体通道图</a> · <a href="head_entry_shortest.json">三组独立路径与间隙界</a> · <a href="head_entry_smooth.json">有限平滑曲线试算</a> · <a href="../hardware_A7_J10_C4_review.html">A7新资料接收</a></p></details>
+<h2>LCD 插座已对应到正确位置</h2><div class="grid"><div><img src="sources/lcd_connector_photo.webp" alt="微雪官方LCD接口图，左侧18PIN外接FPC，中央是屏内部排线座"><p><small>微雪官方接口照片，仅用来对应物理插座；针脚定义仍以已核对的原理图为准。</small></p></div><div><p>外接 18PIN 对应 STEP 的 <b>Connector_108</b>（电气 L1）。中央 Connector_107 是屏本体排线座。</p><p>随屏 18P / 0.5 mm / 200 mm / 同面接触排线有厂家依据，但宽厚、允许半径及 CAM 端配对方向仍待确认。</p><p><a href="https://docs.waveshare.com/1.85inch_Touch_LCD_Module">LCD 官方接口</a> · <a href="https://www.waveshare.com/product/1.85inch-touch-lcd-module.htm">官方配件列表</a></p></div></div>
+<h2>接下来可以在到货前完成</h2><p>补齐相机完整排线资料；明确 USB/SH/喇叭及舵机线的实际插头、出线尺寸；线束已确认由供应商按图制作，逐线图纸和实际线材仍需完成。然后规划现有空隙内的路线、固定点和拆装松量，复核组合姿态。需要改打印结构时先提供候选确认。</p>
+<p><a href="HEAD_HARNESS_REQUIREMENTS.md">给硬件任务的输入清单</a> · <a href="head_connectivity.json">连接与运动分组证据</a> · <a href="head_path_review.json">名义端点/剖面报告</a> · <a href="head_hardware_groups.json">保存模型回读</a></p>
+<p><a href="../harness_A2/assembly_safe_review/index.html">此前通过的14根固定线候选</a>仍保留：静态、130头部姿态和407身体装配位置通过，完整线束和实物资格未完成。</p>
+<p><small>PROTOTYPE / UNVALIDATED。130姿态的端点回读不是线束动态寿命或连续无干涉证明。主模型及装配视频保持。</small></p></main><!-- A8_PITCH_FLEX_UPDATE --><section><h2>完整装配与颈部补查</h2><p>上部穿入/回位/入座/弯线与颈部R10独立候选已通过各自连续检查，未应用主模型。新顺序先装22件偏航与舵盘、再装14件头托与CAM，有限刚体路径通过。四根名义全长、153–162mm上方暂存线尾及共同PH插头已建入，身体段供线动作仍有间隙/相交问题。扎带、真实端子入壳、另7根跨关节线/FFC、完整连续顺序仍未完成。CAM内六角螺钉待确认；裁线图未放行。</p><p><a href="../harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/index.html">查看剖面和检查范围</a></p></section><!-- /A8_PITCH_FLEX_UPDATE --></html>

@@ -1,0 +1,1 @@
+Historical invalid results. An empty ribbon mesh was caught in rendered inspection; these records are not validation evidence. The current generator requires a non-empty connected band and checks its analytic volume before any fit result.

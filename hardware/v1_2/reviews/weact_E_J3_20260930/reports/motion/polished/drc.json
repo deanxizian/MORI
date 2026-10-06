@@ -1,0 +1,298 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T23:10:55",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "MORI_motion_P5R7.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 0.7071 mm",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 27.6
+                    },
+                    "uuid": "ebbfc5fe-94c5-4abd-9778-81c0944c71a9"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "不允许的项目 (规则 'P3R1 J4 unrelated nets outside body')",
+            "items": [
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 0.7071 mm",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 27.6
+                    },
+                    "uuid": "ebbfc5fe-94c5-4abd-9778-81c0944c71a9"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "短路了两个不同网络的项目 (网络 /IMU_CS 和 /CLR_N)",
+            "items": [
+                {
+                    "description": "过孔 [/IMU_CS] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 38.4,
+                        "y": 15.5
+                    },
+                    "uuid": "650b04e9-9c93-47a7-ab37-85fc978c293e"
+                },
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 17.4300 mm",
+                    "pos": {
+                        "x": 30.07,
+                        "y": 15.93
+                    },
+                    "uuid": "f4962d6e-e42b-47b4-9ca4-188487ee6064"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "孔间距违规 (规则 'R05-R07 hole to copper' 间距 0.3000 mm; 实际 0.1800 mm)",
+            "items": [
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 17.4300 mm",
+                    "pos": {
+                        "x": 30.07,
+                        "y": 15.93
+                    },
+                    "uuid": "f4962d6e-e42b-47b4-9ca4-188487ee6064"
+                },
+                {
+                    "description": "过孔 [/IMU_CS] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 38.4,
+                        "y": 15.5
+                    },
+                    "uuid": "650b04e9-9c93-47a7-ab37-85fc978c293e"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                },
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 17.4300 mm",
+                    "pos": {
+                        "x": 30.07,
+                        "y": 15.93
+                    },
+                    "uuid": "f4962d6e-e42b-47b4-9ca4-188487ee6064"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                },
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 0.5233 mm",
+                    "pos": {
+                        "x": 29.7,
+                        "y": 16.3
+                    },
+                    "uuid": "6854310b-a8d6-4246-90c0-c4a4aecadbb5"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "短路了两个不同网络的项目 (网络 /IMU_CS 和 /CLR_N)",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                },
+                {
+                    "description": "过孔 [/CLR_N] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 29.7,
+                        "y": 16.3
+                    },
+                    "uuid": "d534e3c1-26f9-4052-85f7-d1f302c6353d"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "孔间距违规 (规则 'R05-R07 hole to copper' 间距 0.3000 mm; 实际 0.0000 mm)",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                },
+                {
+                    "description": "过孔 [/CLR_N] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 29.7,
+                        "y": 16.3
+                    },
+                    "uuid": "d534e3c1-26f9-4052-85f7-d1f302c6353d"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                },
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 17.4300 mm",
+                    "pos": {
+                        "x": 30.07,
+                        "y": 15.93
+                    },
+                    "uuid": "f4962d6e-e42b-47b4-9ca4-188487ee6064"
+                }
+            ],
+            "severity": "error",
+            "type": "track_angle"
+        },
+        {
+            "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+            "items": [
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 17.4300 mm",
+                    "pos": {
+                        "x": 30.07,
+                        "y": 15.93
+                    },
+                    "uuid": "f4962d6e-e42b-47b4-9ca4-188487ee6064"
+                },
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                }
+            ],
+            "severity": "error",
+            "type": "track_angle"
+        },
+        {
+            "description": "顶层阻焊开窗区域与不同网络的项目相连",
+            "items": [
+                {
+                    "description": "走线 [/CLR_N] (F.Cu), 长度: 17.4300 mm",
+                    "pos": {
+                        "x": 30.07,
+                        "y": 15.93
+                    },
+                    "uuid": "f4962d6e-e42b-47b4-9ca4-188487ee6064"
+                },
+                {
+                    "description": "过孔 [/IMU_CS] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 38.4,
+                        "y": 15.5
+                    },
+                    "uuid": "650b04e9-9c93-47a7-ab37-85fc978c293e"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "顶层阻焊开窗区域与不同网络的项目相连",
+            "items": [
+                {
+                    "description": "走线 [/IMU_CS] (F.Cu), 长度: 2.5456 mm",
+                    "pos": {
+                        "x": 28.7,
+                        "y": 17.3
+                    },
+                    "uuid": "443b5f4b-250f-4ea8-bdec-f451675e34b7"
+                },
+                {
+                    "description": "过孔 [/CLR_N] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 29.7,
+                        "y": 16.3
+                    },
+                    "uuid": "d534e3c1-26f9-4052-85f7-d1f302c6353d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        }
+    ]
+}

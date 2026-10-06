@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "revision": "V1-A2",
+  "units": "mm",
+  "data_status": "ASSUMED",
+  "source": "MORI_SPEC_V1.md; Task 1; user visual refinement reference 2026-09-21",
+  "head_diameter_mm": 105,
+  "body_diameter_mm": 150,
+  "wheel_diameter_mm": 95,
+  "wheel_width_mm": 18,
+  "ground_clearance_mm": 25,
+  "wheel_body_gap_mm": 4,
+  "shell_thickness_mm": 2.4,
+  "body_side_cut_x_mm": 62,
+  "body_top_cut_depth_mm": 12,
+  "body_top_opening_diameter_mm": 72,
+  "head_embedding_depth_mm": 12,
+  "head_lower_opening_z_from_center_mm": -39,
+  "seam_gap_mm": 0.4,
+  "mesh": {
+    "sphere_segments": 96,
+    "sphere_rings": 64,
+    "cylinder_segments": 64,
+    "boolean_simplify_tolerance_mm": 0.0005,
+    "weld_tolerance_mm": 0.0002
+  },
+  "display": {
+    "active_diameter_mm": 58,
+    "aperture_diameter_mm": 60,
+    "pcb_diameter_mm": 62,
+    "face_y_from_head_mm": 40,
+    "z_from_head_mm": -4,
+    "screen_depth_mm": 3,
+    "pcb_depth_mm": 2,
+    "eye_spacing_mm": 23,
+    "eye_width_mm": 8,
+    "eye_height_mm": 15
+  },
+  "head_joint": {
+    "yaw_range_deg": [
+      -60,
+      60
+    ],
+    "pitch_range_deg": [
+      -20,
+      25
+    ],
+    "yaw_bearing_od_mm": 32,
+    "yaw_bearing_id_mm": 20,
+    "yaw_bearing_width_mm": 7,
+    "yaw_bearing_z_from_top_mm": -15,
+    "pitch_bearing_od_mm": 12,
+    "pitch_bearing_id_mm": 5,
+    "pitch_bearing_width_mm": 4,
+    "pitch_bearing_abs_x_mm": 39,
+    "guard_outer_radius_mm": 49.2,
+    "guard_thickness_mm": 1.8,
+    "guard_top_z_from_head_mm": -21,
+    "guard_lower_z_from_body_top_mm": 0.8
+  },
+  "camera": {
+    "pupil_from_head_mm": [
+      0,
+      37.4,
+      33
+    ],
+    "body_center_from_head_mm": [
+      0,
+      27.5,
+      33
+    ],
+    "body_max_xyz_mm": [
+      14,
+      8,
+      10
+    ],
+    "aperture_diameter_mm": 10,
+    "assumed_hfov_deg": 70,
+    "assumed_vfov_deg": 50
+  },
+  "drive": {
+    "motor_max_diameter_mm": 25,
+    "motor_max_length_including_encoder_mm": 65,
+    "motor_offset_y_mm": 20,
+    "motor_z_mm": 100,
+    "shaft_diameter_trial_mm": 4,
+    "shaft_length_trial_mm": 12,
+    "axle_diameter_trial_mm": 6,
+    "bearing_abs_x_mm": [
+      26,
+      36
+    ],
+    "bearing_od_mm": 13,
+    "bearing_width_mm": 4,
+    "pulley_abs_x_mm": 40.5,
+    "pulley_radius_mm": 5.5,
+    "belt_width_mm": 3,
+    "belt_thickness_mm": 0.8
+  },
+  "layout": {
+    "deck_z_mm": 118,
+    "deck_thickness_mm": 4,
+    "deck_xy_mm": [
+      108,
+      100
+    ],
+    "battery_center_mm": [
+      0,
+      0,
+      71
+    ],
+    "battery_max_xyz_mm": [
+      40,
+      72,
+      22
+    ],
+    "battery_adjust_y_mm": 4,
+    "mcu_max_xyz_mm": [
+      48,
+      24,
+      12
+    ],
+    "mcu_centers_mm": [
+      [
+        0,
+        32,
+        130
+      ],
+      [
+        0,
+        -32,
+        130
+      ]
+    ],
+    "imu_max_xyz_mm": [
+      26,
+      18,
+      5
+    ],
+    "imu_center_mm": [
+      39,
+      0,
+      124.5
+    ]
+  },
+  "fasteners_assumed": {
+    "body_screw_clearance_diameter_mm": 3.4,
+    "body_insert_pilot_diameter_mm": 4.1,
+    "head_screw_clearance_diameter_mm": 2.4,
+    "head_insert_pilot_diameter_mm": 3.2,
+    "note": "Trial coupon values, no vendor mounting pattern frozen"
+  },
+  "dock": {
+    "robot_lift_mm": 8,
+    "base_xyz_mm": [
+      108,
+      146,
+      8
+    ],
+    "contact_xy_mm": [
+      [
+        32,
+        30
+      ],
+      [
+        -32,
+        30
+      ],
+      [
+        32,
+        -30
+      ],
+      [
+        -32,
+        -30
+      ]
+    ],
+    "pad_thickness_mm": 2
+  },
+  "validation": {
+    "yaw_step_deg": 10,
+    "pitch_step_deg": 5,
+    "wheel_step_deg": 10,
+    "tilt_step_deg": 1,
+    "collision_volume_tolerance_mm3": 0.01
+  },
+  "render": {
+    "engine": "CYCLES",
+    "samples": 32,
+    "resolution": 1200
+  },
+  "body_wheel_relief": {
+    "mode": "local_rounded_pocket",
+    "corner_radius_mm": 6,
+    "note": "Local wheel-side relief preserves spherical upper flanks. Inner cavity uses an offset cutter to retain nominal shell wall."
+  },
+  "appearance": {
+    "tire_edge_radius_mm": 1.6,
+    "hub_cap_edge_radius_mm": 0.5,
+    "camera_baffle_outer_radius_mm": 4.85,
+    "camera_baffle_inner_radius_mm": 3.7,
+    "head_guard_material": "dark",
+    "reference": "mechanical/sources/user_visual_refinement.png",
+    "note": "Geometry changes, not a generated picture. No decorative LED added.",
+    "camera_window_material_note": "Rendered transmissive tinted anti-reflection appearance; not a measured optical coating specification"
+  },
+  "user_interfaces": {
+    "button_surface_z_mm": 149,
+    "button_direction": "radial from body sphere center; rear +Z inclined surface",
+    "button_fit_status": "ASSUMED; candidate radial plunger and switch travel require Stage B"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "revision": "V1.2-M1.8",
+  "source_model_sha256": "7164bc59cd2f0b656374820bf161718398719e84f87cff1d49fde9ca97fd66c0",
+  "source": "Original-size SCS0009 drawing-based body/ears/output, no rescaling; bought revision and real leads remain unknown.",
+  "fixed_output_tip_ground_mm": [
+    0.0,
+    0.0,
+    155.45001220703125
+  ],
+  "cases": [
+    {
+      "orientation": "upright",
+      "rotation_axis": "Z",
+      "angle_deg": 0,
+      "bounds_xyz_mm": [
+        [
+          -10.55,
+          21.95
+        ],
+        [
+          -6.05,
+          6.05
+        ],
+        [
+          127.0,
+          155.45
+        ]
+      ],
+      "output_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "same_vertical_yaw_axis": true,
+      "observed_intersections": [],
+      "boundary": "Same fixed output-tip datum and current adjacent geometry. Alternative mounts/transmissions are not designed; collisions do not prove every possible relocation impossible."
+    },
+    {
+      "orientation": "horizontal_Y90",
+      "rotation_axis": "Y",
+      "angle_deg": 90,
+      "bounds_xyz_mm": [
+        [
+          -28.45,
+          0.0
+        ],
+        [
+          -6.05,
+          6.05
+        ],
+        [
+          133.5,
+          166.0
+        ]
+      ],
+      "output_axis": [
+        1.0,
+        0.0,
+        7.549790126404332e-08
+      ],
+      "same_vertical_yaw_axis": false,
+      "observed_intersections": [
+        {
+          "moving": "Yaw_Servo",
+          "target": "Yaw_Turntable",
+          "overlap_mm3": 323.09
+        },
+        {
+          "moving": "Yaw_Servo",
+          "target": "Yaw_Base",
+          "overlap_mm3": 2076.3
+        },
+        {
+          "moving": "Yaw_Servo",
+          "target": "Yaw_Bearing",
+          "overlap_mm3": 529.75
+        },
+        {
+          "moving": "Yaw_Servo",
+          "target": "Yaw_Horn",
+          "overlap_mm3": 9.47
+        },
+        {
+          "moving": "Yaw_Output",
+          "target": "Yaw_Turntable",
+          "overlap_mm3": 4.71
+        },
+        {
+          "moving": "Yaw_Output",
+          "target": "Yaw_Horn",
+          "overlap_mm3": 2.07
+        },
+        {
+          "moving": "Yaw_Output",
+          "target": "Yaw_Lock_Screw",
+          "overlap_mm3": 1.58
+        }
+      ],
+      "boundary": "Same fixed output-tip datum and current adjacent geometry. Alternative mounts/transmissions are not designed; collisions do not prove every possible relocation impossible."
+    },
+    {
+      "orientation": "inverted_X180",
+      "rotation_axis": "X",
+      "angle_deg": 180,
+      "bounds_xyz_mm": [
+        [
+          -10.55,
+          21.95
+        ],
+        [
+          -6.05,
+          6.05
+        ],
+        [
+          155.45,
+          183.9
+        ]
+      ],
+      "output_axis": [
+        0.0,
+        -8.742277657347586e-08,
+        -1.0
+      ],
+      "same_vertical_yaw_axis": true,
+      "observed_intersections": [
+        {
+          "moving": "Yaw_Servo",
+          "target": "Yaw_Turntable",
+          "overlap_mm3": 1705.88
+        }
+      ],
+      "boundary": "Same fixed output-tip datum and current adjacent geometry. Alternative mounts/transmissions are not designed; collisions do not prove every possible relocation impossible."
+    },
+    {
+      "orientation": "clocked_Z180",
+      "rotation_axis": "Z",
+      "angle_deg": 180,
+      "bounds_xyz_mm": [
+        [
+          -21.95,
+          10.55
+        ],
+        [
+          -6.05,
+          6.05
+        ],
+        [
+          127.0,
+          155.45
+        ]
+      ],
+      "output_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "same_vertical_yaw_axis": true,
+      "observed_intersections": [
+        {
+          "moving": "Yaw_Servo",
+          "target": "Yaw_Base",
+          "overlap_mm3": 13.71
+        }
+      ],
+      "boundary": "Same fixed output-tip datum and current adjacent geometry. Alternative mounts/transmissions are not designed; collisions do not prove every possible relocation impossible."
+    }
+  ],
+  "retained": "upright",
+  "decision": "Upright preserves the flat deck and direct vertical drive. Y90 turns the output horizontal and needs a direction-changing transmission. X180 puts the body above the same output into head/yaw space; Z180 changes clocking, not height. User permits all orientations if a later real-hardware layout benefits.",
+  "limits": "Rigid packaging screen only. Ear fastening, actual horn/spline engagement, wire exit, bearing axial retention, gear design and dynamics NOT_TESTED."
+}

@@ -1,0 +1,19 @@
+00:00.285  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+RENDER imu_underside
+00:03.976  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/imu_underside.png'
+/Users/dean/Documents/MORI/mechanical/scripts/render.py:103: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  shell=bpy.data.objects[PREFIX+'Body_Upper'];mat=bpy.data.materials.get(PREFIX+'port_xray') or bpy.data.materials.new(PREFIX+'port_xray');mat.use_nodes=True;nodes=mat.node_tree.nodes;nodes.clear();out=nodes.new('ShaderNodeOutputMaterial');mix=nodes.new('ShaderNodeMixShader');mix.inputs[0].default_value=.88;solid=nodes.new('ShaderNodeBsdfDiffuse');solid.inputs['Color'].default_value=(.8,.85,.9,1);clear=nodes.new('ShaderNodeBsdfTransparent');mat.node_tree.links.new(solid.outputs[0],mix.inputs[1]);mat.node_tree.links.new(clear.outputs[0],mix.inputs[2]);mat.node_tree.links.new(mix.outputs[0],out.inputs[0]);shell.data.materials.clear();shell.data.materials.append(mat)
+RENDER rear_interface_detail
+00:11.856  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/rear_interface_detail.png'
+/Users/dean/Documents/MORI/mechanical/scripts/render.py:101: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  shell=bpy.data.objects[PREFIX+n];mat=bpy.data.materials.get(PREFIX+'level_xray') or bpy.data.materials.new(PREFIX+'level_xray');mat.use_nodes=True;nodes=mat.node_tree.nodes;nodes.clear();out=nodes.new('ShaderNodeOutputMaterial');mix=nodes.new('ShaderNodeMixShader');mix.inputs[0].default_value=.82;solid=nodes.new('ShaderNodeBsdfDiffuse');solid.inputs['Color'].default_value=(.8,.85,.9,1);clear=nodes.new('ShaderNodeBsdfTransparent');mat.node_tree.links.new(solid.outputs[0],mix.inputs[1]);mat.node_tree.links.new(clear.outputs[0],mix.inputs[2]);mat.node_tree.links.new(mix.outputs[0],out.inputs[0]);shell.data.materials.clear();shell.data.materials.append(mat)
+RENDER level_head_side
+00:17.767  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/level_head_side.png'
+RENDER deck_plan
+00:20.207  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/deck_plan.png'
+RENDER 45_assembled
+00:24.265  render           | Saved: '/Users/dean/Documents/MORI/mechanical/renders/45_assembled.png'
+RENDER_COMPLETE
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

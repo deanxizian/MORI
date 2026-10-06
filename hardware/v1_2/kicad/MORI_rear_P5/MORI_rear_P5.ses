@@ -1,0 +1,240 @@
+(session "MORI_rear_P5"
+  (base_design "MORI_rear_P5")
+  (placement
+    (resolution um 10)
+    (component "MORI_Custom:SOFNG_MS202V_G3_P4__P3R1_SW1"
+      (place SW1 120000 -129000 front 0)
+    )
+    (component "Diode_SMD:D_SOD-323"
+      (place D2 103000 -73000 front 180)
+      (place D3 137000 -73000 front 180)
+    )
+    (component "MountingHole:MountingHole_2.2mm_M2"
+      (place H1 30000 -110000 front 0)
+      (place H2 210000 -110000 front 0)
+    )
+    (component "MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_ANNULUS__P3R1_J3"
+      (place J3 110000 -195000 front 0)
+    )
+    (component "MORI_Custom:Littelfuse_451_6.1x2.69_P4__P3R1_F1"
+      (place F1 42000 -53000 back 90)
+    )
+    (component "MORI_Custom:USB_C_Receptacle_HRO_TYPE-C-31-M-12__P4_ANNULUS__P3R1_USB1"
+      (place USB1 120000 -30000 back 180)
+    )
+    (component "Diode_SMD:D_SOD-123F"
+      (place D1 195000 -60000 back 270)
+    )
+    (component "Capacitor_SMD:C_0603_1608Metric"
+      (place C1 210000 -180000 back 90)
+    )
+    (component "MORI_Custom:JST_PH_S5B-PH-K_1x05_P2.00mm_Horizontal__P4_ANNULUS__P3R1_J2"
+      (place J2 61000 -237000 back 270)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad " KiCad's Pcbnew")
+      (host_version "10.0.6")
+    )
+    (library_out 
+      (padstack "Via[0-1]_800:300_um"
+        (shape
+          (circle F.Cu 8000 0 0)
+        )
+        (shape
+          (circle B.Cu 8000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-1]_1000:450_um"
+        (shape
+          (circle F.Cu 10000 0 0)
+        )
+        (shape
+          (circle B.Cu 10000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net "/MASTER_RETURN"
+        (wire
+          (path F.Cu 2000
+            110000 -195000
+            110000 -168900
+          )
+          (type protect)
+        )
+        (wire
+          (path F.Cu 2000
+            95000 -101000
+            95000 -96000
+          )
+          (type protect)
+        )
+      )
+      (net "/LOOP_3V3"
+        (wire
+          (path F.Cu 2000
+            95000 -157000
+            95000 -162000
+          )
+          (type protect)
+        )
+      )
+      (net "/CLR_N"
+        (wire
+          (path F.Cu 2000
+            120000 -157000
+            120260 -156740
+            132144 -156740
+          )
+        )
+        (wire
+          (path B.Cu 2000
+            170000 -195000
+            170000 -180095
+            146645 -156740
+            132144 -156740
+          )
+        )
+        (via "Via[0-1]_800:300_um" 132144 -156740
+        )
+        (wire
+          (path F.Cu 2000
+            170000 -195000
+            170000 -168900
+          )
+          (type protect)
+        )
+        (wire
+          (path F.Cu 2000
+            120000 -157000
+            120000 -162000
+          )
+          (type protect)
+        )
+      )
+      (net "/CC1"
+        (wire
+          (path B.Cu 2000
+            61000 -197000
+            79500 -197000
+          )
+          (type protect)
+        )
+        (wire
+          (path F.Cu 2000
+            113500 -73000
+            118500 -73000
+          )
+          (type protect)
+        )
+      )
+      (net "/CC2"
+        (wire
+          (path B.Cu 2000
+            61000 -177000
+            79500 -177000
+          )
+          (type protect)
+        )
+        (wire
+          (path F.Cu 2000
+            147500 -73000
+            152500 -73000
+          )
+          (type protect)
+        )
+      )
+      (net "/VBUS_RAW"
+        (wire
+          (path B.Cu 6000
+            42000 -28500
+            42000 -17500
+          )
+          (type protect)
+        )
+        (wire
+          (path B.Cu 6000
+            61000 -157000
+            79500 -157000
+          )
+          (type protect)
+        )
+      )
+      (net "/VBUS_FUSED"
+        (wire
+          (path F.Cu 6000
+            75737 -42400
+            65811 -52326
+            65811 -75221
+            79887 -89297
+          )
+        )
+        (wire
+          (path B.Cu 6000
+            195000 -79000
+            184703 -89297
+            79887 -89297
+          )
+        )
+        (wire
+          (path B.Cu 6000
+            75737 -42400
+            65839 -32502
+            65839 -19617
+            55037 -8815
+            28564 -8815
+            21233 -16146
+            21233 -77500
+          )
+        )
+        (wire
+          (path B.Cu 6000
+            42000 -77500
+            21233 -77500
+          )
+        )
+        (via "Via[0-1]_1000:450_um" 79887 -89297
+        )
+        (via "Via[0-1]_1000:450_um" 75737 -42400
+        )
+        (wire
+          (path B.Cu 6000
+            210000 -167000
+            199315 -177685
+            199315 -216735
+            179050 -237000
+            79500 -237000
+          )
+        )
+        (wire
+          (path B.Cu 6000
+            195000 -74000
+            195000 -79000
+          )
+          (type protect)
+        )
+        (wire
+          (path B.Cu 6000
+            210000 -172250
+            210000 -167000
+          )
+          (type protect)
+        )
+        (wire
+          (path B.Cu 6000
+            61000 -237000
+            79500 -237000
+          )
+          (type protect)
+        )
+      )
+    )
+  )
+)

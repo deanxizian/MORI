@@ -1,0 +1,137 @@
+{
+  "revision": "CAM-FPC-EXIT-R1",
+  "date_local": "2026-10-06",
+  "scope": "READ_ONLY_EVIDENCE_HANDOFF",
+  "model_changes_applied": false,
+  "main_mechanical": "M1.49 C5 + K1",
+  "status": "PASS",
+  "status_meaning": "Requested evidence review completed, not a physical or full model qualification",
+  "coordinate_definition": {
+    "U": "right when viewing SD side with USB below",
+    "V": "toward SD/top",
+    "W": "outward from SD side",
+    "global_at_zero": {
+      "+U": "+X",
+      "+V": "+Z",
+      "+W": "-Y"
+    },
+    "cable_direction": "away from connector; insertion motion is opposite",
+    "pose_limit": "mechanical zero only; later yaw/pitch transforms required"
+  },
+  "cam_ports": [
+    {
+      "schematic_reference": "J2",
+      "model_reference": "CAMERA_FPC_24",
+      "function": "24-pin DVP camera",
+      "side": "SD",
+      "current_model_mouth_local_UVW": [
+        0,
+        -1,
+        0
+      ],
+      "supported_exit_local_UVW": [
+        0,
+        1,
+        0
+      ],
+      "supported_exit_zero_pose_XYZ": [
+        0,
+        0,
+        1
+      ],
+      "evidence": "Official installed OV3660 product photograph and camera installation photograph; observed direction only",
+      "sources": [
+        "sources/esp32-s3-cam-ov3660-1.jpg",
+        "sources/ESP32-S3-CAM-OVxxxx-details-5-2.jpg"
+      ],
+      "direction_review": "PASS",
+      "current_mouth_photo_consistency": "FAIL",
+      "photo_board_revision": "UNKNOWN",
+      "selected_supplier_unit_qualification": "BLOCKED",
+      "model_recommendation": "Independent camera-only 180-degree visual candidate may be compared; retain actual board and pad/logical data. Do not apply or qualify internal contacts by rotation.",
+      "schematic_note": "V1 J2: 0.5-24pin rear-flip 2.0H; complete manufacturer MPN unavailable"
+    },
+    {
+      "schematic_reference": "L3",
+      "model_reference": "DISPLAY_FPC_18",
+      "function": "18-pin display interface",
+      "side": "IC",
+      "current_model_mouth_local_UVW": [
+        1,
+        0,
+        0
+      ],
+      "supported_exit_local_UVW": [
+        -1,
+        0,
+        0
+      ],
+      "supported_exit_zero_pose_XYZ": [
+        -1,
+        0,
+        0
+      ],
+      "evidence": "Two official connected display examples show cable leaving outer board edge; normalized using USB/right versus USB/down landmarks, not inferred from white plastic alone",
+      "sources": [
+        "sources/use_msg_01.webp",
+        "sources/use_msg_02.webp",
+        "sources/esp32-s3-cam-ovxxxx-3_1.jpg"
+      ],
+      "direction_review": "PASS",
+      "current_mouth_photo_consistency": "FAIL",
+      "photo_board_revision": "UNKNOWN",
+      "selected_supplier_unit_qualification": "BLOCKED",
+      "current_white_body_side": "-U",
+      "current_dark_latch_side": "+U",
+      "body_color_layout_matches_photos": true,
+      "model_recommendation": "Do not rotate entire current package 180 degrees. Define outward entry independently while preserving the photo-supported white-outside/dark-inside layout; exact hinge/contact geometry remains unknown.",
+      "schematic_note": "V1 and V1.1 L3 are logical 18-pin symbols, not mechanical orientation drawings"
+    }
+  ],
+  "lcd_endpoint": {
+    "product": "Waveshare LCD35079",
+    "schematic_reference": "L1",
+    "cad_reference": "Connector_108",
+    "supported_exit_zero_pose_XYZ": [
+      -1,
+      0,
+      0
+    ],
+    "evidence": "Received original CAD extraction views, entrance-side features versus opposite solder tails",
+    "original_CAD_changed": false,
+    "full_contact_and_cable_qualification": "BLOCKED",
+    "sources": [
+      "sources/Connector_108_minus_x.png",
+      "sources/Connector_108_plus_x.png",
+      "inputs/review.json"
+    ]
+  },
+  "revision_evidence": {
+    "official_notes_explicitly_confirm_connector_change": false,
+    "absence_of_note_proves_same_connector": false,
+    "observed_examples_exact_board_revision": "UNKNOWN",
+    "V1_J2_rear_flip_note": true,
+    "L3_complete_MPN_or_hinge_drawing_available": false
+  },
+  "logical_map": {
+    "source": "hardware/v1_2/wiring_P5R7/06_屏幕FFC待核对.csv",
+    "sha256": "c834196f4ca310331a0fd8346bd7758063c19bc5654aabdb058d0774e149bba3",
+    "copy": "inputs/06_屏幕FFC待核对.csv",
+    "modified": false,
+    "endpoints": [
+      "CAM L3",
+      "LCD L1"
+    ],
+    "physical_cavity_numbering": "BLOCKED",
+    "screen_pins_16_18": "BLOCKED",
+    "pin10": "CAM NC to LCD TE; TE synchronization NOT_APPLICABLE",
+    "reference_warning": "CAM L1 is a 24 nH inductor, not a connector. Camera is CAM J2."
+  },
+  "retained_unknowns": "missing_fields.csv",
+  "physical_tests": "NOT_TESTED",
+  "manufacturing_release": "BLOCKED",
+  "no_supplier_contact": true,
+  "PCB_BOM_firmware_main_model_unchanged": true,
+  "prior_terminal_package": "hardware/v1_2/cam_ph_terminal_reconciliation_20261006",
+  "prior_terminal_package_changes": false
+}

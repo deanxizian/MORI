@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-26",
+  "evidence": "ASSUMED; calculations only; not measured",
+  "input_power_table": "reports/power_states.csv",
+  "input_sha256": "10f4fb80ac332fdf0a8ed827d9923ddda823b4715b16b58b41a90d57bc6f72bc",
+  "source_row_status": "ASSUMED_NOT_TESTED",
+  "assumptions": [
+    "Historical peak powers treated as endpoint loads for sensitivity screening",
+    "8.09V and 5.21V are old Pololu/diode model endpoints, not candidate specifications",
+    "1.25 multiplier is a proposed screening margin, not a mandated standard",
+    "Input headroom excludes battery-to-module wiring, switch, fuse and shunt drops",
+    "Loss examples use hypothetical efficiency, excluding downstream diode/FET losses"
+  ],
+  "rails": {
+    "wheel": {
+      "assumed_peak_load_W": 30.0,
+      "nominal_module_V": 9.0,
+      "nominal_peak_current_A": 3.333333,
+      "old_reference_low_load_voltage_V": 8.09,
+      "low_voltage_sensitivity_current_A": 3.708282,
+      "screening_current_with_25percent_margin_A": 4.635352,
+      "required_continuous_current_measured_A": null,
+      "peak_duration_measured_s": null,
+      "status": "NOT_TESTED"
+    },
+    "head": {
+      "assumed_peak_load_W": 12.0,
+      "nominal_module_V": 6.0,
+      "nominal_peak_current_A": 2.0,
+      "old_reference_low_load_voltage_V": 5.21,
+      "low_voltage_sensitivity_current_A": 2.303263,
+      "screening_current_with_25percent_margin_A": 2.879079,
+      "required_continuous_current_measured_A": null,
+      "peak_duration_measured_s": null,
+      "status": "NOT_TESTED"
+    }
+  },
+  "wheel_headroom": [
+    {
+      "module_input_V": 9.9,
+      "output_V": 9,
+      "gross_headroom_V": 0.9,
+      "dfrobot_dfr1015_approx_2V_headroom_met": false
+    },
+    {
+      "module_input_V": 10.2,
+      "output_V": 9,
+      "gross_headroom_V": 1.2,
+      "dfrobot_dfr1015_approx_2V_headroom_met": false
+    },
+    {
+      "module_input_V": 10.8,
+      "output_V": 9,
+      "gross_headroom_V": 1.8,
+      "dfrobot_dfr1015_approx_2V_headroom_met": false
+    },
+    {
+      "module_input_V": 11.1,
+      "output_V": 9,
+      "gross_headroom_V": 2.1,
+      "dfrobot_dfr1015_approx_2V_headroom_met": true
+    },
+    {
+      "module_input_V": 12.6,
+      "output_V": 9,
+      "gross_headroom_V": 3.6,
+      "dfrobot_dfr1015_approx_2V_headroom_met": true
+    }
+  ],
+  "hypothetical_peak_conversion_losses": [
+    {
+      "efficiency_assumed": 0.85,
+      "wheel_W": 5.294118,
+      "head_W": 2.117647,
+      "total_W": 7.411765
+    },
+    {
+      "efficiency_assumed": 0.9,
+      "wheel_W": 3.333333,
+      "head_W": 1.333333,
+      "total_W": 4.666667
+    },
+    {
+      "efficiency_assumed": 0.95,
+      "wheel_W": 1.578947,
+      "head_W": 0.631579,
+      "total_W": 2.210526
+    }
+  ],
+  "head_added_vendor_mass_g": [
+    8.7,
+    9.2
+  ],
+  "recommended_pair_price_cny": null,
+  "shipping_adaptation_heatsink_cost_cny": null,
+  "savings_vs_original_cny": null,
+  "procurement_release": "BLOCKED",
+  "physical_tests": "NOT_TESTED"
+}

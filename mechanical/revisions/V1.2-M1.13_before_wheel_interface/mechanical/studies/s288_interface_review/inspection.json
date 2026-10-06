@@ -1,0 +1,164 @@
+{
+  "revision": "V1.2-M1.13",
+  "status": "BLOCKED",
+  "source_blend": "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+  "source_sha256": "3996f2411ca04f7d8e35017a453b62456c0a5893ca8e6944c6de25b0095c4680",
+  "source_is_unchanged": true,
+  "units": "mm",
+  "coordinates": "+X robot right, +Y front, +Z up",
+  "axis": {
+    "direction": [
+      1,
+      0,
+      0
+    ],
+    "y_mm": 0,
+    "z_mm": 52.5,
+    "right_output_face_x_mm": 27.0,
+    "left_output_face_x_mm": -27.0
+  },
+  "right_assembly_bounds_xyz_mm": {
+    "Drive_Motor_R": [
+      [
+        4.0,
+        24.0
+      ],
+      [
+        -24.5,
+        9.500000953674316
+      ],
+      [
+        42.5,
+        62.5
+      ]
+    ],
+    "S288_Output_R_Outer": [
+      [
+        24.0,
+        27.0
+      ],
+      [
+        -7.0,
+        7.0
+      ],
+      [
+        45.5,
+        59.5
+      ]
+    ],
+    "S288_Output_R_Inner": [
+      [
+        0.9999996423721313,
+        4.000000476837158
+      ],
+      [
+        -7.0,
+        7.0
+      ],
+      [
+        45.5,
+        59.5
+      ]
+    ],
+    "Wheel_Coupler_R": [
+      [
+        27.0,
+        29.0
+      ],
+      [
+        -7.0,
+        7.0
+      ],
+      [
+        45.5,
+        59.5
+      ]
+    ],
+    "Wheel_Axle_R": [
+      [
+        29.0,
+        71.0
+      ],
+      [
+        -1.9900000095367432,
+        1.9900000095367432
+      ],
+      [
+        50.5099983215332,
+        54.4900016784668
+      ]
+    ],
+    "Wheel_Bearing_R_33": [
+      [
+        31.0,
+        35.0
+      ],
+      [
+        -5.0,
+        5.0
+      ],
+      [
+        47.5,
+        57.5
+      ]
+    ],
+    "Wheel_Bearing_R_39": [
+      [
+        37.0,
+        41.0
+      ],
+      [
+        -5.0,
+        5.0
+      ],
+      [
+        47.5,
+        57.5
+      ]
+    ],
+    "Wheel_Hub_R": [
+      [
+        60.5,
+        75.5
+      ],
+      [
+        -42.0,
+        42.0
+      ],
+      [
+        10.5,
+        94.5
+      ]
+    ]
+  },
+  "coupler_to_axle_axial_engagement_mm": 0,
+  "hub_to_axle_axial_overlap_mm": 10.5,
+  "hub_bore_diameter_mm": 4.4,
+  "shaft_diameter_mm": 3.98,
+  "hub_radial_clearance_mm": 0.21,
+  "vendor_source": "mechanical/sources/v1_2/unitree_servo_manual.pdf p2; S288 drawing, not J288",
+  "fidelity": "VENDOR_DIMENSIONED_SIMPLIFICATION; no complete manufacturer CAD or measured purchased sample",
+  "unresolved": [
+    "Output six pilot holes and adapter fastening are not modeled",
+    "Adapter is only a 2mm blank ring; current axle has zero axial engagement with it",
+    "Round hub bore has no D-flat/key/clamp and is larger than the trial shaft",
+    "Axial shaft/bearing retention and case mounting qualification are incomplete",
+    "Connector exits, purchased version, thread depths and allowable loads require confirmation"
+  ],
+  "torque_path_intent": [
+    "S288 output face",
+    "model-specific flange adapter",
+    "separate metal wheel axle",
+    "positively locked printed hub",
+    "tyre"
+  ],
+  "radial_load_path_intent": [
+    "tyre",
+    "printed hub",
+    "metal axle",
+    "two independent bearings",
+    "Drive_Bridge",
+    "Load_Frame"
+  ],
+  "claim_limit": "Coincident axes and collision-free geometry do not establish torque transmission or a buildable connection."
+}

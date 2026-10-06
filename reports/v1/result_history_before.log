@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_active_action_result_survives_telemetry_command_history _________
+
+    def test_active_action_result_survives_telemetry_command_history():
+     r=Rig();r.arm();c=r.issue('PATROL',{'duration_s':20,'segment_m':.1,'supervised':True})
+     for _ in range(520):r.issue('HEARTBEAT')
+>    assert r.d.results[c['command_id']]['status']=='RUNNING'
+E    KeyError: 'abc5330d8d144c7481f818b42a4904f9'
+
+simulation/tests/test_device.py:85: KeyError
+=========================== short test summary info ============================
+FAILED simulation/tests/test_device.py::test_active_action_result_survives_telemetry_command_history
+1 failed, 14 deselected in 0.11s

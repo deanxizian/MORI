@@ -1,0 +1,67 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_interrupt_is_complete_only_after_owned_playback_ack ___________
+
+tmp_path = PosixPath('/private/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/pytest-of-dean/pytest-29/test_interrupt_is_complete_onl0')
+
+    def test_interrupt_is_complete_only_after_owned_playback_ack(tmp_path):
+     from backend.mori.app import Gateway
+     async def exercise():
+      clock=Clock();g=Gateway(tmp_path,clock);r=Rig();r.d=g.device
+      p=g.auth.create('owner',['interaction']);cid=p['client_id']
+      c=r.cmd('VOICE_SESSION',{'action':'text','text':'你好'},client=cid)
+      assert (await g.dispatch(c,p))['status']=='RUNNING'
+      await g.voice_tasks[cid]
+      ident=c['command_id'];m=g.voice_metrics[ident]
+      # Generated audio is not playback. A request to cancel is not an acoustic completion.
+      assert m['playback_start_received_ms'] is None
+      clock.step(10)
+      g.playback(p,{'type':'playback','command_id':ident,'ended':False,'position_ms':0})
+      await g.dispatch(r.cmd('VOICE_SESSION',{'action':'interrupt','text':''},client=cid),p)
+      assert g.device.results[ident]['status']=='CANCELLED'
+      assert m['interrupt_complete_ms'] is None
+      assert m['interrupt_requested_ms']==clock()
+      ack={'type':'interrupt_ack','command_id':ident}
+      g.interrupt_ack({'client_id':'other'},ack)
+      assert m['interrupt_complete_ms'] is None
+      clock.step(12);g.interrupt_ack(p,ack)
+      assert m['interrupt_complete_ms']==clock()
+      g.close()
+>    asyncio.run(exercise())
+
+backend/tests/test_audio.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+../../.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def exercise():
+     clock=Clock();g=Gateway(tmp_path,clock);r=Rig();r.d=g.device
+     p=g.auth.create('owner',['interaction']);cid=p['client_id']
+     c=r.cmd('VOICE_SESSION',{'action':'text','text':'你好'},client=cid)
+     assert (await g.dispatch(c,p))['status']=='RUNNING'
+     await g.voice_tasks[cid]
+     ident=c['command_id'];m=g.voice_metrics[ident]
+     # Generated audio is not playback. A request to cancel is not an acoustic completion.
+     assert m['playback_start_received_ms'] is None
+     clock.step(10)
+     g.playback(p,{'type':'playback','command_id':ident,'ended':False,'position_ms':0})
+     await g.dispatch(r.cmd('VOICE_SESSION',{'action':'interrupt','text':''},client=cid),p)
+     assert g.device.results[ident]['status']=='CANCELLED'
+>    assert m['interrupt_complete_ms'] is None
+E    assert 1010 is None
+
+backend/tests/test_audio.py:53: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /Users/dean/Documents/MORI/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/test_audio.py::test_interrupt_is_complete_only_after_owned_playback_ack
+1 failed, 3 deselected, 1 warning in 0.35s

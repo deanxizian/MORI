@@ -1,0 +1,1318 @@
+{
+  "schema_version": "1.2",
+  "revision": "V1.2-M1.39",
+  "owner": "mechanical",
+  "units": "mm",
+  "coordinates": {
+    "x": "right",
+    "y": "forward",
+    "z": "up",
+    "yaw_positive": "left about +Z",
+    "pitch_positive": "face up about +X",
+    "IMU_installation": "Rigid body seat, sensor reference rotated+90deg around body Z. Calibration/actual board axes pending; consume geometry.json#/layout/imu_rotation_z_deg."
+  },
+  "component_truth_source": "contracts/components.json (hardware-owned; read-only)",
+  "data_status": "ASSUMED",
+  "verification_status": "SOURCE_BACKED_MODELS_AND_GEOMETRY_CHECKS_PENDING_CURRENT_REPORT; NO_AS_BUILT_OR_MANUFACTURE_RELEASE",
+  "no_final_vendor_holes": true,
+  "components": {
+    "wheel_servo": {
+      "requested_model": "Unitree YS-342026-S288",
+      "max_xyz_mm": [
+        26,
+        20,
+        34
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "Vendor manual body20x34x20, opposed outputs overall26; rotated axes X axial, Y20, Z34. Output axis9.5 from lower end.",
+      "final_mount_holes_mm": null
+    },
+    "yaw_servo": {
+      "requested_model": "FEETECH SCS0009",
+      "max_xyz_mm": [
+        32.5,
+        12.1,
+        28.45
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "DOCUMENTED_INTERFACE_RECONSTRUCTION; BOUGHT_REVISION_AND_HORN_NOT_VERIFIED",
+      "motion_group": "yaw",
+      "notes": "SCS0009 A/0 p4/p6. Continuous case/ears,2x2mm mounting holes on28.5mm pitch; ear bottom16.8/top18.4;3.95mm20T output,M2x0.4 centre lock. Table23.2 vs drawing23.3 retained discrepancy. Cosmetic undimensioned details explicitly assumed.",
+      "final_mount_holes_mm": null,
+      "body_xyz_mm": [
+        23.3,
+        12.1,
+        25.25
+      ],
+      "output_motion_group": "body",
+      "geometry_source_id": "SCS0009_DRAWING"
+    },
+    "pitch_servo": {
+      "requested_model": "FEETECH SCS0009",
+      "max_xyz_mm": [
+        28.45,
+        12.1,
+        32.5
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "DOCUMENTED_INTERFACE_RECONSTRUCTION; BOUGHT_REVISION_AND_HORN_NOT_VERIFIED",
+      "motion_group": "yaw",
+      "notes": "SCS0009 A/0 p4/p6. Continuous case/ears,2x2mm mounting holes on28.5mm pitch; ear bottom16.8/top18.4;3.95mm20T output,M2x0.4 centre lock. Table23.2 vs drawing23.3 retained discrepancy. Cosmetic undimensioned details explicitly assumed.",
+      "final_mount_holes_mm": null,
+      "body_xyz_mm": [
+        25.25,
+        12.1,
+        23.3
+      ],
+      "geometry_source_id": "SCS0009_DRAWING"
+    },
+    "display": {
+      "requested_model": "Waveshare 35079",
+      "max_xyz_mm": [
+        55,
+        9.3500001,
+        55
+      ],
+      "data_status": "VENDOR_DOCUMENTED",
+      "verification_status": "VENDOR_CAD_IMPORTED_EXACT_CONNECTOR_FIT_BLOCKED",
+      "motion_group": "pitch",
+      "notes": "Official Rev1 STEP is imported1:1, including populated rear PCB, connector housings and three standoffs. No loose mating plug or FFC included. PDF9.1ref vs CAD9.35 and hole centers differ by up to0.06mm: retain STEP geometry, match physical revision before final print/hole freeze. Prior55x55 full-rectangle-only conflict is superseded by actual circular CAD shape.",
+      "final_mount_holes_mm": null,
+      "geometry_source_id": "LCD35079_STEP",
+      "vendor_dimensions": {
+        "glass_outer_diameter_mm": 55,
+        "active_diameter_mm": 45.68,
+        "view_diameter_mm": 46.08,
+        "glass_thickness_mm": 0.7,
+        "pcb_thickness_mm": 1.6,
+        "drawing_reference_total_depth_mm": 9.1,
+        "cad_total_depth_mm": 9.3500001,
+        "mount_thread": "3xM2",
+        "drawing_hole_xz_from_screen_mm": [
+          [
+            0,
+            21
+          ],
+          [
+            -14.85,
+            -14.85
+          ],
+          [
+            14.85,
+            -14.85
+          ]
+        ],
+        "cad_post_center_xz_from_screen_mm": [
+          [
+            0,
+            20.94
+          ],
+          [
+            -14.84924240492,
+            -14.90924240492
+          ],
+          [
+            14.84924240492,
+            -14.90924240492
+          ]
+        ],
+        "thread_engagement_approved_mm": null
+      },
+      "connector_mating_clearance_status": "NOT_TESTED: actual FFC,15PIN mating cable and service-tool dimensions required",
+      "geometry_validation_limit": "CAD113 solids all rendered. Two connector tessellations not manifold; their original bounding boxes are conservative collision proxies. Full exact-hardware fit remains BLOCKED."
+    },
+    "cam_board": {
+      "requested_model": "Waveshare 33700 OV3660",
+      "max_xyz_mm": [
+        37,
+        12,
+        37
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "OFFICIAL_OUTLINE_PLUS_PHOTO_RECONSTRUCTION_NOT_MEASURED",
+      "motion_group": "pitch",
+      "notes": "M1.33: official37x37,R2.25,32.6mm grid retained. Double-sided parts and OV3660 camera reconstructed from matching official product photos. Photo coordinates, PCB thickness, hole diameter and package heights are ASSUMED with per-feature uncertainty in config/geometry.json#/waveshare_detail; no hardware scaling or physical fit claim. Existing12mm envelope is a hidden reserve, not the actual PCB thickness. Final mounting release remains pending.",
+      "final_mount_holes_mm": null,
+      "geometry_source_id": "CAM33700_DRAWING",
+      "vendor_dimensions": {
+        "board_width_mm": 37,
+        "board_height_mm": 37,
+        "mount_center_pitch_mm": [
+          32.6,
+          32.6
+        ],
+        "corner_radius_mm": 2.25,
+        "hole_edge_offset_mm": 2.2,
+        "mount_hole_diameter_mm": null,
+        "pcb_thickness_mm": null,
+        "populated_total_depth_mm": null,
+        "usb_projection_mm": null,
+        "microphone_coordinates_mm": null,
+        "antenna_coordinates_mm": null
+      },
+      "photo_reconstruction_source": "config/geometry.json#/waveshare_detail"
+    },
+    "battery": {
+      "requested_model": "Tenergy31013 protected3S2600mAh5A geometric candidate",
+      "max_xyz_mm": [
+        80,
+        65,
+        30
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "GEOMETRY_SELECTED_PURCHASE_BLOCKED",
+      "motion_group": "body",
+      "notes": "max_xyz_mm remains80x65x30 available bay, NOT actual purchased dimensions. Actual nominal71x55x20 in geometry.json#/detail_fit/battery; bottom on padded tray. OptionalNTC, balance, tolerance, leads, charger and domestic price remain BLOCKED.",
+      "final_mount_holes_mm": null,
+      "geometry_source_id": "TENERGY31013",
+      "vendor_dimensions": {
+        "nominal_xyz_mm": [
+          71,
+          55,
+          20
+        ],
+        "mass_g": 150,
+        "tolerance": null
+      }
+    },
+    "motion_mcu": {
+      "requested_model": "WeAct STM32F4 64Pin CoreBoard V1.1 / F412RET6",
+      "max_xyz_mm": null,
+      "data_status": "ASSUMED",
+      "verification_status": "NATIVE_P2_CARRIER_PLUS_1_TO_1_CORE_CAD_SOCKET_AND_P3_PENDING",
+      "motion_group": "body",
+      "notes": "NativeP2 carrier70x35x1.6 and original WeAct CAD integrated.6mm header stack ASSUMED. Current placed envelope in assembly_instances.json; old70x35x12 capacity superseded. P3 actual populated handoff required.",
+      "final_mount_holes_mm": null,
+      "geometry_source_id": "WEACT_V11"
+    },
+    "power_module": {
+      "requested_model": "protected3S /6V/5V",
+      "max_xyz_mm": [
+        80,
+        55,
+        20.6
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "Capacity:80x55 board1.6,front+16,rear-3. Not populatedP3 CAD. Underside1mm edge support margins and final fasteners await P3.",
+      "final_mount_holes_mm": null,
+      "allocation_parameter_source": "config/geometry.json#/layout/power_allocation_xyz_mm"
+    },
+    "usb_power": {
+      "requested_model": "USB-C 3S charger",
+      "max_xyz_mm": [
+        28,
+        20,
+        10
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "BLOCKED_VENDOR_OR_MEASURED_DETAILS",
+      "motion_group": "body",
+      "notes": "Rear_Interface_PCB is a24x14 mechanical proposal, switch on top/USB on bottom, both exit rear. Charger/power circuit remains hardware-owned. Old USB_Charge board allocation removed.",
+      "final_mount_holes_mm": null
+    },
+    "speaker": {
+      "requested_model": "WSS-SP3040-08 / YH-SP3040-08",
+      "max_xyz_mm": [
+        56.3,
+        9.5,
+        30.3
+      ],
+      "nominal_box_xyz_mm": [
+        42,
+        9,
+        30
+      ],
+      "nominal_including_ears_xyz_mm": [
+        56,
+        9,
+        30
+      ],
+      "data_status": "ASSUMED",
+      "verification_status": "PARTIAL_VENDOR_DRAWING_WITH_APPROVED_ESTIMATES_NOT_MEASURED",
+      "motion_group": "body",
+      "final_mount_holes_mm": {
+        "pitch_mm": 49,
+        "pitch_tolerance_mm": 0.5,
+        "hole_diameter_mm": 2,
+        "diameter_interpretation": "Callout2 without diameter symbol; verify sample",
+        "local_centers_xz_mm": [
+          [
+            -24.5,
+            0
+          ],
+          [
+            24.5,
+            0
+          ]
+        ],
+        "physical_fit_release": false
+      },
+      "geometry_source_id": "SP3040_USER_SPEC",
+      "notes": "Trial M2x6 with blind M2 heat inserts and cut foam. Speaker hole interpreted2mm: nominal screw/hole zero radial clearance and+/-0.5mm pitch not qualified. Ear depth/thickness estimated with user approval; calibrate physical unit before final print.",
+      "field_evidence_ref": "config/geometry.json#/detail_fit/speaker/field_evidence"
+    }
+  },
+  "wheel_mounting": {
+    "vendor_documented_body_hole_pitch_mm": [
+      30,
+      16
+    ],
+    "vendor_documented_holes": "6 x diameter1.7 blind depth3 max, M2 self-tapping per S288 drawing",
+    "load_path": "Tyre -> double-D printed hub -> one-piece steel flanged shaft -> two 686ZZ bearings -> split Drive_Bridge / common Motor_Retainer -> Load_Frame; radial load distribution and alignment require physical qualification",
+    "bearing_fit": {
+      "model": "686ZZ",
+      "dimensions_mm": [
+        6,
+        13,
+        5
+      ],
+      "status": "VENDOR_DOCUMENTED nominal envelope; manufacturer datasheet, no bought lot",
+      "seat_nominal_mm": 13,
+      "required": "coupon compensation, actual bore and inner-race shoulder check, coaxial reaming if required; bearing preload and rotating-ring fit NOT_TESTED"
+    },
+    "vendor_documented_output_face": {
+      "diameter_mm": 14,
+      "projection_each_side_mm": 3,
+      "hole_circle_diameter_mm": 10.5,
+      "pilot_holes": "6xdiameter1.7, M2 self-tapping, depth3mm maximum",
+      "status": "VENDOR_DOCUMENTED",
+      "modeling_limit": "Pilot circle documented; detailed shaft/center fastener/installed adapter, hole clocking and permitted loads not frozen. Do not substitute J288 4xM2 and2 dowel pattern."
+    },
+    "current_design": {
+      "enabled": true,
+      "revision": "V1.2-M1.14",
+      "route": "ONE_PIECE_CUSTOM_METAL_FLANGED_SHAFT_DOUBLE_D_HUB",
+      "output_face_abs_x_mm": 27.0,
+      "output_hole_pcd_mm": 10.5,
+      "output_pilot_diameter_mm": 1.7,
+      "output_pilot_depth_max_mm": 3.0,
+      "output_hole_angles_deg": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "flange_od_mm": 14.0,
+      "flange_thickness_mm": 5.5,
+      "flange_hole_clearance_mm": 2.2,
+      "factory_screw_recess_diameter_mm": 6.0,
+      "factory_screw_recess_depth_mm": 2.0,
+      "output_screw_length_mm": 8.0,
+      "output_screw_head_diameter_max_mm": 3.8,
+      "output_screw_head_height_max_mm": 1.6,
+      "output_tool_diameter_mm": 2.5,
+      "shoulder_end_abs_x_mm": 35.5,
+      "shoulder_diameter_mm": 8.0,
+      "shoulder_tool_relief_diameter_mm": 4.2,
+      "shaft_journal_diameter_model_mm": 5.98,
+      "shaft_nominal_diameter_mm": 6.0,
+      "shaft_end_abs_x_mm": 72.7,
+      "shaft_material": "C45/1045 steel candidate; no material certificate",
+      "shaft_thread": "M3 x 0.5 blind tap, 9 mm usable minimum; drill allowance separately specified",
+      "bearing_model": "686ZZ",
+      "bearing_centers_abs_x_mm": [
+        38.0,
+        48.0
+      ],
+      "bearing_id_mm": 6.0,
+      "bearing_od_mm": 13.0,
+      "bearing_width_mm": 5.0,
+      "bearing_seat_nominal_diameter_mm": 13.0,
+      "bearing_seat_axial_margin_mm": 0.15,
+      "bearing_housing_abs_x_limits_mm": [
+        33.5,
+        52.0
+      ],
+      "bearing_housing_throat_diameter_mm": 9.0,
+      "bearing_split_gap_mm": 0.3,
+      "spacer_od_mm": 8.0,
+      "spacer_id_mm": 6.1,
+      "spacer_spans_abs_x_mm": [
+        [
+          40.5,
+          45.5
+        ],
+        [
+          50.5,
+          60.5
+        ]
+      ],
+      "hub_key_start_abs_x_mm": 60.5,
+      "shaft_key_across_flats_mm": 4.8,
+      "hub_key_clearance_diameter_mm": 6.08,
+      "hub_key_clearance_across_flats_mm": 4.84,
+      "hub_washer_seat_abs_x_mm": 72.9,
+      "hub_counterbore_diameter_mm": 8.0,
+      "hub_washer_od_mm": 7.0,
+      "hub_washer_id_mm": 3.2,
+      "hub_washer_thickness_mm": 0.5,
+      "hub_screw_length_mm": 8.0,
+      "hub_screw_head_diameter_mm": 5.5,
+      "hub_screw_head_height_mm": 3.0,
+      "clamp_bolt_xy_mm": [
+        [
+          -35,
+          -17
+        ],
+        [
+          -35,
+          17
+        ],
+        [
+          35,
+          -17
+        ],
+        [
+          35,
+          17
+        ]
+      ],
+      "clamp_screw_length_mm": 25.0,
+      "clamp_plate_bottom_z_mm": 39.5,
+      "clamp_plate_top_z_mm": 42.0,
+      "clamp_nut_floor_z_mm": 62.1,
+      "clamp_nut_thickness_mm": 2.4,
+      "clamp_nut_af_mm": 5.5,
+      "clamp_nut_clearance_af_mm": 5.8,
+      "motor_seat_clearance_per_side_mm": 0.15,
+      "motor_top_pad_thickness_mm": 1.0,
+      "sweep_step_deg": 5,
+      "assembly_step_mm": 1.0,
+      "screening_total_mass_kg": 1.5,
+      "screening_dynamic_load_factor": 3.0,
+      "screening_peak_torque_Nm": 0.6,
+      "fit_status": "DESIGN_NOMINAL; print coupons, bearing inner-ring shoulder geometry, purchased screws, motor cable recess, coaxiality, actual tyre attachment and load testing required",
+      "bearing_source": "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/686ZZ-miniature-bearing-6x13x5mm.pdf",
+      "vendor_source": "mechanical/sources/v1_2/unitree_servo_manual.pdf p2 S288 only",
+      "shell_axle_service_slot_width_mm": 10.0
+    },
+    "torque_path": "S288 plastic output flange -> 6 manufacturer-compatible M2 self-tapping screws per side -> steel flange integral with 6mm shaft -> 12.2mm double-D engagement -> printed hub",
+    "axial_retention": "Integral shaft shoulder -> first bearing inner ring -> 5mm metal spacer -> second inner ring -> 10mm metal spacer -> hub -> M3 washer/axial screw; bearing outer rings captured by split housing lips with nominal 0.15mm end allowance; no force transmitted via printed coupler",
+    "coupling_status": "CANDIDATE_DESIGN; generated and checked through build.py/validate.py. Reports contain current test outcome. No production/purchasing release.",
+    "case_retention": "Opposed horizontal servo cases captured in form-fitting shared cage, bottom cap, bottom/top compliant pads; four M3 through-bolts in printed housing; no unverified servo body thread depth is used. Clamp creep/torque reaction and cable connector exit require bench test.",
+    "purchasing_release": false,
+    "shell_service": "Body_Lower axle holes open upward to body seam in wheel-covered reliefs (10mm nominal width). Remove hubs and outer metal spacers, then body lower can descend without withdrawing integral shafts. Must verify actual solid extraction and real wiring.",
+    "shell_seam_mount_abs_y_mm": 54
+  },
+  "head_interfaces": {
+    "yaw": "Head-carried inverted SCS0009 CASE in yaw frame; body-fixed output/horn via removable D-key reaction link. Independent32OD/20ID bearing and open body bridge carry weight.",
+    "pitch": "paired12OD/5ID bearings,5mm trunnions, cradle, head/CAM/display",
+    "scs_drawing_date": "2020-11-23 A/0; body dimension mismatch23.2/23.3 requires variant confirmation",
+    "joint_range_deg": {
+      "yaw": [
+        -60,
+        60
+      ],
+      "pitch": [
+        -20,
+        25
+      ]
+    },
+    "cross_joint_wires": [
+      "power",
+      "UART",
+      "body speaker"
+    ],
+    "dvp_qspi": "same pitch moving group; cable lengths and connector directions unverified",
+    "minimum_bend_radius_assumed_mm": 8,
+    "servo_command_relation": "Head yaw = negative servo shaft angle relative to case after zero calibration; actual feedback/sign NOT_TESTED"
+  },
+  "hardware_handoff": {
+    "pending_components_json": false,
+    "budget_status": "BLOCKED: <=1000 CNY unverified; no procurement/PCB release",
+    "legacy_reference": "mechanical/revisions/V1-A4_before_V1_2/contracts/mechanical_interfaces.json",
+    "no_extra_motor_driver": true,
+    "no_duplicate_audio": true,
+    "new_vendor_dimensions_adr": "reports/decisions/ADR-MECH-013-purchased-dimensions.md"
+  },
+  "mechanical_allocation_parameters": {
+    "battery": "config/geometry.json#/layout/battery_max_xyz_mm",
+    "motion_mcu": "config/geometry.json#/layout_cleanup/motion_carrier",
+    "cam_board": "config/geometry.json#/layout/cam_board_allocation_xyz_mm",
+    "power_module": "config/geometry.json#/layout_cleanup/power_bay",
+    "imu": "config/geometry.json#/layout_cleanup/imu",
+    "rear_interface": "config/geometry.json#/layout_cleanup/interface_pcb"
+  },
+  "poses_source": "mechanical/reports/assembly_instances.json derived from build.py; do not hand-edit as a second truth",
+  "source_documents": {
+    "spec": "MORI_SPEC_V1_2.md",
+    "task": "01_CODEX_MECHANICAL.md",
+    "S288": "mechanical/sources/v1_2/unitree_servo_manual.pdf p2",
+    "SCS0009": "mechanical/sources/v1_2/scs0009_spec.pdf p4/p6",
+    "CAM33700": "https://docs.waveshare.com/ESP32-S3-CAM-OVxxxx",
+    "LCD35079": "https://www.waveshare.com/product/1.85inch-touch-lcd-module.htm"
+  },
+  "service": {
+    "battery_removal_direction": "+Y",
+    "tray_travel_mm": 120,
+    "prerequisites": [
+      "DISARM and reliable cradle/support",
+      "unplug battery",
+      "wheel cap/wheel and axle release to free lower shell",
+      "both body shells and two short tray retention screws removed"
+    ],
+    "tools_all_verified": false,
+    "usb_plug_body_mm": [
+      16,
+      34,
+      10
+    ],
+    "usb_plug_nose_mm": [
+      8.4,
+      6,
+      2.6
+    ]
+  },
+  "required_hardware_measurements": [
+    "CAM thickness, hole diameter, exact connector/mic/antenna coordinates; board37x37 and hole-center grid32.6 now documented",
+    "CAM original DVP FPC length and minimum bend radius",
+    "LCD purchased Rev1 match; resolve STEP9.35 vs PDF9.1ref and hole-center rounding; mating cables/tool access",
+    "SCS0009 purchased version/horn/locking screw and ear tolerances",
+    "S288 output adapter/fasteners/thread engagement and bearing permissible loads",
+    "3S finished pack, protection/charger/buck dimensions and thermal clearances",
+    "all mounting hardware and driver-tool access",
+    "SelectedCMS4017 actual terminals, gasket compression and acoustic fit",
+    "Tenergy31013 tolerances/lead exit/NTC/balance/local cost and USB-C charger",
+    "CAM33700 full populated STEP or measured board + mic/camera/FPC coordinates",
+    "WeAct carrier/header stack and mounting access",
+    "Switch/USB-C module exact product and fixation"
+  ],
+  "hardware_component_revision_read": "V1.2-H0.5-P5R6",
+  "hardware_component_sha256": "f97b95addee1708530ba05247e3012e7525fa2666af5c31d970c37b037433b36",
+  "purchased_modeling_policy": {
+    "require_matching_manufacturer_model_revision": true,
+    "priority": [
+      "MEASURED matched purchased unit",
+      "manufacturer STEP with documented revision",
+      "manufacturer dimensioned drawing"
+    ],
+    "never_scale_hardware": true,
+    "unknown_fields_are_null": true,
+    "assumed_clearances_are_separate": true,
+    "no_purchased_units_measured": true,
+    "user_has_orders": false,
+    "purchase_route": "Exact V1.2 specified products; others remain unselected"
+  },
+  "vendor_geometry_sources": {
+    "LCD35079_STEP": {
+      "path": "mechanical/sources/v1_2_verified_dimensions/1.85inch_touch_lcd_module-3d.stp",
+      "sha256": "da8b3fca5ffd30c89d12bf488203741baaa1bd390732b62d92b23b279fb1dd9d",
+      "url": "https://github.com/waveshareteam/1.85inch-Touch-LCD-Module/tree/main/dimensions",
+      "revision": "STEP REV1 2026-07-02",
+      "status": "VENDOR_DOCUMENTED"
+    },
+    "LCD35079_DRAWING": {
+      "path": "mechanical/sources/v1_2_verified_dimensions/1_85inch_touch_lcd_module.pdf",
+      "sha256": "78d31f98fce2750c754a564fd96fc0c857f6dae28f82a050fe30855ee0c4739f",
+      "status": "VENDOR_DOCUMENTED"
+    },
+    "CAM33700_DRAWING": {
+      "path": "mechanical/sources/v1_2_verified_dimensions/cam_dimensions.jpg",
+      "sha256": "d28a8c6706cdd9aee5564d8aba09bc5ccb0479791b879b15e618677ee05b7667",
+      "url": "https://www.waveshare.com/esp32-s3-cam-ov5640.htm?sku=33700",
+      "revision": null,
+      "status": "VENDOR_DOCUMENTED"
+    },
+    "S288_DRAWING": {
+      "path": "mechanical/sources/v1_2/unitree_servo_manual.pdf",
+      "sha256": "587cce7385d2d27704671c39db49c226ac127ae30d686207b812e78a960a0201",
+      "url": "https://www.unitree.com/download/DigitalServo/",
+      "status": "VENDOR_DOCUMENTED",
+      "scope": "Dimensioned simplified assembly; no full vendor CAD or matching purchased revision"
+    },
+    "SCS0009_DRAWING": {
+      "path": "mechanical/sources/v1_2/scs0009_spec.pdf",
+      "sha256": "b8ce3f28a8c12d2ad9dee697087eae03eb716219016b48be9a7e1856755213c6",
+      "url": "https://www.feetech.cn/Data/feetechrc/upload/file/20220915/6379883463905538176347522.pdf",
+      "status": "VENDOR_DOCUMENTED",
+      "scope": "Dimensioned simplified assembly; no full vendor CAD or matching purchased revision"
+    },
+    "CMS4017_DRAWING": {
+      "path": "mechanical/sources/v1_2_detail_fit/speaker_cms4017.pdf",
+      "sha256": "bc137979ed19efcdb1dfa4e45a450b0161318d0a859a358a20a6268600014c77",
+      "units": "mm",
+      "read_date": "2026-09-22",
+      "physical_measurement": false
+    },
+    "WEACT_V11": {
+      "path": "hardware/v1_2/sources/weact_f4/WeAct-STM32F4_64PIN-CoreBoard_V11 3D.step",
+      "sha256": "dbcf5ae535545af20e4869933e9a405cc663fb8f2da01bf5a7acc95ba2d41d62",
+      "units": "mm",
+      "read_date": "2026-09-22",
+      "physical_measurement": false
+    },
+    "TENERGY31013": {
+      "path": "mechanical/sources/v1_2_detail_fit/tenergy31013.html",
+      "sha256": "2e16e5a463170078f39bb32d328a37f932741227ff5dcf78a759e733d0884b23",
+      "units": "mm",
+      "read_date": "2026-09-22",
+      "physical_measurement": false
+    },
+    "BEARING686ZZ": {
+      "path": "mechanical/sources/v1_2/686ZZ_dimensions.pdf",
+      "url": "https://www.smbbearings.com/firebrick/ckeditor/plugins/upload/Uploads/Documents/bearingpdfs/686ZZ-miniature-bearing-6x13x5mm.pdf",
+      "sha256": "687c51bc421cb233a8db88d49169f0cd4c43817754a0bb673817d270f8792393",
+      "type": "SUPPLIER_DIMENSIONED_DRAWING",
+      "status": "VENDOR_DOCUMENTED",
+      "fields": "686ZZ 6x13x5mm nominal only; internal race/shield geometry not imported"
+    },
+    "FUSHENG_FS4545_DRAWING": {
+      "path": "mechanical/sources/fusheng_FS4545DB0450_H25_R01/dimensions.jpg",
+      "sha256": "d8af2f28cb9ebabe1e7c92e903e19f3ff338a7edaa56d6f8cdef2bb385af0cd2",
+      "provenance": "User-supplied manufacturer image; not physical metrology",
+      "units": "mm",
+      "revision": "V0",
+      "status": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    },
+    "FUSHENG_FS4545_SPEC": {
+      "path": "mechanical/sources/fusheng_FS4545DB0450_H25_R01/specifications.jpg",
+      "sha256": "1e0d718e8feda3fadfae597b14cc306b4febbd6caba9cde35f433bd9fd22e1e1",
+      "provenance": "User-supplied manufacturer image; not physical metrology",
+      "revision": "A",
+      "status": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    },
+    "WAVESHARE_PHOTOS_M1_33": {
+      "path": "mechanical/sources/waveshare_detail/source_manifest.json",
+      "sha256": "f37a2275f117d5cc373e0c314a53cb6d322136c3132a4611c70b9bf94db28c61",
+      "description": "Official Waveshare photos and schematic; reconstruction assumptions remain in shared config"
+    },
+    "SP3040_USER_SPEC": {
+      "path": "mechanical/sources/SP3040/SP3040_user_specification.pdf",
+      "sha256": "f16071502c87b41df65d2a6e4f258b4ebaf96ef2c4b7f22cec23dad565fbce43",
+      "units": "mm",
+      "manufacturer": "Shenzhen Haolin Electroacoustic Technology",
+      "revision": "WSSSZ201809110016 / 1.0",
+      "pages": {
+        "outline": 3,
+        "ratings": 2
+      },
+      "status": "VENDOR_DOCUMENTED_DIMENSIONED_FIELDS_ONLY",
+      "physical_measurement": false,
+      "approved_estimates_ref": "config/geometry.json#/detail_fit/speaker/field_evidence/ASSUMED"
+    }
+  },
+  "structure_revision": "V1.2-M1.12",
+  "appearance_revision": "V1.2-M1.12",
+  "hardware_read_scope": {
+    "revision": "V1.2-H0.5-P5R6",
+    "handoff": "hardware/v1_2/handoff/mechanical_P5R6.json",
+    "populated_fit": "NOMINAL_ONLY; actual execution results in mechanical/reports/native_electronics_validation.json, full mated/as-built fit BLOCKED",
+    "note": "Published P5R6 receipt: motion/power/rear P5R6 plus unchanged IMU P5R4. Imported native geometry retains positions; physical/mated qualification pending. Hardware files are read-only.",
+    "fit_differences": {
+      "rear_P5_outline_mm": [
+        24,
+        25
+      ],
+      "current_rear_allocation_mm": [
+        24,
+        25
+      ],
+      "PH_mated_height_excluding_wire_bend_mm": 8,
+      "whole_populated_fit": "BLOCKED",
+      "power_P5_outline_mm": [
+        80,
+        55
+      ],
+      "power_P5_layers": 4,
+      "power_holes_match_current_P4_reference": true,
+      "component_positions_match_historical_models": false,
+      "current_model_source": "P5R6 receipt in progress"
+    },
+    "read_source_sha256": {
+      "contracts/components.json": "f97b95addee1708530ba05247e3012e7525fa2666af5c31d970c37b037433b36",
+      "hardware/v1_2/handoff/mechanical_P5R6.json": "90851be7c164260a347f00aecdd4d47ca3cee8aa7e173800785383626cfd5f57"
+    }
+  },
+  "belly_relayout": {
+    "source": "config/geometry.json#/belly_relayout",
+    "wheel_drive": "Two original-size S288 bodies rotated about unchanged X wheel axes; opposite90deg clocking balances fore-aft offsets",
+    "head_yaw": "SCS0009 case attached to yaw-only yoke in head; spline/horn restrained to body via removable keyed reaction link. head_yaw=-servo_relative_angle after zero calibration. Bearing carries head weight.",
+    "electronics_capacity": "80x40x18mm power-board allocation above removable carrier; no actual S3 PCB or hole map.70x35x12mm motion-board allocation remains incomplete populated hardware.",
+    "manufacturing_release": false,
+    "unknown_interfaces": [
+      "actual SCS horn fit and split-clamp preload/torque",
+      "real battery and populated MCU/power boards",
+      "full connector/harness/tool handles",
+      "FDM strength and actuator/balance dynamics"
+    ],
+    "cross_domain_handoff": "reports/decisions/ADR-MECH-021-combined-belly-relayout.md"
+  },
+  "mechanical_selection_M1_10": {
+    "authorization": "User explicitly requested component selection and precise purchased-part models on2026-09-22",
+    "hardware_components_contract": "read-only, unchanged; these selections are mechanical proposals requiring electrical BOM reconciliation",
+    "supplier_choices": {
+      "speaker": "Superseded by M1.20: Fusheng FS4545DB0450-H25-R01, user-selected enclosed45x45x25mm,60mm including ears,4ohm5W",
+      "battery": "Tenergy31013,3S2600mAh5A,71x55x20mm150g; geometric candidate only; purchase blocked by NTC/balance/tolerance/charger/CNY total",
+      "microphones": "Two original MEMS on Waveshare33700; not separate modules; MPN and dimensional coords not published",
+      "CAM": "Waveshare ESP32-S3-CAM-OV3660 SKU33700",
+      "display": "Waveshare1.85inch Touch LCD Module SKU35079",
+      "MCU": "WeAct64PinV1.1/F412RET6, original224-solid CAD; populated carrier/header placement unqualified"
+    },
+    "default_pitch_deg": 10,
+    "pitch_limits_absolute_deg": [
+      -20,
+      25
+    ],
+    "ports_vertical_centers_mm": {
+      "switch": [
+        0,
+        -74.5,
+        124
+      ],
+      "USB_C": [
+        0,
+        -76.5,
+        107
+      ]
+    },
+    "external_reset": false,
+    "function_button": "Existing STOP/function physical button retained, explicitly not reset",
+    "speaker_mount": "M1.20: two vendor ears fixed directly to integral Body_Upper seats; no printed rear cup",
+    "camera": "Lens allocation moved inside sphere; window geometry recessed; camera package and FPC still unmeasured",
+    "display_mount": "Three CAD-derived post seats on open straight fork with4existing side screws; no full circular structural rear ring"
+  },
+  "custom_pcb_capacity_feedback": {
+    "status": "PROPOSED_NO_PCB_OUTLINE_FREEZE",
+    "shared_parameters": "config/geometry.json#/pcb_capacity_proposal",
+    "result": "mechanical/studies/pcb_P2_fit/fit_results.json",
+    "native_inventory": "mechanical/studies/pcb_P2_fit/native_inventory.json",
+    "model": "mechanical/studies/pcb_P2_fit/MORI_P2_PCB_FIT_STUDY.blend",
+    "source_boards": {
+      "motion": "hardware/v1_2/kicad/MORI_motion_P2/MORI_motion_P2.kicad_pcb",
+      "imu": "hardware/v1_2/kicad/MORI_imu_P2/MORI_imu_P2.kicad_pcb",
+      "power_historical_only": "hardware/v1_2/kicad/MORI_power_P2/MORI_power_P2.kicad_pcb"
+    },
+    "notes": [
+      "User confirms only IMU, power and carrier are custom PCBs.",
+      "Current S3 power outline is still null;80x55mm is mechanical design feedback, not actual final artwork.",
+      "Preserve motion70x35 and IMU20x16 board outlines; redesign local mechanical seats.",
+      "Whole-board mating sockets/plugs, tool access and new supports remain unqualified.",
+      "Native electrical files and hardware-owned components contract not modified."
+    ],
+    "current_assembly_status": "M1.12 retains M1.11 power80x55 capacity and P2 populated references. P3 dimensions still70x35 /20x16 /80x55. P3 native coordinates received but full populated/plug fit requires separate adaptation; no P3 assembly fit claim."
+  },
+  "layout_cleanup_requirements": {
+    "parameters": "config/geometry.json#/layout_cleanup",
+    "head_zero": "Head bottom cut horizontal; load frames horizontal/vertical; only screen/camera mount normals tilted +10deg",
+    "IMU": "Native P2 20x16 mounted components down on rigid Load_Frame underside. New mounting axis transform exported; P3 component changes require recheck.",
+    "function_button": "Removed per user request; no independent function or reset button/hole. Existing physical power/DISARM remains.",
+    "interface_board": "Fourth small custom PCB authorized. Mechanical shell seat/port openings only; circuit and exact connectors belong to other session.",
+    "P3_status": "P3 routed boards and native outline/hole/connector handoff received; exportedSTEP is bare-board only. Full P3 populated/plug fit not integrated. Current P2 reference is explicitly retained, not relabeled P3.",
+    "face_surface": "Radial flat face rim: plane distance sqrt(head_radius^2-mask_radius^2), whole optics rigidly pitched10deg about mother sphere centre. Active centre approximately8.8mm above head centre; replaces global-Z-centred recessed placement. Sphere shell bottom/main frame remain level.",
+    "load_frame": "104mm full side width with uncut4mm planar edge lands. Inner wheel-pocket seat52.6mm each side; new plate reaches52mm. No local wheel/shell boolean trim; preserve speaker/rear service cutouts.",
+    "current_revision_delta": "M1.17 replaces long power-board edge lands with four local seats at received P4 hole locations. Two diagonal trial screws provide retention; final populated P5 fit remains blocked.",
+    "validation_sources": [
+      "mechanical/reports/face_surface_fit.json",
+      "mechanical/reports/frame_side_clearance.json",
+      "mechanical/reports/layout_cleanup_validation.json"
+    ]
+  },
+  "rear_interface_pcb": {
+    "status": "MECHANICAL_REQUIREMENTS_ONLY_ELECTRONICS_BY_OTHER_SESSION",
+    "pcb_xy_mm": [
+      24,
+      14
+    ],
+    "thickness_mm": 1.6,
+    "pcb_center_mm": [
+      0,
+      -65,
+      115
+    ],
+    "holes_xy_local_mm": [
+      [
+        -9,
+        4
+      ],
+      [
+        9,
+        4
+      ]
+    ],
+    "hole_diameter_mm": 2.2,
+    "hole_copper_keepout_diameter_mm": 5.5,
+    "front_side": "top +Z; right-angle switch actuator toward -Y",
+    "back_side": "bottom -Z; USB-C opening toward -Y",
+    "rear_connector_edge_local_y_mm": -7,
+    "switch_center_mm": [
+      0,
+      -75,
+      123
+    ],
+    "usb_center_mm": [
+      0,
+      -74,
+      112
+    ],
+    "top_component_limit_mm": 9,
+    "bottom_component_limit_mm": 7,
+    "inner_cable_exit_direction": "+Y",
+    "selected_switch_usb_models": null,
+    "connector_positions_are_requirements_not_verified_parts": true,
+    "requirements_document": "mechanical/INTERFACE_PCB_REQUIREMENTS.md",
+    "reference_frame": "+X right +Y forward +Z up; board top is +Z",
+    "release": "PROPOSAL_PENDING_CONNECTOR_SELECTION",
+    "screw_access": "From -Z underside; two integral upper-shell tabs on PCB top face; detach upper shell first.",
+    "inner_cable_points_mm": [
+      [
+        0,
+        -56.7,
+        117
+      ],
+      [
+        0,
+        -56.7,
+        109
+      ],
+      [
+        16,
+        -52,
+        108.5
+      ]
+    ],
+    "fixation_geometry": {
+      "shell_integral_tabs": 2,
+      "tab_nominal_xyz_mm": [
+        7,
+        19,
+        4.2
+      ],
+      "mounting_screws": 2,
+      "screw_trial": "M2 x6, upward insertion from detached-shell underside",
+      "inserts": "M2 candidate OD3,length3.8; final SKU and heat insert pilot require trial",
+      "illustrations": [
+        "mechanical/renders/rear_interface_detail.png",
+        "mechanical/renders/rear_interface_section.png"
+      ]
+    },
+    "current_status": "SUPERSEDED: consult native_electronics and geometry.json#/native_electronics/boards/rear",
+    "current_user_change": "M1.38 user deletes rear power switch and its shell opening; electrical task must remove/replaceSW1 circuit and define manual power-off / motor-disable behavior. P5R6 remains immutable source pending receipt."
+  },
+  "part_consolidation": {
+    "geometry_source": "config/geometry.json#/part_consolidation",
+    "merged_interfaces": {
+      "Wheel_Cap_L": "Wheel_Hub_L exposed outer face; separate cover deleted",
+      "Wheel_Cap_R": "Wheel_Hub_R exposed outer face; separate cover deleted",
+      "Camera_Baffle": "Head_Front integral collar; black internal coating required",
+      "Pitch_Cable_Clip": "Pitch_Yoke open local cable guide",
+      "Yaw_Turntable": "Pitch_Yoke continuous yaw component",
+      "Body_Top_Shroud": "Yaw_Base fixed collar"
+    },
+    "retired_fasteners": [
+      "Gimbal_Base_-13_Screw",
+      "Gimbal_Base_-13_Nut",
+      "Gimbal_Base_13_Screw",
+      "Gimbal_Base_13_Nut"
+    ],
+    "assembly_requirement": "Pitch head removed first. After yaw servo/output and reaction cross-retainer removal, lift combined yaw U/journal together with reaction link/horn/clamp; keep relative motion groups distinct in assembled state. Reverse sequence for installation.",
+    "data_status": "ASSUMED",
+    "manufacturing_release": false,
+    "yaw_limit_interface": {
+      "source": "config/geometry.json#/part_consolidation",
+      "description": "Integral rotating tab and fixed stops relocated together above the yaw bearing to allow upward removal of the consolidated U/journal. Operating range unchanged. Contact angles and strength require dedicated geometry/physical review.",
+      "contact_strength_status": "NOT_TESTED"
+    }
+  },
+  "yaw_bridge_mount": {
+    "geometry_source": "config/geometry.json#/yaw_bridge_mount",
+    "design_revision": "V1.2-M1.22",
+    "load_path": "Yaw bearing to bridge legs; integral shoulders bear on Load_Frame deck; broad tongues locate inside sockets and lap against existing side cheeks. Two transverse M3 screws with metal hex nuts retain the removable joint.",
+    "no_external_mount_ears": true,
+    "no_outer_wall_tool_grooves": true,
+    "screw_count": 2,
+    "nut_count": 2,
+    "insert_count": 0,
+    "fastener_status": "NOMINAL_PURCHASED_REFERENCE_NO_THREADS_OR_BATCH_TOLERANCE",
+    "hardware_pcb_datum_changed": false,
+    "assembly_prerequisites": "Bench-seat inner nuts, lower bare bridge into deck sockets, secure from sides before fitting head. Remove body shells, tyres/hubs and wheel-end screw/washer for driver access; battery/tray, motors, bearings and shafts can remain. Release head/reaction link before bare bridge extraction.",
+    "qualification": "M1.22 adopted geometry; reports/yaw_bridge_joint_validation.json and validation.json. Print fit, torque, strength, fatigue, creep, impact and balancing NOT_TESTED.",
+    "hardware_sources": [
+      {
+        "description": "M3x8 ISO7380 button head nominal 5.7 mm diameter / 1.65 mm maximum height",
+        "url": "https://www.westfieldfasteners.co.uk/Bolts-Screws-Metric/Socket-Head-Button-Dome-Screw-M3x8-A4-Stainless.html"
+      },
+      {
+        "description": "Bossard BN115 M3 hex nut nominal AF5.5 x2.4 mm; conservative unchamfered envelope",
+        "url": "https://kvt.partcommunity.com/3d-cad-models/bn-115-hex-nuts-0-8d-din-934-iso-4032-cl-8-plain-bossard-catalog?info=bossard%2F01%2F01_100%2F01_100_200%2F01_100_200_10%2Fbn_115_116_117_20237_20539_20540_118_82415_119%2Fbn_115.prj"
+      }
+    ]
+  },
+  "fastener_cleanup": {
+    "geometry_source": "config/geometry.json#/fastener_cleanup",
+    "scope": "All robot hard printed components inspected; remove external screw ears/tool grooves, preserve bearing/optics/vendor interfaces and removable service splits",
+    "speaker_mount": "Same selected speaker and front seat; continuous oval rear cup with rear recessed M2x20 screws to shell-only blind inserts",
+    "wheel_cap": "Two pairs of M3 fasteners moved to x±29/y±23 inside plain flat cap; bearings, metal shaft and hubs unchanged",
+    "reaction_clamp": "Round clamp collar with transverse screws/nut inside its nominal silhouette, no separate screw ears",
+    "qualification": "Nominal geometry evidence: mechanical/reports/fastener_cleanup_validation.json and validation.json for the matching revision. Fits, inserts, print strength and acoustics unqualified"
+  },
+  "battery_retention": {
+    "geometry_source": "config/geometry.json#/battery_retention",
+    "design_revision": "V1.2-M1.18",
+    "fixed_part": "Load_Frame",
+    "removable_part": "Battery_Tray",
+    "fastener": "2 x M2x6 lateral screws into existing tray M2 trial inserts",
+    "site_rule": "Paired +/-X sites share Y from geometry; Z follows allocated battery bottom +3mm. Both hardware and tray pilots move together.",
+    "shell_access": "Wheels and body shells removed; keep robot supported and pack disconnected. Straight tool and screw approach checked separately from full service sequence.",
+    "no_new_parts": true,
+    "no_external_ears": true,
+    "checks": "mechanical/reports/battery_retention_validation.json",
+    "qualification": "Local hole-edge continuity and geometry only; actual insert fit, print strength, fatigue and physical assembly NOT_TESTED",
+    "update_note": "M1.18 widens tray and removes local inward lands; constant3.6mm cheeks,1.8mm head recess and1.8mm backing. Y0/Z79 retained. See battery_tray contract and actual checks."
+  },
+  "power_board_mount": {
+    "parameters": "config/geometry.json#/layout_cleanup/power_bay",
+    "source": "hardware/v1_2/handoff/mechanical_P4.json#/boards/MORI_power_P4/holes",
+    "geometry_status": "PASS_GEOMETRY_ONLY; see power_board_mount_validation.json for actual solid seat, access and removal checks",
+    "hardware_fit_status": "BLOCKED",
+    "mounting": "Four low integral seats; two diagonal M2x6 trial screws + two M2 inserts. No separate spacer, long rail or exterior mounting ear.",
+    "requirements": [
+      "Keep underside component/solder volume out of diameter5.8 around all four native hole centers.",
+      "Keep top component/tool volume out of diameter5.4 around H2/H3. Native PCB clearance bores stay diameter2.2.",
+      "Install power PCB and two top screws before fixed yaw bridge/head. For service, detach upper shell and bridge/head first.",
+      "Local seats reach the unchanged PCB bottomZ119.5; other underside allocation reachesZ116.5,1.5 above deck.",
+      "P4 outline/hole coordinates only; P4 populated/mated fit incomplete and routing rejected. P5 underway, must reconfirm holes and keepouts before release.",
+      "No electrical files changed, no print/strength/vibration qualification."
+    ],
+    "validation": "mechanical/reports/power_board_mount_validation.json"
+  },
+  "battery_tray": {
+    "parameters": "config/geometry.json#/battery_tray",
+    "geometry_status": "CANDIDATE_DESIGN; actual validation in reports/battery_tray_fit.json",
+    "design": "Wider removable tray between constant-thickness side plates; local retention lands deleted; existing lower shelves bear tray weight. Same two sideM2x6 screws/inserts.",
+    "pack": "Selected71x55x20 envelope unchanged; original channel/pad/strap geometry preserved.",
+    "trial_clearance_mm_each_side": 0.3,
+    "load_path": "Pack -> existing pad -> tray floor -> lower ledges -> drive frame. Side fasteners retain +Y extraction.",
+    "validation": "mechanical/reports/battery_tray_fit.json",
+    "limits": "Nominal geometry only; pack tolerance, printed slides, insert fit, strength/creep and vibration unqualified."
+  },
+  "microphone_acoustics": {
+    "source": "config/geometry.json#/microphone_acoustics",
+    "design_revision": "V1.2-M1.19",
+    "mechanical_mode": "OPEN_HEAD_CAVITY_NO_PRINTED_DUCTS",
+    "purchased_microphones": "Existing Waveshare33700 onboard pair, same board position; no separate mic purchase or PCB modification",
+    "shell_and_frame": "Retain rear shell sound holes and unsealed local frame passages. No tube, gasket, new bracket or extra fastener.",
+    "data_status": "ASSUMED_PHOTO_REGISTERED_NOT_MEASURED",
+    "verification": "Actual nominal air-path probes and no-duct inventory in mechanical/reports/microphone_open_path.json; not an acoustic simulation",
+    "remaining": "Exact sound-port side and coordinates, loaded servo/speaker recordings, sensitivity and channel crosstalk require the selected physical CAM board."
+  },
+  "speaker_replacement": {
+    "revision": "V1.2-M1.37",
+    "authorization": "User selected their SP3040 again and expressly allowed estimates for undimensioned features on2026-09-26. Original shell-integral two-screw mount retained.",
+    "supersedes": "M1.20 Fusheng45x45x25 speaker",
+    "parameters_ref": "config/geometry.json#/detail_fit/speaker",
+    "mount_ref": "config/geometry.json#/speaker_mount",
+    "source_id": "SP3040_USER_SPEC",
+    "retired_print": "Speaker_Mount (retired since M1.20)",
+    "new_prints": 0,
+    "new_fasteners": 0,
+    "hardware_handoff": "SP3040 4ohm3W nominal/3.5W max;200mm lead and2P1.25 label. Exact connector family/polarity and power capability require electrical owner review. Hardware files and components.json unchanged. Mass/cost/stock unknown.",
+    "physical_fit": "BLOCKED pending sample hole/pitch/ear calibration"
+  },
+  "compact_yaw_stops": {
+    "geometry_source": "config/geometry.json#/compact_yaw_stops",
+    "normal_yaw_deg": [
+      -60,
+      60
+    ],
+    "form": "Integral fixed arc blocks + low annular rotating shoulder/key; two different motion groups remain separate",
+    "parts": [
+      "Yaw_Base",
+      "Pitch_Yoke"
+    ],
+    "additional_print_parts": 0,
+    "additional_fasteners": 0,
+    "service": "Remove rotating group upward per service sequence; bearing may lift after rotor is removed. Geometry must be checked, not assumed.",
+    "validation_report": "mechanical/reports/integrated_stop_check.json",
+    "data_status": "ASSUMED",
+    "strength_status": "NOT_TESTED",
+    "bearing_vendor_fit": "BLOCKED"
+  },
+  "native_electronics": {
+    "config": "config/geometry.json#/native_electronics",
+    "source_inventory": "mechanical/sources/populated_P5/inventory.json",
+    "source_evidence": "mechanical/sources/populated_P5/supplement_audit.json",
+    "status": "P5R6_RECEIVED_SOURCE_GEOMETRY",
+    "hardware_source_written": false,
+    "CAM_full_CAD": "BLOCKED: official resources provide outline/hole grid and schematic, no populated 3D CAD found",
+    "charger": "BLOCKED: selected module/dimensions absent",
+    "source_placement_report": "mechanical/reports/native_electronics_geometry.json",
+    "source_validation_report": "mechanical/reports/native_electronics_validation.json",
+    "rear_interface": "P5 native24x25 adopted; shell seats follow native H1/H2. Switch reach and mated-plug clearance unresolved; source footprints unchanged.",
+    "buck_mount": "Two family CAD modules under Load_Frame above battery;5 integral short seats,4 M2 screws,4 trial inserts. No new printed parts; heat not qualified.",
+    "supersedes_legacy_fields": [
+      "layout_cleanup_requirements",
+      "rear_interface_pcb",
+      "custom_pcb_capacity_feedback",
+      "hardware_read_scope/fit_differences"
+    ],
+    "handoff": "hardware/v1_2/handoff/mechanical_P5R6.json",
+    "revision_delta": "Published during M1.23: motion R9/R13, IMU R1 placements changed; native sources re-exported. All board outlines/mount holes/connectors unchanged.",
+    "note": "Motion/power/rear P5R6; IMU P5R4, per formal mechanical_P5R6 handoff. No footprints moved or hardware-owned source edited. Two5V converters are on the power PCB;9V wheel and6V head reference modules remain separate per received electrical contract."
+  },
+  "head_print_cleanup": {
+    "parameters_source": "config/geometry.json#/head_print_cleanup",
+    "hardware_datums_unchanged": true,
+    "fastener_count_unchanged": true,
+    "preserved_interfaces": [
+      "three original LCD posts",
+      "four paired face-side screws",
+      "bilateral pitch bearings",
+      "CAM outline allocation",
+      "camera mount and optics10deg"
+    ],
+    "cam_retention": "BLOCKED; rear acoustic holes are not PCB mounting holes; no final CAM hole diameter or fastening qualification",
+    "validation_report": "mechanical/reports/head_cleanup_validation.json",
+    "fastener_only_relocation": "Four existing Face_Joint M2 nuts move another1.3mm inward to x=+/-39.2, following4.5mm uniform cradle walls and retaining2mm backing. Existing screws, optical, PCB and actuator positions unchanged.",
+    "planar_cleanup": "Rectangular U cradle without corner chamfers or raised trunnion patches; constant16mm optical mast and square side returns. Keep true optical contact planes, component pockets and bearing interfaces.",
+    "rear_corner_update": {
+      "revision": "M1.28",
+      "parameter_source": "config/geometry.json#/head_print_cleanup",
+      "part": "Pitch_Cradle",
+      "geometry": "Two broad constant-thickness diagonal wall sections replace the right-angle rear corners. Match M1.24 outerXY fold profile; preserve present4.5mm normal wall thickness, low top and simple side walls.",
+      "preserved": [
+        "all mounting and shaft hole datums",
+        "all electronics and fastener dimensions and poses",
+        "no new printed parts or fasteners"
+      ],
+      "validation_source": "mechanical/reports/head_corner_validation.json",
+      "physical_qualification": "NOT_TESTED"
+    }
+  },
+  "hardware_review_snapshot": {
+    "path": "mechanical/sources/hardware_review/components_P5R6_f97b95addee1.json",
+    "revision": "V1.2-H0.5-P5R6",
+    "sha256": "f97b95addee1708530ba05247e3012e7525fa2666af5c31d970c37b037433b36",
+    "role": "Immutable received assembly input, not editable hardware truth"
+  },
+  "pending_hardware_receipt": {
+    "status": "BLOCKED",
+    "observed_live_revision": "V1.2-H0.5-P5R4",
+    "model_revision": "V1.2-H0.5-P5R2",
+    "handoff": "hardware/v1_2/handoff/mechanical_P5R4.json",
+    "reason": "M1.25 is head-support cleanup against the received P5R2 assembly. P5R4 moves rear D1/D3/C1 and IMU C1/C2; imports, populated assembly and mating interfaces have not been synchronized or validated. P5R5 directories are unreceived work."
+  },
+  "drive_print_cleanup": {
+    "parameters_source": "config/geometry.json#/drive_print_cleanup",
+    "datums_unchanged": [
+      "S288 x2 cases and outputs",
+      "686ZZ x4",
+      "all metal shafts and spacers",
+      "all bolts/nuts",
+      "battery and electronics",
+      "all head geometry"
+    ],
+    "changed_prints": [
+      "Drive_Bridge",
+      "Motor_Retainer"
+    ],
+    "case_cap_interface_z_mm": 42,
+    "motor_bottom_pad_plane_mm": 42,
+    "assembly": "Remove lower shell, wheels and four cap screws; cap lowers before motor/shaft/bearing cartridges. Existing motor preload pads and bearing split maintained.",
+    "manufacturing_release": false,
+    "reviewed_prints": [
+      "Drive_Bridge",
+      "Motor_Retainer",
+      "Load_Frame"
+    ],
+    "retained_functional_geometry": [
+      "Lower cap 2.5 mm bottom-corner triangular plane clearance; top and seam corners remain square and flush",
+      "Four stepped bearing bores and axial retention shoulders",
+      "Existing inward Battery_Tray bearing ledges; Load_Frame geometry unchanged",
+      "0.9 mm lower outer bearing-saddle edge clearance to lower shell"
+    ],
+    "validation_sources": [
+      "mechanical/reports/drive_cleanup_validation.json",
+      "mechanical/reports/wheel_interface_validation.json",
+      "mechanical/reports/static_interference.json"
+    ],
+    "physical_qualification": "NOT_TESTED",
+    "geometry_status_source": "mechanical/reports/drive_cleanup_validation.json"
+  },
+  "head_surface_display": {
+    "revision": "M1.29",
+    "status": "DISPLAY_ONLY_NO_INTERFACE_CHANGE",
+    "parameter_source": "config/geometry.json#/head_surface_display",
+    "geometry_preserved_against": "V1.2-M1.28",
+    "validation_source": "mechanical/reports/head_surface_validation.json",
+    "limits": "Normals and smoothing flags do not change printable geometry or certify strength."
+  },
+  "head_servo_detail": {
+    "revision": "M1.30",
+    "source": "config/geometry.json#/head_servo_detail",
+    "model_fidelity": "DIMENSIONED_DRAWING_RECONSTRUCTION_WITH_EXPLICIT_COSMETIC_ASSUMPTIONS",
+    "vendor_CAD": false,
+    "measured": false,
+    "case_and_ears": "One connected case;2mm holes,28.5mm pitch; ear16.8..18.4mm from bottom. Old disconnected ears and wrong height superseded.",
+    "pitch_orientation": "180deg clock about unchanged output axis to keep both mounting ears on the simple left U wall.",
+    "yaw_orientation": "Retain inverted yaw-only case, body-fixed output/horn and independent load bearing.",
+    "mounts": "Two integral seats per servo; trial M2x5 screws and blind M2 inserts. No new printed parts.",
+    "horn": "Existing unselected mating-horn allocations remain BLOCKED; detailed motor does not qualify them."
+  },
+  "head_routing": {
+    "status": "NOT_TESTED_DEFERRED_BY_USER",
+    "source": "config/geometry.json#/head_routing",
+    "scope": "Remove provisional head cable cuts and clip; hide provisional routes. Complete routing and strain relief are later work."
+  },
+  "head_servo_corner_cleanup": {
+    "geometry_source": "config/geometry.json#/head_servo_detail/front_corner_cleanup",
+    "preserved_interfaces": "M1.31 corner cleanup and orthogonal post/web junction retained. M1.32 centered-seat contour supersedes only the full-post-shape freeze; keep mounting datums, lower journal and bearing interfaces.",
+    "change": "Remove only excess historical infill at the concave post/web corners; keep right angles",
+    "validation_report": "mechanical/reports/head_seat_foot_validation.json",
+    "strength_status": "NOT_TESTED"
+  },
+  "head_servo_centered_pads": {
+    "geometry_source": "config/geometry.json#/head_servo_detail/centered_yaw_pads",
+    "preserved_interfaces": "Both SCS0009 ear-hole centres,28.5mm pitch,202.05mm support plane, inserts/screws, servo transforms and bearings",
+    "change": "M1.32 edit withdrawn; restore M1.31 continuous flat yaw support arm and original front post. Hardware datums retained.",
+    "validation_report": "mechanical/reports/yaw_pad_centering_validation.json",
+    "strength_status": "NOT_TESTED",
+    "status": "RETIRED",
+    "superseded_by": "head_mount_simplification"
+  },
+  "mechanical_revision": "V1.2-M1.38",
+  "waveshare_photo_reconstruction": {
+    "config_source": "config/geometry.json#/waveshare_detail",
+    "status": "ASSUMED",
+    "measured": false,
+    "official_dimensions": [
+      "CAM37x37, R2.25,32.6mm grid",
+      "camera24pin0.5mm2.0H FPC",
+      "originalLCD35079 STEP"
+    ],
+    "photo_estimates": [
+      "CAM populated parts",
+      "hole diameters",
+      "connector housings",
+      "OV3660 camera body/lens/FPC"
+    ],
+    "assembly_release": false,
+    "arrival_measurements": [
+      "CAM PCB thickness and all connector projection heights",
+      "PCB hole diameter and actual laminate revision",
+      "Camera carrier/lens dimensions, FPC total free length and exit orientation",
+      "MEMS package/port coordinates and acoustic test",
+      "LCD connector revision and mounting post heights vs drawing rounding"
+    ]
+  },
+  "head_mount_simplification": {
+    "geometry_source": "config/geometry.json#/head_mount_simplification",
+    "shell_hole_datum": "common.head_shell_mount_xy_mm: center of the unchanged Pitch_Cradle shell-lug rectangle from head_print_cleanup",
+    "paired_parts": [
+      "Pitch_Cradle",
+      "Head_Front"
+    ],
+    "shell_hole_change": "Both printed interfaces move together; no purchased hole is moved. Nominal clearance diameter2.4mm and trial pilot diameter3.2mm retained. Trial inserts, matching screw length, access and final fastening need Stage B review.",
+    "yaw_support": "Restore complete M1.31 flat support geometry; same servo/ear/shaft locations and4.5mm rear arm thickness.",
+    "validation_report": "mechanical/reports/simple_head_mounts_validation.json",
+    "strength_status": "NOT_TESTED",
+    "unchanged_camera_fit_status": "Existing M1.33 camera conflicts remain pending separate approval."
+  },
+  "assembly_completion": {
+    "parameters_source": "config/geometry.json#/assembly_completion",
+    "status": "GENERATED_NOMINAL_CANDIDATE; execution evidence in mechanical/reports/assembly_completion_validation.json",
+    "manufacturing_release": false,
+    "camera_retention": "Existing Display_Frame pocket plus two integral Head_Front lips; no extra cap or fastener.3.8mm module-only recess with unchanged window datum; controlled outer FOV flare.0.2mm side and0.15mm end clearances are trial values.",
+    "cam_mount": "Official32.6mm hole grid; four M2x6 trial screws/short inserts,31mm wide integral cradle backplate and short seats; microphones keep open side air paths.",
+    "battery": "User retains71x55x20 finished3S candidate;20mm hook-loop strap/soft top pad routed through tray. Pack tolerance, lead exit, band thickness and strength unmeasured."
+  },
+  "drive_edge_cleanup": {
+    "part": "Motor_Retainer",
+    "geometry_source": "config/geometry.json#/drive_edge_cleanup",
+    "requirement": "User authorizes removing only the circled +X/right narrow underside transition lip. Bearing housings, support root within the plate, cap fasteners, motors and all other components remain at existing datums.",
+    "data_status": "ASSUMED",
+    "verification": "Candidate geometry only; print strength/creep and actual fit remain NOT_TESTED."
+  },
+  "speaker_update": {
+    "enabled": true,
+    "revision": "M1.37",
+    "authorization": "User selected their SP3040 again and expressly allowed estimates for undimensioned features on2026-09-26. Original shell-integral two-screw mount retained.",
+    "changed_existing_ids": [
+      "Speaker",
+      "Body_Upper",
+      "Speaker_Gasket",
+      "Speaker_Screw_-1",
+      "Speaker_Screw_1",
+      "Speaker_Insert_-1",
+      "Speaker_Insert_1"
+    ],
+    "new_ids": [],
+    "retired_ids": [],
+    "baseline_revision": "V1.2-M1.36",
+    "baseline_blend": "mechanical/revisions/V1.2-M1.36_before_SP3040/mechanical/mori_v1_2.blend",
+    "baseline_geometry": "mechanical/studies/speaker_SP3040_review/baseline_geometry_evaluated.json",
+    "source_sha256": "f16071502c87b41df65d2a6e4f258b4ebaf96ef2c4b7f22cec23dad565fbce43",
+    "documented_depth_reduction_mm": 16,
+    "new_prints": 0,
+    "new_fasteners": 0,
+    "wiring": "NOT_TESTED_DEFERRED",
+    "physical_fit": "NOT_TESTED",
+    "structural_strength": "NOT_TESTED"
+  },
+  "readiness_completion": {
+    "enabled": true,
+    "revision": "M1.38",
+    "baseline_revision": "V1.2-M1.37",
+    "baseline_geometry": "mechanical/studies/readiness_completion/baseline_geometry.json",
+    "data_status": "ASSUMED_TRIAL_INTERFACES",
+    "changed_existing_ids": [
+      "Head_Front",
+      "Pitch_Cradle",
+      "Display_Frame",
+      "Body_Upper"
+    ],
+    "retired_ids": [
+      "Face_Mask",
+      "Face_Protector",
+      "Camera_Window"
+    ],
+    "new_ids": [
+      "LCD_Mount_Screw_0",
+      "LCD_Mount_Screw_1",
+      "LCD_Mount_Screw_2",
+      "Head_Cradle_Screw_-1",
+      "Head_Cradle_Screw_1",
+      "Head_Cradle_Insert_-1",
+      "Head_Cradle_Insert_1",
+      "Head_Seam_Screw_-1",
+      "Head_Seam_Screw_1",
+      "Head_Seam_Insert_-1",
+      "Head_Seam_Insert_1"
+    ],
+    "optics": {
+      "integral_black_rim": true,
+      "remove_extra_transparent_sheets": true,
+      "rim_outer_overlap_radius_mm": 31,
+      "rim_inner_radius_mm": 23.4,
+      "rim_thickness_mm": 1,
+      "finish": "Black coating on integral head-front rim; LCD original cover retained; camera has no separate window."
+    },
+    "rear_switch": {
+      "remove_shell_opening": true,
+      "hardware_action": "User requests SW1 deletion. Native received P5R6 switch geometry remains until electrical owner publishes revised board. No circuit bypass or footprint edit.",
+      "shutdown_action": "User delegated power-off/emergency-stop implementation to electrical task; no replacement shell opening until requirements received."
+    },
+    "lcd": {
+      "clearance_radius_mm": 1.2,
+      "screw_lengths_mm": [
+        12,
+        12,
+        12
+      ],
+      "trial_engagement_mm": [
+        2.5,
+        2.5,
+        2.5
+      ],
+      "head_radius_mm": 1.9,
+      "head_height_mm": 1.5,
+      "spotface_radius_mm": 2.15,
+      "note": "Manufacturer3xM2; CAD nominal blind cavity about3.55mm. Screw engagement is a trial, not a supplier-approved thread depth.",
+      "thread_validation": {
+        "external_major_diameter_mm": 1.9,
+        "root_diameter_mm": 1.509,
+        "pitch_mm": 0.4,
+        "source": "https://international.optimas.com/technical-resources/metric-thread-dimensions/",
+        "representation": "Visible nominal major-diameter envelope; engaged segment uses a root-only validation proxy because the vendor CAD contains female thread crests. No modeled male helix or thread-fit qualification.",
+        "source_file": "mechanical/sources/fasteners/Optimas_Metric_Thread_Dimensions.html",
+        "source_manifest": "mechanical/sources/fasteners/source_manifest.json"
+      },
+      "lower_crossbar_extension_mm": 4,
+      "crossbar_width_mm": 64,
+      "crossbar_depth_mm": 3,
+      "crossbar_center_y_mm": 29,
+      "original_crossbar_bottom_from_head_mm": -10,
+      "crossbar_forward_shift_mm": 3,
+      "crossbar_top_from_head_mm": -2,
+      "mast_connection_top_from_head_mm": 2,
+      "mast_connection_bottom_from_head_mm": -6
+    },
+    "head_shell": {
+      "screw_length_mm": 12,
+      "head_seat_z_from_head_mm": 32.9,
+      "head_radius_mm": 1.9,
+      "head_height_mm": 1.5,
+      "counterbore_radius_mm": 2.15,
+      "clearance_radius_mm": 1.2,
+      "insert_top_from_head_mm": 24,
+      "insert_length_mm": 4,
+      "insert_outer_radius_mm": 1.4,
+      "insert_inner_radius_mm": 1.05,
+      "pilot_radius_mm": 1.5,
+      "pilot_extra_depth_mm": 0.2,
+      "note": "User approved two recessed exterior top screws on original paired axes; trial inserts in existing cradle lugs, no new mounting ears."
+    },
+    "head_seam": {
+      "screw_length_mm": 16,
+      "head_bearing_y_mm": -12.5,
+      "insert_start_y_mm": 0.4,
+      "insert_length_mm": 3.5,
+      "insert_outer_radius_mm": 1.4,
+      "insert_inner_radius_mm": 1.05,
+      "axis_abs_x_mm": 43,
+      "axis_z_from_head_mm": 37,
+      "head_radius_mm": 1.9,
+      "head_height_mm": 1.5
+    },
+    "limits": [
+      "No hardware-owned files changed.",
+      "No new wire holes; harness planning remains pending connector selection.",
+      "Prototype geometry; screws, printed fits and threads need samples."
+    ]
+  },
+  "prearrival_completion": {
+    "approved_revision": "V1.2-M1.39",
+    "material": {
+      "supplier": "JLC3DP",
+      "material": "PA12",
+      "scope": "All printed pieces; first structural prototype",
+      "recommended_process": "MJF",
+      "user_confirmed": true,
+      "manufacturing_release": false,
+      "density_kg_m3_reference": 1010,
+      "density_basis": "Ricoh MJF PA12 reference only; not measured JLC lot"
+    },
+    "servo_ear_retention": "Four M2 bolts/nuts supersede old trial inserts. No new prints or fastener count increase; horn/transmission remains unresolved.",
+    "camera_aperture": "Approved continuous elliptical flare; same optics and mounts, H/V view still assumed.",
+    "IMU_proposal": {
+      "approved": false,
+      "withdrawn_by_user": true,
+      "decision": "Retain20x16mm original native PCB and two existing holes; no area growth or third boss",
+      "native_board_changed": false,
+      "mechanical_seat_applied": false,
+      "awaits": null,
+      "superseded_proposal": "mechanical/studies/prearrival_preparation/imu_mount_proposal.json"
+    }
+  },
+  "mount_root_cleanup": {
+    "enabled": true,
+    "revision": "M1.40",
+    "authorization": "2026-09-28 user requests CAM root repair plus similar-defect audit; explicitly chooses straight rear plate plus two acoustic openings (option A). Keep holes, boards and fasteners unchanged.",
+    "baseline_revision": "V1.2-M1.39",
+    "baseline_geometry": "mechanical/studies/mount_root_cleanup/baseline_geometry.json",
+    "baseline_blend": "mechanical/revisions/V1.2-M1.39_before_mount_root_cleanup/mechanical/mori_v1_2.blend",
+    "changed_existing_ids": [
+      "Pitch_Cradle"
+    ],
+    "added_ids": [],
+    "retired_ids": [],
+    "selected_option": "full_plate",
+    "geometry_source": "assembly_completion.cam_mount",
+    "strength": "NOT_TESTED",
+    "manufacturing_release": false,
+    "CAM_board_hole_grid_mm": 32.6,
+    "CAM_rear_plate_width_mm": 44,
+    "seat_square_side_mm": 5.6,
+    "new_robot_parts": 0,
+    "new_fasteners": 0,
+    "hardware_pose_changes": [],
+    "acoustic_openings": "Two diameter5 nominal angled passages following existing microphone paths; not wiring holes or acoustic qualification"
+  }
+}

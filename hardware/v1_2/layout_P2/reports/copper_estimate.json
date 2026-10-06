@@ -1,0 +1,66 @@
+{
+  "revision": "V1.2-H0.2-P2",
+  "status": "HOST_CALCULATION_ONLY",
+  "BENCH": "NOT_TESTED",
+  "note": "50 mm segment examples, not extracted source-to-load path resistance. 70 um outer copper,20C copper resistivity; actual plating/copper/temperature/planes and pad constrictions affect results. IPC2221 empirical relation is a rough estimate, not a guaranteed rating. Total loop includes ground plane/connector/regulator losses. 0.2 mm signal/sense branches are not rated for these load currents.",
+  "traces": [
+    {
+      "path": "BATTERY_MAIN",
+      "width_mm": 2,
+      "copper_um": 70,
+      "example_length_mm": 50,
+      "example_current_A": 6,
+      "dc_resistance_mohm_at20C": 6.1571428571428575,
+      "voltage_drop_V": 0.036942857142857145,
+      "copper_loss_W": 0.22165714285714289,
+      "IPC2221_external_estimated_A_at20C_rise": 8.863971933100231
+    },
+    {
+      "path": "WHEEL_MAIN",
+      "width_mm": 1.5,
+      "copper_um": 70,
+      "example_length_mm": 50,
+      "example_current_A": 3.5,
+      "dc_resistance_mohm_at20C": 8.20952380952381,
+      "voltage_drop_V": 0.028733333333333336,
+      "copper_loss_W": 0.10056666666666668,
+      "IPC2221_external_estimated_A_at20C_rise": 7.195281479236726
+    },
+    {
+      "path": "HEAD_MAIN",
+      "width_mm": 1,
+      "copper_um": 70,
+      "example_length_mm": 50,
+      "example_current_A": 3.5,
+      "dc_resistance_mohm_at20C": 12.314285714285715,
+      "voltage_drop_V": 0.0431,
+      "copper_loss_W": 0.15085,
+      "IPC2221_external_estimated_A_at20C_rise": 5.362676823028493
+    }
+  ],
+  "battery_via_example": {
+    "outer_mm": 1,
+    "drill_mm": 0.45,
+    "board_mm": 1.6,
+    "assumed_barrel_plating_um": 25,
+    "parallel_count": 2,
+    "combined_A": 6,
+    "single_dc_mohm": 0.7804675467105496,
+    "parallel_loss_W": 0.014048415840789894,
+    "limitation": "Equal current sharing and plating thickness assumed. No qualified via temperature rise/current rating; supplier and bench confirmation required."
+  },
+  "board_material": {
+    "thickness_mm": 1.6,
+    "power_copper_um": 70,
+    "logic_copper_um": 35,
+    "finish": "ENIG design target; quote pending"
+  },
+  "required_tests": [
+    "current-limited no-load startup",
+    "single branch stepped load and supply drop",
+    "parallel wheel/head peak load",
+    "reverse/braking energy injection with protected fixture",
+    "connector/shunt/MOSFET/diode/plane temperatures",
+    "fault latch and interaction power-loss behavior"
+  ]
+}

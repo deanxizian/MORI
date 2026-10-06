@@ -1,0 +1,43 @@
+test_count_scale_and_version (test_hw04_interface.Handoff04) ... FAIL
+test_motor_revolution_does_not_multiply_x4_again (test_hw04_interface.Handoff04) ... FAIL
+test_one_edge_survives_eight_frame_window (test_hw04_interface.Handoff04) ... FAIL
+test_wiring_mirrors_authorized_snapshot (test_hw04_interface.Handoff04) ... 
+======================================================================
+FAIL: test_count_scale_and_version (test_hw04_interface.Handoff04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/software/tests/test_hw04_interface.py", line 54, in test_count_scale_and_version
+    self.assertAlmostEqual(float(count),979.616,places=5)
+AssertionError: 1204.43994140625 != 979.616 within 5 places (224.82394140625001 difference)
+
+======================================================================
+FAIL: test_motor_revolution_does_not_multiply_x4_again (test_hw04_interface.Handoff04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/software/tests/test_hw04_interface.py", line 70, in test_motor_revolution_does_not_multiply_x4_again
+    self.assertAlmostEqual(float(value),expected,places=6)
+AssertionError: 0.618450820446 != 0.7603864955916061 within 6 places (0.14193567514560612 difference)
+
+======================================================================
+FAIL: test_one_edge_survives_eight_frame_window (test_hw04_interface.Handoff04)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/software/tests/test_hw04_interface.py", line 62, in test_one_edge_survives_eight_frame_window
+    self.assertAlmostEqual(float(value),expected,places=7)
+AssertionError: 0.012884391472 != 0.015841385324825125 within 7 places (0.0029569938528251245 difference)
+
+======================================================================
+FAIL: test_wiring_mirrors_authorized_snapshot (test_hw04_interface.Handoff04) (name='wiring.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/software/tests/test_hw04_interface.py", line 77, in test_wiring_mirrors_authorized_snapshot
+    self.assertEqual(actual,manifest['sha256'][name])
+AssertionError: '9b3efb0e8b5d19348ffecb3aca1a1becc4453d440f093875657373e289617765' != '6083415c31ee092b77200561be134d3603a29589e46ddfae3b5e9cce34bfbb36'
+- 9b3efb0e8b5d19348ffecb3aca1a1becc4453d440f093875657373e289617765
++ 6083415c31ee092b77200561be134d3603a29589e46ddfae3b5e9cce34bfbb36
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.653s
+
+FAILED (failures=4)

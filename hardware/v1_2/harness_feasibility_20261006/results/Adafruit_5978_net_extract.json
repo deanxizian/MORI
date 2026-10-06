@@ -1,0 +1,208 @@
+{
+  "parts": {
+    "FRAME1": {
+      "name": "FRAME1",
+      "library": "microbuilder",
+      "deviceset": "FRAME_A4",
+      "device": ""
+    },
+    "U$1": {
+      "name": "U$1",
+      "library": "adafruit_electromech",
+      "deviceset": "MOUNTINGHOLE",
+      "device": "2.5"
+    },
+    "U$2": {
+      "name": "U$2",
+      "library": "adafruit_electromech",
+      "deviceset": "MOUNTINGHOLE",
+      "device": "2.5"
+    },
+    "FID1": {
+      "name": "FID1",
+      "library": "microbuilder",
+      "deviceset": "FIDUCIAL",
+      "device": "_0.5MM",
+      "value": "FIDUCIAL_0.5MM"
+    },
+    "FID2": {
+      "name": "FID2",
+      "library": "microbuilder",
+      "deviceset": "FIDUCIAL",
+      "device": "_0.5MM",
+      "value": "FIDUCIAL_0.5MM"
+    },
+    "R2": {
+      "name": "R2",
+      "library": "microbuilder",
+      "deviceset": "RESISTOR",
+      "device": "_0603_NOOUT",
+      "value": "5.1K"
+    },
+    "U$5": {
+      "name": "U$5",
+      "library": "microbuilder",
+      "deviceset": "GND",
+      "device": ""
+    },
+    "U$6": {
+      "name": "U$6",
+      "library": "microbuilder",
+      "deviceset": "GND",
+      "device": ""
+    },
+    "U$7": {
+      "name": "U$7",
+      "library": "microbuilder",
+      "deviceset": "GND",
+      "device": ""
+    },
+    "X1": {
+      "name": "X1",
+      "library": "adafruit_electromech",
+      "deviceset": "USB_C_PLUG_12P",
+      "device": "",
+      "value": "USB Type C Plug"
+    },
+    "JP2": {
+      "name": "JP2",
+      "library": "microbuilder",
+      "deviceset": "HEADER-1X5",
+      "device": "76MIL"
+    },
+    "SJ1": {
+      "name": "SJ1",
+      "library": "microbuilder",
+      "deviceset": "SOLDERJUMPER",
+      "device": "CLOSED"
+    }
+  },
+  "nets": {
+    "GND": [
+      {
+        "part": "U$7",
+        "gate": "G$1",
+        "pin": "GND"
+      },
+      {
+        "part": "JP2",
+        "gate": "A",
+        "pin": "1"
+      },
+      {
+        "part": "U$6",
+        "gate": "G$1",
+        "pin": "GND"
+      },
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "GND"
+      },
+      {
+        "part": "R2",
+        "gate": "G$1",
+        "pin": "1"
+      },
+      {
+        "part": "U$5",
+        "gate": "G$1",
+        "pin": "GND"
+      }
+    ],
+    "VBUS": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "VBUS"
+      },
+      {
+        "part": "JP2",
+        "gate": "A",
+        "pin": "5"
+      }
+    ],
+    "D+": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "D+"
+      },
+      {
+        "part": "JP2",
+        "gate": "A",
+        "pin": "3"
+      }
+    ],
+    "D-": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "D-"
+      },
+      {
+        "part": "JP2",
+        "gate": "A",
+        "pin": "2"
+      }
+    ],
+    "CC1": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "CC1"
+      },
+      {
+        "part": "JP2",
+        "gate": "A",
+        "pin": "4"
+      },
+      {
+        "part": "SJ1",
+        "gate": "1",
+        "pin": "1"
+      }
+    ],
+    "SSTX+": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "SSTX+"
+      }
+    ],
+    "SSTX-": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "SSTX-"
+      }
+    ],
+    "SSRX+": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "SSRX+"
+      }
+    ],
+    "SSRX-": [
+      {
+        "part": "X1",
+        "gate": "G$1",
+        "pin": "SSRX-"
+      }
+    ],
+    "N$1": [
+      {
+        "part": "R2",
+        "gate": "G$1",
+        "pin": "2"
+      },
+      {
+        "part": "SJ1",
+        "gate": "1",
+        "pin": "2"
+      }
+    ]
+  },
+  "scope": "Read-only manufacturer Eagle source; not modified or adopted"
+}

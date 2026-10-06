@@ -1,0 +1,171 @@
+{
+  "pcb_sha256": "751e4c12d399bffb8137878124ef8eb6bf9b37005ee49914397a17e08bd7e12e",
+  "native_width_inventory": {
+    "/+3V3": {
+      "0.2": 32,
+      "0.5": 1
+    },
+    "/+5V_MOTION": {
+      "0.5": 6
+    },
+    "/ARM_CLK": {
+      "0.2": 6
+    },
+    "/ARM_FEEDBACK": {
+      "0.2": 4
+    },
+    "/ARM_Q": {
+      "0.2": 23
+    },
+    "/ARM_Q_N": {
+      "0.2": 16
+    },
+    "/BAT_ADC": {
+      "0.2": 2
+    },
+    "/BAT_ADC_IN": {
+      "0.2": 18
+    },
+    "/CAM_3V3": {
+      "0.2": 10
+    },
+    "/CAM_RX": {
+      "0.2": 3
+    },
+    "/CAM_RX_BUF": {
+      "0.2": 4
+    },
+    "/CAM_TX": {
+      "0.2": 8
+    },
+    "/CHG_N": {
+      "0.2": 19
+    },
+    "/CLR_N": {
+      "0.2": 32
+    },
+    "/CURRENT_ADC": {
+      "0.2": 4
+    },
+    "/CURRENT_ADC_IN": {
+      "0.2": 19
+    },
+    "/FAULT_N": {
+      "0.2": 16
+    },
+    "/GND": {
+      "0.2": 26
+    },
+    "/HEAD_BUS": {
+      "0.2": 14
+    },
+    "/HEAD_OE_N": {
+      "0.2": 6
+    },
+    "/HEAD_OE_REQ_N": {
+      "0.2": 8
+    },
+    "/HEAD_RX": {
+      "0.2": 3
+    },
+    "/HEAD_TX": {
+      "0.2": 2
+    },
+    "/HEAD_TX_BUF": {
+      "0.2": 5
+    },
+    "/IMU_CS": {
+      "0.2": 14
+    },
+    "/IMU_CS_M": {
+      "0.2": 4
+    },
+    "/IMU_DRDY": {
+      "0.2": 9
+    },
+    "/IMU_MISO": {
+      "0.2": 8
+    },
+    "/IMU_MOSI": {
+      "0.2": 11
+    },
+    "/IMU_MOSI_M": {
+      "0.2": 2
+    },
+    "/IMU_SCK": {
+      "0.2": 11
+    },
+    "/IMU_SCK_M": {
+      "0.2": 2
+    },
+    "/LINK_RX": {
+      "0.2": 6
+    },
+    "/LINK_TX": {
+      "0.2": 4
+    },
+    "/LOOP_3V3": {
+      "0.2": 7
+    },
+    "/NRST": {
+      "0.2": 2
+    },
+    "/S288_BUS": {
+      "0.2": 8
+    },
+    "/S288_OE_N": {
+      "0.2": 10
+    },
+    "/S288_OE_REQ_N": {
+      "0.2": 13
+    },
+    "/S288_RX": {
+      "0.2": 6
+    },
+    "/S288_TX": {
+      "0.2": 9
+    },
+    "/S288_TX_BUF": {
+      "0.2": 1
+    },
+    "/USER_KEY_N": {
+      "0.2": 21
+    },
+    "/WHEEL_ADC": {
+      "0.2": 3
+    },
+    "/WHEEL_ADC_IN": {
+      "0.2": 17
+    }
+  },
+  "foil_mm_assumed": 0.035,
+  "via_plating_mm_assumed": 0.02,
+  "scenario_source": "S3 logic budgets 0.75A / 2A; 30W/9V wheel and 12W/6V head; 6.48A aggregate. Branch BAT_MON values are conservative engineering scenarios, not measured simultaneous currents. Rear1A from P4 input limit. IMU20mA is an engineering allowance.",
+  "method": "Native copper-shape adjacency after filtering narrow tracks, shortest resistance-weighted single path; sums full segment lengths even at mid-segment junctions. No IC internal conduction inferred. Copper zones, parallel current sharing, contact/connector/pad resistance and return network excluded.",
+  "qualification": "NOT_TESTED: this is drawn-path and DC resistance estimation only. It does not establish allowable continuous current or temperature rise. Converter SW currents have ripple, so DC scenarios are not RMS loss qualifications.",
+  "paths": [
+    {
+      "net": "/+5V_MOTION",
+      "source": "J1",
+      "destination": "U100",
+      "design_scenario_A": 0.75,
+      "load_path_status": "PASS",
+      "minimum_width_filter_mm": 0.49,
+      "minimum_path_width_mm": 0.5,
+      "widest_complete_path_minimum_width_mm": 0.5,
+      "complete_segment_length_mm": 21.59700576850888,
+      "single_path_vias": [],
+      "conservative_complete_segment_path_R20_mohm": 21.276135968519608,
+      "drop20_mV": 15.957101976389707,
+      "loss20_W": 0.01196782648229228,
+      "path_uuids": [
+        "04ea3708-695c-495e-863b-5f090b941a28",
+        "0ce48db0-9525-48ec-bd8b-1663a6bd5666",
+        "c9c54bb7-8522-4e2f-b6f3-2126440e8827",
+        "fb72c440-2a5b-4ab9-91e7-eb008cc23ed8",
+        "88ab8546-2ce8-412c-b995-2c90d114f792",
+        "4c160a3a-213f-4f1f-bb89-b0297ca9ebf6"
+      ]
+    }
+  ]
+}

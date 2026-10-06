@@ -1,0 +1,16 @@
+00:00.341  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/verify_keeper_alternating_yaw_access.py:56: RuntimeWarning: invalid value encountered in divide
+  norm=np.cross(v[f[:,1]]-face,v[f[:,2]]-face);norm/=np.linalg.norm(norm,axis=1)[:,None]
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/verify_keeper_alternating_yaw_access.py", line 85, in <module>
+    entry.append(dict(piece=i,**check(hull,fixed,wires)))
+                                ~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/verify_keeper_alternating_yaw_access.py", line 57, in check
+    assert np.max(np.einsum('ij,ij->i',v.mean(0)-face,norm))<1e-5
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+Error: script failed, file: 'mechanical/studies/prearrival_finish/head_harness_M1_49/verify_keeper_alternating_yaw_access.py', exiting.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

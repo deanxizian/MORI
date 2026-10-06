@@ -1,0 +1,1507 @@
+{
+  "status": "PASS",
+  "scope": "Two sequential keeper-fastener access operations with tool entry, rotation and screw sweeps; provisional final wire poses only",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+    "mechanical/reports/build_manifest.json": "fe96a9eb6604d65d3bcae09983487b2e03febb2a9d41e5140478cee69f1b308c",
+    "config/geometry.json": "3af8a61411825ba12a315c9377a117f5923e822c5f219ad8de13eae87da5225d",
+    "contracts/mechanical_interfaces.json": "4957dc15dfbec31e07e0a37a2b7a7a0de681ca5ce40e600c2c00fe2217c15d95",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "a5450cf9342cea2a5ccdd702c457e152900ead75eb46c65b0790c001b0acd0fe",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/bench_preassembly_v2/review.json": "c03d662a449a91c314f7e7d7252e0c75f1607688901be02c645b39184e112df5",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/keeper_after_head_long_leg/review.json": "3e5fb5abd1d20973811bf9f783ab0488a08982c99ef0ffb1e02df0e0a521b761",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_side_fans/c6_join/candidate_curves.npz": "9abf98d1d6519c46a08ce50bc8f6a49b82265ed2fb286d0b3c04a1b80778c1be",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/upper_pack_geometry.py": "558d6f9c2d124f333b4784ecdd96557d434a2f98207b045ad7a7204fc255713d",
+    "mechanical/scripts/validate.py": "4c360ac202a34210616d8ea59084a49fab91c22af4e191022065ef9e5f412857",
+    "mechanical/scripts/interface_completion.py": "68534361096577af88ad6bc0bd7657ab0e9cd8aeae1c542d87320c1ceb07eab3",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/c6_left_slot_entry/Yaw_Base_candidate.npz": "46d54714f72d10eb5c80c211bdd75d7a4b4a05bcea81cf79b142725c2fd67975",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/sliding_guide_v4/Pitch_Yoke_candidate.npz": "831fbe6d9d409b08f25117c519e0a373e9fd28318649c5a462c2eb1bba3c2eb9",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/Pitch_Cradle_candidate.npz": "1c8cee6e733a88b4d0d977f8e30bc1b69902cd42c318b42e0fa95fd6586889cc",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/band.npz": "58fdf83e073f48e567f29bee37e35d79c59cd5b40802fa7eebbbbc9b59d5b7a3",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/return_clamp_v3/head.npz": "082a1df3d3d2c8c707617dd79a4d4a06dcb4df6c25c9f99892386ab908bc926e"
+  },
+  "rows": [
+    {
+      "stage": "full_head",
+      "screw": "Yaw_Keeper_Screw_0",
+      "yaw_deg": 60,
+      "head_top_mm": [
+        -26.200000762939453,
+        0.0,
+        163.5500030517578
+      ],
+      "status": "BLOCKED",
+      "tool_entry": [
+        {
+          "piece": 0,
+          "status": "BLOCKED",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": [
+            {
+              "target": "Head_Front",
+              "volume_mm3": 11.427085047398906,
+              "gap_lower_bound_mm": 0.0
+            }
+          ]
+        },
+        {
+          "piece": 1,
+          "status": "BLOCKED",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": [
+            {
+              "target": "Head_Front",
+              "volume_mm3": 33.55895558052928,
+              "gap_lower_bound_mm": 0.0
+            }
+          ]
+        },
+        {
+          "piece": 2,
+          "status": "BLOCKED",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": [
+            {
+              "target": "Head_Front",
+              "volume_mm3": 33.88876696985032,
+              "gap_lower_bound_mm": 0.0
+            }
+          ]
+        }
+      ],
+      "tool_rotation": [],
+      "screw_entry": [],
+      "checked_wire_candidates": [
+        "CAM_1",
+        "CAM_2",
+        "CAM_3",
+        "CAM_4",
+        "P_J9_1",
+        "P_J9_2",
+        "P_J9_3",
+        "P_J18_1",
+        "P_J18_2",
+        "SPK_reservation_3",
+        "SPK_reservation_6"
+      ]
+    },
+    {
+      "stage": "full_head",
+      "screw": "Yaw_Keeper_Screw_1",
+      "yaw_deg": -60,
+      "head_top_mm": [
+        26.200000762939453,
+        0.0,
+        163.5500030517578
+      ],
+      "status": "BLOCKED",
+      "tool_entry": [
+        {
+          "piece": 0,
+          "status": "BLOCKED",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": [
+            {
+              "target": "Head_Front",
+              "volume_mm3": 11.427077011608667,
+              "gap_lower_bound_mm": 0.0
+            }
+          ]
+        },
+        {
+          "piece": 1,
+          "status": "BLOCKED",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": [
+            {
+              "target": "Head_Front",
+              "volume_mm3": 35.36506963508464,
+              "gap_lower_bound_mm": 0.0
+            }
+          ]
+        },
+        {
+          "piece": 2,
+          "status": "BLOCKED",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": [
+            {
+              "target": "Head_Front",
+              "volume_mm3": 33.88875426125228,
+              "gap_lower_bound_mm": 0.0
+            }
+          ]
+        }
+      ],
+      "tool_rotation": [],
+      "screw_entry": [],
+      "checked_wire_candidates": [
+        "CAM_1",
+        "CAM_2",
+        "CAM_3",
+        "CAM_4",
+        "P_J9_1",
+        "P_J9_2",
+        "P_J9_3",
+        "P_J18_1",
+        "P_J18_2",
+        "SPK_reservation_3",
+        "SPK_reservation_6"
+      ]
+    },
+    {
+      "stage": "inner_head_before_optics",
+      "screw": "Yaw_Keeper_Screw_0",
+      "yaw_deg": 60,
+      "head_top_mm": [
+        -26.200000762939453,
+        0.0,
+        163.5500030517578
+      ],
+      "status": "PASS",
+      "tool_entry": [
+        {
+          "piece": 0,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "piece": 1,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "piece": 2,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        }
+      ],
+      "tool_rotation": [
+        {
+          "from_deg": 0,
+          "to_deg": 5,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 5,
+          "to_deg": 10,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 10,
+          "to_deg": 15,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 15,
+          "to_deg": 20,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 20,
+          "to_deg": 25,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 25,
+          "to_deg": 30,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 30,
+          "to_deg": 35,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 35,
+          "to_deg": 40,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 40,
+          "to_deg": 45,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 45,
+          "to_deg": 50,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 50,
+          "to_deg": 55,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 55,
+          "to_deg": 60,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 60,
+          "to_deg": 65,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 65,
+          "to_deg": 70,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 70,
+          "to_deg": 75,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 75,
+          "to_deg": 80,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 80,
+          "to_deg": 85,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 85,
+          "to_deg": 90,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 90,
+          "to_deg": 95,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 95,
+          "to_deg": 100,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 100,
+          "to_deg": 105,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 105,
+          "to_deg": 110,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 110,
+          "to_deg": 115,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 115,
+          "to_deg": 120,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 120,
+          "to_deg": 125,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 125,
+          "to_deg": 130,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 130,
+          "to_deg": 135,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 135,
+          "to_deg": 140,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 140,
+          "to_deg": 145,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 145,
+          "to_deg": 150,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 150,
+          "to_deg": 155,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 155,
+          "to_deg": 160,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 160,
+          "to_deg": 165,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 165,
+          "to_deg": 170,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 170,
+          "to_deg": 175,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 175,
+          "to_deg": 180,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 180,
+          "to_deg": 185,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 185,
+          "to_deg": 190,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 190,
+          "to_deg": 195,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 195,
+          "to_deg": 200,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 200,
+          "to_deg": 205,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 205,
+          "to_deg": 210,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 210,
+          "to_deg": 215,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 215,
+          "to_deg": 220,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 220,
+          "to_deg": 225,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 225,
+          "to_deg": 230,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 230,
+          "to_deg": 235,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 235,
+          "to_deg": 240,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 240,
+          "to_deg": 245,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 245,
+          "to_deg": 250,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 250,
+          "to_deg": 255,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 255,
+          "to_deg": 260,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 260,
+          "to_deg": 265,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 265,
+          "to_deg": 270,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 270,
+          "to_deg": 275,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 275,
+          "to_deg": 280,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 280,
+          "to_deg": 285,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 285,
+          "to_deg": 290,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 290,
+          "to_deg": 295,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 295,
+          "to_deg": 300,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 300,
+          "to_deg": 305,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 305,
+          "to_deg": 310,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 310,
+          "to_deg": 315,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 315,
+          "to_deg": 320,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 320,
+          "to_deg": 325,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 325,
+          "to_deg": 330,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 330,
+          "to_deg": 335,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 335,
+          "to_deg": 340,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 340,
+          "to_deg": 345,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 345,
+          "to_deg": 350,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 350,
+          "to_deg": 355,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 355,
+          "to_deg": 360,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        }
+      ],
+      "screw_entry": [
+        {
+          "piece": "head",
+          "mesh_head_bottom_z_mm": 161.89999389648438,
+          "native_material_not_enclosed_mm3": 0.0,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": []
+        },
+        {
+          "piece": "shank",
+          "mesh_head_bottom_z_mm": 161.89999389648438,
+          "native_material_not_enclosed_mm3": 0.0,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.001,
+          "hits": []
+        }
+      ],
+      "checked_wire_candidates": [
+        "CAM_1",
+        "CAM_2",
+        "CAM_3",
+        "CAM_4",
+        "P_J9_1",
+        "P_J9_2",
+        "P_J9_3",
+        "P_J18_1",
+        "P_J18_2",
+        "SPK_reservation_3",
+        "SPK_reservation_6"
+      ]
+    },
+    {
+      "stage": "inner_head_before_optics",
+      "screw": "Yaw_Keeper_Screw_1",
+      "yaw_deg": -60,
+      "head_top_mm": [
+        26.200000762939453,
+        0.0,
+        163.5500030517578
+      ],
+      "status": "PASS",
+      "tool_entry": [
+        {
+          "piece": 0,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "piece": 1,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "piece": 2,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        }
+      ],
+      "tool_rotation": [
+        {
+          "from_deg": 0,
+          "to_deg": 5,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 5,
+          "to_deg": 10,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 10,
+          "to_deg": 15,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 15,
+          "to_deg": 20,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 20,
+          "to_deg": 25,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 25,
+          "to_deg": 30,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 30,
+          "to_deg": 35,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 35,
+          "to_deg": 40,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 40,
+          "to_deg": 45,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 45,
+          "to_deg": 50,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 50,
+          "to_deg": 55,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 55,
+          "to_deg": 60,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 60,
+          "to_deg": 65,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 65,
+          "to_deg": 70,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 70,
+          "to_deg": 75,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 75,
+          "to_deg": 80,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 80,
+          "to_deg": 85,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 85,
+          "to_deg": 90,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 90,
+          "to_deg": 95,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 95,
+          "to_deg": 100,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 100,
+          "to_deg": 105,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 105,
+          "to_deg": 110,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 110,
+          "to_deg": 115,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 115,
+          "to_deg": 120,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 120,
+          "to_deg": 125,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 125,
+          "to_deg": 130,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 130,
+          "to_deg": 135,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 135,
+          "to_deg": 140,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 140,
+          "to_deg": 145,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 145,
+          "to_deg": 150,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 150,
+          "to_deg": 155,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 155,
+          "to_deg": 160,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 160,
+          "to_deg": 165,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 165,
+          "to_deg": 170,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 170,
+          "to_deg": 175,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 175,
+          "to_deg": 180,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 180,
+          "to_deg": 185,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 185,
+          "to_deg": 190,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 190,
+          "to_deg": 195,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 195,
+          "to_deg": 200,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 200,
+          "to_deg": 205,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 205,
+          "to_deg": 210,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 210,
+          "to_deg": 215,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 215,
+          "to_deg": 220,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 220,
+          "to_deg": 225,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 225,
+          "to_deg": 230,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 230,
+          "to_deg": 235,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 235,
+          "to_deg": 240,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 240,
+          "to_deg": 245,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 245,
+          "to_deg": 250,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 250,
+          "to_deg": 255,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 255,
+          "to_deg": 260,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 260,
+          "to_deg": 265,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 265,
+          "to_deg": 270,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 270,
+          "to_deg": 275,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 275,
+          "to_deg": 280,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 280,
+          "to_deg": 285,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 285,
+          "to_deg": 290,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 290,
+          "to_deg": 295,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 295,
+          "to_deg": 300,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 300,
+          "to_deg": 305,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 305,
+          "to_deg": 310,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 310,
+          "to_deg": 315,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 315,
+          "to_deg": 320,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 320,
+          "to_deg": 325,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 325,
+          "to_deg": 330,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 330,
+          "to_deg": 335,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 335,
+          "to_deg": 340,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 340,
+          "to_deg": 345,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 345,
+          "to_deg": 350,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 350,
+          "to_deg": 355,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        },
+        {
+          "from_deg": 355,
+          "to_deg": 360,
+          "error_mm": 0.006363318135810085,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.301,
+          "hits": []
+        }
+      ],
+      "screw_entry": [
+        {
+          "piece": "head",
+          "mesh_head_bottom_z_mm": 161.89999389648438,
+          "native_material_not_enclosed_mm3": 0.0,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.0,
+          "hits": []
+        },
+        {
+          "piece": "shank",
+          "mesh_head_bottom_z_mm": 161.89999389648438,
+          "native_material_not_enclosed_mm3": 0.0,
+          "status": "PASS",
+          "native_gap_lower_bound_mm": 0.001,
+          "hits": []
+        }
+      ],
+      "checked_wire_candidates": [
+        "CAM_1",
+        "CAM_2",
+        "CAM_3",
+        "CAM_4",
+        "P_J9_1",
+        "P_J9_2",
+        "P_J9_3",
+        "P_J18_1",
+        "P_J18_2",
+        "SPK_reservation_3",
+        "SPK_reservation_6"
+      ]
+    }
+  ],
+  "absent_in_inner_head_stage": [
+    "Camera_Lens",
+    "Camera_PCB",
+    "Display_Frame",
+    "Display_PCB",
+    "Face_Joint_-1_0.0_Nut",
+    "Face_Joint_-1_0.0_Screw",
+    "Face_Joint_-1_7.0_Nut",
+    "Face_Joint_-1_7.0_Screw",
+    "Face_Joint_1_0.0_Nut",
+    "Face_Joint_1_0.0_Screw",
+    "Face_Joint_1_7.0_Nut",
+    "Face_Joint_1_7.0_Screw",
+    "Head_Cradle_Screw_-1",
+    "Head_Cradle_Screw_1",
+    "Head_Front",
+    "Head_Rear",
+    "Head_Seam_Insert_-1",
+    "Head_Seam_Insert_1",
+    "Head_Seam_Screw_-1",
+    "Head_Seam_Screw_1",
+    "LCD_Mount_Screw_0",
+    "LCD_Mount_Screw_1",
+    "LCD_Mount_Screw_2"
+  ],
+  "provisional_transmission_parts_retained": [
+    "Pitch_Horn",
+    "Pitch_Lock_Screw",
+    "Pitch_Output",
+    "Pitch_Trunnion_L",
+    "Pitch_Trunnion_R"
+  ],
+  "tool_use": "Long 100mm leg coaxial; short 5.5mm arm at upper end; ball-end engagement and tightening torque unqualified",
+  "tool": {
+    "manufacturer": "Wera",
+    "model": "950 PKLS",
+    "sku": "05022041001",
+    "AF_mm": 2,
+    "long_leg_mm": 100,
+    "short_leg_mm": 5.5,
+    "url": "https://www.wera.de/en/tools/950-pkls-l-key-metric-chrome-plated",
+    "evidence": "Manufacturer table, refreshed 2026-10-06; length convention and filled elbow are conservative assumptions, not exact CAD"
+  },
+  "tool_entry_travel_mm": 150,
+  "rotation_intervals_per_operation": 72,
+  "sequence": [
+    "Bridge bolts fixed and upper body shell settled before the head subassembly.",
+    "With optics and head shells absent, turn the unpowered inner head to +60deg, install left keeper screw, remove tool.",
+    "Turn head to -60deg with tool removed, install right keeper screw, remove tool, return to zero."
+  ],
+  "between_operation_wired_motion": "NOT_TESTED",
+  "whole_head_lowering": "NOT_TESTED",
+  "loose_lead_manipulation": "NOT_TESTED",
+  "actual_transmission_stack": "BLOCKED",
+  "actual_tool_engagement_torque": "NOT_TESTED",
+  "full_harness": "BLOCKED",
+  "main_changed": false,
+  "approved": false,
+  "C6_main_applied": false,
+  "Yaw_Reaction_Link_present": true,
+  "tool_geometry_sha256": "2031e219a715522c814db434ac317739b9b0cda4b84d01f41ed2c4e300caaa3e",
+  "script_sha256": "8580dc33622239932c215abdae7f9a4fec3dda8a2d91c55943940f99d694092e",
+  "elapsed_s": 13.535144805908203,
+  "zero_area_hull_faces_omitted_from_halfspace_only": 10
+}

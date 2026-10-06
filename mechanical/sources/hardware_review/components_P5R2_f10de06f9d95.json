@@ -1,0 +1,5206 @@
+{
+  "schema_version": "1.2",
+  "revision": "V1.2-H0.5-P5R2",
+  "owner": "hardware",
+  "date": "2026-09-23",
+  "status": "PROTOTYPE_ROUTED_UNVALIDATED",
+  "spec": "MORI_SPEC_V1_2.md",
+  "actuator_count": 4,
+  "application_mcu_count": 2,
+  "auxiliary_mcu_note": "CAM板CH32为I/O扩展；S288/SCS内部控制IC不计入应用主控数量。",
+  "sources": "hardware/v1_2/sources/index.json",
+  "data_status_vocabulary": [
+    "ASSUMED",
+    "VENDOR_DOCUMENTED",
+    "MEASURED"
+  ],
+  "legacy_status_mapping": {
+    "VENDOR_VERIFIED": "旧词不能迁移为MEASURED；原厂资料事实记VENDOR_DOCUMENTED"
+  },
+  "physical_tests": "NOT_TESTED",
+  "budget": {
+    "hard_cap_cny": 1000,
+    "planning_target_cny": 900,
+    "reserve_cny": 100,
+    "reserve_in_base_bom": false,
+    "previous_user_budget_relaxation": "此前用户曾允许适度超预算；本次按最新V1.2重新采用<=1000元门槛，保留历史事实。",
+    "tools_labour_cloud_excluded": true,
+    "full_total_cny": null,
+    "compliance": "BLOCKED"
+  },
+  "components": [
+    {
+      "id": "wheel_servo",
+      "category": "actuator",
+      "purpose": "左右轮执行器",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "Unitree YS-342026-S288",
+      "board_revision": null,
+      "specification": "6.4–12.6 V；12 V空载16.5 rad/s；0.6 N·m为反向工况最大/堵转值",
+      "interface": "6 Mbps 8N1半双工TTL；集成驱动/双编码器",
+      "source_ids": [
+        "HW12-U1",
+        "HW12-U2",
+        "HW12-U3"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "vendor_axes": "W,H,D",
+        "overall_whd": [
+          20,
+          34,
+          26
+        ],
+        "includes_plug_and_cable": false
+      },
+      "mass_g": 19.5,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "按原厂手册和结构独立承载轮轴方案校核；最终孔位未冻结",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "wheel_servo"
+      ],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": "S288，不买J288；连接件与线材包含情况待核",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "PRIMARY_SPECIFIED_NOT_RELEASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "国内精确规格价格/库存/税运",
+        "连续扭矩-速度/温升曲线",
+        "TTL阈值/方向释放/掉电状态",
+        "固件版本与协议差异",
+        "输出径向轴向承载与回差",
+        "接插件净空"
+      ],
+      "notes": "内驱不另购FOC板；反馈扭矩不证明有输出力矩传感器；最大扭矩不能设为无限时限幅。",
+      "ratings": {
+        "max_opposed_direction_stall_torque_Nm": 0.6,
+        "continuous_torque_Nm": null,
+        "no_load_speed_rad_s_at_12V": 16.5,
+        "no_load_current_A_at_12V": 0.27,
+        "standby_current_A_at_12V": 0.05,
+        "nominal_gear_ratio": 288.35,
+        "rotor_encoder_bits": 15,
+        "output_angle_states": 8192,
+        "quadrature_AB_multiplier": null
+      }
+    },
+    {
+      "id": "head_servo",
+      "category": "actuator",
+      "purpose": "yaw/pitch头部执行器",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "FEETECH SCS0009",
+      "board_revision": "参考2020-11-23 A/0；采购修订未确认",
+      "specification": "6 V支路目标；并发峰值电流待核",
+      "interface": "独立半双工TTL 8N1；文档默认1 Mbps",
+      "source_ids": [
+        "HW12-F1",
+        "HW12-SPEC",
+        "HW12-P2"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "body_nominal": [
+          23.2,
+          12.1,
+          25.25
+        ],
+        "body_drawing": [
+          23.3,
+          12.1,
+          25.25
+        ],
+        "ear_span": 32.5,
+        "ear_hole_pitch": 28.5,
+        "ear_hole_diameter": 2,
+        "output_total_depth": 28.45,
+        "includes_plug_and_cable": false
+      },
+      "mass_g": 13.2,
+      "mass_tolerance_g": 1,
+      "shaft_hole_interface": "20T/OD3.95；输出螺钉M2.0×4；5264-3P线15cm；1GND/2VCC/3TTL，观察方向待确认",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "yaw_servo",
+        "pitch_servo"
+      ],
+      "mounting_release": false,
+      "purchase_channel": "https://www.juxitech.com/zh-hant/collections/actuation/products/feetech-scs0009-serial-bus-servo",
+      "purchase_option": "JuxiTech JX00099，网页型号FEETECH SCS0009；机械/电位器版本待核",
+      "unit_price_cny": 103,
+      "currency": "CNY",
+      "quote_date": "2026-09-22",
+      "stock_status": "PUBLISHED_IN_STOCK",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_VARIANT_TAX_AND_SHIPPING",
+      "selection_status": "PRIMARY_SPECIFIED_NOT_RELEASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "采购修订匹配/税运；国内103元型号报价已有",
+        "保持电流/噪声/温升及原始A0连续额定的适用版本",
+        "TTL阈值/寄存器与零点实测"
+      ],
+      "notes": "文档位置300°/1024；位置/速度/负载/电压/温度回读尚未实测。名义23.2与图23.3冲突，不能冻结安装孔。 国内商家中国CNY页面显示103元/个、有货、深圳发货；网页编码器说明与旧原厂规格冲突，暂不据此采购。",
+      "price_status": "PUBLISHED_MODEL_PRICE_VARIANT_PENDING",
+      "exact_variant_match": false,
+      "procurement_evidence": "hardware/v1_2/procurement/SCS0009_JX00099_price_observation.json",
+      "ratings": {
+        "at6V": {
+          "rated_torque_Nm": 0.073549875,
+          "rated_current_A": 0.4,
+          "stall_torque_Nm": 0.22555294999999997,
+          "stall_current_A": 1.0,
+          "no_load_current_A": 0.15
+        },
+        "at4p8V": {
+          "rated_torque_Nm": 0.063743225,
+          "rated_current_A": 0.3,
+          "stall_current_A": 0.8
+        },
+        "position_feedback": "carbon potentiometer in2020A/0;300deg/1024, current sold revision not matched",
+        "backlash_deg_documented_max": 0.5
+      }
+    },
+    {
+      "id": "motion_mcu",
+      "category": "controller",
+      "purpose": "身体运动与本机保护",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "WeAct STM32F4 64Pin CoreBoard V1.1 / STM32F412RET6",
+      "board_revision": "V1.1 2026-05-30; populated F412RET6 option",
+      "specification": "5V board input; local3.3V; 512KB flash /256KB SRAM; HSE8MHz -> SYSCLK96MHz proposed",
+      "interface": "USART1/2/6 + SPI1/EXTI0 + ADC1 + top SWD",
+      "source_ids": [
+        "HW12-WEACT",
+        "HW12-F412-RM",
+        "HW12-F412-DS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "board_xy": [
+          41.6,
+          33.22
+        ],
+        "populated_height": null,
+        "includes_cable": false
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "motion_mcu"
+      ],
+      "mounting_release": false,
+      "purchase_channel": "https://weactstudio.taobao.com/",
+      "purchase_option": "64Pin V1.1 STM32F412RET6; not F411CEU6 BlackPill",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "EXPLICIT_ADAPTATION_PROTOTYPE",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "国内所选规格报价与板修订",
+        "完整堆叠高度/质量/插拔空间",
+        "实物时钟与6Mbps物理链路"
+      ],
+      "notes": "ADR-HW-V1_2-002.md; pinout/DMA frozen for prototype; no motor or application-count change.",
+      "schematic_references": [
+        "MORI_motion_P5R2:U100"
+      ]
+    },
+    {
+      "id": "body_imu",
+      "category": "sensor",
+      "purpose": "身体姿态反馈",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "TDK ICM-42688-P / MORI_imu_P5R2 daughterboard",
+      "board_revision": "P5R2",
+      "specification": "3.3V VDD/VDDIO; SPI1 initial6MHz, ODR1000Hz/DRDY timestamp target",
+      "interface": "SPI + DRDY/采集时间戳",
+      "source_ids": [
+        "HW12-ICM",
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "chip_xy": [
+          2.5,
+          3.0
+        ],
+        "designed_board_xy": [
+          20,
+          16
+        ],
+        "board_thickness": 1.6,
+        "installed_height": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "body_imu"
+      ],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "PROTOTYPE_DISCRETE_IMU_BOARD",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "最新量产手册/封装确认",
+        "国内芯片报价与SMT打样",
+        "轴向装配确认与数据延迟实测"
+      ],
+      "notes": "本行只计ICM芯片；PCB、无源器件及贴装另列，不把整个子板与散件重复计价。LGA需回流服务，现有万用表/限流电源不是贴装设备。",
+      "schematic_references": [
+        "MORI_imu_P5R2:U1"
+      ]
+    },
+    {
+      "id": "interaction_cam",
+      "category": "controller",
+      "purpose": "头内交互主控、摄像头及板载音频",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "Waveshare ESP32-S3-CAM-OV3660 / SKU33700",
+      "board_revision": null,
+      "specification": "系统稳压5 V输入；单节BAT口严禁接3S",
+      "interface": "ESP32-S3R8 16MB Flash/8MB PSRAM；OV3660 DVP；LCD QSPI；板载音频",
+      "source_ids": [
+        "HW12-W1",
+        "HW12-W2",
+        "HW12-MECH-CAM33700_DRAWING"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "board_width_mm": 37,
+        "board_height_mm": 37,
+        "mount_center_pitch_mm": [
+          32.6,
+          32.6
+        ],
+        "corner_radius_mm": 2.25,
+        "hole_edge_offset_mm": 2.2,
+        "mount_hole_diameter_mm": null,
+        "pcb_thickness_mm": null,
+        "populated_total_depth_mm": null,
+        "usb_projection_mm": null,
+        "microphone_coordinates_mm": null,
+        "antenna_coordinates_mm": null,
+        "mechanical_notes": "Board outline37x37, outer cornerR2.25 and four hole-center grid32.6x32.6 verified from official dimension image. Hole diameter, populated thickness, exact connector/mic/antenna positions are NOT documented. Y12mm remains clearly amber ALLOCATION ONLY; never reported as actual board thickness. No final CAM mount-hole diameter."
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "cam_board"
+      ],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "PRIMARY_SPECIFIED_NOT_RELEASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "完整安装高度/孔径/净重/连接器麦克风天线位置",
+        "DVP原装排线长度/接触面",
+        "具体OV3660版国内价格",
+        "相机+屏+音频压力测试"
+      ],
+      "notes": "J11 UART与TF卡复用，首轮禁TF；CH32V003F4U6为板载I/O扩展辅助MCU。",
+      "included_components": [
+        {
+          "model": "OV3660",
+          "quantity": 1,
+          "role": "camera"
+        },
+        {
+          "model": "MEMS microphone",
+          "quantity": 2,
+          "role": "microphone"
+        },
+        {
+          "model": "ES7210",
+          "quantity": 1,
+          "role": "audio_adc"
+        },
+        {
+          "model": "ES8311",
+          "quantity": 1,
+          "role": "codec"
+        },
+        {
+          "model": "NS4150B",
+          "quantity": 1,
+          "role": "speaker_amplifier"
+        },
+        {
+          "model": "CH32V003F4U6",
+          "quantity": 1,
+          "role": "io_expander_not_application_mcu"
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "category": "display",
+      "purpose": "黑底双眼圆屏",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "Waveshare 1.85inch Touch LCD Module / SKU35079",
+      "board_revision": null,
+      "specification": "3.3/5 V模块输入；360×360；ST77916/CST816S",
+      "interface": "QSPI + I2C；18P FFC或15P端子",
+      "source_ids": [
+        "HW12-W3",
+        "HW12-MECH-LCD35079_STEP"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "glass_outer_diameter_mm": 55,
+        "active_diameter_mm": 45.68,
+        "view_diameter_mm": 46.08,
+        "glass_thickness_mm": 0.7,
+        "pcb_thickness_mm": 1.6,
+        "drawing_reference_total_depth_mm": 9.1,
+        "cad_total_depth_mm": 9.3500001,
+        "mount_thread": "3xM2",
+        "drawing_hole_xz_from_screen_mm": [
+          [
+            0,
+            21
+          ],
+          [
+            -14.85,
+            -14.85
+          ],
+          [
+            14.85,
+            -14.85
+          ]
+        ],
+        "cad_post_center_xz_from_screen_mm": [
+          [
+            0,
+            20.94
+          ],
+          [
+            -14.84924240492,
+            -14.90924240492
+          ],
+          [
+            14.84924240492,
+            -14.90924240492
+          ]
+        ],
+        "thread_engagement_approved_mm": null,
+        "mechanical_notes": "Official Rev1 STEP is imported1:1, including populated rear PCB, connector housings and three standoffs. No loose mating plug or FFC included. PDF9.1ref vs CAD9.35 and hole centers differ by up to0.06mm: retain STEP geometry, match physical revision before final print/hole freeze. Prior55x55 full-rectangle-only conflict is superseded by actual circular CAD shape."
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "display"
+      ],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "PRIMARY_SPECIFIED_NOT_RELEASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "采购Rev1对应/净重",
+        "STEP9.35与PDF9.1ref差异、孔位约0.06mm差异",
+        "排线接触面/插拔净空与16–18脚定义",
+        "所选SKU国内价格"
+      ],
+      "notes": "替代旧H0.3的TDO2.1寸主选；显示跨度由53.28改45.68mm，按V1.2执行。"
+    },
+    {
+      "id": "speaker",
+      "category": "audio",
+      "purpose": "身体扬声器与音腔",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "4Ω 3W配套扬声器（料号待选）",
+      "board_revision": null,
+      "specification": "阻抗4Ω、功率3W；实际音腔/热待验",
+      "interface": "NS4150B BTL J5，两线均不能接公共地",
+      "source_ids": [
+        "HW12-W1",
+        "HW12-W2"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "speaker"
+      ],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "料号/带腔外形/重量/国内价格",
+        "线长/功率/声学验证"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "battery",
+      "category": "power",
+      "purpose": "成品主电池",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "成品3S 2200–2600mAh电池组（未选定）",
+      "board_revision": null,
+      "specification": "化学体系、额定/满充/截止/放电能力待选",
+      "interface": "保护/均衡/温度/插头分别核对",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [
+        "battery"
+      ],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "型号/化学体系/厂家",
+        "尺寸/重量/电流/保护/温度",
+        "国内现货价格"
+      ],
+      "notes": "若4.2V/cell，满充12.6V与S288上限重合；不焊裸电芯。"
+    },
+    {
+      "id": "battery_protection",
+      "category": "power",
+      "purpose": "电池保护/均衡/温度",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "与成品3S匹配方案；随包则合并价格，当前未知",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "保护不等于充电或电源路径",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "usb_charge",
+      "category": "power",
+      "purpose": "USB-C及3S CC/CV充电",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "UNSELECTED finished3S USB-C CC/CV module",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "不沿用BQ25887或CAM单节充电",
+      "source_ids": [
+        "HW12-IP2326",
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "确切模块型号/修订/原理图/尺寸",
+        "CC advertisement/input limit and ordinary5V behavior",
+        "3S voltage accuracy/current/NTC and pack balance",
+        "国内报价"
+      ],
+      "notes": "后部P4仅提供USB-C、CC/ESD/保险和开关接口；外部3S充电/PD/温度/电源路径模块仍未选定，不能据接口PCB称充电完整。"
+    },
+    {
+      "id": "wheel_power",
+      "category": "power",
+      "purpose": "轮驱母线保护与回灌",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "Pololu D36V50F9 #4094 9V buck (engineering reference)",
+      "board_revision": null,
+      "specification": "9V5A typical,9.9–50Vinput; actual curve/thermal limit required",
+      "interface": "满电制动及BMS断开必须处理；TVS单独不够",
+      "source_ids": [
+        "HW12-POL9"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "xyz": [
+          25.4,
+          25.4,
+          9.525
+        ]
+      },
+      "mass_g": 7,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "ENGINEERING_REFERENCE_CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "P1 adds B540C blocking, switched output and rail-powered brake on separate power PCB. Do not mistake D24V50F9 for a real selected part."
+    },
+    {
+      "id": "head_power",
+      "category": "power",
+      "purpose": "独立6V支路",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "Pololu D24V22F6 #2859",
+      "board_revision": null,
+      "specification": "6V nominal; output after blocking diode estimated5.21–6.04V",
+      "interface": "按两SCS0009并发连续与峰值核额定",
+      "source_ids": [
+        "HW12-POL6"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "xyz": [
+          17.8,
+          17.8,
+          8
+        ]
+      },
+      "mass_g": 2.3,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "ENGINEERING_REFERENCE_CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "Use4.8V head rated torque for conservative check; not a6V guarantee at servo pins."
+    },
+    {
+      "id": "logic_power",
+      "category": "power",
+      "purpose": "运动/交互板载5V降压IC（两个独立支路）",
+      "quantity": 2,
+      "quantity_unit": "set",
+      "full_model": "TPS54302DDCR",
+      "board_revision": "P4 routed prototype; S3 buck circuit retained",
+      "specification": "4.5-28V input;400kHz;chip3A; system targets0.5A motion/1.5A CAM sustained",
+      "interface": "Board-local3S-to5V; MCU modules retain their own3.3V. No separate Pololu5V modules.",
+      "source_ids": [
+        "HW12-S3-02"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_envelope_xyz": [
+          2.9,
+          2.8,
+          1.1
+        ],
+        "note": "TI DDC0006A IC envelope only; not a converter-module or board envelope. H1.1max."
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城",
+      "purchase_option": "C311983 / TPS54302DDCR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "SELECTED_ROUTED_PROTOTYPE_NOT_BENCH_VALIDATED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "国内小批量结算价/库存",
+        "实际模块并发电流",
+        "纹波/瞬态/温升实测",
+        "实际铜厚/纹波/瞬态/温升台架验证"
+      ],
+      "notes": "Replaces the unpurchased Pololu D24V22F5 x2. No old module mass/envelope is reused. U60/U70. SLVSDG6C Rev C. 1GND 2SW 3VIN 4FB 5EN 6BOOT. EN internally pulled up; never tie EN to 3S VIN. 3A silicon rating is not the qualified harness/assembly rating.",
+      "schematic_references": [
+        "MORI_power_P5R2:U60",
+        "MORI_power_P5R2:U70"
+      ]
+    },
+    {
+      "id": "lcd_cable",
+      "category": "interface",
+      "purpose": "屏幕FFC及必要转接",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "Waveshare LCD35079 supplied FFC18P 0.5mm 200mm same-side contacts",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "CAM端TE未接；同针数不是插接批准",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "pitch": 0.5,
+        "positions": 18,
+        "length": 200
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "VENDOR_PACKING_LIST; ASSEMBLY_DIRECTION_NOT_TESTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "Included in display package if actual order confirms; not counted as free without quote. Reconcile CAM connector mating orientation by continuity before energizing."
+    },
+    {
+      "id": "user_button",
+      "category": "control",
+      "purpose": "已移除的外部功能按钮（保留历史条目）",
+      "quantity": 0,
+      "quantity_unit": "set",
+      "full_model": "C&K PTS645SL50SMTR92LFS candidate + printed cap",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "normally-open dry contact to motion J6 /PC13; no MCU reset",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "NOT_APPLICABLE",
+      "selection_status": "NOT_APPLICABLE",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "M1.11明确移除独立外壳按钮；运动J6仅保留机内PC13维护输入，非RESET。未额外购买C&K按钮。"
+    },
+    {
+      "id": "physical_disable",
+      "category": "control",
+      "purpose": "后接口板双刀物理电源/禁驱开关",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "SOFNG MS-202V-G3",
+      "board_revision": "P5R2",
+      "specification": "0.5A/30VDC catalog rating; low-current contacts only",
+      "interface": "rear SW1; pole A controls power Q90 via10k, pole B opens motion J8 latch-clear loop",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "body_xyz": [
+          9.1,
+          3.5,
+          3.5
+        ],
+        "stem_mm": 3,
+        "travel_mm": 2,
+        "installed_envelope": "See hardware/v1_2/handoff/mechanical_P4.json"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "https://item.szlcsc.com/44278924.html",
+      "purchase_option": "C42378287 / MS-202V-G3",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "样品万用表确认双刀状态/本地编号",
+        "国内结算报价",
+        "操作机构/外壳适配",
+        "Q90浪涌/SOA/温升"
+      ],
+      "notes": "主电流通过电源板Q90/Q1；小开关不承载电机电流。OFF会失去平衡；托架使用。故障恢复不得自动ARM。",
+      "schematic_references": [
+        "MORI_rear_P5R2:SW1"
+      ]
+    },
+    {
+      "id": "tyres",
+      "category": "mechanical",
+      "purpose": "轮胎",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "Ø105×18轮胎/胎圈（机械要求，具体商品未选）",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "按实际轮径算速度，抓地/重量待验",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "mechanical_requirement_diameter": 105,
+        "mechanical_requirement_width": 18,
+        "vendor_envelope": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "以当前config/geometry.json为机械尺寸来源；不是已核商品尺寸。不得采购旧Ø95胎后缩放硬件模型。"
+    },
+    {
+      "id": "wheel_couplers",
+      "category": "mechanical",
+      "purpose": "轮毂/轮轴/输出连接",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "M1.14 custom metal flanged shaft / double-D hub interface, candidate",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "不把径向外力全部施加到舵机细轴",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "继承当前mechanical wheel_interface设计；两根定制钢轴/隔套及接口报价未取得，不是现成已购件。加工、公差、输出小孔螺钉、同轴度、强度与载荷试验尚未通过。"
+    },
+    {
+      "id": "wheel_bearings",
+      "category": "mechanical",
+      "purpose": "轮轴承",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "686ZZ candidate; exact manufacturer/order suffix pending",
+      "board_revision": null,
+      "specification": "M1.14/M1.15 wheel interface requires two686ZZ per wheel,6x13x5mm",
+      "interface": "两轴各两支撑的当前设计数量，型号/载荷待核",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "mechanical_required_ID_OD_width": [
+          6.0,
+          13.0,
+          5.0
+        ],
+        "selected_vendor_confirmed": false
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "替换旧4ID/10OD/4W占位要求；机械方案是尺寸需求，非本次实物/供应商确认。"
+    },
+    {
+      "id": "head_bearings",
+      "category": "mechanical",
+      "purpose": "头承载轴承套件",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "yaw32OD/20ID、pitch12OD/5ID试配方案",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "具体型号/数量/公差按机械确认",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "carrier_pcb",
+      "category": "fabrication",
+      "purpose": "一次基础PCB打样",
+      "quantity": 1,
+      "quantity_unit": "four-board prototype set",
+      "full_model": "MORI_motion_P5R2 + MORI_imu_P5R2 + MORI_power_P5R2 + MORI_rear_P5R2",
+      "board_revision": "motion/imu/power/rear:P5R2",
+      "specification": "motion70x35 four-layer; power80x55 four-layer70/35/35/70um nominal; IMU20x16 and rear24x25 two-layer; all1.6mm; supplier stack-up and quote pending",
+      "interface": "Native Edge.Cuts/holes/connectors in hardware/v1_2/handoff/mechanical_P3.json",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "motion_xy": [
+          70,
+          35
+        ],
+        "imu_xy": [
+          20,
+          16
+        ],
+        "power_xy": [
+          80,
+          55
+        ],
+        "board_thickness": 1.6,
+        "power_thickness": 1.6,
+        "full_installed_height": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "ROUTED_PROTOTYPE_NOT_RELEASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "四板打样/贴装/铜厚的国内报价",
+        "完整机械插合包络",
+        "实机验证"
+      ],
+      "notes": "P5原型四板。电源由2层升级4层以保证公共地回流；旧打样额度不是新叠层报价。完整插合尺寸与物理验证仍未完成。"
+    },
+    {
+      "id": "harness",
+      "category": "assembly",
+      "purpose": "高电流/跨轴/维护线束",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "额定线规/防呆端子/压接/应力释放待选",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "大电流不走杜邦、面包板或显示FFC",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "按P4逐针线束表制作；线长及弯曲待机械交接。PH配对壳/端子单列，线材、XT30/XH对端、工厂转接及压接加工仍包含在本项，未免除费用。"
+    },
+    {
+      "id": "fasteners",
+      "category": "assembly",
+      "purpose": "紧固件/嵌件",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "机械装机套件待核量",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "不假定已有",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "printing",
+      "category": "fabrication",
+      "purpose": "外壳/支架/托架打印材料",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "按机械体积/填充/损耗核量",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "含必需维护托架和基础试打材料",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "shipping",
+      "category": "logistics",
+      "purpose": "国内运费",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "实际店铺合单/地址结算待核",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "不假设包邮或运费券",
+      "source_ids": [
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "REQUIRED_UNSELECTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "usb_adapter",
+      "category": "power",
+      "purpose": "External USB-C adapter matched to charger input profile",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "UNSELECTED: dependent on qualified3S charger",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "不沿用BQ25887或CAM单节充电",
+      "source_ids": [
+        "HW12-IP2326",
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "BLOCKED_CHARGER_SELECTION",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "确切模块型号/修订/原理图/尺寸",
+        "CC advertisement/input limit and ordinary5V behavior",
+        "3S voltage accuracy/current/NTC and pack balance",
+        "国内报价"
+      ],
+      "notes": "User owns no components; mandatory accessory cost retained as UNKNOWN, not zero."
+    },
+    {
+      "id": "usb_charge_cable",
+      "category": "power",
+      "purpose": "USB-C charging cable matched to current/CC/PD profile",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "UNSELECTED: dependent on qualified3S charger",
+      "board_revision": null,
+      "specification": "具体额定与采购规格未冻结",
+      "interface": "不沿用BQ25887或CAM单节充电",
+      "source_ids": [
+        "HW12-IP2326",
+        "HW12-SPEC"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "BLOCKED_CHARGER_SELECTION",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "确切模块型号/修订/原理图/尺寸",
+        "CC advertisement/input limit and ordinary5V behavior",
+        "3S voltage accuracy/current/NTC and pack balance",
+        "国内报价"
+      ],
+      "notes": "User owns no components; mandatory accessory cost retained as UNKNOWN, not zero."
+    },
+    {
+      "id": "p1_dump_wheel",
+      "category": "power",
+      "purpose": "wheel制动外置功率电阻",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "Vishay AC05000005608JAC00 candidate",
+      "board_revision": null,
+      "specification": "5.6ohm5W; pulse energy NOT_QUALIFIED",
+      "interface": "大电流不走杜邦、面包板或显示FFC",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "PULSE_CURVE_AND_CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "Do not substitute5W nameplate for20W wheel pulse capability. Heat isolation and mounting external to crowded PCB required."
+    },
+    {
+      "id": "p1_dump_head",
+      "category": "power",
+      "purpose": "head制动外置功率电阻",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "Vishay AC05000001009JAC00 candidate",
+      "board_revision": null,
+      "specification": "10ohm5W; pulse energy NOT_QUALIFIED",
+      "interface": "大电流不走杜邦、面包板或显示FFC",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED",
+      "selection_status": "PULSE_CURVE_AND_CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
+      "missing": [
+        "精确型号/价格/现货或加工报价",
+        "相关额定、包络与连接器"
+      ],
+      "notes": "Do not substitute5W nameplate for20W wheel pulse capability. Heat isolation and mounting external to crowded PCB required."
+    },
+    {
+      "id": "p4_001",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:F60",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "0451001.MRL",
+      "board_revision": "P5R2",
+      "specification": "1A / 125V / very fast",
+      "interface": "Fuse:Fuse_Littelfuse-NANO2-451_453",
+      "source_ids": [
+        "HW12-S3-01"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "C3099",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "Input branch fuse, not a fast electronic current limiter. Coordinate inrush, ambient derating and upstream 6.3A fuse on bench.",
+      "schematic_references": [
+        "MORI_power_P5R2:F60"
+      ]
+    },
+    {
+      "id": "p4_002",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:F70",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "0451002.MRL",
+      "board_revision": "P5R2",
+      "specification": "2A / 125V / very fast",
+      "interface": "Fuse:Fuse_Littelfuse-NANO2-451_453",
+      "source_ids": [
+        "HW12-S3-11"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "C99547",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "Input branch fuse, not a fast electronic current limiter. Coordinate inrush, ambient derating and upstream 6.3A fuse on bench.",
+      "schematic_references": [
+        "MORI_power_P5R2:F70"
+      ]
+    },
+    {
+      "id": "p4_003",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_rear_P5R2:F1",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "045101.5MRL",
+      "board_revision": "P5R2",
+      "specification": "045101.5MRL / 1.5A",
+      "interface": "MORI_Custom:Littelfuse_451_6.1x2.69_P4__P3R1_F1",
+      "source_ids": [
+        "HW12-P4"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:Littelfuse_451_6.1x2.69_P4__P3R1_F1",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "045101.5MRL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "P4原生工程对应的器件；不能视为整机已核价。",
+      "schematic_references": [
+        "MORI_rear_P5R2:F1"
+      ],
+      "source_urls": [
+        "https://www.littelfuse.com/assetdocs/fuse-451-and-453-datasheet?assetguid=533cd5cc-956c-4243-867f-6ab5a62f6ba1"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_004",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:JP60, MORI_power_P5R2:JP70",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "61300211121",
+      "board_revision": "P5R2",
+      "specification": "SERVICE OFF / OPEN=ON",
+      "interface": "MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P3R1_JP70; MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P3_JP60__P3R1_JP60",
+      "source_ids": [
+        "HW12-S3-10"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "61300211121",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "Normally open header. Bridge 1-2 only in maintenance cradle to disable this one rail. Motion supply loss removes ARM and robot balance. No automatic MCU-controlled power cycling.",
+      "schematic_references": [
+        "MORI_power_P5R2:JP60",
+        "MORI_power_P5R2:JP70"
+      ]
+    },
+    {
+      "id": "p4_005",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:J1, MORI_power_P5R2:J2, MORI_power_P5R2:J3, MORI_power_P5R2:J4, MORI_power_P5R2:J5, MORI_power_P5R2:J11, MORI_power_P5R2:J12",
+      "quantity": 7,
+      "quantity_unit": "piece",
+      "full_model": "AMASS XT30UPB-M",
+      "board_revision": "P5R2",
+      "specification": "HEAD BUCK 6V RETURN; HEAD BUCK VIN; HEAD DUMP 10R EXTERNAL; PACK AFTER 6.3A FUSE; WHEEL BUCK 9V RETURN; WHEEL BUCK VIN; WHEEL DUMP 5R6 EXTERNAL",
+      "interface": "Connector_AMASS:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical; MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J12__P3R1_J12; MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J4__P3_J4__P3R1_J4; MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J5__P3_J5; MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3R1_J3; MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J1; MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J2__P3R1_J2",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Connector_AMASS:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Connector_AMASS:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "AMASS XT30UPB-M",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "KICAD_LIBRARY_FOOTPRINT; MATCH_VENDOR_AND_MATE",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.; J6 marked DNP in S3; previous P2 physical board remains unchanged.",
+      "schematic_references": [
+        "MORI_power_P5R2:J1",
+        "MORI_power_P5R2:J2",
+        "MORI_power_P5R2:J3",
+        "MORI_power_P5R2:J4",
+        "MORI_power_P5R2:J5",
+        "MORI_power_P5R2:J11",
+        "MORI_power_P5R2:J12"
+      ]
+    },
+    {
+      "id": "p4_006",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:Q11, MORI_power_P5R2:Q31, MORI_power_P5R2:Q20, MORI_power_P5R2:Q40",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "AO3400A",
+      "board_revision": "P5R2",
+      "specification": "AO3400A",
+      "interface": "Package_TO_SOT_SMD:SOT-23",
+      "source_ids": [
+        "HW12-AOS-ao3400a"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_TO_SOT_SMD:SOT-23"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_TO_SOT_SMD:SOT-23",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "AO3400A",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:Q11",
+        "MORI_power_P5R2:Q31",
+        "MORI_power_P5R2:Q20",
+        "MORI_power_P5R2:Q40"
+      ]
+    },
+    {
+      "id": "p4_007",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:Q1, MORI_power_P5R2:Q10, MORI_power_P5R2:Q30, MORI_power_P5R2:Q90",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "AO4407A",
+      "board_revision": "P5R2",
+      "specification": "AO4407A",
+      "interface": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "source_ids": [
+        "HW12-AOS-ao4407a"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "AO4407A",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:Q1",
+        "MORI_power_P5R2:Q10",
+        "MORI_power_P5R2:Q30",
+        "MORI_power_P5R2:Q90"
+      ]
+    },
+    {
+      "id": "p4_008",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:J1, MORI_motion_P5R2:J2, MORI_motion_P5R2:J6, MORI_motion_P5R2:J8, MORI_power_P5R2:J13, MORI_power_P5R2:J15, MORI_power_P5R2:J16, MORI_power_P5R2:J17, MORI_power_P5R2:J19",
+      "quantity": 9,
+      "quantity_unit": "piece",
+      "full_model": "B2B-PH-K-S(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "CHARGE INTERLOCK; CHARGER RAW VBUS SENSE; INTERNAL SERVICE KEY; LATCHED ENABLE LOOP; MOTION 5V IN; MOTION 5V OUT / 1+ 2GND; REAR MASTER / 1RETURN 2GND; S288 DATA; S288 DATA ONLY",
+      "interface": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS; MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J15; MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J16; MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J19",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "bare_xyz": [
+          5.9,
+          4.5,
+          6
+        ],
+        "mated_height": 8,
+        "mated_depth": null,
+        "wire_bend": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS; MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J15; MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J16; MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J19",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "https://item.szlcsc.com/142630.html",
+      "purchase_option": "C131337 / B2B-PH-K-S(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "厂商尺寸与国内目录料号已记录；库存、价格、线束和安装间隙未实测。",
+      "schematic_references": [
+        "MORI_motion_P5R2:J1",
+        "MORI_motion_P5R2:J2",
+        "MORI_motion_P5R2:J6",
+        "MORI_motion_P5R2:J8",
+        "MORI_power_P5R2:J13",
+        "MORI_power_P5R2:J15",
+        "MORI_power_P5R2:J16",
+        "MORI_power_P5R2:J17",
+        "MORI_power_P5R2:J19"
+      ],
+      "source_urls": [
+        "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_009",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:J18",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "B2B-XH-A(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "CAM 5V OUT / 1+ 2GND",
+      "interface": "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
+      "source_ids": [
+        "HW12-S3-12"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "B2B-XH-A(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "To qualified CAM USB power pigtail, NOT BAT connector. Target1.5A sustained/2A peak. USB-C source/CC/polarity and cable resistance still require qualification. Disconnect robot5V for host USB.",
+      "schematic_references": [
+        "MORI_power_P5R2:J18"
+      ]
+    },
+    {
+      "id": "p4_010",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:J3, MORI_power_P5R2:J14",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "B3B-PH-K-S(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "HEAD DATA; HEAD DATA ONLY",
+      "interface": "MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "bare_xyz": [
+          7.9,
+          4.5,
+          6
+        ],
+        "mated_height": 8,
+        "mated_depth": null,
+        "wire_bend": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "https://item.szlcsc.com/142632.html",
+      "purchase_option": "C131339 / B3B-PH-K-S(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "厂商尺寸与国内目录料号已记录；库存、价格、线束和安装间隙未实测。",
+      "schematic_references": [
+        "MORI_motion_P5R2:J3",
+        "MORI_power_P5R2:J14"
+      ],
+      "source_urls": [
+        "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_011",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:J7, MORI_power_P5R2:J8, MORI_power_P5R2:J9",
+      "quantity": 3,
+      "quantity_unit": "piece",
+      "full_model": "B3B-XH-A(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "S288 L; S288 R; SCS0009 CHAIN",
+      "interface": "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical; MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J7__P3_J7__P3R1_J7; MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J8__P3R1_J8",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "B3B-XH-A(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "KICAD_LIBRARY_FOOTPRINT; MATCH_VENDOR_AND_MATE",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:J7",
+        "MORI_power_P5R2:J8",
+        "MORI_power_P5R2:J9"
+      ]
+    },
+    {
+      "id": "p4_012",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:J5, MORI_rear_P5R2:J3",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "B4B-PH-K-S(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "CAM J11 MATCH; MASTER + DISARM / PH4",
+      "interface": "MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_ANNULUS__P3R1_J3; MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "bare_xyz": [
+          9.9,
+          4.5,
+          6
+        ],
+        "mated_height": 8,
+        "mated_depth": null,
+        "wire_bend": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_ANNULUS__P3R1_J3; MORI_Custom:JST_PH_B4B-PH-K_1x04_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "https://item.szlcsc.com/142627.html",
+      "purchase_option": "C131334 / B4B-PH-K-S(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "厂商尺寸与国内目录料号已记录；库存、价格、线束和安装间隙未实测。",
+      "schematic_references": [
+        "MORI_motion_P5R2:J5",
+        "MORI_rear_P5R2:J3"
+      ],
+      "source_urls": [
+        "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_013",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:D10, MORI_power_P5R2:D30",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "B540C-13-F",
+      "board_revision": "P5R2",
+      "specification": "B540C-13-F",
+      "interface": "Diode_SMD:D_SMC; MORI_Custom:D_SMC__P3_D10__P3R1_D10",
+      "source_ids": [
+        "HW12-DIODE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Diode_SMD:D_SMC"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Diode_SMD:D_SMC",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "B540C-13-F",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:D10",
+        "MORI_power_P5R2:D30"
+      ]
+    },
+    {
+      "id": "p4_014",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:J4, MORI_motion_P5R2:J7, MORI_imu_P5R2:J1, MORI_power_P5R2:J10",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "B8B-PH-K-S(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "BODY IMU SPI; BODY RIGID IMU; MOTION CONTROL; POWER CONTROL",
+      "interface": "MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J1; MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J10; MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J4; MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J7",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "bare_xyz": [
+          17.9,
+          4.5,
+          6
+        ],
+        "mated_height": 8,
+        "mated_depth": null,
+        "wire_bend": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J1; MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J10; MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J4; MORI_Custom:JST_PH_B8B-PH-K_1x08_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J7",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "https://item.szlcsc.com/169322.html",
+      "purchase_option": "C157974 / B8B-PH-K-S(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "厂商尺寸与国内目录料号已记录；库存、价格、线束和安装间隙未实测。",
+      "schematic_references": [
+        "MORI_motion_P5R2:J4",
+        "MORI_motion_P5R2:J7",
+        "MORI_imu_P5R2:J1",
+        "MORI_power_P5R2:J10"
+      ],
+      "source_urls": [
+        "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_015",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:D1, MORI_motion_P5R2:D2, MORI_motion_P5R2:D3",
+      "quantity": 3,
+      "quantity_unit": "piece",
+      "full_model": "BAT54H,115",
+      "board_revision": "P5R2",
+      "specification": "BAT54H,115",
+      "interface": "Diode_SMD:D_SOD-123",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Diode_SMD:D_SOD-123"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Diode_SMD:D_SOD-123",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "BAT54H,115",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_AND_PINMAP_CANDIDATE_VERIFY_VENDOR",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:D1",
+        "MORI_motion_P5R2:D2",
+        "MORI_motion_P5R2:D3"
+      ]
+    },
+    {
+      "id": "p4_016",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:D1, MORI_power_P5R2:D20, MORI_power_P5R2:D40, MORI_power_P5R2:D90",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "BZT52H-C10,115",
+      "board_revision": "P5R2",
+      "specification": "BZT52H-C10,115",
+      "interface": "Diode_SMD:D_SOD-123F",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Diode_SMD:D_SOD-123F"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Diode_SMD:D_SOD-123F",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "BZT52H-C10,115",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_AND_PINMAP_CANDIDATE_VERIFY_VENDOR",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:D1",
+        "MORI_power_P5R2:D20",
+        "MORI_power_P5R2:D40",
+        "MORI_power_P5R2:D90"
+      ]
+    },
+    {
+      "id": "p4_017",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:C2",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "CL10A105KA8NNNC",
+      "board_revision": "P5R2",
+      "specification": "1u 25V",
+      "interface": "MORI_Custom:C_0603_1608Metric__P3_C2",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Capacitor_SMD:C_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "CL10A105KA8NNNC",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:C2"
+      ]
+    },
+    {
+      "id": "p4_018",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:C8",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "CL10A106KP8NNNC",
+      "board_revision": "P5R2",
+      "specification": "10u",
+      "interface": "Capacitor_SMD:C_0603_1608Metric",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Capacitor_SMD:C_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "CL10A106KP8NNNC",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:C8"
+      ]
+    },
+    {
+      "id": "p4_019",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_imu_P5R2:C2",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "CL10A225KP8NNNC",
+      "board_revision": "P5R2",
+      "specification": "2.2u",
+      "interface": "Capacitor_SMD:C_0603_1608Metric",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Capacitor_SMD:C_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "CL10A225KP8NNNC",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_imu_P5R2:C2"
+      ]
+    },
+    {
+      "id": "p4_020",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:C9, MORI_motion_P5R2:C10, MORI_motion_P5R2:C11, MORI_imu_P5R2:C3, MORI_power_P5R2:C21, MORI_power_P5R2:C41",
+      "quantity": 6,
+      "quantity_unit": "piece",
+      "full_model": "CL10B103KB8NNNC",
+      "board_revision": "P5R2",
+      "specification": "10n",
+      "interface": "Capacitor_SMD:C_0603_1608Metric",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Capacitor_SMD:C_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "CL10B103KB8NNNC",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:C9",
+        "MORI_motion_P5R2:C10",
+        "MORI_motion_P5R2:C11",
+        "MORI_imu_P5R2:C3",
+        "MORI_power_P5R2:C21",
+        "MORI_power_P5R2:C41"
+      ]
+    },
+    {
+      "id": "p4_021",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:C1, MORI_motion_P5R2:C2, MORI_motion_P5R2:C3, MORI_motion_P5R2:C4, MORI_motion_P5R2:C5, MORI_motion_P5R2:C6, MORI_motion_P5R2:C7, MORI_motion_P5R2:C12, MORI_imu_P5R2:C1, MORI_power_P5R2:C20, MORI_power_P5R2:C40, MORI_power_P5R2:C1",
+      "quantity": 12,
+      "quantity_unit": "piece",
+      "full_model": "CL10B104KB8NNNC",
+      "board_revision": "P5R2",
+      "specification": "100n",
+      "interface": "Capacitor_SMD:C_0603_1608Metric",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Capacitor_SMD:C_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "CL10B104KB8NNNC",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:C1",
+        "MORI_motion_P5R2:C2",
+        "MORI_motion_P5R2:C3",
+        "MORI_motion_P5R2:C4",
+        "MORI_motion_P5R2:C5",
+        "MORI_motion_P5R2:C6",
+        "MORI_motion_P5R2:C7",
+        "MORI_motion_P5R2:C12",
+        "MORI_imu_P5R2:C1",
+        "MORI_power_P5R2:C20",
+        "MORI_power_P5R2:C40",
+        "MORI_power_P5R2:C1"
+      ]
+    },
+    {
+      "id": "p4_022",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:C60, MORI_power_P5R2:C66, MORI_power_P5R2:C63, MORI_power_P5R2:C64, MORI_power_P5R2:C70, MORI_power_P5R2:C76, MORI_power_P5R2:C73, MORI_power_P5R2:C74",
+      "quantity": 8,
+      "quantity_unit": "piece",
+      "full_model": "CL32B226KAJNNNE",
+      "board_revision": "P5R2",
+      "specification": "22u / 25V / X7R",
+      "interface": "Capacitor_SMD:C_1210_3225Metric; MORI_Custom:C_1210_3225Metric__P3_C60__P3R1_C60; MORI_Custom:C_1210_3225Metric__P3_C70; MORI_Custom:C_1210_3225Metric__P3_C74",
+      "source_ids": [
+        "HW12-S3-04"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "C309062",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "schematic_references": [
+        "MORI_power_P5R2:C60",
+        "MORI_power_P5R2:C66",
+        "MORI_power_P5R2:C63",
+        "MORI_power_P5R2:C64",
+        "MORI_power_P5R2:C70",
+        "MORI_power_P5R2:C76",
+        "MORI_power_P5R2:C73",
+        "MORI_power_P5R2:C74"
+      ]
+    },
+    {
+      "id": "p4_023",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:C10, MORI_power_P5R2:C30",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "EEUFR1C102",
+      "board_revision": "P5R2",
+      "specification": "Panasonic EEU-FR1C102 1000uF 16V",
+      "interface": "MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P2_C10__P3_C10__P3R1_C10; MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P3_C30__P3R1_C30",
+      "source_ids": [
+        "HW12-CAP"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "EEUFR1C102",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "VENDOR_DOCUMENTED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:C10",
+        "MORI_power_P5R2:C30"
+      ]
+    },
+    {
+      "id": "p4_024",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:C65, MORI_power_P5R2:C75",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "GRM1885C1H750JA01D",
+      "board_revision": "P5R2",
+      "specification": "75p / 50V / C0G",
+      "interface": "Capacitor_SMD:C_0603_1608Metric; MORI_Custom:C_0603_1608Metric__P3R1_C75",
+      "source_ids": [
+        "HW12-S3-06"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "GRM1885C1H750JA01D",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "Feedforward across upper feedback resistor, following TI 5V ceramic-output reference. Re-tune only from stability/step-load evidence.",
+      "schematic_references": [
+        "MORI_power_P5R2:C65",
+        "MORI_power_P5R2:C75"
+      ]
+    },
+    {
+      "id": "p4_025",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:C61, MORI_power_P5R2:C62, MORI_power_P5R2:C71, MORI_power_P5R2:C72, MORI_rear_P5R2:C1",
+      "quantity": 5,
+      "quantity_unit": "piece",
+      "full_model": "GRM188R71H104KA93D",
+      "board_revision": "P5R2",
+      "specification": "100n / 50V / X7R",
+      "interface": "Capacitor_SMD:C_0603_1608Metric",
+      "source_ids": [
+        "HW12-S3-05"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "GRM188R71H104KA93D",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "Exact suffix and domestic small-quantity quotation remain to be checked. Cboot must connect BOOT to SW, not GND.",
+      "schematic_references": [
+        "MORI_power_P5R2:C61",
+        "MORI_power_P5R2:C62",
+        "MORI_power_P5R2:C71",
+        "MORI_power_P5R2:C72",
+        "MORI_rear_P5R2:C1"
+      ]
+    },
+    {
+      "id": "p4_026",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:U1",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "INA180A1IDBVR",
+      "board_revision": "P5R2",
+      "specification": "INA180A1IDBVR",
+      "interface": "Package_TO_SOT_SMD:SOT-23-5",
+      "source_ids": [
+        "HW12-TI-ina180"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_TO_SOT_SMD:SOT-23-5"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_TO_SOT_SMD:SOT-23-5",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "INA180A1IDBVR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:U1"
+      ]
+    },
+    {
+      "id": "p4_027",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:U20, MORI_power_P5R2:U40",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "LM393BDR",
+      "board_revision": "P5R2",
+      "specification": "LM393BDR",
+      "interface": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "source_ids": [
+        "HW12-TI-lm393b"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "LM393BDR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:U20",
+        "MORI_power_P5R2:U40"
+      ]
+    },
+    {
+      "id": "p4_028",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:Q50",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "MMBT3904LT1G",
+      "board_revision": "P5R2",
+      "specification": "MMBT3904LT1G",
+      "interface": "Package_TO_SOT_SMD:SOT-23",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Package_TO_SOT_SMD:SOT-23"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_TO_SOT_SMD:SOT-23",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "MMBT3904LT1G",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_AND_PINMAP_CANDIDATE_VERIFY_VENDOR",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:Q50"
+      ]
+    },
+    {
+      "id": "p4_029",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_rear_P5R2:D2, MORI_rear_P5R2:D3",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "PESD5V0L1BA,115",
+      "board_revision": "P5R2",
+      "specification": "PESD5V0L1BA,115",
+      "interface": "Diode_SMD:D_SOD-323",
+      "source_ids": [
+        "HW12-P4"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Diode_SMD:D_SOD-323",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "PESD5V0L1BA,115",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "P4原生工程对应的器件；不能视为整机已核价。",
+      "schematic_references": [
+        "MORI_rear_P5R2:D2",
+        "MORI_rear_P5R2:D3"
+      ],
+      "source_urls": [
+        "https://assets.nexperia.com/documents/data-sheet/PESD5V0L1BA.pdf"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_030",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R56, MORI_power_P5R2:R90",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR07100KL",
+      "board_revision": "P5R2",
+      "specification": "100k",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR07100KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R56",
+        "MORI_power_P5R2:R90"
+      ]
+    },
+    {
+      "id": "p4_031",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R11, MORI_power_P5R2:R31",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR07100RL",
+      "board_revision": "P5R2",
+      "specification": "100",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR07100RL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R11",
+        "MORI_power_P5R2:R31"
+      ]
+    },
+    {
+      "id": "p4_032",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:R3, MORI_motion_P5R2:R4, MORI_motion_P5R2:R5, MORI_motion_P5R2:R7, MORI_motion_P5R2:R8, MORI_motion_P5R2:R13, MORI_motion_P5R2:R17, MORI_motion_P5R2:R18, MORI_imu_P5R2:R2, MORI_power_P5R2:R1, MORI_power_P5R2:R10, MORI_power_P5R2:R30, MORI_power_P5R2:R54, MORI_power_P5R2:R91",
+      "quantity": 14,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR0710KL",
+      "board_revision": "P5R2",
+      "specification": "10k",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR0710KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:R3",
+        "MORI_motion_P5R2:R4",
+        "MORI_motion_P5R2:R5",
+        "MORI_motion_P5R2:R7",
+        "MORI_motion_P5R2:R8",
+        "MORI_motion_P5R2:R13",
+        "MORI_motion_P5R2:R17",
+        "MORI_motion_P5R2:R18",
+        "MORI_imu_P5R2:R2",
+        "MORI_power_P5R2:R1",
+        "MORI_power_P5R2:R10",
+        "MORI_power_P5R2:R30",
+        "MORI_power_P5R2:R54",
+        "MORI_power_P5R2:R91"
+      ]
+    },
+    {
+      "id": "p4_033",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:R6, MORI_motion_P5R2:R14, MORI_motion_P5R2:R15, MORI_motion_P5R2:R16, MORI_motion_P5R2:R19",
+      "quantity": 5,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR071KL",
+      "board_revision": "P5R2",
+      "specification": "1k",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR071KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:R6",
+        "MORI_motion_P5R2:R14",
+        "MORI_motion_P5R2:R15",
+        "MORI_motion_P5R2:R16",
+        "MORI_motion_P5R2:R19"
+      ]
+    },
+    {
+      "id": "p4_034",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R20, MORI_power_P5R2:R24, MORI_power_P5R2:R40, MORI_power_P5R2:R44",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR072K2L",
+      "board_revision": "P5R2",
+      "specification": "2.2k",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR072K2L",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R20",
+        "MORI_power_P5R2:R24",
+        "MORI_power_P5R2:R40",
+        "MORI_power_P5R2:R44"
+      ]
+    },
+    {
+      "id": "p4_035",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:R10, MORI_motion_P5R2:R11, MORI_motion_P5R2:R12, MORI_imu_P5R2:R1",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR0733RL",
+      "board_revision": "P5R2",
+      "specification": "33",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR0733RL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:R10",
+        "MORI_motion_P5R2:R11",
+        "MORI_motion_P5R2:R12",
+        "MORI_imu_P5R2:R1"
+      ]
+    },
+    {
+      "id": "p4_036",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R55",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR0747KL",
+      "board_revision": "P5R2",
+      "specification": "47k",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR0747KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R55"
+      ]
+    },
+    {
+      "id": "p4_037",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:R9",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR0747RL",
+      "board_revision": "P5R2",
+      "specification": "47",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR0747RL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:R9"
+      ]
+    },
+    {
+      "id": "p4_038",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:R1, MORI_motion_P5R2:R2",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RC0603FR0768RL",
+      "board_revision": "P5R2",
+      "specification": "68",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603FR0768RL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:R1",
+        "MORI_motion_P5R2:R2"
+      ]
+    },
+    {
+      "id": "p4_039",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R3, MORI_power_P5R2:R4",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RC0603JR070RL",
+      "board_revision": "P5R2",
+      "specification": "0",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RC0603JR070RL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R3",
+        "MORI_power_P5R2:R4"
+      ]
+    },
+    {
+      "id": "p4_040",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R50, MORI_power_P5R2:R52, MORI_power_P5R2:R60, MORI_power_P5R2:R70",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD07100KL",
+      "board_revision": "P5R2",
+      "specification": "100k / 0.1%; 100k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE",
+        "HW12-S3-07"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD07100KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.; Nominal 0.596V reference gives 5.0772V setpoint; full voltage tolerance is calculated, not assumed exactly5.000V.",
+      "schematic_references": [
+        "MORI_power_P5R2:R50",
+        "MORI_power_P5R2:R52",
+        "MORI_power_P5R2:R60",
+        "MORI_power_P5R2:R70"
+      ]
+    },
+    {
+      "id": "p4_041",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R22, MORI_power_P5R2:R26, MORI_power_P5R2:R42, MORI_power_P5R2:R46",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0710KL",
+      "board_revision": "P5R2",
+      "specification": "10k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD0710KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R22",
+        "MORI_power_P5R2:R26",
+        "MORI_power_P5R2:R42",
+        "MORI_power_P5R2:R46"
+      ]
+    },
+    {
+      "id": "p4_042",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R61, MORI_power_P5R2:R71",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0713K3L",
+      "board_revision": "P5R2",
+      "specification": "13.3k / 0.1%",
+      "interface": "MORI_Custom:R_0603_1608Metric__P3_R71; Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-S3-08"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "RT0603BRD0713K3L",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "Nominal 0.596V reference gives 5.0772V setpoint; full voltage tolerance is calculated, not assumed exactly5.000V.",
+      "schematic_references": [
+        "MORI_power_P5R2:R61",
+        "MORI_power_P5R2:R71"
+      ]
+    },
+    {
+      "id": "p4_043",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R41",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0716K5L",
+      "board_revision": "P5R2",
+      "specification": "16.5k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD0716K5L",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R41"
+      ]
+    },
+    {
+      "id": "p4_044",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R45",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0718K7L",
+      "board_revision": "P5R2",
+      "specification": "18.7k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD0718K7L",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R45"
+      ]
+    },
+    {
+      "id": "p4_045",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R23, MORI_power_P5R2:R43",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD071ML",
+      "board_revision": "P5R2",
+      "specification": "1M 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD071ML",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R23",
+        "MORI_power_P5R2:R43"
+      ]
+    },
+    {
+      "id": "p4_046",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R51, MORI_power_P5R2:R53",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0727KL",
+      "board_revision": "P5R2",
+      "specification": "27k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD0727KL",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R51",
+        "MORI_power_P5R2:R53"
+      ]
+    },
+    {
+      "id": "p4_047",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R21",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0733K2L",
+      "board_revision": "P5R2",
+      "specification": "33.2k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD0733K2L",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R21"
+      ]
+    },
+    {
+      "id": "p4_048",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R25",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "RT0603BRD0737K4L",
+      "board_revision": "P5R2",
+      "specification": "37.4k 0.1%",
+      "interface": "Resistor_SMD:R_0603_1608Metric",
+      "source_ids": [
+        "HW12-PASSIVE"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_0603_1608Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "RT0603BRD0737K4L",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运",
+        "候选订货码与厂商数据页逐一确认"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R25"
+      ]
+    },
+    {
+      "id": "p4_049",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_rear_P5R2:J2",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "S5B-PH-K-S(LF)(SN)",
+      "board_revision": "P5R2",
+      "specification": "CHARGER / PH5 SIDE ENTRY",
+      "interface": "MORI_Custom:JST_PH_S5B-PH-K_1x05_P2.00mm_Horizontal__P4_ANNULUS__P3R1_J2",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "bare_xyz": [
+          11.9,
+          7.6,
+          4.8
+        ],
+        "mated_height": null,
+        "mated_depth": 9.6,
+        "wire_bend": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:JST_PH_S5B-PH-K_1x05_P2.00mm_Horizontal__P4_ANNULUS__P3R1_J2",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "https://item.szlcsc.com/169271.html",
+      "purchase_option": "C157923 / S5B-PH-K-S(LF)(SN)",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "厂商尺寸与国内目录料号已记录；库存、价格、线束和安装间隙未实测。",
+      "schematic_references": [
+        "MORI_rear_P5R2:J2"
+      ],
+      "source_urls": [
+        "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_050",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_rear_P5R2:D1",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "SMF24A",
+      "board_revision": "P5R2",
+      "specification": "SMF24A / Littelfuse",
+      "interface": "Diode_SMD:D_SOD-123F",
+      "source_ids": [
+        "HW12-P4"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Diode_SMD:D_SOD-123F",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "SMF24A",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "P4原生工程对应的器件；不能视为整机已核价。",
+      "schematic_references": [
+        "MORI_rear_P5R2:D1"
+      ],
+      "source_urls": [
+        "https://www.littelfuse.cn/products/overvoltage-protection/tvs-diodes/surface-mount/smf/smf24a"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_051",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:U5",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "SN74LVC1G74DCUR",
+      "board_revision": "P5R2",
+      "specification": "SN74LVC1G74DCUR",
+      "interface": "MORI_Custom:TI_DCU0008A_0p85x0p30",
+      "source_ids": [
+        "HW12-TI-sn74lvc1g74"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "SN74LVC1G74DCUR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:U5"
+      ]
+    },
+    {
+      "id": "p4_052",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:U1, MORI_motion_P5R2:U2",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "SN74LVC2G125DCUR",
+      "board_revision": "P5R2",
+      "specification": "SN74LVC2G125DCUR",
+      "interface": "MORI_Custom:TI_DCU0008A_0p85x0p30",
+      "source_ids": [
+        "HW12-TI-sn74lvc2g125"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "SN74LVC2G125DCUR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:U1",
+        "MORI_motion_P5R2:U2"
+      ]
+    },
+    {
+      "id": "p4_053",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:U3",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "SN74LVC2G32DCUR",
+      "board_revision": "P5R2",
+      "specification": "SN74LVC2G32DCUR",
+      "interface": "MORI_Custom:TI_DCU0008A_0p85x0p30",
+      "source_ids": [
+        "HW12-TI-sn74lvc2g32"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "SN74LVC2G32DCUR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:U3"
+      ]
+    },
+    {
+      "id": "p4_054",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:L60, MORI_power_P5R2:L70",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "SRP7050TA-100M",
+      "board_revision": "P5R2",
+      "specification": "10uH / SRP7050TA-100M",
+      "interface": "MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap",
+      "source_ids": [
+        "HW12-S3-03"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "vendor_body_xyz_max": [
+          7,
+          6.9,
+          5
+        ],
+        "pcb_land_outer_span": 8.4,
+        "pcb_land_gap": 2.5,
+        "pad_xy": [
+          2.95,
+          3.5
+        ],
+        "pad_centres_x": [
+          -2.725,
+          2.725
+        ],
+        "installed_height_including_solder": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": null,
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/授权分销，精确SKU待核价",
+      "purchase_option": "C2041441",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CHECKOUT_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "国内运费另列；未确认包邮",
+      "confirmation_status": "EXACT_QUOTE_PENDING",
+      "selection_status": "SELECTED_SCHEMATIC_ONLY",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "额定、引脚、封装、反馈公差和环路稳定性重新核对",
+      "missing": [
+        "国内精确MPN小批量报价/库存",
+        "封装与布局终审",
+        "实板测试"
+      ],
+      "notes": "10uH +/-20%; DCR max69mohm, Irms4A (40C rise), Isat7.5A (20% L fall). Footprint dimension interpretation pending visual confirmation before PCB.; P3 corrects the previously mistaken land width using Bourns SRP7050TA drawing. These are vendor dimensions, not measurements.",
+      "schematic_references": [
+        "MORI_power_P5R2:L60",
+        "MORI_power_P5R2:L70"
+      ]
+    },
+    {
+      "id": "p4_055",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:U21, MORI_power_P5R2:U41",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "TL431BIDBZR",
+      "board_revision": "P5R2",
+      "specification": "TL431BIDBZR",
+      "interface": "Package_TO_SOT_SMD:SOT-23",
+      "source_ids": [
+        "HW12-TI-tl431"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_TO_SOT_SMD:SOT-23"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_TO_SOT_SMD:SOT-23",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "TL431BIDBZR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:U21",
+        "MORI_power_P5R2:U41"
+      ]
+    },
+    {
+      "id": "p4_056",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:U6",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "TLV803EA29DBZR",
+      "board_revision": "P5R2",
+      "specification": "TLV803EA29DBZR",
+      "interface": "Package_TO_SOT_SMD:SOT-23",
+      "source_ids": [
+        "HW12-TI-tlv803e"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_TO_SOT_SMD:SOT-23"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_TO_SOT_SMD:SOT-23",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "TLV803EA29DBZR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:U6"
+      ]
+    },
+    {
+      "id": "p4_057",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_motion_P5R2:U4",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "TXU0202DCUR",
+      "board_revision": "P5R2",
+      "specification": "TXU0202DCUR",
+      "interface": "MORI_Custom:TI_DCU0008A_0p85x0p30",
+      "source_ids": [
+        "HW12-TI-txu0202"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "package_footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "TXU0202DCUR",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "EXACT_IC_VENDOR_PINMAP; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_motion_P5R2:U4"
+      ]
+    },
+    {
+      "id": "p4_058",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_rear_P5R2:USB1",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "TYPE-C-31-M-12",
+      "board_revision": "P5R2",
+      "specification": "HRO TYPE-C-31-M-12 / charge only",
+      "interface": "MORI_Custom:USB_C_Receptacle_HRO_TYPE-C-31-M-12__P4_ANNULUS__P3R1_USB1",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "VENDOR_DOCUMENTED",
+      "dimensions_mm": {
+        "bare_xyz": [
+          8.94,
+          7.35,
+          3.16
+        ],
+        "mated_height": null,
+        "mated_depth": null,
+        "wire_bend": null
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "MORI_Custom:USB_C_Receptacle_HRO_TYPE-C-31-M-12__P4_ANNULUS__P3R1_USB1",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城目录 C165948",
+      "purchase_option": "C165948 / TYPE-C-31-M-12",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "NOT_LIVE_CONFIRMED",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "CN_CATALOG_FOUND_QUOTE_PENDING",
+      "selection_status": "PROTOTYPE_SELECTED_NOT_PURCHASED",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU结算报价与库存",
+        "实物/装配及电气验证"
+      ],
+      "notes": "厂商尺寸与国内目录料号已记录；库存、价格、线束和安装间隙未实测。",
+      "schematic_references": [
+        "MORI_rear_P5R2:USB1"
+      ],
+      "source_urls": [
+        "https://www.krhro.com/Product-Details/726.html"
+      ],
+      "source_local_paths": []
+    },
+    {
+      "id": "p4_059",
+      "category": "pcb_part",
+      "purpose": "P4 PCB装配：MORI_power_P5R2:R2",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "WSL2512R0100FEA",
+      "board_revision": "P5R2",
+      "specification": "WSL2512R0100FEA 10mR 1% 1W",
+      "interface": "Resistor_SMD:R_2512_6332Metric",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-23",
+      "data_status": "ASSUMED",
+      "dimensions_mm": {
+        "package_footprint": "Resistor_SMD:R_2512_6332Metric"
+      },
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Resistor_SMD:R_2512_6332Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "WSL2512R0100FEA",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "VENDOR_SERIES; CN_QUOTE_PENDING",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确MPN小批量价格、库存、税运"
+      ],
+      "notes": "Native schematic/PCB BOM cross-reference; not a quote and not purchased.",
+      "schematic_references": [
+        "MORI_power_P5R2:R2"
+      ]
+    },
+    {
+      "id": "p4_external_master_fuse",
+      "category": "power",
+      "purpose": "电池线束串联总保险与绝缘保险座",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "6.3A DC inline fuse + holder; exact part UNSELECTED",
+      "board_revision": "external harness",
+      "specification": "DC voltage/interrupt rating and time-current curve must match finished3S pack;6.3A is design target, not a selected rating",
+      "interface": "finished protected pack positive -> fuse -> power J1.2",
+      "source_ids": [
+        "HW12-PCB"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "精确DC保险及座型号、曲线、尺寸",
+        "成品电池短路与放电额定",
+        "国内报价"
+      ],
+      "notes": "从旧physical_disable组合拆出，不能随开关更新漏掉此必需件。",
+      "schematic_references": [
+        "MORI_power_P5R2:J1"
+      ]
+    },
+    {
+      "id": "p4_assembly_service",
+      "category": "assembly",
+      "purpose": "四板首台装配/回流及必要钢网辅料",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "Qualified small-batch double-sided PCBA service; quote pending",
+      "board_revision": "P5R2",
+      "specification": "四板首台装配/回流及必要钢网辅料",
+      "interface": "P4 native assembly + vendor module drawing",
+      "source_ids": [
+        "HW12-P4"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "精确报价与所含项目",
+        "实际装配/插合与检验"
+      ],
+      "notes": "含IMU LGA和电源细脚元件；若板厂报价已含钢网/辅料则合并，不重复计价。工具与人工的排除口径不等于免费商业贴装。"
+    },
+    {
+      "id": "p4_motion_module_sockets",
+      "category": "assembly",
+      "purpose": "WeAct模块与载板可拆插接件",
+      "quantity": 1,
+      "quantity_unit": "set",
+      "full_model": "WeAct V1.1 matching socket/header set; exact MPN/stack height UNSELECTED",
+      "board_revision": "P5R2",
+      "specification": "WeAct模块与载板可拆插接件",
+      "interface": "P4 native assembly + vendor module drawing",
+      "source_ids": [
+        "HW12-P4"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": null,
+      "purchase_option": null,
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "精确报价与所含项目",
+        "实际装配/插合与检验"
+      ],
+      "notes": "按实际P1/P2/P3/P4孔阵列确认；P5维护/NRST方式分别核对。不能假定模块已附合适排母或拿未知插合高度证明机械适配。"
+    },
+    {
+      "id": "p4_phr_2",
+      "category": "harness_part",
+      "purpose": "P4 PH2板座配对线端壳体",
+      "quantity": 9,
+      "quantity_unit": "piece",
+      "full_model": "PHR-2",
+      "board_revision": "P4 harness",
+      "specification": "JST PH2.0 mating housing",
+      "interface": "SPH-002T-P0.5S contacts; see exact cable table",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "PHR-2",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU/结算价",
+        "插合/锁扣与线缆路径"
+      ],
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+    },
+    {
+      "id": "p4_phr_3",
+      "category": "harness_part",
+      "purpose": "P4 PH3板座配对线端壳体",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "PHR-3",
+      "board_revision": "P4 harness",
+      "specification": "JST PH2.0 mating housing",
+      "interface": "SPH-002T-P0.5S contacts; see exact cable table",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "PHR-3",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU/结算价",
+        "插合/锁扣与线缆路径"
+      ],
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+    },
+    {
+      "id": "p4_phr_4",
+      "category": "harness_part",
+      "purpose": "P4 PH4板座配对线端壳体",
+      "quantity": 2,
+      "quantity_unit": "piece",
+      "full_model": "PHR-4",
+      "board_revision": "P4 harness",
+      "specification": "JST PH2.0 mating housing",
+      "interface": "SPH-002T-P0.5S contacts; see exact cable table",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "PHR-4",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU/结算价",
+        "插合/锁扣与线缆路径"
+      ],
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+    },
+    {
+      "id": "p4_phr_5",
+      "category": "harness_part",
+      "purpose": "P4 PH5板座配对线端壳体",
+      "quantity": 1,
+      "quantity_unit": "piece",
+      "full_model": "PHR-5",
+      "board_revision": "P4 harness",
+      "specification": "JST PH2.0 mating housing",
+      "interface": "SPH-002T-P0.5S contacts; see exact cable table",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "PHR-5",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU/结算价",
+        "插合/锁扣与线缆路径"
+      ],
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+    },
+    {
+      "id": "p4_phr_8",
+      "category": "harness_part",
+      "purpose": "P4 PH8板座配对线端壳体",
+      "quantity": 4,
+      "quantity_unit": "piece",
+      "full_model": "PHR-8",
+      "board_revision": "P4 harness",
+      "specification": "JST PH2.0 mating housing",
+      "interface": "SPH-002T-P0.5S contacts; see exact cable table",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "PHR-8",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU/结算价",
+        "插合/锁扣与线缆路径"
+      ],
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+    },
+    {
+      "id": "p4_ph_contacts",
+      "category": "harness_part",
+      "purpose": "PH线端压接端子备料",
+      "quantity": 69,
+      "quantity_unit": "piece",
+      "full_model": "SPH-002T-P0.5S",
+      "board_revision": "P4 harness",
+      "specification": "JST PH crimp contact; wire/insulation per manufacturer",
+      "interface": "PHR-2/3/4/5/8",
+      "source_ids": [
+        "HW12-P4-CONNECTORS"
+      ],
+      "source_date": "2026-09-22",
+      "data_status": "ASSUMED",
+      "dimensions_mm": null,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "connector_clearance_mm": null,
+      "mechanical_contract_keys": [],
+      "mounting_release": false,
+      "purchase_channel": "立创商城/淘宝授权店；未形成所选SKU结算证据",
+      "purchase_option": "SPH-002T-P0.5S",
+      "unit_price_cny": null,
+      "currency": "CNY",
+      "quote_date": null,
+      "stock_status": "UNKNOWN",
+      "stock_quantity": null,
+      "tax_basis": "UNKNOWN",
+      "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
+      "confirmation_status": "BLOCKED_QUOTE_AND_ASSEMBLY",
+      "selection_status": "ORDER_CODE_CANDIDATE_VERIFY_EXACT_DATASHEET",
+      "included_in": null,
+      "alternative_model": null,
+      "readaptation_requirement": "封装/引脚/额定/公差不等同则重新适配",
+      "missing": [
+        "国内精确SKU/价格",
+        "线规/压接/拉力验证"
+      ],
+      "notes": "按所有预留孔位的端子数备料，包含未用孔；损耗另核，不保证压接一次成功。"
+    }
+  ],
+  "quote_leads": [
+    {
+      "component_id": "display",
+      "source_id": "HW12-P1",
+      "observed_price_cny": 99.9,
+      "observed_date": "2026-09-22",
+      "stock_text": "在售",
+      "stock_quantity": null,
+      "exact_sku_match": "BLOCKED",
+      "listed_manufacturer": "Spotpear",
+      "listed_sku": "010609500000",
+      "main_bom_price_adopted": false,
+      "tax_shipping": "UNKNOWN"
+    }
+  ],
+  "excluded_duplicate_purchases": [
+    "S288 external generic FOC driver",
+    "OV3660 included in SKU33700",
+    "MEMS mics/ES7210/ES8311/NS4150B included in SKU33700",
+    "Pololu D24V22F5 x2: unpurchased reference removed; replaced by TPS54302 S3 board circuits. PCB test pads included in board fabrication, not separately purchased.",
+    "P4 assembly U100/ICM/U60/U70/SW1 are counted under motion_mcu/body_imu/logic_power/physical_disable; do not add them again from the assembly cross-reference.",
+    "Power J6 RAW BAT SERVICE is DNP; no old external5V module attached. PH cable housings/contacts are separately counted; remaining harness work still charged."
+  ],
+  "procurement_release": false,
+  "manufacturing_release": false,
+  "engineering_revision_note": "P5 complete new placement/routing; P4 parts and nets retained. Power4-layer GND stack. Full native checks0; procurement, physical tests and complete source-rule equivalence are not released.",
+  "pcb_routing_style_review": {
+    "revision": "P5",
+    "status": "NOT_TESTED",
+    "native_rule_check": "PASS",
+    "foreign_body_track_screen": "PASS",
+    "foreign_body_track_candidates": 0,
+    "inner_signal_tracks": 0,
+    "visual_review": "Completed native top/bottom view review, corridor simplification and documented local exceptions; user visual acceptance pending",
+    "full_source_rule_equivalence": "NOT_TESTED",
+    "exceptions": "hardware/v1_2/layout_P5/reports/body_escape_exceptions.json",
+    "report": "hardware/v1_2/layout_P5/routing_acceptance.md",
+    "physical_tests": "NOT_TESTED",
+    "P5R1_marked_review": "hardware/v1_2/layout_P5R1/reports/verification.json",
+    "P5R2_all_trace_review": "hardware/v1_2/layout_P5R2/reports/verification.json"
+  },
+  "mechanical_requirements_source": {
+    "path": "config/geometry.json",
+    "revision": "V1.2-M1.15",
+    "sha256": "327a0f8b8b238b719dbdbdb22cace7e7e9cd94599bb31a6bd7e17bb04c495d9e",
+    "status": "DESIGN_REQUIREMENTS_ONLY_NOT_PURCHASED_DIMENSIONS"
+  },
+  "additional_source_index": "hardware/v1_2/layout_P4/connector_sources.json",
+  "assembly_cross_reference": "hardware/v1_2/layout_P5R2/assembly_parts_with_mpn.csv",
+  "layout_cross_task_open_items": [
+    {
+      "item": "speaker_selection",
+      "status": "BLOCKED",
+      "reason": "Mechanical M1.20/M1.21 records Fusheng FS4545DB0450-H25-R01; existing hardware acoustic BOM has not been synchronized or repriced in this layout-only task. No speaker geometry or amplifier qualification is asserted here."
+    }
+  ],
+  "layout_P5R1_marked_review": {
+    "revision": "V1.2-H0.5-P5R1",
+    "scope": "Motion board user-marked A–G routing review only; other three native PCBs unchanged",
+    "circuit_revision": "V1.2-H0.5-P5",
+    "outline_mm": [
+      70,
+      35,
+      1.6
+    ],
+    "native_checks": {
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "status": "PASS",
+      "tool": "10.0.6",
+      "source_sha256": "d0937f31fe610d0eacecf0a95fab267f99536f028613bc4f393917e2ab77a4c2",
+      "report": "hardware/v1_2/layout_P5R1/reports/MORI_motion_P5R1/drc.json"
+    },
+    "pad_net_map_identical": true,
+    "before": {
+      "tracks": 507,
+      "vias": 98,
+      "track_length_mm": 1222.135
+    },
+    "after": {
+      "tracks": 488,
+      "vias": 96,
+      "track_length_mm": 1205.263
+    },
+    "changed_placements": {
+      "C2": {
+        "before": {
+          "position": [
+            24.5,
+            22.75
+          ],
+          "angle": 0.0,
+          "layer": "B.Cu"
+        },
+        "after": {
+          "position": [
+            24.25,
+            22.75
+          ],
+          "angle": 0.0,
+          "layer": "B.Cu"
+        }
+      }
+    },
+    "foreign_body_crossing_candidates": 0,
+    "DRC_exclusions": 0,
+    "inner_signal_tracks": 0,
+    "marked_regions_reworked": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "user_visual_acceptance": "NOT_TESTED",
+    "full_source_rule_equivalence": "NOT_TESTED",
+    "physical_tests": "NOT_TESTED",
+    "manufacturing_release": false,
+    "retained_exceptions": [
+      "U100 raised-module architecture and documented own-pin housing escape remain; no blanket under-body clearance claim",
+      "Other three P5 boards and their documented exceptions remain unchanged"
+    ],
+    "comparison": "hardware/v1_2/layout_P5R1/index.html"
+  },
+  "layout_P5R2_all_trace_review": {
+    "revision": "V1.2-H0.5-P5R2",
+    "scope": "All four custom PCBs; per-net visual review, every segment/via inventory, transactional routing corrections, native checks and supply-width review. Circuit unchanged.",
+    "native_checks": {
+      "motion": {
+        "board": "MORI_motion_P5R2",
+        "ERC": 0,
+        "DRC": 0,
+        "unconnected": 0,
+        "parity": 0,
+        "status": "PASS",
+        "source_sha256": "5ec76c6c1f7bd483442618e65ebcd85b6ee0dd807218c960802deeee8662480d",
+        "tool": "10.0.6",
+        "report": "hardware/v1_2/layout_P5R2/reports/motion/drc.json"
+      },
+      "imu": {
+        "board": "MORI_imu_P5R2",
+        "ERC": 0,
+        "DRC": 0,
+        "unconnected": 0,
+        "parity": 0,
+        "status": "PASS",
+        "source_sha256": "386d8bc0add378612e38d8002d78c8fe3672760a225da6a21e6511c79370eefa",
+        "tool": "10.0.6",
+        "report": "hardware/v1_2/layout_P5R2/reports/imu/drc.json"
+      },
+      "power": {
+        "board": "MORI_power_P5R2",
+        "ERC": 0,
+        "DRC": 0,
+        "unconnected": 0,
+        "parity": 0,
+        "status": "PASS",
+        "source_sha256": "dc7cf61576921aa06d0fcf55101aecc158d9fe9bc8641af44f94ef382164f005",
+        "tool": "10.0.6",
+        "report": "hardware/v1_2/layout_P5R2/reports/power/drc.json"
+      },
+      "rear": {
+        "board": "MORI_rear_P5R2",
+        "ERC": 0,
+        "DRC": 0,
+        "unconnected": 0,
+        "parity": 0,
+        "status": "PASS",
+        "source_sha256": "a9769049abc1419530618065dec9d9915aa04fee4bbae5b25e527e7d75502236",
+        "tool": "10.0.6",
+        "report": "hardware/v1_2/layout_P5R2/reports/rear/drc.json"
+      }
+    },
+    "source_projects_preserved": true,
+    "rules_source": {
+      "path": "/Users/dean/Documents/KiCad/Rules/pcb-rules.json",
+      "sha256": "5d49d0134ca8c32acc41736591db9e839c347a40a2baa061d32c9ce64a7c25b0",
+      "enabled": 44,
+      "total": 47,
+      "full_equivalence": "NOT_TESTED"
+    },
+    "reviewed_nets": 114,
+    "source_segments": 1647,
+    "final_segments": 1406,
+    "final_vias": 250,
+    "deltas": {
+      "motion": {
+        "source_pcb_sha256": "d0937f31fe610d0eacecf0a95fab267f99536f028613bc4f393917e2ab77a4c2",
+        "output_pcb_sha256": "5ec76c6c1f7bd483442618e65ebcd85b6ee0dd807218c960802deeee8662480d",
+        "before": {
+          "tracks": 488,
+          "vias": 96,
+          "track_length_mm": 1205.263
+        },
+        "after": {
+          "tracks": 455,
+          "vias": 96,
+          "track_length_mm": 1196.703
+        },
+        "pad_net_footprint_map_identical": true,
+        "changed_placements": {
+          "R9": {
+            "before": {
+              "position": [
+                45.0,
+                13.5
+              ],
+              "angle": 0.0,
+              "layer": "B.Cu"
+            },
+            "after": {
+              "position": [
+                45.0,
+                13.75
+              ],
+              "angle": 0.0,
+              "layer": "B.Cu"
+            }
+          },
+          "R13": {
+            "before": {
+              "position": [
+                46.0,
+                20.0
+              ],
+              "angle": 180.0,
+              "layer": "B.Cu"
+            },
+            "after": {
+              "position": [
+                45.5,
+                19.5
+              ],
+              "angle": 90.0,
+              "layer": "B.Cu"
+            }
+          }
+        },
+        "edge_geometry_identical": true,
+        "holes_connectors_and_module_poses_identical": true,
+        "copper_layers_unchanged": true,
+        "inner_signal_tracks": 0,
+        "drc_exclusions": []
+      },
+      "imu": {
+        "source_pcb_sha256": "c3ef36b88930cffa19a72433c46d43a80c211368e6119bc83d65b44013bafff7",
+        "output_pcb_sha256": "386d8bc0add378612e38d8002d78c8fe3672760a225da6a21e6511c79370eefa",
+        "before": {
+          "tracks": 70,
+          "vias": 9,
+          "track_length_mm": 88.223
+        },
+        "after": {
+          "tracks": 70,
+          "vias": 9,
+          "track_length_mm": 89.439
+        },
+        "pad_net_footprint_map_identical": true,
+        "changed_placements": {
+          "R1": {
+            "before": {
+              "position": [
+                6.5,
+                8.85
+              ],
+              "angle": 90.0,
+              "layer": "F.Cu"
+            },
+            "after": {
+              "position": [
+                5.9,
+                8.65
+              ],
+              "angle": 180.0,
+              "layer": "F.Cu"
+            }
+          }
+        },
+        "edge_geometry_identical": true,
+        "holes_connectors_and_module_poses_identical": true,
+        "copper_layers_unchanged": true,
+        "inner_signal_tracks": 0,
+        "drc_exclusions": []
+      },
+      "power": {
+        "source_pcb_sha256": "e40d1967304aaeed70f6b7e5d7bd83bed3200863f0db1e50aa3ceb321a541a29",
+        "output_pcb_sha256": "dc7cf61576921aa06d0fcf55101aecc158d9fe9bc8641af44f94ef382164f005",
+        "before": {
+          "tracks": 1005,
+          "vias": 130,
+          "track_length_mm": 1909.388
+        },
+        "after": {
+          "tracks": 807,
+          "vias": 130,
+          "track_length_mm": 1781.855
+        },
+        "pad_net_footprint_map_identical": true,
+        "changed_placements": {},
+        "edge_geometry_identical": true,
+        "holes_connectors_and_module_poses_identical": true,
+        "copper_layers_unchanged": true,
+        "inner_signal_tracks": 0,
+        "drc_exclusions": []
+      },
+      "rear": {
+        "source_pcb_sha256": "5ea3e45f028f4deb5acf6c5276a484845d2a6377c66e226a6cbd40f7c7dc19e2",
+        "output_pcb_sha256": "a9769049abc1419530618065dec9d9915aa04fee4bbae5b25e527e7d75502236",
+        "before": {
+          "tracks": 84,
+          "vias": 15,
+          "track_length_mm": 167.558
+        },
+        "after": {
+          "tracks": 74,
+          "vias": 15,
+          "track_length_mm": 162.517
+        },
+        "pad_net_footprint_map_identical": true,
+        "changed_placements": {},
+        "edge_geometry_identical": true,
+        "holes_connectors_and_module_poses_identical": true,
+        "copper_layers_unchanged": true,
+        "inner_signal_tracks": 0,
+        "drc_exclusions": []
+      }
+    },
+    "foreign_body_crossing_candidates": 0,
+    "body_escape_inventory": "reports/body_escape_inventory.json",
+    "strict_no_under_component_routing": "NOT_TESTED",
+    "R14_local_exceptions": [
+      "IMU U1.9/U1.11: two short GND free corners do not meet exact 0.499999 mm setback; geometric FAIL retained explicitly",
+      "IMU U1.8: 0.2 mm local bevel for dense LGA escape, not exact 0.499999 mm source setback",
+      "Power W_BRAKE_GATE near R24.2: copper-width pad landing; centreline-only corner screening is not a complete pad-attachment classifier"
+    ],
+    "user_visual_acceptance": "NOT_TESTED",
+    "current_capacity_and_temperature": "NOT_TESTED",
+    "manufacturing_release": false,
+    "mechanical_fit": "BLOCKED",
+    "physical_tests": "NOT_TESTED"
+  }
+}

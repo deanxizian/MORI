@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · C6 左侧穿线口候选</title><style>body{margin:0;background:#f1f5f6;color:#203a44;font:16px/1.75 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1180px;margin:auto;padding:28px 24px 60px}h1{font-size:30px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}figure{margin:0;background:white;border-radius:10px;overflow:hidden}img{display:block;width:100%}figcaption{padding:14px}.notice{background:#fff0d5;padding:18px;border-radius:10px}a{color:#17687b}td,th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid #c3d3d8}table{width:100%;border-collapse:collapse}@media(max-width:760px){.grid{grid-template-columns:1fr}}</style><main>
+<a href="../index.html">← 线束检查总览</a><h1>C6：现有左侧穿线口加宽 0.8 mm</h1>
+<p class="notice">待用户确认，尚未应用。主模型、STL和 M1.49-A1 视频仍是已确认的 C5＋K1。下部线束的名义几何检查通过，完整线束仍为 BLOCKED。</p>
+<p>把 Yaw_Base 现有左侧弧形开口的外缘半径从 11.7 增至 12.5 mm，开口宽度由 2.15 增至 2.95 mm。实际只削去下方承台内缘约 22.05 mm³ 材料；不增加零件、螺钉或外部凸台。开口角度、轴承座接触面、头部位置和 K1 压板固定孔保持。</p>
+<figure><img src="section_comparison.png"><figcaption>实际实体剖面对比。橙色为删去的窄边；仅扩大已有开口。修改只落在 R11.7～12.5、Z145.5～147 mm 的局部范围。</figcaption></figure>
+<div class="grid"><figure><img src="body_entry_rear.png"><figcaption>九根身体到颈部导线的共同候选：3 根舵机总线、2 根 CAM 供电、4 根 CAM 信号。线径为未选定的资料参考；上端开放。两根喇叭局部预留线未在此图显示。</figcaption></figure>
+<figure><img src="body_entry_under.png"><figcaption>下方视角。外壳等遮挡物在图中隐藏；碰撞检查仍包含完整实体和接插件预留。</figcaption></figure></div>
+<table><tr><th>检查范围</th><th>结果及界限</th></tr>
+<tr><td>零件修改</td><td>仅 Yaw_Base 删减材料，仍为一个连续实体；R11.69以内和R12.51以外的材料未改变。轴承与紧固件未移动。</td></tr>
+<tr><td>九根下部导线共同存在</td><td>PASS。选中的9条连续路线经过当前候选实体、13个偏航／10个俯仰离散姿态和自身回绕检查。失败的其他候选保留在原记录中。</td></tr>
+<tr><td>线间与连接</td><td>PASS。含2根喇叭局部预留，共715组完整线间检查，最小保守间隙下界 0.308 mm，要求0.3 mm；117处连接坐标吻合。</td></tr>
+<tr><td>未完成</td><td>CAM上段汇合、其余端部、固定与应力释放、FFC/FPC及带线装配。C6通过的是下部路线，不能与未通过的上段拼成完整线束。</td></tr>
+<tr><td>实物验证</td><td>PA12强度、实际线束成形／回弹、动态疲劳、端子与安装公差仍为 NOT_TESTED；曲线长度不是供应商下料尺寸。</td></tr></table>
+<p><a href="MORI_M1_49_C6_entry_candidate.blend">可编辑 Blender 候选</a> · <a href="combined/lower_nine_screen.json">九线完整下部检查</a> · <a href="geometry_review.json">材料变化与连通性</a> · <a href="../entry_topology_review/radial_sections.png">原结构入口剖面</a> · <a href="../entry_topology_review/cam34_overlap.png">原回弯交叉位置</a></p>
+<p>确认范围仅为上述0.8 mm开口变化。其余打印件、承力连接、孔位、硬件及运动范围不在本候选的改动范围内。</p></main></html>

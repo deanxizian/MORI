@@ -1,0 +1,4988 @@
+[
+  {
+    "stage": "native_export",
+    "command": [
+      "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/prepare_populated_pcbs.py",
+      "export"
+    ],
+    "started_utc": "2026-09-23T15:18:31.171614+00:00",
+    "finished_utc": "2026-09-23T15:18:33.779248+00:00",
+    "returncode": 0,
+    "log": "reports/native_export.log"
+  },
+  {
+    "stage": "native_convert",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/convert_populated_pcbs.py"
+    ],
+    "started_utc": "2026-09-23T15:18:33.780071+00:00",
+    "finished_utc": "2026-09-23T15:18:39.057671+00:00",
+    "returncode": 0,
+    "log": "reports/native_convert.log"
+  },
+  {
+    "stage": "native_supplement",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/supplement_populated_pcbs.py"
+    ],
+    "started_utc": "2026-09-23T15:18:39.058062+00:00",
+    "finished_utc": "2026-09-23T15:18:39.937729+00:00",
+    "returncode": 0,
+    "log": "reports/native_supplement.log"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-23T15:18:39.938180+00:00",
+    "finished_utc": "2026-09-23T15:19:10.594799+00:00",
+    "returncode": 0,
+    "log": "reports/build.log"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-23T15:19:10.595292+00:00",
+    "finished_utc": "2026-09-23T15:19:51.735802+00:00",
+    "returncode": 0,
+    "log": "reports/validate.log"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-23T15:19:51.736908+00:00",
+    "finished_utc": "2026-09-23T15:25:51.784089+00:00",
+    "returncode": 0,
+    "log": "reports/render.log"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-23T15:19:51.736956+00:00",
+    "finished_utc": "2026-09-23T15:19:53.707196+00:00",
+    "returncode": 0,
+    "log": "reports/export.log"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-23T15:19:51.737031+00:00",
+    "finished_utc": "2026-09-23T15:19:52.810533+00:00",
+    "returncode": 0,
+    "log": "reports/export_wheel_metal.log"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-23T15:30:06.316581+00:00",
+    "finished_utc": "2026-09-23T15:31:09.861990+00:00",
+    "returncode": 0,
+    "log": "reports/check_rebuild.log"
+  },
+  {
+    "stage": "validate_post_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-23T15:31:09.862785+00:00",
+    "finished_utc": "2026-09-23T15:31:50.346529+00:00",
+    "returncode": 0,
+    "log": "reports/validate_post_metadata.log"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Body_IMU,Body_Upper,Head_Buck,Head_Buck_Insert_0,Head_Buck_Insert_1,Head_Buck_Screw_0,Head_Buck_Screw_1,Load_Frame,MCU_Carrier,Power_Module,Power_Switch,Rear_Interface_Insert_0,Rear_Interface_Insert_1,Rear_Interface_PCB,Rear_Interface_Screw_0,Rear_Interface_Screw_1,USB_Receptacle,Wheel_Buck,Wheel_Buck_Insert_1,Wheel_Buck_Insert_2,Wheel_Buck_Screw_1,Wheel_Buck_Screw_2"
+    ],
+    "started_utc": "2026-09-23T15:31:50.347908+00:00",
+    "finished_utc": "2026-09-23T15:31:59.962552+00:00",
+    "returncode": 0,
+    "log": "reports/catalog.log"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-23T15:31:50.347960+00:00",
+    "finished_utc": "2026-09-23T15:31:56.132036+00:00",
+    "returncode": 0,
+    "log": "reports/export_electronics_detail.log"
+  },
+  {
+    "stage": "assembly_animation",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/assembly_animation.py",
+      "--",
+      "--width",
+      "960",
+      "--samples",
+      "16",
+      "--render",
+      "stills"
+    ],
+    "started_utc": "2026-09-23T15:31:50.348025+00:00",
+    "finished_utc": "2026-09-23T15:31:58.877574+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation.log"
+  },
+  {
+    "stage": "check_animation",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_assembly_animation.py",
+      "--",
+      "--native-only"
+    ],
+    "started_utc": "2026-09-23T15:31:59.963457+00:00",
+    "finished_utc": "2026-09-23T15:32:02.232891+00:00",
+    "returncode": 0,
+    "log": "reports/check_animation.log"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-23T15:31:59.963512+00:00",
+    "finished_utc": "2026-09-23T15:32:02.761466+00:00",
+    "returncode": 0,
+    "log": "reports/delivery_check.log"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-23T15:32:02.761964+00:00",
+    "finished_utc": "2026-09-23T15:32:02.801029+00:00",
+    "returncode": 0,
+    "log": "reports/report.log"
+  },
+  {
+    "stage": "check_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/scripts/check_electronics_detail.py"
+    ],
+    "workdir": "/Users/dean/Documents/MORI",
+    "returncode": 0,
+    "log": "reports/check_electronics_detail.log",
+    "evidence": "reports/electronics_detail_validation.json"
+  },
+  {
+    "stage": "report_final",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-23T15:34:31.048561+00:00",
+    "finished_utc": "2026-09-23T15:34:31.081561+00:00",
+    "returncode": 0,
+    "log": "reports/report.log"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-23T17:55:35.364247+00:00",
+    "finished_utc": "2026-09-23T17:56:07.042401+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_build.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-23T17:56:07.043164+00:00",
+    "finished_utc": "2026-09-23T17:57:11.491507+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-23T17:59:18.143743+00:00",
+    "finished_utc": "2026-09-23T17:59:59.366634+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_validate.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-23T17:59:59.367954+00:00",
+    "finished_utc": "2026-09-23T18:06:38.853650+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_render.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-23T17:59:59.368010+00:00",
+    "finished_utc": "2026-09-23T18:00:01.380227+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_export.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-23T17:59:59.368094+00:00",
+    "finished_utc": "2026-09-23T18:00:00.815698+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-23T17:59:59.368155+00:00",
+    "finished_utc": "2026-09-23T18:07:27.079042+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_animation.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Cradle,Display_Frame,Pitch_Yoke"
+    ],
+    "started_utc": "2026-09-23T18:07:27.080057+00:00",
+    "finished_utc": "2026-09-23T18:07:30.280447+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-23T18:07:27.080107+00:00",
+    "finished_utc": "2026-09-23T18:07:33.623553+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-23T18:07:27.080169+00:00",
+    "finished_utc": "2026-09-23T18:07:39.555999+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-23T18:07:39.556603+00:00",
+    "finished_utc": "2026-09-23T18:07:42.296122+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-23T18:07:39.556677+00:00",
+    "finished_utc": "2026-09-23T18:07:41.251642+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-23T18:07:42.296627+00:00",
+    "finished_utc": "2026-09-23T18:07:42.426972+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_report.log",
+    "mechanical_revision": "V1.2-M1.24"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-24T09:29:56.953314+00:00",
+    "finished_utc": "2026-09-24T09:30:28.527344+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_build.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-24T09:30:28.529496+00:00",
+    "finished_utc": "2026-09-24T09:31:40.100838+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-24T09:31:40.101740+00:00",
+    "finished_utc": "2026-09-24T09:32:27.090239+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_validate.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-24T09:32:27.091539+00:00",
+    "finished_utc": "2026-09-24T09:41:11.364228+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_render.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-24T09:32:27.091590+00:00",
+    "finished_utc": "2026-09-24T09:32:30.243475+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_export.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-24T09:32:27.091663+00:00",
+    "finished_utc": "2026-09-24T09:32:29.650933+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-24T09:32:27.091696+00:00",
+    "finished_utc": "2026-09-24T09:40:39.332648+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_animation.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Cradle,Display_Frame,Pitch_Yoke"
+    ],
+    "started_utc": "2026-09-24T09:41:11.365822+00:00",
+    "finished_utc": "2026-09-24T09:41:15.351176+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T09:41:11.365875+00:00",
+    "finished_utc": "2026-09-24T09:41:19.281915+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T09:41:11.365937+00:00",
+    "finished_utc": "2026-09-24T09:41:25.809072+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-24T09:41:25.809601+00:00",
+    "finished_utc": "2026-09-24T09:41:28.440850+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T09:41:25.809652+00:00",
+    "finished_utc": "2026-09-24T09:41:27.460583+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-24T09:41:28.442224+00:00",
+    "finished_utc": "2026-09-24T09:41:28.576707+00:00",
+    "returncode": 0,
+    "log": "reports/head_final_report.log",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "comparison_baseline",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/revisions/V1.2-M1.24_before_planar_head_cleanup/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/scripts/validate_head_cleanup.py",
+      "--",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/baseline_geometry.json"
+    ],
+    "returncode": 0,
+    "log": "reports/planar_head_baseline.log",
+    "log_modified_utc": "2026-09-24T09:16:11.991237+00:00",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "comparison_before",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/revisions/V1.2-M1.24_before_planar_head_cleanup/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "before"
+    ],
+    "returncode": 0,
+    "log": "reports/planar_head_before_render.log",
+    "log_modified_utc": "2026-09-24T09:16:18.737383+00:00",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/studies/head_cleanup/retained_interfaces.py"
+    ],
+    "returncode": 0,
+    "log": "reports/retained_head_interfaces.log",
+    "log_modified_utc": "2026-09-24T09:32:46.635350+00:00",
+    "mechanical_revision": "V1.2-M1.25"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-24T11:17:54.252309+00:00",
+    "finished_utc": "2026-09-24T11:18:26.510371+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_build.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-24T11:18:26.511160+00:00",
+    "finished_utc": "2026-09-24T11:19:33.559419+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-24T11:19:33.560303+00:00",
+    "finished_utc": "2026-09-24T11:20:17.376643+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_validate.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-24T11:20:17.378063+00:00",
+    "finished_utc": "2026-09-24T11:28:45.857208+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_render.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-24T11:20:17.378116+00:00",
+    "finished_utc": "2026-09-24T11:20:19.468022+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_export.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-24T11:20:17.378178+00:00",
+    "finished_utc": "2026-09-24T11:20:18.566042+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-24T11:20:17.378217+00:00",
+    "finished_utc": "2026-09-24T11:28:23.397267+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_animation.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Drive_Bridge,Motor_Retainer"
+    ],
+    "started_utc": "2026-09-24T11:28:45.858022+00:00",
+    "finished_utc": "2026-09-24T11:28:48.991308+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T11:28:45.858095+00:00",
+    "finished_utc": "2026-09-24T11:28:53.630514+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-24T11:28:45.858130+00:00",
+    "finished_utc": "2026-09-24T11:28:48.826971+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T11:28:45.858196+00:00",
+    "finished_utc": "2026-09-24T11:29:01.263386+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-24T11:29:01.263916+00:00",
+    "finished_utc": "2026-09-24T11:29:03.881677+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T11:29:01.263969+00:00",
+    "finished_utc": "2026-09-24T11:29:02.877321+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-24T11:29:03.882647+00:00",
+    "finished_utc": "2026-09-24T11:29:04.012838+00:00",
+    "returncode": 0,
+    "log": "reports/drive_final_report.log",
+    "mechanical_revision": "V1.2-M1.26"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-24T12:46:14.216054+00:00",
+    "finished_utc": "2026-09-24T12:46:47.222980+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_build.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-24T12:46:47.223942+00:00",
+    "finished_utc": "2026-09-24T12:48:04.163238+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-24T12:48:04.168174+00:00",
+    "finished_utc": "2026-09-24T12:48:55.381069+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_validate.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-24T12:48:55.383499+00:00",
+    "finished_utc": "2026-09-24T12:59:11.824723+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_render.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-24T12:48:55.383548+00:00",
+    "finished_utc": "2026-09-24T12:48:57.613758+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_export.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-24T12:48:55.383609+00:00",
+    "finished_utc": "2026-09-24T12:48:57.220506+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-24T12:48:55.383666+00:00",
+    "finished_utc": "2026-09-24T12:58:11.446537+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_animation.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T12:59:11.828405+00:00",
+    "finished_utc": "2026-09-24T12:59:49.768834+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T12:59:11.828454+00:00",
+    "finished_utc": "2026-09-24T12:59:52.493794+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Cradle"
+    ],
+    "started_utc": "2026-09-24T12:59:11.828513+00:00",
+    "finished_utc": "2026-09-24T12:59:16.738802+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T12:59:11.828555+00:00",
+    "finished_utc": "2026-09-24T12:59:27.407278+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-24T12:59:11.828611+00:00",
+    "finished_utc": "2026-09-24T12:59:18.267395+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T12:59:11.828656+00:00",
+    "finished_utc": "2026-09-24T12:59:53.426677+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-24T12:59:53.427915+00:00",
+    "finished_utc": "2026-09-24T12:59:56.407250+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T12:59:53.427960+00:00",
+    "finished_utc": "2026-09-24T12:59:55.407307+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-24T12:59:56.408567+00:00",
+    "finished_utc": "2026-09-24T12:59:56.558894+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_report.log",
+    "mechanical_revision": "V1.2-M1.27"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-24T13:19:01.001700+00:00",
+    "finished_utc": "2026-09-24T13:19:37.500616+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_build.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-24T13:19:37.501072+00:00",
+    "finished_utc": "2026-09-24T13:20:47.341604+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-24T13:20:47.342228+00:00",
+    "finished_utc": "2026-09-24T13:21:35.125247+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_validate.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-24T13:21:35.126541+00:00",
+    "finished_utc": "2026-09-24T13:29:45.209750+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_render.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-24T13:21:35.126618+00:00",
+    "finished_utc": "2026-09-24T13:21:38.295793+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_export.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-24T13:21:35.126661+00:00",
+    "finished_utc": "2026-09-24T13:21:36.480122+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T13:21:35.126716+00:00",
+    "finished_utc": "2026-09-24T13:21:51.863628+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-24T13:21:35.126754+00:00",
+    "finished_utc": "2026-09-24T13:29:37.938604+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_animation.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T13:29:45.210927+00:00",
+    "finished_utc": "2026-09-24T13:30:07.175567+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Cradle"
+    ],
+    "started_utc": "2026-09-24T13:29:45.210988+00:00",
+    "finished_utc": "2026-09-24T13:29:48.021032+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T13:29:45.211060+00:00",
+    "finished_utc": "2026-09-24T13:29:54.983675+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-24T13:29:45.211102+00:00",
+    "finished_utc": "2026-09-24T13:29:48.910853+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T13:29:45.211154+00:00",
+    "finished_utc": "2026-09-24T13:30:08.384875+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-24T13:30:08.385629+00:00",
+    "finished_utc": "2026-09-24T13:30:11.345005+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T13:30:08.385680+00:00",
+    "finished_utc": "2026-09-24T13:30:10.386195+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-24T13:30:11.346377+00:00",
+    "finished_utc": "2026-09-24T13:30:11.496835+00:00",
+    "returncode": 0,
+    "log": "reports/corner_final_report.log",
+    "mechanical_revision": "V1.2-M1.28"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-24T14:05:27.799767+00:00",
+    "finished_utc": "2026-09-24T14:06:02.452880+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_build.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "surface_before",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/revisions/V1.2-M1.28_before_surface_normals/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_surface_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "before"
+    ],
+    "started_utc": "2026-09-24T14:05:27.799936+00:00",
+    "finished_utc": "2026-09-24T14:05:37.263642+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_surface_before.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-24T14:06:02.453484+00:00",
+    "finished_utc": "2026-09-24T14:07:11.204001+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-24T14:07:11.204634+00:00",
+    "finished_utc": "2026-09-24T14:07:58.643673+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_validate.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-24T14:07:58.645237+00:00",
+    "finished_utc": "2026-09-24T14:14:25.544252+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_render.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-24T14:07:58.645325+00:00",
+    "finished_utc": "2026-09-24T14:08:02.729341+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_export.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-24T14:07:58.645403+00:00",
+    "finished_utc": "2026-09-24T14:08:00.176282+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T14:07:58.646283+00:00",
+    "finished_utc": "2026-09-24T14:08:20.842076+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "surface_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_surface_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T14:07:58.646459+00:00",
+    "finished_utc": "2026-09-24T14:08:20.269951+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_surface_comparison.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-24T14:07:58.646592+00:00",
+    "finished_utc": "2026-09-24T14:15:36.979469+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_animation.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T14:15:36.980407+00:00",
+    "finished_utc": "2026-09-24T14:15:58.334204+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Cradle,Pitch_Yoke,Display_Frame"
+    ],
+    "started_utc": "2026-09-24T14:15:36.980453+00:00",
+    "finished_utc": "2026-09-24T14:15:42.058527+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T14:15:36.980509+00:00",
+    "finished_utc": "2026-09-24T14:15:46.163089+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-24T14:15:36.980556+00:00",
+    "finished_utc": "2026-09-24T14:15:40.627348+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T14:15:36.980627+00:00",
+    "finished_utc": "2026-09-24T14:15:59.156028+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-24T14:15:59.156676+00:00",
+    "finished_utc": "2026-09-24T14:16:01.945683+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T14:15:59.156727+00:00",
+    "finished_utc": "2026-09-24T14:16:00.905508+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-24T14:16:01.946909+00:00",
+    "finished_utc": "2026-09-24T14:16:02.076590+00:00",
+    "returncode": 0,
+    "log": "reports/surface_final_report.log",
+    "mechanical_revision": "V1.2-M1.29"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-24T15:07:33.220935+00:00",
+    "finished_utc": "2026-09-24T15:08:08.229680+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_build.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "servo_before",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/revisions/V1.2-M1.29_before_servo_detail/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "before",
+      "--views",
+      "servo,yoke"
+    ],
+    "started_utc": "2026-09-24T15:07:33.221269+00:00",
+    "finished_utc": "2026-09-24T15:07:42.337742+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_servo_before.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-24T15:08:08.230261+00:00",
+    "finished_utc": "2026-09-24T15:09:16.608760+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-24T15:09:16.609397+00:00",
+    "finished_utc": "2026-09-24T15:10:05.640549+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_validate.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-24T15:10:05.642203+00:00",
+    "finished_utc": "2026-09-24T15:17:22.501294+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_render.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-24T15:10:05.642261+00:00",
+    "finished_utc": "2026-09-24T15:10:08.493257+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_export.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-24T15:10:05.642326+00:00",
+    "finished_utc": "2026-09-24T15:10:06.953958+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "servo_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T15:10:05.642356+00:00",
+    "finished_utc": "2026-09-24T15:10:54.551299+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_servo_comparison.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-24T15:10:05.642418+00:00",
+    "finished_utc": "2026-09-24T15:17:53.367087+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_animation.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T15:17:53.367997+00:00",
+    "finished_utc": "2026-09-24T15:18:23.238685+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T15:17:53.368039+00:00",
+    "finished_utc": "2026-09-24T15:18:20.594104+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Display_Frame,Head_Pitch_Ear_0_Insert,Head_Pitch_Ear_0_Screw,Head_Pitch_Ear_1_Insert,Head_Pitch_Ear_1_Screw,Head_Yaw_Ear_0_Insert,Head_Yaw_Ear_0_Screw,Head_Yaw_Ear_1_Insert,Head_Yaw_Ear_1_Screw,Pitch_Cradle,Pitch_Output,Pitch_Servo,Pitch_Yoke,Yaw_Output,Yaw_Servo"
+    ],
+    "started_utc": "2026-09-24T15:17:53.368092+00:00",
+    "finished_utc": "2026-09-24T15:18:13.271242+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T15:17:53.368168+00:00",
+    "finished_utc": "2026-09-24T15:18:05.247342+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-24T15:17:53.368196+00:00",
+    "finished_utc": "2026-09-24T15:17:57.930645+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-24T15:17:53.368252+00:00",
+    "finished_utc": "2026-09-24T15:18:23.222787+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-24T15:21:07.179616+00:00",
+    "finished_utc": "2026-09-24T15:21:08.402877+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-24T15:21:08.403432+00:00",
+    "finished_utc": "2026-09-24T15:21:10.799966+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-24T15:21:08.403483+00:00",
+    "finished_utc": "2026-09-24T15:21:09.892305+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-24T15:21:10.800564+00:00",
+    "finished_utc": "2026-09-24T15:21:10.931723+00:00",
+    "returncode": 0,
+    "log": "reports/servo_final_report.log",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "servo_comparison_visual_review_refresh",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "returncode": 0,
+    "log": "reports/servo_final_servo_comparison.log",
+    "log_modified_utc": "2026-09-24T15:13:21.535382+00:00",
+    "reason": "After visual review, show complete head fastening and show the pitch-ear service view with yaw servo removed. No geometry edits.",
+    "mechanical_revision": "V1.2-M1.30"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "returncode": 0,
+    "log": "studies/head_seat_foot/corrected_corner_build.log",
+    "log_modified_utc": "2026-09-25T02:18:56.102305+00:00",
+    "execution": "Completed before visual acceptance; return code observed from tool process. Start timestamp not recorded.",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "returncode": 0,
+    "log": "studies/head_seat_foot/corrected_corner_validate.log",
+    "log_modified_utc": "2026-09-25T02:20:53.924740+00:00",
+    "execution": "Completed before visual acceptance; return code observed from tool process. Start timestamp not recorded.",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-25T02:22:07.253728+00:00",
+    "finished_utc": "2026-09-25T02:23:18.969123+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-25T02:23:18.970118+00:00",
+    "finished_utc": "2026-09-25T02:35:17.954420+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_render.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-25T02:23:18.970173+00:00",
+    "finished_utc": "2026-09-25T02:23:24.813061+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_export.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-25T02:23:18.970243+00:00",
+    "finished_utc": "2026-09-25T02:23:20.905174+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "servo_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T02:23:18.970322+00:00",
+    "finished_utc": "2026-09-25T02:24:37.656088+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_servo_comparison.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-25T02:23:18.970364+00:00",
+    "finished_utc": "2026-09-25T02:32:58.850854+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_animation.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "foot_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_seat_foot/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T02:23:18.970417+00:00",
+    "finished_utc": "2026-09-25T02:23:59.014833+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_foot_comparison.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T02:35:17.956142+00:00",
+    "finished_utc": "2026-09-25T02:35:57.347183+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T02:35:17.956195+00:00",
+    "finished_utc": "2026-09-25T02:35:54.015580+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Yoke"
+    ],
+    "started_utc": "2026-09-25T02:35:17.956396+00:00",
+    "finished_utc": "2026-09-25T02:35:23.537310+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T02:35:17.956495+00:00",
+    "finished_utc": "2026-09-25T02:35:34.689524+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-25T02:35:17.956560+00:00",
+    "finished_utc": "2026-09-25T02:35:24.919983+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T02:35:17.956649+00:00",
+    "finished_utc": "2026-09-25T02:35:58.571036+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-25T02:35:58.573638+00:00",
+    "finished_utc": "2026-09-25T02:35:59.918067+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-25T02:35:59.918580+00:00",
+    "finished_utc": "2026-09-25T02:36:02.864064+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T02:35:59.918671+00:00",
+    "finished_utc": "2026-09-25T02:36:01.849401+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-25T02:36:02.865441+00:00",
+    "finished_utc": "2026-09-25T02:36:03.035822+00:00",
+    "returncode": 0,
+    "log": "reports/foot_final_report.log",
+    "mechanical_revision": "V1.2-M1.31"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": null,
+    "finished_utc": "2026-09-25T02:58:21.369540+00:00",
+    "returncode": 0,
+    "log": "reports/pad_initial_build.log",
+    "time_provenance": "Completion timestamp from execution log mtime; process start not captured",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-25T03:42:35.641662+00:00",
+    "finished_utc": "2026-09-25T03:43:45.528123+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-25T03:43:45.529076+00:00",
+    "finished_utc": "2026-09-25T03:44:40.405090+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_validate.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-25T03:44:40.406744+00:00",
+    "finished_utc": "2026-09-25T03:55:15.463274+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_render.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-25T03:44:40.406798+00:00",
+    "finished_utc": "2026-09-25T03:44:47.390450+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_export.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-25T03:44:40.406877+00:00",
+    "finished_utc": "2026-09-25T03:44:43.025386+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "servo_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T03:44:40.406978+00:00",
+    "finished_utc": "2026-09-25T03:46:04.414075+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_servo_comparison.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-25T03:44:40.408894+00:00",
+    "finished_utc": "2026-09-25T03:53:42.549128+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_animation.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "pad_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/yaw_pad_centering/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T03:44:40.408937+00:00",
+    "finished_utc": "2026-09-25T03:45:39.935284+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_pad_comparison.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "foot_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_seat_foot/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T03:44:40.408998+00:00",
+    "finished_utc": "2026-09-25T03:45:33.632732+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_foot_comparison.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T03:55:15.464974+00:00",
+    "finished_utc": "2026-09-25T03:55:52.481145+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T03:55:15.465022+00:00",
+    "finished_utc": "2026-09-25T03:55:49.792174+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Yoke"
+    ],
+    "started_utc": "2026-09-25T03:55:15.465110+00:00",
+    "finished_utc": "2026-09-25T03:55:20.125519+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T03:55:15.465194+00:00",
+    "finished_utc": "2026-09-25T03:55:29.765224+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-25T03:55:15.465230+00:00",
+    "finished_utc": "2026-09-25T03:55:21.441717+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T03:55:15.465291+00:00",
+    "finished_utc": "2026-09-25T03:55:53.518968+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-25T03:55:53.519718+00:00",
+    "finished_utc": "2026-09-25T03:55:54.862176+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-25T03:55:54.862849+00:00",
+    "finished_utc": "2026-09-25T03:55:57.568784+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T03:55:54.862898+00:00",
+    "finished_utc": "2026-09-25T03:55:56.635451+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-25T03:55:57.569613+00:00",
+    "finished_utc": "2026-09-25T03:55:57.707128+00:00",
+    "returncode": 0,
+    "log": "reports/pad_final_report.log",
+    "mechanical_revision": "V1.2-M1.32"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-25T04:49:43.529955+00:00",
+    "finished_utc": "2026-09-25T04:50:23.449907+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_build.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-25T04:50:23.451763+00:00",
+    "finished_utc": "2026-09-25T04:51:48.844923+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-25T04:51:48.845864+00:00",
+    "finished_utc": "2026-09-25T04:52:44.447095+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_validate.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-25T04:52:44.448860+00:00",
+    "finished_utc": "2026-09-25T04:58:46.755407+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_render.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-25T04:52:44.448920+00:00",
+    "finished_utc": "2026-09-25T04:52:49.327424+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_export.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-25T04:52:44.448994+00:00",
+    "finished_utc": "2026-09-25T04:52:46.551897+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "servo_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T04:52:44.449952+00:00",
+    "finished_utc": "2026-09-25T04:53:47.281053+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_servo_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "waveshare_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/waveshare_study_render.py"
+    ],
+    "started_utc": "2026-09-25T04:52:44.452380+00:00",
+    "finished_utc": "2026-09-25T04:53:36.636967+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_waveshare_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T05:00:20.821896+00:00",
+    "finished_utc": "2026-09-25T05:01:13.504206+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T05:00:20.822329+00:00",
+    "finished_utc": "2026-09-25T05:01:08.731600+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "CAM_Mainboard,Onboard_MIC_L,Onboard_MIC_R,Camera_PCB,Camera_Lens,Display_PCB"
+    ],
+    "started_utc": "2026-09-25T05:00:20.822373+00:00",
+    "finished_utc": "2026-09-25T05:00:38.242967+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T05:00:20.822441+00:00",
+    "finished_utc": "2026-09-25T05:01:19.059562+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "retained_interfaces",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/retained_interfaces.py"
+    ],
+    "started_utc": "2026-09-25T05:00:20.823373+00:00",
+    "finished_utc": "2026-09-25T05:00:28.860955+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_retained_interfaces.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "drive_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T05:00:20.823547+00:00",
+    "finished_utc": "2026-09-25T05:01:14.685038+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_drive_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "pad_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/yaw_pad_centering/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T05:00:20.825823+00:00",
+    "finished_utc": "2026-09-25T05:01:19.777043+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_pad_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "foot_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_seat_foot/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T05:00:20.827316+00:00",
+    "finished_utc": "2026-09-25T05:01:16.437412+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_foot_comparison.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-25T05:01:19.777848+00:00",
+    "finished_utc": "2026-09-25T05:01:21.305548+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-25T05:01:21.306175+00:00",
+    "finished_utc": "2026-09-25T05:01:24.145143+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T05:01:21.306235+00:00",
+    "finished_utc": "2026-09-25T05:01:23.451777+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-25T05:01:24.145767+00:00",
+    "finished_utc": "2026-09-25T05:01:24.286433+00:00",
+    "returncode": 0,
+    "log": "reports/waveshare_final_report.log",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "waveshare_bench_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_waveshare_bench.py"
+    ],
+    "returncode": 0,
+    "log": "reports/waveshare_bench_check.log",
+    "recorded_log_finished_utc": "2026-09-25T05:04:30.938018+00:00",
+    "timestamp_basis": "completed log mtime; original start time not captured",
+    "mechanical_revision": "V1.2-M1.33"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "mechanical/scripts/build.py"
+    ],
+    "returncode": 0,
+    "log": "reports/simple_head_build.log",
+    "note": "Executed directly before the finalization pipeline; BUILD_COMPLETE and Blender exit0 recorded.",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-25T14:04:23.081753+00:00",
+    "finished_utc": "2026-09-25T14:05:45.909194+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-25T14:08:25.345110+00:00",
+    "finished_utc": "2026-09-25T14:09:24.539427+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_validate.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-25T14:09:24.541580+00:00",
+    "finished_utc": "2026-09-25T14:15:38.779100+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_render.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-25T14:09:24.541647+00:00",
+    "finished_utc": "2026-09-25T14:09:27.820385+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_export.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-25T14:09:24.541718+00:00",
+    "finished_utc": "2026-09-25T14:09:26.548472+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "simple_before",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/revisions/V1.2-M1.33_before_simple_head_mounts/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/simple_head_mounts/render_review.py",
+      "--",
+      "--tag",
+      "before"
+    ],
+    "started_utc": "2026-09-25T14:09:24.541773+00:00",
+    "finished_utc": "2026-09-25T14:10:01.192260+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_simple_before.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "simple_after",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/simple_head_mounts/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T14:09:26.548765+00:00",
+    "finished_utc": "2026-09-25T14:10:00.947785+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_simple_after.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "head_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_cleanup/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T14:15:38.783106+00:00",
+    "finished_utc": "2026-09-25T14:16:26.917533+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_head_comparison.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "corner_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_corner_chamfer/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T14:15:38.783172+00:00",
+    "finished_utc": "2026-09-25T14:16:22.987812+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_corner_comparison.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "servo_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_servo_detail/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T14:15:38.783251+00:00",
+    "finished_utc": "2026-09-25T14:17:10.627947+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_servo_comparison.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "foot_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/head_seat_foot/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T14:15:38.783315+00:00",
+    "finished_utc": "2026-09-25T14:16:29.738170+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_foot_comparison.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Yoke,Pitch_Cradle,Head_Front"
+    ],
+    "started_utc": "2026-09-25T14:16:22.988351+00:00",
+    "finished_utc": "2026-09-25T14:16:28.214328+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_catalog.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T14:16:26.917937+00:00",
+    "finished_utc": "2026-09-25T14:17:12.249135+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "waveshare_comparison",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/waveshare_study_render.py"
+    ],
+    "started_utc": "2026-09-25T14:16:28.214503+00:00",
+    "finished_utc": "2026-09-25T14:17:19.425820+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_waveshare_comparison.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-25T14:17:19.426455+00:00",
+    "finished_utc": "2026-09-25T14:17:20.805441+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-25T14:17:20.805949+00:00",
+    "finished_utc": "2026-09-25T14:17:24.945030+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T14:17:20.806015+00:00",
+    "finished_utc": "2026-09-25T14:17:24.033154+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "waveshare_bench_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_waveshare_bench.py"
+    ],
+    "started_utc": "2026-09-25T14:17:20.806084+00:00",
+    "finished_utc": "2026-09-25T14:17:25.828354+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_waveshare_bench_check.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-25T14:17:25.831251+00:00",
+    "finished_utc": "2026-09-25T14:17:26.031508+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_report.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "delivery_scope",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_simple_head_delivery.py"
+    ],
+    "started_utc": "2026-09-25T14:18:45.403147+00:00",
+    "finished_utc": "2026-09-25T14:18:45.469154+00:00",
+    "returncode": 0,
+    "log": "reports/simple_head_delivery_scope.log",
+    "mechanical_revision": "V1.2-M1.34"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-25T17:00:42.264692+00:00",
+    "finished_utc": "2026-09-25T17:01:23.308517+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_build.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-25T17:01:23.311178+00:00",
+    "finished_utc": "2026-09-25T17:02:50.665836+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-25T17:02:50.669358+00:00",
+    "finished_utc": "2026-09-25T17:03:53.646398+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_validate.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-25T17:03:53.649340+00:00",
+    "finished_utc": "2026-09-25T17:09:46.293081+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_render.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-25T17:03:53.649421+00:00",
+    "finished_utc": "2026-09-25T17:03:57.413838+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_export.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "completion_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/assembly_completion/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-25T17:03:53.649465+00:00",
+    "finished_utc": "2026-09-25T17:04:22.255225+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_completion_views.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Battery_Pad_Top,Battery_Strap,Battery_Tray,Body_IMU,CAM_Mount_Insert_0,CAM_Mount_Insert_1,CAM_Mount_Insert_2,CAM_Mount_Insert_3,CAM_Mount_Screw_0,CAM_Mount_Screw_1,CAM_Mount_Screw_2,CAM_Mount_Screw_3,Camera_Lens,Camera_PCB,Display_Frame,Head_Front,MCU_Carrier,Pitch_Cradle,Power_Module,Power_Switch,Rear_Interface_PCB,USB_Receptacle"
+    ],
+    "started_utc": "2026-09-25T17:03:53.649536+00:00",
+    "finished_utc": "2026-09-25T17:04:10.912937+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T17:11:54.743593+00:00",
+    "finished_utc": "2026-09-25T17:12:14.172969+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-25T17:11:54.743756+00:00",
+    "finished_utc": "2026-09-25T17:11:56.371065+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-25T17:11:54.743846+00:00",
+    "finished_utc": "2026-09-25T17:11:56.744011+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-25T17:12:14.175331+00:00",
+    "finished_utc": "2026-09-25T17:12:18.426351+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-25T17:12:14.175390+00:00",
+    "finished_utc": "2026-09-25T17:12:17.534161+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "waveshare_bench_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_waveshare_bench.py"
+    ],
+    "started_utc": "2026-09-25T17:12:14.175448+00:00",
+    "finished_utc": "2026-09-25T17:12:19.549217+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_waveshare_bench_check.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-25T17:10:24.008154+00:00",
+    "finished_utc": "2026-09-25T17:18:03.326783+00:00",
+    "time_basis": "First and last subprocess timestamps; see animation/commands.json for exact child commands.",
+    "returncode": 0,
+    "log": "reports/completion_animation_pipeline.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report_completion.py"
+    ],
+    "started_utc": "2026-09-25T17:19:44.544416+00:00",
+    "finished_utc": "2026-09-25T17:19:44.650597+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_report.log",
+    "mechanical_revision": "V1.2-M1.35"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-26T00:59:48.891861+00:00",
+    "finished_utc": "2026-09-26T01:00:28.811271+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_build.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-26T01:00:28.814198+00:00",
+    "finished_utc": "2026-09-26T01:01:53.727704+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-26T01:01:53.731652+00:00",
+    "finished_utc": "2026-09-26T01:02:56.843292+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_validate.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-26T01:02:56.846807+00:00",
+    "finished_utc": "2026-09-26T02:14:45.418412+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_render.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-26T01:02:56.846861+00:00",
+    "finished_utc": "2026-09-26T01:03:00.720147+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_export.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "completion_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/assembly_completion/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-26T01:02:56.846922+00:00",
+    "finished_utc": "2026-09-26T01:03:37.227652+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_completion_views.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Motor_Retainer"
+    ],
+    "started_utc": "2026-09-26T01:02:56.846978+00:00",
+    "finished_utc": "2026-09-26T01:02:59.329979+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-26T01:02:59.330291+00:00",
+    "finished_utc": "2026-09-26T01:58:16.266738+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_animation.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "edge_before",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/revisions/V1.2-M1.35_before_cap_edge_cleanup/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_edge_review/render_review.py",
+      "--",
+      "--tag",
+      "before"
+    ],
+    "started_utc": "2026-09-26T01:03:00.720343+00:00",
+    "finished_utc": "2026-09-26T01:03:16.266463+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_edge_before.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "edge_after",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/drive_edge_review/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-26T01:03:16.267190+00:00",
+    "finished_utc": "2026-09-26T01:03:29.902865+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_edge_after.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-26T02:14:45.426241+00:00",
+    "finished_utc": "2026-09-26T02:15:05.566702+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-26T02:14:45.426288+00:00",
+    "finished_utc": "2026-09-26T02:14:46.977701+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-26T02:14:45.426475+00:00",
+    "finished_utc": "2026-09-26T02:14:50.372549+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-26T02:15:05.568616+00:00",
+    "finished_utc": "2026-09-26T02:15:09.344062+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-26T02:15:05.568676+00:00",
+    "finished_utc": "2026-09-26T02:15:08.511490+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "waveshare_bench_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_waveshare_bench.py"
+    ],
+    "started_utc": "2026-09-26T02:15:05.569526+00:00",
+    "finished_utc": "2026-09-26T02:15:10.378193+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_waveshare_bench_check.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report_completion.py"
+    ],
+    "started_utc": "2026-09-26T02:15:10.380734+00:00",
+    "finished_utc": "2026-09-26T02:15:10.551612+00:00",
+    "returncode": 0,
+    "log": "reports/completion_final_report.log",
+    "mechanical_revision": "V1.2-M1.36"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-26T11:17:30.563904+00:00",
+    "finished_utc": "2026-09-26T11:18:09.102084+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_build.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-26T11:18:09.106083+00:00",
+    "finished_utc": "2026-09-26T11:19:32.714571+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-26T11:19:32.717132+00:00",
+    "finished_utc": "2026-09-26T11:20:39.383810+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_validate.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-26T11:20:39.387819+00:00",
+    "finished_utc": "2026-09-26T11:29:42.621754+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_render.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-26T11:20:39.387895+00:00",
+    "finished_utc": "2026-09-26T11:20:43.091130+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_export.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "speaker_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/speaker_SP3040_review/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-26T11:20:39.387954+00:00",
+    "finished_utc": "2026-09-26T11:21:10.467780+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_speaker_views.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-26T11:20:39.388024+00:00",
+    "finished_utc": "2026-09-26T11:29:04.333637+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_animation.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Speaker,Body_Upper,Speaker_Gasket,Speaker_Screw_-1,Speaker_Screw_1,Speaker_Insert_-1,Speaker_Insert_1"
+    ],
+    "started_utc": "2026-09-26T11:29:42.624766+00:00",
+    "finished_utc": "2026-09-26T11:29:46.864748+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-26T11:29:42.624832+00:00",
+    "finished_utc": "2026-09-26T11:30:00.940140+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-26T11:29:42.624911+00:00",
+    "finished_utc": "2026-09-26T11:29:43.960566+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-26T11:29:42.625007+00:00",
+    "finished_utc": "2026-09-26T11:29:44.671954+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-26T11:30:00.942819+00:00",
+    "finished_utc": "2026-09-26T11:30:04.125155+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-26T11:30:00.942896+00:00",
+    "finished_utc": "2026-09-26T11:30:03.388108+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report_completion.py"
+    ],
+    "started_utc": "2026-09-26T11:30:04.127358+00:00",
+    "finished_utc": "2026-09-26T11:30:04.273719+00:00",
+    "returncode": 0,
+    "log": "reports/SP3040_final_report.log",
+    "mechanical_revision": "V1.2-M1.37"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-27T01:53:25.755788+00:00",
+    "finished_utc": "2026-09-27T01:54:04.319674+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_build.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-27T01:54:04.323109+00:00",
+    "finished_utc": "2026-09-27T01:55:28.530958+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-27T01:55:28.533979+00:00",
+    "finished_utc": "2026-09-27T01:56:35.874480+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_validate.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-27T01:56:35.878009+00:00",
+    "finished_utc": "2026-09-27T02:05:32.136855+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_render.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-27T01:59:45.061025+00:00",
+    "finished_utc": "2026-09-27T01:59:50.765792+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_export.log",
+    "mechanical_revision": "V1.2-M1.38",
+    "previous_attempt": {
+      "stage": "export",
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+      ],
+      "started_utc": "2026-09-27T01:56:35.878090+00:00",
+      "finished_utc": "2026-09-27T01:56:40.600614+00:00",
+      "returncode": 1,
+      "log": "reports/readiness_final_export.log",
+      "mechanical_revision": "V1.2-M1.38",
+      "failure": "Legacy Camera_Window template reference remained after approved window retirement. STL geometry exported; template branch then failed. Fixed export script retires its two owned templates."
+    }
+  },
+  {
+    "stage": "readiness_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/readiness_completion/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-27T01:56:35.878170+00:00",
+    "finished_utc": "2026-09-27T01:57:21.885071+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_readiness_views.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "completion_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/assembly_completion/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-27T01:56:35.878249+00:00",
+    "finished_utc": "2026-09-27T01:57:21.122845+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_completion_views.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-27T01:56:40.600799+00:00",
+    "finished_utc": "2026-09-27T02:04:17.897237+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_animation.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Head_Front,Pitch_Cradle,Display_Frame,Body_Upper,LCD_Mount_Screw_0,LCD_Mount_Screw_1,LCD_Mount_Screw_2,Head_Cradle_Screw_-1,Head_Cradle_Screw_1,Head_Cradle_Insert_-1,Head_Cradle_Insert_1,Head_Seam_Screw_-1,Head_Seam_Screw_1,Head_Seam_Insert_-1,Head_Seam_Insert_1"
+    ],
+    "started_utc": "2026-09-27T02:06:27.170810+00:00",
+    "finished_utc": "2026-09-27T02:06:34.298570+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-27T02:06:27.170968+00:00",
+    "finished_utc": "2026-09-27T02:06:45.517986+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-27T02:06:27.171035+00:00",
+    "finished_utc": "2026-09-27T02:06:29.679700+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-27T02:06:27.171072+00:00",
+    "finished_utc": "2026-09-27T02:06:29.824519+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-27T02:06:45.520902+00:00",
+    "finished_utc": "2026-09-27T02:06:48.229177+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-27T02:06:45.520972+00:00",
+    "finished_utc": "2026-09-27T02:06:47.602065+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report_completion.py"
+    ],
+    "started_utc": "2026-09-27T12:20:24.764441+00:00",
+    "finished_utc": "2026-09-27T12:20:24.937811+00:00",
+    "returncode": 0,
+    "log": "reports/readiness_final_report.log",
+    "mechanical_revision": "V1.2-M1.38"
+  },
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-09-27T15:58:08.245922+00:00",
+    "finished_utc": "2026-09-27T15:58:48.535946+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_build.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "check_rebuild",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_rebuild.py"
+    ],
+    "started_utc": "2026-09-27T15:58:48.538732+00:00",
+    "finished_utc": "2026-09-27T16:00:14.262697+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_check_rebuild.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-09-27T16:00:14.265796+00:00",
+    "finished_utc": "2026-09-27T16:01:22.666917+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_validate.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/render.py",
+      "--",
+      "--views",
+      "all",
+      "--size",
+      "1000",
+      "--samples",
+      "20"
+    ],
+    "started_utc": "2026-09-27T16:01:22.671013+00:00",
+    "finished_utc": "2026-09-27T16:08:56.828111+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_render.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-09-27T16:01:22.671099+00:00",
+    "finished_utc": "2026-09-27T16:01:27.318143+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_export.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "readiness_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/readiness_completion/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-27T16:01:22.673006+00:00",
+    "finished_utc": "2026-09-27T16:02:09.541887+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_readiness_views.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "completion_views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/studies/assembly_completion/render_review.py",
+      "--",
+      "--tag",
+      "after"
+    ],
+    "started_utc": "2026-09-27T16:01:22.673255+00:00",
+    "finished_utc": "2026-09-27T16:02:09.427710+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_completion_views.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "animation",
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/run_animation.py",
+      "--defer-publish"
+    ],
+    "started_utc": "2026-09-27T16:01:27.318383+00:00",
+    "finished_utc": "2026-09-27T16:08:31.611386+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_animation.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "catalog",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/catalog.py",
+      "--",
+      "--ids",
+      "Pitch_Yoke,Head_Front,Head_Yaw_Ear_0_Screw,Head_Yaw_Ear_1_Screw,Head_Pitch_Ear_0_Screw,Head_Pitch_Ear_1_Screw,Head_Yaw_Ear_0_Nut,Head_Yaw_Ear_1_Nut,Head_Pitch_Ear_0_Nut,Head_Pitch_Ear_1_Nut"
+    ],
+    "started_utc": "2026-09-27T16:08:56.831541+00:00",
+    "finished_utc": "2026-09-27T16:09:02.084607+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_catalog.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "export_electronics_detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-27T16:08:56.831603+00:00",
+    "finished_utc": "2026-09-27T16:09:15.877865+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_export_electronics_detail.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "export_wheel_metal",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/export_wheel_metal.py"
+    ],
+    "started_utc": "2026-09-27T16:08:56.831679+00:00",
+    "finished_utc": "2026-09-27T16:08:58.620038+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_export_wheel_metal.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "structure_metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-09-27T16:08:56.831733+00:00",
+    "finished_utc": "2026-09-27T16:08:58.806546+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_structure_metadata.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "delivery_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/delivery_check.py"
+    ],
+    "started_utc": "2026-09-27T16:09:15.880142+00:00",
+    "finished_utc": "2026-09-27T16:09:18.782506+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_delivery_check.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "electronics_detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/Documents/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-09-27T16:09:15.880230+00:00",
+    "finished_utc": "2026-09-27T16:09:18.072506+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_electronics_detail_check.log",
+    "mechanical_revision": "V1.2-M1.39"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report_completion.py"
+    ],
+    "started_utc": "2026-09-27T16:09:18.785009+00:00",
+    "finished_utc": "2026-09-27T16:09:18.910701+00:00",
+    "returncode": 0,
+    "log": "reports/prearrival_final_report.log",
+    "mechanical_revision": "V1.2-M1.39"
+  }
+]

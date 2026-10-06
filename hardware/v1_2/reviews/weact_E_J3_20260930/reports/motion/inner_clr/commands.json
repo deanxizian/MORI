@@ -1,0 +1,47 @@
+{
+  "inputs": {
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pcb": "bc391842fd1c9247d1d721d1e49de91b84a7bd66d9ffa3f076948c98d8ddbe69",
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_sch": "98d38df1d3a027cc126da1dbfe9c080a5e3194ea608794dddb620a96f11872b5",
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_dru": "e990520c3a8c95f8ac5c4b5327c5f864cd9924abd58210f6c91d141d4a0e4317",
+    "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pro": "84dd831073af4efd906aa1a9440b6e27f2504224cc64402a4c5fe089f6ea5fde"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "pcb",
+        "drc",
+        "--format",
+        "json",
+        "--severity-all",
+        "--all-track-errors",
+        "--schematic-parity",
+        "--refill-zones",
+        "--exit-code-violations",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/v1_2/reviews/weact_E_J3_20260930/reports/motion/inner_clr/drc.json",
+        "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pcb"
+      ],
+      "returncode": 5,
+      "stdout": "发现 4 条违规项\n发现 0 个未连接的项目\n发现 0 个原理图一致性问题\n保存 DRC 报告到 /Users/dean/Documents/MORI/hardware/v1_2/reviews/weact_E_J3_20260930/reports/motion/inner_clr/drc.json\n",
+      "stderr": "Fontconfig error: Cannot load default config file: File not found\n"
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "sch",
+        "erc",
+        "--format",
+        "json",
+        "--severity-all",
+        "--exit-code-violations",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/v1_2/reviews/weact_E_J3_20260930/reports/motion/inner_clr/erc.json",
+        "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_sch"
+      ],
+      "returncode": 0,
+      "stdout": "发现 0 条违规项\n已将 ERC 报告保存到文件 /Users/dean/Documents/MORI/hardware/v1_2/reviews/weact_E_J3_20260930/reports/motion/inner_clr/erc.json\n",
+      "stderr": "Fontconfig error: Cannot load default config file: File not found\n"
+    }
+  ]
+}

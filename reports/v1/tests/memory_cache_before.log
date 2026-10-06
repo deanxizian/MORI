@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________ test_memory_delete_purges_gateway_result_cache ________________
+
+tmp_path = PosixPath('/private/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/pytest-of-dean/pytest-24/test_memory_delete_purges_gate0')
+
+    def test_memory_delete_purges_gateway_result_cache(tmp_path):
+     g=Gateway(tmp_path,Clock());r=Rig();r.d=g.device;p=g.auth.create('owner',['memory']);cid=p['client_id']
+     def issue(k,params):return asyncio.run(g.dispatch(r.cmd(k,params,client=cid),p))
+     ident=issue('MEMORY_REMEMBER',{'text':'private cache','category':'fact','confirmed':True,'sensitive':False,'source_id':'explicit'})['data']['id']
+     issue('MEMORY_QUERY',{'query':''});issue('MEMORY_DELETE',{'id':ident})
+>    assert 'private cache' not in json.dumps(list(g.device.results.values()))
+E    assert 'private cache' not in '[{"command_...ata": null}]'
+E      
+E      'private cache' is contained here:
+E      ?           ^^^^^^^^^^^^^^^
+E         "text": "private cache", "source_id": "explicit", "confirmed": true, "created_at": "2026-09-21T14:12:24.197248+00:00", "updated_at": "2026-09-21T14:12:24.197248+00:00", "conflicts": []}]}, {"command_id": "81530613ab004607ace55b1e0eafffbe", "client_id": "client-2769d482a4c043aaa3b0b981373bb4ae", "type": "MEMORY_DELETE", "status": "COMPLETED", "reason": "", "device_ms": 1000, "data": null}]
+E      ?           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend/tests/test_storage_gateway.py:73: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /Users/dean/Documents/MORI/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/tests/test_storage_gateway.py::test_memory_delete_purges_gateway_result_cache
+1 failed, 1 warning in 0.21s

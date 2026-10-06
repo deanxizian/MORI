@@ -1,0 +1,118 @@
+{
+  "tool_versions": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "CAD_Python": "3.12.14"
+  },
+  "records": [
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/build_candidate.py"
+      ],
+      "stdout_stderr_log": "mechanical/studies/prearrival_finish/verification_logs/camera_top_candidate_build.log",
+      "log_sha256": "53735b41459cc1ed218dc3da03d682509dd01d5bb2f2fea615ad64b98f28a30e",
+      "exit_code": 2,
+      "note": "Initial topology result API mismatch; corrected before final build."
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/build_candidate.py"
+      ],
+      "stdout_stderr_log": "mechanical/studies/prearrival_finish/verification_logs/camera_top_candidate_build_final.log",
+      "log_sha256": "21762c1e8b7fc4cfec4f1d746cb9f91c98b746f8ff9c4e32ed536461a573d924",
+      "exit_code": 0,
+      "note": "Successful saved independent candidate."
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/verify_candidate.py"
+      ],
+      "stdout_stderr_log": "mechanical/studies/prearrival_finish/verification_logs/camera_top_candidate_verify.log",
+      "log_sha256": "d0a90544c3a9e70c462259d0be3c02715d2a07e147daf525acc4893e6e6f25af",
+      "exit_code": 2,
+      "note": "Float32 BVH thickness estimate lost several 1e-5 mm at world Z; replaced by float64 triangle intersection."
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/verify_candidate.py"
+      ],
+      "stdout_stderr_log": "mechanical/studies/prearrival_finish/verification_logs/camera_top_candidate_verify_float64.log",
+      "log_sha256": "034a49dac695b8e0893b6f16b54ca8bbd78b2414aa7538dc8819318a4c102ef4",
+      "exit_code": 2,
+      "note": "Parenthesis syntax typo, corrected."
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/verify_candidate.py"
+      ],
+      "stdout_stderr_log": "mechanical/studies/prearrival_finish/verification_logs/camera_top_candidate_verify_final.log",
+      "log_sha256": "c7ed12d695404541e30aba7bfd0aca31876989cc9c1f5246bd0ddcbae752aa5d",
+      "exit_code": 0,
+      "note": "Saved-mesh, scope, capture and assembly verification passed."
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/candidate.blend",
+        "--python-exit-code",
+        "2",
+        "--python",
+        "mechanical/studies/prearrival_finish/camera_top_clearance/render_and_extract.py"
+      ],
+      "stdout_stderr_log": "mechanical/studies/prearrival_finish/verification_logs/camera_top_candidate_render.log",
+      "log_sha256": "a23516598f473af44deedb564d6e54b8da87bad83614ce20c0bfeafaa2abb574",
+      "exit_code": 0,
+      "note": "Renders and source sections complete."
+    }
+  ],
+  "publication_commands": [
+    [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "mechanical/studies/prearrival_finish/camera_top_clearance/plot_review.py"
+    ],
+    [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "mechanical/studies/prearrival_finish/camera_top_clearance/publish_review.py",
+      "--visual-reviewed"
+    ]
+  ],
+  "current_script_hashes": {
+    "build_candidate.py": "a12a070cd3d65870d8b2e199cd70176273a6c5657fd2eff09d890d2d4647dddd",
+    "verify_candidate.py": "bf91e8059b95733d067f13337fd118b2a074b5490afe7d71a4bb4d95d69f9272",
+    "render_and_extract.py": "a092303496804019224e7a650df10db5dc3d865eb980fad5a3269be1002a009b",
+    "plot_review.py": "787f0bad9fca12c8539a9d4802576a1fc70ac0308eb488015e04c7bf85c0f24e",
+    "publish_review.py": "06e4a2fd7e1b5924e812490ab1f594a19c0f267060bd4b51163755310105031e"
+  },
+  "earlier_failed_scripts_not_claimed_byte_identical": true,
+  "main_applied": false
+}

@@ -1,0 +1,246 @@
+{
+  "generated_utc": "2026-09-21T06:35:23.677816+00:00",
+  "requirements_basis": "HW-SW-0.4 user instruction and parallel update prompt",
+  "software": "SW-0.4",
+  "actual_original_extraction": "HW-SW-0.3",
+  "adopted_handoff": "HW-SW-0.4",
+  "baseline_archive_members_verified": 23,
+  "software_implementation": "PASS",
+  "host_unit_and_simulation": "PASS",
+  "current_hardware_handoff_source_alignment": "PASS",
+  "current_hardware_handoff_compatibility": "PASS",
+  "compatibility_scope": "Software constants, manifest, GPIO and wiring mirrors align with adopted candidate HW-SW-0.4. No physical compatibility or electrical validation is implied.",
+  "idf_builds": {
+    "default_locked": "PASS",
+    "no_screen": "PASS",
+    "gated_code_compile_only_DO_NOT_FLASH": "PASS",
+    "separate_unmodified_HW_SW_0_4_baseline": "PASS"
+  },
+  "c_assertions": {
+    "original_core": 163,
+    "simulated_engine": 2211,
+    "motor_adapter": 22,
+    "default_locked_adapter": 10,
+    "total": 2406
+  },
+  "behavioral_regression_checks": 4,
+  "python_tests": 24,
+  "hw04_python_acceptance_tests": 5,
+  "physical_validation": "NOT_TESTED",
+  "physical_timing_max_us": null,
+  "free_balance": "NOT_TESTED",
+  "power_on_or_flash_performed": false,
+  "real_serial_connection_performed": false,
+  "git": "NOT_APPLICABLE",
+  "commands": {
+    "hw04_baseline_reproduction_corrected": {
+      "argv": [
+        "bash",
+        "software/scripts/reproduce_hw04_baseline.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:26:11.495982+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T06:26:36.159351+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "f07c063907e2295f3d2a87a37357f1b7ee1a85c5bfd4825133d8a700233d2f3f",
+      "record": "hw04_baseline_reproduction_corrected/command.json",
+      "log": "hw04_baseline_reproduction_corrected/output.log"
+    },
+    "hw04_default_build": {
+      "argv": [
+        "bash",
+        "software/scripts/idf_build.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:31:23.491046+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T06:31:30.405743+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "176544d7b8d7ee74e236d62043e3207e4272cace7945e5cd086a1a36d61dd793",
+      "record": "hw04_default_build/command.json",
+      "log": "hw04_default_build/output.log"
+    },
+    "hw04_variant_build": {
+      "argv": [
+        "bash",
+        "software/scripts/build_variants.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:32:17.645368+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T06:32:34.785515+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "3d81e940a71cb1a56a8a6df52d84c8f8576963b81e089aafbbf79535eaa8455d",
+      "record": "hw04_variant_build/command.json",
+      "log": "hw04_variant_build/output.log"
+    },
+    "SIMULATED_hw04_host_corrected": {
+      "argv": [
+        "bash",
+        "software/scripts/test_host.sh"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:32:17.645368+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T06:32:20.060970+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "cb47d974cdc23a0965e2ef1f1b1234bce3fdd0653e3498a38bebec879c17e59b",
+      "record": "SIMULATED_hw04_host_corrected/command.json",
+      "log": "SIMULATED_hw04_host_corrected/output.log"
+    },
+    "SIMULATED_hw04_python": {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "software/tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:31:23.491200+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T06:31:25.435872+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "165f895a8c1c2abf490c14d64eca45addc22012caec25889ca6e37f3aad446f7",
+      "record": "SIMULATED_hw04_python/command.json",
+      "log": "SIMULATED_hw04_python/output.log"
+    },
+    "SIMULATED_hw04_demo": {
+      "argv": [
+        "bash",
+        "software/scripts/simulation_demo.sh",
+        "hw04"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:31:23.491055+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T06:31:25.104917+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "8bf93ba65e9fd8c0580351c5fa028039f37c1486ec5a02f1369f98cd17f812db",
+      "record": "SIMULATED_hw04_demo/command.json",
+      "log": "SIMULATED_hw04_demo/output.log"
+    },
+    "SIMULATED_hw04_replay_acceptance": {
+      "argv": [
+        "python3",
+        "software/scripts/verify_hw04_recordings.py"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:33:07.416019+00:00",
+      "evidence_type": "SIMULATED",
+      "end_utc": "2026-09-21T06:33:07.515058+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "d4fe05be50c68c8bebf0b444e19be149035628088cf44416e85e25fb5fdc0a87",
+      "record": "SIMULATED_hw04_replay_acceptance/command.json",
+      "log": "SIMULATED_hw04_replay_acceptance/output.log"
+    },
+    "hw04_delivery_audit": {
+      "argv": [
+        "python3",
+        "software/scripts/verify_delivery.py",
+        "--require-current-handoff"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "start_utc": "2026-09-21T06:34:16.008521+00:00",
+      "evidence_type": "HOST_BUILD_OR_STATIC",
+      "end_utc": "2026-09-21T06:34:16.059216+00:00",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "9c939102d231f83bca593e68199b6fcc44b17ee0423c584f98272cd7480f166b",
+      "record": "hw04_delivery_audit/command.json",
+      "log": "hw04_delivery_audit/output.log"
+    }
+  },
+  "offline_delivery_audit": {
+    "status": "PASS",
+    "checks_passed": 222,
+    "checks_total": 222,
+    "source_files": 80,
+    "artifacts": 6
+  },
+  "preservation": {
+    "old_simulated_files": 24,
+    "old_simulated_sha256": "PASS",
+    "unchanged_implementation_files": 22,
+    "protected_input_sha256": "PASS",
+    "previous_release": "pre_hw04_merge/final_validation.json",
+    "initial_baseline": "baseline_integrity.json",
+    "no_existing_software_file_deleted": true
+  },
+  "candidate_interfaces": {
+    "motor": "Pololu #4863 25D MP12V",
+    "decoded_motor_cpr_includes_x4": 48,
+    "gear_ratio_exact": "22^3*23/(12*1000)",
+    "wheel_counts_per_turn": 979.616,
+    "belt_ratio_candidate": 1,
+    "metres_per_count": 0.0003046615225670368,
+    "encoder_supply": "DEVKIT_5V through 3.3V SN74LVC14AD input level conversion",
+    "usb": "Unplug whole J12 logic buck harness; keep J14. No external logic 5V in USB mode; no Wi-Fi; logic budget <500mA NOT_TESTED.",
+    "control_left_model": "Wheel_R/Motor_R at Blender +X",
+    "adc_node": "VMAIN; not proof of isolated VM_MOTOR regen peaks",
+    "overvoltage_software_V": 8.65
+  },
+  "resolved_failures": [
+    {
+      "record": "SIMULATED_hw04_interface_before/command.json",
+      "reason": "Previous 1204.44 scale and wiring mirror differ from authorized 0.4; fixed shared scale, metadata, wiring and documentation.",
+      "resolved_by": [
+        "SIMULATED_hw04_python",
+        "hw04_delivery_audit"
+      ]
+    },
+    {
+      "record": "SIMULATED_hw04_host/command.json",
+      "reason": "Host -Werror rejected fabsf on newly double-precision constant in two assertions; used fabs, preserving test tolerance and float runtime arithmetic.",
+      "resolved_by": [
+        "SIMULATED_hw04_host_corrected"
+      ]
+    },
+    {
+      "record": "hw04_build_path_correction.json",
+      "reason": "First baseline build used relative -B and produced task-owned build files outside software. Moved that directory under software/reports, fixed absolute paths, rebuilt. No hardware/mechanical source modification.",
+      "resolved_by": [
+        "hw04_baseline_reproduction_corrected"
+      ]
+    }
+  ],
+  "known_warnings": [
+    "Pinned GC9A01 2.0.3 includes deprecated intr_types.h; retained lock.",
+    "IDF bash autocompletion warning on macOS bash 3.2; build succeeds."
+  ],
+  "hardware_decisions_pending": [
+    "Final display size/bus and mounting conflicts for DevKit/IMU",
+    "Battery ANSMANN2447-0105 71mm versus 70mm envelope; protection/balancing/charger/regen path",
+    "Physical electrical gate, 0.39ohm modification and clamp thermal/energy limits",
+    "Actual belt teeth/elasticity/backlash/effective wheel circumference and total mass"
+  ],
+  "human_measurements_pending": [
+    "Encoder supply/raw/shifted levels and custom J4/J5 pin continuity; USB J12/J14 backfeed/current",
+    "Six-face IMU mounting, pitch direction, left/right encoder and output signs",
+    "nSLEEP/ESTOP/nFAULT/watchdog/reset and maximum enabled pulse duration",
+    "VMAIN and VM_MOTOR scope traces, clamp turn-on/hysteresis/peak/energy",
+    "ADC/NTC/INA calibration; actual timing maxima/quantiles under screen/head/approved non-USB wireless load",
+    "Head centre/direction/effective range/cable load, torque/friction/inertia/thermal margin, protected balance and safe low-speed movement"
+  ],
+  "evidence_note": "SIMULATED clock values are injected test inputs, never ESP32 measurements. All power/axes/head/balance gates remain n, gains zero; no automatic authorization commands or real-device IO.",
+  "artifact_sha256": {
+    "firmware_work/firmware/build/mori_hardware_validation.elf": "ddd5e8353de8619f2fb22743089942b6076471b53ad732c28aed745cb4ed57ab",
+    "firmware_work/firmware/build/mori_hardware_validation.bin": "7c872eccb6137f38c9f69751e8ca6f0ec3d29d344f4dea6bd5c1956f947d35e0",
+    "reports/compile_only/no_screen/mori_hardware_validation.bin": "e573ef5b6662955abc217498c8b63cf4affb7dba6f52cfddec9e823a6f79da39",
+    "reports/compile_only/DO_NOT_FLASH_gated_coverage/mori_hardware_validation.bin": "799327e20f94ea56d1160f3f5d7e9983d0b919b77a1cfb56295291e8676f4bc8",
+    "reports/hw04_baseline_build/mori_hardware_validation.elf": "5abe55d6d7bf8c5f9087f72e3e689b5e170bc2c259cda529d79c1e9418a10292",
+    "reports/hw04_baseline_build/mori_hardware_validation.bin": "f7e0b7ed2666cecb00e0122d0670d044857da009c9231366051c3b1b55950c3b"
+  }
+}

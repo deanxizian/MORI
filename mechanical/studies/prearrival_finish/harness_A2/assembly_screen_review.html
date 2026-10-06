@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · 装配走线筛选复核</title><style>*{box-sizing:border-box}body{margin:0;background:#edf1f0;color:#243a33;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1080px;margin:auto;padding:30px 22px 60px}h1{font-size:30px}a{color:#146c53}h2{margin-top:34px}img{width:100%;border-radius:10px;background:#dbe0de}figure{margin:24px 0}figcaption{font-size:14px;color:#4c615a}table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #c6d2cd;text-align:left}.notice{background:#fff1d7;padding:16px;border:1px solid #ddc494;border-radius:8px}.ok{background:#daeae1;border-color:#a3c5b4}code{overflow-wrap:anywhere}summary{cursor:pointer;font-weight:600}details{background:white;padding:14px;margin:16px 0;border-radius:8px}@media(max-width:700px){h1{font-size:24px}td,th{padding:7px;font-size:13px}}</style><main><section id="fixed-wire-assembly-update"><h2>最新固定线装配候选</h2><p><a href="assembly_safe_review/index.html">H01–H04 共14根线</a>已通过静态、130头部姿态和407身体装配位置检查。其余分支、绑束、真实出线及松量仍未完成；主模型保持。</p></section>
+<a href="index.html">返回十四线静态研究</a><h1>历史记录：走线筛选修正</h1>
+<p>主模型 M1.47 与 M1.47-A1 视频保持；未采用研究开口，未改针号或硬件。</p>
+<p class="notice">以下为此前有限候选集的 BLOCKED 记录；当前通过的联合候选见上方链接。单根路线能通过，并不能证明八根同时可装；现有候选不能作为完整线束下单或裁线图。</p>
+<h2>这次确认的结果</h2><ul>
+<li>八个端点插头本体：407个身体装配位置、两处承重桥螺钉和工具路径通过。</li>
+<li>H01–H05共44个单线端后5mm直段分配通过；真实端子出线及5mm分配仍属假设。</li>
+<li>原十四线候选的静态实体与130头部姿态通过；原407位置身体装配的真实相交FAIL保持。</li>
+</ul>
+<h2>修正一次误判</h2><p>此前以“最近三角面法向的正负”判断点是否在实体内部。靠近三角面边缘时，这个判断不成立：实际空腔点离支座约14.88mm，却被误拒绝。旧的“整批候选全部被拒绝”结论撤回；原记录放入历史目录，没有当成不存在路线的证明。</p>
+<p>现在先保留完整曲线的表面距离下界。若曲线有一点在物体包围盒之外，且整段已证实不穿过表面，就排除整体包含；仅在整段都被包围盒覆盖时，用封闭实体探针确认包含。空腔、实体内部、穿透及近表面四项实际场景检查通过。</p>
+<h2>修正后的有限候选搜索</h2><table><tr><th>候选组</th><th>输入曲线</th><th>单线通过</th><th>证据</th></tr><tr><td>原后缘候选</td><td>711</td><td>142</td><td><a href="imu_assembly_pools.json">记录</a></td></tr><tr><td>原侧缘候选</td><td>758</td><td>23</td><td><a href="imu_side_assembly_pools.json">记录</a></td></tr><tr><td>保留结构的局部细化候选</td><td>1920</td><td>1224</td><td><a href="imu_refined_assembly_pools.json">记录</a></td></tr></table>
+<p>各行包含重复或细化关系，不能把数量相加当成不同结构方案。细化候选做了八线兼容组合搜索：58个搜索节点、87099对兼容计算，结果为BLOCKED。这是有限候选集的结果，不是所有可能走向都不可行的证明。</p>
+<h2>还需要完成</h2><p>八线同时布置、绑束与应力释放、真实出线和松量、带线插拔，以及H05、头部和其他分支。补充：用户已于2026-10-03确认供应商按图制作；最终线材与逐线加工图尚未完成，未下单。</p>
+<p>独立开孔研究未采用。其早期筛选同样可能受误判影响，不能据此要求用户接受结构改动。</p>
+<p><a href="screen_regression.json">四项回归检查</a> · <a href="terminal_straights_corrected.json">44个端后直段</a> · <a href="endpoint_plug_body_sequence.json">插头装配检查</a> · <a href="imu_refined_assembly_joint.json">八线组合搜索</a> · <a href="filter_false_rejection_history/README.md">撤回记录说明</a> · <a href="deck_slot_review/README.md">未采用的开孔研究</a></p>
+<p>PROTOTYPE / UNVALIDATED。所有PASS仅覆盖声明的名义检查，制造和完整线束没有放行。</p></main></html>

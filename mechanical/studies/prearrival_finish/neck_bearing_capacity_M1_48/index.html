@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI · 跨颈通道整体复核</title><style>body{margin:0;background:#f3f5f4;color:#233c35;font:16px/1.85 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1080px;margin:auto;padding:28px 22px 65px}h1{font-size:30px;line-height:1.4}a{color:#146c53}.note{padding:18px;background:#fff0dc;border:1px solid #d9b16a}figure{margin:24px 0;background:white;border:1px solid #cad4ce}img{display:block;width:100%}figcaption{padding:14px}td,th{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #cbd6cf}table{border-collapse:collapse;width:100%;background:white}.links{display:flex;flex-wrap:wrap;gap:16px}</style>
+<main><aside id="C5-followup" class="note"><b>最新C5候选：</b>局部11线、运动净距与过渡壁厚检查已通过，尚待结构确认；完整线束仍未完成。<a href="C5_index.html">查看候选与检查范围</a>。下方保留之前研究。</aside><aside id="C4-followup" class="note"><b>后续 C4 结果：</b>局部11线通过，净距与过渡壁厚仍需修正，尚未采用。<a href="C4_status.html">查看当前状态</a>。下方保留此前研究。</aside><nav><a href="../index.html">到货前待办</a> · <a href="../../../index.html?revision=V1.2-M1.48#camera-cam">主模型M1.48</a></nav>
+<h1>局部通道有进展，整机运动仍有冲突</h1>
+<p class="note"><b>候选未采用，完整线束未完成。</b> 较大内孔轴承允许保留反力孔壁并放入11根局部导线；完整打印件复核后，发现支撑颈部和防脱压板碰头壳，尚不能应用。主模型、STL和动画保持M1.48。</p>
+<figure><a href="head_motion_sections.png"><img src="head_motion_sections.png" alt="原模型与候选在仰头25度和下俯20度的实体截面，红色显示候选与头壳相交"></a><figcaption>蓝：偏航支撑；金色：防脱压板；紫：转动后的头壳；红：实体相交。截面来自当前模型和独立候选，点击看大图。</figcaption></figure>
+<table><tr><th>检查</th><th>结果及限制</th></tr>
+<tr><td>11根局部线共存</td><td>通过130个有限姿态。线间保守间隙下界0.668mm；上下端尚未连接实际端口，七根较粗线尚未选型。</td></tr>
+<tr><td>固定座与舵机座</td><td>指定原D形孔壁、两条承力连接、上部舵机座保留。三件打印实体连通；不等于强度通过。</td></tr>
+<tr><td>装入与工具</td><td>轴承装入、压板侧装和落座、螺钉及工具局部路径通过。只检查刚体，完整带线装配未完成。</td></tr>
+<tr><td>完整头部运动</td><td>未通过：偏航支撑碰后壳；压板碰前/后壳。限位首次采样接触±63.75°，也需回到原目标区间。</td></tr>
+<tr><td>轴承尺寸参考</td><td><a href="https://www.oss.nsk.com/tw/products/bearings/ball-bearings/deep-groove-ball-bearings/single-row-deep-groove-ball-bearings/6806zz-apn.html">NSK6806ZZ</a>30×42×7，原6804ZZ20×32×7；只建厂家边界，未选购。轴承目录质量增加7g；整机预算仍未关闭。</td></tr></table>
+<figure><a href="local_sections.png"><img src="local_sections.png" alt="反力固定座保留两个承力连接，导线通过左右窗口和扩大后的轴颈"></a><figcaption>这是通过局部检查的通道。头壳冲突未解决前，不据此批准结构或制作线束。</figcaption></figure>
+<h2>到货前仍剩5类</h2><p>完整线束、反力夹初装、未定采购件及安装、厂家传动与插接资料、质量与驱动预算。机械与硬件输入仍有工作，不能表述为只等实物。</p>
+<p class="links"><a href="README.md">完整范围和命令</a><a href="C2_verification.json">整体复核</a><a href="sources/manifest.json">厂家来源</a><a href="review.json">本轮状态</a><a href="delivery.json">交付校验</a><a href="../work_status.json">剩余清单</a></p>
+<p>PROTOTYPE / UNVALIDATED · 无制造、采购或主模型替换。</p></main></html>

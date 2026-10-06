@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM临时扎带尾端</title>
+<style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;background:#f4f6f5;color:#253b3d;max-width:1080px;margin:30px auto;padding:0 24px 60px}a{color:#096a74}h1{font-size:30px}.note{background:#fff0d9;padding:18px;border-radius:10px}figure{margin:22px 0}img{width:100%;border-radius:8px}figcaption{font-size:14px}td,th{text-align:left;padding:12px;border-bottom:1px solid #cad7d2}table{border-collapse:collapse;width:100%}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+<p><a href="../index.html">← A8研究</a> · <a href="../../index.html">当前未完成项</a> · <a href="../cam_profiled_tool/index.html">上一轮：剪尾工具</a></p>
+<h1>CAM临时扎带尾端可以从现有间隙侧绕</h1>
+<p class="note">局部尾端形态检查PASS；完整穿带、收紧和整段带线装配仍未闭合。主模型M1.47、STL、正式动画和硬件均未修改。</p>
+<p>供应商按图制作已经确定。<a href="../TOOLING_DETAILS.md">JST完整端子压接参考</a>、<a href="https://www.jst-mfg.com/product/pdf/eng/eSH.pdf">SH目录</a>、<a href="https://www.jst-mfg.com/product/pdf/eng/ePH.pdf">PH目录</a>已经找到；线长、分支、固定位置和整机安装顺序仍由项目完成。</p>
+<h2>原直线操作区过于局限</h2>
+<p>旧检查把尾端固定为6mm宽、110mm长的直线操作区，因此穿过小舵机。改用官方尺寸图中带宽/厚度上界2.7×1.3mm的带段，沿小舵机和座壁之间的现有间隙绕行，局部可以通过。</p>
+<figure><a href="tail_section_comparison.png"><img src="tail_section_comparison.png" alt="左：旧直线工作空间与舵机相交。右：同一高度的临时柔性尾端路径。检查使用完整3D带段；剖面仅用来解释。"></a><figcaption>左：旧直线工作空间与舵机相交。右：同一高度的临时柔性尾端路径。检查使用完整3D带段；剖面仅用来解释。</figcaption></figure>
+<p><strong>橙色是最后会剪掉的扎带尾端，不是新增打印横梁或保留凸起。</strong>110mm只是偏长的检查分配，实际成环后的自由长度更短；没有发布剪切尺寸。</p>
+<h2>有多少空间</h2>
+<table><tr><th>检查</th><th>结果</th></tr><tr><td>36个内部侧绕形态</td><td>均避开刚性件与四根CAM线</td></tr><tr><td>选定R5例</td><td>刚性间距0.50mm；导线表面间距下界3.65mm</td></tr><tr><td>截面加0.2mm，路线偏移±0.5mm的9组检查</td><td>均通过；刚性间距至少0.40mm，导线间距下界3.56mm</td></tr><tr><td>保存的带段实体</td><td>单个闭合实体，回读检查通过</td></tr></table>
+<p>R5与绕行形态仍为设计假设，扩大检查不是供应商公差或材料弯曲认证。起点与自身扣头、成环带身的接触不计入刚性件间距。</p>
+<div class="grid"><figure><a href="tail_overview.png"><img src="tail_overview.png" alt="完整临时尾端分配。两只舵机保留在位，屏幕支架与头壳尚未安装。"></a><figcaption>完整临时尾端分配。两只舵机保留在位，屏幕支架与头壳尚未安装。</figcaption></figure><figure><a href="tail_top.png"><img src="tail_top.png" alt="尾端先侧绕再向前伸出；尾端在安装完成后剪除。"></a><figcaption>尾端先侧绕再向前伸出；尾端在安装完成后剪除。</figcaption></figure></div>
+<h2>还有哪些设计工作</h2>
+<p>还需把初次穿带、拉紧操作、真实刀口开合及松线暂存放进完整装配顺序。旧的固定两端再抬升头托42mm路径仍失败；本次局部通过不代替它。</p>
+<p>其余头部导线、FPC、身体侧固定以及实际插合面针序仍待完成。最终下料长度未放行。三份<a href="../cam_tie_install/README.md">官方扎带尺寸图</a>已留存；<a href="https://www.hellermanntyton.com/products/cable-ties-inside-serrated/t18r/111-01712">T18R官方页</a>允许手工或工具安装，但没有替本项目验证R5弯曲和拉紧力。</p>
+<p><a href="README.md">完整记录</a> · <a href="review.blend">独立Blender</a> · <a href="inner_corridor.json">36组结果</a> · <a href="verification.json">实体回读与扩大检查</a> · <a href="screen.json">48个失败外侧路线</a> · <a href="commands.json">命令</a> · <a href="review_manifest.json">交付记录</a></p></html>

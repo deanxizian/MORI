@@ -1,0 +1,96 @@
+{
+  "candidates": [
+    {
+      "variant": "A",
+      "selected": false,
+      "profile": {
+        "shoulder_bias": 0,
+        "depth_scale": 1
+      },
+      "same_head_wheel_display_envelopes": true,
+      "height_mm": 282.0,
+      "enclosed_cavity_estimate_cm3": 1764,
+      "body_shell_mass_g_estimate": 229,
+      "body_allocation_shell_intersections": [
+        {
+          "part": "Power_Module",
+          "shell": "Body_Upper",
+          "volume_mm3": 3622.744092346221
+        }
+      ],
+      "images": [
+        "renders/variants/A_front.png",
+        "renders/variants/A_side.png",
+        "renders/variants/A_45.png"
+      ]
+    },
+    {
+      "variant": "B",
+      "selected": true,
+      "profile": {
+        "shoulder_bias": 0.045,
+        "depth_scale": 0.985
+      },
+      "same_head_wheel_display_envelopes": true,
+      "height_mm": 282.0,
+      "enclosed_cavity_estimate_cm3": 1745,
+      "body_shell_mass_g_estimate": 226,
+      "body_allocation_shell_intersections": [
+        {
+          "part": "Power_Module",
+          "shell": "Body_Upper",
+          "volume_mm3": 3317.0524291501974
+        }
+      ],
+      "images": [
+        "renders/variants/B_front.png",
+        "renders/variants/B_side.png",
+        "renders/variants/B_45.png"
+      ]
+    }
+  ],
+  "camera_definitions": {
+    "front": [
+      [
+        0,
+        650,
+        145
+      ],
+      [
+        0,
+        0,
+        145
+      ],
+      325
+    ],
+    "side": [
+      [
+        650,
+        0,
+        145
+      ],
+      [
+        0,
+        0,
+        145
+      ],
+      325
+    ],
+    "45": [
+      [
+        380,
+        500,
+        325
+      ],
+      [
+        0,
+        0,
+        145
+      ],
+      340
+    ]
+  },
+  "scope": "M1 exterior comparison with same actual internal allocations. Cavity volume is not a usable rectangular envelope or hardware-fit qualification.",
+  "decision": "Select B: 4.5% pole-dependent shoulder bias and1.5% depth reduction give a mild fuller shoulder/tucked belly. Same height, tyres and module sizes; broad rounded flanks retained. Both retain horizontal removable body split and vertical head split. COM/space impact is small and still requires selected-parts checks; final B validation is separate.",
+  "authoritative_parameter": "config/geometry.json shape.selected; no second geometry truth or scaled hardware"
+}

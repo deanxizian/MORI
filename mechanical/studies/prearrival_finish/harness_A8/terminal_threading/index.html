@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>J2 端子穿入与板端复核 · MORI</title><style>body{font:16px/1.8 -apple-system,BlinkMacSystemFont,sans-serif;max-width:1050px;margin:36px auto;padding:0 24px;color:#253f49;background:#f5f7f7}h1{font-size:30px}h2{font-size:23px;margin-top:32px}img{width:100%;border-radius:8px;background:white}a{color:#086b7c}.note{background:#fff0d9;padding:14px 18px;border-left:4px solid #b48232}table{border-collapse:collapse;width:100%}td,th{padding:10px 12px;border-bottom:1px solid #d4dede;text-align:left}</style>
+<p><a href="../index.html">← A8研究和原厂资料</a></p><h1>临时穿入有了路线，完整线束仍未通过</h1>
+<p class="note">独立研究J2 · 主模型M1.47未改 · 未采用、未发布加工。加入对插包络后的检查仍为BLOCKED。</p>
+<section id="amass-latest"><p class="note">最新补充：原厂互配尺寸已复跑。名义包络通过、上界分配仍未通过。<a href="../amass_mating/index.html">查看原厂图和最新复核</a>；下方首次J2结果保留为历史。</p></section><table><tr><th>已完成</th><th>结果与范围</th></tr><tr><td>参考裸端子的连续穿入</td><td>PASS：四个方向，对207个未改源物体和14根固定线；未含对插包络</td></tr>
+<tr><td>两件候选打印件的网格</td><td>已清理并重载；单一闭合实体、无退化面。强度/薄壁未验证</td></tr>
+<tr><td>装后局部线形</td><td>PASS：对209源实体/代理，130个头部姿态</td></tr>
+<tr><td>加入29个对插包络</td><td>BLOCKED：三根径向引出段及四条端子穿入路线占用了保守插头空间</td></tr>
+<tr><td>完整板端连接与固定</td><td>BLOCKED：尚无四线成组连接、固定和完整加工长度</td></tr></table>
+<h2>装后导线与装入动作是两条不同路线</h2><img src="transit_sections.png" alt="J2两处打印件剖面以及装后线形和临时端子路线">
+<h2>先核实插合空间，再改走线</h2><img src="body_mating_review.png" alt="旧径向引出段与电源板对插包络的俯视关系">
+<p>原来采用未扣除插合量的23.1mm保守空间。新找到的艾迈斯2025V1原厂图给出互配总长20.10±0.50mm，扣除板端焊脚后，板上名义高度17.10mm，独立极限上界17.90mm。仍需重建正确包络与焊接出线并复跑；当前结果不能解释成实物必然干涉。</p>
+<p><a href="../amass_mating/README.md">查看原厂尺寸、图纸和推导</a> · <a href="../amass_mating/sources/XT30UPB_M_2025V1.pdf">原厂2025V1规格书</a></p>
+<h2>尚未完成</h2><p>四根线的板端过渡与固定、完整俯仰段、CAM实际插头、相机FPC、装入和拆卸时的软线、逐线下料长度。已有局部长度不能给供应商下料。</p>
+<p><a href="README.md">完整说明</a> · <a href="cleaned/candidate.blend">独立研究Blender</a> · <a href="cleaned/reloaded_mated_audit.json">清理后复核</a> · <a href="../TOOLING_DETAILS.md">压接工艺资料</a></p></html>

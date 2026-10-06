@@ -1,0 +1,332 @@
+[
+  {
+    "id": "enclosed_speaker_nominals",
+    "status": "PASS",
+    "summary": "SP3040箱体42×30×9、总长56与孔距49按图；未标耳厚等按批准估算",
+    "measurement": {
+      "local_size_xyz_mm": [
+        56.0,
+        9.000006504640623,
+        30.00000309806137
+      ],
+      "expected_xyz_mm": [
+        56,
+        9,
+        30
+      ],
+      "hole_pitch_mm": 49,
+      "hole_diameter_mm": 2,
+      "mass_g": null,
+      "mass_tolerance_g": null,
+      "source": "mechanical/sources/SP3040/SP3040_user_specification.pdf"
+    },
+    "method": "Rigid inverse transform of actual mesh. Documented envelope mixed with explicitly estimated ear/radius details; not measured."
+  },
+  {
+    "id": "speaker_shell_attachment",
+    "status": "PASS",
+    "summary": "喇叭原厂耳直锁上壳一体座；取消打印后盖、与内框架无连接",
+    "measurement": {
+      "shell_contact_gap_mm": 0.0,
+      "frame_gap_mm": 12.515805227782481,
+      "shell_overlap_mm3": 0.00016181302384789072,
+      "frame_overlap_mm3": 0,
+      "fasteners": 2,
+      "retired_print_absent": true,
+      "nominal_front_gasket_mm": 1.2
+    },
+    "method": "Actual solid contact, gap and intersection; trial gasket/preload/ear strength not qualified."
+  },
+  {
+    "id": "speaker_shell_tool_access",
+    "status": "PASS",
+    "summary": "上壳拆出后喇叭两枚螺钉可装入并有工具路径",
+    "measurement": {
+      "tools": [
+        {
+          "side": -1,
+          "failures": []
+        },
+        {
+          "side": 1,
+          "failures": []
+        }
+      ],
+      "insertion": [
+        {
+          "side": -1,
+          "screw_insertion_failures": []
+        },
+        {
+          "side": 1,
+          "screw_insertion_failures": []
+        }
+      ],
+      "driver_diameter_mm": 3.5
+    },
+    "method": "30mm smooth screw translation each1mm and straight driver solid; upper shell on bench, handle/fingers not tested."
+  },
+  {
+    "id": "speaker_blind_boss_skin",
+    "status": "PASS",
+    "summary": "原厂耳有实际支承面，壳内盲孔末端有材料",
+    "measurement": {
+      "caps": [
+        {
+          "side": -1,
+          "missing_mm3": 0.0,
+          "checked_cap_thickness_mm": 1.2
+        },
+        {
+          "side": 1,
+          "missing_mm3": 0.0,
+          "checked_cap_thickness_mm": 1.2
+        }
+      ],
+      "ear_seat_rays": [
+        {
+          "side": -1,
+          "local_z_mm": -3,
+          "support_gap_mm": 3.814697265625e-06
+        },
+        {
+          "side": -1,
+          "local_z_mm": 3,
+          "support_gap_mm": 0.0
+        },
+        {
+          "side": 1,
+          "local_z_mm": -3,
+          "support_gap_mm": 0.0
+        },
+        {
+          "side": 1,
+          "local_z_mm": 3,
+          "support_gap_mm": 0.0
+        }
+      ]
+    },
+    "method": "Actual solid containment behind holes and contact rays; not heat-insert pullout or print-strength qualification."
+  },
+  {
+    "id": "speaker_max_box_envelope",
+    "status": "PASS",
+    "summary": "箱体最大标注外形公差与周边实体",
+    "measurement": {
+      "maximum_box_xyz_mm": [
+        42.3,
+        9.5,
+        30.3
+      ],
+      "overall_ear_span_mm": 56.3,
+      "failures": []
+    },
+    "method": "Fixed estimated front/ear datum; increased box dimensions/span. Ear thickness/front-depth and +/-0.5mm hole pitch variation NOT covered; not a complete tolerance fit."
+  },
+  {
+    "id": "speaker_rear_vent_reserve",
+    "status": "PASS",
+    "summary": "未定坐标泄气孔：整个后表面保留2mm开放空间",
+    "measurement": {
+      "rear_face_keepout_depth_mm": 2,
+      "failures": []
+    },
+    "method": "Conservative full rear-face box; exact hole/gas-flow acoustic requirements not supplied."
+  },
+  {
+    "id": "speaker_removal_path",
+    "status": "PASS",
+    "summary": "上壳台面状态下喇叭沿背面40mm抽出路径",
+    "measurement": {
+      "step_mm": 1,
+      "travel_mm": 40,
+      "failures": []
+    },
+    "method": "Actual speaker solid, remove both screws and disconnect lead first. Upper shell already removed from robot; no claim for in-body replacement."
+  },
+  {
+    "id": "speaker_front_grille_paths",
+    "status": "PASS",
+    "summary": "原有15个外壳声孔通路开放，落在图示比例估算的椭圆振膜内",
+    "measurement": {
+      "probe_diameter_mm": 0.6,
+      "holes": [
+        {
+          "x_mm": -6,
+          "z_mm": 131.0,
+          "capsule_distance_mm": 1.6572781899957567,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": -6,
+          "z_mm": 135.0,
+          "capsule_distance_mm": 5.821618191175329,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": -6,
+          "z_mm": 139.0,
+          "capsule_distance_mm": 10.197746595561467,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": -3,
+          "z_mm": 131.0,
+          "capsule_distance_mm": 1.3215789794921875,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": -3,
+          "z_mm": 135.0,
+          "capsule_distance_mm": 5.735088348388672,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": -3,
+          "z_mm": 139.0,
+          "capsule_distance_mm": 10.148597717285156,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 0,
+          "z_mm": 131.0,
+          "capsule_distance_mm": 1.3215789794921875,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 0,
+          "z_mm": 135.0,
+          "capsule_distance_mm": 5.735088348388672,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 0,
+          "z_mm": 139.0,
+          "capsule_distance_mm": 10.148597717285156,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 3,
+          "z_mm": 131.0,
+          "capsule_distance_mm": 1.3215789794921875,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 3,
+          "z_mm": 135.0,
+          "capsule_distance_mm": 5.735088348388672,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 3,
+          "z_mm": 139.0,
+          "capsule_distance_mm": 10.148597717285156,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 6,
+          "z_mm": 131.0,
+          "capsule_distance_mm": 1.6572781899957567,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 6,
+          "z_mm": 135.0,
+          "capsule_distance_mm": 5.821618191175329,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        },
+        {
+          "x_mm": 6,
+          "z_mm": 139.0,
+          "capsule_distance_mm": 10.197746595561467,
+          "within_assumed_diaphragm": true,
+          "failures": []
+        }
+      ]
+    },
+    "method": "Actual cylinder-solid intersections through unchanged shell holes; diaphragm perimeter ASSUMED, not acoustic/excursion qualification."
+  },
+  {
+    "id": "speaker_physical_audio_fit",
+    "status": "BLOCKED",
+    "summary": "喇叭实物、耳厚/孔距公差配合、线长接头、振膜行程与实际声音待核",
+    "measurement": {
+      "power_rating_W": 3,
+      "amplifier_output_W": "NOT_VERIFIED",
+      "price_CNY": null,
+      "hole_radial_clearance_nominal_mm": 0.0,
+      "hole_pitch_tolerance_mm": 0.5,
+      "ear_estimates": {
+        "ear_width_mm": 10,
+        "ear_thickness_mm": 1.5,
+        "ear_front_depth_mm": 5.5,
+        "ear_corner_radius_mm": 2.8,
+        "box_corner_radius_mm": 5.5,
+        "diaphragm_obround_xz_mm": [
+          33,
+          23
+        ],
+        "hole_callout_interpretation": "diameter2mm",
+        "orientation": "42mm along assembly X; lead side upward"
+      }
+    },
+    "method": "M2 in interpreted2mm holes has zero nominal radial clearance; +/-0.5mm hole pitch is not qualified by centered nominal geometry. User authorized estimates, not manufacturing release."
+  },
+  {
+    "id": "speaker_SP3040_scope",
+    "status": "PASS",
+    "summary": "仅替换喇叭及其壳内安装接口；无新增打印件或五金",
+    "measurement": {
+      "revision": "V1.2-M1.37",
+      "status": "PASS",
+      "baseline_revision": "V1.2-M1.36",
+      "changed_parts": [
+        "Body_Upper",
+        "Speaker",
+        "Speaker_Gasket",
+        "Speaker_Insert_-1",
+        "Speaker_Insert_1",
+        "Speaker_Screw_-1",
+        "Speaker_Screw_1"
+      ],
+      "unexpected_changes": [],
+      "retired": [],
+      "part_count_delta": 0,
+      "shell_change_outside_speaker_region_mm3": 4.625081463110541e-05,
+      "shell_connected": true,
+      "source_hash_matches": true,
+      "ear_holes_and_head_backing": [
+        {
+          "side": -1,
+          "hole_obstructed_mm3": 0,
+          "head_backing_missing_mm3": 0
+        },
+        {
+          "side": 1,
+          "hole_obstructed_mm3": 0,
+          "head_backing_missing_mm3": 0
+        }
+      ],
+      "new_prints": 0,
+      "new_fasteners": 0,
+      "physical_fit": "BLOCKED",
+      "strength": "NOT_TESTED",
+      "preserved": "All non-speaker part geometry/matrices, shell exterior away from the local internal speaker seats, existing grille and electronics positions."
+    },
+    "method": "All-part geometry/matrix fingerprints vs immutableM1.36, local shell solid difference, actual ear bore and annular screw-head backing probes."
+  }
+]

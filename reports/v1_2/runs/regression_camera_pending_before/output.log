@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_tracking_before_first_frame_is_pending_not_http_error __________
+
+tmp_path = PosixPath('/private/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/pytest-of-dean/pytest-40/test_tracking_before_first_fra0')
+
+    def test_tracking_before_first_frame_is_pending_not_http_error(tmp_path):
+        app=create_app(str(tmp_path));g=app.state.gateway
+        # No lifespan producer: exercise the precise interval before first capture.
+        client=TestClient(app)
+        try:
+            identity=client.post('/api/pair',json={'code':g.auth.pair_code}).json()
+            headers={'Authorization':'Bearer '+identity['token']}
+            g.device.camera='TRACKING'
+            pending=client.get('/api/camera/frame',headers=headers)
+>           assert pending.status_code==204 and pending.content==b''
+E           assert (409 == 204)
+E            +  where 409 = <Response [409 Conflict]>.status_code
+
+simulation/tests/test_v1_2.py:34: AssertionError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:37
+  /Users/dean/Documents/MORI/.venv/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED simulation/tests/test_v1_2.py::test_tracking_before_first_frame_is_pending_not_http_error
+1 failed, 1 warning in 0.29s

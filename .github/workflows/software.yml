@@ -1,0 +1,98 @@
+name: MORI software evidence
+on:
+  # The initial public archive is reviewed as a PR. Preserve builds for manual use;
+  # archiving documentation does not rerun or renew historical test evidence.
+  workflow_dispatch:
+    inputs:
+      build_mobile:
+        description: 'App工作恢复后才手动启用；当前仅网页'
+        type: boolean
+        default: false
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24.19.0'}
+      - uses: pnpm/action-setup@v4
+        with: {version: '11.19.0'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pnpm install --frozen-lockfile
+      - run: python -m venv .venv && .venv/bin/pip install -r backend/requirements.lock
+      - run: .venv/bin/python tools/fetch-v1_2-refs.py
+      - run: .venv/bin/python tools/verify-v1_2.py
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: |
+          pnpm dev > reports/v1/ci-vite.log 2>&1 &
+          MORI_REPORT_ROOT=reports/v1_2 .venv/bin/python tools/record.py browser_ci -- pnpm exec playwright test --config apps/console/playwright.config.ts
+      - run: pnpm format:check
+      - run: .venv/bin/python -m simulation.replay simulation/fixtures/SIMULATED_session.jsonl --output reports/v1/SIMULATED_ci_replay.jsonl
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: host-evidence, path: reports/v1_2}
+  stm32:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python tools/fetch-v1_2-refs.py
+      - run: python tools/bootstrap-arm.py
+      - run: MORI_REPORT_ROOT=reports/v1_2 python tools/record.py stm32_ci -- bash tools/build-motion-v1_2.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stm32-build
+          path: |
+            firmware/motion/build_stm32/*.elf
+            firmware/motion/build_stm32/*.bin
+            firmware/motion/build_stm32/*.map
+            reports/v1_2/
+  firmware:
+    runs-on: ubuntu-24.04
+    container: espressif/idf:v5.5.2
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash tools/build-firmware.sh interaction
+      - run: bash tools/build-firmware.sh legacy-motion
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: firmware-builds
+          path: |
+            firmware/*/build_v1/*.bin
+            firmware/*/build_v1/project_description.json
+            firmware/*/build_v1/log/
+            firmware/interaction/build_v1_2/*.bin
+            firmware/interaction/build_v1_2/log/
+  android:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.build_mobile }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24.19.0'}
+      - uses: pnpm/action-setup@v4
+        with: {version: '11.19.0'}
+      - uses: actions/setup-java@v4
+        with: {distribution: temurin, java-version: '21'}
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - run: pnpm install --frozen-lockfile && pnpm build && pnpm mobile:sync
+      - run: bash apps/mobile/android/gradlew -p apps/mobile/android assembleDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: android-development, path: apps/mobile/android/app/build/outputs/apk/debug}
+  ios:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.build_mobile }}
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '24.19.0'}
+      - uses: pnpm/action-setup@v4
+        with: {version: '11.19.0'}
+      - run: pnpm install --frozen-lockfile && pnpm build && pnpm mobile:sync
+      - run: xcodebuild -project apps/mobile/ios/App/App.xcodeproj -scheme App -sdk iphonesimulator -configuration Debug CODE_SIGNING_ALLOWED=NO build

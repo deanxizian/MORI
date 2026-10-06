@@ -1,0 +1,480 @@
+{
+  "revision": "V1.2-H0.4-P4",
+  "original_REFERENCES_md": "NOT_SUPPLIED",
+  "original_Sxx_mapping": null,
+  "id_policy": "HW12-*为本轮记录，不伪造缺失REFERENCES.md的S01…映射",
+  "sources": [
+    {
+      "id": "HW12-U1",
+      "title": "Unitree S288 current Chinese specifications",
+      "url": "https://www.unitree.com/cn/DigitalServo/",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "最大扭矩有方向工况；连续曲线未知"
+    },
+    {
+      "id": "HW12-U2",
+      "title": "Unitree J288/S288 manual",
+      "url": "https://www.unitree.com/images/无刷数字舵机J288S288使用手册.pdf",
+      "local_path": "hardware/v1_2/sources/S288_manual.pdf",
+      "access_date": "2026-09-22",
+      "note": "连接器方向和所购固件未核"
+    },
+    {
+      "id": "HW12-U3",
+      "title": "Unitree digital_servo v1.0.1",
+      "url": "https://github.com/unitreerobotics/digital_servo/archive/refs/tags/v1.0.1.zip",
+      "local_path": "hardware/v1_2/sources/digital_servo_v1.0.1.zip",
+      "access_date": "2026-09-22",
+      "note": "静态审查；未执行、刷写"
+    },
+    {
+      "id": "HW12-U4",
+      "title": "Unitree alternate mobile page",
+      "url": "https://www.unitree-robot.com/mobile/DigitalServo/",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "与当前中文桌面页扭矩数值不一致，不能据此填写连续额定值"
+    },
+    {
+      "id": "HW12-W1",
+      "title": "Waveshare CAM SKU33700",
+      "url": "https://docs.waveshare.com/ESP32-S3-CAM-OVxxxx",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "采购板修订待匹配"
+    },
+    {
+      "id": "HW12-W2",
+      "title": "Waveshare CAM schematic",
+      "url": "https://files.waveshare.com/wiki/ESP32-S3-CAM-OVxxxx/ESP32-S3-CAM-XXXX-schematic.pdf",
+      "local_path": "hardware/v1_2/sources/CAM_schematic.pdf",
+      "access_date": "2026-09-22",
+      "note": "已视觉检查；TMI3112H与产品文字MP1605存在差异"
+    },
+    {
+      "id": "HW12-W3",
+      "title": "Waveshare LCD SKU35079",
+      "url": "https://docs.waveshare.com/1.85inch_Touch_LCD_Module",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "厚度、净重、FFC接触面与16..18针仍缺资料"
+    },
+    {
+      "id": "HW12-F1",
+      "title": "FEETECH SCS0009 A/0 2020-11-23",
+      "url": "https://www.feetech.cn/Data/feetechrc/upload/file/20220915/6379883463905538176347522.pdf",
+      "local_path": "mechanical/sources/v1_2/scs0009_spec.pdf",
+      "access_date": "2026-09-22",
+      "note": "复用结构任务下载的原厂文件，已读渲染第4/6页；本次网页读取超时。采购版本待核"
+    },
+    {
+      "id": "HW12-P1",
+      "title": "Spotpear domestic display listing",
+      "url": "https://spotpear.cn/shop/Raspberry-Pi-ESP32-Pico-Arduino-STM32-1.85inch-Touch-LCD-ST77916/1.85inch-Touch-LCD-Module.html",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "页面99.9元，在售；品牌斑梨、SKU010609500000与35079对应关系未确认，不计入精确主BOM报价"
+    },
+    {
+      "id": "HW12-ST1",
+      "title": "STM32F413/423 RM0430",
+      "url": "https://www.st.com/resource/en/reference_manual/dm00305666-stm32f413-423-advanced-arm-based-32-bit-mcus-stmicroelectronics.pdf",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "完整PDF下载超时；本轮按官方例程随附HAL宏复算，未宣称完成STM32板级审查"
+    },
+    {
+      "id": "HW12-SPEC",
+      "title": "User supplied V1.2",
+      "url": null,
+      "local_path": "MORI_SPEC_V1_2.md",
+      "access_date": "2026-09-22",
+      "note": "设计要求，不代表厂商规格或实测"
+    },
+    {
+      "id": "HW12-P2",
+      "title": "JuxiTech SCS0009 SKU JX00099 China CNY listing",
+      "url": "https://www.juxitech.com/zh-hant/collections/actuation/products/feetech-scs0009-serial-bus-servo",
+      "local_path": "hardware/v1_2/procurement/SCS0009_JX00099_price_observation.json",
+      "access_date": "2026-09-22",
+      "note": "103 CNY observed, published in stock, China market/ship from Shenzhen. Mechanical revision and encoder-description conflict unresolved; tax/freight unknown."
+    },
+    {
+      "id": "HW12-WEACT",
+      "title": "WeAct 64Pin V1.1 original schematic/drawing/STEP",
+      "url": "https://github.com/WeActStudio/WeActStudio.STM32F4_64Pin_CoreBoard",
+      "local_path": "hardware/v1_2/sources/weact_f4/WeAct-STM32F4_64PIN-CoreBoard_V11 SchDoc.pdf",
+      "access_date": "2026-09-22",
+      "note": "Exact F412RET6 populated variant and domestic price still to match."
+    },
+    {
+      "id": "HW12-F412-RM",
+      "title": "ST RM0402 Rev6",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0402-stm32f412-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "local_path": "hardware/v1_2/sources/weact_f4/RM0402 STM32F412 Reference manual.pdf",
+      "access_date": "2026-09-22",
+      "note": "Clock table6 p60; DMA table30/31 p199 verified; runtime firmware not built here."
+    },
+    {
+      "id": "HW12-F412-DS",
+      "title": "ST DS11139 STM32F412xE/xG",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f412re.pdf",
+      "local_path": "hardware/v1_2/sources/weact_f4/DS11139 STM32F412xE.pdf",
+      "access_date": "2026-09-22",
+      "note": "512KB flash/256KB RAM for RET6; manufacturer source copy in WeAct repository."
+    },
+    {
+      "id": "HW12-ICM",
+      "title": "TDK DS000347 ICM42688P",
+      "url": "https://www.lcsc.com/datasheet/C1850418.pdf",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Web cached vendor datasheet rev1.2 preproduction used for pins/land review; latest TDK download blocked. Latest silicon/datasheet reconciliation remains a gate."
+    },
+    {
+      "id": "HW12-POL9",
+      "title": "Pololu D36V50F9 #4094",
+      "url": "https://www.pololu.com/product/4094",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "9V module engineering reference; USD price is not CNY quote. China stock/price NOT_CONFIRMED."
+    },
+    {
+      "id": "HW12-POL6",
+      "title": "Pololu D24V22F6 #2859",
+      "url": "https://www.pololu.com/product/2859",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "6V reference. Thermal current depends voltage/cooling; China stock/price NOT_CONFIRMED."
+    },
+    {
+      "id": "HW12-POL5",
+      "title": "Pololu D24V22F5 #2858",
+      "url": "https://www.pololu.com/product/2858",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Two independent5V converters proposed; no stock/price qualification."
+    },
+    {
+      "id": "HW12-IP2326",
+      "title": "Injoinic IP2326 v1.11",
+      "url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1132/IP2326.pdf",
+      "local_path": "hardware/v1_2/sources/parts/IP2326.pdf",
+      "access_date": "2026-09-22",
+      "note": "3S charging selectable via CON_SEL1k; built-in balance only2S. Reference chip, NOT a qualified finished module and NOT drawn as an implemented charger."
+    },
+    {
+      "id": "HW12-PASSIVE",
+      "title": "Yageo exact thin-film resistor series example",
+      "url": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD07100KL",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Other values selected using series ordering code, exact supplier match still required."
+    },
+    {
+      "id": "HW12-CAP",
+      "title": "Panasonic EEUFR1C102",
+      "url": "https://industrial.panasonic.com/ww/products/pt/aluminum-cap-lead/models/EEUFR1C102",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "1000uF16V, D10 H16 pitch5; vendor documented, NOT measured."
+    },
+    {
+      "id": "HW12-PCB",
+      "title": "Native KiCad P1 source",
+      "url": null,
+      "local_path": "hardware/v1_2/tools/design_P1.py",
+      "access_date": "2026-09-22",
+      "note": "Design-generated board outlines/holes, not vendor parts. No Gerber release."
+    },
+    {
+      "id": "HW12-TI-sn74lvc2g125",
+      "title": "sn74lvc2g125 TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf",
+      "local_path": "hardware/v1_2/sources/parts/sn74lvc2g125.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-sn74lvc2g32",
+      "title": "sn74lvc2g32 TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g32.pdf",
+      "local_path": "hardware/v1_2/sources/parts/sn74lvc2g32.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-sn74lvc1g74",
+      "title": "sn74lvc1g74 TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+      "local_path": "hardware/v1_2/sources/parts/sn74lvc1g74.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-txu0202",
+      "title": "txu0202 TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/txu0202.pdf",
+      "local_path": "hardware/v1_2/sources/parts/txu0202.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-tlv803e",
+      "title": "tlv803e TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv803e.pdf",
+      "local_path": "hardware/v1_2/sources/parts/tlv803e.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-lm393b",
+      "title": "lm393b TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/lm393b.pdf",
+      "local_path": "hardware/v1_2/sources/parts/lm393b.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-tl431",
+      "title": "tl431 TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/tl431.pdf",
+      "local_path": "hardware/v1_2/sources/parts/tl431.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-TI-ina180",
+      "title": "ina180 TI datasheet",
+      "url": "https://www.ti.com/lit/ds/symlink/ina180.pdf",
+      "local_path": "hardware/v1_2/sources/parts/ina180.pdf",
+      "access_date": "2026-09-22",
+      "note": "Pin mapping read from vendor document."
+    },
+    {
+      "id": "HW12-AOS-ao4407a",
+      "title": "ao4407a AOS datasheet",
+      "url": "https://www.aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "local_path": "hardware/v1_2/sources/parts/ao4407a.pdf",
+      "access_date": "2026-09-22",
+      "note": "Ratings are device conditions, not board thermal test."
+    },
+    {
+      "id": "HW12-AOS-ao3400a",
+      "title": "ao3400a AOS datasheet",
+      "url": "https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf",
+      "local_path": "hardware/v1_2/sources/parts/ao3400a.pdf",
+      "access_date": "2026-09-22",
+      "note": "Ratings are device conditions, not board thermal test."
+    },
+    {
+      "id": "HW12-MECH-LCD35079_STEP",
+      "title": "LCD35079_STEP",
+      "url": "https://github.com/waveshareteam/1.85inch-Touch-LCD-Module/tree/main/dimensions",
+      "local_path": "mechanical/sources/v1_2_verified_dimensions/1.85inch_touch_lcd_module-3d.stp",
+      "access_date": "2026-09-22",
+      "note": "Inherited latest mechanical source and its dimensional caveats; never overwrites mechanical truth."
+    },
+    {
+      "id": "HW12-MECH-LCD35079_DRAWING",
+      "title": "LCD35079_DRAWING",
+      "url": null,
+      "local_path": "mechanical/sources/v1_2_verified_dimensions/1_85inch_touch_lcd_module.pdf",
+      "access_date": "2026-09-22",
+      "note": "Inherited latest mechanical source and its dimensional caveats; never overwrites mechanical truth."
+    },
+    {
+      "id": "HW12-MECH-CAM33700_DRAWING",
+      "title": "CAM33700_DRAWING",
+      "url": "https://www.waveshare.com/esp32-s3-cam-ov5640.htm?sku=33700",
+      "local_path": "mechanical/sources/v1_2_verified_dimensions/cam_dimensions.jpg",
+      "access_date": "2026-09-22",
+      "note": "Inherited latest mechanical source and its dimensional caveats; never overwrites mechanical truth."
+    },
+    {
+      "id": "HW12-DIODE",
+      "title": "Diodes B540C-13-F DS13012 Rev18-2",
+      "url": "https://www.diodes.com/datasheet/download/B540C.pdf",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Manufacturer PDF reviewed through web; direct local download403. SMC cathode band,0.55V at5A25C; board thermal rating unqualified."
+    },
+    {
+      "id": "HW12-JST-SH",
+      "title": "JST SH connector and contact",
+      "url": "https://www.jst.com/wp-content/uploads/2021/01/eSH.pdf",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "SH SSH-003T-P0.2-H28-32AWG; use30AWG signal leads."
+    },
+    {
+      "id": "HW12-BAT-LEAD",
+      "title": "KeepPower finished3S2600mAh inquiry lead",
+      "url": "https://www.keeppower.com.cn/products_detail.php?id=613",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "67x56x20mm/148g documented;2C5.2A below assumed6A peak;NTC/balance/model inconsistency/domestic retail unqualified. NOT SELECTED."
+    },
+    {
+      "id": "HW12-UPS-REJECT",
+      "title": "Waveshare UPS3S rejected for this route",
+      "url": "https://www.waveshare.com/wiki/UPS_Module_3S",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "60x93mm; USB-C5V output,12.6V charging input and loose cell holder. Not the required finished-pack USB-C-input charging assembly."
+    },
+    {
+      "id": "HW12-CN-DIODE",
+      "title": "China catalog exact B540C-13-F",
+      "url": "https://www.szlcsc.com/p/B540C-13-F_681.html",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Exact model indexed; live CNY price and stock not verified."
+    },
+    {
+      "id": "HW12-CN-DUMP",
+      "title": "China listing Vishay10ohm5W",
+      "url": "https://item.szlcsc.com/1666549.html",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Exact AC05000001009JAC00 listing; CNY settlement/stock and pulse qualification unknown."
+    },
+    {
+      "id": "HW12-CAMERA-SDK",
+      "title": "Espressif camera component primary repository",
+      "url": "https://github.com/espressif/esp32-camera",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Mode/resource limits reference; version pinning and BSP integration software owned."
+    },
+    {
+      "id": "HW12-WHO",
+      "title": "Espressif ESP-WHO primary repository",
+      "url": "https://github.com/espressif/esp-who",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Supported examples do not prove MORI performance or identity tracking."
+    },
+    {
+      "id": "HW12-WAKE",
+      "title": "Espressif custom wake-word service",
+      "url": "https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/wake_word_engine/ESP_Wake_Words_Customization.html",
+      "local_path": null,
+      "access_date": "2026-09-22",
+      "note": "Paid customization/no fixed public fee; MORI model not acquired."
+    },
+    {
+      "id": "HW12-S3-01",
+      "title": "0451001.MRL manufacturer data / S3 selected value",
+      "url": "https://www.littelfuse.com/assetdocs/fuse-451-and-453-datasheet?assetguid=533cd5cc-956c-4243-867f-6ab5a62f6ba1",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-02",
+      "title": "TPS54302DDCR manufacturer data / S3 selected value",
+      "url": "https://www.ti.com/lit/ds/symlink/tps54302.pdf",
+      "local_path": "hardware/v1_2/sources/parts/TI_TPS54302_RevC.pdf",
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-03",
+      "title": "SRP7050TA-100M manufacturer data / S3 selected value",
+      "url": "https://www.bourns.com/docs/product-datasheets/srp7050ta.pdf",
+      "local_path": "hardware/v1_2/sources/parts/Bourns_SRP7050TA.pdf",
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked.; P3 land pattern read from source: outer span8.4/gap2.5/pads2.95x3.5mm."
+    },
+    {
+      "id": "HW12-S3-04",
+      "title": "CL32B226KAJNNNE manufacturer data / S3 selected value",
+      "url": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-05",
+      "title": "GRM188R71H104KA93D manufacturer data / S3 selected value",
+      "url": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93D",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-06",
+      "title": "GRM1885C1H750JA01D manufacturer data / S3 selected value",
+      "url": "https://www.murata.com/en-us/products/productdetail?partno=GRM1885C1H750JA01D",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-07",
+      "title": "RT0603BRD07100KL manufacturer data / S3 selected value",
+      "url": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD07100KL",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-08",
+      "title": "RT0603BRD0713K3L manufacturer data / S3 selected value",
+      "url": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD0713K3L",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-09",
+      "title": "BM02B-GHS-TBT(LF)(SN) manufacturer data / S3 selected value",
+      "url": "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-10",
+      "title": "61300211121 manufacturer data / S3 selected value",
+      "url": "https://www.we-online.com/components/products/datasheet/61300211121.pdf",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-11",
+      "title": "0451002.MRL manufacturer data / S3 selected value",
+      "url": "https://www.littelfuse.com/assetdocs/fuse-451-and-453-datasheet?assetguid=533cd5cc-956c-4243-867f-6ab5a62f6ba1",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-S3-12",
+      "title": "B2B-XH-A(LF)(SN) manufacturer data / S3 selected value",
+      "url": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
+      "local_path": null,
+      "accessed_date": "2026-09-22",
+      "notes": "Design reference, not an order or measured qualification. Exact domestic quote/stock status is separately tracked."
+    },
+    {
+      "id": "HW12-P4",
+      "title": "P4 native engineering, checks and assembly cross-reference",
+      "url": null,
+      "local_path": "hardware/v1_2/layout_P4/README.md",
+      "accessed_date": "2026-09-23",
+      "notes": "Source index, not a live stock/price or measured-fit confirmation. See source-specific URLs and hashes."
+    },
+    {
+      "id": "HW12-P4-CONNECTORS",
+      "title": "JST PH / HRO USB-C / SOFNG switch official drawings and domestic catalog records",
+      "url": null,
+      "local_path": "hardware/v1_2/layout_P4/connector_sources.json",
+      "accessed_date": "2026-09-23",
+      "notes": "Source index, not a live stock/price or measured-fit confirmation. See source-specific URLs and hashes."
+    }
+  ]
+}

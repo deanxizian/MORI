@@ -1,0 +1,619 @@
+{
+  "status": "BLOCKED",
+  "scope": "Finite reference/contact-space sweep on unchanged candidate neck guide; not whole-wire installation",
+  "script_sha256": "91455c02f283dd77064df4db6536a440d04ca3b49191cbd0295674f1ede2e654",
+  "helper_sha256": "46a9ae2a2cff0683beaa1f031865b44ffcd7c7c6bf8c2418f3ef9d149fdc7feb",
+  "path_helper_sha256": "7399c56bf8f31a9c9915d45ef51487b1b8b0b70051cbb89bf5da257f1aab0722",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_fixed_wires_sha256": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_anchors/candidate_v3/cleaned/Yaw_Base.npz",
+      "sha256": "c94ddf3d56dd719ca85e7a15c686c4f952a208629677af5a6acb7cf1a9b963cf"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_anchors/candidate_v3/cleaned/Pitch_Yoke.npz",
+      "sha256": "3f8026ad79f052a866e4b8b6e0a4fa68d4d7795622298f5ab0fbf792a6271334"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "source_objects": 209,
+  "fixed_wires": 14,
+  "radial_guide_mm": 7.6,
+  "bend_radius_mm": 8.0,
+  "maximum_arc_sampling_step_mm": 0.08,
+  "clearance_padding_mm": 0.3,
+  "rows": [
+    {
+      "id": "historical_SH_reference",
+      "dims": [
+        0.8,
+        1.35,
+        3.9
+      ],
+      "direction": 1,
+      "evidence": "ASSUMED catalogue-derived historical box",
+      "status": "PASS",
+      "cases": [
+        {
+          "phase_deg": 45,
+          "status": "PASS",
+          "checked_positions": 924,
+          "planned_positions": 924,
+          "failures": []
+        },
+        {
+          "phase_deg": 135,
+          "status": "PASS",
+          "checked_positions": 924,
+          "planned_positions": 924,
+          "failures": []
+        },
+        {
+          "phase_deg": 225,
+          "status": "PASS",
+          "checked_positions": 924,
+          "planned_positions": 924,
+          "failures": []
+        },
+        {
+          "phase_deg": 315,
+          "status": "PASS",
+          "checked_positions": 924,
+          "planned_positions": 924,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "id": "larger_SH_requested_space",
+      "dims": [
+        1.0,
+        1.8,
+        4.1
+      ],
+      "direction": 1,
+      "evidence": "ASSUMED larger requested space used in the upper-feed checks",
+      "status": "BLOCKED",
+      "cases": [
+        {
+          "phase_deg": 45,
+          "status": "BLOCKED",
+          "checked_positions": 68,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 67,
+              "segment": "lower_R8",
+              "obstacle": "Yaw_Base",
+              "rear_mm": [
+                9.42243502893443,
+                9.422435028934428,
+                139.3301955046971
+              ],
+              "transform_3x4": [
+                [
+                  0.20105384469696397,
+                  -0.7071067811865475,
+                  -0.67792134612547,
+                  8.032696269377217
+                ],
+                [
+                  0.20105384469696394,
+                  0.7071067811865476,
+                  -0.6779213461254698,
+                  8.032696269377215
+                ],
+                [
+                  0.9587255619128647,
+                  0.0,
+                  0.2843330739377004,
+                  139.91307830626937
+                ]
+              ],
+              "padded_intersection_mm3": 0.006588111890810389,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.2523944745963314
+            }
+          ]
+        },
+        {
+          "phase_deg": 135,
+          "status": "BLOCKED",
+          "checked_positions": 68,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 67,
+              "segment": "lower_R8",
+              "obstacle": "Yaw_Base",
+              "rear_mm": [
+                -9.422435028934428,
+                9.42243502893443,
+                139.3301955046971
+              ],
+              "transform_3x4": [
+                [
+                  -0.20105384469696394,
+                  -0.7071067811865476,
+                  0.6779213461254698,
+                  -8.032696269377215
+                ],
+                [
+                  0.20105384469696397,
+                  -0.7071067811865475,
+                  -0.67792134612547,
+                  8.032696269377217
+                ],
+                [
+                  0.9587255619128647,
+                  0.0,
+                  0.2843330739377004,
+                  139.91307830626937
+                ]
+              ],
+              "padded_intersection_mm3": 0.006588111890807155,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.2523944745963314
+            }
+          ]
+        },
+        {
+          "phase_deg": 225,
+          "status": "BLOCKED",
+          "checked_positions": 68,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 67,
+              "segment": "lower_R8",
+              "obstacle": "Yaw_Base",
+              "rear_mm": [
+                -9.422435028934432,
+                -9.422435028934428,
+                139.3301955046971
+              ],
+              "transform_3x4": [
+                [
+                  -0.201053844696964,
+                  0.7071067811865475,
+                  0.6779213461254701,
+                  -8.032696269377219
+                ],
+                [
+                  -0.20105384469696394,
+                  -0.7071067811865477,
+                  0.6779213461254698,
+                  -8.032696269377215
+                ],
+                [
+                  0.9587255619128647,
+                  0.0,
+                  0.2843330739377004,
+                  139.91307830626937
+                ]
+              ],
+              "padded_intersection_mm3": 0.006588111890819213,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.252394474596332
+            }
+          ]
+        },
+        {
+          "phase_deg": 315,
+          "status": "BLOCKED",
+          "checked_positions": 68,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 67,
+              "segment": "lower_R8",
+              "obstacle": "Yaw_Base",
+              "rear_mm": [
+                9.422435028934428,
+                -9.422435028934432,
+                139.3301955046971
+              ],
+              "transform_3x4": [
+                [
+                  0.2010538446969639,
+                  0.7071067811865477,
+                  -0.6779213461254697,
+                  8.032696269377215
+                ],
+                [
+                  -0.201053844696964,
+                  0.7071067811865474,
+                  0.6779213461254701,
+                  -8.032696269377219
+                ],
+                [
+                  0.9587255619128647,
+                  -0.0,
+                  0.2843330739377004,
+                  139.91307830626937
+                ]
+              ],
+              "padded_intersection_mm3": 0.006588111890807531,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.252394474596332
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH_reverse_catalogue_reference",
+      "dims": [
+        1.5,
+        2.08,
+        5.7
+      ],
+      "direction": -1,
+      "evidence": "ASSUMED box from PH series outline; not finished-crimp dimensions or exact individual drawing",
+      "status": "BLOCKED",
+      "cases": [
+        {
+          "phase_deg": 45,
+          "status": "BLOCKED",
+          "checked_positions": 66,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 858,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                11.030865786510143,
+                11.030865786510141,
+                196.9384993793474
+              ],
+              "transform_3x4": [
+                [
+                  0.7071067811865476,
+                  -0.7071067811865475,
+                  0.0,
+                  11.030865786510143
+                ],
+                [
+                  0.7071067811865475,
+                  0.7071067811865476,
+                  0.0,
+                  11.030865786510141
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  194.0884993793474
+                ]
+              ],
+              "padded_intersection_mm3": 0.019912360928822682,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.2384993793474166
+            }
+          ]
+        },
+        {
+          "phase_deg": 135,
+          "status": "BLOCKED",
+          "checked_positions": 66,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 858,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                -11.030865786510141,
+                11.030865786510143,
+                196.9384993793474
+              ],
+              "transform_3x4": [
+                [
+                  -0.7071067811865475,
+                  -0.7071067811865476,
+                  0.0,
+                  -11.030865786510141
+                ],
+                [
+                  0.7071067811865476,
+                  -0.7071067811865475,
+                  0.0,
+                  11.030865786510143
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  194.0884993793474
+                ]
+              ],
+              "padded_intersection_mm3": 0.019912360928834694,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.2384993793474166
+            }
+          ]
+        },
+        {
+          "phase_deg": 225,
+          "status": "BLOCKED",
+          "checked_positions": 66,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 858,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                -11.030865786510144,
+                -11.030865786510141,
+                196.9384993793474
+              ],
+              "transform_3x4": [
+                [
+                  -0.7071067811865477,
+                  0.7071067811865475,
+                  0.0,
+                  -11.030865786510144
+                ],
+                [
+                  -0.7071067811865475,
+                  -0.7071067811865477,
+                  0.0,
+                  -11.030865786510141
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  194.0884993793474
+                ]
+              ],
+              "padded_intersection_mm3": 0.019912360928872098,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.2384993793474166
+            }
+          ]
+        },
+        {
+          "phase_deg": 315,
+          "status": "BLOCKED",
+          "checked_positions": 66,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 858,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                11.03086578651014,
+                -11.030865786510144,
+                196.9384993793474
+              ],
+              "transform_3x4": [
+                [
+                  0.7071067811865474,
+                  0.7071067811865477,
+                  0.0,
+                  11.03086578651014
+                ],
+                [
+                  -0.7071067811865477,
+                  0.7071067811865474,
+                  0.0,
+                  -11.030865786510144
+                ],
+                [
+                  0.0,
+                  -0.0,
+                  1.0,
+                  194.0884993793474
+                ]
+              ],
+              "padded_intersection_mm3": 0.01991236092884321,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.2384993793474166
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PH_reverse_requested_space",
+      "dims": [
+        1.7,
+        2.3,
+        6.0
+      ],
+      "direction": -1,
+      "evidence": "ASSUMED larger requested space, not a vendor maximum",
+      "status": "BLOCKED",
+      "cases": [
+        {
+          "phase_deg": 45,
+          "status": "BLOCKED",
+          "checked_positions": 62,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 862,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                11.030865786510143,
+                11.030865786510141,
+                197.2561301867722
+              ],
+              "transform_3x4": [
+                [
+                  0.7071067811865476,
+                  -0.7071067811865475,
+                  0.0,
+                  11.030865786510143
+                ],
+                [
+                  0.7071067811865475,
+                  0.7071067811865476,
+                  0.0,
+                  11.030865786510141
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  194.2561301867722
+                ]
+              ],
+              "padded_intersection_mm3": 0.030742420015309965,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.25613018677219657
+            }
+          ]
+        },
+        {
+          "phase_deg": 135,
+          "status": "BLOCKED",
+          "checked_positions": 62,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 862,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                -11.030865786510141,
+                11.030865786510143,
+                197.2561301867722
+              ],
+              "transform_3x4": [
+                [
+                  -0.7071067811865475,
+                  -0.7071067811865476,
+                  0.0,
+                  -11.030865786510141
+                ],
+                [
+                  0.7071067811865476,
+                  -0.7071067811865475,
+                  0.0,
+                  11.030865786510143
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  194.2561301867722
+                ]
+              ],
+              "padded_intersection_mm3": 0.030742420015302425,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.25613018677219657
+            }
+          ]
+        },
+        {
+          "phase_deg": 225,
+          "status": "BLOCKED",
+          "checked_positions": 62,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 862,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                -11.030865786510144,
+                -11.030865786510141,
+                197.2561301867722
+              ],
+              "transform_3x4": [
+                [
+                  -0.7071067811865477,
+                  0.7071067811865475,
+                  0.0,
+                  -11.030865786510144
+                ],
+                [
+                  -0.7071067811865475,
+                  -0.7071067811865477,
+                  0.0,
+                  -11.030865786510141
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0,
+                  194.2561301867722
+                ]
+              ],
+              "padded_intersection_mm3": 0.030742420015276006,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.25613018677219657
+            }
+          ]
+        },
+        {
+          "phase_deg": 315,
+          "status": "BLOCKED",
+          "checked_positions": 62,
+          "planned_positions": 924,
+          "failures": [
+            {
+              "index": 862,
+              "segment": "upper_free_end",
+              "obstacle": "Pitch_Yoke",
+              "rear_mm": [
+                11.03086578651014,
+                -11.030865786510144,
+                197.2561301867722
+              ],
+              "transform_3x4": [
+                [
+                  0.7071067811865474,
+                  0.7071067811865477,
+                  0.0,
+                  11.03086578651014
+                ],
+                [
+                  -0.7071067811865477,
+                  0.7071067811865474,
+                  0.0,
+                  -11.030865786510144
+                ],
+                [
+                  0.0,
+                  -0.0,
+                  1.0,
+                  194.2561301867722
+                ]
+              ],
+              "padded_intersection_mm3": 0.03074242001527982,
+              "nominal_box_intersection_mm3": 0.0,
+              "nominal_gap_below_1_mm": 0.25613018677219657
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "PH_source_url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+  "PH_source_scope": "Shared series contact outline, not a maximum post-crimp envelope",
+  "mating_housings": "NOT_TESTED",
+  "complete_wire_and_common_body_plug": "NOT_TESTED",
+  "continuous_sweep": "NOT_TESTED",
+  "candidate_structures_changed": false,
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "elapsed_s": 7.890117883682251
+}

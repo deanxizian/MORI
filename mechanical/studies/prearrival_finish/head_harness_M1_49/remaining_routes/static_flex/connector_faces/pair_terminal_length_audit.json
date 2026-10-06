@@ -1,0 +1,62 @@
+{
+  "status": "FAIL",
+  "scope": "Old 170+15+15 allocation cannot meet both supported inlet tangents at the stated R assumptions",
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/direction_receipt.json": "7de15259fd5da95fee4eb49233b401c20d3af4767c7bec7a53537deb0233357f",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/terminal_length_audit.json": "1cd15d0d637bc98bc282008b7d8388fd0eab49116626af8cf058aa9c42ab86c6",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/static_flex_geometry.py": "3cbfd048e80b03ad24775d02b483aae3d4cfbce8f1183b5904b61fe212f3288a"
+  },
+  "orientation_along_cable": "CAM to LCD",
+  "CAM_outward_tangent": [
+    -1,
+    0,
+    0
+  ],
+  "core_initial_tangent": [
+    1,
+    0,
+    0
+  ],
+  "core_final_tangent": [
+    -1,
+    0,
+    0
+  ],
+  "LCD_insertion_tangent": [
+    1,
+    0,
+    0
+  ],
+  "minimum_tangent_turn_each_end_rad": 3.141592653589793,
+  "cases": [
+    {
+      "assumed_minimum_radius_mm": 5.0,
+      "each_end_necessary_length_mm": 15.707963267948966,
+      "both_ends_necessary_length_mm": 31.41592653589793,
+      "each_end_budget_mm": 15,
+      "total_end_budget_mm": 30,
+      "each_end_shortfall_lower_bound_mm": 0.7079632679489656,
+      "central_length_upper_bound_ignoring_other_constraints_mm": 168.58407346410206,
+      "status": "FAIL"
+    },
+    {
+      "assumed_minimum_radius_mm": 7.5,
+      "each_end_necessary_length_mm": 23.561944901923447,
+      "both_ends_necessary_length_mm": 47.12388980384689,
+      "each_end_budget_mm": 15,
+      "total_end_budget_mm": 30,
+      "each_end_shortfall_lower_bound_mm": 8.561944901923447,
+      "central_length_upper_bound_ignoring_other_constraints_mm": 152.8761101961531,
+      "status": "FAIL"
+    }
+  ],
+  "assumptions": [
+    "R5/R7.5 are prior capacity assumptions, not vendor limits.",
+    "No allowance is included for insertion, stiffeners, positional offsets or strip twist.",
+    "Upper bounds on center length are necessary conditions only, not passing routes.",
+    "No conclusion that the original 200 mm cable cannot fit."
+  ],
+  "main_changed": false,
+  "full_LCD_route": "BLOCKED",
+  "script_sha256": "a4e5fe563478997169ddb453478c59c7dd7840a62da1835b1932c2c692849f9a"
+}

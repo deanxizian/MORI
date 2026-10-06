@@ -1,0 +1,371 @@
+Pinouts | LSM6DSOX, ISM330DHC, & LSM6DSO32 6 DoF IMUs | Adafruit Learning System
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "LSM6DSOX, ISM330DHC, &amp; LSM6DSO32 6 DoF IMUs",
+    "description": "The LSM6DSOX, ICM330DHC, and LSM6DSO32 are three sweet new 6-DOF IMUs from ST. This guide will show how to get started with them in no time!",
+    "image": "https://cdn-learn.adafruit.com/guides/images/000/002/823/medium800/main_crop.jpg",
+    "url": "https://learn.adafruit.com/lsm6dsox-and-ism330dhc-6-dof-imu/pinouts",
+    "publisher": "Adafruit",
+    "datePublished": "2019-12-22T15:12:14-05:00",
+    "author": {
+      "@type": "Person",
+      "name": "Bryan Siepert"
+    }
+  }
+var dataLayer = [];
+  function gtag(){dataLayer.push(arguments);}
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PRPXBQ6');
+gtag('js', new Date());
+gtag("event", "view_item_list", {
+      item_list_id: "2823:18015",
+      item_list_name: "lsm6dsox-and-ism330dhc-6-dof-imu/pinouts",
+      items: [
+  {
+    "item_id": "4438",
+    "item_name": "Adafruit LSM6DSOX 6 DoF Accelerometer and Gyroscope",
+    "affiliation": "Featured Product"
+  }
+]
+    });
+{
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "https://learn.adafruit.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://learn.adafruit.com/search?q={search_term}",
+        "query-input": "required name=search_term"
+      }
+    }
+Skip to main content
+Skip to article content
+Shop
+Learn
+Blog
+Forums
+IO
+LIVE!
+AdaBox
+toggle menu
+Search
+0
+Sign In
+|
+Create Account
+Playground
+New Guides
+Series
+Wishlists
+Shop
+Learn
+Blog
+Forums
+IO
+LIVE!
+AdaBox
+Sign In
+0
+Explore & Learn
+Learn Categories
+3D Printing
+AdaBox
+Adafruit Products
+Arduino Compatibles
+Breakout Boards
+Circuit Playground
+CircuitPython
+CLUE
+Community Support
+Components
+Crickit
+Customer & Partner Projects
+Development Boards
+Educators
+EL Wire/Tape/Panel
+Feather
+Gaming
+Hacks
+Internet of Things - IOT
+LCDs & Displays
+LEDs
+Machine Learning
+MakeCode
+Maker Business
+micro:bit
+Microcontrollers
+Programming
+Raspberry Pi
+Robotics & CNC
+Sensors
+STEMMA
+Tools
+Trellis
+Wearables
+Explore
+Groups to get your gears turning
+Explore Groups
+New Guides
+Playground
+LSM6DSOX, ISM330DHC, & LSM6DSO32 6 DoF IMUs
+Pinouts
+LSM6DSOX, ISM330DHC, & LSM6DSO32 6 DoF IMUs
+Learn how to use the LSM6DSOX, ISM330DHC, and LSM6DSO32 sensors with Arduino and Python
+by
+Bryan Siepert
+and
+Isaac Wellish
+published December 22, 2019, last edited February 28, 2025
+posted in
+Sensors
+Adafruit Products
+Breakout Boards
+/
+Accel, Gyro, & Magnetometers
+STEMMA
+Save
+New Favorite
+×
+Please
+sign in
+to include this guide in your list of favorites.
+You will be redirected back to this guide once you
+sign in
+, and can then save this guide as one of your favorites.
+Close
+Link Note
+Download
+Overview
+Pinouts
+Arduino
+Arduino Docs
+Python & CircuitPython
+Python Docs
+Downloads
+Single page
+Feedback?  Corrections?
+Text View
+Guide Products
+view all
+Your browser does not support the video tag.
+Primary
+Adafruit LSM6DSOX 6 DoF Accelerometer and Gyroscope
+$11.95
+Add  to Cart
+View product details
+23
+Beginner
+Product guide
+Pinouts
+The top of each breakout is very similar! They include The names of all the pins which you can reference in the lists below
+Power Pins
+Vin
+- this is the power pin. Since the sensor chip uses 3 VDC, we have included a voltage regulator on board that will take 3-5VDC and safely convert it down. To power the board, give it the same power as the logic level of your microcontroller - e.g. for a 5V microcontroller like Arduino, use 5V
+3Vo
+- this is the 3.3V output from the voltage regulator, you can grab up to 100mA from this if you like
+GND
+- common ground for power and logic
+I2C Logic Pins
+SCL
+- I2C clock pin, connect to your microcontroller's I2C clock line. This pin is level shifted so you can use 3-5V logic, and there's a
+10K pullup
+on this pin.
+SDA
+-I2C data pin, connect to your microcontroller's I2C data line. This pin is level shifted so you can use 3-5V logic, and there's a 1
+0K pullup
+on this pin.
+STEMMA QT
+-
+These connectors allow you to connectors to dev boards with
+STEMMA QT
+connectors or to other things with
+various associated accessories
+SPI Logic pins:
+All pins going into the breakout have level shifting circuitry to make them 3-5V logic level safe. Use whatever logic level is on
+Vin!
+SCK
+- This is
+also
+the
+S
+PI
+C
+loc
+k
+pin, it's an input to the chip
+DO (Bottom)
+- this is the serial
+D
+ata
+O
+ut /
+M
+icrocontroller
+I
+n
+S
+ensor
+O
+ut pin, for data sent from the LSM6DSOX, ISM330DHCX, or LSM6DSO32 to your processor.
+SDA
+- this is
+also
+the Serial Data In /
+M
+icrocontroller
+O
+ut
+S
+ensor
+I
+n pin, for data sent from your processor to the LSM6DSOX, ISM330DHCX, or LSM6DSO32
+CS (Bottom)
+- this is the
+C
+hip
+S
+elect pin, drop it low to start an SPI transaction. Its an input to the chip
+If you want to connect multiple LSM6DSOX, ISM330DHCX, or LSM6DSO32's to one microcontroller, have them share the
+SDI
+,
+DO
+and
+SCK
+pins. Then assign each one a unique
+CS
+pin.
+Other Pins
+INT1
+-This is the primary interrupt pin. You can setup the LSM6DSOX, ISM330DHCX, or LSM6DSO32 to pull this low when certain conditions are met such as new measurement data being available. Consult the
+datasheet
+for usage
+INT2
+-This is the primary interrupt pin. You can setup the LSM6DSOX, ISM330DHCX, or LSM6DSO32 to pull this low when certain conditions are met such as new measurement data being available. Consult the
+datasheet
+for usage
+D0 (Bottom)
+- I2C Address pin. Pulling this pin high or bridging the solder jumper on the back will change the I2C address from
+0x6A
+to
+0x6B
+SCX, SDX, Aux CS, DO (Top)
+- Pins for advanced users to connect the LSM6DSOX, ISM330DHCX, or LSM6DSO32 to another sensor. Consult the
+datasheet
+for usage
+The backs of the breakouts show additional information about the specifications of the sensor, as well as the I2C address and additional pin information
+Page last edited March 08, 2024
+Text editor powered by
+tinymce
+.
+Overview
+Arduino
+Related Guides
+Your browser does not support the video tag. This links to the guide CircuitPython Libraries and Jupyter Notebook on any Computer with MCP2221.
+CircuitPython Libraries and Jupyter Notebook on any...
+By
+Brent Rubell
+beginner
+33
+Adafruit SensorLab - Gyroscope Calibration
+By
+lady ada
+beginner
+31
+Your browser does not support the video tag. This links to the guide MASLOW: an Open WiFi Detector with Adafruit Pro Trinket and CC3000.
+MASLOW: an Open WiFi Detector with Adafruit Pro...
+By
+Phillip Burgess
+beginner
+42
+Adafruit PiCowbell Proto for Pico
+By
+Kattni Rembor
+Product Guide
+7
+Adafruit QT Py RP2040
+By
+Kattni Rembor
+Product Guide
+96
+Your browser does not support the video tag. This links to the guide Clue Coffee Scale.
+Clue Coffee Scale
+By
+Jan Goolsbey
+beginner
+25
+CircuitPython Libraries on any Computer with MCP2221
+By
+Carter Nelson
+Product Guide
+80
+Getting Started with Binho Nova
+By
+Jonathan Georgino
+beginner
+3
+Adafruit PMSA003I Air Quality Breakout
+By
+Kattni Rembor
+Product Guide
+48
+Adafruit DPI Display Kippah
+By
+lady ada
+Product Guide
+29
+HalloWing Magic 9 Ball
+By
+John Park
+beginner
+15
+Adafruit STEMMA Analog SPDT Switch
+By
+Liz Clark
+Product Guide
+1
+Working with Multiple Same Address I2C Devices
+By
+Carter Nelson
+beginner
+43
+MCUME Emulators on Fruit Jam
+By
+Tim C
+intermediate
+9
+DIY Trinkey No-Soldering USB Air Quality Monitor
+By
+Carter Nelson
+beginner
+45
+Create Wishlist
+×
+Title
+Description
+Close
+Search
+Search
+Categories
+Contact Us
+Tech Support Forums
+FAQs
+Shipping & Returns
+Freebies
+Terms of Service
+Privacy & Legal
+Website Accessibility
+LLMs.txt
+Theme: System
+About Us
+Press
+Educators
+Distributors
+Jobs
+Gift Cards
+"The mind is not a vessel that needs filling, but wood that needs igniting"
+Plutarch
+A Minority and Woman-owned Business Enterprise (M/WBE)

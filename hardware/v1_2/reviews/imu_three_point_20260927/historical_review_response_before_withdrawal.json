@@ -1,0 +1,104 @@
+{
+  "review_date": "2026-09-27",
+  "review_kind": "EVALUATION_ONLY_NOT_RELEASED_PCB",
+  "received_native_board": "MORI_imu_P5R4",
+  "received_handoff": "hardware/v1_2/handoff/mechanical_P5R6.json",
+  "baseline_sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68",
+  "proposal_sha256": "6a9541ffcf7093400a5aab1e9e0be0ad0144c849e03cf3f92b42bbf4d1d9dbfa",
+  "recommendation": "20x21mm three-point proposal is conditionally adoptable without signal rerouting; implement the listed corrections in a separately authorized revision",
+  "new_native_board_created": false,
+  "published_files_changed": false,
+  "mechanical_files_changed": false,
+  "geometry_screen": "PASS",
+  "existing_ground_vs_proposed_keepout": "FAIL",
+  "baseline_ERC": "PASS",
+  "baseline_DRC": "PASS",
+  "new_board_ERC_DRC": "NOT_TESTED",
+  "physical_qualification": "NOT_TESTED",
+  "manufacturing_release": "BLOCKED",
+  "proposed_outline_mm": [
+    20,
+    21
+  ],
+  "thickness_mm": 1.6,
+  "copper_layers": 2,
+  "proposed_holes": [
+    {
+      "reference": "H1",
+      "xy_mm": [
+        2.5,
+        17.5
+      ],
+      "finished_drill_mm": 2.4,
+      "type": "NPTH",
+      "status": "TRIAL_NOT_ADOPTED"
+    },
+    {
+      "reference": "H2",
+      "xy_mm": [
+        17.5,
+        17.5
+      ],
+      "finished_drill_mm": 2.4,
+      "type": "NPTH",
+      "status": "TRIAL_NOT_ADOPTED"
+    },
+    {
+      "reference": "H3",
+      "xy_mm": [
+        10,
+        2.5
+      ],
+      "finished_drill_mm": 2.4,
+      "type": "NPTH",
+      "status": "TRIAL_NOT_ADOPTED"
+    }
+  ],
+  "hole_note": "H1/H2 were 2.2mm. Proposed common 2.4mm is an explicit change, not an unchanged interface; final size/tolerance must be recorded per hole.",
+  "hardware_changes_required": [
+    "Translate ALL retained PCB objects by native (0,+5mm), including tracks, vias, zones, rule areas, drawings and footprints.",
+    "Define the 20x21mm outline; add H3 to schematic and a locally defined NPTH footprint, and explicitly resolve H1/H2 drill dimensions.",
+    "Apply diameter6.6mm copper/electrical-component keepout at H3 on both faces, including GND zones; allow the mechanical hole itself.",
+    "Trim current ground fill by approximately0.299mm radial overlap, about0.554mm2 each face. Signal routing need not move relative to the components.",
+    "Preserve pin assignments, U1 orientation/decoupling, connector orientation and sensor firmware transform.",
+    "Refill and run native ERC/DRC/parity, connectivity and mounting review before a new native-board handoff."
+  ],
+  "mechanical_followup_after_native_handoff": {
+    "path": "config/geometry.json#/native_electronics/boards/imu/board_center_xy_mm",
+    "current": [
+      -25,
+      -40
+    ],
+    "required_if_centroid_based_import_retained": [
+      -25,
+      -42.5
+    ],
+    "reason": "Existing board_transform recenters from new outline centroid. Leaving -40 moves all retained parts +2.5mm in world Y.",
+    "owner": "mechanical; proposal only, not applied",
+    "keep_substrate_reference_z_mm": 108.355,
+    "keep_rotation_xyz_deg": [
+      180,
+      0,
+      0
+    ]
+  },
+  "proposed_origin_world_mm": [
+    -35,
+    -53,
+    108.355
+  ],
+  "third_support_axis_world_mm": [
+    -25,
+    -50.5,
+    108.4
+  ],
+  "support_edge_note": "Diameter6.6 seat overhangs rear PCB edge by0.8mm; 1.3mm hole-to-edge material, about92.1percent nominal annular support retained. Partial bearing is not a stress/strength PASS.",
+  "full_circle_support_if_required": "Needs >=3.3mm centre-to-edge distance and renewed mechanical check; do not silently shift the hole.",
+  "connector_note": "J1/PHR-8 unchanged. Fab gap0.590mm, courtyard gap0.475mm to H3 keepout; existing PHR-8 envelope projection gap about0.975mm to radius3.3 support. New screw/tool/cable path still NOT_TESTED.",
+  "guideline_note": "Proposal quotes TDK AN-000393 v1.5. Existing project copy v2.4 pp11-12 now recommends at least3 supports and permits4 or more depending on PCB size/shape. Three points are not an exclusive qualification requirement.",
+  "guideline_file": "hardware/v1_2/sources/parts/TDK_AN000393_v2p4.pdf",
+  "report": "hardware/v1_2/reviews/imu_three_point_20260927/README.md",
+  "evidence": "hardware/v1_2/reviews/imu_three_point_20260927/evaluation.json",
+  "source_integrity": "PASS",
+  "cross_thread_reply_sent": false
+}

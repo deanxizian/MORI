@@ -1,0 +1,1164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MORI/2 command",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol",
+    "type",
+    "source",
+    "permissions",
+    "params",
+    "device_id",
+    "session_id",
+    "command_id",
+    "client_id",
+    "sequence",
+    "sent_at_ms",
+    "basis_device_ms",
+    "valid_for_ms"
+  ],
+  "properties": {
+    "protocol": {
+      "const": "MORI/2"
+    },
+    "type": {
+      "enum": [
+        "READ_STATUS",
+        "CLAIM_CONTROL",
+        "RELEASE_CONTROL",
+        "HEARTBEAT",
+        "ARM",
+        "STOP_MOTION",
+        "DISARM",
+        "FAULT_STOP",
+        "ACK_FAULT",
+        "ENTER_MAINTENANCE",
+        "MAINTENANCE_ACTION",
+        "SET_VELOCITY",
+        "MOVE_DISTANCE",
+        "TURN_ANGLE",
+        "HEAD_TARGET",
+        "SET_EXPRESSION",
+        "CAMERA_MODE",
+        "SNAPSHOT",
+        "SELECT_TARGET",
+        "FOLLOW",
+        "PATROL",
+        "ACTIVE_ACTION",
+        "CANCEL",
+        "MEMORY_QUERY",
+        "MEMORY_REMEMBER",
+        "MEMORY_CORRECT",
+        "MEMORY_DELETE",
+        "MEMORY_EXPORT",
+        "MEMORY_ENABLED",
+        "VOLUME",
+        "VOICE_SESSION",
+        "BUTTON",
+        "WAKE_CONFIG"
+      ]
+    },
+    "source": {
+      "enum": [
+        "console",
+        "mobile",
+        "voice",
+        "button",
+        "autonomy",
+        "local"
+      ]
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "read",
+          "control",
+          "safety",
+          "maintenance",
+          "interaction",
+          "camera",
+          "memory"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "params": {
+      "type": "object"
+    },
+    "device_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{1,64}$"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{1,64}$"
+    },
+    "command_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{1,64}$"
+    },
+    "client_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]{1,64}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2147483647
+    },
+    "sent_at_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "basis_device_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "valid_for_ms": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30000
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "READ_STATUS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "CLAIM_CONTROL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "supervised": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "supervised"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "RELEASE_CONTROL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "HEARTBEAT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ARM"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "local_confirmation": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "local_confirmation"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "STOP_MOTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "DISARM"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "support_confirmed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "support_confirmed"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "FAULT_STOP"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "reason": {
+                "type": "string",
+                "maxLength": 80
+              }
+            },
+            "required": [
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ACK_FAULT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "support_confirmed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "support_confirmed"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ENTER_MAINTENANCE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "support_confirmed": {
+                "type": "boolean"
+              },
+              "cabled": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "support_confirmed",
+              "cabled"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MAINTENANCE_ACTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "enum": [
+                  "ota",
+                  "nvs_reset",
+                  "shutdown",
+                  "provision"
+                ]
+              }
+            },
+            "required": [
+              "action"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "SET_VELOCITY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "v_m_s": {
+                "type": "number",
+                "minimum": -0.1,
+                "maximum": 0.1
+              },
+              "yaw_rad_s": {
+                "type": "number",
+                "minimum": -0.5,
+                "maximum": 0.5
+              }
+            },
+            "required": [
+              "v_m_s",
+              "yaw_rad_s"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MOVE_DISTANCE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "distance_m": {
+                "type": "number",
+                "minimum": -0.3,
+                "maximum": 0.3
+              }
+            },
+            "required": [
+              "distance_m"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "TURN_ANGLE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "angle_rad": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              }
+            },
+            "required": [
+              "angle_rad"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "HEAD_TARGET"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "yaw_rad": {
+                "type": "number",
+                "minimum": -1.0471975511965976,
+                "maximum": 1.0471975511965976
+              },
+              "pitch_rad": {
+                "type": "number",
+                "minimum": -0.3490658503988659,
+                "maximum": 0.4363323129985824
+              }
+            },
+            "required": [
+              "yaw_rad",
+              "pitch_rad"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "SET_EXPRESSION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "state": {
+                "enum": [
+                  "idle",
+                  "listening",
+                  "thinking",
+                  "speaking",
+                  "happy",
+                  "confused",
+                  "sleep_visual",
+                  "error"
+                ]
+              }
+            },
+            "required": [
+              "state"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "CAMERA_MODE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "mode": {
+                "enum": [
+                  "OFF",
+                  "SNAPSHOT",
+                  "TRACKING"
+                ]
+              },
+              "upload_allowed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "mode",
+              "upload_allowed"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "SNAPSHOT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "upload_allowed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "upload_allowed"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "SELECT_TARGET"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "target_id": {
+                "type": "string",
+                "maxLength": 64
+              },
+              "confirmed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "target_id",
+              "confirmed"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "FOLLOW"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "mode": {
+                "enum": [
+                  "HEAD",
+                  "BODY"
+                ]
+              },
+              "supervised": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "mode",
+              "supervised"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "PATROL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "duration_s": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 30
+              },
+              "segment_m": {
+                "type": "number",
+                "minimum": 0.01,
+                "maximum": 0.3
+              },
+              "supervised": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "duration_s",
+              "segment_m",
+              "supervised"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ACTIVE_ACTION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "pattern": {
+                "enum": [
+                  "short_forward",
+                  "nod",
+                  "shake"
+                ]
+              },
+              "supervised": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "pattern",
+              "supervised"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "CANCEL"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "command_id": {
+                "type": "string",
+                "maxLength": 64
+              }
+            },
+            "required": [
+              "command_id"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 300
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MEMORY_QUERY"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "maxLength": 512
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MEMORY_REMEMBER"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "maxLength": 2000
+              },
+              "category": {
+                "enum": [
+                  "fact",
+                  "preference",
+                  "summary",
+                  "inference"
+                ]
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "sensitive": {
+                "type": "boolean"
+              },
+              "source_id": {
+                "type": "string",
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "text",
+              "category",
+              "confirmed",
+              "sensitive",
+              "source_id"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MEMORY_CORRECT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 64
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 2000
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "source_id": {
+                "type": "string",
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "id",
+              "text",
+              "confirmed",
+              "source_id"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MEMORY_DELETE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 64
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MEMORY_EXPORT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "MEMORY_ENABLED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "enabled"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "VOLUME"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "level": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "level"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "VOICE_SESSION"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "enum": [
+                  "start",
+                  "interrupt",
+                  "text"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 2000
+              }
+            },
+            "required": [
+              "action",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "BUTTON"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "gesture": {
+                "enum": [
+                  "short",
+                  "double",
+                  "long"
+                ]
+              }
+            },
+            "required": [
+              "gesture"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "WAKE_CONFIG"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "params": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "requested_phrase": {
+                "type": "string",
+                "maxLength": 64
+              }
+            },
+            "required": [
+              "enabled",
+              "requested_phrase"
+            ],
+            "additionalProperties": false
+          },
+          "valid_for_ms": {
+            "maximum": 30000
+          }
+        }
+      }
+    }
+  ]
+}

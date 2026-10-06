@@ -1,0 +1,41 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_extreme_json_integer_is_rejected_without_server_exception ________
+
+    def test_extreme_json_integer_is_rejected_without_server_exception():
+     base=json.loads((ROOT/'contracts/test_vectors.json').read_text())[0]['command'];base['params']['v_m_s']=10**1000
+>    with pytest.raises(ProtocolError):parse(json.dumps(base))
+
+simulation/tests/test_contracts_c.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+contracts/protocol.py:43: in parse
+    try:return validate(json.loads(raw,object_pairs_hook=pairs,parse_constant=lambda _:(_ for _ in ()).throw(ProtocolError('NONFINITE'))))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+c = {'basis_device_ms': 100, 'client_id': 'client', 'command_id': 'command', 'device_id': 'mori-sim-01', ...}
+
+    def validate(c):
+     if not isinstance(c,dict) or set(c)!=FIELDS:raise ProtocolError('ENVELOPE_FIELDS')
+     if c['protocol']!=SPEC['protocol']:raise ProtocolError('VERSION')
+     for k in ('device_id','session_id','command_id','client_id'):
+      if not isinstance(c[k],str) or not IDENT.fullmatch(c[k]):raise ProtocolError('IDENTIFIER')
+     if c['source'] not in SPEC['sources']:raise ProtocolError('SOURCE')
+     p=c['permissions']
+     if not isinstance(p,list) or not p or len(p)>len(SPEC['permissions']) or not all(isinstance(x,str) and x in SPEC['permissions'] for x in p) or len(set(p))!=len(p):raise ProtocolError('PERMISSIONS')
+     for k,lo,hi in [('sequence',1,2147483647),('sent_at_ms',0,9007199254740991),('basis_device_ms',0,9007199254740991),('valid_for_ms',1,30000)]:
+      if type(c[k]) is not int or not lo<=c[k]<=hi:raise ProtocolError('INTEGER_RANGE')
+     rule=SPEC['commands'].get(c['type']) if isinstance(c['type'],str) else None
+     if not rule or c['valid_for_ms']>rule['ttl_max_ms']:raise ProtocolError('COMMAND_OR_EXPIRY')
+     if rule['permission'] not in p:raise ProtocolError('PERMISSION_MISSING')
+     params=c['params']
+     if not isinstance(params,dict) or set(params)!=set(rule['fields']):raise ProtocolError('PARAM_FIELDS')
+     for key,r in rule['fields'].items():
+      v=params[key];kind=r['kind']
+      if kind in ('number','integer'):
+>      if type(v) not in (float,int) or not math.isfinite(v) or not r['min']<=v<=r['max'] or kind=='integer' and type(v) is not int:raise ProtocolError('NUMBER_RANGE')
+E      OverflowError: int too large to convert to float
+
+contracts/protocol.py:26: OverflowError
+=========================== short test summary info ============================
+FAILED simulation/tests/test_contracts_c.py::test_extreme_json_integer_is_rejected_without_server_exception
+1 failed in 0.02s

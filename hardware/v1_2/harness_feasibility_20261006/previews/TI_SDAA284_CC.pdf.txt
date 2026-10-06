@@ -1,0 +1,383 @@
+PAGE 1
+www.ti.com Table of Contents
+Application Note
+USB Type-C Configuration Channel (CC) Controller
+Selection Guide
+Vishesh Pithadiya
+ABSTRACT
+This application note discusses the fundamentals of USB Type-C and the USB Type-C Configuration Channel
+(CC). Afterwards, this document provides insight into the CC designs that TI has to offer, as well as typical use
+cases for each part.
+Table of Contents
+1 Introduction.............................................................................................................................................................................2
+2 Detailed Description............................................................................................................................................................... 8
+3 Summary............................................................................................................................................................................... 10
+4 References.............................................................................................................................................................................11
+Trademarks
+All trademarks are the property of their respective owners.
+SDAA284 – MARCH 2026
+Submit Document Feedback
+USB Type-C Configuration Channel (CC) Controller Selection Guide 1
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 2
+Introduction www.ti.com
+1 Introduction
+Common Terms and Definitions
+Table 1-1. Common Terms and Definitions
+Term Definition
+Differential signal A signal that is transmitted using a pair of transmission lines. The transmitter sends data using two
+complementary, opposite-polarity signals on a pair of wires. The difference of these complementary signals
+is used to interpret the data at the receiver.
+common mode voltage The DC idle voltage of a link. The common mode voltage is the voltage of the link when no data is being
+transmitted
+DC-coupling DC coupling is when the common mode voltage of a link can be a non-zero value.
+AC-coupling AC coupling is when the common mode voltage of a link is 0V. This is typically done using AC coupling caps to
+block out DC voltages.
+Full duplex bidirectional communication across a single channel
+half duplex Unidirectional communication in two directions across two channels
+GBPS Giga bits per second.
+CC Configuration Channel
+MUX Multiplexer
+source Data/ power is transmitted from the source.
+sink Data/ power is received by the sink.
+DFP Downstream Facing Port
+UFP Upstream Facing Port
+DRP Dual-Role port
+CC Controller A CC controller is used to configure the orientation and power capabilities of the USB Type C link.
+PD controller Power Delivery controller. This type of controller typically integrates the functionality of the CC controller and
+PD functionality such as high-power capabilities and USB Type-C alternate modes.
+PHY Physical Layer. This includes all the hardware connections required for an interface.
+AEQ Q100 Automotive qualification specification
+try.SNK A state in the USB Type-C state machine that allows for a DRP to prefer acting as a sink
+try.SRC A state in the USB Type-C state machine that allows for a DRP to prefer acting as a source
+What is USB?
+Universal Serial Bus, or USB is a serial protocol that allows for communication from a USB host to a USB
+device. This protocol was originally introduced in 1996 and today is one of the most popular communication
+protocols in the world. USB is used in applications ranging from mobile phones to electrical vehicles. Since
+1996 there have been many updates and improvements to the protocol specification that led to its popularity. As
+shown in Table 1, the major revisions of the USB in use today are USB 2.0, USB 3.2, and USB 4.
+Note: USB3.2 is an umbrella protocol that encompasses USB 3.0 (USB 3.2 Gen 1), and USB 3.1 (USB 3.2 Gen
+2)
+2 USB Type-C Configuration Channel (CC) Controller Selection Guide SDAA284 – MARCH 2026
+Submit Document Feedback
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 3
+www.ti.com Introduction
+Table 1-2. Major USB Revisions and Data Communication Speeds Associated
+USB Version Symbol Datarate
+USB 2.0 LS Low-Speed
+￼
+1.5Mbps
+FS Full-Speed 12Mbps
+HS High-Speed
+￼
+480Mbps
+USB 3.2 Gen 1 SuperSpeed
+￼
+5Gbps
+Gen 2 SuperSpeed 10Gbps
+￼
+10Gbps
+Gen 2x2 SuperSpeed 20Gbps
+￼
+20Gbps
+USB 4
+￼
+40Gbps
+The latest revision of the USB is always backwards compatible with the previous iteration. This means a USB
+port supporting the newest revision, USB 4 with communication speeds of 40Gbps, is also required to support
+the oldest revision, USB 2.0 Low Speed with a communication speed of 1.5Mbps.
+When USB transitioned from USB2 to USB3.x there was a major change in the physical characteristics of the
+USB port.
+• In USB2.0 speeds all communication take place between a single DC-coupled differential pair utilizing
+half-duplex communication. (bidirectional communication across a single channel)
+• In USB3.2 onwards communication takes place across two AC-coupled differential pairs allowing for full
+duplex communication. (unidirectional communication across two channels)
+The USB specification also defines standard connectors associated with the USB protocol. The following
+diagram highlights the different USB connectors and footprints:
+￼
+Figure 1-1. Typical USB 2.0 Connector Types
+Here a link to the USB website for more details: https://www.usb.org/documents
+What is USB Type-C and how is it different from previous USB Specifications?
+The standard USB 2.0 type-A connector is symmetrical across the y-axis, so only one orientation of the USB
+connector can be plugged into a receptacle. The USB 2.0 connector has 4 pins.
+• Vbus (5V Supply)
+• D+ (Positive data input/ output for differential signaling)
+• D+ (Negative data input/ output for differential signaling)
+• GND (Ground connection)
+SDAA284 – MARCH 2026
+Submit Document Feedback
+USB Type-C Configuration Channel (CC) Controller Selection Guide 3
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 4
+Introduction www.ti.com
+The following diagram shows what a standard USB 2.0 Type-A connector pinout looks like.
+4
+3
+2
+1
+D-
+GND D+ VCC
+Figure 1-2. USB 2.0 Type-A Pinout
+With the implementation of the full duplex USB 3.2 protocol some pins needed to be added to the USB
+connector. The addition of the differential pairs SSTX and SSRX allow fror high speed communication while
+the D+ and D- pin remain for backwards compatibility. An example of a standard USB 3.2 Type-A connector is
+shown in Figure 1-3.
+4
+3
+2
+1
+SSRX- SSRX+ SSTX+ SSTX-
+GND
+GND D+ VCC
+D-
+5
+6 7 8 9
+Figure 1-3. USB 3.2 Type-A Pinout
+USB Type-C is a physical connector type that is symmetric across the x-axis and y-axis, meaning that there
+are two orientations of the cable that can be plugged into a receptacle. A USB device is required to function
+normally regardless of cable orientation; for this reason, the USB Type-C pinout includes a duplicate of each.
+The duplicate pins in a USB-C receptacle are shown in Figure 1-4
+￼
+Figure 1-4. USB Type-C Pinout
+Pins A5 and B5 of a Type-C receptacle are Configuration Channel (CC) pins.
+How is the Configuration Channel (CC) implemented in USB Type-C?
+The CC negotiation is one of the first steps of USB Type-C enumeration. The purpose of CC negotiation is
+threefold:
+1. 2. 3. To determine the orientation of the USB Type-C connector
+To negotiate the power sourcing and sinking capabilities between the host and device
+To configure the system appropriately in alternate modes and debug modes
+Determining the orientation of the USB Type-C controller is done by measuring the common mode of the CC
+pins. A standard representation of a USB Type-C CC connection is shown below.
+4 USB Type-C Configuration Channel (CC) Controller Selection Guide SDAA284 – MARCH 2026
+Submit Document Feedback
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 5
+www.ti.com Introduction
+￼
+Figure 1-5. USB Type-C Pull-Up/ Pull-Down CC Model
+In this image we see that the Source have pull up (PUP) resistors present on CC1 and CC2, these are defined
+to be Rp. The sink has pull down resistors (PDOWN) present on CC1 and CC2, these are defines to be Rd.
+Ra is a resistor internal to the cable which terminates the unused CC pins. When a USB Type-C cable is used
+to connect the Source and Sink ports, we see that one of the CC channels are connected to create a voltage
+divider network.
+The Source and Sink are both monitoring the voltage seen on the CC pins. The CC voltage of the Source is
+at 3.3V when no connection is present. When a connection is made the CC voltage drops below 3.3V, and the
+Source knows a Sink is connected. Similarly, the CC voltage of the Sink is at 0V when no connection is present.
+When a connection is made, the CC voltage is pulled above 0V, so the Sink knows a Source is connected.
+To clarify, two pull-up resistors are present on the source (Rp). Two pull-down resistors is present on the sink
+(Rd). A weak pulldowns is present on all four pins of the USB Type-C cable (Ra). When the USB Type-C cable is
+plugged in, one pair of Ra and Rd is connected. This determines the orientation of the USB connection.
+• If the change in voltage is detected on CC1, then the port determines the connection to be in the normal
+orientation. If the voltage change is detected on CC2 then the port determines the connection orientation in
+the flipped orientation. This is how the configuration channels are used to determine the orientation of the
+USB Type-C connector.
+The pull-down values for the Sink is the same for all USB Type-C. However, the pull up values on the Source
+can be adjusted to change the common mode voltage of the CC pins between the DFP and UFP.
+Different values of the DFP pull up resistors lead to different common mode voltages for the CC connection. This
+adjustable range of common mode voltages is used to determine the power capabilities of the connection. The
+following figures show the resistor values used to advertise 900mA, 1.5A, and 3A modes.
+SDAA284 – MARCH 2026
+Submit Document Feedback
+USB Type-C Configuration Channel (CC) Controller Selection Guide 5
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 6
+Introduction www.ti.com
+￼
+Figure 1-6. Rp Resistor Values for CC Power Negotiation)
+These different resistance values for Rp result in different ranges of common mode voltage for the CC voltage
+divider network. The resistor values in figure 4 relate directly to the voltages defined in figure 5. The voltages
+defined in the following table are detection thresholds for the USB Source.
+￼
+Figure 1-7. CC Common Mode Voltage Detection Thresholds for 5V PUP CC Model
+We observe that the voltage divider network of the CC can determine the orientation and power capabilities of
+the connection. We also observe that there are only three power modes available when determining power using
+the CC network.
+• 5V/ 900mA (4.5W)
+• 5V/ 1.5A (7.5W)
+• 5V/ 3A (15W)
+6 USB Type-C Configuration Channel (CC) Controller Selection Guide Copyright © 2026 Texas Instruments Incorporated
+SDAA284 – MARCH 2026
+Submit Document Feedback
+PAGE 7
+www.ti.com Introduction
+However, we know that USB Type-C have chargers that can charge at 50W+. How is this possible? Any power
+negotiation past 15W requires a PD controller. More information for these parts can be found here.
+The third function of the USB Tupe-C Configuration Channel (CC) is to configure the system appropriately into
+alternate modes and debug modes. Alternate mode configuration also requires a PD controller to communicate
+across the CC lines, and this function is not discussed in this document.
+USB Type-C supports a variety of debug modes for a wide range of testing. These modes are optional, and not
+all UBS systems are required to support them. Figure 1-8 shows the terminations seen by the USB source and
+the debug and accessory modes associated.
+￼
+Figure 1-8. Expected CC Terminations and Debug Modes Associated
+SDAA284 – MARCH 2026
+Submit Document Feedback
+USB Type-C Configuration Channel (CC) Controller Selection Guide 7
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 8
+Detailed Description www.ti.com
+2 Detailed Description
+This section of the document discusses what the CC controller portfolio of the USB team contains, and key
+differentiation criteria to help in the part selection process.
+There are four main product families and three generations of parts in the CC controller portfolio. Figure 2-1
+shows a visualization of the product families and the generations.
+TUSB422
+PD
+Family
++ PD1.2 compliant PD PHY
++ Supports DFP, UFP, DRP
++ Integrated 2.5W VCONN switch
++ I2C & GPIO mode support
+TUSB319-Q1
+Auto
+Family
++ Automotive grade
++ Only GPIO mode
++ DFP only
++ DIR pin for SS MUX
+TUSB321I
+TUSB321AI
+TUSB322
+GPIO
+Family
+wsfd+ Only GPIO mode
++ Supports DFP, UFP, DRP
++ DIR pin for SS MUX
++ Low power
+TUSB320I
++ ultra low power
++ ID pin failsafe
++ no VCONN fault timeout
++ ultra low power
++ ID pin failsafe
++ I2C & GPIO mode support
+TUSB320LI/HI
+TUSB320LAI/HAI
+I2C
+Family
++ Supports I2C mode
++ Supports DFP, UFP, DRP
++ Active low Enable
++ low power
++ Accessory modes in UFP & DFP
++ Mode change via register
++ active current detection
++ Active high & low Enable
++ ultra low power
++ ID pin failsafe
+1st Gen 2nd Gen 3rd Gen
+Product Generation
+Figure 2-1. TI's Current CC Controller Portfolio
+The four families of products can be divided based on the following identifiers:
+1. 2. 3. 4. PD Family: This family of products supports PD PHYs. The only part in this family is the TUSB422 which
+was released to be fully compliant with PD specification revision 1.2. For newer PD offerings, reach out to
+TI's PD controller team.
+Automotive Family: The family of products that are AEQ Q100 qualified. The only part in this family of
+products is the TUSB319-Q1. This is a DFP only CC controller.
+GPIO Family: This family of products were designed for GPIO applications. They are all designed with an
+external DIR which is used to control a USB Superspeed MUX. These parts are best designed for USB
+3.x applications of a USB Type-C system. There are three parts in this family of products: TUSB321I,
+TUSB321AI, and TUSB322I.
+I2C Family: This family of products are designed for I2C and GPIO applications. The products are designed
+to operate with USB 2.0 systems in GPIO mode as the products do not have an external DIR pin. However,
+in I2C mode these parts can operate in USB 2.0 and USB 3.x applications. These parts also provide the
+flexibility of an EN pin which can be active high or active low. The parts in this family are: TUSB230I,
+TUSB320LI, TUSB320HI, TUSB320LAI, and TUSB320HAI.
+In addition to the four families of products, TI's CC controller portfolio can further be broken down into
+generations. The following figure highlights the key changes between generations. Keep in mind all three
+generations of products exist independently, meaning that a newer generation does not make older generations
+obsolete. The PD controller family is not included here as there is only one generation of the TUSB422.
+8 USB Type-C Configuration Channel (CC) Controller Selection Guide Copyright © 2026 Texas Instruments Incorporated
+SDAA284 – MARCH 2026
+Submit Document Feedback
+PAGE 9
+www.ti.com Detailed Description
+￼
+Figure 2-2. Generational Breakdown of CC Controller Portfolio
+Figure 2-3 provides a product selection flowchart that uses key device features to streamline part selection.
+Features
+No Yes
+I2C?
+No
+ID Pin
+Yes
+No
+Failsafe? PD PHY?
+Yes
+Yes
+No
+No Yes
+AEC-Q100?
+TUSB321
+Try.SNK try.SRC
+support?
+￼
+TUSB319-Q1
+No
+TUSB422
+TUSB321AI
+TUSB320
+Low power
+consumption?
+Yes
+No
+Active low
+Enable?
+Yes Active low
+No
+Yes Yes
+Enable?
+TUSB320HI TUSB320HAI
+No
+TUSB320LI DIR pin?
+Yes
+TUSB320LAI
+TUSB322I
+Figure 2-3. CC Controller Selection Flowchart
+SDAA284 – MARCH 2026
+Submit Document Feedback
+USB Type-C Configuration Channel (CC) Controller Selection Guide 9
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 10
+Summary www.ti.com
+3 Summary
+The CC controller portfolio covers many of the needs defined by the USB Type-C specification. Because of this
+coverage, there are currently no plans to expand this portfolio. If higher power, alternate mode functionality, or
+MCU functionality is needed please have a look at the PD controller portfolio on TI.com.
+10 USB Type-C Configuration Channel (CC) Controller Selection Guide SDAA284 – MARCH 2026
+Submit Document Feedback
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 11
+www.ti.com References
+4 References
+1. 2. Texas Instruments, Implementing USB Type-C® Using TI's Portfolio, application note.
+Texas Instruments, Typical Application Issues for TUSB32x and HD3SS3220 CC Controller Devices,
+application note.
+3. USB, https://www.usb.org, webpage.
+SDAA284 – MARCH 2026
+Submit Document Feedback
+USB Type-C Configuration Channel (CC) Controller Selection Guide 11
+Copyright © 2026 Texas Instruments Incorporated
+PAGE 12
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

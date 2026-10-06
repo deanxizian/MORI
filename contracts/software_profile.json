@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.2",
+  "software_version": "1.2.0-dev.1",
+  "product_spec": "MORI_SPEC_V1_2.md",
+  "parameter_version": "V1.2-UNMEASURED-1",
+  "physical_release": false,
+  "evidence": "DOCUMENT",
+  "motion": {
+    "mcu": "STM32F413RGT6",
+    "wheel": "YS-342026-S288",
+    "head": "SCS0009",
+    "body_imu": "ICM-42688-P",
+    "wheel_bus_baud": 6000000,
+    "head_bus_baud": null,
+    "inter_mcu_baud": null,
+    "pins": null,
+    "uart_clock_hz": null,
+    "head_bus_baud_candidate": 1000000,
+    "uart_clock_candidate_hz": 96000000,
+    "candidate_status": "ASSUMED_NOT_IMPLEMENTED"
+  },
+  "interaction": {
+    "board": "Waveshare ESP32-S3-CAM-OV3660",
+    "sku": 33700,
+    "display_sku": 35079,
+    "display_driver": "ST77916",
+    "interface": "QSPI",
+    "width": 360,
+    "height": 360,
+    "active_diameter_mm": 45.68,
+    "pin_contract_verified": false
+  },
+  "power": {
+    "battery_series": 3,
+    "charge_max_v": 12.6,
+    "head_branch_v": 6,
+    "warning_v": null,
+    "critical_v": null,
+    "overvoltage_v": null,
+    "wheel_current_limit_a": null,
+    "regeneration_verified": false,
+    "battery_assumption": "ordinary 4.2V/cell 3S, final pack not selected"
+  },
+  "calibration": {
+    "wheel_radius_m": null,
+    "track_m": null,
+    "body_mass_kg": null,
+    "com_height_m": null,
+    "imu_rotation": null,
+    "wheel_signs": null,
+    "head_zero": null,
+    "head_joint_region": null,
+    "camera_intrinsics": null,
+    "camera_extrinsics": null,
+    "wheel_output_to_axle_ratio": null
+  },
+  "control": {
+    "kp_pitch": 0,
+    "kd_pitch": 0,
+    "kp_speed": 0,
+    "ki_speed": 0,
+    "wheel_torque_limit_nm": 0,
+    "physical_enable": false,
+    "normal_compute_budget_us": null,
+    "measured_max_us": null
+  },
+  "simulation_limits": {
+    "data_status": "ASSUMED",
+    "speed_m_s": 0.1,
+    "segment_m": 0.3,
+    "lease_ms": 300,
+    "observation_age_ms": 250
+  },
+  "web_only": true,
+  "blocked_on": [
+    "V1.2 hardware GPIO/clock/power contract",
+    "3S regeneration clamp and protection",
+    "S288 bench torque/stop/timeout evidence",
+    "head joint calibration and combined reachable region",
+    "QSPI FPC mapping and board revision",
+    "body IMU installation/filter/latency",
+    "protected robot balancing test"
+  ],
+  "hardware_contract": "contracts/electrical_interfaces.json",
+  "mechanical_contract": "contracts/mechanical_interfaces.json",
+  "observed_hardware_revision": "V1.2-H0.1"
+}

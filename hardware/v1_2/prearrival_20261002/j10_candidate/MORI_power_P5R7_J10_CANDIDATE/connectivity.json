@@ -1,0 +1,3599 @@
+{
+  "size": [
+    80,
+    55
+  ],
+  "layers": 4,
+  "clearance": 0.2,
+  "description": "Two PCB-local5V converters; MCU local3V3 retained. Schematic-only revision, no new PCB.",
+  "components": [
+    {
+      "ref": "J1",
+      "value": "PACK AFTER 6.3A FUSE",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J1",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "PACK_FUSED",
+          "type": "passive"
+        }
+      },
+      "note": "Protected finished3S pack through external6.3A fuse. On-board Q90 is controlled by rear SW1. No direct small-switch load current.",
+      "source": "",
+      "uuid": "a28b9fe2-1fe1-561c-a7d2-a67b1cbb857f",
+      "placed_at": [
+        9.0,
+        6.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J2",
+      "value": "WHEEL BUCK VIN",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J2__P5_J2",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "BAT_MON",
+          "type": "passive"
+        }
+      },
+      "note": "AMASS XT30UPB-M PCB: pin1 minus, pin2 plus; mating housing polarization plus continuity check mandatory.",
+      "source": "",
+      "uuid": "6624a7f9-7cac-57a4-96b8-0edb5c6452be",
+      "placed_at": [
+        22.0,
+        6.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J3",
+      "value": "WHEEL BUCK 9V RETURN",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3R1_J3",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "W9_IN",
+          "type": "passive"
+        }
+      },
+      "note": "AMASS XT30UPB-M PCB: pin1 minus, pin2 plus; mating housing polarization plus continuity check mandatory.",
+      "source": "",
+      "uuid": "2b0110ec-acad-5b78-9e38-21e285883dd5",
+      "placed_at": [
+        35.0,
+        6.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J4",
+      "value": "HEAD BUCK VIN",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J4__P3_J4__P3R1_J4",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "BAT_MON",
+          "type": "passive"
+        }
+      },
+      "note": "AMASS XT30UPB-M PCB: pin1 minus, pin2 plus; mating housing polarization plus continuity check mandatory.",
+      "source": "",
+      "uuid": "592ec726-bd18-57da-a27e-ac1af1df8306",
+      "placed_at": [
+        25.0,
+        50.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J5",
+      "value": "HEAD BUCK 6V RETURN",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J5__P3_J5__P5_J5",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "H6_IN",
+          "type": "passive"
+        }
+      },
+      "note": "AMASS XT30UPB-M PCB: pin1 minus, pin2 plus; mating housing polarization plus continuity check mandatory.",
+      "source": "",
+      "uuid": "c67ebe28-c3d8-5be2-b56d-cbc55bef7245",
+      "placed_at": [
+        40.0,
+        50.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J6",
+      "value": "BAT_MON SERVICE / DNP",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P3_J6__P3R1_J6",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "BAT_MON",
+          "type": "passive"
+        }
+      },
+      "note": "Legacy external5V feed no longer used. Not5V. Leave unpopulated in S3.",
+      "source": "",
+      "uuid": "8d0aadc1-d030-53d2-99cf-dbeaf97df962",
+      "dnp": true,
+      "placed_at": [
+        48.0,
+        6.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J11",
+      "value": "WHEEL DUMP 5R6 EXTERNAL",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P5R5_DUMP",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "W_DUMP_D",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "W_VM",
+          "type": "passive"
+        }
+      },
+      "note": "AMASS XT30UPB-M PCB: pin1 minus, pin2 plus; mating housing polarization plus continuity check mandatory.",
+      "source": "",
+      "uuid": "d4b24453-c253-5648-a925-a1b99be110bb",
+      "placed_at": [
+        61.0,
+        6.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J12",
+      "value": "HEAD DUMP 10R EXTERNAL",
+      "footprint": "MORI_Custom:AMASS_XT30UPB-M_1x02_P5.0mm_Vertical__P2_J12__P5_J12__P5R5_DUMP",
+      "pins": {
+        "1": {
+          "name": "MINUS",
+          "net": "H_DUMP_D",
+          "type": "passive"
+        },
+        "2": {
+          "name": "PLUS",
+          "net": "H_VM",
+          "type": "passive"
+        }
+      },
+      "note": "AMASS XT30UPB-M PCB: pin1 minus, pin2 plus; mating housing polarization plus continuity check mandatory.",
+      "source": "",
+      "uuid": "867924a2-7b97-5c70-bde5-ab7cd8f3be4f",
+      "placed_at": [
+        65.0,
+        50.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J7",
+      "value": "S288 L",
+      "footprint": "MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J7__P3_J7__P5_J7",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "V+",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "3": {
+          "name": "BUS",
+          "net": "W_BUS",
+          "type": "passive"
+        }
+      },
+      "note": "Board-side XH 3-pin interface only. SCS original 5264-3P uses 1GND/2VCC/3TTL. S288 factory mating plug remains unverified; adapter harness must be confirmed.",
+      "source": "",
+      "uuid": "e2b2596d-b132-5a8b-8e69-0ecd4c1fd475",
+      "placed_at": [
+        75.0,
+        19.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J8",
+      "value": "S288 R",
+      "footprint": "MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P2_J8__P5_J8",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "V+",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "3": {
+          "name": "BUS",
+          "net": "W_BUS",
+          "type": "passive"
+        }
+      },
+      "note": "Board-side XH 3-pin interface only. SCS original 5264-3P uses 1GND/2VCC/3TTL. S288 factory mating plug remains unverified; adapter harness must be confirmed.",
+      "source": "",
+      "uuid": "4d277c0c-6bc9-5adb-a7dd-c59c45737a25",
+      "placed_at": [
+        63.0,
+        26.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J9",
+      "value": "SCS0009 CHAIN",
+      "footprint": "MORI_Custom:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical__P5_J9",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        },
+        "2": {
+          "name": "V+",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "3": {
+          "name": "BUS",
+          "net": "H_BUS",
+          "type": "passive"
+        }
+      },
+      "note": "Board-side XH 3-pin interface only. SCS original 5264-3P uses 1GND/2VCC/3TTL. S288 factory mating plug remains unverified; adapter harness must be confirmed.",
+      "source": "",
+      "uuid": "1bdb1723-8556-5519-b5ad-4ff5d3730c91",
+      "placed_at": [
+        64.0,
+        42.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J10",
+      "value": "MOTION CONTROL",
+      "footprint": "Connector_JST:JST_PH_S8B-PH-K_1x08_P2.00mm_Horizontal__MORI_1p35land_0p75drill",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+3V3",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "ARM_Q",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "FAULT_N",
+          "type": "passive"
+        },
+        "4": {
+          "name": "4",
+          "net": "CHG_N",
+          "type": "passive"
+        },
+        "5": {
+          "name": "5",
+          "net": "BAT_ADC",
+          "type": "passive"
+        },
+        "6": {
+          "name": "6",
+          "net": "WHEEL_ADC",
+          "type": "passive"
+        },
+        "7": {
+          "name": "7",
+          "net": "CURRENT_ADC",
+          "type": "passive"
+        },
+        "8": {
+          "name": "8",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "P4 PH 2.0 mm. PHR-8 / SPH-002T-P0.5S. Signal pin numbering unchanged. Check both mating views; never wire by color alone.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "ea829840-6578-5a7c-92ce-4f7aff3a268a",
+      "placed_at": [
+        44.5,
+        27.0,
+        -90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B8B-PH-K-S(LF)(SN)"
+    },
+    {
+      "ref": "J13",
+      "value": "S288 DATA",
+      "footprint": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_BUS",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "P4 PH 2.0 mm. PHR-2 / SPH-002T-P0.5S. Signal pin numbering unchanged. Check both mating views; never wire by color alone.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "eb530a4d-85b6-5dc2-a20b-1316aa696bd6",
+      "placed_at": [
+        75.0,
+        34.0,
+        90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B2B-PH-K-S(LF)(SN)"
+    },
+    {
+      "ref": "J14",
+      "value": "HEAD DATA",
+      "footprint": "MORI_Custom:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_BUS",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": null,
+          "type": "passive"
+        }
+      },
+      "note": "P4 PH 2.0 mm. PHR-3 / SPH-002T-P0.5S. Signal pin numbering unchanged. Check both mating views; never wire by color alone.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "09c7276a-c8b7-5717-a6fd-2d6ec383fcbd",
+      "placed_at": [
+        75.0,
+        43.0,
+        90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B3B-PH-K-S(LF)(SN)"
+    },
+    {
+      "ref": "J15",
+      "value": "CHARGE INTERLOCK",
+      "footprint": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J15",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "CHG_N",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "P4 PH 2.0 mm. PHR-2 / SPH-002T-P0.5S. Signal pin numbering unchanged. Check both mating views; never wire by color alone.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "48d1b1c7-92db-5930-b8d8-e916f4be3b47",
+      "placed_at": [
+        4.5,
+        31.0,
+        90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B2B-PH-K-S(LF)(SN)"
+    },
+    {
+      "ref": "J16",
+      "value": "CHARGER RAW VBUS SENSE",
+      "footprint": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P3R1_J16",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "VBUS_CHARGE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "P4 PH 2.0 mm. PHR-2 / SPH-002T-P0.5S. Signal pin numbering unchanged. Check both mating views; never wire by color alone.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "0d466159-0c18-589f-818a-cca9eb2532ba",
+      "placed_at": [
+        4.5,
+        46.0,
+        90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B2B-PH-K-S(LF)(SN)"
+    },
+    {
+      "ref": "Q1",
+      "value": "AO4407A",
+      "footprint": "MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_Q1",
+      "pins": {
+        "1": {
+          "name": "SOURCE PROTECTED OUTPUT",
+          "net": "BAT_REV",
+          "type": "power_out"
+        },
+        "2": {
+          "name": "2",
+          "net": "BAT_REV",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "BAT_REV",
+          "type": "passive"
+        },
+        "4": {
+          "name": "4",
+          "net": "REV_GATE",
+          "type": "passive"
+        },
+        "5": {
+          "name": "5",
+          "net": "BAT_IN",
+          "type": "passive"
+        },
+        "6": {
+          "name": "6",
+          "net": "BAT_IN",
+          "type": "passive"
+        },
+        "7": {
+          "name": "7",
+          "net": "BAT_IN",
+          "type": "passive"
+        },
+        "8": {
+          "name": "8",
+          "net": "BAT_IN",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "uuid": "e92f5ce3-3587-5fc5-9b92-dea233b4ec8c",
+      "placed_at": [
+        23.0,
+        12.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R1",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "REV_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "b80ed6a9-4196-5c99-a377-4f46857dbebd",
+      "placed_at": [
+        22.0,
+        17.5,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "D1",
+      "value": "BZT52H-C10,115",
+      "footprint": "Diode_SMD:D_SOD-123F",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_REV",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "REV_GATE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "ed6c4fe1-7b24-5f50-bfa2-412d2710a8fe",
+      "placed_at": [
+        26.0,
+        17.5,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R2",
+      "value": "WSL2512R0100FEA 10mR 1% 1W",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_REV",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "BAT_MON",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "9d70bf3c-a48a-532b-9224-b203f7a5c8cb",
+      "placed_at": [
+        33.0,
+        12.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U1",
+      "value": "INA180A1IDBVR",
+      "footprint": "MORI_Custom:SOT-23-5__P5_U1",
+      "pins": {
+        "1": {
+          "name": "OUT",
+          "net": "CURRENT_ADC",
+          "type": "output"
+        },
+        "2": {
+          "name": "GND",
+          "net": "GND",
+          "type": "power_in"
+        },
+        "3": {
+          "name": "IN+",
+          "net": "KELVIN_P",
+          "type": "input"
+        },
+        "4": {
+          "name": "IN-",
+          "net": "KELVIN_N",
+          "type": "input"
+        },
+        "5": {
+          "name": "VS",
+          "net": "+3V3",
+          "type": "power_in"
+        }
+      },
+      "note": "Kelvin sense of 10mR; gain20 =>0.2V/A. Discharge only; reverse current not measured.",
+      "source": "https://www.ti.com/lit/ds/symlink/ina180.pdf",
+      "uuid": "16bb29b0-7064-58df-ad77-1d380ef5cf96",
+      "placed_at": [
+        34.0,
+        18.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R3",
+      "value": "0",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_REV",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "KELVIN_P",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "fe6265b4-7cf9-5fc2-a6a8-43006a6f06ee",
+      "placed_at": [
+        30.0,
+        16.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R4",
+      "value": "0",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_MON",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "KELVIN_N",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "ea53da1e-f0a9-5193-8f00-ad3da0403474",
+      "placed_at": [
+        38.0,
+        16.5,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "D10",
+      "value": "B540C-13-F",
+      "footprint": "MORI_Custom:D_SMC__P3_D10__P5_D10",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_PRE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W9_IN",
+          "type": "passive"
+        }
+      },
+      "note": "B540C-13-F verified from DS13012 Rev18-2; SMC cathode pin1. Thermal/quote NOT_QUALIFIED.",
+      "source": "https://www.diodes.com/datasheet/download/B540C.pdf",
+      "uuid": "b231e676-2d23-5e16-9c1e-27909880591d",
+      "placed_at": [
+        44.0,
+        13.5,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q10",
+      "value": "AO4407A",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_PRE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_PRE",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "W_PRE",
+          "type": "passive"
+        },
+        "4": {
+          "name": "4",
+          "net": "W_GATE",
+          "type": "passive"
+        },
+        "5": {
+          "name": "DRAIN SWITCHED OUTPUT",
+          "net": "W_VM",
+          "type": "power_out"
+        },
+        "6": {
+          "name": "6",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "7": {
+          "name": "7",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "8": {
+          "name": "8",
+          "net": "W_VM",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "uuid": "c7a250fe-b160-5755-9b26-3636cd191a0a",
+      "placed_at": [
+        53.0,
+        12.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q11",
+      "value": "AO3400A",
+      "footprint": "MORI_Custom:SOT-23__P5_Q11",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "ARM_Q",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "W_GATE_LOW",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf",
+      "uuid": "d3338968-7c1d-5456-affb-8723d3a472e5",
+      "placed_at": [
+        42.0,
+        19.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R10",
+      "value": "10k",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R10",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_PRE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "ee5045df-06e6-5829-abaa-03c9c8eb2324",
+      "placed_at": [
+        47.0,
+        18.7,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R11",
+      "value": "100",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R11",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_GATE_LOW",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "7542eca2-d5c8-5c9f-9acc-9b6cb34da6c3",
+      "placed_at": [
+        45.0,
+        18.5,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C10",
+      "value": "Panasonic EEU-FR1C102 1000uF 16V",
+      "footprint": "MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P2_C10__P3_C10__P5_C10",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "D10 x H16; height is vendor capacitor envelope, NOT fitted into old10mm allocation.",
+      "source": "",
+      "uuid": "c856ddf9-3a33-5624-a2fb-85efd9280972",
+      "placed_at": [
+        52.0,
+        22.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "D30",
+      "value": "B540C-13-F",
+      "footprint": "MORI_Custom:D_SMC__P5_D30",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_PRE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H6_IN",
+          "type": "passive"
+        }
+      },
+      "note": "B540C-13-F verified from DS13012 Rev18-2; SMC cathode pin1. Thermal/quote NOT_QUALIFIED.",
+      "source": "https://www.diodes.com/datasheet/download/B540C.pdf",
+      "uuid": "ba63c9d2-d6a3-5f51-802a-1eef77a45cea",
+      "placed_at": [
+        36.0,
+        35.0,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q30",
+      "value": "AO4407A",
+      "footprint": "MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_Q30",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_PRE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_PRE",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "H_PRE",
+          "type": "passive"
+        },
+        "4": {
+          "name": "4",
+          "net": "H_GATE",
+          "type": "passive"
+        },
+        "5": {
+          "name": "DRAIN SWITCHED OUTPUT",
+          "net": "H_VM",
+          "type": "power_out"
+        },
+        "6": {
+          "name": "6",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "7": {
+          "name": "7",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "8": {
+          "name": "8",
+          "net": "H_VM",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "uuid": "a1838f20-625f-5c4f-9919-3bb9c507a272",
+      "placed_at": [
+        51.0,
+        34.0,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q31",
+      "value": "AO3400A",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "ARM_Q",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "H_GATE_LOW",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf",
+      "uuid": "0b687595-1fc2-50bf-98d8-579671cf709c",
+      "placed_at": [
+        56.0,
+        36.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R30",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_PRE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "68a4e373-5c98-5446-89c2-1152480a4972",
+      "placed_at": [
+        49.0,
+        29.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R31",
+      "value": "100",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R31",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_GATE_LOW",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "7efbf8c6-042a-5868-b47f-bf091aeb8dd8",
+      "placed_at": [
+        48.5,
+        39.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C30",
+      "value": "Panasonic EEU-FR1C102 1000uF 16V",
+      "footprint": "MORI_Custom:CP_Radial_D10.0mm_P5.00mm__P3_C30__P5_C30",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "D10 x H16; height is vendor capacitor envelope, NOT fitted into old10mm allocation.",
+      "source": "",
+      "uuid": "ec96707d-e646-506b-a5a5-63bd6774def0",
+      "placed_at": [
+        53.0,
+        44.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U20",
+      "value": "LM393BDR",
+      "footprint": "MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_U20",
+      "pins": {
+        "1": {
+          "name": "OUT1",
+          "net": "W_BRAKE_GATE",
+          "type": "open_collector"
+        },
+        "2": {
+          "name": "IN1-",
+          "net": "W_REF",
+          "type": "input"
+        },
+        "3": {
+          "name": "IN1+",
+          "net": "W_SENSE",
+          "type": "input"
+        },
+        "4": {
+          "name": "GND",
+          "net": "GND",
+          "type": "power_in"
+        },
+        "5": {
+          "name": "IN2+",
+          "net": "W_REF",
+          "type": "input"
+        },
+        "6": {
+          "name": "IN2-",
+          "net": "W_OVSENSE",
+          "type": "input"
+        },
+        "7": {
+          "name": "OUT2",
+          "net": "FAULT_N",
+          "type": "open_collector"
+        },
+        "8": {
+          "name": "VCC",
+          "net": "W_VM",
+          "type": "power_in"
+        }
+      },
+      "note": "",
+      "source": "https://www.ti.com/lit/ds/symlink/lm393b.pdf",
+      "uuid": "d5fb30ed-897c-50c9-bf77-520ed1f89321",
+      "placed_at": [
+        66.0,
+        14.0,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U21",
+      "value": "TL431BIDBZR",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": {
+          "name": "K",
+          "net": "W_REF",
+          "type": "passive"
+        },
+        "2": {
+          "name": "REF",
+          "net": "W_REF",
+          "type": "input"
+        },
+        "3": {
+          "name": "A",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "DBZ pin1 cathode,2 reference,3 anode. B grade +/-0.5% at25C; thermal error in tolerance model.",
+      "source": "https://www.ti.com/lit/ds/symlink/tl431.pdf",
+      "uuid": "0cd8e3c4-ed41-5d3e-b1b9-aa7c9fb51c73",
+      "placed_at": [
+        59.5,
+        13.5,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q20",
+      "value": "AO3400A",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_BRAKE_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "W_DUMP_D",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf",
+      "uuid": "7a180066-1039-5409-92c7-e8c6fa1639b7",
+      "placed_at": [
+        71.5,
+        6.5,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "D20",
+      "value": "BZT52H-C10,115",
+      "footprint": "Diode_SMD:D_SOD-123F",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_BRAKE_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "3573065a-3b93-58e1-a724-ce89c2cd75bb",
+      "placed_at": [
+        73.0,
+        9.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R20",
+      "value": "2.2k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_REF",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "acbd7162-9a95-5d43-ac46-7e4e9074213a",
+      "placed_at": [
+        60.5,
+        10.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R21",
+      "value": "33.2k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_SENSE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "0ffcc201-a995-53e9-9ee2-1c04fd42a35b",
+      "placed_at": [
+        62.0,
+        18.8,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R22",
+      "value": "10k 0.1%",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R22",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_SENSE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "50ea8bea-5553-5515-88c3-97028940de66",
+      "placed_at": [
+        62.0,
+        21.3,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R23",
+      "value": "1M 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_BRAKE_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_SENSE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "30ecae12-6ede-5b3d-8656-9521e17addd1",
+      "placed_at": [
+        70.5,
+        18.25,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R24",
+      "value": "2.2k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_BRAKE_GATE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "42e50d72-1fa0-50de-a515-3cdffd201379",
+      "placed_at": [
+        69.0,
+        19.8,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R25",
+      "value": "37.4k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "W_OVSENSE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "aff63caa-4a94-5144-ac98-3975f4b0cd52",
+      "placed_at": [
+        65.5,
+        21.2,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R26",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_OVSENSE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "b139d434-cf54-5900-adcb-0852fb8e82bf",
+      "placed_at": [
+        75.0,
+        25.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C20",
+      "value": "100n",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "5e928a4f-e9b0-5df6-a8d4-b742a0746dc0",
+      "placed_at": [
+        71.0,
+        14.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C21",
+      "value": "10n",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_OVSENSE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "518e2d2d-952c-5483-88c9-dbde5123fc17",
+      "placed_at": [
+        70.5,
+        22.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U40",
+      "value": "LM393BDR",
+      "footprint": "MORI_Custom:SOIC-8_3.9x4.9mm_P1.27mm__P5_U40",
+      "pins": {
+        "1": {
+          "name": "OUT1",
+          "net": "H_BRAKE_GATE",
+          "type": "open_collector"
+        },
+        "2": {
+          "name": "IN1-",
+          "net": "H_REF",
+          "type": "input"
+        },
+        "3": {
+          "name": "IN1+",
+          "net": "H_SENSE",
+          "type": "input"
+        },
+        "4": {
+          "name": "GND",
+          "net": "GND",
+          "type": "power_in"
+        },
+        "5": {
+          "name": "IN2+",
+          "net": "H_REF",
+          "type": "input"
+        },
+        "6": {
+          "name": "IN2-",
+          "net": "H_OVSENSE",
+          "type": "input"
+        },
+        "7": {
+          "name": "OUT2",
+          "net": "FAULT_N",
+          "type": "open_collector"
+        },
+        "8": {
+          "name": "VCC",
+          "net": "H_VM",
+          "type": "power_in"
+        }
+      },
+      "note": "",
+      "source": "https://www.ti.com/lit/ds/symlink/lm393b.pdf",
+      "uuid": "2fbd6db2-930d-5842-997e-b9a703df3a1d",
+      "placed_at": [
+        65.0,
+        34.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U41",
+      "value": "TL431BIDBZR",
+      "footprint": "MORI_Custom:SOT-23__P5_U41",
+      "pins": {
+        "1": {
+          "name": "K",
+          "net": "H_REF",
+          "type": "passive"
+        },
+        "2": {
+          "name": "REF",
+          "net": "H_REF",
+          "type": "input"
+        },
+        "3": {
+          "name": "A",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "DBZ pin1 cathode,2 reference,3 anode. B grade +/-0.5% at25C; thermal error in tolerance model.",
+      "source": "https://www.ti.com/lit/ds/symlink/tl431.pdf",
+      "uuid": "78961823-c6a7-5c2f-9ff1-7f85cb4f1f81",
+      "placed_at": [
+        58.5,
+        32.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q40",
+      "value": "AO3400A",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_BRAKE_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "H_DUMP_D",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO3400A.pdf",
+      "uuid": "8ff5e4b5-51e7-5840-a195-77ffed6c73dc",
+      "placed_at": [
+        55.5,
+        51.5,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "D40",
+      "value": "BZT52H-C10,115",
+      "footprint": "MORI_Custom:D_SOD-123F__P5_D40",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_BRAKE_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "0748361a-c4a5-5d0a-b3e1-d283e68f325e",
+      "placed_at": [
+        59.5,
+        51.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R40",
+      "value": "2.2k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_REF",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "1bcca0a3-c639-5567-9676-5efa4a1bb2cd",
+      "placed_at": [
+        58.0,
+        28.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R41",
+      "value": "16.5k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_SENSE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "9f91b6d5-9a61-5872-8fef-eac0ca5cd670",
+      "placed_at": [
+        62.0,
+        38.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R42",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_SENSE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "ae57ffbd-318c-52de-8b1d-1c5cc3a2e337",
+      "placed_at": [
+        66.5,
+        38.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R43",
+      "value": "1M 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_BRAKE_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_SENSE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "b5afd9fe-5674-55f4-a81c-35abaec73ba2",
+      "placed_at": [
+        64.0,
+        30.7,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R44",
+      "value": "2.2k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_BRAKE_GATE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "84c69f56-7a62-5d23-8d99-e22a90545de6",
+      "placed_at": [
+        72.6,
+        28.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R45",
+      "value": "18.7k 0.1%",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R45",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "H_OVSENSE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "847ced76-8b8c-5c74-ba8b-0d2671163dd8",
+      "placed_at": [
+        70.5,
+        36.5,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R46",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_OVSENSE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "6f1c535d-937e-5c57-aff9-ba9e4bc564a7",
+      "placed_at": [
+        54.5,
+        28.8,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C40",
+      "value": "100n",
+      "footprint": "MORI_Custom:C_0603_1608Metric__P5_C40",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "6de8cb5c-6e4e-54cd-974d-314101acdacd",
+      "placed_at": [
+        70.5,
+        32.595,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C41",
+      "value": "10n",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "H_OVSENSE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "e290afc9-c20c-5a9b-912f-e21a97ae444f",
+      "placed_at": [
+        71.0,
+        38.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R50",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_MON",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "BAT_ADC",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "42680169-5743-5781-b398-7b2baa6ab7b3",
+      "placed_at": [
+        39.5,
+        24.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R51",
+      "value": "27k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_ADC",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "294349c4-6eea-51f0-8d73-ef919e7d958c",
+      "placed_at": [
+        41.0,
+        22.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R52",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "W_VM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "WHEEL_ADC",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "01015a25-51e9-5ba5-977b-5fcddbf75af6",
+      "placed_at": [
+        45.5,
+        21.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R53",
+      "value": "27k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "WHEEL_ADC",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "eb7d9b8d-fd1e-54d3-8eaf-4d8fa21a4716",
+      "placed_at": [
+        47.5,
+        24.5,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R54",
+      "value": "10k",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R54",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "ARM_Q",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "10652861-77e2-5d56-8432-990d6193ce92",
+      "placed_at": [
+        46.0,
+        45.5,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R55",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "VBUS_CHARGE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "CHG_BASE",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "3e3c56dd-89e6-5c7b-9b71-721e9d01d4eb",
+      "placed_at": [
+        10.0,
+        45.5,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R56",
+      "value": "100k",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P5_R56",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "CHG_BASE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "27e7561b-30c3-5bb2-bab2-c35d84485c38",
+      "placed_at": [
+        16.2,
+        44.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C1",
+      "value": "100n",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+3V3",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "61458692-fc35-50d8-af59-9dd3b99e8872",
+      "placed_at": [
+        38.5,
+        21.5,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C2",
+      "value": "1u 25V",
+      "footprint": "MORI_Custom:C_0603_1608Metric__P3_C2",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_MON",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "",
+      "source": "",
+      "uuid": "71d112a3-2fb7-5518-b9fc-fac8ee850b3f",
+      "placed_at": [
+        38.0,
+        11.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "Q50",
+      "value": "MMBT3904LT1G",
+      "footprint": "MORI_Custom:SOT-23__P5_Q50",
+      "pins": {
+        "1": {
+          "name": "B",
+          "net": "CHG_BASE",
+          "type": "input"
+        },
+        "2": {
+          "name": "E",
+          "net": "GND",
+          "type": "passive"
+        },
+        "3": {
+          "name": "C",
+          "net": "CHG_N",
+          "type": "open_collector"
+        }
+      },
+      "note": "SOT23 1B 2E 3C. Raw VBUS detect only; neither CC nor charging control.",
+      "source": "",
+      "uuid": "ecc6e259-253d-5c34-8aad-ac0787ad1cb9",
+      "placed_at": [
+        13.5,
+        44.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "#FLG1",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "+3V3",
+          "type": "power_out"
+        }
+      },
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "d0a35263-5cb2-5b2e-a60d-277a0c5e32bd"
+    },
+    {
+      "ref": "#FLG2",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "GND",
+          "type": "power_out"
+        }
+      },
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "ccb34267-6874-57c9-8d46-9c2aa9b1f1ce"
+    },
+    {
+      "ref": "#FLG3",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "PACK_FUSED",
+          "type": "power_out"
+        }
+      },
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "b4eed057-0bae-5433-9b72-5bbc2f791825"
+    },
+    {
+      "ref": "#FLG4",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "W9_IN",
+          "type": "power_out"
+        }
+      },
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "e3586298-c098-5230-bee6-cbeacdace613"
+    },
+    {
+      "ref": "#FLG5",
+      "value": "External validated supply boundary",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Power source",
+          "net": "H6_IN",
+          "type": "power_out"
+        }
+      },
+      "note": "Represents documented external supply input; not an ERC suppression.",
+      "source": "",
+      "uuid": "9d9756a0-cfbb-5f4a-85e9-18b2164b716f"
+    },
+    {
+      "ref": "H1",
+      "value": "M2 mounting / POSITION TBD",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pins": {},
+      "note": "",
+      "source": "",
+      "uuid": "fccb9a62-63bd-5f0d-bdd0-93126228e693",
+      "placed_at": [
+        3.0,
+        3.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "H2",
+      "value": "M2 mounting / POSITION TBD",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pins": {},
+      "note": "",
+      "source": "",
+      "uuid": "3f6f881b-f5a7-5afd-a396-b8014d2704a8",
+      "placed_at": [
+        3.0,
+        52.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "H3",
+      "value": "M2 mounting / POSITION TBD",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pins": {},
+      "note": "",
+      "source": "",
+      "uuid": "0199b42a-4001-5087-a51b-26ddf95ea6b6",
+      "placed_at": [
+        77.0,
+        3.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "H4",
+      "value": "M2 mounting / POSITION TBD",
+      "footprint": "MountingHole:MountingHole_2.2mm_M2",
+      "pins": {},
+      "note": "",
+      "source": "",
+      "uuid": "1af68162-1544-5a9d-a914-83a3b8df9936",
+      "placed_at": [
+        77.0,
+        52.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "F60",
+      "value": "1A / 125V / very fast",
+      "footprint": "Fuse:Fuse_Littelfuse-NANO2-451_453",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_MON",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "M5_VIN",
+          "type": "passive"
+        }
+      },
+      "note": "Input branch fuse, not a fast electronic current limiter. Coordinate inrush, ambient derating and upstream 6.3A fuse on bench.",
+      "source": "https://www.littelfuse.com/assetdocs/fuse-451-and-453-datasheet?assetguid=533cd5cc-956c-4243-867f-6ab5a62f6ba1",
+      "uuid": "9be960a5-2d7d-51a8-8730-ef97978dcc80",
+      "mpn": "0451001.MRL",
+      "manufacturer": "Littelfuse",
+      "lcsc": "C3099",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        34.0,
+        23.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U60",
+      "value": "TPS54302DDCR",
+      "footprint": "MORI_Custom:TI_DDC0006A_TPS54302",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "power_in"
+        },
+        "2": {
+          "name": "SW",
+          "net": "M5_SW",
+          "type": "power_out"
+        },
+        "3": {
+          "name": "VIN",
+          "net": "M5_VIN",
+          "type": "power_in"
+        },
+        "4": {
+          "name": "FB",
+          "net": "M5_FB",
+          "type": "input"
+        },
+        "5": {
+          "name": "EN",
+          "net": "M5_EN",
+          "type": "input"
+        },
+        "6": {
+          "name": "BOOT",
+          "net": "M5_BOOT",
+          "type": "passive"
+        }
+      },
+      "note": "SLVSDG6C Rev C. 1GND 2SW 3VIN 4FB 5EN 6BOOT. EN internally pulled up; never tie EN to 3S VIN. 3A silicon rating is not the qualified harness/assembly rating.",
+      "source": "https://www.ti.com/lit/ds/symlink/tps54302.pdf",
+      "uuid": "8fa00077-f265-59f8-9839-392770527b0d",
+      "mpn": "TPS54302DDCR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "C311983",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        27.0,
+        26.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "L60",
+      "value": "10uH / SRP7050TA-100M",
+      "footprint": "MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "M5_SW",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        }
+      },
+      "note": "P3 manufacturer drawing visually checked;2.5mm is gap, pad2.95x3.5mm,centres+/-2.725mm. NOT_TESTED.",
+      "source": "https://www.bourns.com/docs/product-datasheets/srp7050ta.pdf",
+      "uuid": "b0f3a864-d06a-5953-9427-4c8cd1d41bc8",
+      "mpn": "SRP7050TA-100M",
+      "manufacturer": "Bourns",
+      "lcsc": "C2041441",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        16.5,
+        24.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C60",
+      "value": "22u / 25V / X7R",
+      "footprint": "MORI_Custom:C_1210_3225Metric__P3_C60__P3R1_C60",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "M5_VIN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "5d92fe67-15c0-594b-a39f-0ee7b5ba942a",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        22.5,
+        30.6,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C66",
+      "value": "22u / 25V / X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "M5_VIN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "c4b834e4-65ef-574c-8e70-34c2bef59539",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        26.5,
+        30.6,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C63",
+      "value": "22u / 25V / X7R",
+      "footprint": "MORI_Custom:C_1210_3225Metric__P5_C63",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "fa6e9825-871b-57d2-936d-2cbf56cd9ecf",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        10.0,
+        23.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C64",
+      "value": "22u / 25V / X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "e581ec49-d61c-5c06-9951-1cfa20541950",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        10.0,
+        28.0,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C61",
+      "value": "100n / 50V / X7R",
+      "footprint": "MORI_Custom:C_0603_1608Metric__P5_C61",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "M5_VIN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Exact suffix and domestic small-quantity quotation remain to be checked. Cboot must connect BOOT to SW, not GND.",
+      "source": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93D",
+      "uuid": "444fe010-2512-53cc-9e24-4e063cc35f72",
+      "mpn": "GRM188R71H104KA93D",
+      "manufacturer": "Murata",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        23.2,
+        26.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C62",
+      "value": "100n / 50V / X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "M5_BOOT",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "M5_SW",
+          "type": "passive"
+        }
+      },
+      "note": "Exact suffix and domestic small-quantity quotation remain to be checked. Cboot must connect BOOT to SW, not GND.",
+      "source": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93D",
+      "uuid": "e61c79f9-e8cd-5331-ba04-64704b4302c1",
+      "mpn": "GRM188R71H104KA93D",
+      "manufacturer": "Murata",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        27.575,
+        22.8,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C65",
+      "value": "75p / 50V / C0G",
+      "footprint": "MORI_Custom:C_0603_1608Metric__P5_C65",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "M5_FB",
+          "type": "passive"
+        }
+      },
+      "note": "Feedforward across upper feedback resistor, following TI 5V ceramic-output reference. Re-tune only from stability/step-load evidence.",
+      "source": "https://www.murata.com/en-us/products/productdetail?partno=GRM1885C1H750JA01D",
+      "uuid": "c93d4d84-6939-5a68-b05d-c2f85759733c",
+      "mpn": "GRM1885C1H750JA01D",
+      "manufacturer": "Murata",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        29.7,
+        31.65,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R60",
+      "value": "100k / 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "M5_FB",
+          "type": "passive"
+        }
+      },
+      "note": "Nominal 0.596V reference gives 5.0772V setpoint; full voltage tolerance is calculated, not assumed exactly5.000V.",
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD07100KL",
+      "uuid": "ae3ea2c1-a1bd-5f54-9e28-42c1eca5b3b7",
+      "mpn": "RT0603BRD07100KL",
+      "manufacturer": "Yageo",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        30.0,
+        28.55,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R61",
+      "value": "13.3k / 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "M5_FB",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Nominal 0.596V reference gives 5.0772V setpoint; full voltage tolerance is calculated, not assumed exactly5.000V.",
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD0713K3L",
+      "uuid": "1484f21b-5bc9-5662-9d26-0e204c91ad66",
+      "mpn": "RT0603BRD0713K3L",
+      "manufacturer": "Yageo",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        30.0,
+        30.1,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J17",
+      "value": "MOTION 5V OUT / 1+ 2GND",
+      "footprint": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS",
+      "pins": {
+        "1": {
+          "name": "5V_OUT",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        },
+        "2": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "P4 PH 2.0 mm. PHR-2 / SPH-002T-P0.5S. Signal pin numbering unchanged. Check both mating views; never wire by color alone.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "7b2ffa30-af06-56a8-9278-824aeb2a37d3",
+      "mpn": "BM02B-GHS-TBT(LF)(SN)",
+      "manufacturer": "JST",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        4.5,
+        24.0,
+        90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B2B-PH-K-S(LF)(SN)"
+    },
+    {
+      "ref": "JP60",
+      "value": "SERVICE OFF / OPEN=ON",
+      "footprint": "MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P3_JP60__P3R1_JP60",
+      "pins": {
+        "1": {
+          "name": "EN",
+          "net": "M5_EN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Normally open header. Bridge 1-2 only in maintenance cradle to disable this one rail. Motion supply loss removes ARM and robot balance. No automatic MCU-controlled power cycling.",
+      "source": "https://www.we-online.com/components/products/datasheet/61300211121.pdf",
+      "uuid": "887980b7-bad8-571e-b3bb-485c6222f929",
+      "mpn": "61300211121",
+      "manufacturer": "Wurth Elektronik",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        5.0,
+        39.5,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "TP60",
+      "value": "+5V_MOTION",
+      "footprint": "MORI_Custom:TestPoint_Pad_D1.5mm__P3_TP60",
+      "pins": {
+        "1": {
+          "name": "+5V_MOTION",
+          "net": "+5V_MOTION",
+          "type": "passive"
+        }
+      },
+      "note": "Electrical test access defined; position and fixture coverage intentionally not frozen.",
+      "source": "",
+      "uuid": "00c8c33c-b0e8-5e51-832e-fc45e6a99ca5",
+      "mpn": "PCB copper test pad",
+      "manufacturer": "PCB",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        9.5,
+        32.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "TP61",
+      "value": "GND",
+      "footprint": "MORI_Custom:TestPoint_Pad_D1.5mm__P5_TP61",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Electrical test access defined; position and fixture coverage intentionally not frozen.",
+      "source": "",
+      "uuid": "fd21fcd3-4a37-5e1b-a9d3-870914822839",
+      "mpn": "PCB copper test pad",
+      "manufacturer": "PCB",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        12.5,
+        32.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "#FLG6",
+      "value": "FUSED INPUT POWER DECLARATION",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Post-fuse source",
+          "net": "M5_VIN",
+          "type": "power_out"
+        }
+      },
+      "note": "ERC declaration of power passed through Q1/R2/F60 or F70. No new physical power source and no rule exclusion.",
+      "source": "https://www.ti.com/lit/ds/symlink/tps54302.pdf",
+      "uuid": "3491eea4-d624-5be1-9f5f-43d00d08374a",
+      "mpn": "NOT_A_COMPONENT",
+      "manufacturer": "N/A",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "internal_power_declaration": true,
+      "flag_caption": "Post-fuse power"
+    },
+    {
+      "ref": "F70",
+      "value": "2A / 125V / very fast",
+      "footprint": "MORI_Custom:Fuse_Littelfuse-NANO2-451_453__P5_F70",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "BAT_MON",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "C5_VIN",
+          "type": "passive"
+        }
+      },
+      "note": "Input branch fuse, not a fast electronic current limiter. Coordinate inrush, ambient derating and upstream 6.3A fuse on bench.",
+      "source": "https://www.littelfuse.com/assetdocs/fuse-451-and-453-datasheet?assetguid=533cd5cc-956c-4243-867f-6ab5a62f6ba1",
+      "uuid": "73ebd6ca-c4a1-57b6-885e-698578e081b1",
+      "mpn": "0451002.MRL",
+      "manufacturer": "Littelfuse",
+      "lcsc": "C99547",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        30.5,
+        37.0,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "U70",
+      "value": "TPS54302DDCR",
+      "footprint": "MORI_Custom:TI_DDC0006A_TPS54302",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "power_in"
+        },
+        "2": {
+          "name": "SW",
+          "net": "C5_SW",
+          "type": "power_out"
+        },
+        "3": {
+          "name": "VIN",
+          "net": "C5_VIN",
+          "type": "power_in"
+        },
+        "4": {
+          "name": "FB",
+          "net": "C5_FB",
+          "type": "input"
+        },
+        "5": {
+          "name": "EN",
+          "net": "C5_EN",
+          "type": "input"
+        },
+        "6": {
+          "name": "BOOT",
+          "net": "C5_BOOT",
+          "type": "passive"
+        }
+      },
+      "note": "SLVSDG6C Rev C. 1GND 2SW 3VIN 4FB 5EN 6BOOT. EN internally pulled up; never tie EN to 3S VIN. 3A silicon rating is not the qualified harness/assembly rating.",
+      "source": "https://www.ti.com/lit/ds/symlink/tps54302.pdf",
+      "uuid": "d19da987-3bac-59b0-a2d8-0b6e2714730d",
+      "mpn": "TPS54302DDCR",
+      "manufacturer": "Texas Instruments",
+      "lcsc": "C311983",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        26.25,
+        40.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "L70",
+      "value": "10uH / SRP7050TA-100M",
+      "footprint": "MORI_Custom:Bourns_SRP7050TA_8p4_span_2p5_gap",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "C5_SW",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "+5V_CAM",
+          "type": "passive"
+        }
+      },
+      "note": "P3 manufacturer drawing visually checked;2.5mm is gap, pad2.95x3.5mm,centres+/-2.725mm. NOT_TESTED.",
+      "source": "https://www.bourns.com/docs/product-datasheets/srp7050ta.pdf",
+      "uuid": "2f164286-61dd-5a66-ab32-b6bee08654e9",
+      "mpn": "SRP7050TA-100M",
+      "manufacturer": "Bourns",
+      "lcsc": "C2041441",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        16.5,
+        38.0,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C70",
+      "value": "22u / 25V / X7R",
+      "footprint": "MORI_Custom:C_1210_3225Metric__P3_C70",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "C5_VIN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "8fc01073-d6d5-5e50-b47b-6b3d3ba28ff1",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        22.5,
+        44.4,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C76",
+      "value": "22u / 25V / X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "C5_VIN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "0f9f65bd-c88e-5d39-aeb2-722fbeb9df70",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        26.5,
+        44.4,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C73",
+      "value": "22u / 25V / X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_CAM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "829b2c13-259e-5b33-aa26-e1d19d1ac834",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        10.0,
+        37.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C74",
+      "value": "22u / 25V / X7R",
+      "footprint": "MORI_Custom:C_1210_3225Metric__P3_C74",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_CAM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "22uF +/-10%. Effective capacitance at bias and temperature must be qualified; nominal capacitance is not guaranteed in-circuit capacitance.",
+      "source": "https://product.samsungsem.com/mlcc/CL32B226KAJNNN.do",
+      "uuid": "36deca9e-47f2-5c10-9639-5151c675fd12",
+      "mpn": "CL32B226KAJNNNE",
+      "manufacturer": "Samsung Electro-Mechanics",
+      "lcsc": "C309062",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        10.0,
+        42.0,
+        -90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C71",
+      "value": "100n / 50V / X7R",
+      "footprint": "MORI_Custom:C_0603_1608Metric__P5_C71",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "C5_VIN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Exact suffix and domestic small-quantity quotation remain to be checked. Cboot must connect BOOT to SW, not GND.",
+      "source": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93D",
+      "uuid": "3035a37e-2c19-5cac-9abf-1611b640847d",
+      "mpn": "GRM188R71H104KA93D",
+      "manufacturer": "Murata",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        22.45,
+        40.0,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C72",
+      "value": "100n / 50V / X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "C5_BOOT",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "C5_SW",
+          "type": "passive"
+        }
+      },
+      "note": "Exact suffix and domestic small-quantity quotation remain to be checked. Cboot must connect BOOT to SW, not GND.",
+      "source": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93D",
+      "uuid": "6b16f151-d9f6-5884-afd2-4de4ff604adf",
+      "mpn": "GRM188R71H104KA93D",
+      "manufacturer": "Murata",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        27.0,
+        36.6,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "C75",
+      "value": "75p / 50V / C0G",
+      "footprint": "MORI_Custom:C_0603_1608Metric__P3R1_C75",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_CAM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "C5_FB",
+          "type": "passive"
+        }
+      },
+      "note": "Feedforward across upper feedback resistor, following TI 5V ceramic-output reference. Re-tune only from stability/step-load evidence.",
+      "source": "https://www.murata.com/en-us/products/productdetail?partno=GRM1885C1H750JA01D",
+      "uuid": "9a78c1be-93fc-52ec-97e2-168e68670d29",
+      "mpn": "GRM1885C1H750JA01D",
+      "manufacturer": "Murata",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        29.7,
+        45.9232,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R70",
+      "value": "100k / 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "+5V_CAM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "C5_FB",
+          "type": "passive"
+        }
+      },
+      "note": "Nominal 0.596V reference gives 5.0772V setpoint; full voltage tolerance is calculated, not assumed exactly5.000V.",
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD07100KL",
+      "uuid": "c920204b-c87b-5bac-a343-e1ed39f1735a",
+      "mpn": "RT0603BRD07100KL",
+      "manufacturer": "Yageo",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        30.0,
+        42.55,
+        180.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "R71",
+      "value": "13.3k / 0.1%",
+      "footprint": "MORI_Custom:R_0603_1608Metric__P3_R71",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "C5_FB",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Nominal 0.596V reference gives 5.0772V setpoint; full voltage tolerance is calculated, not assumed exactly5.000V.",
+      "source": "https://www.yageogroup.com/component-documentation/download/specsheet/RT0603BRD0713K3L",
+      "uuid": "74bf79c8-0ffd-5ca6-8b97-51dc6e98e50f",
+      "mpn": "RT0603BRD0713K3L",
+      "manufacturer": "Yageo",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        30.0,
+        44.1,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "J18",
+      "value": "CAM 5V OUT / 1+ 2GND",
+      "footprint": "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical",
+      "pins": {
+        "1": {
+          "name": "5V_OUT",
+          "net": "+5V_CAM",
+          "type": "passive"
+        },
+        "2": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "To qualified CAM USB power pigtail, NOT BAT connector. Target1.5A sustained/2A peak. USB-C source/CC/polarity and cable resistance still require qualification. Disconnect robot5V for host USB.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
+      "uuid": "3c66cdf5-8299-5827-993a-0ba3621ce2eb",
+      "mpn": "B2B-XH-A(LF)(SN)",
+      "manufacturer": "JST",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        13.0,
+        50.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "JP70",
+      "value": "SERVICE OFF / OPEN=ON",
+      "footprint": "MORI_Custom:PinHeader_1x02_P2.54mm_Vertical__P5_JP70",
+      "pins": {
+        "1": {
+          "name": "EN",
+          "net": "C5_EN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Normally open header. Bridge 1-2 only in maintenance cradle to disable this one rail. Motion supply loss removes ARM and robot balance. No automatic MCU-controlled power cycling.",
+      "source": "https://www.we-online.com/components/products/datasheet/61300211121.pdf",
+      "uuid": "0a21455c-b675-5c32-a8ca-bd50558c9653",
+      "mpn": "61300211121",
+      "manufacturer": "Wurth Elektronik",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        36.5,
+        44.5,
+        90.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "TP70",
+      "value": "+5V_CAM",
+      "footprint": "MORI_Custom:TestPoint_Pad_D1.5mm__P3R1_TP70",
+      "pins": {
+        "1": {
+          "name": "+5V_CAM",
+          "net": "+5V_CAM",
+          "type": "passive"
+        }
+      },
+      "note": "Electrical test access defined; position and fixture coverage intentionally not frozen.",
+      "source": "",
+      "uuid": "e01f615a-7b06-58a0-9ba0-b4b1537b6815",
+      "mpn": "PCB copper test pad",
+      "manufacturer": "PCB",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        35.0,
+        51.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "TP71",
+      "value": "GND",
+      "footprint": "MORI_Custom:TestPoint_Pad_D1.5mm__P5_TP71",
+      "pins": {
+        "1": {
+          "name": "GND",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "Electrical test access defined; position and fixture coverage intentionally not frozen.",
+      "source": "",
+      "uuid": "bd44f92e-da82-5810-bb29-7fb00837ec62",
+      "mpn": "PCB copper test pad",
+      "manufacturer": "PCB",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        34.5,
+        48.0,
+        0.0
+      ],
+      "side": "F"
+    },
+    {
+      "ref": "#FLG7",
+      "value": "FUSED INPUT POWER DECLARATION",
+      "footprint": "",
+      "pins": {
+        "1": {
+          "name": "Post-fuse source",
+          "net": "C5_VIN",
+          "type": "power_out"
+        }
+      },
+      "note": "ERC declaration of power passed through Q1/R2/F60 or F70. No new physical power source and no rule exclusion.",
+      "source": "https://www.ti.com/lit/ds/symlink/tps54302.pdf",
+      "uuid": "8ae79a25-1fb2-5beb-b598-7eb47e08b422",
+      "mpn": "NOT_A_COMPONENT",
+      "manufacturer": "N/A",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "internal_power_declaration": true,
+      "flag_caption": "Post-fuse power"
+    },
+    {
+      "ref": "Q90",
+      "value": "AO4407A",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "PACK_FUSED",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "PACK_FUSED",
+          "type": "passive"
+        },
+        "3": {
+          "name": "3",
+          "net": "PACK_FUSED",
+          "type": "passive"
+        },
+        "4": {
+          "name": "4",
+          "net": "MASTER_GATE",
+          "type": "passive"
+        },
+        "5": {
+          "name": "5",
+          "net": "BAT_IN",
+          "type": "passive"
+        },
+        "6": {
+          "name": "6",
+          "net": "BAT_IN",
+          "type": "passive"
+        },
+        "7": {
+          "name": "7",
+          "net": "BAT_IN",
+          "type": "passive"
+        },
+        "8": {
+          "name": "8",
+          "net": "BAT_IN",
+          "type": "passive"
+        }
+      },
+      "note": "Main load switch source=PACK_FUSED, drain=BAT_IN. Q1 remains reverse protection with common drains. Power OFF requires Q90 off; not a safety-rated isolator.",
+      "source": "https://www.aosmd.com/sites/default/files/res/datasheets/AO4407A.pdf",
+      "uuid": "526d77a2-00a6-5f51-b235-f71caf0c61fd",
+      "placed_at": [
+        14.5,
+        12.0,
+        0.0
+      ],
+      "side": "F",
+      "at": [
+        5,
+        11,
+        0
+      ],
+      "auto": false
+    },
+    {
+      "ref": "R90",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "PACK_FUSED",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "MASTER_GATE",
+          "type": "passive"
+        }
+      },
+      "note": "Gate-source pull-up defaults master OFF with rear harness open.",
+      "source": "",
+      "uuid": "6feb6253-15ce-5555-a90d-82ca62f57fd8",
+      "placed_at": [
+        5.5,
+        11.0,
+        90.0
+      ],
+      "side": "F",
+      "at": [
+        4.5,
+        16,
+        0
+      ],
+      "auto": false
+    },
+    {
+      "ref": "R91",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "MASTER_GATE",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "MASTER_RETURN",
+          "type": "passive"
+        }
+      },
+      "note": "Gate return current limited; rear switch carries <1.3mA at12.6V, not actuator current.",
+      "source": "",
+      "uuid": "f14e32fc-83ef-5534-a7c7-3e54a98062b9",
+      "placed_at": [
+        9.0,
+        17.5,
+        -90.0
+      ],
+      "side": "F",
+      "at": [
+        10,
+        25,
+        0
+      ],
+      "auto": false
+    },
+    {
+      "ref": "D90",
+      "value": "BZT52H-C10,115",
+      "footprint": "Diode_SMD:D_SOD-123F",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "PACK_FUSED",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "MASTER_GATE",
+          "type": "passive"
+        }
+      },
+      "note": "Cathode pin1 to source. Gate clamp; low-current zener tolerance must be checked.",
+      "source": "",
+      "uuid": "57f08d59-92d5-5d2b-9a28-cd409823db66",
+      "placed_at": [
+        8.5,
+        10.5,
+        180.0
+      ],
+      "side": "F",
+      "at": [
+        9,
+        22,
+        90
+      ],
+      "auto": false
+    },
+    {
+      "ref": "J19",
+      "value": "REAR MASTER / 1RETURN 2GND",
+      "footprint": "MORI_Custom:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical__P4_PH_ANNULUS__P5_J19",
+      "pins": {
+        "1": {
+          "name": "1",
+          "net": "MASTER_RETURN",
+          "type": "passive"
+        },
+        "2": {
+          "name": "2",
+          "net": "GND",
+          "type": "passive"
+        }
+      },
+      "note": "JST B2B-PH-K-S(LF)(SN),C131337; PHR-2/SPH-002T-P0.5S; rear J3.1/2. RETURN may sit at pack voltage while OFF.",
+      "source": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+      "uuid": "e181ff9e-f0f7-5f2d-9412-353b42167504",
+      "mpn": "BM02B-GHS-TBT(LF)(SN)",
+      "manufacturer": "JST",
+      "lcsc": "",
+      "dnp": false,
+      "layout_status": "NOT_LAID_OUT",
+      "source_date": "2026-09-22",
+      "physical_tests": "NOT_TESTED",
+      "placed_at": [
+        4.5,
+        17.0,
+        90.0
+      ],
+      "side": "F",
+      "selected_mpn": "JST B2B-PH-K-S(LF)(SN)",
+      "at": [
+        11,
+        28,
+        0
+      ],
+      "auto": false
+    }
+  ],
+  "module_outlines": [],
+  "power_nets": [
+    "+3V3",
+    "M5_VIN",
+    "C5_VIN",
+    "+5V_MOTION",
+    "+5V_CAM"
+  ],
+  "high_current_nets": [
+    "BAT_IN",
+    "BAT_REV",
+    "BAT_MON",
+    "W9_IN",
+    "W_PRE",
+    "W_VM",
+    "W_DUMP_D",
+    "H6_IN",
+    "H_PRE",
+    "H_VM",
+    "H_DUMP_D"
+  ],
+  "layout_revision": "P5R6",
+  "clearance_semantics": "Routing default only; authoritative object-pair clearances are in .kicad_dru and project rules.",
+  "schematic_revision": "V1.2-H0.3-S3",
+  "pcb_status": "PROTOTYPE_ROUTED_NOT_BENCH_VALIDATED",
+  "mechanical_outline_status": "DESIGN_GENERATED: user-authorized80x55; populated assembly remains unqualified",
+  "revision": "V1.2-H0.5-P5R6",
+  "circuit_revision": "V1.2-H0.5-P5"
+}

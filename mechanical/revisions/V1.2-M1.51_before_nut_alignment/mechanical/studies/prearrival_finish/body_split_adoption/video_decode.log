@@ -1,0 +1,10 @@
+mechanical/studies/prearrival_finish/body_split_adoption/inspect_video.swift:14:31: warning: 'copyCGImage(at:actualTime:)' was deprecated in macOS 15.0: Use generateCGImageAsynchronouslyForTime:completionHandler: instead [#DeprecatedDeclaration]
+12 | for (name, seconds) in [("bench_complete", 69.0), ("front_closed", 73.2), ("rear_locked", 78.3), ("overview", 85.0)] {
+13 |     var actual = CMTime.zero
+14 |     let image = try generator.copyCGImage(at: CMTime(seconds: seconds, preferredTimescale: 600), actualTime: &actual)
+   |                               `- warning: 'copyCGImage(at:actualTime:)' was deprecated in macOS 15.0: Use generateCGImageAsynchronouslyForTime:completionHandler: instead [#DeprecatedDeclaration]
+15 |     let bitmap = NSBitmapImageRep(cgImage: image)
+16 |     let file = out.appendingPathComponent("video_\(name).png")
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+VIDEO_FRAMES_DECODED

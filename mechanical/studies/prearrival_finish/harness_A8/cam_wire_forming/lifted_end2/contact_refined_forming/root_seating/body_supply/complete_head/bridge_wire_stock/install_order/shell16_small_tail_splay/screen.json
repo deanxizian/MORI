@@ -1,0 +1,307 @@
+{
+  "status": "BLOCKED",
+  "scope": "Finite four-wire rear motion with refined conservative clearance bounds; final restoration not covered",
+  "script_sha256": "6f56b51367f073a782fdc7df350f5b3b7e341c977cdff9bf2534a5777ba5146c",
+  "helper_sha256": "1dd1e327a99019d1bdbb6732db8d895eaebcf4db0870ba1baef19212449aa510",
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_back20_wire_families/screen.json": "0c0e61d83a43059539fe4693c354c0bb7b7da0e816ed2b0ab5650f1c91dbd016",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_extended_back/screen.json": "c0a6545a4dff138d6b28b4b2f0119629e6c83963363faac5be3fb18fc4a74182",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/screen.json": "ccf3e2bed22075ec3417d32f816aa4c7d02b924336433d39ff19eea33acfd7cc",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/verification.json": "3f0a11b2ada8e320d73364b6d216cbf24c501ff0417ffd35dc9da632a76667cc",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/curves.npz": "971bf572eb8d55d5f03cbf3d7d537b0d2b814b911abfeb809715640b7db09bd0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_back20_piecewise/screen.json": "aa8c0658b456f69c8256506ce25bd117b71d755546eb9ccb34ae0689efdffb1e",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_full_rigid_path/screen.json": "11034d12bca6941fe7b3c8ae65ef300195c88ea7530cd395f10a8351b8b8072b",
+    "mechanical/studies/prearrival_finish/harness_A8/merge_shell16_back20_wires.py": "d1cd0304a65dfbd44818d409c879975546168f74c9b4930fb0f2e06f077950e1"
+  },
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "trials": [
+    {
+      "tail_yaw_deg": 3.0,
+      "status": "BLOCKED",
+      "passing_positions": 17,
+      "furthest_back_mm": 2.0,
+      "failure": {
+        "kind": "CAM_mutual_coarse_clearance",
+        "a": 1,
+        "b": 2,
+        "surface_gap_lower_bound_mm": 0.12898685468516768
+      },
+      "diagnostics": [
+        {
+          "back_mm": 0,
+          "order": "simultaneous",
+          "status": "PASS",
+          "passing_positions": 8,
+          "failure": null
+        },
+        {
+          "back_mm": 2,
+          "order": "simultaneous",
+          "status": "BLOCKED",
+          "passing_positions": 0,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.1154726071966192
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            1,
+            2,
+            3
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 4,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.08135517727273066
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            1,
+            3,
+            2
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 12,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.08135517727273066
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            2,
+            1,
+            3
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 0,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.12898685468516768
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            2,
+            3,
+            1
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 0,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.12898685468516768
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            3,
+            1,
+            2
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 12,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.08135517727273066
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            3,
+            2,
+            1
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 8,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.12898685468516768
+          }
+        }
+      ]
+    },
+    {
+      "tail_yaw_deg": 3.5,
+      "status": "BLOCKED",
+      "passing_positions": 17,
+      "furthest_back_mm": 2.0,
+      "failure": {
+        "kind": "CAM_mutual_coarse_clearance",
+        "a": 1,
+        "b": 2,
+        "surface_gap_lower_bound_mm": 0.12898685468516768
+      },
+      "diagnostics": [
+        {
+          "back_mm": 0,
+          "order": "simultaneous",
+          "status": "PASS",
+          "passing_positions": 8,
+          "failure": null
+        },
+        {
+          "back_mm": 2,
+          "order": "simultaneous",
+          "status": "BLOCKED",
+          "passing_positions": 0,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.11333785911425094
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            1,
+            2,
+            3
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 4,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.0751250766275423
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            1,
+            3,
+            2
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 12,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.0751250766275423
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            2,
+            1,
+            3
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 0,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.12898685468516768
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            2,
+            3,
+            1
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 0,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.12898685468516768
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            3,
+            1,
+            2
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 12,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.0751250766275423
+          }
+        },
+        {
+          "back_mm": 2,
+          "order": [
+            3,
+            2,
+            1
+          ],
+          "status": "BLOCKED",
+          "passing_positions": 8,
+          "failure": {
+            "kind": "CAM_mutual_coarse_clearance",
+            "a": 1,
+            "b": 2,
+            "surface_gap_lower_bound_mm": 0.12898685468516768
+          }
+        }
+      ]
+    }
+  ],
+  "selected": null,
+  "records": [],
+  "final_parameters": null,
+  "curves_sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+  "refinements": {
+    "mutual": 14,
+    "wire_or_self": 14
+  },
+  "refined_chord_step_mm": 0.02,
+  "original_analytic_error_retained": true,
+  "required_surface_margin_mm": 0.3,
+  "wire_OD_mm": 0.6604,
+  "body_wire_count": 14,
+  "full_nominal_lengths_preserved": true,
+  "exact_initial_boundary_match": true,
+  "continuous_motion": "NOT_TESTED",
+  "branch_continuity_audit": "NOT_TESTED",
+  "vertical_continuation": "NOT_TESTED",
+  "loose_tail_restoration": "NOT_TESTED",
+  "complete_attached_assembly": "BLOCKED",
+  "main_applied": false,
+  "manufacturing_release": false,
+  "search_helper_sha256": "bdbdeaca17d78f41de3ef83bdfaef9d441c46dfe8081386fc154225353ea1186",
+  "surface_diagnosis_sha256": "a2d185d0afc185494d23471b531fbdfd9c3c068b27969c139ede9490cde862d9"
+}

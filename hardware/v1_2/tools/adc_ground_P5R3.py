@@ -1,0 +1,11 @@
+from review_P5R3 import *
+e=Edit('power')
+e.remove(net='/WHEEL_ADC',predicate=lambda t:not isinstance(t,k.PCB_VIA)and xy(t.GetStart())in[(41.9608,20.421599),(42.5,20.421599),(45.211999,23.133598),(44.675,21),(44.675,21.8)])
+e.add('/WHEEL_ADC',F,[(41.9608,20.421599),(45.211999,23.6728)],.2)
+e.add('/WHEEL_ADC',F,[(44.675,21),(44.675,22.0642),(44.1392,22.6)],.2)
+e.remove(net='/GND',predicate=lambda t:xy(t.GetStart())in[(42.9,22),(41.825,22)])
+e.move('R51',(42.2,23),0)
+e.remove(ids=['06c22d8b'])
+e.add('/BAT_ADC',F,[(39.8272,20.9296),(39.8272,22.4528),(40.3744,23),(41.375,23)],.2)
+e.add('/GND',F,[(43.025,23),(44.1,23),(44.1,24)],.2);e.via('/GND',(44.1,24))
+e.save()

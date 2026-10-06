@@ -1,0 +1,21 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI · CAM 线固定与装配候选</title>
+<style>body{background:#f3f5f4;color:#233c35;font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;margin:0}main{max-width:1080px;margin:auto;padding:28px 22px 60px}h1{font-size:30px;line-height:1.4}a{color:#176950}.note{padding:16px 20px;background:#fff1d4;border:1px solid #d9b46b}figure{margin:24px 0;background:white;border:1px solid #c7d2cc}img{display:block;width:100%}figcaption{padding:12px 16px}td,th{padding:12px;border-bottom:1px solid #ccd7d1;text-align:left;vertical-align:top}table{border-collapse:collapse;width:100%;background:#fff}.links{display:flex;gap:14px;flex-wrap:wrap}</style>
+<main><aside id="socket-support-followup" class="note"><b>后续支座复核：此候选暂不能采用。</b> 反力固定座顶部被通道局部切开，需先修正。下方 PASS 仅适用于所列线路、固定或局部装配检查，未覆盖固定座承载。<a href="../whole_head_harness_M1_48/index.html">查看新增截面对比</a>。</aside><nav><a href="../index.html">到货前待办</a> · <a href="../yaw_service_M1_48/index.html">前一阶段：完整 CAM 路线</a></nav>
+<h1>CAM 固定和局部装入已有候选，完整线束仍未完成</h1>
+<p class="note"><b>未应用主模型。</b>两处固定座并入已有打印件，配两根扎带；加上前一阶段通道，共涉及三个打印件候选。仍需把局部步骤连成完整带线装配工序。</p>
+<figure><img src="anchors_front.png" alt="CAM 板及线固定座候选"><figcaption>橙色为扎带估计外形，线色仅区分机械路线。屏幕、相机、头壳等尚未安装；不会作为主模型显示。</figcaption></figure>
+<table><thead><tr><th>已补的检查</th><th>通过范围</th></tr></thead><tbody>
+<tr><td>固定座、扎带及线路</td><td>130 个组合姿态；两个固定座与主体连通，不增加打印件。</td></tr>
+<tr><td>导线在固定点的位置</td><td>24 个位置 × 130 姿态，材料点数值变化约 0.000016 mm；不是制造精度或夹持力证明。</td></tr>
+<tr><td>剪尾工具与临时长尾</td><td>工具进出与一条向上弯起的 80 mm 长尾候选通过；实际穿入、收紧尚未验证。</td></tr>
+<tr><td>局部穿颈</td><td>四个方向各 410 个包络区间，要求仍为 0.3 mm。端子压接后最大尺寸仍待厂家。</td></tr>
+<tr><td>CAM 板后装</td><td>板卡抬高 6 mm 插线再落座：16 个位置、64 条完整线对实体检查及逐元件刚性平移扫掠通过；6 mm 是插合行程预留。</td></tr>
+</tbody></table>
+<figure><img src="tail_workspace.png" alt="向上弯起的绿色临时扎带长尾"><figcaption>绿色长尾只在收紧、剪尾时存在。图示空间不证明扎带实际弯折和手工收紧可行。</figcaption></figure>
+<h2>仍未完成的线束工作</h2><p>身体端应力释放；穿颈、成形、插接与扎带收紧的完整衔接；另七根跨关节线和 FFC；候选通道/固定座的结构及制造复核；最终供应商制作图。</p>
+<p>本次柔性装配只检查离散位置，完整线束仍 <b>BLOCKED</b>。三个打印件候选均未进入正式 STL 或装配视频；轴颈采样最薄壁仍约 1.48 mm，强度未验证。</p>
+<p>距离实物前工作完成仍有五类：完整线束、反力夹初装、采购件及安装、供应商接口资料、质量与驱动预算。主模型为 M1.48。</p>
+<p class="links"><a href="review.blend">独立 Blender</a><a href="anchors_rear.png">固定座反面</a><a href="README.md">完整说明和限制</a><a href="../work_status.json">项目剩余清单</a></p>
+<details><summary>检查记录与来源</summary><p class="links"><a href="anchors.json">固定座</a><a href="material_stations.json">导线材料点</a><a href="tools_and_tail.json">工具与长尾</a><a href="neck_feed_verified.json">穿颈</a><a href="board_installation.json">CAM 后装</a><a href="publication.json">文件哈希</a><a href="delivery.json">交付核对</a></p><p>早期 neck_feed.json 是构造切削面的边界重放诊断，当前穿颈依据为 neck_feed_verified.json。未放宽 0.3 mm 间隙或修改打印件取得通过。</p></details>
+</main></html>

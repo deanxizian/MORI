@@ -1,0 +1,112 @@
+{
+  "revision": "V1.2-H0.2-P1",
+  "evidence_layer": "HOST_TEST",
+  "source_tag": "Unitree digital_servo v1.0.1",
+  "transport_used": false,
+  "BENCH": "NOT_TESTED",
+  "ROBOT": "NOT_TESTED",
+  "source_sha256": {
+    "hardware/v1_2/sources/unitree_v1.0.1_excerpt/python/servo_demo.py": "3bb9753a4d7995eafc950dd1cf6bd113429e14021f0b4a766598fe68a10c7a00",
+    "hardware/v1_2/sources/unitree_v1.0.1_excerpt/stm32/firmware/App/protocol.h": "b520d1f99bb15597829a1c64b60f6a1692a762d6e887dc19fb8373be16580236",
+    "hardware/v1_2/sources/unitree_v1.0.1_excerpt/stm32/firmware/App/protocol.c": "01b3ebe1694a40b8acc91e76d904a0d5a0006b3d099c12f2a52d1c932a1b3c04",
+    "hardware/v1_2/sources/unitree_v1.0.1_excerpt/stm32/firmware/App/crc_ccitt.h": "b4ee7089c0724d70d89eeac7286bd932c88b3caee17480ea09c81a1467717ef4"
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "build_stderr": "",
+  "C_sizes": {
+    "control": 20,
+    "feedback_payload": 19,
+    "feedback_wire": 26
+  },
+  "CRC": {
+    "status": "PASS",
+    "vectors": 258,
+    "scope": "16-byte command prefix / 20-byte feedback mode+payload",
+    "polynomial": "0x04C11DB7",
+    "init": "0xFFFFFFFF",
+    "xorout": "0x00000000",
+    "processing": "Each 4-byte little-endian word enters MSB byte first; bits shift left, no bit reflection.",
+    "example_input_hex": "000102030405060708090a0b0c0d0e0f",
+    "unitree_crc_hex": "081b46ca",
+    "zlib_crc_hex": "cecee288",
+    "restriction": "Both vendor functions discard a non-multiple-of-four tail; MORI wrapper must require exact packet lengths."
+  },
+  "command_comparison": [
+    {
+      "case": "zero",
+      "C_hex": "feee91000000000000000000000000009ce9c752",
+      "Python_hex": "feee91000000000000000000000000009ce9c752",
+      "byte_equal": true,
+      "C_raw": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Python_raw": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "positive",
+      "C_hex": "feee910008000b00be3a00000f000f0017fe247d",
+      "Python_hex": "feee910009000c00be3a00000f000f0095f8e16a",
+      "byte_equal": false,
+      "C_raw": [
+        8,
+        11,
+        15038,
+        15,
+        15
+      ],
+      "Python_raw": [
+        9,
+        12,
+        15038,
+        15,
+        15
+      ]
+    },
+    {
+      "case": "negative",
+      "C_hex": "feee9100f8fff5ff42c5ffff0f000f007f51c466",
+      "Python_error": "argument out of range",
+      "finding": "Python uses unsigned I for signed pos_des; negative target rejected."
+    }
+  ],
+  "feedback_comparison": [
+    {
+      "case": "nominal",
+      "wire_hex": "fcee9119321809000c001027000000000000001000009fe998b0",
+      "C_sensor": 50.0,
+      "Python_sensor": 50,
+      "C_voltage_V": 12.0,
+      "Python_voltage_V": 12.0
+    },
+    {
+      "case": "unsigned_boundary",
+      "wire_hex": "fcee9119c8c809000c001027000000000000001000006b0cc399",
+      "C_sensor": 200.0,
+      "Python_sensor": -56,
+      "C_voltage_V": 100.0,
+      "Python_voltage_V": -28.0
+    }
+  ],
+  "boundary_note": "Synthetic uint8 boundaries are outside normal S288 voltage operation; they expose signedness, not a measured operating fault.",
+  "invalid_feedback_rejection_cases": 6,
+  "findings": [
+    "protocol.md uint16 vol is inconsistent with C/Python one-byte layout; C/Python payload size agrees at19 and wire26.",
+    "Python command negative pos_des raises struct.error due to unsigned I; C declares int32.",
+    "Python sensor/vol uses signed b but C uses uint8; incorrect above127.",
+    "C truncates float-to-int; Python rounds. Nonzero command raw values need an explicit conversion policy.",
+    "CRC code agrees between C, Python and independent bitwise reference for valid protected lengths; documentation bit-reversed wording is misleading."
+  ],
+  "execution_status": "PASS",
+  "vendor_implementation_consistency": "FAIL",
+  "device_protocol_qualification": "BLOCKED_PENDING_REAL_FIRMWARE_CAPTURE"
+}

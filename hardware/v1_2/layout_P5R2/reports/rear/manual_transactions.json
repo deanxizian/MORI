@@ -1,0 +1,685 @@
+[
+  {
+    "removed": [
+      "022f29f3-87ce-4b04-9e07-1e95898730c7",
+      "184b911f-1891-4f82-8a0d-8e2a2af98fbc",
+      "397c25af-caab-44bc-8200-c4661d2bc5de",
+      "43f93ba3-e00e-4e72-98d7-998d5e33781e",
+      "7dee163b-ca93-4765-8cbf-d0c3f64710f3",
+      "8844cffe-a054-4666-99a7-686c5f5c3b09",
+      "9367b063-22cc-42fd-bbe9-6f9b410e4ac5",
+      "9c8680a2-b22f-4b3e-adef-d72b4301d629",
+      "de885002-fb31-4127-b9ea-973d5530397d",
+      "e2c65ffc-a322-4eb9-9e62-ee83c9027bbe",
+      "e5f08458-63e4-4635-b1f1-e063cba846ce"
+    ],
+    "routes": [
+      {
+        "net": "/CC1",
+        "layer": "B.Cu",
+        "points": [
+          [
+            12,
+            9.85
+          ],
+          [
+            12,
+            9.05
+          ],
+          [
+            11.6,
+            8.65
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "896bcf86-b4c2-4fe0-8645-54dea7a340c7",
+          "2f624b20-d4f3-425d-9624-e4c442360946"
+        ]
+      },
+      {
+        "net": "/CC1",
+        "layer": "F.Cu",
+        "points": [
+          [
+            11.6,
+            8.65
+          ],
+          [
+            15.65,
+            8.65
+          ],
+          [
+            16.9,
+            9.9
+          ],
+          [
+            16.9,
+            19.2
+          ],
+          [
+            17.4,
+            19.7
+          ],
+          [
+            19,
+            19.7
+          ]
+        ],
+        "width": 0.2,
+        "uuids": [
+          "a57ca35b-38e2-4feb-8423-208521d82e9c",
+          "763bc4b2-4b8d-4c9a-954e-03124b61f64b",
+          "1cc9394d-fe20-43cc-908a-54262ccb0699",
+          "61ea1d5b-e0f9-457e-9e0f-1d8a24065202",
+          "fc3f203c-c39a-4af8-bb7b-932935cd0d71"
+        ]
+      }
+    ],
+    "placements": [],
+    "vias": [
+      {
+        "net": "/CC1",
+        "new": [
+          11.6,
+          8.65
+        ]
+      }
+    ],
+    "reason": "CC1: compare right-side corridor against original left/bottom loop; retain USB ESD branch before onward path",
+    "accepted": false,
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--all-track-errors",
+      "--refill-zones",
+      "--exit-code-violations",
+      "-o",
+      "/Users/dean/Documents/MORI/hardware/v1_2/layout_P5R2/reports/rear/manual_candidate_drc.json",
+      "/Users/dean/Documents/MORI/hardware/v1_2/kicad/MORI_rear_P5R2/MORI_rear_P5R2.kicad_pcb"
+    ],
+    "returncode": 5,
+    "violations": [
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1000 mm)",
+        "items": [
+          {
+            "description": "走线 [/VBUS_RAW] (F.Cu), 长度: 7.3500 mm",
+            "pos": {
+              "x": 16.6,
+              "y": 15.75
+            },
+            "uuid": "0c305107-d0da-4f31-a290-da63f53b9c00"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 9.3000 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 9.9
+            },
+            "uuid": "1cc9394d-fe20-43cc-908a-54262ccb0699"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1000 mm)",
+        "items": [
+          {
+            "description": "走线 [/VBUS_RAW] (F.Cu), 长度: 7.3500 mm",
+            "pos": {
+              "x": 16.6,
+              "y": 15.75
+            },
+            "uuid": "0c305107-d0da-4f31-a290-da63f53b9c00"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 0.7071 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 19.2
+            },
+            "uuid": "61ea1d5b-e0f9-457e-9e0f-1d8a24065202"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1519 mm)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.7678 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 8.65
+            },
+            "uuid": "763bc4b2-4b8d-4c9a-954e-03124b61f64b"
+          },
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 0.5798 mm",
+            "pos": {
+              "x": 15.24,
+              "y": 8.7376
+            },
+            "uuid": "c00858a5-56d9-41c8-9886-e96f6419b531"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CC1 和 /CC2)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 4.0500 mm",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "a57ca35b-38e2-4feb-8423-208521d82e9c"
+          },
+          {
+            "description": "过孔 [/CC2] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 13.4112,
+              "y": 8.7376
+            },
+            "uuid": "e19822f8-f02b-4089-bc8b-16ead2fd171d"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "孔间距违规 (规则 'R05-R07 hole to copper' 间距 0.3000 mm; 实际 0.0000 mm)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 4.0500 mm",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "a57ca35b-38e2-4feb-8423-208521d82e9c"
+          },
+          {
+            "description": "过孔 [/CC2] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 13.4112,
+              "y": 8.7376
+            },
+            "uuid": "e19822f8-f02b-4089-bc8b-16ead2fd171d"
+          }
+        ],
+        "severity": "error",
+        "type": "hole_clearance"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CC1 和 /CC2)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 4.0500 mm",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "a57ca35b-38e2-4feb-8423-208521d82e9c"
+          },
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 0.5798 mm",
+            "pos": {
+              "x": 15.24,
+              "y": 8.7376
+            },
+            "uuid": "c00858a5-56d9-41c8-9886-e96f6419b531"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1519 mm)",
+        "items": [
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 0.6024 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 9.1476
+            },
+            "uuid": "65741a20-da59-4b7a-bfc5-072751c73838"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.7678 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 8.65
+            },
+            "uuid": "763bc4b2-4b8d-4c9a-954e-03124b61f64b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CC1 和 /CC2)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 9.3000 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 9.9
+            },
+            "uuid": "1cc9394d-fe20-43cc-908a-54262ccb0699"
+          },
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 10.0500 mm",
+            "pos": {
+              "x": 17.05,
+              "y": 11.15
+            },
+            "uuid": "52e29291-4307-4a09-b3ee-f16729f02e1e"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Tracks crossing",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 9.3000 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 9.9
+            },
+            "uuid": "1cc9394d-fe20-43cc-908a-54262ccb0699"
+          },
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 1.9799 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 9.75
+            },
+            "uuid": "a6045bea-ff83-41a8-a88a-21ddf52cb3fc"
+          }
+        ],
+        "severity": "error",
+        "type": "tracks_crossing"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CC2 和 /CC1)",
+        "items": [
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 1.8288 mm",
+            "pos": {
+              "x": 13.4112,
+              "y": 8.7376
+            },
+            "uuid": "7a9528d4-2f4a-470f-9a21-e0a02a44f9cc"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 4.0500 mm",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "a57ca35b-38e2-4feb-8423-208521d82e9c"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "Tracks crossing",
+        "items": [
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 10.0500 mm",
+            "pos": {
+              "x": 17.05,
+              "y": 11.15
+            },
+            "uuid": "52e29291-4307-4a09-b3ee-f16729f02e1e"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 0.7071 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 19.2
+            },
+            "uuid": "61ea1d5b-e0f9-457e-9e0f-1d8a24065202"
+          }
+        ],
+        "severity": "error",
+        "type": "tracks_crossing"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1500 mm)",
+        "items": [
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 10.0500 mm",
+            "pos": {
+              "x": 17.05,
+              "y": 11.15
+            },
+            "uuid": "52e29291-4307-4a09-b3ee-f16729f02e1e"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.6000 mm",
+            "pos": {
+              "x": 17.4,
+              "y": 19.7
+            },
+            "uuid": "fc3f203c-c39a-4af8-bb7b-932935cd0d71"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1500 mm)",
+        "items": [
+          {
+            "description": "过孔 [/CC1] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "bd4f1d9f-cf5f-49ac-97f9-842870ff08d7"
+          },
+          {
+            "description": "走线 [/VBUS_RAW] (F.Cu), 长度: 8.5118 mm",
+            "pos": {
+              "x": 7.6882,
+              "y": 7.8
+            },
+            "uuid": "fdb9b930-bbe2-45d5-9390-5d8134fd98a9"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R07 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.0500 mm)",
+        "items": [
+          {
+            "description": "过孔 [/CC1] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "bd4f1d9f-cf5f-49ac-97f9-842870ff08d7"
+          },
+          {
+            "description": "F.Cu 上 SW1 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 12.0,
+              "y": 10.1
+            },
+            "uuid": "e90f47df-bf01-4e42-b2ca-858d28b83871"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "短路了两个不同网络的项目 (网络 /CC1 和 /VBUS_RAW)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.7678 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 8.65
+            },
+            "uuid": "763bc4b2-4b8d-4c9a-954e-03124b61f64b"
+          },
+          {
+            "description": "过孔 [/VBUS_RAW] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 16.7,
+              "y": 9.0
+            },
+            "uuid": "8059831d-d28c-4cc6-85c6-b47266ab33ba"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      {
+        "description": "孔间距违规 (规则 'R05-R07 hole to copper' 间距 0.3000 mm; 实际 0.1700 mm)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.7678 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 8.65
+            },
+            "uuid": "763bc4b2-4b8d-4c9a-954e-03124b61f64b"
+          },
+          {
+            "description": "过孔 [/VBUS_RAW] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 16.7,
+              "y": 9.0
+            },
+            "uuid": "8059831d-d28c-4cc6-85c6-b47266ab33ba"
+          }
+        ],
+        "severity": "error",
+        "type": "hole_clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.1000 mm)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 9.3000 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 9.9
+            },
+            "uuid": "1cc9394d-fe20-43cc-908a-54262ccb0699"
+          },
+          {
+            "description": "走线 [/VBUS_RAW] (F.Cu), 长度: 0.8485 mm",
+            "pos": {
+              "x": 16.0,
+              "y": 15.15
+            },
+            "uuid": "4e578e46-14d1-4d85-a74b-e18a1fd17da0"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R05 object pairs 0.1999996' 间距 0.2000 mm; 实际 0.0950 mm)",
+        "items": [
+          {
+            "description": "走线 [/VBUS_RAW] (F.Cu), 长度: 0.7000 mm",
+            "pos": {
+              "x": 16.7,
+              "y": 8.3
+            },
+            "uuid": "67e2b214-564c-4cf2-b85c-efb63e537f8e"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.7678 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 8.65
+            },
+            "uuid": "763bc4b2-4b8d-4c9a-954e-03124b61f64b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "间距违规 (规则 'R01 via-pad physical any net' 间距 0.2000 mm; 实际 0.0500 mm)",
+        "items": [
+          {
+            "description": "过孔 [/CC1] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "bd4f1d9f-cf5f-49ac-97f9-842870ff08d7"
+          },
+          {
+            "description": "F.Cu 上 SW1 的焊盘 2 [/GND]",
+            "pos": {
+              "x": 12.0,
+              "y": 10.1
+            },
+            "uuid": "e90f47df-bf01-4e42-b2ca-858d28b83871"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      {
+        "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+        "items": [
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 1.9799 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 9.75
+            },
+            "uuid": "a6045bea-ff83-41a8-a88a-21ddf52cb3fc"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 9.3000 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 9.9
+            },
+            "uuid": "1cc9394d-fe20-43cc-908a-54262ccb0699"
+          }
+        ],
+        "severity": "error",
+        "type": "track_angle"
+      },
+      {
+        "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 9.3000 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 9.9
+            },
+            "uuid": "1cc9394d-fe20-43cc-908a-54262ccb0699"
+          },
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 1.9799 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 9.75
+            },
+            "uuid": "a6045bea-ff83-41a8-a88a-21ddf52cb3fc"
+          }
+        ],
+        "severity": "error",
+        "type": "track_angle"
+      },
+      {
+        "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 0.7071 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 19.2
+            },
+            "uuid": "61ea1d5b-e0f9-457e-9e0f-1d8a24065202"
+          },
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 10.0500 mm",
+            "pos": {
+              "x": 17.05,
+              "y": 11.15
+            },
+            "uuid": "52e29291-4307-4a09-b3ee-f16729f02e1e"
+          }
+        ],
+        "severity": "error",
+        "type": "track_angle"
+      },
+      {
+        "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+        "items": [
+          {
+            "description": "走线 [/CC2] (F.Cu), 长度: 10.0500 mm",
+            "pos": {
+              "x": 17.05,
+              "y": 11.15
+            },
+            "uuid": "52e29291-4307-4a09-b3ee-f16729f02e1e"
+          },
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 0.7071 mm",
+            "pos": {
+              "x": 16.9,
+              "y": 19.2
+            },
+            "uuid": "61ea1d5b-e0f9-457e-9e0f-1d8a24065202"
+          }
+        ],
+        "severity": "error",
+        "type": "track_angle"
+      },
+      {
+        "description": "顶层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 1.7678 mm",
+            "pos": {
+              "x": 15.65,
+              "y": 8.65
+            },
+            "uuid": "763bc4b2-4b8d-4c9a-954e-03124b61f64b"
+          },
+          {
+            "description": "过孔 [/VBUS_RAW] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 16.7,
+              "y": 9.0
+            },
+            "uuid": "8059831d-d28c-4cc6-85c6-b47266ab33ba"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      {
+        "description": "顶层阻焊开窗区域与不同网络的项目相连",
+        "items": [
+          {
+            "description": "走线 [/CC1] (F.Cu), 长度: 4.0500 mm",
+            "pos": {
+              "x": 11.6,
+              "y": 8.65
+            },
+            "uuid": "a57ca35b-38e2-4feb-8423-208521d82e9c"
+          },
+          {
+            "description": "过孔 [/CC2] (F.Cu - B.Cu)",
+            "pos": {
+              "x": 13.4112,
+              "y": 8.7376
+            },
+            "uuid": "e19822f8-f02b-4089-bc8b-16ead2fd171d"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      }
+    ],
+    "unconnected": []
+  }
+]

@@ -1,0 +1,868 @@
+{
+  "source_main_sha256": "d060e2a72114c9d1e9fba5e481a95997fa9b2fd202d0629005409614bc3ff7e7",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "d060e2a72114c9d1e9fba5e481a95997fa9b2fd202d0629005409614bc3ff7e7",
+    "mechanical/studies/prearrival_finish/neck_threading_M1_48/outer_corridor_motion_lowest.json": "35855b233d070cf4d6686ae55f94db74739d3fb72ecbae3b3636042e7f4e3751",
+    "config/geometry.json": "66a7e7305766c73a60e5bd1ed6f6616df9ada0a9c8c86fe70fc70e32f0ff8fc8",
+    "contracts/mechanical_interfaces.json": "0324a37da01910648a1bd0a1905a6492b6b0e8d61aad3f28db60dc2dde74cc0b",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/studies/prearrival_finish/outer_harness_M1_48/native_context.py": "526ab2c09b3ced57691a405c8bf741174cd66243e46d2ef750ec2718e1780547",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "native_parts": 209,
+  "substituted_prints": [],
+  "mating_allocations": 29,
+  "fixed_candidate_wires": 14,
+  "board_sources": {
+    "motion": {
+      "file": "hardware/v1_2/kicad/MORI_motion_P5R7/MORI_motion_P5R7.kicad_pcb",
+      "sha256": "0f7dfd337522c602ecb11e56dab266f54589b256585332075e2b57a84a82e24e"
+    },
+    "imu": {
+      "file": "hardware/v1_2/kicad/MORI_imu_P5R4/MORI_imu_P5R4.kicad_pcb",
+      "sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68"
+    },
+    "power": {
+      "file": "hardware/v1_2/kicad/MORI_power_P5R6/MORI_power_P5R6.kicad_pcb",
+      "sha256": "3e6a76409928e96840aef31cfa43985a6ad00db0c0abed68a6fcb3c2a9f816dc"
+    },
+    "rear": {
+      "file": "hardware/v1_2/kicad/MORI_rear_P5R7/MORI_rear_P5R7.kicad_pcb",
+      "sha256": "4c44796c21883d3b16ce1212651ffbed90b62edbe0c878175f78eadbe02686f6"
+    }
+  },
+  "AMASS_allocations": [
+    {
+      "id": "power_J5",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -2.5999999046325684,
+        -22.299999237060547,
+        121.0999984741211,
+        7.599999904632568,
+        -16.700000762939453,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -2.75,
+        -22.450000762939453,
+        121.0999984741211,
+        7.75,
+        -16.549999237060547,
+        139.0
+      ],
+      "base_world_mm": [
+        2.5,
+        -19.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J4",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -17.600000381469727,
+        -22.299999237060547,
+        121.0999984741211,
+        -7.400000095367432,
+        -16.700000762939453,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -17.75,
+        -22.450000762939453,
+        121.0999984741211,
+        -7.25,
+        -16.549999237060547,
+        139.0
+      ],
+      "base_world_mm": [
+        -12.500000238418579,
+        -19.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J3",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -7.599999904632568,
+        21.700000762939453,
+        121.0999984741211,
+        2.5999999046325684,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -7.75,
+        21.549999237060547,
+        121.0999984741211,
+        2.75,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        -2.5,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J2",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -20.600000381469727,
+        21.700000762939453,
+        121.0999984741211,
+        -10.399999618530273,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -20.75,
+        21.549999237060547,
+        121.0999984741211,
+        -10.25,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        -15.5,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J12",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        22.399999618530273,
+        -22.299999237060547,
+        121.0999984741211,
+        32.599998474121094,
+        -16.700000762939453,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        22.25,
+        -22.450000762939453,
+        121.0999984741211,
+        32.75,
+        -16.549999237060547,
+        139.0
+      ],
+      "base_world_mm": [
+        27.499999046325684,
+        -19.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J11",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        18.399999618530273,
+        21.700000762939453,
+        121.0999984741211,
+        28.600000381469727,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        18.25,
+        21.549999237060547,
+        121.0999984741211,
+        28.75,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        23.5,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    },
+    {
+      "id": "power_J1",
+      "mode": "upper_with_thickness_allocation",
+      "mating_pair": [
+        "XT30UPB-M",
+        "XT30U-F"
+      ],
+      "old_bounds_mm": [
+        -33.599998474121094,
+        21.700000762939453,
+        121.0999984741211,
+        -23.399999618530273,
+        27.299999237060547,
+        144.1999969482422
+      ],
+      "new_bounds_mm": [
+        -33.75,
+        21.549999237060547,
+        121.0999984741211,
+        -23.25,
+        27.450000762939453,
+        139.0
+      ],
+      "base_world_mm": [
+        -28.499999046325684,
+        24.5,
+        121.09999771118164
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "orientation_3x3": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "housing_xyz_mm": [
+        10.5,
+        5.9,
+        17.9
+      ],
+      "field_evidence": {
+        "width": "VENDOR_DOCUMENTED",
+        "height": "DERIVED_FROM_DOCUMENTED_DIMENSIONS",
+        "depth": "ASSUMED_FEMALE_THICKNESS_MARGIN"
+      },
+      "unmodeled": [
+        "solder fillet",
+        "heat-shrink insulation",
+        "actual lead departure/bend",
+        "supplier tolerances not shown"
+      ]
+    }
+  ],
+  "limitations": [
+    "Native board/vendor proxy limitations remain; no physical fit claim.",
+    "14 existing wire solids are candidates, not an adopted or proven-installed harness.",
+    "Mating shapes, crimp exits and solder/heat-shrink still include explicit allocations."
+  ],
+  "selected_parts": {
+    "Yaw_Base": {
+      "group": "body",
+      "low_mm": [
+        -47.099998474121094,
+        -35.79999923706055,
+        98.5
+      ],
+      "high_mm": [
+        47.099998474121094,
+        35.79999923706055,
+        163.8000030517578
+      ]
+    },
+    "Yaw_Reaction_Link": {
+      "group": "body",
+      "low_mm": [
+        -12.0,
+        -12.0,
+        139.70001220703125
+      ],
+      "high_mm": [
+        11.98034954071045,
+        12.0,
+        196.0
+      ]
+    },
+    "Load_Frame": {
+      "group": "body",
+      "low_mm": [
+        -52.0,
+        -64.0,
+        66.5
+      ],
+      "high_mm": [
+        52.0,
+        50.0,
+        121.0
+      ]
+    },
+    "Pitch_Cradle": {
+      "group": "pitch",
+      "low_mm": [
+        -51.0,
+        -34.0,
+        212.0
+      ],
+      "high_mm": [
+        51.0,
+        28.0,
+        254.3000030517578
+      ]
+    },
+    "Pitch_Yoke": {
+      "group": "yaw",
+      "low_mm": [
+        -48.48827362060547,
+        -48.488243103027344,
+        149.0
+      ],
+      "high_mm": [
+        48.48821258544922,
+        23.100000381469727,
+        234.60000610351562
+      ]
+    },
+    "MCU_Carrier": {
+      "group": "body",
+      "low_mm": [
+        -35.0,
+        -61.5,
+        119.24
+      ],
+      "high_mm": [
+        35.0,
+        -26.5,
+        128.64000000000001
+      ]
+    },
+    "CAM_Mainboard": {
+      "group": "pitch",
+      "low_mm": [
+        -18.5,
+        -25.8,
+        215.47
+      ],
+      "high_mm": [
+        18.57,
+        -19.0,
+        253.5
+      ]
+    },
+    "MCU_Motion": {
+      "group": "body",
+      "low_mm": [
+        -29.000000000000007,
+        -60.61,
+        125.13999993749272
+      ],
+      "high_mm": [
+        12.629612181675121,
+        -27.390000000000015,
+        138.58143934
+      ]
+    },
+    "CAM_Mount_Screw_0": {
+      "group": "pitch",
+      "low_mm": [
+        -18.19999885559082,
+        -27.15999984741211,
+        216.8000030517578
+      ],
+      "high_mm": [
+        -14.399999618530273,
+        -20.15999984741211,
+        220.59999084472656
+      ]
+    },
+    "CAM_Mount_Screw_1": {
+      "group": "pitch",
+      "low_mm": [
+        -18.19999885559082,
+        -27.15999984741211,
+        249.40000915527344
+      ],
+      "high_mm": [
+        -14.399999618530273,
+        -20.15999984741211,
+        253.1999969482422
+      ]
+    },
+    "CAM_Mount_Screw_2": {
+      "group": "pitch",
+      "low_mm": [
+        14.399999618530273,
+        -27.15999984741211,
+        216.8000030517578
+      ],
+      "high_mm": [
+        18.19999885559082,
+        -20.15999984741211,
+        220.59999084472656
+      ]
+    },
+    "CAM_Mount_Screw_3": {
+      "group": "pitch",
+      "low_mm": [
+        14.399999618530273,
+        -27.15999984741211,
+        249.40000915527344
+      ],
+      "high_mm": [
+        18.19999885559082,
+        -20.15999984741211,
+        253.1999969482422
+      ]
+    },
+    "CAM_Mount_Insert_0": {
+      "group": "pitch",
+      "low_mm": [
+        -18.099998474121094,
+        -27.040000915527344,
+        216.89999389648438
+      ],
+      "high_mm": [
+        -14.499999046325684,
+        -24.040000915527344,
+        220.5
+      ]
+    },
+    "CAM_Mount_Insert_1": {
+      "group": "pitch",
+      "low_mm": [
+        -18.099998474121094,
+        -27.040000915527344,
+        249.5
+      ],
+      "high_mm": [
+        -14.499999046325684,
+        -24.040000915527344,
+        253.10000610351562
+      ]
+    },
+    "CAM_Mount_Insert_2": {
+      "group": "pitch",
+      "low_mm": [
+        14.499999046325684,
+        -27.040000915527344,
+        216.89999389648438
+      ],
+      "high_mm": [
+        18.099998474121094,
+        -24.040000915527344,
+        220.5
+      ]
+    },
+    "CAM_Mount_Insert_3": {
+      "group": "pitch",
+      "low_mm": [
+        14.499999046325684,
+        -27.040000915527344,
+        249.5
+      ],
+      "high_mm": [
+        18.099998474121094,
+        -24.040000915527344,
+        253.10000610351562
+      ]
+    }
+  },
+  "body_J5_pins": {
+    "1": [
+      15.5,
+      -45.025001525878906,
+      130.63999938964844
+    ],
+    "2": [
+      17.5,
+      -45.025001525878906,
+      130.63999938964844
+    ],
+    "3": [
+      19.5,
+      -45.025001525878906,
+      130.63999938964844
+    ],
+    "4": [
+      21.5,
+      -45.025001525878906,
+      130.63999938964844
+    ]
+  },
+  "nearest_hosts": {
+    "J5_1": [
+      {
+        "part": "Load_Frame",
+        "distance_mm": 18.139999389648438,
+        "point_mm": [
+          15.500518798828125,
+          -45.02431869506836,
+          115.0
+        ]
+      },
+      {
+        "part": "Yaw_Base",
+        "distance_mm": 23.657419204711914,
+        "point_mm": [
+          10.511070251464844,
+          -30.964614868164062,
+          151.5
+        ]
+      },
+      {
+        "part": "Pitch_Yoke",
+        "distance_mm": 38.300418853759766,
+        "point_mm": [
+          5.625190734863281,
+          -16.571277618408203,
+          156.8000030517578
+        ]
+      }
+    ],
+    "J5_2": [
+      {
+        "part": "Load_Frame",
+        "distance_mm": 18.139999389648438,
+        "point_mm": [
+          17.499160766601562,
+          -45.02427291870117,
+          115.0
+        ]
+      },
+      {
+        "part": "Yaw_Base",
+        "distance_mm": 24.098955154418945,
+        "point_mm": [
+          11.763103485107422,
+          -30.50749397277832,
+          151.5
+        ]
+      },
+      {
+        "part": "Pitch_Yoke",
+        "distance_mm": 38.8448486328125,
+        "point_mm": [
+          6.177663803100586,
+          -16.37310218811035,
+          156.8000030517578
+        ]
+      }
+    ],
+    "J5_3": [
+      {
+        "part": "Load_Frame",
+        "distance_mm": 18.139999389648438,
+        "point_mm": [
+          19.5,
+          -45.025001525878906,
+          115.0
+        ]
+      },
+      {
+        "part": "Yaw_Base",
+        "distance_mm": 24.598541259765625,
+        "point_mm": [
+          12.988594055175781,
+          -30.005008697509766,
+          151.5
+        ]
+      },
+      {
+        "part": "Pitch_Yoke",
+        "distance_mm": 39.450904846191406,
+        "point_mm": [
+          6.9435954093933105,
+          -16.060972213745117,
+          156.8000030517578
+        ]
+      }
+    ],
+    "J5_4": [
+      {
+        "part": "Load_Frame",
+        "distance_mm": 18.139999389648438,
+        "point_mm": [
+          21.5,
+          -45.025001525878906,
+          115.0
+        ]
+      },
+      {
+        "part": "Yaw_Base",
+        "distance_mm": 25.15736198425293,
+        "point_mm": [
+          14.146489143371582,
+          -29.47736167907715,
+          151.5
+        ]
+      },
+      {
+        "part": "Pitch_Yoke",
+        "distance_mm": 40.116764068603516,
+        "point_mm": [
+          7.648568153381348,
+          -15.738541603088379,
+          156.8000030517578
+        ]
+      }
+    ]
+  },
+  "script_sha256": "d81fa55e9368e57b120f1abf0083294ddeba250901e4c05d43b56c2b5f47102b"
+}

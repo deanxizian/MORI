@@ -1,0 +1,541 @@
+{
+  "status": "BLOCKED",
+  "scope": "Later port approach and simple rigid-harness diagnostics after CAM-first bridge placement; flexible feeding remains an explicit separate obligation",
+  "script_sha256": "3df949311e57325582fb21e139327ffe397c0ddc02b59baf8d507cdf57307f4e",
+  "helper_sha256": "3c4166626b3520f4f571d26eebe7257dd5000f9ab54636f27efc36e9068f2573",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_split_report_sha256": "f8ee74d8c1ef0b2462ab68cacc4372618b7319a88b4e4de52a4f1eca7fbc7bb2",
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "source_objects": 209,
+  "present_source_objects": 122,
+  "deferred_harnesses": [
+    "H01",
+    "H02",
+    "H04"
+  ],
+  "body_H03_wires_present": true,
+  "full_CAM_arrays_sha256": "0b8464d2fc192ffc322dcf6ac5f2cc8c2018051e2cca5351332331167a0098f6",
+  "connector_rows": [
+    {
+      "shell_state": "upper_held",
+      "harness": "H01",
+      "port": "power_J17",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 34,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "power_J17",
+        "obstacle": "Yaw_Base",
+        "volume_mm3": 3.653983889580539,
+        "kind": "solid_overlap",
+        "offset_mm": 16.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          16.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H01",
+      "port": "motion_J1",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 24,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "motion_J1",
+        "obstacle": "CAM_wire_3",
+        "kind": "clearance_bound",
+        "distance_mm": 0.6423140168190002,
+        "required_mm": 0.6904890580145941,
+        "point_mm": [
+          27.80319624502539,
+          -30.307328027466646,
+          142.63999938964844
+        ],
+        "offset_mm": 11.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          11.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H02",
+      "port": "motion_J2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "PASS",
+      "checked_positions": 41,
+      "planned_positions": 41,
+      "failure": null
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H02",
+      "port": "power_J13",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 27,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "power_J13",
+        "obstacle": "CAM_wire_4",
+        "kind": "clearance_bound",
+        "distance_mm": 0.6847505569458008,
+        "required_mm": 0.6903688329447436,
+        "point_mm": [
+          38.242852211032194,
+          -0.08127885824654868,
+          142.63999938964844
+        ],
+        "offset_mm": 13.0,
+        "translation_mm": [
+          0.0,
+          0.0,
+          13.0
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H04",
+      "port": "motion_J4",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "PASS",
+      "checked_positions": 41,
+      "planned_positions": 41,
+      "failure": null
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H04",
+      "port": "imu_J1",
+      "axis": [
+        0.0,
+        8.742277657347586e-08,
+        -1.0
+      ],
+      "status": "PASS",
+      "checked_positions": 41,
+      "planned_positions": 41,
+      "failure": null
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H01",
+      "port": "power_J17",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 34,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "power_J17",
+        "obstacle": "Yaw_Base",
+        "volume_mm3": 3.653983889580539,
+        "kind": "solid_overlap",
+        "offset_mm": 16.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          16.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H01",
+      "port": "motion_J1",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 24,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "motion_J1",
+        "obstacle": "CAM_wire_3",
+        "kind": "clearance_bound",
+        "distance_mm": 0.6423140168190002,
+        "required_mm": 0.6904890580145941,
+        "point_mm": [
+          27.80319624502539,
+          -30.307328027466646,
+          142.63999938964844
+        ],
+        "offset_mm": 11.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          11.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H02",
+      "port": "motion_J2",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "PASS",
+      "checked_positions": 41,
+      "planned_positions": 41,
+      "failure": null
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H02",
+      "port": "power_J13",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 27,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "power_J13",
+        "obstacle": "CAM_wire_4",
+        "kind": "clearance_bound",
+        "distance_mm": 0.6847505569458008,
+        "required_mm": 0.6903688329447436,
+        "point_mm": [
+          38.242852211032194,
+          -0.08127885824654868,
+          142.63999938964844
+        ],
+        "offset_mm": 13.0,
+        "translation_mm": [
+          0.0,
+          0.0,
+          13.0
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H04",
+      "port": "motion_J4",
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 34,
+      "planned_positions": 41,
+      "failure": {
+        "moving": "motion_J4",
+        "obstacle": "Body_Upper",
+        "volume_mm3": 0.0011750198198940132,
+        "kind": "solid_overlap",
+        "offset_mm": 16.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          16.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H04",
+      "port": "imu_J1",
+      "axis": [
+        0.0,
+        8.742277657347586e-08,
+        -1.0
+      ],
+      "status": "PASS",
+      "checked_positions": 41,
+      "planned_positions": 41,
+      "failure": null
+    }
+  ],
+  "axis_compatibility": [
+    {
+      "shell_state": "upper_held",
+      "harness": "H01",
+      "port_axes": {
+        "power_J17": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "motion_J1": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "common_axial_translation_possible": true
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H02",
+      "port_axes": {
+        "motion_J2": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "power_J13": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "common_axial_translation_possible": true
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H04",
+      "port_axes": {
+        "motion_J4": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "imu_J1": [
+          0.0,
+          8.742277657347586e-08,
+          -1.0
+        ]
+      },
+      "common_axial_translation_possible": false
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H01",
+      "port_axes": {
+        "power_J17": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "motion_J1": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "common_axial_translation_possible": true
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H02",
+      "port_axes": {
+        "motion_J2": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "power_J13": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "common_axial_translation_possible": true
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H04",
+      "port_axes": {
+        "motion_J4": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "imu_J1": [
+          0.0,
+          8.742277657347586e-08,
+          -1.0
+        ]
+      },
+      "common_axial_translation_possible": false
+    }
+  ],
+  "rigid_harness_rows": [
+    {
+      "shell_state": "upper_held",
+      "harness": "H01",
+      "mode": "whole_preformed_wire_and_two_housings",
+      "moving": [
+        "motion_J1",
+        "power_J17",
+        "wire_H01_1",
+        "wire_H01_2"
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 4,
+      "planned_positions": 51,
+      "failure": {
+        "moving": "wire_H01_2",
+        "obstacle": "Yaw_Base",
+        "volume_mm3": 0.9513104950644597,
+        "kind": "solid_overlap",
+        "offset_mm": 1.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          1.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_held",
+      "harness": "H02",
+      "mode": "whole_preformed_wire_and_two_housings",
+      "moving": [
+        "motion_J2",
+        "power_J13",
+        "wire_H02_1",
+        "wire_H02_2"
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 2,
+      "planned_positions": 51,
+      "failure": {
+        "moving": "wire_H02_2",
+        "obstacle": "CAM_wire_3",
+        "kind": "clearance_bound",
+        "distance_mm": 0.6747884750366211,
+        "required_mm": 0.6904890580145941,
+        "point_mm": [
+          25.663240725610226,
+          -29.557773057536807,
+          142.63999938964844
+        ],
+        "offset_mm": 0.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H01",
+      "mode": "whole_preformed_wire_and_two_housings",
+      "moving": [
+        "motion_J1",
+        "power_J17",
+        "wire_H01_1",
+        "wire_H01_2"
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 4,
+      "planned_positions": 51,
+      "failure": {
+        "moving": "wire_H01_2",
+        "obstacle": "Yaw_Base",
+        "volume_mm3": 0.9513104950644597,
+        "kind": "solid_overlap",
+        "offset_mm": 1.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          1.5
+        ]
+      }
+    },
+    {
+      "shell_state": "upper_seated",
+      "harness": "H02",
+      "mode": "whole_preformed_wire_and_two_housings",
+      "moving": [
+        "motion_J2",
+        "power_J13",
+        "wire_H02_1",
+        "wire_H02_2"
+      ],
+      "status": "BLOCKED",
+      "checked_positions": 2,
+      "planned_positions": 51,
+      "failure": {
+        "moving": "wire_H02_2",
+        "obstacle": "CAM_wire_3",
+        "kind": "clearance_bound",
+        "distance_mm": 0.6747884750366211,
+        "required_mm": 0.6904890580145941,
+        "point_mm": [
+          25.663240725610226,
+          -29.557773057536807,
+          142.63999938964844
+        ],
+        "offset_mm": 0.5,
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.5
+        ]
+      }
+    }
+  ],
+  "native_mating_overlap": "Only original final mating overlap of each housing with its own board is preserved; no source obstacle or board face removed",
+  "other_deferred_harnesses_during_each_probe": "H01/H02/H04 except the active test are not yet installed; a later ordering must include them",
+  "flexible_wire_feed": "NOT_TESTED",
+  "continuous_motion": "NOT_TESTED",
+  "tools_and_hands": "NOT_TESTED",
+  "actual_housing_geometry": "ASSUMED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "no_universal_impossibility_claim": true,
+  "elapsed_s": 1.9522600173950195
+}

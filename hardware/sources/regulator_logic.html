@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_32x32-f40058cd34e1fec5906522ec0c9eb39b303192067c0e353a30796e859ce41106.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_192x192-52532413e1c353491bfa0a2dd977aacf020e8ca4104064094121739bad21c4bf.png" sizes="192x192" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_96x96-fcf7f6d6568f76d479e5ae1822ded335e0bbd75ab7efd0de7e010bb41fd83e41.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_16x16-13632635dc6dd0e11ba9a38071e8218d26d62e71f8ebafacd9929c3136117372.png" sizes="16x16" />
+<link rel="apple-touch-icon" type="image/png" href="https://a.pololu-files.com/assets/favicon_96x96-fcf7f6d6568f76d479e5ae1822ded335e0bbd75ab7efd0de7e010bb41fd83e41.png" />
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' integrity='sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=' media='all' rel='stylesheet'>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css' integrity='sha256-2RdmDD1veq0y68SwASxtC7hKE+IBoBLjNLzKS59Ghsk=' media='all' rel='stylesheet'>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css' integrity='sha256-etrwgFLGpqD4oNAFW08ZH9Bzif5ByXK2lXNHKy7LQGo=' media='all' rel='stylesheet'>
+<link rel="stylesheet" crossorigin="anonymous" href="https://a.pololu-files.com/assets/application-e635e160a355d4b2b19403e60b42c30abb9ae25ace89aaf7631693e2034b8c9f.css" media="all" integrity="sha256-RyjKAGsMQf/lcOuc4ZBHf+4fcBjG1BkZ+QGNQM70/3c=" />
+<script crossorigin='anonymous' integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=' src='https://a.pololu-files.com/mirror/code.jquery.com/jquery-1.12.4.min.js'></script>
+<script crossorigin='anonymous' integrity='sha256-4Cr335oZDYg4Di3OwgUOyqSTri0jUm2+7Gf2kH3zp1I=' src='https://a.pololu-files.com/mirror/cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+<script crossorigin='anonymous' integrity='sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=' src='https://a.pololu-files.com/mirror/code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>
+<link crossorigin='anonymous' href='https://a.pololu-files.com/mirror/code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' integrity='sha256-RPilbUJ5F7X6DdeTO6VFZ5vl5rO5MJnmSk4pwhWfV8A' media='all' rel='stylesheet'>
+<script class='braintree-gateway' src='https://js.braintreegateway.com/web/3.88.4/js/client.min.js'></script>
+<script class='braintree-gateway' src='https://js.braintreegateway.com/web/3.88.4/js/hosted-fields.min.js'></script>
+<script src="https://a.pololu-files.com/assets/application-e7b04321302c7b1cd29ca6232c9f00526fecf7e6f46a7ac51612c2f93c60ac63.js" crossorigin="anonymous" integrity="sha256-BU4VCJxbUORyOkyc5zk/oZBh8QNcA9rlggAmD7jCqkE="></script>
+<script type="importmap" data-turbo-track="reload">{
+  "integrity":
+{"https://a.pololu-files.com/assets/application_module-765f0f526c59caa9c9857c01889e68833710c17121ab6f9093f3a0a809af7bd4.js":"sha256-s+WZHcA06TsuXtPz2xeDSGgG6j+QSXvT2ghPYhJLLow=","https://a.pololu-files.com/assets/price_notification-f64b0ae30b1bb595d10d8954f34036fbff24e2c81e1c7a9e581f03692cc149c3.js":"sha256-nL1KwUBafy6EPV1yoK+yXM1O5GODfiG083pcMsXgCxs=","https://a.pololu-files.com/assets/stock_notification-87bb320c31885d5b381c69e4a05013db3f11fb479d693729b0e5de58ae356892.js":"sha256-yqOxxloFhGTJ98f3K+XH50QttcrJOBxnARzUT78kLCc=","https://a.pololu-files.com/assets/payment_handler-49a20512068cb88565bc275464d6002af52baec06430fbdc9480f530a2c5b9a7.js":"sha256-PmVdEt5BorGjsZxOo7BfGw8aes3BCxnDQvw55paraHo="},
+  "imports": {
+    "application": "https://a.pololu-files.com/assets/application_module-765f0f526c59caa9c9857c01889e68833710c17121ab6f9093f3a0a809af7bd4.js",
+    "price_notification": "https://a.pololu-files.com/assets/price_notification-f64b0ae30b1bb595d10d8954f34036fbff24e2c81e1c7a9e581f03692cc149c3.js",
+    "stock_notification": "https://a.pololu-files.com/assets/stock_notification-87bb320c31885d5b381c69e4a05013db3f11fb479d693729b0e5de58ae356892.js",
+    "payment_handler": "https://a.pololu-files.com/assets/payment_handler-49a20512068cb88565bc275464d6002af52baec06430fbdc9480f530a2c5b9a7.js",
+    "braintree": "https://js.braintreegateway.com/web/dropin/1.46.1/js/dropin.js"
+  }
+}</script>
+
+<script type="module">import "application"</script>
+<script>
+  if(document.domain.indexOf("pololu-files.com") == -1) {
+    $.ajax({
+    url: "https://www.googletagmanager.com/gtag/js?id=G-G4ENPJ5RV1",
+    dataType: "script"
+    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', "G-G4ENPJ5RV1");
+  }
+</script>
+
+<link rel="stylesheet" href="https://a.pololu-files.com/assets/print-ac5d562ac93a31ac3e5c942e261bf17032bf5da61b940dea46300fe83f1e72dc.css" media="print" />
+
+<title>Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5</title>
+
+<meta name="description" content="
+	
+		Output voltage
+		Typical max output current1
+		Input voltage range2
+	
+	
+		5 V
+		 1 A
+		 5.1 V – 36 V
+	
+
+Note 1: Actual achievable continuous output current is a function of input voltage and is limited by thermal dissipation.
+Note 2: Minimum input voltage is subject to dropout voltage considerations; see the dropout voltage section of product pages for more information." />
+<meta name="keywords" content="Pololu,robotics,robot electronics,robot kits,robot parts,ir beacon,servo controller,motor controller,robot sensors,robot chassis,robot gearboxes,robot tires, ball casters, tamiya parts,elenco kits" />
+<meta property="og:url" content="https://www.pololu.com/product/2831" />
+<meta property="og:title" content="Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5" />
+<meta property="og:description" content="
+	
+		Output voltage
+		Typical max output current1
+		Input voltage range2
+	
+	
+		5 V
+		 1 A
+		 5.1 V – 36 V
+	
+
+Note 1: Actual achievable continuous output current is a function of input voltage and is limited by thermal dissipation.
+Note 2: Minimum input voltage is subject to dropout voltage considerations; see the dropout voltage section of product pages for more information." />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:image" content="https://a.pololu-files.com/picture/0J6002.1200x627.jpg?f14365599f7afb5d22a84d245c638ad3" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Pololu" />
+<meta name="twitter:title" content="Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5" />
+<meta name="twitter:description" content="
+	
+		Output voltage
+		Typical max output current1
+		Input voltage range2
+	
+	
+		5 V
+		 1 A
+		 5.1 V – 36 V
+	
+
+Note 1: Actual achievable continuous output current is a function of input voltage and is limited by thermal dissipation.
+Note 2: Minimum input voltage is subject to dropout voltage considerations; see the dropout voltage section of product pages for more information." />
+<meta name="twitter:image" content="https://a.pololu-files.com/picture/0J6002.1200x627.jpg?f14365599f7afb5d22a84d245c638ad3" />
+<script class='structured_data' type='application/ld+json'>
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Voltage Regulators and Power Supplies","item":"https://www.pololu.com/category/84/voltage-regulators-and-power-supplies"},{"@type":"ListItem","position":2,"name":"Step-Down (Buck) Voltage Regulators","item":"https://www.pololu.com/category/131/step-down-buck-voltage-regulators"},{"@type":"ListItem","position":3,"name":"D24V10Fx Step-Down Voltage Regulators","item":"https://www.pololu.com/category/248/d24v10fx-step-down-voltage-regulators"}]}
+</script>
+<script class='structured_data' type='application/ld+json'>
+{"@context":"https://schema.org","@type":"Product","image":"https://a.pololu-files.com/picture/0J6002.600x480.jpg?f14365599f7afb5d22a84d245c638ad3","name":"Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5","description":"\n\t\n\t\tOutput voltage\n\t\tTypical max output current1\n\t\tInput voltage range2\n\t\n\t\n\t\t5 V\n\t\t 1 A\n\t\t 5.1 V – 36 V\n\t\n\nNote 1: Actual achievable continuous output current is a function of input voltage and is limited by thermal dissipation.\nNote 2: Minimum input voltage is subject to dropout voltage considerations; see the dropout voltage section of product pages for more information.","sku":2831,"brand":"Pololu","offers":{"@type":"Offer","price":"12.95","priceCurrency":"USD","URL":"https://www.pololu.com/product/2831","availability":"InStock"}}
+</script>
+
+<script src="https://a.pololu-files.com/assets/syntaxhighlight-91017fb9868118fd42306075e0164112dd3d3e16331dc462f55ad4497e7fca3d.js" defer="defer"></script>
+</head>
+
+<body class='math_ignore' onload='externalLinksNewWindow(); if(document.onLoadHandler){document.onLoadHandler();}  productInit(&#39;/product/2831&#39;);'>
+
+<div id='main'>
+<h2 id="breadcrumbs"><a href="/category/84/voltage-regulators-and-power-supplies">Voltage Regulators and Power Supplies</a> &raquo; <a href="/category/131/step-down-buck-voltage-regulators">Step-Down (Buck) Voltage Regulators</a> &raquo; <a href="/category/248/d24v10fx-step-down-voltage-regulators">D24V10Fx Step-Down Voltage Regulators</a> &raquo;</h2>
+<h1 id="page_title">Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5</h1>
+<div data-url='/product/2831' id='contents'>
+<!-- CONTENTS_BEGIN /product/2831 -->
+<div data-javascript-not-loaded-message='&lt;!-- javascript_not_loaded_message --&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Your browser failed to load our JavaScript files, which are required for checkout.  Please check that you are not blocking or disabling our scripts and &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; if you are still unable to proceed.' id='javascript_not_loaded_message' style='display:none;'></div>
+<div data-braintree-not-loaded-message='&lt;!-- braintree_not_loaded_message --&gt;&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Your browser failed to connect to our secure payment processor, Braintree Payments.  You will be unable to enter your credit card information at  the payment step of checkout unless this is fixed.&lt;/p&gt;
+&lt;p&gt;Some things to try:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Check for network problems or things like script blockers that could be blocking &lt;a href=&quot;https://js.braintreegateway.com/web/3.58.0/js/client.min.js&quot;&gt;this file&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Try completing checkout on a device on a different network, such as a phone with Wi-Fi disabled.&lt;/li&gt;
+	&lt;li&gt;Select the option to pay with PayPal and enter your credit card on their site. (You don&amp;#8217;t need a PayPal account.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please &lt;a href=&quot;/contact&quot;&gt;contact us&lt;/a&gt; if you continue to have trouble with checkout!&lt;/p&gt;' id='braintree_not_loaded_message' style='display:none;'></div>
+
+<div class='product_top'><span class='product_top_pictures'>
+<div>
+<a class="noscript-fallback" href="https://a.pololu-files.com/picture/0J6002.1200.jpg?f14365599f7afb5d22a84d245c638ad3"><img alt="" title="Click to zoom" id="main_picture_img" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6002&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6002.98x98.jpg?f14365599f7afb5d22a84d245c638ad3&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6002.600x480.jpg?f14365599f7afb5d22a84d245c638ad3&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6002.1200.jpg?f14365599f7afb5d22a84d245c638ad3&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6003&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx, bottom view with dimensions.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6003.98x98.jpg?0de060af47bce4a54aa5792a09d311fd&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6003.600x480.jpg?0de060af47bce4a54aa5792a09d311fd&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6003.1200.jpg?0de060af47bce4a54aa5792a09d311fd&quot;,&quot;longest_side&quot;:460},{&quot;id&quot;:&quot;0J6005&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx with included hardware.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6005.98x98.jpg?fefbeff1e451b6e6324104246d3aafef&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6005.600x480.jpg?fefbeff1e451b6e6324104246d3aafef&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6005.1200.jpg?fefbeff1e451b6e6324104246d3aafef&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6004&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx in a breadboard.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6004.98x98.jpg?7a4d5e994151b9819a6392dc693f89c4&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6004.600x480.jpg?7a4d5e994151b9819a6392dc693f89c4&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6004.1200.jpg?7a4d5e994151b9819a6392dc693f89c4&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6006&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulators D24V10Fx in a breadboard.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6006.98x98.jpg?94327a90e5dbbe73d34816e8b843e8fc&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6006.600x480.jpg?94327a90e5dbbe73d34816e8b843e8fc&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6006.1200.jpg?94327a90e5dbbe73d34816e8b843e8fc&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6007&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulators D24V10Fx and D24V5Fx next to a 7805 voltage regulator in TO-220 package.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6007.98x98.jpg?2bbadc4cf3ac098c6ee53658ffc2f939&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6007.600x480.jpg?2bbadc4cf3ac098c6ee53658ffc2f939&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6007.1200.jpg?2bbadc4cf3ac098c6ee53658ffc2f939&quot;,&quot;longest_side&quot;:1200},{&quot;id&quot;:&quot;0J6010&quot;,&quot;caption&quot;:&quot;\u003cp\u003eTypical efficiency of Pololu 5V step-down voltage regulator D24V10F5.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6010.98x98.jpg?2f4f35f553265edfb2522d6aeb0c7cc4&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6010.600x480.jpg?2f4f35f553265edfb2522d6aeb0c7cc4&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6010.1200.png?2f4f35f553265edfb2522d6aeb0c7cc4&quot;,&quot;longest_side&quot;:600},{&quot;id&quot;:&quot;0J6011&quot;,&quot;caption&quot;:&quot;\u003cp\u003eTypical dropout voltage of Pololu 5V step-down voltage regulator D24V10F5.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6011.98x98.jpg?b4a6d0797fcd46fb68642e3d4ba47d2e&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6011.600x480.jpg?b4a6d0797fcd46fb68642e3d4ba47d2e&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6011.1200.png?b4a6d0797fcd46fb68642e3d4ba47d2e&quot;,&quot;longest_side&quot;:600},{&quot;id&quot;:&quot;0J6037&quot;,&quot;caption&quot;:&quot;\u003cp\u003eSchematic diagram for the Pololu D24V10Fx family of 1\u0026nbsp;A step-down voltage regulators.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6037.98x98.jpg?767c5231f3336445f68c4a503e734792&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6037.600x480.jpg?767c5231f3336445f68c4a503e734792&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6037.1200.png?767c5231f3336445f68c4a503e734792&quot;,&quot;longest_side&quot;:1200}]" data-picture-id="0J6002" data-picture-longest-side="1200" data-gallery-id="main-pictures" src="https://a.pololu-files.com/picture/0J6002.600x480.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+<div id='related_pictures_gallery'></div>
+</div>
+
+</span><span class='order_form_section'>
+<div class='order_form_with_price_notification'>
+<form action='/cart/add' data-product-id='2831' data-product-ui='short_order_form' enctype='multipart/form-data' method='post'>
+<fieldset class='hidden'>
+<input type="hidden" name="session_id" value="40838175845fa04180ad0f3105399519" />
+<input name='product[id]' type='hidden' value='2831'>
+</fieldset>
+<div>
+<div>
+<span data-product-ui='short_order_form_on_sale' style='display: none'></span>
+<span class='message_positive' data-product-ui='short_order_form_new' style='display: none'>
+<!-- product_recently_added_to_website -->New!
+</span>
+</div>
+<table class='part_number_and_stock text_left'>
+<tr>
+<td class='part_number' style='white-space: nowrap'>
+<span class='label'>Pololu item #:</span>
+<span class='value'>2831</span>
+</td>
+<td class="td_right" data-product-ui="order_form_stock"><span></span></td>
+</tr>
+<tr>
+<td style='white-space: nowrap'>
+<span class='label'>Brand:</span>
+<span class='value'><a href="/brands/pololu">Pololu</a></span>
+</td>
+<td class='td_right'>
+<a data-lightbox-link="true" data-lightbox-height="25rem" data-lightbox-width="34rem" href="/product/2831/supply-outlook">supply outlook</a>
+</td>
+</tr>
+<tr>
+<td colspan='2'>
+<div class='stock-notification-display-div'>
+<div class='stock-notification-label-and-button-div' data-available-stock='478' data-product-id='0J2831'>
+<span class='label'>
+</span>
+<button class='enable-stock-notification-button btn-small btn-link' data-logged-in='false' type='button'>
+Get stock notification
+</button>
+<a class="fa fa-question-circle" data-lightbox-link="true" data-lightbox-height="21rem" data-lightbox-width="27rem" href="/ordering/stock-notifications"></a>
+</div>
+</div>
+
+<tr>
+<td colspan='2'>
+<div class='stock-notification-form-div' style='display: none;'>
+<hr>
+<div class='spaced-row'>
+<div>
+<label>Notify me when stock is at least</label>
+<input class='stock_quantity' name='wishlist_product[notify_stock_quantity]' size='2' type='text'>
+</div>
+<button class='disable-stock-notification-button btn-small btn-link' style='display: none; margin-left: 8px;' type='button'>Cancel</button>
+</div>
+<div>
+<label>Optional: desired quantity</label>
+<input class='desired_quantity' name='wishlist_product[quantity_desired]' size='2' type='text'>
+</div>
+<div class='spaced-row'>
+<div>
+<button class='remove-stock-notification-button btn-small btn-red' type='button'>Remove</button>
+</div>
+<button class='save-stock-notification-button btn-small btn-green' type='button'>Save</button>
+</div>
+<hr>
+</div>
+
+</td>
+</tr>
+
+</td>
+</tr>
+<tr>
+<td colspan='2'>
+<span class='label'>Status:</span>
+<span class='value'>Active and Preferred&nbsp;<a class="fa fa-question-circle" data-lightbox-link="true" data-lightbox-height="21rem" data-lightbox-width="27rem" href="/product-status-overview"></a></span>
+</td>
+</tr>
+<tr>
+<td>
+<a title="RoHS 3 compliant" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/compliance/rohs3-compliant"><img style="width: 76px; height: 16px; min-width: 76px;" alt="RoHS 3 compliant" src="https://a.pololu-files.com/assets/rohs3_compliant_yes-cde9d1a22538fcb174660dfa52f6fb93f93fcdfcf99e282ad9cf792ffa8f3124.png" /></a>
+</td>
+<td class='td_right'></td>
+</tr>
+<tr class='free_shipping_info' style='display: none'>
+<td colspan='2'>
+<a class="shipping_info_popup_link " title="Free add-on shipping in USA" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/free-add-on-shipping-usa"><img style="width: 16px; height: 16px; min-width: 16px;" alt="" src="https://a.pololu-files.com/assets/free_add_on_shipping_usa-6090726d172668d9cb8985f6e646312e37d8bde4dafc6dddbdc77aff8069a03a.png" /></a>&nbsp;Free add-on shipping in USA&nbsp;<a class="shipping_info_popup_link " title="Free add-on shipping in USA" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/free-add-on-shipping-usa"><span class="fa fa-question-circle" /></a>
+</td>
+</tr>
+
+<tr class='free_shipping_info' style='display: none'>
+<td colspan='2'>
+<a class="shipping_info_popup_link " title="This item could qualify for free shipping" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/potential-free-shipping-usa"><img style="width: 16px; height: 11px; min-width: 16px;" alt="This item could qualify for free shipping" src="https://a.pololu-files.com/assets/free_shipping_usa_gray-7c9ae1b4621ead73c8493cff1b11345529bb7604d4584577749f53b7c7a0628f.png" /></a>&nbsp;Free shipping in USA over $75&nbsp;<a class="shipping_info_popup_link " title="This item could qualify for free shipping" data-lightbox-link="true" data-lightbox-height="17rem" data-lightbox-width="25rem" href="/ordering/potential-free-shipping-usa"><span class="fa fa-question-circle" /></a>
+</td>
+</tr>
+
+</table>
+
+
+</div>
+<hr>
+<table class='pricing'>
+<tr>
+<th>
+Price break
+</th>
+<th>
+Unit price (US$)
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td class=''>
+12.95
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td class=''>
+11.91
+</td>
+</tr>
+<tr>
+<td>
+25
+</td>
+<td class=''>
+10.96
+</td>
+</tr>
+<tr>
+<td>
+100
+</td>
+<td class=''>
+10.08
+</td>
+</tr>
+</table>
+<hr>
+
+<table class='add_to_cart'>
+<tr>
+<td class='add_to_cart'>
+<label for='product_quantity'>Quantity:</label>
+<input id='product_quantity' name='product[quantity]' size='2' type='text' value='1'>
+<br>
+<span class='allow_backorders'><!-- allow_backorders --><a href="/ordering#backorders">backorders</a> allowed</span>
+</td>
+<td class='td_right'>
+<div>
+<button alt="Add to cart" name="submit" value="add_to_cart" title="Adds Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5 to your cart." data-add-to-cart="true" data-freeze-cart="false" class="btn-medium btn-green">Add to cart</button><br/>
+<button alt="Add to list" name="submit" value="add_to_list" title="Adds Pololu 5V, 1A Step-Down Voltage Regulator D24V10F5 to your list." class="btn-small btn-link">Add to list</button>
+</div>
+</td>
+
+</tr>
+</table>
+</form>
+<div>
+<div class='price-notification-container'>
+<div class='price-notification-display-div' style='display: flex; align-items: center;
+margin-top: 0.3em; margin-bottom: 0.3em;'>
+<span class='label price-notification-label'>
+</span>
+<span class='right-span'>
+<button class='enable-price-notification-button btn-small btn-link' data-logged-in='false' type='button'>
+Get price notification
+</button>
+<a class="fa fa-question-circle" data-lightbox-link="true" data-lightbox-height="21rem" data-lightbox-width="27rem" href="/ordering/price-change-notifications"></a>
+</span>
+</div>
+<div class='price-notification-form-div' style='display: none;'>
+<form action='https://www.pololu.com/wishlist_product/set_price_notification' enctype='multipart/form-data' method='post' style='width: 100%'>
+<input type="hidden" name="wishlist_product[id]" id="wishlist_product_id" autocomplete="off" />
+<input type="hidden" name="product_id" id="product_id" value="0J2831" autocomplete="off" />
+<input type="hidden" name="session_id" value="40838175845fa04180ad0f3105399519" />
+<hr>
+<div class='spaced-row'>
+<label>Notify me</label>
+<button class='disable-price-notification-button btn-small btn-link' type='button'>Cancel</button>
+</div>
+<div class='align-center indent-radio'>
+<input checked class='notify-any-price-change' id='notify-any-price-change' name='wishlist_product[price_notification]' type='radio' value='notify-any-price-change'>
+<label for='notify-any-price-change'>&nbspon any price change</label>
+</div>
+<div class='align-center indent-radio'>
+<input class='notify-any-price-drop' id='notify-any-price-drop' name='wishlist_product[price_notification]' type='radio' value='notify-any-price-drop'>
+<label for='notify-any-price-drop'>&nbspon any price drop</label>
+</div>
+<div class='align-center indent-radio'>
+<input class='notify-at-target-price' id='notify-at-target-price' name='wishlist_product[price_notification]' type='radio' value='notify-at-target-price'>
+<label for='notify-at-target-price'>&nbspat or below $</label>
+<input class='target-price' name='wishlist_product[target_price]' placeholder='price' size='3' type='text' value=''>
+<label for='notify-at-target-price'>&nbspat qty&nbsp</label>
+<input class='quantity' name='wishlist_product[target_quantity]' placeholder='qty' size='2' type='text' value=''>
+</div>
+<div class='spaced-row'>
+<div>
+</div>
+<button class='save-price-notification-button btn-small btn-green' type='submit'>Save</button>
+</div>
+</form>
+</div>
+
+</div>
+</div>
+</div>
+<script type='module'>
+import {PriceNotification} from 'price_notification'
+new PriceNotification();
+import {StockNotification} from 'stock_notification'
+new StockNotification();
+</script>
+
+</span>
+<div id='short_description'>
+<table class="active_controller_comparison">
+	<tr>
+		<th>Output voltage</th>
+		<th>Typical max output current<sup>1</sup></th>
+		<th>Input voltage range<sup>2</sup></th>
+	</tr>
+	<tr>
+		<td>5&nbsp;V</td>
+		<td> 1&nbsp;A</td>
+		<td> 5.1&nbsp;V&nbsp;&ndash;&nbsp;36&nbsp;V</td>
+	</tr>
+</table>
+<p><small>Note 1: Actual achievable continuous output current is a function of input voltage and is limited by thermal dissipation.</small><br>
+<small>Note 2: Minimum input voltage is subject to dropout voltage considerations; see the dropout voltage section of product pages for more information.</small></p>
+
+</div>
+<p>Alternatives available with variations in these parameter(s):
+<a class="select_by_specification_link" data-lightbox-link="true" data-lightbox-height="20rem" data-lightbox-width="50rem" href="/catalog/select-by-specification?parameters=0J130&amp;product=2831&amp;products=2830"><span class='select_by_specification_parameter'>output voltage</span>
+<span class="select_by_specification_main_link">Select variant&#8230;</span>
+</a></p><p class='compare_link'>
+<span class="compare"><a href="/search/compare/248"><img alt="" src="https://a.pololu-files.com/assets/compare-cd658e4a1effbb8bf041401c86b9bef3949f6946b740d13b04703d381ec5594b.png" /></a><a title="Compare all products in D24V10Fx Step-Down Voltage Regulators" href="/search/compare/248">Compare all products in D24V10Fx Step-Down Voltage Regulators</a></span>.
+</p></div>
+
+<a name="tabs"></a><table class="tabs"><tr><td>&nbsp;</td><th class="selected "><span id="name">Description</span></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/2831/specs&#39;);" href="/product/2831/specs"><span id="name">Specs</span> <span id="count">(10)</span></a></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/2831/pictures&#39;);" href="/product/2831/pictures"><span id="name">Pictures</span> <span id="count">(9)</span></a></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/2831/resources&#39;);" href="/product/2831/resources"><span id="name">Resources</span> <span id="count">(5)</span></a></th><td>&nbsp;</td><th class="empty"><span id="name">FAQs</span> <span id="count">(0)</span></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/2831/blog&#39;);" href="/product/2831/blog"><span id="name">On the blog</span> <span id="count">(3)</span></a></th><td>&nbsp;</td><th class=""><a onclick="saveScrollPosition(&#39;/product/2831/distributors&#39;);" href="/product/2831/distributors"><span id="name">Distributors</span> <span id="count">(85)</span></a></th><td class="last">&nbsp;</td></tr></table><div class="tab_page"><h2>Overview</h2>
+<table class="picture_with_caption right"><tr><td><a href="https://a.pololu-files.com/picture/0J6003.1200.jpg?0de060af47bce4a54aa5792a09d311fd" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6003&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx, bottom view with dimensions.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6003.98x98.jpg?0de060af47bce4a54aa5792a09d311fd&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6003.600x480.jpg?0de060af47bce4a54aa5792a09d311fd&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6003.1200.jpg?0de060af47bce4a54aa5792a09d311fd&quot;,&quot;longest_side&quot;:460}]" data-picture-id="0J6003" data-picture-longest_side="460" src="https://a.pololu-files.com/picture/0J6003.250.jpg?0de060af47bce4a54aa5792a09d311fd" /></a></td><p></tr></table>
+<table class="picture_with_caption right"><tr><td style="max-width: 250px"><a href="https://a.pololu-files.com/picture/0J6007.1200.jpg?2bbadc4cf3ac098c6ee53658ffc2f939" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6007&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulators D24V10Fx and D24V5Fx next to a 7805 voltage regulator in TO-220 package.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6007.98x98.jpg?2bbadc4cf3ac098c6ee53658ffc2f939&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6007.600x480.jpg?2bbadc4cf3ac098c6ee53658ffc2f939&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6007.1200.jpg?2bbadc4cf3ac098c6ee53658ffc2f939&quot;,&quot;longest_side&quot;:1200}]" data-picture-id="0J6007" data-picture-longest_side="1200" src="https://a.pololu-files.com/picture/0J6007.250.jpg?2bbadc4cf3ac098c6ee53658ffc2f939" /></a></td></tr><tr><th style="max-width: 250px"><p>Pololu step-down voltage regulators D24V10Fx and D24V5Fx next to a 7805 voltage regulator in TO-220 package.</p></th></tr></table></p>
+<p>The D24V10Fx family of step-down voltage regulators features the Intersil ISL85410 1A synchronous buck regulator and generates lower output voltages from input voltages as high as 36&nbsp;V.  They are switching regulators (also called switched-mode power supplies (SMPS) or DC-to-DC converters) with typical efficiencies between 80% and 95%, which is much more efficient than linear voltage regulators, especially when the difference between the input and output voltage is large.  These regulators have a power-save mode that activates at light loads and a low quiescent (no load) current draw, which make them well suited for applications that are run from a battery.  These regulators are available in five different fixed output voltages:</p>
+<p>Alternatives available with variations in these parameter(s):
+<a class="select_by_specification_link" data-lightbox-link="true" data-lightbox-height="20rem" data-lightbox-width="50rem" href="/catalog/select-by-specification?parameters=0J130&amp;product=2831&amp;products=2830"><span class='select_by_specification_parameter'>output voltage</span>
+<span class="select_by_specification_main_link">Select variant&#8230;</span>
+</a></p>
+<p>The different versions of this regulator all look very similar, so the bottom silkscreen includes a blank space where you can add your own distinguishing marks or labels. This product page applies to all five versions of the D24V10Fx family.</p>
+<p>The SHDN pin can be used to put the board in a low-power state that reduces the quiescent current to approximately 10&nbsp;µA to 20&nbsp;µA per volt on VIN, and a PG (power good) output can be used to monitor the state of the regulator&#8217;s output voltage.</p>
+<p>The regulators feature short-circuit/over-current protection, and thermal shutdown helps prevent damage from overheating.  The boards do <strong>not</strong> have reverse-voltage protection.</p>
+<p>If you do not need quite as much current, consider the very similar D24V5Fx family of step-down voltage regulators, which can deliver up to 500&nbsp;mA in a wide range of output voltages:</p>
+<p>Alternatives available with variations in these parameter(s):
+<a class="select_by_specification_link" data-lightbox-link="true" data-lightbox-height="20rem" data-lightbox-width="50rem" href="/catalog/select-by-specification?parameters=0J130&amp;product=2831&amp;products=2842"><span class='select_by_specification_parameter'>output voltage</span>
+<span class="select_by_specification_main_link">Select variant&#8230;</span>
+</a></p>
+<p>The picture on the right shows a 1&nbsp;A D24V10Fx regulator next to a 0.5&nbsp;A D24V5Fx regulator and a common 7805 linear regulator in a TO-220 package.</p>
+<h2>Features</h2>
+<ul>
+	<li>Input voltage: [<i>output&nbsp;voltage&nbsp;+&nbsp;dropout&nbsp;voltage</i>] to 36&nbsp;V (see below for more information on dropout voltage)</li>
+	<li>Fixed 3.3&nbsp;V, 5&nbsp;V, 6&nbsp;V, 9&nbsp;V, or 12&nbsp;V output (depending on regulator version) with 4% accuracy</li>
+	<li>Maximum output current: 1&nbsp;A</li>
+	<li>Typical efficiency of 80% to 93%</li>
+	<li>500 kHz switching frequency (when not in power-save mode)</li>
+	<li>2&nbsp;ms soft-start reduces in-rush current on power-up</li>
+	<li>200&nbsp;&mu;A typical no-load quiescent current</li>
+	<li>Over-current and short-circuit protection, over-temperature shutoff</li>
+	<li>Power-good indicator can be used to tell when the regulator has reached and is maintaining its target output voltage</li>
+	<li>Small size:  0.7″&nbsp;&times;&nbsp;0.5″&nbsp;&times;&nbsp;0.14″ (18&nbsp;mm&nbsp;&times;&nbsp;13&nbsp;mm&nbsp;&times;&nbsp;3.5&nbsp;mm)</li>
+</ul>
+<table class="picture_with_caption right"><tr><td><a href="https://a.pololu-files.com/picture/0J6006.1200.jpg?94327a90e5dbbe73d34816e8b843e8fc" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6006&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulators D24V10Fx in a breadboard.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6006.98x98.jpg?94327a90e5dbbe73d34816e8b843e8fc&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6006.600x480.jpg?94327a90e5dbbe73d34816e8b843e8fc&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6006.1200.jpg?94327a90e5dbbe73d34816e8b843e8fc&quot;,&quot;longest_side&quot;:1200}]" data-picture-id="0J6006" data-picture-longest_side="1200" src="https://a.pololu-files.com/picture/0J6006.250.jpg?94327a90e5dbbe73d34816e8b843e8fc" /></a></td><p></tr></table>
+<table class="picture_with_caption right"><tr><td><a href="https://a.pololu-files.com/picture/0J6004.1200.jpg?7a4d5e994151b9819a6392dc693f89c4" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6004&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx in a breadboard.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6004.98x98.jpg?7a4d5e994151b9819a6392dc693f89c4&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6004.600x480.jpg?7a4d5e994151b9819a6392dc693f89c4&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6004.1200.jpg?7a4d5e994151b9819a6392dc693f89c4&quot;,&quot;longest_side&quot;:1200}]" data-picture-id="0J6004" data-picture-longest_side="1200" src="https://a.pololu-files.com/picture/0J6004.250.jpg?7a4d5e994151b9819a6392dc693f89c4" /></a></td></tr></table></p>
+<h2>Using the regulator</h2>
+<h3>Connections</h3>
+<p>The buck regulator has five connections: power good (PG). shutdown (<font style="text-decoration: overline;">SHDN</font>), input voltage (VIN), ground (GND), and output voltage (VOUT).</p>
+<p>The &#8220;power good&#8221; indicator, <strong>PG</strong>, is an open-drain output that drives low when the regulator&#8217;s output voltage falls below 80% or rises above 120% of its target output voltage.  This output is also actively held low for the duration of the regulator&#8217;s 2&nbsp;ms soft-start period and while the regulator is being disabled by the <font style="text-decoration: overline;">SHDN</font> input or by over-temperature or over-current fault conditions.  An external pull-up resistor is generally required to use this pin.</p>
+<p>The <font style="text-decoration: overline;"><strong>SHDN</strong></font> pin can be driven low (under 0.4&nbsp;V) to turn off the output and put the board into a low-power state.  There is a 100&nbsp;k&ohm; pull-up resistor between the <font style="text-decoration: overline;">SHDN</font> pin and VIN, so if you want to leave the board permanently enabled, the <font style="text-decoration: overline;">SHDN</font> pin can be left disconnected.  While the <font style="text-decoration: overline;">SHDN</font> pin is being driven low, the current draw of the regulator is dominated by the current through the pull-up resistor and will be proportional to the input voltage. (At 36&nbsp;V in it will draw about 360 &mu;A.)</p>
+<p>The input voltage, <strong>VIN</strong>, powers the regulator.  Voltages between 3&nbsp;V and 36&nbsp;V can be applied to VIN, but the effective lower limit of VIN is VOUT plus the regulator&#8217;s dropout voltage, which varies approximately linearly with the load (see below for graphs of dropout voltages as a function of the load).  Additionally, please be wary of destructive LC spikes (see below for more information).</p>
+<p>The output voltage, <strong>VOUT</strong>, is fixed and depends on the regulator version: the D24V10F3 version outputs 3.3&nbsp;V, the D24V10F5 version outputs 5&nbsp;V, the D24V10F6 version outputs 6&nbsp;V, the D24V10F9 version outputs 9&nbsp;V, and the D24V10F12 version outputs 12&nbsp;V.</p>
+<p>The five connections are labeled on the back side of the PCB and are arranged with a 0.1″ spacing along the edge of the board for compatibility with solderless <a href="/category/28/solderless-breadboards">breadboards</a>, <a href="/category/19/connectors">connectors</a>, and other prototyping arrangements that use a 0.1″ grid.  You can solder wires directly to the board or solder in either the 5&#215;1 <a href="/product/965">straight male header strip</a> or the 5&#215;1 <a href="/product/967">right-angle male header strip</a> that is included.</p>
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J6005.1200.jpg?fefbeff1e451b6e6324104246d3aafef" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6005&quot;,&quot;caption&quot;:&quot;\u003cp\u003ePololu step-down voltage regulator D24V10Fx with included hardware.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6005.98x98.jpg?fefbeff1e451b6e6324104246d3aafef&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6005.600x480.jpg?fefbeff1e451b6e6324104246d3aafef&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6005.1200.jpg?fefbeff1e451b6e6324104246d3aafef&quot;,&quot;longest_side&quot;:1200}]" data-picture-id="0J6005" data-picture-longest_side="1200" src="https://a.pololu-files.com/picture/0J6005.300.jpg?fefbeff1e451b6e6324104246d3aafef" /></a></td><p></tr></table></p>
+<h3>Typical efficiency and output current</h3>
+<p>The efficiency of a voltage regulator, defined as (Power&nbsp;out)/(Power&nbsp;in), is an important measure of its performance, especially when battery life or heat are concerns.  This family of switching regulators typically has an efficiency of 80% to 93%, though the actual efficiency in a given system depends on input voltage, output voltage, and output current.  See the efficiency graph near the bottom of this page for more information.</p>
+<p>In order to achieve a high efficiency at low loads, this regulator automatically goes into a power-save mode where the switching frequency is reduced.  In power-save mode, the switching frequency of the regulator changes as necessary to minimize power loss.  This could make it harder to filter out noise on the output caused by switching.</p>
+<h3>Typical dropout voltage</h3>
+<p>The dropout voltage of a step-down regulator is the minimum amount by which the input voltage must exceed the regulator&#8217;s target output voltage in order to ensure the target output can be achieved.  For example, if a 5&nbsp;V regulator has a 1&nbsp;V dropout voltage, the input must be at least 6&nbsp;V to ensure the output is the full 5&nbsp;V.  Generally speaking, the dropout voltage increases as the output current increases.  See the &#8220;Details&#8221; section below for more information on the dropout voltage for this specific regulator version.</p>
+<h2>
+Details for item #2831
+</h2>
+<p>The graphs below show the typical efficiency and dropout voltage of the 5&nbsp;V D24V10F5 regulator as a function of the output current:</p>
+<div class="left">
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J6010.1200.png?2f4f35f553265edfb2522d6aeb0c7cc4" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6010&quot;,&quot;caption&quot;:&quot;\u003cp\u003eTypical efficiency of Pololu 5V step-down voltage regulator D24V10F5.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6010.98x98.jpg?2f4f35f553265edfb2522d6aeb0c7cc4&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6010.600x480.jpg?2f4f35f553265edfb2522d6aeb0c7cc4&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6010.1200.png?2f4f35f553265edfb2522d6aeb0c7cc4&quot;,&quot;longest_side&quot;:600}]" data-picture-id="0J6010" data-picture-longest_side="600" src="https://a.pololu-files.com/picture/0J6010.400.jpg?2f4f35f553265edfb2522d6aeb0c7cc4" /></a></td><p></tr></table></p>
+</div>
+<div class="left">
+<table class="picture_with_caption center"><tr><td><a href="https://a.pololu-files.com/picture/0J6011.1200.png?b4a6d0797fcd46fb68642e3d4ba47d2e" class="noscript-fallback"><img alt="" class="zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6011&quot;,&quot;caption&quot;:&quot;\u003cp\u003eTypical dropout voltage of Pololu 5V step-down voltage regulator D24V10F5.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6011.98x98.jpg?b4a6d0797fcd46fb68642e3d4ba47d2e&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6011.600x480.jpg?b4a6d0797fcd46fb68642e3d4ba47d2e&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6011.1200.png?b4a6d0797fcd46fb68642e3d4ba47d2e&quot;,&quot;longest_side&quot;:600}]" data-picture-id="0J6011" data-picture-longest_side="600" src="https://a.pololu-files.com/picture/0J6011.400.jpg?b4a6d0797fcd46fb68642e3d4ba47d2e" /></a></td><p></tr></table></p>
+</div>
+<p class="clear note_warning">During normal operation, this product can get hot enough to burn you. Take care when handling this product or other components connected to it.</p>
+<h2>Schematic diagram</h2>
+<table class="picture_with_caption center wide"><tr><td style="max-width: 600px"><a href="https://a.pololu-files.com/picture/0J6037.1200.png?767c5231f3336445f68c4a503e734792" class="noscript-fallback"><img alt="" class="wide zoomable" data-gallery-pictures="[{&quot;id&quot;:&quot;0J6037&quot;,&quot;caption&quot;:&quot;\u003cp\u003eSchematic diagram for the Pololu D24V10Fx family of 1\u0026nbsp;A step-down voltage regulators.\u003c/p\u003e&quot;,&quot;url_tiny&quot;:&quot;https://a.pololu-files.com/picture/0J6037.98x98.jpg?767c5231f3336445f68c4a503e734792&quot;,&quot;url_medium&quot;:&quot;https://a.pololu-files.com/picture/0J6037.600x480.jpg?767c5231f3336445f68c4a503e734792&quot;,&quot;url_full&quot;:&quot;https://a.pololu-files.com/picture/0J6037.1200.png?767c5231f3336445f68c4a503e734792&quot;,&quot;longest_side&quot;:1200}]" data-picture-id="0J6037" data-picture-longest_side="1200" src="https://a.pololu-files.com/picture/0J6037.600.jpg?767c5231f3336445f68c4a503e734792" /></a></td><p></tr><tr><th style="max-width: 600px"><p>Schematic diagram for the Pololu D24V10Fx family of 1&nbsp;A step-down voltage regulators.</p></th></tr></table></p>
+<p>This schematic is also available as a <a href="/file/0J843/step-down-voltage-regulator-d24v10fx-schematic-diagram.pdf">downloadable pdf</a> (136k pdf).</p>
+<h2>LC voltage spikes</h2>
+<p>When connecting voltage to electronic circuits, the initial rush of current can cause voltage spikes that are much higher than the input voltage. If these spikes exceed the regulator&#8217;s maximum voltage (36&nbsp;V), the regulator can be destroyed. In our tests with typical power leads (~30″ test clips), input voltages above 20&nbsp;V caused spikes over 36&nbsp;V.</p>
+<p class="note_warning">If you are connecting more than 20&nbsp;V or your power leads or supply has high inductance, we recommend soldering a 33&nbsp;&mu;F or larger electrolytic capacitor close to the regulator between VIN and GND.  The capacitor should be rated for at least 50&nbsp;V.</p>
+<p>More information about LC spikes can be found in our application note, <a href="/docs/0J16">Understanding Destructive LC Voltage Spikes</a>.</p>
+
+</div>
+
+
+<div id="small_related_items"><div><h2>Related products</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/product/2830"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2830">Pololu 3.3V, 1A Step-Down Voltage Regulator D24V10F3</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2832"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2832">Pololu 6V, 1A Step-Down Voltage Regulator D24V10F6</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2833"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2833">Pololu 9V, 1A Step-Down Voltage Regulator D24V10F9</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2834"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2834">Pololu 12V, 1A Step-Down Voltage Regulator D24V10F12</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2842"><img alt="" src="https://a.pololu-files.com/picture/0J5238.50x40.jpg?af14e4d14a338ca7d03d7d2bc3a8cd35" /></a>
+</td>
+<td><a href="/product/2842">Pololu 3.3V, 500mA Step-Down Voltage Regulator D24V5F3</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2843"><img alt="" src="https://a.pololu-files.com/picture/0J5238.50x40.jpg?af14e4d14a338ca7d03d7d2bc3a8cd35" /></a>
+</td>
+<td><a href="/product/2843">Pololu 5V, 500mA Step-Down Voltage Regulator D24V5F5</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2851"><img alt="" src="https://a.pololu-files.com/picture/0J5851.50x40.jpg?d7ecfd2d1dd922f537ce44c02e13305b" /></a>
+</td>
+<td><a href="/product/2851">Pololu 5V, 5A Step-Down Voltage Regulator D24V50F5</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2866"><img alt="" src="https://a.pololu-files.com/picture/0J5585.50x40.jpg?644d05c330b2f470c7c637a35d6dd0be" /></a>
+</td>
+<td><a href="/product/2866">Pololu 5V, 9A Step-Down Voltage Regulator D24V90F5</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1406"><img alt="" src="https://a.pololu-files.com/picture/0J2204.50x40.jpg?b3ba248216e714c82039603a96d16ed5" /></a>
+</td>
+<td><a href="/product/1406">Rocker Switch: 3-Pin, SPDT, 10A</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2809"><img alt="" src="https://a.pololu-files.com/picture/0J6790.50x40.jpg?7e4b267e642a5afbf9f2803d2b9c360b" /></a>
+</td>
+<td><a href="/product/2809">Mini Pushbutton Power Switch with Reverse Voltage Protection, SV</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2808"><img alt="" src="https://a.pololu-files.com/picture/0J6789.50x40.jpg?a4cf523daa68a0fc751c6ff85fb0ffc6" /></a>
+</td>
+<td><a href="/product/2808">Mini Pushbutton Power Switch with Reverse Voltage Protection, LV</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/965"><img alt="" src="https://a.pololu-files.com/picture/0J6370.50x40.jpg?a0299347159567689cbc426a68c01988" /></a>
+</td>
+<td><a href="/product/965">0.100&quot; (2.54 mm) Breakaway Male Header: 1×40-Pin, Straight, Black</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/967"><img alt="" src="https://a.pololu-files.com/picture/0J1037.50x40.jpg?cb3f097a4f281bd2c172d433d16eba62" /></a>
+</td>
+<td><a href="/product/967">0.100&quot; (2.54 mm) Breakaway Male Header: 1×40-Pin, Right Angle</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1904"><img alt="" src="https://a.pololu-files.com/picture/0J1600.50x40.jpg?8353bd810db0a1268020789eaca369bd" /></a>
+</td>
+<td><a href="/product/1904">0.1&quot; (2.54mm) Crimp Connector Housing: 1x5-Pin 10-Pack</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1015"><img alt="" src="https://a.pololu-files.com/picture/0J882.50x40.jpg?dda1afec386533fa148b2e2d4ccb8c43" /></a>
+</td>
+<td><a href="/product/1015">0.100&quot; (2.54 mm) Female Header: 1x5-Pin, Straight</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1490"><img alt="" src="https://a.pololu-files.com/picture/0J2071.50x40.jpg?3a52dee0af1ebeab0ea83b8cf1140781" /></a>
+</td>
+<td><a href="/product/1490">170-Point Breadboard (White)</a></td>
+</tr>
+</table>
+</div>
+</div><div><h2>Related categories</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/category/248/d24v10fx-step-down-voltage-regulators"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/category/248/d24v10fx-step-down-voltage-regulators">D24V10Fx Step-Down Voltage Regulators</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/84/voltage-regulators-and-power-supplies"><img alt="" src="https://a.pololu-files.com/picture/0J2600.50x40.jpg?8be114e9f4083cc8a086cb2fe450d453" /></a>
+</td>
+<td><a href="/category/84/voltage-regulators-and-power-supplies">Voltage Regulators and Power Supplies</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/55/battery-holders"><img alt="" src="https://a.pololu-files.com/picture/0J1040.50x40.jpg?5e38db440c535ab82074b6a75e9cd342" /></a>
+</td>
+<td><a href="/category/55/battery-holders">Battery Holders</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/54/batteries"><img alt="" src="https://a.pololu-files.com/picture/0J3231.50x40.jpg?8722944d6f6a762d7d2e32c4a550577a" /></a>
+</td>
+<td><a href="/category/54/batteries">Batteries</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/65/premium-jumper-wires"><img alt="" src="https://a.pololu-files.com/picture/0J5697.50x40.jpg?a573bd77129775845a88bc5eff90addf" /></a>
+</td>
+<td><a href="/category/65/premium-jumper-wires">Premium Jumper Wires</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/71/wires-with-pre-crimped-terminals"><img alt="" src="https://a.pololu-files.com/picture/0J11614.50x40.jpg?0c44e46f7c16b54a162ac2f0a59b3c6f" /></a>
+</td>
+<td><a href="/category/71/wires-with-pre-crimped-terminals">Wires with Pre-Crimped Terminals</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/28/solderless-breadboards"><img alt="" src="https://a.pololu-files.com/picture/0J10450.50x40.jpg?5982ae89594735acb521388debe5512f" /></a>
+</td>
+<td><a href="/category/28/solderless-breadboards">Solderless Breadboards</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/14/electronics-prototyping"><img alt="" src="https://a.pololu-files.com/picture/0J3499.50x40.jpg?0692235fe26a29c039ea2b5ce12061ed" /></a>
+</td>
+<td><a href="/category/14/electronics-prototyping">Electronics Prototyping</a></td>
+</tr>
+</table>
+</div>
+</div></div>
+<script>
+product_ui.update();
+</script>
+
+
+<!-- CONTENTS_END -->
+<div id='footer'>
+<p class='share'>
+<span class="image_text_link"><a href="/product/2831?print=1"><img alt="" src="https://a.pololu-files.com/assets/printer-448cebb2a5016700db2565421ada6e98f90fabe5885d8cd3cca1a3854748e146.png" /></a><a href="/product/2831?print=1">Print</a></span>
+<span class="image_text_link"><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831&amp;subject"><img alt="" src="https://a.pololu-files.com/assets/email-f2957b324fa09a7d81ed64679a6b9454647ad40514cd7b1ce501aefd946f5593.png" /></a><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831&amp;subject">Email a friend</a></span>
+<span class="image_text_link"><a href="/feeds"><img alt="" src="https://a.pololu-files.com/assets/feed-icon-12x12-ad0e7f1965647f9414a76a1f32fb46dc73c1b2d295201b0abb56f2b2cf88bfb2.png" /></a><a href="/feeds">Feeds</a></span>
+</p>
+<p class='links'>
+<a href="/">Home</a>
+|
+<a href="https://forum.pololu.com/">Forum</a>
+|
+<a href="/blog">Blog</a>
+|
+<a href="/support">Support</a>
+|
+<a href="/ordering">Ordering Information</a>
+|
+<a href="/list">Lists</a>
+|
+<a href="/distributors">Distributors</a>
+|
+<a href="/catalog/bigorderform">BIG Order Form</a>
+|
+<a href="/about">About</a>
+|
+<a href="/contact">Contact</a>
+</p>
+<p id='copyright'>&copy; 2001<a rel="nofollow" style="text-decoration: none; color: inherit;" href="/pot/0?from=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831">–</a>2026 Pololu Corporation</p>
+</div>
+</div>
+</div>
+<div id='right_col'>
+<div class='menu' data-my-quotes='1'></div>
+<script>quote.display_list()</script>
+<div class='menu' data-mini-cart='1'></div>
+<script>cart.display_mini_cart_content()</script>
+<div><h2>Related Products</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/product/2830"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2830">Pololu 3.3V, 1A Step-Down Voltage Regulator D24V10F3</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2832"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2832">Pololu 6V, 1A Step-Down Voltage Regulator D24V10F6</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2833"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2833">Pololu 9V, 1A Step-Down Voltage Regulator D24V10F9</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2834"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/product/2834">Pololu 12V, 1A Step-Down Voltage Regulator D24V10F12</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2842"><img alt="" src="https://a.pololu-files.com/picture/0J5238.50x40.jpg?af14e4d14a338ca7d03d7d2bc3a8cd35" /></a>
+</td>
+<td><a href="/product/2842">Pololu 3.3V, 500mA Step-Down Voltage Regulator D24V5F3</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2843"><img alt="" src="https://a.pololu-files.com/picture/0J5238.50x40.jpg?af14e4d14a338ca7d03d7d2bc3a8cd35" /></a>
+</td>
+<td><a href="/product/2843">Pololu 5V, 500mA Step-Down Voltage Regulator D24V5F5</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2851"><img alt="" src="https://a.pololu-files.com/picture/0J5851.50x40.jpg?d7ecfd2d1dd922f537ce44c02e13305b" /></a>
+</td>
+<td><a href="/product/2851">Pololu 5V, 5A Step-Down Voltage Regulator D24V50F5</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2866"><img alt="" src="https://a.pololu-files.com/picture/0J5585.50x40.jpg?644d05c330b2f470c7c637a35d6dd0be" /></a>
+</td>
+<td><a href="/product/2866">Pololu 5V, 9A Step-Down Voltage Regulator D24V90F5</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1406"><img alt="" src="https://a.pololu-files.com/picture/0J2204.50x40.jpg?b3ba248216e714c82039603a96d16ed5" /></a>
+</td>
+<td><a href="/product/1406">Rocker Switch: 3-Pin, SPDT, 10A</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2809"><img alt="" src="https://a.pololu-files.com/picture/0J6790.50x40.jpg?7e4b267e642a5afbf9f2803d2b9c360b" /></a>
+</td>
+<td><a href="/product/2809">Mini Pushbutton Power Switch with Reverse Voltage Protection, SV</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/2808"><img alt="" src="https://a.pololu-files.com/picture/0J6789.50x40.jpg?a4cf523daa68a0fc751c6ff85fb0ffc6" /></a>
+</td>
+<td><a href="/product/2808">Mini Pushbutton Power Switch with Reverse Voltage Protection, LV</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/965"><img alt="" src="https://a.pololu-files.com/picture/0J6370.50x40.jpg?a0299347159567689cbc426a68c01988" /></a>
+</td>
+<td><a href="/product/965">0.100&quot; (2.54 mm) Breakaway Male Header: 1×40-Pin, Straight, Black</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/967"><img alt="" src="https://a.pololu-files.com/picture/0J1037.50x40.jpg?cb3f097a4f281bd2c172d433d16eba62" /></a>
+</td>
+<td><a href="/product/967">0.100&quot; (2.54 mm) Breakaway Male Header: 1×40-Pin, Right Angle</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1904"><img alt="" src="https://a.pololu-files.com/picture/0J1600.50x40.jpg?8353bd810db0a1268020789eaca369bd" /></a>
+</td>
+<td><a href="/product/1904">0.1&quot; (2.54mm) Crimp Connector Housing: 1x5-Pin 10-Pack</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1015"><img alt="" src="https://a.pololu-files.com/picture/0J882.50x40.jpg?dda1afec386533fa148b2e2d4ccb8c43" /></a>
+</td>
+<td><a href="/product/1015">0.100&quot; (2.54 mm) Female Header: 1x5-Pin, Straight</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/product/1490"><img alt="" src="https://a.pololu-files.com/picture/0J2071.50x40.jpg?3a52dee0af1ebeab0ea83b8cf1140781" /></a>
+</td>
+<td><a href="/product/1490">170-Point Breadboard (White)</a></td>
+</tr>
+</table>
+</div>
+</div><div><h2>Related Categories</h2>
+<div>
+<table class='linkable_item_list'>
+<tr>
+<td class='img'>
+<a href="/category/248/d24v10fx-step-down-voltage-regulators"><img alt="" src="https://a.pololu-files.com/picture/0J6002.50x40.jpg?f14365599f7afb5d22a84d245c638ad3" /></a>
+</td>
+<td><a href="/category/248/d24v10fx-step-down-voltage-regulators">D24V10Fx Step-Down Voltage Regulators</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/84/voltage-regulators-and-power-supplies"><img alt="" src="https://a.pololu-files.com/picture/0J2600.50x40.jpg?8be114e9f4083cc8a086cb2fe450d453" /></a>
+</td>
+<td><a href="/category/84/voltage-regulators-and-power-supplies">Voltage Regulators and Power Supplies</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/55/battery-holders"><img alt="" src="https://a.pololu-files.com/picture/0J1040.50x40.jpg?5e38db440c535ab82074b6a75e9cd342" /></a>
+</td>
+<td><a href="/category/55/battery-holders">Battery Holders</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/54/batteries"><img alt="" src="https://a.pololu-files.com/picture/0J3231.50x40.jpg?8722944d6f6a762d7d2e32c4a550577a" /></a>
+</td>
+<td><a href="/category/54/batteries">Batteries</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/65/premium-jumper-wires"><img alt="" src="https://a.pololu-files.com/picture/0J5697.50x40.jpg?a573bd77129775845a88bc5eff90addf" /></a>
+</td>
+<td><a href="/category/65/premium-jumper-wires">Premium Jumper Wires</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/71/wires-with-pre-crimped-terminals"><img alt="" src="https://a.pololu-files.com/picture/0J11614.50x40.jpg?0c44e46f7c16b54a162ac2f0a59b3c6f" /></a>
+</td>
+<td><a href="/category/71/wires-with-pre-crimped-terminals">Wires with Pre-Crimped Terminals</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/28/solderless-breadboards"><img alt="" src="https://a.pololu-files.com/picture/0J10450.50x40.jpg?5982ae89594735acb521388debe5512f" /></a>
+</td>
+<td><a href="/category/28/solderless-breadboards">Solderless Breadboards</a></td>
+</tr>
+<tr>
+<td class='img'>
+<a href="/category/14/electronics-prototyping"><img alt="" src="https://a.pololu-files.com/picture/0J3499.50x40.jpg?0692235fe26a29c039ea2b5ce12061ed" /></a>
+</td>
+<td><a href="/category/14/electronics-prototyping">Electronics Prototyping</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+<div id='lightbox_holder'>
+<div id='lightbox_gray_screen'></div>
+<div id='lightbox'>
+<div id='lightbox_gallery'></div>
+<div id='lightbox_content'></div>
+<div id='lightbox_right'><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+<div id='lightbox_left'><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+<div id='lightbox_close'>
+<a href='#' title='Close'><i class="fa fa-times" aria-hidden="true"></i></a>
+</div>
+<div id='lightbox_full'>
+<a href='#' title='View image'><i class="fa fa-expand" aria-hidden="true"></i></a>
+</div>
+</div>
+</div>
+
+<div id='header_small_top'>
+<!-- / this has to go first since it takes up 100% of the width and would block clicking on other parts -->
+<div id='header_center_right'>
+<span data-login-ui='login'>
+<a href="/account/login?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831">Log In</a>
+</span>
+<span data-login-ui='my_account'>
+<a title="My account" data-login-ui="my_account_link" href="/account"></a>
+</span>
+
+</div>
+<div id='header_small_left'>
+<a href="/"><img width="118" height="30" alt="Pololu Robotics &amp; Electronics" class="logo_pololu_only" src="https://a.pololu-files.com/assets/header_pololu_only-fff6349c8769e6b2e59624d6dceacac4422156c5ac8b8b23532f0e93678bb981.png" /></a>
+</div>
+<div id='header_small_right'>
+<a href="/cart"><img width="30" height="30" alt="Shopping cart" src="https://a.pololu-files.com/assets/cart-bf4bf66669c9b9288e6e972718067855ecdcdfc80622cfea29ac04b29478f873.png" /></a>
+</div>
+</div>
+<div id='header_small_bottom'>
+<div id='header_small_right'>
+(702) 262-6648<br/>
+<a href="/ordering">Same-day shipping, worldwide</a>
+</div>
+<div id='header_small_left'>
+<a id="menu_button" onclick="return false;" href="/catalog/menu"><img width="30" height="30" alt="Menu" src="https://a.pololu-files.com/assets/menu-2023bba099d8fd2a25d8e1803c5bdf0aa0a024d9d585000ff9aec2c8a436b29a.png" /></a>
+</div>
+</div>
+<div id='header_small_menu'>
+<div class='header_small_menu_columns'>
+<a href="/catalog/menu">Shop</a>
+<a href="/blog">Blog</a>
+<a href="https://forum.pololu.com/">Forum</a>
+<a href="/support">Support</a>
+</div>
+<!-- / specify local variable id to set an id for the form, mainly for use with testing -->
+<form action='/search' id='header_small_search'>
+<div class='search'><input autocomplete='off' class='search_input mini_search_input' data-autocomplete-search='true' id='header_small_search_input' name='query' placeholder='Search' type='text'><input alt='' class='search_button' src='https://a.pololu-files.com/assets/magglass-d28c6b7b9d1f35858a702b71e13b678bfdee962d795c7ad2426ed9b19ccac5e8.png' type='image' value='go'>
+</div>
+</form>
+
+<a title="My account" href="/account">My account</a>
+<a data-feedback="true" href="/feedback/new?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831">Comments or questions?</a>
+<a href="/about">About Pololu</a>
+<a href="/contact">Contact</a>
+<a href="/ordering">Ordering information</a>
+<a href="/distributors">Distributors</a>
+</div>
+<div id='gray_screen'></div>
+<script>
+menuInit();
+</script>
+
+<div id='header_holder'>
+<table id='header'>
+<tr id='header_top'>
+<td id='header_logo' rowspan='2'>
+<a href="/"><img width="219" height="69" alt="Pololu Robotics and Electronics" class="logo" style="max-width: 230px;" src="https://a.pololu-files.com/assets/header_pololu_no_padding-e37eb899d2ec2ded9153a53ad9e0e6e12861f762e2c3bafb4ca40e79a85d149e.png" /></a>
+</td>
+<td colspan='16' id='header_address'>
+<div id='header_account_links'>
+<span data-login-ui='login'>
+<a href="/account/login?account%5Burl%5D=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831">Log In</a>
+</span>
+<span data-login-ui='my_account'>
+<a title="My account" data-login-ui="my_account_link" href="/account"></a>
+|
+<a href="/account">My Account</a>
+|
+</span>
+<div data-login-ui='logout'>
+<form data-login-ui="logout" action="https://www.pololu.com/account/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="utf8" value="✓" /><input type="hidden" name="session_id" value="**SESSION_ID_STUB**" /><button class="btn-link" name="log-out-button">Log Out</button></form>
+</div>
+
+|
+<a href="/cart">Shopping Cart <img width="16" height="16" alt="" src="https://a.pololu-files.com/assets/cart-bf4bf66669c9b9288e6e972718067855ecdcdfc80622cfea29ac04b29478f873.png" /></a>
+<script>dynamic_user_login.init()</script>
+</div>
+<p class='phone_number'>
+US toll free: 1-877-7-POLOLU ~
+(702) 262-6648<br/>
+<a href="/ordering">Same-day shipping, worldwide</a>
+</p>
+</td>
+</tr>
+<tr id='header_links'>
+<th class='selected'>
+<a href="/">Catalog</a>
+</th>
+<td>&nbsp;</td>
+<th>
+<a href="https://forum.pololu.com/">Forum</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/blog">Blog</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/support">Support</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/ordering">Ordering</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/distributors">Distributors</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/about">About</a>
+</th>
+<td>&nbsp;</td>
+<th class=''>
+<a href="/contact">Contact</a>
+</th>
+<td class='last'></td>
+</tr>
+</table>
+</div>
+<div id='left_col'>
+<div class='menu' id='menu_search'>
+<div>
+<!-- / specify local variable id to set an id for the form, mainly for use with testing -->
+<form action='/search' id='sidebar_search'>
+<div class='search'><input autocomplete='off' class='search_input mini_search_input' data-autocomplete-search='true' id='sidebar_search_input' name='query' placeholder='Search' type='text'><input alt='' class='search_button' src='https://a.pololu-files.com/assets/magglass-d28c6b7b9d1f35858a702b71e13b678bfdee962d795c7ad2426ed9b19ccac5e8.png' type='image' value='go'>
+</div>
+</form>
+
+</div>
+</div>
+<div class='menu'>
+<h2><a data-feedback="true" href="">Feedback</a></h2>
+<div>
+<a class="menu_visible_link" data-feedback="true" href="">Comments or questions?</a>
+</div>
+</div>
+<div class='menu'>
+<h2><a href="/category/31/services">Services</a></h2>
+<div>
+<ul>
+<li>
+<a href="/product/749">Custom Laser Cutting</a>
+</li>
+<li>
+<a href="/product/446">SMT Stencils</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='menu'>
+<h2><a href="/">Products</a></h2>
+<div>
+<!-- sidebar_categories --><h3><a href="/category/42/new-products">New Products</a></h3>
+<h3><span class="specials_category"><a href="/specials">Specials!</a></span></h3>
+<hr />
+<h3><a href="/category/2/robot-kits">Robots</a></h3>
+<ul>
+	<li><a href="/category/76/3pi-robots-and-accessories">3pi</a></li>
+	<li><a href="/category/210/balboa-robot-and-accessories">Balboa</a></li>
+	<li><a href="/category/327/collaborative-robots">Cobot</a></li>
+	<li><a href="/category/202/romi-chassis-and-accessories">Romi</a></li>
+	<li><a href="/category/129/zumo-robots-and-accessories">Zumo</a></li>
+	<li><a href="/category/3/robot-kits-with-soldering">Kits, Soldering</a></li>
+	<li><a href="/category/4/robot-kits-without-soldering">Kits, No Soldering</a></li>
+</ul>
+<h3><a href="/category/6/electronics">Electronics</a></h3>
+<ul>
+	<li><a href="/category/125/arduino-compatible">Arduino</a></li>
+	<li><a href="/category/39/cables-and-wire">Cables and Wires</a></li>
+	<li><a href="/category/13/computer-interface">Computer Interface</a></li>
+	<li><a href="/category/19/connectors">Connectors</a></li>
+	<li><a href="/category/64/development-boards-programmable-controllers">Development Boards</a></li>
+	<li><a href="/category/334/isolation">Isolation</a></li>
+	<li><a href="/category/20/leds">LEDs</a></li>
+	<li><a href="/category/9/motion-control-modules">Motor Control</a></li>
+	<li><a href="/category/321/power">Power</a></li>
+	<li><a href="/category/14/electronics-prototyping">Prototyping</a></li>
+	<li><a href="/category/150/raspberry-pi">Raspberry Pi</a></li>
+	<li><a href="/category/135/relay-modules">Relays</a></li>
+	<li><a href="/category/7/sensors">Sensors</a></li>
+	<li><a href="/category/102/maestro-usb-servo-controllers">Servo Control</a></li>
+	<li><a href="/category/136/voltage-regulators">Voltage Regulators</a></li>
+</ul>
+<h3><a href="/category/21/mechanical-components">Mechanical</a></h3>
+<ul>
+	<li><a href="/category/231/ball-casters">Ball Casters</a></li>
+	<li><a href="/category/230/brackets">Brackets</a></li>
+	<li><a href="/category/26/chassis">Chassis</a></li>
+	<li><a href="/category/25/hardware">Hardware</a></li>
+	<li><a href="/category/127/linear-actuators">Linear Actuators</a></li>
+	<li><a href="/category/22/motors-and-gearboxes">Motors</a></li>
+	<li><a href="/category/179/motor-shaft-adapters">Motor Shaft Adapters</a></li>
+	<li><a href="/category/205/servos">Servos</a></li>
+	<li><a href="/category/87/stepper-motors">Stepper Motors</a></li>
+	<li><a href="/category/61/tamiya-products">Tamiya Products</a></li>
+	<li><a href="/category/5/tools">Tools</a></li>
+	<li><a href="/category/232/tracks">Tracks</a></li>
+	<li><a href="/category/234/wheels">Wheels</a></li>
+</ul>
+<h3><a href="/category/109/shirts">Shirts</a></h3>
+<ul>
+	<li><a href="/category/237/pololu-balboa-t-shirts">Balboa T-Shirts</a></li>
+	<li><a href="/category/194/pololu-zumo-t-shirts">Zumo T-Shirts</a></li>
+	<li><a href="/category/193/pololu-circuit-logo-t-shirts">Logo T-Shirts</a></li>
+</ul>
+</div>
+</div>
+
+<div class='menu'>
+<h2>Community</h2>
+<div>
+<ul>
+<li>
+<a data-lightbox-link="true" data-lightbox-height="34rem" data-lightbox-width="36rem" href="/account/communication-preferences">Mailing list</a>
+</li>
+<li>
+<a href="/blog">Pololu Blog</a>
+</li>
+<li>
+<a href="/blog/engage-your-brain">Engage Your Brain</a>
+</li>
+<li>
+<a href="/blog/community-projects">Community Projects</a>
+</li>
+<li>
+<span class="image_text_link"><a href="/feeds"><img alt="" src="https://a.pololu-files.com/assets/feed-icon-12x12-ad0e7f1965647f9414a76a1f32fb46dc73c1b2d295201b0abb56f2b2cf88bfb2.png" /></a><a href="/feeds">Feeds</a></span>
+</li>
+<li>
+<span class="image_text_link"><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831&amp;subject"><img alt="" src="https://a.pololu-files.com/assets/email-f2957b324fa09a7d81ed64679a6b9454647ad40514cd7b1ce501aefd946f5593.png" /></a><a href="mailto:?body=https%3A%2F%2Fwww.pololu.com%2Fproduct%2F2831&amp;subject">Email a friend</a></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id='mathjax'></div>
+</body>
+</html>

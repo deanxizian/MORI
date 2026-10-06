@@ -1,0 +1,67 @@
+[
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/assembly_animation.py",
+      "--",
+      "--width",
+      "1280",
+      "--render",
+      "stills"
+    ],
+    "started_utc": "2026-09-23T05:48:01.520219+00:00",
+    "finished_utc": "2026-09-23T05:48:18.568975+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_build.log"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "-S",
+      "MORI_Assembly_Animation",
+      "-a"
+    ],
+    "started_utc": "2026-09-23T05:48:18.570585+00:00",
+    "finished_utc": "2026-09-23T05:56:27.497028+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_render.log"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_assembly_animation.py"
+    ],
+    "started_utc": "2026-09-23T05:56:27.505051+00:00",
+    "finished_utc": "2026-09-23T05:56:30.373513+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_validate.log"
+  },
+  {
+    "stage": "publish",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/Users/dean/Documents/MORI/mechanical/scripts/report.py"
+    ],
+    "started_utc": "2026-09-23T05:56:30.373847+00:00",
+    "finished_utc": "2026-09-23T05:56:31.625985+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_publish.log"
+  }
+]

@@ -1,0 +1,1133 @@
+{
+  "schema_version": 1,
+  "name": "项目 PCB 设计规则",
+  "revision": "1.0",
+  "effective_date": "2026-09-11",
+  "length_unit": "mm",
+  "angle_unit": "degree",
+  "priority_policy": "Within each kind, smaller priority number wins; use its explicit object-pair override, otherwise its own default. Pair matching is symmetric. Explicit zero values remain zero.",
+  "precision_policy": "Length values preserve exact mil-to-mm or database-unit conversion. Human tables show nominal manufacturing values; testpoint grid 0.0254 mm and tolerance 0.000254 mm remain exact.",
+  "network_roles": {
+    "P24V": "板卡指定的 24 V 正极链路，按实际电路标记。",
+    "VCC": "正电源网络集合，包含 P24V；低压输出及开关节点按本板定义。",
+    "GND": "地和回线的规则集合；相同角色不代表电气连接。",
+    "POWER": "VCC 与 GND 的并集。"
+  },
+  "object_types": {
+    "Arc": "arc",
+    "Track": "track",
+    "SMDPad": "smd_pad",
+    "THPad": "through_hole_pad",
+    "Via": "via",
+    "Fill": "copper_fill",
+    "Poly": "polygon",
+    "Region": "copper_region",
+    "Text": "copper_text",
+    "Hole": "hole"
+  },
+  "status": {
+    "total": 47,
+    "enabled": 44,
+    "disabled_ids": [
+      "R24",
+      "R28",
+      "R38"
+    ]
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "name": "过孔与焊盘物理间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "via",
+        "b": "pad",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.1999996,
+        "genericclearance_mm": 0.1999996,
+        "ignorepadtopadclearanceinfootprint": true
+      }
+    },
+    {
+      "id": "R02",
+      "name": "24 V 正极链路间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 2,
+      "scope": {
+        "a": "network_role:P24V",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.0,
+        "genericclearance_mm": 0.0,
+        "ignorepadtopadclearanceinfootprint": true
+      },
+      "clearance_overrides_mm": {
+        "track|polygon": 1.00000054,
+        "smd_pad|polygon": 1.00000054,
+        "through_hole_pad|polygon": 1.00000054,
+        "via|polygon": 1.00000054,
+        "polygon|copper_region": 1.00000054
+      }
+    },
+    {
+      "id": "R03",
+      "name": "禁布对象间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 3,
+      "scope": {
+        "a": "all",
+        "b": "keepout_objects",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.499999,
+        "genericclearance_mm": 0.499999,
+        "ignorepadtopadclearanceinfootprint": false
+      },
+      "clearance_overrides_mm": {
+        "arc|via": 0.0,
+        "track|via": 0.0,
+        "smd_pad|via": 0.0,
+        "through_hole_pad|via": 0.0,
+        "via|via": 0.0
+      }
+    },
+    {
+      "id": "R04",
+      "name": "定位点与覆铜间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 4,
+      "scope": {
+        "a": "component_class:Mark",
+        "b": "polygon",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.0,
+        "genericclearance_mm": 0.0,
+        "ignorepadtopadclearanceinfootprint": false
+      },
+      "clearance_overrides_mm": {
+        "smd_pad|polygon": 1.00000054
+      }
+    },
+    {
+      "id": "R05",
+      "name": "正电源对象间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 5,
+      "scope": {
+        "a": "network_role:VCC",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.499999,
+        "genericclearance_mm": 0.499999,
+        "ignorepadtopadclearanceinfootprint": true
+      },
+      "clearance_overrides_mm": {
+        "arc|smd_pad": 0.1999996,
+        "arc|through_hole_pad": 0.1999996,
+        "arc|via": 0.1999996,
+        "arc|copper_text": 0.0,
+        "arc|hole": 0.2999994,
+        "track|track": 0.1999996,
+        "track|smd_pad": 0.1999996,
+        "track|through_hole_pad": 0.1999996,
+        "track|via": 0.1999996,
+        "track|copper_text": 0.0,
+        "track|hole": 0.2999994,
+        "smd_pad|smd_pad": 0.1999996,
+        "smd_pad|through_hole_pad": 0.1999996,
+        "smd_pad|via": 0.1999996,
+        "smd_pad|copper_text": 0.0999998,
+        "smd_pad|hole": 0.2999994,
+        "through_hole_pad|through_hole_pad": 0.1999996,
+        "through_hole_pad|via": 0.1999996,
+        "through_hole_pad|copper_text": 0.0999998,
+        "through_hole_pad|hole": 0.2999994,
+        "via|via": 0.1999996,
+        "via|copper_text": 0.0,
+        "via|hole": 0.2999994,
+        "copper_fill|copper_text": 0.0,
+        "copper_fill|hole": 0.2999994,
+        "polygon|copper_text": 0.0,
+        "polygon|hole": 0.2999994,
+        "copper_region|copper_text": 0.0,
+        "copper_region|hole": 0.2999994,
+        "copper_text|copper_text": 0.0999998,
+        "copper_text|hole": 0.2999994
+      }
+    },
+    {
+      "id": "R06",
+      "name": "地与回线对象间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 6,
+      "scope": {
+        "a": "network_role:GND",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.2999994,
+        "genericclearance_mm": 0.2999994,
+        "ignorepadtopadclearanceinfootprint": true
+      },
+      "clearance_overrides_mm": {
+        "arc|arc": 0.1999996,
+        "arc|track": 0.1999996,
+        "arc|smd_pad": 0.1999996,
+        "arc|through_hole_pad": 0.1999996,
+        "arc|via": 0.1999996,
+        "arc|copper_text": 0.0,
+        "track|track": 0.1999996,
+        "track|smd_pad": 0.1999996,
+        "track|through_hole_pad": 0.1999996,
+        "track|via": 0.1999996,
+        "track|copper_text": 0.0,
+        "smd_pad|smd_pad": 0.1999996,
+        "smd_pad|through_hole_pad": 0.1999996,
+        "smd_pad|via": 0.1999996,
+        "smd_pad|copper_text": 0.0999998,
+        "through_hole_pad|through_hole_pad": 0.1999996,
+        "through_hole_pad|via": 0.1999996,
+        "through_hole_pad|copper_text": 0.0999998,
+        "via|via": 0.1999996,
+        "via|copper_text": 0.0,
+        "copper_fill|copper_text": 0.0,
+        "polygon|polygon": 0.499999,
+        "polygon|copper_text": 0.0,
+        "copper_region|copper_text": 0.0,
+        "copper_text|copper_text": 0.0999998
+      }
+    },
+    {
+      "id": "R07",
+      "name": "普通对象间距",
+      "kind": "Clearance",
+      "enabled": true,
+      "priority": 7,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.499999,
+        "genericclearance_mm": 0.499999,
+        "ignorepadtopadclearanceinfootprint": true
+      },
+      "clearance_overrides_mm": {
+        "arc|arc": 0.1999996,
+        "arc|track": 0.1999996,
+        "arc|smd_pad": 0.1999996,
+        "arc|through_hole_pad": 0.1999996,
+        "arc|via": 0.1999996,
+        "arc|polygon": 0.2999994,
+        "arc|copper_text": 0.0,
+        "arc|hole": 0.2999994,
+        "track|track": 0.1999996,
+        "track|smd_pad": 0.1999996,
+        "track|through_hole_pad": 0.1999996,
+        "track|via": 0.1999996,
+        "track|polygon": 0.2999994,
+        "track|copper_text": 0.0,
+        "track|hole": 0.2999994,
+        "smd_pad|smd_pad": 0.1999996,
+        "smd_pad|through_hole_pad": 0.1999996,
+        "smd_pad|via": 0.1999996,
+        "smd_pad|polygon": 0.2999994,
+        "smd_pad|copper_text": 0.0999998,
+        "smd_pad|hole": 0.2999994,
+        "through_hole_pad|through_hole_pad": 0.1999996,
+        "through_hole_pad|via": 0.1999996,
+        "through_hole_pad|polygon": 0.2999994,
+        "through_hole_pad|copper_text": 0.0999998,
+        "through_hole_pad|hole": 0.2999994,
+        "via|via": 0.1999996,
+        "via|polygon": 0.2999994,
+        "via|copper_text": 0.0,
+        "via|hole": 0.2999994,
+        "copper_fill|copper_text": 0.0,
+        "copper_fill|hole": 0.2999994,
+        "polygon|copper_text": 0.0,
+        "polygon|hole": 0.2999994,
+        "copper_region|copper_text": 0.0,
+        "copper_region|hole": 0.2999994,
+        "copper_text|copper_text": 0.0999998,
+        "copper_text|hole": 0.2999994
+      }
+    },
+    {
+      "id": "R08",
+      "name": "电源与回线线宽",
+      "kind": "Width",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "network_role:POWER",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "maxlimit_mm": 5.00000016,
+        "minlimit_mm": 0.1999996,
+        "preferedwidth_mm": 0.499999
+      }
+    },
+    {
+      "id": "R09",
+      "name": "信号线宽",
+      "kind": "Width",
+      "enabled": true,
+      "priority": 2,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "maxlimit_mm": 2.00000108,
+        "minlimit_mm": 0.1999996,
+        "preferedwidth_mm": 0.1999996
+      }
+    },
+    {
+      "id": "R10",
+      "name": "内电层连接",
+      "kind": "PlaneConnect",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "planeconnectstyle": "Relief",
+        "reliefexpansion_mm": 0.254,
+        "reliefentries": 4,
+        "reliefconductorwidth_mm": 0.2999994,
+        "reliefairgap_mm": 0.254
+      }
+    },
+    {
+      "id": "R11",
+      "name": "布线拓扑",
+      "kind": "RoutingTopology",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "topology": "Shortest"
+      }
+    },
+    {
+      "id": "R12",
+      "name": "布线顺序",
+      "kind": "RoutingPriority",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "routingpriority": 0
+      }
+    },
+    {
+      "id": "R13",
+      "name": "允许布线层",
+      "kind": "RoutingLayers",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "top_layer_v5": true,
+        "mid_layer_1_v5": false,
+        "mid_layer_2_v5": false,
+        "mid_layer_3_v5": true,
+        "mid_layer_4_v5": true,
+        "mid_layer_5_v5": true,
+        "mid_layer_6_v5": true,
+        "mid_layer_7_v5": true,
+        "mid_layer_8_v5": true,
+        "mid_layer_9_v5": true,
+        "mid_layer_10_v5": true,
+        "mid_layer_11_v5": true,
+        "mid_layer_12_v5": true,
+        "mid_layer_13_v5": true,
+        "mid_layer_14_v5": true,
+        "mid_layer_15_v5": true,
+        "mid_layer_16_v5": false,
+        "mid_layer_17_v5": true,
+        "mid_layer_18_v5": true,
+        "mid_layer_19_v5": true,
+        "mid_layer_20_v5": true,
+        "mid_layer_21_v5": true,
+        "mid_layer_22_v5": true,
+        "mid_layer_23_v5": true,
+        "mid_layer_24_v5": true,
+        "mid_layer_25_v5": true,
+        "mid_layer_26_v5": true,
+        "mid_layer_27_v5": true,
+        "mid_layer_28_v5": true,
+        "mid_layer_29_v5": true,
+        "mid_layer_30_v5": true,
+        "bottom_layer_v5": true
+      }
+    },
+    {
+      "id": "R14",
+      "name": "转角样式",
+      "kind": "RoutingCorners",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "cornerstyle": "45-Degree",
+        "minsetback_mm": 0.499999,
+        "maxsetback_mm": 0.499999
+      }
+    },
+    {
+      "id": "R15",
+      "name": "正电源过孔",
+      "kind": "RoutingVias",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "network_role:VCC",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "holewidth_mm": 0.2499995,
+        "width_mm": 0.499999,
+        "viastyle": "Through Hole",
+        "minholewidth_mm": 0.2499995,
+        "minwidth_mm": 0.499999,
+        "maxholewidth_mm": 0.499999,
+        "maxwidth_mm": 1.00000054
+      }
+    },
+    {
+      "id": "R16",
+      "name": "普通过孔",
+      "kind": "RoutingVias",
+      "enabled": true,
+      "priority": 2,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "holewidth_mm": 0.2499995,
+        "width_mm": 0.499999,
+        "viastyle": "Through Hole",
+        "minholewidth_mm": 0.2499995,
+        "minwidth_mm": 0.499999,
+        "maxholewidth_mm": 0.499999,
+        "maxwidth_mm": 1.00000054
+      }
+    },
+    {
+      "id": "R17",
+      "name": "内电层间距",
+      "kind": "PlaneClearance",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "clearance_mm": 0.3999992
+      }
+    },
+    {
+      "id": "R18",
+      "name": "阻焊扩展",
+      "kind": "SolderMaskExpansion",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "expansion_mm": 0.0499999,
+        "istentingtop": false
+      }
+    },
+    {
+      "id": "R19",
+      "name": "钢网扩展",
+      "kind": "PasteMaskExpansion",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "expansion_mm": 0.0499999
+      }
+    },
+    {
+      "id": "R20",
+      "name": "禁止短路",
+      "kind": "ShortCircuit",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "allowed": false
+      }
+    },
+    {
+      "id": "R21",
+      "name": "未布通检查",
+      "kind": "UnRoutedNet",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {}
+    },
+    {
+      "id": "R22",
+      "name": "SMD 下方过孔",
+      "kind": "ViasUnderSMD",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "allowed": true
+      }
+    },
+    {
+      "id": "R23",
+      "name": "过孔数量",
+      "kind": "MaximumViaCount",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "limit": 500
+      }
+    },
+    {
+      "id": "R24",
+      "name": "最小环宽",
+      "kind": "MinimumAnnularRing",
+      "enabled": false,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "minimumring_mm": 0.1999996
+      }
+    },
+    {
+      "id": "R25",
+      "name": "带孔焊盘覆铜连接",
+      "kind": "PolygonConnect",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "pad_with_hole",
+        "b": "polygon",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "connectstyle": "Relief",
+        "reliefconductorwidth_mm": 0.2999994,
+        "reliefentries": 4,
+        "polygonreliefangle": "45 Angle",
+        "airgapwidth_mm": 0.254
+      }
+    },
+    {
+      "id": "R26",
+      "name": "普通覆铜连接",
+      "kind": "PolygonConnect",
+      "enabled": true,
+      "priority": 2,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "connectstyle": "Direct",
+        "reliefconductorwidth_mm": 0.254,
+        "reliefentries": 4,
+        "polygonreliefangle": "45 Angle",
+        "airgapwidth_mm": 0.254
+      }
+    },
+    {
+      "id": "R27",
+      "name": "走线锐角",
+      "kind": "AcuteAngle",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "minimum": 60.0,
+        "checktracksonly": true
+      }
+    },
+    {
+      "id": "R28",
+      "name": "器件间距",
+      "kind": "ComponentClearance",
+      "enabled": false,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.0999998,
+        "collisioncheckmode": 3,
+        "verticalgap_mm": 0.0999998,
+        "showdistances": false
+      }
+    },
+    {
+      "id": "R29",
+      "name": "孔径范围",
+      "kind": "HoleSize",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "absolutevalues": true,
+        "maxlimit_mm": 5.00000016,
+        "minlimit_mm": 0.0999998,
+        "maxpercent": 80.0,
+        "minpercent": 20.0
+      }
+    },
+    {
+      "id": "R30",
+      "name": "制造测试点几何",
+      "kind": "FabricationTestpoint",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "side": 3,
+        "testpointundercomponent": true,
+        "minsize_mm": 1.016,
+        "maxsize_mm": 2.54,
+        "preferedsize_mm": 1.524,
+        "minholesize_mm": 0.0,
+        "maxholesize_mm": 1.016,
+        "preferedholesize_mm": 0.8128,
+        "testpointgrid_mm": 0.0254,
+        "allowsidetop": true,
+        "allowsidebottom": true,
+        "usegrid": true,
+        "gridtolerance_mm": 0.000254
+      }
+    },
+    {
+      "id": "R31",
+      "name": "制造测试点用途",
+      "kind": "FabricationTestPointUsage",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "valid": 0,
+        "allowmultiple": false
+      }
+    },
+    {
+      "id": "R32",
+      "name": "层对约束",
+      "kind": "LayerPairs",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "enforce": true
+      }
+    },
+    {
+      "id": "R33",
+      "name": "BGA 扇出",
+      "kind": "FanoutControl",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "component_type:BGA",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "bgadir": "Out",
+        "bgaviamode": "Centered",
+        "fanoutstyle": "Auto",
+        "fanoutdirection": "Alternating",
+        "viagrid_mm": 0.0254
+      }
+    },
+    {
+      "id": "R34",
+      "name": "LCC 扇出",
+      "kind": "FanoutControl",
+      "enabled": true,
+      "priority": 2,
+      "scope": {
+        "a": "component_type:LCC",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "bgadir": "Out",
+        "bgaviamode": "Centered",
+        "fanoutstyle": "Auto",
+        "fanoutdirection": "Alternating",
+        "viagrid_mm": 0.0254
+      }
+    },
+    {
+      "id": "R35",
+      "name": "SOIC 扇出",
+      "kind": "FanoutControl",
+      "enabled": true,
+      "priority": 3,
+      "scope": {
+        "a": "component_type:SOIC",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "bgadir": "Out",
+        "bgaviamode": "Centered",
+        "fanoutstyle": "Auto",
+        "fanoutdirection": "OutOnly",
+        "viagrid_mm": 0.0254
+      }
+    },
+    {
+      "id": "R36",
+      "name": "少于五引脚器件扇出",
+      "kind": "FanoutControl",
+      "enabled": true,
+      "priority": 4,
+      "scope": {
+        "a": "component_pin_count<5",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "bgadir": "Out",
+        "bgaviamode": "Centered",
+        "fanoutstyle": "Auto",
+        "fanoutdirection": "OutOnly",
+        "viagrid_mm": 0.0254
+      }
+    },
+    {
+      "id": "R37",
+      "name": "默认扇出",
+      "kind": "FanoutControl",
+      "enabled": true,
+      "priority": 5,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "different",
+        "layers": "same"
+      },
+      "parameters": {
+        "bgadir": "Out",
+        "bgaviamode": "Centered",
+        "fanoutstyle": "Auto",
+        "fanoutdirection": "OutOnly",
+        "viagrid_mm": 0.0254
+      }
+    },
+    {
+      "id": "R38",
+      "name": "器件高度",
+      "kind": "Height",
+      "enabled": false,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "minheight_mm": 0.0,
+        "maxheight_mm": 25.4,
+        "prefheight_mm": 0.0
+      }
+    },
+    {
+      "id": "R39",
+      "name": "差分布线",
+      "kind": "DiffPairsRouting",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "maxlimit_mm": 0.254,
+        "minlimit_mm": 0.254,
+        "mostfreqgap_mm": 0.254,
+        "toplayer_minwidth_mm": 0.381,
+        "toplayer_maxwidth_mm": 0.381,
+        "toplayer_prefwidth_mm": 0.381,
+        "midlayer1_minwidth_mm": 0.381,
+        "midlayer1_maxwidth_mm": 0.381,
+        "midlayer1_prefwidth_mm": 0.381,
+        "midlayer2_minwidth_mm": 0.381,
+        "midlayer2_maxwidth_mm": 0.381,
+        "midlayer2_prefwidth_mm": 0.381,
+        "midlayer3_minwidth_mm": 0.381,
+        "midlayer3_maxwidth_mm": 0.381,
+        "midlayer3_prefwidth_mm": 0.381,
+        "midlayer4_minwidth_mm": 0.381,
+        "midlayer4_maxwidth_mm": 0.381,
+        "midlayer4_prefwidth_mm": 0.381,
+        "midlayer5_minwidth_mm": 0.381,
+        "midlayer5_maxwidth_mm": 0.381,
+        "midlayer5_prefwidth_mm": 0.381,
+        "midlayer6_minwidth_mm": 0.381,
+        "midlayer6_maxwidth_mm": 0.381,
+        "midlayer6_prefwidth_mm": 0.381,
+        "midlayer7_minwidth_mm": 0.381,
+        "midlayer7_maxwidth_mm": 0.381,
+        "midlayer7_prefwidth_mm": 0.381,
+        "midlayer8_minwidth_mm": 0.381,
+        "midlayer8_maxwidth_mm": 0.381,
+        "midlayer8_prefwidth_mm": 0.381,
+        "midlayer9_minwidth_mm": 0.381,
+        "midlayer9_maxwidth_mm": 0.381,
+        "midlayer9_prefwidth_mm": 0.381,
+        "midlayer10_minwidth_mm": 0.381,
+        "midlayer10_maxwidth_mm": 0.381,
+        "midlayer10_prefwidth_mm": 0.381,
+        "midlayer11_minwidth_mm": 0.381,
+        "midlayer11_maxwidth_mm": 0.381,
+        "midlayer11_prefwidth_mm": 0.381,
+        "midlayer12_minwidth_mm": 0.381,
+        "midlayer12_maxwidth_mm": 0.381,
+        "midlayer12_prefwidth_mm": 0.381,
+        "midlayer13_minwidth_mm": 0.381,
+        "midlayer13_maxwidth_mm": 0.381,
+        "midlayer13_prefwidth_mm": 0.381,
+        "midlayer14_minwidth_mm": 0.381,
+        "midlayer14_maxwidth_mm": 0.381,
+        "midlayer14_prefwidth_mm": 0.381,
+        "midlayer15_minwidth_mm": 0.381,
+        "midlayer15_maxwidth_mm": 0.381,
+        "midlayer15_prefwidth_mm": 0.381,
+        "midlayer16_minwidth_mm": 0.381,
+        "midlayer16_maxwidth_mm": 0.381,
+        "midlayer16_prefwidth_mm": 0.381,
+        "midlayer17_minwidth_mm": 0.381,
+        "midlayer17_maxwidth_mm": 0.381,
+        "midlayer17_prefwidth_mm": 0.381,
+        "midlayer18_minwidth_mm": 0.381,
+        "midlayer18_maxwidth_mm": 0.381,
+        "midlayer18_prefwidth_mm": 0.381,
+        "midlayer19_minwidth_mm": 0.381,
+        "midlayer19_maxwidth_mm": 0.381,
+        "midlayer19_prefwidth_mm": 0.381,
+        "midlayer20_minwidth_mm": 0.381,
+        "midlayer20_maxwidth_mm": 0.381,
+        "midlayer20_prefwidth_mm": 0.381,
+        "midlayer21_minwidth_mm": 0.381,
+        "midlayer21_maxwidth_mm": 0.381,
+        "midlayer21_prefwidth_mm": 0.381,
+        "midlayer22_minwidth_mm": 0.381,
+        "midlayer22_maxwidth_mm": 0.381,
+        "midlayer22_prefwidth_mm": 0.381,
+        "midlayer23_minwidth_mm": 0.381,
+        "midlayer23_maxwidth_mm": 0.381,
+        "midlayer23_prefwidth_mm": 0.381,
+        "midlayer24_minwidth_mm": 0.381,
+        "midlayer24_maxwidth_mm": 0.381,
+        "midlayer24_prefwidth_mm": 0.381,
+        "midlayer25_minwidth_mm": 0.381,
+        "midlayer25_maxwidth_mm": 0.381,
+        "midlayer25_prefwidth_mm": 0.381,
+        "midlayer26_minwidth_mm": 0.381,
+        "midlayer26_maxwidth_mm": 0.381,
+        "midlayer26_prefwidth_mm": 0.381,
+        "midlayer27_minwidth_mm": 0.381,
+        "midlayer27_maxwidth_mm": 0.381,
+        "midlayer27_prefwidth_mm": 0.381,
+        "midlayer28_minwidth_mm": 0.381,
+        "midlayer28_maxwidth_mm": 0.381,
+        "midlayer28_prefwidth_mm": 0.381,
+        "midlayer29_minwidth_mm": 0.381,
+        "midlayer29_maxwidth_mm": 0.381,
+        "midlayer29_prefwidth_mm": 0.381,
+        "midlayer30_minwidth_mm": 0.381,
+        "midlayer30_maxwidth_mm": 0.381,
+        "midlayer30_prefwidth_mm": 0.381,
+        "bottomlayer_minwidth_mm": 0.381,
+        "bottomlayer_maxwidth_mm": 0.381,
+        "bottomlayer_prefwidth_mm": 0.381,
+        "maxuncoupledlength_mm": 12.7
+      }
+    },
+    {
+      "id": "R40",
+      "name": "孔到孔间距",
+      "kind": "HoleToHoleClearance",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "gap_mm": 0.1499997,
+        "allowstackedmicrovias": true
+      }
+    },
+    {
+      "id": "R41",
+      "name": "最小阻焊桥",
+      "kind": "MinimumSolderMaskSliver",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "minsoldermaskwidth_mm": 0.07500112
+      }
+    },
+    {
+      "id": "R42",
+      "name": "丝印到裸露焊盘",
+      "kind": "SilkToSolderMaskClearance",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "pad",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "minsilkscreentomaskgap_mm": 0.00999998,
+        "clearancetoexposedcopper": true
+      }
+    },
+    {
+      "id": "R43",
+      "name": "丝印间距",
+      "kind": "SilkToSilkClearance",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "silktosilkclearance_mm": 0.0499999
+      }
+    },
+    {
+      "id": "R44",
+      "name": "走线悬端",
+      "kind": "NetAntennae",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "netantennaetolerance_mm": 0.0
+      }
+    },
+    {
+      "id": "R45",
+      "name": "装配测试点几何",
+      "kind": "AssemblyTestpoint",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {
+        "testpointundercomponent": true,
+        "minsize_mm": 1.016,
+        "maxsize_mm": 2.54,
+        "preferedsize_mm": 1.524,
+        "minholesize_mm": 0.0,
+        "maxholesize_mm": 1.016,
+        "preferedholesize_mm": 0.8128,
+        "testpointgrid_mm": 0.0254,
+        "usegrid": true,
+        "gridtolerance_mm": 0.000254,
+        "allowsidetop": true,
+        "allowsidebottom": true
+      }
+    },
+    {
+      "id": "R46",
+      "name": "装配测试点用途",
+      "kind": "AssemblyTestPointUsage",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {}
+    },
+    {
+      "id": "R47",
+      "name": "未填充覆铜检查",
+      "kind": "UnpouredPolygon",
+      "enabled": true,
+      "priority": 1,
+      "scope": {
+        "a": "all",
+        "b": "all",
+        "nets": "any",
+        "layers": "same"
+      },
+      "parameters": {}
+    }
+  ]
+}

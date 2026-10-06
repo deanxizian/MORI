@@ -1,0 +1,21 @@
+...F........                                                             [100%]
+=================================== FAILURES ===================================
+__________ test_cached_result_cannot_be_overwritten_by_wrong_session ___________
+
+    def test_cached_result_cannot_be_overwritten_by_wrong_session():
+     r=Rig();r.arm();c=r.cmd('READ_STATUS');result=r.d.issue(c,r.p)
+     r.d.issue(dict(c,session_id='wrong'),r.p)
+>    assert r.d.issue(c,r.p)==result
+E    AssertionError: assert {'client_id':...s': 1000, ...} == {'client_id':...s': 1000, ...}
+E      
+E      Omitting 4 identical items, use -vv to show
+E      Differing items:
+E      {'reason': 'SESSION'} != {'reason': ''}
+E      {'data': None} != {'data': {'active': None, 'camera': {'age_ms': None, 'mode': 'OFF', 'observation': None, 'selected_target': None, ...}...': 'BLOCKED', 'physical_autonomy': 'BLOCKED', 'physical_head_pitch': 'BLOCKED', ...}, 'device_id': 'mori-sim-01', ...}}
+E      {'status': 'REJECTED'} != {'status': 'COMPLETED'}
+E      Use -v to get more diff
+
+simulation/tests/test_device.py:45: AssertionError
+=========================== short test summary info ============================
+FAILED simulation/tests/test_device.py::test_cached_result_cannot_be_overwritten_by_wrong_session
+1 failed, 11 passed in 6.25s

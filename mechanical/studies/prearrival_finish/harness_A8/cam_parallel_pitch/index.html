@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI · CAM端四线俯仰线环</title>
+<style>body{font:16px/1.75 system-ui,-apple-system,"PingFang SC",sans-serif;background:#f3f6f5;color:#283e43;max-width:1120px;margin:28px auto;padding:0 24px 60px}a{color:#086f78}.note{background:#fff0d9;padding:18px 22px;border-radius:8px}.ok{background:#e4f2eb;padding:18px 22px;border-radius:8px}.images{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}figure{margin:0}img{width:100%;border-radius:8px}table{border-collapse:collapse;width:100%}td,th{padding:11px;border-bottom:1px solid #cdd9d7;text-align:left}@media(max-width:760px){.images{grid-template-columns:1fr}}</style>
+<p><a href="../index.html">← A8研究</a> · <a href="../../index.html">全部剩余项目</a></p><h1>CAM端四线俯仰线环</h1>
+<p class="ok">CAM端四根线已经共同通过本轮名义几何检查，解决了此前单线分别优化后相互靠近的问题。</p>
+<p class="note">完整线束仍为BLOCKED。线环下端还没有接到颈部线路，也没有真实夹持座。主模型、STL和装配动画未改；本页不能作为供应商加工图。</p>
+<p>四根线在平行平面内共同弯曲，前侧随俯仰变化，上方半圆调整高度以保持同一长度。相机插头后保留5mm直段，再缓慢侧移进入舵机间隙。</p>
+<div class="images"><figure><a href="zero.png"><img src="zero.png" alt="零位，CAM端局部线环"></a><figcaption>零位；点击看原图</figcaption></figure><figure><a href="down20.png"><img src="down20.png" alt="低头20°，CAM端局部线环"></a><figcaption>低头20°；点击看原图</figcaption></figure><figure><a href="up25.png"><img src="up25.png" alt="抬头25°，CAM端局部线环"></a><figcaption>抬头25°；点击看原图</figcaption></figure></div>
+<p>图中隐藏部分零件以显示线路；检查包含它们。四色为几何槽位，非供应商针腔或线色定义。线环下端是临时接续基准，尚未连接或固定。</p>
+<table><tr><th>检查</th><th>结果</th></tr><tr><td>源实体与既有插头/静态线</td><td>3组候选各130个组合姿态PASS；J3M独立候选，未应用主模型</td></tr><tr><td>四线自身与相互间距</td><td>PASS，最小间隙下界0.306mm</td></tr><tr><td>与原身体线段共存</td><td>PASS，最小间隙下界3.98mm；尚未连接</td></tr><tr><td>整个俯仰区间的线长、半径、正直段</td><td>解析检查PASS；未证明连续碰撞或真实线材动态行为</td></tr><tr><td>过渡连接、固定、装入及完整线束</td><td>仍需设计，不能下发最终长度</td></tr></table>
+<h2>下一步</h2><p>完成颈部到线环的过渡和实际固定，再纳入其余头部线路、FPC及装拆检查。CAM插合件与压接组合仍需确认。局部中心线约101.12mm仅用于设计，不能直接下料。</p>
+<p><a href="README.md">完整说明与边界</a> · <a href="comparison.blend">Blender检查副本</a> · <a href="following_arc/packing.json">四线整束检查</a> · <a href="following_arc/math_bounds.json">全角度长度/半径界</a> · <a href="tail_math_bounds.json">侧移段曲率</a> · <a href="../cam_pitch_flex/index.html">公开资料及此前结果</a> · <a href="commands.json">复现命令</a> · <a href="review_manifest.json">来源</a></p></html>

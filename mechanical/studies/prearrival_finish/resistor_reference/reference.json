@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "scope": "Dimensional reference build only; not full installed fit or thermal qualification",
+  "created_utc": "2026-10-02T19:46:17.201682+00:00",
+  "blender": "5.2.2 LTS",
+  "source_pdf": "hardware/v1_2/prearrival_20261002/sources/vishay_ac.pdf",
+  "source_pdf_sha256": "ebd3c714bb6b8c267c4cee006f5c72f105ee79c47d43ca680eb7e65929051f51",
+  "source_url": "https://www.vishay.com/docs/28730/ac_ac-at_ac-ni.pdf",
+  "source_revision": "05-Dec-2024",
+  "source_page": 10,
+  "source_hardware_handoff": "hardware/v1_2/handoff/mechanical_P5R7_prearrival_A2.json",
+  "body_objects": 2,
+  "transition_guard_objects": 4,
+  "units": "mm",
+  "parts": [
+    {
+      "id": "WHEEL_BRAKE_CANDIDATE",
+      "mpn": "AC05000005608JAC00",
+      "resistance_ohm": 5.6,
+      "tolerance_percent": 5,
+      "part_class": "PLACEHOLDER",
+      "aggregate_evidence": "ASSUMED",
+      "vendor_documented_fields": {
+        "body_length_max_mm": 18,
+        "body_diameter_max_mm": 7.5,
+        "lead_diameter_nominal_mm": 0.8,
+        "lead_diameter_tolerance_mm": 0.03,
+        "end_transition_axial_max_mm": 3,
+        "B_datum_mm": 63,
+        "B_datum_tolerance_mm": 1,
+        "nominal_mass_g": 1.9
+      },
+      "body_representation": "Bounding cylinder, not actual waist or rounded profile",
+      "end_transition_representation": "Wire-display guard, radius conservatively allocated equal to body; not physical shape",
+      "lead_representation": "Not modeled beyond transition: final lead forming/trim and support unknown",
+      "demonstration_translation_mm": [
+        0,
+        0,
+        0
+      ],
+      "translation_is_robot_installation": false,
+      "complete_installed_envelope": "BLOCKED",
+      "thermal_spacing_mm": null,
+      "mount_sku": null
+    },
+    {
+      "id": "HEAD_BRAKE_CANDIDATE",
+      "mpn": "AC05000001009JAC00",
+      "resistance_ohm": 10.0,
+      "tolerance_percent": 5,
+      "part_class": "PLACEHOLDER",
+      "aggregate_evidence": "ASSUMED",
+      "vendor_documented_fields": {
+        "body_length_max_mm": 18,
+        "body_diameter_max_mm": 7.5,
+        "lead_diameter_nominal_mm": 0.8,
+        "lead_diameter_tolerance_mm": 0.03,
+        "end_transition_axial_max_mm": 3,
+        "B_datum_mm": 63,
+        "B_datum_tolerance_mm": 1,
+        "nominal_mass_g": 1.9
+      },
+      "body_representation": "Bounding cylinder, not actual waist or rounded profile",
+      "end_transition_representation": "Wire-display guard, radius conservatively allocated equal to body; not physical shape",
+      "lead_representation": "Not modeled beyond transition: final lead forming/trim and support unknown",
+      "demonstration_translation_mm": [
+        0,
+        18,
+        0
+      ],
+      "translation_is_robot_installation": false,
+      "complete_installed_envelope": "BLOCKED",
+      "thermal_spacing_mm": null,
+      "mount_sku": null
+    }
+  ],
+  "main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "main_geometry_changed": false,
+  "purchased": false,
+  "manufacturing_release": false,
+  "output_blend": "mechanical/studies/prearrival_finish/resistor_reference/AC05_MAX_ENVELOPE_NOT_INSTALLED.blend",
+  "output_blend_sha256": "255afafb610b915962c6987fd61e5bf612c25ba0ae560aaf2875c6be91d2a136",
+  "script_sha256": "7b124e859d256c521c3936bdcdbf861e004189e5164b247f1502b9f95c3e774a",
+  "limits": [
+    "The same AC05 body envelope is shared by the two named electrical candidates.",
+    "Wire diameter is documented but untrimmed straight ends, mounting pitch and final bend form are not selected.",
+    "B63+/-1 must not be relabeled as final cut wire length or installed axial size.",
+    "No thermal exclusion distance is invented from electrical wattage or nominal body size.",
+    "Nominal1.90g per part is catalogue data, not physical weighing or computed envelope mass.",
+    "Coordinates only separate the two candidates for inspection; neither is placed inside MORI."
+  ]
+}

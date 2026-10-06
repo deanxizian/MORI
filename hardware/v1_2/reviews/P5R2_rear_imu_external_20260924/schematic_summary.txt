@@ -1,0 +1,105 @@
+rear 42 [] []
+USB1 A4 A4 ['VBUS_RAW'] /VBUS_RAW False
+USB1 A9 A9 ['VBUS_RAW'] /VBUS_RAW False
+USB1 B4 B4 ['VBUS_RAW'] /VBUS_RAW False
+USB1 B9 B9 ['VBUS_RAW'] /VBUS_RAW False
+USB1 A1 A1 ['GND'] /GND False
+USB1 A12 A12 ['GND'] /GND False
+USB1 B1 B1 ['GND'] /GND False
+USB1 B12 B12 ['GND'] /GND False
+USB1 SH SH ['GND'] /GND False
+USB1 A5 CC1 ['CC1'] /CC1 False
+USB1 B5 CC2 ['CC2'] /CC2 False
+USB1 A6 A6 [] unconnected-(USB1-PadA6) True
+USB1 A7 A7 [] unconnected-(USB1-PadA7) True
+USB1 A8 A8 [] unconnected-(USB1-PadA8) True
+USB1 B6 B6 [] unconnected-(USB1-PadB6) True
+USB1 B7 B7 [] unconnected-(USB1-PadB7) True
+USB1 B8 B8 [] unconnected-(USB1-PadB8) True
+F1 1 1 ['VBUS_RAW'] /VBUS_RAW False
+F1 2 2 ['VBUS_FUSED'] /VBUS_FUSED False
+J2 1 1 ['VBUS_FUSED'] /VBUS_FUSED False
+J2 2 2 ['GND'] /GND False
+J2 3 3 ['CC1'] /CC1 False
+J2 4 4 ['CC2'] /CC2 False
+J2 5 5 ['VBUS_RAW'] /VBUS_RAW False
+D1 1 1 ['VBUS_FUSED'] /VBUS_FUSED False
+D1 2 2 ['GND'] /GND False
+C1 1 1 ['VBUS_FUSED'] /VBUS_FUSED False
+C1 2 2 ['GND'] /GND False
+D2 1 1 ['CC1'] /CC1 False
+D2 2 2 ['GND'] /GND False
+D3 1 1 ['CC2'] /CC2 False
+D3 2 2 ['GND'] /GND False
+SW1 2 COM1 ['GND'] /GND False
+SW1 1 A1 ['MASTER_RETURN'] /MASTER_RETURN False
+SW1 3 B1 [] unconnected-(SW1-B1-Pad3) True
+SW1 5 COM2 ['CLR_N'] /CLR_N False
+SW1 4 A2 ['LOOP_3V3'] /LOOP_3V3 False
+SW1 6 B2 [] unconnected-(SW1-B2-Pad6) True
+J3 1 1 ['MASTER_RETURN'] /MASTER_RETURN False
+J3 2 2 ['GND'] /GND False
+J3 3 3 ['LOOP_3V3'] /LOOP_3V3 False
+J3 4 4 ['CLR_N'] /CLR_N False
+imu 32 [] []
+J1 1 1 ['+3V3'] /+3V3 False
+J1 2 2 ['GND'] /GND False
+J1 3 3 ['SCK'] /SCK False
+J1 4 4 ['MOSI'] /MOSI False
+J1 5 5 ['MISO'] /MISO False
+J1 6 6 ['CS_N'] /CS_N False
+J1 7 7 ['DRDY'] /DRDY False
+J1 8 8 ['GND'] /GND False
+U1 13 SCLK ['SCK'] /SCK False
+U1 14 SDI ['MOSI'] /MOSI False
+U1 1 SDO ['MISO_IC'] /MISO_IC False
+U1 12 CS_N ['CS_N'] /CS_N False
+U1 4 INT1 ['DRDY'] /DRDY False
+U1 5 VDDIO ['+3V3'] /+3V3 False
+U1 8 VDD ['+3V3'] /+3V3 False
+U1 2 RESV ['GND'] /GND False
+U1 3 RESV ['GND'] /GND False
+U1 6 GND ['GND'] /GND False
+U1 7 RESV ['GND'] /GND False
+U1 9 FSYNC ['GND'] /GND False
+U1 10 RESV ['GND'] /GND False
+U1 11 RESV ['GND'] /GND False
+R1 1 1 ['MISO_IC'] /MISO_IC False
+R1 2 2 ['MISO'] /MISO False
+R2 1 1 ['CS_N'] /CS_N False
+R2 2 2 ['+3V3'] /+3V3 False
+C1 1 1 ['+3V3'] /+3V3 False
+C1 2 2 ['GND'] /GND False
+C2 1 1 ['+3V3'] /+3V3 False
+C2 2 2 ['GND'] /GND False
+C3 1 1 ['+3V3'] /+3V3 False
+C3 2 2 ['GND'] /GND False
+motion J2 S288 DATA ONLY [('1', '/S288_BUS'), ('2', '/GND')]
+motion J6 INTERNAL SERVICE KEY [('1', '/USER_KEY_N'), ('2', '/GND')]
+motion J4 BODY IMU SPI [('1', '/+3V3'), ('2', '/GND'), ('3', '/IMU_SCK'), ('4', '/IMU_MOSI'), ('5', '/IMU_MISO'), ('6', '/IMU_CS'), ('7', '/IMU_DRDY'), ('8', '/GND')]
+motion J5 CAM J11 MATCH [('1', '/CAM_RX'), ('2', '/CAM_TX'), ('3', '/CAM_3V3'), ('4', '/GND')]
+motion J1 MOTION 5V IN [('1', '/+5V_MOTION'), ('2', '/GND')]
+motion J3 HEAD DATA ONLY [('1', '/HEAD_BUS'), ('2', '/GND'), ('3', 'unconnected-(J3-Pad3)')]
+motion J8 LATCHED ENABLE LOOP [('1', '/LOOP_3V3'), ('2', '/CLR_N')]
+motion J7 POWER CONTROL [('1', '/+3V3'), ('2', '/ARM_Q'), ('3', '/FAULT_N'), ('4', '/CHG_N'), ('5', '/BAT_ADC_IN'), ('6', '/WHEEL_ADC_IN'), ('7', '/CURRENT_ADC_IN'), ('8', '/GND')]
+power J3 WHEEL BUCK 9V RETURN [('1', '/GND'), ('2', '/W9_IN')]
+power J16 CHARGER RAW VBUS SENSE [('1', '/VBUS_CHARGE'), ('2', '/GND')]
+power J15 CHARGE INTERLOCK [('1', '/CHG_N'), ('2', '/GND')]
+power J13 S288 DATA [('1', '/W_BUS'), ('2', '/GND')]
+power J5 HEAD BUCK 6V RETURN [('1', '/GND'), ('2', '/H6_IN')]
+power J2 WHEEL BUCK VIN [('1', '/GND'), ('2', '/BAT_MON')]
+power JP70 SERVICE OFF / OPEN=ON [('1', '/C5_EN'), ('2', '/GND')]
+power J4 HEAD BUCK VIN [('1', '/GND'), ('2', '/BAT_MON')]
+power J17 MOTION 5V OUT / 1+ 2GND [('1', '/+5V_MOTION'), ('2', '/GND')]
+power J8 S288 R [('1', '/GND'), ('2', '/W_VM'), ('3', '/W_BUS')]
+power J1 PACK AFTER 6.3A FUSE [('1', '/GND'), ('2', '/PACK_FUSED')]
+power J9 SCS0009 CHAIN [('1', '/GND'), ('2', '/H_VM'), ('3', '/H_BUS')]
+power J18 CAM 5V OUT / 1+ 2GND [('1', '/+5V_CAM'), ('2', '/GND')]
+power J12 HEAD DUMP 10R EXTERNAL [('1', '/H_DUMP_D'), ('2', '/H_VM')]
+power J14 HEAD DATA [('1', '/H_BUS'), ('2', '/GND'), ('3', 'unconnected-(J14-Pad3)')]
+power J6 RAW BAT SERVICE / DNP [('1', '/GND'), ('2', '/BAT_MON')]
+power J11 WHEEL DUMP 5R6 EXTERNAL [('1', '/W_DUMP_D'), ('2', '/W_VM')]
+power J19 REAR MASTER / 1RETURN 2GND [('1', '/MASTER_RETURN'), ('2', '/GND')]
+power J7 S288 L [('1', '/GND'), ('2', '/W_VM'), ('3', '/W_BUS')]
+power J10 MOTION CONTROL [('1', '/+3V3'), ('2', '/ARM_Q'), ('3', '/FAULT_N'), ('4', '/CHG_N'), ('5', '/BAT_ADC'), ('6', '/WHEEL_ADC'), ('7', '/CURRENT_ADC'), ('8', '/GND')]
+power JP60 SERVICE OFF / OPEN=ON [('1', '/M5_EN'), ('2', '/GND')]

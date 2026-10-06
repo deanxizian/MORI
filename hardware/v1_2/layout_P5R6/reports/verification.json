@@ -1,0 +1,223 @@
+{
+  "revision": "V1.2-H0.5-P5R6",
+  "scope": "Motion SOD123F land correction; power bootstrap/SW banks/M5_EN/markings; rear actual markings. IMU remains immutable P5R4.",
+  "native_checks": {
+    "motion": {
+      "board": "MORI_motion_P5R6",
+      "status": "PASS",
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "ignored_ERC_checks": [],
+      "ignored_DRC_checks": [],
+      "source_sha256": "e29270bf2aec9dd1270a29df551007352faf21a812969b8e87b2fbd87aff2ec7",
+      "tool": "10.0.6",
+      "report": "hardware/v1_2/layout_P5R6/reports/motion/drc.json"
+    },
+    "power": {
+      "board": "MORI_power_P5R6",
+      "status": "PASS",
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "ignored_ERC_checks": [],
+      "ignored_DRC_checks": [],
+      "source_sha256": "3e6a76409928e96840aef31cfa43985a6ad00db0c0abed68a6fcb3c2a9f816dc",
+      "tool": "10.0.6",
+      "report": "hardware/v1_2/layout_P5R6/reports/power/drc.json"
+    },
+    "rear": {
+      "board": "MORI_rear_P5R6",
+      "status": "PASS",
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "ignored_ERC_checks": [],
+      "ignored_DRC_checks": [],
+      "source_sha256": "f1c933e77f5e902e0c713f763702f8c44359b23bd20c968a7ffbbd9e68b2a009",
+      "tool": "10.0.6",
+      "report": "hardware/v1_2/layout_P5R6/reports/rear/drc.json"
+    },
+    "imu": {
+      "board": "MORI_imu_P5R4",
+      "status": "PASS",
+      "ERC": 0,
+      "DRC": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "ignored_ERC_checks": [],
+      "ignored_DRC_checks": [],
+      "source_sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68",
+      "tool": "10.0.6",
+      "report": "hardware/v1_2/layout_P5R6/reports/imu/drc.json"
+    }
+  },
+  "source_projects_preserved": true,
+  "circuit_revision": "V1.2-H0.5-P5",
+  "invariants": {
+    "motion": {
+      "pad_nets_identical": true,
+      "all_other_pad_sizes_drills_identical": true,
+      "schematic_net_topology_identical": true,
+      "custom_DRC_rule_file_unchanged": true,
+      "intentional_land_pattern_change": "D1/D2/D3 Nexperia SOD123F, 1.2mm square copper/2.8mm pitch/1.1mm paste"
+    },
+    "power": {
+      "pad_nets_identical": true,
+      "all_other_pad_sizes_drills_identical": true,
+      "schematic_net_topology_identical": true,
+      "custom_DRC_rule_file_unchanged": true,
+      "intentional_land_pattern_change": null
+    },
+    "rear": {
+      "pad_nets_identical": true,
+      "all_other_pad_sizes_drills_identical": true,
+      "schematic_net_topology_identical": true,
+      "custom_DRC_rule_file_unchanged": true,
+      "intentional_land_pattern_change": null
+    }
+  },
+  "deltas": {
+    "motion": {
+      "source_pcb_sha256": "834b8bb26930ba07778ad8b1a4fc0325f2989c92b8b31b6732b9dfe812732146",
+      "output_pcb_sha256": "e29270bf2aec9dd1270a29df551007352faf21a812969b8e87b2fbd87aff2ec7",
+      "before": {
+        "tracks": 455,
+        "vias": 96,
+        "track_length_mm": 1196.703
+      },
+      "after": {
+        "tracks": 455,
+        "vias": 96,
+        "track_length_mm": 1196.703
+      },
+      "pad_net_footprint_map_identical": false,
+      "changed_placements": {},
+      "edge_geometry_identical": true,
+      "holes_connectors_and_module_poses_identical": true,
+      "copper_layers_unchanged": true,
+      "inner_signal_tracks": 0,
+      "drc_exclusions": []
+    },
+    "power": {
+      "source_pcb_sha256": "12310ac29f20f4dbef1052a8f9412dd45e623a25e36e2a43953dcf4929926166",
+      "output_pcb_sha256": "3e6a76409928e96840aef31cfa43985a6ad00db0c0abed68a6fcb3c2a9f816dc",
+      "before": {
+        "tracks": 878,
+        "vias": 154,
+        "track_length_mm": 1888.927
+      },
+      "after": {
+        "tracks": 884,
+        "vias": 158,
+        "track_length_mm": 1887.394
+      },
+      "pad_net_footprint_map_identical": true,
+      "changed_placements": {
+        "C62": {
+          "before": {
+            "position": [
+              28.35,
+              22.6
+            ],
+            "angle": 90.0,
+            "layer": "F.Cu"
+          },
+          "after": {
+            "position": [
+              27.575,
+              22.8
+            ],
+            "angle": 180.0,
+            "layer": "F.Cu"
+          }
+        },
+        "C72": {
+          "before": {
+            "position": [
+              27.6,
+              36.1
+            ],
+            "angle": 90.0,
+            "layer": "F.Cu"
+          },
+          "after": {
+            "position": [
+              27.0,
+              36.6
+            ],
+            "angle": 180.0,
+            "layer": "F.Cu"
+          }
+        }
+      },
+      "edge_geometry_identical": true,
+      "holes_connectors_and_module_poses_identical": true,
+      "copper_layers_unchanged": true,
+      "inner_signal_tracks": 11,
+      "drc_exclusions": []
+    },
+    "rear": {
+      "source_pcb_sha256": "a1e093427298f6c4b7188e8022e6971c09645d6a5e07cc09b6db4642ed4e7ae3",
+      "output_pcb_sha256": "f1c933e77f5e902e0c713f763702f8c44359b23bd20c968a7ffbbd9e68b2a009",
+      "before": {
+        "tracks": 86,
+        "vias": 16,
+        "track_length_mm": 176.021
+      },
+      "after": {
+        "tracks": 86,
+        "vias": 16,
+        "track_length_mm": 176.021
+      },
+      "pad_net_footprint_map_identical": true,
+      "changed_placements": {},
+      "edge_geometry_identical": true,
+      "holes_connectors_and_module_poses_identical": true,
+      "copper_layers_unchanged": true,
+      "inner_signal_tracks": 0,
+      "drc_exclusions": []
+    }
+  },
+  "rules_source": {
+    "path": "/Users/dean/Documents/KiCad/Rules/pcb-rules.json",
+    "sha256": "5d49d0134ca8c32acc41736591db9e839c347a40a2baa061d32c9ce64a7c25b0",
+    "total": 47,
+    "enabled": 44,
+    "full_equivalence": "NOT_TESTED"
+  },
+  "foreign_body_crossing_candidates_in_changed_boards": 0,
+  "R13_local_exception": "Existing two isolated power /GND feedback-return paths on In1; unchanged, retained sampled pour-isolation evidence.",
+  "R14_power_free_corner_failures": 0,
+  "R14_retained_rear_exception": [
+    {
+      "net": "/CC2",
+      "layer": "F.Cu",
+      "vertex": [
+        13.25,
+        8.5
+      ],
+      "adjacent_lengths": [
+        2.3499999999999996,
+        2.1999999999999993
+      ],
+      "status": "FAIL",
+      "reason": "Exact bevel conflicts with clearance/body protection"
+    }
+  ],
+  "IMU_retained_style_exceptions": "P5R4 short GND pad/via escapes; unchanged, see layout_P5R4 review.",
+  "style_limits": "Own-pad housing escape and raised U100 module projection are itemized. Native DRC does not certify full source-rule equivalence or all aesthetic preferences.",
+  "interface_pairs": "reports/interface_pairs.json",
+  "bench_tests": "NOT_TESTED",
+  "manufacturing_release": false,
+  "mechanical_fit": "BLOCKED",
+  "unresolved": [
+    "External PD/3S charger unselected; RAW sense source protection and CC/voltage coordination remain BLOCKED",
+    "SW1 lever direction must be measured before assembly; silk records electrical ON contact pairs only",
+    "Supplier copper/steel-stencil process, current/temperature/ripple/EMC and complete populated/mated fit NOT_TESTED",
+    "6.48A concurrent design budget versus nominal 6.3A fuse still requires load-duration/time-current coordination"
+  ]
+}

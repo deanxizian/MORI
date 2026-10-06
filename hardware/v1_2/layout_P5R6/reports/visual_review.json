@@ -1,0 +1,18 @@
+{
+  "reviewer": "Assistant inspection of native KiCad plots",
+  "views": {
+    "motion/after/back.png": "bb3c6aa173f19972543d6e347100b3f868857e4969e170bf25351142246aeb2e",
+    "power/after/front.png": "ab318716e48f364abdcac7bd6f0a505bdd5e4aba4aa277732b8a43b4285489db",
+    "power/after/combined.png": "27253f1b8490e5dc5c525acaf240779db253bfb43d391f69fd6dcf66d31b6622",
+    "rear/after/silk_front.png": "c4e441300e073122fb8015cb5009d7e3bbd35891f7a38fdde8c2e9a957fcccdb",
+    "rear/after/silk_back.png": "302fcc43abedb144147ec2f163237972d7796d03f68ad1925ad684618bc61f3b"
+  },
+  "scope": "Changed diode pad/body escapes; horizontal bootstrap groups and SW-via placement; printed rear legends read from component/back view. Not every existing segment was manually re-reviewed in this local change. Whole-board automated inventory/body/corner/native checks are separate.",
+  "findings": [
+    "Changed diode copper still terminates inside actual lands; native pad/cathode bar agrees with retained polarity",
+    "New bootstrap geometry escapes outside IC/package and avoids new foreign-body crossings",
+    "Rear legends readable with actual B-side mirrored view; ON records contacts, not a guessed lever arrow",
+    "Fab labels in combined plots are diagnostic and may overlay opposite-side content; actual SilkS-only plots/native silk checks used for marking review"
+  ],
+  "physical_print": "NOT_TESTED"
+}

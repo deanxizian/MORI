@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "scope": "Primary-source catalogue facts and rejected alternatives; not a production selection",
+  "wire": {
+    "manufacturer": "Alpha Wire",
+    "part": "2626",
+    "url": "https://www.alphawire.com/products/wire/hook-up-wire/thermothin/2626",
+    "source_read": "web.search primary manufacturer page and specification PDF,2026-10-06 Asia/Shanghai",
+    "conductor": "26AWG19/38 nickel-plated copper",
+    "insulation": "FLUOROPLASTIC",
+    "OD_inch": [
+      0.031,
+      0.035
+    ],
+    "OD_mm": [
+      0.7874,
+      0.889
+    ],
+    "nominal_bend_factor": 5,
+    "catalogue_radius_at_max_OD_mm": 4.445,
+    "screen_centerline_radius_mm": 5.5,
+    "dynamic_radius_mm": null,
+    "flex_life_cycles": null,
+    "DCR_ohm_per_1000ft_nominal": 40
+  },
+  "GH_candidate": {
+    "terminal": "JST SSHL-002T-P0.2",
+    "housing": "GHR-02V-S",
+    "source": "hardware/v1_2/head_harness_evidence_20261003/sources/JST_GH.pdf",
+    "sha256": "b1dcb317b6b9a4fbbedd2dbf42c64c95306a252d23de8933b85fcf161240b722",
+    "AWG_range": [
+      30,
+      26
+    ],
+    "insulation_OD_mm": [
+      0.76,
+      1.0
+    ],
+    "numeric_label_screen": "Within stated AWG and whole OD ranges; not a qualified crimp",
+    "special_conductor_review": "Nickel plating, actual conductor area/stranding and crimp process remain unknown; vendor numeric AWG match alone insufficient"
+  },
+  "rejected": [
+    {
+      "part": "Alpha2628",
+      "OD_mm": [
+        0.635,
+        0.7366
+      ],
+      "reason": "Full OD range is below GH0.76mm minimum; do not treat thinner as compatible."
+    },
+    {
+      "part": "Alpha2843/1",
+      "reason": "Solid conductor; excluded from this moving-harness planning reference."
+    }
+  ],
+  "wire_selection": "BLOCKED",
+  "SP3040_lead_mating": "BLOCKED;200mm stated lead, exact factory connector and termination unconfirmed",
+  "manufacturing_release": false
+}

@@ -1,0 +1,89 @@
+{
+  "revision": "V1.2-M1.35",
+  "baseline_revision": "V1.2-M1.28",
+  "status": "PASS",
+  "geometry_changed": [
+    "Battery_Pad_Top",
+    "Battery_Strap",
+    "Battery_Tray",
+    "Body_IMU",
+    "CAM_Mainboard",
+    "CAM_Mount_Insert_0",
+    "CAM_Mount_Insert_1",
+    "CAM_Mount_Insert_2",
+    "CAM_Mount_Insert_3",
+    "CAM_Mount_Screw_0",
+    "CAM_Mount_Screw_1",
+    "CAM_Mount_Screw_2",
+    "CAM_Mount_Screw_3",
+    "Camera_Lens",
+    "Camera_PCB",
+    "Display_Frame",
+    "Head_Front",
+    "Head_Pitch_Ear_0_Insert",
+    "Head_Pitch_Ear_0_Screw",
+    "Head_Pitch_Ear_1_Insert",
+    "Head_Pitch_Ear_1_Screw",
+    "Head_Yaw_Ear_0_Insert",
+    "Head_Yaw_Ear_0_Screw",
+    "Head_Yaw_Ear_1_Insert",
+    "Head_Yaw_Ear_1_Screw",
+    "MCU_Carrier",
+    "Onboard_MIC_L",
+    "Onboard_MIC_R",
+    "Pitch_Cradle",
+    "Pitch_Output",
+    "Pitch_Servo",
+    "Pitch_Yoke",
+    "Power_Module",
+    "Rear_Interface_PCB",
+    "Yaw_Output",
+    "Yaw_Servo"
+  ],
+  "removed_parts": [
+    "Head_Yaw_Ear_0_Nut",
+    "Head_Yaw_Ear_1_Nut"
+  ],
+  "unexpected_changes": [],
+  "unexpected_removed": [],
+  "parts": [
+    {
+      "id": "Pitch_Cradle",
+      "checked_planar_faces": 2208,
+      "maximum_planar_normal_error_deg": 0.015975326326062016,
+      "retained_smooth_curved_faces": 2064,
+      "geometry_changed": true
+    },
+    {
+      "id": "Pitch_Yoke",
+      "checked_planar_faces": 6043,
+      "maximum_planar_normal_error_deg": 0.02009115069752097,
+      "retained_smooth_curved_faces": 7834,
+      "geometry_changed": true
+    },
+    {
+      "id": "Display_Frame",
+      "checked_planar_faces": 3666,
+      "maximum_planar_normal_error_deg": 0.022299531576162657,
+      "retained_smooth_curved_faces": 1361,
+      "geometry_changed": true
+    },
+    {
+      "id": "Yaw_Servo",
+      "checked_planar_faces": 888,
+      "maximum_planar_normal_error_deg": 0.013112848260975911,
+      "retained_smooth_curved_faces": 1032,
+      "geometry_changed": true
+    },
+    {
+      "id": "Pitch_Servo",
+      "checked_planar_faces": 888,
+      "maximum_planar_normal_error_deg": 0.013112848260975911,
+      "retained_smooth_curved_faces": 1032,
+      "geometry_changed": true
+    }
+  ],
+  "normal_failures": [],
+  "method": "Exact rounded world/local vertex and triangle hashes and world matrices for every part; actual saved Blender corner normals versus geometric face normals, using float64 atan2 angles, for all designed planar faces; 0.05deg tolerance includes custom-normal storage quantization; curved faces retain smooth shading.",
+  "effect": "Normal-only policy retained. Current servo/mount geometry changes checked in head_servo_validation.json when enabled. Strength remains unqualified."
+}

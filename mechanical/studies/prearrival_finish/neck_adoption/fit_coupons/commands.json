@@ -1,0 +1,29 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "--factory-startup",
+        "-t",
+        "4",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "mechanical/studies/prearrival_finish/neck_adoption/build_fit_coupons.py"
+      ],
+      "returncode": 0,
+      "log": "fit_coupons.log"
+    },
+    {
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "mechanical/studies/prearrival_finish/neck_adoption/publish_fit_coupons.py"
+      ],
+      "returncode": 0
+    }
+  ],
+  "blender_version": "5.2.2 LTS d13f752e3b9c",
+  "source_blend_sha256": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+  "failed_attempt_note": "First render attempt stopped because the fresh scene had no world; no robot geometry was modified. The successful run creates its own world."
+}

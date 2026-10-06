@@ -1,0 +1,21 @@
+{$MORI_DOMAIN} {
+ encode gzip
+ header {
+  X-Content-Type-Options nosniff
+  Referrer-Policy no-referrer
+  Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Strict-Transport-Security "max-age=31536000"
+ }
+ @api path /api/* /health /ws /xiaozhi/*
+ handle @api {
+  request_body {
+   max_size 900KB
+  }
+  reverse_proxy gateway:8765
+ }
+ handle {
+  root * /srv
+  try_files {path} /index.html
+  file_server
+ }
+}

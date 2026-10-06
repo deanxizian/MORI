@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "scope": "Partial current-main retention and assembly candidate evidence",
+  "utc": "2026-10-05T12:19:54.813511+00:00",
+  "source_main_sha256": "d060e2a72114c9d1e9fba5e481a95997fa9b2fd202d0629005409614bc3ff7e7",
+  "result_files": [
+    "anchors.json",
+    "material_stations.json",
+    "tools_and_tail.json",
+    "neck_feed_verified.json",
+    "board_installation.json"
+  ],
+  "native_sources": {
+    "mechanical/mori_v1_2.blend": "d060e2a72114c9d1e9fba5e481a95997fa9b2fd202d0629005409614bc3ff7e7",
+    "mechanical/studies/prearrival_finish/neck_threading_M1_48/outer_corridor_motion_lowest.json": "35855b233d070cf4d6686ae55f94db74739d3fb72ecbae3b3636042e7f4e3751",
+    "config/geometry.json": "66a7e7305766c73a60e5bd1ed6f6616df9ada0a9c8c86fe70fc70e32f0ff8fc8",
+    "contracts/mechanical_interfaces.json": "0324a37da01910648a1bd0a1905a6492b6b0e8d61aad3f28db60dc2dde74cc0b",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/studies/prearrival_finish/outer_harness_M1_48/native_context.py": "526ab2c09b3ced57691a405c8bf741174cd66243e46d2ef750ec2718e1780547",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "reproduction_commands": [
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/studies/prearrival_finish/cam_retention_M1_48/check_anchors.py",
+      "cwd": "/Users/dean/Documents/MORI",
+      "script_sha256": "28cf79412d48eb770544957f5dd290584a75811c7d842ac2af8191e8335d85c5",
+      "log": "anchors.log",
+      "log_sha256": "7862992ec767a9905abbd7b75387e5417b404874999d9b08bfa6bb962790724a"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/studies/prearrival_finish/cam_retention_M1_48/check_material_stations.py",
+      "cwd": "/Users/dean/Documents/MORI",
+      "script_sha256": "1f5e9d01f0f175de2abde62e968056625c66744d98649d6eba19b37fd380cc74",
+      "log": "material_stations.log",
+      "log_sha256": "a8bd9eddeefc8f26bae94a2d95d7c65876b2ed9488e937bd50fa8b7d3427145d"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/studies/prearrival_finish/cam_retention_M1_48/check_tool_routes.py",
+      "cwd": "/Users/dean/Documents/MORI",
+      "script_sha256": "ec9a1d50366b311f5e2f6596be9dfafedba8d597f11b9feca714a7b5347ecf54",
+      "log": "tools_and_tail.log",
+      "log_sha256": "c7381e6a7ea08ac4c16e1538c47318553697106fa81b646c692c44f8cef3eb8e"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/studies/prearrival_finish/cam_retention_M1_48/verify_neck_feed.py",
+      "cwd": "/Users/dean/Documents/MORI",
+      "script_sha256": "6d05868aadb5d46b1744b4e489ecfa3cdae054bbd021dffd63f47f5b8ca91eb4",
+      "log": "neck_feed_verified.log",
+      "log_sha256": "d4cf7729f5ea59439748ab467527e500cd9ef3d44b69b148af932406a0e4d24f"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/studies/prearrival_finish/cam_retention_M1_48/check_board_installation.py",
+      "cwd": "/Users/dean/Documents/MORI",
+      "script_sha256": "f696ea1fff7b526e6ebb799afd16f3f7060a867243ef3bc36b0c5083dae45c7e",
+      "log": "board_installation.log",
+      "log_sha256": "436d0c87a0115c5387a61d52e6ee2285e00c895ef4c2c377b58cae7e0087a6cb"
+    },
+    {
+      "command": "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python-exit-code 1 --python mechanical/studies/prearrival_finish/cam_retention_M1_48/render_review.py",
+      "cwd": "/Users/dean/Documents/MORI",
+      "script_sha256": "e7cdbc121709625905dd1599ef8a2c8d6063e3880058c1b0a25ee280c8d7651f",
+      "log": "render_review.log",
+      "log_sha256": "3106963adcdcb8c4fdd556880edb247edd8318f4127e1b761c71819fc101912f"
+    }
+  ],
+  "tools": {
+    "Blender": "5.2.2 LTS d13f752e3b9c",
+    "publication_python": "mori-cad Python 3.12.14"
+  },
+  "visual_review": "Three PNGs inspected; CAM board visible, anchors and temporary tail distinguished; some structures occlude the rear anchor.",
+  "changed_presentation_files": {
+    "mechanical/studies/prearrival_finish/work_status.json": {
+      "before": "8c62588777083ed3bffe335496f037b5f691bc6b62ca5ea2d122a096cf45dce9",
+      "after": "fec4ae4b6c7218130bd3b20736a310a35ccaf371d1b46cb7ccc4801c910c1f26"
+    },
+    "mechanical/index.html": {
+      "before": "3e2a2ec07edb97078f2c479e36acd4b2f426722c8a2221620688200ceefde6f4",
+      "after": "ec19e8f4e9191a2662b6ecc3c7d54e9a8588ffc9a4262b3fad4f3f66dd3113d1"
+    },
+    "mechanical/studies/prearrival_finish/index.html": {
+      "before": "72ad19880df1d8ca55e437453dd502fc088cd143e652e4b05df6a00acfa693f4",
+      "after": "e2a0865f255291db72863501a4b6c7d179e8664a144b2db61f1a4be5351e1345"
+    }
+  },
+  "files": {
+    "neck_feed.json": "b584f134a5262157ddbf17cdfe352b15678faf42b15ddc1f6c0e302fe7fcd6a1",
+    "connector_addition.npz": "12ca5f482874e87c2efcfc1c69a959514a02f7e7c1a778472fa2d2e5fc2a5b85",
+    "review.blend": "15c15fdae3ba974eacdc2f0f2bd0f9a714989aca3e780826725e38ff4966024b",
+    "check_anchors.py": "28cf79412d48eb770544957f5dd290584a75811c7d842ac2af8191e8335d85c5",
+    "connector_tail_1_curve.npz": "505d6ebdaf5c8e5cc2c32eedf279a0c0bb566f806af9900e9d55ab1202de0bac",
+    "yaw_band.npz": "6793dd6ee86b23184dcd11fe6b634ee3535ee5a6b5ecfa98762b1e5385789e49",
+    "check_material_stations.py": "1f5e9d01f0f175de2abde62e968056625c66744d98649d6eba19b37fd380cc74",
+    "material_stations.log": "a8bd9eddeefc8f26bae94a2d95d7c65876b2ed9488e937bd50fa8b7d3427145d",
+    "index.html": "cecd2c44bef6d964fcdc7da1b50f3c9936cde2ddc4279bb9ad20978d7619ef6d",
+    "tools_and_tail.json": "ea6ab17b67f6cbdb9cf8fba22d7014d07044c051d572c512f02776e21b411c65",
+    "feed_contact_315.npz": "3593e121fb1b207fdcab144387bc551d0d5c018863e0053fdf0a2e3533cde6bf",
+    "anchors.json": "c7cf7fda37ff247696de41b9214976d5fec04c9f0d78941121dfbf3b3a4eb211",
+    "verify_neck_feed.py": "6d05868aadb5d46b1744b4e489ecfa3cdae054bbd021dffd63f47f5b8ca91eb4",
+    "connector_0_cutter_sweep.npz": "a87a83de70859fab755f9981dad6fa429d630208bf2d11559e3ed1e6f9b63834",
+    "feed_wire_315.npz": "8578368d374229012cb90d6ca88d9889cfabafe09ed59411c429e8e03397df1d",
+    "board_installation.log": "436d0c87a0115c5387a61d52e6ee2285e00c895ef4c2c377b58cae7e0087a6cb",
+    "connector_tail_0_curve.npz": "172626ed1cccb50e3f4b3fabf7a3e7cac26d5349e993d773f3f70f0d4f3d2f60",
+    "yaw_45_cutter_sweep.npz": "5085024161e1e77ef88dd77e0198d19a5859d80f5500950b6d3dcdf196914882",
+    "neck_feed_verified.json": "5856fb75d4e5e74d2fe6acee336fc9773110c26d68185789902936fde3898b5a",
+    "render_review.py": "e7cdbc121709625905dd1599ef8a2c8d6063e3880058c1b0a25ee280c8d7651f",
+    "tail_workspace.png": "f180d40c6db8d2e12f810b102cebac42991004bd7cd32186b936b1a116c87f17",
+    "tools_and_tail.log": "c7381e6a7ea08ac4c16e1538c47318553697106fa81b646c692c44f8cef3eb8e",
+    "connector_band.npz": "b07e96c5745fecf500a145c82da86e33881e5c3d120d5872c77dd812ac7f17c3",
+    "current_context.py": "9a24dd490ddcf06e089f6ab6879c06576a9ce62a55bc917a5a69bdcabbb08e17",
+    "material_stations.json": "a6fb31cd26f25cc124e375469289fc743aba4819f8218ff0afe76f9a0e390cdc",
+    "yaw_addition.npz": "7e270fa4ad10723005ef66242914b6ec216f3cd65f6d82aa7a3ff89d990824aa",
+    "yaw_30_cutter_sweep.npz": "c45f8712c15526dcab9ebe3cc39dd13e15167debea983ecf22e44ed2926a05b7",
+    "check_board_installation.py": "f696ea1fff7b526e6ebb799afd16f3f7060a867243ef3bc36b0c5083dae45c7e",
+    "README.md": "a2c97797de1fb742deba63e721b8e0b4212e6123e4616276c9b5a0fbc0b68290",
+    "feed_contact_225.npz": "0ed82188d47c1ca247d5132137cddb04e02e7cd9db78f41a3c2f873db1d1da30",
+    "Pitch_Cradle.npz": "896850720c1ebf1b541701128b361a7b10e64778506387d917d10fa088398bd9",
+    "replay_neck_feed.py": "8c47f0980cbb83af27049e691a9b8d1010d39b2be0a2973fe7c49a5fee95b7da",
+    "yaw_head.npz": "be409235b9916e48cc7293b53e4c20fb415d8625c5099e047b8ae582311851cd",
+    "feed_wire_225.npz": "6721d29a381cf4bea9d3b06cf1370a7c92500be5bb7bc88e4f86cdbca31c5861",
+    "connector_tail_3_curve.npz": "eede2e2a7071e8655b58ea57f48a827f3e12a33f27d11da2941313102dbbf1c8",
+    "anchors_rear.png": "f893dd9eac9822fea9fa01708d5ec93d0cffb9cbf4ae785f076addcf1a54367e",
+    "board_installation_curves.npz": "51f4ff684dfd07fd51de03d70ee54049896468bf872f0d7334ac43efbd280a32",
+    "render_review.log": "3106963adcdcb8c4fdd556880edb247edd8318f4127e1b761c71819fc101912f",
+    "neck_feed_verified.log": "d4cf7729f5ea59439748ab467527e500cd9ef3d44b69b148af932406a0e4d24f",
+    "neck_feed.log": "eeabe9eca995267dd9a0066930a2d93dd970d2e709f0b0d0bc6f7c69f9f0028d",
+    "feed_contact_45.npz": "43cd42a7e45652cdfacaa2f96a6d81e2a05fa5b88f07c39aaf20b8ea72abfd3f",
+    "check_tool_routes.py": "ec9a1d50366b311f5e2f6596be9dfafedba8d597f11b9feca714a7b5347ecf54",
+    "connector_tail_5_curve.npz": "e0f3786a149f3f5c11da366992a9494b2c74bcf353809e4b541acfd57520f2b1",
+    "feed_wire_45.npz": "87608feecdc7ae0e4ee151d1e668d987ba521799d7a096b5b235aee60ca7e647",
+    "connector_tail_2.npz": "344c2f173b3e424399ef176199aae60f5d920471b18e989a99309a77b06d88a2",
+    "connector_tail_3.npz": "7cb7b2439478ee21f34692394d059004e70faea7af7912d72d91271c90180e85",
+    "anchors_front.png": "f4e873073548b85f08318cb61a9ed9fdf7f263897fb63fddf347f4b76190b49e",
+    "anchors.log": "7862992ec767a9905abbd7b75387e5417b404874999d9b08bfa6bb962790724a",
+    "connector_tail_1.npz": "09fa79a232508843a38a90e673da7b955d61e7e19a7b483bbe0676a1b636463b",
+    "connector_tail_0.npz": "f83a6a40fe42c3707383453156d1d85d972b1856520479ac1600f01afd32012a",
+    "connector_tail_2_curve.npz": "77aba5b395260134eed73caa8d8ef09e69d5f5ab69b31087cb0f8ba4d976723a",
+    "board_installation.json": "9784e200aa810640952ee1b7a740c28922b83339e74bd178506e35c8b2880c60",
+    "Pitch_Yoke.npz": "a03f1d737974f2d5bdc45078368b6226f557d3b2c5c8a82ef6fd276315b39d54",
+    "connector_tail_4.npz": "dfbd844edea680e0205d221a921b31f499243a1ac51f51908d082d49cdaf7634",
+    "feed_wire_135.npz": "93b7b462d2d0838947a13224b4f4afd07cca6379e3805c5efde88bbd3387b90f",
+    "connector_tail_5.npz": "c8d27a327c7f122f35b3499de68b59761f89f14b782559e4d3c4d1706f307a1d",
+    "connector_tail_4_curve.npz": "341c68f3a579f04daa06680d36679efa642bd331597e86092f84882854f6d729",
+    "connector_head.npz": "058b86665ec27eb309707942b3bb2103c063667f0819092488fe36715838717e",
+    "publish.py": "08b657edb964ac2ddbb49e783bf99c9beb58668a27821245924278db451e85b4",
+    "feed_contact_135.npz": "216313b0266fc52cb94ba7a7badb6012a9b1af8b5dd2a6d24ec20b3f5935f3c7"
+  },
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false
+}

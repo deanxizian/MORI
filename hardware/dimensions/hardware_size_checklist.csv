@@ -1,0 +1,24 @@
+﻿项目ID,硬件,数量,当前预留/mm,尺寸顺序,确认事项,参数来源,候选型号,实测尺寸,接口/连接器尺寸,质量/g,尺寸复核状态
+wheel_motor,驱动减速电机本体,2,Ø25 × 60；轴沿 X,"diameter, axial_length",编码器、输出轴、出线不含在这 60 mm 内；实际夹持部形状与安装孔待数据表。,drive.motor_can_*,,,,,NOT_TESTED
+encoder,电机尾部编码器,2,Ø23 × 12,"diameter, axial_length",需另查编码器 PCB、焊点、插头和出线空间。,drive.motor_encoder_*,,,,,NOT_TESTED
+motor_shaft,电机输出轴,2,Ø4 × 外伸 14,"diameter, protrusion_length",D 形、键、扁位、带轮固定和轴向止挡未定。,drive.motor_output_shaft_*,,,,,NOT_TESTED
+wheel,轮胎,2,外径 Ø95 × 宽 18；内径 Ø66,"outer_diameter, axial_width, inner_diameter",与轮毂胎圈、材料、硬度和防脱结构一起定；不是指定采购型号。,wheel_diameter_mm / wheel_width_mm / tire_inner_radius_mm,,,,,NOT_TESTED
+wheel_axle,独立承重轮轴,2,Ø6 × 53.5,"diameter, length",长度为当前包络；轴肩、卡簧槽、轮毂夹紧、承载未定。,drive.axle_*,,,,,NOT_TESTED
+wheel_bearing,轮轴承,4,内径 6 × 外径 13 × 宽 5,"inner_diameter, outer_diameter, width",每轮 2 个；轴承座当前孔 Ø13.6 是试配孔，不是精密轴承配合公差。,drive.bearing_*,,,,,NOT_TESTED
+drive_pulley,驱动带轮,4,节圆 Ø17 × 宽 5；两种孔 Ø4 / Ø6,"pitch_diameter, width",仅节圆包络；真实齿顶、挡边、轴套、节距和张紧机构未建。,drive.pulley_*,,,,,NOT_TESTED
+drive_belt,驱动同步带,2,宽 4；外扩厚度包络 1.2,"width, radial_thickness_envelope",长度、齿形和预张紧未选。当前两轴中心距由布局推导。,drive.belt_*,,,,,NOT_TESTED
+head_servo,头部位置舵机本体,1,23 × 12 × 24,"X,Y,Z",固定耳、花键、舵盘、紧固件、出线须另加；不能只对比本体。,head_joint.servo_body_mm,,,,,NOT_TESTED
+servo_output,舵机输出端占位,1,Ø4 × 高 5,"diameter, height",占位圆柱，未定义真实花键/舵盘连接。,head_joint.servo_output_*,,,,,NOT_TESTED
+head_bearing,头部独立承重轴承,1,内径 24 × 外径 36 × 高 6,"inner_diameter, outer_diameter, height",内外圈和滚动体为示意；需核查真实可采购轴承、固定和承载。,head_joint.bearing_*,,,,,NOT_TESTED
+display_panel,圆形显示面板包络,1,目标显示 Ø60；当前厚度包络 2.8；可见遮光孔 Ø58,"active_diameter, body_thickness_envelope",玻璃外形与有效显示区须分别给出；现模型未含真实玻璃边框/FPC。,display.active_screen_diameter_mm / display.screen_thickness_mm,,,,,NOT_TESTED
+display_pcb,显示板 PCB 占位,1,圆形 PCB Ø65 × 板厚 1.6,"diameter, bare_pcb_thickness",1.6 仅板厚，背部元件、固定孔、异形边界需补入。,display.pcb_diameter_mm / display.pcb_thickness_mm,,,,,NOT_TESTED
+display_connector,显示连接器占位,1,12 × 7 × 5,"X,Y,Z",真实插头、插拔方向、FPC 弯曲和应力释放尚未完整建模。,display.connector_size_mm,,,,,NOT_TESTED
+face_protector,透明面罩保护片,1,Ø65.4 × 1.2；安装开口 Ø66,"diameter, thickness",材料、透过率、胶层和可拆固定方式待定。,display.window_diameter_mm / protector_*,,,,,NOT_TESTED
+battery,电池包,1,40 × 70 × 20,"X,Y,Z",含包装/保护结构的真实成品外形；插头、导线、绝缘衬垫另核查，不得压缩软包硬塞。,battery.envelope_mm,,,,,NOT_TESTED
+controller,主控模块,1,55 × 24 × 7,"X,Y,Z",含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。,electronics.controller_envelope_mm,,,,,NOT_TESTED
+driver,双路电机驱动模块,1,36 × 20 × 7,"X,Y,Z",含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。,electronics.driver_envelope_mm,,,,,NOT_TESTED
+imu,IMU 模块,1,16 × 16 × 4,"X,Y,Z",含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。,electronics.imu_envelope_mm,,,,,NOT_TESTED
+bms,电池保护模块 BMS,1,32 × 4 × 22,"X,Y,Z",含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。,electronics.bms_envelope_mm,,,,,NOT_TESTED
+charger_regulator,充电与稳压模块,1,32 × 6 × 28,"X,Y,Z",含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。,electronics.charger_regulator_envelope_mm,,,,,NOT_TESTED
+usb,USB-C 外部接口,1,10 × 8 × 4.2,"X,Y,Z",开孔、面板厚度、固定方式和插拔/操作空间待实物确认。,electronics.usb_envelope_mm,,,,,NOT_TESTED
+switch,电源开关,1,8 × 7 × 5,"X,Y,Z",开孔、面板厚度、固定方式和插拔/操作空间待实物确认。,electronics.switch_envelope_mm,,,,,NOT_TESTED

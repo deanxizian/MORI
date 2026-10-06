@@ -1,0 +1,107 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-23T09:18:56",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "MORI_rear_P4.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+            "items": [
+                {
+                    "description": "走线 [/VBUS_RAW] (B.Cu), 长度: 0.8500 mm",
+                    "pos": {
+                        "x": 8.7,
+                        "y": 8.4
+                    },
+                    "uuid": "2eeca60d-5675-40c3-ba46-60e66a55b395"
+                },
+                {
+                    "description": "走线 [/VBUS_RAW] (B.Cu), 长度: 1.9799 mm",
+                    "pos": {
+                        "x": 7.7,
+                        "y": 9.8
+                    },
+                    "uuid": "c4de1f9c-619f-4131-9c61-a5682d382e6e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_angle"
+        },
+        {
+            "description": "走线角度 (规则 'R27 minimum track angle' 最小角度 60.000°; 实际 45.000°)",
+            "items": [
+                {
+                    "description": "走线 [/VBUS_RAW] (B.Cu), 长度: 1.9799 mm",
+                    "pos": {
+                        "x": 7.7,
+                        "y": 9.8
+                    },
+                    "uuid": "c4de1f9c-619f-4131-9c61-a5682d382e6e"
+                },
+                {
+                    "description": "走线 [/VBUS_RAW] (B.Cu), 长度: 0.8500 mm",
+                    "pos": {
+                        "x": 8.7,
+                        "y": 8.4
+                    },
+                    "uuid": "2eeca60d-5675-40c3-ba46-60e66a55b395"
+                }
+            ],
+            "severity": "error",
+            "type": "track_angle"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "SW1 的 线段, 位于 F.Silkscreen",
+                    "pos": {
+                        "x": 15.25,
+                        "y": 14.65
+                    },
+                    "uuid": "e390f158-8902-47aa-ae13-9e02f8089de9"
+                },
+                {
+                    "description": "过孔 [/GND] (F.Cu - B.Cu)",
+                    "pos": {
+                        "x": 16.05,
+                        "y": 15.1
+                    },
+                    "uuid": "9f733535-b8a1-496b-a007-9be33bec6cd6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI · 承重桥接合方案</title><style>
+body{margin:0;background:#f4f5f5;color:#202b31;font:16px/1.8 system-ui,-apple-system,sans-serif}main{max-width:1080px;margin:40px auto;padding:0 22px}h1{font-size:32px;margin:10px 0}h2{font-size:21px;margin:28px 0 10px}p{max-width:850px}.tag{font-size:13px;letter-spacing:1px;color:#516a72}.links{display:flex;gap:18px;flex-wrap:wrap}a{color:#166c80}figure{margin:24px 0;background:white;border-radius:14px;overflow:hidden}img{display:block;width:100%;height:auto}figcaption{padding:14px 20px}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.facts div{background:white;padding:20px;border-radius:12px}.facts strong{display:block;font-size:25px}.note{border-left:4px solid #b98734;padding:10px 18px;background:#fff8eb}footer{font-size:13px;color:#65727a;margin:30px 0}@media(max-width:680px){.facts{grid-template-columns:1fr}h1{font-size:26px}}
+</style><main><div class="tag">MORI · 基于 M1.21 的未发布候选</div>
+<h1>插接承重桥，横向螺钉锁紧</h1>
+<p>让桥脚插入托板，与原有侧板搭接。肩部承受向下的载荷，插槽提供侧向限位，两枚横向螺钉配金属螺母锁紧。蓝色是承重桥，浅灰色是主框架。</p>
+<div class="links"><a href="yaw_bridge_joint_PROPOSAL.blend">下载可编辑 Blender 候选</a><a href="README.md">设计复核与限制</a><a href="fit_report.json">实际检查数据</a><a href="review.py">生成脚本</a></div>
+<div class="facts"><div><strong>15 件</strong>本体打印件数保持不变</div><div><strong>2 枚螺钉＋2 枚螺母</strong>替换这处原来的 M2＋热熔嵌件</div><div><strong>12.5 mm</strong>在托板底部以下的搭接长度</div></div>
+<figure><img src="exploded.png" alt="实际 Blender 爆炸渲染：桥脚插舌、托板插槽、两侧横向螺钉及内侧螺母窝"><figcaption>同一几何的爆炸视图。插舌根部设圆角；外侧没有安装耳或竖向螺丝刀沟。图中分离的零件仅作装配展示。</figcaption></figure>
+<h2>限位已同步为环内短挡块</h2><p>转动挡块由低矮环肩支撑，不再保留细长悬伸条。正常Yaw范围仍±60°；此处限位已与主模型M1.21同步，桥脚接合仍保持候选状态。<a href="../../YAW_STOP_OPTIMIZATION.md">限位更新说明</a></p><figure><img src="../../renders/yaw_stop_detail.png" alt="M1.21环内短限位的实际剖视渲染"><figcaption>灰色固定挡块、蓝色转动环肩。上部框架仅在视图中剖切。</figcaption></figure><h2>原来的 M2 连接不能仅凭外形判定够强</h2><p>原嵌件孔两侧各剩 1.3 mm 名义塑料壁，两枚螺钉又都在后侧一条线上。静止头重主要压在桥脚上；摆动、急停、受碰和反复松动则需要另行验证。孔位能装入不等于承载合格。</p>
+<figure><img src="assembled.png" alt="实际 Blender 装配渲染：插接承重桥与主框架"><figcaption>装配状态。侧板上方的两处圆孔对应承重桥横向螺钉，原有电池托盘固定接口保留。</figcaption></figure>
+<h2>检查范围与使用代价</h2><p>局部实体干涉、插入路径、工具空间及 90 个头部联合姿态检查已运行。侧向上螺钉需要拆下机身外壳和车轮；电池托盘可以留在原位。完整实物板卡与插头仍有既有未知项。</p>
+<p class="note"><strong>这是几何通过的候选，强度尚未测试。</strong>插接间隙、夹紧贴合、打印层向、孔边承压、疲劳和蠕变都需实物验证。当前主装配、STL 和动画仍是 M1.21，没有自动替换为这个方案。</p>
+<footer>图像来自本地 Blender 5.2.1 LTS。有限采样不是连续无干涉证明。工具命令和来源哈希见 fit_report.json 与 run.log。</footer></main></html>

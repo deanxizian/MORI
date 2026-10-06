@@ -1,0 +1,48 @@
+{
+  "status": "FAIL",
+  "scope": "Conditional endpoint-length audit of the 170 mm central capacity sample",
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/review/review.json": "de58cc700fbb8c8b884d11876d63f143d62f17851dde5ed0bcb3575a793784d0",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/endpoints.json": "c6b2495d3fa083bdcac4152fb062bfed6ecd3102ec8f8c2ace485180edd5e86b",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/review.json": "d07e371a8d09f1e95059a1e6d573a00625a5b0316e2efe51fd129d9146127217",
+    "mechanical/sources/v1_2_verified_dimensions/1.85inch_touch_lcd_module-3d.stp": "da8b3fca5ffd30c89d12bf488203741baaa1bd390732b62d92b23b279fb1dd9d",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/static_flex_geometry.py": "3cbfd048e80b03ad24775d02b483aae3d4cfbce8f1183b5904b61fe212f3288a"
+  },
+  "central_end_tangent_world": [
+    -1,
+    0,
+    0
+  ],
+  "LCD_insertion_tangent_world": [
+    1,
+    0,
+    0
+  ],
+  "tangent_evidence": "Original vendor STEP Connector_108 appears to enter from world -X. Actual contact face, pin1 and purchased revision remain unqualified.",
+  "minimum_total_tangent_turn_rad": 3.141592653589793,
+  "reserved_LCD_end_length_mm": 15,
+  "method": "For curvature <= 1/R, rotating the oriented unit tangent by pi requires arc length >= pi*R. This necessary condition also applies to a 3D centerline. Endpoint distances, insertion length and twist constraints can only add further restrictions.",
+  "radii_are_capacity_assumptions_not_vendor_limits": true,
+  "cases": [
+    {
+      "minimum_radius_mm": 5.0,
+      "necessary_length_lower_bound_mm": 15.707963267948966,
+      "budget_shortfall_lower_bound_mm": 0.7079632679489656,
+      "status": "FAIL"
+    },
+    {
+      "minimum_radius_mm": 7.5,
+      "necessary_length_lower_bound_mm": 23.561944901923447,
+      "budget_shortfall_lower_bound_mm": 8.561944901923447,
+      "status": "FAIL"
+    }
+  ],
+  "full_route": "BLOCKED",
+  "main_changed": false,
+  "limitations": [
+    "This rejects the old fixed 15 mm terminal budget under the stated R assumptions.",
+    "It is not a conclusion that the original 200 mm cable is too short or cannot fit.",
+    "Reallocate center and end lengths and regenerate a complete candidate after connector-direction reconciliation."
+  ],
+  "script_sha256": "f693ade313bf941ef9235272f7e28d10bdb1dd25548c538e5ed5aa385128cdd1"
+}

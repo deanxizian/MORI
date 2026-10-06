@@ -1,0 +1,34 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>颈部穿线：结构通路与线束顺序</title><style>
+body{margin:0;background:#f4f5f6;color:#18272f;font:17px/1.65 system-ui,sans-serif}main{max-width:1120px;margin:auto;padding:32px 24px 70px}
+h1{font-size:31px;line-height:1.35}h2{font-size:23px;margin-top:34px}a{color:#146d85}section{background:white;border:1px solid #dbe1e4;border-radius:12px;padding:22px;margin:22px 0}
+.status{display:inline-block;padding:4px 13px;background:#fff0d9;color:#794b08;border-radius:20px;font-weight:650}.muted{color:#5e6e77}
+table{width:100%;border-collapse:collapse}th,td{padding:13px 10px;border-bottom:1px solid #dbe1e4;text-align:left;vertical-align:top}th{background:#edf1f3}
+img{width:100%;height:auto;border:1px solid #dde4e8}code{font-size:13px;overflow-wrap:anywhere}li{margin:8px 0}
+@media(max-width:700px){main{padding:20px 12px}section{padding:14px}table{font-size:14px}h1{font-size:25px}}
+</style><main>
+<a href="../../index.html">← 完整走线工作页</a><h1>颈部通路已找到，线束装入顺序仍未闭合</h1>
+<p><span class="status">完整线束 BLOCKED</span></p>
+<p>主模型继续使用已确认的 M1.49 C5＋K1。以下是独立的穿线研究，使用尚未采用的 C6／导向／固定候选；本次未更改主模型或打印件。</p>
+<section><h2>这轮得到的结果</h2><table><thead><tr><th>检查</th><th>结果</th><th>范围</th></tr></thead><tbody>
+<tr><td>名义端子通过结构通道</td><td>PASS</td><td>保留反力连杆，从头内导向位置穿至身体侧。1,048 个位置及之间 1,047 段连续运动通过，净距下界约 0.306 mm。</td></tr>
+<tr><td>其余 7 根线已占据候选位置时穿入</td><td>BLOCKED</td><td>CAM 的 +5V 和 GND 候选线会进入端子盒内部，属于明确相交。</td></tr>
+<tr><td>第一根 CAM 信号线完整到达身体侧</td><td>BLOCKED</td><td>线长保持、结构净距和本次自接近检查通过；身体侧与 CAM 供电 GND 线相交。</td></tr>
+</tbody></table><p class="muted">端子仍是 2.08 × 1.5 × 5.7 mm 名义盒；所选端子的实际压接外形未确认。上述结果不等同于成品线束可安装。</p></section>
+<section><h2>端子如何绕过反力连杆</h2><p>端子先在连杆外侧下行，局部向内倾斜，再穿过下方出口。移动轨迹和端子朝向分别处理，没有移动连杆或削薄打印件。</p>
+<a href="sections.png"><img src="sections.png" alt="三个高度的实际结构截面，展示名义端子与反力连杆、俯仰支架、固定轴承座的关系"></a>
+<p><a href="review.json">连续通路检查</a> · <a href="path.npz">完整端子位置与朝向</a> · <a href="plot_review.json">截面来源</a></p></section>
+<section><h2>已确认的相交位置</h2><p>在两个不同的穿入位置，P_J18_1（CAM +5V）和 P_J18_2（CAM GND）的候选线中心分别进入名义端子盒内部。</p>
+<p>身体侧完整导线的检查也找到明确交叉：CAM 信号线和供电 GND 的局部中心距约 0.110 mm，而规划外半径之和为 0.9144 mm。加密采样没有消除这个相交。</p>
+<p><a href="../contact_with_upper_wires/explicit_witnesses.json">相交坐标与证据</a> · <a href="../contact_with_upper_wires/review.json">连同 7 根候选线的穿入检查</a> · <a href="../wire_body_arrival_refined/review.json">完整导线到达状态</a></p></section>
+<section><h2>接下来必须补齐</h2><ol>
+<li>安排 CAM 信号线与两根供电线的先后穿入、临时停放和恢复到最终位置的顺序。</li>
+<li>检查整根软线在每一步中的过渡形状、线长、弯曲和相互净距，并衔接已有的头内预装步骤。</li>
+<li>获得实际端子压接、CAM 供电接口和成品线资料后，替换规划包络复核。</li>
+</ol><p>“CAM 信号线先穿、供电线后装”目前只是待检验的顺序方向，尚未作为装配结论。</p></section>
+<details><summary>保留的诊断记录</summary><ul>
+<li><a href="../contact_vertical/review.json">竖直端子</a></li><li><a href="../contact_profile/review.json">沿路径切向倾斜</a></li>
+<li><a href="../contact_radial_orientation/review.json">仅径向倾斜</a></li><li><a href="../contact_collar_follow/review.json">绕过连杆下缘</a></li>
+<li><a href="../contact_lower_inward/review.json">下段内移的对照</a></li><li><a href="../wire_body_arrival/review.json">完整导线初次检查</a></li>
+</ul><p class="muted">有限路径失败不能证明所有走线方式都不可行。主模型、硬件源文件与已发布动画保持既有版本；没有制造放行。</p><p><a href="main_integrity.json">主模型、硬件及动画保留核验</a></p></details>
+</main></html>

@@ -1,0 +1,23 @@
+00:00.312  blend            | Read blend: "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend"
+OUTLET_STEERING 185.0 BLOCKED 26 6.746541890553682
+OUTLET_STEERING 181.0 BLOCKED 26 8.664486854509574
+OUTLET_STEERING 188.0 BLOCKED 26 5.080669273948369
+Traceback (most recent call last):
+  File "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/screen_cam_outlet_steering.py", line 80, in <module>
+    r=dict(status='PASS' if arrays else 'BLOCKED',sources=ctx.sources,inputs={str(p.relative_to(ROOT)):sha(p) for p in inputs},
+                                                                                                       ~~~^^^
+  File "/Users/dean/Documents/MORI/mechanical/scripts/harness_context.py", line 17, in <lambda>
+    sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                                ~~~~~~~~~~~~~~~~~~^^
+  File "/Applications/Blender.app/Contents/Resources/5.2/python/lib/python3.13/pathlib/_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "/Applications/Blender.app/Contents/Resources/5.2/python/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/neck_curve_geometry.py'
+
+Error: script failed, file: 'mechanical/studies/prearrival_finish/head_harness_M1_49/screen_cam_outlet_steering.py', exiting.
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

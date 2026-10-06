@@ -1,0 +1,95 @@
+{
+  "baseline": "V1.2-M1.38",
+  "scope": "Pre-arrival studies based onM1.38; ear nuts/camera/PA12 applied inM1.39; IMU expansion withdrawn",
+  "fabricator": "JLC3DP recommendation only, no upload/order",
+  "work_packages": {
+    "coupon_design": {
+      "status": "PASS",
+      "scope": "7 independent calibration coupons: closed one-piece mesh and STL roundtrip",
+      "evidence": "jlc_coupons/manifest.json",
+      "physical_validation": "NOT_TESTED"
+    },
+    "servo_ear_candidate": {
+      "status": "PASS",
+      "scope": "4 nut conversions,130 poses,nominal nut entry",
+      "evidence": "../../reports/prearrival_validation.json",
+      "adoption": "USER_APPROVED_M1.39",
+      "applied_to_main": true
+    },
+    "camera_aperture_candidate": {
+      "status": "PASS",
+      "scope": "775 assumed-FOV rays, one continuous aperture, no added overlaps",
+      "evidence": "../../reports/prearrival_validation.json",
+      "adoption": "USER_APPROVED_M1.39",
+      "applied_to_main": true
+    },
+    "imu_third_mount_proposal": {
+      "status": "NOT_APPLICABLE",
+      "scope": "20x21 proposal spatial check; original PCB remains intact",
+      "evidence": "imu_mount_proposal.json",
+      "adoption": "WITHDRAWN_BY_USER_KEEP_ORIGINAL_TWO_HOLES"
+    },
+    "mated_connectors": {
+      "status": "BLOCKED",
+      "scope": "29 housings checked, rearJ3 conservative overlap requires exact interface; wire bends missing",
+      "evidence": "mated_connector_review.json"
+    },
+    "weact_stack_screening": {
+      "status": "PASS",
+      "scope": "11 static rigid core heights6..11mm; actual sockets and pin engagement unresolved",
+      "evidence": "weact_stack_review.json",
+      "selected_interface": "BLOCKED"
+    },
+    "fastener_inventory": {
+      "status": "PASS",
+      "scope": "129 existing objects listed,73 tool approaches screened; not final supplier BOM",
+      "evidence": "fastener_inventory.csv",
+      "seat_and_procurement_release": "BLOCKED"
+    },
+    "insert_compatibility": {
+      "status": "BLOCKED",
+      "scope": "Several old seats do not fit selected-candidate reference wall/depth; no automatic enlargement",
+      "evidence": "insert_seat_screening.json"
+    },
+    "mass_and_torque_scenarios": {
+      "status": "PASS",
+      "scope": "Recomputed PA12 full-solid estimate with explicit unmeasured inputs; no strength/dynamics claim",
+      "evidence": "pa12_mass_and_torque.json",
+      "physical_validation": "NOT_TESTED"
+    },
+    "lcd_conversion_diagnosis": {
+      "status": "BLOCKED",
+      "scope": "SourceBRep valid;107/108 mesh stillnonmanifold after investigated settings; original mesh/source retained",
+      "evidence": "lcd_tessellation_diagnosis.json"
+    },
+    "lcd_conservative_separation": {
+      "status": "PASS",
+      "scope": "Full CAD bounds of107/108 separate from other parts at130 nominal poses; gap search capped5mm, no mesh alteration",
+      "evidence": "lcd_connector_bounds_review.json",
+      "exact_mesh_repair": "BLOCKED"
+    },
+    "head_transmission": {
+      "status": "BLOCKED",
+      "scope": "Left trunnion-to-horn gap2.2mm, incomplete bearing engagement and axial retention; matching horn missing",
+      "evidence": "电路与采购接口交接.md"
+    },
+    "harness_routes": {
+      "status": "NOT_TESTED",
+      "scope": "Rigid mating housings complete in scope; finite service-loop and bend design waits mounting and connector decisions; no speculative holes",
+      "evidence": "电路与采购接口交接.md"
+    },
+    "electrical_handoff": {
+      "status": "PASS",
+      "scope": "IMU expansion assessment sent then withdrawn by user; native boards unchanged",
+      "evidence": "电路与采购接口交接.md",
+      "hardware_response": "NO_IMU_EXPANSION_REQUIRED"
+    },
+    "jlc_material_and_production": {
+      "status": "BLOCKED",
+      "scope": "PA12 confirmed and coupon package prepared; whole-robot design not released",
+      "evidence": "嘉立创打样建议.md"
+    }
+  },
+  "hardware_files_read_only": true,
+  "whole_robot_manufacturing_release": "BLOCKED"
+}

@@ -1,0 +1,2117 @@
+{
+  "status": "PASS",
+  "scope": "Two-package photo-direction correction and added-volume checks; not a mated connector model",
+  "sources": {
+    "mechanical/mori_v1_2.blend": "89cb07f571367bf87b627c771998d0cc0c28b873be575afdb4002c9bcf5b499f",
+    "mechanical/reports/build_manifest.json": "fe96a9eb6604d65d3bcae09983487b2e03febb2a9d41e5140478cee69f1b308c",
+    "config/geometry.json": "3af8a61411825ba12a315c9377a117f5923e822c5f219ad8de13eae87da5225d",
+    "contracts/mechanical_interfaces.json": "4957dc15dfbec31e07e0a37a2b7a7a0de681ca5ce40e600c2c00fe2217c15d95",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d",
+    "mechanical/scripts/harness_context.py": "a5450cf9342cea2a5ccdd702c457e152900ead75eb46c65b0790c001b0acd0fe",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.json": "7fa23646d560203128977fe852ae4e9d2409f4154f4cfcd3645187676e2cd52b",
+    "mechanical/studies/prearrival_preparation/mated_connector_review.blend": "aab3e76da569599cf9dfc750a107d0e27bc6b6c4a1e733a9cd2fba2a9a00d2ac",
+    "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "mechanical/studies/prearrival_finish/harness_A2/assembly_safe_review/fourteen_wire_solids.json": "4857f4d9148c1cdf11c1f8eabe3978fb91457e4a6e1e5544c177ba03e9f3ae79",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/envelopes.py": "6e75ccf1823013d92e31eb8f281075bddd9d8742637403a8e6d0aeb2a25d1370",
+    "mechanical/studies/prearrival_finish/harness_A8/amass_mating/received_dimensions.json": "aadd38c67a92b43bc09df51861d092cd2b3e24794859ce43ec2637e0b184310e",
+    "mechanical/studies/prearrival_finish/harness_A8/h06_ports.json": "c904bb3472af3ad4e45a480047159a22d674898f2d8476686e72b4224ee0bff9"
+  },
+  "inputs": {
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/cam_fpc_entry_geometry.py": "ca56434935b916240b8fbd4e25f7dd71a31c8b7e7d08c69ad09b1f6497546ab4",
+    "mechanical/scripts/waveshare_detail.py": "3c66862a9d354301e9a138312681a7c4a0015a4b5ddb0dfd6db4a33d77a1c3a4",
+    "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/direction_receipt.json": "7de15259fd5da95fee4eb49233b401c20d3af4767c7bec7a53537deb0233357f"
+  },
+  "changed_components": [
+    {
+      "reference": "CAMERA_FPC_24",
+      "bounds_before_mm": [
+        [
+          -8.0600004196167,
+          -25.799999237060547,
+          224.16000366210938
+        ],
+        [
+          7.940000057220459,
+          -23.799999237060547,
+          229.36000061035156
+        ]
+      ],
+      "bounds_after_mm": [
+        [
+          -8.06,
+          -25.8,
+          224.16
+        ],
+        [
+          7.94,
+          -23.8,
+          229.36
+        ]
+      ],
+      "direction_uvw": [
+        0,
+        1,
+        0
+      ],
+      "direction_world": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "old_volume_mm3": 118.84298893174527,
+      "new_volume_mm3": 118.84304000000049,
+      "added_volume_mm3": 38.629557016194774,
+      "removed_volume_mm3": 38.62950594793979,
+      "illustrative_mouth": null,
+      "limitations": "Direction observed; slot height, depth, contact plane/pin1, latch mechanics and actual supply revision remain unknown. Contacts are unnumbered illustrations."
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "bounds_before_mm": [
+        [
+          -18.110000610351562,
+          -22.200000762939453,
+          228.4600067138672
+        ],
+        [
+          -13.010000228881836,
+          -20.200000762939453,
+          241.16000366210938
+        ]
+      ],
+      "bounds_after_mm": [
+        [
+          -18.11,
+          -22.2,
+          228.46
+        ],
+        [
+          -13.010000000000002,
+          -20.2,
+          241.16
+        ]
+      ],
+      "direction_uvw": [
+        -1,
+        0,
+        0
+      ],
+      "direction_world": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "old_volume_mm3": 93.35699738842858,
+      "new_volume_mm3": 90.49492499999967,
+      "added_volume_mm3": 10.301211975023906,
+      "removed_volume_mm3": 13.163284363452712,
+      "illustrative_mouth": {
+        "width_mm": 11.5,
+        "height_mm": 0.45,
+        "height_from_board_face_mm": 0.95,
+        "evidence": "ASSUMED",
+        "may_define_harness_datums": false
+      },
+      "limitations": "Slot width/height/depth and gold fingers are unnumbered visual assumptions, not verified insertion/contact data; no physical mating qualification."
+    }
+  ],
+  "unchanged_component_groups": 130,
+  "unchanged_native_parts": 209,
+  "poses": 130,
+  "pose_rows": [
+    {
+      "yaw": -60,
+      "pitch": -20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -60,
+      "pitch": -15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -60,
+      "pitch": -10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -60,
+      "pitch": -5,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -60,
+      "pitch": 0,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -60,
+      "pitch": 5,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -60,
+      "pitch": 10,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -60,
+      "pitch": 15,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -60,
+      "pitch": 20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -60,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -50,
+      "pitch": -20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -50,
+      "pitch": -15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -50,
+      "pitch": -10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -50,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -50,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -50,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -50,
+      "pitch": 10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -50,
+      "pitch": 15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -50,
+      "pitch": 20,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -50,
+      "pitch": 25,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -40,
+      "pitch": -20,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -40,
+      "pitch": -15,
+      "broadphase_candidates": 11
+    },
+    {
+      "yaw": -40,
+      "pitch": -10,
+      "broadphase_candidates": 11
+    },
+    {
+      "yaw": -40,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -40,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -40,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -40,
+      "pitch": 10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -40,
+      "pitch": 15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -40,
+      "pitch": 20,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -40,
+      "pitch": 25,
+      "broadphase_candidates": 11
+    },
+    {
+      "yaw": -30,
+      "pitch": -20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": -15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -30,
+      "pitch": -10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -30,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": 10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": 15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": 20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -30,
+      "pitch": 25,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": -20,
+      "pitch": -20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -20,
+      "pitch": -15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": -10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": 10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": 15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": 20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -20,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -10,
+      "pitch": -20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -10,
+      "pitch": -15,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -10,
+      "pitch": -10,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -10,
+      "pitch": -5,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": -10,
+      "pitch": 0,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": -10,
+      "pitch": 5,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": -10,
+      "pitch": 10,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": -10,
+      "pitch": 15,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": -10,
+      "pitch": 20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": -10,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 0,
+      "pitch": -20,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 0,
+      "pitch": -15,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 0,
+      "pitch": -10,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 0,
+      "pitch": -5,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 0,
+      "pitch": 0,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 0,
+      "pitch": 5,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 0,
+      "pitch": 10,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 0,
+      "pitch": 15,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 0,
+      "pitch": 20,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 0,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 10,
+      "pitch": -20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 10,
+      "pitch": -15,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 10,
+      "pitch": -10,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 10,
+      "pitch": -5,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 10,
+      "pitch": 0,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 10,
+      "pitch": 5,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 10,
+      "pitch": 10,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 10,
+      "pitch": 15,
+      "broadphase_candidates": 6
+    },
+    {
+      "yaw": 10,
+      "pitch": 20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 10,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 20,
+      "pitch": -20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 20,
+      "pitch": -15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 20,
+      "pitch": -10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 20,
+      "pitch": -5,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 20,
+      "pitch": 0,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 20,
+      "pitch": 5,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 20,
+      "pitch": 10,
+      "broadphase_candidates": 7
+    },
+    {
+      "yaw": 20,
+      "pitch": 15,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 20,
+      "pitch": 20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 20,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 30,
+      "pitch": -20,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 30,
+      "pitch": -15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 30,
+      "pitch": -10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 30,
+      "pitch": -5,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 30,
+      "pitch": 0,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 30,
+      "pitch": 5,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 30,
+      "pitch": 10,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 30,
+      "pitch": 15,
+      "broadphase_candidates": 8
+    },
+    {
+      "yaw": 30,
+      "pitch": 20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 30,
+      "pitch": 25,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 40,
+      "pitch": -20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 40,
+      "pitch": -15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 40,
+      "pitch": -10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 40,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 40,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 40,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 40,
+      "pitch": 10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 40,
+      "pitch": 15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 40,
+      "pitch": 20,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 40,
+      "pitch": 25,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 50,
+      "pitch": -20,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 50,
+      "pitch": -15,
+      "broadphase_candidates": 11
+    },
+    {
+      "yaw": 50,
+      "pitch": -10,
+      "broadphase_candidates": 11
+    },
+    {
+      "yaw": 50,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 50,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 50,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 50,
+      "pitch": 10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 50,
+      "pitch": 15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 50,
+      "pitch": 20,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 50,
+      "pitch": 25,
+      "broadphase_candidates": 11
+    },
+    {
+      "yaw": 60,
+      "pitch": -20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": -15,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 60,
+      "pitch": -10,
+      "broadphase_candidates": 10
+    },
+    {
+      "yaw": 60,
+      "pitch": -5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": 0,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": 5,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": 10,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": 15,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": 20,
+      "broadphase_candidates": 9
+    },
+    {
+      "yaw": 60,
+      "pitch": 25,
+      "broadphase_candidates": 10
+    }
+  ],
+  "new_interferences": [],
+  "main_changed": false,
+  "adopted": false,
+  "component_volume_basis": "Boolean union of individual connected source solids; overlapping visual pieces are not double counted",
+  "sibling_checks": [
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PCB",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "Mount_hole_annuli",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "SD_SOCKET",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "BOOT",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PWR",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "SD_Q1",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "SD_Q2",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "SD_REG",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "SD_L",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "USER_LED",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "CHG_LED",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "ESP32_S3",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "FLASH",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "ES7210",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "ES8311",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "NS4150B",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "CH32V003",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "POWER_IC",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "BACK_L",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "XTAL",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "ANTENNA",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "IPEX1",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "SPEAKER_2P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "BATTERY_2P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "I2C_4P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "UART_4P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "DISPLAY_FPC_18",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "USB_C",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_00",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_01",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_02",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_03",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_04",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_05",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_06",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_07",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_08",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_09",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_10",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_11",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_12",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_13",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_14",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_15",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_16",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_17",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_18",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_19",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_20",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_21",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_22",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_23",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_24",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_25",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_26",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_27",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_28",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_29",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_30",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_31",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_32",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_33",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_34",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_35",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_36",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_37",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_38",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_39",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_SD_40",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_00",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_01",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_02",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_03",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_04",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_05",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_06",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_07",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_08",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_09",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_10",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_11",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_12",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_13",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_14",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_15",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_16",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_17",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_18",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_19",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_20",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_21",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_22",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_23",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_24",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_25",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_26",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_27",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_28",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_29",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_30",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_31",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_32",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_33",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_34",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_35",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_36",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_37",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_38",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_39",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_40",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_41",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_42",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_43",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_44",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_45",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_46",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_47",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_48",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_49",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_50",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_51",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_52",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_53",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_54",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_55",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_56",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_57",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_58",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_59",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_60",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "CAMERA_FPC_24",
+      "other": "PH_IC_61",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PCB",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "Mount_hole_annuli",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "SD_SOCKET",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "CAMERA_FPC_24",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "BOOT",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PWR",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "SD_Q1",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "SD_Q2",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "SD_REG",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "SD_L",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "USER_LED",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "CHG_LED",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "ESP32_S3",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "FLASH",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "ES7210",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "ES8311",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "NS4150B",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "CH32V003",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "POWER_IC",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "BACK_L",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "XTAL",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "ANTENNA",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "IPEX1",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "SPEAKER_2P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "BATTERY_2P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "I2C_4P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "UART_4P",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "USB_C",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_00",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_01",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_02",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_03",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_04",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_05",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_06",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_07",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_08",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_09",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_10",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_11",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_12",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_13",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_14",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_15",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_16",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_17",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_18",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_19",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_20",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_21",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_22",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_23",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_24",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_25",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_26",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_27",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_28",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_29",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_30",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_31",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_32",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_33",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_34",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_35",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_36",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_37",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_38",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_39",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_SD_40",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_00",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_01",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_02",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_03",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_04",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_05",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_06",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_07",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_08",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_09",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_10",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_11",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_12",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_13",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_14",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_15",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_16",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_17",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_18",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_19",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_20",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_21",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_22",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_23",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_24",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_25",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_26",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_27",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_28",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_29",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_30",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_31",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_32",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_33",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_34",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_35",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_36",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_37",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_38",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_39",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_40",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_41",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_42",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_43",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_44",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_45",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_46",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_47",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_48",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_49",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_50",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_51",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_52",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_53",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_54",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_55",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_56",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_57",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_58",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_59",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_60",
+      "added_overlap_mm3": 0.0
+    },
+    {
+      "reference": "DISPLAY_FPC_18",
+      "other": "PH_IC_61",
+      "added_overlap_mm3": 0.0
+    }
+  ],
+  "sibling_failures": [],
+  "sibling_overlap_tolerance_mm3": 1e-06,
+  "exact_FPC_mating": "BLOCKED",
+  "full_harness": "BLOCKED",
+  "physical_validation": "NOT_TESTED",
+  "blend": "MORI_M1_49_CAM_corrected_entries.blend",
+  "blend_sha256": "73a4993060daa9a5cba38f4eb0a0febe208edf25c280817c92bb7ab2581cf641",
+  "images": [
+    {
+      "file": "before_SD.png",
+      "sha256": "34ca06548a616ad0786f71682f4c47cc97cb4e40da601067c8d8d6087cf38bfd"
+    },
+    {
+      "file": "before_IC.png",
+      "sha256": "20d7f6b7b5da1688e23ce5c14e92b9e63787014ecd506fabd2b3a8ae517a38cf"
+    },
+    {
+      "file": "corrected_SD.png",
+      "sha256": "f3e55f26dba77a253f2920fcae8edc586d6b2678927d409e33d5ef73f7058ced"
+    },
+    {
+      "file": "corrected_IC.png",
+      "sha256": "0de2853c6b545f0d3164c6ab5add9201d2c0ededfe55229799dc8bf4bfeb2e30"
+    }
+  ],
+  "script_sha256": "b1dc2fbba2e1e677b90b63ad3d796cb386c39bfd1e1f1fb7a311be88e2d99198",
+  "elapsed_s": 13.415319919586182
+}

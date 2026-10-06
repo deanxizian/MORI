@@ -1,0 +1,27 @@
+import sys,pcbnew as k
+from review_edit_P5R2 import Edit,F,B,xy
+e=Edit(sys.argv[1])
+if e.kind=='motion':
+ e.remove(net='/BAT_ADC',predicate=lambda t:not isinstance(t,k.PCB_VIA))
+ e.add('/BAT_ADC',B,[(11.18,25.825),(11.18,31.47),(12.45,32.74)])
+ e.commit('ADC: aligned corridor within unchanged C9/R14 pad lands; remove S jog without disturbing same-net via clearance')
+ e.move('C7',(42.5,11.9),0)
+ e.remove(net='/CAM_3V3',predicate=lambda t:not isinstance(t,k.PCB_VIA)and t.GetLayer()==B and min(xy(t.GetStart())[1],xy(t.GetEnd())[1])>11.95 and max(xy(t.GetStart())[1],xy(t.GetEnd())[1])<13.1 and max(xy(t.GetStart())[0],xy(t.GetEnd())[0])<51.3)
+ e.add('/CAM_3V3',B,[(41.656,12.090399),(42.265601,12.7),(46.228,12.7),(46.532799,13.0048),(51.206399,13.0048)])
+ e.commit('C7 move 0.1 mm upward: clear its ground pad and straighten downstream 3V3 corridor')
+elif e.kind=='imu':
+ e.move('R1',(5.9,8.65),180)
+ e.remove(net='/MISO_IC',predicate=lambda t:not isinstance(t,k.PCB_VIA))
+ e.add('/MISO_IC',F,[(6.725,8.65),(7.225,8.65),(7.425,8.85),(8.8375,8.85)])
+ e.remove(net='/MISO',predicate=lambda t:not isinstance(t,k.PCB_VIA)and t.GetLayer()==F and max(xy(t.GetStart())[0],xy(t.GetEnd())[0])<8)
+ e.add('/MISO',F,[(5.075,8.65),(4.65,8.65),(4.65,7.9992),(5.6388,7.0104)])
+ e.commit('R1 rotate, shift left/up: outward pin escape and MISO connection clear both ground via and 3V3 approach')
+ e.remove(net='/+3V3',predicate=lambda t:not isinstance(t,k.PCB_VIA))
+ e.add('/+3V3',F,[(3,3.5),(3,7.8),(7.7,12.5),(8.225,12.5)])
+ e.add('/+3V3',F,[(9.5,10.5125),(9.5,11.05),(9,11.55),(8.725,11.55),(8.225,12.05),(8.225,12.5)])
+ e.add('/+3V3',F,[(8.5344,12.9032),(8.9408,13.3096),(11.3154,13.3096),(11.725,12.9)])
+ e.add('/+3V3',F,[(11.1625,10.35),(11.725,10.35),(11.725,12.9)])
+ e.add('/+3V3',F,[(11.725,12),(12.7,12),(13.2,11.5),(13.2,10.675)])
+ e.add('/+3V3',F,[(13.2,10.675),(14.45,10.675),(15.9,9.225)])
+ e.commit('IMU supply: one vertical VDDIO line and 90-degree C1 branch; C1/C2 positions retained to clear DRDY on back')
+else:raise SystemExit(e.kind)

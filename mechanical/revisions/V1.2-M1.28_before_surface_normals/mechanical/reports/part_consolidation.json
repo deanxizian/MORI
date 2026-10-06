@@ -1,0 +1,207 @@
+{
+  "revision": "V1.2-M1.28",
+  "before_revision": "V1.2-M1.12",
+  "status": "PASS",
+  "robot_print_before": 25,
+  "robot_print_after": 15,
+  "fasteners_before": 74,
+  "fasteners_after": 106,
+  "retired_ids": [
+    "Body_Top_Shroud",
+    "Camera_Baffle",
+    "Gimbal_Base_-13_Nut",
+    "Gimbal_Base_-13_Screw",
+    "Gimbal_Base_13_Nut",
+    "Gimbal_Base_13_Screw",
+    "Mic_Duct_L",
+    "Mic_Duct_R",
+    "Pitch_Cable_Clip",
+    "Wheel_Cap_L",
+    "Wheel_Cap_R",
+    "Yaw_Turntable",
+    "Motor_Retainer_Insert_0",
+    "Motor_Retainer_Insert_1",
+    "Motor_Retainer_Screw_0",
+    "Motor_Retainer_Screw_1",
+    "Wheel_Bearing_L_33",
+    "Wheel_Bearing_L_39",
+    "Wheel_Bearing_R_33",
+    "Wheel_Bearing_R_39",
+    "Wheel_Coupler_L",
+    "Wheel_Coupler_R"
+  ],
+  "integrations": {
+    "Camera_Baffle": "Head_Front",
+    "Pitch_Cable_Clip": "Pitch_Yoke",
+    "Yaw_Turntable": "Pitch_Yoke",
+    "Body_Top_Shroud": "Yaw_Base",
+    "Wheel_Cap_L": "Wheel_Hub_L",
+    "Wheel_Cap_R": "Wheel_Hub_R"
+  },
+  "changed_prints": [
+    {
+      "id": "Head_Front",
+      "volume_before_mm3": 39748.60231738284,
+      "volume_after_mm3": 39851.19762208062,
+      "bounds_xyz_mm": [
+        [
+          -59.99351501464844,
+          59.993473052978516
+        ],
+        [
+          0.20001220703125,
+          56.37336730957031
+        ],
+        [
+          175.5,
+          281.9950866699219
+        ]
+      ]
+    },
+    {
+      "id": "Pitch_Yoke",
+      "volume_before_mm3": 25546.536711437224,
+      "volume_after_mm3": 55654.46510981868,
+      "bounds_xyz_mm": [
+        [
+          -48.48827362060547,
+          48.48821258544922
+        ],
+        [
+          -48.488243103027344,
+          23.0
+        ],
+        [
+          149.0,
+          234.0
+        ]
+      ]
+    },
+    {
+      "id": "Yaw_Base",
+      "volume_before_mm3": 42968.68319075622,
+      "volume_after_mm3": 47013.11723574335,
+      "bounds_xyz_mm": [
+        [
+          -48.0,
+          48.0
+        ],
+        [
+          -35.79999923706055,
+          35.79999923706055
+        ],
+        [
+          115.0,
+          163.8000030517578
+        ]
+      ]
+    },
+    {
+      "id": "Wheel_Hub_L",
+      "volume_before_mm3": 82765.35949685058,
+      "volume_after_mm3": 82541.47950163027,
+      "bounds_xyz_mm": [
+        [
+          -75.5,
+          -60.5
+        ],
+        [
+          -42.0,
+          42.0
+        ],
+        [
+          10.5,
+          94.5
+        ]
+      ]
+    },
+    {
+      "id": "Wheel_Hub_R",
+      "volume_before_mm3": 82765.35949685058,
+      "volume_after_mm3": 82541.47950163027,
+      "bounds_xyz_mm": [
+        [
+          60.5,
+          75.5
+        ],
+        [
+          -42.0,
+          42.0
+        ],
+        [
+          10.5,
+          94.5
+        ]
+      ]
+    }
+  ],
+  "service_sequence": "With pitch head and shells detached, bench-fit fixed reaction link/horn/clamp through the combined yaw U/journal. Insert this group into bearing/bridge, then fit reaction cross-retainer, yaw servo/output and lock. Removal reverses this sequence; reaction link travels with U/journal after cross-retainer removal. In operation the reaction link remains BODY-fixed, never yaw-parented.",
+  "retained_splits": [
+    "Drive_Bridge vs Load_Frame: wheel-drive installation",
+    "Yaw_Base vs Load_Frame: bearing and reaction-link installation",
+    "Display_Frame vs Pitch_Cradle: LCD rear-post screws and camera bench assembly",
+    "Speaker vs Body_Upper: direct vendor ears, trial gasket and two shell-side screws; no printed rear cover",
+    "Battery_Tray for pack replacement",
+    "Motor_Retainer for wheel-drive insertion"
+  ],
+  "print_release": false,
+  "robot_print_after_consolidation_phase": 17,
+  "fasteners_after_consolidation_phase": 70,
+  "current_joint_revision": "V1.2-M1.28",
+  "native_electronics_mounting": "No additional printed parts; two buck modules add four M2 screws and four trial inserts.",
+  "current_robot_print_ids": [
+    "Battery_Tray",
+    "Body_Lower",
+    "Body_Upper",
+    "Display_Frame",
+    "Drive_Bridge",
+    "Head_Front",
+    "Head_Rear",
+    "Load_Frame",
+    "Motor_Retainer",
+    "Pitch_Cradle",
+    "Pitch_Yoke",
+    "Wheel_Hub_L",
+    "Wheel_Hub_R",
+    "Yaw_Base",
+    "Yaw_Reaction_Link"
+  ],
+  "physical_components": [
+    {
+      "id": "Head_Front",
+      "motion_group": "pitch",
+      "positive_solids": 1,
+      "cavity_components": 0,
+      "volume_mm3": 39851.197583485075
+    },
+    {
+      "id": "Pitch_Yoke",
+      "motion_group": "yaw",
+      "positive_solids": 1,
+      "cavity_components": 0,
+      "volume_mm3": 55654.46511004504
+    },
+    {
+      "id": "Yaw_Base",
+      "motion_group": "body",
+      "positive_solids": 1,
+      "cavity_components": 0,
+      "volume_mm3": 52518.55518508672
+    },
+    {
+      "id": "Wheel_Hub_L",
+      "motion_group": "wheel_L",
+      "positive_solids": 1,
+      "cavity_components": 0,
+      "volume_mm3": 82541.47950163027
+    },
+    {
+      "id": "Wheel_Hub_R",
+      "motion_group": "wheel_R",
+      "positive_solids": 1,
+      "cavity_components": 0,
+      "volume_mm3": 82541.47950163027
+    }
+  ],
+  "scope": "Connected solid meshes, object inventory and correct rigid motion groups only; service paths, FOV and motion have separate checks. No print/strength qualification."
+}

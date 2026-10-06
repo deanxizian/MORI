@@ -1,0 +1,33 @@
+Already up to date
+Done in 157ms using pnpm v11.19.0
+$ vitest run --config apps/console/vitest.config.ts
+
+ RUN  v3.1.3 /Users/dean/Documents/MORI
+
+ ❯ apps/console/tests/core.test.ts (4 tests | 1 failed) 27ms
+   ✓ eyes independent clock > deterministic finite frames, blink and interruption continuity 23ms
+   ✓ foreground pointer/blur/hidden/disconnect release prevents replay 0ms
+   ✓ shared cross-language valid and invalid corpus 2ms
+   × MORI repeats the reference blink schedule beyond 15 minutes 2ms
+     → expected 0.9996588425489107 to be less than 0.1
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/console/tests/core.test.ts > MORI repeats the reference blink schedule beyond 15 minutes
+AssertionError: expected 0.9996588425489107 to be less than 0.1
+ ❯ apps/console/tests/core.test.ts:32:131
+     30|  expect(Object.keys(SPEC.commands).length).toBeGreaterThan(30)
+     31| })
+     32| it('MORI repeats the reference blink schedule beyond 15 minutes',()=>{…
+       |                                                                                                                                   ^
+     33| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  22:21:53
+   Duration  212ms (transform 29ms, setup 0ms, collect 28ms, tests 27ms, environment 0ms, prepare 47ms)
+
+[ELIFECYCLE] Test failed. See above for more details.

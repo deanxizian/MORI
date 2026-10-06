@@ -1,0 +1,1 @@
+Intermediate diagnostics while adapting the original vendor LCD, not the current acceptance report. Earlier collisions were repaired by changing printed supports and installation positions. Current results are in mechanical/reports/validation.json with the completed commands.json. Original source dimensions were never reduced to hide a collision.

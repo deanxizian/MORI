@@ -1,0 +1,1277 @@
+{
+  "status": "PASS",
+  "scope": "Arithmetic and model-volume integration only; physical verification NOT_TESTED",
+  "main_motor": {
+    "nominal_V": 12,
+    "ratio": 20.408666666666665,
+    "encoder_counts_motor_x4": 48,
+    "no_load_rpm": 380,
+    "no_load_A": 0.1,
+    "stall_A": 1.8,
+    "stall_torque_Nm": 0.3138128,
+    "no_load_rpm_tolerance": 0.2,
+    "continuous_rating_known": false,
+    "max_duty_balance": 0.65,
+    "mpn": "Pololu4863"
+  },
+  "mass": {
+    "total_kg": 1.0102766693344203,
+    "body_kg": 0.880351359242706,
+    "wheel_system_kg": 0.12992531009171426,
+    "body_com_Blender_m": [
+      -0.00021821666830072766,
+      0.00018289328590479227,
+      0.10356663869039681
+    ],
+    "body_com_control_m": [
+      -0.00018289328590479227,
+      -0.00021821666830072766,
+      0.10356663869039681
+    ],
+    "body_com_relative_axle_control_m": [
+      -0.00018289328590479227,
+      -0.00021821666830072766,
+      0.05606663869039681
+    ],
+    "com_forward_uncertainty_m": 0.008,
+    "com_height_uncertainty_m": 0.02,
+    "pitch_inertia_about_body_com_kg_m2": 0.0023487208125632375,
+    "inertia_interval": [
+      0.0015266685281661045,
+      0.0035230812188448563
+    ],
+    "mass_interval_kg": [
+      0.8082213354675363,
+      1.2123320032013043
+    ],
+    "note": "19 closed STL volumes at1.24g/cm3; coupons excluded; bought placeholders NOT counted; tyres/shafts/bearings/boards allocations; true slice mass and rotor/belt inertia pending"
+  },
+  "kinematics": {
+    "target_rpm": 60.31134685587613,
+    "encoder_output_counts_x4": 979.616,
+    "single_channel_cycles_motor_rev": 12.0,
+    "distance_per_count_m": 0.0003046615225670368,
+    "belt_ratio": 1,
+    "belt_efficiency_assumption": 0.85,
+    "track_m": 0.138
+  },
+  "linear_model": {
+    "states": "x,xdot,theta,thetadot; upright linearization, level rolling without slip",
+    "equations": [
+      "A*xdd+B*thetadd=tau/r-Frr",
+      "B*xdd+C*thetadd=mb*g*l*theta-tau"
+    ],
+    "A": 1.0752393243802774,
+    "B": 0.04935834157926052,
+    "C": 0.005116077116244827,
+    "det": 0.0030647614184935276,
+    "open_loop_positive_pole_s-1": 13.03151328560975,
+    "unmodelled": "motor electrical dynamics/reflected inertia, backlash, flexible belts, head yaw coupling, tyre compliance, Coulomb friction, slip, sensor phase delay; wheel inertia approximated solid discs"
+  },
+  "regen": {
+    "cap_F": 0.001,
+    "cap_energy_8_4_to_10_V_J": 0.014719999999999999,
+    "translation_energy_at_0_3_J": 0.04546245012004891,
+    "cap_bus_after_0_5J_V": 32.71941319767211,
+    "dump_R_ohm": 5.6,
+    "dump_current_at8_9_A": 1.5892857142857144,
+    "dump_power_at8_9_W": 14.144642857142859,
+    "current_trip_range_A": [
+      0.4061944656004062,
+      0.6216006216006216
+    ],
+    "clamp_on_tolerance_V": [
+      8.731725371750716,
+      9.036461465436458
+    ],
+    "clamp_off_tolerance_V": [
+      8.640867481552208,
+      8.938327378873765
+    ],
+    "qualification": "NOT_TESTED. Tolerance allocation must be confirmed; hysteresis, gate charge, resistor pulse energy and comparator turn-on overshoot require scope acceptance<10V."
+  },
+  "runtime": {
+    "candidate_battery_Wh": 24.12,
+    "usable_Wh": 18.09,
+    "assumed_average_W": [
+      5,
+      8
+    ],
+    "estimated_hours": [
+      2.26125,
+      3.618
+    ],
+    "battery_fit": "FAIL; 71mm pack exceeds70mm slot; these runtime estimates require verified charge/usable capacity"
+  },
+  "head": {
+    "inertia_kg_m2_assumed": 0.0002,
+    "accel_rad_s2_assumed": 2,
+    "cable_friction_Nm_allocation": 0.01,
+    "head_torque_2x_margin_Nm": 0.0208,
+    "required_servo_Nm_with_efficiency_0_8": 0.014857142857142857,
+    "required_total_servo_travel_deg": 210,
+    "SER0037_spec_lower_rated_torque_at4_8V_Nm": 0.02941995,
+    "status": "NOT_TESTED; use lower specification-table values when vendor introduction disagrees"
+  },
+  "motor_envelope": [
+    {
+      "battery_V": 8.4,
+      "speed_m_s": 0,
+      "rpm": 0.0,
+      "no_load_rpm": 256.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 1.215
+    },
+    {
+      "battery_V": 8.4,
+      "speed_m_s": 0.1,
+      "rpm": 20.103782285292045,
+      "no_load_rpm": 256.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 1.215
+    },
+    {
+      "battery_V": 8.4,
+      "speed_m_s": 0.3,
+      "rpm": 60.31134685587613,
+      "no_load_rpm": 256.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 1.215
+    },
+    {
+      "battery_V": 8.4,
+      "speed_m_s": 0.6,
+      "rpm": 120.62269371175226,
+      "no_load_rpm": 256.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.032361499340412464,
+      "slow20pct_65pct_each_Nm": 0.01119373390051557,
+      "unlimited_stall_A": 1.215
+    },
+    {
+      "battery_V": 7.2,
+      "speed_m_s": 0,
+      "rpm": 0.0,
+      "no_load_rpm": 218.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 1.0350000000000001
+    },
+    {
+      "battery_V": 7.2,
+      "speed_m_s": 0.1,
+      "rpm": 20.103782285292045,
+      "no_load_rpm": 218.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 1.0350000000000001
+    },
+    {
+      "battery_V": 7.2,
+      "speed_m_s": 0.3,
+      "rpm": 60.31134685587613,
+      "no_load_rpm": 218.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.04677499030025779,
+      "unlimited_stall_A": 1.0350000000000001
+    },
+    {
+      "battery_V": 7.2,
+      "speed_m_s": 0.6,
+      "rpm": 120.62269371175226,
+      "no_load_rpm": 218.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.015023342140412461,
+      "slow20pct_65pct_each_Nm": 0.0,
+      "unlimited_stall_A": 1.0350000000000001
+    },
+    {
+      "battery_V": 6.6,
+      "speed_m_s": 0,
+      "rpm": 0.0,
+      "no_load_rpm": 199.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 0.945
+    },
+    {
+      "battery_V": 6.6,
+      "speed_m_s": 0.1,
+      "rpm": 20.103782285292045,
+      "no_load_rpm": 199.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 0.945
+    },
+    {
+      "battery_V": 6.6,
+      "speed_m_s": 0.3,
+      "rpm": 60.31134685587613,
+      "no_load_rpm": 199.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.038105911700257795,
+      "unlimited_stall_A": 0.945
+    },
+    {
+      "battery_V": 6.6,
+      "speed_m_s": 0.6,
+      "rpm": 120.62269371175226,
+      "no_load_rpm": 199.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.006354263540412464,
+      "slow20pct_65pct_each_Nm": 0.0,
+      "unlimited_stall_A": 0.945
+    },
+    {
+      "battery_V": 6,
+      "speed_m_s": 0,
+      "rpm": 0.0,
+      "no_load_rpm": 180.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 0.855
+    },
+    {
+      "battery_V": 6,
+      "speed_m_s": 0.1,
+      "rpm": 20.103782285292045,
+      "no_load_rpm": 180.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.048043871297283575,
+      "slow20pct_65pct_each_Nm": 0.048043871297283575,
+      "unlimited_stall_A": 0.855
+    },
+    {
+      "battery_V": 6,
+      "speed_m_s": 0.3,
+      "rpm": 60.31134685587613,
+      "no_load_rpm": 180.5,
+      "full_duty_each_Nm": 0.048043871297283575,
+      "limited_65pct_each_Nm": 0.040020715820206235,
+      "slow20pct_65pct_each_Nm": 0.029436833100257805,
+      "unlimited_stall_A": 0.855
+    },
+    {
+      "battery_V": 6,
+      "speed_m_s": 0.6,
+      "rpm": 120.62269371175226,
+      "no_load_rpm": 180.5,
+      "full_duty_each_Nm": 0.042030856240412466,
+      "limited_65pct_each_Nm": 0.0,
+      "slow20pct_65pct_each_Nm": 0.0,
+      "unlimited_stall_A": 0.855
+    }
+  ],
+  "recovery": [
+    {
+      "total_kg": 0.4,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0007205419046320499,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.006384980963025004,
+      "each_motor_A_est": 0.14069292879720013,
+      "x_accel_m_s2": 0.5913550003783768,
+      "speed_change_100ms_m_s": 0.059135500037837685,
+      "traction_ratio": 0.09707091805372677
+    },
+    {
+      "total_kg": 0.4,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0007205419046320499,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.009761248215141039,
+      "each_motor_A_est": 0.1622106441492574,
+      "x_accel_m_s2": 1.0062282196679082,
+      "speed_change_100ms_m_s": 0.10062282196679083,
+      "traction_ratio": 0.16955164345013013
+    },
+    {
+      "total_kg": 0.4,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0007205419046320499,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.014262937884629085,
+      "each_motor_A_est": 0.1909009312853337,
+      "x_accel_m_s2": 1.5593925120539502,
+      "speed_change_100ms_m_s": 0.15593925120539504,
+      "traction_ratio": 0.2661926106453346
+    },
+    {
+      "total_kg": 0.6,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0012541290429727344,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.00998743481904291,
+      "each_motor_A_est": 0.1636521825689896,
+      "x_accel_m_s2": 0.6767909322132483,
+      "speed_change_100ms_m_s": 0.06767909322132483,
+      "traction_ratio": 0.10293823454088893
+    },
+    {
+      "total_kg": 0.6,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0012541290429727344,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.01521711371312808,
+      "each_motor_A_est": 0.19698210980003417,
+      "x_accel_m_s2": 1.140749559131754,
+      "speed_change_100ms_m_s": 0.1140749559131754,
+      "traction_ratio": 0.17778438691937495
+    },
+    {
+      "total_kg": 0.6,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0012541290429727344,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.02219001890524164,
+      "each_motor_A_est": 0.24142201277476025,
+      "x_accel_m_s2": 1.7593610616897617,
+      "speed_change_100ms_m_s": 0.17593610616897618,
+      "traction_ratio": 0.27757925675735634
+    },
+    {
+      "total_kg": 0.8,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0017877161813134189,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.013477135237324587,
+      "each_motor_A_est": 0.18589283316247512,
+      "x_accel_m_s2": 0.7172285214321303,
+      "speed_change_100ms_m_s": 0.07172285214321304,
+      "traction_ratio": 0.10466161374732652
+    },
+    {
+      "total_kg": 0.8,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0017877161813134189,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.020495445670511304,
+      "each_motor_A_est": 0.23062211401517915,
+      "x_accel_m_s2": 1.2044197099639182,
+      "speed_change_100ms_m_s": 0.12044197099639183,
+      "traction_ratio": 0.1799951393939859
+    },
+    {
+      "total_kg": 0.8,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0017877161813134189,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.029853192914760254,
+      "each_motor_A_est": 0.2902611551521178,
+      "x_accel_m_s2": 1.854007961339635,
+      "speed_change_100ms_m_s": 0.1854007961339635,
+      "traction_ratio": 0.2804398402561984
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.017101076507351137,
+      "each_motor_A_est": 0.20898903108701197,
+      "x_accel_m_s2": 0.7417564612796345,
+      "speed_change_100ms_m_s": 0.07417564612796344,
+      "traction_ratio": 0.1053546173886294
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.02597402939968983,
+      "each_motor_A_est": 0.2655383680951818,
+      "x_accel_m_s2": 1.2430396588743153,
+      "speed_change_100ms_m_s": 0.12430396588743153,
+      "traction_ratio": 0.18077236505023522
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.03780463325614143,
+      "each_motor_A_est": 0.34093748410607494,
+      "x_accel_m_s2": 1.9114172556672238,
+      "speed_change_100ms_m_s": 0.19114172556672238,
+      "traction_ratio": 0.2813293619323764
+    }
+  ],
+  "sensitivity": [
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.013168338552766223,
+      "each_motor_A_est": 0.18392480200148767,
+      "x_accel_m_s2": 0.4962993326191044,
+      "speed_change_100ms_m_s": 0.049629933261910446,
+      "traction_ratio": 0.07192738721205527
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.019986898358054603,
+      "each_motor_A_est": 0.22738102689281384,
+      "x_accel_m_s2": 0.8622615159365826,
+      "speed_change_100ms_m_s": 0.08622615159365826,
+      "traction_ratio": 0.12988333818468192
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.02907831143177245,
+      "each_motor_A_est": 0.28532266008124874,
+      "x_accel_m_s2": 1.350211093693221,
+      "speed_change_100ms_m_s": 0.1350211093693221,
+      "traction_ratio": 0.20715793948151748
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.014583914384449235,
+      "each_motor_A_est": 0.19294658716565566,
+      "x_accel_m_s2": 0.5517318224485864,
+      "speed_change_100ms_m_s": 0.05517318224485865,
+      "traction_ratio": 0.08395940655951717
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.022251819688747426,
+      "each_motor_A_est": 0.24181588315548266,
+      "x_accel_m_s2": 0.9509534996637544,
+      "speed_change_100ms_m_s": 0.09509534996637545,
+      "traction_ratio": 0.14913456914062098
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.03247569342781168,
+      "each_motor_A_est": 0.30697494447525203,
+      "x_accel_m_s2": 1.4832490692839786,
+      "speed_change_100ms_m_s": 0.14832490692839786,
+      "traction_ratio": 0.2360347859154261
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.016606165572567826,
+      "each_motor_A_est": 0.20583485168589571,
+      "x_accel_m_s2": 0.6309210936335607,
+      "speed_change_100ms_m_s": 0.06309210936335607,
+      "traction_ratio": 0.10114800562731989
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.025487421589737175,
+      "each_motor_A_est": 0.26243710638786677,
+      "x_accel_m_s2": 1.0776563335597138,
+      "speed_change_100ms_m_s": 0.10776563335597139,
+      "traction_ratio": 0.17663632764910542
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.03606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.0373290962792963,
+      "each_motor_A_est": 0.33790677932382807,
+      "x_accel_m_s2": 1.6733033201279168,
+      "speed_change_100ms_m_s": 0.16733033201279168,
+      "traction_ratio": 0.2772874236781526
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.015933668890605296,
+      "each_motor_A_est": 0.2015488781248266,
+      "x_accel_m_s2": 0.6960419828364799,
+      "speed_change_100ms_m_s": 0.06960419828364799,
+      "traction_ratio": 0.0954319620870336
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.024106177212896488,
+      "each_motor_A_est": 0.25363412335568525,
+      "x_accel_m_s2": 1.169896493365268,
+      "speed_change_100ms_m_s": 0.11698964933652681,
+      "traction_ratio": 0.16489611656768194
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.03500285497595142,
+      "each_motor_A_est": 0.32308111699683006,
+      "x_accel_m_s2": 1.8017025074036526,
+      "speed_change_100ms_m_s": 0.18017025074036527,
+      "traction_ratio": 0.2575149892085465
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.017101076507351137,
+      "each_motor_A_est": 0.20898903108701197,
+      "x_accel_m_s2": 0.7417564612796345,
+      "speed_change_100ms_m_s": 0.07417564612796344,
+      "traction_ratio": 0.1053546173886294
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.02597402939968983,
+      "each_motor_A_est": 0.2655383680951818,
+      "x_accel_m_s2": 1.2430396588743153,
+      "speed_change_100ms_m_s": 0.12430396588743153,
+      "traction_ratio": 0.18077236505023522
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.03780463325614143,
+      "each_motor_A_est": 0.34093748410607494,
+      "x_accel_m_s2": 1.9114172556672238,
+      "speed_change_100ms_m_s": 0.19114172556672238,
+      "traction_ratio": 0.2813293619323764
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.01876880167413091,
+      "each_motor_A_est": 0.21961782103299107,
+      "x_accel_m_s2": 0.8070628590555697,
+      "speed_change_100ms_m_s": 0.08070628590555698,
+      "traction_ratio": 0.119529839248052
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.028642389666537465,
+      "each_motor_A_est": 0.2825444320087483,
+      "x_accel_m_s2": 1.3475298953158115,
+      "speed_change_100ms_m_s": 0.13475298953158116,
+      "traction_ratio": 0.20345272002531137
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.05606663869039681,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.04180717365641288,
+      "each_motor_A_est": 0.3664465799764247,
+      "x_accel_m_s2": 2.0681526103294674,
+      "speed_change_100ms_m_s": 0.20681526103294676,
+      "traction_ratio": 0.31534989439499056
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.018028271578862446,
+      "each_motor_A_est": 0.2148982551308452,
+      "x_accel_m_s2": 0.8695196299493605,
+      "speed_change_100ms_m_s": 0.08695196299493606,
+      "traction_ratio": 0.11323552972804943
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.02724335543853933,
+      "each_motor_A_est": 0.2736280702287436,
+      "x_accel_m_s2": 1.439073422894902,
+      "speed_change_100ms_m_s": 0.1439073422894902,
+      "traction_ratio": 0.1915612999245446
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0015266685281661045,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.039530133918108515,
+      "each_motor_A_est": 0.3519344903592748,
+      "x_accel_m_s2": 2.198478480155625,
+      "speed_change_100ms_m_s": 0.21984784801556254,
+      "traction_ratio": 0.2959956601865382
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.01902154576147795,
+      "each_motor_A_est": 0.2212286163055041,
+      "x_accel_m_s2": 0.9084152226780516,
+      "speed_change_100ms_m_s": 0.09084152226780517,
+      "traction_ratio": 0.12167809699649114
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.028832594130724143,
+      "each_motor_A_est": 0.2837566481081979,
+      "x_accel_m_s2": 1.5013063712608088,
+      "speed_change_100ms_m_s": 0.15013063712608088,
+      "traction_ratio": 0.2050694075540514
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0023487208125632375,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.041913991956385725,
+      "each_motor_A_est": 0.36712735717845624,
+      "x_accel_m_s2": 2.2918279027044854,
+      "speed_change_100ms_m_s": 0.22918279027044855,
+      "traction_ratio": 0.31625782163079835
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 5,
+      "desired_pitch_accel_rad_s2": -5.585053606381854,
+      "each_wheel_Nm": 0.0204405088795001,
+      "each_motor_A_est": 0.23027198941215976,
+      "x_accel_m_s2": 0.9639803551476109,
+      "speed_change_100ms_m_s": 0.0963980355147611,
+      "traction_ratio": 0.13373890737997932
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 8,
+      "desired_pitch_accel_rad_s2": -8.936085770210967,
+      "each_wheel_Nm": 0.031102935119559583,
+      "each_motor_A_est": 0.2982260450788469,
+      "x_accel_m_s2": 1.590210583212104,
+      "speed_change_100ms_m_s": 0.1590210583212104,
+      "traction_ratio": 0.2243667041676325
+    },
+    {
+      "total_kg": 1.0102766693344203,
+      "com_above_axle_m": 0.07606663869039682,
+      "body_pitch_inertia_kg_m2": 0.0035230812188448563,
+      "lean_deg": 12,
+      "desired_pitch_accel_rad_s2": -13.404128655316452,
+      "each_wheel_Nm": 0.04531950343963889,
+      "each_motor_A_est": 0.38883145263442975,
+      "x_accel_m_s2": 2.425184220631427,
+      "speed_change_100ms_m_s": 0.24251842206314272,
+      "traction_ratio": 0.34520376655117
+    }
+  ],
+  "base_load": [
+    {
+      "mass_kg": 0.4,
+      "slope_deg": 0,
+      "force_N": 0.2784532,
+      "each_wheel_Nm": 0.0066132635,
+      "each_motor_Nm": 0.00778031
+    },
+    {
+      "mass_kg": 0.4,
+      "slope_deg": 3,
+      "force_N": 0.48364184473195365,
+      "each_wheel_Nm": 0.0114864938123839,
+      "each_motor_Nm": 0.013513522132216354
+    },
+    {
+      "mass_kg": 0.6,
+      "slope_deg": 0,
+      "force_N": 0.4176798,
+      "each_wheel_Nm": 0.00991989525,
+      "each_motor_Nm": 0.011670465
+    },
+    {
+      "mass_kg": 0.6,
+      "slope_deg": 3,
+      "force_N": 0.7254627670979303,
+      "each_wheel_Nm": 0.017229740718575845,
+      "each_motor_Nm": 0.020270283198324524
+    },
+    {
+      "mass_kg": 0.8,
+      "slope_deg": 0,
+      "force_N": 0.5569064,
+      "each_wheel_Nm": 0.013226527,
+      "each_motor_Nm": 0.01556062
+    },
+    {
+      "mass_kg": 0.8,
+      "slope_deg": 3,
+      "force_N": 0.9672836894639073,
+      "each_wheel_Nm": 0.0229729876247678,
+      "each_motor_Nm": 0.02702704426443271
+    },
+    {
+      "mass_kg": 1.0102766693344203,
+      "slope_deg": 0,
+      "force_N": 0.703286928653778,
+      "each_wheel_Nm": 0.016703064555527225,
+      "each_motor_Nm": 0.019650664182973208
+    },
+    {
+      "mass_kg": 1.0102766693344203,
+      "slope_deg": 3,
+      "force_N": 1.2215301801163823,
+      "each_wheel_Nm": 0.02901134177776408,
+      "each_motor_Nm": 0.03413099032678127
+    }
+  ],
+  "encoder_counts": [
+    {
+      "speed_m_s": 0.005,
+      "sample_s": 0.002403846153846154,
+      "counts": 0.039451095326900346
+    },
+    {
+      "speed_m_s": 0.005,
+      "sample_s": 0.01,
+      "counts": 0.16411655655990542
+    },
+    {
+      "speed_m_s": 0.005,
+      "sample_s": 0.019230769230769232,
+      "counts": 0.31560876261520276
+    },
+    {
+      "speed_m_s": 0.01,
+      "sample_s": 0.002403846153846154,
+      "counts": 0.07890219065380069
+    },
+    {
+      "speed_m_s": 0.01,
+      "sample_s": 0.01,
+      "counts": 0.32823311311981085
+    },
+    {
+      "speed_m_s": 0.01,
+      "sample_s": 0.019230769230769232,
+      "counts": 0.6312175252304055
+    },
+    {
+      "speed_m_s": 0.03,
+      "sample_s": 0.002403846153846154,
+      "counts": 0.23670657196140205
+    },
+    {
+      "speed_m_s": 0.03,
+      "sample_s": 0.01,
+      "counts": 0.9846993393594324
+    },
+    {
+      "speed_m_s": 0.03,
+      "sample_s": 0.019230769230769232,
+      "counts": 1.8936525756912164
+    },
+    {
+      "speed_m_s": 0.3,
+      "sample_s": 0.002403846153846154,
+      "counts": 2.3670657196140206
+    },
+    {
+      "speed_m_s": 0.3,
+      "sample_s": 0.01,
+      "counts": 9.846993393594325
+    },
+    {
+      "speed_m_s": 0.3,
+      "sample_s": 0.019230769230769232,
+      "counts": 18.936525756912165
+    },
+    {
+      "speed_m_s": 0.6,
+      "sample_s": 0.002403846153846154,
+      "counts": 4.734131439228041
+    },
+    {
+      "speed_m_s": 0.6,
+      "sample_s": 0.01,
+      "counts": 19.69398678718865
+    },
+    {
+      "speed_m_s": 0.6,
+      "sample_s": 0.019230769230769232,
+      "counts": 37.87305151382433
+    }
+  ],
+  "power": [
+    {
+      "state": "stationary_balance",
+      "battery_V": 8.4,
+      "power_W_upper_budget": 4.128823529411765,
+      "battery_A": 0.4915266106442577,
+      "logic_buck_A": 0.23,
+      "head_buck_A": 0.035,
+      "driver_and_sense_heat_W": 0.04455,
+      "motor_copper_each_W": 0.15
+    },
+    {
+      "state": "stationary_balance",
+      "battery_V": 6.6,
+      "power_W_upper_budget": 3.5888235294117647,
+      "battery_A": 0.5437611408199644,
+      "logic_buck_A": 0.23,
+      "head_buck_A": 0.035,
+      "driver_and_sense_heat_W": 0.04455,
+      "motor_copper_each_W": 0.15
+    },
+    {
+      "state": "moving",
+      "battery_V": 8.4,
+      "power_W_upper_budget": 5.0864705882352945,
+      "battery_A": 0.6055322128851541,
+      "logic_buck_A": 0.24999999999999997,
+      "head_buck_A": 0.035,
+      "driver_and_sense_heat_W": 0.07920000000000002,
+      "motor_copper_each_W": 0.2666666666666667
+    },
+    {
+      "state": "moving",
+      "battery_V": 6.6,
+      "power_W_upper_budget": 4.366470588235294,
+      "battery_A": 0.6615864527629234,
+      "logic_buck_A": 0.24999999999999997,
+      "head_buck_A": 0.035,
+      "driver_and_sense_heat_W": 0.07920000000000002,
+      "motor_copper_each_W": 0.2666666666666667
+    },
+    {
+      "state": "disturbance_head_wifi",
+      "battery_V": 8.4,
+      "power_W_upper_budget": 12.778941176470589,
+      "battery_A": 1.5213025210084035,
+      "logic_buck_A": 0.65,
+      "head_buck_A": 0.6,
+      "driver_and_sense_heat_W": 0.20275200000000002,
+      "motor_copper_each_W": 0.6826666666666666
+    },
+    {
+      "state": "disturbance_head_wifi",
+      "battery_V": 6.6,
+      "power_W_upper_budget": 11.62694117647059,
+      "battery_A": 1.7616577540106955,
+      "logic_buck_A": 0.65,
+      "head_buck_A": 0.6,
+      "driver_and_sense_heat_W": 0.20275200000000002,
+      "motor_copper_each_W": 0.6826666666666666
+    },
+    {
+      "state": "hardware_limit_coincident",
+      "battery_V": 8.4,
+      "power_W_upper_budget": 19.610537501713974,
+      "battery_A": 2.334587797823092,
+      "logic_buck_A": 0.75,
+      "head_buck_A": 0.8,
+      "driver_and_sense_heat_W": 0.7650469188930726,
+      "motor_copper_each_W": 2.575915551828527
+    },
+    {
+      "state": "hardware_limit_coincident",
+      "battery_V": 6.6,
+      "power_W_upper_budget": 17.372775263951734,
+      "battery_A": 2.6322386763563235,
+      "logic_buck_A": 0.75,
+      "head_buck_A": 0.8,
+      "driver_and_sense_heat_W": 0.7650469188930726,
+      "motor_copper_each_W": 2.575915551828527
+    }
+  ],
+  "mass_items": [
+    {
+      "part": "Battery_Tray",
+      "mass_kg": 0.013806016082889195,
+      "xyz_mm": [
+        -5.491340148909576e-10,
+        -8.808647573786266e-10,
+        52.35923091768964
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Body_Lower_Shell",
+      "mass_kg": 0.08905933572101846,
+      "xyz_mm": [
+        2.455892042478277e-05,
+        1.719828437753199e-06,
+        56.399619182434314
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Body_Upper_Shell",
+      "mass_kg": 0.08597111264458063,
+      "xyz_mm": [
+        -0.000923226947273198,
+        -0.3379402766427867,
+        118.86143648976211
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Cable_Guide_-1",
+      "mass_kg": 0.0003456060245196026,
+      "xyz_mm": [
+        14.00000009150859,
+        -6.999999997578355,
+        117.99999999999976
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Cable_Guide_1",
+      "mass_kg": 0.0003456060245196015,
+      "xyz_mm": [
+        14.000000091508632,
+        6.999999997578385,
+        118.00000000000017
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Controller_Mount",
+      "mass_kg": 0.0030676866868912184,
+      "xyz_mm": [
+        1.172768185553561e-13,
+        -29.00000012285819,
+        114.93228886579045
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Display_Mount_Frame",
+      "mass_kg": 0.0034493653689993227,
+      "xyz_mm": [
+        8.462481839381607e-07,
+        -27.959084159815,
+        187.2304359676078
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Driver_Mount",
+      "mass_kg": 0.0017860178343584296,
+      "xyz_mm": [
+        -2.153328784063699e-14,
+        29.000000164128476,
+        115.0272188779587
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Head_Bearing_Carrier",
+      "mass_kg": 0.014476231416735343,
+      "xyz_mm": [
+        -3.6340636764390426e-14,
+        -7.48133192272268e-15,
+        142.3766351234714
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Head_Front_Shell",
+      "mass_kg": 0.03240268384035179,
+      "xyz_mm": [
+        -2.8053496001624296e-06,
+        -17.558202389660426,
+        189.90377784684333
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Head_Rear_Shell",
+      "mass_kg": 0.045256368259688255,
+      "xyz_mm": [
+        -2.091857538200864e-05,
+        24.14258407488666,
+        188.75250591694063
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Head_Turntable",
+      "mass_kg": 0.013984668502511906,
+      "xyz_mm": [
+        -2.0804634222864887e-10,
+        1.6493136725774916e-10,
+        148.4382037567657
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Imu_Mount",
+      "mass_kg": 0.0007782946956106752,
+      "xyz_mm": [
+        35.00000004212394,
+        -1.1817954588806245e-14,
+        115.00000000000067
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Load_Frame",
+      "mass_kg": 0.06076556151170892,
+      "xyz_mm": [
+        0.6715276127693421,
+        -1.0425065785847976e-09,
+        104.18255444262513
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Motor_Mount_L",
+      "mass_kg": 0.006286719157682226,
+      "xyz_mm": [
+        3.100917965231591e-16,
+        -19.999999701642135,
+        93.94326002539457
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Motor_Mount_R",
+      "mass_kg": 0.006286719157682225,
+      "xyz_mm": [
+        2.498143418624672e-15,
+        19.999999701642142,
+        93.94326002539457
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Servo_Mount",
+      "mass_kg": 0.0010833663129582102,
+      "xyz_mm": [
+        -21.55518177031072,
+        7.801324979330125e-15,
+        115.19999694824162
+      ],
+      "rotating_wheels": false,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Wheel_Cap_L",
+      "mass_kg": 0.0099626552148717,
+      "xyz_mm": [
+        -78.202403724966,
+        -4.297181258086359e-06,
+        47.50000063344048
+      ],
+      "rotating_wheels": true,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "Wheel_Cap_R",
+      "mass_kg": 0.009962654876842576,
+      "xyz_mm": [
+        78.20240376474197,
+        -3.8842487065711445e-06,
+        47.4999996885191
+      ],
+      "rotating_wheels": true,
+      "basis": "STL closed mesh volume x1.24g/cm3 solid PLA; no infill discount; actual material/print mass pending"
+    },
+    {
+      "part": "wheel_hubs_tyres_shafts_pulleys",
+      "mass_kg": 0.11,
+      "xyz_mm": [
+        0,
+        0,
+        47.5
+      ],
+      "rotating_wheels": true,
+      "basis": "pair allocation: excludes printed caps counted above; exact tyre material/shafts/bearings pending"
+    },
+    {
+      "part": "wheel_motors",
+      "mass_kg": 0.196,
+      "xyz_mm": [
+        0,
+        0,
+        90.5
+      ],
+      "rotating_wheels": false,
+      "basis": "2x98g manufacturer; motor rotor/reflected inertia unknown"
+    },
+    {
+      "part": "battery",
+      "mass_kg": 0.099,
+      "xyz_mm": [
+        0,
+        0,
+        63
+      ],
+      "rotating_wheels": false,
+      "basis": "ANSMANN2447-0105 catalog99g; tray revision/electrical verification HOLD"
+    },
+    {
+      "part": "lcd_and_mask",
+      "mass_kg": 0.025,
+      "xyz_mm": [
+        0,
+        -36,
+        186
+      ],
+      "rotating_wheels": false,
+      "basis": "module+mask allowance; no duplication of mount frame"
+    },
+    {
+      "part": "servo",
+      "mass_kg": 0.0112,
+      "xyz_mm": [
+        -22,
+        0,
+        122
+      ],
+      "rotating_wheels": false,
+      "basis": "SER0037 specification weight, ears not measured"
+    },
+    {
+      "part": "boards_and_carrier",
+      "mass_kg": 0.065,
+      "xyz_mm": [
+        0,
+        0,
+        117
+      ],
+      "rotating_wheels": false,
+      "basis": "allowance; all bare modules, carrier and local small parts"
+    },
+    {
+      "part": "bearings_fasteners_standoffs",
+      "mass_kg": 0.045,
+      "xyz_mm": [
+        0,
+        0,
+        96
+      ],
+      "rotating_wheels": false,
+      "basis": "nonprinted hardware allocation incl four axle bearings/head bearing/fasteners"
+    },
+    {
+      "part": "dump_resistor_clamp",
+      "mass_kg": 0.025,
+      "xyz_mm": [
+        0,
+        28,
+        85
+      ],
+      "rotating_wheels": false,
+      "basis": "power resistor+heat-spreader allowance; measured thermal requirements may increase"
+    },
+    {
+      "part": "wires_connectors",
+      "mass_kg": 0.035,
+      "xyz_mm": [
+        0,
+        0,
+        95
+      ],
+      "rotating_wheels": false,
+      "basis": "allowance; external test stand/estop excluded"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "scope": "Continuous geometry of the four upper CAM wires against fixed/moving solids and stored fixed-route wires, conditional on a42mm body payout per conductor",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "script_sha256": "6bea0e2fe351df283b131520054ffb50b1f5f3ecfda865c92ff2e11ec5377446",
+  "helper_sha256": "5b8db0bd93a520ffb11a2931bd9d2280242010d9b1fac028fe1a757df3b8c724",
+  "screen_sha256": "83233e2f2625b2c07db1c4627fd504091598ff7946d1592254902a45ef1bdfd4",
+  "curves_sha256": "ee7213012000b24bd8bdda3f05220ab34ffa6d88a04e3448162c578ebf4be614",
+  "fixed_and_straight_union_failures": [],
+  "adaptive_intervals": [
+    {
+      "interval_mm": [
+        0.0,
+        2.625
+      ],
+      "middle_mm": 1.3125,
+      "translation_allowance_mm": 1.3125,
+      "status": "PASS"
+    },
+    {
+      "interval_mm": [
+        2.625,
+        5.25
+      ],
+      "middle_mm": 3.9375,
+      "translation_allowance_mm": 1.3125,
+      "status": "PASS"
+    },
+    {
+      "interval_mm": [
+        5.25,
+        10.5
+      ],
+      "middle_mm": 7.875,
+      "translation_allowance_mm": 2.625,
+      "status": "PASS"
+    },
+    {
+      "interval_mm": [
+        10.5,
+        21.0
+      ],
+      "middle_mm": 15.75,
+      "translation_allowance_mm": 5.25,
+      "status": "PASS"
+    },
+    {
+      "interval_mm": [
+        21.0,
+        42.0
+      ],
+      "middle_mm": 31.5,
+      "translation_allowance_mm": 10.5,
+      "status": "PASS"
+    }
+  ],
+  "unproved_intervals": [],
+  "interval_tests": 9,
+  "maximum_translation_mm": 42.0,
+  "required_surface_gap_mm": 0.3,
+  "maximum_shape_packing_gap_bound_mm": 0.30583859777931377,
+  "packing_proof": "All shorter-departure paths are subsets of the maximum path; mutual and nonadjacent self distances cannot decrease on restriction. Uses stored h42 check including neck fan and current body prefix.",
+  "moving_obstacle_proof": "In CAM frame original core and tail-after-first5 translate by-h. Distance is1-Lipschitz in h; half interval added to geometric clearance requirement, including chord and point-spacing bounds.",
+  "bend_proof": "Only extends a collinear straight; all original bends retained, no new curvature. Does not establish cable force or life.",
+  "first5mm_contact_exceptions": [
+    "CAM_UART_4P",
+    "CAM_catalogue_housing",
+    "CAM_connector_tie_band",
+    "CAM_connector_tie_head",
+    "Pitch_Cradle"
+  ],
+  "body_reserve": "NOT_TESTED",
+  "common_PH_housing_motion": "NOT_TESTED",
+  "rigid_cradle_continuous_collision": "NOT_TESTED",
+  "tie_tightening_sliding_force": "NOT_TESTED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "elapsed_s": 1.505401849746704
+}

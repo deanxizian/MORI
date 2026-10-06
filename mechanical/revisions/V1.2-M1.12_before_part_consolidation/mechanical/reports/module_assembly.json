@@ -1,0 +1,149 @@
+{
+  "revision": "V1.2-M1.12",
+  "joints": [
+    {
+      "id": "Gimbal_Base_-13",
+      "axis": "Z",
+      "xy_mm": [
+        -13,
+        11.0
+      ],
+      "head_base_mm": 191.0,
+      "access_direction": "+Z",
+      "group": "yaw",
+      "upper": "Pitch_Yoke",
+      "lower": "Yaw_Turntable"
+    },
+    {
+      "id": "Gimbal_Base_13",
+      "axis": "Z",
+      "xy_mm": [
+        13,
+        11.0
+      ],
+      "head_base_mm": 191.0,
+      "access_direction": "+Z",
+      "group": "yaw",
+      "upper": "Pitch_Yoke",
+      "lower": "Yaw_Turntable"
+    },
+    {
+      "id": "Drive_L_-8",
+      "axis": "Z",
+      "xy_mm": [
+        -44.5,
+        -8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Drive_L_8",
+      "axis": "Z",
+      "xy_mm": [
+        -44.5,
+        8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Drive_R_-8",
+      "axis": "Z",
+      "xy_mm": [
+        44.5,
+        -8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Drive_R_8",
+      "axis": "Z",
+      "xy_mm": [
+        44.5,
+        8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Yaw_Base_-1",
+      "axis": "Z",
+      "xy_mm": [
+        -49,
+        0
+      ],
+      "head_base_mm": 119.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Yaw_Base",
+      "lower": "Load_Frame"
+    },
+    {
+      "id": "Yaw_Base_1",
+      "axis": "Z",
+      "xy_mm": [
+        49,
+        0
+      ],
+      "head_base_mm": 119.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Yaw_Base",
+      "lower": "Load_Frame"
+    }
+  ],
+  "flat_deck": {
+    "top_z_mm": 115.0,
+    "bottom_z_mm": 111.0,
+    "yaw_servo_on_deck": false,
+    "battery_to_deck_nominal_gap_mm": 5,
+    "servo_retention": "Head yaw ear shelves + M2 trial fasteners; final unit/horn clamping unverified"
+  },
+  "side_face_joints": {
+    "count": 4,
+    "axis": "X",
+    "y_mm": 24,
+    "z_relative_head_mm": [
+      0,
+      7
+    ],
+    "direction": "outward left/right",
+    "prerequisite": "Head front/rear shells removed; LCD seated on removable face bracket on bench"
+  },
+  "removed_material_functions": [
+    "full chassis rear wall",
+    "full body tub side enclosure",
+    "old provisional power and USB scaffold",
+    "tall head front bulkhead",
+    "deep structural gimbal bowl",
+    "spherical-trimmed high head-cradle wings",
+    "yaw servo recessed shelf"
+  ],
+  "limits": "M2 thread envelopes and access shafts are trial geometry, not supplier threads or full tool-handle proof. Unknown P1 power/USB final mounting remains BLOCKED.",
+  "additional_assembly": "Install body bridge/bearing, rotating journal, removable keyed reaction link/horn, THEN lower the yaw U support over the link, and finally fit the inverted yaw servo. Assemble centre horn lock through axial bore before inserting reaction cross screw. Real bought horn and tools still require bench check.",
+  "merged_same_body_parts": [
+    "Load_Frame + Body_Cheek_L + Body_Cheek_R",
+    "Power_Board_Carrier replaced by integral edge lands",
+    "IMU and rear-interface mounts integral to Load_Frame / Body_Upper"
+  ],
+  "retained_service_splits": [
+    "Drive_Bridge vs Load_Frame: wheel-drive installation",
+    "Yaw_Base vs Load_Frame: bearing and reaction-link installation",
+    "Display_Frame vs Pitch_Cradle: LCD rear-post screws and camera bench assembly",
+    "Speaker_Mount vs Body_Upper: speaker seal and replacement"
+  ]
+}

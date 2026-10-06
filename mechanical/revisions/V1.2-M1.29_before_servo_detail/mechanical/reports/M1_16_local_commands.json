@@ -1,0 +1,36 @@
+[
+  {
+    "stage": "before_geometry",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "mechanical/mori_v1_2.blend",
+      "--python",
+      "mechanical/scripts/validate_battery_retention.py",
+      "--",
+      "--before"
+    ],
+    "log": "battery_retention_before.log",
+    "returncode": 0,
+    "finished_log_utc": "2026-09-23T04:54:16.003881+00:00",
+    "note": "Old Y20 intentionally fails closed-edge check; Y12 trial later rejected by full assembly tool-access check. Final source uses Y0."
+  },
+  {
+    "stage": "trial_y12_geometry",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "mechanical/mori_v1_2.blend",
+      "--python",
+      "mechanical/scripts/validate_battery_retention.py"
+    ],
+    "log": "M1_16_battery_check.log",
+    "returncode": 0,
+    "finished_log_utc": "2026-09-23T04:58:42.627400+00:00",
+    "note": "Old Y20 intentionally fails closed-edge check; Y12 trial later rejected by full assembly tool-access check. Final source uses Y0."
+  }
+]

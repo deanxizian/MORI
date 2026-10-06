@@ -1,0 +1,70 @@
+{
+  "status": "BLOCKED",
+  "audit_status": "PASS",
+  "scope": "Material reserve and assembly dependency audit; no body reserve geometry checked",
+  "script_sha256": "cc55712c81833ea0dbe09cd6dfe10847857e0f6febbcf1bb07537a8c379d851e",
+  "source_main_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "source_feed_sha256": "25886e0047f191034783dba1818e6775bbb3c470e481c466d05b68bd80a4cc71",
+  "rows": [
+    {
+      "geometric_slot": 0,
+      "upper_material_allocation_mm": 153.1486393225259,
+      "neck_staged_upper_length_mm": 13.0,
+      "unrepresented_reserve_before_retraction_mm": 140.1486393225259,
+      "unrepresented_reserve_after_retraction_mm": 153.1486393225259,
+      "unrepresented_reserve_after_full_feed_mm": 0.0,
+      "electrical_pin_assignment": "Unchanged; this is a geometric slot, not a pin number"
+    },
+    {
+      "geometric_slot": 1,
+      "upper_material_allocation_mm": 154.33876491453182,
+      "neck_staged_upper_length_mm": 13.0,
+      "unrepresented_reserve_before_retraction_mm": 141.33876491453182,
+      "unrepresented_reserve_after_retraction_mm": 154.33876491453182,
+      "unrepresented_reserve_after_full_feed_mm": 0.0,
+      "electrical_pin_assignment": "Unchanged; this is a geometric slot, not a pin number"
+    },
+    {
+      "geometric_slot": 2,
+      "upper_material_allocation_mm": 160.6886187462412,
+      "neck_staged_upper_length_mm": 13.0,
+      "unrepresented_reserve_before_retraction_mm": 147.6886187462412,
+      "unrepresented_reserve_after_retraction_mm": 160.6886187462412,
+      "unrepresented_reserve_after_full_feed_mm": 0.0,
+      "electrical_pin_assignment": "Unchanged; this is a geometric slot, not a pin number"
+    },
+    {
+      "geometric_slot": 3,
+      "upper_material_allocation_mm": 161.73822145957524,
+      "neck_staged_upper_length_mm": 13.0,
+      "unrepresented_reserve_before_retraction_mm": 148.73822145957524,
+      "unrepresented_reserve_after_retraction_mm": 161.73822145957524,
+      "unrepresented_reserve_after_full_feed_mm": 0.0,
+      "electrical_pin_assignment": "Unchanged; this is a geometric slot, not a pin number"
+    }
+  ],
+  "source_allocation_is_polyline": true,
+  "final_cut_lengths": false,
+  "finding": "A fixed body centreline plus a growing upper prefix does not contain the remaining cable material. Endpoint-only checks do not solve this.",
+  "existing_body_sequence": {
+    "script": "mechanical/studies/prearrival_closure/dual_body_sequence.py",
+    "script_sha256": "f4290d435a51d1d8586834a56635c39937be27444743aa634624c4cf6555195d",
+    "report": "mechanical/studies/prearrival_closure/dual_body_sequence.json",
+    "report_sha256": "5d167b41ce7dd467ec29fa6551bd6b881626a12fb886e081a0ca7e4e01b536f7",
+    "report_source_matches_current_main": false,
+    "moving_bridge_scope": "Yaw_Base, Yaw_Bearing and selected bridge nuts; not a complete prewired head",
+    "complete_prewired_head_insertion": "NOT_TESTED"
+  },
+  "next_candidate": "Prewire the detached head/neck assembly with the body connector loose, then check complete module insertion and final body-side routing",
+  "required_next_checks": [
+    "Full moving-module membership and source solids",
+    "Continuous full-wire length, loose-tail and common PH housing poses",
+    "Head-module lowering path with wires and temporarily held upper body shell",
+    "Final body routing, retention and plug insertion; reverse service path"
+  ],
+  "no_structure_change_authorized_by_this_audit": true,
+  "main_applied": false,
+  "body_end_material_supply": "NOT_TESTED",
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false
+}

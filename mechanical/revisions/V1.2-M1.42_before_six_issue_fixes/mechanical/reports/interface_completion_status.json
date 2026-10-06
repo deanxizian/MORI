@@ -1,0 +1,81 @@
+{
+  "revision": "V1.2-M1.42",
+  "project_digital_release": "FAIL",
+  "implemented_interface_checks": "PASS",
+  "manufacturing_release": false,
+  "physical_measurements": "NONE",
+  "source_blend_sha256": "6f243f76e5eae72196c1a592b84c0f4b34943210cb0cb122eb2d29afe2bacc99",
+  "four_tasks": [
+    {
+      "item": "头部传动连接",
+      "status": "BLOCKED",
+      "detail": "按用户选择保留 SCS0009。配套舵盘、花键、短轴与轴向锁紧等厂家资料；已列明所需图纸，原占位件没有当成已定型件。反力连杆暂未改动。"
+    },
+    {
+      "item": "嵌件与紧固件",
+      "status": "BLOCKED",
+      "detail": "已采用 34 个目录嵌件、26 枚 GB823 名义包络及一枚 M2×14 内六角螺钉；已核孔口、孔壁、盲孔底和啮合。其余螺母/五金仍有候选与装入方式待确认，未把整机紧固件表标为冻结。"
+    },
+    {
+      "item": "WeAct 排母和对插",
+      "status": "BLOCKED",
+      "detail": "已建 Würth 8.5 mm 排母和插头候选。A–D 针脚匹配；E 的排针方向和基板孔阵列不匹配。Rear J3 插头与排母焊脚另有约 0.314 mm³ 交叠。电路交接已写好，原生 PCB 未改。"
+    },
+    {
+      "item": "全部打印件与完整装配",
+      "status": "FAIL",
+      "detail": "全件网格/壁厚采样与工具、步骤复核已做；已给相机孔腔、舵机螺母薄壁、轮轴承挡边、下壳孔口及上壳路径分别做好候选，等用户确认后应用和整机重验。当前主模型的问题仍记FAIL。"
+    }
+  ],
+  "remaining_digital": [
+    {
+      "item": "相机座旧孔腔",
+      "status": "FAIL",
+      "detail": "当前局部约 0.362 mm；填平候选通过实体与 130 姿态检查，待用户确认。",
+      "evidence": "studies/interface_completion/thin_mount_comparison.svg"
+    },
+    {
+      "item": "俯仰上侧螺母槽",
+      "status": "FAIL",
+      "detail": "当前与轴承孔之间约 0.102 mm；螺母移入现有耳座、M2×8、短侧装口候选已做，待确认。",
+      "evidence": "studies/interface_completion/thin_mount_candidates.json"
+    },
+    {
+      "item": "后侧 yaw 螺母薄壁",
+      "status": "FAIL",
+      "detail": "原槽局部约 0.192 mm。保留螺母位置、开短前入口并重整4.2AF槽的候选已做；顶面承压材料约2.6 mm，名义装入、两种螺母包络止转和130姿态检查通过。待用户确认，未改反力连杆。",
+      "evidence": "studies/interface_completion/yaw_nut_open_candidate.json"
+    },
+    {
+      "item": "四个轮驱连接螺母",
+      "status": "FAIL",
+      "detail": "原封闭槽无法装入。5×1.9 mm 短侧装口候选通过插入/止转检查，等待用户选择。",
+      "evidence": "studies/interface_completion/drive_nut_entry.svg"
+    },
+    {
+      "item": "轮轴承内侧挡边",
+      "status": "FAIL",
+      "detail": "当前0.75 mm。候选内轴承外移0.5 mm，使挡边1.25 mm；同步延长金属轴肩、短隔套改4.5 mm。73姿态/侧及底盖、电机组件拆卸通过，待用户确认。",
+      "evidence": "studies/interface_completion/bearing_lip_candidate.json"
+    },
+    {
+      "item": "机身下壳孔口",
+      "status": "FAIL",
+      "detail": "当前原长沉孔留下约0.29 mm尖薄片。四拼缝点移位候选消除此处薄片，下壳采样最薄约1.74 mm；待确认并应用。",
+      "evidence": "studies/interface_completion/body_seam_complete_checks.json"
+    },
+    {
+      "item": "机身上壳装入/取出",
+      "status": "FAIL",
+      "detail": "现有孔位妨碍取壳。四拼缝点移至X±22/Y±71后：卸车轮、下壳及头部/固定桥，上壳带喇叭/后接口板倾斜15°、抬14 mm、后移14 mm再上提。369姿态和工具包络检查通过；尚未应用。",
+      "evidence": "studies/interface_completion/body_seam_comparison.svg"
+    },
+    {
+      "item": "WeAct E / 后接口 J3",
+      "status": "BLOCKED",
+      "detail": "E 需要用户选择排针路线和电路任务修孔阵列；J3 与长焊脚的冲突需电路任务处理。",
+      "evidence": "studies/interface_completion/WEACT_E_HANDOFF.md"
+    }
+  ],
+  "user_deferred": "SCS0009 matching horn / dependent shaft and locking; cable routing"
+}

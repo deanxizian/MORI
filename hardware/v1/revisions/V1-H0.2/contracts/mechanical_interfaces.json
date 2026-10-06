@@ -1,0 +1,788 @@
+{
+  "schema_version": "1.0",
+  "revision": "V1-A3",
+  "status": "ASSUMED",
+  "canonical_geometry": "../config/geometry.json",
+  "coordinate_frame": {
+    "id": "assembly_ground",
+    "units": "mm",
+    "x": "right",
+    "y": "forward",
+    "z": "up",
+    "yaw_positive": "left; +Z right-hand",
+    "head_pitch_positive": "up; +X right-hand",
+    "body_forward_tilt_positive": "-X; separate from head pitch",
+    "origin": "Nominal ground point below axle midpoint; all config/layout and assembly_instances positions use this frame"
+  },
+  "scope": "Maximum allocation requirements, not manufacturer drawings. No supplier hole patterns frozen. Stage B requires exact models, connector and flange dimensions, mass and procurement cost.",
+  "components": {
+    "drive_motor_each": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Axis X; includes encoder in 65 mm length; actual shaft / flange unselected",
+      "geometry_json_pointers": {
+        "length": "/drive/motor_max_length_including_encoder_mm",
+        "diameter": "/drive/motor_max_diameter_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "yaw_servo": {
+      "max_xyz_mm": [
+        24,
+        13,
+        24
+      ],
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Output axis +Z; flange excluded and must fit reserved mount space"
+    },
+    "pitch_servo": {
+      "max_xyz_mm": [
+        24,
+        12,
+        22
+      ],
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Output axis -X; bilateral load bearings"
+    },
+    "interaction_mcu": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Compact ESP32-S3 board required; antenna and USB reserve separate",
+      "geometry_json_pointers": {
+        "xyz": "/layout/mcu_max_xyz_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "motion_mcu": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Compact ESP32-S3 board required; antenna and USB reserve separate",
+      "geometry_json_pointers": {
+        "xyz": "/layout/mcu_max_xyz_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "battery": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Packing allocation only; capacity follows measured power, not locked",
+      "geometry_json_pointers": {
+        "xyz": "/layout/battery_max_xyz_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "camera": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Lens barrel and window separate; intrinsics unknown",
+      "geometry_json_pointers": {
+        "xyz": "/camera/body_max_xyz_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "display": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Circular PCB allocation, active diameter 58; NOT actual selected screen",
+      "geometry_json_pointers": {
+        "pcb_diameter": "/display/pcb_diameter_mm",
+        "pcb_depth": "/display/pcb_depth_mm",
+        "active_diameter": "/display/active_diameter_mm",
+        "screen_depth": "/display/screen_depth_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "imu": {
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Rigid frame; old candidate PCB fits this box, connector heights still TBD",
+      "geometry_json_pointers": {
+        "xyz": "/layout/imu_max_xyz_mm"
+      },
+      "dimension_source": "config/geometry.json; no independent dimension duplicate"
+    },
+    "audio_amp": {
+      "max_xyz_mm": [
+        22,
+        18,
+        6
+      ],
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Separate from microphone cavity"
+    },
+    "usb_power": {
+      "max_xyz_mm": [
+        24,
+        18,
+        8
+      ],
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "USB-C receptacle and plug envelope separate"
+    },
+    "motor_driver": {
+      "max_xyz_mm": [
+        30,
+        22,
+        8
+      ],
+      "data_status": "ASSUMED",
+      "manufacturer": null,
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Electrical suitability and FOC/PWM choice unresolved"
+    },
+    "power_module": {
+      "max_xyz_mm": [
+        24,
+        16,
+        8
+      ],
+      "data_status": "ASSUMED",
+      "model": null,
+      "vendor_holes_mm": null,
+      "note": "Combined BMS/regulation allocation; protection/charger electrical topology pending"
+    }
+  },
+  "joints": {
+    "yaw": {
+      "range_deg": [
+        -60,
+        60
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "feedback_status": "NOT_TESTED; angle remains ESTIMATED until loaded calibration and signal validation pass",
+      "pivot_formula_mm": "[0,0,body_radius+ground_clearance+body_radius-body_top_cut_depth+head_radius-head_embedding_depth]",
+      "physical_bearing_center_formula_mm": "[0,0,body_top_z+head_joint.yaw_bearing_z_from_top_mm]",
+      "bearing_geometry_json_pointers": [
+        "/head_joint/yaw_bearing_od_mm",
+        "/head_joint/yaw_bearing_id_mm",
+        "/head_joint/yaw_bearing_width_mm"
+      ],
+      "load_path": "head -> pitch bilateral bearings -> yoke -> turntable hollow stem -> yaw bearing -> carrier posts -> load frame",
+      "drive_path": "yaw servo -> horn -> slotted drive web -> hollow stem/turntable",
+      "cable_passage": "Limited 140-degree arc slot in rotor drive web, fixed bundle center radius 6.4 mm; hollow stem bore diameter 15.4 mm; no slipring. Strength and cable flex NOT_TESTED",
+      "feedback_candidate": "H0.2 domestic candidate SER0046 analog0–3.3V; replaced FT90M-FB candidate; not mechanically/electrically frozen"
+    },
+    "pitch": {
+      "range_deg": [
+        -20,
+        25
+      ],
+      "axis_in_yaw": [
+        1,
+        0,
+        0
+      ],
+      "feedback_status": "NOT_TESTED; angle remains ESTIMATED until loaded calibration and signal validation pass",
+      "pivot": "same geometric point as yaw axis at head sphere center",
+      "load_path": "shell/cradle -> paired steel trunnion candidates -> bilateral bearing references -> yaw-fixed yoke",
+      "drive_path": "pitch servo -> horn/coupler -> left trunnion -> rotating cradle",
+      "bearing_fit": "Trial journal Ø4.98 into nominal Ø5 allocation; not supplier fit approval",
+      "feedback_candidate": "H0.2 domestic candidate SER0046 analog0–3.3V; replaced FT90M-FB candidate; not mechanically/electrically frozen"
+    }
+  },
+  "legacy_sources": {
+    "root_params": "../mechanical/legacy/params.json",
+    "hardware_A0": "../hardware/mechanical_interfaces.json",
+    "front_changed_from": "-Y",
+    "warning": "Legacy A0 files are history, not V1 geometry. Candidate dimensions must be checked again. Existing 71 mm ESP32-S3 DevKit envelope exceeds 48 mm V1 allocation; select compact boards or revise geometry; do not shrink hardware."
+  },
+  "procurement_status": "BLOCKED: exact models, feedback/control performance and complete <=1000 CNY budget not verified",
+  "interfaces": {
+    "motor_mounting_holes_mm": null,
+    "servo_mounting_holes_mm": null,
+    "pcb_mounting_holes_mm": null,
+    "bearing_fits_mm": null,
+    "vendor_shaft_diameter_mm": null,
+    "vendor_shaft_length_mm": null,
+    "fastener_note": "Model trial mechanical holes belong only to candidate printed interfaces; coupons required before tolerances are frozen."
+  },
+  "maintenance": {
+    "dock_lift_geometry_pointer": "/dock/robot_lift_mm",
+    "precondition": "DISARMED / DOCKED_MAINTENANCE, wheel drive disabled before insertion, plugged-in free driving prohibited",
+    "power_switch": "A candidate physical power-cut control allocation; electrical emergency-stop behavior and accessibility require hardware confirmation",
+    "battery_path": "Remove lower shell, disconnect battery, remove hangers; tray + battery downward 90 mm; slot Y adjustment +/-4 mm"
+  },
+  "camera_kinematics": {
+    "generated_file": "../mechanical/reports/camera_kinematics.json",
+    "intrinsics": null,
+    "extrinsics_status": "ASSUMED until calibration",
+    "head_angle_status": "ESTIMATED unless measured feedback supplied"
+  },
+  "generated_instances": "../mechanical/reports/assembly_instances.json (derived output; DO NOT EDIT as input)",
+  "stage_b_required_data": [
+    "Exact manufacturer/model and dated mechanical drawing",
+    "Measured max envelopes including flanges/connectors/wire exits",
+    "Shaft diameter, usable length, flat/key/spline and axial retention",
+    "Hole positions, thread depth, screw/insert exact SKU and fits",
+    "Mass and center of mass including harness",
+    "Actuator response/torque/current and actual interface",
+    "Complete itemized CNY bill incl shipping and one print run",
+    "Display/camera optics, FOV, window material and calibration"
+  ],
+  "body_frame": {
+    "id": "body_axle",
+    "axes": "Same XYZ orientation at neutral pose",
+    "origin_in_assembly_ground_mm_formula": "[0,0,wheel_diameter_mm/2]",
+    "conversion": "p_body_axle = p_assembly_ground - [0,0,wheel_radius_mm]",
+    "body_forward_tilt_positive": "-X"
+  },
+  "hardware_candidate_revision": "V1-H0.2",
+  "hardware_candidate_envelopes": {
+    "wheel_foc": {
+      "candidate_model": "DFRobot FIT1034 / 2804 BLDC+AS5600",
+      "bom_id": "WH_FOC",
+      "vendor_dimensions_mm": {
+        "diameter": 34.5,
+        "length": 19.5,
+        "shaft_diameter": 8,
+        "hollow_bore_range": [
+          5.4,
+          6.5
+        ]
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "AS5600 3.3V，12bit，默认I2C；UVW；7极对；GH/MX1.25-4P标注冲突待核",
+      "source_url": "https://www.dfrobot.com.cn/goods-4230.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": null,
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: FIT1034 Ø34.5/8mm轴不兼容现Ø25/4mm；连续轮端扭矩、皮带减速比及低压电源未冻结。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-4230.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "wheel_brushed_alternative": {
+      "candidate_model": "DFRobot FIT0521 / 6V 210RPM金属编码减速电机",
+      "bom_id": "WH_BRUSH",
+      "vendor_dimensions_mm": {
+        "diameter": 24.4,
+        "length": 52
+      },
+      "vendor_mass_g": 96,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "真实A/B反馈；PH2.0-6P；轴/安装孔需尺寸图",
+      "source_url": "https://www.dfrobot.com.cn/goods-1427.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "connector_axial_service_mm": 15
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: cylinder nominal fits; shaft, flange and plug not confirmed",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-1427.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "yaw_servo": {
+      "candidate_model": "DFRobot SER0046 — 9g 270度金属带模拟值反馈舵机",
+      "bom_id": "HD_SERVO",
+      "vendor_dimensions_mm": {
+        "vendor_nominal_xyz": [
+          22.9,
+          12.2,
+          32.5
+        ],
+        "including_mounting_ears": null
+      },
+      "vendor_mass_g": 12,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "红V+、黑GND、白PWM、棕模拟反馈0–3.3V；孔距/花键/固定耳另核",
+      "source_url": "https://www.dfrobot.com.cn/goods-2594.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "wire_exit_mm": 12,
+        "screw_tool_access_mm": 10
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: SER0046名义22.9×12.2×32.5，含耳/舵盘图仍缺；不可套用FT90M-FB孔位。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-2594.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "pitch_servo": {
+      "candidate_model": "DFRobot SER0046 — 9g 270度金属带模拟值反馈舵机",
+      "bom_id": "HD_SERVO",
+      "vendor_dimensions_mm": {
+        "vendor_nominal_xyz": [
+          22.9,
+          12.2,
+          32.5
+        ],
+        "including_mounting_ears": null
+      },
+      "vendor_mass_g": 12,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "红V+、黑GND、白PWM、棕模拟反馈0–3.3V；孔距/花键/固定耳另核",
+      "source_url": "https://www.dfrobot.com.cn/goods-2594.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "wire_exit_mm": 12,
+        "screw_tool_access_mm": 10
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: SER0046名义高度32.5超过原24×12×22预留；组合角度与有限线缆回环需重算。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-2594.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "motion_mcu": {
+      "candidate_model": "Espressif ESP32-S3-WROOM-1-N16R8 / 立创C2913202",
+      "bom_id": "MCU",
+      "vendor_dimensions_mm": {
+        "x": 18,
+        "y": 25.5,
+        "z": 3.1
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "41pad SMD；天线净空另留；GPIO35/36/37不可当外设脚",
+      "source_url": "https://item.szlcsc.com/3198300.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "antenna_no_metal_clearance_mm": 15,
+        "proposed_carrier_xyz_mm": [
+          48,
+          24,
+          12
+        ]
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: module fits when rotated; carrier holes, headers and antenna near battery/yaw servo not checked",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://item.szlcsc.com/3198300.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "interaction_mcu": {
+      "candidate_model": "Espressif ESP32-S3-WROOM-1-N16R8 / 立创C2913202",
+      "bom_id": "MCU",
+      "vendor_dimensions_mm": {
+        "x": 18,
+        "y": 25.5,
+        "z": 3.1
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "41pad SMD；天线净空另留；GPIO35/36/37不可当外设脚",
+      "source_url": "https://item.szlcsc.com/3198300.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "antenna_no_metal_clearance_mm": 15,
+        "proposed_carrier_xyz_mm": [
+          48,
+          24,
+          12
+        ]
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: module fits when rotated; full media routing/connector reserve pending",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://item.szlcsc.com/3198300.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "body_imu": {
+      "candidate_model": "DFRobot SEN0250 / Gravity BMI160 6轴IMU",
+      "bom_id": "IMU",
+      "vendor_dimensions_mm": {
+        "pcb_xy": [
+          22,
+          27
+        ],
+        "assembled_z": null
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "I2C与2个可编程中断；INT焊点/连接器端号待模块原理图复核",
+      "source_url": "https://www.dfrobot.com.cn/goods-1693.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "connector_exit_reserve_mm": 12
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: SEN0250 PCB22×27，不可直接替换原26×18预留；连接器/INT接线净空未知。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-1693.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "display": {
+      "candidate_model": "Spotpear 0201213 / 1.28inch-LCD-Module / GC9A01",
+      "bom_id": "LCD",
+      "vendor_dimensions_mm": {
+        "active_diameter": 32.4,
+        "glass_diameter": 37.5,
+        "pcb_xy": [
+          40.4,
+          37.5
+        ],
+        "assembled_z": null
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "VCC/GND/DIN/CLK/CS/DC/RST/BL；含PH2.0 8PIN 20cm线",
+      "source_url": "https://spotpear.cn/index/product/detail/id/742.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "rear_wire_service_mm": 12
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: 真实显示Ø32.4，PCB40.4×37.5；原模型Ø58显示占位必须改，不能缩放硬件。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://spotpear.cn/index/product/detail/id/742.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "camera": {
+      "candidate_model": "Spotpear 0204002 / OV5640-Camera-Board-(A)",
+      "bom_id": "CAM",
+      "vendor_dimensions_mm": {
+        "pcb_xy": [
+          35.7,
+          23.9
+        ],
+        "lens_and_connector_z": null
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "选A型普通视角，不选B鱼眼/C自动对焦；模块端子线序待图纸",
+      "source_url": "https://spotpear.cn/index/product/detail/id/260/no/198.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "fpc_bend_radius_mm": null
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: OV5640-A板35.7×23.9；原14×8×10不再适用；镜头/排针高度和布置待确认。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://spotpear.cn/index/product/detail/id/260/no/198.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "battery": {
+      "candidate_model": "亚博智能 7.4V 2S 2000mAh 高倍率电池（官方选项）",
+      "bom_id": "BAT",
+      "vendor_dimensions_mm": {
+        "x": 37,
+        "y": 67,
+        "z": 22
+      },
+      "vendor_mass_g": 115,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "工厂电池包带过充/过放/过流/短路保护；AWG14出线15cm；接头型号及均衡未知",
+      "source_url": "https://www.yahboom.com/public/upload/upload-html/1706341250/机器人充电与电池注意事项.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "candidate_service_xyz_mm": [
+          43,
+          82,
+          26
+        ],
+        "note": "假设每侧减振/线束空间，非厂商尺寸，未碰撞验证"
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: 亚博包37×67×22/115g；厚度已用满原22mm预留，需减振、线缆出线和拔插空间。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://detail.tmall.com/item.htm?id=694699380589",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "BLOCKED"
+    },
+    "charger": {
+      "candidate_model": "DFRobot DFR0564 / 7.4V锂电池USB充电模块",
+      "bom_id": "CHG",
+      "vendor_dimensions_mm": {
+        "pcb_xy": [
+          28,
+          37
+        ],
+        "assembled_z": null,
+        "heatsink": [
+          14,
+          14,
+          7
+        ]
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "板上microUSB；外观USB-C需单独CC识别/输入限流/ESD前端",
+      "source_url": "https://www.dfrobot.com.cn/goods-1706.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "heat_sink_height_mm": 7,
+        "thermal_pad_mm": 0.5,
+        "connector_service_mm": 12
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "FAIL:28×37 exceeds24×16 power-module allocation before heatsink",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-1706.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "logic_regulator_each": {
+      "candidate_model": "DFRobot DFR0570 / DC-DC 5.5–28V转3.3V模块",
+      "bom_id": "REG_3V3",
+      "vendor_dimensions_mm": {
+        "pcb_xy": [
+          16.5,
+          22
+        ],
+        "assembled_z": null
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "各域独立稳压但共电池共地；跨域UART防反向供电",
+      "source_url": "https://www.dfrobot.com.cn/goods-1788.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "connector_service_mm": 8
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED:16.5×22 fits rotated plan only; totalheight and location unknown",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-1788.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "servo_regulator": {
+      "candidate_model": "DFRobot DFR0753 / DC-DC 6–14V转5V8A模块",
+      "bom_id": "REG_HEAD",
+      "vendor_dimensions_mm": null,
+      "vendor_mass_g": null,
+      "dimension_status": "ASSUMED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "独立5V轨；母线回灌不可默认流过降压器",
+      "source_url": "https://www.dfrobot.com.cn/goods-2971.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": null,
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: no vendor dimensions",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-2971.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "power_monitor": {
+      "candidate_model": "DFRobot SEN0291 / Gravity INA219数字功率计",
+      "bom_id": "PWR_MON",
+      "vendor_dimensions_mm": {
+        "pcb_xy": [
+          30,
+          22
+        ],
+        "assembled_z": null
+      },
+      "vendor_mass_g": 4,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "I2C；默认地址0x45；接线端子持续额定待核",
+      "source_url": "https://www.dfrobot.com.cn/goods-1890.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "terminal_wire_exit_mm": 15
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "FAIL:30×22 requires new allocation",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-1890.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "microphone": {
+      "candidate_model": "DFRobot SEN0327 / I2S MEMS麦克风模块",
+      "bom_id": "MIC",
+      "vendor_dimensions_mm": {
+        "diameter": 14,
+        "z": null
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "VCC/GND/SCK/WS/SD/LR；实际MEMS芯片不能凭外观认作INMP441",
+      "source_url": "https://www.dfrobot.com.cn/goods-2567.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "acoustic_isolation_radial_mm": 2
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: acoustic duct/height drawing pending",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-2567.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "amplifier": {
+      "candidate_model": "DFRobot DFR0954 / MAX98357 I2S功放模块",
+      "bom_id": "AMP",
+      "vendor_dimensions_mm": null,
+      "vendor_mass_g": null,
+      "dimension_status": "ASSUMED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "I2S输入；OUT+与OUT−均不可接GND；SD静音与掉电隔离需核",
+      "source_url": "https://www.dfrobot.com.cn/goods-3573.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": null,
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: dimensions not published in reviewed page",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-3573.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "speaker": {
+      "candidate_model": "DFRobot FIT0825 / 1W扬声器（带音腔）",
+      "bom_id": "SPK",
+      "vendor_dimensions_mm": {
+        "x": 35,
+        "y": 20,
+        "z": 3.5,
+        "dimension_tolerance": 0.2,
+        "wire_length": 150
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "verification_scope": "Only non-null fields in vendor_dimensions_mm; proposed clearances are ASSUMED, missing fields remain unknown",
+      "measurement_status": "NOT_TESTED",
+      "shaft_hole_interface": "1.25mm两线端子，确切系列及正负针序待核；侧面出声",
+      "source_url": "https://www.dfrobot.com.cn/goods-3226.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "sealed_rear_cavity_depth_mm": 5
+      },
+      "clearance_status": "ASSUMED_DESIGN_REQUIREMENT",
+      "fit_status": "BLOCKED: FIT0825 35×20×3.5侧发声带声腔，需改矩形固定和声道。",
+      "vendor_hole_coordinates_mm": null,
+      "domestic_purchase_url": "https://www.dfrobot.com.cn/goods-3226.html",
+      "candidate_revision": "V1-H0.2",
+      "procurement_status": "PASS"
+    },
+    "foc_driver_each": {
+      "candidate_model": "DFRobot DRI0058 / SimpleFOCmini",
+      "bom_id": "FOC_DRV",
+      "candidate_revision": "V1-H0.2",
+      "vendor_dimensions_mm": {
+        "pcb_xy": [
+          26,
+          21.5
+        ],
+        "assembled_z": null
+      },
+      "vendor_mass_g": null,
+      "dimension_status": "VENDOR_VERIFIED",
+      "measurement_status": "NOT_TESTED",
+      "source_url": "https://www.dfrobot.com.cn/goods-4248.html",
+      "accessed": "2026-09-21",
+      "proposed_additional_clearance": {
+        "wire_exit_mm": 12
+      },
+      "clearance_status": "ASSUMED",
+      "vendor_hole_coordinates_mm": null,
+      "fit_status": "BLOCKED: 两板26×21.5，高度及端子净空待核；供电/控制路线未通过。"
+    }
+  },
+  "hardware_handoff": {
+    "status": "BLOCKED",
+    "file": "../hardware/v1/procurement/mechanical_handoff_H0.2.md",
+    "instruction": "Existing allocation fields and config/geometry.json preserved. Candidate dimensions do not approve holes or fit. No actual measured dimensions available.",
+    "board_requirement": {
+      "preferred": "two compact MCU module carriers plus separate protected power/driver interfaces during bench stage",
+      "combined_board_candidate_xyz_mm": [
+        96,
+        76,
+        1.6
+      ],
+      "central_cutout_candidate_xy_mm": [
+        46,
+        26
+      ],
+      "status": "ASSUMED_NOT_PLACED",
+      "note": "Central yaw servo/post corridor, antenna clearance and power module mounting must be collision-checked before PCB outline freeze. No inherited A0 board."
+    }
+  },
+  "exterior_refinement": {
+    "canonical_geometry_pointers": [
+      "/body_wheel_relief",
+      "/appearance",
+      "/seam_gap_mm"
+    ],
+    "wheel_interface": "Local side relief is driven by body_side_cut_x_mm, not whole-body maximum X. Current wheel centers and axle outer spans follow wheel_inset_refinement; bearing seats and transmission planes remain fixed.",
+    "camera_baffle": "Separate printable black light baffle; camera pose and assumed optical field retained; vendor retention and optics pending.",
+    "hardware_candidate_status": "Existing hardware_candidate_envelopes preserved; this appearance revision does not resolve their fit failures."
+  },
+  "wheel_inset_refinement": {
+    "geometry_pointer": "/wheel_inset_revision",
+    "change": "Both wheel centers and local pocket seats move inward 6 mm relative to A2. Wheel axle inner endpoints/bearing seats and pulley planes stay fixed; outer axle span follows the new wheel center.",
+    "status": "ASSUMED; physical shaft length, locking, tire compression and assembly tolerances pending Stage B",
+    "shell_seam_fasteners": "Four trial lower-shell seam bosses, screws and inserts move from |X|55 to |X|50 mm. Position is derived from shell_service and pocket seat, not vendor hole pattern.",
+    "frame_fastening": "Frame-to-shell printed-interface points follow /shell_service/frame_mount_xy_mm to clear the straight screwdriver paths and existing module mounts. Bearing/drive locations and the frame deck remain fixed."
+  },
+  "hardware_procurement_policy": {
+    "date": "2026-09-21",
+    "domestic_sources_required": true,
+    "budget": "用户允许适度超1000；没有新硬上限；未授权采购",
+    "price_and_stock_register": "../hardware/v1/procurement/domestic_parts.json",
+    "geometry_not_changed": true
+  }
+}

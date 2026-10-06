@@ -1,0 +1,67 @@
+{
+  "revision": "V1.2-M1.30",
+  "baseline_revision": "V1.2-M1.28",
+  "status": "PASS",
+  "geometry_changed": [
+    "Display_Frame",
+    "Head_Pitch_Ear_0_Insert",
+    "Head_Pitch_Ear_0_Screw",
+    "Head_Pitch_Ear_1_Insert",
+    "Head_Pitch_Ear_1_Screw",
+    "Head_Yaw_Ear_0_Insert",
+    "Head_Yaw_Ear_0_Screw",
+    "Head_Yaw_Ear_1_Insert",
+    "Head_Yaw_Ear_1_Screw",
+    "Pitch_Output",
+    "Pitch_Servo",
+    "Pitch_Yoke",
+    "Yaw_Output",
+    "Yaw_Servo"
+  ],
+  "removed_parts": [
+    "Head_Yaw_Ear_0_Nut",
+    "Head_Yaw_Ear_1_Nut"
+  ],
+  "unexpected_changes": [],
+  "unexpected_removed": [],
+  "parts": [
+    {
+      "id": "Pitch_Cradle",
+      "checked_planar_faces": 1160,
+      "maximum_planar_normal_error_deg": 0.02017224917874277,
+      "retained_smooth_curved_faces": 1032,
+      "geometry_changed": false
+    },
+    {
+      "id": "Pitch_Yoke",
+      "checked_planar_faces": 6092,
+      "maximum_planar_normal_error_deg": 0.02009115069752097,
+      "retained_smooth_curved_faces": 7853,
+      "geometry_changed": true
+    },
+    {
+      "id": "Display_Frame",
+      "checked_planar_faces": 3600,
+      "maximum_planar_normal_error_deg": 0.022714934175088578,
+      "retained_smooth_curved_faces": 1360,
+      "geometry_changed": true
+    },
+    {
+      "id": "Yaw_Servo",
+      "checked_planar_faces": 888,
+      "maximum_planar_normal_error_deg": 0.013112848260975911,
+      "retained_smooth_curved_faces": 1032,
+      "geometry_changed": true
+    },
+    {
+      "id": "Pitch_Servo",
+      "checked_planar_faces": 888,
+      "maximum_planar_normal_error_deg": 0.013112848260975911,
+      "retained_smooth_curved_faces": 1032,
+      "geometry_changed": true
+    }
+  ],
+  "normal_failures": [],
+  "method": "Exact rounded world/local vertex and triangle hashes and world matrices for every part; actual saved Blender corner normals versus geometric face normals, using float64 atan2 angles, for all designed planar faces; 0.05deg tolerance includes custom-normal storage quantization; curved faces retain smooth shading.",
+  "effect": "Normal-only policy retained. Current servo/mount geometry changes checked in head_servo_validation.json when enabled. Strength remains unqualified."
+}

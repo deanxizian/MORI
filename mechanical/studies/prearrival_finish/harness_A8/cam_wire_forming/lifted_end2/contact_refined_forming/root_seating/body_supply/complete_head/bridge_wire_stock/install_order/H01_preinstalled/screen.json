@@ -1,0 +1,337 @@
+{
+  "status": "BLOCKED",
+  "scope": "Bounded H01 route screening for preinstallation; no universal impossibility claim",
+  "script_sha256": "c25e519c64368e427ad514e70ef7b52d475fe375445c7da85e40c5877a27a364",
+  "helper_sha256": "72fe1b272640716ae8769ee0a5929d4f798b539d71debd358401aec8f3438b63",
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/verification.json": "351a78dd466e5f008192ae6dcda4c2f7ccff106a2b03695480b5596e738e2bf0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/H02_preinstalled/wire_solids.json": "4b9e27afa06704d3be4f4bec3005b2f05d508396241cc4a4223a2e1ac40f4c76",
+    "mechanical/studies/prearrival_finish/harness_A2/ecowire_candidate.json": "c06943244a957d3476fa13f06a952f35836190a6efa9f0447dcd0b58f3bf38fa",
+    "mechanical/studies/prearrival_finish/harness_A2/ecowire_joint.json": "5e05824e102cb46c566127e5b23991d023bca4f8a1b008910380198f8fe500ae"
+  },
+  "substituted_unadopted_prints": {
+    "Yaw_Base": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Yaw_Base.npz",
+      "sha256": "2f1831e0d1da2511ed6f07f816f9788107845ccc2dc16ff2972db525621a01cb"
+    },
+    "Pitch_Yoke": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/larger_neck_candidate/cleaned/Pitch_Yoke.npz",
+      "sha256": "cad7d2298d33d2e76fa7c6467f9d49a2aba0e2eb601d1b8e8092511b63c7d624"
+    },
+    "Pitch_Cradle": {
+      "path": "mechanical/studies/prearrival_finish/harness_A8/cam_pitch_anchor/connector_anchor/Pitch_Cradle.npz",
+      "sha256": "390f7ddc049654bd3ab8868cafc7330085312477182876d1675445331ec4b8ad"
+    }
+  },
+  "other_fixed_wire_count": 12,
+  "coarse_assembly_positions": 23,
+  "route_families": [
+    "source_rear",
+    "varied_rear_height",
+    "side_lane",
+    "front_of_bridge",
+    "front_right_approach"
+  ],
+  "rows": [
+    {
+      "id": "H01_1",
+      "status": "BLOCKED",
+      "counts": {
+        "controls": 821,
+        "static_passed": 303,
+        "assembly_failed": 303,
+        "static_failed": 478,
+        "short_bends": 40
+      },
+      "blockers": {
+        "assembly:CAM_wire_1": 62,
+        "assembly:CAM_wire_3": 220,
+        "static:fixed_wire_H04_3": 26,
+        "static:fixed_wire_H04_5": 32,
+        "static:fixed_wire_H04_4": 34,
+        "static:Body_Upper": 55,
+        "static:Yaw_Base": 240,
+        "assembly:CAM_wire_2": 21,
+        "static:fixed_wire_H02_1": 32,
+        "static:fixed_wire_H02_2": 32,
+        "static:fixed_wire_H03_1": 27
+      },
+      "examples": {
+        "assembly:CAM_wire_1": {
+          "stage": "bridge_lift_shell_held",
+          "index": 1,
+          "obstacle": "CAM_wire_1",
+          "distance_mm": 0.9809650215290682,
+          "required_mm": 1.2120538143505863,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "assembly:CAM_wire_3": {
+          "stage": "bridge_lift_shell_held",
+          "index": 0,
+          "obstacle": "CAM_wire_3",
+          "distance_mm": 0.3322201113194154,
+          "required_mm": 1.2120565692172296,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "static:fixed_wire_H04_3": {
+          "obstacle": "fixed_wire_H04_3",
+          "point_mm": [
+            17.017027385548623,
+            -52.0,
+            141.5
+          ],
+          "distance_mm": 0.8784325122833252,
+          "required_mm": 0.9616134612825836
+        },
+        "static:fixed_wire_H04_5": {
+          "obstacle": "fixed_wire_H04_5",
+          "point_mm": [
+            20.710591064555878,
+            -55.19020421913284,
+            141.5
+          ],
+          "distance_mm": 0.8894667029380798,
+          "required_mm": 0.9616127895619
+        },
+        "static:fixed_wire_H04_4": {
+          "obstacle": "fixed_wire_H04_4",
+          "point_mm": [
+            20.232648194404767,
+            -51.44490060202345,
+            141.45
+          ],
+          "distance_mm": 0.953715980052948,
+          "required_mm": 0.961645021178783
+        },
+        "static:Body_Upper": {
+          "obstacle": "Body_Upper",
+          "point_mm": [
+            -33.601003136946744,
+            -55.99358799751038,
+            141.45
+          ],
+          "distance_mm": 0.9285223484039307,
+          "required_mm": 0.961641730156939
+        },
+        "static:Yaw_Base": {
+          "obstacle": "Yaw_Base",
+          "point_mm": [
+            -40.28123548292514,
+            6.499999761581421,
+            141.4811017463874
+          ],
+          "distance_mm": 0.8187637329101562,
+          "required_mm": 0.9616510991700443
+        },
+        "assembly:CAM_wire_2": {
+          "stage": "bridge_lift_shell_held",
+          "index": 0,
+          "obstacle": "CAM_wire_2",
+          "distance_mm": 1.1399993896484375,
+          "required_mm": 1.212055026023138,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "static:fixed_wire_H02_1": {
+          "obstacle": "fixed_wire_H02_1",
+          "point_mm": [
+            23.5,
+            -17.623433680444737,
+            141.5
+          ],
+          "distance_mm": 0.9590877294540405,
+          "required_mm": 0.9616210590444921
+        },
+        "static:fixed_wire_H02_2": {
+          "obstacle": "fixed_wire_H02_2",
+          "point_mm": [
+            23.5,
+            -24.53947504157281,
+            142.48939075500195
+          ],
+          "distance_mm": 0.9337978959083557,
+          "required_mm": 0.9616494025475938
+        },
+        "static:fixed_wire_H03_1": {
+          "obstacle": "fixed_wire_H03_1",
+          "point_mm": [
+            33.80003931436799,
+            -29.81834580563237,
+            141.5
+          ],
+          "distance_mm": 0.923499584197998,
+          "required_mm": 0.9616096540280401
+        }
+      }
+    },
+    {
+      "id": "H01_2",
+      "status": "BLOCKED",
+      "counts": {
+        "controls": 821,
+        "static_passed": 303,
+        "assembly_failed": 303,
+        "static_failed": 478,
+        "short_bends": 40
+      },
+      "blockers": {
+        "assembly:CAM_wire_3": 219,
+        "static:fixed_wire_H04_4": 53,
+        "static:fixed_wire_H04_3": 6,
+        "static:fixed_wire_H04_6": 8,
+        "static:fixed_wire_H04_5": 25,
+        "assembly:CAM_wire_1": 34,
+        "static:Body_Upper": 55,
+        "static:Yaw_Base": 240,
+        "assembly:CAM_wire_2": 21,
+        "static:fixed_wire_H02_1": 32,
+        "static:fixed_wire_H02_2": 32,
+        "assembly:CAM_wire_4": 29,
+        "static:fixed_wire_H03_1": 27
+      },
+      "examples": {
+        "assembly:CAM_wire_3": {
+          "stage": "bridge_lift_shell_held",
+          "index": 0,
+          "obstacle": "CAM_wire_3",
+          "distance_mm": 0.8081413496838553,
+          "required_mm": 1.2120565692172296,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "static:fixed_wire_H04_4": {
+          "obstacle": "fixed_wire_H04_4",
+          "point_mm": [
+            19.657280435615853,
+            -52.0,
+            141.5
+          ],
+          "distance_mm": 0.8790648579597473,
+          "required_mm": 0.9616131168280662
+        },
+        "static:fixed_wire_H04_3": {
+          "obstacle": "fixed_wire_H04_3",
+          "point_mm": [
+            16.056523272607244,
+            -52.0,
+            143.5
+          ],
+          "distance_mm": 0.8415855765342712,
+          "required_mm": 0.9616127895619
+        },
+        "static:fixed_wire_H04_6": {
+          "obstacle": "fixed_wire_H04_6",
+          "point_mm": [
+            20.61359535819757,
+            -55.93359381744723,
+            141.5
+          ],
+          "distance_mm": 0.930002748966217,
+          "required_mm": 0.9616124782288478
+        },
+        "static:fixed_wire_H04_5": {
+          "obstacle": "fixed_wire_H04_5",
+          "point_mm": [
+            19.037806064892585,
+            -56.0,
+            142.5
+          ],
+          "distance_mm": 0.8746721744537354,
+          "required_mm": 0.9616508326670073
+        },
+        "assembly:CAM_wire_1": {
+          "stage": "bridge_lift_shell_held",
+          "index": 0,
+          "obstacle": "CAM_wire_1",
+          "distance_mm": 0.019766118227855786,
+          "required_mm": 1.2120538143505863,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "static:Body_Upper": {
+          "obstacle": "Body_Upper",
+          "point_mm": [
+            -33.65206207810928,
+            -55.932100051399935,
+            141.45
+          ],
+          "distance_mm": 0.9505836963653564,
+          "required_mm": 0.9616407375271366
+        },
+        "static:Yaw_Base": {
+          "obstacle": "Yaw_Base",
+          "point_mm": [
+            -40.28099277815218,
+            8.499999761581421,
+            141.48109052546855
+          ],
+          "distance_mm": 0.8190040588378906,
+          "required_mm": 0.9616498204120388
+        },
+        "assembly:CAM_wire_2": {
+          "stage": "bridge_lift_shell_held",
+          "index": 0,
+          "obstacle": "CAM_wire_2",
+          "distance_mm": 1.1399993896484375,
+          "required_mm": 1.212055026023138,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "static:fixed_wire_H02_1": {
+          "obstacle": "fixed_wire_H02_1",
+          "point_mm": [
+            25.5,
+            -14.902717672932386,
+            141.5
+          ],
+          "distance_mm": 0.9610182642936707,
+          "required_mm": 0.9616210590444921
+        },
+        "static:fixed_wire_H02_2": {
+          "obstacle": "fixed_wire_H02_2",
+          "point_mm": [
+            25.5,
+            -22.618569339692275,
+            142.5
+          ],
+          "distance_mm": 0.9261751174926758,
+          "required_mm": 0.9616492366300942
+        },
+        "assembly:CAM_wire_4": {
+          "stage": "bridge_lift_shell_held",
+          "index": 0,
+          "obstacle": "CAM_wire_4",
+          "distance_mm": 0.8431749802037869,
+          "required_mm": 1.2119499283510955,
+          "method": "source_polyline_segment_distance_with_chord_bounds"
+        },
+        "static:fixed_wire_H03_1": {
+          "obstacle": "fixed_wire_H03_1",
+          "point_mm": [
+            33.72196944362048,
+            -29.83670767238096,
+            141.5
+          ],
+          "distance_mm": 0.8711181879043579,
+          "required_mm": 0.9616098985576222
+        }
+      }
+    }
+  ],
+  "pools": {
+    "H01_1": [],
+    "H01_2": []
+  },
+  "selected": null,
+  "best_pair_gap_lower_bound_mm": null,
+  "wire_OD_mm": 1.143,
+  "required_radius_mm": 5.715,
+  "clearance_mm": 0.3,
+  "terminal_exits": "ASSUMED",
+  "main_applied": false,
+  "whole_harness": "BLOCKED",
+  "manufacturing_release": false,
+  "elapsed_s": 31.662276029586792
+}

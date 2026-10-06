@@ -1,0 +1,257 @@
+{
+  "date_utc": "2026-10-02T13:44:49.086051+00:00",
+  "command": "python3 hardware/v1_2/harness_evidence_20261002/receive_and_check.py",
+  "python": "3.9.6",
+  "status": "PASS",
+  "scope": "Received-source integrity, internal count/pin consistency and catalogue-range arithmetic only; not an independent geometry rerun",
+  "received": [
+    {
+      "path": "mechanical/studies/prearrival_finish/harness_A2/fourteen_validation.json",
+      "sha256": "0b788e94e7045d15d864c82ef58d46dbbbf770110b34a082d374b223f89d81c1",
+      "snapshot": "received_fourteen/fourteen_validation.json"
+    },
+    {
+      "path": "mechanical/studies/prearrival_finish/harness_A2/fourteen_body_sequence.json",
+      "sha256": "74ed4fdb5d4db7c97b28c787cea37d1effc9819d42d883f17c5708d365bc7acc",
+      "snapshot": "received_fourteen/fourteen_body_sequence.json"
+    },
+    {
+      "path": "mechanical/studies/prearrival_finish/harness_A2/ecowire_joint.json",
+      "sha256": "5e05824e102cb46c566127e5b23991d023bca4f8a1b008910380198f8fe500ae",
+      "snapshot": "received_fourteen/ecowire_joint.json"
+    },
+    {
+      "path": "mechanical/studies/prearrival_finish/harness_A2/imu_wide_joint.json",
+      "sha256": "7c5ed0782f7fc725ef8a05d92f3b75fd276c38bf0bceba3103841a81bf3cb851",
+      "snapshot": "received_fourteen/imu_wide_joint.json"
+    },
+    {
+      "path": "mechanical/studies/prearrival_finish/harness_A2/imu_wide_pools.json",
+      "sha256": "9b0a11927107acfc8e99c395235f27c7d890995075f65ed082636d7178e29a6d",
+      "snapshot": "received_fourteen/imu_wide_pools.json"
+    },
+    {
+      "path": "mechanical/studies/prearrival_finish/harness_A2/ecowire_sources.json",
+      "sha256": "a6b2a23c352a726ba56bfd26dfc998aa76be2c78720103b88656e83c213f1f9f",
+      "snapshot": "received_fourteen/ecowire_sources.json"
+    }
+  ],
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "wire_count": 14,
+  "pair_count": 91,
+  "head_pose_count": 130,
+  "minimum_reported_pair": {
+    "a": "H04_4",
+    "b": "H04_5",
+    "intersection_mm3": 0,
+    "minimum_polyline_center_distance_mm": 1.3887661525066972,
+    "nominal_polyline_wire_gap_mm": 0.3727661525066972,
+    "conservative_inflated_capsule_gap_lower_bound_mm": 0.33266615250669723,
+    "segment_indices": [
+      44,
+      54
+    ],
+    "status": "PASS"
+  },
+  "minimum_reported_rigid": {
+    "wire": "H04_2",
+    "object": "Body_Upper",
+    "conservative_capsule_gap_lower_bound_mm": 0.46806449415182727,
+    "nearest_sample_mm": [
+      -25.72240601374788,
+      -65.40983764203646,
+      101.17359327480868
+    ],
+    "coverage_bound_mm": 0.019998854999784044,
+    "numeric_allowance_mm": 0.0001
+  },
+  "wire_catalogue_checks": {
+    "6711": {
+      "awg": 26,
+      "od_inches": 0.038,
+      "od_tolerance_inches": 0.002,
+      "od_min_mm": 0.9144,
+      "od_max_mm": 1.016,
+      "static_bend_screen_mm": 5.08,
+      "SPH002_catalogue_window_check": "PASS",
+      "crimp_qualification": "NOT_TESTED",
+      "selected_for_procurement": false
+    },
+    "6712": {
+      "awg": 24,
+      "od_inches": 0.043,
+      "od_tolerance_inches": 0.002,
+      "od_min_mm": 1.0414,
+      "od_max_mm": 1.143,
+      "static_bend_screen_mm": 5.715,
+      "SPH002_catalogue_window_check": "PASS",
+      "crimp_qualification": "NOT_TESTED",
+      "selected_for_procurement": false
+    }
+  },
+  "body_assembly_status": "FAIL",
+  "body_assembly_sample_count": 407,
+  "body_assembly_conflicts": [
+    {
+      "path": "bridge_withdraw18_shell_held15deg14up",
+      "status": "FAIL",
+      "pairs": [
+        {
+          "moving": "Body_Upper",
+          "wire": "H04_1",
+          "first_sample": 0,
+          "last_sample": 36,
+          "max_intersection_mm3": 0.1271332959621411
+        },
+        {
+          "moving": "Body_Upper",
+          "wire": "H04_2",
+          "first_sample": 0,
+          "last_sample": 36,
+          "max_intersection_mm3": 3.1161547675632635
+        }
+      ]
+    },
+    {
+      "path": "shell_and_level_bridge_back14_up140",
+      "status": "FAIL",
+      "pairs": [
+        {
+          "moving": "Body_Upper",
+          "wire": "H04_1",
+          "first_sample": 0,
+          "last_sample": 1,
+          "max_intersection_mm3": 0.1271332959621411
+        },
+        {
+          "moving": "Body_Upper",
+          "wire": "H04_2",
+          "first_sample": 0,
+          "last_sample": 5,
+          "max_intersection_mm3": 3.1161547675632635
+        },
+        {
+          "moving": "Rear_Interface_PCB",
+          "wire": "H04_4",
+          "first_sample": 10,
+          "last_sample": 118,
+          "max_intersection_mm3": 2.2874589884614553
+        },
+        {
+          "moving": "Plug_rear_J2",
+          "wire": "H04_4",
+          "first_sample": 10,
+          "last_sample": 118,
+          "max_intersection_mm3": 4.497651546398679
+        },
+        {
+          "moving": "Plug_rear_J2",
+          "wire": "H04_5",
+          "first_sample": 16,
+          "last_sample": 113,
+          "max_intersection_mm3": 5.021822735796726
+        },
+        {
+          "moving": "Plug_rear_J2",
+          "wire": "H04_1",
+          "first_sample": 67,
+          "last_sample": 117,
+          "max_intersection_mm3": 5.037793375822504
+        },
+        {
+          "moving": "Rear_Interface_PCB",
+          "wire": "H04_5",
+          "first_sample": 73,
+          "last_sample": 116,
+          "max_intersection_mm3": 2.957118077999988
+        },
+        {
+          "moving": "Plug_rear_J2",
+          "wire": "H04_3",
+          "first_sample": 83,
+          "last_sample": 112,
+          "max_intersection_mm3": 5.851402442752292
+        },
+        {
+          "moving": "Rear_Interface_PCB",
+          "wire": "H04_1",
+          "first_sample": 87,
+          "last_sample": 119,
+          "max_intersection_mm3": 1.6499040009269215
+        },
+        {
+          "moving": "Rear_Interface_PCB",
+          "wire": "H04_3",
+          "first_sample": 89,
+          "last_sample": 128,
+          "max_intersection_mm3": 4.880508437131962
+        },
+        {
+          "moving": "Plug_rear_J3",
+          "wire": "H04_3",
+          "first_sample": 110,
+          "last_sample": 133,
+          "max_intersection_mm3": 3.2744889197090856
+        }
+      ]
+    },
+    {
+      "path": "shell_settle_bridge_fixed",
+      "status": "FAIL",
+      "pairs": [
+        {
+          "moving": "Body_Upper",
+          "wire": "H04_2",
+          "first_sample": 36,
+          "last_sample": 60,
+          "max_intersection_mm3": 3.1161547675632635
+        },
+        {
+          "moving": "Body_Upper",
+          "wire": "H04_1",
+          "first_sample": 56,
+          "last_sample": 60,
+          "max_intersection_mm3": 0.1271332959621411
+        }
+      ]
+    }
+  ],
+  "bridge_screw_tools": [
+    {
+      "id": "Yaw_Base_-1_Screw",
+      "status": "PASS",
+      "tool_hits": [],
+      "screw_hits": []
+    },
+    {
+      "id": "Yaw_Base_1_Screw",
+      "status": "PASS",
+      "tool_hits": [],
+      "screw_hits": []
+    }
+  ],
+  "finished_harness_quantity": 4,
+  "PHR_2_quantity": 4,
+  "PHR_3_quantity": 2,
+  "PHR_8_quantity": 2,
+  "SPH_002_contacts_installed_quantity": 28,
+  "quantity_scope": "H01-H04 only; no spare contacts or other harnesses included",
+  "formal_source_files_verified_unchanged": 249,
+  "changed_formal_files": [],
+  "native_CAD_changed": false,
+  "mechanical_model_changed": false,
+  "procurement_released": false,
+  "cut_lengths_released": false,
+  "power_on_released": false,
+  "limitations": [
+    "H01-H03 use6712/6711; eight IMU wires use6711, all unselected static wire candidates.",
+    "Native numbering and pitch retained; transverse terminal exit locations and actual mating geometry unqualified.",
+    "Finite tessellated capsules use0.02mm radial inflation; this is nominal geometry, not strength or contact certification.",
+    "Rigid gap lower bounds subtract half the <=0.04mm sample interval, inflated radius and0.0001mm numerical allowance from nearest-surface distances; whole-solid intersections are checked independently.",
+    "All91 wire-pair gaps use segment-to-segment polyline minima minus both inflated radii and0.0001mm numerical allowance; no mesh MinGap performance shortcut or endpoint-only clearance claim.",
+    "130head poses, not a continuous motion proof.",
+    "No H05, moving-head harness, FFC, branch wiring, anchors, service slack or cable-attached disassembly qualification.",
+    "IMU route-source pending wording is historical; its matching hash is consumed by the fourteen-wire report.",
+    "Nominal catalogue overlap is not JST/Alpha approval of this insulation/crimp combination."
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "objective": "在拿到实物之前，先把能做的都做了",
+  "revision": "V1.2-M1.47",
+  "source_blend_sha256": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+  "updated_utc": "2026-10-02T12:30:06.777180+00:00",
+  "status": "BLOCKED",
+  "status_scope": "Remaining project design/data gaps; this is not the goal tool status",
+  "manufacturing_release": false,
+  "completed": [
+    {
+      "id": "approved_cleanup",
+      "status": "PASS",
+      "detail": "取消废弃转台孔槽；轮驱底盖轴承座18→19.2mm且上座同步。3件与审核候选完全一致，206件其余实体几何和位置保持，零件数量不变。"
+    },
+    {
+      "id": "geometry_delivery",
+      "status": "PASS",
+      "detail": "主模型、STL、当前全部渲染及电子细模同步；主检查124 PASS / 0 FAIL，17 BLOCKED / 19 NOT_TESTED仍保留。21/21候选STL拓扑通过。"
+    },
+    {
+      "id": "animation",
+      "status": "PASS",
+      "detail": "M1.47-A1，82.5秒、1980帧、22章，源模型及路径回读通过；反力夹按预装总成演示的限制保留。"
+    },
+    {
+      "id": "engineering",
+      "status": "PASS",
+      "detail": "209实体质量覆盖及390姿态计算已基于M1.47重算；质量目标与执行器资格未获放行。"
+    },
+    {
+      "id": "tyre_research",
+      "status": "PASS",
+      "detail": "4类具名厂家产品已比对，尺寸及未知接口分开记录；没有套用其他产品尺寸或改变主轮径。"
+    },
+    {
+      "id": "hardware_handoff",
+      "status": "PASS",
+      "detail": "扩展电气输入清单已发送到既有硬件对话，并收到A2分项资料；16个正式原生PCB文件哈希保持。J10失败候选的独立机械包络筛查已完成，未应用。"
+    }
+  ],
+  "additional_checks": {
+    "report": "thin_candidate_service.json",
+    "counts": {
+      "PASS": 9,
+      "FAIL": 3,
+      "NOT_TESTED": 1
+    },
+    "scope": "Historical isolated candidate service checks retained; two explicit failed reaction approaches rechecked on M1.47, not included in general validation count.",
+    "current_main_recheck": "reaction_service_sections_M1_47.json"
+  },
+  "remaining": [
+    {
+      "id": "reaction_assembly",
+      "item": "反力夹口初次装配",
+      "status": "BLOCKED",
+      "owner": "机械；依赖舵盘接口定型",
+      "detail": "反力夹口局部薄边及初装仍未修复。M1.47当前实体复核：直柄工具与头座相交约9.26mm³，反力件上移2mm与头座相交约18.13mm³；只是两条具体路线失败，不表示不存在其他方案。未采用失败的夹口候选；最终舵盘资料仍缺。",
+      "evidence": "reaction_assembly_review.html"
+    },
+    {
+      "id": "harness",
+      "item": "完整线束",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件线材输入",
+      "detail": "H01–H03六根线已有独立EcoWire6711/6712候选：实体、15对线间及130个头部姿态通过，未改支架；线材选型、端子出线、应力释放和拆装松量未定。IMU八线、J10 C2带线退出、头部FFC/服务环和其他分支尚未完成。",
+      "evidence": "harness_A2/index.html"
+    },
+    {
+      "id": "hardware_selection",
+      "item": "未定采购件与安装",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件对话；现成软轮胎路线已确认",
+      "detail": "现成软轮胎未定型。收到独立A3/C2：D30/F70/R50局部背面空间和裸插头退出通过，JP70/TP71操作需在装桥前；真实出线与带线取件未定。候选有26处未连接、14条DRC警告，正式板与机械模型未替换。",
+      "evidence": "J10_A3_review/index.html"
+    },
+    {
+      "id": "supplier_interfaces",
+      "item": "传动与插接资料",
+      "status": "BLOCKED",
+      "owner": "厂家资料＋机械/硬件",
+      "detail": "SCS0009舵盘/短轴锁紧、S288输出自攻螺钉、WeAct E成品孔/针与插接长度仍缺资料；新增JST PHR8插合后真实出线高度。硬件A3查到18个正式PH接口孔径需在打样前修正并重跑DRC，不能只留到实物验证。",
+      "evidence": "SUPPLIER_DATA_REQUEST.md"
+    },
+    {
+      "id": "load_budget",
+      "item": "质量与驱动预算",
+      "status": "BLOCKED",
+      "owner": "机械＋硬件工作点",
+      "detail": "M1.47名义质量估算1.324kg仍超过1.0–1.2kg工程目标。A2两颗未布置制动电阻另计标称3.8g，候选部分合计1.327kg；未选模块、完整线束和热隔离固定仍缺，未修改主模型COM或宣称动力学通过。",
+      "evidence": "ENGINEERING.md"
+    },
+    {
+      "id": "physical_validation",
+      "item": "实物与打印验证",
+      "status": "NOT_TESTED",
+      "owner": "到货/试件后",
+      "detail": "CAM/相机照片估计细节、喇叭安装耳、电池与出线、排针排母实际插接、PA12配合和紧固、承载/蠕变/冲击、声学、温升与平衡需实物。",
+      "evidence": "../../reports/组装与打印.md"
+    }
+  ],
+  "approved_scope": {
+    "local_cleanups": "PASS",
+    "stock_tyre_screening": "PASS",
+    "tyre_selection": "BLOCKED",
+    "hardware_request_sent": true,
+    "hardware_thread_id": "01a0c24f-ddc2-7f03-a9d4-d09dff26d30f"
+  },
+  "prearrival_wire_addendum": {
+    "status": "BLOCKED",
+    "static_H01_H03_geometry": "PASS",
+    "adopted": false,
+    "review": "harness_A2/index.html",
+    "J10_C2_review": "J10_C2_review/index.html",
+    "main_geometry_changed": false,
+    "J10_A3_review": "J10_A3_review/index.html",
+    "PH_formal_interfaces_requiring_correction": 18,
+    "A3_candidate_applied": false
+  }
+}

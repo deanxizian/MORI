@@ -1,0 +1,932 @@
+PAGE 1
+ AN-000393 
+  
+ 
+InvenSense, Inc. reserves the right to change 
+specifications and information herein without 
+notice unless the product is in mass production 
+and the application note has been designated by 
+InvenSense in writing as subject to a specified 
+Product / Process Ch ange Notification Method 
+regulation. 
+InvenSense, a TDK Group Company 
+1745 Technology Drive, San Jose, CA 95110 U.S.A  
++1(408) 988–7339 
+invensense.tdk.com  
+ 
+  
+Document Number: AN-000393 
+Revision: 2.4 
+Date:2/9/2026 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TDK InvenSense  
+ 
+IMU PCB Design and MEMS Assembly 
+Guidelines 
+ 
+ 
+ 
+ 
+
+PAGE 2
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 2 of 28 
+Revision: 2.4  
+   
+TABLE OF CONTENTS 
+List of Figures ...................................................................................................................................................................... 3 
+List of Tables ....................................................................................................................................................................... 4 
+1 Introduction ................................................................................................................................................................ 5 
+2 PCB Design Guidelines ................................................................................................................................................ 6 
+2.1 General PCB Guidelines ......................................................................................................................................... 6 
+2.2 PCB Land Pattern ................................................................................................................................................... 6 
+2.3 Solder Paste Printing ............................................................................................................................................. 7 
+2.4 Routing .................................................................................................................................................................. 8 
+2.5 Flex PCB ................................................................................................................................................................. 9 
+2.6 Multiple IMUs on same PCB .................................................................................................................................. 9 
+3 COMPONENT PLACEMENT AND BOARD MOUNTING Guidelines  ............................................................................. 11 
+3.1 General Recommendations ................................................................................................................................. 11 
+3.2 PCB anchor points AND Mechanical stress on PCB ............................................................................................. 11 
+3.3 PCB with over hanging beam ............................................................................................................................... 12 
+3.4 Buttons, Pogo Pins, shielding boxes, connects, etc. ............................................................................................ 12 
+3.5 heat sources Recommendations ......................................................................................................................... 12 
+3.6 Speakers, fans, etc. .............................................................................................................................................. 13 
+3.7 Shock and vibration ............................................................................................................................................. 13 
+3.8 Epoxy-Seal and other material ............................................................................................................................ 14 
+3.9 Edge of PCB .......................................................................................................................................................... 14 
+4 IMU Products Handling guideline ............................................................................................................................. 15 
+4.1 MEMS handling instructions ................................................................................................................................ 15 
+4.2 Special Handling Instructions for QFN 4.5x4.5mm packages .............................................................................. 15 
+4.3 IMU Products ASSEMBLY guidelines .................................................................................................................... 15 
+4.4 Pick and Place guidelines ..................................................................................................................................... 15 
+ Target parameters ...................................................................................................................................... 15 
+4.5 ESD Considerations .............................................................................................................................................. 16 
+4.6 Reflow Specification ............................................................................................................................................ 16 
+4.7 Rework Procedure ............................................................................................................................................... 17 
+4.8 Storage Specifications.......................................................................................................................................... 18 
+4.9 Tape and Reel Handling Instructions ................................................................................................................... 18 
+4.10 Tape & Reel Specification .................................................................................................................................... 19 
+4.11 Tape and Reel Packaging ..................................................................................................................................... 21 
+4.12 Packaging ............................................................................................................................................................. 23 
+5 Revision history ......................................................................................................................................................... 27 
+ 
+  
+
+PAGE 3
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 3 of 28 
+Revision: 2.4  
+   
+LIST OF FIGURES 
+Figure 1. Recommended PCB Layout footprint for IMU Products in LGA package  .......................................... 6 
+Figure 2. Recommended PCB Layout footprint for IMU Products in QFN and DQFN package  ....................... 7 
+Figure 3. Stencil opening dimensions ................................................................................................................ 7 
+Figure 4. Pre and post reflow configuration ....................................................................................................... 8 
+Figure 5. Symmetrical trace out ......................................................................................................................... 8 
+Figure 6. Keep distance from high-speed and high current traces ................................................................... 9 
+Figure 7. Avoid traces, vias and copper pour below IMUs ................................................................................ 9 
+Figure 8 PCB Cut Slot for Multiple IMUs on the same PCB ............................................................................ 10 
+Figure 9. Keep away from anchor points and the intersection of anchor points  ............................................. 11 
+Figure 10. suggested PCB anchor points ........................................................................................................ 12 
+Figure 11. Unsupported board end .................................................................................................................. 12 
+Figure 12. Avoid connectors directly behind the board ................................................................................... 12 
+Figure 13. Avoid heat sources ......................................................................................................................... 13 
+Figure 14. Speaker and Tactile Vibrations can be interpreted as Noise by the IMUs  ..................................... 13 
+Figure 15. Keep distance to high frequency Electrical sources....................................................................... 13 
+Figure 16. Panelized PCB Bridges. Do not snap apart the PCB. .................................................................... 14 
+Figure 17. Examples of nozzle designs, reference for different packages ...................................................... 16 
+Figure 18. Solder Reflow Profile for Qualification ............................................................................................ 17 
+Figure 19. 3 x 3 mm2 Tape Dimensions (TYPE I) (for package height 0.9 mm and 1.0 mm) ......................... 19 
+Figure 20. 3 x 3 mm2 Tape Dimensions (TYPE II) (for package height 0.75 mm) .......................................... 19 
+Figure 21. 2.5 x 3 mm2 Tape Dimensions (TYPE I) ........................................................................................ 20 
+Figure 22. 2.5 x 3 mm2 Tape Dimensions (TYPE II) (for special request only) ............................................... 20 
+Figure 23. 4.5 x 4.5 mm2 Tape Dimension (for package height 1.1 mm) ........................................................ 20 
+Figure 24. 5.5 x 5.5 mm2 Tape Dimension (for package height 1.4 mm) ........................................................ 21 
+Figure 25. Reel Outline Drawing ..................................................................................................................... 21 
+Figure 26. Tape and Reel – Package Orientation ........................................................................................... 22 
+Figure 27. Barcode Label ................................................................................................................................ 22 
+Figure 28. Location of Label on Reel ............................................................................................................... 23 
+Figure 29. Barcode Label on the Left of the Box ............................................................................................. 23 
+Figure 30. REEL Packing ................................................................................................................................ 23 
+Figure 31. MSL Label (MSL 1, MSL 3 and MSL 5) ......................................................................................... 24 
+Figure 32. Reel Packing for shipping ............................................................................................................... 24 
+Figure 33. Labels ............................................................................................................................................. 25 
+Figure 34. Boxes and Labels ........................................................................................................................... 25 
+Figure 35. Outer Shipping Carton Label .......................................................................................................... 26 
+ 
+
+PAGE 4
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 4 of 28 
+Revision: 2.4  
+   
+LIST OF TABLES 
+Table 1. PnP equipment recommended parameters ....................................................................................... 16 
+Table 2. Temperature Set Points Corresponding to Reflow Profile Above ..................................................... 17 
+Table 3. Reel Dimensions................................................................................................................................ 21 
+Table 4. Reel Specifications for Packages smaller than 4.5 x 4.5 mm2 .......................................................... 22 
+Table 5. Reel Specification for Package 4.5 x 4.5 mm2 .................................................................................. 22 
+ 
+  
+
+PAGE 5
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 5 of 28 
+Revision: 2.4  
+   
+1 INTRODUCTION 
+This document provides high-level PCB design, sensor mounting, and handling guidelines for TDK IMU Products, which 
+incorporate a combination of gyroscope s and accelerometer s. Each sensor has specific requirements to ensure the 
+highest performance in a finished product. For a layout assessment of your design, including placement and estimated 
+temperature disturbances, please contact TDK. 
+The TDK IMU Products discussed in this document consist of 3-axis MEMS gyroscopes and 3-axis MEMS accelerometers. 
+This document replaces AN-IVS-0002A-00  MEMS Motion Handling and Assembly Guide.  
+
+PAGE 6
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 6 of 28 
+Revision: 2.4  
+   
+2 PCB DESIGN GUIDELINES 
+2.1 GENERAL PCB GUIDELINES 
+Traces connected to pads should be as symmetrical as possible. 
+Avoiding vias, traces, and copper pour under IMU device.  
+Always place VDD decoupling capacitors as close as possible to the VDD pin. The VDD pin fanout trace should be thicker 
+than 6 mil. The noise level on the VDD must meet datasheet specifications . 
+Always place VDDIO decoupling capacitors as close as possible to the VDDIO pin. The VDDIO pin fanout trace should be 
+thicker than 6 mil. 
+VDD and VDDIO can be from same power supply source, but each should have its own decoupling capacitor.  
+Keep VDD, VDDIO, serial communication lines away from any battery charge and from components and signals related 
+to the DC-DC switching power regulator when doing the layout. The high energy of a power signal can generate a lot of 
+noise or spikes. 
+Provide solid GND connections for GND pin ( read DS carefully for GND pin ). Any nearby GND via must be bigger than 
+8 mil drill and 12  mil copper. Multiple nearby GND vias are recommended for solid GND connections. The GND pin 
+fanout trace should be thicker than 6 mil. 
+Reduce serial communication bus capacitance by avoiding long trace. Always balance the bus lines as close as possible 
+to trace length. 
+For high-speed interfaces, such as I2C, I3C, and SPI, all clock and data traces should be routed with the same length and 
+away from other high-speed traces. Power traces should also be routed away from the high-speed signals. 
+TDK InvenSense IMU Products provide configurations for output pad slew rate adjustment. User can adjust the output 
+pad slew rate to optimize signal integrity on PCB board. Do not apply unnecessary fast slew rate to avoid over/under 
+shoot on signals. We recommend adjusting the slew rate setting by using scope to monitor the signals.  
+ 
+2.2 PCB LAND PATTERN 
+To achieve optimal performance of MEMS motion devices, placing the solder mask under the MEMS component is not 
+recommended. If this is not possible, placing the solder mask below the component will still work. 
+IMU Product package dimensions are provided in datasheets.  
+Figure 1 provides PCB land pattern recommendation for IMU Products in LGA package.  
+ 
+ 
+Figure 1. Recommended PCB Layout footprint for IMU Products in LGA package 
+Figure 2 provides PCB land pattern recommendation for IMU Products in QFN and DQFN package. 
+ 
+
+
+PAGE 7
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 7 of 28 
+Revision: 2.4  
+   
+ 
+Figure 2. Recommended PCB Layout footprint for IMU Products in QFN and DQFN package 
+ 
+TDK InvenSense products have very low active and standby current consumption. The exposed center pad is not 
+internally connected, and it is not required for heat sinking. The exposed center die pad must not be soldered to the 
+PCB and must be left unconnected.  
+Please use the most recent revision of the datasheet for the device with which you are working. Dummy traces can be 
+added on unused pins. 
+ 
+2.3 SOLDER PASTE PRINTING 
+Mechanical decoupling from the PCB to the sensor must be ensured to prevent any stress on the component.  Contact 
+from PCB resist and the package exposed pad must be avoided. Proper thickness definition for both solder paste and 
+copper help set proper clearance below the package. No solder paste needs to be disposed below the central exposed 
+pad for the chip with the e-pad. 
+Solder paste disposition should be done by stencil screening. In standard conditions, TDK InvenSense recommends using 
+a stencil opening to land ration of 90%. S tencil walls should be tapered to produce uniform release of the paste when 
+the stencil is removed from the PCB. Stencil thickness should be at least 100 m in respect to standard area ratio design 
+rule. 
+ 
+ 
+Figure 3. Stencil opening dimensions 
+Generic best practices for stencil design should be followed: 
+
+
+PAGE 8
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 8 of 28 
+Revision: 2.4  
+   
+• Aspect Ratio 
+o The width of aperture / thickness = W/T 
+o The lowest acceptable aspect ratio is 1.5 
+• Area Ratio 
+o Surface area of aperture / surface area of the aperture walls = (L x W)/ (2 x (L+W) x T) 
+o The lowest acceptable area ratio is 0.66 
+Maximizing symmetry and balance for pad connection will help with component self -alignment and will lead to better 
+control of solder paste reduction after reflowing. At the end of the soldering process, the solder paste must be as 
+uniform as possible to avoid unbalanced stress on the component. 
+Solder paste volume to be printed is greater than the final solder joint volume because solder paste decreases during 
+reflow. Solder paste volume reduction factor is typically between 0.45 and 0.55. Being the pad area constant, in the 
+worst case, the solder paste thickness can be assumed to be about 45% after the reflow: 
+ 
+Figure 4. Pre and post reflow configuration 
+2.4 ROUTING 
+Traces connected to pads should be as symmetrical as possible. Symmetry and balance for pad traces will improve 
+component self-alignment and lead to better control of solder paste reduction after the reflow process.  
+ 
+Figure 5. Symmetrical trace out  
+For high-speed interfaces, such as I2C, I3C, and SPI, all clock and data traces should be routed with the same length, and 
+away from other high-speed traces. Power traces should also be routed away from high-speed signals. Keep VDD, VDDIO, 
+serial communication lines away from any battery charge and DC -DC switching power regulator related components 
+and signals when doing the layout. The high energy of a power signal can generate a lot of noise  or spikes. 
+
+
+PAGE 9
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 9 of 28 
+Revision: 2.4  
+   
+ 
+Figure 6. Keep distance from high-speed and high current traces 
+ 
+We recommend 6mil or thicker traces for a 0.5  oz or 1 oz copper PCB. Provide a solid ground return path, with traces 
+10mil or wider for a 0.5 oz or 1 oz copper PCB. Do not use small vias for power and GND traces. No via on pad. 
+Trace, via, and filled copper are not allowed under the IMU chip directly, as they can cause elevation changes.  
+Do not place vias within the pad outline because vias and their related plating materials can contribute to an orientation 
+offset and non-uniform mechanical package stress.  
+ 
+Figure 7. Avoid traces, vias and copper pour below IMUs 
+NC (No Connect) pins should be soldered to the board for mechanical stability, but those pads on the board should not 
+be connected electrically.  
+2.5 FLEX PCB  
+Flex PCB should be avoided for MEMS sensor part s. If flex PCB must be used, a stiffener must be provided on the 
+opposite side of the flex PCB. The thickness of the stiffener depends on its material. The goal is to prevent the flex PCB 
+from bending, which will generate mechanical stress to MEMS.  
+2.6 MULTIPLE IMUS ON SAME PCB  
+Due to the nature of MEMS sensor operation, when having multiple IMUs on same PCB there will be mechanical force 
+interferences between them. The interference can cause sensor noise increase and sensor offset change. 
+It is strongly recommended not to place two or more IMUs on same PCB board. 
+When it is necessary to have multiple IMUs on same PCB, please try to cut their mechanical force transaction path as 
+much as possible.  Cutting PCB slot is one of many methods recommended here. The below drawing shows a cutting 
+concept for board design reference. 
+ 
+
+
+PAGE 10
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 10 of 28 
+Revision: 2.4  
+   
+ 
+Figure 8 PCB Cut Slot for Multiple IMUs on the same PCB 
+  
+
+
+PAGE 11
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 11 of 28 
+Revision: 2.4  
+   
+3 COMPONENT PLACEMENT AND BOARD MOUNTING GUIDELINES 
+Optimizing the location of a MEMS IMU on a PCB is crucial for ensuring accurate sensor readings and minimizing 
+interference. 
+3.1 GENERAL RECOMMENDATIONS 
+• PCB should be installed with at least 3 anchor points ; 4 or more, depending on pcb size and shape, can be 
+better.  
+• The IMU Products should  be placed in a location that minimizes mechanical stress . Keeping away from the 
+connection of two anchor points is strongly recommended.  
+• The IMU Products should  be kept at a reasonable distance to the critical points : e.g., away from any fixed 
+mounting location, screw hole, large insertion components, such as buttons, shielding boxes, connectors, etc.  
+• To avoid dynamic mechanical stress on pogo pins, placing the sensor direct under or next to pogo pins  is not 
+recommended. 
+• Keep a reasonable distance between sensor and heat sources, which may include processors, power 
+management circuitry, or high current devices. 
+• Direct epoxy contact on the IMU Products is forbidden.  
+• Keep a reasonable distance between the IMU Products and the edge of PCB or bridges for PCB separation by 
+router. Deflection from a routing drill or saw can damage the MEMS device.  
+• Keep a reasonable distance from vibration sources, such as speakers, vibration/haptic motors, fans, high energy 
+inductors, etc.  
+• The MEMS device can be damaged when shock level is over the datasheet specification. Shock or impact should 
+be avoided in manufacturing flow or device assembly process.  It is not recommended to mount the sensor in 
+areas where resonant amplitudes of the PCB are likely. 
+3.2 PCB ANCHOR POINTS AND MECHANICAL STRESS ON PCB 
+In theory, an ideal flat plane is determined by 3 anchor points.  Common practice is to mount a pcb with at least four 
+anchor points (even more, in case of larger pcb’s). Make sure the anchor points are evenly distributed on the board 
+surface area and their mounting ensures planarity, avoiding pcb bending.   
+Keeping a reasonable distance from the points of maximum mechanical stress is recommended. As shown in Figure 9, 
+keep away from the intersection of diagonal lines . Keeping away from any PCB anchors is strongly recommended. 
+Keeping a distance larger than 3 mm to any PCB anchor is recommended.  
+ 
+ 
+ 
+Figure 9. Keep away from anchor points and the intersection of anchor points 
+
+
+PAGE 12
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 12 of 28 
+Revision: 2.4  
+   
+ 
+Figure 10. suggested PCB anchor points 
+3.3 PCB WITH OVER HANGING BEAM 
+When PCB is in extended long and narrow shape, avoid place IMU close to extended stripe with out good PCB support. 
+ 
+ 
+Figure 11. Unsupported board end 
+ 
+3.4 BUTTONS, POGO PINS, SHIELDING BOXES, CONNECTS, ETC. 
+Do not place connectors or test points for pogo pins on the PCB surface below the IMU Product location, as shown in 
+Figure 12. Shock from snapping the connectors and pressure from the pogo pin during functional test on a production 
+line may damage the MEMS part. 
+ 
+ 
+Figure 12. Avoid connectors directly behind the board 
+3.5 HEAT SOURCES RECOMMENDATIONS 
+Do not place IMU close to any heat source. Do not place any heat source component on the opposite side of PCB under 
+IMU. The heat sources may include application processors, power management circuitry, or any high energy device. The 
+
+
+PAGE 13
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 13 of 28 
+Revision: 2.4  
+   
+temperature gradient across the IMU device, especially the top to bottom gradient should be minimized for best 
+measurement results. Refer to Figure 13. 
+ 
+ 
+Figure 13. Avoid heat sources 
+3.6 SPEAKERS, FANS, ETC. 
+Moving parts that cause vibration and are not intended to be measured, such as speakers, vibration/haptic motors, fans, 
+etc. (Figure 14), should be mechanically isolated from IMUs. 
+ 
+Figure 14. Speaker and Tactile Vibrations can be interpreted as Noise by the IMUs 
+Active signals may harmonically couple with the gyro MEMS devices, compromising gyro response. TDK IMU gyro 
+sensors operate at drive frequencies 25  kHz ~ 30 kHz. To avoid harmonic coupling , do not route active signals directly 
+below or near the package. If the IMU device is stacked under an adjacent PCB board, design a ground plane to shield 
+the IMU device from the adjacent PCB. 
+Electrical sources, such as a switched-mode power supply (SMPS) as shown Figure 15, can cause high frequency vibration. 
+SMPS (switched mode power supply) with switching noise below 150 kHz (including Harmonics) can reduce device 
+performance. 
+As mentioned in section  3.3, in addition to unwanted IMU device vibration output, mechanical vibration can damage 
+MEMS if the vibration frequency matches the MEMS resonant frequency.  
+Place any acceleration or vibration sources as far away as possible from MEMS devices. If placement is uncertain, consult 
+the local FAE to provide a more detailed analysis.  
+ 
+ 
+Figure 15. Keep distance to high frequency Electrical sources  
+ 
+3.7 SHOCK AND VIBRATION 
+The MEMS device can be damaged when shock level is over datasheet specification. Shock or impact should be avoided 
+in manufacturing flow or device assembly process. 
+During the design phase the IMU device should be placed in the location where it will receive the least amount of shock 
+possible. Various measurements can be taken to reduce shock transfer, such as location of the IMU device, shock 
+absorbing washers/gaskets for screw points, and shock absorbing foam pads . From a systems level, the placement of 
+other PCBs/Modules/Sub-systems should be placed away from the top/bottom of where the IMU device is located, to 
+prevent possible contact.  
+If there are concerns regard ing a system level design, the systems should be tested with the IMU device as a whole  
+system or tested beforehand and double checked to ensure there is no damage to the IMU device.  
+MEMS gyro and accel have multiple internal resona nce points. System level designs should avoid vibrations with the 
+same frequency of IMU device resonances. Please consult TDK technical support for each device’s resonant frequency. 
+
+
+PAGE 14
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 14 of 28 
+Revision: 2.4  
+   
+The TDK InvenSense IMU gyroscope sensors operate at specific drive frequencies. Please refer to each part’s datasheet 
+for the exact drive frequency number. Any vibration within these frequency ranges will cause extra gyro noise or even 
+damage the gyro.  
+The most common PCB board level vibration source is from power circuits such as a wireless charger, and buck and 
+boost power regulation circuits. Powered devices that may generate acceleration or vibration to the MEMS structures 
+can cause damage to MEMS devices. Examples of such components are inductors, capacitors, PMIC, haptic motors, 
+speakers, etc. 
+The shock experienced from a PCB level versus device level may and will be different. To attain the most accurate data 
+reading, the measurements should be taken from a PCB level as close to the IMU device as possible. If there is a source 
+of acceleration or vibration in the vicinity of the MEMS device, we recommend testing on the PCB with a vibrometer to 
+confirm that the MEMS device is not being excited by any resonance frequency.  
+ 
+3.8 EPOXY-SEAL AND OTHER MATERIAL 
+It is forbidden to put epoxy on top IMU directly. Nearby component epoxy overflow to touch IMU is not allowed too. 
+Any heatsink and shield box touching IMU need to be avoid. 
+ 
+3.9  EDGE OF PCB 
+Keep the IMU device away  from the edge of the PCB or bridges for PCB separation by router see picture below) 
+Deflection from a routing drill or saw can damage the MEMS device. Similarly, dull router bits and saw blades can cause 
+excessive mechanical vibration, which should be avoided. Do not snap apart panelized boards, since snapping apart the 
+PCB boards may introduce severe bending forces and mechanical shock, which may damage the IMU device. 
+ 
+ 
+Figure 16. Panelized PCB Bridges. Do not snap apart the PCB. 
+  
+
+
+PAGE 15
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 15 of 28 
+Revision: 2.4  
+   
+4 IMU PRODUCTS HANDLING GUIDELINE 
+4.1 MEMS HANDLING INSTRUCTIONS 
+Unlike conventional IC products in similar packages, MEMS devices contain moving micromechanical structures. 
+Therefore, MEMS devices require different handling precautions than conventional ICs prior to mounting onto PCBs.   
+All TDK InvenSense IMU products react negatively to Helium gas.  
+TDK InvenSense products have been qualified to an unpowered shock tolerance of 10,000g or 20,000g. Information for 
+each component is available in the corresponding product datasheet. Furthermore, the products are shipped in 
+cushioned tape and reel packing to protect them from potential damage induced by abnormal handling and shipping.  
+• Do not drop individually packaged sensors or trays of sensors. Components placed in trays could be subject to 
+excessive g-forces and stress.  
+• PCBs that incorporate mounted sensors should not be separated by manually snapping them apart. This could 
+create excessive g-forces and stress.  
+• Do not clean MEMS sensors in ultrasonic baths. Ultrasonic baths can induce MEMS damage if the bath energy 
+causes excessive drive motion through resonant frequency coupling.  
+• Do not open and remove MEMS devices from the moisture barrier bag until you are ready to use them . The 
+moisture barrier bag provides protection to the MEMS sensors during storage and transfer. 
+• Do not use any devices that are dropped inadvertently during handling.  
+4.2 SPECIAL HANDLING INSTRUCTIONS FOR QFN 4.5X4.5MM PACKAGES 
+To avoid possible damage or malfunction with TDK InvenSense products in QFN 4.5x4.5 mm package, it is strongly 
+suggested to observe the following guidelines: 
+• Keep assembly line shocks below Accelerometer’s mechanical headroom (refer to specific datasheet for the 
+applicable limit). 
+• If it is not possible, ensure shock duration is lower than 0.2ms for shocks up to 10,000gee. 
+• In any case, do not exceed 10,000gee. 
+• It is strongly suggested to use shock absorbing material to mitigate MEMS shocks during assembly . 
+4.3 IMU PRODUCTS ASSEMBLY GUIDELINES 
+Any material used in the surface mount assembly process of the MEMS gyroscope should be free of restricted RoHS 
+elements or compounds. Pb-free solders should be used for assembly.  
+Although the sensor products can withstand up to three reflow soldering cycles, it is strongly recommended t o avoid 
+multiple reflow steps for the MEMS component. The PCB side where the MEMS is placed must be soldered the last.  
+Use a typical pick -and-place machine with reflow equipment like an oven. Avoid any manual soldering process. 
+Machines should be set to the lowest and slowest pick and place operations, as much possible, to help minimize any 
+shock impact to the device.  
+The sensor has been designed and tested to survive shock up to the Absolute Maximum Rating (AMR) reported into the 
+datasheet. Shock above the AMR could damage the MEMS structure. Parts subjected to shock greater than AMR must 
+be discarded.  
+4.4 PICK AND PLACE GUIDELINES 
+Pick and place (PnP) equipment key factors to be considered to minimize mechanical stress on MEMS structures are the 
+following: 
+• Nozzle gap to the package upper surface 
+• Nozzle shape (larger inner diameter preferred) 
+• Nozzle material 
+• Air vacuum release pressure level 
+ Target parameters 
+The following table summarizes the best choice of the above listed parameters for some of the packages available for 
+TDK-InvenSense IMUs. Reference Pick and Place equipment is JUKI KE-3020VAL. 
+  
+
+PAGE 16
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 16 of 28 
+Revision: 2.4  
+   
+PnP equipment parameter Package size 
+4.5x4.5x1.1 mm 3x3x0.75 mm 
+Nozzle height (distance nozzle-pkg)(1) ≤0.25 mm ≤0.25 mm 
+Nozzle material Plastic or rubber Plastic or rubber 
+Nozzle shape(1)(2) Outer diameter ≥3.95 mm  ≥2.8 mm 
+Inner diameter ≥2.6 mm ≥1.5 mm 
+Pick-up vacuum pressure ≥ -64 kPa ≥ -64 kPa 
+Release air pressure ≤1.3 kPa   ≤1.3 kPa 
+Table 1. PnP equipment recommended parameters 
+Notes: 
+1. Reel and package tolerances are included (example for nozzle height, 4.5x4.5 package, ≤0.25 mm: 0.13mm ±0.12mm) 
+2. Preferred square shape - limited to package size 
+ 
+ 
+Figure 17. Examples of nozzle designs, reference for different packages 
+4.5 ESD CONSIDERATIONS 
+Establish and use  (Electrostatic Damage) ESD-safe handling precautions when unpacking and handling ESD -sensitive 
+devices.  
+• Store ESD-sensitive devices in ESD-safe containers until ready for use. The tape and reel moisture -sealed bag 
+is an ESD approved barrier. The best practice is to keep the units in the original moisture sealed bags until ready 
+for assembly. 
+• TDK InvenSense products are qualified to meet HBM (Human Body Model) 2000V and CDM (Charged Device 
+Model) 500V. Restrict all device handling to ESD protected work areas that measure less than 200V static 
+charge. Ensure that all workstations and personnel are properly grounded to prevent ESD. 
+ 
+4.6 REFLOW SPECIFICATION  
+TDK InvenSense products are qualified in accordance with IPC/JEDEC  J-STD-020F. This standard classifies proper 
+packaging, storage, and handling to avoid subsequent thermal and mechanical damage during the solder -reflow 
+attachment phase of PCB assembly.  
+The peak-solder reflow temperature for package qualification is 260° C maximum for IMU products. The TDK InvenSense 
+products can withstand up to three reflow soldering cycles. 
+
+
+PAGE 17
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 17 of 28 
+Revision: 2.4  
+   
+ 
+Figure 18. Solder Reflow Profile for Qualification 
+ 
+Step Setting CONSTRAINTS 
+Temp (° C) Time (sec) Max. Rate (° C/sec) 
+A Troom 25   
+B TSmin 150   
+C TSmax 200 60 < tBC < 120  
+D TLiquidus 217  r(TLiquidus-TPmax) < 3 
+E TPmin 255  r(TLiquidus-TPmax) < 3 
+F TPmax 260 tAF < 480 r(TLiquidus-TPmax) < 3 
+G TPmin 255 10< tEG < 30 r(TPmax-TLiquidus) < 6 
+H TLiquidus 217 60 < tDH < 150  
+I Troom 25   
+Table 2. Temperature Set Points Corresponding to Reflow Profile Above 
+Notes: Customers must never exceed the Classification temperature (TPmax = 260° C). 
+All temperatures refer to the topside of the package, as measured on the package body surface.  
+ 
+4.7 REWORK PROCEDURE 
+If a MEMS component needs to be removed from PCB for analysis or other purpose and replaced by a new one, care 
+should be taken during removal and installation of the component, so that no damages are added to the component 
+and PCB.  
+The general process for rework using a rework system consists of the following steps:  
+1) Prepare the board for rework.  
+2) Apply low-solids content liquid flux along one edge of the component; then tip the board slightly to flow  flux 
+under component.  
+3) Preheat the board from both top and bottom sides (100° C to 120° C, 60s to 150s) to prevent warping the PCB.  
+4) Then heat the board to (240° C - 255° C) to remove the component; use a shield to apply the heat to the  
+component from above, while isolating other adjacent components from the heat.  
+5) Prepare the site for installation of a replacement component by cleaning the site thoroughly. Remove excessive 
+solder from the pads. Level the pad, clean the site thoroughly, inspect for damage to solder mask or pads, apply 
+flux or solder paste.  
+6) Install the replacement component by locally heating the component to (240° C - 255° C). The installing process 
+needs to be finished in 20s.  
+
+
+PAGE 18
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 18 of 28 
+Revision: 2.4  
+   
+7) Clean the assembly, visually inspect, and X-ray for voiding and solder bridges; 
+8) Perform full functional test. 
+ 
+The following recommendations are intended to reduce the chances of damaging a component during removal:  
+Temperature profile – Hot air heat transfer to the package and PCB is strongly recommended. Typically, heating nozzles 
+are used to increase the temperature locally. Temperature and air flow for heating the device should be controlled. The 
+maximum temperature of the package body must not exceed the maximum allowed temperature for reflow soldering 
+(260 ° C). 
+It is important to minimize the chance of overheating neighboring devices during the removal or installation of the 
+component. A heat shield should be utilized to protect adjacent components on the PCB.  
+ 
+4.8 STORAGE SPECIFICATIONS 
+TDK InvenSense products conform to the storage specifications of IPC/JEDEC J-STD-020 Moisture Sensitivity Level (MSL) 
+1. 
+Calculated shelf-life in moisture-sealed bag 12 months -- Storage Conditions: <40° C and <90% RH 
+After opening moisture-sealed bag Unlimited hours -- Storage Conditions: Ambient ≤30°C at 85%RH 
+TDK InvenSense products conform to the storage specifications of IPC/JEDEC J-STD-020 Moisture Sensitivity Level (MSL) 
+3. 
+Calculated shelf-life in moisture-sealed bag 12 months -- Storage Conditions: <40° C and <90% RH 
+After opening moisture-sealed bag 168 hours -- Storage Conditions: Ambient ≤30°C at 60%RH 
+TDK InvenSense products conform to the storage specifications of IPC/JEDEC J-STD-020 Moisture Sensitivity Level (MSL) 
+5. 
+Calculated shelf-life in moisture-sealed bag 12 months -- Storage Conditions: <40° C and <90% RH 
+After opening moisture-sealed bag 48 hours -- Storage Conditions: Ambient ≤30°C at 60%RH 
+ 
+Notes: A attain the MSL rating for motion-based products, please refer to the qualification report for the details. 
+4.9 TAPE AND REEL HANDLING INSTRUCTIONS 
+TDK InvenSense IMU devices are shipped in tape and reels. They are packaged to protect them from potential damage 
+induced by normal handling and shipping. These are handling guidelines for the tape and reels populated with MEM’s 
+motion devices: 
+Tape and reels (with devices) should not be dropped at any time or un -reeled manually. 
+Precautions should be taken to minimize the amount of vibration that tape and reels (with devices) are subjected to 
+while in pick and place machines.  
+The slowest settings possible should be used on pick and place machines during the SMT process.  
+Tape and reels should be kept in packaging for as long as possible, until ready for use on pick and place machines  
+Any carts used for internal transportation of tape and reels (with devices) should be padded with bumpers and have 
+shock absorbing features. 
+
+PAGE 19
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 19 of 28 
+Revision: 2.4  
+   
+4.10 TAPE & REEL SPECIFICATION 
+ 
+Figure 19. 3 x 3 mm2 Tape Dimensions (TYPE I) (for package height 0.9 mm and 1.0 mm) 
+ 
+ 
+ 
+ 
+Figure 20. 3 x 3 mm2 Tape Dimensions (TYPE II) (for package height 0.75 mm) 
+
+
+PAGE 20
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 20 of 28 
+Revision: 2.4  
+   
+ 
+Figure 21. 2.5 x 3 mm2 Tape Dimensions (TYPE I) 
+ 
+ 
+ 
+ 
+Figure 22. 2.5 x 3 mm2 Tape Dimensions (TYPE II) (for special request only) 
+ 
+ 
+Figure 23. 4.5 x 4.5 mm2 Tape Dimension (for package height 1.1 mm) 
+
+
+PAGE 21
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 21 of 28 
+Revision: 2.4  
+   
+ 
+ 
+ 
+Figure 24. 5.5 x 5.5 mm2 Tape Dimension (for package height 1.4 mm) 
+ 
+4.11 TAPE AND REEL PACKAGING 
+Please refer to each product’s datasheet for IMU product Pin-1 orientation in tape. 
+ 
+ 
+ 
+ 
+Figure 25. Reel Outline Drawing 
+ 
+REEL (mm) 
+L V W Z 
+330 102 12.8 2.3 
+Table 3. Reel Dimensions 
+ 
+
+
+PAGE 22
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 22 of 28 
+Revision: 2.4  
+   
+ 
+Figure 26. Tape and Reel – Package Orientation 
+ 
+Quantity Per Reel 5,000 
+Reels per Box 1 
+Boxes Per Carton (max) 5 
+Pcs/Carton (max) 25,000 
+Table 4. Reel Specifications for Packages smaller than 4.5 x 4.5 mm2 
+ 
+Quantity Per Reel 4,000 
+Reels per Box 1 
+Boxes Per Carton (max) 5 
+Pcs/Carton (max) 20,000 
+Table 5. Reel Specification for Package 4.5 x 4.5 mm2 
+ 
+ 
+Figure 27. Barcode Label 
+
+
+PAGE 23
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 23 of 28 
+Revision: 2.4  
+   
+ 
+Figure 28. Location of Label on Reel 
+ 
+ 
+ 
+Figure 29. Barcode Label on the Left of the Box 
+ 
+ 
+4.12 PACKAGING 
+ 
+     
+Figure 30. REEL Packing 
+ 
+ 
+ 
+ 
+Top EPE 
+Product 
+Bottom EPE 
+
+PAGE 24
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 24 of 28 
+Revision: 2.4  
+   
+     
+ 
+Figure 31. MSL Label (MSL 1, MSL 3 and MSL 5) 
+ 
+  
+Figure 32. Reel Packing for shipping 
+ 
+ 
+
+
+PAGE 25
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 25 of 28 
+Revision: 2.4  
+   
+              
+                                                     Caution Label                                                       ESD Label 
+Figure 33. Labels 
+ 
+          
+                                                  Standard Packing Box                                            Boxes Placed in Foam Lined Shipper Box 
+        
+                          Outer Shipper Label  
+Figure 34. Boxes and Labels 
+  
+
+
+PAGE 26
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 26 of 28 
+Revision: 2.4  
+   
+Representative Shipping Carton label: 
+ 
+Figure 35. Outer Shipping Carton Label 
+ 
+  
+
+
+PAGE 27
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 27 of 28 
+Revision: 2.4  
+   
+5 REVISION HISTORY 
+REVISION DATE REVISION DESCRIPTION 
+11/01/2022 1.0 Initial release 
+12/22/2022 1.1 Cosmetic updates  
+09/15/2023 1.2 Updated section 2.2, added QFN package PCB land pattern 
+Updated section 4 and rest of the document to cover all IMU Products 
+12/06/2023 1.3 Changed chapter 3 title. 
+Updated chapter 4.1 and 4.2 
+01/29/2024 1.4 Updated introduction chapter 1,  and legal information; and fixed typo in the footer 
+02/26/2024 1.5 
+Added section 4.4. 
+Updated section 4.6: Added Figure 18 and Table 2. 
+04/24/2024 1.6 Added sections 2.6, 4.6 & 4.9 
+07/01/2024 1.7 Added section Figure 28 Package Orientation and Table 4~5 Reel Q’ty Specification 
+07/25/2024 1.8 Pick and Place target parameters revised (section 4.4.1) 
+09/02/2024 1.9 Review of “nozzle height” parameter (section 4.4.1) 
+03/28/2025 2.1 
+Cleaned up section 2.2, 3.3, 3.4 and 3.6 
+Modified figure 20 
+Updated Figure 29 
+12/22/2025 2.2 
+Typo corrections 
+Section 3.1, 3.2 reviewed 
+Section 4.2: Special Handling Instructions for QFN 4.5x4.5mm packages added 
+01/22/2026 2.3 Removed reference to EIA standard 
+02/09/2026 2.4 Modify Figure 26. Tape and Reel – Package Orientation 
+Modify Figure 21. 2.5 x 3 mm2 Tape Dimensions (TYPE I) 
+ 
+  
+
+PAGE 28
+ AN-000393 
+  
+ 
+ 
+Document Number: AN-000393                                 Page 28 of 28 
+Revision: 2.4  
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This information furnished by InvenSense or its affiliates (“TDK InvenSense”) is believed to be accurate and reliable. Howeve r, no responsibility is 
+assumed by TDK InvenSense for its use, or for any infringements of patents or other rights of third parties that may result from its use. Specifications 
+are subject to change without notice. TDK InvenSense reserves the right to make changes to this product, including its circuits and software, in order 
+to improve its design and/or performance, without prior notice. TDK InvenSense makes no warranties, neither expressed nor implied, regarding the 
+information and specifications contained in this document. TDK InvenSense assumes no responsibility for any claims or damages  arising from 
+information contained in this d ocument, or from the use of products and services detailed therein. This includes, but is not limited to, claims or 
+damages based on the infringement of patents, copyrights, mask work and/or other intellectual property rights.  
+Certain intellectual property owned by InvenSense and described in this document is patent protected. No license is granted b y implication or 
+otherwise under any patent or patent rights of InvenSense. This publication supersedes and replaces all information previously supplied. Trademarks 
+that are registered trademarks are the property of their respective companies. TDK InvenSense sensors should not be used or sold in the development, 
+storage, production, or utilization of any conventional or mass-destructive weapons or for any other weapons or life-threatening applications, as well 
+as in any other life critical applications such as medical equipment, transportation (unless otherwise agreed in writing by InvenSense, Inc.), aerospace 
+and nuclear instruments, undersea equipment, power plant equipment, disaster prevention and crime prevention equipment.  
+© 202 2−2026 InvenSense. All rights reserved. InvenSense, SmartMotion, SmartIndustrial, SmartSonic, SmartAutomotive, SmartRobotics, SmartSound, 
+SmartPressure, MotionProcessing, MotionProcessor, UltraPrint, MotionTracking, CHIRP Microsystems, SmartBug, SonicLink, Digital Motion Processor, 
+AAR, and the InvenSense logo are registered trademarks of InvenSense, Inc. The TDK logo is a trademark of TDK Corporation. Ot her company and 
+product names may be trademarks of the respective companies with which they are associated. 
+ 
+ 
+© 2022-2026 InvenSense. All rights reserved. 
+ 

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "meaning": "PASS means deliberate violations were detected; this is NOT a compliant product PCB",
+  "checks": {
+    "R01": true,
+    "R05": true,
+    "R06": true,
+    "R07": true,
+    "R08": true,
+    "R09": true,
+    "R15-R16": true,
+    "R27": true,
+    "R39": true,
+    "R40": true
+  },
+  "argv": [
+    "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+    "pcb",
+    "drc",
+    "--format",
+    "json",
+    "--severity-all",
+    "--all-track-errors",
+    "--exit-code-violations",
+    "-o",
+    "/Users/dean/Documents/MORI/hardware/v1_2/layout_P2/reports/rule_probe/drc.json",
+    "/Users/dean/Documents/MORI/hardware/v1_2/layout_P2/reports/rule_probe/rule_probe.kicad_pcb"
+  ],
+  "returncode": 5
+}

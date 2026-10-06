@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MORI · CAM 分段送线复核</title><style>body{font:16px/1.8 system-ui,-apple-system,"PingFang SC",sans-serif;color:#233c3c;background:#f5f7f6;max-width:1120px;margin:32px auto;padding:0 24px 50px}a{color:#086879}section{background:#fff;border-radius:10px;padding:22px;margin:20px 0}.note{background:#fff0dc}img{display:block;width:100%;height:auto}td,th{padding:12px;text-align:left;border-bottom:1px solid #d3dfde}table{width:100%;border-collapse:collapse}</style>
+<p><a href="../body_fixed_CAM/index.html">← 上次装配诊断</a> · <a href="../../../../../../../../../supplier_source_update/index.html">资料与设计进度</a></p>
+<h1>四根 CAM 线：位置放得下，移动过程还要解决</h1>
+<section class="note"><p>两个中间位置已有独立排布通过几何检查；从坐稳位置到这些位置的完整送线动作仍未通过。主模型 M1.47 未改，制造图未放行。</p></section>
+<section><h2>已找到两处排布</h2><table><tr><th>桥的位置</th><th>四线最小保守间隙</th><th>结果范围</th></tr>
+<tr><td>上移 18 mm</td><td>0.439 mm</td><td>单个位置的零件、邻线、自绕和端子空间</td></tr>
+<tr><td>上移 18 mm、后移 14 mm</td><td>0.765 mm</td><td>同上，身体端 PH 接口保持不动</td></tr></table>
+<p>完整线长保留，身体端直段保留，解析圆弯最小半径 7 mm。端子仍是明确标注的尺寸分配。</p>
+<a href="comparison.png"><img src="comparison.png" alt="坐稳基准及两处独立CAM排布的正面和侧面投影；不是连续装配动画"></a></section>
+<section><h2>第 4 根线卡在中间动作</h2><p>保持原弯线形式，每 0.5 mm 逐步抬升。第 1–3 根各自有候选，第 4 根尚未与它们形成完整组合。改变收弯时机的六组尝试，在细化到 0.015 mm 线段后，仍有 H02 间隙不足或明确相交。</p><p>又检查了临时降低中段 0.5–4 mm 的 7 组动作，仍未形成四根线同时通过的抬升组合。</p><p>这需要继续完成线束设计；没有据此扩大孔、移动 PCB 或增加零件。</p></section>
+<section><h2>验证范围</h2><p>14 根身体线、当前阶段 122 件原模型零件、29 个插头空间分配保留。使用前序研究的未采用打印候选。其余跨关节线、FPC、扎带、人手、真实端子入壳和最终裁线尺寸仍待完成。</p><p><a href="README.md">完整说明</a> · <a href="lift18/verification.json">位置一</a> · <a href="rear14_lift18/verification.json">位置二</a> · <a href="../feed_lift_refinement/screen.json">细化失败证据</a> · <a href="../feed_lift_pulse/screen.json">临时降低中段</a> · <a href="publication.json">来源校验</a></p></section></html>

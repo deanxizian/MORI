@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>J1 连续走线候选 · MORI M1.47</title><style>body{font:16px/1.75 -apple-system,BlinkMacSystemFont,sans-serif;margin:40px auto;padding:0 24px;max-width:1080px;color:#263940;background:#f4f6f5}h1{font-size:30px}h2{margin-top:32px;font-size:23px}img{width:100%;background:white;border-radius:8px}a{color:#16617c}.note{border-left:4px solid #b68b3e;background:#fff8e9;padding:14px 18px}table{border-collapse:collapse;width:100%}td,th{padding:10px 14px;border-bottom:1px solid #d4dedc;text-align:left}code{font-size:13px}</style>
+<p><a href="../index.html">← A8研究与官方资料</a></p><h1>四根UART导线：进出路线已接通，装入尚未完成</h1>
+<p class="note">独立候选J1 · 主模型未修改 · 不是供应商加工图。需要先解决端子装入、固定、俯仰连接和整条长度。</p>
+<img src="three_pose_paths.png" alt="相同端点和切线规则下，负60度、零位、正60度的四根局部导线路线">
+<table><tr><th>检查</th><th>结果和范围</th></tr><tr><td>局部连续导线路线</td><td>PASS；四根线、130头部姿态、209源实体及14根固定线候选</td></tr>
+<tr><td>弯曲与线间间隙</td><td>最小抽样弯曲半径7.955 mm；四线相互表面间隙下界6.414 mm</td></tr>
+<tr><td>打印件</td><td>只改Yaw_Base和Pitch_Yoke，207个其余实体保持；强度和开口边缘尚未验证</td></tr>
+<tr><td>端子/胶壳装入</td><td>BLOCKED；16种名义参考包络切线随动尝试均有重叠，不等于所有装法无解</td></tr>
+<tr><td>加工长度</td><td>BLOCKED；92.865 mm只是局部研究长度</td></tr></table>
+<h2>两处打印件需要局部让位</h2><img src="sections_review.png" alt="当前与J1候选的下端入口、上端出口真实实体剖面对比">
+<h2>接下来必须完成的设计</h2><p>核对预压端子、暂不装胶壳的穿入办法，或与关节装配配合的开放放线方案；同时补齐固定、俯仰段和真实板端连接。现阶段不申请采用J1，以免只把未完成的装配问题带入主模型。</p>
+<p>端子和胶壳采用JST目录名义包络，缺少压接后完整形状、公差及CAM实配型号。参考包络出现干涉不能直接解释为原厂端子绝对装不进去。</p>
+<p><a href="README.md">完整说明</a> · <a href="candidate.blend">独立Blender</a> · <a href="screening.json">实体检查</a> · <a href="terminal_entry.json">装入尝试</a> · <a href="../joined_wire_spacing.json">线间检查</a> · <a href="../TOOLING_DETAILS.md">官方压接资料</a></p>
+<p>主模型保持M1.47；没有采购、制造发布或硬件改动。</p></html>

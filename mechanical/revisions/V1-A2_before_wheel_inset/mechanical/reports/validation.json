@@ -1,0 +1,745 @@
+{
+  "status_vocabulary": [
+    "PASS",
+    "FAIL",
+    "NOT_TESTED",
+    "BLOCKED",
+    "NOT_APPLICABLE"
+  ],
+  "elapsed_s": 4.9,
+  "checks": [
+    {
+      "id": "static_rigid_solids",
+      "status": "PASS",
+      "summary": "装配态全部刚性实体两两体积干涉",
+      "measurement": {
+        "failures": 0,
+        "details": "static_interference.json"
+      },
+      "method": "Manifold 3.5.3 intersection of oriented closed triangle meshes; threshold 0.01 mm3; not bbox-only"
+    },
+    {
+      "id": "combined_yaw_pitch",
+      "status": "PASS",
+      "summary": "Yaw/Pitch 联合采样",
+      "measurement": {
+        "poses": 130,
+        "yaw_step_deg": 10,
+        "pitch_step_deg": 5,
+        "failures": 0,
+        "bounds_xyz_mm": [
+          [
+            -84.79999542236328,
+            84.79999542236328
+          ],
+          [
+            -74.99519348144531,
+            74.99528503417969
+          ],
+          [
+            0.0,
+            255.99923217913238
+          ]
+        ]
+      },
+      "method": "Actual solid-volume intersection; no continuous configuration-space proof"
+    },
+    {
+      "id": "sampled_cable_allocations",
+      "status": "PASS",
+      "summary": "联合姿态中的线束预留体与不同运动组实体",
+      "measurement": {
+        "poses": 130,
+        "failure_count": 0,
+        "details": "cable_motion.json"
+      },
+      "method": "Actual tube/torus triangle-solid intersections at yaw 10 deg x pitch 5 deg; does not qualify wire strain/bend fatigue"
+    },
+    {
+      "id": "continuous_motion_proof",
+      "status": "NOT_TESTED",
+      "summary": "有限采样不是连续空间数学证明；弹性、制造公差、舵机回差未建模",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "wheel_360_clearance",
+      "status": "PASS",
+      "summary": "两侧轮胎、轮毂及轮盖完整转动与壳体实际间隙",
+      "measurement": {
+        "poses_each": 37,
+        "minimum_solid_gap_mm": 4.0,
+        "minimum_pair": {
+          "deg": 0,
+          "a": "Tire_L",
+          "b": "Body_Lower",
+          "distance_mm": 4.0
+        },
+        "target_gap_mm": 4,
+        "failures": [],
+        "intentional_contacts": "Axle/bearing pairs separate; not part of wheel-shell gap"
+      },
+      "method": "10 degree actual mesh intersection and solid minimum-distance sampling; local wheel pockets invalidate the old global X-plane bound; finite sampling only"
+    },
+    {
+      "id": "assembled_size",
+      "status": "PASS",
+      "summary": "装配真实包围尺寸",
+      "measurement": {
+        "xyz_mm": [
+          169.59999084472656,
+          149.990478515625,
+          255.99508666992188
+        ],
+        "bounds_xyz_mm": [
+          [
+            -84.79999542236328,
+            84.79999542236328
+          ],
+          [
+            -74.99519348144531,
+            74.99528503417969
+          ],
+          [
+            0.0,
+            255.99508666992188
+          ]
+        ],
+        "body_front_width_mm": 149.62474060058594,
+        "wheel_pocket_seat_width_mm": 124,
+        "head_diameter_mm": 105
+      },
+      "method": "All physical rigid meshes, excluding separate dock, coupons, rendering and keepouts; body width measured from actual upper/lower mesh"
+    },
+    {
+      "id": "sphere_mothers_and_surface",
+      "status": "PASS",
+      "summary": "母球无非等比缩放；未截切球面的离散网格误差",
+      "measurement": {
+        "mothers": [
+          {
+            "id": "Head_Mother",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "radius_mm": 52.5,
+            "max_vertex_radius_error_mm": 0.00014183388661592744
+          },
+          {
+            "id": "Body_Mother",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "radius_mm": 75.0,
+            "max_vertex_radius_error_mm": 0.00019856744556534522
+          }
+        ],
+        "outer_surface_samples": [
+          {
+            "id": "Body_Upper",
+            "outer_vertices": 2458,
+            "max_vertex_sphere_error_mm": 0.05929511492310269,
+            "max_triangle_centroid_sag_mm": 0.062494717904385766
+          },
+          {
+            "id": "Body_Lower",
+            "outer_vertices": 3902,
+            "max_vertex_sphere_error_mm": 0.06247499489820996,
+            "max_triangle_centroid_sag_mm": 0.062460283138307204
+          },
+          {
+            "id": "Head_Front",
+            "outer_vertices": 2409,
+            "max_vertex_sphere_error_mm": 0.041341639658732277,
+            "max_triangle_centroid_sag_mm": 0.041646730248992014
+          },
+          {
+            "id": "Head_Rear",
+            "outer_vertices": 2693,
+            "max_vertex_sphere_error_mm": 0.09373894795785276,
+            "max_triangle_centroid_sag_mm": 0.04027937037183449
+          }
+        ]
+      },
+      "method": "All mother vertices checked. Shell outer-face vertices/centroids selected within 0.12 mm radial band; local rims, bosses and cuts excluded"
+    },
+    {
+      "id": "ground_contacts",
+      "status": "PASS",
+      "summary": "腹部离地、两轮接地与其他零件不穿地",
+      "measurement": {
+        "belly_mm": 25.0,
+        "tire_lowest_z_mm": {
+          "Tire_L": 0.0,
+          "Tire_R": 0.0
+        },
+        "other_lowest_z_mm": 11.5
+      },
+      "method": null
+    },
+    {
+      "id": "body_tilt_geometry",
+      "status": "PASS",
+      "summary": "绕轮轴前后倾斜 ±15°，每 1°",
+      "measurement": [
+        {
+          "body_forward_tilt_deg": -15,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.519274710841273,
+          "belly_z_mm": 23.221139204331394
+        },
+        {
+          "body_forward_tilt_deg": -14,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.54145792655352,
+          "belly_z_mm": 23.440563944476537
+        },
+        {
+          "body_forward_tilt_deg": -13,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.516791523327583,
+          "belly_z_mm": 23.667320364249235
+        },
+        {
+          "body_forward_tilt_deg": -12,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.503081900358694,
+          "belly_z_mm": 23.85917409399144
+        },
+        {
+          "body_forward_tilt_deg": -11,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.500343797159616,
+          "belly_z_mm": 24.036143066727163
+        },
+        {
+          "body_forward_tilt_deg": -10,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.508568779126193,
+          "belly_z_mm": 24.22025887009977
+        },
+        {
+          "body_forward_tilt_deg": -9,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.52775421029601,
+          "belly_z_mm": 24.35724836728471
+        },
+        {
+          "body_forward_tilt_deg": -8,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.530925433696439,
+          "belly_z_mm": 24.491259643788453
+        },
+        {
+          "body_forward_tilt_deg": -7,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.510364870708512,
+          "belly_z_mm": 24.630266473184307
+        },
+        {
+          "body_forward_tilt_deg": -6,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.500771687758002,
+          "belly_z_mm": 24.714004663745314
+        },
+        {
+          "body_forward_tilt_deg": -5,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.502141646128154,
+          "belly_z_mm": 24.804683270160567
+        },
+        {
+          "body_forward_tilt_deg": -4,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.514476539025996,
+          "belly_z_mm": 24.888217680477887
+        },
+        {
+          "body_forward_tilt_deg": -3,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.537775633859923,
+          "belly_z_mm": 24.928451076989596
+        },
+        {
+          "body_forward_tilt_deg": -2,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.521929144859314,
+          "belly_z_mm": 24.975557003963544
+        },
+        {
+          "body_forward_tilt_deg": -1,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.505481332540512,
+          "belly_z_mm": 25.003425419330597
+        },
+        {
+          "body_forward_tilt_deg": 0,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.5,
+          "belly_z_mm": 25.0
+        },
+        {
+          "body_forward_tilt_deg": 1,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.505481332540512,
+          "belly_z_mm": 25.003425419330597
+        },
+        {
+          "body_forward_tilt_deg": 2,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.521929144859314,
+          "belly_z_mm": 24.975557187018897
+        },
+        {
+          "body_forward_tilt_deg": 3,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.537775633859923,
+          "belly_z_mm": 24.928451351502314
+        },
+        {
+          "body_forward_tilt_deg": 4,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.514476539025996,
+          "belly_z_mm": 24.888218046365566
+        },
+        {
+          "body_forward_tilt_deg": 5,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.502141646128154,
+          "belly_z_mm": 24.804683976665043
+        },
+        {
+          "body_forward_tilt_deg": 6,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.500771687758002,
+          "belly_z_mm": 24.71400551107823
+        },
+        {
+          "body_forward_tilt_deg": 7,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.510364870708512,
+          "belly_z_mm": 24.630267461085598
+        },
+        {
+          "body_forward_tilt_deg": 8,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.530925433696439,
+          "belly_z_mm": 24.491260705594414
+        },
+        {
+          "body_forward_tilt_deg": 9,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.52775421029601,
+          "belly_z_mm": 24.35724956078539
+        },
+        {
+          "body_forward_tilt_deg": 10,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.508568779126193,
+          "belly_z_mm": 24.220256054835517
+        },
+        {
+          "body_forward_tilt_deg": 11,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.500343797159616,
+          "belly_z_mm": 24.036139973241603
+        },
+        {
+          "body_forward_tilt_deg": 12,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.503081900358694,
+          "belly_z_mm": 23.85917072323062
+        },
+        {
+          "body_forward_tilt_deg": 13,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.516791523327583,
+          "belly_z_mm": 23.667315215530152
+        },
+        {
+          "body_forward_tilt_deg": 14,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.54145792655352,
+          "belly_z_mm": 23.440558407322612
+        },
+        {
+          "body_forward_tilt_deg": 15,
+          "lowest_part": "Wheel_Hub_L",
+          "lowest_z_mm": 11.519274710841273,
+          "belly_z_mm": 23.22113328043497
+        }
+      ],
+      "method": "Positive body forward tilt is -X rotation. Geometric test only, not control safety range"
+    },
+    {
+      "id": "mesh_topology",
+      "status": "PASS",
+      "summary": "实际装配网格闭合、非流形边、绕序、退化与正体积",
+      "measurement": {
+        "bad": [],
+        "checked": 107
+      },
+      "method": "Triangle edge incidence and orientation, area and signed tetrahedral volume"
+    },
+    {
+      "id": "printable_connected_solids",
+      "status": "PASS",
+      "summary": "候选结构件连通且无未声明封闭内孔",
+      "measurement": {
+        "disconnected": []
+      },
+      "method": "Manifold boundary components with positive volume counted; negative-volume closed cavity boundaries are not mistaken for floating parts"
+    },
+    {
+      "id": "exact_self_intersection",
+      "status": "NOT_TESTED",
+      "summary": "Manifold 接受网格不等价于独立、可靠的全部自交证明；未运行精确全三角自交算法",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "nominal_shell_wall_samples",
+      "status": "PASS",
+      "summary": "未截切区域壳厚径向射线抽查",
+      "measurement": [
+        {
+          "id": "Body_Upper",
+          "count": 72,
+          "min_sample_mm": 2.397910864850893,
+          "max_sample_mm": 2.4012917300822543
+        },
+        {
+          "id": "Body_Lower",
+          "count": 77,
+          "min_sample_mm": 2.3981187403589495,
+          "max_sample_mm": 2.401305171108353
+        },
+        {
+          "id": "Head_Front",
+          "count": 78,
+          "min_sample_mm": 2.398044218443104,
+          "max_sample_mm": 2.4010769923515247
+        },
+        {
+          "id": "Head_Rear",
+          "count": 98,
+          "min_sample_mm": 2.397847553475715,
+          "max_sample_mm": 2.4010770109696216
+        }
+      ],
+      "method": "Ray-paired surfaces; bosses may be thicker, not global minimum-wall proof"
+    },
+    {
+      "id": "global_minimum_wall",
+      "status": "NOT_TESTED",
+      "summary": "孔边、布尔窄区和所有支架的全局最小壁厚尚无可靠全覆盖算法；需切片与实体试样",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "camera_nominal_fov",
+      "status": "PASS",
+      "summary": "相机独立开口、假设视场与脸框遮挡",
+      "measurement": {
+        "hfov_deg": 70,
+        "vfov_deg": 50,
+        "rays": 99,
+        "occlusions": [],
+        "window_misses": []
+      },
+      "method": "11 x 9 pinhole rays through actual transparent window and opaque triangulated blockers; all head optical components share pitch transform. Window refraction not simulated"
+    },
+    {
+      "id": "camera_fov_body_motion",
+      "status": "PASS",
+      "summary": "相机联合姿态视场与固定机身遮挡",
+      "measurement": {
+        "poses": 130,
+        "rays_per_pose": 99,
+        "blockages": []
+      },
+      "method": "Ray casts to fixed body meshes; rigid camera/window/front frame relationship also checked in nominal rays"
+    },
+    {
+      "id": "camera_calibration_reflections",
+      "status": "NOT_TESTED",
+      "summary": "真实镜头视场、透明窗折射、保护片反光和实际外参待选型与标定；无实测舵机反馈时头角为估计",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "head_opening_exposure",
+      "status": "NOT_TESTED",
+      "summary": "下护罩按屏幕扫掠让位；极端俯仰开口是否可接受需查看角度渲染并做实体遮光试验，不宣称完全封闭",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "battery_extraction",
+      "status": "PASS",
+      "summary": "移除下壳、吊杆并断开电池后向下取出",
+      "measurement": {
+        "failure_count": 0,
+        "details": "battery_access.json"
+      },
+      "method": "31 actual solid-mesh translations; connectors/flexible leads not a certified unplugging path"
+    },
+    {
+      "id": "frame_screwdriver_path",
+      "status": "PASS",
+      "summary": "下壳移除后的四处框架螺丝刀杆路径",
+      "measurement": {
+        "radius_mm": 2.5,
+        "length_mm": 50,
+        "failures": []
+      },
+      "method": "Actual tool cylinder / triangle-solid volumes; full hand and tool handle not included"
+    },
+    {
+      "id": "all_fasteners_assembly",
+      "status": "NOT_TESTED",
+      "summary": "其余紧固件长度、嵌件热压头、工具手柄与完整逐件装配路径尚待阶段 B；当前候选孔仅供试打",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "real_hardware_fit",
+      "status": "BLOCKED",
+      "summary": "只验证阶段 A 包络；保留共享契约中硬件候选的适配失败。FT90M-FB 最大耳片/花键包络超出现舵机分配；真实屏幕、相机和完整连接器仍需阶段 B 回写，不能靠外观调整宣称已适配",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "cable_service_loops",
+      "status": "NOT_TESTED",
+      "summary": "已建服务环、线束路径和约束点；实际柔性扫掠与连接器受力未验证",
+      "measurement": {
+        "static_review": "routing_review.json",
+        "review_pairs": 1
+      },
+      "method": null
+    },
+    {
+      "id": "hard_stop_contact_angles",
+      "status": "NOT_TESTED",
+      "summary": "有限角度限位件已布置；准确触点角度、强度与舵机失控冲击需专门验证，不能用软件限角代替",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "power_interface_operations",
+      "status": "NOT_TESTED",
+      "summary": "已布置 USB-C、按钮、电源开关与插头/手指包络；实物插拔、开关急停可达性、线缆拉力待阶段 B",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "mass_inertia_estimates",
+      "status": "PASS",
+      "summary": "已输出有假设的质量与惯量估算（不是载荷验收）",
+      "measurement": {
+        "whole_robot": {
+          "mass_g_rounded": 1045,
+          "center_mm_rounded": [
+            -0.2,
+            -0.1,
+            103.7
+          ],
+          "inertia_at_COM_kg_m2": [
+            [
+              0.0040269,
+              1.93e-05,
+              5.34e-05
+            ],
+            [
+              1.93e-05,
+              0.0049656,
+              -9.19e-05
+            ],
+            [
+              5.34e-05,
+              -9.19e-05,
+              0.0027559
+            ]
+          ],
+          "inertia_at_head_joint_kg_m2": [
+            [
+              0.0144585,
+              1.93e-05,
+              3.67e-05
+            ],
+            [
+              1.93e-05,
+              0.0153971,
+              -0.0001031
+            ],
+            [
+              3.67e-05,
+              -0.0001031,
+              0.0027559
+            ]
+          ],
+          "estimated_mass_uncertainty_percent": 35
+        },
+        "head_pitch": {
+          "mass_g_rounded": 120,
+          "center_mm_rounded": [
+            -0.1,
+            7.7,
+            209.4
+          ],
+          "inertia_at_COM_kg_m2": [
+            [
+              0.0001727,
+              -1e-07,
+              -1e-07
+            ],
+            [
+              -1e-07,
+              0.0001672,
+              3.2e-06
+            ],
+            [
+              -1e-07,
+              3.2e-06,
+              0.0001979
+            ]
+          ],
+          "inertia_at_head_joint_kg_m2": [
+            [
+              0.0001843,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0001714,
+              -2.3e-06
+            ],
+            [
+              0.0,
+              -2.3e-06,
+              0.0002053
+            ]
+          ],
+          "estimated_mass_uncertainty_percent": 35
+        },
+        "head_yaw_total": {
+          "mass_g_rounded": 165,
+          "center_mm_rounded": [
+            -2.9,
+            4.8,
+            204.1
+          ],
+          "inertia_at_COM_kg_m2": [
+            [
+              0.0002115,
+              -2.6e-06,
+              -5e-07
+            ],
+            [
+              -2.6e-06,
+              0.0002225,
+              -6e-06
+            ],
+            [
+              -5e-07,
+              -6e-06,
+              0.0002334
+            ]
+          ],
+          "inertia_at_head_joint_kg_m2": [
+            [
+              0.0002154,
+              -3e-07,
+              -3e-07
+            ],
+            [
+              -3e-07,
+              0.000224,
+              -6.5e-06
+            ],
+            [
+              -3e-07,
+              -6.5e-06,
+              0.0002386
+            ]
+          ],
+          "estimated_mass_uncertainty_percent": 35
+        }
+      },
+      "method": "Signed tetrahedron volume, first and second moments. Uniform effective material densities and separate unselected hardware mass assumptions"
+    },
+    {
+      "id": "head_torque_and_balance",
+      "status": "NOT_TESTED",
+      "summary": "舵机扭矩、头部加速载荷、支架强度、轴承寿命与实机自平衡尚未验证",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "dock_nominal_COM_projection",
+      "status": "PASS",
+      "summary": "托架四点名义支撑多边形内的重心投影",
+      "measurement": {
+        "margin_mm": 28.9,
+        "robot_lift_mm": 8,
+        "drive_required": "DISARMED / DOCKED_MAINTENANCE; no plugged-in driving"
+      },
+      "method": "Assumed masses and rigid contacts; 130 head poses. Actual compliance, friction, cable pull and tipping require physical tests"
+    },
+    {
+      "id": "dock_mesh_contacts",
+      "status": "PASS",
+      "summary": "实际托架网格接触、轮胎离地与实体干涉",
+      "measurement": {
+        "failed_pairs": [],
+        "body_pad_contacts": [
+          {
+            "pad": "Dock_Pad_0",
+            "nearest_sample_mm": 0.0
+          },
+          {
+            "pad": "Dock_Pad_1",
+            "nearest_sample_mm": 0.0
+          },
+          {
+            "pad": "Dock_Pad_2",
+            "nearest_sample_mm": 0.0
+          },
+          {
+            "pad": "Dock_Pad_3",
+            "nearest_sample_mm": 0.0
+          }
+        ],
+        "tire_floor_gap_mm": 8
+      },
+      "method": "Translated assembled robot +8 mm, same meshes; solid intersections and nearest vertex-to-triangle witnesses"
+    },
+    {
+      "id": "dock_physical_stability",
+      "status": "NOT_TESTED",
+      "summary": "软垫变形、地面摩擦、插线拉力及真实重心必须实测；托架稳定不代表机器人断电可自立",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "budget_and_runtime",
+      "status": "BLOCKED",
+      "summary": "1000 元总预算和 60 分钟混合工况续航未验证；未提供完整报价与实测平均功耗",
+      "measurement": null,
+      "method": null
+    }
+  ],
+  "counts": {
+    "PASS": 18,
+    "FAIL": 0,
+    "NOT_TESTED": 11,
+    "BLOCKED": 2
+  },
+  "limits": "Geometry evidence only. No manufacturing, cost, electrical, balance or product safety approval."
+}

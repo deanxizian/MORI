@@ -1,0 +1,9 @@
+{
+  "issue": "The initial production build applied the accepted manifold edit before common.clean(); weld/degenerate-edge cleanup then produced Display_Frame Error.NotManifold.",
+  "resolution": "Apply the accepted local edit after historical source cleanup, matching the approved candidate source sequence. No shape/axis changes authorized or introduced.",
+  "evidence": "initial_validation_failure.log",
+  "subsequent_validation": "../../reports/display_frame_validation.json",
+  "final_resolution": "Edit the historically cleaned source after common.clean(); extend only the two crossbar ends, preserve original LCD bores/spot faces instead of re-cutting them with96 segments, then use existing project0.0005mm Boolean simplification tolerance.",
+  "validation_method": "Exact all-part scope plus original source hole/spot-face preservation and accepted exterior comparison; STL roundtrip requires no boundary, nonmanifold or degenerate triangles.",
+  "preflight": "export_mesh_preflight.json"
+}

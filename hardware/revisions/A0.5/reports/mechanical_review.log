@@ -1,0 +1,171 @@
+00:02.833  blend            | Read blend: "/Users/dean/Documents/MORI/models/MORI_assembly.blend"
+信息: 已另存为 "MORI_Hardware_Fit_A0.5.blend"
+{
+  "mechanical_source_sha256": {
+    "params.json": "15274cb22039a3964adc89a76167d62c7b770437e9ce0ab555dc3b1b62cd86d6",
+    "reports/derived.json": "9767421b5e1e80ace0c8ea6c509e514647110b3c266278a1cfa272a34b265d9a",
+    "models/MORI_assembly.blend": "8b0f58e1e87a35b83309a6b1206db5152d49fde662aaff6990ba3498b1270728"
+  },
+  "unit": "mm",
+  "physical_tests": "NOT_TESTED",
+  "method": "Exact triangle-solid intersection with existing Load_Frame; conservative box-corner inner-sphere test. Not a full assembly/wire sweep.",
+  "candidate_checks": [
+    {
+      "name": "ANSMANN2447_0105",
+      "center_mm": [
+        0,
+        0,
+        63
+      ],
+      "envelope_mm": [
+        39,
+        71,
+        18
+      ],
+      "basis": "Catalog candidate, dimension table inconsistent; battery purchase and charge HOLD.",
+      "inner_sphere_corner_margin_mm": 13.410517625649895,
+      "load_frame_overlap_mm3": 0.0,
+      "geometric_status": "PASS",
+      "geometric_status_scope": "Only these two geometric checks; installed fit is NOT_TESTED"
+    },
+    {
+      "name": "DevKitC1_full_keepout",
+      "center_mm": [
+        0,
+        -25,
+        123
+      ],
+      "envelope_mm": [
+        71,
+        28,
+        18
+      ],
+      "basis": "71x28 planar allocation derived conservatively from official DXF; 18 high is an unmeasured allowance. Head-support interference expected.",
+      "inner_sphere_corner_margin_mm": 0.1815307204323915,
+      "load_frame_overlap_mm3": 640.1793111596185,
+      "geometric_status": "FAIL",
+      "geometric_status_scope": "Only these two geometric checks; installed fit is NOT_TESTED"
+    },
+    {
+      "name": "LSM6DSOX_original_location",
+      "center_mm": [
+        35,
+        0,
+        118
+      ],
+      "envelope_mm": [
+        25.6,
+        17.8,
+        4.6
+      ],
+      "basis": "Product maximum envelope at original IMU center; original bracket is incompatible.",
+      "inner_sphere_corner_margin_mm": 10.310035388682458,
+      "load_frame_overlap_mm3": 0.0,
+      "geometric_status": "PASS",
+      "geometric_status_scope": "Only these two geometric checks; installed fit is NOT_TESTED"
+    },
+    {
+      "name": "LSM6DSOX_proposed_location",
+      "center_mm": [
+        0,
+        30,
+        120.7
+      ],
+      "envelope_mm": [
+        25.6,
+        17.8,
+        4.6
+      ],
+      "basis": "Alternative module-first location only; requires new rigid mount and measured sensor-axis matrix.",
+      "inner_sphere_corner_margin_mm": 15.00674858306921,
+      "load_frame_overlap_mm3": 0.0,
+      "geometric_status": "PASS",
+      "geometric_status_scope": "Only these two geometric checks; installed fit is NOT_TESTED"
+    },
+    {
+      "name": "SER0037_body",
+      "center_mm": [
+        -22,
+        0,
+        122
+      ],
+      "envelope_mm": [
+        22.9,
+        12.3,
+        22.6
+      ],
+      "basis": "Body only; mounting ears, spline and cable are NOT included, so no assembled-fit claim.",
+      "inner_sphere_corner_margin_mm": 12.539893309076142,
+      "load_frame_overlap_mm3": 0.0,
+      "geometric_status": "PASS",
+      "geometric_status_scope": "Only these two geometric checks; installed fit is NOT_TESTED"
+    }
+  ],
+  "print_trials": [
+    {
+      "file": "Battery_Tray_A05_TRIAL.stl",
+      "size_mm": [
+        54.0,
+        92.0,
+        7.450000762939453
+      ],
+      "assembly_to_stl_translation_mm": [
+        -0.0,
+        -0.0,
+        -50.29999923706055
+      ],
+      "volume_mm3": 11377.004227719717,
+      "closed_manifold_status": "PASS",
+      "connected_components": 1,
+      "print_and_fit_test": "NOT_TESTED",
+      "sha256": "23a3f036724abc371852c19c7fbdcc525772eb0becdbe73be56ec161023d82a4"
+    },
+    {
+      "file": "IMU_20p32_Hole_Gauge.stl",
+      "size_mm": [
+        30.0,
+        22.0,
+        2.399993896484375
+      ],
+      "assembly_to_stl_translation_mm": [
+        -0.0,
+        -30.0,
+        -114.0
+      ],
+      "volume_mm3": 1556.533006028733,
+      "closed_manifold_status": "PASS",
+      "connected_components": 1,
+      "print_and_fit_test": "NOT_TESTED",
+      "sha256": "e6a636f10a35ca8a2e523519b08167e7515b03eb5bb47368ad74251d035fd44d"
+    }
+  ],
+  "tray_load_frame_overlap_mm3": 0.0,
+  "tray_pack_intersection_mm3": 0.0,
+  "mcu_low_profile_alternative": {
+    "center_mm": [
+      0,
+      -31,
+      119
+    ],
+    "envelope_mm": [
+      71,
+      28,
+      10
+    ],
+    "status": "NOT_TESTED",
+    "note": "Target only, not an actual DevKit measurement. Relieves head posts; pin/header/cable and antenna clearance remain unconfirmed. Do not cut pins or order from this target."
+  },
+  "bearing_proposal": {
+    "old_center_z": 146.2,
+    "new_center_z": 145.7,
+    "old_top_z": 149.2,
+    "new_top_z": 149.2,
+    "new_bottom_z": 142.2,
+    "status": "NOT_TESTED",
+    "note": "Seat/spindle/retention need redesign; model is only bearing-envelope overlay."
+  },
+  "root_sources_unchanged": true
+}
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

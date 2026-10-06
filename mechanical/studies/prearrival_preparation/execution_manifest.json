@@ -1,0 +1,69 @@
+{
+  "blender": "5.2.1 LTS / 9e2066aef7ef",
+  "CAD_OCP": "7.8.1.1.post1",
+  "python_documents": "3.9.6",
+  "script_manifest": [
+    {
+      "script": "mechanical/studies/prearrival_preparation/inspect_assembly.py",
+      "sha256": "bcae712e4b5873be3d87cf41c490e55f20a4ac66dada5f6573ade30813767c54"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/engineering_review.py",
+      "sha256": "1cb9091055809683607c2558e12b586e4895cbf0784919861235b4ae0aadd51b"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/check_mated_connectors.py",
+      "sha256": "47ddfc08c2394d51ede15c40707a40242d2c2be28b52e923fe7093df4e2e527a"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/fastener_access_review.py",
+      "sha256": "672ab5cf580eb9f17f3e9b96759587d852ab70547ebe7da23a42d176bbbd7944"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/build_jlc_coupons.py",
+      "sha256": "9e97ebaebfb9ddd020d6b32a63608af9967feaf25b31b6d161b551bfa030a251"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/servo_mount_candidate.py",
+      "sha256": "153c30144d7f27408ea7f166f2ab208a15855ae208846bc143021a7f27fe6143"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/check_servo_candidate_motion.py",
+      "sha256": "86b7ff57685cbb2d5d0934e6cefe5e53a89b6779114d5c5ed1b85cec31cab3b9"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/camera_aperture_candidate.py",
+      "sha256": "fa6fe653af4993111e8f0fb22efce35cdbed0868464f24ae904c9f7bb8e5759a"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/imu_mount_proposal.py",
+      "sha256": "eee1b017ade3e74771a7d8fa17d3d320ea5ddec80ee6691bcc3057f92e8622d2"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/check_weact_stack.py",
+      "sha256": "825c324b7bb2dc2140ed83417739606f3336cdd72049ba9a937f72c465d4fb2b"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/check_lcd_connector_bounds.py",
+      "sha256": "d85097a86aa7ce24805144e1c251211c01b7e0f18596c6ee296869f405cc992a"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/package_review.py",
+      "sha256": "78625b58d9bd0276884475a63659ac181965000e5033daa2f3b2f50ed05bb38d"
+    },
+    {
+      "script": "mechanical/studies/prearrival_preparation/check_delivery.py",
+      "sha256": "988886706c8956566987f5d53338486a7d9cdd7288832c32a4e6f6bbd4fb5e6b"
+    }
+  ],
+  "limits": "Logs in this directory record actual completed checks; no manufacturing release, no installed CAD plugin or cloud upload. Head/hardware motion models retain recorded assumptions.",
+  "actual_commands_this_continuation": [
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python mechanical/studies/prearrival_preparation/camera_aperture_candidate.py > mechanical/studies/prearrival_preparation/camera_aperture_candidate.log 2>&1",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python mechanical/studies/prearrival_preparation/check_weact_stack.py > mechanical/studies/prearrival_preparation/weact_stack_review.log 2>&1",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python mechanical/studies/prearrival_preparation/engineering_review.py > mechanical/studies/prearrival_preparation/engineering_review.log 2>&1",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b --python mechanical/studies/prearrival_preparation/build_jlc_coupons.py > mechanical/studies/prearrival_preparation/build_jlc_coupons.log 2>&1",
+    "/Applications/Blender.app/Contents/MacOS/Blender -b mechanical/mori_v1_2.blend --python mechanical/studies/prearrival_preparation/check_lcd_connector_bounds.py > mechanical/studies/prearrival_preparation/lcd_connector_bounds_review.log 2>&1",
+    "python3 mechanical/studies/prearrival_preparation/package_review.py",
+    "python3 mechanical/studies/prearrival_preparation/check_delivery.py"
+  ]
+}

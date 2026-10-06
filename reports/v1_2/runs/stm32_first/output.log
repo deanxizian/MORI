@@ -1,0 +1,77 @@
+Activating ESP-IDF 5.5
+Setting IDF_PATH to '/Users/dean/esp/esp-idf'.
+* Checking python version ... 3.9.6
+* Checking python dependencies ... OK
+* Deactivating the current ESP-IDF environment (if any) ... OK
+* Establishing a new ESP-IDF environment ... OK
+* Identifying shell ... bash
+* Detecting outdated tools in system ... Found tools that are not used by active ESP-IDF version.
+For removing old versions of riscv32-esp-elf, xtensa-esp-elf, xtensa-esp-elf-gdb use command 'python /Users/dean/esp/esp-idf/tools/idf_tools.py uninstall'
+To free up even more space, remove installation packages of those tools.
+Use option python /Users/dean/esp/esp-idf/tools/idf_tools.py uninstall --remove-archives.
+* Shell completion ... Autocompletion code generated
+arm-none-eabi-gcc (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 14.2.1 20241119
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+cmake version 4.4.0
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+-- The C compiler identification is GNU 14.2.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (1.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/dean/Documents/MORI/firmware/motion/build_stm32
+[1/17] Building ASM object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/cmsis-device-f4/Source/Templates/gcc/startup_stm32f413xx.s.obj
+[2/17] Building C object CMakeFiles/mori_motion.elf.dir/v1_2/bus.c.obj
+[3/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c.obj
+FAILED: [code=1] CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c.obj 
+/Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc -DSTM32F413xx -DUSE_HAL_DRIVER -I/Users/dean/Documents/MORI/firmware/motion/v1_2/include -I/Users/dean/Documents/MORI/firmware/motion/v1_2/stm32 -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../refs/v1_2/cmsis-device-f4/Include -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../refs/v1_2/stm32f4xx-hal-driver/Inc -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../refs/v1_2/CMSIS_5/CMSIS/Core/Include -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../contracts -std=gnu11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Os -g3 -ffunction-sections -fdata-sections -Wall -Wextra -MD -MT CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c.obj -c /Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c: In function 'HAL_RCC_ClockConfig':
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c:610:18: error: implicit declaration of function '__HAL_FLASH_GET_LATENCY' [-Wimplicit-function-declaration]
+  610 |   if (FLatency > __HAL_FLASH_GET_LATENCY())
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c:610:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+  610 |   if (FLatency > __HAL_FLASH_GET_LATENCY())
+      |                ^
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c:613:5: error: implicit declaration of function '__HAL_FLASH_SET_LATENCY' [-Wimplicit-function-declaration]
+  613 |     __HAL_FLASH_SET_LATENCY(FLatency);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c:617:35: warning: comparison of integer expressions of different signedness: 'int' and 'uint32_t' {aka 'long unsigned int'} [-Wsign-compare]
+  617 |     if (__HAL_FLASH_GET_LATENCY() != FLatency)
+      |                                   ^~
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c:691:16: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+  691 |   if (FLatency < __HAL_FLASH_GET_LATENCY())
+      |                ^
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc.c:698:35: warning: comparison of integer expressions of different signedness: 'int' and 'uint32_t' {aka 'long unsigned int'} [-Wsign-compare]
+  698 |     if (__HAL_FLASH_GET_LATENCY() != FLatency)
+      |                                   ^~
+[4/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c.obj
+FAILED: [code=1] CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c.obj 
+/Users/dean/Documents/MORI/.state/toolchains/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc -DSTM32F413xx -DUSE_HAL_DRIVER -I/Users/dean/Documents/MORI/firmware/motion/v1_2/include -I/Users/dean/Documents/MORI/firmware/motion/v1_2/stm32 -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../refs/v1_2/cmsis-device-f4/Include -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../refs/v1_2/stm32f4xx-hal-driver/Inc -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../refs/v1_2/CMSIS_5/CMSIS/Core/Include -I/Users/dean/Documents/MORI/firmware/motion/v1_2/../../../contracts -std=gnu11 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Os -g3 -ffunction-sections -fdata-sections -Wall -Wextra -MD -MT CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c.obj.d -o CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c.obj -c /Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c: In function 'HAL_Init':
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c:161:3: error: implicit declaration of function '__HAL_FLASH_INSTRUCTION_CACHE_ENABLE'; did you mean 'INSTRUCTION_CACHE_ENABLE'? [-Wimplicit-function-declaration]
+  161 |   __HAL_FLASH_INSTRUCTION_CACHE_ENABLE();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   INSTRUCTION_CACHE_ENABLE
+/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal.c:165:3: error: implicit declaration of function '__HAL_FLASH_DATA_CACHE_ENABLE' [-Wimplicit-function-declaration]
+  165 |   __HAL_FLASH_DATA_CACHE_ENABLE();
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[5/17] Building C object CMakeFiles/mori_motion.elf.dir/v1_2/s288.c.obj
+[6/17] Building C object CMakeFiles/mori_motion.elf.dir/v1_2/motion.c.obj
+[7/17] Building C object CMakeFiles/mori_motion.elf.dir/v1_2/stm32/main.c.obj
+[8/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/cmsis-device-f4/Source/Templates/system_stm32f4xx.c.obj
+[9/17] Building C object CMakeFiles/mori_motion.elf.dir/v1_2/sensors.c.obj
+[10/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_cortex.c.obj
+[11/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_gpio.c.obj
+[12/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_dma.c.obj
+[13/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+[14/17] Building C object CMakeFiles/mori_motion.elf.dir/Users/dean/Documents/MORI/refs/v1_2/stm32f4xx-hal-driver/Src/stm32f4xx_hal_uart.c.obj
+ninja: build stopped: subcommand failed.

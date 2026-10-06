@@ -1,0 +1,105 @@
+[
+  {
+    "name": "kicad_version",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "version"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:18.207198+00:00",
+    "exit_code": 0,
+    "log": "reports/kicad_version.log",
+    "log_sha256": "79903cfb5fce27bbddaa3cda8e3265c336d8053b799426ca9cfc835ed648c85c"
+  },
+  {
+    "name": "kicad_generate",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3",
+      "hardware/tools/generate_kicad.py"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:18.350671+00:00",
+    "exit_code": 0,
+    "log": "reports/kicad_generate.log",
+    "log_sha256": "a0714868186a8bd2c3c8414c7f01deece4fe9f41fc3c9eb695abdf7d7e3292bc"
+  },
+  {
+    "name": "erc_run",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "sch",
+      "erc",
+      "hardware/kicad/MORI_carrier.kicad_sch",
+      "--format",
+      "json",
+      "--exit-code-violations",
+      "-o",
+      "hardware/reports/erc.json"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:19.280509+00:00",
+    "exit_code": 0,
+    "log": "reports/erc_run.log",
+    "log_sha256": "870133e45fa162500752aaaa9799e31a45305b5a5ba64eee8da5b4cc0bc37914"
+  },
+  {
+    "name": "drc_run",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "hardware/kicad/MORI_carrier.kicad_pcb",
+      "--format",
+      "json",
+      "--schematic-parity",
+      "--exit-code-violations",
+      "-o",
+      "hardware/reports/drc.json"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:20.282149+00:00",
+    "exit_code": 5,
+    "log": "reports/drc_run.log",
+    "log_sha256": "61ca114037cab35e1d5daca3b9cf1b300d771a229f34ffd0dde67cdb92a00fc2"
+  },
+  {
+    "name": "schematic_export",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "sch",
+      "export",
+      "svg",
+      "hardware/kicad/MORI_carrier.kicad_sch",
+      "-o",
+      "hardware/reports/schematic_svg"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:21.622233+00:00",
+    "exit_code": 0,
+    "log": "reports/schematic_export.log",
+    "log_sha256": "e9cfcb377a781c6a252625338cbdeed422fd37a5fb1cf2e9a67fc68f462d7532"
+  },
+  {
+    "name": "pcb_export",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "export",
+      "svg",
+      "hardware/kicad/MORI_carrier.kicad_pcb",
+      "--mode-single",
+      "--exclude-drawing-sheet",
+      "--page-size-mode",
+      "2",
+      "--layers",
+      "F.Cu,B.Cu,F.Silkscreen,Edge.Cuts,Dwgs.User",
+      "-o",
+      "hardware/reports/pcb_preview.svg"
+    ],
+    "cwd": "/Users/dean/Documents/MORI",
+    "start_utc": "2026-09-21T05:48:21.852600+00:00",
+    "exit_code": 0,
+    "log": "reports/pcb_export.log",
+    "log_sha256": "da6282a17a59d7e8e015b02483e8a66865d807c469a7ecb134c8ddc2d07816f2"
+  }
+]

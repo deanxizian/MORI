@@ -1,0 +1,492 @@
+{
+  "schema": "mori_hardware_dimension_requirements_v1",
+  "created_utc": "2026-09-21T05:10:10.619456+00:00",
+  "scope": "Mechanical dimensions derived from current Blender; not a confirmed purchase specification",
+  "units": "mm",
+  "coordinate_convention": "X lateral; Y fore/aft, front=-Y; Z up; ground Z=0",
+  "source_files": {
+    "params.json": "15274cb22039a3964adc89a76167d62c7b770437e9ce0ab555dc3b1b62cd86d6",
+    "models/MORI_assembly.blend": "8b0f58e1e87a35b83309a6b1206db5152d49fde662aaff6990ba3498b1270728",
+    "reports/derived.json": "9767421b5e1e80ace0c8ea6c509e514647110b3c266278a1cfa272a34b265d9a",
+    "hardware/mechanical_interfaces.json": "1fb62059c7bfd8c84832e18895a22e6a373aab827e2aca6e4f5535282199d820"
+  },
+  "fixed_external_geometry": {
+    "head_diameter_mm": 100,
+    "body_diameter_mm": 140,
+    "wheel_diameter_mm": 95,
+    "wheel_width_mm": 18,
+    "ground_clearance_mm": 20,
+    "wheel_body_gap_mm": 4,
+    "shell_thickness_mm": 2.4,
+    "head_yaw_limit_deg": 60
+  },
+  "derived_current_layout": {
+    "body_radius": 70.0,
+    "head_radius": 50.0,
+    "wheel_radius": 47.5,
+    "body_z": 90.0,
+    "body_top_z": 148.0,
+    "head_z": 186.0,
+    "head_bottom_z": 148.8,
+    "wheel_z": 47.5,
+    "wheel_x": 69.0,
+    "track": 138.0,
+    "axle_drop": 42.5,
+    "face_y": -37.5632799419859,
+    "bearing_z": 146.2
+  },
+  "calculations": {
+    "motor_total_axial_envelope_mm": 86,
+    "drive_pulley_center_distance_mm": 47.4236228055175,
+    "head_servo_required_total_travel_deg": 210.0,
+    "head_total_travel_if_servo_180_deg": 102.85714285714286
+  },
+  "requirements": [
+    {
+      "id": "wheel_motor",
+      "name_zh": "驱动减速电机本体",
+      "quantity": 2,
+      "dimension_order": "diameter, axial_length",
+      "nominal_dimensions_mm": [
+        25,
+        60
+      ],
+      "current_model_target": "Ø25 × 60；轴沿 X",
+      "confirmation_required": "编码器、输出轴、出线不含在这 60 mm 内；实际夹持部形状与安装孔待数据表。",
+      "parameter_path": "drive.motor_can_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "encoder",
+      "name_zh": "电机尾部编码器",
+      "quantity": 2,
+      "dimension_order": "diameter, axial_length",
+      "nominal_dimensions_mm": [
+        23,
+        12
+      ],
+      "current_model_target": "Ø23 × 12",
+      "confirmation_required": "需另查编码器 PCB、焊点、插头和出线空间。",
+      "parameter_path": "drive.motor_encoder_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "motor_shaft",
+      "name_zh": "电机输出轴",
+      "quantity": 2,
+      "dimension_order": "diameter, protrusion_length",
+      "nominal_dimensions_mm": [
+        4,
+        14
+      ],
+      "current_model_target": "Ø4 × 外伸 14",
+      "confirmation_required": "D 形、键、扁位、带轮固定和轴向止挡未定。",
+      "parameter_path": "drive.motor_output_shaft_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "wheel",
+      "name_zh": "轮胎",
+      "quantity": 2,
+      "dimension_order": "outer_diameter, axial_width, inner_diameter",
+      "nominal_dimensions_mm": [
+        95,
+        18,
+        66
+      ],
+      "current_model_target": "外径 Ø95 × 宽 18；内径 Ø66",
+      "confirmation_required": "与轮毂胎圈、材料、硬度和防脱结构一起定；不是指定采购型号。",
+      "parameter_path": "wheel_diameter_mm / wheel_width_mm / tire_inner_radius_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "wheel_axle",
+      "name_zh": "独立承重轮轴",
+      "quantity": 2,
+      "dimension_order": "diameter, length",
+      "nominal_dimensions_mm": [
+        6,
+        53.5
+      ],
+      "current_model_target": "Ø6 × 53.5",
+      "confirmation_required": "长度为当前包络；轴肩、卡簧槽、轮毂夹紧、承载未定。",
+      "parameter_path": "drive.axle_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "wheel_bearing",
+      "name_zh": "轮轴承",
+      "quantity": 4,
+      "dimension_order": "inner_diameter, outer_diameter, width",
+      "nominal_dimensions_mm": [
+        6,
+        13,
+        5
+      ],
+      "current_model_target": "内径 6 × 外径 13 × 宽 5",
+      "confirmation_required": "每轮 2 个；轴承座当前孔 Ø13.6 是试配孔，不是精密轴承配合公差。",
+      "parameter_path": "drive.bearing_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "drive_pulley",
+      "name_zh": "驱动带轮",
+      "quantity": 4,
+      "dimension_order": "pitch_diameter, width",
+      "nominal_dimensions_mm": [
+        17.0,
+        5
+      ],
+      "current_model_target": "节圆 Ø17 × 宽 5；两种孔 Ø4 / Ø6",
+      "confirmation_required": "仅节圆包络；真实齿顶、挡边、轴套、节距和张紧机构未建。",
+      "parameter_path": "drive.pulley_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "drive_belt",
+      "name_zh": "驱动同步带",
+      "quantity": 2,
+      "dimension_order": "width, radial_thickness_envelope",
+      "nominal_dimensions_mm": [
+        4,
+        1.2
+      ],
+      "current_model_target": "宽 4；外扩厚度包络 1.2",
+      "confirmation_required": "长度、齿形和预张紧未选。当前两轴中心距由布局推导。",
+      "parameter_path": "drive.belt_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "head_servo",
+      "name_zh": "头部位置舵机本体",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        23,
+        12,
+        24
+      ],
+      "current_model_target": "23 × 12 × 24",
+      "confirmation_required": "固定耳、花键、舵盘、紧固件、出线须另加；不能只对比本体。",
+      "parameter_path": "head_joint.servo_body_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "servo_output",
+      "name_zh": "舵机输出端占位",
+      "quantity": 1,
+      "dimension_order": "diameter, height",
+      "nominal_dimensions_mm": [
+        4,
+        5
+      ],
+      "current_model_target": "Ø4 × 高 5",
+      "confirmation_required": "占位圆柱，未定义真实花键/舵盘连接。",
+      "parameter_path": "head_joint.servo_output_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "head_bearing",
+      "name_zh": "头部独立承重轴承",
+      "quantity": 1,
+      "dimension_order": "inner_diameter, outer_diameter, height",
+      "nominal_dimensions_mm": [
+        24,
+        36,
+        6
+      ],
+      "current_model_target": "内径 24 × 外径 36 × 高 6",
+      "confirmation_required": "内外圈和滚动体为示意；需核查真实可采购轴承、固定和承载。",
+      "parameter_path": "head_joint.bearing_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "display_panel",
+      "name_zh": "圆形显示面板包络",
+      "quantity": 1,
+      "dimension_order": "active_diameter, body_thickness_envelope",
+      "nominal_dimensions_mm": [
+        60,
+        2.8
+      ],
+      "current_model_target": "目标显示 Ø60；当前厚度包络 2.8；可见遮光孔 Ø58",
+      "confirmation_required": "玻璃外形与有效显示区须分别给出；现模型未含真实玻璃边框/FPC。",
+      "parameter_path": "display.active_screen_diameter_mm / display.screen_thickness_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "display_pcb",
+      "name_zh": "显示板 PCB 占位",
+      "quantity": 1,
+      "dimension_order": "diameter, bare_pcb_thickness",
+      "nominal_dimensions_mm": [
+        65,
+        1.6
+      ],
+      "current_model_target": "圆形 PCB Ø65 × 板厚 1.6",
+      "confirmation_required": "1.6 仅板厚，背部元件、固定孔、异形边界需补入。",
+      "parameter_path": "display.pcb_diameter_mm / display.pcb_thickness_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "display_connector",
+      "name_zh": "显示连接器占位",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        12,
+        7,
+        5
+      ],
+      "current_model_target": "12 × 7 × 5",
+      "confirmation_required": "真实插头、插拔方向、FPC 弯曲和应力释放尚未完整建模。",
+      "parameter_path": "display.connector_size_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "face_protector",
+      "name_zh": "透明面罩保护片",
+      "quantity": 1,
+      "dimension_order": "diameter, thickness",
+      "nominal_dimensions_mm": [
+        65.4,
+        1.2
+      ],
+      "current_model_target": "Ø65.4 × 1.2；安装开口 Ø66",
+      "confirmation_required": "材料、透过率、胶层和可拆固定方式待定。",
+      "parameter_path": "display.window_diameter_mm / protector_*",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "battery",
+      "name_zh": "电池包",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        40,
+        70,
+        20
+      ],
+      "current_model_target": "40 × 70 × 20",
+      "confirmation_required": "含包装/保护结构的真实成品外形；插头、导线、绝缘衬垫另核查，不得压缩软包硬塞。",
+      "parameter_path": "battery.envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "controller",
+      "name_zh": "主控模块",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        55,
+        24,
+        7
+      ],
+      "current_model_target": "55 × 24 × 7",
+      "confirmation_required": "含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。",
+      "parameter_path": "electronics.controller_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "driver",
+      "name_zh": "双路电机驱动模块",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        36,
+        20,
+        7
+      ],
+      "current_model_target": "36 × 20 × 7",
+      "confirmation_required": "含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。",
+      "parameter_path": "electronics.driver_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "imu",
+      "name_zh": "IMU 模块",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        16,
+        16,
+        4
+      ],
+      "current_model_target": "16 × 16 × 4",
+      "confirmation_required": "含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。",
+      "parameter_path": "electronics.imu_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "bms",
+      "name_zh": "电池保护模块 BMS",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        32,
+        4,
+        22
+      ],
+      "current_model_target": "32 × 4 × 22",
+      "confirmation_required": "含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。",
+      "parameter_path": "electronics.bms_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "charger_regulator",
+      "name_zh": "充电与稳压模块",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        32,
+        6,
+        28
+      ],
+      "current_model_target": "32 × 6 × 28",
+      "confirmation_required": "含板上元件的整体包络；固定孔、插针/插头、线缆及必要净空待补。",
+      "parameter_path": "electronics.charger_regulator_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "usb",
+      "name_zh": "USB-C 外部接口",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        10,
+        8,
+        4.2
+      ],
+      "current_model_target": "10 × 8 × 4.2",
+      "confirmation_required": "开孔、面板厚度、固定方式和插拔/操作空间待实物确认。",
+      "parameter_path": "electronics.usb_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    },
+    {
+      "id": "switch",
+      "name_zh": "电源开关",
+      "quantity": 1,
+      "dimension_order": "X,Y,Z",
+      "nominal_dimensions_mm": [
+        8,
+        7,
+        5
+      ],
+      "current_model_target": "8 × 7 × 5",
+      "confirmation_required": "开孔、面板厚度、固定方式和插拔/操作空间待实物确认。",
+      "parameter_path": "electronics.switch_envelope_mm",
+      "status": "NOT_TESTED",
+      "basis": "Current Blender reservation; not a supplier specification"
+    }
+  ],
+  "unallocated_dimensions": [
+    "扬声器及声腔",
+    "麦克风及声孔",
+    "摄像头及视场/连接器（若需要）",
+    "物理急停独立器件",
+    "真实线束插头及弯曲净空",
+    "独立散热器与热净空（若需要）"
+  ],
+  "existing_hardware_draft_comparison": [
+    {
+      "item": "坐标定义",
+      "model": "X 为左右轴，前方 -Y，Z 向上",
+      "draft": "X 前、Y 左、Z 上",
+      "status": "FAIL",
+      "action": "必须重新对齐物理轴、原点和左右定义；不能直接复制位置或 IMU 姿态。"
+    },
+    {
+      "item": "轮距 / 侧截面",
+      "model": "轮距 138；侧截 X=±56",
+      "draft": "轮距 114；侧截 Y=±44",
+      "status": "FAIL",
+      "action": "以当前总装 138 为本文件基准；动力学输入和轮轴位置需协调。"
+    },
+    {
+      "item": "头球心 / 身体顶面",
+      "model": "Z=186 / 148",
+      "draft": "Z=190 / 146",
+      "status": "FAIL",
+      "action": "同步装配坐标，不能只同步直径。"
+    },
+    {
+      "item": "驱动机构",
+      "model": "Ø25 电机 + Ø4 输出轴；电机 Z=90.5；带传动到独立 Ø6 轮轴",
+      "draft": "微型电机；Ø3 D 轴；草案输出 Z=47.5，布局不同",
+      "status": "FAIL",
+      "action": "不能直接替换；先决定保留带传动还是重做直接驱动结构，再按真实器件重做支架与轮毂。"
+    },
+    {
+      "item": "电池",
+      "model": "40 × 70 × 20",
+      "draft": "66 × 54 × 20；所设净空 70 × 58 × 25",
+      "status": "FAIL",
+      "action": "不满足当前托架包络；即便平面旋转 90°，短边 54 仍大于 40。需更小包络或重排托架/传动。"
+    },
+    {
+      "item": "主控模块",
+      "model": "55 × 24 × 7",
+      "draft": "所设净空 65 × 30 × 18；实际外形仍未填",
+      "status": "FAIL",
+      "action": "当前预留不满足草案净空；须含连接器、USB 插头及天线净空重布置。"
+    },
+    {
+      "item": "IMU",
+      "model": "16 × 16 × 4",
+      "draft": "25.6 × 17.8 × 4.6",
+      "status": "FAIL",
+      "action": "三个方向都超过当前包络，需更换/扩大安装座并重新检查。"
+    },
+    {
+      "item": "头部舵机",
+      "model": "23 × 12 × 24；当前传动要求有效行程至少 210°",
+      "draft": "23.2 × 12.5 × 22；固定耳、孔位和行程未完成对齐",
+      "status": "FAIL",
+      "action": "本体前两项超过预留；现孔腔虽有试配间隙，仍未满足完整净空，先核查耳位和实际受控行程。"
+    },
+    {
+      "item": "圆屏",
+      "model": "显示占位 Ø60；可见孔 Ø58",
+      "draft": "有效显示 Ø32.4；PCB 40.4 × 37.5；厚度未填",
+      "status": "FAIL",
+      "action": "与当前显示面积/固定框假设不符；较小有效区也可显示眼睛，但黑脸布局和固定框必须按选定屏幕重做。"
+    },
+    {
+      "item": "驱动模块",
+      "model": "36 × 20 × 7",
+      "draft": "20.3 × 17.8 × 3，3 mm 不含排针",
+      "status": "NOT_TESTED",
+      "action": "仅草案本体数字小于包络；排针、出线、固定与热净空未核查，不能记为装配 PASS。"
+    },
+    {
+      "item": "70 × 50 承载 PCB",
+      "model": "无对应独立整板预留；现主控/驱动/IMU 分开放置",
+      "draft": "70 × 50 × 1.6，4 孔间距 60 × 40，未对齐模型",
+      "status": "NOT_TESTED",
+      "action": "须先建立带连接器的整板包络，核对舵机开口、承重柱、线束与维修空间。"
+    }
+  ],
+  "comparison_limit": "Draft numbers are quoted from the existing local hardware file, not independently verified manufacturer data."
+}

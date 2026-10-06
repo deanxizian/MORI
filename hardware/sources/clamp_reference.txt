@@ -1,0 +1,12103 @@
+TL431, TL432 Precision Programmable Reference
+1 Features
+•
+Reference voltage tolerance at 25°C
+–
+0.5% (B grade)
+–
+1% (A grade)
+–
+2% (Standard grade)
+•
+Adjustable output voltage: Vref to 36V
+•
+Operation from −40°C to 125°C
+•
+Typical temperature drift (TL43xB)
+–
+6mV (C temp)
+–
+14mV (I temp, Q temp)
+•
+Low Output Noise
+•
+0.2Ω Typical output impedance
+•
+Sink-current capability: 1mA to 100mA
+2 Applications
+•
+Rack server power
+•
+Industrial AC/DC
+•
+AC inverter & VF drives
+•
+Servo drive control module
+•
+Notebook PC power adapter design
+Vref
+Input
+VKA
+IKA
+Simplified Schematic
+3 Description
+The TL431 and TL432 devices are three-terminal 
+adjustable shunt regulators, with specified thermal 
+stability over applicable automotive, commercial, and 
+military temperature ranges. The output voltage can 
+be set to any value between Vref (approximately
+2.5V) and 36V, with two external resistors. These 
+devices have a typical output impedance of 0.2Ω. 
+Active output circuitry provides a very sharp turn-
+on characteristic, making these devices excellent 
+replacements for Zener diodes in many applications, 
+such as on-board regulation, adjustable power 
+supplies, and switching power supplies. The TL432 
+device has exactly the same functionality and 
+electrical specifications as the TL431 device, but has 
+different pinouts for the DBV, DBZ, and PK packages.
+Both the TL431 and TL432 devices are offered in 
+three grades, with initial tolerances (at 25°C) of 
+0.5%, 1%, and 2%, for the B, A, and standard 
+grade, respectively. In addition, low output drift versus 
+temperature verifies good stability over the entire 
+temperature range.
+The TL43xxC devices are characterized for operation 
+from 0°C to 70°C, the TL43xxI devices are 
+characterized for operation from –40°C to 85°C, and 
+the TL43xxQ devices are characterized for operation 
+from –40°C to 125°C.
+Device Information
+PART NUMBER
+PACKAGE (PIN) (1)
+BODY SIZE (NOM) 
+(2)
+TL43x
+SOT-23-3 (3)
+2.90mm × 1.30mm
+SOT-23-5 (5)
+2.90mm × 1.60mm
+SOIC (8)
+4.90mm × 3.90mm
+PDIP (8)
+9.50mm × 6.35mm
+SOP (8)
+6.20mm × 5.30mm
+(1)
+For all available packages, see the orderable addendum at 
+the end of the data sheet.
+(2)
+The package size (length × width) is a nominal value and 
+includes pins, where applicable.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications, 
+intellectual property matters and other important disclaimers. PRODUCTION DATA.
+
+Table of Contents
+1 Features............................................................................1
+2 Applications.....................................................................1
+3 Description.......................................................................1
+4 Device Comparison Table...............................................3
+5 Pin Configuration and Functions...................................4
+6 Specifications.................................................................. 5
+6.1 Absolute Maximum Ratings........................................ 5
+6.2 ESD Ratings............................................................... 5
+6.3 Thermal Information....................................................5
+6.4 Recommended Operating Conditions.........................5
+6.5 Electrical Characteristics, TL431C, TL432C...............6
+6.6 Electrical Characteristics, TL431I, TL432I.................. 7
+6.7 Electrical Characteristics, TL431Q, TL432Q...............8
+6.8 Electrical Characteristics, TL431AC, TL432AC.......... 9
+6.9 Electrical Characteristics, TL431AI, TL432AI........... 10
+6.10 Electrical Characteristics, TL431AQ, TL432AQ...... 11
+6.11 Electrical Characteristics, TL431BC, TL432BC...... 12
+6.12 Electrical Characteristics, TL431BI, TL432BI......... 13
+6.13 Electrical Characteristics, TL431BQ, TL432BQ......14
+6.14 Typical Characteristics............................................15
+7 Parameter Measurement Information..........................19
+7.1 Temperature Coefficient............................................19
+7.2 Dynamic Impedance................................................. 20
+8 Detailed Description......................................................21
+8.1 Overview...................................................................21
+8.2 Functional Block Diagram.........................................21
+8.3 Feature Description...................................................22
+8.4 Device Functional Modes..........................................22
+9 Applications and Implementation................................23
+9.1 Application Information............................................. 23
+9.2 Typical Applications.................................................. 23
+9.3 System Examples..................................................... 28
+9.4 Power Supply Recommendations.............................31
+9.5 Layout....................................................................... 31
+10 Device and Documentation Support..........................32
+10.1 Device Nomenclature..............................................32
+10.2 Related Links.......................................................... 32
+10.3 Receiving Notification of Documentation Updates..32
+10.4 Support Resources................................................. 32
+10.5 Trademarks.............................................................32
+10.6 Electrostatic Discharge Caution..............................33
+10.7 Glossary..................................................................33
+11 Revision History.......................................................... 33
+12 Mechanical, Packaging, and Orderable 
+Information.................................................................... 33
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+2
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+4 Device Comparison Table
+DEVICE PINOUT
+INITIAL ACCURACY
+OPERATING FREE-AIR TEMPERATURE (TA)
+TL431
+TL432
+B: 0.5%
+A: 1%
+(Blank): 2%
+C: 0°C to 70°C
+I: -40°C to 85°C
+Q: -40°C to 125°C
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+3
+Product Folder Links: TL431 TL432
+
+5 Pin Configuration and Functions
+*
+*- Must be connected to ANODE or left open
+1
+2
+3
+4
+8
+7
+6
+5
+CATHODE
+ANODE
+ANODE
+NC
+REF
+ANODE
+ANODE
+NC
+TL431, TL431A, TL431B . . . D (SOIC) PACKAGE
+(TOP VIEW)
+1
+2
+3
+4
+8
+7
+6
+5
+CATHODE
+NC
+NC
+NC
+REF
+NC
+ANODE
+NC
+TL431, TL431A, TL431B . . . P (PDIP), PS (SOP),
+OR PW (TSSOP) PACKAGE
+(TOP VIEW)
+NC −No internal connection
+TL431, TL431A, TL431B . . . DBV (SOT-23-5) PACKAGE
+(TOP VIEW)
+1
+2
+3
+5
+4
+NC
+†
+CATHODE
+ANODE
+REF
+TL431, TL431A, TL431B . . . PK (SOT-89) PACKAGE
+(TOP VIEW)
+REF
+ANODE
+CATHODE
+† Pin 2 is attached to Substrate and must be
+connected to ANODE or left open.
+NC −No internal connection
+TL432, TL432A, TL432B . . . DBV (SOT-23-5) PACKAGE
+(TOP VIEW)
+1
+2
+3
+5
+4
+NC
+ANODE
+NC
+REF
+CATHODE
+NC −No internal connection
+TL431, TL431A, TL431B . . . DBZ (SOT-23-3) PACKAGE
+(TOP VIEW)
+TL432, TL432A, TL432B . . . DBZ (SOT-23-3) PACKAGE
+(TOP VIEW)
+NC −No internal connection
+1
+2
+3
+REF
+CATHODE
+ANODE
+1
+2
+3
+CATHODE
+REF
+ANODE
+ANODE
+TL432, TL432A, TL432B . . . PK (SOT-89) PACKAGE
+(TOP VIEW)
+REF
+ANODE
+CATHODE
+ANODE
+Table 5-1. Pin Functions
+PIN
+TYPE
+DESCRIPTION
+NAME
+TL431x
+TL432x
+DBZ
+DBV
+PK
+D
+P, PS
+PW
+LP
+DCK
+DBZ
+DBV
+PK
+CATHODE
+1
+3
+3
+1
+1
+1
+1
+2
+4
+1
+I/O
+Shunt Current/Voltage input
+REF
+2
+4
+1
+8
+8
+3
+3
+1
+5
+3
+I
+Threshold relative to common anode
+ANODE
+3
+5
+2
+2, 3, 6, 
+7
+6
+2
+6
+3
+2
+2
+O
+Common pin, normally connected to ground
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+4
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+6 Specifications
+6.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted)(1)
+MIN
+MAX
+UNIT
+VKA
+Cathode Voltage(2)
+37
+V
+IKA
+Continuos Cathode Current Range
+–100
+150
+mA
+II(ref)
+Reference Input Current
+–0.05
+10
+mA
+TJ
+Operating Junction Temperature Range
+150
+°C
+Tstg
+Storage Temperature Range
+–65
+150
+°C
+(1)
+Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress 
+ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under 
+Recommended Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device 
+reliability.
+(2)
+All voltage values are with respect to ANODE, unless otherwise noted.
+6.2 ESD Ratings
+VALUE
+UNIT
+V(ESD)
+Electrostatic 
+discharge
+Human body model (HBM), per ANSI/ESDA/JEDEC JS-001pins(1)
+±2000
+V
+Charged-device model (CDM), per JEDEC specification JESD22-C101 (2)
+±1000
+(1)
+JEDEC document JEP155 states that 500V HBM allows safe manufacturing with a standard ESD control process. Manufacturing with 
+less than 500V HBM is possible with the necessary precautions.
+(2)
+JEDEC document JEP157 states that 250V CDM allows safe manufacturing with a standard ESD control process. Manufacturing with 
+less than 250V CDM is possible with the necessary precautions.
+6.3 Thermal Information
+THERMAL METRIC(1)
+TL43xx
+UNIT
+P
+PW
+D
+PS
+DCK
+DBV
+DBZ
+LP
+PK
+8 PINS
+6 PINS
+5 PINS
+3 PINS
+RθJA 
+Junction-to-ambient 
+thermal resistance
+85
+149
+97
+95
+259
+206
+206
+140
+52
+°C/W
+RθJC(top)
+Junction-to-case 
+(top) thermal 
+resistance
+57
+65
+39
+46
+87
+131
+76
+55
+9
+°C/W
+(1)
+For more information about traditional and new thermal metrics, see the IC Package Thermal Metrics application report (SPRA953)
+6.4 Recommended Operating Conditions
+See (1)
+MIN
+MAX
+UNIT
+VKA
+Cathode Voltage
+Vref
+36
+V
+IKA
+Continuous Cathode Current Range
+1
+100
+mA
+TA
+Operating Free-Air Temperature
+TL43xxC
+0
+70
+°C
+TL43xxI
+–40
+85
+TL43xxQ
+–40
+125
+(1)
+Maximum power dissipation is a function of TJ(max), θJA, and TA. The maximum allowable power dissipation at any allowable ambient 
+temperature is PD = (TJ(max) – TA)/θJA. Operating at the absolute maximum TJ of 150°C can affect reliability.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+5
+Product Folder Links: TL431 TL432
+
+6.5 Electrical Characteristics, TL431C, TL432C
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2440 2495 2550
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+SOT23-3 and TL432 
+devices
+6
+16
+mV
+All other devices
+4
+25
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.4
+1.2
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+1
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+1
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+6
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+6.6 Electrical Characteristics, TL431I, TL432I
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2440 2495 2550
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+SOT23-3 and TL432 
+devices
+14
+34
+mV
+All other devices
+5
+50
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+2.5
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+1
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+1
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+7
+Product Folder Links: TL431 TL432
+
+6.7 Electrical Characteristics, TL431Q, TL432Q
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2440 2495 2550
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+14
+34
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+2.5
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+1
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+1
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+8
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+6.8 Electrical Characteristics, TL431AC, TL432AC
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2470 2495 2520
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+SOT23-3 and TL432 
+devices
+6
+16
+mV
+All other devices
+4
+25
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+1.2
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+0.6
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+0.5
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+9
+Product Folder Links: TL431 TL432
+
+6.9 Electrical Characteristics, TL431AI, TL432AI
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2470 2495 2520
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+SOT23-3 and TL432 
+devices
+14
+34
+mV
+All other devices
+5
+50
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+2.5
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+0.7
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+0.5
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+10
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+6.10 Electrical Characteristics, TL431AQ, TL432AQ
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2470 2495 2520
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+14
+34
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+2.5
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+0.7
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+0.5
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+11
+Product Folder Links: TL431 TL432
+
+6.11 Electrical Characteristics, TL431BC, TL432BC
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2483 2495 2507
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+6
+16
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+1.2
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+0.6
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+0.5
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+12
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+6.12 Electrical Characteristics, TL431BI, TL432BI
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2483 2495 2507
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+14
+34
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+2.5
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+0.7
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+0.5
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+13
+Product Folder Links: TL431 TL432
+
+6.13 Electrical Characteristics, TL431BQ, TL432BQ
+over recommended operating conditions, TA = 25°C (unless otherwise noted)
+PARAMETER
+TEST CIRCUIT
+TEST CONDITIONS
+MIN
+TYP MAX
+UNIT
+Vref
+Reference Voltage
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+2483 2495 2507
+mV
+VI(dev)
+Deviation of reference 
+input voltage over full 
+temperature range (1)
+See Figure 7-1
+VKA = Vref, IKA = 10mA
+14
+34
+mV
+ΔVref / 
+ΔVKA
+Ratio of change in 
+reference voltage to 
+the change in cathode 
+voltage
+See Figure 7-2
+IKA = 10mA
+ΔVKA = 10V- Vref
+–1.4
+–2.7
+mV/V
+ΔVKA = 36V- 10V
+–1
+–2
+mV/V
+Iref
+Reference Input Current
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+2
+4
+µA
+II(dev)
+Deviation of reference 
+input current over full 
+temperature range (1)
+See Figure 7-2
+IKA = 10mA, R1 = 10kΩ, R2 = ∞
+0.8
+2.5
+µA
+Imin
+Minimum cathode 
+current for regulation
+See Figure 7-1
+VKA = Vref
+0.4
+0.7
+mA
+Ioff
+Off-state cathode current See Figure 7-3
+VKA = 36V, Vref = 0
+0.1
+0.5
+µA
+|ZKA|
+Dynamic Impedance (2)
+See Figure 7-1
+VKA = Vref,  f ≤ 1kHz,
+IKA = 1mA to 100mA
+0.2
+0.5
+Ω
+(1)
+The deviation parameters VI(dev) and II(dev) are defined as the differences between the maximum and minimum values obtained over 
+the rated temperature range. For more details on VI(dev) and how it relates to the average temperature coefficient, see Temperature 
+Coefficient.
+(2)
+The dynamic impedance is defined by |ZKA| = ΔVKA/ΔIKA.  For more details on |ZKA| and how it relates to VKA, see Dynamic 
+Impedance.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+14
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+6.14 Typical Characteristics
+Data at high and low temperatures are applicable only within the recommended operating free-air temperature 
+ranges of the various devices.
+2500
+2480
+2420
+2400
+−75
+−50
+−25
+0
+25
+50
+75
+2540
+2580
+2600
+100
+125
+2460
+2560
+2520
+2440
+TA −Free-Air Temperature −°C
+Vref = 2495 mV
+Vref = 2440 mV
+VKA = Vref
+IKA = 10 mA
+Vref = 2550 mV
+−Reference Voltage −mV
+Vref
+Figure 6-1. Reference Voltage vs Free-Air 
+Temperature
+3
+2
+1
+0
+−75
+−25
+0
+50
+4
+5
+100
+125
+−50
+25
+75
+TA −Free-Air Temperature −°C
+R1 = 10 kΩ
+R2 =∞
+IKA = 10 mA
+−Reference Current −
+ref
+I
+µA
+Figure 6-2. Reference Current vs Free-Air 
+Temperature
+25
+0
+−50
+−75
+−100
+125
+−25
+−2
+−1
+0
+1
+75
+50
+100
+150
+2
+3
+VKA −Cathode Voltage −V
+VKA = Vref
+TA = 25°C
+−Cathode Current −mA
+IKA
+Figure 6-3. Cathode Current vs Cathode Voltage
+400
+200
+0
+−200
+−1
+0
+1
+600
+800
+2
+3
+VKA = Vref
+TA = 25°C
+VKA −Cathode Voltage −V
+Imin
+−Cathode Current −
+IKA
+A
+µ
+Figure 6-4. Cathode Current vs Cathode Voltage
+1.5
+1
+0.5
+0
+−75
+−25
+0
+50
+−Off-State Cathode Current −
+2
+2.5
+100
+125
+−50
+25
+75
+Ioff
+µA
+TA −Free-Air Temperature −°C
+VKA = 36 V
+Vref = 0
+16
+Figure 6-5. Off-State Cathode Current vs Free-Air 
+Temperature
+−1.15
+−1.25
+−1.35
+−1.45
+−1.05
+−0.95
+−0.85
+TA −Free-Air Temperature −°C
+−75
+−25
+0
+50
+100
+125
+−50
+25
+75
+VKA = 3 V to 36 V
+−mV/V
+∆Vref
+∆VKA
+/
+16
+Figure 6-6. Ratio of Delta Reference Voltage to 
+Delta Cathode Voltage vs Free-Air Temperature
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+15
+Product Folder Links: TL431 TL432
+
+180
+140
+120
+100
+10
+100
+1 k
+220
+240
+f −Frequency −Hz
+260
+10 k
+100 k
+200
+160
+−Equivalent Input Noise V oltage −nV/
+Hz
+Vn
+IO = 10 mA
+TA = 25°C
+16
+Figure 6-7. Equivalent Input Noise Voltage vs 
+Frequency
+−1
+−2
+−4
+−5
+−6
+3
+−3
+0
+1
+2
+3
+4
+5
+6
+1
+0
+2
+4
+7
+8
+9
+10
+5
+6
+t −Time −s
+f = 0.1 to 10 Hz
+IKA = 10 mA
+TA = 25°C
+−Equivalent Input Noise V oltage −µV
+Vn
+Figure 6-8. Equivalent Input Noise Voltage Over a 
+10S Period
+19.1 V
+VCC
+TLE2027
+TLE2027
+AV = 10 V/mV
+VEE
+0.1 µF
+160 kΩ
+820 Ω
+(DUT)
+TL431
+16 Ω
+910 Ω
+2000 µF
+1 kΩ
+VEE
+VCC
+1 µF
+16 kΩ
+16 kΩ
+1 µF
+33 kΩ
+33 kΩ
+AV = 2 V/V
+22 µF
+500 µF
+To
+Oscilloscope
++
+−
++
+−
+Figure 6-9. Test Circuit for Equivalent Input Noise Voltage Over a 10S Period
+1 k
+10 k
+100 k
+1 M
+10 M
+0
+10
+20
+30
+50
+60
+40
+f −Frequency −Hz
+IKA = 10 mA
+TA = 25°C
+−Small-Signal Voltage Amplification −dB
+A V
+Figure 6-10. Small-Signal Voltage Amplification vs 
+Frequency
+9 µF
+GND
+Output
+232 Ω
+8.25 kΩ
+IKA
+15 kΩ
++
+−
+IKA = 10 mA
+TA = 25°C
+Figure 6-11. Test Circuit for Voltage Amplification
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+16
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+0.1
+1 k
+10 k
+100 k
+1 M
+10 M
+1
+f −Frequency −Hz
+10
+100
+IKA = 10 mA
+TA = 25°C
+−Reference Impedance −
+KA
+|z
+|
+Ω
+Figure 6-12. Reference Impedance vs Frequency
+1 kΩ
+50 Ω
+GND
+Output
+IKA
++
+−
+Figure 6-13. Test Circuit for Reference Impedance
+3
+2
+1
+0
+−1
+0
+1
+2
+3
+4
+Input and Output V oltage −V
+4
+5
+6
+5
+6
+7
+Input
+Output
+TA = 25°C
+t −Time −µs
+Figure 6-14. Pulse Response
+220 Ω
+50 Ω
+GND
+Output
+Pulse
+Generator
+f = 100 kHz
+Figure 6-15. Test Circuit for Pulse Response
+50
+40
+10
+0
+0.001
+0.01
+0.1
+1
+70
+90
+100
+10
+30
+80
+60
+20
+TA = 25°C
+B
+Stable
+Stable
+A VKA = Vref
+B VKA = 5 V
+C VKA = 10 V
+D VKA = 15 Vf
+CL −Load Capacitance −µF
+A
+C
+D
+−Cathode Current −mA
+IKA
+The areas under the curves represent conditions that can 
+cause the device to oscillate. For curves B, C, and D, R2 and 
+V+ are adjusted to establish the initial VKA and IKA conditions, 
+with CL = 0. VBATT and CL then are adjusted to determine the 
+ranges of stability.
+Figure 6-16. Stability Boundary Conditions for All 
+TL431 and TL431A Devices (Except for SOT23-3, 
+SC-70, and Q-Temp Devices)
+150 Ω
+IKA
+R1 = 10 kΩ
+R2
+CL
+VBATT
+IKA
+CL
+VBATT
+150 Ω
+TEST CIRCUIT FOR CURVE A
+TEST CIRCUIT FOR CURVES B, C, AND D
++
+−
++
+−
+Figure 6-17. Test Circuits for Stability Boundary 
+Conditions
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+17
+Product Folder Links: TL431 TL432
+
+50
+40
+10
+0
+0.001
+0.01
+0.1
+1
+70
+90
+100
+10
+30
+80
+60
+20
+Stable
+A VKA = Vref
+B VKA = 5 V
+C VKA = 10 V
+D VKA = 15 Vf
+CL −Load Capacitance −µF
+A
+C
+D
+−Cathode Current −mA
+IKA
+B
+A
+TA = 25°C
+Stable
+B
+The areas under the curves represent conditions that can 
+cause the device to oscillate. For curves B, C, and D, R2 and 
+V+ are adjusted to establish the initial VKA and IKA conditions, 
+with CL = 0. VBATT and CL then are adjusted to determine the 
+ranges of stability.
+Figure 6-18. Stability Boundary Conditions for 
+All TL431B, TL432, SOT-23, SC-70, and Q-Temp 
+Devices
+150 Ω
+IKA
+R1 = 10 kΩ
+R2
+CL
+VBATT
+IKA
+CL
+VBATT
+150 Ω
+TEST CIRCUIT FOR CURVE A
+TEST CIRCUIT FOR CURVES B, C, AND D
++
+−
++
+−
+Figure 6-19. Test Circuit for Stability Boundary 
+Conditions
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+18
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+7 Parameter Measurement Information
+Vref
+Input
+VKA
+IKA
+Figure 7-1. Test Circuit for VKA = Vref 
+Iref
+IKA
+VKA
+Input
+Vref
+R1
+R2
+KA
+ref
+ref
+R1
+V
+= V
+1 +
++ I
+× R1
+R2
+æ
+ö
+ç
+÷
+è
+ø
+Figure 7-2. Test Circuit for VKA > Vref 
+Ioff
+VKA
+Input
+Figure 7-3. Test Circuit for Ioff 
+7.1 Temperature Coefficient
+The deviation of the reference voltage, Vref, over the full temperature range is known as VI(dev). The parameter 
+of VI(dev) can be used to find the temperature coefficient of the device. The average full-range temperature 
+coefficient of the reference input voltage, αVref, is defined as:
+αVref is positive or negative, depending on whether minimum Vref or maximum Vref, respectively, occurs at the 
+lower temperature. The full-range temperature coefficient is an average and therefore any subsection of the 
+rated operating temperature range can yield a value that is greater or less than the average. For more details on 
+temperature coefficient, refer to the Voltage Reference Selection Basics White Paper.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+19
+Product Folder Links: TL431 TL432
+
+7.2 Dynamic Impedance
+The dynamic impedance is defined as 
+KA
+KA
+KA
+V
+Z
+I
+'
+ '
+ . When the device is operating with two external resistors 
+(see Figure 6-13), the total dynamic impedance of the circuit is given by 
+V
+z'
+I
+'
+ '  , which is approximately equal 
+to 
+KA
+R1
+Z
+1
+R2
+§
+·
+
+¨
+¸
+©
+¹ .
+The VKA of the device can be affected by the dynamic impedance. The device test current Itest for VKA is 
+specified in the Electrical Characteristics. Any deviation from Itest can cause deviation on the output VKA. Figure 
+7-4 shows the effect of the dynamic impedance on the VKA.
+Ps
+0
+VKA (V)
+IKA (mA)
+Itest
+IKA(min)
+IKA
+P/
+Figure 7-4. Dynamic Impedance
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+20
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+8 Detailed Description
+8.1 Overview
+This standard device has proven ubiquity and versatility across a wide range of applications, ranging from power 
+to signal path. This is due to its key components containing an accurate voltage reference & opamp, which are 
+very fundamental analog building blocks. TL43xx is used in conjunction with its key components to behave as a 
+single voltage reference, error amplifier, voltage clamp or comparator with integrated reference.
+TL43xx can be operated and adjusted to cathode voltages from 2.5V to 36V, making this part optimum for a 
+wide range of end equipments in industrial, auto, telecom & computing. In order for this device to behave as a 
+shunt regulator or error amplifier, >1mA (Imin(max)) must be supplied in to the cathode pin. Under this condition, 
+feedback can be applied from the Cathode and Ref pins to create a replica of the internal reference voltage.
+Various reference voltage options can be purchased with initial tolerances (at 25°C) of 0.5%, 1%, and 2%. These 
+reference options are denoted by B (0.5%), A (1.0%) and blank (2.0%) after the TL431 or TL432. TL431 & 
+TL432 are both functionaly, but have separate pinout options.
+The TL43xxC devices are characterized for operation from 0°C to 70°C, the TL43xxI devices are characterized 
+for operation from –40°C to 85°C, and the TL43xxQ devices are characterized for operation from –40°C to 
+125°C.
+8.2 Functional Block Diagram
+CATHODE
+REF
+ANODE
++
+_
+Vref
+Figure 8-1. Equivalent Schematic
+ANODE
+REF
+CATHODE
+2.4 kΩ
+7.2 kΩ
+3.28 kΩ
+20 pF
+4 kΩ
+1 kΩ
+800 Ω
+800 Ω
+800 Ω
+20 pF
+150 Ω
+10 kΩ
+Figure 8-2. Detailed Schematic
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+21
+Product Folder Links: TL431 TL432
+
+8.3 Feature Description
+TL43xx consists of an internal reference and amplifier that outputs a sink current base on the difference between 
+the reference pin and the virtual internal pin. The sink current is produced by the internal Darlington pair, shown 
+in the above schematic (Figure 8-2). A Darlington pair is used for this device to be able to sink a maximum 
+current of 100mA.
+When operated with enough voltage headroom (≥ 2.5V) and cathode current (IKA), TL431 forces the reference 
+pin to 2.5V. However, the reference pin can not be left floating, as it needs IREF ≥ 4µA (please see Electrical 
+Characteristics, TL431C, TL432C). This is because the reference pin is driven into an npn, which needs base 
+current in order operate properly.
+When feedback is applied from the Cathode and Reference pins, TL43xx behaves as a Zener diode, regulating 
+to a constant voltage dependent on current being supplied into the cathode. This is due to the internal amplifier 
+and reference entering the proper operating regions. The same amount of current needed in the above feedback 
+situation must be applied to this device in open loop, servo or error amplifying implementations for it to be in the 
+proper linear region giving TL43xx enough gain.
+Unlike many linear regulators, TL43xx is internally compensated to be stable without an output capacitor 
+between the cathode and anode. However, if it is desired to use an output capacitor Figure 6-18 can be used as 
+a guide to assist in choosing the correct capacitor to maintain stability.
+8.4 Device Functional Modes
+8.4.1 Open Loop (Comparator)
+When the cathode/output voltage or current of TL43xx is not being fed back to the reference/input pin in any 
+form, this device is operating in open loop. With proper cathode current (Ika) applied to this device, TL43xx 
+will have the characteristics shown in Figure 9-2. With such high gain in this configuration, TL43xx is typically 
+used as a comparator. With the reference integrated makes TL43xx the prefered choice when users are trying to 
+monitor a certain level of a single signal.
+8.4.2 Closed Loop
+When the cathode/output voltage or current of TL43xx is being fed back to the reference/input pin in any form, 
+this device is operating in closed loop. The majority of applications involving TL43xx use it in this manner to 
+regulate a fixed voltage or current. The feedback enables this device to behave as an error amplifier, computing 
+a portion of the output voltage and adjusting it to maintain the desired regulation. This is done by relating the 
+output voltage back to the reference pin in a manner to make it equal to the internal reference voltage, which can 
+be accomplished via resistive or direct feedback.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+22
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+9 Applications and Implementation
+Note
+Information in the following applications sections is not part of the TI component specification, and 
+TI does not warrant its accuracy or completeness. TI’s customers are responsible for determining 
+suitability of components for their purposes. Customers should validate and test their design 
+implementation to confirm system functionality.
+9.1 Application Information
+As this device has many applications and setups, there are many situations that this datasheet can not 
+characterize in detail. The linked application notes will help the designer make the best choices when using 
+this part.
+Application note Understanding Stability Boundary Conditions Charts in TL431, TL432 Data Sheet (SLVA482) 
+will provide a deeper understanding of this devices stability characteristics and aid the user in making the right 
+choices when choosing a load capacitor. Application note Setting the Shunt Voltage on an Adjustable Shunt 
+Regulator (SLVA445) assists designers in setting the shunt voltage to achieve optimum accuracy for this device.
+9.2 Typical Applications
+9.2.1 Comparator With Integrated Reference
++
+2.5V
+CATHODE
+ANODE
+REF
+VIN
+Vout
+Vsup
+Rsup
+R1
+R2
+VL
+RIN
+Figure 9-1. Comparator Application Schematic
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+23
+Product Folder Links: TL431 TL432
+
+9.2.1.1 Design Requirements
+For this design example, use the parameters listed in Table 9-1 as the input parameters.
+Table 9-1. Design Parameters
+DESIGN PARAMETER
+EXAMPLE VALUE
+Input Voltage Range
+0Vto 5V
+Input Resistance
+10kΩ
+Supply Voltage
+24V
+Cathode Current (Ik)
+5mA
+Output Voltage Level
+~2V– VSUP
+Logic Input Thresholds VIH/VIL
+VL
+9.2.1.2 Detailed Design Procedure
+When using TL431 as a comparator with reference, determine the following:
+•
+Input Voltage Range
+•
+Reference Voltage Accuracy
+•
+Output logic input high and low level thresholds
+•
+Current Source resistance
+9.2.1.2.1 Basic Operation
+In the configuration shown in Figure 9-1 TL431 will behave as a comparator, comparing the VREF pin voltage 
+to the internal virtual reference voltage. When provided a proper cathode current (IK), TL43xx will have enough 
+open loop gain to provide a quick response. This can be seen in Figure 9-2, where the RSUP=10 kΩ (IKA=500 µA) 
+situation responds much slower than RSUP=1 kΩ (IKA=5mA). Operation near and below Imin could result in low 
+gain, leading to a slow response.
+9.2.1.2.1.1 Overdrive
+Slow or inaccurate responses can also occur when the reference pin is not provided enough overdrive voltage. 
+This is the amount of voltage that is higher than the internal virtual reference. The internal virtual reference 
+voltage will be within the range of 2.5V±(0.5%, 1.0% or 1.5%) depending on which version is being used. The 
+more overdrive voltage provided, the faster the TL431 will respond.
+For applications where TL431 is being used as a comparator, it is best to set the trip point to greater than the 
+positive expected error (i.e. +1.0% for the A version). For fast response, setting the trip point to >10% of the 
+internal VREF should suffice.
+For minimal voltage drop or difference from Vin to the ref pin, it is recommended to use an input resistor <10kΩ 
+to provide Iref.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+24
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+9.2.1.2.2 Output Voltage and Logic Input Level
+For TL431 to properly be used as a comparator, the logic output must be readable by the receiving logic device. 
+This is accomplished by knowing the input high and low level threshold voltage levels, typically denoted by VIH & 
+VIL.
+As seen in Figure 9-2, TL431's output low level voltage in open-loop/comparator mode is ~2 V, which is typically 
+sufficient for 5V supplied logic. However, would not work for 3.3V& 1.8Vsupplied logic. To accommodate this a 
+resistive divider can be tied to the output to attenuate the output voltage to a voltage legible to the receiving low 
+voltage logic device.
+TL431's output high voltage is equal to VSUP due to TL431 being open-collector. If VSUP is much higher than the 
+receiving logic's maximum input voltage tolerance, the output must be attenuated to accommodate the outgoing 
+logic's reliability.
+When using a resistive divider on the output, be sure to make the sum of the resistive divider (R1 & R2 in Figure 
+9-1) is much greater than RSUP to not interfere with TL431's ability to pull close to VSUP when turning off.
+9.2.1.2.2.1 Input Resistance
+TL431 requires an input resistance in this application to source the reference current (IREF) needed from this 
+device to be in the proper operating regions while turning on. The actual voltage seen at the ref pin will be 
+VREF=VIN-IREF*RIN. Since IREF can be as high as 4µA it is recommended to use a resistance small enough that 
+will mitigate the error that IREF creates from VIN.
+9.2.1.3 Application Curve
+Time (s)
+Voltage (V)
+-0.001
+-0.0006
+-0.0002
+0.0002
+0.0006
+0.001
+-0.5
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+5.5
+D001
+Vin
+Vka(Rsup=10k:)
+Vka(Rsup=1k:)
+Figure 9-2. Output Response With Various Cathode Currents
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+25
+Product Folder Links: TL431 TL432
+
+9.2.2 Shunt Regulator/Reference
+REF
+CATHODE
+ANODE
+R2
+VSUP
+RSUP
+R1
+VO
+(
+R1
+Vref
+0.1%
+R2
+0.1%
+TL431
+= 1 +
+Vref
+)
+CL
+Figure 9-3. Shunt Regulator Schematic
+9.2.2.1 Design Requirements
+For this design example, use the parameters listed in Table 9-1 as the input parameters.
+Table 9-2. Design Parameters
+DESIGN PARAMETER
+EXAMPLE VALUE
+Reference Initial Accuracy
+1.0 %
+Supply Voltage
+24V
+Cathode Current (Ik)
+5mA
+Output Voltage Level
+2.5V- 36V
+Load Capacitance
+10μF
+Feedback Resistor Values and Accuracy (R1 & R2)
+10kΩ
+9.2.2.2 Detailed Design Procedure
+When using TL431 as a Shunt Regulator, determine the following:
+•
+Input Voltage Range
+•
+Temperature Range
+•
+Total Accuracy
+•
+Cathode Current
+•
+Reference Initial Accuracy
+•
+Output Capacitance
+9.2.2.2.1 Programming Output/Cathode Voltage
+In order to program the cathode voltage to a regulated voltage a resistive bridge must be shunted between 
+the cathode and anode pins with the mid point tied to the reference pin. This can be seen in Figure 9-3, with 
+R1 & R2 being the resistive bridge. The cathode/output voltage in the shunt regulator configuration can be 
+approximated by the equation shown in Figure 9-3. The cathode voltage can be more accuratel determined by 
+taking in to account the cathode current:
+Vo=(1+R1/R2)*VREF-IREF*R1
+In order for this equation to be valid, TL43xx must be fully biased so that it has enough open loop gain 
+to mitigate any gain error. This can be done by meeting the Imin spec denoted in Electrical Characteristics, 
+TL431C, TL432C.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+26
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+9.2.2.2.2 Total Accuracy
+When programming the output above unity gain (VKA=VREF), TL43xx is susceptible to other errors that may 
+effect the overall accuracy beyond VREF. These errors include:
+•
+R1 and R2 accuracies
+•
+VI(dev) - Change in reference voltage over temperature
+•
+ΔVREF / ΔVKA - Change in reference voltage to the change in cathode voltage
+•
+|zKA| - Dynamic impedance, causing a change in cathode voltage with cathode current
+Worst case cathode voltage can be determined taking all of the variables in to account. Application note Setting 
+the Shunt Voltage on an Adjustable Shunt Regulator (SLVA445) assists designers in setting the shunt voltage to 
+achieve optimum accuracy for this device.
+9.2.2.2.3 Stability
+Though TL43xx is stable with no capacitive load, the device that receives the shunt regulator's output voltage 
+could present a capacitive load that is within the TL43xx region of stability, shown in Figure 6-16 and 
+Figure 6-18. Also, designers may use capacitive loads to improve the transient response or for power supply 
+decoupling. When using additional capacitance between Cathode and Anode, refer to Figure 6-16 and Figure 
+6-18. Also, application note Understanding Stability Boundary Conditions Charts in TL431, TL432 Data Sheet 
+(SLVA482) will provide a deeper understanding of this devices stability characteristics and aid the user in making 
+the right choices when choosing a load capacitor.
+9.2.2.2.4 Start-Up Time
+As shown in Figure 9-4, TL43xx has a fast response up to ~2Vand then slowly charges to its programmed value. 
+This is due to the compensation capacitance (shown in Figure 6-18) the TL43xx has to meet its stability criteria. 
+Despite the secondary delay, TL43xx still has a fast response suitable for many clamp applications.
+9.2.2.3 Application Curve
+Time (s)
+Voltage (V)
+-5E-6
+-3E-6
+-1E-6
+1E-6
+3E-6
+5E-6
+-6
+-3
+0
+3
+6
+9
+12
+15
+18
+21
+24
+27
+D001
+Vsup
+Vka=Vref
+R1=10k: & R2=10k:
+R1=38k: & R2=10k:
+Figure 9-4. TL43xx Start-Up Response
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+27
+Product Folder Links: TL431 TL432
+
+9.3 System Examples
+R
+(see Note A)
+VO
+TL431
+VI(BATT)
+2N222
+2N222
+4.7 kΩ
+R1
+0.1%
+R2
+0.1%
+0.01 µF
+30 Ω
+O
+ref
+R1
+V
+=
+1 +
+V
+R2
+æ
+ö
+ç
+÷
+è
+ø
+A.
+R should provide cathode current ≥1mA to the TL431 at minimum V(BATT).
+Figure 9-5. Precision High-Current Series Regulator
+VO
+TL431
+VI(BATT)
+uA7805
+IN
+OUT
+Common
+R1
+R2
+VO
+1
+R1
+R2 Vref
+Minimum VO
+Vref
+5 V
+=
++
+=
++
+(
+(
+Figure 9-6. Output Control of a Three-Terminal Fixed Regulator
+VO
+TL431
+VI(BATT)
+R1
+R2
+VO
+1
+R1
+R2 Vref
+=
++
+(
+(
+Figure 9-7. High-Current Shunt Regulator
+VO
+TL431
+VI(BATT)
+R1
+R2
+C
+(see Note A)
+A.
+Refer to the stability boundary conditions in Figure 6-16 and Figure 6-18 to determine allowable values for C.
+Figure 9-8. Crowbar Circuit
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+28
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+VO ≈5 V, 1.5 A
+TL431
+VI(BATT)
+LM317
+IN
+OUT
+Adjust
+243 Ω
+0.1%
+243 Ω
+0.1%
+8.2 kΩ
+Figure 9-9. Precision 5V, 1.5A Regulator
+VO ≈5 V
+TL431
+VI(BATT)
+27.4 kΩ
+0.1%
+Rb
+(see Note A)
+27.4 kΩ
+0.1%
+A.
+Rb should provide cathode current ≥1mA to the TL431.
+Figure 9-10. Efficient 5V Precision Regulator
+TL431
+12 V
+VCC
+5 V
+6.8 kΩ
+10 kΩ
+10 kΩ
+0.1%
+10 kΩ
+0.1%
+X
+Not
+Used
+Feedback
+TL598
++
+−
+Figure 9-11. PWM Converter With Reference
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+29
+Product Folder Links: TL431 TL432
+
+TL431
+VI(BATT)
+R3
+(see Note A)
+R1A
+R4
+(see Note A)
+R2B
+R2A
+R1B
+Low Limit = 1 + R1B
+R2B Vref
+High Limit =
+1 + R1A
+R2A Vref
+LED on When Low Limit < VI(BATT) < High Limit
+A.
+Select R3 and R4 to provide the desired LED intensity and cathode current ≥1mA to the TL431 at the available VI(BATT).
+Figure 9-12. Voltage Monitor
+TL431
+650 Ω
+2 kΩ
+C
+On
+Off
+R
+12 V
+n
+ref
+12 V
+Delay = R × C × I
+12 V – V
+æ
+ö
+ç
+÷
+ç
+÷
+è
+ø
+Figure 9-13. Delay Timer
+TL431
+IO
+RCL
+0.1%
+R1
+VI(BATT)
+Iout
+Vref
+RCL
+IKA
+R1
+VI(BATT)
+IO
+hFE
+IKA
++
++
+=
+=
+Figure 9-14. Precision Current Limiter
+TL431
+RS
+0.1%
+IO
+VI(BATT)
+IO
+Vref
+RS
+=
+Figure 9-15. Precision Constant-Current Sink
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+30
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+9.4 Power Supply Recommendations
+When using TL43xx as a Linear Regulator to supply a load, designers will typically use a bypass capacitor on 
+the output/cathode pin. When doing this, be sure that the capacitance is within the stability criteria shown in 
+Figure 6-16 and Figure 6-18.
+In order to not exceed the maximum cathode current, be sure that the supply voltage is current limited. Also, be 
+sure to limit the current being driven into the Ref pin, as not to exceed its absolute maximum rating.
+For applications shunting high currents, pay attention to the cathode and anode trace lengths, adjusting the 
+width of the traces to have the proper current density.
+9.5 Layout
+9.5.1 Layout Guidelines
+Bypass capacitors should be placed as close to the part as possible. Current-carrying traces need to have 
+widths appropriate for the amount of current they are carrying; in the case of the TL43xx, these currents will be 
+low.
+9.5.2 Layout Example
+TL432 - DBZ
+(TOP VIEW)
+REF
+1
+CATHODE
+2
+3
+ANODE
+Rsup
+Rref
+Vsup
+CL
+Vin
+GND
+GND
+Figure 9-16. DBZ Layout Example
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+31
+Product Folder Links: TL431 TL432
+
+10 Device and Documentation Support
+10.1 Device Nomenclature
+TI assigns suffixes and prefixes to differentiate all the combinations of the TL43x family. The Eco Plan designator 
+is a legacy designator that was used to differentiate Pb-free and Green devices. More details and possible 
+orderable combinations are located on the Package Option Addendum in Mechanical, Packaging, and Orderable 
+Information.
+TL431 X X XXX X XX
+Product
+Opera
+ng Free-Air 
+Temperature
+Package 
+Type
+Package 
+Quan
+ ty
+Eco Plan
+Inial 
+Accuracy
+1: TL431
+2: TL432*
+B: 0.5%
+A: 1%
+(Blank): 2%
+DCK: SC-70
+D: SOIC
+P: PDIP
+PK: SOT-89
+PS: SO
+DBV: SOT-23-5
+DBZ: SOT-23-3
+PW: TSSOP
+LP: TO-92
+(Bulk package, Straight  lead)
+LPR: TO-92 
+(Reel package, Formed Lead)
+LPM: TO-92 
+(Ammo package, Formed Lead)
+C: 0°C to 70°C
+I: -40°C to 85°C
+Q: -40°C to 125°C
+R: Tape & Reel
+T: Small Tape & Reel
+G3: Legacy Designator
+G4: Legacy Designator
+E3: Legacy Designator
+E4: Legacy Designator
+*(Cathode and REF 
+pins are switched)
+10.2 Related Links
+The table below lists quick access links. Categories include technical documents, support and community 
+resources, tools and software, and quick access to sample or buy.
+Table 10-1. Related Links
+PARTS
+PRODUCT FOLDER
+SAMPLE & BUY
+TECHNICAL 
+DOCUMENTS
+TOOLS & 
+SOFTWARE
+SUPPORT & 
+COMMUNITY
+TL431
+Click here
+Click here
+Click here
+Click here
+Click here
+TL432
+Click here
+Click here
+Click here
+Click here
+Click here
+10.3 Receiving Notification of Documentation Updates
+To receive notification of documentation updates, navigate to the device product folder on ti.com. Click on 
+Notifications to register and receive a weekly digest of any product information that has changed. For change 
+details, review the revision history included in any revised document.
+10.4 Support Resources
+TI E2E™ support forums are an engineer's go-to source for fast, verified answers and design help — straight 
+from the experts. Search existing answers or ask your own question to get the quick design help you need.
+Linked content is provided "AS IS" by the respective contributors. They do not constitute TI specifications and do 
+not necessarily reflect TI's views; see TI's Terms of Use.
+10.5 Trademarks
+TI E2E™ is a trademark of Texas Instruments.
+All trademarks are the property of their respective owners.
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+www.ti.com
+32
+Submit Document Feedback
+Copyright © 2024 Texas Instruments Incorporated
+Product Folder Links: TL431 TL432
+
+10.6 Electrostatic Discharge Caution
+This integrated circuit can be damaged by ESD. Texas Instruments recommends that all integrated circuits be handled 
+with appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may 
+be more susceptible to damage because very small parametric changes could cause the device not to meet its published 
+specifications.
+10.7 Glossary
+TI Glossary 
+This glossary lists and explains terms, acronyms, and definitions.
+11 Revision History
+Changes from Revision R (August 2023) to Revision S (May 2024)
+Page
+•
+Updated pinout diagrams................................................................................................................................... 4
+Changes from Revision Q (July 2022) to Revision R (August 2023)
+Page
+•
+Updated Applications section links.....................................................................................................................1
+•
+Updated Description section...............................................................................................................................1
+•
+Removed KTP package......................................................................................................................................4
+•
+Added detailed Temperature Coefficient and Dynamic Impedance sections................................................... 19
+•
+Updated Applications section........................................................................................................................... 26
+•
+Updated LP package in Device Nomenclature figure.......................................................................................32
+Changes from Revision P (November 2018) to Revision Q (July 2022)
+Page
+•
+Updated the numbering format for tables, figures, and cross-references throughout the document................. 1
+•
+Corrected the device names in the Pin Functions table..................................................................................... 4
+Changes from Revision O (January 2015) to Revision P (November 2018)
+Page
+•
+Added text to the Description section.................................................................................................................1
+•
+Added TL43x Device Comparison Table ........................................................................................................... 3
+•
+Added TL43x Device Nomenclature section.................................................................................................... 32
+Changes from Revision N (January 2014) to Revision O (January 2015)
+Page
+•
+Added Applications, Device Information table, Pin Functions table, ESD Ratings table, Thermal Information 
+table, Feature Description section, Device Functional Modes, Application and Implementation section, Power 
+Supply Recommendations section, Layout section, Device and Documentation Support section, and 
+Mechanical, Packaging, and Orderable Information section.............................................................................. 1
+•
+Added Applications.............................................................................................................................................1
+12 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical packaging and orderable information. This information is the most 
+current data available for the designated devices. This data is subject to change without notice and revision of 
+this document. For browser based versions of this data sheet, refer to the left hand navigation.
+www.ti.com
+TL431, TL432
+SLVS543S – AUGUST 2004 – REVISED MAY 2024
+Copyright © 2024 Texas Instruments Incorporated
+Submit Document Feedback
+33
+Product Folder Links: TL431 TL432
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+PACKAGING INFORMATION
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431ACD
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+431AC
+TL431ACD.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+431AC
+TL431ACDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(TACG, TACJ, TACS)
+    
+TL431ACDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(TACG, TACJ, TACS)
+    
+TL431ACDBVRG4
+Obsolete
+Production
+SOT-23 (DBV) | 5
+-
+-
+Call TI
+Call TI
+0 to 70
+TACG
+TL431ACDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(TACG, TACJ, TACU)
+    
+TL431ACDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(TACG, TACJ, TACU)
+    
+TL431ACDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(TAC3, TACG, TACS,
+     TACU)
+TL431ACDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(TAC3, TACG, TACS,
+     TACU)
+TL431ACDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TAC3
+TL431ACDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TAC3
+TL431ACDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(TAC3, TACG, TACS,
+     TACU)
+TL431ACDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(TAC3, TACG, TACS,
+     TACU)
+TL431ACDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TAC3
+TL431ACDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TAC3
+TL431ACDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T4S, T4U)
+TL431ACDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T4S, T4U)
+TL431ACDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+431AC
+TL431ACDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+431AC
+TL431ACDRG4
+Obsolete
+Production
+SOIC (D) | 8
+-
+-
+Call TI
+Call TI
+0 to 70
+431AC
+TL431ACLP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431AC
+TL431ACLP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431AC
+TL431ACLPM
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431AC
+Addendum-Page 1
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431ACLPM.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431AC
+TL431ACLPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431AC
+TL431ACLPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431AC
+TL431ACP
+Active
+Production
+PDIP (P) | 8
+50 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+0 to 70
+TL431ACP
+TL431ACP.A
+Active
+Production
+PDIP (P) | 8
+50 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+0 to 70
+TL431ACP
+TL431ACPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+4A
+TL431ACPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+4A
+TL431ACPSR
+Active
+Production
+SO (PS) | 8
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431A
+TL431ACPSR.A
+Active
+Production
+SO (PS) | 8
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431A
+TL431ACPWR
+Active
+Production
+TSSOP (PW) | 8
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431A
+TL431ACPWR.A
+Active
+Production
+TSSOP (PW) | 8
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431A
+TL431AID
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+431AI
+TL431AID.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+431AI
+TL431AIDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(TAIG, TAIJ, TAIS)
+    
+TL431AIDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(TAIG, TAIJ, TAIS)
+    
+TL431AIDBVRG4
+Obsolete
+Production
+SOT-23 (DBV) | 5
+-
+-
+Call TI
+Call TI
+-40 to 85
+TAIG
+TL431AIDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(TAIG, TAIJ, TAIU)
+    
+TL431AIDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(TAIG, TAIJ, TAIU)
+    
+TL431AIDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3AG, TAI3, TAIS,
+     TAIU)
+TL431AIDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T3AG, TAI3, TAIS,
+     TAIU)
+TL431AIDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TAI3
+TL431AIDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TAI3
+TL431AIDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3AG, TAI3, TAIS,
+     TAIU)
+TL431AIDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T3AG, TAI3, TAIS,
+     TAIU)
+TL431AIDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TAI3
+Addendum-Page 2
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431AIDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TAI3
+TL431AIDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+T5U
+TL431AIDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+T5U
+TL431AIDCKRE4
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+-
+Call TI
+Call TI
+-40 to 85
+TL431AIDCKRG4
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T5U
+TL431AIDCKRG4.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T5U
+TL431AIDCKT
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+T5U
+TL431AIDCKT.A
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+T5U
+TL431AIDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+431AI
+TL431AIDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+431AI
+TL431AIDRG4
+Obsolete
+Production
+SOIC (D) | 8
+-
+-
+Call TI
+Call TI
+-40 to 85
+431AI
+TL431AILP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431AI
+TL431AILP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431AI
+TL431AILPM
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431AI
+TL431AILPM.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431AI
+TL431AILPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431AI
+TL431AILPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431AI
+TL431AIPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+4B
+TL431AIPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+4B
+TL431AQDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(TAQG, TAQJ, TAQU)
+    
+TL431AQDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(TAQG, TAQJ, TAQU)
+    
+TL431AQDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(TAQG, TAQJ, TAQU)
+    
+TL431AQDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(TAQG, TAQJ, TAQU)
+    
+TL431AQDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(TAQ3, TAQG, TAQS,
+     TAQU)
+TL431AQDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(TAQ3, TAQG, TAQS,
+     TAQU)
+TL431AQDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+TAQS
+Addendum-Page 3
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431AQDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+TAQS
+TL431AQDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(TAQG, TAQS, TAQU)
+    
+TL431AQDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(TAQG, TAQS, TAQU)
+    
+TL431AQDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+TAQS
+TL431AQDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+TAQS
+TL431AQDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+T7U
+TL431AQDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+T7U
+TL431AQDCKT
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+T7U
+TL431AQDCKT.A
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+T7U
+TL431AQPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+4D
+TL431AQPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+4D
+TL431BCD
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431B
+TL431BCD.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431B
+TL431BCDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3GG, T3GJ, T3GU)
+    
+TL431BCDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T3GG, T3GJ, T3GU)
+    
+TL431BCDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3GG, T3GJ, T3GU)
+    
+TL431BCDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T3GG, T3GJ, T3GU)
+    
+TL431BCDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3G3, T3GG, T3GS,
+     T3GU)
+TL431BCDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T3G3, T3GG, T3GS,
+     T3GU)
+TL431BCDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3G3
+TL431BCDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3G3
+TL431BCDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3G3, T3GG, T3GS,
+     T3GU)
+TL431BCDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T3G3, T3GG, T3GS,
+     T3GU)
+Addendum-Page 4
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431BCDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3G3
+TL431BCDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3G3
+TL431BCDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+T2U
+TL431BCDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+T2U
+TL431BCDCKT
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+T2U
+TL431BCDCKT.A
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+T2U
+TL431BCDE4
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+-
+Call TI
+Call TI
+0 to 70
+TL431BCDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431B
+TL431BCDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T431B
+TL431BCLP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+T431B
+TL431BCLP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+T431B
+TL431BCLPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+T431B
+TL431BCLPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+T431B
+TL431BCPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+4C
+TL431BCPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+4C
+TL431BID
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+Z431B
+TL431BID.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+Z431B
+TL431BIDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3FG, T3FJ, T3FU)
+    
+TL431BIDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3FG, T3FJ, T3FU)
+    
+TL431BIDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3FG, T3FJ, T3FU)
+    
+TL431BIDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3FG, T3FJ, T3FU)
+    
+TL431BIDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3F3, T3FG, T3FS,
+     T3FU)
+TL431BIDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T3F3, T3FG, T3FS,
+     T3FU)
+TL431BIDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T3F3
+TL431BIDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T3F3
+Addendum-Page 5
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431BIDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3F3, T3FG, T3FS,
+     T3FU)
+TL431BIDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T3F3, T3FG, T3FS,
+     T3FU)
+TL431BIDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T3F3
+TL431BIDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T3F3
+TL431BIDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+T3U
+TL431BIDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+T3U
+TL431BIDCKT
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+T3U
+TL431BIDCKT.A
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+T3U
+TL431BIDE4
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+-
+Call TI
+Call TI
+-40 to 85
+TL431BIDG4
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+-
+Call TI
+Call TI
+-40 to 85
+TL431BIDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+Z431B
+TL431BIDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+Z431B
+TL431BIDRG4
+Obsolete
+Production
+SOIC (D) | 8
+-
+-
+Call TI
+Call TI
+-40 to 85
+Z431B
+TL431BILP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+Z431B
+TL431BILP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+Z431B
+TL431BILPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+Z431B
+TL431BILPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+Z431B
+TL431BIP
+Obsolete
+Production
+PDIP (P) | 8
+-
+-
+Call TI
+Call TI
+-40 to 85
+TL431BIP
+TL431BIPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+4I
+TL431BIPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+4I
+TL431BQD
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431BQ
+TL431BQD.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431BQ
+TL431BQDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3HJ, T3HU)
+TL431BQDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3HJ, T3HU)
+TL431BQDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3HJ, T3HU)
+TL431BQDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3HJ, T3HU)
+TL431BQDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T3H3, T3HG, T3HS,
+     T3HU)
+TL431BQDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T3H3, T3HG, T3HS,
+     T3HU)
+Addendum-Page 6
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431BQDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T3HS
+TL431BQDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T3HS
+TL431BQDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T3HG, T3HS, T3HU)
+    
+TL431BQDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T3HG, T3HS, T3HU)
+    
+TL431BQDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T3HS
+TL431BQDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T3HS
+TL431BQDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+T8U
+TL431BQDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+T8U
+TL431BQDCKT
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+T8U
+TL431BQDCKT.A
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+T8U
+TL431BQDE4
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+-
+Call TI
+Call TI
+-40 to 125
+TL431BQDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431BQ
+TL431BQDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431BQ
+TL431BQDRG4
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+-
+Call TI
+Call TI
+-40 to 125
+TL431BQLP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 125
+T431BQ
+TL431BQLP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 125
+T431BQ
+TL431BQLPM
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+-40 to 125
+T431BQ
+TL431BQLPM.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+-40 to 125
+T431BQ
+TL431BQLPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 125
+T431BQ
+TL431BQLPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 125
+T431BQ
+TL431BQPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+3H
+TL431BQPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+3H
+TL431CD
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TL431C
+TL431CD.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TL431C
+TL431CDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3CG, T3CJ, T3CS)
+    
+TL431CDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T3CG, T3CJ, T3CS)
+    
+TL431CDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3CG, T3CJ, T3CS)
+    
+Addendum-Page 7
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431CDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T3CG, T3CJ, T3CS)
+    
+TL431CDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3C3, T3CG, T3CS,
+     T3CU)
+TL431CDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T3C3, T3CG, T3CS,
+     T3CU)
+TL431CDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3C3
+TL431CDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3C3
+TL431CDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T3CG, T3CS, T3CU)
+    
+TL431CDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T3CG, T3CS, T3CU)
+    
+TL431CDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+T3CS
+TL431CDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T3CS
+TL431CDG4
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+-
+Call TI
+Call TI
+0 to 70
+TL431CDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TL431C
+TL431CDR-J
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TL431C
+TL431CDR-J.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TL431C
+TL431CDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TL431C
+TL431CDRG4
+Obsolete
+Production
+SOIC (D) | 8
+-
+-
+Call TI
+Call TI
+0 to 70
+TL431C
+TL431CLP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431C
+TL431CLP-Z
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+-
+TL431C
+TL431CLP-Z.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+See TL431CLP-Z
+TL431C
+TL431CLP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431C
+TL431CLPM
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431C
+TL431CLPM.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | AMMO
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431C
+TL431CLPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431C
+TL431CLPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+0 to 70
+TL431C
+TL431CPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+43
+TL431CPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+43
+TL431CPKE6
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SNBI
+Level-1-260C-UNLIM
+0 to 70
+43
+TL431CPKE6.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SNBI
+Level-1-260C-UNLIM
+0 to 70
+43
+Addendum-Page 8
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431CPSR
+Obsolete
+Production
+SO (PS) | 8
+-
+-
+Call TI
+Call TI
+0 to 70
+T431
+TL431ID
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TL431I
+TL431ID.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TL431I
+TL431IDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3IG, T3IJ, T3IS)
+    
+TL431IDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3IG, T3IJ, T3IS)
+    
+TL431IDBVRG4
+Obsolete
+Production
+SOT-23 (DBV) | 5
+-
+-
+Call TI
+Call TI
+-40 to 85
+T3IG
+TL431IDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3IG, T3IJ, T3IU)
+    
+TL431IDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(T3IG, T3IJ, T3IU)
+    
+TL431IDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+(T3I3, T3IG, T3IS,
+     T3IU)
+TL431IDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T3I3, T3IG, T3IS,
+     T3IU)
+TL431IDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+T3IS
+TL431IDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T3IS
+TL431IDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+(T3IG, T3IS, T3IU)
+    
+TL431IDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T3IG, T3IS, T3IU)
+    
+TL431IDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+T3IS
+TL431IDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T3IS
+TL431IDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TL431I
+TL431IDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+TL431I
+TL431IDRG4
+Obsolete
+Production
+SOIC (D) | 8
+-
+-
+Call TI
+Call TI
+-40 to 85
+TL431I
+TL431ILP
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431I
+TL431ILP.A
+Active
+Production
+TO-92 (LP) | 3
+1000 | BULK
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431I
+TL431ILPR
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431I
+TL431ILPR.A
+Active
+Production
+TO-92 (LP) | 3
+2000 | LARGE T&R
+Yes
+SN
+N/A for Pkg Type
+-40 to 85
+TL431I
+TL431IP
+Obsolete
+Production
+PDIP (P) | 8
+-
+-
+Call TI
+Call TI
+-40 to 85
+TL431IP
+TL431IPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+3I
+Addendum-Page 9
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL431IPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+3I
+TL431IPK3
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SNBI
+Level-1-260C-UNLIM
+-40 to 85
+3I
+TL431IPK3.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SNBI
+Level-1-260C-UNLIM
+-40 to 85
+3I
+TL431QD
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431Q
+TL431QD.A
+Active
+Production
+SOIC (D) | 8
+75 | TUBE
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431Q
+TL431QDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3QG, T3QJ, T3QU)
+    
+TL431QDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3QG, T3QJ, T3QU)
+    
+TL431QDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3QG, T3QJ, T3QU)
+    
+TL431QDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(T3QG, T3QJ, T3QU)
+    
+TL431QDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T3Q3, T3QG, T3QS,
+     T3QU)
+TL431QDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T3Q3, T3QG, T3QS,
+     T3QU)
+TL431QDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T3QS
+TL431QDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T3QS
+TL431QDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T3QG, T3QS, T3QU)
+    
+TL431QDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T3QG, T3QS, T3QU)
+    
+TL431QDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T3QS
+TL431QDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T3QS
+TL431QDCKR
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+T6U
+TL431QDCKR.A
+Active
+Production
+SC70 (DCK) | 6
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+T6U
+TL431QDCKT
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+T6U
+TL431QDCKT.A
+Active
+Production
+SC70 (DCK) | 6
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+T6U
+TL431QDR
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431Q
+TL431QDR.A
+Active
+Production
+SOIC (D) | 8
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T431Q
+TL431QPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+3Q
+TL431QPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+3Q
+Addendum-Page 10
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL432ACDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T4BG, T4BJ, T4BU)
+    
+TL432ACDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T4BG, T4BJ, T4BU)
+    
+TL432ACDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+(T4B3, T4BG, T4BS,
+     T4BU)
+TL432ACDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T4B3, T4BG, T4BS,
+     T4BU)
+TL432ACDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+T4BS
+TL432ACDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T4BS
+TL432ACDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+(T4BG, T4BS, T4BU)
+    
+TL432ACDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T4BG, T4BS, T4BU)
+    
+TL432ACDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+T4BS
+TL432ACDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T4BS
+TL432AIDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4AG, T4AJ, T4AU)
+    
+TL432AIDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4AG, T4AJ, T4AU)
+    
+TL432AIDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4A3, T4AG, T4AS,
+     T4AU)
+TL432AIDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T4A3, T4AG, T4AS,
+     T4AU)
+TL432AIDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4A3
+TL432AIDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4A3
+TL432AIDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4A3, T4AG, T4AS,
+     T4AU)
+TL432AIDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T4A3, T4AG, T4AS,
+     T4AU)
+TL432AIDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4A3
+TL432AIDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4A3
+TL432AIPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+2E
+TL432AIPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+2E
+Addendum-Page 11
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL432AQDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(T4DJ, T4DU)
+TL432AQDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(T4DJ, T4DU)
+TL432AQDBVT
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 125
+(T4DJ, T4DU)
+TL432AQDBVT.A
+Active
+Production
+SOT-23 (DBV) | 5
+250 | SMALL T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 125
+(T4DJ, T4DU)
+TL432AQDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T4D3, T4DG, T4DS,
+     T4DU)
+TL432AQDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T4D3, T4DG, T4DS,
+     T4DU)
+TL432AQDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T4DS
+TL432AQDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T4DS
+TL432AQDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T4DG, T4DS, T4DU)
+    
+TL432AQDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T4DG, T4DS, T4DU)
+    
+TL432AQDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T4DS
+TL432AQDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T4DS
+TL432AQPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+2F
+TL432AQPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+2F
+TL432BCDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(TBCJ, TBCU)
+TL432BCDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(TBCJ, TBCU)
+TL432BCDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+(TBCG, TBCS, TBCU)
+    
+TL432BCDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(TBCG, TBCS, TBCU)
+    
+TL432BCDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+TBCS
+TL432BCDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TBCS
+TL432BCDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(TBCG, TBCS, TBCU)
+    
+TL432BCDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(TBCG, TBCS, TBCU)
+    
+TL432BCDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+TBCS
+TL432BCDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+TBCS
+TL432BCPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+2G
+Addendum-Page 12
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL432BCPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+2G
+TL432BIDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4F3, T4FG, T4FS,
+     T4FU)
+TL432BIDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T4F3, T4FG, T4FS,
+     T4FU)
+TL432BIDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4F3
+TL432BIDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4F3
+TL432BIDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4F3, T4FG, T4FS,
+     T4FU)
+TL432BIDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T4F3, T4FG, T4FS,
+     T4FU)
+TL432BIDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4F3
+TL432BIDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4F3
+TL432BIPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+2H
+TL432BIPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+2H
+TL432BQDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T4H3, T4HS, T4HU)
+    
+TL432BQDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T4H3, T4HS, T4HU)
+    
+TL432BQDBZR1G4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T4H3
+TL432BQDBZR1G4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T4H3
+TL432BQPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+2J
+TL432BQPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+2J
+TL432CDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+0 to 70
+(T4CG, T4CJ, T4CU)
+    
+TL432CDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+0 to 70
+(T4CG, T4CJ, T4CU)
+    
+TL432CDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+(T4CG, T4CS, T4CU)
+    
+TL432CDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+(T4CG, T4CS, T4CU)
+    
+TL432CDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+0 to 70
+T4CS
+TL432CDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+0 to 70
+T4CS
+Addendum-Page 13
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+TL432CPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+2A
+TL432CPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+0 to 70
+2A
+TL432IDBVR
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4IG, T4IJ, T4IU)
+    
+TL432IDBVR.A
+Active
+Production
+SOT-23 (DBV) | 5
+3000 | LARGE T&R
+Yes
+SN
+Level-1-260C-UNLIM
+-40 to 85
+(T4IG, T4IJ, T4IU)
+    
+TL432IDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+(T4IG, T4IS, T4IU)
+    
+TL432IDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T4IG, T4IS, T4IU)
+    
+TL432IDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+T4IS
+TL432IDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4IS
+TL432IDBZT
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+(T4IG, T4IS, T4IU)
+    
+TL432IDBZT.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+(T4IG, T4IS, T4IU)
+    
+TL432IDBZTG4
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 85
+T4IS
+TL432IDBZTG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+250 | SMALL T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 85
+T4IS
+TL432IPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+2B
+TL432IPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 85
+2B
+TL432QDBZR
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | SN
+| NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+(T4QG, T4QS, T4QU)
+    
+TL432QDBZR.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+(T4QG, T4QS, T4QU)
+    
+TL432QDBZRG4
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU | NIPDAUAG
+Level-1-260C-UNLIM
+-40 to 125
+T4QS
+TL432QDBZRG4.A
+Active
+Production
+SOT-23 (DBZ) | 3
+3000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-40 to 125
+T4QS
+TL432QPK
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+2C
+TL432QPK.A
+Active
+Production
+SOT-89 (PK) | 3
+1000 | LARGE T&R
+Yes
+SN
+Level-2-260C-1 YEAR
+-40 to 125
+2C
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+Addendum-Page 14
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+ OTHER QUALIFIED VERSIONS OF TL431, TL432 :
+• Automotive : TL431-Q1, TL432-Q1
+ NOTE: Qualified Version Definitions:
+• Automotive - Q100 devices qualified for high-reliability automotive applications targeting zero defects
+Addendum-Page 15
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0
+B0
+K0
+W
+Dimension designed to accommodate the component length
+Dimension designed to accommodate the component thickness
+Overall width of the carrier tape
+Pitch between successive cavity centers
+Dimension designed to accommodate the component width
+TAPE DIMENSIONS
+K0
+ P1
+B0 W
+A0
+Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket Quadrants
+Sprocket Holes
+Q1
+Q1
+Q2
+Q2
+Q3
+Q3
+Q4
+Q4
+User Direction of Feed
+P1
+Reel
+Diameter
+ 
+*All dimensions are nominal
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TL431ACDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431ACDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431ACDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431ACDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431ACDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431ACDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431ACDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431ACDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431ACDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.41
+2.41
+1.2
+4.0
+8.0
+Q3
+TL431ACDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431ACDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431ACPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431ACPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431ACPSR
+SO
+PS
+8
+2000
+330.0
+16.4
+8.35
+6.6
+2.4
+12.0
+16.0
+Q1
+TL431ACPWR
+TSSOP
+PW
+8
+2000
+330.0
+12.4
+7.0
+3.6
+1.6
+8.0
+12.0
+Q1
+TL431AIDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+Pack Materials-Page 1
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TL431AIDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431AIDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431AIDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AIDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431AIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AIDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AIDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431AIDCKR
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431AIDCKRG4
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431AIDCKT
+SC70
+DCK
+6
+250
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431AIDCKT
+SC70
+DCK
+6
+250
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431AIDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431AIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431AIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431AQDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431AQDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431AQDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AQDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AQDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AQDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431AQDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431AQDCKR
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431AQDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431AQDCKT
+SC70
+DCK
+6
+250
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431AQDCKT
+SC70
+DCK
+6
+250
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431AQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431AQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431BCDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BCDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BCDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BCDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BCDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BCDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BCDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431BCDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BCDCKR
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431BCDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431BCDCKT
+SC70
+DCK
+6
+250
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431BCDCKT
+SC70
+DCK
+6
+250
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431BCDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+Pack Materials-Page 2
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TL431BCDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431BCPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431BCPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431BIDBVR
+SOT-23
+DBV
+5
+3000
+178.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BIDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BIDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BIDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BIDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431BIDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BIDCKR
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431BIDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431BIDCKT
+SC70
+DCK
+6
+250
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431BIDCKT
+SC70
+DCK
+6
+250
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431BIDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431BIDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431BIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431BIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431BQDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BQDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BQDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431BQDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BQDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BQDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BQDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431BQDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431BQDCKR
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431BQDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431BQDCKT
+SC70
+DCK
+6
+250
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431BQDCKT
+SC70
+DCK
+6
+250
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431BQDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431BQDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431BQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431CDBVR
+SOT-23
+DBV
+5
+3000
+178.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431CDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431CDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431CDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431CDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431CDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431CDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+Pack Materials-Page 3
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TL431CDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431CDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431CDR-J
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431CPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431CPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431CPKE6
+SOT-89
+PK
+3
+1000
+180.0
+13.0
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431IDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431IDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431IDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431IDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431IDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431IDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431IDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431IDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431IPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431IPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL431QDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431QDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL431QDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431QDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431QDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL431QDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431QDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL431QDCKR
+SC70
+DCK
+6
+3000
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431QDCKR
+SC70
+DCK
+6
+3000
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431QDCKT
+SC70
+DCK
+6
+250
+179.0
+8.4
+2.2
+2.5
+1.2
+4.0
+8.0
+Q3
+TL431QDCKT
+SC70
+DCK
+6
+250
+180.0
+8.4
+2.3
+2.55
+1.2
+4.0
+8.0
+Q3
+TL431QDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431QDR
+SOIC
+D
+8
+2500
+330.0
+12.4
+6.4
+5.2
+2.1
+8.0
+12.0
+Q1
+TL431QPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432ACDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432ACDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432ACDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432ACDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432ACDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432ACDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432ACDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432ACDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AIDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432AIDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AIDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+Pack Materials-Page 4
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TL432AIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432AIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AIDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432AIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432AQDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432AQDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432AQDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432AQDBVT
+SOT-23
+DBV
+5
+250
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432AQDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AQDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AQDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AQDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432AQDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432AQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432AQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432BCDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432BCDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432BCDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BCDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432BCDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BCDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BCDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432BCDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BCPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432BCPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432BIDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BIDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432BIDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BIDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432BIPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432BQDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BQDBZR1G4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432BQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432BQPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432CDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432CDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432CDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432CDBZR
+SOT-23
+DBZ
+3
+3000
+178.0
+9.0
+3.15
+2.77
+1.22
+4.0
+8.0
+Q3
+Pack Materials-Page 5
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+TL432CDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432CPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432CPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432IDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432IDBVR
+SOT-23
+DBV
+5
+3000
+180.0
+8.4
+3.2
+3.2
+1.4
+4.0
+8.0
+Q3
+TL432IDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432IDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432IDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432IDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432IDBZT
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432IDBZTG4
+SOT-23
+DBZ
+3
+250
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432IPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432IPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432QDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+3.2
+2.85
+1.3
+4.0
+8.0
+Q3
+TL432QDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432QDBZRG4
+SOT-23
+DBZ
+3
+3000
+180.0
+8.4
+2.9
+3.35
+1.35
+4.0
+8.0
+Q3
+TL432QPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+TL432QPK
+SOT-89
+PK
+3
+1000
+180.0
+12.4
+4.91
+4.52
+1.9
+8.0
+12.0
+Q3
+Pack Materials-Page 6
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W
+L
+H
+ 
+*All dimensions are nominal
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+TL431ACDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431ACDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431ACDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431ACDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431ACDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431ACDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431ACDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431ACDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431ACDCKR
+SC70
+DCK
+6
+3000
+183.0
+183.0
+20.0
+TL431ACDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431ACDR
+SOIC
+D
+8
+2500
+340.5
+336.1
+25.0
+TL431ACPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431ACPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431ACPSR
+SO
+PS
+8
+2000
+353.0
+353.0
+32.0
+TL431ACPWR
+TSSOP
+PW
+8
+2000
+353.0
+353.0
+32.0
+TL431AIDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431AIDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431AIDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+Pack Materials-Page 7
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+TL431AIDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431AIDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431AIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431AIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431AIDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431AIDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431AIDCKR
+SC70
+DCK
+6
+3000
+200.0
+183.0
+25.0
+TL431AIDCKRG4
+SC70
+DCK
+6
+3000
+200.0
+183.0
+25.0
+TL431AIDCKT
+SC70
+DCK
+6
+250
+200.0
+183.0
+25.0
+TL431AIDCKT
+SC70
+DCK
+6
+250
+210.0
+185.0
+35.0
+TL431AIDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431AIPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431AIPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431AQDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431AQDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431AQDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431AQDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431AQDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431AQDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431AQDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431AQDCKR
+SC70
+DCK
+6
+3000
+200.0
+183.0
+25.0
+TL431AQDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431AQDCKT
+SC70
+DCK
+6
+250
+200.0
+183.0
+25.0
+TL431AQDCKT
+SC70
+DCK
+6
+250
+210.0
+185.0
+35.0
+TL431AQPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431AQPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431BCDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431BCDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431BCDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431BCDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431BCDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431BCDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BCDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BCDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BCDCKR
+SC70
+DCK
+6
+3000
+200.0
+183.0
+25.0
+TL431BCDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431BCDCKT
+SC70
+DCK
+6
+250
+210.0
+185.0
+35.0
+TL431BCDCKT
+SC70
+DCK
+6
+250
+200.0
+183.0
+25.0
+TL431BCDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431BCDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431BCPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431BCPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431BIDBVR
+SOT-23
+DBV
+5
+3000
+208.0
+191.0
+35.0
+Pack Materials-Page 8
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+TL431BIDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431BIDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431BIDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431BIDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431BIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BIDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BIDCKR
+SC70
+DCK
+6
+3000
+200.0
+183.0
+25.0
+TL431BIDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431BIDCKT
+SC70
+DCK
+6
+250
+203.0
+203.0
+35.0
+TL431BIDCKT
+SC70
+DCK
+6
+250
+210.0
+185.0
+35.0
+TL431BIDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431BIDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431BIPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431BIPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431BQDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431BQDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431BQDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431BQDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431BQDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431BQDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BQDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BQDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431BQDCKR
+SC70
+DCK
+6
+3000
+200.0
+183.0
+25.0
+TL431BQDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431BQDCKT
+SC70
+DCK
+6
+250
+210.0
+185.0
+35.0
+TL431BQDCKT
+SC70
+DCK
+6
+250
+203.0
+203.0
+35.0
+TL431BQDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431BQDR
+SOIC
+D
+8
+2500
+340.5
+336.1
+25.0
+TL431BQPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431CDBVR
+SOT-23
+DBV
+5
+3000
+208.0
+191.0
+35.0
+TL431CDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431CDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431CDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431CDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431CDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431CDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431CDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431CDR
+SOIC
+D
+8
+2500
+340.5
+338.1
+20.6
+TL431CDR-J
+SOIC
+D
+8
+2500
+340.5
+338.1
+20.6
+TL431CPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431CPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431CPKE6
+SOT-89
+PK
+3
+1000
+182.0
+182.0
+20.0
+Pack Materials-Page 9
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+TL431IDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431IDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431IDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431IDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431IDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431IDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431IDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431IDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431IPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL431IPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL431QDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL431QDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL431QDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431QDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL431QDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431QDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431QDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL431QDCKR
+SC70
+DCK
+6
+3000
+203.0
+203.0
+35.0
+TL431QDCKR
+SC70
+DCK
+6
+3000
+210.0
+185.0
+35.0
+TL431QDCKT
+SC70
+DCK
+6
+250
+203.0
+203.0
+35.0
+TL431QDCKT
+SC70
+DCK
+6
+250
+210.0
+185.0
+35.0
+TL431QDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431QDR
+SOIC
+D
+8
+2500
+353.0
+353.0
+32.0
+TL431QPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432ACDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432ACDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432ACDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432ACDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432ACDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432ACDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432ACDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432ACDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AIDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432AIDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432AIDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432AIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AIDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AIPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432AIPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432AQDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432AQDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432AQDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+Pack Materials-Page 10
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+TL432AQDBVT
+SOT-23
+DBV
+5
+250
+210.0
+185.0
+35.0
+TL432AQDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432AQDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432AQDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AQDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AQDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432AQPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432AQPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432BCDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432BCDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432BCDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BCDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BCDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BCDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432BCDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432BCDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432BCPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432BCPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432BIDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BIDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432BIDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432BIDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432BIPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432BIPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432BQDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BQDBZR1G4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432BQPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432BQPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432CDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432CDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432CDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432CDBZR
+SOT-23
+DBZ
+3
+3000
+180.0
+180.0
+18.0
+TL432CDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432CPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432CPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432IDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432IDBVR
+SOT-23
+DBV
+5
+3000
+210.0
+185.0
+35.0
+TL432IDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432IDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432IDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432IDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432IDBZT
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+Pack Materials-Page 11
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+TL432IDBZTG4
+SOT-23
+DBZ
+3
+250
+210.0
+185.0
+35.0
+TL432IPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432IPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+TL432QDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432QDBZR
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432QDBZRG4
+SOT-23
+DBZ
+3
+3000
+210.0
+185.0
+35.0
+TL432QPK
+SOT-89
+PK
+3
+1000
+190.0
+190.0
+30.0
+TL432QPK
+SOT-89
+PK
+3
+1000
+340.0
+340.0
+38.0
+Pack Materials-Page 12
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+TUBE
+ 
+ 
+L - Tube length
+T - Tube  
+height
+W - Tube  
+width
+B - Alignment groove width
+ 
+ 
+*All dimensions are nominal
+Device
+Package Name
+Package Type
+Pins
+SPQ
+L (mm)
+W (mm)
+T (µm)
+B (mm)
+TL431ACD
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431ACD.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431ACP
+P
+PDIP
+8
+50
+506
+13.97
+11230
+4.32
+TL431ACP.A
+P
+PDIP
+8
+50
+506
+13.97
+11230
+4.32
+TL431AID
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431AID.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431BCD
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431BCD.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431BID
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431BID.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431BQD
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431BQD.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431CD
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431CD.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431ID
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431ID.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431QD
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+TL431QD.A
+D
+SOIC
+8
+75
+507
+8
+3940
+4.32
+Pack Materials-Page 13
+
+www.ti.com
+PACKAGE OUTLINE
+C
+0.20
+0.08 TYP
+0.25
+2.64
+2.10
+1.12 MAX
+0.10
+0.01 TYP
+3X 0.5
+0.3
+0.6
+0.2 TYP
+1.9
+0.95
+0 -8  TYP
+4X 0 -15
+4X 4 -15
+A
+3.04
+2.80
+B
+1.4
+1.2
+(0.95)
+(0.15)
+(0.125)
+SOT-23 - 1.12 mm max height
+DBZ0003A
+SMALL OUTLINE TRANSISTOR
+4214838/F   08/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Reference JEDEC registration TO-236, except minimum foot length.
+4. Support pin may differ or may not be present.
+5. Body dimensions do not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not exceed
+    0.25mm per side
+ 
+0.2
+C A B
+1
+3
+2
+INDEX AREA
+PIN 1
+NOTE 4
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  4.000
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ALL AROUND
+0.07 MIN
+ALL AROUND
+3X (1.3)
+3X (0.6)
+(2.1)
+2X (0.95)
+(R0.05) TYP
+4214838/F   08/2024
+SOT-23 - 1.12 mm max height
+DBZ0003A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+5. Publication IPC-7351 may have alternate designs. 
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+SCALE:15X
+PKG
+1
+3
+2
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+METAL
+SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.1)
+2X(0.95)
+3X (1.3)
+3X (0.6)
+(R0.05) TYP
+SOT-23 - 1.12 mm max height
+DBZ0003A
+SMALL OUTLINE TRANSISTOR
+4214838/F   08/2024
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations. 
+8. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 THICK STENCIL
+SCALE:15X
+SYMM
+PKG
+1
+3
+2
+
+
+
+www.ti.com
+PACKAGE OUTLINE
+C
+.228-.244  TYP
+[5.80-6.19]
+.069 MAX
+[1.75]     
+6X .050
+[1.27]
+8X .012-.020
+     [0.31-0.51]
+2X
+.150
+[3.81]
+.005-.010  TYP
+[0.13-0.25]
+0 - 8
+.004-.010
+[0.11-0.25]
+.010
+[0.25]
+.016-.050
+[0.41-1.27]
+4X (0 -15 )
+A
+.189-.197
+[4.81-5.00]
+NOTE 3
+B
+.150-.157
+[3.81-3.98]
+NOTE 4
+4X (0 -15 )
+(.041)
+[1.04]
+SOIC - 1.75 mm max height
+D0008A
+SMALL OUTLINE INTEGRATED CIRCUIT
+4214825/C   02/2019
+NOTES: 
+ 
+1. Linear dimensions are in inches [millimeters]. Dimensions in parenthesis are for reference only. Controlling dimensions are in inches.
+    Dimensioning and tolerancing per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed .006 [0.15] per side. 
+4. This dimension does not include interlead flash.
+5. Reference JEDEC registration MS-012, variation AA.
+ 
+1
+8
+.010 [0.25]
+C A B
+5
+4
+PIN 1 ID AREA
+SEATING PLANE
+.004 [0.1] C
+ SEE DETAIL A
+DETAIL A
+TYPICAL
+SCALE  2.800
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+.0028 MAX
+[0.07]
+ALL AROUND
+.0028 MIN
+[0.07]
+ALL AROUND
+ 
+(.213)
+[5.4]
+6X (.050 )
+[1.27]
+8X (.061 )
+[1.55]
+8X (.024)
+[0.6]
+(R.002 ) TYP
+[0.05]
+SOIC - 1.75 mm max height
+D0008A
+SMALL OUTLINE INTEGRATED CIRCUIT
+4214825/C   02/2019
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+METAL
+SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+SOLDER MASK DETAILS
+EXPOSED
+METAL
+OPENING
+SOLDER MASK
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED
+METAL
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:8X
+SYMM
+1
+4
+5
+8
+SEE
+DETAILS
+SYMM
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+8X (.061 )
+[1.55]
+8X (.024)
+[0.6]
+6X (.050 )
+[1.27]
+(.213)
+[5.4]
+(R.002 ) TYP
+[0.05]
+SOIC - 1.75 mm max height
+D0008A
+SMALL OUTLINE INTEGRATED CIRCUIT
+4214825/C   02/2019
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON .005 INCH [0.125 MM] THICK STENCIL
+SCALE:8X
+SYMM
+SYMM
+1
+4
+5
+8
+
+
+
+www.ti.com
+PACKAGE OUTLINE
+3X 2.67
+2.03
+5.21
+4.44
+5.34
+4.32
+3X
+12.7 MIN
+2X 1.27
+0.13
+3X 0.55
+0.38
+4.19
+3.17
+3.43 MIN
+3X 0.43
+0.35
+(2.54)
+NOTE 3
+2X 2.9
+2.4
+2X
+4 MAX
+SEATING
+PLANE
+6X
+0.076 MAX
+(0.51) TYP
+(1.5) TYP
+TO-92 -  5.34 mm max height
+LP0003A
+TO-92
+4215214/C   04/2025
+NOTES:
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Lead dimensions are not controlled within this area.
+4. Reference JEDEC TO-226, variation AA.
+5. Shipping method:
+    a. Straight lead option available in bulk pack only.
+    b. Formed lead option available in tape and reel or ammo pack.
+    c. Specific products can be offered in limited combinations of shipping medium and lead options.
+    d. Consult product folder for more information on available options.
+EJECTOR PIN
+OPTIONAL
+PLANE
+SEATING
+STRAIGHT LEAD OPTION
+3
+2
+1
+SCALE  1.200
+FORMED LEAD OPTION
+OTHER DIMENSIONS IDENTICAL
+TO STRAIGHT LEAD OPTION
+SCALE  1.200
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+TYP
+(1.07)
+(1.5)
+2X (1.5)
+2X (1.07)
+(1.27)
+(2.54)
+FULL R
+TYP
+(
+1.4)
+0.05 MAX
+ALL AROUND
+TYP
+(2.6)
+(5.2)
+(R0.05) TYP
+3X (
+0.9) HOLE
+2X (
+1.4)
+METAL
+3X (
+0.85) HOLE
+(R0.05) TYP
+4215214/C   04/2025
+TO-92 -  5.34 mm max height
+LP0003A
+TO-92
+LAND PATTERN EXAMPLE
+FORMED LEAD OPTION
+NON-SOLDER MASK DEFINED
+SCALE:15X
+SOLDER MASK
+OPENING
+METAL
+2X
+SOLDER MASK
+OPENING
+1
+2
+3
+LAND PATTERN EXAMPLE
+STRAIGHT LEAD OPTION
+NON-SOLDER MASK DEFINED
+SCALE:15X
+METAL
+TYP
+SOLDER MASK
+OPENING
+2X
+SOLDER MASK
+OPENING
+2X
+METAL
+1
+2
+3
+
+www.ti.com
+TAPE SPECIFICATIONS
+19.0
+17.5
+13.7
+11.7
+11.0
+8.5
+0.5 MIN
+3.7-4.3 TYP
+9.75
+8.50
+2.9
+2.4 TYP
+6.75
+5.95
+13.0
+12.4
+(2.5) TYP
+16.5
+15.5
+32
+23
+4215214/C   04/2025
+TO-92 -  5.34 mm max height
+LP0003A
+TO-92
+FOR FORMED LEAD OPTION PACKAGE
+
+
+www.ti.com
+PACKAGE OUTLINE
+C
+ TYP
+6.6
+6.2
+1.2 MAX
+6X 0.65
+8X 0.30
+0.19
+2X
+1.95
+0.15
+0.05
+(0.15) TYP
+0 - 8
+0.25
+GAGE PLANE
+0.75
+0.50
+A
+NOTE 3
+3.1
+2.9
+B
+NOTE 4
+4.5
+4.3
+4221848/A   02/2015
+TSSOP - 1.2 mm max height
+PW0008A
+SMALL OUTLINE PACKAGE
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-153, variation AA.
+ 
+1
+8
+0.1
+C A
+B
+5
+4
+PIN 1 ID
+AREA
+SEATING PLANE
+0.1 C
+ SEE DETAIL A
+DETAIL A
+TYPICAL
+SCALE  2.800
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+(5.8)
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+8X (1.5)
+8X (0.45)
+6X (0.65)
+(R
+)
+TYP
+0.05
+4221848/A   02/2015
+TSSOP - 1.2 mm max height
+PW0008A
+SMALL OUTLINE PACKAGE
+SYMM
+SYMM
+LAND PATTERN EXAMPLE
+SCALE:10X
+1
+4
+5
+8
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+METAL
+SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+SOLDER MASK DETAILS
+NOT TO SCALE
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(5.8)
+6X (0.65)
+8X (0.45)
+8X (1.5)
+(R
+) TYP
+0.05
+4221848/A   02/2015
+TSSOP - 1.2 mm max height
+PW0008A
+SMALL OUTLINE PACKAGE
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SYMM
+SYMM
+1
+4
+5
+8
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:10X
+
+www.ti.com
+PACKAGE OUTLINE
+C
+0.22
+0.08 TYP
+0.25
+3.0
+2.6
+2X 0.95
+1.9
+1.45
+0.90
+0.15
+0.00 TYP
+5X 0.5
+0.3
+0.6
+0.3 TYP
+8
+0  TYP
+1.9
+(0.1)
+(0.15)
+4X 0 -15
+4X 4 -15
+A
+3.05
+2.75
+B
+1.75
+1.45
+(1.1)
+SOT-23 - 1.45 mm max height
+DBV0005A
+SMALL OUTLINE TRANSISTOR
+4214839/K   08/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Refernce JEDEC MO-178.
+4. Body dimensions do not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.25 mm per side.
+5. Support pin may differ or may not be present.
+0.2
+C A B
+1
+3
+4
+5
+2
+INDEX AREA
+PIN 1
+ NOTE 5
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  4.000
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ARROUND
+0.07 MIN
+ARROUND
+5X (1.1)
+5X (0.6)
+(2.6)
+(1.9)
+2X (0.95)
+(R0.05) TYP
+4214839/K   08/2024
+SOT-23 - 1.45 mm max height
+DBV0005A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:15X
+PKG
+1
+3
+4
+5
+2
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED METAL
+METAL
+SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+EXPOSED METAL
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.6)
+(1.9)
+2X(0.95)
+5X (1.1)
+5X (0.6)
+(R0.05) TYP
+SOT-23 - 1.45 mm max height
+DBV0005A
+SMALL OUTLINE TRANSISTOR
+4214839/K   08/2024
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+     design recommendations. 
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:15X
+SYMM
+PKG
+1
+3
+4
+5
+2
+
+www.ti.com
+PACKAGE OUTLINE
+C
+0.22
+0.08 TYP
+0.15
+2.4
+1.8
+4X 0.65
+1.1
+0.8
+0.1
+0.0 TYP
+6X 0.30
+0.15
+NOTE 5
+0.46
+0.26 TYP
+8
+0  TYP
+1.3
+4X 0 -12
+4X 4 -15
+A
+2.15
+1.85
+B
+1.4
+1.1
+SOT - 1.1 max height
+DCK0006A
+SMALL OUTLINE TRANSISTOR
+4214835/D   11/2024
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Body dimensions do not include mold flash or protrusion. Mold flash and protrusion shall not exceed 0.15 per side.
+4. Falls within JEDEC MO-203 variation AB.
+1
+3
+4
+6
+2
+INDEX AREA
+PIN 1
+NOTE 5
+0.1
+C A B
+GAGE PLANE
+SEATING PLANE
+0.1 C
+SCALE  5.600
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ARROUND
+0.07 MIN
+ARROUND
+6X (0.9)
+6X (0.4)
+(2.2)
+4X (0.65)
+(R0.05) TYP
+4214835/D   11/2024
+SOT - 1.1 max height
+DCK0006A
+SMALL OUTLINE TRANSISTOR
+NOTES: (continued)
+ 
+5. Publication IPC-7351 may have alternate designs. 
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+SYMM
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE:18X
+PKG
+1
+3
+4
+6
+2
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+DEFINED
+EXPOSED METAL
+METAL
+SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK DETAILS
+EXPOSED METAL
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(2.2)
+4X(0.65)
+6X (0.9)
+6X (0.4)
+(R0.05) TYP
+SOT - 1.1 max height
+DCK0006A
+SMALL OUTLINE TRANSISTOR
+4214835/D   11/2024
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+     design recommendations. 
+8. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 THICK STENCIL
+SCALE:18X
+SYMM
+PKG
+1
+3
+4
+6
+2
+
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

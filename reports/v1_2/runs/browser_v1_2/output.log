@@ -1,0 +1,72 @@
+Already up to date
+Done in 228ms using pnpm v11.19.0
+
+Running 2 tests using 1 worker
+
+(node:79971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:79971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [desktop] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory (220ms)
+(node:79980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:79980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [mobile-chromium] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory (126ms)
+
+
+  1) [desktop] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5173/
+    Call log:
+    [2m  - navigating to "http://127.0.0.1:5173/", waiting until "load"[22m
+
+
+      10 | test('pair, explicit arm, bounded motion, stop, camera loss and persistent memory',async({page},testInfo)=>{
+      11 |  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message))
+    > 12 |  await page.goto('/');await page.getByLabel('服务地址').fill('http://127.0.0.1:18765');await page.getByLabel('一次性配对码').fill(readFileSync(state+'/pairing.txt','utf8'));await page.getByRole('button',{name:'配对并连接'}).click();await expect(page.getByText('● 在线',{exact:true})).toBeVisible()
+         |             ^
+      13 |  const claim=()=>page.getByRole('button',{name:'取得控制权 / 续租'}).click()
+      14 |  await claim();await page.getByRole('checkbox',{name:'明确解锁此模拟设备'}).check();await page.getByRole('button',{name:'解锁模拟运动'}).click();await expect(page.getByText('模拟使能',{exact:true})).toBeVisible()
+      15 |  await page.getByRole('button',{name:'前进 100 mm',exact:true}).click();await expect(page.locator('tbody tr').filter({hasText:'MOVE_DISTANCE'})).toContainText('COMPLETED',{timeout:6000})
+        at /Users/dean/Documents/MORI/apps/console/tests/e2e/console.spec.ts:12:13
+
+    Error Context: test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-desktop/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-chromium] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5173/
+    Call log:
+    [2m  - navigating to "http://127.0.0.1:5173/", waiting until "load"[22m
+
+
+      10 | test('pair, explicit arm, bounded motion, stop, camera loss and persistent memory',async({page},testInfo)=>{
+      11 |  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message))
+    > 12 |  await page.goto('/');await page.getByLabel('服务地址').fill('http://127.0.0.1:18765');await page.getByLabel('一次性配对码').fill(readFileSync(state+'/pairing.txt','utf8'));await page.getByRole('button',{name:'配对并连接'}).click();await expect(page.getByText('● 在线',{exact:true})).toBeVisible()
+         |             ^
+      13 |  const claim=()=>page.getByRole('button',{name:'取得控制权 / 续租'}).click()
+      14 |  await claim();await page.getByRole('checkbox',{name:'明确解锁此模拟设备'}).check();await page.getByRole('button',{name:'解锁模拟运动'}).click();await expect(page.getByText('模拟使能',{exact:true})).toBeVisible()
+      15 |  await page.getByRole('button',{name:'前进 100 mm',exact:true}).click();await expect(page.locator('tbody tr').filter({hasText:'MOVE_DISTANCE'})).toContainText('COMPLETED',{timeout:6000})
+        at /Users/dean/Documents/MORI/apps/console/tests/e2e/console.spec.ts:12:13
+
+    Error Context: test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-mobile-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-mobile-chromium/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/console-pair-explicit-arm--a4350--loss-and-persistent-memory-mobile-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 
+    [mobile-chromium] › apps/console/tests/e2e/console.spec.ts:10:5 › pair, explicit arm, bounded motion, stop, camera loss and persistent memory 

@@ -1,0 +1,1308 @@
+{
+  "status": "BLOCKED",
+  "scope": "Four CAM wires together at finite shared back20 and hold/reshape samples",
+  "script_sha256": "d1cd0304a65dfbd44818d409c879975546168f74c9b4930fb0f2e06f077950e1",
+  "helper_sha256": "2ffab7eab64b7991963fa511776fadc3f4da3f7b7e082dd053b0e421fc335f3e",
+  "source_files": {
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_back20_wire_families/screen.json": "0c0e61d83a43059539fe4693c354c0bb7b7da0e816ed2b0ab5650f1c91dbd016",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_extended_back/screen.json": "c0a6545a4dff138d6b28b4b2f0119629e6c83963363faac5be3fb18fc4a74182",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/screen.json": "ccf3e2bed22075ec3417d32f816aa4c7d02b924336433d39ff19eea33acfd7cc",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/verification.json": "3f0a11b2ada8e320d73364b6d216cbf24c501ff0417ffd35dc9da632a76667cc",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/curves.npz": "971bf572eb8d55d5f03cbf3d7d537b0d2b814b911abfeb809715640b7db09bd0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/CAM_H02_joint_lift/wire_solids.json": "b5c65874b396c7fb269b87fd4e61a7076e4a41c4314f79dc10a8f5f1ed2458c0",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_back20_piecewise/screen.json": "aa8c0658b456f69c8256506ce25bd117b71d755546eb9ccb34ae0689efdffb1e",
+    "mechanical/studies/prearrival_finish/harness_A8/cam_wire_forming/lifted_end2/contact_refined_forming/root_seating/body_supply/complete_head/bridge_wire_stock/install_order/shell16_full_rigid_path/screen.json": "11034d12bca6941fe7b3c8ae65ef300195c88ea7530cd395f10a8351b8b8072b"
+  },
+  "protected_sources": {
+    "mechanical/mori_v1_2.blend": "bcaa5736a8cdf43441a6a83a6cb69606546cc01d2c0d28d98f4c09383e07368f",
+    "config/geometry.json": "0caa6c209c2e699a89f3d5111ffaf1b54b9b89bb361f885d70b50cbfbc26aeb4",
+    "contracts/mechanical_interfaces.json": "39d5c3bc786daed52251c9c1669175e7fda374be4b2cec78c56b7019a2457268",
+    "contracts/components.json": "376246dbf550094b26406854b8246fbe68e3d8ffb6a0ca6e21ffbe81ba31849d"
+  },
+  "records": [
+    {
+      "index": 0,
+      "stage": "initial",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "family": "LRL-1",
+          "elevation_fraction": 1.0
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "family": "LSL",
+          "elevation_fraction": 0.0
+        },
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "family": "LSR",
+          "elevation_fraction": 1.0
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 0.43891066468349244
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2193970564646506
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219287387244288
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 1,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.9375,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 0.8786592896108602
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2194553299058124
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.21934566068545
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 2,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.875,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1509767283080004
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219259259806261
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219149590585898
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 3,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.8125,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1512204189790227
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219502950477283
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.21939328125692
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 4,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.75,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1511812421547394
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219463773653
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219354104432638
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 5,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.6875,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1511621275495674
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219444659047828
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219334989827466
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 6,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.625,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1510933413934532
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219375872891714
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219266203671351
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 7,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5625,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1511235459981075
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2194060774963678
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219296408276005
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 8,
+      "stage": "hold_and_reshape",
+      "bridge_y_mm": -0.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1510200109318516
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2193025424301123
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.2191928732097495
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192674612176988
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191577919973353
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650760647294224
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 9,
+      "stage": "shared_back",
+      "bridge_y_mm": -0.25,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1509620542321868
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2192565285852495
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219174565555929
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.219225207345658
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191432443163372
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650734599032262
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 10,
+      "stage": "shared_back",
+      "bridge_y_mm": -0.5,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1510577345525326
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2190356050336533
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219159052887821
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2191563408362287
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.219279788690395
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7648934004053421
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 11,
+      "stage": "shared_back",
+      "bridge_y_mm": -0.75,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.1479074461380012
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219228773618704
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219146611953658
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.219338301517366
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2192561398523183
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7651246150838765
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 12,
+      "stage": "shared_back",
+      "bridge_y_mm": -1.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 1.0721965756616167
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.21915801954335
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219173437922612
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2191813679146122
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.219196786293874
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.765052897801035
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 13,
+      "stage": "shared_back",
+      "bridge_y_mm": -1.25,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 0.9954851365680848
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.21902886133175
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219182643816622
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2190521377852739
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.219205920270146
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7649346845540754
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 14,
+      "stage": "shared_back",
+      "bridge_y_mm": -1.5,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 0.9177834934707979
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2193820509139432
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219436986797047
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2191073806347326
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2191623165178362
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650244037385088
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 15,
+      "stage": "shared_back",
+      "bridge_y_mm": -1.75,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 0.8380454956368497
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.219287273010488
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219298512376902
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2192294468976075
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.2192406862640213
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7650588748849142
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    },
+    {
+      "index": 16,
+      "stage": "shared_back",
+      "bridge_y_mm": -2.0,
+      "bridge_z_mm": 18.0,
+      "parameters": {
+        "1": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 0.5,
+          "family": "LSR"
+        },
+        "2": {
+          "entry_azimuth_deg": 105.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LSR"
+        },
+        "3": {
+          "entry_azimuth_deg": 15.0,
+          "planar_radius_mm": 7.0,
+          "elevation_fraction": 1.0,
+          "family": "LRL-1"
+        },
+        "4": {
+          "entry_azimuth_deg": 0.0,
+          "planar_radius_mm": 10.0,
+          "elevation_fraction": 0.0,
+          "family": "LSL"
+        }
+      },
+      "pairs": [
+        {
+          "a": 1,
+          "b": 2,
+          "surface_gap_lower_bound_mm": 0.7571443746815031
+        },
+        {
+          "a": 1,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 3.2192600555691517
+        },
+        {
+          "a": 1,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 5.219406777786803
+        },
+        {
+          "a": 2,
+          "b": 3,
+          "surface_gap_lower_bound_mm": 1.2190237247958635
+        },
+        {
+          "a": 2,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 3.219170447013514
+        },
+        {
+          "a": 3,
+          "b": 4,
+          "surface_gap_lower_bound_mm": 0.7649140671254072
+        }
+      ],
+      "analytic_lengths_mm": {
+        "1": 287.29072199056225,
+        "2": 327.8590533262688,
+        "3": 285.09331007720493,
+        "4": 339.6145291968563
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "back_mm": 0,
+      "order": "simultaneous",
+      "status": "PASS",
+      "passing_positions": 8,
+      "failure": null
+    },
+    {
+      "back_mm": 2,
+      "order": "simultaneous",
+      "status": "BLOCKED",
+      "passing_positions": 0,
+      "failure": {
+        "kind": "CAM_mutual_coarse_clearance",
+        "a": 1,
+        "b": 2,
+        "surface_gap_lower_bound_mm": 0.0296217129162108
+      }
+    },
+    {
+      "back_mm": 2,
+      "order": [
+        2,
+        3
+      ],
+      "status": "BLOCKED",
+      "passing_positions": 0,
+      "failure": {
+        "kind": "CAM_mutual_coarse_clearance",
+        "a": 1,
+        "b": 2,
+        "surface_gap_lower_bound_mm": 0.0296217129162108
+      }
+    },
+    {
+      "back_mm": 2,
+      "order": [
+        3,
+        2
+      ],
+      "status": "BLOCKED",
+      "passing_positions": 7,
+      "failure": {
+        "kind": "CAM_mutual_coarse_clearance",
+        "a": 3,
+        "b": 4,
+        "surface_gap_lower_bound_mm": 0.17322548383734823
+      }
+    }
+  ],
+  "failure": {
+    "kind": "CAM_mutual_coarse_clearance",
+    "a": 3,
+    "b": 4,
+    "surface_gap_lower_bound_mm": 0.17322548383734823
+  },
+  "complete_back20": false,
+  "final_parameters": {
+    "1": {
+      "entry_azimuth_deg": 105.0,
+      "planar_radius_mm": 7.0,
+      "elevation_fraction": 0.5,
+      "family": "LSR"
+    },
+    "2": {
+      "entry_azimuth_deg": 105.0,
+      "planar_radius_mm": 7.0,
+      "elevation_fraction": 1.0,
+      "family": "LSR"
+    },
+    "3": {
+      "entry_azimuth_deg": 15.0,
+      "planar_radius_mm": 7.0,
+      "elevation_fraction": 1.0,
+      "family": "LRL-1"
+    },
+    "4": {
+      "entry_azimuth_deg": 0.0,
+      "planar_radius_mm": 10.0,
+      "elevation_fraction": 0.0,
+      "family": "LSL"
+    }
+  },
+  "checked_positions": 17,
+  "curves_sha256": "5b40f25309d683231a326f6f9734c7d66246233a2f46ac1a220fe52cbc6b0d05",
+  "body_wire_count": 14,
+  "full_nominal_lengths_preserved": true,
+  "exact_initial_boundary_match": true,
+  "continuous_motion": "NOT_TESTED",
+  "vertical_continuation": "NOT_TESTED",
+  "complete_attached_assembly": "BLOCKED",
+  "main_applied": false,
+  "manufacturing_release": false
+}

@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-06T05:59:26.535915+00:00",
+  "commands": [
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/mori_v1_2.blend",
+        "-t",
+        "2",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "mechanical/studies/prearrival_finish/head_harness_M1_49/review_cam_fpc_correction.py"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "exit_code": 0,
+      "log": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_fpc_correction.log",
+      "log_sha256": "257c1de5974298703fefe464eb8e0b9c1281e08def0b93f044685bdb2c82394b",
+      "script_sha256": "b1dc2fbba2e1e677b90b63ad3d796cb386c39bfd1e1f1fb7a311be88e2d99198",
+      "result": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/review.json",
+      "result_sha256": "1f057d49d34bcedff43807cacf25235cd9032358f155fc78f77f803fd3babe2a",
+      "check_status": "PASS"
+    },
+    {
+      "argv": [
+        "/Applications/Blender.app/Contents/MacOS/Blender",
+        "--background",
+        "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/MORI_M1_49_CAM_corrected_entries.blend",
+        "-t",
+        "2",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "mechanical/studies/prearrival_finish/head_harness_M1_49/render_cam_fpc_entries.py"
+      ],
+      "cwd": "/Users/dean/Documents/MORI",
+      "exit_code": 0,
+      "log": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_fpc_entry_views.log",
+      "log_sha256": "9ef9ccf1a5aadefc9a4086b52d6b43c95f9c1f63290d5f43c8f483887692d080",
+      "script_sha256": "874906707abc20ec194f75459063486e842e4bba0275f68a2a65a7fa981d62d6",
+      "result": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/closeup_review.json",
+      "result_sha256": "569a25015fe979b959e17c4b0d2f00010c271bc4886f15110025d0c5e036ef85",
+      "check_status": "PASS"
+    }
+  ],
+  "failed_executions": [
+    {
+      "status": "FAIL",
+      "exit_code": 1,
+      "cause": "render.camera requires existing generated collections to be loaded into common.COLS.",
+      "script_sha256": "9c667f0782379e26e824e1e515cc0121fc06b19a94b30546d503b8ec31b72161",
+      "log": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/collections.log",
+      "log_sha256": "5c4f7ebf6f4dd6909f21db0732dc7f98d953e1be43752e48c45cf4c9c6c6382b",
+      "main_changed": false,
+      "script_snapshot": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/render_cam_fpc_entries.collections.py"
+    },
+    {
+      "status": "FAIL",
+      "exit_code": 1,
+      "cause": "Mixing signed and unsigned face index arrays promoted the aggregate indices to float64; Blender requires integers.",
+      "script_sha256": "a3bca22b4bcdbf74b68fcc55e1f4beda9be999a69d40ad480675597144343821",
+      "log": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/index_dtype.log",
+      "log_sha256": "ded32040842a1bb089eeb796e596dbc1731974a24977a492a98b76df4defd6b1",
+      "main_changed": false,
+      "script_snapshot": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/review_cam_fpc_correction.index_dtype.py"
+    },
+    {
+      "status": "FAIL",
+      "exit_code": 1,
+      "cause": "Incorrect source object prefix; use common.PREFIX instead of guessed object-name matching.",
+      "script_sha256": "6b623aeab855c80436d9a1e7704080f36334ad9ed0c68a6e78db0489ab1274f0",
+      "log": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/object_name.log",
+      "log_sha256": "726b599531de4be0e03f8f7bbf43865f1bd0b7462610de95c2e92f85e5283748",
+      "main_changed": false,
+      "script_snapshot": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/render_cam_fpc_entries.object_name.py"
+    },
+    {
+      "exit_code": 1,
+      "cause": "Component source indices were incorrectly applied to boolean-processed Solid vertices; source object indices are required.",
+      "script_snapshot": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/review_cam_fpc_correction.range_error.py",
+      "script_sha256": "c2ff9f0b0a6ab6fed69e3e3cef6a79fe80479b46a97b08e91e5180e089a3e616",
+      "log": "mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/static_flex/connector_faces/correction/failures/range_error.log",
+      "log_sha256": "338899e9635f252269240f8d46268add2ad3e3b53475c83b23fcc677e46a7f03",
+      "main_changed": false
+    }
+  ],
+  "scope": "Two successful executions; four failed intermediate script executions retained, not geometric failures",
+  "script_sha256": "3357682c97c2aaeb854fbf32cb5bd6fdbbaf44b3042231f98278ce0d13d23a70"
+}

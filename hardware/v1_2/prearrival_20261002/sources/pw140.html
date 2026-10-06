@@ -1,0 +1,303 @@
+
+<!DOCTYPE html><html xmlns:wb="http://open.weibo.com/wb" lang='en' class='m-article m-article-view'>
+  <head profile="http://www.w3.org/2005/10/profile"> 
+    <meta charset="utf-8"> 
+    <meta name="renderer" content="webkit"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="Cache-Control" content="no-transform"> 
+    <meta name="Generator" content="pwchip8.3 www.zsite.net'"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel='preload' as='style' href='/en/source-css-b2c446f60a43b2a2e30b3a3941d9cc4d-1790667851.html'/>
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.pwchip.com/en/article/511.mhtml"> 
+    <link rel="canonical" href="https://www.pwchip.com//en/article/511.html" > 
+    <title>3S Li-ion battery charging and discharging board with 5V2A input and output through USB-C port-Module 140 - PCB design scheme - Wuxi PWChip Semi Technology CO., LTD</title> 
+    <meta name="keywords" content="Wuxi PWChip Semi Technology CO., LTD，Wuxi PWChip，PWChip Semi，Wuxi PWChip Semi Technology"> 
+    <meta name="description" content="1.1 Name: 3S Li-ion battery charging and discharging board with 5V2A input and output throughUSB-C port1.2 Application: Convenient charging devices, etc.1.3 Battery pack: 11.1V Li-ion battery pack, 3S multiple parallel configuration, fully charged at 12.6V1.4 Input (USB1): 5V2A (charging LED on, fully charged LED on, flashing LED without battery)1.5 Output (USB1): 5V2.4A (discharging LED on)"> 
+    <link rel='stylesheet' href='/theme/default/default/chanzhi.all.css?v=8.3' type='text/css' media='screen'/> <script>
+      var config={"webRoot":"\/","cookieLife":30,"cookiePath":"\/","requestType":"PATH_INFO","requestFix":"-","moduleVar":"m","methodVar":"f","viewVar":"t","defaultView":"html","themeRoot":"\/theme\/","currentModule":"article","currentMethod":"view","clientLang":"en","requiredFields":"","save":"Save","router":"\/index.php","runMode":"front","langCode":"en"}
+      if(typeof(v) != "object") v = {};v.theme = {"template":"default","theme":"qd0153","device":"desktop"};
+    </script>
+    <script src='/js/chanzhi.all.js?v=8.3' type='text/javascript'></script> 
+    <link rel='stylesheet' href='/data/css/default_qd0153_en.css?v=' type='text/css' media='screen' id='themeStyle'/> 
+    <link rel='icon' href='/file.php?f=202011/f_cd3d9d767efe14c86e47fe87cd76c362.ico&t=ico&o=&s=&v=1734154691' type='image/x-icon' />
+    <link rel='shortcut icon' href='/file.php?f=202011/f_cd3d9d767efe14c86e47fe87cd76c362.ico&t=ico&o=&s=&v=1734154691' type='image/x-icon' /> 
+    <link href='/en/rss.xml' title='Wuxi PWChip Semi Technology CO., LTD' type='application/rss+xml' rel='alternate' /> <!--[if lt IE 9]>
+      <script src='/js/chanzhi.all.ie8.js?v=8.3' type='text/javascript'></script>
+      <![endif]--> <!--[if lt IE 10]>
+      
+      
+      <script src='/js/chanzhi.all.ie9.js?v=8.3' type='text/javascript'></script>
+      <![endif]--> 
+    <link rel='stylesheet' href='/en/source-css-b2c446f60a43b2a2e30b3a3941d9cc4d-1790667851.html' type='text/css' media='screen' />
+  </head>
+  <body> 
+    <div class='page-container'> 
+      <div class='blocks' data-region='all-top'>
+        <div data-ve='block' data-id="291"> 
+          <header id='header' class=' is-normal-width is-mc-nav'> 
+            <div id='headNav' class=''> 
+              <div class='row'> 
+                <nav id='siteNav'>
+                  <a href='/en/user-login.html' >Login</a>
+                  <a href='/en/user-register.html' >Register</a>
+                  <a href='/' >简</a>
+                  <a href='/tw/' >繁</a>
+                  <a href='/en/' >En</a>
+                </nav> 
+              </div> 
+            </div> 
+            <div id='headTitle' class='with-navbar '> 
+              <div class='row'> 
+                <div id='siteTitle'> 
+                  <div id='siteLogo' data-ve='logo'>
+                    <a href='/en/index.html' >
+                    <img src='/file.php?f=202011/f_22ea430d5ef3cde30299f56b98a88793.png&t=png&o=&s=&v=1734154691' class='logo' alt='' title='' /></a>
+                  </div> 
+                </div> 
+                <div id='navbarWrapper'>
+                  <nav id='navbar' class='navbar' data-type='desktop_top'> 
+                    <div class='navbar-header'> 
+                      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbarCollapse'> 
+                        <span class='icon-bar'></span> 
+                        <span class='icon-bar'></span> 
+                        <span class='icon-bar'></span> 
+                      </button> 
+                    </div> 
+                    <div class='collapse navbar-collapse' id='navbarCollapse'> 
+                      <ul class='nav navbar-nav'> 
+                        <li class='nav-system-home'>
+                        <a href='/en/index.html' target='_self'>Home</a></li> 
+                        <li class="dropdown-hover nav-product-0"> 
+                        <a href='/en/product/' class="dropdown-toggle" data-toggle="dropdown">Products 
+                        <b class='caret'></b></a> <ul class='dropdown-menu' role='menu'> 
+                          <li class='nav-product-54'>
+                          <a href='/en/product/c54.html' target='_self'>MOSFET</a></li> 
+                          <li class='nav-product-58'>
+                          <a href='/en/product/c58.html' target='_self'>OVP/OCP Protection</a></li> 
+                          <li class='nav-product-59'>
+                          <a href='/en/product/c59.html' target='_self'>Li-ion Charger</a></li> 
+                          <li class='nav-product-60'>
+                          <a href='/en/product/c60.html' target='_self'>Li-ion Protector</a></li> 
+                          <li class='nav-product-61'>
+                          <a href='/en/product/c61.html' target='_self'>LDO</a></li> 
+                          <li class='nav-product-62'>
+                          <a href='/en/product/c62.html' target='_self'>Voltage Detector</a></li> 
+                          <li class='nav-product-63'>
+                          <a href='/en/product/c63.html' target='_self'>DC-DC Boost</a></li> 
+                          <li class='nav-product-64'>
+                          <a href='/en/product/c64.html' target='_self'>DC-DC Buck</a></li> 
+                          <li class='nav-product-65'>
+                          <a href='/en/product/c65.html' target='_self'>DC-DC buck-Boost</a></li> 
+                          <li class='nav-product-97'>
+                          <a href='/en/product/c97.html' target='_self'>USB Fast charging</a></li> <!-- end nav2 --> 
+                        </ul> </li> 
+                        <li class='nav-article-95'>
+                        <a href='/en/article/c95.html' target='_self'>PCB design scheme</a></li> 
+                        <li class='nav-page-46'>
+                        <a href='/en/page/Supp.html' target='_self'>Support</a></li> 
+                        <li class='nav-page-47'>
+                        <a href='/en/page/us.html' target='_self'>About us</a></li> <!-- end nav1 --> 
+                      </ul> 
+                    </div>
+                  </nav>
+                </div> 
+              </div> 
+            </div>
+          </header>
+        </div>
+      </div> 
+      <div class='page-wrapper'> 
+        <div class='page-content'> 
+          <div class='blocks row' data-region='all-banner'>
+          </div>
+          <ul class="breadcrumb">
+            <li>
+            <span class='breadcrumb-title'>Current Page : </span>
+            <a href='/en/' >Home</a></li>
+            <li>
+            <a href='/en/article/c95.html' >PCB design scheme</a></li>
+            <li>3S Li-ion battery charging and discharging board with 5V2A input and output through USB-C port-Module 140</li>
+          </ul>
+          <div class='row blocks' data-region='article_view-topBanner'>
+          </div>
+          <div class='row' id='columns' data-page='article_view'> 
+            <div class='col-md-12'> 
+              <div class='row blocks' data-region='article_view-top'>
+              </div> 
+              <div class='article' id='article' data-id='511'> 
+                <header> 
+                  <h1>
+                    3S Li-ion battery charging and discharging board with 5V2A input and output through USB-C port-Module 140
+                  </h1> 
+                  <dl class='dl-inline'> 
+                    <dd data-toggle='tooltip' data-placement='top' data-original-title='
+                      <strong>Added on </strong> 2023-05-15 16:32:00 &nbsp;&nbsp;'>
+                      <i class='icon-time icon-large'></i> 2023-05-15 16:32:00
+                    </dd> 
+                    <dd data-toggle='tooltip' data-placement='top' data-original-title='
+                      <strong>Author </strong> UA &nbsp;&nbsp;'>
+                      <i class='icon-user icon-large'></i> UA
+                    </dd> 
+                    <span class='label label-success'>Original</span> <dd class='pull-right'> 
+                      <span class='label label-warning' data-toggle='tooltip' data-placement='top' data-original-title='
+                      <strong>Viewed </strong> 1511'>
+                      <i class='icon-eye-open'></i> 1511</span> 
+                    </dd> 
+                  </dl> 
+                  <section class='abstract'>
+                    <strong>Summary</strong> : 1.1 Name: 3S Li-ion battery charging and discharging board with 5V2A input and output throughUSB-C port1.2 Application: Convenient charging devices, etc.1.3 Battery pack: 11.1V Li-ion battery pack, 3S multiple parallel configuration, fully charged at 12.6V1.4 Input (USB1): 5V2A (charging LED on, fully charged LED on, flashing LED without battery)1.5 Output (USB1): 5V2.4A (discharging LED on)
+                  </section> 
+                </header> 
+                <section class='article-content'> 
+                  <img src="/file.php?f=202306/f_bc0eb7b7ba82f40cfeb819ecdb1a72b7&amp;t=png&amp;o=&amp;s=&amp;v=1686707483" alt="" />
+                  <img src="/file.php?f=202306/f_45037c3847ae9cf4a58dc15ae19dff9b&amp;t=png&amp;o=&amp;s=&amp;v=1686707483" alt="" />
+                  <img src="/file.php?f=202306/f_c7fd53c3a595e0fcd75636e11f117af2&amp;t=png&amp;o=&amp;s=&amp;v=1686707483" alt="" /> 
+                </section> 
+                <section> 
+                  <ul class='files-list clearfix'>
+                    <li class='file file-zip'>
+                    <a href='/en/file-download-4425-left.html' target='_blank' title='140号密码是PWCHIP ，WWW.PWCHIP.COM.zip'>140号密码是PWCHIP ，WWW.PWCHIP.COM.zip</a>
+                    <span class='file-download'>
+                    <i class='icon-download'></i> 1</span>
+                    <span class='file-md5'>
+                    <a href='javascript:void(0)' class='label' data-toggle='popover' data-placement='bottom' data-content='6026ea64f9da9bd34984c8b8b816901a'>下载</a></span></li>
+                  </ul> 
+                </section> 
+                <footer> 
+                  <div class='article-moreinfo clearfix'> 
+                    <p class='text-right pull-right'>
+                      Last edited by UA on 2023-06-19 09:31:12
+                    </p> 
+                  </div> 
+                  <ul class='pager pager-justify'> 
+                    <li class='previous' title='PD and QC Fast Charger 2A Charging Chip Solution for Four Lithium Iron Phosphate Batteries PW4000-Module 139'>
+                    <a href='/en/article/510.html' >
+                    <i class="icon-arrow-left"></i> 
+                    <span>PD and QC Fast Charger 2A Charging Chip Solution for Four Lithium Iron Phosphate Batteries PW4000-Module 139</span></a></li> 
+                    <li class='next' title='Three-cell lithium battery protection board with 10A overcurrent protection and battery balancing circuit-Module 141'>
+                    <a href='/en/article/512.html' >
+                    <span>Three-cell lithium battery protection board with 10A overcurrent protection and battery balancing circuit-Module 141</span> 
+                    <i class="icon-arrow-right"></i></a></li> 
+                  </ul> 
+                </footer> 
+              </div> 
+              <div class='row blocks' data-region='article_view-bottom'>
+              </div> 
+              <div id='commentBox'> 
+                <link rel='stylesheet' href='/en/source-css-ffeba6115f2bd1670fee2bfec2bd27a4-1790667851.html' type='text/css' media='screen' /> <div class='panel'> 
+                  <div class='panel-heading'> 
+                    <strong> 
+                    <i class='icon-comment-alt'></i> Write a Comment</strong> 
+                  </div> 
+                  <div class='panel-body'> 
+                    <form method='post' class='form-horizontal' id='commentForm' action="/en/message-post-comment.html"> 
+                      <div class='form-group'> 
+                        <label for='from' class='col-sm-1 control-label'> 
+                          From 
+                        </label> 
+                        <div class='col-sm-5 required'> 
+                          <input type='text' name='from' id='from' value='' class='form-control' /> 
+                        </div> 
+                      </div> 
+                      <div class='form-group'> 
+                        <label for='email' class='col-sm-1 control-label'> 
+                          Email 
+                        </label> 
+                        <div class='col-sm-5'> 
+                          <input type='text' name='email' id='email' value='' class='form-control' /> 
+                        </div> 
+                        <div class='col-sm-5'> 
+                          <div class='checkbox'> 
+                            <label> 
+                              <input type='checkbox' name='receiveEmail' value='1' checked /> 
+                              Email Notification 
+                            </label> 
+                          </div> 
+                        </div> 
+                      </div> 
+                      <div class='form-group'> 
+                        <label for='content' class='col-sm-1 control-label'> 
+                          Content 
+                        </label> 
+                        <div class='col-sm-11 required'> 
+                          <textarea name='content' id='content' class='form-control'></textarea> 
+                          <input type='hidden' name='objectType' id='objectType' value='article'  /> 
+                          <input type='hidden' name='objectID' id='objectID' value='511'  /> 
+                        </div> 
+                      </div> 
+                      <div class='form-group hiding' id='captchaBox'> 
+                      </div> 
+                      <div class='form-group'> 
+                        <div class='col-sm-11 col-sm-offset-1'> 
+                          <span> <input type='submit' id='submit' class='btn btn-primary' value='Save' data-popover-container="false" data-loading='Loading...' /> </span> 
+                          <span> 
+                          <small class="text-important">Comment will be posted after it is reviewed.</small></span> 
+                        </div> 
+                      </div> 
+                    </form> 
+                  </div> 
+                </div>
+                <script src='/en/source-js-ffeba6115f2bd1670fee2bfec2bd27a4-1790667851.html' type='text/javascript'></script> 
+              </div> 
+            </div> 
+          </div>
+          <div class='row blocks' data-region='article_view-bottomBanner'>
+          </div> 
+          <div class='blocks all-bottom row' data-region='all-bottom'> 
+          </div> 
+        </div>
+      </div> 
+      <footer id='footer' class='clearfix'> 
+        <div class='wrapper'> 
+          <div id='footNav'> 
+            <a href='/en/sitemap/' class='text-linki'>
+            <i class='icon-sitemap'></i> Sitemap</a> 
+          </div> 
+          <span id='copyright'> &copy; 2020- 2026 &nbsp;&nbsp; </span> 
+          <span id='icpInfo'> 
+          <a href='http://beian.miit.gov.cn' target='_blank'>苏ICP备20042765号</a> 
+          <a href='http://beian.miit.gov.cn' target='_blank'>
+          <img src='/theme/default/default/images/main/police.png'  />苏ICP备20042765号</a> </span> <div id='powerby'> 
+            <a href='http://www.zsite.net/?v=8.3' target='_blank' title='Open Source CMS - Zsite'>
+            <span class='icon-zsite'></span> 
+            <span class='name'>ZSite</span>8.3</a> 
+          </div> 
+          <span style='cursor:pointer;' id='execIcon'>
+          <i class='icon icon-dashboard'> </i></span>
+          <span id='execInfoBar' class='hide'>
+          <span class='text-left'>SQL query：
+          <b>68</b> <br> 
+            Memory footprint: 
+            <b>13.75MB</b><br> 
+              PHP E-time: 
+              <b>0.27</b> s</span></span> 
+            </div> 
+          </footer> 
+          <a href='#' id='go2top' class='icon-arrow-up' data-toggle='tooltip' title='Top'></a>
+        </div>
+        <div id='rightDocker' class='hidden-xs'> 
+          <button id='rightDockerBtn' class='btn' data-toggle="popover" data-placement="left" data-target='$next'>
+            <i class='icon-qrcode'></i>
+          </button> 
+          <div class='popover fade'> 
+            <div class='arrow'>
+            </div> 
+            <div class='popover-content docker-right'> 
+              <table class='table table-borderless'> 
+                <tr> 
+                  <td> 
+                    <div class='heading'> 
+                      <i class='icon-mobile-phone'></i> QR Code 
+                    </div> 
+                    <img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' width='200' height='200' data-src='/en/misc-qrcode.html' /> 
+                  </td> 
+                </tr> 
+              </table> 
+            </div> 
+          </div>
+        </div>
+        <div class='hide'>
+        </div> 
+        <script src='/en/source-js-b2c446f60a43b2a2e30b3a3941d9cc4d-1790667851.html' type='text/javascript'></script>
+      </body>
+    </html>

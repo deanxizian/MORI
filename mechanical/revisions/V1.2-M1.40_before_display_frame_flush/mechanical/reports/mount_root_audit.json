@@ -1,0 +1,88 @@
+{
+  "revision": "V1.2-M1.40",
+  "scope": "15robot prints;19board-seat root-footprints;34current insert sites; source/function review and finite current solid checks",
+  "printed_part_review": [
+    {
+      "id": "Pitch_Cradle",
+      "review": "CAM上两座根部曾偏出31mm后板；改44mm平直板和四个方座，两个进声孔保持原通路。侧壁、折弯角、转轴孔和头壳耳座保持。",
+      "result": "本轮修复"
+    },
+    {
+      "id": "Load_Frame",
+      "review": "4处运动基板、2处IMU、4处电源板、5处9V/6V模块座根部均完整落在托板实体内；保留短座以留元件间隙。",
+      "result": "根部实体探针通过"
+    },
+    {
+      "id": "Pitch_Yoke",
+      "review": "两轴舵机耳座、后连接臂、两侧轴承壁与本体连续；保留已确认穿栓螺母、承重轴承台肩和运动限位。",
+      "result": "源轮廓/连续实体/既有耳座检查通过"
+    },
+    {
+      "id": "Display_Frame",
+      "review": "屏幕三座和相机捕获槽为定位/锁紧接口；下横板已整条加深、前移，不能删掉必要承压面。",
+      "result": "既有承压、装板及联合姿态检查通过"
+    },
+    {
+      "id": "Yaw_Base",
+      "review": "两脚插接舌与横向M3连接、轴承肩和短限位块都有对应功能；不恢复外伸螺丝耳或工具槽。",
+      "result": "插接与承压专项通过"
+    },
+    {
+      "id": "Yaw_Reaction_Link",
+      "review": "圆形夹头与直杆是固定反力路径；端部夹缝和紧固孔保留，未见孤立凸块。",
+      "result": "源轮廓及单一实体检查通过"
+    },
+    {
+      "id": "Drive_Bridge",
+      "review": "电机/轮轴轴承座与连续箱壁结合，四个底盖螺钉列已并入箱壁。",
+      "result": "既有连接截面及底盖取出检查通过"
+    },
+    {
+      "id": "Motor_Retainer",
+      "review": "共用平底盖和必要半圆轴承鞍座保留；此前右侧1.5mm窄边已删除。",
+      "result": "局部差分及轴承支承检查通过"
+    },
+    {
+      "id": "Battery_Tray",
+      "review": "两侧壁、平底、绑带槽和侧向限位孔保留；没有重新加入内伸小托边。",
+      "result": "托盘承托及带电池抽出采样通过"
+    },
+    {
+      "id": "Body_Upper",
+      "review": "喇叭与后接口板座直接连壳；其径向材料与嵌件最终规格仍需定型，不据根部连续声称强度合格。",
+      "result": "根部源轮廓/既有拆卸路径检查；嵌件选型BLOCKED"
+    },
+    {
+      "id": "Body_Lower",
+      "review": "壳体内部拼接座和轴孔边缘保持，连续连接到曲面壳壁。",
+      "result": "源轮廓与单一实体检查通过"
+    },
+    {
+      "id": "Head_Front",
+      "review": "LCD黑圈、相机限位唇和拼缝座均有功能；拼缝嵌件规格仍需定型。",
+      "result": "源轮廓/相机捕获检查；嵌件选型BLOCKED"
+    },
+    {
+      "id": "Head_Rear",
+      "review": "拼缝固定座、壳孔与切口是固定和装入接口。未检出同类窄搭接柱端。",
+      "result": "源轮廓及壳体装入检查通过"
+    },
+    {
+      "id": "Wheel_Hub_L",
+      "review": "轴孔双D止转和轴端螺钉沉入为轮轴接口；轴承/输出螺钉属于金属采购件。",
+      "result": "既有轮轴配合/360°旋转采样通过"
+    },
+    {
+      "id": "Wheel_Hub_R",
+      "review": "与左轮相同的必要止转/轴端保持结构；没有新增外盖或支撑耳。",
+      "result": "既有轮轴配合/360°旋转采样通过"
+    }
+  ],
+  "before_root_failures": [
+    "CAM_1",
+    "CAM_3"
+  ],
+  "after_root_failures": [],
+  "root_evidence": "studies/mount_root_cleanup/audit_V1_2-M1_40.json",
+  "limits": "Root footprint probes are not stress/strength tests or an exhaustive global defect algorithm. Common-insert wall screening is compatibility evidence for an unselected reference, not a pass/fail of purchased hardware."
+}

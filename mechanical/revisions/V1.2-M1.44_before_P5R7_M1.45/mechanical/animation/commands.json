@@ -1,0 +1,74 @@
+[
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/assembly_animation.py",
+      "--",
+      "--width",
+      "1280",
+      "--render",
+      "stills"
+    ],
+    "started_utc": "2026-10-01T13:12:31.062816+00:00",
+    "finished_utc": "2026-10-01T13:12:49.519641+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_build.log"
+  },
+  {
+    "stage": "native_validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_assembly_animation.py",
+      "--",
+      "--native-only"
+    ],
+    "started_utc": "2026-10-01T13:12:49.522058+00:00",
+    "finished_utc": "2026-10-01T13:13:57.446306+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_native_validate.log"
+  },
+  {
+    "stage": "render",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "-S",
+      "MORI_Assembly_Animation",
+      "-a"
+    ],
+    "started_utc": "2026-10-01T13:13:57.446871+00:00",
+    "finished_utc": "2026-10-01T13:26:45.480521+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_render.log"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/Documents/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/Documents/MORI/mechanical/scripts/check_assembly_animation.py"
+    ],
+    "started_utc": "2026-10-01T13:26:45.481441+00:00",
+    "finished_utc": "2026-10-01T13:27:34.993938+00:00",
+    "returncode": 0,
+    "log": "reports/assembly_animation_validate.log"
+  }
+]

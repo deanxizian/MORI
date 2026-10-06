@@ -1,0 +1,194 @@
+(version 1)
+
+# Source: https://github.com/deanxizian/KiCad/tree/f756532aa67112a9d437c18e8ca00ac8fba2c9b4/Rules
+
+# Generated from all 47 source rules; applicability and limitations: rule_mapping.json.
+
+# No 24 V rail exists in MORI. Source P24V is NOT mapped to the 3S pack.
+
+(rule "R07 default"
+  (condition "A.NetName != B.NetName")
+  (constraint clearance (min 0.49999900mm))
+)
+
+(rule "R07 object pairs 0.1999996"
+  (condition "A.NetName != B.NetName && (((A.Type == 'Arc') && (B.Type == 'Arc')) || (((A.Type == 'Arc') && (B.Type == 'Track')) || ((A.Type == 'Track') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Arc'))) || ((A.Type == 'Track') && (B.Type == 'Track')) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Track'))) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || ((A.Type == 'Via') && (B.Type == 'Via')))")
+  (constraint clearance (min 0.19999960mm))
+)
+
+(rule "R07 object pairs 0.2999994"
+  (condition "A.NetName != B.NetName && ((((A.Type == 'Arc') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Arc'))) || (((A.Type == 'Track') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Track'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Via') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Via'))))")
+  (constraint clearance (min 0.29999940mm))
+)
+
+(rule "R07 object pairs 0.0"
+  (condition "A.NetName != B.NetName && ((((A.Type == 'Arc') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Arc'))) || (((A.Type == 'Track') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Track'))) || (((A.Type == 'Via') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Via'))) || (((A.Type == 'Zone') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Zone'))))")
+  (constraint clearance (min 0.00000000mm))
+)
+
+(rule "R07 object pairs 0.0999998"
+  (condition "A.NetName != B.NetName && ((((A.Type == 'Pad' && A.Pad_Type == 'SMD') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && ((B.Type == 'Text' || B.Type == 'Text Box'))))")
+  (constraint clearance (min 0.09999980mm))
+)
+
+(rule "R07 original same-package pad condition"
+  (condition "A.NetName != B.NetName && A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R06 default"
+  (condition "A.NetName != B.NetName && ((0 == 1) || (0 == 1))")
+  (constraint clearance (min 0.29999940mm))
+)
+
+(rule "R06 object pairs 0.1999996"
+  (condition "A.NetName != B.NetName && ((0 == 1) || (0 == 1)) && (((A.Type == 'Arc') && (B.Type == 'Arc')) || (((A.Type == 'Arc') && (B.Type == 'Track')) || ((A.Type == 'Track') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Arc'))) || ((A.Type == 'Track') && (B.Type == 'Track')) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Track'))) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || ((A.Type == 'Via') && (B.Type == 'Via')))")
+  (constraint clearance (min 0.19999960mm))
+)
+
+(rule "R06 object pairs 0.0"
+  (condition "A.NetName != B.NetName && ((0 == 1) || (0 == 1)) && ((((A.Type == 'Arc') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Arc'))) || (((A.Type == 'Track') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Track'))) || (((A.Type == 'Via') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Via'))) || (((A.Type == 'Zone') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Zone'))))")
+  (constraint clearance (min 0.00000000mm))
+)
+
+(rule "R06 object pairs 0.0999998"
+  (condition "A.NetName != B.NetName && ((0 == 1) || (0 == 1)) && ((((A.Type == 'Pad' && A.Pad_Type == 'SMD') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && ((B.Type == 'Text' || B.Type == 'Text Box'))))")
+  (constraint clearance (min 0.09999980mm))
+)
+
+(rule "R06 object pairs 0.499999"
+  (condition "A.NetName != B.NetName && ((0 == 1) || (0 == 1)) && (((A.Type == 'Zone') && (B.Type == 'Zone')))")
+  (constraint clearance (min 0.49999900mm))
+)
+
+(rule "R06 original same-package pad condition"
+  (condition "A.NetName != B.NetName && ((0 == 1) || (0 == 1)) && A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R05 default"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/VBUS_RAW' || A.NetName == '/VBUS_FUSED') || (B.NetName == '/VBUS_RAW' || B.NetName == '/VBUS_FUSED'))")
+  (constraint clearance (min 0.49999900mm))
+)
+
+(rule "R05 object pairs 0.1999996"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/VBUS_RAW' || A.NetName == '/VBUS_FUSED') || (B.NetName == '/VBUS_RAW' || B.NetName == '/VBUS_FUSED')) && ((((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Arc'))) || ((A.Type == 'Track') && (B.Type == 'Track')) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Track'))) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || ((A.Type == 'Via') && (B.Type == 'Via')))")
+  (constraint clearance (min 0.19999960mm))
+)
+
+(rule "R05 object pairs 0.0"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/VBUS_RAW' || A.NetName == '/VBUS_FUSED') || (B.NetName == '/VBUS_RAW' || B.NetName == '/VBUS_FUSED')) && ((((A.Type == 'Arc') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Arc'))) || (((A.Type == 'Track') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Track'))) || (((A.Type == 'Via') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Via'))) || (((A.Type == 'Zone') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Zone'))))")
+  (constraint clearance (min 0.00000000mm))
+)
+
+(rule "R05 object pairs 0.0999998"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/VBUS_RAW' || A.NetName == '/VBUS_FUSED') || (B.NetName == '/VBUS_RAW' || B.NetName == '/VBUS_FUSED')) && ((((A.Type == 'Pad' && A.Pad_Type == 'SMD') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && ((B.Type == 'Text' || B.Type == 'Text Box'))))")
+  (constraint clearance (min 0.09999980mm))
+)
+
+(rule "R05 original same-package pad condition"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/VBUS_RAW' || A.NetName == '/VBUS_FUSED') || (B.NetName == '/VBUS_RAW' || B.NetName == '/VBUS_FUSED')) && A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R01 via-pad physical any net"
+  (condition "(A.Type == 'Via' && B.Type == 'Pad') || (B.Type == 'Via' && A.Type == 'Pad')")
+  (constraint physical_clearance (min 0.1999996mm))
+)
+
+(rule "R05-R07 hole to copper"
+  (constraint hole_clearance (min 0.2999994mm))
+)
+
+(rule "R09 signal width"
+  (constraint track_width (min 0.1999996mm) (opt 0.1999996mm) (max 2.00000108mm))
+)
+
+(rule "R08 power and return width"
+  (condition "(A.NetName == '/VBUS_RAW' || A.NetName == '/VBUS_FUSED') || (0 == 1)")
+  (constraint track_width (min 0.1999996mm) (opt 0.499999mm) (max 5.00000016mm))
+)
+
+(rule "R29 absolute holes"
+  (constraint hole_size (min 0.0999998mm) (max 5.00000016mm))
+)
+
+(rule "R15-R16 through via geometry"
+  (condition "A.Type == 'Via'")
+  (constraint via_diameter (min 0.499999mm) (opt 0.499999mm) (max 1.00000054mm))
+  (constraint hole_size (min 0.2499995mm) (opt 0.2499995mm) (max 0.499999mm))
+  (constraint assertion "A.Via_Type == 'Through'")
+)
+
+(rule "R23 via count"
+  (constraint via_count (max 500))
+)
+
+(rule "R27 minimum track angle"
+  (condition "A.Type == 'Track' && B.Type == 'Track'")
+  (constraint track_angle (min 60))
+)
+
+(rule "R26 solid polygon connection"
+  (constraint zone_connection solid)
+)
+
+(rule "R25 through-hole thermals"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'")
+  (constraint zone_connection thermal_reliefs)
+  (constraint thermal_relief_gap (opt 0.254mm))
+  (constraint thermal_spoke_width (opt 0.2999994mm))
+  (constraint min_resolved_spokes 4)
+)
+
+(rule "R43 silk-to-silk"
+  (condition "A.Layer == B.Layer")
+  (constraint silk_clearance (min 0.0499999mm))
+)
+
+(rule "R42 silk-to-exposed-pad"
+  (condition "A.Type == 'Pad' || B.Type == 'Pad'")
+  (constraint silk_clearance (min 0.00999998mm))
+)
+
+(rule "R39 differential geometry"
+  (condition "A.inDiffPair('*')")
+  (constraint track_width (min 0.381mm) (opt 0.381mm) (max 0.381mm))
+  (constraint diff_pair_gap (min 0.254mm) (opt 0.254mm) (max 0.254mm))
+  (constraint diff_pair_uncoupled (max 12.7mm))
+)
+
+(rule "R40 hole-to-hole"
+  (constraint hole_to_hole (min 0.1499997mm))
+)
+
+(rule "MORI existing copper-to-edge"
+  (constraint edge_clearance (min 0.50mm))
+)
+(rule "P4 SW1 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_SW1') && A.NetName != '/CLR_N' && A.NetName != '/GND' && A.NetName != '/LOOP_3V3' && A.NetName != '/MASTER_RETURN' && A.NetName != 'unconnected-(SW1-B1-Pad3)' && A.NetName != 'unconnected-(SW1-B2-Pad6)'")
+ (constraint disallow track via))
+(rule "P4 J3 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_J3') && A.NetName != '/CLR_N' && A.NetName != '/GND' && A.NetName != '/LOOP_3V3' && A.NetName != '/MASTER_RETURN'")
+ (constraint disallow track via))
+(rule "P4 F1 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_F1') && A.NetName != '/VBUS_FUSED' && A.NetName != '/VBUS_RAW'")
+ (constraint disallow track via))
+(rule "P4 D2 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_D2') && A.NetName != '/CC1' && A.NetName != '/GND'")
+ (constraint disallow track via))
+(rule "P4 D3 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_D3') && A.NetName != '/CC2' && A.NetName != '/GND'")
+ (constraint disallow track via))
+(rule "P4 USB1 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_USB1') && A.NetName != '/CC1' && A.NetName != '/CC2' && A.NetName != '/GND' && A.NetName != '/VBUS_RAW' && A.NetName != 'unconnected-(USB1-PadA6)' && A.NetName != 'unconnected-(USB1-PadA7)' && A.NetName != 'unconnected-(USB1-PadA8)' && A.NetName != 'unconnected-(USB1-PadB6)' && A.NetName != 'unconnected-(USB1-PadB7)' && A.NetName != 'unconnected-(USB1-PadB8)'")
+ (constraint disallow track via))
+(rule "P4 D1 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_D1') && A.NetName != '/GND' && A.NetName != '/VBUS_FUSED'")
+ (constraint disallow track via))
+(rule "P4 C1 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_C1') && A.NetName != '/GND' && A.NetName != '/VBUS_FUSED'")
+ (constraint disallow track via))
+(rule "P4 J2 unrelated nets outside body"
+ (condition "A.intersectsArea('NETBODY_J2') && A.NetName != '/CC1' && A.NetName != '/CC2' && A.NetName != '/GND' && A.NetName != '/VBUS_FUSED' && A.NetName != '/VBUS_RAW'")
+ (constraint disallow track via))

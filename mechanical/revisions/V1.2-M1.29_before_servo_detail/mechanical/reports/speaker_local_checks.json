@@ -1,0 +1,147 @@
+[
+  {
+    "id": "enclosed_speaker_nominals",
+    "status": "PASS",
+    "summary": "福声箱体、原厂耳和孔距按提供图纸生成；未缩放采购件",
+    "measurement": {
+      "local_size_xyz_mm": [
+        60.0,
+        25.000005847310376,
+        44.999997732512156
+      ],
+      "expected_xyz_mm": [
+        60,
+        25,
+        45
+      ],
+      "hole_pitch_mm": 52.8,
+      "hole_diameter_mm": 3.2,
+      "mass_g": 31.5,
+      "mass_tolerance_g": 1.5,
+      "source": "mechanical/sources/fusheng_FS4545DB0450_H25_R01/dimensions.jpg"
+    },
+    "method": "Rigid inverse transform of same actual mesh. Full rectangular ear contour is a conservative approximation of undimensioned taper."
+  },
+  {
+    "id": "speaker_shell_attachment",
+    "status": "PASS",
+    "summary": "喇叭原厂耳直锁上壳一体座；取消打印后盖、与内框架无连接",
+    "measurement": {
+      "shell_contact_gap_mm": 0.0,
+      "frame_gap_mm": 2.6899999113770336,
+      "shell_overlap_mm3": 3.3625421983354385e-05,
+      "frame_overlap_mm3": 0,
+      "fasteners": 2,
+      "retired_print_absent": true,
+      "nominal_front_gasket_mm": 1.2
+    },
+    "method": "Actual solid contact, gap and intersection; trial gasket/preload/ear strength not qualified."
+  },
+  {
+    "id": "speaker_shell_tool_access",
+    "status": "PASS",
+    "summary": "上壳拆出后喇叭两枚螺钉可装入并有工具路径",
+    "measurement": {
+      "tools": [
+        {
+          "side": -1,
+          "failures": []
+        },
+        {
+          "side": 1,
+          "failures": []
+        }
+      ],
+      "insertion": [
+        {
+          "side": -1,
+          "screw_insertion_failures": []
+        },
+        {
+          "side": 1,
+          "screw_insertion_failures": []
+        }
+      ],
+      "driver_diameter_mm": 4.8
+    },
+    "method": "30mm smooth screw translation each1mm and straight driver solid; upper shell on bench, handle/fingers not tested."
+  },
+  {
+    "id": "speaker_blind_boss_skin",
+    "status": "PASS",
+    "summary": "原厂耳有实际支承面，壳内盲孔末端有材料",
+    "measurement": {
+      "caps": [
+        {
+          "side": -1,
+          "missing_mm3": 0.0,
+          "checked_cap_thickness_mm": 1.2
+        },
+        {
+          "side": 1,
+          "missing_mm3": 0.0,
+          "checked_cap_thickness_mm": 1.2
+        }
+      ],
+      "ear_seat_rays": [
+        {
+          "side": -1,
+          "local_z_mm": -3,
+          "support_gap_mm": 3.814697265625e-06
+        },
+        {
+          "side": -1,
+          "local_z_mm": 3,
+          "support_gap_mm": 3.814697265625e-06
+        },
+        {
+          "side": 1,
+          "local_z_mm": -3,
+          "support_gap_mm": 3.814697265625e-06
+        },
+        {
+          "side": 1,
+          "local_z_mm": 3,
+          "support_gap_mm": 3.814697265625e-06
+        }
+      ]
+    },
+    "method": "Actual solid containment behind holes and contact rays; not heat-insert pullout or print-strength qualification."
+  },
+  {
+    "id": "speaker_max_box_envelope",
+    "status": "PASS",
+    "summary": "箱体最大标注外形公差与周边实体",
+    "measurement": {
+      "maximum_box_xyz_mm": [
+        45.3,
+        25.5,
+        45.3
+      ],
+      "overall_ear_span_mm": 60.3,
+      "failures": []
+    },
+    "method": "Fixed front/ear datum; increased box width/height/depth and ear span. Not a full GD&T stack of mounting-plane/pitch/FDM tolerances."
+  },
+  {
+    "id": "speaker_rear_vent_reserve",
+    "status": "PASS",
+    "summary": "未定坐标泄气孔：整个后表面保留2mm开放空间",
+    "measurement": {
+      "rear_face_keepout_depth_mm": 2,
+      "failures": []
+    },
+    "method": "Conservative full rear-face box; exact hole/gas-flow acoustic requirements not supplied."
+  },
+  {
+    "id": "speaker_physical_audio_fit",
+    "status": "BLOCKED",
+    "summary": "喇叭实物、耳厚/孔距公差配合、线长接头、振膜行程与实际声音待核",
+    "measurement": {
+      "power_rating_W": 5,
+      "amplifier_output_W": "NOT_VERIFIED",
+      "price_CNY": null
+    },
+    "method": "Supplied spec rating does not establish CAM amplifier output or actual cost. No new amplifier or PCB change assumed."
+  }
+]

@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>头部子装配与压板工具路径</title><style>
+body{margin:0;background:#f4f6f7;color:#1d3038;font:17px/1.65 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:30px 24px 65px}
+h1{font-size:30px;line-height:1.4}h2{font-size:23px}section{background:white;border:1px solid #d6dfe3;border-radius:12px;padding:22px;margin:22px 0}
+a{color:#116d85}img{width:100%;height:auto}.status{background:#fff0d9;color:#80510b;padding:5px 13px;border-radius:18px;font-weight:650}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}figure{margin:0}figcaption{padding:10px 0;font-size:15px}.muted{color:#596d78}
+table{border-collapse:collapse;width:100%;font-size:15px}td,th{text-align:left;vertical-align:top;border-bottom:1px solid #dce3e7;padding:12px}th{background:#eef3f5}li{margin:9px 0}
+@media(max-width:700px){main{padding:18px 12px}section{padding:15px}.pair{grid-template-columns:1fr}h1{font-size:25px}}
+</style><main><a href="../../index.html">← 走线工作页</a><h1>压板工具路径已通过，整套装配仍待闭合</h1>
+<p><span class="status">完整带线装配 BLOCKED</span></p>
+<p>已批准的 K1 孔位与孔壁修正继续保留在主模型 M1.49。本轮补查安装顺序，没有改动主模型、STL、硬件或动画。</p>
+<section><h2>压板的两枚螺钉可以分开操作</h2>
+<p>头壳、屏幕和相机支架暂不安装。内侧头架分别转到 +60° 与 −60°，用长边朝下的工具逐枚操作，工具取出后再转头。</p>
+<div class="pair"><figure><a href="left_keeper.png"><img src="left_keeper.png" alt="内侧头架在正60度偏航时，从上方操作左侧压板螺钉"></a><figcaption>左侧螺钉：偏航 +60°。蓝色为工具包络，黄色为压板。</figcaption></figure>
+<figure><a href="right_keeper.png"><img src="right_keeper.png" alt="内侧头架在负60度偏航时，从上方操作右侧压板螺钉"></a><figcaption>右侧螺钉：偏航 −60°。头壳与光学组件最后安装。</figcaption></figure></div>
+<p>两次操作均检查了 150 mm 直线伸入／退出、完整一圈转动和实际螺钉的连续装入扫掠；避开了这两个姿态下的 11 条候选导线。工具按 <a href="https://www.wera.de/en/tools/950-pkls-l-key-metric-chrome-plated">Wera 950 PKLS 05022041001</a> 的 2 mm 内六角、100／5.5 mm 边长建立保守包络。</p>
+<p class="muted">图片使用独立 C6、导向和绑带座候选，尚未应用到主模型；省略导线显示以说明工具位置。导线目前仍是规划路径。实际球头啮合、拧紧扭矩、两次操作间的完整带线运动没有通过此检查。</p>
+<p><a href="../keeper_alternating_yaw/review.json">逐步检查与明确缺件清单</a> · <a href="render_review.json">渲染来源</a></p></section>
+<section><h2>反力连杆仍限制头部落座与锁紧</h2>
+<a href="reaction_order.png"><img src="reaction_order.png" alt="反力连杆预装时被头部支架孔挡住，随头部安装后直柄工具受上壳阻挡的实际剖面"></a>
+<table><thead><tr><th>装配方向</th><th>结果</th><th>范围</th></tr></thead><tbody>
+<tr><td>先固定连杆，再竖直放入内侧头架</td><td>BLOCKED</td><td>−60° 到 +60°、每 10° 一组均在落座路径中相交。零偏航时，抬高 24 mm 的相交体积约 411 mm³；不是首个接触点的微小数值造成的误判。</td></tr>
+<tr><td>连杆随内侧头架一起落座</td><td>刚体采样 PASS；锁紧未闭合</td><td>0～90 mm 的 181 个竖直位置通过。连杆横向固定螺钉要随后安装；直柄工具受扬声器和上壳阻挡。</td></tr>
+<tr><td>改用短柄工具，从未封闭的下部退出</td><td>局部姿态有空间，所测退出路径 BLOCKED</td><td>20／25／30 mm 短边存在局部可放置姿态；23 个姿态、共 138 条简单退让路径均受阻。其他带转动的路径及实际工具选型仍未验证。</td></tr>
+<tr><td>先留上壳抬起，之后再落下</td><td>所测路径 BLOCKED</td><td>内侧头架已就位时，上壳原有 15°／14 mm 倾斜抬升路径在 −60°、0°、+60° 三个头部位置均碰到支架。</td></tr>
+</tbody></table>
+<p>因此还不能把这套顺序交给装配执行，也没有据此增加开孔。SCS0009 原配舵盘及传动锁紧叠层仍待厂家资料，连杆附近的安装判断也须随真实接口复核。</p>
+<p><a href="../inner_head_lowering/review.json">头部落座清单</a> · <a href="../reaction_link_order/review.json">实际相交与直柄工具检查</a> · <a href="../reaction_short_tool/review.json">短柄局部筛查</a> · <a href="../reaction_short_tool_exit/review.json">138 条退出路径</a></p></section>
+<section><h2>本轮解决的范围</h2><p>压板螺钉可以按两个偏航位置分别操作，这一局部工具路径已闭合。完整线束装入、连杆固定、线长保持及最终接头仍未闭合；不能把各处单独的 PASS 合并成“整机已能装配”。</p>
+<p><a href="../power_sequence_review/index.html">上一轮：供电插头与承重桥锁紧依赖</a> · <a href="main_integrity.json">主模型、硬件、STL 和动画保留核验</a></p></section>
+<details><summary>检查边界与修正记录</summary><ul>
+<li>早期长边工具筛查要求同一偏航角能操作左右两枚螺钉，结果为 BLOCKED。本轮改为逐枚操作，保留早期报告，未覆盖其证据。</li>
+<li>连续工具检查曾因凸包零面积三角形产生无效法向而中止；失败记录保留。修正仅影响检验算法，不改变零件实体。</li>
+<li>螺钉扫掠按保存网格的实际头／杆边界分拆，并验证包络包含全部原始实体；避免把宽螺钉头的微小切片扩展到整根细杆产生假碰撞。旧结果保留在 history_screw_split。</li>
+<li>更严格的本轮诊断还记录了候选承重桥与名义反力连杆螺母约 0.00847 mm³ 的相交，原因未定。没有以此修改孔位或豁免配合，待实际紧固件与传动接口一起复核。</li>
+<li>C6、导向和固定座均是未批准的独立候选；力学、材料与实物装配仍为 NOT_TESTED。</li>
+</ul><p><a href="../keeper_after_head/review.json">短边压板工具初筛</a> · <a href="../keeper_after_head_long_leg/review.json">长边单姿态初筛</a> · <a href="plot_review.json">剖面图片来源</a></p></details>
+</main></html>

@@ -1,0 +1,147 @@
+{
+  "revision": "V1.2-M1.15",
+  "joints": [
+    {
+      "id": "Drive_L_-8",
+      "axis": "Z",
+      "xy_mm": [
+        -44.5,
+        -8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Drive_L_8",
+      "axis": "Z",
+      "xy_mm": [
+        -44.5,
+        8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Drive_R_-8",
+      "axis": "Z",
+      "xy_mm": [
+        44.5,
+        -8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Drive_R_8",
+      "axis": "Z",
+      "xy_mm": [
+        44.5,
+        8
+      ],
+      "head_base_mm": 68.0,
+      "access_direction": "+Z",
+      "group": "body",
+      "upper": "Load_Frame",
+      "lower": "Drive_Bridge"
+    },
+    {
+      "id": "Yaw_Base_-1",
+      "axis": "Z",
+      "xy_mm": [
+        -45.0,
+        -17.0
+      ],
+      "head_base_mm": 112.9,
+      "head_height_mm": 1.6,
+      "access_direction": "-Z",
+      "group": "body",
+      "upper": "Yaw_Base",
+      "lower": "Load_Frame",
+      "prerequisite_removed": [
+        "Battery",
+        "Battery_Tray"
+      ],
+      "prerequisite_removed_prefixes": [
+        "Battery_Retainer"
+      ],
+      "fastener_type": "M2 screw into blind heat-set insert",
+      "screw_length_mm": 8.0
+    },
+    {
+      "id": "Yaw_Base_1",
+      "axis": "Z",
+      "xy_mm": [
+        45.0,
+        -17.0
+      ],
+      "head_base_mm": 112.9,
+      "head_height_mm": 1.6,
+      "access_direction": "-Z",
+      "group": "body",
+      "upper": "Yaw_Base",
+      "lower": "Load_Frame",
+      "prerequisite_removed": [
+        "Battery",
+        "Battery_Tray"
+      ],
+      "prerequisite_removed_prefixes": [
+        "Battery_Retainer"
+      ],
+      "fastener_type": "M2 screw into blind heat-set insert",
+      "screw_length_mm": 8.0
+    }
+  ],
+  "flat_deck": {
+    "top_z_mm": 115.0,
+    "bottom_z_mm": 111.0,
+    "yaw_servo_on_deck": false,
+    "battery_to_deck_nominal_gap_mm": 5,
+    "servo_retention": "Head yaw ear shelves + M2 trial fasteners; final unit/horn clamping unverified"
+  },
+  "side_face_joints": {
+    "count": 4,
+    "axis": "X",
+    "y_mm": 24,
+    "z_relative_head_mm": [
+      0,
+      7
+    ],
+    "direction": "outward left/right",
+    "prerequisite": "Head front/rear shells removed; LCD seated on removable face bracket on bench"
+  },
+  "removed_material_functions": [
+    "full chassis rear wall",
+    "full body tub side enclosure",
+    "old provisional power and USB scaffold",
+    "tall head front bulkhead",
+    "deep structural gimbal bowl",
+    "spherical-trimmed high head-cradle wings",
+    "yaw servo recessed shelf"
+  ],
+  "limits": "Trial M2 fastening and straight-shank access only, not actual threads or hands. P3 power populated fit and rear-interface components/final retention still pending.",
+  "additional_assembly": "With pitch head and shells detached, bench-fit fixed reaction link/horn/clamp through the combined yaw U/journal. Insert this group into bearing/bridge, then fit reaction cross-retainer, yaw servo/output and lock. Removal reverses this sequence; reaction link travels with U/journal after cross-retainer removal. In operation the reaction link remains BODY-fixed, never yaw-parented. M1.14: install6 flange screws per motor on bench before bearings; slide bearings/spacers onto shaft; insert whole cartridges from below; fit common cap with4 M3 bolts; install load frame, shell, then D hubs and end washers/M3 screws. Release wheel end bolts before cap/cartridge removal.",
+  "merged_same_body_parts": [
+    "Load_Frame + Body_Cheek_L + Body_Cheek_R",
+    "Power_Board_Carrier replaced by integral edge lands",
+    "IMU and rear-interface mounts integral to Load_Frame / Body_Upper",
+    "Yaw_Turntable + Pitch_Yoke + open Pitch_Cable_Clip",
+    "Body_Top_Shroud + Yaw_Base",
+    "Camera_Baffle + Head_Front",
+    "Wheel_Cap_L/R deleted; hub outer faces exposed"
+  ],
+  "retained_service_splits": [
+    "Drive_Bridge vs Load_Frame: wheel-drive installation",
+    "Yaw_Base vs Load_Frame: bearing and reaction-link installation",
+    "Display_Frame vs Pitch_Cradle: LCD rear-post screws and camera bench assembly",
+    "Speaker_Mount vs Body_Upper: speaker seal and replacement"
+  ]
+}

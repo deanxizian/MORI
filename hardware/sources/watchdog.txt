@@ -1,0 +1,2857 @@
+1
+Data sheet acquired from Harris Semiconductor
+SCHS142F
+September 1997 - Revised October 2003
+Features
+• Overriding Reset Terminates Output Pulse
+• Triggering From the Leading or Trailing Edge
+• Q and Q Buffered Outputs
+• Separate Resets
+• Wide Range of Output-Pulse Widths
+• Schmitt Trigger on Both A and B Inputs
+• Fanout (Over Temperature Range)
+- Standard Outputs. . . . . . . . . . . . . . . 10 LSTTL Loads
+- Bus Driver Outputs  . . . . . . . . . . . . . 15 LSTTL Loads
+• Wide Operating Temperature Range . . . -55oC to 125oC
+• Balanced Propagation Delay and Transition Times
+• Signiﬁcant Power Reduction Compared to LSTTL
+Logic ICs
+• HC Types
+- 2V to 6V Operation
+- High Noise Immunity: NIL = 30%, NIH = 30%of VCC at
+VCC = 5V
+• HCT Types
+- 4.5V to 5.5V Operation
+- Direct LSTTL Input Logic Compatibility,
+VIL= 0.8V (Max), VIH = 2V (Min)
+- CMOS Input Compatibility, Il ≤1µA at VOL, VOH
+Description
+The ’HC123, ’HCT123, CD74HC423 and CD74HCT423 are
+dual monostable multivibrators with resets. They are all
+retriggerable and differ only in that the 123 types can be
+triggered by a negative to positive reset pulse; whereas the
+423 types do not have this feature. An external resistor (RX)
+and an external capacitor (CX) control the timing and the
+accuracy for the circuit. Adjustment of Rx and CX provides a
+wide range of output pulse widths from the Q and Q
+terminals. Pulse triggering on the A and B inputs occur at a
+particular voltage level and is not related to the rise and fall
+times of the trigger pulses.
+Once triggered, the output pulse width may be extended by
+retriggering inputs A and B. The output pulse can be
+terminated by a LOW level on the Reset (R) pin. Trailing
+edge triggering (A) and leading edge triggering (B) inputs
+are provided for triggering from either edge of the input
+pulse. If either Mono is not used each input on the unused
+device (A, B, and R) must be terminated high or low.
+The minimum value of external resistance, Rx is typically
+5kΩ. The minimum value external capacitance, CX, is 0pF.
+The calculation for the pulse width is tW = 0.45 RXCX at
+VCC = 5V.
+Ordering Information
+PART NUMBER
+TEMP. RANGE (oC)
+PACKAGE
+CD54HC123F3A
+-55 to 125
+16 Ld CERDIP
+CD54HCT123F3A
+-55 to 125
+16 Ld CERDIP
+CD74HC123E
+-55 to 125
+16 Ld PDIP
+CD74HC123M
+-55 to 125
+16 Ld SOIC
+CD74HC123MT
+-55 to 125
+16 Ld SOIC
+CD74HC123M96
+-55 to 125
+16 Ld SOIC
+CD74HC123NSR
+-55 to 125
+16 Ld SOP
+CD74HC123PW
+-55 to 125
+16 Ld TSSOP
+CD74HC123PWR
+-55 to 125
+16 Ld TSSOP
+CD74HC123PWT
+-55 to 125
+16 Ld TSSOP
+CD74HC423E
+-55 to 125
+16 Ld PDIP
+CD74HC423M
+-55 to 125
+16 Ld SOIC
+CD74HC423MT
+-55 to 125
+16 Ld SOIC
+CD74HC423M96
+-55 to 125
+16 Ld SOIC
+CD74HC423NSR
+-55 to 125
+16 Ld SOP
+CD74HCT123E
+-55 to 125
+16 Ld PDIP
+CD74HCT123M
+-55 to 125
+16 Ld SOIC
+CD74HCT123MT
+-55 to 125
+16 Ld SOIC
+CD74HCT123M96
+-55 to 125
+16 Ld SOIC
+CD74HCT423E
+-55 to 125
+16 Ld PDIP
+CD74HCT423MT
+-55 to 125
+16 Ld SOIC
+CD74HCT423M96
+-55 to 125
+16 Ld SOIC
+NOTE: When ordering, use the entire part number. The sufﬁxes 96
+and R denote tape and reel. The sufﬁx T denotes a small-quantity
+reel of 250.
+CAUTION: These devices are sensitive to electrostatic discharge. Users should follow proper IC Handling Procedures.
+Copyright © 2003, Texas Instruments Incorporated
+CD54/74HC123, CD54/74HCT123,
+CD74HC423, CD74HCT423
+High-Speed CMOS Logic Dual Retriggerable
+Monostable Multivibrators with Resets
+[ /Title
+(CD74
+HC123
+,
+CD74
+HCT12
+3,
+CD74
+HC423
+,
+CD74
+HCT42
+3)
+/Sub-
+ject
+(High
+Speed
+
+2
+Pinout
+CD54HC123, CD54HCT123
+(CERDIP)
+CD74HC123
+(PDIP, SOIC, SOP, TSSOP)
+CD74HC423
+(PDIP, SOIC, SOP)
+CD74HCT123, CD74HCT423
+(PDIP, SOIC)
+TOP VIEW
+Functional Diagram
+14
+15
+16
+9
+13
+12
+11
+10
+1
+2
+3
+4
+5
+7
+6
+8
+1A
+1B
+1R
+1Q
+2Q
+2CX
+GND
+2RXCX
+VCC
+1CX
+1Q
+2Q
+2R
+2B
+2A
+1RXCX
+2R
+11
+2A
+9
+10
+5
+12
+2Q
+2Q
+2B
+MONO 2
+VCC
+6
+7
+2Cx
+2RxCx
+1R
+3
+1A
+2
+1
+13
+4
+1Q
+1Q
+1B
+MONO 1
+VCC
+14
+15
+1Cx
+1RxCx
+1Cx
+1Rx
+2Cx
+2Rx
+TRUTH TABLE
+INPUTS
+OUTPUTS
+A
+B
+R
+Q
+Q
+CD74HC/HCT123
+H
+X
+H
+L
+H
+X
+L
+H
+L
+H
+L
+↑
+H
+↓
+H
+H
+X
+X
+L
+L
+H
+L
+H
+↑
+CD74HC/HCT423
+H
+X
+H
+L
+H
+X
+L
+H
+L
+H
+L
+↑
+H
+↓
+H
+H
+X
+X
+L
+L
+H
+H = High Voltage Level, L = Low Voltage Level,
+X = Don’t Care.
+CD54/74HC123, CD54/74HCT123, CD74HC423, CD74HCT423
+
+3
+Absolute Maximum Ratings
+Thermal Information
+DC Supply Voltage, VCC . . . . . . . . . . . . . . . . . . . . . . . . -0.5V to 7V
+DC Input Diode Current, IIK
+For VI < -0.5V or VI > VCC + 0.5V. . . . . . . . . . . . . . . . . . . . . .±20mA
+DC Output Diode Current, IOK
+For VO < -0.5V or VO > VCC + 0.5V . . . . . . . . . . . . . . . . . . . .±20mA
+DC Output Source or Sink Current per Output Pin, IO
+For VO > -0.5V or VO < VCC + 0.5V . . . . . . . . . . . . . . . . . . . .±25mA
+DC VCC or Ground Current, ICC or IGND . . . . . . . . . . . . . . . . . .±50mA
+Operating Conditions
+Temperature Range (TA)  . . . . . . . . . . . . . . . . . . . . . -55oC to 125oC
+Supply Voltage Range, VCC
+HC Types  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .2V to 6V
+HCT Types  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .4.5V to 5.5V
+DC Input or Output Voltage, VI, VO  . . . . . . . . . . . . . . . . . 0V to VCC
+Input Rise and Fall Time
+2V . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1000ns (Max)
+4.5V. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 500ns (Max)
+6V . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 400ns (Max)
+Package Thermal Impedance, θJA (see Note 1):
+E (PDIP) Package . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .67oC/W
+M (SOIC) Package. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .73oC/W
+NS (SOP) Package . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  64oC/W
+PW (TSSOP) Package  . . . . . . . . . . . . . . . . . . . . . . . . .  108oC/W
+Maximum Junction Temperature . . . . . . . . . . . . . . . . . . . . . . . 150oC
+Maximum Storage Temperature Range  . . . . . . . . . .-65oC to 150oC
+Maximum Lead Temperature (Soldering 10s) . . . . . . . . . . . . . 300oC
+(SOIC - Lead Tips Only)
+CAUTION: Stresses above those listed in “Absolute Maximum Ratings” may cause permanent damage to the device. This is a stress only rating and operation
+of the device at these or any other conditions above those indicated in the operational sections of this speciﬁcation is not implied.
+NOTE:
+1. The package thermal impedance is calculated in accordance with JESD 51-7.
+DC Electrical Speciﬁcations
+PARAMETER
+SYMBOL
+TEST
+CONDITIONS
+VCC
+(V)
+25oC
+-40oC TO 85oC
+-55oC TO 125oC
+UNITS
+VI (V)
+IO (mA)
+MIN
+TYP
+MAX
+MIN
+MAX
+MIN
+MAX
+HC TYPES
+High Level Input
+Voltage
+VIH
+-
+-
+2
+1.5
+-
+-
+1.5
+-
+1.5
+-
+V
+4.5
+3.15
+-
+-
+3.15
+ -
+3.15
+-
+V
+6
+4.2
+-
+-
+4.2
+-
+4.2
+-
+V
+Low Level Input
+Voltage
+VIL
+-
+-
+2
+-
+-
+0.5
+-
+0.5
+-
+0.5
+V
+4.5
+-
+-
+1.35
+-
+1.35
+-
+1.35
+V
+6
+-
+-
+1.8
+-
+1.8
+-
+1.8
+V
+High Level Output
+Voltage
+CMOS Loads
+VOH
+VIH or VIL
+-0.02
+2
+1.9
+-
+-
+1.9
+-
+1.9
+-
+V
+-0.02
+4.5
+4.4
+-
+-
+4.4
+ -
+4.4
+-
+V
+-0.02
+6
+5.9
+-
+-
+5.9
+-
+5.9
+-
+V
+High Level Output
+Voltage
+TTL Loads
+-
+-
+-
+-
+-
+-
+-
+-
+-
+V
+-4
+4.5
+3.98
+-
+-
+3.84
+-
+3.7
+-
+V
+-5.2
+6
+5.48
+-
+-
+5.34
+-
+5.2
+-
+V
+Low Level Output
+Voltage
+CMOS Loads
+VOL
+VIH or VIL
+0.02
+2
+-
+-
+0.1
+-
+0.1
+-
+0.1
+V
+0.02
+4.5
+-
+-
+0.1
+-
+0.1
+-
+0.1
+V
+0.02
+6
+-
+-
+0.1
+-
+0.1
+-
+0.1
+V
+Low Level Output
+Voltage
+TTL Loads
+-
+-
+-
+-
+-
+-
+-
+-
+-
+V
+4
+4.5
+-
+-
+0.26
+-
+0.33
+-
+0.4
+V
+5.2
+6
+-
+-
+0.26
+-
+0.33
+-
+0.4
+V
+Input Leakage
+Current
+II
+VCC or
+GND
+-
+6
+-
+-
+±0.1
+-
+±1
+-
+±1
+µA
+Quiescent Device
+Current
+ICC
+VCC or
+GND
+0
+6
+-
+-
+8
+-
+80
+-
+160
+µA
+CD54/74HC123, CD54/74HCT123, CD74HC423, CD74HCT423
+
+4
+HCT TYPES
+High Level Input
+Voltage
+VIH
+-
+-
+4.5 to
+5.5
+2
+-
+-
+2
+-
+2
+-
+V
+Low Level Input
+Voltage
+VIL
+-
+-
+4.5 to
+5.5
+-
+-
+0.8
+-
+0.8
+-
+0.8
+V
+High Level Output
+Voltage
+CMOS Loads
+VOH
+VIH or VIL
+-0.02
+4.5
+4.4
+-
+-
+4.4
+-
+4.4
+-
+V
+High Level Output
+Voltage
+TTL Loads
+-4
+4.5
+3.98
+-
+-
+3.84
+-
+3.7
+-
+V
+Low Level Output
+Voltage
+CMOS Loads
+VOL
+VIH or VIL
+0.02
+4.5
+-
+-
+0.1
+-
+0.1
+-
+0.1
+V
+Low Level Output
+Voltage
+TTL Loads
+4
+4.5
+-
+-
+0.26
+-
+0.33
+-
+0.4
+V
+Input Leakage
+Current
+II
+VCC and
+GND
+0
+5.5
+-
+±0.1
+-
+±1
+-
+±1
+µA
+Quiescent Device
+Current
+ICC
+VCC or
+GND
+0
+5.5
+-
+-
+8
+-
+80
+-
+160
+µA
+Additional Quiescent
+Device Current Per
+Input Pin: 1 Unit Load
+∆ICC
+(Note 2)
+VCC
+-2.1
+-
+4.5 to
+5.5
+-
+100
+360
+-
+450
+-
+490
+µA
+NOTE:
+2. For dual-supply systems theoretical worst case (VI = 2.4V, VCC = 5.5V) specification is 1.8mA.
+DC Electrical Speciﬁcations  (Continued)
+PARAMETER
+SYMBOL
+TEST
+CONDITIONS
+VCC
+(V)
+25oC
+-40oC TO 85oC
+-55oC TO 125oC
+UNITS
+VI (V)
+IO (mA)
+MIN
+TYP
+MAX
+MIN
+MAX
+MIN
+MAX
+HCT Input Loading Table
+INPUT
+UNIT LOADS
+All
+0.35
+NOTE: Unit Load is ∆ICC limit speciﬁed in DC Electrical Table, e.g.
+360µA max at 25oC.
+Prerequisite for Switching Speciﬁcations
+PARAMETER
+SYMBOL
+VCC (V)
+25oC
+-40oC TO 85oC
+-55oC TO 125oC
+UNITS
+MIN
+TYP
+MAX
+MIN
+TYP
+MAX
+MIN
+TYP
+MAX
+HC TYPES
+Minimum Input,
+Pulse Width
+tWL
+A
+2
+100
+-
+-
+125
+-
+-
+150
+-
+-
+ns
+4.5
+20
+-
+-
+25
+-
+-
+30
+-
+-
+ns
+6
+17
+-
+-
+21
+-
+-
+26
+-
+-
+ns
+B
+tWH
+2
+100
+-
+-
+125
+-
+-
+150
+-
+-
+ns
+4.5
+20
+-
+-
+25
+-
+-
+30
+-
+-
+ns
+6
+17
+-
+-
+21
+-
+-
+26
+-
+-
+ns
+CD54/74HC123, CD54/74HCT123, CD74HC423, CD74HCT423
+
+5
+R
+tWL
+2
+100
+-
+-
+125
+-
+-
+150
+-
+150
+ns
+4.5
+20
+-
+-
+25
+-
+-
+30
+-
+30
+ns
+6
+17
+-
+-
+21
+-
+-
+26
+-
+26
+ns
+A and B Hold Time
+tH
+2
+50
+-
+-
+65
+-
+-
+75
+-
+75
+ns
+4.5
+10
+-
+-
+13
+-
+-
+15
+-
+15
+ns
+6
+9
+-
+-
+11
+-
+-
+13
+-
+13
+ns
+Reset Removal Time
+tREM
+2
+50
+-
+-
+65
+-
+-
+75
+-
+75
+ns
+4.5
+10
+-
+-
+13
+-
+-
+15
+-
+15
+ns
+6
+9
+-
+-
+11
+-
+-
+13
+-
+13
+ns
+Retrigger Time Number
+trT
+5
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ns
+RX = 10KΩ, CX = 0
+-
+50
+-
+-
+63
+-
+-
+76
+-
+ns
+Output Pulse Width
+tW
+5
+Q or Q
+RX = 10KΩ, CX = 10nF
+40
+-
+50
+38.7
+-
+51.3
+38.2
+-
+51.8
+µs
+HCT TYPES
+Minimum Input,
+Pulse Width
+tWL
+5
+-
+A
+20
+-
+-
+25
+-
+-
+30
+-
+-
+ns
+B
+tWH
+20
+-
+-
+25
+-
+-
+30
+-
+-
+ns
+R
+tWL
+20
+-
+-
+25
+-
+-
+30
+-
+-
+ns
+A and B Hold Time
+tH
+5
+10
+-
+-
+13
+-
+-
+15
+-
+-
+ns
+Reset Removal Time
+tREM
+5
+10
+-
+-
+13
+-
+-
+15
+-
+ns
+Retrigger Time Number
+(Note 3)
+RX = 10KΩ, CX = 0
+trT
+5
+-
+50
+-
+-
+63
+-
+-
+76
+-
+ns
+Output Pulse Width Q or Q
+tW
+5
+40
+-
+50
+38.7
+-
+51.3
+38.2
+-
+51.8
+µs
+RX = 10KΩ, CX = 10nF
+NOTE:
+3. Time to trigger depends on the values of RX and CX. The output pulse width can only be extended when the time between the active-
+going edges of the trigger input pulses meet the minimum retrigger time requirement.
+Prerequisite for Switching Speciﬁcations  (Continued)
+PARAMETER
+SYMBOL
+VCC (V)
+25oC
+-40oC TO 85oC
+-55oC TO 125oC
+UNITS
+MIN
+TYP
+MAX
+MIN
+TYP
+MAX
+MIN
+TYP
+MAX
+CD54/74HC123, CD54/74HCT123, CD74HC423, CD74HCT423
+
+6
+Switching Speciﬁcations Input tr, tf = 6ns, RX = 10KΩ, CX = 0
+PARAMETER
+SYMBOL
+TEST
+CONDITIONS
+VCC (V)
+25oC
+-40oC TO
+85oC
+-55oC TO
+125oC
+UNIT
+S
+MIN
+TYP
+MAX
+MIN
+MAX
+MIN
+MAX
+HC TYPES
+Trigger Propagation Delay
+tPLH
+CL = 50pF
+A, B, R to Q
+2
+-
+-
+300
+-
+375
+-
+450
+ns
+4.5
+-
+-
+60
+-
+75
+-
+90
+ns
+CL = 15pF
+5
+-
+25
+-
+-
+-
+-
+-
+ns
+CL = 50pF
+6
+-
+-
+51
+-
+64
+-
+76
+ns
+A, B, R to Q
+tPHL
+CL = 50pF
+2
+-
+-
+320
+-
+400
+-
+480
+ns
+4.5
+-
+-
+64
+-
+80
+-
+96
+ns
+CL = 15pF
+5
+-
+26
+-
+-
+-
+-
+-
+ns
+CL = 50pF
+6
+-
+-
+54
+-
+68
+-
+82
+ns
+Reset Propagation Delay
+tPHL, tPLH
+CL = 50pF
+2
+-
+-
+215
+-
+270
+-
+325
+ns
+R to Q or Q
+4.5
+-
+-
+43
+-
+54
+-
+65
+ns
+6
+-
+-
+37
+-
+46
+-
+55
+ns
+Output Transition Time
+tTHL, tTLH
+CL = 50pF
+2
+-
+-
+75
+-
+95
+-
+110
+ns
+4.5
+-
+-
+15
+-
+19
+-
+22
+ns
+6
+-
+-
+13
+-
+16
+-
+19
+ns
+Output Pulse Width
+RX = 10KΩ, CX = 10nF
+-
+-
+5
+-
+45
+-
+-
+-
+-
+-
+µs
+Pulse Width Match Between
+Circuits In the Same Package
+RX = 10KΩ, CX = 10pF
+-
+-
+5
+-
+±2
+-
+-
+-
+-
+-
+%
+Power Dissipation Capacitance
+(Note 4)
+CPD
+CL = 15pF
+5
+-
+-
+-
+-
+-
+-
+-
+pF
+Input Capacitance
+CIN
+CL = 50pF
+-
+10
+-
+10
+-
+10
+-
+10
+pF
+HCT TYPES
+Trigger Propagation Delay
+A, B, R to Q
+tPLH
+CL = 50pF
+4.5
+-
+-
+60
+-
+75
+-
+90
+ns
+CL = 15pF
+5
+-
+25
+-
+-
+-
+-
+-
+ns
+A, B, R to Q
+tPHL
+CL = 50pF
+4.5
+-
+-
+68
+-
+85
+-
+102
+ns
+CL =15pF
+5
+-
+27
+-
+-
+-
+-
+-
+ns
+Reset Propagation Delay
+R to Q or Q
+tPHL, tPLH
+CL = 50pF
+4.5
+-
+-
+48
+-
+60
+-
+72
+ns
+Output Transition Time
+tTHL, tTLH
+CL = 50pF
+4.5
+-
+-
+15
+-
+19
+-
+22
+ns
+Output Pulse Width
+RX = 10KΩ, CX = 10nF
+-
+-
+5
+-
+45
+-
+-
+-
+-
+-
+µs
+CD54/74HC123, CD54/74HCT123, CD74HC423, CD74HCT423
+
+7
+Switching Speciﬁcations Input tr, tf = 6ns, RX = 10KΩ, CX = 0 (Continued)
+PARAMETER
+SYMBOL
+TEST
+CONDITIONS
+VCC (V)
+25oC
+-40oC TO
+85oC
+-55oC TO
+125oC
+UNIT
+S
+MIN
+TYP
+MAX
+MIN
+MAX
+MIN
+MAX
+Pulse Width Match Between
+Circuits In the Same Package
+RX = 10KΩ, CX = 10pF
+-
+-
+5
+±2
+-
+-
+-
+-
+-
+%
+Input Capacitance
+CIN
+CL = 50pF
+-
+-
+-
+10
+-
+10
+-
+10
+pF
+NOTE:
+4. CPD is used to determine the dynamic power consumption, per multivibrator.
+PD = (CPD + CX) VCC2 fi ∑(CL VCC2 fO)
+Where
+fi = input frequency
+fO = Output Frequency
+CL = Output Load Capacitance
+CX = External Capacitance
+VCC = Supply Voltage,
+assuming fi « I
+tW
+------
+CD54/74HC123, CD54/74HCT123, CD74HC423, CD74HCT423
+
+8
+Test Circuits and Waveforms
+FIGURE 1. OUTPUT PULSE CONTROL USING RESET INPUT
+(R) PULSE FOR 123
+FIGURE 2. OUTPUT PULSE CONTROL USING RESET INPUT
+(R) FOR 423
+FIGURE 3. TRIGGERING OF ONE SHOT BY INPUT A OR INPUT B FOR A PERIOD tW
+FIGURE 4. TYPICAL OUTPUT PULSE WIDTH AS A FUNCTION
+OF CX FOR RX = 10kΩ AND 100kΩ
+FIGURE 5. TYPICAL “K” FACTOR AS A FUNCTION OF VCC
+B = LOW
+A = HIGH
+tW
+tW
+VS
+VS
+Q
+R
+B
+A
+tW
+tW
+A
+B
+R
+B = LOW
+A = HIGH
+Q
+tW
+VS
+VS
+tW
+tW
+A
+B
+B
+A
+Q
+trT
+(R = HIGH)
+tW
+tW
+tW
+tW
+NOTE: Output pulse control using retrigger pulse for 123 and 423.
+VS
+OUTPUT PULSE WIDTH (µs)
+2
+4
+6
+8
+103
+102
+101
+2
+4
+6
+8
+2
+4
+6
+8
+2
+4
+6
+8
+EXTERNAL CAPACITANCE (CX) - pF
+2
+4 6 8
+103
+104
+2
+4 6 8
+2
+4 6 8
+2
+4 6 8
+105
+106
+107
+RX = 100kΩ
+RX = 10kΩ
+DC SUPPLY VOLTAGE (VCC) = 5V
+AMBIENT TEMPERATURE (TA) = 25oC
+EXTERNAL CAPACITANCE (CX) = 10nF
+EXTERNAL RESISTANCE (RX) = 10kΩ TO 100kΩ
+AMBIENT TEMPERATURE (TA) = 25oC
+0.9
+0.8
+0.7
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+“K” FACTOR
+HCT
+DC SUPPLY VOLTAGE (VCC) - VOLTS
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+PACKAGING INFORMATION
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+5962-8684701EA
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+5962-8684701EA
+CD54HC123F3A
+5962-8970001EA
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+5962-8970001EA
+CD54HCT123F3A
+CD54HC123F
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+CD54HC123F
+CD54HC123F.A
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+CD54HC123F
+CD54HC123F3A
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+5962-8684701EA
+CD54HC123F3A
+CD54HC123F3A.A
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+5962-8684701EA
+CD54HC123F3A
+CD54HCT123F3A
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+5962-8970001EA
+CD54HCT123F3A
+CD54HCT123F3A.A
+Active
+Production
+CDIP (J) | 16
+25 | TUBE
+No
+SNPB
+N/A for Pkg Type
+-55 to 125
+5962-8970001EA
+CD54HCT123F3A
+CD74HC123E
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HC123E
+CD74HC123E.A
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HC123E
+CD74HC123EE4
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HC123E
+CD74HC123M
+Obsolete
+Production
+SOIC (D) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HC123M
+CD74HC123M96
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123M96.A
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123M96E4
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123M96G4
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123M96G4.A
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123NSR
+Active
+Production
+SOP (NS) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123NSR.A
+Active
+Production
+SOP (NS) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC123M
+CD74HC123PW
+Obsolete
+Production
+TSSOP (PW) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HJ123
+CD74HC123PWR
+Active
+Production
+TSSOP (PW) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU | SN
+Level-1-260C-UNLIM
+-55 to 125
+HJ123
+CD74HC123PWR.A
+Active
+Production
+TSSOP (PW) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HJ123
+CD74HC123PWRG4
+Active
+Production
+TSSOP (PW) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HJ123
+CD74HC123PWRG4.A
+Active
+Production
+TSSOP (PW) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HJ123
+CD74HC123PWT
+Obsolete
+Production
+TSSOP (PW) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HJ123
+Addendum-Page 1
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+Orderable part number
+Status
+(1)
+Material type
+(2)
+Package | Pins
+Package qty | Carrier
+RoHS
+(3)
+Lead finish/
+Ball material
+(4)
+MSL rating/
+Peak reflow
+(5)
+Op temp (°C)
+Part marking
+(6)
+CD74HC423E
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HC423E
+CD74HC423E.A
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HC423E
+CD74HC423M
+Obsolete
+Production
+SOIC (D) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HC423M
+CD74HC423M96
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC423M
+CD74HC423M96.A
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC423M
+CD74HC423M96G4
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC423M
+CD74HC423NSR
+Active
+Production
+SOP (NS) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC423M
+CD74HC423NSR.A
+Active
+Production
+SOP (NS) | 16
+2000 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HC423M
+CD74HCT123E
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HCT123E
+CD74HCT123E.A
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HCT123E
+CD74HCT123M
+Obsolete
+Production
+SOIC (D) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HCT123M
+CD74HCT123M96
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HCT123M
+CD74HCT123M96.A
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HCT123M
+CD74HCT123MT
+Obsolete
+Production
+SOIC (D) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HCT123M
+CD74HCT423E
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HCT423E
+CD74HCT423E.A
+Active
+Production
+PDIP (N) | 16
+25 | TUBE
+Yes
+NIPDAU
+N/A for Pkg Type
+-55 to 125
+CD74HCT423E
+CD74HCT423M96
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HCT423M
+CD74HCT423M96.A
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HCT423M
+CD74HCT423M96G4
+Active
+Production
+SOIC (D) | 16
+2500 | LARGE T&R
+Yes
+NIPDAU
+Level-1-260C-UNLIM
+-55 to 125
+HCT423M
+CD74HCT423MT
+Obsolete
+Production
+SOIC (D) | 16
+-
+-
+Call TI
+Call TI
+-55 to 125
+HCT423M
+ 
+(1) Status:  For more details on status, see our product life cycle.
+ 
+(2) Material type:  When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+ 
+(3) RoHS values:  Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+ 
+(4) Lead finish/Ball material:  Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+ 
+Addendum-Page 2
+
+PACKAGE OPTION ADDENDUM
+www.ti.com
+18-Sep-2026
+(5) MSL rating/Peak reflow:  The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+ 
+(6) Part marking:  There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+ 
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+ 
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+ 
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+ 
+ OTHER QUALIFIED VERSIONS OF CD54HC123, CD54HCT123, CD74HC123, CD74HCT123 :
+• Catalog : CD74HC123, CD74HCT123
+• Military : CD54HC123, CD54HCT123
+ NOTE: Qualified Version Definitions:
+• Catalog - TI's standard catalog product
+• Military - QML certified for Military and Defense Applications
+Addendum-Page 3
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+TAPE AND REEL INFORMATION
+Reel Width (W1)
+REEL DIMENSIONS
+A0
+B0
+K0
+W
+Dimension designed to accommodate the component length
+Dimension designed to accommodate the component thickness
+Overall width of the carrier tape
+Pitch between successive cavity centers
+Dimension designed to accommodate the component width
+TAPE DIMENSIONS
+K0
+ P1
+B0 W
+A0
+Cavity
+QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+Pocket Quadrants
+Sprocket Holes
+Q1
+Q1
+Q2
+Q2
+Q3
+Q3
+Q4
+Q4
+User Direction of Feed
+P1
+Reel
+Diameter
+ 
+*All dimensions are nominal
+Device
+Package
+Type
+Package
+Drawing
+Pins
+SPQ
+Reel
+Diameter
+(mm)
+Reel
+Width
+W1 (mm)
+A0
+(mm)
+B0
+(mm)
+K0
+(mm)
+P1
+(mm)
+W
+(mm)
+Pin1
+Quadrant
+CD74HC123M96
+SOIC
+D
+16
+2500
+330.0
+16.4
+6.5
+10.3
+2.1
+8.0
+16.0
+Q1
+CD74HC123M96G4
+SOIC
+D
+16
+2500
+330.0
+16.4
+6.5
+10.3
+2.1
+8.0
+16.0
+Q1
+CD74HC123NSR
+SOP
+NS
+16
+2000
+330.0
+16.4
+8.1
+10.4
+2.5
+12.0
+16.0
+Q1
+CD74HC123PWR
+TSSOP
+PW
+16
+2000
+330.0
+12.4
+6.9
+5.6
+1.6
+8.0
+12.0
+Q1
+CD74HC123PWRG4
+TSSOP
+PW
+16
+2000
+330.0
+12.4
+6.9
+5.6
+1.6
+8.0
+12.0
+Q1
+CD74HC423M96
+SOIC
+D
+16
+2500
+330.0
+16.4
+6.5
+10.3
+2.1
+8.0
+16.0
+Q1
+CD74HC423NSR
+SOP
+NS
+16
+2000
+330.0
+16.4
+8.1
+10.4
+2.5
+12.0
+16.0
+Q1
+CD74HCT123M96
+SOIC
+D
+16
+2500
+330.0
+16.4
+6.5
+10.3
+2.1
+8.0
+16.0
+Q1
+CD74HCT423M96
+SOIC
+D
+16
+2500
+330.0
+16.4
+6.5
+10.3
+2.1
+8.0
+16.0
+Q1
+Pack Materials-Page 1
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+TAPE AND REEL BOX DIMENSIONS
+Width (mm)
+W
+L
+H
+ 
+*All dimensions are nominal
+Device
+Package Type
+Package Drawing
+Pins
+SPQ
+Length (mm)
+Width (mm)
+Height (mm)
+CD74HC123M96
+SOIC
+D
+16
+2500
+353.0
+353.0
+32.0
+CD74HC123M96G4
+SOIC
+D
+16
+2500
+340.5
+336.1
+32.0
+CD74HC123NSR
+SOP
+NS
+16
+2000
+353.0
+353.0
+32.0
+CD74HC123PWR
+TSSOP
+PW
+16
+2000
+353.0
+353.0
+32.0
+CD74HC123PWRG4
+TSSOP
+PW
+16
+2000
+353.0
+353.0
+32.0
+CD74HC423M96
+SOIC
+D
+16
+2500
+353.0
+353.0
+32.0
+CD74HC423NSR
+SOP
+NS
+16
+2000
+353.0
+353.0
+32.0
+CD74HCT123M96
+SOIC
+D
+16
+2500
+353.0
+353.0
+32.0
+CD74HCT423M96
+SOIC
+D
+16
+2500
+353.0
+353.0
+32.0
+Pack Materials-Page 2
+
+PACKAGE MATERIALS INFORMATION
+ 
+ 
+www.ti.com
+10-Aug-2026
+TUBE
+ 
+ 
+L - Tube length
+T - Tube  
+height
+W - Tube  
+width
+B - Alignment groove width
+ 
+ 
+*All dimensions are nominal
+Device
+Package Name
+Package Type
+Pins
+SPQ
+L (mm)
+W (mm)
+T (µm)
+B (mm)
+CD74HC123E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC123E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC123E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC123E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC123EE4
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC123EE4
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC423E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC423E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC423E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HC423E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT123E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT123E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT123E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT123E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT423E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT423E
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT423E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+CD74HCT423E.A
+N
+PDIP
+16
+25
+506
+13.97
+11230
+4.32
+Pack Materials-Page 3
+
+www.ti.com
+PACKAGE OUTLINE
+C
+8.2
+7.4 TYP
+14X 1.27
+16X 0.51
+0.35
+2X
+8.89
+0.15 TYP
+0 - 10
+0.3
+0.1
+2.00 MAX
+(1.25)
+0.25
+GAGE PLANE
+1.05
+0.55
+A
+10.4
+10.0
+NOTE 3
+B
+5.4
+5.2
+NOTE 4
+4220735/A   12/2021
+SOP - 2.00 mm max height
+NS0016A
+SOP
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm, per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm, per side.
+ 
+ 
+1
+16
+0.25
+C A B
+9
+8
+PIN 1 ID
+AREA
+SEATING PLANE
+0.1 C
+ SEE DETAIL A
+DETAIL A
+TYPICAL
+SCALE  1.500
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.07 MAX
+ALL AROUND
+0.07 MIN
+ALL AROUND
+ 
+14X (1.27)
+(R0.05) TYP
+(7)
+16X (1.85)
+16X (0.6)
+4220735/A   12/2021
+SOP - 2.00 mm max height
+NS0016A
+SOP
+NOTES: (continued)
+ 
+5. Publication IPC-7351 may have alternate designs. 
+6. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+METAL
+SOLDER MASK
+OPENING
+NON SOLDER MASK
+DEFINED
+SOLDER MASK DETAILS
+OPENING
+SOLDER MASK
+METAL
+SOLDER MASK
+DEFINED
+LAND PATTERN EXAMPLE
+SCALE:7X
+SYMM
+1
+8
+9
+16
+SEE
+DETAILS
+SYMM
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+(7)
+(R0.05) TYP
+16X (1.85)
+16X (0.6)
+14X (1.27)
+4220735/A   12/2021
+SOP - 2.00 mm max height
+NS0016A
+SOP
+NOTES: (continued)
+ 
+7. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+8. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE:7X
+SYMM
+SYMM
+1
+8
+9
+16
+
+
+
+www.ti.com
+PACKAGE OUTLINE
+C
+14X 0.65
+2X
+4.55
+16X 0.30
+0.17
+6.6
+6.2 TYP
+1.2 MAX
+0.15
+0.05
+0.25
+GAGE PLANE
+0 -8
+4X (0 -12 )
+B
+4.5
+4.3
+NOTE 4
+A
+5.1
+4.9
+NOTE 3
+0.75
+0.50
+(0.15) TYP
+TSSOP - 1.2 mm max height
+PW0016A
+SMALL OUTLINE PACKAGE
+4220204/B   12/2023
+1
+8
+9
+16
+0.1
+C A B
+PIN 1 INDEX AREA
+SEE DETAIL  A
+0.1 C
+NOTES: 
+ 
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+    per ASME Y14.5M. 
+2. This drawing is subject to change without notice. 
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+    exceed 0.15 mm per side. 
+4. This dimension does not include interlead flash. Interlead flash shall not exceed 0.25 mm per side.
+5. Reference JEDEC registration MO-153.
+ 
+SEATING
+PLANE
+A  20
+DETAIL A
+TYPICAL
+SCALE  2.500
+
+www.ti.com
+EXAMPLE BOARD LAYOUT
+0.05 MAX
+ALL AROUND
+0.05 MIN
+ALL AROUND
+16X (1.5)
+16X (0.45)
+14X (0.65)
+(5.8)
+(R0.05) TYP
+TSSOP - 1.2 mm max height
+PW0016A
+SMALL OUTLINE PACKAGE
+4220204/B   12/2023
+NOTES: (continued)
+ 
+6. Publication IPC-7351 may have alternate designs. 
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+ 
+LAND PATTERN EXAMPLE
+EXPOSED METAL SHOWN
+SCALE: 10X
+SYMM
+SYMM
+1
+8
+9
+16
+15.000
+METAL
+SOLDER MASK
+OPENING
+METAL UNDER
+SOLDER MASK
+SOLDER MASK
+OPENING
+EXPOSED METAL
+EXPOSED METAL
+SOLDER MASK DETAILS
+NON-SOLDER MASK
+DEFINED
+(PREFERRED)
+SOLDER MASK
+DEFINED
+
+www.ti.com
+EXAMPLE STENCIL DESIGN
+16X (1.5)
+16X (0.45)
+14X (0.65)
+(5.8)
+(R0.05) TYP
+TSSOP - 1.2 mm max height
+PW0016A
+SMALL OUTLINE PACKAGE
+4220204/B   12/2023
+NOTES: (continued)
+ 
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.   
+9. Board assembly site may have different recommendations for stencil design.
+ 
+SOLDER PASTE EXAMPLE
+BASED ON 0.125 mm THICK STENCIL
+SCALE: 10X
+SYMM
+SYMM
+1
+8
+9
+16
+
+
+IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE 
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS” 
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD 
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate 
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable 
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an 
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license 
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully 
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on 
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable 
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products 
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+Copyright © 2026, Texas Instruments Incorporated
+Last updated 10/2025

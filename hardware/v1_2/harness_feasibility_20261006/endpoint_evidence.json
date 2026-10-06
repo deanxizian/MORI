@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-06",
+  "scope": "Read-only endpoint research, unselected references; not a harness drawing or PCB change",
+  "CAM_USB": {
+    "status": "BLOCKED",
+    "accepted_finished_pigtail_SKU": null,
+    "installed_pigtail_xyz_mm": null,
+    "mating_plane_to_wire_exit_mm": null,
+    "termination_overmold_length_mm": null,
+    "dynamic_bend_radius_mm": null,
+    "source_CC_implementation": null,
+    "polarity": {"J18.1":"USB VBUS","J18.2":"GND"},
+    "board_USB_facts": {"revisions_reviewed":["V1","V1.1"],"CC1_R21_ohm":5100,"CC2_R23_ohm":5100,
+       "VBUS_to_VSYS_diode":"D3 MBR230LSFT1G","scope":"Published schematics, actual purchased revision not confirmed"},
+    "references": [
+      {"manufacturer":"Adafruit","model":"5978 USB Type C Plug Breakout","selected":false,
+       "as_shipped_source_role_screen":"FAIL","reason":"CC1 -> closed SJ1 -> R2 5.1k -> GND; sink termination, no approved source function",
+       "vendor_product_dimensions_mm":[24.1,14.3,3.1],"dimensions_are":"Manufacturer product envelope, not final wired/mated envelope",
+       "native_source":"sources/Adafruit_5978_schematic.sch","board_source":"sources/Adafruit_5978_board.brd",
+       "url":"https://www.adafruit.com/product/5978","price_cny":null,
+       "missing":["actual assembly/pigtail strain relief","approved source CC and VBUS implementation","CAM clearance","final manufacturer plug part number"]},
+      {"manufacturer":"GCT","model":"USB4151-GF-C","selected":false,"kind":"Bare vertical PCB-mounted24-contact Type-C plug, not finished wire assembly",
+       "drawing_revision":"B3, dated08/05/23 as printed","drawing_pages":3,
+       "dimensioned_fields_mm":{"shell_width":{"nominal":8.25,"tolerance":0.03},"shell_thickness":{"nominal":2.40,"tolerance":0.03},
+           "catalogue_body_length":11.10,"shell_length_dimension":9.80,"front_flange_width_dimension":8.66,
+           "PCB_land_depth_dimension":5.60,"recommended_PCB_thickness":{"nominal":0.8,"tolerance":0.1}},
+       "full_wired_assembly_bbox_mm":null,"native_STEP_included":false,
+       "drawing":"sources/GCT_USB4151_drawing.pdf","url":"https://gct.co/files/drawings/usb4151.pdf",
+       "missing":["termination PCB design","source CC/power switching","wire soldering/strain relief/insulation","all mating/plug/cable clearances"],
+       "not_authorized":"No fifth formal board or new geometry adopted"}
+    ]
+  },
+  "SCS0009_tail": {
+    "status":"BLOCKED",
+    "source":"sources/FEETECH_SCS0009_A0.pdf",
+    "document":"A/0,2020-11-23,pages4,8",
+    "connector_label":"5264-3P",
+    "full_connector_manufacturer_and_SKU":null,
+    "length_nominal_mm":150,
+    "length_measurement_datum":null,
+    "length_tolerance_mm":null,
+    "wire_AWG":null,"wire_OD_mm":null,"wire_exit_xyz_mm":null,"wire_conductor_plating":null,
+    "page4_dimensioned_fields_mm":{"contact_pitch":2.5,"shown_length":8.9,"shown_side_depth":4.7,"shown_top_depth":3.9,"shown_inner_dimension":3.30,"shown_partial_side_height":4.20},
+    "complete_connector_width_and_tolerances_mm":null,
+    "page4_function_numbering":{"1":"GND","2":"VCC","3":"Signal/TTL"},
+    "page8_example_P2_P5_numbering":{"1":"DATA","2":"power","3":"GND"},
+    "numbering_disposition":"Preserve both source views; no automatic mirror/reversal or new formal pinmap. Full mating-face drawing and continuity needed.",
+    "splitter_exact_SKU":null,"splitter_dimensions_mm":null,"splitter_supplied_with_current_SKU":null,
+    "splitter_evidence":"Visible in A0p8 packaging photograph only; no part number/full dimensions/current sales inclusion proof",
+    "factory_tail_current_rating_A":null,
+    "motion_group":"Both head servo bodies belong to yaw group, per mechanical handoff; no new pitch route imposed"
+  },
+  "CAM_UART": {
+    "formal_mapping":["1->1","2->2","3->3","4->4"],
+    "board_photo_mapping":"Prior verified board component-side/TypeC-down photo shows left-to-right GND,3V3,TXD,RXD; retained, not re-audited here",
+    "actual_mating_face_and_crimp_exit":"BLOCKED",
+    "no_pinmap_change":true
+  },
+  "SPK": {"candidate_wire":"Alpha2626","terminal":"SSHL-002T-P0.2","housing_candidate":"GHR-02V-S",
+    "actual_CAM_socket_SKU":null,"actual_SPK_tail_SKU":null,"polarity":"CAM J5.1 PA_OUTL+, J5.2 PA_OUTL-; both BTL outputs, neither GND",
+    "status":"BLOCKED","load_current_A":null,"speaker":"Retained user-selected SP3040; no substitution"}
+}
