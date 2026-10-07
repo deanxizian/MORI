@@ -5,6 +5,7 @@ import json
 import pathlib
 import re
 import subprocess
+from git_metadata import project_git
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'reports/v1_2'
@@ -80,7 +81,7 @@ report = {
     'scope': 'V1.2软件基线；web only；本机模拟/主机验证，非整机验收',
     'local_checks_status': 'PASS' if all(c['status'] == 'PASS' and c['exit_code'] == 0 for c in checks) else 'FAIL',
     'hardware_status': 'NOT_TESTED', 'physical_release': False,
-    'project_git': {'head': subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(), 'dirty': bool(subprocess.check_output(['git','status','--porcelain=v1'],cwd=ROOT,text=True)), 'scope':'Actual local repository at report time'},
+    'project_git': project_git(ROOT),
     'counts': {'python': python_count, 'motion_assertions': 2430, 'unitree_synthetic_vectors': 41, 'typescript_tests': 4, 'browser_tests': 2, 'legacy_python': 24, 'legacy_c_assertions': 2406},
     'eyes_host_benchmark': eyes, 'matrix': [dict(zip(fields, row)) for row in matrix],
     'runs': checks, 'hardware_and_integration_blockers': blockers,

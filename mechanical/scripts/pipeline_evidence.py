@@ -1,5 +1,5 @@
 """Filesystem-only guards shared by the CLI and evidence tests (no bpy)."""
-import hashlib, json, os, shutil, subprocess, sys
+import hashlib, json, os, shutil, subprocess, sys, tempfile, zipfile
 from pathlib import Path
 
 def sha(path):
@@ -32,6 +32,7 @@ def current_inputs(project):
     paths=set(build['input_sha256'])
     paths.update(str(p.relative_to(project)) for p in (project/'mechanical/scripts').glob('*.py'))
     paths.update(str(p.relative_to(project)) for p in (project/'mechanical/input_assets').glob('*') if p.is_file())
+    if (project/'tools/restore_archive_assets.py').is_file():paths.add('tools/restore_archive_assets.py')
     manifest=project/'docs/archive_assets.json'
     if manifest.exists():
         paths.add('docs/archive_assets.json')
@@ -63,6 +64,37 @@ def verify_resume(project, records, stages):
         if not artifacts or any(not (project/p).is_file() or sha(project/p)!=h for p,h in artifacts.items()):raise ValueError('Missing/changed stage output: '+stage)
         kept.append(row)
     return kept
+
+CORE_STAGES=('build','finalize_structure_metadata','validate','render','export','export_wheel_metal','delivery_check','report')
+
+def save_pipeline_execution(project, records):
+    """Publish the executed script/input/output fingerprints and exact stage logs."""
+    project=Path(project);verify_resume(project,records,CORE_STAGES)
+    payload={'commands.json':(json.dumps(records,ensure_ascii=False,indent=2)+'\n').encode()}
+    for row in records:
+        name=row['log'];data=(project/'mechanical'/name).read_bytes()
+        if row.get('log_sha256')!=hashlib.sha256(data).hexdigest():raise ValueError('Changed stage log: '+name)
+        payload[name]=data
+    target=project/'mechanical/reports/pipeline_execution.zip'
+    fd,name=tempfile.mkstemp(prefix='.pipeline-',suffix='.zip',dir=target.parent);os.close(fd)
+    try:
+        with zipfile.ZipFile(name,'w',zipfile.ZIP_DEFLATED) as z:
+            for path,data in payload.items():z.writestr(path,data)
+        with zipfile.ZipFile(name) as z:
+            if z.testzip() is not None:raise ValueError('Pipeline evidence ZIP failed CRC')
+        os.replace(name,target)
+    finally:Path(name).unlink(missing_ok=True)
+
+def verify_pipeline_execution(project):
+    project=Path(project)
+    with zipfile.ZipFile(project/'mechanical/reports/pipeline_execution.zip') as z:
+        records=json.loads(z.read('commands.json'))
+        expected={'commands.json',*(row['log'] for row in records)}
+        if set(z.namelist())!=expected or len(z.namelist())!=len(expected) or z.testzip() is not None:raise ValueError('Invalid pipeline evidence members')
+        verify_resume(project,records,CORE_STAGES)
+        for row in records:
+            if row.get('returncode')!=0 or row.get('log_sha256')!=hashlib.sha256(z.read(row['log'])).hexdigest():raise ValueError('Failed/unverified pipeline stage: '+row['stage'])
+    return records
 
 def cad_python():
     configured=os.environ.get('MORI_CAD_PYTHON')

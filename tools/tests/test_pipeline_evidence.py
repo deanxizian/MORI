@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'mechanical/scripts'))
-from pipeline_evidence import annotate_retries, current_inputs, render_outputs, sha, verify_resume, DELIVERY_EVIDENCE_FILES
+from pipeline_evidence import annotate_retries, current_inputs, render_outputs, sha, verify_resume, DELIVERY_EVIDENCE_FILES, CORE_STAGES, save_pipeline_execution, verify_pipeline_execution
 from report_current import generate
 from mesh_components import components
 
@@ -35,6 +35,16 @@ class EvidenceTests(unittest.TestCase):
         self.assertNotIn('params.json',current_inputs(self.root))
         self.write('docs/archive_assets.json',{'groups':{'mechanical-build-inputs':[{'path':'mechanical/current-source.json','sha256':'required'}]}})
         with self.assertRaisesRegex(ValueError,'current-source'):current_inputs(self.root)
+    def test_packaged_pipeline_rejects_changed_generator(self):
+        script=self.root/'mechanical/scripts/validate.py';script.write_text('original generator')
+        output=self.write('mechanical/model.json',{'data':1});records=[]
+        for stage in CORE_STAGES:
+            log=self.root/'mechanical/reports'/(stage+'.log');log.write_text('actual log')
+            records.append({'stage':stage,'returncode':0,'input_sha256':current_inputs(self.root),'artifact_sha256':{'mechanical/model.json':sha(output)},'log':'reports/'+stage+'.log','log_sha256':sha(log)})
+        save_pipeline_execution(self.root,records)
+        self.assertEqual(verify_pipeline_execution(self.root),records)
+        script.write_text('changed generator')
+        with self.assertRaisesRegex(ValueError,'input evidence'):verify_pipeline_execution(self.root)
     def test_render_requires_actual_bytes_and_full_view_set(self):
         image=self.root/'mechanical/renders/front.png';image.write_bytes(b'image-one')
         row={'view':'front','geometry_sha256':'geometry','image_sha256':sha(image),'image_bytes':image.stat().st_size}

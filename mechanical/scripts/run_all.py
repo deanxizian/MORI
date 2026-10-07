@@ -1,7 +1,7 @@
 """Portable pipeline runner, invoked with ordinary Python. Does not modify legacy A0 files."""
 import sys,os,subprocess,json,datetime,shutil,argparse
 from pathlib import Path
-from pipeline_evidence import current_inputs, verify_resume, cad_python, sha
+from pipeline_evidence import current_inputs, verify_resume, cad_python, sha, save_pipeline_execution
 ROOT=Path(__file__).resolve().parents[1]
 blender=os.environ.get('MORI_BLENDER') or shutil.which('blender') or '/Applications/Blender.app/Contents/MacOS/Blender'
 parser=argparse.ArgumentParser();parser.add_argument('--core',action='store_true',help='Build/validate/render/export current outputs and refresh delivery/report; skip historical comparisons');parser.add_argument('--from-step',default='build',help='Resume at a named step, retaining successful preceding command records');parser.add_argument('--render-size',type=int,default=1200);parser.add_argument('--render-samples',type=int,default=32);args=parser.parse_args()
@@ -61,4 +61,5 @@ for name,pre in steps:
     if name=='export':
         evidence=json.loads((ROOT/'reports/export_manifest.json').read_text())
         if evidence['candidate_count']!=evidence['exported_count']:sys.exit('Candidate STL export check failed; see export_manifest.json.')
+save_pipeline_execution(ROOT.parent,records)
 print('PIPELINE_COMPLETE: inspect reports/validation.json and export_manifest.json; NOT_TESTED/BLOCKED are explicit engineering limits.')

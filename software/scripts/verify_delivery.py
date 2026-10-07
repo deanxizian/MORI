@@ -14,11 +14,18 @@ def verify_archives():
         if not archive.is_file() or not manifest.is_file():
             print('BLOCKED: missing preserved baseline archive '+version);return False
         data=json.loads(manifest.read_text())
-        with zipfile.ZipFile(archive) as z:
-            for name,expected in data['sha256'].items():
-                checks[version+' '+name]=name in z.namelist() and hashlib.sha256(z.read(name)).hexdigest()==expected
+        try:
+            with zipfile.ZipFile(archive) as z:
+                names=z.namelist()
+                checks[version+' exact unique member set']=len(names)==len(set(names)) and set(names)==set(data['sha256'])
+                checks[version+' complete ZIP CRC']=z.testzip() is None
+                for name,expected in data['sha256'].items():
+                    checks[version+' '+name]=name in names and hashlib.sha256(z.read(name)).hexdigest()==expected
+        except (OSError,zipfile.BadZipFile,RuntimeError) as error:
+            checks[version+' readable archive']=False
+            print('FAIL '+version+' archive: '+str(error))
     for name,ok in checks.items():print(('PASS ' if ok else 'FAIL ')+name)
-    print(f'{sum(checks.values())}/{len(checks)} immutable archive members; current firmware/build/hardware NOT_TESTED by this check')
+    print(f'{sum(checks.values())}/{len(checks)} immutable archive checks (member set, CRC, hashes); current firmware/build/hardware NOT_TESTED by this check')
     return all(checks.values())
 def verify(require_current=False):
     prerequisites=['reports/baseline_integrity.json','reports/hw04_adoption.json','reports/delivery_manifest.json','reference_sources/HW-SW-0.3_firmware_baseline.zip','reference_sources/HW-SW-0.4_firmware_baseline.zip','reference_sources/HW-SW-0.4_baseline_manifest.json']
@@ -77,7 +84,7 @@ def verify(require_current=False):
     handoff=ROOT/'hardware/handoff/baseline_manifest.json'
     current=json.loads(handoff.read_text()).get('version','UNKNOWN') if handoff.is_file() else 'MISSING_LEGACY_HANDOFF'
     print(('PASS' if current_matches else 'FAIL')+' current upstream source alignment: '+current+'; physical validation NOT_TESTED')
-    return all(checks.values()) and (not require_current or current_matches)
+    return verify_archives() and all(checks.values()) and (not require_current or current_matches)
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--archives-only',action='store_true',help='verify the shipped immutable HW-SW-0.3/0.4 archives only; no current source/build or hardware claim')

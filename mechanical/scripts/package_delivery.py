@@ -1,7 +1,7 @@
 """Package verified current core outputs plus their complete published inputs."""
 from pathlib import Path
 import argparse, datetime, hashlib, json, shutil, zipfile
-from pipeline_evidence import restored_build_inputs, verify_delivery_stamp
+from pipeline_evidence import restored_build_inputs, verify_delivery_stamp, verify_pipeline_execution
 PROJECT=Path(__file__).resolve().parents[2]
 def read(p):return json.loads(p.read_text())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -12,6 +12,7 @@ def safe(project,name):
 
 def check(project):
     root=project/'mechanical';reports=root/'reports'
+    verify_pipeline_execution(project)
     validation=read(reports/'validation.json')
     if validation['counts']['FAIL']:raise ValueError('Failed geometry checks')
     if validation.get('source_blend_sha256')!=sha(root/'mori_v1_2.blend'):raise ValueError('Validation model changed')
@@ -56,6 +57,8 @@ def collect(project):
     names.update(str(p.relative_to(project)) for p in (root/'input_assets').iterdir() if p.is_file())
     for f in ('build_manifest','validation','delivery_consistency','export_manifest','render_manifest','current_report','head_shell_cleanup','imu_mount_transform','structure_changes','module_assembly','wheel_metal_export'):
         names.add('mechanical/reports/'+f+'.json')
+    names.add('mechanical/reports/pipeline_execution.zip')
+    for row in verify_pipeline_execution(project):names.update(row['artifact_sha256'])
     names.update('mechanical/'+row['file'] for row in read(reports/'export_manifest.json')['parts'])
     names.update('mechanical/renders/'+row['view']+'.png' for row in read(reports/'render_manifest.json'))
     names.update('mechanical/'+row['file'] for row in read(reports/'wheel_metal_export.json')['parts'])
