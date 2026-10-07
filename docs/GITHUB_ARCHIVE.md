@@ -15,9 +15,9 @@ git lfs fsck
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-本地图册为 `http://127.0.0.1:8000/mechanical/index.html`，视频入口为 `/mechanical/animation/index.html`。三个 Blender 工程使用 LFS，STL、视频、原生 PCB 和源码使用普通 Git。GitHub 的源码 ZIP 可能只有模型的 LFS 指针；请使用上述克隆方式。
+本地图册为 `http://127.0.0.1:8000/mechanical/index.html`，视频入口为 `/mechanical/animation/index.html`。三个 Blender 工程使用 LFS，STL、视频、原生 PCB 工程包和源码使用普通 Git。GitHub 的源码 ZIP 可能只有模型的 LFS 指针；请使用上述克隆方式。
 
-KiCad 的 PCB、原理图、符号和封装文件按整体图形工程审阅，Git 属性关闭行式 diff，不改变原始字节；DRU、契约、接线和说明仍显示文本差异。请用 KiCad 查看原生几何和连线。文本网格缓存不会作为数百万行源码混入审查。
+GitHub 完整 diff 对本批原生 CAD 没有采用本地 Git 的 binary 属性；原 PCB/封装组因此仍触发 20,000 行限制。现在四套完整 KiCad 工程存为普通 Git ZIP，逐文件内容不变，并保留原理图、设计规则、项目配置等可读文本。使用前按 [原生工程说明](../hardware/v1_2/native_projects/README.md)解压，再用 KiCad 审阅几何和连线。没有为这些小型 CAD 增加 LFS，文本网格缓存也未混入源码审查。
 
 ## 数据与旧工具
 

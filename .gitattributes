@@ -1,7 +1,8 @@
 # Current editable Blender models; generated mesh caches stay in the archive.
 *.blend filter=lfs diff=lfs merge=lfs -text
 
-# Serialized native CAD is reviewed in KiCad/Blender, not as line-oriented code.
+# Suppress local line diffs for serialized CAD; GitHub may still expand it.
+# Large native PCB/footprint sources are delivered in lossless ordinary-Git ZIPs.
 # These files remain ordinary Git blobs, unchanged from the received snapshot.
 *.kicad_pcb binary
 *.kicad_sch binary

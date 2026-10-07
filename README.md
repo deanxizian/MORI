@@ -16,7 +16,7 @@ MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏
 | 当前版本与未完成事项 | [CURRENT_STATUS](docs/CURRENT_STATUS.md) |
 | 从哪些厂家购买哪些产品 | [采购清单](mechanical/procurement/M1.52_按厂家采购清单_2026-10-06.md) |
 | 机械模型、图册与装配视频 | [机械入口](mechanical/README.md) · [网页图册源文件](mechanical/index.html) · [装配视频](mechanical/animation/MORI_assembly.mp4) |
-| 四块 PCB 的原生工程与接线 | [硬件入口](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/hardware/v1_2/README.md) · [P5R7 接线](hardware/v1_2/wiring_P5R7/README.md) |
+| 四块 PCB 的原生工程与接线 | [原生工程包与解压说明](hardware/v1_2/native_projects/README.md) · [P5R7 接线](hardware/v1_2/wiring_P5R7/README.md) |
 | 网页、固件和模拟测试 | [软件说明](README_SOFTWARE_V1_2.md) · [原有验收记录](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/reports/v1_2/acceptance.md) |
 | 下载大文件、在本地打开图册 | [下载与归档说明](docs/GITHUB_ARCHIVE.md) |
 | 历史版本和旧文件的适用范围 | [历史索引](docs/HISTORY.md) |
@@ -44,7 +44,7 @@ MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏
 
 ## 本地阅读
 
-三个 Blender 工程采用 **Git LFS**；大型网格按需从不可变归档恢复，其余小型 CAD、视频、文档与源码使用普通 Git。克隆后先执行 `git lfs pull`，再按 [下载说明](docs/GITHUB_ARCHIVE.md)核对资产。GitHub 的 HTML 文件视图显示源代码；本地图册可这样打开：
+三个 Blender 工程采用 **Git LFS**；大型网格按需从不可变归档恢复，四套原生 KiCad 工程以 ZIP 保存完整文件，并保留可读的原理图与规则；工程包、视频、文档与源码使用普通 Git。克隆后先执行 `git lfs pull`，再按 [下载说明](docs/GITHUB_ARCHIVE.md)核对资产。GitHub 的 HTML 文件视图显示源代码；本地图册可这样打开：
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
