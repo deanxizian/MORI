@@ -24,7 +24,9 @@
     "report": "python mechanical/scripts/report.py",
     "package": "python mechanical/scripts/package_delivery.py --output-parent .state/review/packages --release-name MORI_M1_52_review_R2",
     "package_rebuild": "Blender --background --python-use-system-env --python-exit-code 1 --python <freshly extracted package>/mechanical/scripts/build.py; PYTHONPATH supplied only for the external manifold3d runtime",
-    "package_validate": "Blender --background --python-use-system-env --python-exit-code 1 <rebuilt package>/mechanical/mori_v1_2.blend --python <rebuilt package>/mechanical/scripts/validate.py"
+    "package_validate": "Blender --background --python-use-system-env --python-exit-code 1 <rebuilt package>/mechanical/mori_v1_2.blend --python <rebuilt package>/mechanical/scripts/validate.py",
+    "round2_pipeline": "MORI_CAD_PYTHON=<OCP 7.8.1.1 Python> python <extracted 851-file R4 package>/mechanical/scripts/run_all.py --core --render-size 128 --render-samples 1",
+    "round2_repackage": "python <rebuilt R4 package>/mechanical/scripts/package_delivery.py --output-parent .state/review/repacked --release-name MORI_core_rebuilt"
   },
   "files": {
     "docs/review_evidence/tools-tests.log": {
@@ -166,9 +168,25 @@
     "docs/review_evidence/round2-tools-final.log": {
       "bytes": 109,
       "sha256": "f90205cbd4fdd781cd1743acb491bbf8107bba0a826706e16eea68607db679c8"
+    },
+    "docs/review_evidence/round2-gitleaks.log": {
+      "bytes": 174,
+      "sha256": "db96f21884e97a408b95f22d0ae8ff00d22274dbaa19f6295e4d45d9751b5c44"
+    },
+    "docs/review_evidence/round2-core-pipeline-r4.log": {
+      "bytes": 259,
+      "sha256": "1be6005fb8b7e21f46a6e349a6e4d98a9a42f3a8888d059c2efde7d0d3195cf6"
+    },
+    "docs/review_evidence/round2-core-result.json": {
+      "bytes": 3006,
+      "sha256": "ee3e99e446a5c1501787bf3827acd448c0c030ed98bc486561507c6e68b82034"
+    },
+    "docs/review_evidence/round2-repackage.log": {
+      "bytes": 190,
+      "sha256": "19e138f7882174a5c50101b73bf09140ab053cf8e9f4657bb0478601b3141c85"
     }
   },
   "round2_source_base": "ddfaf9d62796f1a2c67505a9baa523074ab878cc",
-  "round2_scope": "PR 12 follow-up corrections; current core full-pipeline retry recorded separately when complete; prior evidence remains dated.",
+  "round2_scope": "PR 12 follow-up corrections and complete fresh-package core pipeline; prior failed CAD runtime check and successful retry both retained.",
   "log_normalization": "Trailing terminal blank lines may be removed from checked-in copies; command results retained."
 }
