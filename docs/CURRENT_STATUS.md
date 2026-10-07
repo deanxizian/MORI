@@ -1,0 +1,35 @@
+# 当前状态：资料整理快照
+
+快照日期：2026-10-06。机械 **V1.2-M1.52**，硬件合同 **V1.2-H0.5-P5R7**。这次任务是整理并通过 GitHub PR 上传资料，不是新的设计迭代或制造发布。
+
+## 已接收的当前内容
+
+- 机械主模型、电子细模和预览为 M1.52；本次修订只转正两枚试配六角螺母，其他 199 件实体与所有 21 个 STL 保持。机器人本体有 16 件打印件。
+- 装配动画为 M1.52-A1，85.75 秒、22 步。动画同步当前几何，但不代表完整柔性线束、真实舵盘和全部初装过程已闭合。
+- 头身防脱、6806ZZ 偏航轴承、K1 孔壁修正、前后分壳等已进入主模型。
+- PCB 接收版本为运动／后接口 P5R7、电源 P5R6、IMU P5R4。保留原生工程、接线和正式交接。
+- 采购整理对应当前 SCS0009、S288、CAM33700、LCD35079、WeAct F412RET6 与 SP3040；型号待确认或未选定的项目仍单独列明。
+
+依据：[当前交付记录](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/mechanical/studies/prearrival_finish/reaction_access_M1_51/delivery.json)、[工作状态](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/mechanical/studies/prearrival_finish/work_status.json)、[硬件说明](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/hardware/v1_2/README.md)。没有把旧轮次的检查数量重新解释为本轮重测。
+
+## 仍未解决或待验证
+
+| 问题 | 当前证据边界 |
+|---|---|
+| SCS0009 舵盘、轴与锁紧叠层 | 厂家完整资料／实发配件未匹配，最终传动接口未冻结 |
+| 上部反力夹初装 | 下部工具与紧固件路径已有名义检查；上部装入与完整初装仍 BLOCKED |
+| 完整线束 | 恒定材料长度、端部配对、应力释放、FFC／FPC、带线闭壳和供应商裁线图仍未完成 |
+| 未采用候选 | C6 通道、滑动导线约束、回弯固定等仍是候选，未因本次上传而采用 |
+| WeAct E 插合 | 原厂 STEP 自身存在针孔相交；不能据此认定实物能插或不能插，需真实孔／针证据 |
+| 电池、轮胎与电源外部件 | 实际采购型号、额定、热设计和完整装配接口仍有未定项 |
+| 物理断电／急停实施 | 原外露开关已取消，硬件实施方案及验证未闭合 |
+| PA12 与真实装配 | 轴承配合、嵌件、孔径、公差、强度、疲劳、线束寿命尚未试打／实测 |
+| 整机运行 | 上电、热、EMC、充电、电池安全、实机平衡与续航未获验证 |
+
+## 软件记录与硬件版本不能混用
+
+现有 [软件验收](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/reports/v1_2/acceptance.md)为 2026-09-22、1.2.0-dev.1，包含 HOST／SIMULATION 与构建证据。相关软件说明仍写 STM32F413；当前硬件合同已是 WeAct F412RET6。归档时未改固件或重跑这些测试，不能声称其已覆盖 P5R7。
+
+## 状态解释
+
+`PASS` 仅针对记录中的具体检查；`FAIL` 表示该检查未通过；`NOT_TESTED` 没有执行验证；`BLOCKED` 缺少前置输入或仍有未解决问题；`NOT_APPLICABLE` 不适用。整机仍为 **PROTOTYPE / UNVALIDATED**，`manufacturing_release=false`。
