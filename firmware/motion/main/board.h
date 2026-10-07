@@ -1,0 +1,28 @@
+#pragma once
+#include "driver/gpio.h"
+#define PIN_BATTERY GPIO_NUM_1
+#define PIN_NTC_L GPIO_NUM_2
+#define PIN_NTC_R GPIO_NUM_4
+#define PIN_AIN1 GPIO_NUM_5
+#define PIN_AIN2 GPIO_NUM_6
+#define PIN_BIN1 GPIO_NUM_7
+#define PIN_BIN2 GPIO_NUM_8
+#define PIN_ENC_LA GPIO_NUM_9
+#define PIN_ENC_LB GPIO_NUM_10
+#define PIN_ENC_RA GPIO_NUM_11
+#define PIN_ENC_RB GPIO_NUM_12
+#define PIN_LCD_MOSI GPIO_NUM_13
+#define PIN_LCD_CLK GPIO_NUM_14
+#define PIN_LCD_CS GPIO_NUM_15
+#define PIN_IMU_INT GPIO_NUM_16
+#define PIN_SDA GPIO_NUM_17
+#define PIN_SCL GPIO_NUM_18
+#define PIN_ARM GPIO_NUM_21
+#define PIN_LCD_DC GPIO_NUM_39
+#define PIN_LCD_RST GPIO_NUM_40
+#define PIN_HEAD GPIO_NUM_41
+#define PIN_HEARTBEAT GPIO_NUM_42
+#define PIN_FAULT GPIO_NUM_47
+#define PIN_ESTOP GPIO_NUM_48
+#include "mori_io.h"
+#define WHEEL_M_PER_COUNT MORI_WHEEL_M_PER_COUNT
