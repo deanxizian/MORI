@@ -1,0 +1,150 @@
+# Keep default detectors enabled. Only reviewed non-secret data are allowlisted.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Artifact filename to SHA-256 entries in reviewed provenance manifests"
+targetRules = ["generic-api-key", "jfrog-identity-token"]
+condition = "AND"
+regexTarget = "line"
+regexes = ['''^\s*"[^"\n]+[/.][^"\n]*"\s*:\s*"[0-9a-f]{64}"[,]?\s*$''']
+paths = [
+  '''^hardware/v1_2/cam_fpc_exit_review_20261006/protected_baseline\.json$''',
+  '''^hardware/v1_2/cam_ph_terminal_reconciliation_20261006/delivery_manifest\.json$''',
+  '''^hardware/v1_2/j10_routing_C3_20261002/received_mechanical/delivery\.json$''',
+  '''^hardware/v1_2/layout_P5R2/reports/artifact_manifest\.json$''',
+  '''^hardware/v1_2/layout_P5R3/reports/bundle_manifest\.json$''',
+  '''^hardware/v1_2/layout_P5R5/reports/package_manifest\.json$''',
+  '''^hardware/v1_2/layout_P5R6/reports/package_manifest\.json$''',
+  '''^mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/M1\.9_unreleased_report_audit/MORI_V1_2_M1_9/PACKAGE_MANIFEST\.json$''',
+  '''^mechanical/revisions/V1\-A4_before_V1_2/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.10_before_level_head/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.11_before_surface_face/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.12_before_part_consolidation/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.13_before_wheel_interface/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.14_before_flush_yaw_mount/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.15_before_battery_mount_repair/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.15_before_battery_mount_repair/snapshot\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.16_before_power_seat_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.17_before_wider_battery_tray/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.18_before_no_mic_ducts/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.18_before_no_mic_ducts/snapshot\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.19_before_fusheng_speaker/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.19_before_fusheng_speaker/snapshot\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.1_before_structure_simplification/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.20_before_compact_yaw_stops/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.20_before_compact_yaw_stops/snapshot\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.21_before_crossbolt_joint/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.22_before_populated_pcbs/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.22_before_populated_pcbs/snapshot\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.23_before_head_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.24_before_planar_head_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.25_before_drive_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.26_before_head_corner_chamfer/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.27_before_broad_head_folds/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.28_before_surface_normals/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.29_before_servo_detail/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.2_before_monocoque/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.30_before_seat_foot_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.30_before_seat_foot_cleanup/snapshot_manifest\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.31_before_yaw_pad_centering/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.31_before_yaw_pad_centering/snapshot_manifest\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.32_before_waveshare_detail/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.33_before_simple_head_mounts/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.34_before_assembly_completion/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.35_before_cap_edge_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.38_before_prearrival/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.39_before_mount_root_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.3_before_simple_modules/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.40_before_display_frame_flush/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.41_before_interface_completion/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.42_before_six_issue_fixes/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.43_before_head_retention_M1\.44/hardware_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.43_before_head_retention_M1\.44/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.44_before_P5R7_M1\.45/hardware_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.44_before_P5R7_M1\.45/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.44_before_P5R7_M1\.45/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.46_before_approved_thin_cleanup/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.46_before_approved_thin_cleanup/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.48_before_neck_capacity/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.48_before_neck_capacity/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.49_before_CAM_entry_fix/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.49_before_CAM_entry_fix/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.49_before_CAM_entry_fix/mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/publication\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.4_before_lower_deck/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.50_before_body_split/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.50_before_body_split/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.50_before_body_split/mechanical/studies/prearrival_finish/cam_entry_adoption/preparation\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.51_before_nut_alignment/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.51_before_nut_alignment/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.51_before_nut_alignment/mechanical/studies/prearrival_finish/body_split_adoption/approval\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.51_before_nut_alignment/mechanical/studies/prearrival_finish/body_split_adoption/preparation\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.51_before_nut_alignment/mechanical/studies/prearrival_finish/cam_entry_adoption/preparation\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.5_before_flat_head/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.6_before_wheels_camera/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.7_before_lower_body/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.8_before_belly_relayout/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1\.9_before_detail_fit/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/revisions/V1\.2\-M1_before_purchased_dimensions/mechanical/reports/preexisting_hashes\.json$''',
+  '''^mechanical/studies/prearrival_finish/body_split_adoption/approval\.json$''',
+  '''^mechanical/studies/prearrival_finish/body_split_adoption/preparation\.json$''',
+  '''^mechanical/studies/prearrival_finish/cam_entry_adoption/preparation\.json$''',
+  '''^mechanical/studies/prearrival_finish/camera_cam_adoption/approval\.json$''',
+  '''^mechanical/studies/prearrival_finish/hardware_A7_delivery\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A2/delivery\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/cam_connector_install/review_manifest\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/cam_socket_tool/review_manifest\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/cam_tie_install/review_manifest\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/delivery\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/CAM_PH_RECEIPT\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_search/review\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_plug_simple/review\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_restraints/power_side_access/review\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/publication\.json$''',
+  '''^mechanical/studies/prearrival_finish/neck_adoption/approval\.json$''',
+  '''^mechanical/studies/prearrival_finish/neck_adoption/fit_coupons/review_manifest\.json$''',
+  '''^mechanical/studies/prearrival_finish/neck_bearing_capacity_M1_48/delivery\.json$''',
+  '''^mechanical/studies/prearrival_finish/reaction_access_M1_51/delivery\.json$''',
+  '''^mechanical/studies/prearrival_finish/reaction_access_M1_51/preparation\.json$''',
+  '''^mechanical/studies/prearrival_finish/supplier_made_harness/delivery\.json$''',
+  '''^mechanical/studies/prearrival_finish/thin_candidate_workspace/mechanical/reports/head_retention_delivery_files\.json$''',
+  '''^mechanical/studies/prearrival_finish/thin_candidate_workspace/mechanical/reports/preexisting_hashes\.json$''',
+  '''^reports/v1/file_manifest\.json$''',
+  '''^reports/v1_2/file_manifest\.json$''',
+]
+
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Numerical harness candidate array identifiers"
+condition = "AND"
+regexTarget = "line"
+regexes = ['''^\s*"(?:array_key|key)"\s*:\s*"(?:radial_and_height_[0-9]+_[0-9]+|upper_fan_delayed_pin[0-9]+_[0-9]+|pin[0-9]+_(?:lead[0-9.]+|r[0-9.]+_z[0-9.]+))"[,]?\s*$''']
+paths = [
+  '''^mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/history_feed_only/relaxation_raw_screen\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/history_initial_storage_fins/relaxation_raw_screen\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/open_mouth/relaxation_screen\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/relaxation_raw_screen\.json$''',
+  '''^mechanical/studies/prearrival_finish/harness_A8/assembly_feed_v3/relaxation_screen\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/cam_joined_verification\.json$''',
+  '''^mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/cam_side_fans/fan_screen\.json$''',
+  '''^mechanical/studies/prearrival_finish/outer_harness_M1_48/outer_risers\.json$''',
+  '''^mechanical/studies/prearrival_finish/outer_harness_M1_48/outer_risers_R10\.json$''',
+  '''^mechanical/studies/prearrival_finish/outer_harness_M1_48/outer_risers_R8\.json$''',
+]
+
+[[rules.allowlists]]
+description = "J6 service-key connector footprint is a component name"
+condition = "AND"
+regexTarget = "match"
+paths = ['''^hardware/v1_2/layout_P4/previews/MORI_motion_P4/placement_native\.csv$''']
+regexes = ['''KEY","JST_PH_B2B-PH-K_1x02_P2\.00mm_Vertical__P4_PH_ANNULUS"''']
+
+[[rules.allowlists]]
+description = "Historical simulated command UUID in a Python KeyError"
+condition = "AND"
+regexTarget = "match"
+paths = ['''^reports/v1/result_history_before\.log$''']
+regexes = ['''^KeyError: '[a-f0-9]{32}'$''']
