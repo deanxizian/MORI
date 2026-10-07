@@ -1,0 +1,21 @@
+menu "MORI interaction evidence gates"
+config MORI_INTERACTION_BOARD_VERIFIED
+    bool "Hardware pin/power contract verified"
+    default n
+config MORI_ENABLE_PHYSICAL_CAMERA
+    bool "Camera tested"
+    depends on MORI_INTERACTION_BOARD_VERIFIED
+    default n
+config MORI_ENABLE_PHYSICAL_AUDIO
+    bool "Audio tested"
+    depends on MORI_INTERACTION_BOARD_VERIFIED
+    default n
+config MORI_ENABLE_PHYSICAL_DISPLAY
+    bool "Display tested"
+    depends on MORI_INTERACTION_BOARD_VERIFIED
+    default n
+config MORI_ENABLE_PHYSICAL_BUTTON
+    bool "Button tested"
+    depends on MORI_INTERACTION_BOARD_VERIFIED
+    default n
+endmenu
