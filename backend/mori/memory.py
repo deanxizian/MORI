@@ -1,4 +1,4 @@
-import datetime,json,pathlib,sqlite3,uuid
+import datetime,json,os,pathlib,sqlite3,uuid
 
 def utc():return datetime.datetime.now(datetime.timezone.utc).isoformat()
 class Memory:
@@ -13,6 +13,8 @@ class Memory:
   CREATE TABLE IF NOT EXISTS preferences(user_id TEXT,device_id TEXT,enabled INTEGER DEFAULT 1,PRIMARY KEY(user_id,device_id));
   CREATE TABLE IF NOT EXISTS deletion_ledger(id TEXT PRIMARY KEY,deleted_at TEXT);
   ''');self.db.commit()
+  journal=self.path.with_suffix('.deletions.jsonl')
+  if journal.exists():self.apply_deletions(journal)
  def enabled(self,user,device):
   row=self.db.execute('SELECT enabled FROM preferences WHERE user_id=? AND device_id=?',(user,device)).fetchone();return row is None or bool(row[0])
  def set_enabled(self,user,device,enabled):
@@ -43,17 +45,28 @@ class Memory:
  def delete(self,user,device,ident):
   row=self.db.execute('SELECT id FROM memories WHERE id=? AND user_id=? AND device_id=?',(ident,user,device)).fetchone()
   if not row:raise ValueError('NOT_FOUND')
+  # Persist the independent tombstone before acknowledging/removing SQL content.
+  # A crash after this write is recovered on open, including after an old backup.
+  deleted_at=utc();journal=self.path.with_suffix('.deletions.jsonl')
+  with journal.open('a') as f:
+   f.write(json.dumps({'id':ident,'deleted_at':deleted_at})+'\n');f.flush();os.fsync(f.fileno())
+  fd=os.open(journal.parent,os.O_RDONLY)
+  try:os.fsync(fd)
+  finally:os.close(fd)
   self.db.execute('DELETE FROM memory_index WHERE id=?',(ident,));self.db.execute('DELETE FROM memories WHERE id=?',(ident,))
-  self.db.execute('INSERT OR REPLACE INTO deletion_ledger VALUES(?,?)',(ident,utc()));self.db.commit();self.rebuild_index()
-  # Independent deletion journal must be retained across restoration of older backups.
-  with self.path.with_suffix('.deletions.jsonl').open('a') as f:f.write(json.dumps({'id':ident,'deleted_at':utc()})+'\n')
+  self.db.execute('INSERT OR REPLACE INTO deletion_ledger VALUES(?,?)',(ident,deleted_at));self.db.commit();self.rebuild_index()
  def export(self,user,device):
   return [dict(r) for r in self.db.execute('SELECT * FROM memories WHERE user_id=? AND device_id=?',(user,device))]
  def backup(self,path):
   target=sqlite3.connect(path);self.db.backup(target);target.close()
  def apply_deletions(self,journal):
-  for line in pathlib.Path(journal).read_text().splitlines():
-   ident=json.loads(line)['id'];self.db.execute('DELETE FROM memory_index WHERE id=?',(ident,));self.db.execute('DELETE FROM memories WHERE id=?',(ident,))
+  path=pathlib.Path(journal);data=path.read_bytes();end=data.rfind(b'\n')+1
+  if end!=len(data):
+   with path.open('r+b') as f:f.truncate(end);f.flush();os.fsync(f.fileno())
+  for line in data[:end].splitlines():
+   record=json.loads(line);ident=record['id']
+   self.db.execute('DELETE FROM memory_index WHERE id=?',(ident,));self.db.execute('DELETE FROM memories WHERE id=?',(ident,))
+   self.db.execute('INSERT OR REPLACE INTO deletion_ledger VALUES(?,?)',(ident,record['deleted_at']))
   self.db.commit();self.rebuild_index()
  def rebuild_index(self):
   self.db.execute('DROP TABLE memory_index');self.db.execute("CREATE VIRTUAL TABLE memory_index USING fts5(id UNINDEXED,user_id UNINDEXED,device_id UNINDEXED,text,tokenize='unicode61')");self.db.execute('INSERT INTO memory_index SELECT id,user_id,device_id,text FROM memories');self.db.commit();self.db.execute('VACUUM')

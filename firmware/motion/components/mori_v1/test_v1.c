@@ -15,6 +15,23 @@ int main(void){mori_v1_t v;mori_v1_init(&v,123);uint8_t yes=1;assert(!v.core.out
  v.core.v_target=.1f;mori_v1_tick(&v,1300,NULL);assert(!v.claimed&&v.core.v_target==0&&v.core.state==MORI_BALANCE);
  assert(command(&v,MORI_FAULT_STOP,1,4,1310,NULL,0)==V1_FAULT);assert(v.core.state==MORI_FAULT&&!v.core.out.enable);
  mori_v1_init(&v,456);assert(v.session==456&&v.core.state==MORI_DISARMED);
+ /* Host fixtures exercise state gates; they are not physical authorization. */
+ v.physical_contract_verified=true;v.head[0].verified=v.head[1].verified=true;
+ assert(command(&v,MORI_CLAIM_CONTROL,1,10,1000,&yes,1)==V1_COMPLETED);
+ float targets[2]={.5f,.2f};
+ assert(command(&v,MORI_HEAD_TARGET,2,11,1001,(const uint8_t*)targets,8)==V1_REJECTED);
+ v.core.state=MORI_BALANCE;
+ assert(command(&v,MORI_HEAD_TARGET,3,12,1002,(const uint8_t*)targets,8)==V1_RUNNING);
+ mori_v1_tick(&v,1003,NULL);assert(v.head[0].position>0);
+ assert(command(&v,MORI_DISARM,4,13,1004,&yes,1)==V1_COMPLETED);
+ float stopped=v.head[0].position;mori_v1_tick(&v,1014,NULL);
+ assert(v.core.state==MORI_DISARMED&&v.head[0].position==stopped&&v.head[0].target==stopped&&v.head[0].velocity==0);
+ assert(command(&v,MORI_HEARTBEAT,5,14,1020,NULL,0)==V1_COMPLETED);
+ uint64_t lease_end=v.lease_end_ms;
+ assert(command(&v,MORI_READ_STATUS,6,15,1030,NULL,0)==V1_COMPLETED);
+ assert(command(&v,MORI_HEARTBEAT,7,14,1040,NULL,0)==V1_COMPLETED);
+ assert(v.lease_end_ms==lease_end); /* A B A with a new sequence must not renew. */
+ mori_v1_init(&v,789);
  mori_axis_t *a=&v.head[1];assert(!mori_axis_target(a,NAN));assert(!mori_axis_target(a,.5));assert(mori_axis_target(a,.4));float last=0;
  for(int i=0;i<300;i++){mori_axis_step(a,.01f,false);assert(fabsf(a->position-last)<=.005201f);assert(a->position<=a->maximum);last=a->position;}
  assert(fabsf(a->position-.4f)<.001f);assert(a->target==.4f);mori_axis_step(a,.01f,true);assert(a->velocity==0);

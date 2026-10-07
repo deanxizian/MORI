@@ -2,7 +2,7 @@
 
 本工程已按用户提供的 `MORI_SPEC_V1_2.md`、`software/inputs/v1_2/03_CODEX_SOFTWARE.md` 更新，保留已有软件与旧台架回归。**当前只开发网页，App 暂停**，这个用户要求优先于附件中的 App 条目。
 
-网页、模拟设备、语音 mock/服务适配、SQLite 记忆、视觉像素输入及有界活动/跟随/巡游继续可运行。运动默认构建改为 STM32F413；新增 S288、SCS0009、ICM42688 数据解析、安全核心与分段计时钩子。交互改为 16 MB Flash、360×360 目标，锁定并编译 ST77916 QSPI、ES7210/ES8311、CH32V003 与 OV3660 相关依赖。
+网页、模拟设备、语音 mock/服务适配、SQLite 记忆、视觉像素输入及有界活动/跟随/巡游继续可运行。运动默认构建对齐已选 STM32F412RET6（512 KiB Flash / 256 KiB SRAM）；新增 S288、SCS0009、ICM42688 数据解析、安全核心与分段计时钩子。交互改为 16 MB Flash、360×360 目标，锁定并编译 ST77916 QSPI、ES7210/ES8311、CH32V003 与 OV3660 相关依赖。
 
 **机器人是否已经能自平衡站立：尚未验证。** 新 STM32 镜像是禁驱启动镜像；编译和模拟不代表实机已接通、能旋转或能平衡。`reports/v1_2/acceptance.md` 区分实现、HOST_TEST/SIMULATION 与 BENCH/ROBOT。
 
@@ -46,7 +46,7 @@ bash tools/build-firmware.sh legacy-motion
 | 项目 | 当前软件 | 物理边界 |
 |---|---|---|
 | 控制台/后端 | 1.2.0-dev.1，MORI/2 向后兼容字段扩展 | 仅模拟连接，实机解锁 BLOCKED |
-| STM32 | F413 CMSIS v2.6.10 + HAL v1.8.3；Arm GCC 14.2.1 | 板型/时钟/管脚/安全链未释放 |
+| STM32 | F412Rx CMSIS v2.6.10 + HAL v1.8.3；Arm GCC 14.2.1 | 板型/时钟/管脚/安全链未释放 |
 | S288 | 显式 20/26 字节、独立 CRC、齿比一次转换、TC 方向释放状态、限时双轮轮询 | 停止语义、电平、6 Mbps 波形、实际带载扭矩未测 |
 | SCS0009 | 大端位置/速度/负载反馈；需标定的 joint 映射；联合可达域回调 | 零点/带载限位/联合区域/重力保持未测 |
 | ICM42688 | WHO_AM_I 与 14 字节 SI 解码、正交旋转矩阵校验 | 模块、SPI/DRDY、量程/滤波/零点及实时驱动接入待核 |
@@ -60,3 +60,5 @@ MORI/2 保留相同 33 命令。新增软件/参数版本与 `sensors.*.valid`�
 台架步骤/记录：`docs/debug_manual_v1_2.md`；分段时序：`docs/realtime_v1_2.md`；变更：`software/interface_change_requests.md` / `reports/decisions/ADR-SW12-001.md`；依赖与许可：`software/THIRD_PARTY_V1_2.md`。
 
 离线动力学补充了供电能力下降、头部质量/惯量与pitch反作用，保留延迟、饱和、死区、噪声和轮滑。它仍是 **ASSUMED 加速度输入模型**，不等同 S288 扭矩对象；说明及未建模项见 `docs/dynamics_v1_2.md`。实机增益保持0。
+
+2026-10-07 复核：编译目标改用锁定 CMSIS 的 startup_stm32f412rx.s、STM32F412Rx 宏和专用 STM32F412RE.ld。保留旧 F413 链接脚本供历史复现；它不再是默认目标。容量依据 [ST 官方 F412RE](https://www.st.com/en/microcontrollers-microprocessors/stm32f412re.html)。这只修正目标和内存边界，现有禁驱门保持；不是 GPIO/时钟/实时端口已接通。

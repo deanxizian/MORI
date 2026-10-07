@@ -3,8 +3,11 @@ import { ref, onMounted, onUnmounted } from "vue";
 import {
   ui,
   pair,
+  restorePairing,
+  revokePairing,
   connect,
   api,
+  request,
   command,
   claim,
   release,
@@ -18,11 +21,11 @@ import EyesPreview from "./components/EyesPreview.vue";
 const tab = ref("control"),
   code = ref(""),
   busy = ref(false),
+  uploadPending = ref<boolean | null>(null),
   support = ref(false),
   local = ref(false),
   yaw = ref(0),
   pitch = ref(0),
-  upload = ref(false),
   picture = ref(""),
   description = ref(""),
   voice = ref(""),
@@ -61,19 +64,35 @@ async function run(fn: () => Promise<unknown>) {
   }
 }
 async function camera(mode: string) {
-  await command("CAMERA_MODE", { mode, upload_allowed: upload.value });
+  await command("CAMERA_MODE", {
+    mode,
+    upload_allowed: ui.status?.camera.upload_allowed ?? false,
+  });
   if (mode === "OFF") {
     if (picture.value) URL.revokeObjectURL(picture.value);
     picture.value = "";
   } else await frame();
 }
+async function setUploadConsent(event: Event) {
+  const allowed = (event.target as HTMLInputElement).checked;
+  uploadPending.value = allowed;
+  await run(async () => {
+    const result = await command("CAMERA_MODE", {
+      mode: ui.status?.camera.mode ?? "OFF",
+      upload_allowed: allowed,
+    });
+    // The result can arrive before the next telemetry frame. Keep the accepted
+    // value visible instead of resetting the checkbox to the previous frame.
+    if (result?.status === "COMPLETED" && ui.status)
+      ui.status.camera.upload_allowed = allowed;
+  });
+  uploadPending.value = null;
+}
 async function frame() {
   if (!ui.identity || fetching) return;
   fetching = true;
   try {
-    const r = await fetch(ui.base + "/api/camera/frame", {
-      headers: { Authorization: "Bearer " + ui.identity.token },
-    });
+    const r = await request("/api/camera/frame");
     if (!r.ok || r.status === 204) return;
     const url = URL.createObjectURL(await r.blob());
     if (picture.value) URL.revokeObjectURL(picture.value);
@@ -147,6 +166,7 @@ function chooseTab(value: string) {
 }
 onMounted(() => {
   installLifecycle();
+  restorePairing();
   poll = setInterval(() => {
     if (
       tab.value === "vision" &&
@@ -465,7 +485,11 @@ onUnmounted(() => {
             </div>
             <label class="check"
               ><input
-                v-model="upload"
+                :checked="
+                  uploadPending ?? ui.status?.camera.upload_allowed ?? false
+                "
+                :disabled="!ui.connected || busy"
+                @change="setUploadConsent"
                 type="checkbox"
               />允许本次按需抓拍上传语义服务（跟踪默认本地）</label
             ><img
@@ -485,7 +509,7 @@ onUnmounted(() => {
                 @click="
                   run(async () => {
                     description = JSON.stringify(
-                      await api('/api/camera/describe'),
+                      await api('/api/camera/describe', {}),
                     );
                   })
                 "
@@ -815,9 +839,7 @@ onUnmounted(() => {
             <pre>{{ ui.costs }}</pre>
             <h3>本机通信统计（非 MCU 实测时延）</h3>
             <pre>{{ ui.statistics }}</pre>
-            <button @click="run(() => api('/api/credentials/revoke'))">
-              撤销此客户端凭证
-            </button>
+            <button @click="run(revokePairing)">撤销此客户端凭证</button>
             <p class="muted">
               当前仅开发网页；App 暂停。模拟绑定不代表实机 Wi-Fi 配网完成。
             </p>

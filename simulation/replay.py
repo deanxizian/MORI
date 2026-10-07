@@ -16,6 +16,7 @@ def replay(records):
   if 'command' in item:
    c=item['command'];result=r.issue(c['type'],c['params'])
   if 'scenario' in item:
+   if item['scenario'] not in ('single','multiple','lost','dark'):raise ValueError('unknown replay scenario')
    f=r.d.capture();r.d.observe(f,v.detect(fixture(f,item['scenario'])))
   rows.append({'source':'SIMULATED','device_ms':r.clock(),'result':result,'state':r.d.snapshot()})
  return rows

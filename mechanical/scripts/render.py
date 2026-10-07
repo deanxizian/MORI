@@ -299,7 +299,7 @@ def main():
             for aa,bb in [((15,-64,115),(15,-59,118)),((15,-64,110),(15,-58,105))]:line('section_leader',aa,bb,.1)
         bpy.context.view_layer.update(); sc.render.filepath=str(ROOT/'renders'/f'{name}.png')
         print('RENDER',name,flush=True); bpy.ops.render.render(write_still=True)
-        rows.append(dict(default_pitch_deg=P['head_joint'].get('default_pitch_deg',0) if name in ['45_assembled','front','side','rear','top','bottom','face_detail','docked'] else 0,view=name,geometry_sha256=dig.hexdigest(),visibility_mode=name,ortho_scale_mm=sc.camera.data.ortho_scale,camera_mm=list(sc.camera.location),target_mm=list(views[name][1]),resolution=a.size,samples=a.samples))
+        rows.append(dict(image_sha256=hashlib.sha256(Path(sc.render.filepath).read_bytes()).hexdigest(),image_bytes=Path(sc.render.filepath).stat().st_size,default_pitch_deg=P['head_joint'].get('default_pitch_deg',0) if name in ['45_assembled','front','side','rear','top','bottom','face_detail','docked'] else 0,view=name,geometry_sha256=dig.hexdigest(),visibility_mode=name,ortho_scale_mm=sc.camera.data.ortho_scale,camera_mm=list(sc.camera.location),target_mm=list(views[name][1]),resolution=a.size,samples=a.samples))
         if name.startswith('yaw_stop_'):
             rows[-1]['section_method']='Actual Yaw_Base/Pitch_Yoke cropped to Z153..166 to reveal stops; rotor blue for explanation. Exploded view adds9mm Z presentation offset only, never saved/exported.'
         elif name=='consolidated_camera':rows[-1]['section_method']='Actual head-front mesh cropped around integrated camera collar; assembly coordinates unchanged'

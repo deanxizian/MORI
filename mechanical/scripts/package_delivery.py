@@ -1,73 +1,76 @@
-"""Package only current executed V1.2 mechanical evidence; preserve previous releases."""
+"""Package verified current core outputs plus their complete published inputs."""
 from pathlib import Path
-from html.parser import HTMLParser
-from urllib.parse import urlparse,unquote
-import argparse,json,shutil,hashlib,zipfile,datetime
+import argparse, datetime, hashlib, json, shutil, zipfile
 PROJECT=Path(__file__).resolve().parents[2]
-read=lambda p:json.loads(p.read_text())
-sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
-class Links(HTMLParser):
- def __init__(self):super().__init__();self.refs=[]
- def handle_starttag(self,tag,attrs):self.refs.extend(v for k,v in attrs if k in ['href','src'])
+def read(p):return json.loads(p.read_text())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def safe(project,name):
+    p=Path(name)
+    if p.is_absolute() or '..' in p.parts:raise ValueError('Unsafe package path: '+name)
+    return project/p
+
 def check(project):
- root=project/'mechanical';r=root/'reports';assert read(r/'validation.json')['counts']['FAIL']==0
- assert read(r/'delivery_consistency.json')['status']=='PASS';assert read(r/'rebuild_check.json')['status']=='PASS'
- e=read(r/'export_manifest.json');assert e['candidate_count']==e['exported_count']
- for i in e['parts']:assert i['status']=='PASS' and sha(root/i['file'])==i['sha256']
- for p,h in read(r/'build_manifest.json')['input_sha256'].items():assert sha(project/p)==h,p
- parser=Links();parser.feed((root/'index.html').read_text());missing=[u for u in parser.refs if not urlparse(u).scheme and urlparse(u).path and not(root/unquote(urlparse(u).path)).exists()];assert not missing,missing
- return len(parser.refs)
-def copy(source,dest):
- dest.parent.mkdir(parents=True,exist_ok=True)
- if source.is_dir():shutil.copytree(source,dest,ignore=shutil.ignore_patterns('__pycache__','*.pyc','.DS_Store'))
- else:shutil.copy2(source,dest)
+    root=project/'mechanical';reports=root/'reports'
+    validation=read(reports/'validation.json')
+    if validation['counts']['FAIL']:raise ValueError('Failed geometry checks')
+    if validation.get('source_blend_sha256')!=sha(root/'mori_v1_2.blend'):raise ValueError('Validation model changed')
+    if read(reports/'delivery_consistency.json')['status']!='PASS':raise ValueError('Delivery consistency has not passed')
+    exports=read(reports/'export_manifest.json')
+    if exports['candidate_count']!=exports['exported_count']:raise ValueError('STL export incomplete')
+    for row in exports['parts']:
+        if row['status']!='PASS' or sha(safe(root,row['file']))!=row['sha256']:raise ValueError('STL changed: '+row['id'])
+    for name,digest in read(reports/'build_manifest.json')['input_sha256'].items():
+        if sha(safe(project,name))!=digest:raise ValueError('Build source changed: '+name)
+    for row in read(reports/'render_manifest.json'):
+        p=root/'renders'/(row['view']+'.png')
+        if sha(p)!=row['image_sha256'] or p.stat().st_size!=row['image_bytes']:raise ValueError('Rendered image changed: '+row['view'])
+
+def collect(project):
+    root=project/'mechanical';reports=root/'reports'
+    names=set(read(reports/'build_manifest.json')['input_sha256'])
+    native='hardware/v1_2/native_projects/manifest.json';names.add(native)
+    for bundle in read(project/native)['projects']:
+        names.add(bundle['archive'])
+        if sha(safe(project,bundle['archive']))!=bundle['sha256']:raise ValueError('Native archive changed')
+        for item in bundle['files']:
+            if sha(safe(project,item['path']))!=item['sha256']:raise ValueError('Native file differs: '+item['path'])
+            names.add(item['path'])
+    names.update(['AGENTS.md','MORI_SPEC_V1_2.md','01_CODEX_MECHANICAL.md','config/geometry.json','contracts/mechanical_interfaces.json','contracts/components.json','docs/CURRENT_STATUS.md','mechanical/README.md','mechanical/current_report.html','mechanical/mori_v1_2.blend'])
+    # Restore manifest pins nested CAD/PDF/photo inputs read by the builders.
+    manifest=read(project/'docs/archive_assets.json')
+    for group in ('mechanical-data','mechanical-build-inputs','legacy-helpers'):
+        for item in manifest['groups'][group]:
+            p=safe(project,item['path'])
+            if sha(p)!=item['sha256']:raise ValueError('Restored input differs: '+item['path'])
+            names.add(item['path'])
+    names.update(str(p.relative_to(project)) for p in (root/'scripts').glob('*.py'))
+    names.update(str(p.relative_to(project)) for p in (root/'input_assets').iterdir() if p.is_file())
+    for f in ('build_manifest','validation','delivery_consistency','export_manifest','render_manifest','current_report','head_shell_cleanup','imu_mount_transform'):
+        names.add('mechanical/reports/'+f+'.json')
+    names.update('mechanical/'+row['file'] for row in read(reports/'export_manifest.json')['parts'])
+    names.update('mechanical/renders/'+row['view']+'.png' for row in read(reports/'render_manifest.json'))
+    for name in names:
+        if not safe(project,name).is_file():raise FileNotFoundError('Required current input/output missing: '+name)
+    return sorted(names)
+
 def main():
- a=argparse.ArgumentParser();a.add_argument('--output-parent',required=True,type=Path);a.add_argument('--release-name',default='MORI_V1_2_M1_10');args=a.parse_args();check(PROJECT)
- assert args.release_name and Path(args.release_name).name==args.release_name and args.release_name not in ['.','..']
- dest=args.output_parent/args.release_name;archive=args.output_parent/(args.release_name+'.zip')
- if dest.exists() or archive.exists():raise FileExistsError('Earlier releases are immutable: '+str(dest))
- names=['AGENTS.md','MORI_SPEC_V1_2.md','01_CODEX_MECHANICAL.md','config/geometry.json','contracts/mechanical_interfaces.json','reports/mechanical_v1_2.md','reports/decisions/ADR-MECH-012-v1_2-layout.md','mechanical/mori_v1_2.blend','mechanical/README.md','mechanical/index.html','mechanical/scripts','mechanical/sources/v1_2','mechanical/exports/templates']
- names += ['reports/decisions/ADR-MECH-022-local-mounts-and-sourced-parts.md','mechanical/sources/v1_2_detail_fit','reports/decisions/ADR-MECH-013-purchased-dimensions.md','reports/decisions/ADR-MECH-014-structure-simplification.md','reports/decisions/ADR-MECH-015-monocoque.md','reports/decisions/ADR-MECH-016-simple-modules.md','reports/decisions/ADR-MECH-017-lower-flat-deck.md','reports/decisions/ADR-MECH-018-flat-head-support.md','reports/decisions/ADR-MECH-019-larger-wheels-independent-camera.md','reports/decisions/ADR-MECH-020-lower-body-wheel-position.md','reports/decisions/ADR-MECH-021-combined-belly-relayout.md','mechanical/sources/user_wheel_camera_reference.png','mechanical/renders/appearance','mechanical/sources/v1_2_verified_dimensions','mechanical/renders/structure']
- if (PROJECT/'contracts/components.json').exists():
-  names.append('contracts/components.json')
-  if (PROJECT/'hardware/v1_2/sources').exists():names.append('hardware/v1_2/sources')
- baseline=read(PROJECT/'config/geometry.json')['structure'].get('comparison_baseline',{})
- names += [baseline[k] for k in ['blend','report','parameters','mass','derived'] if k in baseline]
- for n in names:copy(PROJECT/n,dest/n)
- root=PROJECT/'mechanical';rp=root/'reports'
- report_names=['validation','static_interference','head_motion','cable_motion','wheel_clearance','mesh_topology','battery_access','routing_review','mass_budget','derived','assembly_instances','build_manifest','intended_contacts','camera_kinematics','export_manifest','rebuild_check','body_head_envelope','parameter_comparison','parts_preview_manifest','delivery_consistency','head_load_estimate','display_outline_review','commands','render_manifest']
- report_names += ['presentation_manifest','detail_fit_geometry','detail_fit_validation','speaker_mount','vendor_weact_import','vendor_lcd_import','purchased_geometry_audit','structure_changes','structure_render_comparison','motor_insertion','module_assembly','module_service_checks','flat_head_check','wheels_camera_change','face_body_clearance','display_center_alignment','appearance_comparison','lower_body_comparison','belly_relayout_geometry','belly_relayout_validation']
- if (rp/'delivery_consistency_before_hardware_refresh.json').exists():report_names.append('delivery_consistency_before_hardware_refresh')
- for n in report_names:copy(rp/(n+'.json'),dest/'mechanical/reports'/(n+'.json'))
- for n in ['采购件选型.md','bom.csv','bom.json','组装与打印.md','外购与自制.md','设计与选型分工.md','结构简化说明.md','打印件审查.md','purchased_dimensions.md','convert_vendor_step.log']:copy(rp/n,dest/'mechanical/reports'/n)
- for cmd in read(rp/'commands.json'):
-  if 'log' in cmd:copy(root/cmd['log'],dest/'mechanical'/cmd['log'])
- for n in read(rp/'render_manifest.json'):copy(root/'renders'/(n['view']+'.png'),dest/'mechanical/renders'/(n['view']+'.png'))
- for n in read(rp/'parts_preview_manifest.json'):copy(root/n['file'],dest/'mechanical'/n['file'])
- for n in ['A','B']:
-  for v in ['front','side','45']:copy(root/'renders/variants'/f'{n}_{v}.png',dest/'mechanical/renders/variants'/f'{n}_{v}.png')
- for path,digest in read(rp/'presentation_manifest.json')['files'].items():
-  assert sha(root/path)==digest,path
-  copy(root/path,dest/'mechanical'/path)
- for n in read(rp/'export_manifest.json')['parts']:copy(root/n['file'],dest/'mechanical'/n['file'])
- (dest/'README.md').write_text('''# MORI V1.2 mechanical candidate release
-
-Open mechanical/index.html for the actual Blender gallery and all parts. Editable model: mechanical/mori_v1_2.blend. Report: reports/mechanical_v1_2.md. Rebuild: python3 mechanical/scripts/run_all.py; see mechanical/README.md for platform dependencies.
-
-M1 complete, M2 partially complete and vendor interfaces blocked, M3 candidate files generated. The full vendor LCD STEP is imported1:1; CAM board outline is documented, populated height remains unknown. Two connector tessellations require conservative collision proxies; exact complete hardware fit remains BLOCKED. Unknown purchased modules remain allocations. Shared inputs: config/geometry.json and contracts/mechanical_interfaces.json. The hardware-owned components.json is an unchanged read-only snapshot; new dimensional facts are handed off through ADR-MECH-013.
-
-This package contains current mechanical evidence only. Previous A4 revisions and unrelated software/hardware stay in the original MORI project. No purchase, PCB freeze or balance validation is claimed.
-
-M1.10 preserves the prior wheel/yaw/belly relayout and adds recessed camera, default+10deg pitch, shell-mounted speaker, open three-post display fork, explicit onboard microphones and vertical switch/USB. Exact vendor LCD/WeAct CAD and source-dimensioned speaker/battery references are included. CAM/flex dimensions, battery electrical compatibility, charger, actual carrier stack and S3 power PCB remain blocked. Read ADR-MECH-022 and the source/selection report. No purchase, physical measurement, printing or balance qualification is claimed.
-
-''')
- check(dest)
- manifest={'revision':read(PROJECT/'config/geometry.json')['revision'],'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Mechanical pre-study; no manufacturing release','files':{str(p.relative_to(dest)):sha(p) for p in sorted(dest.rglob('*')) if p.is_file()}}
- (dest/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
- with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-  for p in sorted(dest.rglob('*')):
-   if p.is_file():z.write(p,p.relative_to(args.output_parent))
- with zipfile.ZipFile(archive) as z:assert z.testzip() is None
- assert all(sha(dest/p)==h for p,h in manifest['files'].items())
- print(json.dumps({'status':'PASS','delivery':str(dest),'archive':str(archive),'files':len(manifest['files'])+1,'zip_bytes':archive.stat().st_size,'zip_sha256':sha(archive)},ensure_ascii=False))
+    parser=argparse.ArgumentParser();parser.add_argument('--output-parent',required=True,type=Path);parser.add_argument('--release-name');args=parser.parse_args()
+    check(PROJECT);revision=read(PROJECT/'config/geometry.json')['revision']
+    name=args.release_name or 'MORI_'+revision.replace('.','_')
+    if Path(name).name!=name or name in ('.','..'):raise ValueError('Invalid release name')
+    dest=args.output_parent/name;archive=args.output_parent/(name+'.zip')
+    if dest.exists() or archive.exists():raise FileExistsError('Existing delivery retained: '+str(dest))
+    names=collect(PROJECT)
+    for name in names:
+        target=dest/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(PROJECT/name,target)
+    (dest/'README.md').write_text(f'''# MORI {revision} mechanical prototype\n\nOpen mechanical/current_report.html for executed evidence and mechanical/mori_v1_2.blend for the current assembly. Geometry PASS is not manufacturing or physical qualification; see docs/CURRENT_STATUS.md.\n\nRebuild the current core with `python3 mechanical/scripts/run_all.py --core` after installing Blender/manifold3d as documented. The package includes the exact build inputs, published nested CAD/PDF/photo sources and generated STL/render outputs. CAD Python is configured through MORI_CAD_PYTHON. Historical comparison blends and external tool runtimes are not bundled; optional historical comparison stages may remain BLOCKED. This package is not a supplier production release.\n''')
+    check(dest)
+    manifest={'revision':revision,'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'PASS','scope':'Current input/output integrity; PROTOTYPE / UNVALIDATED; manufacturing_release=false','files':{str(p.relative_to(dest)):sha(p) for p in sorted(dest.rglob('*')) if p.is_file()}}
+    (dest/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+        for p in sorted(dest.rglob('*')):
+            if p.is_file():z.write(p,p.relative_to(args.output_parent))
+    with zipfile.ZipFile(archive) as z:
+        if z.testzip() is not None:raise ValueError('Package ZIP CRC failed')
+    print(json.dumps({'status':'PASS','archive':str(archive),'files':len(manifest['files'])+1,'bytes':archive.stat().st_size,'sha256':sha(archive)}))
 if __name__=='__main__':main()

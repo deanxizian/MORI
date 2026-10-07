@@ -67,6 +67,11 @@ static void safety(void){
  }
  ready(&m,1000);s=fresh(1000);mori_motion_step(&m,&s,1000);s=fresh(7000);mori_motion_step(&m,&s,7000);CHECK(m.fault==F_CONTROL_TIMEOUT);
  ready(&m,1000);for(uint64_t t=1000;t<=13000;t+=2000){s=fresh(t);s.pitch_rad=.2;mori_motion_step(&m,&s,t);}CHECK(m.fault==F_SATURATION&&!m.drive_requested);
+ /* A new ARM starts its own saturation window after fault/ack or disarm. */
+ CHECK(mori_motion_ack(&m,true,true));s=fresh(100000);CHECK(mori_motion_arm(&m,&s,100000,true));
+ s.pitch_rad=.2;mori_motion_step(&m,&s,100000);CHECK(m.fault==F_NONE&&m.saturated_since_us==100000);
+ CHECK(mori_motion_disarm(&m,true));s=fresh(200000);CHECK(mori_motion_arm(&m,&s,200000,true));
+ s.pitch_rad=.2;mori_motion_step(&m,&s,200000);CHECK(m.fault==F_NONE&&m.saturated_since_us==200000);
  ready(&m,1000);mori_motion_fault(&m,F_QUEUE);CHECK(m.fault==F_QUEUE&&!m.drive_requested);mori_motion_init(&m);CHECK(m.state==M_DISARMED&&!m.drive_requested&&m.parameters.kp_pitch==0);
  ready(&m,1000);m.state=M_AUTONOMY;s=fresh(1000);s.head_valid=false;mori_motion_step(&m,&s,1000);CHECK(m.head_inhibited&&m.target_v==0&&m.drive_requested);
 }

@@ -64,3 +64,18 @@ def test_interrupt_is_complete_only_after_owned_playback_ack(tmp_path):
   assert g.device.results[c['command_id']]['status']=='EXPIRED'
   g.close()
  asyncio.run(exercise())
+
+def test_valid_wav_provider_error_is_not_reported_as_bad_audio(tmp_path):
+ import base64
+ app=create_app(tmp_path);g=app.state.gateway
+ class Denied:
+  source='TEST'
+  async def asr(self,data):raise ValueError('API_BUDGET_NOT_AUTHORIZED')
+ g.services=Denied()
+ with TestClient(app) as client:
+  p=g.auth.create('owner',['interaction']);headers={'Authorization':'Bearer '+p['token']}
+  data=asyncio.run(MockServices().tts('test'))
+  response=client.post('/api/voice/asr',headers=headers,json={'audio_base64':base64.b64encode(data).decode()})
+  assert response.status_code==403 and response.json()['detail']=='API_BUDGET_NOT_AUTHORIZED'
+  response=client.post('/api/voice/asr',headers=headers,json={'audio_base64':'bad'})
+  assert response.status_code==422

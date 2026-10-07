@@ -84,3 +84,12 @@ def test_active_action_result_survives_telemetry_command_history():
  for _ in range(520):r.issue('HEARTBEAT')
  assert r.d.results[c['command_id']]['status']=='RUNNING'
  assert len(r.d.results)<=512
+
+def test_leaving_tracking_freezes_head_instead_of_finishing_stale_follow_target():
+ r=Rig();r.arm();r.issue('CAMERA_MODE',{'mode':'TRACKING','upload_allowed':False})
+ f=r.d.capture();r.d.observe(f,Vision().detect(fixture(1)))
+ r.issue('SELECT_TARGET',{'target_id':'track-1','confirmed':True})
+ assert r.issue('FOLLOW',{'mode':'HEAD','supervised':True})['status']=='RUNNING'
+ r.d.head_target=[.5,.2];r.d.head_velocity=[.1,.1]
+ r.issue('CAMERA_MODE',{'mode':'OFF','upload_allowed':False})
+ assert r.d.active is None and r.d.head_target==r.d.head and r.d.head_velocity==[0.,0.]

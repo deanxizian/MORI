@@ -4,6 +4,7 @@ import hashlib
 import json
 import pathlib
 import re
+import subprocess
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'reports/v1_2'
@@ -62,7 +63,7 @@ matrix = [
     ('相机+显示+音频+Wi-Fi/温升功耗并发', 'BLOCKED', 'HARDWARE', 'NOT_TESTED', 'NOT_TESTED', '没有设备实测；不能用依赖编译替代压力测试'),
     ('受保护平衡、受控地面移动、60分钟混合续航', 'BLOCKED', 'HARDWARE', 'NOT_TESTED', 'NOT_TESTED', '没有实机，不能声称已经自平衡站立'),
     ('App工程/移动端构建', 'NOT_APPLICABLE', 'HOST', 'NOT_APPLICABLE', 'NOT_APPLICABLE', '用户要求只做网页，保留已有工程，当前暂停'),
-    ('远端CI runner实际执行', 'PASS', 'HOST', 'NOT_TESTED', 'NOT_APPLICABLE', '工作流已更新；本目录无Git仓库，没有远端CI运行结果'),
+    ('远端CI runner实际执行', 'NOT_TESTED', 'REMOTE_CI', 'NOT_TESTED', 'NOT_APPLICABLE', '工作流文件不代表已执行；此生成器未查询远端运行证据'),
 ]
 fields = ['feature', 'implementation_status', 'source', 'unit_simulation_status', 'hardware_status', 'boundary']
 blockers = [
@@ -79,7 +80,7 @@ report = {
     'scope': 'V1.2软件基线；web only；本机模拟/主机验证，非整机验收',
     'local_checks_status': 'PASS' if all(c['status'] == 'PASS' and c['exit_code'] == 0 for c in checks) else 'FAIL',
     'hardware_status': 'NOT_TESTED', 'physical_release': False,
-    'project_git': 'NOT_APPLICABLE: no Git repository; file_manifest.json identifies source and binaries',
+    'project_git': {'head': subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(), 'dirty': bool(subprocess.check_output(['git','status','--porcelain=v1'],cwd=ROOT,text=True)), 'scope':'Actual local repository at report time'},
     'counts': {'python': python_count, 'motion_assertions': 2430, 'unitree_synthetic_vectors': 41, 'typescript_tests': 4, 'browser_tests': 2, 'legacy_python': 24, 'legacy_c_assertions': 2406},
     'eyes_host_benchmark': eyes, 'matrix': [dict(zip(fields, row)) for row in matrix],
     'runs': checks, 'hardware_and_integration_blockers': blockers,
@@ -96,7 +97,7 @@ report = {
 lines = [
     '# MORI V1.2 软件验收记录', '',
     f"软件 {profile['software_version']}；参数 {profile['parameter_version']}；记录 {report['recorded_utc']}。",
-    '', '**本地软件检查 PASS；实机 NOT_TESTED；实机使能 BLOCKED。尚不能声称机器人可自平衡站立。** App 按用户要求暂停。', '',
+    '', f"**本地软件检查 {report['local_checks_status']}；实机 NOT_TESTED；实机使能 BLOCKED。尚不能声称机器人可自平衡站立。** App 按用户要求暂停。", '',
     '用户附件作为V1.2需求；保留更晚的网页限定。机械/电气真源由并行任务维护，读取V1.2-H0.1/V1.2-M1后合并软件契约，不改硬件/机械/params。未提供的模板/交接/REFERENCES未冒称已读。', '',
     '## 实际通过的检查', '',
     f'- V1.2运动核心2430条ASan/UBSan断言；41组官方C合成协议差分；Python {python_count}项；TS 4项；浏览器2项。',
@@ -122,7 +123,7 @@ lines += ['', '```sh', '.venv/bin/python -m backend.run', 'bash tools/node-env.s
 lines += ['- ' + item for item in blockers]
 lines += ['', '新3S数值保护路径尚待测量适配；新运动核心目前接收power_ok/low_battery等HAL健康输入。旧ADC/NTC/nFAULT故障注入的PASS只属于旧台架，不应冒充新S288硬件已验证。新STM32尚需板端口、DRDY/滤波、实际调度和物理命令桥接入，详细列在[软件入口](../../README_SOFTWARE_V1_2.md)和[调试手册](../../docs/debug_manual_v1_2.md)。', '',
     '## 版本、许可与追溯', '',
-    '实际环境见 [environment.json](environment.json)；源/固件/日志哈希见 [file_manifest.json](file_manifest.json)。工程没有Git仓库，因此不虚构提交；第三方仓库使用锁定commit。Arm14.2.Rel1下载摘要与校验见arm_toolchain.json/arm_download.json。',
+    '实际环境见 [environment.json](environment.json)；源/固件/日志哈希见 [file_manifest.json](file_manifest.json)。当前生成器记录实际 Git HEAD 与工作区状态，见 acceptance.json 的 project_git；历史运行日志仍保留各自日期和输入，不等于本次全部重测。第三方仓库使用锁定commit。Arm14.2.Rel1下载摘要与校验见arm_toolchain.json/arm_download.json。',
     'ESP-IDF维持5.5.2、LVGL9.2.2、ESP-SR2.2.0；camera2.0.16→2.1.4为明确兼容变更，新增ST77916 1.0.1、codec1.5.4、CH32 1.0.1。升级前lock/config已归档。许可与逐文件来源见 [THIRD_PARTY_V1_2.md](../../software/THIRD_PARTY_V1_2.md)，宇树参考不改标MIT。', '',
     '阶段：S1 PASS；S2构建PASS/板级运行BLOCKED；S3本地后端和记忆PASS/真实语音与部署未验证；S4 SIMULATION PASS/实机BLOCKED；S5 NOT_TESTED。远端CI未运行，App NOT_APPLICABLE。', '',
     '网页验收、尺寸、交互范围和截图见 [design/qa.md](design/qa.md)。所有实机实时性最大值、电流/温度、旋转、负载、自由平衡和60分钟混合续航均NOT_TESTED；没有串口连接、烧录或云部署。', '',

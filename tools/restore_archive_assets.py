@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import zipfile
 from urllib.parse import quote, urlsplit
 from urllib.request import Request, urlopen
 
@@ -63,12 +64,22 @@ def restore(root, entry):
     target.parent.mkdir(parents=True, exist_ok=True)
     destination(root, entry["path"])
     temp = None
+    archive = None
     try:
         h = hashlib.sha256()
         total = 0
         with tempfile.NamedTemporaryFile(dir=target.parent, prefix=".mori-download-", delete=False) as output:
             temp = Path(output.name)
-            with urlopen(download_request(entry), timeout=120) as response:
+            if entry["storage"] == "LOCAL_ZIP":
+                bundle = destination(DEFAULT_ROOT, entry["archive"])
+                if digest(bundle) != entry["archive_sha256"]:
+                    raise ValueError("Local input archive hash mismatch")
+                archive = zipfile.ZipFile(bundle)
+                response = archive.open(entry["member"])
+            else:
+                archive = None
+                response = urlopen(download_request(entry), timeout=120)
+            with response:
                 for block in iter(lambda: response.read(1024 * 1024), b""):
                     total += len(block)
                     if total > entry["bytes"]:
@@ -81,6 +92,8 @@ def restore(root, entry):
         os.link(temp, target)
         return "restored"
     finally:
+        if archive is not None:
+            archive.close()
         if temp is not None:
             temp.unlink(missing_ok=True)
 
@@ -96,6 +109,9 @@ def main():
     if manifest["snapshot"] != SNAPSHOT or manifest["repository"] != REPOSITORY:
         parser.error("Manifest source differs from pinned archive")
     groups = manifest["groups"]
+    native = json.loads((DEFAULT_ROOT / "hardware/v1_2/native_projects/manifest.json").read_text())
+    groups["native-pcbs"] = [dict(entry, storage="LOCAL_ZIP", archive=project["archive"], archive_sha256=project["sha256"], member=entry["path"])
+        for project in native["projects"] for entry in project["files"]]
     if args.list or not (args.group or args.path):
         for name, entries in groups.items():
             print(f"{name}: {len(entries)} files, {sum(e['bytes'] for e in entries) / 1048576:.1f} MiB")

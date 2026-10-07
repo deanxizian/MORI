@@ -24,7 +24,10 @@ bash software/scripts/test_host.sh
 python3 -m unittest discover -s software/tests -p 'test_*.py' -v
 # ESP-IDF v5.5.2安全门关闭的默认配置构建，只build、不flash
 bash software/scripts/idf_build.sh
-# 原始与已采纳快照、旧模拟记录、保护文件、GPIO和安全门检查
+# 校验仓库内附带的0.3/0.4 ZIP快照，不能代替当前代码或实机验证
+python3 software/scripts/verify_delivery.py --archives-only
+# 旧交付的完整审计需要另行恢复历史证据和当时构建产物；当前源文件已演进，可能报告差异
+python3 tools/restore_archive_assets.py --group legacy-software-verification --group legacy-helpers
 python3 software/scripts/verify_delivery.py
 # 严格检查与本次已采纳0.4上游一致；不代表实物获准上电
 python3 software/scripts/verify_delivery.py --require-current-handoff

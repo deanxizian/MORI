@@ -14,7 +14,10 @@ def command(args):
 versions=[['bash','tools/node-env.sh','--version'],['bash','tools/node-env.sh','exec','node','--version'],[sys.executable,'-VV'],['cc','--version'],['git','rev-parse','HEAD'],['git','-C','/Users/dean/esp/esp-idf','rev-parse','HEAD'],['git','-C','/Users/dean/esp/esp-idf','describe','--tags','--always'],['bash','-c','source /Users/dean/esp/esp-idf/export.sh >/dev/null 2>&1 && idf.py --version && xtensa-esp32s3-elf-gcc --version && cmake --version && ninja --version']]
 for compiler in (ROOT/'.state/toolchains').glob('*/bin/arm-none-eabi-gcc'):
  versions.append([str(compiler),'--version'])
-environment={'recorded_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source':'HOST','platform':platform.platform(),'tools':[command(c) for c in versions],'project_git':'NOT_APPLICABLE: directory has no Git repository; source hashes below identify this delivery','mobile_scope':'NOT_APPLICABLE: paused by user, web only'}
+git_head=command(['git','rev-parse','HEAD'])
+git_status=command(['git','status','--porcelain=v1'])
+project_git={'status':'PASS' if git_head['exit_code']==0 and git_status['exit_code']==0 else 'NOT_APPLICABLE','head':git_head.get('output') if git_head['exit_code']==0 else None,'dirty':bool(git_status.get('output')) if git_status['exit_code']==0 else None,'commands':[git_head,git_status]}
+environment={'recorded_utc' :datetime.datetime.now(datetime.timezone.utc).isoformat(),'source':'HOST','platform':platform.platform(),'tools':[command(c) for c in versions],'project_git':project_git,'mobile_scope':'NOT_APPLICABLE: paused by user, web only'}
 (OUT/'environment.json').write_text(json.dumps(environment,indent=2,ensure_ascii=False))
 
 excluded={'__pycache__','node_modules','managed_components','build','build_v1','build_adapter_check','dist','.pytest_cache','.git'}

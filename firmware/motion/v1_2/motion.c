@@ -26,7 +26,7 @@ static mori_fault health(const mori_motion *m,const mori_sample *s,uint64_t now)
 }
 bool mori_motion_arm(mori_motion *m,const mori_sample *s,uint64_t now,bool confirm){
  if(!m||!confirm||m->state!=M_DISARMED||m->fault||!mori_parameters_valid(&m->parameters)||health(m,s,now)||s->low_battery)return false;
- m->state=M_ARMED_IDLE;m->drive_requested=true;m->external_inhibit_requested=false;m->have_frame=false;m->integral=0;m->last_frame_us=now;return true;
+ m->state=M_ARMED_IDLE;m->drive_requested=true;m->external_inhibit_requested=false;m->have_frame=false;m->integral=0;m->saturating=false;m->saturated_since_us=0;m->last_frame_us=now;return true;
 }
 bool mori_motion_target(mori_motion *m,double v,double turn,uint64_t now,uint32_t lease){
  if(!m||!m->drive_requested||m->fault||!isfinite(v)||!isfinite(turn)||fabs(v)>.10||fabs(turn)>m->parameters.torque_limit_nm||!lease||lease>300000||UINT64_MAX-now<lease)return false;
@@ -34,7 +34,7 @@ bool mori_motion_target(mori_motion *m,double v,double turn,uint64_t now,uint32_
 }
 void mori_motion_stop(mori_motion *m){if(m){m->target_v=m->target_turn_nm=0;m->lease_end_us=0;if(m->drive_requested)m->state=M_ARMED_IDLE;}}
 void mori_motion_fault(mori_motion *m,mori_fault f){if(!m)return;if(!m->fault)m->fault=f?f:F_INPUT;m->drive_requested=false;m->external_inhibit_requested=true;m->head_inhibited=true;m->left_nm=m->right_nm=m->limited_v=m->integral=0;mori_motion_stop(m);m->state=M_FAULT;}
-bool mori_motion_disarm(mori_motion *m,bool support){if(!m||!support)return false;if(m->state==M_FAULT)return false;mori_motion_stop(m);m->drive_requested=false;m->external_inhibit_requested=true;m->left_nm=m->right_nm=m->integral=m->limited_v=0;m->state=M_DISARMED;return true;}
+bool mori_motion_disarm(mori_motion *m,bool support){if(!m||!support)return false;if(m->state==M_FAULT)return false;mori_motion_stop(m);m->drive_requested=false;m->external_inhibit_requested=true;m->left_nm=m->right_nm=m->integral=m->limited_v=0;m->head_inhibited=true;m->state=M_DISARMED;return true;}
 bool mori_motion_ack(mori_motion *m,bool support,bool confirm){if(!m||m->state!=M_FAULT||!support||!confirm)return false;m->fault=F_NONE;m->state=M_DISARMED;m->have_frame=false;return true;}
 void mori_motion_step(mori_motion *m,const mori_sample *s,uint64_t now){
  if(!m||!m->drive_requested)return;

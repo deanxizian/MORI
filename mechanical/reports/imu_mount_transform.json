@@ -1,0 +1,118 @@
+{
+  "native_board_revision": "MORI_imu_P5R4",
+  "native_pcb_xy_mm": [
+    20,
+    16
+  ],
+  "native_to_assembly_rotation": [
+    [
+      1.0,
+      0.0,
+      -0.0
+    ],
+    [
+      0.0,
+      -1.0,
+      8.742277657347586e-08
+    ],
+    [
+      -0.0,
+      -8.742277657347586e-08,
+      -1.0
+    ]
+  ],
+  "native_to_assembly_translation_mm": [
+    -35.0,
+    -48.0,
+    108.35499930061779
+  ],
+  "PCB_front_normal_body": [
+    0,
+    0,
+    -1
+  ],
+  "components_face": "down",
+  "mount": "two existing rigid Load_Frame bosses; native holes unchanged",
+  "IMU_sensor_to_PCB_axes": {
+    "status": "PASS",
+    "scope": "Nominal axis derivation only, not calibration or power-on release",
+    "native_board": "MORI_imu_P5R4",
+    "native_pcb_sha256": "b960058cd5e8660431ec619fe3c733d1d08a68f19847ed3bcd750c324061ff68",
+    "sensor_reference": "U1",
+    "native_footprint_at_mm_deg": [
+      10,
+      9.6,
+      0
+    ],
+    "native_layer": "F.Cu",
+    "native_pad1_local_xy_mm": [
+      -1.1625,
+      -0.75
+    ],
+    "PCB_CAD_coordinates": "x=KiCad x; y=-KiCad y; z=front normal",
+    "sensor_to_PCB_CAD_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "PCB_CAD_to_body_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "sensor_to_body_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "derivation": "DS-000347 v1.9 Fig16 p53 has pin1 at the -X,+Y corner in top view; p54 pin1 is top-left. Native U1 pad1 is top-left at rotation0 on front. The assembly rotates the board180deg about X. Vectors map as body=R*sensor; determinant=+1. Derived from published drawing and native placement, not measured.",
+    "sources": [
+      {
+        "path": "hardware/v1_2/sources/parts/TDK_ICM42688P_DS000347_v1p9.pdf",
+        "sha256": "9c6b57b0a2e45cf0251dd2423878573bd4da46e0cc2faa93dc558c28af51300a",
+        "pages": [
+          53,
+          54
+        ]
+      }
+    ],
+    "physical_sign_test": "NOT_TESTED",
+    "firmware_axis_calibration_release": false
+  }
+}

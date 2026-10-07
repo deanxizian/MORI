@@ -36,6 +36,15 @@ def test_pairing_onetime_revocation(tmp_path):
  with pytest.raises(ValueError):a.verify(p['token'])
  a.db.close()
 
+def test_reconnected_client_receives_its_own_sequence_floor(tmp_path):
+ app=create_app(tmp_path);g=app.state.gateway
+ with TestClient(app) as c:
+  p=g.auth.create('owner',['control']);other=g.auth.create('owner',['control'])
+  g.device.last_sequence[p['client_id']]=47;g.device.last_sequence[other['client_id']]=99
+  with c.websocket_connect('/ws') as ws:
+   ws.send_json({'token':p['token']});snapshot=ws.receive_json()
+   assert snapshot['data']['client_sequence']==47
+
 def test_gateway_cross_client_memory_collision_leaks_nothing(tmp_path):
  g=Gateway(tmp_path,Clock());r=Rig();r.d=g.device
  a=g.auth.create('owner',['memory']);b=g.auth.create('owner',['memory']);r.p=a
@@ -82,3 +91,34 @@ def test_auxiliary_json_rejects_wrong_shapes_and_extra_fields(tmp_path):
    assert response.status_code==400
   for raw in ['{"scenario":"single","scenario":"lost"}', '{"scenario":NaN}', '{']:
    assert client.post('/api/simulation/scenario',headers=h,content=raw).status_code==400
+
+def test_pairing_attack_cannot_permanently_lock_owner(tmp_path):
+ now=[10.];a=Auth(tmp_path,clock=lambda:now[0]);code=a.pair_code
+ for _ in range(20):
+  with pytest.raises(ValueError):a.pair('bad','attacker')
+ # Independent transport peer is unaffected.
+ p=a.pair(code,'owner');assert a.verify(p['token'])
+ a.db.close()
+ a=Auth(tmp_path,clock=lambda:now[0]);code=a.pair_code
+ for _ in range(5):
+  with pytest.raises(ValueError):a.pair('bad','shared-nat')
+ with pytest.raises(ValueError):a.pair(code,'shared-nat')
+ now[0]+=61
+ assert a.verify(a.pair(code,'shared-nat')['token'])
+ a.db.close()
+
+def test_delete_fsync_failure_is_not_acknowledged(tmp_path,monkeypatch):
+ import backend.mori.memory as module
+ m=Memory(tmp_path/'memory.sqlite');ident=m.remember('u','d','retained until journal durable','fact','explicit',True)
+ def failure(_):raise OSError('test disk failure')
+ monkeypatch.setattr(module.os,'fsync',failure)
+ with pytest.raises(OSError):m.delete('u','d',ident)
+ assert m.export('u','d')[0]['id']==ident
+ m.close()
+
+def test_durable_tombstone_recovers_sql_interruption(tmp_path):
+ from backend.mori.memory import utc
+ p=tmp_path/'memory.sqlite';m=Memory(p);ident=m.remember('u','d','private','fact','explicit',True);m.close()
+ # Model a crash after the durable journal append and before SQL commit.
+ p.with_suffix('.deletions.jsonl').write_text(json.dumps({'id':ident,'deleted_at':utc()})+'\n')
+ m=Memory(p);assert m.export('u','d')==[];assert m.db.execute('SELECT count(*) FROM memory_index').fetchone()[0]==0;m.close()

@@ -1,6 +1,6 @@
 # PR 审阅顺序
 
-这些 PR 依次叠加，每份 base 是上一层分支。按顺序审阅与合并；**本次不执行合并**。后续合并时需维护依赖关系：普通 merge 后可将下一份 base 改为 main；如使用 squash/rebase，先重放下游分支，避免重复差异。
+这些 PR 依次叠加，每份 base 是上一层分支。按顺序审阅与合并；本轮按用户授权在复核后合并并清理分支。后续合并时需维护依赖关系：普通 merge 后可将下一份 base 改为 main；如使用 squash/rebase，先重放下游分支，避免重复差异。
 
 | 顺序 | 范围 | PR | base |
 |---|---|---|---|
@@ -15,6 +15,6 @@
 | 9 | 当前模型、STL 与装配视频 | [#10](https://github.com/deanxizian/MORI/pull/10) | review/08-mechanical-tools |
 | 10 | 资料导航、恢复工具与校验记录 | [#11](https://github.com/deanxizian/MORI/pull/11) | review/09-current-models |
 
-完整当前资料树位于最后一层 `review/10-navigation`。原 PR #1 由这组拆分取代；其提交和原始归档分支保留，供历史资料定位。
+修复前的完整资料树位于第 10 层；审查修复在 `codex/review-closure` 中汇总。合并后以 `main` 为准，临时审查分支会删除。原 PR #1 由这组拆分取代；其提交和原始归档分支保留，供历史资料定位。
 
 [归档与下载](GITHUB_ARCHIVE.md) · [项目索引](PROJECT_INDEX.md)

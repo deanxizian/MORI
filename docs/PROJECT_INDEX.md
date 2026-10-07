@@ -22,4 +22,4 @@
 
 原生 PCB 需先按 [解压说明](../hardware/v1_2/native_projects/README.md)恢复完整工程，原理图和设计规则仍可直接查看。
 
-`config/project_baseline.json` 中早期 P3 字段保留原样，不能替代当前 P5R7 正式交接。历史软件仍有 F413 目标，与当前 F412RET6 硬件的差异没有在资料整理中解决。
+`config/project_baseline.json` 已按当前 P5R7 接收集校正；原生 PCB 字节未变。默认运动固件改为 F412RE 并已交叉编译，板级接通与实机测试仍未完成。代码审查修复及实际验证见 [复核记录](REVIEW_CLOSURE.md)。

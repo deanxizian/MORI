@@ -24,7 +24,9 @@ def run(reverse=False,delay_s=.01,deadzone=.03,noise_rad=.0005,slip=1.,seconds=4
  J=body_mass_kg*length**2+head_mass_kg*head_height_m**2+head_inertia_kg_m2
  available_acceleration=2.*supply_fraction
  theta=initial_pitch_rad;rate=0.;x=v=0.;maximum=abs(theta);saturated=0.;fault=None
- q=collections.deque([0.]*(int(delay_s/dt)+1));rng=random.Random(17);samples=[]
+ # Linear fractional-sample delay: zero is immediate; exact grid delays use N samples.
+ delay_steps=delay_s/dt;whole=int(delay_steps);fraction=delay_steps-whole
+ q=collections.deque([0.]*(whole+2),maxlen=whole+2);rng=random.Random(17);samples=[]
  for i in range(int(seconds/dt)):
   measured=theta+rng.gauss(0,noise_rad);raw=(kp*measured+kd*rate)*(-1 if reverse else 1)
   a=max(-available_acceleration,min(available_acceleration,raw));a=0 if abs(a)<deadzone else a-math.copysign(deadzone,a)
@@ -33,10 +35,10 @@ def run(reverse=False,delay_s=.01,deadzone=.03,noise_rad=.0005,slip=1.,seconds=4
   head_rate_frequency=2*math.pi*head_pitch_hz
   head_acceleration=-head_pitch_amplitude_rad*head_rate_frequency**2*math.sin(head_rate_frequency*i*dt)
   head_reaction_nm=-head_inertia_kg_m2*head_acceleration
-  q.append(a);applied=q.popleft()*slip
+  q.append(a);applied=((1-fraction)*q[-whole-1]+fraction*q[-whole-2])*slip
   rate+=(g*H*theta-H*applied+head_reaction_nm)/J*dt;theta+=rate*dt;v+=applied*dt;x+=v*dt
   maximum=max(maximum,abs(theta));samples.append({'t_s':i*dt,'pitch_rad':theta,'cart_acceleration_m_s2':applied,'head_reaction_nm':head_reaction_nm,'x_m':x,'v_m_s':v})
- return {'source':'SIMULATION','hardware_qualification':'NOT_TESTED','parameters':'ASSUMED_CART_ACCELERATION_MODEL_NOT_PWM_OR_S288_TORQUE','kp_model_only':kp,'kd_model_only':kd,'pitch_end_rad':theta,'pitch_max_rad':maximum,'fault':fault,'dt_s':dt,'delay_s':delay_s,'deadzone':deadzone,'noise_rad':noise_rad,'slip':slip,'supply_fraction':supply_fraction,'available_acceleration_m_s2':available_acceleration,'body_mass_kg':body_mass_kg,'body_height_m':length,'head_mass_kg':head_mass_kg,'head_height_m':head_height_m,'head_inertia_kg_m2':head_inertia_kg_m2,'head_pitch_amplitude_rad':head_pitch_amplitude_rad,'head_pitch_hz':head_pitch_hz,'gravity_moment_kg_m':H,'total_inertia_kg_m2':J,'samples':samples}
+ return {'source':'SIMULATION','hardware_qualification':'NOT_TESTED','parameters':'ASSUMED_CART_ACCELERATION_MODEL_NOT_PWM_OR_S288_TORQUE','kp_model_only':kp,'kd_model_only':kd,'pitch_end_rad':theta,'pitch_max_rad':maximum,'fault':fault,'dt_s':dt,'delay_s':delay_s,'delay_model':'linear_fractional_sample','deadzone':deadzone,'noise_rad':noise_rad,'slip':slip,'supply_fraction':supply_fraction,'available_acceleration_m_s2':available_acceleration,'body_mass_kg':body_mass_kg,'body_height_m':length,'head_mass_kg':head_mass_kg,'head_height_m':head_height_m,'head_inertia_kg_m2':head_inertia_kg_m2,'head_pitch_amplitude_rad':head_pitch_amplitude_rad,'head_pitch_hz':head_pitch_hz,'gravity_moment_kg_m':H,'total_inertia_kg_m2':J,'samples':samples}
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--output',default='reports/v1/SIMULATED_dynamics.json');a=ap.parse_args()
