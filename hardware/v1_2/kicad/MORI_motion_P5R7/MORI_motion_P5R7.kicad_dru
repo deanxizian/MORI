@@ -1,0 +1,599 @@
+(version 1)
+
+# Source: https://github.com/deanxizian/KiCad/tree/f756532aa67112a9d437c18e8ca00ac8fba2c9b4/Rules
+
+# Generated from all 47 source rules; applicability and limitations: rule_mapping.json.
+
+# No 24 V rail exists in MORI. Source P24V is NOT mapped to the 3S pack.
+
+(rule "R07 default"
+  (condition "A.NetName != B.NetName")
+  (constraint clearance (min 0.49999900mm))
+)
+
+(rule "R07 object pairs 0.1999996"
+  (condition "A.NetName != B.NetName && (((A.Type == 'Arc') && (B.Type == 'Arc')) || (((A.Type == 'Arc') && (B.Type == 'Track')) || ((A.Type == 'Track') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Arc'))) || ((A.Type == 'Track') && (B.Type == 'Track')) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Track'))) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || ((A.Type == 'Via') && (B.Type == 'Via')))")
+  (constraint clearance (min 0.19999960mm))
+)
+
+(rule "R07 object pairs 0.2999994"
+  (condition "A.NetName != B.NetName && ((((A.Type == 'Arc') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Arc'))) || (((A.Type == 'Track') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Track'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Via') && (B.Type == 'Zone')) || ((A.Type == 'Zone') && (B.Type == 'Via'))))")
+  (constraint clearance (min 0.29999940mm))
+)
+
+(rule "R07 object pairs 0.0"
+  (condition "A.NetName != B.NetName && ((((A.Type == 'Arc') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Arc'))) || (((A.Type == 'Track') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Track'))) || (((A.Type == 'Via') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Via'))) || (((A.Type == 'Zone') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Zone'))))")
+  (constraint clearance (min 0.00000000mm))
+)
+
+(rule "R07 object pairs 0.0999998"
+  (condition "A.NetName != B.NetName && ((((A.Type == 'Pad' && A.Pad_Type == 'SMD') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && ((B.Type == 'Text' || B.Type == 'Text Box'))))")
+  (constraint clearance (min 0.09999980mm))
+)
+
+(rule "R07 original same-package pad condition"
+  (condition "A.NetName != B.NetName && A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R06 default"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/GND') || (B.NetName == '/GND'))")
+  (constraint clearance (min 0.29999940mm))
+)
+
+(rule "R06 object pairs 0.1999996"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/GND') || (B.NetName == '/GND')) && (((A.Type == 'Arc') && (B.Type == 'Arc')) || (((A.Type == 'Arc') && (B.Type == 'Track')) || ((A.Type == 'Track') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Arc'))) || ((A.Type == 'Track') && (B.Type == 'Track')) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Track'))) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || ((A.Type == 'Via') && (B.Type == 'Via')))")
+  (constraint clearance (min 0.19999960mm))
+)
+
+(rule "R06 object pairs 0.0"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/GND') || (B.NetName == '/GND')) && ((((A.Type == 'Arc') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Arc'))) || (((A.Type == 'Track') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Track'))) || (((A.Type == 'Via') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Via'))) || (((A.Type == 'Zone') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Zone'))))")
+  (constraint clearance (min 0.00000000mm))
+)
+
+(rule "R06 object pairs 0.0999998"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/GND') || (B.NetName == '/GND')) && ((((A.Type == 'Pad' && A.Pad_Type == 'SMD') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && ((B.Type == 'Text' || B.Type == 'Text Box'))))")
+  (constraint clearance (min 0.09999980mm))
+)
+
+(rule "R06 object pairs 0.499999"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/GND') || (B.NetName == '/GND')) && (((A.Type == 'Zone') && (B.Type == 'Zone')))")
+  (constraint clearance (min 0.49999900mm))
+)
+
+(rule "R06 original same-package pad condition"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/GND') || (B.NetName == '/GND')) && A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R05 default"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/+3V3' || A.NetName == '/+5V_MOTION' || A.NetName == '/CAM_3V3') || (B.NetName == '/+3V3' || B.NetName == '/+5V_MOTION' || B.NetName == '/CAM_3V3'))")
+  (constraint clearance (min 0.49999900mm))
+)
+
+(rule "R05 object pairs 0.1999996"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/+3V3' || A.NetName == '/+5V_MOTION' || A.NetName == '/CAM_3V3') || (B.NetName == '/+3V3' || B.NetName == '/+5V_MOTION' || B.NetName == '/CAM_3V3')) && ((((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Arc'))) || (((A.Type == 'Arc') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Arc'))) || ((A.Type == 'Track') && (B.Type == 'Track')) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Track'))) || (((A.Type == 'Track') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Track'))) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Via')) || ((A.Type == 'Via') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || ((A.Type == 'Via') && (B.Type == 'Via')))")
+  (constraint clearance (min 0.19999960mm))
+)
+
+(rule "R05 object pairs 0.0"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/+3V3' || A.NetName == '/+5V_MOTION' || A.NetName == '/CAM_3V3') || (B.NetName == '/+3V3' || B.NetName == '/+5V_MOTION' || B.NetName == '/CAM_3V3')) && ((((A.Type == 'Arc') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Arc'))) || (((A.Type == 'Track') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Track'))) || (((A.Type == 'Via') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Via'))) || (((A.Type == 'Zone') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Zone'))))")
+  (constraint clearance (min 0.00000000mm))
+)
+
+(rule "R05 object pairs 0.0999998"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/+3V3' || A.NetName == '/+5V_MOTION' || A.NetName == '/CAM_3V3') || (B.NetName == '/+3V3' || B.NetName == '/+5V_MOTION' || B.NetName == '/CAM_3V3')) && ((((A.Type == 'Pad' && A.Pad_Type == 'SMD') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'SMD'))) || (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && ((B.Type == 'Text' || B.Type == 'Text Box'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole'))) || (((A.Type == 'Text' || A.Type == 'Text Box')) && ((B.Type == 'Text' || B.Type == 'Text Box'))))")
+  (constraint clearance (min 0.09999980mm))
+)
+
+(rule "R05 original same-package pad condition"
+  (condition "A.NetName != B.NetName && ((A.NetName == '/+3V3' || A.NetName == '/+5V_MOTION' || A.NetName == '/CAM_3V3') || (B.NetName == '/+3V3' || B.NetName == '/+5V_MOTION' || B.NetName == '/CAM_3V3')) && A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R01 via-pad physical any net"
+  (condition "(A.Type == 'Via' && B.Type == 'Pad') || (B.Type == 'Via' && A.Type == 'Pad')")
+  (constraint physical_clearance (min 0.1999996mm))
+)
+
+(rule "R05-R07 hole to copper"
+  (constraint hole_clearance (min 0.2999994mm))
+)
+
+(rule "R09 signal width"
+  (constraint track_width (min 0.1999996mm) (opt 0.1999996mm) (max 2.00000108mm))
+)
+
+(rule "R08 power and return width"
+  (condition "(A.NetName == '/+3V3' || A.NetName == '/+5V_MOTION' || A.NetName == '/CAM_3V3') || (A.NetName == '/GND')")
+  (constraint track_width (min 0.1999996mm) (opt 0.499999mm) (max 5.00000016mm))
+)
+
+(rule "R29 absolute holes"
+  (constraint hole_size (min 0.0999998mm) (max 5.00000016mm))
+)
+
+(rule "R15-R16 through via geometry"
+  (condition "A.Type == 'Via'")
+  (constraint via_diameter (min 0.499999mm) (opt 0.499999mm) (max 1.00000054mm))
+  (constraint hole_size (min 0.2499995mm) (opt 0.2499995mm) (max 0.499999mm))
+  (constraint assertion "A.Via_Type == 'Through'")
+)
+
+(rule "R23 via count"
+  (constraint via_count (max 500))
+)
+
+(rule "R27 minimum track angle"
+  (condition "A.Type == 'Track' && B.Type == 'Track'")
+  (constraint track_angle (min 60))
+)
+
+(rule "R26 solid polygon connection"
+  (constraint zone_connection solid)
+)
+
+(rule "R25 through-hole thermals"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'")
+  (constraint zone_connection thermal_reliefs)
+  (constraint thermal_relief_gap (opt 0.254mm))
+  (constraint thermal_spoke_width (opt 0.2999994mm))
+  (constraint min_resolved_spokes 4)
+)
+
+(rule "R43 silk-to-silk"
+  (condition "A.Layer == B.Layer")
+  (constraint silk_clearance (min 0.0499999mm))
+)
+
+(rule "R42 silk-to-exposed-pad"
+  (condition "A.Type == 'Pad' || B.Type == 'Pad'")
+  (constraint silk_clearance (min 0.00999998mm))
+)
+
+(rule "R39 differential geometry"
+  (condition "A.inDiffPair('*')")
+  (constraint track_width (min 0.381mm) (opt 0.381mm) (max 0.381mm))
+  (constraint diff_pair_gap (min 0.254mm) (opt 0.254mm) (max 0.254mm))
+  (constraint diff_pair_uncoupled (max 12.7mm))
+)
+
+(rule "R40 hole-to-hole"
+  (constraint hole_to_hole (min 0.1499997mm))
+)
+
+(rule "MORI existing copper-to-edge"
+  (constraint edge_clearance (min 0.50mm))
+)
+
+# P3 local return exceptions: GND / +3V3 / CAM_3V3 under logic IC bodies.
+(rule "P3 outward signals U1" (condition "A.Type == 'Track' && A.Layer == 'B.Cu' && A.intersectsArea('OUTWARD_U1') && A.NetName != '/GND' && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3'") (constraint disallow track))
+(rule "P3 outward signals U2" (condition "A.Type == 'Track' && A.Layer == 'B.Cu' && A.intersectsArea('OUTWARD_U2') && A.NetName != '/GND' && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3'") (constraint disallow track))
+(rule "P3 outward signals U3" (condition "A.Type == 'Track' && A.Layer == 'B.Cu' && A.intersectsArea('OUTWARD_U3') && A.NetName != '/GND' && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3'") (constraint disallow track))
+(rule "P3 outward signals U4" (condition "A.Type == 'Track' && A.Layer == 'B.Cu' && A.intersectsArea('OUTWARD_U4') && A.NetName != '/GND' && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3'") (constraint disallow track))
+(rule "P3 outward signals U5" (condition "A.Type == 'Track' && A.Layer == 'B.Cu' && A.intersectsArea('OUTWARD_U5') && A.NetName != '/GND' && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3'") (constraint disallow track))
+(rule "P3 outward signals U6" (condition "A.Type == 'Track' && A.Layer == 'B.Cu' && A.intersectsArea('OUTWARD_U6') && A.NetName != '/GND' && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3'") (constraint disallow track))
+
+# P3R1 net-selective body escape rules
+(rule "P3R1 J5 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J5') && A.NetName != '/CAM_3V3' && A.NetName != '/CAM_RX' && A.NetName != '/CAM_TX' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J3 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J3') && A.NetName != '/GND' && A.NetName != '/HEAD_BUS' && A.NetName != 'unconnected-(J3-Pad3)'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J7 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J7') && A.NetName != '/+3V3' && A.NetName != '/ARM_Q' && A.NetName != '/BAT_ADC_IN' && A.NetName != '/CHG_N' && A.NetName != '/CURRENT_ADC_IN' && A.NetName != '/FAULT_N' && A.NetName != '/GND' && A.NetName != '/WHEEL_ADC_IN'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J2 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J2') && A.NetName != '/GND' && A.NetName != '/S288_BUS'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J1 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J1') && A.NetName != '/+5V_MOTION' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J4 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J4') && A.NetName != '/+3V3' && A.NetName != '/GND' && A.NetName != '/IMU_CS' && A.NetName != '/IMU_DRDY' && A.NetName != '/IMU_MISO' && A.NetName != '/IMU_MOSI' && A.NetName != '/IMU_SCK'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R16 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R16') && A.NetName != '/CURRENT_ADC' && A.NetName != '/CURRENT_ADC_IN'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R3 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R3') && A.NetName != '/+3V3' && A.NetName != '/S288_OE_REQ_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R10 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R10') && A.NetName != '/IMU_SCK' && A.NetName != '/IMU_SCK_M'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J8 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J8') && A.NetName != '/CLR_N' && A.NetName != '/LOOP_3V3'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R6 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R6') && A.NetName != '/+3V3' && A.NetName != '/LOOP_3V3'")
+  (constraint disallow track via)
+)
+(rule "P3R1 J6 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_J6') && A.NetName != '/GND' && A.NetName != '/USER_KEY_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R11 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R11') && A.NetName != '/IMU_MOSI' && A.NetName != '/IMU_MOSI_M'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C5 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C5') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 U1 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_U1') && A.NetName != '/+3V3' && A.NetName != '/GND' && A.NetName != '/S288_BUS' && A.NetName != '/S288_OE_N' && A.NetName != '/S288_RX' && A.NetName != '/S288_TX' && A.NetName != '/S288_TX_BUF'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C7 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C7') && A.NetName != '/CAM_3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C6 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C6') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C8 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C8') && A.NetName != '/+5V_MOTION' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 D3 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_D3') && A.NetName != '/CHG_N' && A.NetName != '/CLR_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R9 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R9') && A.NetName != '/CAM_RX' && A.NetName != '/CAM_RX_BUF'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R17 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R17') && A.NetName != '/+3V3' && A.NetName != '/FAULT_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 U4 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_U4') && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3' && A.NetName != '/CAM_RX_BUF' && A.NetName != '/CAM_TX' && A.NetName != '/GND' && A.NetName != '/LINK_RX' && A.NetName != '/LINK_TX'")
+  (constraint disallow track via)
+)
+(rule "P3R1 U3 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_U3') && A.NetName != '/+3V3' && A.NetName != '/ARM_Q_N' && A.NetName != '/GND' && A.NetName != '/HEAD_OE_N' && A.NetName != '/HEAD_OE_REQ_N' && A.NetName != '/S288_OE_N' && A.NetName != '/S288_OE_REQ_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R1 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R1') && A.NetName != '/S288_BUS' && A.NetName != '/S288_TX_BUF'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R13 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R13') && A.NetName != '/+3V3' && A.NetName != '/IMU_CS'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R4 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R4') && A.NetName != '/+3V3' && A.NetName != '/HEAD_OE_REQ_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 D2 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_D2') && A.NetName != '/CLR_N' && A.NetName != '/FAULT_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C1 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C1') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C10 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C10') && A.NetName != '/GND' && A.NetName != '/WHEEL_ADC'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C12 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C12') && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R18 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R18') && A.NetName != '/+3V3' && A.NetName != '/CHG_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R15 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R15') && A.NetName != '/WHEEL_ADC' && A.NetName != '/WHEEL_ADC_IN'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R14 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R14') && A.NetName != '/BAT_ADC' && A.NetName != '/BAT_ADC_IN'")
+  (constraint disallow track via)
+)
+(rule "P3R1 U5 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_U5') && A.NetName != '/+3V3' && A.NetName != '/ARM_CLK' && A.NetName != '/ARM_Q' && A.NetName != '/ARM_Q_N' && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R12 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R12') && A.NetName != '/IMU_CS' && A.NetName != '/IMU_CS_M'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R8 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R8') && A.NetName != '/+3V3' && A.NetName != '/USER_KEY_N'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R2 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R2') && A.NetName != '/HEAD_BUS' && A.NetName != '/HEAD_TX_BUF'")
+  (constraint disallow track via)
+)
+(rule "P3R1 D1 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_D1') && A.NetName != '/CLR_N' && A.NetName != '/NRST'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R19 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R19') && A.NetName != '/ARM_FEEDBACK' && A.NetName != '/ARM_Q'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C11 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C11') && A.NetName != '/CURRENT_ADC' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C3 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C3') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R7 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R7') && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 U6 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_U6') && A.NetName != '/+3V3' && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 R5 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_R5') && A.NetName != '/ARM_CLK' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C2 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C2') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C4 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C4') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+(rule "P3R1 U2 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_U2') && A.NetName != '/+3V3' && A.NetName != '/GND' && A.NetName != '/HEAD_BUS' && A.NetName != '/HEAD_OE_N' && A.NetName != '/HEAD_RX' && A.NetName != '/HEAD_TX' && A.NetName != '/HEAD_TX_BUF'")
+  (constraint disallow track via)
+)
+(rule "P3R1 C9 unrelated nets outside body"
+  (condition "A.intersectsArea('NETBODY_C9') && A.NetName != '/BAT_ADC' && A.NetName != '/GND'")
+  (constraint disallow track via)
+)
+
+# P3R1 internal return plane rules
+(rule "R17 In1.Cu plane clearance" (layer In1.Cu) (condition "A.Type == 'Zone' || B.Type == 'Zone'") (constraint clearance (min 0.3999992mm)))
+(rule "R10 In1.Cu plane connection" (layer In1.Cu) (constraint zone_connection thermal_reliefs) (constraint thermal_relief_gap (opt 0.254mm)) (constraint thermal_spoke_width (opt 0.2999994mm)) (constraint min_resolved_spokes 4))
+(rule "R17 In2.Cu plane clearance" (layer In2.Cu) (condition "A.Type == 'Zone' || B.Type == 'Zone'") (constraint clearance (min 0.3999992mm)))
+(rule "R10 In2.Cu plane connection" (layer In2.Cu) (constraint zone_connection thermal_reliefs) (constraint thermal_relief_gap (opt 0.254mm)) (constraint thermal_spoke_width (opt 0.2999994mm)) (constraint min_resolved_spokes 4))
+
+# R13 internal signal routing disabled
+(rule "R13 In1.Cu no signal tracks" (layer In1.Cu) (condition "A.Type == 'Track' || A.Type == 'Arc'") (constraint disallow track))
+(rule "R13 In2.Cu no signal tracks" (layer In2.Cu) (condition "A.Type == 'Track' || A.Type == 'Arc'") (constraint disallow track))
+
+# P5 both outer layers - no automatic opposite-side exemption
+(rule "P5 J2 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J2_OPPOSITE') && A.NetName != '/GND' && A.NetName != '/S288_BUS'")
+ (constraint disallow track via)
+)
+(rule "P5 J6 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J6_OPPOSITE') && A.NetName != '/GND' && A.NetName != '/USER_KEY_N'")
+ (constraint disallow track via)
+)
+(rule "P5 J4 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J4_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND' && A.NetName != '/IMU_CS' && A.NetName != '/IMU_DRDY' && A.NetName != '/IMU_MISO' && A.NetName != '/IMU_MOSI' && A.NetName != '/IMU_SCK'")
+ (constraint disallow track via)
+)
+(rule "P5 J5 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J5_OPPOSITE') && A.NetName != '/CAM_3V3' && A.NetName != '/CAM_RX' && A.NetName != '/CAM_TX' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 J1 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J1_OPPOSITE') && A.NetName != '/+5V_MOTION' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 J3 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J3_OPPOSITE') && A.NetName != '/GND' && A.NetName != '/HEAD_BUS' && A.NetName != 'unconnected-(J3-Pad3)'")
+ (constraint disallow track via)
+)
+(rule "P5 J8 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J8_OPPOSITE') && A.NetName != '/CLR_N' && A.NetName != '/LOOP_3V3'")
+ (constraint disallow track via)
+)
+(rule "P5 J7 opposite projection"
+ (condition "A.intersectsArea('NETBODY_J7_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/ARM_Q' && A.NetName != '/BAT_ADC_IN' && A.NetName != '/CHG_N' && A.NetName != '/CURRENT_ADC_IN' && A.NetName != '/FAULT_N' && A.NetName != '/GND' && A.NetName != '/WHEEL_ADC_IN'")
+ (constraint disallow track via)
+)
+(rule "P5 R16 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R16_OPPOSITE') && A.NetName != '/CURRENT_ADC' && A.NetName != '/CURRENT_ADC_IN'")
+ (constraint disallow track via)
+)
+(rule "P5 R3 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R3_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/S288_OE_REQ_N'")
+ (constraint disallow track via)
+)
+(rule "P5 R10 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R10_OPPOSITE') && A.NetName != '/IMU_SCK' && A.NetName != '/IMU_SCK_M'")
+ (constraint disallow track via)
+)
+(rule "P5 R6 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R6_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/LOOP_3V3'")
+ (constraint disallow track via)
+)
+(rule "P5 R11 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R11_OPPOSITE') && A.NetName != '/IMU_MOSI' && A.NetName != '/IMU_MOSI_M'")
+ (constraint disallow track via)
+)
+(rule "P5 C5 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C5_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 U1 opposite projection"
+ (condition "A.intersectsArea('NETBODY_U1_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND' && A.NetName != '/S288_BUS' && A.NetName != '/S288_OE_N' && A.NetName != '/S288_RX' && A.NetName != '/S288_TX' && A.NetName != '/S288_TX_BUF'")
+ (constraint disallow track via)
+)
+(rule "P5 C7 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C7_OPPOSITE') && A.NetName != '/CAM_3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 C6 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C6_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 C8 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C8_OPPOSITE') && A.NetName != '/+5V_MOTION' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 D3 opposite projection"
+ (condition "A.intersectsArea('NETBODY_D3_OPPOSITE') && A.NetName != '/CHG_N' && A.NetName != '/CLR_N'")
+ (constraint disallow track via)
+)
+(rule "P5 R9 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R9_OPPOSITE') && A.NetName != '/CAM_RX' && A.NetName != '/CAM_RX_BUF'")
+ (constraint disallow track via)
+)
+(rule "P5 R17 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R17_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/FAULT_N'")
+ (constraint disallow track via)
+)
+(rule "P5 U4 opposite projection"
+ (condition "A.intersectsArea('NETBODY_U4_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/CAM_3V3' && A.NetName != '/CAM_RX_BUF' && A.NetName != '/CAM_TX' && A.NetName != '/GND' && A.NetName != '/LINK_RX' && A.NetName != '/LINK_TX'")
+ (constraint disallow track via)
+)
+(rule "P5 U3 opposite projection"
+ (condition "A.intersectsArea('NETBODY_U3_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/ARM_Q_N' && A.NetName != '/GND' && A.NetName != '/HEAD_OE_N' && A.NetName != '/HEAD_OE_REQ_N' && A.NetName != '/S288_OE_N' && A.NetName != '/S288_OE_REQ_N'")
+ (constraint disallow track via)
+)
+(rule "P5 R1 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R1_OPPOSITE') && A.NetName != '/S288_BUS' && A.NetName != '/S288_TX_BUF'")
+ (constraint disallow track via)
+)
+(rule "P5 R13 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R13_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/IMU_CS'")
+ (constraint disallow track via)
+)
+(rule "P5 R4 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R4_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/HEAD_OE_REQ_N'")
+ (constraint disallow track via)
+)
+(rule "P5 D2 opposite projection"
+ (condition "A.intersectsArea('NETBODY_D2_OPPOSITE') && A.NetName != '/CLR_N' && A.NetName != '/FAULT_N'")
+ (constraint disallow track via)
+)
+(rule "P5 C1 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C1_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 C10 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C10_OPPOSITE') && A.NetName != '/GND' && A.NetName != '/WHEEL_ADC'")
+ (constraint disallow track via)
+)
+(rule "P5 C12 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C12_OPPOSITE') && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 R18 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R18_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/CHG_N'")
+ (constraint disallow track via)
+)
+(rule "P5 R15 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R15_OPPOSITE') && A.NetName != '/WHEEL_ADC' && A.NetName != '/WHEEL_ADC_IN'")
+ (constraint disallow track via)
+)
+(rule "P5 R14 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R14_OPPOSITE') && A.NetName != '/BAT_ADC' && A.NetName != '/BAT_ADC_IN'")
+ (constraint disallow track via)
+)
+(rule "P5 U5 opposite projection"
+ (condition "A.intersectsArea('NETBODY_U5_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/ARM_CLK' && A.NetName != '/ARM_Q' && A.NetName != '/ARM_Q_N' && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 R12 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R12_OPPOSITE') && A.NetName != '/IMU_CS' && A.NetName != '/IMU_CS_M'")
+ (constraint disallow track via)
+)
+(rule "P5 R8 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R8_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/USER_KEY_N'")
+ (constraint disallow track via)
+)
+(rule "P5 R2 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R2_OPPOSITE') && A.NetName != '/HEAD_BUS' && A.NetName != '/HEAD_TX_BUF'")
+ (constraint disallow track via)
+)
+(rule "P5 D1 opposite projection"
+ (condition "A.intersectsArea('NETBODY_D1_OPPOSITE') && A.NetName != '/CLR_N' && A.NetName != '/NRST'")
+ (constraint disallow track via)
+)
+(rule "P5 R19 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R19_OPPOSITE') && A.NetName != '/ARM_FEEDBACK' && A.NetName != '/ARM_Q'")
+ (constraint disallow track via)
+)
+(rule "P5 C11 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C11_OPPOSITE') && A.NetName != '/CURRENT_ADC' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 C3 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C3_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 R7 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R7_OPPOSITE') && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 U6 opposite projection"
+ (condition "A.intersectsArea('NETBODY_U6_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/CLR_N' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 R5 opposite projection"
+ (condition "A.intersectsArea('NETBODY_R5_OPPOSITE') && A.NetName != '/ARM_CLK' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 C2 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C2_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 C4 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C4_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+(rule "P5 U2 opposite projection"
+ (condition "A.intersectsArea('NETBODY_U2_OPPOSITE') && A.NetName != '/+3V3' && A.NetName != '/GND' && A.NetName != '/HEAD_BUS' && A.NetName != '/HEAD_OE_N' && A.NetName != '/HEAD_RX' && A.NetName != '/HEAD_TX' && A.NetName != '/HEAD_TX_BUF'")
+ (constraint disallow track via)
+)
+(rule "P5 C9 opposite projection"
+ (condition "A.intersectsArea('NETBODY_C9_OPPOSITE') && A.NetName != '/BAT_ADC' && A.NetName != '/GND'")
+ (constraint disallow track via)
+)
+
+# P5R7 E socket: only the connected pin may use its outward escape corridor
+(rule "P5R7 E socket unrelated routes F.Cu"
+ (condition "A.intersectsArea('P5R7_E_FULL_F.Cu') && A.NetName != '/NRST'")
+ (constraint disallow track via)
+)
+(rule "P5R7 E socket unrelated routes B.Cu"
+ (condition "A.intersectsArea('P5R7_E_FULL_B.Cu') && A.NetName != '/NRST'")
+ (constraint disallow track via)
+)
+(rule "P5R7 AC socket foreign nets F.Cu"
+ (condition "A.intersectsArea('P5R7_LONG_FULL_AC_F.Cu') && A.NetName != '/+3V3' && A.NetName != '/ARM_FEEDBACK' && A.NetName != '/BAT_ADC' && A.NetName != '/CHG_N' && A.NetName != '/CURRENT_ADC' && A.NetName != '/GND' && A.NetName != '/HEAD_RX' && A.NetName != '/HEAD_TX' && A.NetName != '/IMU_CS_M' && A.NetName != '/IMU_DRDY' && A.NetName != '/IMU_MISO' && A.NetName != '/IMU_MOSI_M' && A.NetName != '/IMU_SCK_M' && A.NetName != '/USER_KEY_N' && A.NetName != '/WHEEL_ADC' && A.NetName != 'unconnected-(U100-A.10_PC3-PadA10)' && A.NetName != 'unconnected-(U100-A.12_PA1-PadA12)' && A.NetName != 'unconnected-(U100-A.1_VB-PadA1)' && A.NetName != 'unconnected-(U100-A.21_PB2-PadA21)' && A.NetName != 'unconnected-(U100-A.22_PB1-PadA22)' && A.NetName != 'unconnected-(U100-A.23_PB11_NC_VCAP-PadA23)' && A.NetName != 'unconnected-(U100-A.24_PB10-PadA24)' && A.NetName != 'unconnected-(U100-A.3_PC14-PadA3)' && A.NetName != 'unconnected-(U100-A.6_PC15-PadA6)' && A.NetName != 'unconnected-(U100-A.9_PA0-PadA9)'")
+ (constraint disallow track via)
+)
+(rule "P5R7 AC socket foreign nets B.Cu"
+ (condition "A.intersectsArea('P5R7_LONG_FULL_AC_B.Cu') && A.NetName != '/+3V3' && A.NetName != '/ARM_FEEDBACK' && A.NetName != '/BAT_ADC' && A.NetName != '/CHG_N' && A.NetName != '/CURRENT_ADC' && A.NetName != '/GND' && A.NetName != '/HEAD_RX' && A.NetName != '/HEAD_TX' && A.NetName != '/IMU_CS_M' && A.NetName != '/IMU_DRDY' && A.NetName != '/IMU_MISO' && A.NetName != '/IMU_MOSI_M' && A.NetName != '/IMU_SCK_M' && A.NetName != '/USER_KEY_N' && A.NetName != '/WHEEL_ADC' && A.NetName != 'unconnected-(U100-A.10_PC3-PadA10)' && A.NetName != 'unconnected-(U100-A.12_PA1-PadA12)' && A.NetName != 'unconnected-(U100-A.1_VB-PadA1)' && A.NetName != 'unconnected-(U100-A.21_PB2-PadA21)' && A.NetName != 'unconnected-(U100-A.22_PB1-PadA22)' && A.NetName != 'unconnected-(U100-A.23_PB11_NC_VCAP-PadA23)' && A.NetName != 'unconnected-(U100-A.24_PB10-PadA24)' && A.NetName != 'unconnected-(U100-A.3_PC14-PadA3)' && A.NetName != 'unconnected-(U100-A.6_PC15-PadA6)' && A.NetName != 'unconnected-(U100-A.9_PA0-PadA9)'")
+ (constraint disallow track via)
+)
+(rule "P5R7 BD socket foreign nets F.Cu"
+ (condition "A.intersectsArea('P5R7_LONG_FULL_BD_F.Cu') && A.NetName != '/+5V_MOTION' && A.NetName != '/ARM_CLK' && A.NetName != '/CLR_N' && A.NetName != '/FAULT_N' && A.NetName != '/GND' && A.NetName != '/HEAD_OE_REQ_N' && A.NetName != '/LINK_RX' && A.NetName != '/LINK_TX' && A.NetName != '/S288_OE_REQ_N' && A.NetName != '/S288_RX' && A.NetName != '/S288_TX' && A.NetName != 'unconnected-(U100-B.10_PD2-PadB10)' && A.NetName != 'unconnected-(U100-B.11_PC10-PadB11)' && A.NetName != 'unconnected-(U100-B.12_PC11-PadB12)' && A.NetName != 'unconnected-(U100-B.13_PA12-PadB13)' && A.NetName != 'unconnected-(U100-B.14_PA15-PadB14)' && A.NetName != 'unconnected-(U100-B.16_PA11-PadB16)' && A.NetName != 'unconnected-(U100-B.17_PA8-PadB17)' && A.NetName != 'unconnected-(U100-B.19_PC8-PadB19)' && A.NetName != 'unconnected-(U100-B.1_PB9-PadB1)' && A.NetName != 'unconnected-(U100-B.20_PC9-PadB20)' && A.NetName != 'unconnected-(U100-B.23_PB14-PadB23)' && A.NetName != 'unconnected-(U100-B.24_PB15-PadB24)' && A.NetName != 'unconnected-(U100-B.8_PB4-PadB8)' && A.NetName != 'unconnected-(U100-B.9_PC12-PadB9)' && A.NetName != 'unconnected-(U100-D.1_PB12-PadD1)' && A.NetName != 'unconnected-(U100-D.2_PB13-PadD2)'")
+ (constraint disallow track via)
+)
+(rule "P5R7 BD socket foreign nets B.Cu"
+ (condition "A.intersectsArea('P5R7_LONG_FULL_BD_B.Cu') && A.NetName != '/+5V_MOTION' && A.NetName != '/ARM_CLK' && A.NetName != '/CLR_N' && A.NetName != '/FAULT_N' && A.NetName != '/GND' && A.NetName != '/HEAD_OE_REQ_N' && A.NetName != '/LINK_RX' && A.NetName != '/LINK_TX' && A.NetName != '/S288_OE_REQ_N' && A.NetName != '/S288_RX' && A.NetName != '/S288_TX' && A.NetName != 'unconnected-(U100-B.10_PD2-PadB10)' && A.NetName != 'unconnected-(U100-B.11_PC10-PadB11)' && A.NetName != 'unconnected-(U100-B.12_PC11-PadB12)' && A.NetName != 'unconnected-(U100-B.13_PA12-PadB13)' && A.NetName != 'unconnected-(U100-B.14_PA15-PadB14)' && A.NetName != 'unconnected-(U100-B.16_PA11-PadB16)' && A.NetName != 'unconnected-(U100-B.17_PA8-PadB17)' && A.NetName != 'unconnected-(U100-B.19_PC8-PadB19)' && A.NetName != 'unconnected-(U100-B.1_PB9-PadB1)' && A.NetName != 'unconnected-(U100-B.20_PC9-PadB20)' && A.NetName != 'unconnected-(U100-B.23_PB14-PadB23)' && A.NetName != 'unconnected-(U100-B.24_PB15-PadB24)' && A.NetName != 'unconnected-(U100-B.8_PB4-PadB8)' && A.NetName != 'unconnected-(U100-B.9_PC12-PadB9)' && A.NetName != 'unconnected-(U100-D.1_PB12-PadD1)' && A.NetName != 'unconnected-(U100-D.2_PB13-PadD2)'")
+ (constraint disallow track via)
+)
