@@ -1,0 +1,499 @@
+{
+  "protocol": "MORI/2",
+  "schema_version": 1,
+  "max_json_bytes": 4096,
+  "lease_ms": 300,
+  "observation_max_age_ms": 250,
+  "sources": [
+    "console",
+    "mobile",
+    "voice",
+    "button",
+    "autonomy",
+    "local"
+  ],
+  "permissions": [
+    "read",
+    "control",
+    "safety",
+    "maintenance",
+    "interaction",
+    "camera",
+    "memory"
+  ],
+  "commands": {
+    "READ_STATUS": {
+      "code": 1,
+      "permission": "read",
+      "fields": {},
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "CLAIM_CONTROL": {
+      "code": 2,
+      "permission": "control",
+      "fields": {
+        "supervised": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "RELEASE_CONTROL": {
+      "code": 3,
+      "permission": "control",
+      "fields": {},
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "HEARTBEAT": {
+      "code": 4,
+      "permission": "control",
+      "fields": {},
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "ARM": {
+      "code": 5,
+      "permission": "control",
+      "fields": {
+        "local_confirmation": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "STOP_MOTION": {
+      "code": 6,
+      "permission": "control",
+      "fields": {},
+      "priority": 1,
+      "ttl_max_ms": 300
+    },
+    "DISARM": {
+      "code": 7,
+      "permission": "control",
+      "fields": {
+        "support_confirmed": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 1,
+      "ttl_max_ms": 300
+    },
+    "FAULT_STOP": {
+      "code": 8,
+      "permission": "safety",
+      "fields": {
+        "reason": {
+          "kind": "string",
+          "max": 80
+        }
+      },
+      "priority": 0,
+      "ttl_max_ms": 30000
+    },
+    "ACK_FAULT": {
+      "code": 9,
+      "permission": "maintenance",
+      "fields": {
+        "support_confirmed": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "ENTER_MAINTENANCE": {
+      "code": 10,
+      "permission": "maintenance",
+      "fields": {
+        "support_confirmed": {
+          "kind": "boolean"
+        },
+        "cabled": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "MAINTENANCE_ACTION": {
+      "code": 11,
+      "permission": "maintenance",
+      "fields": {
+        "action": {
+          "kind": "enum",
+          "values": [
+            "ota",
+            "nvs_reset",
+            "shutdown",
+            "provision"
+          ]
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "SET_VELOCITY": {
+      "code": 12,
+      "permission": "control",
+      "fields": {
+        "v_m_s": {
+          "kind": "number",
+          "min": -0.1,
+          "max": 0.1
+        },
+        "yaw_rad_s": {
+          "kind": "number",
+          "min": -0.5,
+          "max": 0.5
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "MOVE_DISTANCE": {
+      "code": 13,
+      "permission": "control",
+      "fields": {
+        "distance_m": {
+          "kind": "number",
+          "min": -0.3,
+          "max": 0.3
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "TURN_ANGLE": {
+      "code": 14,
+      "permission": "control",
+      "fields": {
+        "angle_rad": {
+          "kind": "number",
+          "min": -3.141592653589793,
+          "max": 3.141592653589793
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "HEAD_TARGET": {
+      "code": 15,
+      "permission": "control",
+      "fields": {
+        "yaw_rad": {
+          "kind": "number",
+          "min": -1.0471975511965976,
+          "max": 1.0471975511965976
+        },
+        "pitch_rad": {
+          "kind": "number",
+          "min": -0.3490658503988659,
+          "max": 0.4363323129985824
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "SET_EXPRESSION": {
+      "code": 16,
+      "permission": "interaction",
+      "fields": {
+        "state": {
+          "kind": "enum",
+          "values": [
+            "idle",
+            "listening",
+            "thinking",
+            "speaking",
+            "happy",
+            "confused",
+            "sleep_visual",
+            "error"
+          ]
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "CAMERA_MODE": {
+      "code": 17,
+      "permission": "camera",
+      "fields": {
+        "mode": {
+          "kind": "enum",
+          "values": [
+            "OFF",
+            "SNAPSHOT",
+            "TRACKING"
+          ]
+        },
+        "upload_allowed": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "SNAPSHOT": {
+      "code": 18,
+      "permission": "camera",
+      "fields": {
+        "upload_allowed": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "SELECT_TARGET": {
+      "code": 19,
+      "permission": "camera",
+      "fields": {
+        "target_id": {
+          "kind": "string",
+          "max": 64
+        },
+        "confirmed": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "FOLLOW": {
+      "code": 20,
+      "permission": "control",
+      "fields": {
+        "mode": {
+          "kind": "enum",
+          "values": [
+            "HEAD",
+            "BODY"
+          ]
+        },
+        "supervised": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "PATROL": {
+      "code": 21,
+      "permission": "control",
+      "fields": {
+        "duration_s": {
+          "kind": "number",
+          "min": 1,
+          "max": 30
+        },
+        "segment_m": {
+          "kind": "number",
+          "min": 0.01,
+          "max": 0.3
+        },
+        "supervised": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "ACTIVE_ACTION": {
+      "code": 22,
+      "permission": "control",
+      "fields": {
+        "pattern": {
+          "kind": "enum",
+          "values": [
+            "short_forward",
+            "nod",
+            "shake"
+          ]
+        },
+        "supervised": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 300
+    },
+    "CANCEL": {
+      "code": 23,
+      "permission": "control",
+      "fields": {
+        "command_id": {
+          "kind": "string",
+          "max": 64
+        }
+      },
+      "priority": 1,
+      "ttl_max_ms": 300
+    },
+    "MEMORY_QUERY": {
+      "code": 24,
+      "permission": "memory",
+      "fields": {
+        "query": {
+          "kind": "string",
+          "max": 512
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "MEMORY_REMEMBER": {
+      "code": 25,
+      "permission": "memory",
+      "fields": {
+        "text": {
+          "kind": "string",
+          "max": 2000
+        },
+        "category": {
+          "kind": "enum",
+          "values": [
+            "fact",
+            "preference",
+            "summary",
+            "inference"
+          ]
+        },
+        "confirmed": {
+          "kind": "boolean"
+        },
+        "sensitive": {
+          "kind": "boolean"
+        },
+        "source_id": {
+          "kind": "string",
+          "max": 128
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "MEMORY_CORRECT": {
+      "code": 26,
+      "permission": "memory",
+      "fields": {
+        "id": {
+          "kind": "string",
+          "max": 64
+        },
+        "text": {
+          "kind": "string",
+          "max": 2000
+        },
+        "confirmed": {
+          "kind": "boolean"
+        },
+        "source_id": {
+          "kind": "string",
+          "max": 128
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "MEMORY_DELETE": {
+      "code": 27,
+      "permission": "memory",
+      "fields": {
+        "id": {
+          "kind": "string",
+          "max": 64
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "MEMORY_EXPORT": {
+      "code": 28,
+      "permission": "memory",
+      "fields": {},
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "MEMORY_ENABLED": {
+      "code": 29,
+      "permission": "memory",
+      "fields": {
+        "enabled": {
+          "kind": "boolean"
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "VOLUME": {
+      "code": 30,
+      "permission": "interaction",
+      "fields": {
+        "level": {
+          "kind": "number",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "VOICE_SESSION": {
+      "code": 31,
+      "permission": "interaction",
+      "fields": {
+        "action": {
+          "kind": "enum",
+          "values": [
+            "start",
+            "interrupt",
+            "text"
+          ]
+        },
+        "text": {
+          "kind": "string",
+          "max": 2000
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "BUTTON": {
+      "code": 32,
+      "permission": "interaction",
+      "fields": {
+        "gesture": {
+          "kind": "enum",
+          "values": [
+            "short",
+            "double",
+            "long"
+          ]
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    },
+    "WAKE_CONFIG": {
+      "code": 33,
+      "permission": "interaction",
+      "fields": {
+        "enabled": {
+          "kind": "boolean"
+        },
+        "requested_phrase": {
+          "kind": "string",
+          "max": 64
+        }
+      },
+      "priority": 2,
+      "ttl_max_ms": 30000
+    }
+  }
+}

@@ -1,0 +1,2732 @@
+[
+  {
+    "name": "velocity SI",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "READ_STATUS",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "read"
+      ],
+      "type": "READ_STATUS",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CLAIM_CONTROL",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "CLAIM_CONTROL",
+      "params": {
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CLAIM_CONTROL missing supervised",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "CLAIM_CONTROL",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "RELEASE_CONTROL",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "RELEASE_CONTROL",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEARTBEAT",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEARTBEAT",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ARM",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "ARM",
+      "params": {
+        "local_confirmation": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ARM missing local_confirmation",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "ARM",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "STOP_MOTION",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "STOP_MOTION",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "DISARM",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "DISARM",
+      "params": {
+        "support_confirmed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "DISARM missing support_confirmed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "DISARM",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "FAULT_STOP",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "safety"
+      ],
+      "type": "FAULT_STOP",
+      "params": {
+        "reason": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "FAULT_STOP missing reason",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "safety"
+      ],
+      "type": "FAULT_STOP",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ACK_FAULT",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "ACK_FAULT",
+      "params": {
+        "support_confirmed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ACK_FAULT missing support_confirmed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "ACK_FAULT",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ENTER_MAINTENANCE",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "ENTER_MAINTENANCE",
+      "params": {
+        "support_confirmed": true,
+        "cabled": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ENTER_MAINTENANCE missing support_confirmed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "ENTER_MAINTENANCE",
+      "params": {
+        "cabled": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ENTER_MAINTENANCE missing cabled",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "ENTER_MAINTENANCE",
+      "params": {
+        "support_confirmed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MAINTENANCE_ACTION",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "MAINTENANCE_ACTION",
+      "params": {
+        "action": "ota"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MAINTENANCE_ACTION missing action",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "maintenance"
+      ],
+      "type": "MAINTENANCE_ACTION",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": -0.1,
+        "yaw_rad_s": -0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY missing v_m_s",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "yaw_rad_s": -0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY invalid v_m_s1.1",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 1.1,
+        "yaw_rad_s": -0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY invalid v_m_sTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": true,
+        "yaw_rad_s": -0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY invalid v_m_s0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": "0",
+        "yaw_rad_s": -0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY missing yaw_rad_s",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": -0.1
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY invalid yaw_rad_s1.5",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": -0.1,
+        "yaw_rad_s": 1.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY invalid yaw_rad_sTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": -0.1,
+        "yaw_rad_s": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_VELOCITY invalid yaw_rad_s0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": -0.1,
+        "yaw_rad_s": "0"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MOVE_DISTANCE",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "MOVE_DISTANCE",
+      "params": {
+        "distance_m": -0.3
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MOVE_DISTANCE missing distance_m",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "MOVE_DISTANCE",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MOVE_DISTANCE invalid distance_m1.3",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "MOVE_DISTANCE",
+      "params": {
+        "distance_m": 1.3
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MOVE_DISTANCE invalid distance_mTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "MOVE_DISTANCE",
+      "params": {
+        "distance_m": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MOVE_DISTANCE invalid distance_m0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "MOVE_DISTANCE",
+      "params": {
+        "distance_m": "0"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "TURN_ANGLE",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "TURN_ANGLE",
+      "params": {
+        "angle_rad": -3.141592653589793
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "TURN_ANGLE missing angle_rad",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "TURN_ANGLE",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "TURN_ANGLE invalid angle_rad4.141592653589793",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "TURN_ANGLE",
+      "params": {
+        "angle_rad": 4.141592653589793
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "TURN_ANGLE invalid angle_radTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "TURN_ANGLE",
+      "params": {
+        "angle_rad": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "TURN_ANGLE invalid angle_rad0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "TURN_ANGLE",
+      "params": {
+        "angle_rad": "0"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": -1.0471975511965976,
+        "pitch_rad": -0.3490658503988659
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET missing yaw_rad",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "pitch_rad": -0.3490658503988659
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET invalid yaw_rad2.0471975511965974",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": 2.0471975511965974,
+        "pitch_rad": -0.3490658503988659
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET invalid yaw_radTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": true,
+        "pitch_rad": -0.3490658503988659
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET invalid yaw_rad0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": "0",
+        "pitch_rad": -0.3490658503988659
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET missing pitch_rad",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": -1.0471975511965976
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET invalid pitch_rad1.4363323129985823",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": -1.0471975511965976,
+        "pitch_rad": 1.4363323129985823
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET invalid pitch_radTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": -1.0471975511965976,
+        "pitch_rad": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "HEAD_TARGET invalid pitch_rad0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "HEAD_TARGET",
+      "params": {
+        "yaw_rad": -1.0471975511965976,
+        "pitch_rad": "0"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_EXPRESSION",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "SET_EXPRESSION",
+      "params": {
+        "state": "idle"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SET_EXPRESSION missing state",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "SET_EXPRESSION",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CAMERA_MODE",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "CAMERA_MODE",
+      "params": {
+        "mode": "OFF",
+        "upload_allowed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CAMERA_MODE missing mode",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "CAMERA_MODE",
+      "params": {
+        "upload_allowed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CAMERA_MODE missing upload_allowed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "CAMERA_MODE",
+      "params": {
+        "mode": "OFF"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SNAPSHOT",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "SNAPSHOT",
+      "params": {
+        "upload_allowed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SNAPSHOT missing upload_allowed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "SNAPSHOT",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SELECT_TARGET",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "SELECT_TARGET",
+      "params": {
+        "target_id": "test",
+        "confirmed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SELECT_TARGET missing target_id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "SELECT_TARGET",
+      "params": {
+        "confirmed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "SELECT_TARGET missing confirmed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "camera"
+      ],
+      "type": "SELECT_TARGET",
+      "params": {
+        "target_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "FOLLOW",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "FOLLOW",
+      "params": {
+        "mode": "HEAD",
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "FOLLOW missing mode",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "FOLLOW",
+      "params": {
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "FOLLOW missing supervised",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "FOLLOW",
+      "params": {
+        "mode": "HEAD"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 1,
+        "segment_m": 0.01,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL missing duration_s",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "segment_m": 0.01,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL invalid duration_s31",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 31,
+        "segment_m": 0.01,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL invalid duration_sTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": true,
+        "segment_m": 0.01,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL invalid duration_s0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": "0",
+        "segment_m": 0.01,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL missing segment_m",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 1,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL invalid segment_m1.3",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 1,
+        "segment_m": 1.3,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL invalid segment_mTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 1,
+        "segment_m": true,
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL invalid segment_m0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 1,
+        "segment_m": "0",
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "PATROL missing supervised",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "PATROL",
+      "params": {
+        "duration_s": 1,
+        "segment_m": 0.01
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ACTIVE_ACTION",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "ACTIVE_ACTION",
+      "params": {
+        "pattern": "short_forward",
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ACTIVE_ACTION missing pattern",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "ACTIVE_ACTION",
+      "params": {
+        "supervised": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "ACTIVE_ACTION missing supervised",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "ACTIVE_ACTION",
+      "params": {
+        "pattern": "short_forward"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CANCEL",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "CANCEL",
+      "params": {
+        "command_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "CANCEL missing command_id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "CANCEL",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_QUERY",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_QUERY",
+      "params": {
+        "query": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_QUERY missing query",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_QUERY",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_REMEMBER",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_REMEMBER",
+      "params": {
+        "text": "test",
+        "category": "fact",
+        "confirmed": true,
+        "sensitive": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_REMEMBER missing text",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_REMEMBER",
+      "params": {
+        "category": "fact",
+        "confirmed": true,
+        "sensitive": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_REMEMBER missing category",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_REMEMBER",
+      "params": {
+        "text": "test",
+        "confirmed": true,
+        "sensitive": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_REMEMBER missing confirmed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_REMEMBER",
+      "params": {
+        "text": "test",
+        "category": "fact",
+        "sensitive": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_REMEMBER missing sensitive",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_REMEMBER",
+      "params": {
+        "text": "test",
+        "category": "fact",
+        "confirmed": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_REMEMBER missing source_id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_REMEMBER",
+      "params": {
+        "text": "test",
+        "category": "fact",
+        "confirmed": true,
+        "sensitive": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_CORRECT",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_CORRECT",
+      "params": {
+        "id": "test",
+        "text": "test",
+        "confirmed": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_CORRECT missing id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_CORRECT",
+      "params": {
+        "text": "test",
+        "confirmed": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_CORRECT missing text",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_CORRECT",
+      "params": {
+        "id": "test",
+        "confirmed": true,
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_CORRECT missing confirmed",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_CORRECT",
+      "params": {
+        "id": "test",
+        "text": "test",
+        "source_id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_CORRECT missing source_id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_CORRECT",
+      "params": {
+        "id": "test",
+        "text": "test",
+        "confirmed": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_DELETE",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_DELETE",
+      "params": {
+        "id": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_DELETE missing id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_DELETE",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_EXPORT",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_EXPORT",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_ENABLED",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_ENABLED",
+      "params": {
+        "enabled": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "MEMORY_ENABLED missing enabled",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "memory"
+      ],
+      "type": "MEMORY_ENABLED",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOLUME",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOLUME",
+      "params": {
+        "level": 0
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOLUME missing level",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOLUME",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOLUME invalid level2",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOLUME",
+      "params": {
+        "level": 2
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOLUME invalid levelTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOLUME",
+      "params": {
+        "level": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOLUME invalid level0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOLUME",
+      "params": {
+        "level": "0"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOICE_SESSION",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOICE_SESSION",
+      "params": {
+        "action": "start",
+        "text": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOICE_SESSION missing action",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOICE_SESSION",
+      "params": {
+        "text": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "VOICE_SESSION missing text",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "VOICE_SESSION",
+      "params": {
+        "action": "start"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "BUTTON",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "BUTTON",
+      "params": {
+        "gesture": "short"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "BUTTON missing gesture",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "BUTTON",
+      "params": {},
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "WAKE_CONFIG",
+    "valid": true,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "WAKE_CONFIG",
+      "params": {
+        "enabled": true,
+        "requested_phrase": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "WAKE_CONFIG missing enabled",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "WAKE_CONFIG",
+      "params": {
+        "requested_phrase": "test"
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "WAKE_CONFIG missing requested_phrase",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "interaction"
+      ],
+      "type": "WAKE_CONFIG",
+      "params": {
+        "enabled": true
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "sequenceTrue",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": true,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "sequence2147483648",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 2147483648,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "sequence0",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 0,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "protocolMORI/1",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/1",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "valid_for_ms301",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 301
+    }
+  },
+  {
+    "name": "params{'v_m_s': 0, 'yaw_rad_s': 0, 'extra': 1}",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0,
+        "yaw_rad_s": 0,
+        "extra": 1
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "permissions['control', 'control']",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control",
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "session_id",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "sent_at_ms9007199254740992",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "SET_VELOCITY",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 9007199254740992,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  },
+  {
+    "name": "type__proto__",
+    "valid": false,
+    "command": {
+      "protocol": "MORI/2",
+      "device_id": "mori-sim-01",
+      "session_id": "session",
+      "command_id": "command",
+      "client_id": "client",
+      "source": "console",
+      "permissions": [
+        "control"
+      ],
+      "type": "__proto__",
+      "params": {
+        "v_m_s": 0.1,
+        "yaw_rad_s": 0.5
+      },
+      "sequence": 1,
+      "sent_at_ms": 100,
+      "basis_device_ms": 100,
+      "valid_for_ms": 300
+    }
+  }
+]
