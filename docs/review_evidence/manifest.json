@@ -26,7 +26,9 @@
     "package_rebuild": "Blender --background --python-use-system-env --python-exit-code 1 --python <freshly extracted package>/mechanical/scripts/build.py; PYTHONPATH supplied only for the external manifold3d runtime",
     "package_validate": "Blender --background --python-use-system-env --python-exit-code 1 <rebuilt package>/mechanical/mori_v1_2.blend --python <rebuilt package>/mechanical/scripts/validate.py",
     "round2_pipeline": "MORI_CAD_PYTHON=<OCP 7.8.1.1 Python> python <extracted 851-file R4 package>/mechanical/scripts/run_all.py --core --render-size 128 --render-samples 1",
-    "round2_repackage": "python <rebuilt R4 package>/mechanical/scripts/package_delivery.py --output-parent .state/review/repacked --release-name MORI_core_rebuilt"
+    "round2_repackage": "python <rebuilt R4 package>/mechanical/scripts/package_delivery.py --output-parent .state/review/repacked --release-name MORI_core_rebuilt",
+    "round3_pipeline": "MORI_CAD_PYTHON=<OCP 7.8.1.1 Python> python mechanical/scripts/run_all.py --core --render-size 1200 --render-samples 32",
+    "round3_package": "python mechanical/scripts/package_delivery.py --output-parent .state/review/packages --release-name MORI_M1_52_review_R5"
   },
   "files": {
     "docs/review_evidence/tools-tests.log": {
@@ -192,10 +194,57 @@
     "docs/review_evidence/round3-tools.log": {
       "bytes": 2231,
       "sha256": "b55595ba729e19daf4118153a9ed49886b0c193b09a9bc38c020c50f071739a3"
+    },
+    "docs/review_evidence/package-r5.log": {
+      "bytes": 193,
+      "sha256": "7e235d678d86556c8b77560631852db02bcb19e0f343c22c1305126358aa1723"
+    },
+    "docs/review_evidence/round3-gitleaks.log": {
+      "bytes": 108,
+      "sha256": "1fda4ca72dbdeb895bf23beb017b7ee649b617e1c55c325a56feda506acc1b17"
+    },
+    "docs/review_evidence/round3-core-result.json": {
+      "bytes": 2245,
+      "sha256": "d5a165c2dcf5e38762f853123e893e0f32c94d76d5f607f0a6c4409598480ec0"
+    },
+    "docs/review_evidence/round3-current-pipeline.log": {
+      "bytes": 259,
+      "sha256": "1be6005fb8b7e21f46a6e349a6e4d98a9a42f3a8888d059c2efde7d0d3195cf6"
+    },
+    "docs/review_evidence/round3-package-integrity.json": {
+      "bytes": 639,
+      "sha256": "be2c4c2747a4876c6a6dd0124e9713a015c82672a733faa79c9d6bbab2e01df8"
+    },
+    "mechanical/reports/pipeline_execution.zip": {
+      "bytes": 309477,
+      "sha256": "2768bc6c6a8b8db93508ed1e65af1684d01de870fc71060c50b21be891bbb8eb"
+    },
+    "docs/review_evidence/round4-python.log": {
+      "bytes": 655,
+      "sha256": "823934fee738f4e2b16ce9a431ce922b4e465ed3258c6290fa95459d4ab77008"
+    },
+    "docs/review_evidence/round4-frontend.log": {
+      "bytes": 351,
+      "sha256": "28d4571cb405b243f84452bcd95678e3f1d76e22f2970e152e44e2b8c1edb246"
+    },
+    "docs/review_evidence/round4-format.log": {
+      "bytes": 66,
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    "docs/review_evidence/round4-tools.log": {
+      "bytes": 2231,
+      "sha256": "2d3dbf914e4ef8ba20ca0e7c6d5bfddfac09c1a37263197d3c38a85bf460f44e"
+    },
+    "docs/review_evidence/round4-build.log": {
+      "bytes": 389,
+      "sha256": "0c0ac631683f2adc0136bacfae58d5e5ea5223947e61aa9a89e4bdb486094b52"
     }
   },
   "round2_source_base": "ddfaf9d62796f1a2c67505a9baa523074ab878cc",
   "round2_scope": "PR 12 follow-up corrections and complete fresh-package core pipeline; prior failed CAD runtime check and successful retry both retained.",
   "log_normalization": "Trailing terminal blank lines may be removed from checked-in copies; command results retained.",
-  "round3_source_base": "bee11d471625ced83ac774a407bd191fddff5e67"
+  "round3_source_base": "bee11d471625ced83ac774a407bd191fddff5e67",
+  "round3_executed_source_commit": "75abb96f82eaf0020c1d9093e4e3fbf411a75e43",
+  "round3_scope": "All eight current core stages rerun at 1200 px / 32 samples; exact execution evidence and independent R5 package integrity verified, including stale-generator rejection. R4 independent full core rebuild remains separately recorded.",
+  "round4_source_base": "75abb96f82eaf0020c1d9093e4e3fbf411a75e43"
 }

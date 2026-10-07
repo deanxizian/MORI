@@ -331,7 +331,10 @@ export function connect() {
     lease.active = false;
     haltDrive();
     stopAudio();
-    ui.notice = "连接断开：停止续租；重连后需要重新取得控制权";
+    ui.notice =
+      event.code === 1008
+        ? "配对凭据已失效，请重新配对"
+        : "连接断开：停止续租；重连后需要重新取得控制权";
   };
   next.onerror = () => {
     ui.notice = "连接失败，请检查服务地址与一次性配对";

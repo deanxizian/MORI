@@ -219,11 +219,16 @@ def create_app(directory=None,clock=None):
   origin=ws.headers.get('origin')
   if origin and origin not in origins:await ws.close(code=1008);return
   await ws.accept();p=None;sender=None
+  async def verify_token(token):
+   try:return g.auth.verify(token)
+   except ValueError:
+    with contextlib.suppress(RuntimeError):await ws.close(code=1008,reason='UNAUTHORIZED')
+    raise
   try:
    login=await asyncio.wait_for(ws.receive_text(),5)
    login=object_json(login,256)
    if set(login)!={'token'}:raise ValueError('FIELDS')
-   token=login['token'];p=g.auth.verify(token)
+   token=login['token'];p=await verify_token(token)
    previous=g.sockets.get(p['client_id'])
    if previous:await previous.close(code=4001,reason='CLIENT_CONNECTION_REPLACED')
    g.sockets[p['client_id']]=ws
@@ -231,12 +236,13 @@ def create_app(directory=None,clock=None):
     transport_seq=0
     while True:
      transport_seq+=1
-     g.auth.verify(token)
+     try:await verify_token(token)
+     except ValueError:return
      data=g.device.snapshot();data['client_sequence']=g.device.last_sequence.get(p['client_id'],0)
      await ws.send_json({'type':'telemetry','transport_seq':transport_seq,'data':data});await asyncio.sleep(.1)
    sender=asyncio.create_task(telemetry())
    while True:
-    raw=await ws.receive_text();g.auth.verify(token)
+    raw=await ws.receive_text();await verify_token(token)
     if len(raw)>4096:await ws.send_json({'type':'result','data':{'status':'REJECTED','reason':'LENGTH'}});continue
     try:envelope=object_json(raw)
     except (ValueError,RecursionError):envelope=None
@@ -249,7 +255,9 @@ def create_app(directory=None,clock=None):
     await ws.send_json({'type':'result','data':res})
   except (WebSocketDisconnect,ValueError,KeyError,asyncio.TimeoutError):pass
   finally:
-   if sender:sender.cancel()
+   if sender:
+    sender.cancel()
+    with contextlib.suppress(asyncio.CancelledError,WebSocketDisconnect,RuntimeError):await sender
    if p:
     if g.sockets.get(p['client_id'])==ws:
      g.device.disconnect(p['client_id']);g.sockets.pop(p['client_id'],None)

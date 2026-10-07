@@ -3,6 +3,7 @@ from backend.mori.memory import Memory
 from backend.mori.auth import Auth
 from backend.mori.app import create_app,Gateway
 from fastapi.testclient import TestClient
+from starlette.websockets import WebSocketDisconnect
 from simulation.tests.test_device import Clock,Rig
 
 def test_memory_restart_scope_correct_delete_restore(tmp_path):
@@ -44,6 +45,31 @@ def test_reconnected_client_receives_its_own_sequence_floor(tmp_path):
   with c.websocket_connect('/ws') as ws:
    ws.send_json({'token':p['token']});snapshot=ws.receive_json()
    assert snapshot['data']['client_sequence']==47
+
+@pytest.mark.parametrize('credential_state',['unknown','revoked'])
+def test_websocket_rejects_invalid_saved_credentials_with_policy_close(tmp_path,credential_state):
+ app=create_app(tmp_path);g=app.state.gateway
+ with TestClient(app) as c:
+  token='unknown-test-token'
+  if credential_state=='revoked':
+   p=g.auth.create('owner',['control']);token=p['token'];g.auth.revoke(p['client_id'])
+  with c.websocket_connect('/ws') as ws:
+   ws.send_json({'token':token})
+   with pytest.raises(WebSocketDisconnect) as error:ws.receive_json()
+   assert error.value.code==1008 and error.value.reason=='UNAUTHORIZED'
+  assert not g.sockets
+
+def test_websocket_revocation_closes_idle_authenticated_connection(tmp_path):
+ app=create_app(tmp_path);g=app.state.gateway
+ with TestClient(app) as c:
+  p=g.auth.create('owner',['control'])
+  with c.websocket_connect('/ws') as ws:
+   ws.send_json({'token':p['token']});assert ws.receive_json()['type']=='telemetry'
+   headers={'Authorization':'Bearer '+p['token']}
+   assert c.post('/api/credentials/revoke',headers=headers).status_code==200
+   with pytest.raises(WebSocketDisconnect) as error:
+    for _ in range(10):ws.receive_json()
+   assert error.value.code==1008
 
 def test_gateway_cross_client_memory_collision_leaks_nothing(tmp_path):
  g=Gateway(tmp_path,Clock());r=Rig();r.d=g.device

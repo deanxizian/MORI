@@ -1,0 +1,9 @@
+RUN build
+RUN finalize_structure_metadata
+RUN validate
+RUN render
+RUN export
+RUN export_wheel_metal
+RUN delivery_check
+RUN report
+PIPELINE_COMPLETE: inspect reports/validation.json and export_manifest.json; NOT_TESTED/BLOCKED are explicit engineering limits.

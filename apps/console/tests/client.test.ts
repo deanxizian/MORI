@@ -167,3 +167,25 @@ it("does not migrate ambiguous origin-only credentials to a gateway", async () =
   c.restorePairing();
   expect(c.ui.identity).toBeNull();
 });
+it("clears rejected saved credentials on policy close and does not restore them", async () => {
+  const c = await paired();
+  c.lease.claim();
+  Socket.latest.onclose?.({ code: 1008 });
+  expect(c.ui.identity).toBeNull();
+  expect(c.lease.active).toBe(false);
+  expect(c.ui.notice).toContain("重新配对");
+  vi.resetModules();
+  const fresh = await import("../src/client");
+  fresh.restorePairing();
+  expect(fresh.ui.identity).toBeNull();
+});
+it("retains valid pairing across a normal transport disconnect", async () => {
+  const c = await paired();
+  Socket.latest.close();
+  expect(c.ui.identity?.token).toBe(identity.token);
+  vi.resetModules();
+  const fresh = await import("../src/client");
+  fresh.restorePairing();
+  expect(fresh.ui.identity?.token).toBe(identity.token);
+  expect(fresh.lease.active).toBe(false);
+});

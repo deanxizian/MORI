@@ -101,9 +101,11 @@ class Device:
   if kind=='SET_EXPRESSION':self.expression=p['state'];return self.result(c,'COMPLETED')
   if kind=='VOLUME':self.volume=p['level'];return self.result(c,'COMPLETED')
   if kind=='CAMERA_MODE':
-   self.camera=p['mode'];self.upload_allowed=p['upload_allowed'];self.observation=None;self.selected_target=None
-   if self.active and self.active['mode']=='FOLLOW':
-    self.cancel('CAMERA_MODE_CHANGED');self.cancel_head('CAMERA_MODE_CHANGED')
+   changed=self.camera!=p['mode'];self.camera=p['mode'];self.upload_allowed=p['upload_allowed']
+   if changed:
+    self.observation=None;self.selected_target=None
+    if self.active and self.active['mode']=='FOLLOW':
+     self.cancel('CAMERA_MODE_CHANGED');self.cancel_head('CAMERA_MODE_CHANGED')
    return self.result(c,'COMPLETED','SIMULATED_INPUT' if not self.hardware else 'CAMERA_DRIVER_PENDING')
   if kind=='SNAPSHOT':
    if self.camera!='SNAPSHOT':return self.result(c,'REJECTED','SNAPSHOT_MODE_REQUIRED')
