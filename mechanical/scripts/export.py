@@ -5,6 +5,7 @@ import sys, struct, math, hashlib
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from common import *
+from mesh_components import components
 
 def triangles(o):
     o.data.calc_loop_triangles(); vs=vertices_world(o)
@@ -44,7 +45,7 @@ def topology(vertices,faces,normals=None):
         for j in range(3):
             e=(ids[j],ids[(j+1)%3]); key=tuple(sorted(e)); edges[key]=edges.get(key,0)+1
             oriented[key]=oriented.get(key,0)+(1 if e==key else -1)
-    return dict(vertices=len(vertices),triangles=len(faces),boundary_edges=sum(n==1 for n in edges.values()),
+    return dict(vertices=len(vertices),triangles=len(faces),connected_components=len(components(vertices,faces)),boundary_edges=sum(n==1 for n in edges.values()),
                 nonmanifold_edges=sum(n!=2 for n in edges.values()),inconsistent_edges=sum(v!=0 for v in oriented.values()),
                 degenerate_triangles=degenerate,signed_volume_mm3=volume,inconsistent_stl_normals=bad_normals)
 
@@ -67,6 +68,7 @@ def main():
         bb=[[min(p[i] for p in v),max(p[i] for p in v)] for i in range(3)]; orig=bounds(o)
         err=max(abs(bb[i][j]-orig[i][j]) for i in range(3) for j in range(2))
         ok=err<.01 and all(top[k]==0 for k in ['nonmanifold_edges','inconsistent_edges','degenerate_triangles','inconsistent_stl_normals']) and top['signed_volume_mm3']>0
+        if name=='Head_Front':ok=ok and top['connected_components']==1
         # Only printable geometry passes into the deliverable directory.
         if not ok:
             quarantine=ROOT/'reports/quarantined_stl'; quarantine.mkdir(exist_ok=True)

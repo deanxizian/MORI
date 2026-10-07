@@ -11,6 +11,7 @@ export type Status = {
   device_id: string;
   session_id: string;
   device_ms: number;
+  client_sequence?: number;
   frame_id: number;
   source: string;
   state: string;
@@ -55,11 +56,32 @@ type Result = {
   data?: unknown;
 };
 type Identity = { token: string; client_id: string; permissions: string[] };
+function gatewayBase(base: string) {
+  const url = new URL(base);
+  if (
+    !["http:", "https:"].includes(url.protocol) ||
+    url.username ||
+    url.password ||
+    url.search ||
+    url.hash
+  )
+    throw Error("网关地址只能包含 HTTP(S) 主机和路径");
+  return url.origin + url.pathname.replace(/\/+$/, "");
+}
+const identityKey = (base: string) => "mori.credential.v2:" + gatewayBase(base);
+function savedBase() {
+  try {
+    return localStorage.getItem("mori.gateway") || "http://127.0.0.1:8765";
+  } catch {
+    return "http://127.0.0.1:8765";
+  }
+}
+let identityBase: string | null = null;
 export const ui = reactive({
   base:
     location.protocol === "https:" && location.hostname !== "localhost"
       ? location.origin
-      : "http://127.0.0.1:8765",
+      : savedBase(),
   connected: false,
   status: null as Status | null,
   identity: null as Identity | null,
@@ -105,7 +127,59 @@ function stats() {
     hardware_compute_max: "NOT_TESTED",
   };
 }
-const waiting = new Map<string, (r: Result) => void>();
+const waiting = new Map<
+  string,
+  {
+    resolve: (r: Result) => void;
+    reject: (e: Error) => void;
+    timeout: ReturnType<typeof setTimeout>;
+  }
+>();
+function failPending(reason: string) {
+  for (const pending of waiting.values()) {
+    clearTimeout(pending.timeout);
+    pending.reject(Error(reason));
+  }
+  waiting.clear();
+  sent.clear();
+}
+export function restorePairing() {
+  try {
+    const value = JSON.parse(
+      localStorage.getItem(identityKey(ui.base)) || "null",
+    );
+    ui.identity =
+      value &&
+      typeof value.token === "string" &&
+      typeof value.client_id === "string" &&
+      Array.isArray(value.permissions) &&
+      value.permissions.every((p: unknown) => typeof p === "string")
+        ? value
+        : null;
+    identityBase = ui.identity ? gatewayBase(ui.base) : null;
+  } catch {
+    ui.identity = null;
+    identityBase = null;
+  }
+  if (ui.identity) connect(); // Authentication only; never restore control or ARM.
+}
+function forgetPairing() {
+  try {
+    if (identityBase) localStorage.removeItem(identityKey(identityBase));
+  } catch {}
+  ui.identity = null;
+  identityBase = null;
+  lease.active = false;
+  haltDrive();
+  failPending("配对凭据已撤销");
+  ws?.close();
+  ui.connected = false;
+  ui.status = null;
+}
+export async function revokePairing() {
+  await api("/api/credentials/revoke", {});
+  forgetPairing();
+}
 let audioContext: AudioContext | null = null,
   playing: AudioBufferSourceNode | null = null,
   playbackTimer: ReturnType<typeof setInterval> | null = null;
@@ -117,38 +191,61 @@ export const lease = new LeaseGuard(() => {
 export function stale() {
   return !ui.status || performance.now() - ui.received > 250;
 }
-export async function api(path: string, body?: unknown) {
-  const res = await fetch(ui.base + path, {
+export async function request(path: string, body?: unknown) {
+  const base = gatewayBase(ui.base);
+  const res = await fetch(base + path, {
     method: body === undefined ? "GET" : "POST",
     headers: {
-      ...(ui.identity ? { Authorization: "Bearer " + ui.identity.token } : {}),
+      ...(ui.identity && identityBase === base
+        ? { Authorization: "Bearer " + ui.identity.token }
+        : {}),
       "Content-Type": "application/json",
     },
     ...(body === undefined ? {} : { body: JSON.stringify(body) }),
   });
   if (!res.ok) throw Error((await res.text()).slice(0, 150));
-  return res.json();
+  return res;
+}
+export async function api(path: string, body?: unknown) {
+  return (await request(path, body)).json();
 }
 export async function pair(code: string) {
-  const url = new URL(ui.base);
+  const base = gatewayBase(ui.base);
+  const url = new URL(base);
   if (
     url.protocol !== "https:" &&
     !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)
   )
     throw Error("非本机连接必须使用 HTTPS/WSS");
   ui.identity = await api("/api/pair", { code });
+  identityBase = base;
+  try {
+    localStorage.setItem(identityKey(base), JSON.stringify(ui.identity));
+    localStorage.setItem("mori.gateway", base);
+  } catch {
+    ui.notice = "已配对，但此浏览器无法保存凭据；刷新前请启用站点存储";
+  }
   connect();
 }
 export function connect() {
-  if (!ui.identity) return;
+  if (!ui.identity || identityBase !== gatewayBase(ui.base)) {
+    restorePairing();
+    return;
+  }
+  failPending("连接已重建");
   lease.active = false;
   haltDrive();
   lastTransport = 0;
   previousArrival = 0;
   if (ws) ws.close();
-  const next = new WebSocket(ui.base.replace(/^http/, "ws") + "/ws");
+  const next = new WebSocket(
+    gatewayBase(ui.base).replace(/^http/, "ws") + "/ws",
+  );
+  const token = ui.identity.token;
   ws = next;
-  next.onopen = () => next.send(JSON.stringify({ token: ui.identity!.token }));
+  next.onopen = () => {
+    if (ws === next) next.send(JSON.stringify({ token }));
+  };
   next.onmessage = async (e) => {
     if (ws !== next) return;
     const m = JSON.parse(e.data);
@@ -167,9 +264,16 @@ export function connect() {
         lease.active = false;
         haltDrive();
         seq = 0;
-        waiting.clear();
+        failPending("设备会话已更换，请重新取得控制权");
       }
       ui.status = m.data;
+      // A restored credential may already have issued commands in this server
+      // session. Resume above its authenticated server-side sequence floor.
+      if (
+        Number.isSafeInteger(m.data.client_sequence) &&
+        m.data.client_sequence >= 0
+      )
+        seq = Math.max(seq, m.data.client_sequence);
       ui.received = performance.now();
       ui.connected = true;
       for (const event of m.data.events) {
@@ -193,8 +297,16 @@ export function connect() {
         ui.results = ui.results.map((item) =>
           item.type.startsWith("MEMORY_") ? { ...item, data: undefined } : item,
         );
-      waiting.get(r.command_id)?.(r);
+      const pending = waiting.get(r.command_id);
+      if (pending) {
+        clearTimeout(pending.timeout);
+        pending.resolve(r);
+      }
       waiting.delete(r.command_id);
+      if (r.type === "HEARTBEAT" && r.status !== "COMPLETED") {
+        lease.active = false;
+        haltDrive();
+      }
       if (r.status === "REJECTED" || r.status === "EXPIRED")
         ui.notice = r.reason;
     }
@@ -211,13 +323,18 @@ export function connect() {
     }
     if (m.type === "voice_metrics") ui.voiceMetrics = m.data;
   };
-  next.onclose = () => {
+  next.onclose = (event) => {
     if (ws !== next) return;
+    failPending("连接已断开");
+    if (event.code === 1008) forgetPairing();
     ui.connected = false;
     lease.active = false;
     haltDrive();
     stopAudio();
-    ui.notice = "连接断开：停止续租；重连后需要重新取得控制权";
+    ui.notice =
+      event.code === 1008
+        ? "配对凭据已失效，请重新配对"
+        : "连接断开：停止续租；重连后需要重新取得控制权";
   };
   next.onerror = () => {
     ui.notice = "连接失败，请检查服务地址与一次性配对";
@@ -232,7 +349,10 @@ export function connect() {
         !stale(),
       )
     )
-      void send("HEARTBEAT", {}).catch(() => {});
+      void send("HEARTBEAT", {}).catch(() => {
+        lease.active = false;
+        haltDrive();
+      });
   }, 100);
 }
 export function send(
@@ -267,9 +387,8 @@ export function send(
     ),
   });
   return new Promise((resolve, reject) => {
-    waiting.set(id, resolve);
     sent.set(id, performance.now());
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       if (waiting.delete(id)) {
         sent.delete(id);
         timeouts++;
@@ -277,7 +396,15 @@ export function send(
         reject(Error("命令结果超时"));
       }
     }, 3000);
-    ws!.send(JSON.stringify(c));
+    waiting.set(id, { resolve, reject, timeout });
+    try {
+      ws!.send(JSON.stringify(c));
+    } catch (error) {
+      waiting.delete(id);
+      sent.delete(id);
+      clearTimeout(timeout);
+      reject(error);
+    }
   });
 }
 export async function command(

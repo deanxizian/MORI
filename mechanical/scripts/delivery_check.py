@@ -3,13 +3,15 @@ import sys,hashlib,struct,json
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from common import *
+from pipeline_evidence import render_outputs, EXPECTED_RENDER_VIEWS, DELIVERY_EVIDENCE_FILES, sha
 bpy.context.window.scene=bpy.data.scenes['MORI_V1_Assembly'];load_collections()
 for name in ['DOCK','COUPONS','DATUMS','KEEP_OUT']:COLS[name].hide_viewport=False
 assembled();h=hashlib.sha256()
 for o in sorted(parts(),key=lambda o:o.name):
  h.update(o.name.encode());h.update(np.array(o.matrix_world,dtype=np.float64).tobytes());h.update(np.array([tuple(v.co) for v in o.data.vertices],dtype=np.float32).tobytes());o.data.calc_loop_triangles();h.update(np.array([tuple(t.vertices) for t in o.data.loop_triangles],dtype=np.int32).tobytes())
 renders=json.loads((ROOT/'reports/render_manifest.json').read_text());exports=json.loads((ROOT/'reports/export_manifest.json').read_text());manifest=json.loads((ROOT/'reports/build_manifest.json').read_text())
-result={'render_geometry_sha256':h.hexdigest(),'all_render_hashes_match_final_model':all(v['geometry_sha256']==h.hexdigest() for v in renders),'render_count':len(renders),'all_stl_hashes_match':all(hashlib.sha256((ROOT/v['file']).read_bytes()).hexdigest()==v['sha256'] for v in exports['parts']),'input_hashes_match':all(hashlib.sha256((PROJECT/p).read_bytes()).hexdigest()==value for p,value in manifest['input_sha256'].items()),'foreign_test_object_absent':bpy.data.objects.get('MORI_TEST_FOREIGN_OBJECT_PRESERVATION') is None,'actuators':len([o for o in parts() if o.get('actuator_id')])}
+render_files=render_outputs(ROOT,renders,EXPECTED_RENDER_VIEWS,h.hexdigest())
+result={'render_files':render_files,'all_render_files_match':render_files['status']=='PASS','render_geometry_sha256':h.hexdigest(),'all_render_hashes_match_final_model':all(v['geometry_sha256']==h.hexdigest() for v in renders),'render_count':len(renders),'all_stl_hashes_match':all(hashlib.sha256((ROOT/v['file']).read_bytes()).hexdigest()==v['sha256'] for v in exports['parts']),'input_hashes_match':all(hashlib.sha256((PROJECT/p).read_bytes()).hexdigest()==value for p,value in manifest['input_sha256'].items()),'foreign_test_object_absent':bpy.data.objects.get('MORI_TEST_FOREIGN_OBJECT_PRESERVATION') is None,'actuators':len([o for o in parts() if o.get('actuator_id')])}
 # Hardware may publish a read-only evidence addendum while current geometry is
 # rendering. Preserve the real build hash and test its immutable snapshot;
 # never relabel the model as having adopted that later hardware selection.
@@ -76,10 +78,11 @@ from structural_simplification import volume
 row=metal['parts'][0];shaft=bpy.data.objects[PREFIX+'Wheel_Axle_R'];bb=bounds(shaft);size=[b-a for a,b in bb];expected=[row['size_mm'][2],row['size_mm'][0],row['size_mm'][1]]
 result['metal_STEP_vs_Blender_shaft']={'dimension_error_mm':max(abs(a-b) for a,b in zip(size,expected)),'volume_relative_error':abs(volume(shaft)-row['volume_mm3'])/row['volume_mm3']}
 result['metal_STEP_matches_Blender']=result['metal_STEP_vs_Blender_shaft']['dimension_error_mm']<.005 and result['metal_STEP_vs_Blender_shaft']['volume_relative_error']<.01
-result['status']='PASS' if all(result[k] for k in ['all_render_hashes_match_final_model','all_stl_hashes_match','input_provenance_valid','foreign_test_object_absent','structure_report_matches_modules','assembly_report_matches_screw_datums','metal_STEP_units_and_config_match','metal_STEP_matches_Blender']) and result['actuators']==4 else 'FAIL'
+result['status']='PASS' if all(result[k] for k in ['all_render_files_match','all_render_hashes_match_final_model','all_stl_hashes_match','input_provenance_valid','foreign_test_object_absent','structure_report_matches_modules','assembly_report_matches_screw_datums','metal_STEP_units_and_config_match','metal_STEP_matches_Blender']) and result['actuators']==4 else 'FAIL'
 result['stl_topology_failed_ids']=[row['id'] for row in exports['parts'] if row['status']!='PASS']
 result['stl_topology_status']='FAIL' if result['stl_topology_failed_ids'] else 'PASS'
 result['status_scope']='Input/render/export consistency only; STL topology and manufacturing readiness reported separately.'
+result['evidence_sha256']={name:sha(PROJECT/name) for name in DELIVERY_EVIDENCE_FILES}
 save_json(ROOT/'reports/delivery_consistency.json',result);print(json.dumps(result))
 if result['status']!='PASS':
  raise RuntimeError('Final delivery input/render/export evidence is inconsistent; see delivery_consistency.json')

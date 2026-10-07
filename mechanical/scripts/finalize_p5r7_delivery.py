@@ -29,9 +29,9 @@ checks['local_links_resolve']=not missing
 cmdpath=R/'reports/p5r7_delivery_commands.json';commands=read(cmdpath)
 commands+=read(R/'reports/p5r7_path_commands.json')
 commands=list({(x['started_utc'],x['stage']):x for x in commands}.values());commands.sort(key=lambda x:x['started_utc'])
-for x in commands:
-    if x['returncode'] and x['stage']=='check_p5r7_current_paths':
-        x['diagnostic']='First wrapper split left a comment suffix as Python, raising IndentationError before checks. Corrected, then rerun successfully; the shared log path contains the successful retry.'
+from pipeline_evidence import annotate_retries
+commands=annotate_retries(commands,R)
+checks['command_failures_have_verified_retries']=all(not x['returncode'] or x.get('retry_verification')=='PASS' for x in commands)
 cmdpath.write_text(json.dumps(commands,ensure_ascii=False,indent=2)+'\n')
 files=[PROJECT/'config/geometry.json',PROJECT/'contracts/mechanical_interfaces.json',R/'mori_v1_2.blend',R/'mori_electronics_detail.blend',R/'mori_assembly_animation.blend']
 files += [R/x for x in ['index.html','manufacturing.html','parts.html','README.md','reports/P5R7应用_M1_45.md','reports/p5r7_delivery.json','reports/p5r7_adoption_validation.json','reports/p5r7_current/followthrough.json','reports/p5r7_current/service.json','reports/head_retention_body_sequence.json','reports/p5r7_delivery_commands.json','reports/validation.json','reports/export_manifest.json','animation/manifest.json','animation/validation.json','animation/delivery.json','animation/MORI_assembly.mp4','animation/index.html']]

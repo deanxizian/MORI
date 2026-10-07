@@ -9,11 +9,49 @@
     "z": "up",
     "yaw_positive": "left about +Z",
     "pitch_positive": "face up about +X",
-    "IMU_installation": "Rigid body seat, sensor reference rotated+90deg around body Z. Calibration/actual board axes pending; consume geometry.json#/layout/imu_rotation_z_deg."
+    "IMU_installation": "Current MORI_imu_P5R4 is component-side DOWN. Use config/geometry.json#/native_electronics/boards/imu and reports/imu_mount_transform.json; layout/imu_rotation_z_deg is LEGACY, not a current sensor transform. Die axes/physical calibration must not be inferred from that field.",
+    "IMU_board_to_body_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "IMU_sensor_to_body_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        0,
+        -1
+      ]
+    ],
+    "IMU_sensor_transform_status": "PASS",
+    "IMU_sensor_transform_note": "Nominal source-derived rotation only; physical axis/sign/scale verification NOT_TESTED. See imu_axes_nominal.json; firmware calibration remains disabled.",
+    "IMU_sensor_to_body_evidence": "mechanical/input_assets/imu_axes_nominal.json",
+    "IMU_axis_calibration": "Nominal matrix derived from native U1 and DS-000347 Fig16; physical sign/scale validation NOT_TESTED. No firmware release."
   },
   "component_truth_source": "contracts/components.json (hardware-owned; read-only)",
   "data_status": "ASSUMED",
-  "verification_status": "SOURCE_BACKED_MODELS_AND_GEOMETRY_CHECKS_PENDING_CURRENT_REPORT; NO_AS_BUILT_OR_MANUFACTURE_RELEASE",
+  "verification_status": "BLOCKED",
   "no_final_vendor_holes": true,
   "components": {
     "wheel_servo": {
@@ -181,9 +219,9 @@
       "requested_model": "WeAct STM32F4 64Pin CoreBoard V1.1 / F412RET6",
       "max_xyz_mm": null,
       "data_status": "ASSUMED",
-      "verification_status": "NATIVE_P2_CARRIER_PLUS_1_TO_1_CORE_CAD_SOCKET_AND_P3_PENDING",
+      "verification_status": "BLOCKED",
       "motion_group": "body",
-      "notes": "NativeP2 carrier70x35x1.6 and original WeAct CAD integrated.6mm header stack ASSUMED. Current placed envelope in assembly_instances.json; old70x35x12 capacity superseded. P3 actual populated handoff required.",
+      "notes": "Current motion P5R7 carrier and original WeAct V1.1 CAD, component side UP / individual pins DOWN. Nominal11.04mm stack =8.5mm socket+2.54mm header body; actual engagement and original E pin/hole model inconsistency remain BLOCKED. See P5R7_adoption.",
       "final_mount_holes_mm": null,
       "geometry_source_id": "WEACT_V11"
     },
@@ -310,7 +348,7 @@
     "shell_seam_geometry_source": "config/geometry.json#/assembly_issue_fixes/body_seam; paired current XY axes are (±22, ±71)mm. Former absY54mm sites are retired."
   },
   "head_interfaces": {
-    "yaw": "Head-carried inverted SCS0009 CASE in yaw frame; body-fixed output/horn via removable D-key reaction link. Independent32OD/20ID bearing and open body bridge carry weight.",
+    "yaw": "Head-carried inverted SCS0009 CASE in yaw frame; body-fixed output/horn via removable D-key reaction link. Independent6806ZZ42OD/30ID/7W bearing and open body bridge carry weight.",
     "pitch": "paired12OD/5ID bearings,5mm trunnions, cradle, head/CAM/display",
     "scs_drawing_date": "2020-11-23 A/0; body dimension mismatch23.2/23.3 requires variant confirmation",
     "joint_range_deg": {
@@ -386,11 +424,11 @@
     "S288 output adapter/fasteners/thread engagement and bearing permissible loads",
     "3S finished pack, protection/charger/buck dimensions and thermal clearances",
     "all mounting hardware and driver-tool access",
-    "SelectedCMS4017 actual terminals, gasket compression and acoustic fit",
+    "Selected SP3040 actual ears/holes, lead connector, gasket compression and acoustic fit",
     "Tenergy31013 tolerances/lead exit/NTC/balance/local cost and USB-C charger",
     "CAM33700 full populated STEP or measured board + mic/camera/FPC coordinates",
     "WeAct carrier/header stack and mounting access",
-    "Switch/USB-C module exact product and fixation"
+    "Rear USB-C actual plug clearance and fixation; external switch cancelled; physical power-cut/emergency-stop implementation remains a hardware gate"
   ],
   "hardware_component_revision_read": "V1.2-H0.5-P5R7",
   "hardware_component_sha256": "19e93b76f0aa75e625cd9e7b828dbe12088854104a9bafe2044fd6b1a0f5f236",
@@ -1515,5 +1553,11 @@
     "configuration": "config/geometry.json#/reaction_nut_alignment",
     "horn_and_final_fasteners": "BLOCKED",
     "physical_fit": "NOT_TESTED"
+  },
+  "verification_note": "SOURCE_BACKED_MODELS_AND_GEOMETRY_CHECKS_PENDING_CURRENT_REPORT; NO_AS_BUILT_OR_MANUFACTURE_RELEASE",
+  "review_metadata_receipt": {
+    "date": "2026-10-07",
+    "scope": "Correct current readout; no change to model dimensions, native PCB geometry or physical release",
+    "hardware_contract_revision": "V1.2-H0.5-P5R7"
   }
 }

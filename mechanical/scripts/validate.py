@@ -504,6 +504,9 @@ def v12_checks(solids):
 
 
 def main():
+    if P['revision']=='V1.2-M1.52' and (ROOT/'input_assets/M1_52_review_baseline.json').is_file():
+        from validate_review_closure import run_current
+        return run_current()
     if P.get('reaction_nut_alignment',{}).get('enabled'):
         from validate_reaction_nut_alignment import run_current
         return run_current()

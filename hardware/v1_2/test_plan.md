@@ -1,10 +1,16 @@
-<!-- P4 CURRENT -->
-**当前P4前置测试与门槛：[P4-T01～T07](layout_P4/实测与阻塞项.md)。四板已完成原型布线及原生检查，全部实机项仍NOT_TESTED。下文P1/S3字样为原测试编排历史；按P4针序/线束执行，两路5V已在电源板，J6仅机内维护输入。**
-<!-- P4 CURRENT END -->
+# P5R7 prototype test prerequisites
+
+Current set: motion/rear **P5R7**, power **P5R6**, IMU **P5R4**. All physical tests remain **NOT_TESTED**; manufacturing and power-on release remain **BLOCKED**. Use the exact [native bundles](native_projects/README.md), current [electrical contract](../../contracts/electrical_interfaces.json) and [P5R7 harness pin table](wiring_P5R7/README.md).
+
+Before the historical test sequence below: verify WeAct component side UP / pins DOWN and the corrected E footprint; verify rear J3 on B.Cu in the P5R7 position; use integrated dual 5V converters on the power PCB. LCD pins 16–18 are documented NC on both boards, but purchased FFC direction, continuity and supply headroom are still unverified. Harness lengths and unresolved endpoints do not constitute supplier fabrication drawings. Retain physical emergency-stop and no automatic re-arm requirements.
+
+The P1/S3/P4 entries below are retained historical planning context, not the current wiring authority. Reconcile each numeric limit and pin against the above board set before use; no test is marked passed by this metadata update.
+
+
 
 # P1 上电、台架与整机验证
 
-**S3前置增量**：若装配的是新板载5V原理图，先执行[S3-T01～T06](schematic_S3/README.md)的断电、空载、假负载、线束瞬态、分支故障和双MCU并发检查，再接续下表的电机/平衡测试。下面T04中的两个外置5V模块已被S3替换；9V/6V模块测试仍保留。S3尚无PCB/实板，全部增量为NOT_TESTED。
+**S3前置增量**：若装配的是新板载5V原理图，先执行[S3-T01～T06](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/hardware/v1_2/schematic_S3/README.md)的断电、空载、假负载、线束瞬态、分支故障和双MCU并发检查，再接续下表的电机/平衡测试。下面T04中的两个外置5V模块已被S3替换；9V/6V模块测试仍保留。S3尚无PCB/实板，全部增量为NOT_TESTED。
 
 版本V1.2-H0.2-P1，2026-09-22。**全部实物记录 NOT_TESTED**。用户已确认：器件均未采购；已有万用表、限流电源。它们足以开展断电检查和部分静态上电，不能验证6Mbps波形、快速回灌峰值、温升或目标时延。未刷写任何机器人。
 

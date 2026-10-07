@@ -84,3 +84,28 @@ def test_active_action_result_survives_telemetry_command_history():
  for _ in range(520):r.issue('HEARTBEAT')
  assert r.d.results[c['command_id']]['status']=='RUNNING'
  assert len(r.d.results)<=512
+
+def test_leaving_tracking_freezes_head_instead_of_finishing_stale_follow_target():
+ r=Rig();r.arm();r.issue('CAMERA_MODE',{'mode':'TRACKING','upload_allowed':False})
+ f=r.d.capture();r.d.observe(f,Vision().detect(fixture(1)))
+ r.issue('SELECT_TARGET',{'target_id':'track-1','confirmed':True})
+ assert r.issue('FOLLOW',{'mode':'HEAD','supervised':True})['status']=='RUNNING'
+ r.d.head_target=[.5,.2];r.d.head_velocity=[.1,.1]
+ r.issue('CAMERA_MODE',{'mode':'OFF','upload_allowed':False})
+ assert r.d.active is None and r.d.head_target==r.d.head and r.d.head_velocity==[0.,0.]
+
+@pytest.mark.parametrize('follow_mode',['HEAD','BODY'])
+def test_upload_consent_preserves_selected_target_and_active_follow(follow_mode):
+ r=Rig();r.arm();r.issue('CAMERA_MODE',{'mode':'TRACKING','upload_allowed':False})
+ f=r.d.capture();r.d.observe(f,Vision().detect(fixture(1)))
+ r.issue('SELECT_TARGET',{'target_id':'track-1','confirmed':True})
+ command=r.issue('FOLLOW',{'mode':follow_mode,'supervised':True});r.tick()
+ assert command['status']=='RUNNING'
+ target=r.d.head_target[:];velocity=r.d.head_velocity[:];observation=r.d.observation.copy()
+ for allowed in [True,False]:
+  result=r.issue('CAMERA_MODE',{'mode':'TRACKING','upload_allowed':allowed})
+  assert result['status']=='COMPLETED' and r.d.upload_allowed is allowed
+  assert r.d.selected_target=='track-1' and r.d.observation==observation
+  assert r.d.active['command']['command_id']==command['command_id']
+  assert r.d.results[command['command_id']]['status']=='RUNNING'
+  assert r.d.head_target==target and r.d.head_velocity==velocity

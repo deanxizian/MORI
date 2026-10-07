@@ -2,6 +2,13 @@
 import sys
 from pathlib import Path as _Path
 import json as _json
+import re as _re
+_revision=_json.loads((_Path(__file__).resolve().parents[2]/'config/geometry.json').read_text())['revision']
+_match=_re.fullmatch(r'V1\.2-M1\.(\d+)',_revision)
+if _match and int(_match.group(1))>=44:
+    from report_current import generate
+    generate()
+    sys.exit(0)
 if _json.loads((_Path(__file__).resolve().parents[2]/'config/geometry.json').read_text()).get('assembly_issue_fixes',{}).get('enabled'):
     from report_six_fixes import generate
     generate()

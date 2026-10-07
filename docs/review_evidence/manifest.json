@@ -1,0 +1,263 @@
+{
+  "review_date": "2026-10-07",
+  "scope": "Executed local regression/build/render/export/package evidence. HOST/SIMULATION only; no robot, manufacturing or remote CI claim. Raw browser credential storage is excluded.",
+  "source_git_base": "f11dc5588f909b2943a4dc894d3ee2de1fd1dcce",
+  "source_worktree_dirty": true,
+  "tools": {
+    "Blender": "5.2.2 LTS",
+    "manifold3d": "3.5.3",
+    "Python": "3.12.14 (project venv)",
+    "Arm_GNU": "14.2.Rel1",
+    "Git": "2.54.0",
+    "GitHub_CLI": "2.92.0",
+    "OCP": "7.8.1.1 (cadquery-ocp; direct STEP exporter runtime)"
+  },
+  "commands": {
+    "frontend_tests": "node node_modules/vitest/vitest.mjs run --config apps/console/vitest.config.ts",
+    "frontend_build": "node node_modules/vue-tsc/bin/vue-tsc.js --noEmit -p apps/console/tsconfig.json; node node_modules/vite/bin/vite.js build --config apps/console/vite.config.ts",
+    "python": "python -m pytest backend/tests simulation/tests -q",
+    "tools": "python -m unittest discover -s tools/tests -v",
+    "native": "bash tools/test-native.sh; bash tools/test-motion-v1_2.sh",
+    "legacy": "python -m unittest discover -s software/tests; python software/scripts/verify_delivery.py --archives-only",
+    "geometry": "Blender --background --python-exit-code 1 mechanical/mori_v1_2.blend --python mechanical/scripts/{build,validate,export,finalize_structure_metadata,delivery_check}.py (separate invocations)",
+    "renders": "render.py -- --views all --size 480 --samples 8; render.py -- --views front,side,rear,internal --size 1200 --samples 32",
+    "report": "python mechanical/scripts/report.py",
+    "package": "python mechanical/scripts/package_delivery.py --output-parent .state/review/packages --release-name MORI_M1_52_review_R2",
+    "package_rebuild": "Blender --background --python-use-system-env --python-exit-code 1 --python <freshly extracted package>/mechanical/scripts/build.py; PYTHONPATH supplied only for the external manifold3d runtime",
+    "package_validate": "Blender --background --python-use-system-env --python-exit-code 1 <rebuilt package>/mechanical/mori_v1_2.blend --python <rebuilt package>/mechanical/scripts/validate.py",
+    "round2_pipeline": "MORI_CAD_PYTHON=<OCP 7.8.1.1 Python> python <extracted 851-file R4 package>/mechanical/scripts/run_all.py --core --render-size 128 --render-samples 1",
+    "round2_repackage": "python <rebuilt R4 package>/mechanical/scripts/package_delivery.py --output-parent .state/review/repacked --release-name MORI_core_rebuilt",
+    "round3_pipeline": "MORI_CAD_PYTHON=<OCP 7.8.1.1 Python> python mechanical/scripts/run_all.py --core --render-size 1200 --render-samples 32",
+    "round3_package": "python mechanical/scripts/package_delivery.py --output-parent .state/review/packages --release-name MORI_M1_52_review_R5"
+  },
+  "files": {
+    "docs/review_evidence/tools-tests.log": {
+      "bytes": 770,
+      "sha256": "e5318c69ab09a65e66c2de53d4e864bdcbc2b80c12f05b22cccfae987506d4b4"
+    },
+    "docs/review_evidence/package-validate.log": {
+      "bytes": 2168,
+      "sha256": "d604f5c999e74d09ff7c104221b84d7208722a10dd28925d39016793dc21bfa5"
+    },
+    "docs/review_evidence/format-check.log": {
+      "bytes": 66,
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    "docs/review_evidence/browser-qa.json": {
+      "bytes": 684,
+      "sha256": "33d12dd4e3a30e3f068b8ecaabf52d6ed3b6553b341d33b9cac7e5a419ab0a27"
+    },
+    "docs/review_evidence/render-gallery.log": {
+      "bytes": 731,
+      "sha256": "858b823eb4ddcf5b1a4227f20ef71fe03e12cb0d842bfecb4ff771126bebf737"
+    },
+    "docs/review_evidence/native-integrity.json": {
+      "bytes": 1302,
+      "sha256": "0e15eaa83ad7db449c937d9d021a07fdcf740318e75620774ac65afeeb431da0"
+    },
+    "docs/review_evidence/legacy-python.log": {
+      "bytes": 98,
+      "sha256": "ae77f4b44b4c5ed466411c13b2a6b5b64f0edaf1c36b1af0cfac6ae633c07039"
+    },
+    "docs/review_evidence/validate.log": {
+      "bytes": 2114,
+      "sha256": "b8f8c4d8343661588c6aebe9268f53ff2f3bc9e026c25bafb041bb88ffbe79e9"
+    },
+    "docs/review_evidence/display-solid-diff.log": {
+      "bytes": 1630,
+      "sha256": "5fbe96df346d52a255793a48dba378c2081019305a742cdcc2635c9d3012b3bc"
+    },
+    "docs/review_evidence/legacy-archives.log": {
+      "bytes": 1652,
+      "sha256": "ee37944254daf09d733ac79a632774e12e8a29d6d0e117c58414ad09ee5ed7cd"
+    },
+    "docs/review_evidence/export.log": {
+      "bytes": 1450,
+      "sha256": "729f32daadf5bc98b006ab277d01350510f90ce9eab2de1bb6373fe07c92ecba"
+    },
+    "docs/review_evidence/stl-scope.json": {
+      "bytes": 5560,
+      "sha256": "4ded5d3a68993d6ebcce16c2c9fa871f64004dbe3311f1bc758ca7f8daffbf54"
+    },
+    "docs/review_evidence/render-review.log": {
+      "bytes": 11892,
+      "sha256": "c6949df38a51edc2a0f00c8ed34d57802d0876a041842dbc9eec96d932892387"
+    },
+    "docs/review_evidence/frontend-tests.log": {
+      "bytes": 353,
+      "sha256": "9a465e0a6c7b59e757eb8ee044f6b20053469ec3f5933d0a9456a18397c81d90"
+    },
+    "docs/review_evidence/delivery-check.log": {
+      "bytes": 2248,
+      "sha256": "2f3d94e04326747f3a3d173912f4eabe0ebc9a913fdb59660c64379c8ad1c12e"
+    },
+    "docs/review_evidence/native-tests.log": {
+      "bytes": 225,
+      "sha256": "2a5600bd99e2b9b4a1bbcad5000c8150798d3b69fde6408f38c3a87a3160222c"
+    },
+    "docs/review_evidence/package-rebuild.log": {
+      "bytes": 2754,
+      "sha256": "0237d6f0c8f417356450f505a49ce54ad0cb7d32687b527957dc85e2e7bef958"
+    },
+    "docs/review_evidence/f412-negative.log": {
+      "bytes": 812,
+      "sha256": "c988ecefb303a34d5849ea55f1bd71fc0c7f9807c96b01b9b6143920f4856d68"
+    },
+    "docs/review_evidence/motion-tests.log": {
+      "bytes": 86,
+      "sha256": "8d275cd485f8103ad025b50add3732999876dbdedcd975ec0b54b6db6dc50b0f"
+    },
+    "docs/review_evidence/python-final.log": {
+      "bytes": 655,
+      "sha256": "cd6a7a2c6ecfc7710db351afbf3211d951ef1e1c4b06fff0770247488ee5f6df"
+    },
+    "docs/review_evidence/frontend-build.log": {
+      "bytes": 389,
+      "sha256": "04cc2d6e528dd4c707aa3f437c93adc1100f74a77c986b43664626f52ace6bc4"
+    },
+    "docs/review_evidence/f412-build.log": {
+      "bytes": 3697,
+      "sha256": "21e5d22f7a8482ba23fefa81cad2223837a19df40a10a2872cbb2d2b360f9563"
+    },
+    "docs/review_evidence/package.log": {
+      "bytes": 193,
+      "sha256": "91bb25f7f807602d9ea449a2fb2104ba14e3c1370702b300de778c5731993386"
+    },
+    "docs/review_evidence/build.log": {
+      "bytes": 2819,
+      "sha256": "8fb1a44d9be1d8473fdd7782ef43e46977c6fbc211b15f40bc687172af1209f1"
+    },
+    "docs/review_evidence/package-r4.log": {
+      "bytes": 193,
+      "sha256": "b7c4154671b382b68b89c69ef66b802810e6c0e5a54f6e2c39298046ee52c0e3"
+    },
+    "docs/review_evidence/round2-core-first-failure.log": {
+      "bytes": 207,
+      "sha256": "c88be594f7225433b5b93d10a3f320f942908f064c8ef1e6d375d8b443225c1d"
+    },
+    "docs/review_evidence/round2-python.log": {
+      "bytes": 655,
+      "sha256": "9b86920e4980b6848f5f3daad93bcf9287f7b64c0bc53304842e46af9f040262"
+    },
+    "docs/review_evidence/round2-native-sync.json": {
+      "bytes": 815,
+      "sha256": "2b2d384b0f771980c52da1dc20f73a557c420e275f75313381be05ac2ffa0584"
+    },
+    "docs/review_evidence/package-r3.log": {
+      "bytes": 193,
+      "sha256": "c396dc5c9bab30b18efdb81544a68f27d43c4fd89ad8073cb6cf942b8e598375"
+    },
+    "docs/review_evidence/round2-camera-errors.json": {
+      "bytes": 196,
+      "sha256": "8f4c4976821f67af6b908a44ee1b9c9b1ab0da4350dd95f1d942388634d24ab8"
+    },
+    "docs/review_evidence/round2-storage.log": {
+      "bytes": 655,
+      "sha256": "6c81b7f7523306327ec6b5d1293c88801ff77099eaebb9fba87ff78bde4ea56b"
+    },
+    "docs/review_evidence/round2-native.log": {
+      "bytes": 225,
+      "sha256": "2a5600bd99e2b9b4a1bbcad5000c8150798d3b69fde6408f38c3a87a3160222c"
+    },
+    "docs/review_evidence/round2-frontend.log": {
+      "bytes": 351,
+      "sha256": "7d3dbbd9343d78d9ab33d3dfbe0dbbade393cb80aaa5fec9561e92d9b85ec708"
+    },
+    "docs/review_evidence/round2-format.log": {
+      "bytes": 66,
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    "docs/review_evidence/round2-tools-final.log": {
+      "bytes": 109,
+      "sha256": "f90205cbd4fdd781cd1743acb491bbf8107bba0a826706e16eea68607db679c8"
+    },
+    "docs/review_evidence/round2-gitleaks.log": {
+      "bytes": 174,
+      "sha256": "db96f21884e97a408b95f22d0ae8ff00d22274dbaa19f6295e4d45d9751b5c44"
+    },
+    "docs/review_evidence/round2-core-pipeline-r4.log": {
+      "bytes": 259,
+      "sha256": "1be6005fb8b7e21f46a6e349a6e4d98a9a42f3a8888d059c2efde7d0d3195cf6"
+    },
+    "docs/review_evidence/round2-core-result.json": {
+      "bytes": 3006,
+      "sha256": "ee3e99e446a5c1501787bf3827acd448c0c030ed98bc486561507c6e68b82034"
+    },
+    "docs/review_evidence/round2-repackage.log": {
+      "bytes": 190,
+      "sha256": "19e138f7882174a5c50101b73bf09140ab053cf8e9f4657bb0478601b3141c85"
+    },
+    "docs/review_evidence/round3-baseline-archives.log": {
+      "bytes": 1795,
+      "sha256": "1aa2d7fec20f2e7f583124047c9a99dbf1b1d7838d608a16d65be249e731bf9f"
+    },
+    "docs/review_evidence/round3-tools.log": {
+      "bytes": 2231,
+      "sha256": "b55595ba729e19daf4118153a9ed49886b0c193b09a9bc38c020c50f071739a3"
+    },
+    "docs/review_evidence/package-r5.log": {
+      "bytes": 193,
+      "sha256": "7e235d678d86556c8b77560631852db02bcb19e0f343c22c1305126358aa1723"
+    },
+    "docs/review_evidence/round3-gitleaks.log": {
+      "bytes": 108,
+      "sha256": "1fda4ca72dbdeb895bf23beb017b7ee649b617e1c55c325a56feda506acc1b17"
+    },
+    "docs/review_evidence/round3-core-result.json": {
+      "bytes": 2245,
+      "sha256": "d5a165c2dcf5e38762f853123e893e0f32c94d76d5f607f0a6c4409598480ec0"
+    },
+    "docs/review_evidence/round3-current-pipeline.log": {
+      "bytes": 259,
+      "sha256": "1be6005fb8b7e21f46a6e349a6e4d98a9a42f3a8888d059c2efde7d0d3195cf6"
+    },
+    "docs/review_evidence/round3-package-integrity.json": {
+      "bytes": 639,
+      "sha256": "be2c4c2747a4876c6a6dd0124e9713a015c82672a733faa79c9d6bbab2e01df8"
+    },
+    "mechanical/reports/pipeline_execution.zip": {
+      "bytes": 309477,
+      "sha256": "2768bc6c6a8b8db93508ed1e65af1684d01de870fc71060c50b21be891bbb8eb"
+    },
+    "docs/review_evidence/round4-python.log": {
+      "bytes": 655,
+      "sha256": "823934fee738f4e2b16ce9a431ce922b4e465ed3258c6290fa95459d4ab77008"
+    },
+    "docs/review_evidence/round4-frontend.log": {
+      "bytes": 351,
+      "sha256": "28d4571cb405b243f84452bcd95678e3f1d76e22f2970e152e44e2b8c1edb246"
+    },
+    "docs/review_evidence/round4-format.log": {
+      "bytes": 66,
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20"
+    },
+    "docs/review_evidence/round4-tools.log": {
+      "bytes": 2231,
+      "sha256": "2d3dbf914e4ef8ba20ca0e7c6d5bfddfac09c1a37263197d3c38a85bf460f44e"
+    },
+    "docs/review_evidence/round4-build.log": {
+      "bytes": 389,
+      "sha256": "0c0ac631683f2adc0136bacfae58d5e5ea5223947e61aa9a89e4bdb486094b52"
+    },
+    "docs/review_evidence/round4-clean-checkout.json": {
+      "bytes": 1438,
+      "sha256": "f4771fda590a797010437f566802fb69edcaf7e0bb6dd08cc9fe3d4f2681b7c3"
+    },
+    "docs/review_evidence/round4-gitleaks.log": {
+      "bytes": 108,
+      "sha256": "964578dc48458bdb8c1f9cb353f33a8c1dd0f4bd1e74b0c12301d586de7efb74"
+    },
+    "docs/review_evidence/round4-remote-files.json": {
+      "bytes": 1672,
+      "sha256": "f02c8415437fdb8fdc45b3a477fcfe442e26aaa603315ffc6accfb8979d334a2"
+    }
+  },
+  "round2_source_base": "ddfaf9d62796f1a2c67505a9baa523074ab878cc",
+  "round2_scope": "PR 12 follow-up corrections and complete fresh-package core pipeline; prior failed CAD runtime check and successful retry both retained.",
+  "log_normalization": "Trailing terminal blank lines may be removed from checked-in copies; command results retained.",
+  "round3_source_base": "bee11d471625ced83ac774a407bd191fddff5e67",
+  "round3_executed_source_commit": "75abb96f82eaf0020c1d9093e4e3fbf411a75e43",
+  "round3_scope": "All eight current core stages rerun at 1200 px / 32 samples; exact execution evidence and independent R5 package integrity verified, including stale-generator rejection. R4 independent full core rebuild remains separately recorded.",
+  "round4_source_base": "75abb96f82eaf0020c1d9093e4e3fbf411a75e43",
+  "round4_clean_checkout_source": "d7f8379c717d2acefc636b4eece073251bb2ae21"
+}

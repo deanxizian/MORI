@@ -529,7 +529,26 @@ E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，�
         for s in published_stages:
             scene.frame_set(s['end']);scene.render.filepath=str(OUT/f'step_{s["index"]:02d}.png');print('ANIMATION_STILL',s['index'],flush=True);bpy.ops.render.render(write_still=True)
     elif a.render=='video':
-        scene.frame_set(1);bpy.ops.render.render(animation=True)
+        # Render to a new path: an old MP4 must not satisfy this run's check.
+        import uuid
+        final_video=Path(scene.render.filepath)
+        if final_video.suffix!='.mp4':final_video=final_video.with_suffix('.mp4')
+        pending=final_video.with_name('.render-'+uuid.uuid4().hex+'.mp4')
+        try:
+            scene.render.filepath=str(pending)
+            scene.frame_set(1);bpy.ops.render.render(animation=True)
+            if not pending.is_file() or pending.stat().st_size==0:raise RuntimeError('Animation render produced no new video')
+            pending.replace(final_video)
+        finally:
+            scene.render.filepath=str(final_video)
+            pending.unlink(missing_ok=True)
+    if a.render=='video':
+        video=Path(scene.render.filepath)
+        if video.suffix!='.mp4':video=video.with_suffix('.mp4')
+        if not video.is_file() or video.stat().st_size==0:raise RuntimeError('Animation render returned without a nonempty video')
+        report['rendered_video']=True
+        report['video']={'file':str(video.relative_to(ROOT)),'bytes':video.stat().st_size,'sha256':hashlib.sha256(video.read_bytes()).hexdigest()}
+        save_json(OUT/'manifest.json',report)
     print('ASSEMBLY_ANIMATION_BUILT',len(actors),scene.frame_end,flush=True)
 
 

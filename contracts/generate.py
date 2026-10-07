@@ -24,5 +24,5 @@ for name,v in s['commands'].items():
   pp[k]= {'enum':f['values']} if f['kind']=='enum' else {'type':f['kind']}
   if 'min' in f:pp[k].update(minimum=f['min'],maximum=f['max'])
   if f['kind']=='string':pp[k]['maxLength']=f['max']
- variants.append({'if':{'properties':{'type':{'const':name}}},'then':{'properties':{'params':{'type':'object','properties':pp,'required':list(pp),'additionalProperties':False},'valid_for_ms':{'maximum':v['ttl_max_ms']}}}})
+ variants.append({'if':{'properties':{'type':{'const':name}}},'then':{'properties':{'params':{'type':'object','properties':pp,'required':list(pp),'additionalProperties':False},'valid_for_ms':{'maximum':v['ttl_max_ms']},'permissions':{'contains':{'const':v['permission']}}}}})
 (r/'command.schema.json').write_text(json.dumps({'$schema':'https://json-schema.org/draft/2020-12/schema','title':'MORI/2 command','type':'object','additionalProperties':False,'required':list(props),'properties':props,'allOf':variants},indent=2)+'\n')

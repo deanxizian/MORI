@@ -158,7 +158,7 @@ def create_app(directory=None,clock=None):
    raw=await bounded_body(request,128)
    obj=object_json(raw,128)
    if set(obj)!={'code'}:raise ValueError('FIELDS')
-   return g.auth.pair(obj['code'])
+   return g.auth.pair(obj['code'],request.client.host if request.client else 'unknown')
   except (ValueError,KeyError,TypeError):raise HTTPException(403,'PAIRING_REJECTED')
  @app.get('/api/status')
  def status(request:Request):identity(request);return g.device.snapshot()
@@ -178,8 +178,13 @@ def create_app(directory=None,clock=None):
    data=base64.b64decode(obj['audio_base64'],validate=True)
    with wave.open(io.BytesIO(data),'rb') as f:
     if f.getnchannels()!=1 or f.getsampwidth()!=2 or f.getframerate()!=16000 or f.getnframes()>320000:raise ValueError()
-   return {'text':await g.services.asr(data),'source':g.services.source,'retained':False}
   except (ValueError,TypeError,wave.Error,EOFError):raise HTTPException(422,'WAV_16K_MONO_20S_REQUIRED')
+  try:text=await g.services.asr(data)
+  except ValueError as error:
+   if str(error)=='API_BUDGET_NOT_AUTHORIZED':raise HTTPException(403,'API_BUDGET_NOT_AUTHORIZED')
+   raise HTTPException(502,'ASR_PROVIDER_FAILED') from error
+  except Exception as error:raise HTTPException(502,'ASR_PROVIDER_FAILED') from error
+  return {'text':text,'source':g.services.source,'retained':False}
  @app.get('/api/camera/frame')
  def frame(request:Request):
   p=identity(request)
@@ -214,22 +219,30 @@ def create_app(directory=None,clock=None):
   origin=ws.headers.get('origin')
   if origin and origin not in origins:await ws.close(code=1008);return
   await ws.accept();p=None;sender=None
+  async def verify_token(token):
+   try:return g.auth.verify(token)
+   except ValueError:
+    with contextlib.suppress(RuntimeError):await ws.close(code=1008,reason='UNAUTHORIZED')
+    raise
   try:
    login=await asyncio.wait_for(ws.receive_text(),5)
    login=object_json(login,256)
    if set(login)!={'token'}:raise ValueError('FIELDS')
-   token=login['token'];p=g.auth.verify(token)
+   token=login['token'];p=await verify_token(token)
    previous=g.sockets.get(p['client_id'])
-   if previous:await previous.close(code=1008)
+   if previous:await previous.close(code=4001,reason='CLIENT_CONNECTION_REPLACED')
    g.sockets[p['client_id']]=ws
    async def telemetry():
     transport_seq=0
     while True:
      transport_seq+=1
-     g.auth.verify(token);await ws.send_json({'type':'telemetry','transport_seq':transport_seq,'data':g.device.snapshot()});await asyncio.sleep(.1)
+     try:await verify_token(token)
+     except ValueError:return
+     data=g.device.snapshot();data['client_sequence']=g.device.last_sequence.get(p['client_id'],0)
+     await ws.send_json({'type':'telemetry','transport_seq':transport_seq,'data':data});await asyncio.sleep(.1)
    sender=asyncio.create_task(telemetry())
    while True:
-    raw=await ws.receive_text();g.auth.verify(token)
+    raw=await ws.receive_text();await verify_token(token)
     if len(raw)>4096:await ws.send_json({'type':'result','data':{'status':'REJECTED','reason':'LENGTH'}});continue
     try:envelope=object_json(raw)
     except (ValueError,RecursionError):envelope=None
@@ -242,7 +255,9 @@ def create_app(directory=None,clock=None):
     await ws.send_json({'type':'result','data':res})
   except (WebSocketDisconnect,ValueError,KeyError,asyncio.TimeoutError):pass
   finally:
-   if sender:sender.cancel()
+   if sender:
+    sender.cancel()
+    with contextlib.suppress(asyncio.CancelledError,WebSocketDisconnect,RuntimeError):await sender
    if p:
     if g.sockets.get(p['client_id'])==ws:
      g.device.disconnect(p['client_id']);g.sockets.pop(p['client_id'],None)

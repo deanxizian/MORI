@@ -1,4 +1,6 @@
-# 拆分发布检查
+# 拆分发布检查（修复前的历史记录）
+
+以下是拆分阶段原记录；后续修复与重测见 [REVIEW_CLOSURE.md](REVIEW_CLOSURE.md)。
 
 这轮只检查资料拆分及交付，不是新的机器人设计或硬件验证。原始提交为 `48fe22aa75554c9d7bb237e2d2dcacca7f83dde1`；具体结果见 [SPLIT_VALIDATION.json](SPLIT_VALIDATION.json)。
 

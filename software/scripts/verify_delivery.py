@@ -6,9 +6,36 @@ ROOT=SW.parent
 FW=SW/'firmware_work/firmware'
 
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def verify_archives():
+    checks={}
+    for version in ('0.3','0.4'):
+        manifest=SW/f'reference_sources/HW-SW-{version}_baseline_manifest.json'
+        archive=SW/f'reference_sources/HW-SW-{version}_firmware_baseline.zip'
+        if not archive.is_file() or not manifest.is_file():
+            print('BLOCKED: missing preserved baseline archive '+version);return False
+        data=json.loads(manifest.read_text())
+        try:
+            with zipfile.ZipFile(archive) as z:
+                names=z.namelist()
+                checks[version+' exact unique member set']=len(names)==len(set(names)) and set(names)==set(data['sha256'])
+                checks[version+' complete ZIP CRC']=z.testzip() is None
+                for name,expected in data['sha256'].items():
+                    checks[version+' '+name]=name in names and hashlib.sha256(z.read(name)).hexdigest()==expected
+        except (OSError,zipfile.BadZipFile,RuntimeError) as error:
+            checks[version+' readable archive']=False
+            print('FAIL '+version+' archive: '+str(error))
+    for name,ok in checks.items():print(('PASS ' if ok else 'FAIL ')+name)
+    print(f'{sum(checks.values())}/{len(checks)} immutable archive checks (member set, CRC, hashes); current firmware/build/hardware NOT_TESTED by this check')
+    return all(checks.values())
 def verify(require_current=False):
+    prerequisites=['reports/baseline_integrity.json','reports/hw04_adoption.json','reports/delivery_manifest.json','reference_sources/HW-SW-0.3_firmware_baseline.zip','reference_sources/HW-SW-0.4_firmware_baseline.zip','reference_sources/HW-SW-0.4_baseline_manifest.json']
+    missing=[str(SW/x) for x in prerequisites if not (SW/x).is_file()]
+    if missing:
+        print('BLOCKED: legacy HW-SW-0.4 verifier inputs missing; this is not a V1.2 release check.')
+        print('Restore with: python3 tools/restore_archive_assets.py --group legacy-software-verification --group legacy-helpers')
+        print('Missing: '+', '.join(missing));return False
     original=json.loads((SW/'reports/baseline_integrity.json').read_text())
-    checks={p:digest(ROOT/p)==sha for p,sha in original['source_hashes'].items() if not p.startswith('hardware/handoff/')}
+    checks={p:(ROOT/p).is_file() and digest(ROOT/p)==sha for p,sha in original['source_hashes'].items() if not p.startswith('hardware/handoff/')}
     with zipfile.ZipFile(SW/'reference_sources/HW-SW-0.3_firmware_baseline.zip') as archive:
         for name,sha in original['baseline_manifest']['sha256'].items():
             checks['extracted baseline member '+name]=hashlib.sha256(archive.read(name)).hexdigest()==sha
@@ -54,10 +81,14 @@ def verify(require_current=False):
         checks['delivery source/artifact manifest exists']=False
     for name,passed in checks.items():print(('PASS ' if passed else 'FAIL ')+name)
     print(f'{sum(checks.values())}/{len(checks)} checks; physical NOT_TESTED')
-    current=json.loads((ROOT/'hardware/handoff/baseline_manifest.json').read_text()).get('version','UNKNOWN')
+    handoff=ROOT/'hardware/handoff/baseline_manifest.json'
+    current=json.loads(handoff.read_text()).get('version','UNKNOWN') if handoff.is_file() else 'MISSING_LEGACY_HANDOFF'
     print(('PASS' if current_matches else 'FAIL')+' current upstream source alignment: '+current+'; physical validation NOT_TESTED')
-    return all(checks.values()) and (not require_current or current_matches)
+    return verify_archives() and all(checks.values()) and (not require_current or current_matches)
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--archives-only',action='store_true',help='verify the shipped immutable HW-SW-0.3/0.4 archives only; no current source/build or hardware claim')
     parser.add_argument('--require-current-handoff',action='store_true',help='fail if current hardware/protected inputs differ from explicitly adopted HW-SW-0.4; this does not approve power-on')
-    args=parser.parse_args();sys.exit(0 if verify(args.require_current_handoff) else 1)
+    args=parser.parse_args()
+    if args.archives_only and args.require_current_handoff:parser.error('archives-only does not check the current handoff')
+    sys.exit(0 if (verify_archives() if args.archives_only else verify(args.require_current_handoff)) else 1)

@@ -486,17 +486,24 @@
       "purpose": "身体扬声器与音腔",
       "quantity": 1,
       "quantity_unit": "piece",
-      "full_model": "4Ω 3W配套扬声器（料号待选）",
-      "board_revision": null,
-      "specification": "阻抗4Ω、功率3W；实际音腔/热待验",
+      "full_model": "WSS-SP3040-08 / YH-SP3040-08",
+      "board_revision": "WSSSZ201809110016 / 1.0",
+      "specification": "4 ohm / 3 W nominal; 3.5 W max per supplied SP3040 specification",
       "interface": "NS4150B BTL J5，两线均不能接公共地",
       "source_ids": [
-        "HW12-W1",
-        "HW12-W2"
+        "SP3040_USER_SPEC"
       ],
-      "source_date": "2026-09-22",
+      "source_date": "2026-10-07",
       "data_status": "ASSUMED",
-      "dimensions_mm": null,
+      "dimensions_mm": {
+        "box_width_height_depth": [
+          42,
+          30,
+          9
+        ],
+        "overall_ear_span": 56,
+        "mount_hole_pitch": 49
+      },
       "mass_g": null,
       "mass_tolerance_g": null,
       "shaft_hole_interface": null,
@@ -515,15 +522,16 @@
       "tax_basis": "UNKNOWN",
       "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
       "confirmation_status": "BLOCKED",
-      "selection_status": "REQUIRED_UNSELECTED",
+      "selection_status": "USER_SELECTED_UNMEASURED",
       "included_in": null,
       "alternative_model": null,
       "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
       "missing": [
-        "料号/带腔外形/重量/国内价格",
-        "线长/功率/声学验证"
+        "实物耳厚、孔径解释、公差与安装配合",
+        "质量、国内价格与库存",
+        "声学/热与功放适配测试"
       ],
-      "notes": ""
+      "notes": "User selected the supplied SP3040. Per-field evidence and approved estimates: config/geometry.json#/detail_fit/speaker/field_evidence. Unknown ear details remain ASSUMED; no procurement/physical release."
     },
     {
       "id": "battery",
@@ -1106,16 +1114,27 @@
       "purpose": "头承载轴承套件",
       "quantity": 1,
       "quantity_unit": "set",
-      "full_model": "yaw32OD/20ID、pitch12OD/5ID试配方案",
+      "full_model": "Yaw 6806ZZ 30x42x7; bilateral pitch 5x12x4 reference",
       "board_revision": null,
-      "specification": "具体额定与采购规格未冻结",
+      "specification": "M1.49 adopted yaw 6806ZZ 30x42x7 mm; keep the current pitch reference",
       "interface": "具体型号/数量/公差按机械确认",
       "source_ids": [
         "HW12-SPEC"
       ],
       "source_date": "2026-09-22",
       "data_status": "ASSUMED",
-      "dimensions_mm": null,
+      "dimensions_mm": {
+        "yaw_ID_OD_width": [
+          30,
+          42,
+          7
+        ],
+        "pitch_ID_OD_width": [
+          5,
+          12,
+          4
+        ]
+      },
       "mass_g": null,
       "mass_tolerance_g": null,
       "shaft_hole_interface": null,
@@ -1132,7 +1151,7 @@
       "tax_basis": "UNKNOWN",
       "shipping_basis": "UNKNOWN；国内运费另列，不假设包邮",
       "confirmation_status": "BLOCKED",
-      "selection_status": "REQUIRED_UNSELECTED",
+      "selection_status": "MECHANICAL_NOMINAL_ADOPTED_PHYSICAL_FIT_PENDING",
       "included_in": null,
       "alternative_model": null,
       "readaptation_requirement": "更换须重核供电、协议、包络、重量与成本；未授权自行改主路线",
@@ -1140,7 +1159,7 @@
         "精确型号/价格/现货或加工报价",
         "相关额定、包络与连接器"
       ],
-      "notes": ""
+      "notes": "Mechanical receipt: config/geometry.json#/neck_harness_capacity. Manufacturer/order suffix, actual fits, loads and price remain unqualified."
     },
     {
       "id": "carrier_pcb",
@@ -4693,7 +4712,7 @@
       "dimensions_mm": null,
       "mass_g": null,
       "mass_tolerance_g": null,
-      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "shaft_hole_interface": null,
       "connector_clearance_mm": null,
       "mechanical_contract_keys": [],
       "mounting_release": false,
@@ -4715,7 +4734,7 @@
         "国内精确SKU/结算价",
         "插合/锁扣与线缆路径"
       ],
-      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。 No PCB footprint: cable-side housing/contact; dimensional mating data is specified by the exact JST PH part."
     },
     {
       "id": "p4_phr_3",
@@ -4735,7 +4754,7 @@
       "dimensions_mm": null,
       "mass_g": null,
       "mass_tolerance_g": null,
-      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "shaft_hole_interface": null,
       "connector_clearance_mm": null,
       "mechanical_contract_keys": [],
       "mounting_release": false,
@@ -4757,7 +4776,7 @@
         "国内精确SKU/结算价",
         "插合/锁扣与线缆路径"
       ],
-      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。 No PCB footprint: cable-side housing/contact; dimensional mating data is specified by the exact JST PH part."
     },
     {
       "id": "p4_phr_4",
@@ -4777,7 +4796,7 @@
       "dimensions_mm": null,
       "mass_g": null,
       "mass_tolerance_g": null,
-      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "shaft_hole_interface": null,
       "connector_clearance_mm": null,
       "mechanical_contract_keys": [],
       "mounting_release": false,
@@ -4799,7 +4818,7 @@
         "国内精确SKU/结算价",
         "插合/锁扣与线缆路径"
       ],
-      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。 No PCB footprint: cable-side housing/contact; dimensional mating data is specified by the exact JST PH part."
     },
     {
       "id": "p4_phr_5",
@@ -4819,7 +4838,7 @@
       "dimensions_mm": null,
       "mass_g": null,
       "mass_tolerance_g": null,
-      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "shaft_hole_interface": null,
       "connector_clearance_mm": null,
       "mechanical_contract_keys": [],
       "mounting_release": false,
@@ -4841,7 +4860,7 @@
         "国内精确SKU/结算价",
         "插合/锁扣与线缆路径"
       ],
-      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。 No PCB footprint: cable-side housing/contact; dimensional mating data is specified by the exact JST PH part."
     },
     {
       "id": "p4_phr_8",
@@ -4861,7 +4880,7 @@
       "dimensions_mm": null,
       "mass_g": null,
       "mass_tolerance_g": null,
-      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "shaft_hole_interface": null,
       "connector_clearance_mm": null,
       "mechanical_contract_keys": [],
       "mounting_release": false,
@@ -4883,7 +4902,7 @@
         "国内精确SKU/结算价",
         "插合/锁扣与线缆路径"
       ],
-      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。"
+      "notes": "按已装板座每座一只线端壳的备料量；维护/NC接口可依实际装配清单少装，不能无说明计零。 No PCB footprint: cable-side housing/contact; dimensional mating data is specified by the exact JST PH part."
     },
     {
       "id": "p4_ph_contacts",
@@ -4903,7 +4922,7 @@
       "dimensions_mm": null,
       "mass_g": null,
       "mass_tolerance_g": null,
-      "shaft_hole_interface": "Capacitor_SMD:C_0603_1608Metric",
+      "shaft_hole_interface": null,
       "connector_clearance_mm": null,
       "mechanical_contract_keys": [],
       "mounting_release": false,
@@ -4925,7 +4944,7 @@
         "国内精确SKU/价格",
         "线规/压接/拉力验证"
       ],
-      "notes": "按所有预留孔位的端子数备料，包含未用孔；损耗另核，不保证压接一次成功。"
+      "notes": "按所有预留孔位的端子数备料，包含未用孔；损耗另核，不保证压接一次成功。 No PCB footprint: cable-side housing/contact; dimensional mating data is specified by the exact JST PH part."
     }
   ],
   "quote_leads": [
@@ -6417,5 +6436,11 @@
     "manufacturing_release": false,
     "factory_tolerance_confirmed": false,
     "physical_tests": "NOT_TESTED"
+  },
+  "review_metadata_receipt": {
+    "date": "2026-10-07",
+    "scope": "Synchronize already adopted mechanical selections and correct cable-part metadata only; no schematic/PCB/selection change",
+    "source": "config/geometry.json",
+    "manufacturing_release": false
   }
 }
