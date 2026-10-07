@@ -56,7 +56,19 @@ type Result = {
   data?: unknown;
 };
 type Identity = { token: string; client_id: string; permissions: string[] };
-const identityKey = (base: string) => "mori.credential:" + new URL(base).origin;
+function gatewayBase(base: string) {
+  const url = new URL(base);
+  if (
+    !["http:", "https:"].includes(url.protocol) ||
+    url.username ||
+    url.password ||
+    url.search ||
+    url.hash
+  )
+    throw Error("网关地址只能包含 HTTP(S) 主机和路径");
+  return url.origin + url.pathname.replace(/\/+$/, "");
+}
+const identityKey = (base: string) => "mori.credential.v2:" + gatewayBase(base);
 function savedBase() {
   try {
     return localStorage.getItem("mori.gateway") || "http://127.0.0.1:8765";
@@ -144,7 +156,7 @@ export function restorePairing() {
       value.permissions.every((p: unknown) => typeof p === "string")
         ? value
         : null;
-    identityBase = ui.identity ? new URL(ui.base).origin : null;
+    identityBase = ui.identity ? gatewayBase(ui.base) : null;
   } catch {
     ui.identity = null;
     identityBase = null;
@@ -180,10 +192,11 @@ export function stale() {
   return !ui.status || performance.now() - ui.received > 250;
 }
 export async function request(path: string, body?: unknown) {
-  const res = await fetch(ui.base + path, {
+  const base = gatewayBase(ui.base);
+  const res = await fetch(base + path, {
     method: body === undefined ? "GET" : "POST",
     headers: {
-      ...(ui.identity && identityBase === new URL(ui.base).origin
+      ...(ui.identity && identityBase === base
         ? { Authorization: "Bearer " + ui.identity.token }
         : {}),
       "Content-Type": "application/json",
@@ -197,24 +210,25 @@ export async function api(path: string, body?: unknown) {
   return (await request(path, body)).json();
 }
 export async function pair(code: string) {
-  const url = new URL(ui.base);
+  const base = gatewayBase(ui.base);
+  const url = new URL(base);
   if (
     url.protocol !== "https:" &&
     !["localhost", "127.0.0.1", "[::1]"].includes(url.hostname)
   )
     throw Error("非本机连接必须使用 HTTPS/WSS");
   ui.identity = await api("/api/pair", { code });
-  identityBase = url.origin;
+  identityBase = base;
   try {
-    localStorage.setItem(identityKey(ui.base), JSON.stringify(ui.identity));
-    localStorage.setItem("mori.gateway", ui.base);
+    localStorage.setItem(identityKey(base), JSON.stringify(ui.identity));
+    localStorage.setItem("mori.gateway", base);
   } catch {
     ui.notice = "已配对，但此浏览器无法保存凭据；刷新前请启用站点存储";
   }
   connect();
 }
 export function connect() {
-  if (!ui.identity || identityBase !== new URL(ui.base).origin) {
+  if (!ui.identity || identityBase !== gatewayBase(ui.base)) {
     restorePairing();
     return;
   }
@@ -224,9 +238,14 @@ export function connect() {
   lastTransport = 0;
   previousArrival = 0;
   if (ws) ws.close();
-  const next = new WebSocket(ui.base.replace(/^http/, "ws") + "/ws");
+  const next = new WebSocket(
+    gatewayBase(ui.base).replace(/^http/, "ws") + "/ws",
+  );
+  const token = ui.identity.token;
   ws = next;
-  next.onopen = () => next.send(JSON.stringify({ token: ui.identity!.token }));
+  next.onopen = () => {
+    if (ws === next) next.send(JSON.stringify({ token }));
+  };
   next.onmessage = async (e) => {
     if (ws !== next) return;
     const m = JSON.parse(e.data);

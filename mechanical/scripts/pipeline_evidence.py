@@ -5,6 +5,27 @@ from pathlib import Path
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
+def restored_build_inputs(manifest):
+    """Explicit current source groups; legacy reports/A0/runtime caches are optional."""
+    groups=manifest['groups']
+    rows=list(groups.get('mechanical-build-inputs', []))
+    rows += [row for row in groups.get('mechanical-data', []) if row['path'].startswith('mechanical/sources/')]
+    return {row['path']:row for row in rows}.values()
+
+DELIVERY_EVIDENCE_FILES=(
+    'mechanical/mori_v1_2.blend',
+    *('mechanical/reports/'+name+'.json' for name in (
+        'build_manifest','validation','export_manifest','render_manifest',
+        'structure_changes','module_assembly','wheel_metal_export')),
+)
+
+def verify_delivery_stamp(project, delivery):
+    recorded=delivery.get('evidence_sha256', {})
+    if set(recorded)!=set(DELIVERY_EVIDENCE_FILES):raise ValueError('Delivery evidence fingerprint missing/incomplete')
+    for name,digest in recorded.items():
+        path=Path(project)/name
+        if not path.is_file() or sha(path)!=digest:raise ValueError('Stale delivery evidence: '+name)
+
 def current_inputs(project):
     project=Path(project)
     build=json.loads((project/'mechanical/reports/build_manifest.json').read_text())
@@ -14,12 +35,10 @@ def current_inputs(project):
     manifest=project/'docs/archive_assets.json'
     if manifest.exists():
         paths.add('docs/archive_assets.json')
-        for entries in json.loads(manifest.read_text())['groups'].values():
-            for entry in entries:
-                if entry['path'].startswith(('mechanical/','hardware/','scripts/','params.json','01_CODEX_MECHANICAL.md')):
-                    target=project/entry['path']
-                    if not target.is_file() or sha(target)!=entry['sha256']:raise ValueError('Missing/changed restored build input: '+entry['path'])
-                    paths.add(entry['path'])
+        for entry in restored_build_inputs(json.loads(manifest.read_text())):
+            target=project/entry['path']
+            if not target.is_file() or sha(target)!=entry['sha256']:raise ValueError('Missing/changed restored build input: '+entry['path'])
+            paths.add(entry['path'])
     native=project/'hardware/v1_2/native_projects/manifest.json'
     if native.exists():
         paths.add(str(native.relative_to(project)))
@@ -49,8 +68,8 @@ def cad_python():
     configured=os.environ.get('MORI_CAD_PYTHON')
     binary=shutil.which(configured) if configured else sys.executable
     if not binary:raise RuntimeError('MORI_CAD_PYTHON does not resolve to an executable')
-    result=subprocess.run([binary,'-c','import cadquery'],capture_output=True,text=True)
-    if result.returncode:raise RuntimeError('CAD interpreter needs cadquery; set MORI_CAD_PYTHON to the environment documented in mechanical/README.md')
+    result=subprocess.run([binary,'-c','from OCP.STEPControl import STEPControl_Writer'],capture_output=True,text=True)
+    if result.returncode:raise RuntimeError('CAD interpreter needs OCP (cadquery-ocp); set MORI_CAD_PYTHON to the environment documented in mechanical/README.md')
     return binary
 
 def render_outputs(root, rows, expected, geometry):

@@ -14,7 +14,8 @@
 | 8 | 机械检查及展示工具 | [#9](https://github.com/deanxizian/MORI/pull/9) | review/07-mechanical-builders |
 | 9 | 当前模型、STL 与装配视频 | [#10](https://github.com/deanxizian/MORI/pull/10) | review/08-mechanical-tools |
 | 10 | 资料导航、恢复工具与校验记录 | [#11](https://github.com/deanxizian/MORI/pull/11) | review/09-current-models |
+| 11 | 审查修复及组合树复核 | [#12](https://github.com/deanxizian/MORI/pull/12) | review/10-navigation |
 
-修复前的完整资料树位于第 10 层；审查修复在 `codex/review-closure` 中汇总。合并后以 `main` 为准，临时审查分支会删除。原 PR #1 由这组拆分取代；其提交和原始归档分支保留，供历史资料定位。
+修复前的完整资料树位于第 10 层；审查修复在第 11 层中汇总。合并后以 `main` 为准，临时审查分支会删除。原 PR #1 由这组拆分取代；其提交和原始归档分支保留，供历史资料定位。
 
 [归档与下载](GITHUB_ARCHIVE.md) · [项目索引](PROJECT_INDEX.md)

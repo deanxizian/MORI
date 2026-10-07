@@ -1,6 +1,6 @@
 # P5R7 端口与接线增补
 
-**E 插合待核：**正确针号/方向保持，但直针与 WeAct 成品孔的兼容性尚未确认；[增补 A1](../reviews/weact_E_J3_20260930/E_pin_hole_addendum_20261001/README.md)。不得强压、扩孔或缩针。
+**E 插合待核：**正确针号/方向保持，但直针与 WeAct 成品孔的兼容性尚未确认；[增补 A1](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/hardware/v1_2/reviews/weact_E_J3_20260930/E_pin_hole_addendum_20261001/README.md)。不得强压、扩孔或缩针。
 
 当前组合：motion P5R7、rear P5R7、power P5R6、IMU P5R4。各编号对应的信号、MCU GPIO 和线束对端保持；实物均 NOT_TESTED。
 
@@ -10,4 +10,4 @@
 - 后板 J3 在 B 面，180°，原生1号孔 (14.45,21.20) mm；顶视图从左到右4、3、2、1。1=MASTER_RETURN、2=GND、3=LOOP_3V3、4=CLR_N。
 - 当前 CSV 已同步板号、J3 面向和坐标；P5R6 工作簿保留作历史记录，不作为本次装配方向依据。
 
-原生几何、逐针数据及未闭合事项见 [交接记录](../reviews/weact_E_J3_20260930/README.md)。原理图保留的 SW1 与整机已取消的外露开关存在单独的功能交接事项；本次局部插合修正不表示物理断电/急停已闭合。
+原生几何、逐针数据及未闭合事项见 [交接记录](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/hardware/v1_2/reviews/weact_E_J3_20260930/README.md)。原理图保留的 SW1 与整机已取消的外露开关存在单独的功能交接事项；本次局部插合修正不表示物理断电/急停已闭合。

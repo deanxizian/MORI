@@ -1,6 +1,7 @@
 """Current revision summary; never rewrite the retained historical gallery."""
 import hashlib, html, json
 from pathlib import Path
+from pipeline_evidence import verify_delivery_stamp
 
 def generate(project=None):
     project=Path(project or Path(__file__).resolve().parents[2]);root=project/'mechanical'
@@ -23,6 +24,8 @@ def generate(project=None):
     if not model.is_file() or v.get('source_blend_sha256')!=hashlib.sha256(model.read_bytes()).hexdigest():evidence['errors'].append('Validation does not match current model')
     d=docs.get('delivery',{})
     if d.get('status')!='PASS':evidence['errors'].append('Current delivery consistency has not passed')
+    try:verify_delivery_stamp(project,d)
+    except ValueError as error:evidence['errors'].append(str(error))
     e=docs.get('export',{})
     if not e.get('candidate_count') or e.get('candidate_count')!=e.get('exported_count'):evidence['errors'].append('Candidate STL export incomplete')
     evidence['validation_counts']=v.get('counts',{})
@@ -34,5 +37,7 @@ def generate(project=None):
     rows=''.join('<li>'+esc(s)+'</li>' for s in evidence['errors']) or '<li>源文件、当前检查和候选导出证据一致。</li>'
     links=''.join(f'<li><a href="{esc(v["file"])}">{esc(k)}</a></li>' for k,v in evidence['checks'].items())
     (root/'current_report.html').write_text(f'''<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MORI {esc(params['revision'])} 当前构建报告</title><style>body{{font:17px/1.6 system-ui;max-width:850px;margin:40px auto;padding:0 24px}}code{{word-break:break-all}}</style><h1>MORI {esc(params['revision'])} 当前构建报告</h1><p>证据一致性：<strong>{evidence['status']}</strong>。整机仍为 PROTOTYPE / UNVALIDATED，未制造放行。</p><ul>{rows}</ul><p>实际几何检查统计：<code>{esc(json.dumps(evidence['validation_counts']))}</code>。PASS 仅限原记录的检查范围；其余 BLOCKED / NOT_TESTED 仍保留。</p><ul>{links}</ul><p><a href="../docs/CURRENT_STATUS.md">当前工程卡点</a> · <a href="index.html">保留的图册快照</a> · <a href="reports/current_report.json">机器可读证据</a></p></html>''')
+    evidence['html_sha256']=hashlib.sha256((root/'current_report.html').read_bytes()).hexdigest()
+    report.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
     if evidence['errors']:raise RuntimeError('Current report blocked: '+'; '.join(evidence['errors']))
     return evidence

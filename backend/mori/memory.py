@@ -63,11 +63,16 @@ class Memory:
   path=pathlib.Path(journal);data=path.read_bytes();end=data.rfind(b'\n')+1
   if end!=len(data):
    with path.open('r+b') as f:f.truncate(end);f.flush();os.fsync(f.fileno())
+  applied={row[0] for row in self.db.execute('SELECT id FROM deletion_ledger')};removed=False
   for line in data[:end].splitlines():
    record=json.loads(line);ident=record['id']
-   self.db.execute('DELETE FROM memory_index WHERE id=?',(ident,));self.db.execute('DELETE FROM memories WHERE id=?',(ident,))
+   if ident in applied:continue
+   removed=bool(self.db.execute('DELETE FROM memory_index WHERE id=?',(ident,)).rowcount) or removed
+   removed=bool(self.db.execute('DELETE FROM memories WHERE id=?',(ident,)).rowcount) or removed
    self.db.execute('INSERT OR REPLACE INTO deletion_ledger VALUES(?,?)',(ident,record['deleted_at']))
-  self.db.commit();self.rebuild_index()
+   applied.add(ident)
+  self.db.commit()
+  if removed:self.rebuild_index()
  def rebuild_index(self):
   self.db.execute('DROP TABLE memory_index');self.db.execute("CREATE VIRTUAL TABLE memory_index USING fts5(id UNINDEXED,user_id UNINDEXED,device_id UNINDEXED,text,tokenize='unicode61')");self.db.execute('INSERT INTO memory_index SELECT id,user_id,device_id,text FROM memories');self.db.commit();self.db.execute('VACUUM')
  def close(self):self.db.close()

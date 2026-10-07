@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'mechanical/scripts'))
-from pipeline_evidence import annotate_retries, current_inputs, render_outputs, sha, verify_resume
+from pipeline_evidence import annotate_retries, current_inputs, render_outputs, sha, verify_resume, DELIVERY_EVIDENCE_FILES
 from report_current import generate
 from mesh_components import components
 
@@ -27,6 +27,14 @@ class EvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'output'):verify_resume(self.root,[record],['build'])
         self.write('config/geometry.json',{'revision':'changed'})
         with self.assertRaisesRegex(ValueError,'inputs changed'):verify_resume(self.root,[record],['build'])
+    def test_current_inputs_ignore_optional_legacy_reports(self):
+        (self.root/'docs').mkdir()
+        self.write('docs/archive_assets.json',{'groups':{
+            'mechanical-data':[{'path':'mechanical/reports/solid_Body_IMU.json','sha256':'historical'}],
+            'legacy-helpers':[{'path':'params.json','sha256':'old'}]}})
+        self.assertNotIn('params.json',current_inputs(self.root))
+        self.write('docs/archive_assets.json',{'groups':{'mechanical-build-inputs':[{'path':'mechanical/current-source.json','sha256':'required'}]}})
+        with self.assertRaisesRegex(ValueError,'current-source'):current_inputs(self.root)
     def test_render_requires_actual_bytes_and_full_view_set(self):
         image=self.root/'mechanical/renders/front.png';image.write_bytes(b'image-one')
         row={'view':'front','geometry_sha256':'geometry','image_sha256':sha(image),'image_bytes':image.stat().st_size}
@@ -50,9 +58,13 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(gallery.read_text(),'retained gallery')
         model=self.write('mechanical/mori_v1_2.blend',{'geometry':1})
         self.write('mechanical/reports/validation.json',{'source_blend_sha256':sha(model),'counts':{'PASS':1,'FAIL':0,'BLOCKED':2}})
-        self.write('mechanical/reports/delivery_consistency.json',{'status':'PASS'})
         self.write('mechanical/reports/export_manifest.json',{'candidate_count':1,'exported_count':1})
+        for name in DELIVERY_EVIDENCE_FILES:
+            if not (self.root/name).exists():self.write(name,{})
+        self.write('mechanical/reports/delivery_consistency.json',{'status':'PASS','evidence_sha256':{p:sha(self.root/p) for p in DELIVERY_EVIDENCE_FILES}})
         self.assertEqual(generate(self.root)['status'],'PASS')
+        self.write('mechanical/reports/export_manifest.json',{'candidate_count':2,'exported_count':2})
+        with self.assertRaisesRegex(RuntimeError,'Stale delivery'):generate(self.root)
         self.write('config/geometry.json',{'revision':'V1.2-M1.53'})
         with self.assertRaisesRegex(RuntimeError,'Stale build'):generate(self.root)
     def test_distinct_small_island_is_reported(self):

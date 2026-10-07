@@ -97,6 +97,11 @@ async function frame() {
     const url = URL.createObjectURL(await r.blob());
     if (picture.value) URL.revokeObjectURL(picture.value);
     picture.value = url;
+  } catch {
+    // Polls can race camera shutdown, revocation or a transport disconnect.
+    // Discard the old frame and wait for the next authenticated telemetry.
+    if (picture.value) URL.revokeObjectURL(picture.value);
+    picture.value = "";
   } finally {
     fetching = false;
   }

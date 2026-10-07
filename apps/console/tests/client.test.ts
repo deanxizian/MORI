@@ -139,3 +139,31 @@ it("resumes above the authenticated sequence floor after reconnecting", async ()
   });
   await pending;
 });
+it("isolates gateways under different paths and normalizes trailing slashes", async () => {
+  const c = await import("../src/client");
+  c.ui.base = "https://gateway.example/robot-a/";
+  await c.pair("local-code");
+  c.ui.base = "https://gateway.example/robot-b";
+  await c.request("/api/status");
+  expect(fetch).toHaveBeenLastCalledWith(
+    "https://gateway.example/robot-b/api/status",
+    expect.objectContaining({
+      headers: { "Content-Type": "application/json" },
+    }),
+  );
+  c.restorePairing();
+  expect(c.ui.identity).toBeNull();
+  c.ui.base = "https://gateway.example/robot-a";
+  c.restorePairing();
+  expect(c.ui.identity?.token).toBe(identity.token);
+});
+it("does not migrate ambiguous origin-only credentials to a gateway", async () => {
+  storage.set(
+    "mori.credential:https://gateway.example",
+    JSON.stringify(identity),
+  );
+  const c = await import("../src/client");
+  c.ui.base = "https://gateway.example";
+  c.restorePairing();
+  expect(c.ui.identity).toBeNull();
+});

@@ -67,10 +67,27 @@
 | 47 | [#9](https://github.com/deanxizian/MORI/pull/9) | 继续执行前核对全部源输入及前序产物哈希；过期、缺失或失败记录均拒绝。 |
 | 48 | [#9](https://github.com/deanxizian/MORI/pull/9) | 验证实际 PNG 大小、SHA256、几何哈希及完整视图集合；仅有清单不算通过。 |
 | 49 | [#9](https://github.com/deanxizian/MORI/pull/9) | 失败重试须有更晚成功记录、匹配日志和实际产物哈希；不再只改文字就标成功。 |
-| 50 | [#9](https://github.com/deanxizian/MORI/pull/9) | CAD 解释器由 MORI_CAD_PYTHON 或当前 Python 决定，并实际检查 cadquery 可导入。 |
+| 50 | [#9](https://github.com/deanxizian/MORI/pull/9) | CAD 解释器由 MORI_CAD_PYTHON 或当前 Python 决定，并实际检查导出器直接使用的 OCP 可导入。 |
 | 51 | [#10](https://github.com/deanxizian/MORI/pull/10) | 源模型清除四个已定位微小游离体，主壳面片完全保留；STL 导出拒绝 Head_Front 多连通体。 |
 | 52 | [#11](https://github.com/deanxizian/MORI/pull/11) | 资产表用 GIT_ZIP_MEMBER 明确原生 PCB 所在 ZIP、成员路径、成员哈希及 ZIP 哈希。 |
 
 ## 尚未解决的工程事项
+
+### PR #12 二次审查
+
+`ddfaf9d` 的自动审查完成于 2026-10-07，提出 10 条意见。本次追加处理如下；旧阶段的机械限制继续约束结构设计，当前工作是用户要求的整个仓库审查修复。
+
+- F413/F412：原始 `48fe22aa` 中 `contracts/components.json#/components` 的 `motion_mcu` 已选 WeAct F412RET6；保留匹配这一硬件的构建，并修正仍写 F413 的 `software_profile.json`。没有换板。
+- Head_Front：保留单独记录的四个数值碎片清理。它属于本次审查修复，不冒称原 M1.52 两枚螺母改动；主壳的 17,554 个面片逐一保持。没有外形或接口重设计。
+- components.json：本次仓库审查按既有 SP3040 和 6806ZZ 选择校正过期说明；原始硬件快照和全部 PCB/原理图/库字节保留。没有宣称新电气设计或制造放行，后续机械设计仍不得擅改硬件源。
+- 相机轮询：处理关闭/失联时的 HTTP 失败，丢弃旧帧；真实 Chromium 注入 409/401 各 4 次，没有未处理的 Promise 错误。
+- 当前报告：`--core` 同步运行 STEP 导出、交付检查和报告生成；打包核对报告、HTML 及全部相关产物指纹，拒绝旧 PASS。
+- 构建输入：仅校验构建清单、明确的当前补充输入和厂家源；不再强制恢复历史报告、A0 参数或旧运行时缓存。
+- 原生工程包：先在内存中生成并校验所有新 ZIP，再以临时文件替换。写前保留恢复日志/备份；后续项目或最终清单失败时回滚，中断后重跑先恢复。两个注入故障测试和幂等检查通过。
+- 网关凭据：按完整规范化地址（含路径）隔离；旧的仅 origin 凭据不自动迁移，避免发到同域名下另一个机器人。
+- 头部禁驱：独立 `torque_enabled` 默认关闭，DISARM/FAULT/释放立即关闭，位置静止不能代表禁驱；STOP_MOTION 保持与故障停机不同。主机测试通过，实体适配器仍未接通。
+- 删除重放：跳过数据库已记账的 tombstone，仅实际删除内容时重建索引；正常重启不再重复 VACUUM。
+
+新增网页回归后共 11 项，存储/网关 12 项、归档工具 10 项和 V1 C 核心均通过。首次新 core 流程暴露了 OCP 环境被误要求安装完整 cadquery 的检查错误，已改为检查导出器实际依赖；失败记录保留，不把它计为通过。
 
 第 29 项的供应商裁线长度没有被凭空填入；相关表已明确降为端点定义，制造仍 BLOCKED。S01–S08 原编号对应关系也没有原始资料，只能明确未提供。头部舵盘、上部反力夹初装、完整带线闭壳、WeAct E 孔针实物匹配、急停实施、打印强度及实机运行见 [当前状态](CURRENT_STATUS.md)。这些边界继续保留，代码合并不改变它们。

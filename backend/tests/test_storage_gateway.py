@@ -122,3 +122,11 @@ def test_durable_tombstone_recovers_sql_interruption(tmp_path):
  # Model a crash after the durable journal append and before SQL commit.
  p.with_suffix('.deletions.jsonl').write_text(json.dumps({'id':ident,'deleted_at':utc()})+'\n')
  m=Memory(p);assert m.export('u','d')==[];assert m.db.execute('SELECT count(*) FROM memory_index').fetchone()[0]==0;m.close()
+
+def test_applied_tombstones_do_not_rebuild_on_restart(tmp_path,monkeypatch):
+ p=tmp_path/'memory.sqlite';m=Memory(p)
+ ident=m.remember('u','d','deleted','fact','explicit',True)
+ m.delete('u','d',ident);m.close()
+ def unexpected_rebuild(self):raise AssertionError('Already applied tombstones must not rebuild or VACUUM')
+ monkeypatch.setattr(Memory,'rebuild_index',unexpected_rebuild)
+ m=Memory(p);assert m.export('u','d')==[];m.close()

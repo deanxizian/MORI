@@ -3,7 +3,7 @@ import sys,hashlib,struct,json
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from common import *
-from pipeline_evidence import render_outputs, EXPECTED_RENDER_VIEWS
+from pipeline_evidence import render_outputs, EXPECTED_RENDER_VIEWS, DELIVERY_EVIDENCE_FILES, sha
 bpy.context.window.scene=bpy.data.scenes['MORI_V1_Assembly'];load_collections()
 for name in ['DOCK','COUPONS','DATUMS','KEEP_OUT']:COLS[name].hide_viewport=False
 assembled();h=hashlib.sha256()
@@ -82,6 +82,7 @@ result['status']='PASS' if all(result[k] for k in ['all_render_files_match','all
 result['stl_topology_failed_ids']=[row['id'] for row in exports['parts'] if row['status']!='PASS']
 result['stl_topology_status']='FAIL' if result['stl_topology_failed_ids'] else 'PASS'
 result['status_scope']='Input/render/export consistency only; STL topology and manufacturing readiness reported separately.'
+result['evidence_sha256']={name:sha(PROJECT/name) for name in DELIVERY_EVIDENCE_FILES}
 save_json(ROOT/'reports/delivery_consistency.json',result);print(json.dumps(result))
 if result['status']!='PASS':
  raise RuntimeError('Final delivery input/render/export evidence is inconsistent; see delivery_consistency.json')

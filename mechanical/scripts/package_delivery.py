@@ -1,6 +1,7 @@
 """Package verified current core outputs plus their complete published inputs."""
 from pathlib import Path
 import argparse, datetime, hashlib, json, shutil, zipfile
+from pipeline_evidence import restored_build_inputs, verify_delivery_stamp
 PROJECT=Path(__file__).resolve().parents[2]
 def read(p):return json.loads(p.read_text())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -14,7 +15,14 @@ def check(project):
     validation=read(reports/'validation.json')
     if validation['counts']['FAIL']:raise ValueError('Failed geometry checks')
     if validation.get('source_blend_sha256')!=sha(root/'mori_v1_2.blend'):raise ValueError('Validation model changed')
-    if read(reports/'delivery_consistency.json')['status']!='PASS':raise ValueError('Delivery consistency has not passed')
+    delivery=read(reports/'delivery_consistency.json')
+    if delivery['status']!='PASS':raise ValueError('Delivery consistency has not passed')
+    verify_delivery_stamp(project,delivery)
+    summary=read(reports/'current_report.json')
+    if summary['status']!='PASS' or set(summary['checks'])!={'build','validation','delivery','export'}:raise ValueError('Current report incomplete')
+    if summary.get('html_sha256')!=sha(root/'current_report.html'):raise ValueError('Current report HTML is stale')
+    for row in summary['checks'].values():
+        if sha(safe(root,row['file']))!=row['sha256']:raise ValueError('Current report is stale: '+row['file'])
     exports=read(reports/'export_manifest.json')
     if exports['candidate_count']!=exports['exported_count']:raise ValueError('STL export incomplete')
     for row in exports['parts']:
@@ -24,6 +32,8 @@ def check(project):
     for row in read(reports/'render_manifest.json'):
         p=root/'renders'/(row['view']+'.png')
         if sha(p)!=row['image_sha256'] or p.stat().st_size!=row['image_bytes']:raise ValueError('Rendered image changed: '+row['view'])
+    for row in read(reports/'wheel_metal_export.json')['parts']:
+        if sha(safe(root,row['file']))!=row['sha256']:raise ValueError('Metal STEP changed: '+row['id'])
 
 def collect(project):
     root=project/'mechanical';reports=root/'reports'
@@ -35,20 +45,20 @@ def collect(project):
         for item in bundle['files']:
             if sha(safe(project,item['path']))!=item['sha256']:raise ValueError('Native file differs: '+item['path'])
             names.add(item['path'])
-    names.update(['AGENTS.md','MORI_SPEC_V1_2.md','01_CODEX_MECHANICAL.md','config/geometry.json','contracts/mechanical_interfaces.json','contracts/components.json','docs/CURRENT_STATUS.md','mechanical/README.md','mechanical/current_report.html','mechanical/mori_v1_2.blend'])
+    names.update(['AGENTS.md','MORI_SPEC_V1_2.md','01_CODEX_MECHANICAL.md','config/geometry.json','contracts/mechanical_interfaces.json','contracts/components.json','docs/CURRENT_STATUS.md','docs/archive_assets.json','tools/restore_archive_assets.py','mechanical/README.md','mechanical/current_report.html','mechanical/mori_v1_2.blend'])
     # Restore manifest pins nested CAD/PDF/photo inputs read by the builders.
     manifest=read(project/'docs/archive_assets.json')
-    for group in ('mechanical-data','mechanical-build-inputs','legacy-helpers'):
-        for item in manifest['groups'][group]:
-            p=safe(project,item['path'])
-            if sha(p)!=item['sha256']:raise ValueError('Restored input differs: '+item['path'])
-            names.add(item['path'])
+    for item in restored_build_inputs(manifest):
+        p=safe(project,item['path'])
+        if sha(p)!=item['sha256']:raise ValueError('Restored input differs: '+item['path'])
+        names.add(item['path'])
     names.update(str(p.relative_to(project)) for p in (root/'scripts').glob('*.py'))
     names.update(str(p.relative_to(project)) for p in (root/'input_assets').iterdir() if p.is_file())
-    for f in ('build_manifest','validation','delivery_consistency','export_manifest','render_manifest','current_report','head_shell_cleanup','imu_mount_transform'):
+    for f in ('build_manifest','validation','delivery_consistency','export_manifest','render_manifest','current_report','head_shell_cleanup','imu_mount_transform','structure_changes','module_assembly','wheel_metal_export'):
         names.add('mechanical/reports/'+f+'.json')
     names.update('mechanical/'+row['file'] for row in read(reports/'export_manifest.json')['parts'])
     names.update('mechanical/renders/'+row['view']+'.png' for row in read(reports/'render_manifest.json'))
+    names.update('mechanical/'+row['file'] for row in read(reports/'wheel_metal_export.json')['parts'])
     for name in names:
         if not safe(project,name).is_file():raise FileNotFoundError('Required current input/output missing: '+name)
     return sorted(names)
