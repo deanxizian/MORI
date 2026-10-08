@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "revision": "V1.2-M1.52",
+  "revision": "V1.2-M1.54",
   "owner": "mechanical",
   "units": "mm",
   "coordinates": {
@@ -1559,5 +1559,52 @@
     "date": "2026-10-07",
     "scope": "Correct current readout; no change to model dimensions, native PCB geometry or physical release",
     "hardware_contract_revision": "V1.2-H0.5-P5R7"
+  },
+  "neck_entry_relief": {
+    "revision": "V1.2-M1.53",
+    "user_approved": true,
+    "geometry_source": "config/geometry.json#/neck_entry_relief",
+    "changed_existing_ids": [
+      "Yaw_Base"
+    ],
+    "old_new_outer_radius_mm": [
+      11.7,
+      12.5
+    ],
+    "bearing_seat_and_fasteners_unchanged": true,
+    "full_harness": "BLOCKED",
+    "physical_strength": "NOT_TESTED",
+    "manufacturing_release": false
+  },
+  "cam_orientation_adoption": {
+    "geometry_source": "config/geometry.json#/cam_orientation",
+    "status": "USER_APPROVED",
+    "request": "行，试试看usb朝右吧",
+    "changed_ids": [
+      "CAM_Mainboard",
+      "Onboard_MIC_L",
+      "Onboard_MIC_R"
+    ],
+    "rotation_about_world_Y_deg": -90,
+    "center_mounts_fasteners_shell_camera_LCD": "UNCHANGED",
+    "USB_outward_world": [
+      1,
+      0,
+      0
+    ],
+    "CAM_camera_FPC_outward_world": [
+      -1,
+      0,
+      0
+    ],
+    "CAM_display_FPC_outward_world": [
+      0,
+      0,
+      -1
+    ],
+    "hardware_files_modified": false,
+    "full_harness": "BLOCKED",
+    "physical_validation": "NOT_TESTED",
+    "manufacturing_release": false
   }
 }

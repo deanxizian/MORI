@@ -2,11 +2,11 @@
 
 MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏航与俯仰两只舵机、圆形屏幕、真实摄像头及板载音频。
 
-本仓库整理机械、硬件、软件、采购和验证资料。**当前为 PROTOTYPE / UNVALIDATED，未完成实物装配、上电和主动平衡验证，未制造放行。** 首次上传以 PR 审阅，本次没有继续修改机器人设计。
+本仓库整理机械、硬件、软件、采购和验证资料。**当前为 PROTOTYPE / UNVALIDATED，未完成实物装配、上电和主动平衡验证，未制造放行。** 当前机械模型为 M1.54，已应用用户确认的颈部通道与 CAM 朝向修改，详见[本次更新](docs/M1_54_MODEL_UPDATE.md)。
 
 ![MORI 当前结构预览](mechanical/renders/internal.png)
 
-首次归档现已拆为 [10 份有依赖顺序的 PR](docs/REVIEW_STACK.md)，仍未合并。历史与大批生成数据保留在不可变归档。
+首次归档的[拆分 PR 与审查修复](docs/REVIEW_STACK.md)已合并。历史与大批生成数据保留在不可变归档。
 
 ## 先看这些
 
@@ -14,7 +14,7 @@ MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏
 |---|---|
 | 项目资料总索引 | [PROJECT_INDEX](docs/PROJECT_INDEX.md) |
 | 当前版本与未完成事项 | [CURRENT_STATUS](docs/CURRENT_STATUS.md) |
-| 从哪些厂家购买哪些产品 | [采购清单](mechanical/procurement/M1.52_按厂家采购清单_2026-10-06.md) |
+| 从哪些厂家购买哪些产品 | [采购清单](mechanical/procurement/M1.52_按厂家采购清单_2026-10-06.md) · [已下单记录](mechanical/procurement/采购记录.md) |
 | 机械模型、图册与装配视频 | [机械入口](mechanical/README.md) · [网页图册源文件](mechanical/index.html) · [装配视频](mechanical/animation/MORI_assembly.mp4) |
 | 四块 PCB 的原生工程与接线 | [原生工程包与解压说明](hardware/v1_2/native_projects/README.md) · [P5R7 接线](hardware/v1_2/wiring_P5R7/README.md) |
 | 网页、固件和模拟测试 | [软件说明](README_SOFTWARE_V1_2.md) · [原有验收记录](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/reports/v1_2/acceptance.md) |
@@ -23,16 +23,16 @@ MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏
 
 ## 当前基线
 
-资料整理快照：**2026-10-06**。规格为 [MORI_SPEC_V1_2.md](MORI_SPEC_V1_2.md)。
+当前模型整理日期：**2026-10-08**。规格为 [MORI_SPEC_V1_2.md](MORI_SPEC_V1_2.md)。
 
 | 工作包 | 当前入口版本 | 说明 |
 |---|---|---|
-| 机械 | **V1.2-M1.52** | 主模型、电子细模和预览；当前 16 件机器人打印件，导出目录的 21 个 STL 还含其他试配文件 |
-| 装配动画 | **V1.2-M1.52-A1** | 85.75 秒、22 步；完整带线装配和上部反力夹初装仍未闭合 |
+| 机械 | **V1.2-M1.54** | 主模型、电子细模和预览；当前 16 件机器人打印件，导出目录的 21 个 STL 还含其他试配文件 |
+| 装配动画 | **V1.2-M1.54-A1** | 85.75 秒、22 步；完整带线装配和上部反力夹初装仍未闭合 |
 | 硬件合同 | **V1.2-H0.5-P5R7** | 运动板／后接口板 P5R7，电源板 P5R6，IMU 板 P5R4 |
 | 软件 | **1.2.0-dev.1 历史交付记录** | 原验收日期 2026-09-22；不能据此声称已适配或验证后续 P5R7 硬件 |
 
-最新硬件合同选择 WeAct STM32F412RET6 64Pin V1.1。旧软件说明仍记载 STM32F413；本次只记录这一版本差异，没有代替软件任务迁移目标板。
+硬件合同选择 WeAct STM32F412RET6 64Pin V1.1。2026-10-07 的审查修复已迁移默认编译目标并完成交叉编译，板级接通与实机验证仍未完成；详见[复核记录](docs/REVIEW_CLOSURE.md)。本次机械更新没有改动固件。
 
 ## 资料的有效范围
 

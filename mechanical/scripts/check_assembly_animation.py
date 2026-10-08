@@ -5,6 +5,12 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from common import *
 from assembly_animation import ANIM_OWNER,AP,OUT,SCENE_NAME,same_geometry,STAGES
 source_scene=bpy.data.scenes['MORI_V1_Assembly'];bpy.context.window.scene=source_scene
+load_collections()
+# Hidden validation proxies can retain unevaluated parent transforms on file
+# load. Evaluate the same assembled source used by the main solid checks before
+# taking matrices or constructing collision solids; never save this visibility.
+for name in ['DATUMS','DOCK','KEEP_OUT','COUPONS']:COLS[name].hide_viewport=False
+assembled()
 bpy.context.view_layer.update()
 source_matrices={o.name:o.matrix_world.copy() for o in source_scene.objects}
 scene=bpy.data.scenes[SCENE_NAME];bpy.context.window.scene=scene

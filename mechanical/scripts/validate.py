@@ -504,6 +504,12 @@ def v12_checks(solids):
 
 
 def main():
+    if P.get('cam_orientation',{}).get('enabled'):
+        from validate_cam_orientation import run_current
+        return run_current()
+    if P.get('neck_entry_relief',{}).get('enabled'):
+        from validate_neck_entry_relief import run_current
+        return run_current()
     if P['revision']=='V1.2-M1.52' and (ROOT/'input_assets/M1_52_review_baseline.json').is_file():
         from validate_review_closure import run_current
         return run_current()

@@ -33,8 +33,12 @@ python3 tools/restore_archive_assets.py --group mechanical-data --group legacy-h
 - [数据恢复清单](archive_assets.json)
 - [当前模型与原生 PCB 哈希](current_assets.json)
 - [原始归档树](https://github.com/deanxizian/MORI/tree/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/)
-- [归档分支](https://github.com/deanxizian/MORI/tree/docs/project-archive-2026-10-06)
+- [原归档 PR #1（已关闭）](https://github.com/deanxizian/MORI/pull/1)
 
-原归档提交继续保留，源文件没有删除，也没有改写 Git 历史。它包含当时已上传的历史、报告、研究脚本和来源资料；约 37 GB 的本地大型历史资产原本就未整体上传，仍留在原工作目录。独立归档不是承诺完整备份本机。
+2026-10-07 按用户要求删除原归档分支，当时 GitHub 仅保留 `main` 分支。原始提交仍由已关闭的 PR #1 引用，历史链接和恢复脚本继续使用上述固定提交；删除的是分支引用，没有删除本地资料或改写 Git 历史。原始提交包含当时已上传的历史、报告、研究脚本和来源资料；约 37 GB 的本地大型历史资产原本就未整体上传，仍留在原工作目录。独立归档不是承诺完整备份本机。
 
 新导航中的缺省证据链接指向不可变归档。原始资料快照保持；当前源码已包含审查修复。部分历史链接／绝对路径仍需到归档树查看。基线版本与未完成问题见 [当前状态](CURRENT_STATUS.md)。
+
+## M1.54 后续模型更新
+
+2026-10-08 本次 PR 同步 M1.53 C6 与 M1.54 CAM USB 朝右，详见 [模型更新](M1_54_MODEL_UPDATE.md)。新的 26 个批准基线／工具输入保存在约 0.65 MiB 的普通 Git ZIP 中，由同一 `mechanical-build-inputs` 恢复组按哈希解包；原始归档提交和四套硬件工程包不变。当前状态与模型哈希见 [CURRENT_STATUS](CURRENT_STATUS.md) 和 [current_assets.json](current_assets.json)。本地未采用线束研究没有混入当前模型，也未承诺完整上传。

@@ -1,23 +1,56 @@
 {
-  "revision": "V1.2-M1.52",
-  "review_revision": "2026-10-07-R1",
-  "source_blend_sha256": "53f4e502c0aab2a5c12a246916768962044ccc0b04baa81c22f5e42897ddf73f",
+  "revision": "V1.2-M1.54",
+  "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
   "checks": [
     {
-      "id": "review_repair_scope",
+      "id": "cam_right_exact_scope",
       "status": "PASS",
-      "summary": "仅清理头前壳的4个极小游离碎片；其余设计几何保持",
+      "summary": "CAM整板及板载双麦转向右侧；其余198件和全部打印件保持",
       "measurement": {
-        "changed": [
-          "Head_Front",
-          "Display_Frame",
-          "Display_PCB"
+        "changed_ids": [
+          "CAM_Mainboard",
+          "Onboard_MIC_L",
+          "Onboard_MIC_R"
         ],
-        "parts": 201,
-        "baseline": "mechanical/input_assets/M1_52_review_baseline.json",
-        "baseline_sha256": "7950c71003c0080c0522f79c1700a70e15d37cef697766785fd4874d77e11e59"
+        "unchanged_native_parts": 198,
+        "new_parts": 0,
+        "printed_parts_unchanged": true,
+        "visual_and_validation_meshes_checked": true,
+        "rigid_rows": [
+          {
+            "id": "CAM_Mainboard",
+            "visual_coordinate_error_mm": 7.62939453125e-06,
+            "solid_vertices_exact": true,
+            "triangles_unchanged": true,
+            "component_count": 132
+          },
+          {
+            "id": "Onboard_MIC_L",
+            "visual_coordinate_error_mm": 7.62939453125e-06,
+            "solid_vertices_exact": true,
+            "triangles_unchanged": true,
+            "component_count": 1
+          },
+          {
+            "id": "Onboard_MIC_R",
+            "visual_coordinate_error_mm": 7.62939453125e-06,
+            "solid_vertices_exact": true,
+            "triangles_unchanged": true,
+            "component_count": 1
+          }
+        ],
+        "mounting_axis_set_error_mm": 1.0658141036401503e-14,
+        "protected_hardware_files": 302,
+        "excluded_runtime_caches": [
+          "hardware/v1_2/tools/__pycache__/sync_native_metadata.cpython-312.pyc"
+        ],
+        "hardware_sources_unchanged": true,
+        "configuration_delta": [
+          "revision",
+          "cam_orientation"
+        ]
       },
-      "method": "Canonical world triangles; Head_Front main component exact, Display_Frame has documented float rounding; Display_PCB is the exact reviewed re-triangulation with <0.00001 mm3 symmetric difference. No dimensions or hardware transforms changed."
+      "method": "Exact quarter-turn of independent pre-adoption solid/visual vertices, unchanged triangles and per-component bounds; no part scaling."
     },
     {
       "id": "p5r7_E_source_interface",
@@ -559,7 +592,7 @@
       "status": "PASS",
       "summary": "相机窗口与圆屏黑面罩分离，中间保留真实白色球壳",
       "measurement": {
-        "revision": "V1.2-M1.52",
+        "revision": "V1.2-M1.54",
         "wheel_diameter_before_mm": 105,
         "wheel_diameter_actual_mm": 105.0,
         "wheel_axis_z_mm": 52.5,
@@ -775,7 +808,7 @@
       "status": "PASS",
       "summary": "当前布局与基准的质量模型比较（包含选型质量变化，不以重心更低作为通过条件）",
       "measurement": {
-        "revision": "V1.2-M1.52",
+        "revision": "V1.2-M1.54",
         "before_revision": "V1.2-M1.12",
         "mass_data_status": "ASSUMED",
         "before": {
@@ -828,19 +861,19 @@
           "estimated_COM_above_axle_mm": 58.8,
           "estimated_inertia_at_axle_kg_m2": [
             [
-              0.0111209,
-              -5.4e-06,
-              6.46e-05
+              0.011125,
+              -5.2e-06,
+              6.24e-05
             ],
             [
-              -5.4e-06,
-              0.0122247,
-              1.3e-05
+              -5.2e-06,
+              0.0122288,
+              1.32e-05
             ],
             [
-              6.46e-05,
-              1.3e-05,
-              0.0033217
+              6.24e-05,
+              1.32e-05,
+              0.0033218
             ]
           ]
         },
@@ -875,36 +908,36 @@
           ],
           "inertia_at_COM_kg_m2": [
             [
-              0.006576,
-              -5.4e-06,
-              3.84e-05
+              0.0065789,
+              -5.1e-06,
+              3.69e-05
             ],
             [
-              -5.4e-06,
-              0.0076797,
-              -1e-06
+              -5.1e-06,
+              0.0076827,
+              -8e-07
             ],
             [
-              3.84e-05,
-              -1e-06,
-              0.0033215
+              3.69e-05,
+              -8e-07,
+              0.0033216
             ]
           ],
           "inertia_at_head_joint_kg_m2": [
             [
-              0.0226774,
-              -5.4e-06,
-              -1.1e-05
+              0.0226775,
+              -5.2e-06,
+              -1.11e-05
             ],
             [
-              -5.4e-06,
-              0.0237812,
-              -2.74e-05
+              -5.2e-06,
+              0.0237814,
+              -2.72e-05
             ],
             [
-              -1.1e-05,
-              -2.74e-05,
-              0.0033217
+              -1.11e-05,
+              -2.72e-05,
+              0.0033218
             ]
           ],
           "estimated_mass_uncertainty_percent": 35
@@ -912,41 +945,41 @@
         "head_pitch": {
           "mass_g_rounded": 170,
           "center_mm_rounded": [
-            0.1,
+            0.2,
             -0.3,
             230.2
           ],
           "inertia_at_COM_kg_m2": [
             [
               0.0002756,
-              -0.0,
+              2e-07,
               1e-07
             ],
             [
-              -0.0,
-              0.000274,
-              -2e-07
+              2e-07,
+              0.0002741,
+              0.0
             ],
             [
               1e-07,
-              -2e-07,
-              0.0003395
+              0.0,
+              0.0003396
             ]
           ],
           "inertia_at_head_joint_kg_m2": [
             [
-              0.0002868,
-              -0.0,
-              -0.0
-            ],
-            [
-              -0.0,
-              0.0002852,
-              3e-07
-            ],
-            [
-              -0.0,
+              0.000287,
               3e-07,
+              -1e-07
+            ],
+            [
+              3e-07,
+              0.0002855,
+              5e-07
+            ],
+            [
+              -1e-07,
+              5e-07,
               0.0003396
             ]
           ],
@@ -957,39 +990,39 @@
           "center_mm_rounded": [
             -1.3,
             -0.4,
-            219.1
+            219.2
           ],
           "inertia_at_COM_kg_m2": [
             [
-              0.0003795,
-              1e-07,
-              -6e-07
+              0.0003798,
+              4e-07,
+              -7e-07
             ],
             [
-              1e-07,
-              0.0004178,
-              -3.1e-06
+              4e-07,
+              0.0004182,
+              -2.8e-06
             ],
             [
-              -6e-07,
-              -3.1e-06,
+              -7e-07,
+              -2.8e-06,
               0.0004026
             ]
           ],
           "inertia_at_head_joint_kg_m2": [
             [
-              0.0003817,
-              -0.0,
-              -1.5e-06
+              0.0003819,
+              2e-07,
+              -1.7e-06
             ],
             [
-              -0.0,
-              0.0004204,
-              -3.4e-06
+              2e-07,
+              0.0004207,
+              -3.2e-06
             ],
             [
-              -1.5e-06,
-              -3.4e-06,
+              -1.7e-06,
+              -3.2e-06,
               0.0004031
             ]
           ],
@@ -1371,31 +1404,41 @@
       "method": null
     },
     {
+      "id": "cam_right_services",
+      "status": "PASS",
+      "summary": "CAM右向USB分配空间、原螺钉工具与装入路径复核",
+      "measurement": {
+        "report": "cam_right_service_validation.json",
+        "scope": "130 discrete poses, 3 illustrative USB bodies, 12 existing tool sweeps, current CAM entry path and open-air probes only."
+      },
+      "method": "Actual triangle-solid intersections/min_gap; piecewise continuous translation tested with forward surface prisms preserving holes. No complete plug nose/contact/cable or hand qualification."
+    },
+    {
+      "id": "cam_right_full_harness",
+      "status": "BLOCKED",
+      "summary": "CAM上端信号／电源／FPC出口已变；此前完整上端路线不可沿用，仍需重排和验证",
+      "measurement": null,
+      "method": null
+    },
+    {
       "id": "historical_extended_checks",
       "status": "NOT_TESTED",
-      "summary": "历史完整装配、走线与局部试件检查本次未重跑；保留原始日期和输入边界",
+      "summary": "其他历史局部装配检查保留原日期；本次不冒充全部重新执行",
       "measurement": {
-        "url": "https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/mechanical/reports/validation.json",
-        "sha256": "09fb6a93e843c42afe1f0bf7860fb80dd1fb540f9ba1edc4e5c0e84fd6b87230",
-        "counts": {
-          "PASS": 100,
-          "FAIL": 0,
-          "NOT_TESTED": 19,
-          "BLOCKED": 20,
-          "NOT_APPLICABLE": 3
-        }
+        "baseline": "mechanical/revisions/V1.2-M1.53_before_CAM_right",
+        "current": "full native motion/topology/optics/core access plus CAM services"
       },
-      "method": "Current full-body collisions, motion, topology, optics and core access above are fresh. Historical tests are not counted as current PASS."
+      "method": null
     }
   ],
   "counts": {
-    "PASS": 25,
+    "PASS": 26,
     "FAIL": 0,
     "NOT_TESTED": 9,
-    "BLOCKED": 10,
+    "BLOCKED": 11,
     "NOT_APPLICABLE": 0
   },
-  "elapsed_s": 60.24511218070984,
+  "elapsed_s": 84.86307525634766,
   "historical_superseded_checks": [],
   "physical_validation": "NOT_TESTED",
   "manufacturing_release": false

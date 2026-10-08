@@ -3,7 +3,9 @@ from common import *
 from mesh_components import components
 
 def apply_head_shell_cleanup():
-    if P['revision']!='V1.2-M1.52':return
+    # Later approved C6 revisions retain the reviewed cleanup. Do not bring
+    # the detached remnants back merely because the display revision changed.
+    if P['revision']!='V1.2-M1.52' and not P.get('neck_entry_relief',{}).get('enabled'):return
     o=bpy.data.objects[PREFIX+'Head_Front'];bpy.context.view_layer.update()
     verts=[tuple(o.matrix_world@v.co) for v in o.data.vertices]
     faces=[tuple(p.vertices) for p in o.data.polygons]

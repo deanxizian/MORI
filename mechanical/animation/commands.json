@@ -1,0 +1,101 @@
+[
+  {
+    "stage": "animation_build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/assembly_animation.py",
+      "--",
+      "--width",
+      "1280",
+      "--samples",
+      "16",
+      "--render",
+      "stills"
+    ],
+    "started_utc": "2026-10-08T02:56:10.416821+00:00",
+    "finished_utc": "2026-10-08T02:56:25.321787+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
+    "log": "studies/cam_right_adoption/animation_build.log",
+    "log_sha256": "a9b898474773198a283941beb7db22bb7a6eec733a2b83241efe5ac2d141c1be"
+  },
+  {
+    "stage": "animation_native",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_assembly_animation.py",
+      "--",
+      "--native-only"
+    ],
+    "started_utc": "2026-10-08T02:56:25.507017+00:00",
+    "finished_utc": "2026-10-08T02:57:29.435344+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
+    "log": "studies/cam_right_adoption/animation_native.log",
+    "log_sha256": "a9d5b0cffa5b43709a8d3aabef3d5bfd73f62afd791fba5eba11c0b42a05b868"
+  },
+  {
+    "stage": "animation_video",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/cam_right_adoption/render_video.py"
+    ],
+    "started_utc": "2026-10-08T02:57:29.565676+00:00",
+    "finished_utc": "2026-10-08T03:04:19.157415+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
+    "log": "studies/cam_right_adoption/animation_video.log",
+    "log_sha256": "f7656e2f872e47e9470c33a3e5667524c177c4c8ea00150331ee2722d3efaeea"
+  },
+  {
+    "stage": "animation_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_assembly_animation.py"
+    ],
+    "started_utc": "2026-10-08T03:04:19.224524+00:00",
+    "finished_utc": "2026-10-08T03:05:03.117653+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
+    "log": "studies/cam_right_adoption/animation_check.log",
+    "log_sha256": "f6916fb653117227ff60eaadae51e22f077e578461b03091af3ade1e21efff5b"
+  },
+  {
+    "stage": "animation_cam_readback",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/cam_right_adoption/check_animation_cam.py"
+    ],
+    "started_utc": "2026-10-08T03:05:03.182587+00:00",
+    "finished_utc": "2026-10-08T03:05:08.091099+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
+    "log": "studies/cam_right_adoption/animation_cam_readback.log",
+    "log_sha256": "d11d11a3f7e35f34ad12bc67c2a9478477861b217311decda3df248cf5f026f5"
+  }
+]
