@@ -3,6 +3,14 @@
 useDefault = true
 
 [[allowlists]]
+description = "Two verified file checksums in expanded mechanical pipeline command records"
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "line"
+regexes = ['''^\s*"mechanical/(?:scripts/render_retention_access_frame\.py|studies/prearrival_preparation/fastener_access_review\.json)"\s*:\s*"[0-9a-f]{64}"[,]?\s*$''']
+paths = ['''(?:^|/)expanded_archives/pipeline_execution/commands\.json$''']
+
+[[allowlists]]
 description = "Artifact filename to SHA-256 entries in reviewed provenance manifests"
 targetRules = ["generic-api-key", "jfrog-identity-token"]
 condition = "AND"

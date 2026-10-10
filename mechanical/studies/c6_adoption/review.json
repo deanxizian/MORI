@@ -1,0 +1,930 @@
+{
+  "status": "PASS",
+  "scope": "Current native-solid screening of frozen historical nine LOWER routes only, on the adopted C6 print.",
+  "source_revision": "V1.2-M1.53",
+  "sources": {
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend": "3029d2e6f7eb3262e33252573bcd0453ea757260658228a8e4d2ce275d7bcfee",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/config/geometry.json": "74da1fdc4f3fe4e62fac733a1504b1c3794cd44d7d909779fc1d24d068cf84fd",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/contracts/mechanical_interfaces.json": "29f654b23399a618ce3e51c03726f8540dbd857149bbbecf925cfd952b67c6fb",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/contracts/components.json": "2768fabcffd0bd87dd5f901c1274853459165811da401555a915d8848552390e",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/common.py": "def112b088aafac89a042556e19e84bce2523e1ee420b943ba0e69a25df0067a",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/validate.py": "c0e4cd52f240aeb37b3655af9a94ce561775da73e5eac1eae4770df2a750dd43",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/build_manifest.json": "a7439b676ccf589fb0d54c398a08fa1030690ade157130adcea84a1c18625117",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/input_assets/M1_52_Yaw_Base_before_C6.npz": "a3dfeba3158646d7cb93e5094095808401cf336d979dff413cc89e4fbb6bd6df",
+    "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/entry_channel_candidate.py": "9a69ebade1bcbe668626f4a350d74faadb8dc40404e50bae3b69b9c6cc59657e",
+    "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/c6_left_slot_entry/Yaw_Base_candidate.npz": "46d54714f72d10eb5c80c211bdd75d7a4b4a05bcea81cf79b142725c2fd67975",
+    "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/c6_left_slot_entry/geometry_review.json": "366d131433e14276749712c23bf5936ba9e7fd6178adc74eaeb997e8c3512b74",
+    "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/c6_left_slot_entry/combined/lower_nine_screen.json": "82e4702a1018eaecfce8e9425d8abb56fad07a6c14f713d519bf731d9416d723",
+    "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/c6_left_slot_entry/combined/lower_nine_candidates.npz": "ba2ea73d3cc803f7f849fb0338f57f20dd5c0fb1cc8f95702403884a719bfd25",
+    "/Users/dean/Documents/MORI/mechanical/studies/prearrival_finish/head_harness_M1_49/remaining_routes/left_tall_balanced/neck_screen.json": "a776dd3d3c8e2198c2764e7e68b6be81273407f15fda48968437e12ad2a23edd",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/c6_adoption/check_lower_routes.py": "a1e6e4756c870073e616726234ad5dcbf78ec4f8bdd76dcc76814bb3cdb5c4cf",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_MCU_Carrier.json": "2cde4991b8e4b92ab8cd7e96c0d2a82bdefe32a825356418e665cf9c74506abe",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Body_IMU.json": "147ebd9488fe6318ce435a32446da41c7f94b99e5b167c72a015afc94c6b8eff",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Power_Module.json": "d9899678213d8bfa7cf6ea56bf247f006f08c469e8e3428309151875b5868351",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Rear_Interface_PCB.json": "ebdb6c4bc266072310543ccc234984588428d66b1e883301c0687bfb0cce9f93",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Power_Switch.json": "68d5ee12efdfb6ab76f02505bd1d68dc3d9cbaec6280af2a2bcca98fde0fbf17",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_USB_Receptacle.json": "3d7d62bb706898cd660f125a919350af95eb50d40faf44323e831ef7d1bbc888",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Wheel_Buck.json": "832bfffc4b92e0dc8b3f9b21ab044e5090b033317bd92751060b7dc19d974816",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Head_Buck.json": "23bf46197bc5fd2772cc734bcffa179d116191dee3682ce3400f82ffdaee76e2",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_CAM_Mainboard.json": "59edc0ac0fe0d6c7fafd8ea6e300d10df217a5704050c7d4c3b7a1ad17c3624a",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Onboard_MIC_L.json": "a62fbaac2bd1365ec303bae80752615958020e97dde11af633056043db27ef45",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Onboard_MIC_R.json": "72904dab7b46ea97add4d0ee51fc10b5bae91384f1b8a8e02717f2cae6f7f295",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Camera_PCB.json": "9935dd13893e89edbbdfc09dfde051f3bc56c0c9c02d325a6fdc7eeb1523589b",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_Camera_Lens.json": "e2fa211a1ceb12136b6221072c34ad373b181c05502f5caa7fea342f453cae03",
+    "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/reports/solid_MCU_Motion.json": "f1dc4dd6f23237a5888ad166056d9f51f21c81ed51bf1cdb15bac9d8144b3c4f"
+  },
+  "blender_version": "5.2.2 LTS",
+  "construction": {
+    "status": "PASS",
+    "scope": "Candidate construction only; not structural qualification",
+    "approved": true,
+    "changed_existing_ids": [
+      "Yaw_Base"
+    ],
+    "old_outer_radius_mm": 11.7,
+    "new_outer_radius_mm": 12.5,
+    "opening_angles_deg": [
+      113.0,
+      200.0
+    ],
+    "opening_z_mm": [
+      136.9,
+      149.1
+    ],
+    "boolean_overlap_into_existing_void_mm": 0.01,
+    "removed_volume_mm3": 22.047417145471172,
+    "removed_bounds_mm": [
+      [
+        -12.5,
+        -4.275251790881157,
+        145.5
+      ],
+      [
+        -4.571554275049867,
+        11.506310671567917,
+        147.0
+      ]
+    ],
+    "connected_solids": 1,
+    "bearing_seat_changed": false,
+    "fasteners_changed": false,
+    "main_changed": true,
+    "physical_strength": "NOT_TESTED"
+  },
+  "candidate_historical_symmetric_difference_mm3": 5.2260929707566236e-06,
+  "native_parts": 201,
+  "route_count": 9,
+  "yaw_samples": [
+    -60,
+    -50,
+    -40,
+    -30,
+    -20,
+    -10,
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60
+  ],
+  "pitch_samples": [
+    -20,
+    -15,
+    -10,
+    -5,
+    0,
+    5,
+    10,
+    15,
+    20,
+    25
+  ],
+  "route_group_pose_checks": 1404,
+  "minimum_screened_gap": {
+    "endpoint": "CAM_4",
+    "yaw": -60,
+    "pitch": 0,
+    "group": "body",
+    "object": "Yaw_Base",
+    "gap_lower_bound_mm": 0.3996437378356015,
+    "sampled_centerline_distance_mm": 0.7599945068359375,
+    "radius_mm": 0.3302,
+    "half_step_mm": 0.02998648338444702,
+    "chord_error_mm": 6.428561588900372e-05,
+    "point_mm": [
+      25.979463595139926,
+      -20.955345783864814,
+      144.73999938964843
+    ]
+  },
+  "insufficient_clearance_bounds": [],
+  "guaranteed_gap_lower_bound_mm": 0.3,
+  "minimum_screened_gap_is_global_minimum": false,
+  "clearance_method": "Expanded AABB excludes samples at the 0.3 mm threshold; near samples use nearest triangle distance minus radius, maximum half-step, chord error and 0.0001 mm numerical allowance. Containment checked separately. The near-sample minimum is not the global minimum.",
+  "current_unmodified_Yaw_Base_insufficient_bounds": [
+    {
+      "endpoint": "CAM_1",
+      "yaw": -60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": -60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": -60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": -60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": -50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": -50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": -50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": -50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": -40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": -40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": -40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": -40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": -30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": -30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": -30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": -30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": -20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": -20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": -20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": -20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": -10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": -10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": -10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": -10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 0,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 0,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 0,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 0,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 10,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 20,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 30,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 40,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 50,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_1",
+      "yaw": 60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.15747473401113238,
+      "sampled_centerline_distance_mm": 0.20287083089351654,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998127928875992,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -10.079893020407741,
+        5.569329619275936,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_3",
+      "yaw": 60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.1939723371511052,
+      "sampled_centerline_distance_mm": 0.16638325154781342,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029991303083029615,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -6.836940547357828,
+        9.318235533474358,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_2",
+      "yaw": 60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.21669261448406849,
+      "sampled_centerline_distance_mm": 0.14365579187870026,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.029984120746879755,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -8.25236220261414,
+        8.130555744588449,
+        145.41410313269327
+      ]
+    },
+    {
+      "endpoint": "CAM_4",
+      "yaw": 60,
+      "object": "Yaw_Base",
+      "gap_lower_bound_mm": -0.20043882353810916,
+      "sampled_centerline_distance_mm": 0.15991194546222687,
+      "radius_mm": 0.3302,
+      "half_step_mm": 0.02998648338444702,
+      "chord_error_mm": 6.428561588900372e-05,
+      "point_mm": [
+        -5.44752316125024,
+        10.20169947843344,
+        145.41410313269327
+      ]
+    }
+  ],
+  "wire_to_wire": {
+    "status": "NOT_TESTED",
+    "historical_status": "PASS",
+    "historical_pairs": 715,
+    "frozen_curve_hash_verified": true
+  },
+  "sources_unchanged": true,
+  "main_changed": false,
+  "approved": true,
+  "adopted": true,
+  "manufacturing_release": false,
+  "full_harness": "BLOCKED",
+  "limitations": [
+    "Finite sampled poses; no continuous motion proof.",
+    "The same lower curves retain historical wire and crimp assumptions.",
+    "No new review of connector mating allocations or fourteen other candidate wires.",
+    "No complete upper loops, constant material length, strain relief, threading, wired enclosure closure, or supplier cut-length release.",
+    "Current purchased-hardware models still include explicit proxies and assumed fields.",
+    "Print strength, fits and cable life are NOT_TESTED."
+  ],
+  "elapsed_s": 57.48088598251343
+}

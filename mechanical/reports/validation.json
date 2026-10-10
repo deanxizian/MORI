@@ -1,23 +1,35 @@
 {
-  "revision": "V1.2-M1.52",
-  "review_revision": "2026-10-07-R1",
-  "source_blend_sha256": "53f4e502c0aab2a5c12a246916768962044ccc0b04baa81c22f5e42897ddf73f",
+  "revision": "V1.2-M1.55",
+  "source_blend_sha256": "e17e7b829069edfb6ec57f7813d303893a12ae9e90c20edc2e1ca19f8f3e3f9f",
   "checks": [
     {
-      "id": "review_repair_scope",
+      "id": "reaction_entry_exact_scope",
       "status": "PASS",
-      "summary": "仅清理头前壳的4个极小游离碎片；其余设计几何保持",
+      "summary": "已确认R2：仅Pitch_Yoke内部孔道和后侧颈壁改变；其余200件及全部硬件位姿保持",
       "measurement": {
-        "changed": [
-          "Head_Front",
-          "Display_Frame",
-          "Display_PCB"
+        "changed_ids": [
+          "Pitch_Yoke"
         ],
-        "parts": 201,
-        "baseline": "mechanical/input_assets/M1_52_review_baseline.json",
-        "baseline_sha256": "7950c71003c0080c0522f79c1700a70e15d37cef697766785fd4874d77e11e59"
+        "unchanged_native_parts": 200,
+        "part_count": 201,
+        "new_ids": [],
+        "retired_ids": [],
+        "changed_transform_ids": [],
+        "approved_mesh_difference_mm3": 0.0,
+        "comparison_limit_mm3": 0.003,
+        "outside_edit_ROI_difference_mm3": 1.8955234930812472e-05,
+        "bearing_fit_skin_difference_mm3": 1.539581009356984e-14,
+        "unchanged_config_except_revision_and_R2": true,
+        "hardware_drift": [],
+        "excluded_runtime_caches": [
+          "hardware/v1_2/.DS_Store",
+          "hardware/v1_2/cam_usb_source_candidate_R2_20261008/scripts/__pycache__/design.cpython-39.pyc",
+          "hardware/v1_2/cam_usb_source_candidate_R2_20261008/scripts/__pycache__/sexpr.cpython-39.pyc",
+          "hardware/v1_2/tools/__pycache__/sync_native_metadata.cpython-312.pyc"
+        ],
+        "protected_hardware_count": 846
       },
-      "method": "Canonical world triangles; Head_Front main component exact, Display_Frame has documented float rounding; Display_PCB is the exact reviewed re-triangulation with <0.00001 mm3 symmetric difference. No dimensions or hardware transforms changed."
+      "method": "Independent pre-adoption fingerprints and approved mesh; finite numerical difference is not print-fit tolerance."
     },
     {
       "id": "p5r7_E_source_interface",
@@ -559,7 +571,7 @@
       "status": "PASS",
       "summary": "相机窗口与圆屏黑面罩分离，中间保留真实白色球壳",
       "measurement": {
-        "revision": "V1.2-M1.52",
+        "revision": "V1.2-M1.55",
         "wheel_diameter_before_mm": 105,
         "wheel_diameter_actual_mm": 105.0,
         "wheel_axis_z_mm": 52.5,
@@ -775,7 +787,7 @@
       "status": "PASS",
       "summary": "当前布局与基准的质量模型比较（包含选型质量变化，不以重心更低作为通过条件）",
       "measurement": {
-        "revision": "V1.2-M1.52",
+        "revision": "V1.2-M1.55",
         "before_revision": "V1.2-M1.12",
         "mass_data_status": "ASSUMED",
         "before": {
@@ -819,28 +831,28 @@
           "body_center_ground_z_mm": 100.0,
           "head_center_ground_z_mm": 222.0,
           "derived_normal_height_mm": 282.0,
-          "mass_g_rounded": 1315,
+          "mass_g_rounded": 1310,
           "estimated_COM_ground_mm": [
             -0.3,
             -0.2,
-            111.3
+            111.2
           ],
-          "estimated_COM_above_axle_mm": 58.8,
+          "estimated_COM_above_axle_mm": 58.7,
           "estimated_inertia_at_axle_kg_m2": [
             [
-              0.0111209,
-              -5.4e-06,
-              6.46e-05
+              0.0111024,
+              -5.2e-06,
+              6.24e-05
             ],
             [
-              -5.4e-06,
-              0.0122247,
-              1.3e-05
+              -5.2e-06,
+              0.0122063,
+              1.14e-05
             ],
             [
-              6.46e-05,
-              1.3e-05,
-              0.0033217
+              6.24e-05,
+              1.14e-05,
+              0.0033216
             ]
           ]
         },
@@ -848,7 +860,7 @@
           "wheel_rise_relative_body_mm": 0.0,
           "body_lowering_mm": 0.0,
           "head_lowering_mm": 0.0,
-          "estimated_COM_lowering_mm": 4.9
+          "estimated_COM_lowering_mm": 5.0
         },
         "battery_center_mm": [
           0,
@@ -867,44 +879,44 @@
       "summary": "已输出有假设的质量与惯量估算（不是载荷验收）",
       "measurement": {
         "whole_robot": {
-          "mass_g_rounded": 1315,
+          "mass_g_rounded": 1310,
           "center_mm_rounded": [
             -0.3,
             -0.2,
-            111.3
+            111.2
           ],
           "inertia_at_COM_kg_m2": [
             [
-              0.006576,
-              -5.4e-06,
-              3.84e-05
+              0.0065732,
+              -5.1e-06,
+              3.69e-05
             ],
             [
-              -5.4e-06,
-              0.0076797,
-              -1e-06
+              -5.1e-06,
+              0.007677,
+              -1.7e-06
             ],
             [
-              3.84e-05,
-              -1e-06,
-              0.0033215
+              3.69e-05,
+              -1.7e-06,
+              0.0033214
             ]
           ],
           "inertia_at_head_joint_kg_m2": [
             [
-              0.0226774,
-              -5.4e-06,
-              -1.1e-05
+              0.0226726,
+              -5.2e-06,
+              -1.11e-05
             ],
             [
-              -5.4e-06,
-              0.0237812,
-              -2.74e-05
+              -5.2e-06,
+              0.0237766,
+              -2.64e-05
             ],
             [
-              -1.1e-05,
-              -2.74e-05,
-              0.0033217
+              -1.11e-05,
+              -2.64e-05,
+              0.0033216
             ]
           ],
           "estimated_mass_uncertainty_percent": 35
@@ -912,85 +924,85 @@
         "head_pitch": {
           "mass_g_rounded": 170,
           "center_mm_rounded": [
-            0.1,
+            0.2,
             -0.3,
             230.2
           ],
           "inertia_at_COM_kg_m2": [
             [
               0.0002756,
-              -0.0,
+              2e-07,
               1e-07
             ],
             [
-              -0.0,
-              0.000274,
-              -2e-07
+              2e-07,
+              0.0002741,
+              0.0
             ],
             [
               1e-07,
-              -2e-07,
-              0.0003395
+              0.0,
+              0.0003396
             ]
           ],
           "inertia_at_head_joint_kg_m2": [
             [
-              0.0002868,
-              -0.0,
-              -0.0
-            ],
-            [
-              -0.0,
-              0.0002852,
-              3e-07
-            ],
-            [
-              -0.0,
+              0.000287,
               3e-07,
+              -1e-07
+            ],
+            [
+              3e-07,
+              0.0002855,
+              5e-07
+            ],
+            [
+              -1e-07,
+              5e-07,
               0.0003396
             ]
           ],
           "estimated_mass_uncertainty_percent": 35
         },
         "head_yaw_total": {
-          "mass_g_rounded": 255,
+          "mass_g_rounded": 250,
           "center_mm_rounded": [
             -1.3,
             -0.4,
-            219.1
+            219.5
           ],
           "inertia_at_COM_kg_m2": [
             [
-              0.0003795,
-              1e-07,
-              -6e-07
+              0.0003755,
+              4e-07,
+              -8e-07
             ],
             [
-              1e-07,
-              0.0004178,
-              -3.1e-06
+              4e-07,
+              0.0004139,
+              -2.2e-06
             ],
             [
-              -6e-07,
-              -3.1e-06,
-              0.0004026
+              -8e-07,
+              -2.2e-06,
+              0.0004024
             ]
           ],
           "inertia_at_head_joint_kg_m2": [
             [
-              0.0003817,
-              -0.0,
-              -1.5e-06
+              0.0003771,
+              2e-07,
+              -1.7e-06
             ],
             [
-              -0.0,
-              0.0004204,
-              -3.4e-06
+              2e-07,
+              0.0004159,
+              -2.4e-06
             ],
             [
-              -1.5e-06,
-              -3.4e-06,
-              0.0004031
+              -1.7e-06,
+              -2.4e-06,
+              0.0004029
             ]
           ],
           "estimated_mass_uncertainty_percent": 35
@@ -1003,7 +1015,7 @@
       "status": "BLOCKED",
       "summary": "当前结构的估算质量与V1.2工程目标",
       "measurement": {
-        "whole_g_rounded": 1315,
+        "whole_g_rounded": 1310,
         "whole_target_g": [
           1000,
           1200
@@ -1371,31 +1383,64 @@
       "method": null
     },
     {
+      "id": "reaction_entry_saved_geometry",
+      "status": "PASS",
+      "summary": "保存后的R2连续装入、完整壳体俯仰、保留孔壁与防脱／移入检查",
+      "measurement": {
+        "report": "reaction_clamp_entry_validation.json",
+        "scope": "Saved-model source replay, continuous prototype entry/shell motion, retained bulk wall/radial journal/local curves and finite keeper/drop/capture checks"
+      },
+      "method": null
+    },
+    {
+      "id": "cam_right_services",
+      "status": "PASS",
+      "summary": "保持USB朝右；当前模型CAM安装、原工具与接口分配空间复核",
+      "measurement": {
+        "report": "cam_right_service_validation.json",
+        "scope": "130 discrete poses, 3 illustrative USB bodies, 12 existing tool sweeps, current CAM entry path and open-air probes only."
+      },
+      "method": "Actual triangle-solid intersections/min_gap; piecewise continuous translation tested with forward surface prisms preserving holes. No complete plug nose/contact/cable or hand qualification."
+    },
+    {
+      "id": "reaction_actual_horn_locking",
+      "status": "BLOCKED",
+      "summary": "裸打印件装入已修复；实际SC-0090-C001舵盘、花键和锁紧叠层按用户决定到货后核对",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "full_wired_assembly",
+      "status": "BLOCKED",
+      "summary": "完整线材／端子、初始理线、最终整理、入壳和带线闭壳尚未完成；未采用任何线束候选",
+      "measurement": null,
+      "method": null
+    },
+    {
+      "id": "R2_print_strength",
+      "status": "NOT_TESTED",
+      "summary": "开放端缘、PA12刚度、强度、疲劳与真实手操作仍待试打；径向／侧壁采样不等于强度放行",
+      "measurement": null,
+      "method": null
+    },
+    {
       "id": "historical_extended_checks",
       "status": "NOT_TESTED",
-      "summary": "历史完整装配、走线与局部试件检查本次未重跑；保留原始日期和输入边界",
+      "summary": "未重跑的历史局部试件保留原日期；本次只报告当前执行的检查",
       "measurement": {
-        "url": "https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/mechanical/reports/validation.json",
-        "sha256": "09fb6a93e843c42afe1f0bf7860fb80dd1fb540f9ba1edc4e5c0e84fd6b87230",
-        "counts": {
-          "PASS": 100,
-          "FAIL": 0,
-          "NOT_TESTED": 19,
-          "BLOCKED": 20,
-          "NOT_APPLICABLE": 3
-        }
+        "baseline": "mechanical/revisions/V1.2-M1.54_before_reaction_entry_R2"
       },
-      "method": "Current full-body collisions, motion, topology, optics and core access above are fresh. Historical tests are not counted as current PASS."
+      "method": null
     }
   ],
   "counts": {
-    "PASS": 25,
+    "PASS": 27,
     "FAIL": 0,
-    "NOT_TESTED": 9,
-    "BLOCKED": 10,
+    "NOT_TESTED": 10,
+    "BLOCKED": 12,
     "NOT_APPLICABLE": 0
   },
-  "elapsed_s": 60.24511218070984,
+  "elapsed_s": 103.79342699050903,
   "historical_superseded_checks": [],
   "physical_validation": "NOT_TESTED",
   "manufacturing_release": false

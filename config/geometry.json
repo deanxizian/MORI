@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "revision": "V1.2-M1.52",
+  "revision": "V1.2-M1.55",
   "units": "mm",
   "data_status": "ASSUMED",
   "source": "MORI_SPEC_V1_2.md and 01_CODEX_MECHANICAL.md; user 2026-09-22",
@@ -7723,5 +7723,120 @@
     "baseline": "mechanical/revisions/V1.2-M1.51_before_nut_alignment",
     "baseline_inspection": "mechanical/studies/prearrival_finish/reaction_access_M1_51/inspection.json",
     "scope": "Correct existing trial nut orientation only; no dimension, part, print, hole, bolt-axis or fastener-selection change. Horn and real fastener interfaces remain BLOCKED."
+  },
+  "neck_entry_relief": {
+    "enabled": true,
+    "approved": true,
+    "revision": "V1.2-M1.53",
+    "approval_record": "mechanical/input_assets/C6_approval.json",
+    "changed_existing_ids": [
+      "Yaw_Base"
+    ],
+    "window_index": 1,
+    "outward_extension_mm": 0.8,
+    "boolean_overlap_mm": 0.01,
+    "sector_step_deg": 0.5,
+    "baseline": "mechanical/revisions/V1.2-M1.52_before_C6",
+    "approved_reference": "mechanical/input_assets/C6_Yaw_Base_approved.npz",
+    "scope": "Only extend the outer edge of the existing left entry window. Existing opening angles, web exclusion, bearing seat, holes, fasteners and all hardware datums retained.",
+    "full_harness": "BLOCKED",
+    "physical_strength": "NOT_TESTED"
+  },
+  "cam_orientation": {
+    "enabled": true,
+    "approved": true,
+    "revision": "CAM-USB-RIGHT-R1",
+    "rotation_about_world_Y_deg": -90,
+    "changed_existing_ids": [
+      "CAM_Mainboard",
+      "Onboard_MIC_L",
+      "Onboard_MIC_R"
+    ],
+    "baseline": "mechanical/input_assets/M1_54_CAM_baseline.json",
+    "visual_baseline": "mechanical/input_assets/M1_54_CAM_visual_baseline.json",
+    "approval": "mechanical/input_assets/cam_right_approval.json",
+    "board_center_and_mount_axis_set": "UNCHANGED",
+    "USB_outward_world": [
+      1,
+      0,
+      0
+    ],
+    "air_probes": {
+      "L": {
+        "shell_port": "L",
+        "intermediate_y_mm": -26.5
+      },
+      "R": {
+        "shell_port": "L",
+        "intermediate_y_mm": -28.5
+      }
+    },
+    "assembly": {
+      "forward_mm": 2.0,
+      "lift_at_plug_insertion_mm": 8.0,
+      "entry_above_mm": 70.0,
+      "plug_approach_travel_mm": 30.0
+    },
+    "limits": [
+      "L/R preserve source channel identity; installed microphones become lower/upper. No acoustic/beamforming/RF qualification.",
+      "Existing mounts and shell openings unchanged; USB body probes are allocations, not selected full plugs.",
+      "Old CAM wire and FPC endpoints are historical after rotation; full harness remains BLOCKED."
+    ]
+  },
+  "reaction_clamp_entry": {
+    "enabled": true,
+    "approved": true,
+    "revision": "V1.2-M1.55",
+    "changed_existing_ids": [
+      "Pitch_Yoke"
+    ],
+    "new_ids": [],
+    "retired_ids": [],
+    "parameters": {
+      "reference_reaction_bore_r_mm": 12.35,
+      "rear_open_start_Z_mm": 163.5,
+      "rear_open_max_Y_mm": -7.5,
+      "rear_open_top_Z_mm": 180.0,
+      "rear_open_max_radius_mm": 16.1
+    },
+    "construction": {
+      "segments": 256,
+      "rear_cut_box_xy_mm": [
+        [
+          -20.0,
+          -30.0
+        ],
+        [
+          20.0,
+          -7.5
+        ]
+      ]
+    },
+    "approval": "mechanical/studies/reaction_clamp_R2_adoption/approval.json",
+    "baseline": "mechanical/input_assets/M1_55_reaction_entry_baseline.json",
+    "numerical_comparison_limit_mm3": 0.003,
+    "required_nominal_gap_mm": 0.3,
+    "retained_wall_reserve_mm": 2.2,
+    "entry_Z_range_mm": [
+      -100.0,
+      0.0
+    ],
+    "numerical_edit_ROI": {
+      "radius_mm": 16.2,
+      "z_mm": [
+        148.68,
+        180.08
+      ]
+    },
+    "preserved_fit_skin": {
+      "inner_radius_mm": 14.2,
+      "outer_probe_radius_mm": 30.0,
+      "z_mm": [
+        148.99,
+        156.0
+      ]
+    },
+    "classification": "PRINTABLE / ASSUMED",
+    "limits": "Bare-print entry only; actual SC-0090-C001 horn and locking deferred to arrival. Full wired assembly BLOCKED; open-rim PA12 stiffness/strength/fatigue NOT_TESTED; manufacturing_release=false."
   }
 }

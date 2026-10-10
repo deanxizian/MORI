@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M1.55 线束研究与待补资料</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:1000px;margin:36px auto;padding:0 22px;line-height:1.75;color:#222;background:#faf9f6}
+h1{font-size:26px}h2{font-size:20px;margin-top:30px}a{color:#245a74}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d6d4ce;padding:10px;text-align:left;vertical-align:top}img{max-width:100%;height:auto}.state{border-left:4px solid #b78945;padding:10px 18px;background:#f1ece2}code{font-family:ui-monospace,monospace}footer{margin-top:32px;color:#555}
+</style>
+<h1>M1.55 线束研究与待补资料</h1>
+<p>2026-10-10。主模型 M1.55、装配动画 M1.55-A1；以下线束研究未采用。硬件合同保持 P5R7。</p>
+<p class="state"><strong>完整线束：BLOCKED。</strong>七条已知参考的名义运行检查已完成，实际材料、接口、裁线和完整带线装配仍未完成。局部 PASS 不等于实物或制造资格。</p>
+<p><a href="../../index.html">机械图册</a> · <a href="../../../docs/CURRENT_STATUS.md">当前状态</a> · <a href="../../../docs/PREARRIVAL_BLOCKERS.md">待补资料</a> · <a href="../../../docs/M1_55_MODEL_UPDATE.md">已采用模型更新</a></p>
+<h2 id="known">已完成的具体参考范围</h2>
+<ul>
+<li>12 条身体／颈部容量前段的名义偏航运动、弯折、公共数值长度、实体间隙、66 组互线和自身接近检查。</li>
+<li>7 条已知上段：4 根 CAM 信号、2 根电源与 1 根 CC；名义偏航 −60°～+60°、俯仰 −20°～+25°范围的长度、弯折、实体、21 组互线及自身检查。</li>
+<li>前段与已知上段 84 组比较，包括 7 组同线接续及 77 组其他前段互线；保持原 0.3 mm 规划间隙目标。</li>
+</ul>
+<p>使用的是名义几何与分段线径分配。它们不定义真实粗细线接续、实际压接、夹持或可下发的裁线尺寸。三条头舵机和两条喇叭参考尚缺完整上段，不能据此称整束通过。</p>
+<h2 id="assembly">装配研究的限制与未通过方式</h2>
+<table>
+<tr><th>研究方式</th><th>实际结果</th><th>不能据此推出</th></tr>
+<tr><td>裸 PH 端子容量路径</td><td>两种容量框、6,090 个连续区间通过；未采用真实压接／保护／附线。</td><td>真实带线逐根装入、操作空间或完整装配通过。</td></tr>
+<tr><td>身体前段预铺后装驱动座</td><td>12 条参考均在已检装入路径与 Pitch_Yoke 相交，未采用。</td><td>所有临时软线整理方法都不可能。</td></tr>
+<tr><td>整束随头部搬入</td><td>19 个已知参考段检查；10 条身体前段与 Yaw_Base 相交，未采用。</td><td>缺失的五条上段已被覆盖，或数学切点等于实际自由端。</td></tr>
+<tr><td>PHR-4 外形容量与带线插合</td><td>外形容量框通过；五种固定头端提线候选均有 Yaw_Base 净距失败，20 处独立复现。</td><td>容量框定义了内腔、实际插深、压接或握持。</td></tr>
+<tr><td>先端接身体、再装承重桥</td><td>原路径及直落候选各 19 处失败；38 处独立复现为 36 容量管相交、2 规划净距不足，未采用。</td><td>其他有真实自由端的分步穿线／临时整理方法已被排除。</td></tr>
+</table>
+<p><img src="../../../docs/images/M1_55_service_collision_section.svg" alt="未采用插合提线候选的实际剖面"></p>
+<p>图为有限候选姿态下的容量管与原生实体剖面。容量线径没有成为最终线材选型，图示不是实物相撞的测量记录。</p>
+<h2 id="remaining">剩余四组完整工作</h2>
+<ol>
+<li>补齐五条缺真实端点的上段及完整路线。</li>
+<li>确定实际材料、粗细线接续、工艺余量与供应商裁线。</li>
+<li>确定配对接头、压接、保护、第一可弯点、夹持与应力释放。</li>
+<li>完成实际带线穿入、插合、临时整理、拆壳／闭壳，再同步正式模型和动画。</li>
+</ol>
+<p>喇叭壳体出口至现有插头末端 150 mm 已由用户报告，含插头。插头尺寸待补充；舵机附件和微雪排线按用户决定到货后核对；CAM 供电源端仍待正式硬件交接。询问稿没有发送。</p>
+<h2 id="records">记录包与复核边界</h2>
+<p><a href="../../../docs/evidence/M1_55_harness_records.zip">下载研究记录包</a> · <a href="../../../docs/review_evidence/M1_55_archives.json">成员哈希与未包含项</a></p>
+<p>包内有数值记录、脚本、日志和原页面快照；保留原日期和失败结果。二进制缓存、比较 Blender、图片和第三方原始载荷仍在本地，本包不是完整可执行备份。页面快照中的历史链接也不代表当前公开入口。恢复后读取记录，不应跳过缺失输入而声明重现 PASS。</p>
+<footer>PRINTABLE／PURCHASED_REFERENCE／PLACEHOLDER 及证据等级沿用各源记录。原型未完成实物装配、材料强度、线束寿命或制造验证；manufacturing_release=false。</footer>
+</html>

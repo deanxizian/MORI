@@ -26,9 +26,9 @@ STAGES = [
     ('基板与电源板装件', 'P5R6电源板已集成运动5V + CAM 5V；两枚M2×6固定', 96, 'body'),
     ('承重桥落座并锁紧', '外壳未装；桥下降18mm，侧向锁紧两枚M3，车轮后装', 96, 'bridge_lock'),
     ('电池托盘与电池', '台面套好20mm绑带，再把电池与托盘一起滑入；左右M2限位', 66, 'body'),
-    ('Yaw 转动座台面预装', '离机装入4枚M2螺母；C压板从侧面套入转动座', 78, 'head_bench'),
+    ('Yaw 转动座台面预装', '离机从下方装入反力轴；再装4枚M2螺母和C压板；实际舵盘配套仍待确认', 120, 'head_bench'),
     ('双舵机台面预装', 'Pitch先在右侧上方下放，再左移30mm；锁紧后装倒置Yaw', 144, 'head_bench'),
-    ('CAM固定与头托', '四枚DIN912 M2×5；用1.5mm短边L扳手锁紧，显示架及头壳后装', 96, 'head'),
+    ('CAM固定与头托', 'USB朝右；向前错开2mm下放，抬高8mm时预接USB，再落座并锁四枚M2', 96, 'head'),
     ('显示与摄像头', '先在台面用3枚M2×12固定LCD；装叉架，再插入相机，无独立压盖', 78, 'optics'),
     ('头壳合拢 · 走线待设计', '前壳两枚M2下锁沉入上侧；后壳两枚M2锁拼缝，面圈已并入前壳', 78, 'head_shell'),
     ('前后壳附件台面预装', '前后壳转向内侧展示；喇叭、接口板分别预装，下一镜恢复装配方向', 108, 'shell_bench'),
@@ -70,6 +70,8 @@ def smooth(o):
         for k in fc.keyframe_points:
             if fc.data_path in ['hide_render', 'hide_viewport']:
                 k.interpolation = 'CONSTANT'
+            elif (o.get('cam_path_linear') or o.get('reaction_entry_path_linear')) and fc.data_path=='location':
+                k.interpolation = 'LINEAR'
             else:
                 k.interpolation = 'BEZIER'
                 k.handle_left_type = k.handle_right_type = 'AUTO_CLAMPED'
@@ -274,17 +276,26 @@ def main():
     s=stages[8];span=s['end']-s['start'];r=roots['Battery_Bench']
     for fr,xyz in [(1,(0,80,0)),(s['start']+round(span*.53),(0,80,0)),(s['start']+round(span*.78),(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
     for sign in [-1,1]:assign(['Battery_Retainer_Screw_'+str(sign)],9,(sign*22,0,0),begin=.78,finish=.96)
-    assign(select('Pitch_Yoke','Yaw_Reaction_Link','Yaw_Horn',prefix=('Yaw_Reaction_Clamp_',)),10,begin=.0,finish=.05,parent='Yaw_Group')
+    if P.get('reaction_clamp_entry',{}).get('enabled'):
+        assign(['Pitch_Yoke'],10,begin=.0,finish=.05,parent='Yaw_Group')
+        assign(['Yaw_Reaction_Link'],10,(0,0,P['reaction_clamp_entry']['entry_Z_range_mm'][0]),begin=.07,finish=.42,parent='Yaw_Group')
+        actors['Yaw_Reaction_Link']['reaction_entry_path_linear']=True
+        # Unselected actual horn/fastener delivery remains an in-place reference,
+        # not a claim of a confirmed supplier accessory installation route.
+        assign(select('Yaw_Horn',prefix=('Yaw_Reaction_Clamp_',)),10,begin=.44,finish=.48,parent='Yaw_Group')
+    else:
+        assign(select('Pitch_Yoke','Yaw_Reaction_Link','Yaw_Horn',prefix=('Yaw_Reaction_Clamp_',)),10,begin=.0,finish=.05,parent='Yaw_Group')
     # Seat nuts on the detached yoke before lowering it into the fixed bridge.
     for n,offset in [('Head_Pitch_Ear_0_Nut',(0,12,0)),('Head_Pitch_Ear_1_Nut',(-12,0,0)),('Head_Yaw_Ear_0_Nut',(0,12,0)),('Head_Yaw_Ear_1_Nut',(0,0,-12))]:
-        assign([n],10,offset,begin=.06,finish=.24,parent='Yaw_Group')
-    assign(['Yaw_Anti_Lift_Keeper'],10,(0,60,0),begin=.27,finish=.94,parent='Yaw_Group')
+        assign([n],10,offset,begin=.50,finish=.65,parent='Yaw_Group')
+    assign(['Yaw_Anti_Lift_Keeper'],10,(0,60,0),begin=.68,finish=.96,parent='Yaw_Group')
     assign(['Yaw_Keeper_Screw_0','Yaw_Keeper_Screw_1'],22,(0,0,35),begin=.32,finish=.60,stagger=2)
     s=stages[21];r=roots['Yaw_Turn'];span=s['end']-s['start']
     for fr,angle in [(1,0),(s['start']+8,0),(s['start']+30,60),(s['start']+104,60),(s['end']-5,0),(scene.frame_end,0)]:
         r.rotation_euler.z=math.radians(angle);r.keyframe_insert(data_path='rotation_euler',frame=fr)
     s=stages[20];r=roots['Yaw_Group']
-    for fr,xyz in [(1,(0,0,64)),(s['start']+8,(0,0,64)),(s['start']+56,(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
+    for fr,xyz in [(1,(130,0,64)),(s['start']+8,(130,0,64)),(s['start']+28,(0,0,64)),(s['start']+62,(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
+    r['reaction_entry_path_linear']=True
     assign(select(prefix=('Yaw_Reaction_Retainer_',)),21,(0,24,0),begin=.78,finish=.98)
     for side,sign in [('L',-1),('R',1)]:assign(['Pitch_Bearing_'+side],11,(sign*25,0,0),begin=.01,finish=.15,parent='Yaw_Group')
     assign([n for n in actors if n.startswith('Head_Pitch_Ear_') and n.endswith('_Insert')],11,(15,0,0),begin=.01,finish=.16)
@@ -301,7 +312,21 @@ def main():
     assign(['Pitch_Cradle','Pitch_Horn'],12,begin=.02,finish=.06,parent='Head_Bench')
     assign(select(prefix=('Head_Cradle_Insert_',)),12,(0,0,12),begin=.04,finish=.16,parent='Head_Bench')
     assign(select(prefix=('CAM_Mount_Insert_',)),12,(0,12,0),begin=.04,finish=.15,parent='Head_Bench')
-    assign(select('CAM_Mainboard',prefix=('Onboard_MIC_',)),12,(0,24,0),begin=.18,finish=.35,parent='Head_Bench')
+    cam_ids=select('CAM_Mainboard',prefix=('Onboard_MIC_',))
+    if P.get('cam_orientation',{}).get('enabled'):
+        seq=P['cam_orientation']['assembly'];cam_stage=stages[11];cam_span=cam_stage['end']-cam_stage['start']
+        assign(cam_ids,12,(0,seq['forward_mm'],seq['entry_above_mm']),begin=.18,finish=.35,parent='Head_Bench')
+        for name in cam_ids:
+            o=actors[name];base=bases[name].translation.copy()
+            for fraction,offset in [(.24,(0,seq['forward_mm'],seq['lift_at_plug_insertion_mm'])),
+                                    (.28,(0,seq['forward_mm'],seq['lift_at_plug_insertion_mm'])),
+                                    (.32,(0,seq['forward_mm'],0))]:
+                move(o,cam_stage['start']+round(cam_span*fraction),base+Vector(offset))
+            # Keep each inspected straight segment straight; automatic handles
+            # can round the two corners into an unverified diagonal path.
+            o['cam_path_linear']=True
+    else:
+        assign(cam_ids,12,(0,24,0),begin=.18,finish=.35,parent='Head_Bench')
     assign(select(prefix=('CAM_Mount_Screw_',)),12,(0,18,0),begin=.37,finish=.5,parent='Head_Bench')
     s=stages[11];span=s['end']-s['start'];r=roots['Head_Bench']
     for fr,xyz in [(1,(0,0,42)),(s['start']+round(span*.52),(0,0,42)),(s['start']+round(span*.75),(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
@@ -473,7 +498,8 @@ def main():
 身体改为前后两片外壳。承重桥在身体外壳未装时单独下放、前移并锁紧。
 前壳喇叭和后壳接口板在台面分别预装；内部总成完成后，前壳沿-Y、后壳沿+Y合入。
 底部两组一体插舌定位，四枚原框架螺钉经底部工具孔锁紧；旧拼缝螺钉和嵌件取消。
-每片模块含附件的名义平移路径各检查275个位置；保存后的动画另以半帧抽样。
+每片模块含原生附件的名义平移路径各检查275个位置，不含独立插头包络。
+保存后的动画可另以半帧抽样；该项需单独的动画回读记录。
 完整软线长度、变形和带线合壳仍未完成，动画未把静态导线示意当作装配证明。
 双舵机先在离机座上锁紧；Pitch先在X+30mm处下放，再向左平移到位。
 C压板先从侧面套到转动座，随驱动座一起下放。随后转动座转60°，
@@ -488,15 +514,17 @@ M1.49采用6806ZZ轴承（30×42×7mm）；压板配对孔位为X±26.2mm，
 降压器区分：第6步的外置模块是轮驱9V（D36V50F9）和头部6V（D24V22F6）。
 第7步电源板上的U60/U70已集成运动5V和CAM 5V；没有另装两块外置5V模块。
 本视频采用{P["revision"]}主模型，运动基板与后接口板已更新为P5R7；电源P5R6、IMU P5R4。
-CAM相机排线入口朝上，屏幕排线入口朝板外；两处依据官方照片修正。
+{('M1.54将CAM USB转向机器人右侧+X；CAM端相机FPC朝左-X，屏幕FPC朝下-Z。' if P.get('cam_orientation',{}).get('enabled') else 'CAM相机排线入口朝上，屏幕排线入口朝板外；两处依据官方照片修正。')}
 M1.52仅把两枚现有反力连接试配螺母绕原孔轴转正30°，与六角槽方向一致。
-下部横向紧固的名义进入路径通过；上部舵盘夹口初次装配和最终五金选型仍未完成。
+M1.53将固定偏航桥左侧穿线口外边缘加宽0.8mm；轴承座和五金位置保持。
+{('M1.55 R2 已应用裸反力轴从下方装入的步骤；保存后路径须通过独立回读。实发舵盘与最终锁紧叠层仍待到货核对。' if P.get('reaction_clamp_entry',{}).get('enabled') else '下部横向紧固的名义进入路径通过；上部舵盘夹口初次装配和最终五金选型仍未完成。')}
 槽口/触点仅为示意，真实插深、补强片和接触面仍未确认；完整线束尚未应用。
 WeAct元件面朝上、排针朝下；先放三组排母，再插入核心板与E直排针候选。
 E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，不能据动画确认实物配合或下单。
 '''
     textblock=bpy.data.texts.get('MORI_动画使用说明') or bpy.data.texts.new('MORI_动画使用说明');textblock.clear();textblock.write(guide)
-    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成：\n\n```sh\n/Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_v1_2.blend --python mechanical/scripts/assembly_animation.py -- --width 1280 --render stills\n/Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_assembly_animation.blend -S MORI_Assembly_Animation -a\n```\n')
+    rebuild=('python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py' if P.get('reaction_clamp_entry',{}).get('enabled') else 'python mechanical/scripts/run_animation.py')
+    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成并回读验证（先成功生成当前主模型；R2 研究脚本可从 validation 资料包恢复）：\n\n```sh\n'+rebuild+'\n```\n\n[当前采用记录](../../docs/M1_55_MODEL_UPDATE.md)\n')
     script=bpy.data.texts.get('assembly_animation.py') or bpy.data.texts.new('assembly_animation.py');script.clear();script.write(Path(__file__).read_text())
     # Native saved state starts at the first assembly step, camera view ready.
     scene.frame_set(1)

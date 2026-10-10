@@ -1,0 +1,113 @@
+{
+  "recorded_utc": "2026-10-10T06:05:45.479673+00:00",
+  "status": "PASS",
+  "scope": "Review fixes: reexecuted digital pipeline, exact unchanged geometry, publication hashes and evidence restoration; not physical qualification",
+  "revision": "V1.2-M1.55",
+  "animation_revision": "V1.2-M1.55-A1",
+  "reexecuted_core_stages_verified": [
+    "build",
+    "finalize_structure_metadata",
+    "validate",
+    "render",
+    "export",
+    "export_wheel_metal",
+    "delivery_check",
+    "report"
+  ],
+  "current_validation_counts": {
+    "PASS": 27,
+    "FAIL": 0,
+    "NOT_TESTED": 10,
+    "BLOCKED": 12,
+    "NOT_APPLICABLE": 0
+  },
+  "approved_mesh_difference_mm3": 0,
+  "unchanged_native_parts_relative_to_M1_54": 200,
+  "protected_hardware_files": 846,
+  "protected_hardware_unchanged": true,
+  "regenerated_assets": {
+    "mechanical/mori_v1_2.blend": "e17e7b829069edfb6ec57f7813d303893a12ae9e90c20edc2e1ca19f8f3e3f9f",
+    "mechanical/mori_electronics_detail.blend": "de11ed5a0b013b0ef2d101d2f6356e7c3b5b5770c888fcaf62f747f977d2a139",
+    "mechanical/mori_assembly_animation.blend": "dc2286965b6b68be4ea9b1681c1464f84a6fcfef1ed55d359cce7e69ce776252",
+    "mechanical/animation/MORI_assembly.mp4": "ac6ca397cc467f46d35ae658cb9ea6ab64f54a1af8ee46ccc366af2dd644d9d4"
+  },
+  "review_geometry_equivalence": {
+    "status": "PASS",
+    "scope": "Exact native part vertices, face topology, transforms and classification before and after review-only regeneration; no physical qualification",
+    "old_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "current_blend_sha256": "e17e7b829069edfb6ec57f7813d303893a12ae9e90c20edc2e1ca19f8f3e3f9f",
+    "compared_parts": 206,
+    "compared_classification_fields": [
+      "category",
+      "data_status",
+      "verification_status",
+      "stage",
+      "export_candidate",
+      "interface_status"
+    ],
+    "new_ids": [],
+    "removed_ids": [],
+    "changed_ids": [],
+    "manufacturing_release": false
+  },
+  "existing_animation_video_evidence": {
+    "file": "MORI_assembly.mp4",
+    "bytes": 15287075,
+    "sha256": "ac6ca397cc467f46d35ae658cb9ea6ab64f54a1af8ee46ccc366af2dd644d9d4",
+    "decoded_dimensions_px": [
+      1280,
+      720
+    ],
+    "decoded_frames": 2100,
+    "decoded_fps": 24.0,
+    "duration_seconds": 87.5
+  },
+  "renders": 62,
+  "archive_members_verified": 1512,
+  "recovery_cases": [
+    "clean approval extraction and exact hashes",
+    "repeat retains existing exact files",
+    "overlapping groups accept the same exact content",
+    "existing different content causes zero writes",
+    "symlink destination rejected",
+    "non-directory ancestor causes zero writes across the entire selection",
+    "all published groups restored together with exact member hashes"
+  ],
+  "publication_navigation_links": 189,
+  "animation_delivery_files_verified": 38,
+  "unique_restored_members": 1511,
+  "full_harness": "BLOCKED",
+  "physical_validation": "NOT_TESTED",
+  "manufacturing_release": false,
+  "tool_regressions": {
+    "status": "PASS",
+    "test_count": 25,
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/tests",
+      "-v"
+    ],
+    "returncode": 0,
+    "log_sha256": "e44e19084f138aaf49acf13f6ddc1a4956edf6a232b299c7e1a3d3b9f2b4850f",
+    "recorded_utc": "2026-10-10T05:57:48.773187+00:00"
+  },
+  "secret_scan": {
+    "status": "PASS",
+    "tool": "gitleaks 8.30.1",
+    "scope": "All changed staged text and recursively expanded changed ZIP text; binaries excluded. Previous unchanged payloads retain the prior scan record.",
+    "text_files": 236,
+    "text_bytes": 27633129,
+    "current_file_checksum_false_positives": 16,
+    "unique_checksum_lines": 2,
+    "unclassified_findings": 0,
+    "default_detectors_disabled": false,
+    "repository_config_unchanged": true,
+    "exclusions": "Exact observed lines and expanded-scan path only; all 16 occurrences match two actual current source checksums.",
+    "scan_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reviewed_config_sha256": "f061c6fb57dfa7f2256a47bdf14363684ecf97011c3fa263fb16ebbea7908586"
+  }
+}

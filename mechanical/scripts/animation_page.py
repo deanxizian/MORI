@@ -3,6 +3,19 @@ from pathlib import Path
 import json,html,hashlib,re
 
 
+def reaction_entry_verified(root, manifest):
+    """Only current saved-model and saved-animation evidence permits PASS text."""
+    root = Path(root)
+    paths = [root/'reports/reaction_clamp_entry_validation.json',
+             root/'studies/reaction_clamp_R2_adoption/animation_reaction_entry.json',
+             root/'studies/reaction_clamp_R2_adoption/bench_followup.json']
+    if not all(p.is_file() for p in paths):
+        return False
+    checks = [json.loads(p.read_text()) for p in paths]
+    return (all(c.get('status') == 'PASS' and c.get('source_blend_sha256') == manifest['source_blend_sha256'] for c in checks)
+            and all(c.get('animation_blend_sha256') == manifest['animation_blend_sha256'] for c in checks[1:]))
+
+
 def generate(root):
     root=Path(root);out=root/'animation';mp=out/'manifest.json'
     if not mp.exists():return ''
@@ -46,6 +59,11 @@ def generate(root):
 <p><a href="validation.json">动画文件与视频检查</a> · <a href="manifest.json">步骤、帧号与来源记录</a> · <a href="../scripts/assembly_animation.py">可重复生成脚本</a></p></main>
 <script>const video=document.getElementById('assembly-video');const buttons=[...document.querySelectorAll('[data-time]')];for(const b of buttons)b.addEventListener('click',()=>{{video.currentTime=Number(b.dataset.time);video.play().catch(()=>{{}})}});video.addEventListener('timeupdate',()=>{{let active=buttons[0];for(const b of buttons)if(Number(b.dataset.time)<=video.currentTime)active=b;for(const b of buttons)b.classList.toggle('active',b===active)}});</script></html>'''
     config=json.loads((root.parent/'config/geometry.json').read_text())
+    r2_enabled=config.get('reaction_clamp_entry',{}).get('enabled',False)
+    r2_pass=r2_enabled and reaction_entry_verified(root,m)
+    r2_note=('M1.55 R2 裸反力轴装入已通过当前保存模型与动画回读；含镜头隐藏的已装身体零件。' if r2_pass else
+             'M1.55 R2 已应用裸反力轴装入步骤；当前本地保存后复核资料未齐或已过期，须恢复匹配资料或重新回读。')
+    r2_note+=' 实发舵盘、最终锁紧叠层、完整带线装配及实物强度仍未验证。'
     if m.get('body_sequence_readback',{}).get('status')=='PASS':
         notice='<p class="note"><b>本次已更新完整视频：</b>第9–11步改为上壳与承重桥分别支承、共同下放；桥单独下降18mm并锁两枚M3，上壳最后回正落位。第13–15步为双舵机离机预装，连同C压板一起下放；第16步转动座转60°露出孔位，从上方锁两枚M3后回正，再装俯仰头部。<a href="upper_shell_path_validation.json">已检查保存后的动画关键帧</a>；线束随动和人工支承仍待验证。</p>'
         page=page.replace('<video id="assembly-video"',notice+'<video id="assembly-video"')
@@ -64,13 +82,17 @@ def generate(root):
             if eq.get('status')=='PASS' and eq.get('current_source_blend_sha256')==m['source_blend_sha256'] and not eq.get('changed_objects'):
                 sources.add(eq['original_source_blend_sha256'])
         reaction_open=(review.get('source_blend_sha256') in sources and review.get('status')=='BLOCKED')
-    if reaction_open:
+    if reaction_open and not r2_enabled:
         page=page.replace('<video id="assembly-video"','<p class="note"><b>新增检查：反力夹口初次装配尚未闭合。</b>螺钉工具与预装穿入会被头座挡住；此视频把它作为已预装总成展示，不能作为该处初装验证。<a href="../studies/prearrival_finish/reaction_assembly_review.html">查看现有主模型的阻挡剖面</a>。</p><video id="assembly-video"')
     if m.get('body_sequence_kind')=='front_rear':
-        notice='<p class="note"><b>本版已采用前后分壳：</b>先安装并锁紧内部承重桥与头部，再分别预装前壳喇叭和后壳接口板。前后壳平移合入，由四个底部工具孔锁紧原框架螺钉；两组壳内插舌定位，旧拼缝五金取消。<a href="front_rear_path_validation.json">已回读检查保存的动画路径</a>。完整软线束随动、反力夹初装和实物配合仍未闭合。</p>'
+        remaining=('完整软线束随动、实发舵盘装配和实物配合仍未闭合。' if r2_enabled else '完整软线束随动、反力夹初装和实物配合仍未闭合。')
+        notice='<p class="note"><b>本版已采用前后分壳：</b>先安装并锁紧内部承重桥与头部，再分别预装前壳喇叭和后壳接口板。前后壳平移合入，由四个底部工具孔锁紧原框架螺钉；两组壳内插舌定位，旧拼缝五金取消。<a href="front_rear_path_validation.json">已回读检查保存的动画路径</a>。'+remaining+'</p>'
         page=re.sub(r'<p class="note"><b>本次已更新完整视频：.*?</p>',notice,page,flags=re.S)
         page=page.replace('上壳附件在独立镜头预装后切换到装入起点。','身体前后壳附件分别在台面预装后平移合入。')
-    if config.get('reaction_nut_alignment',{}).get('enabled'):
+    if r2_enabled:
+        note='<p class="note"><b>R2 已应用到主模型：</b>'+r2_note+' <a href="../../docs/M1_55_MODEL_UPDATE.md">采用记录与完整证据包</a>。</p>'
+        page=page.replace('<div class="chapters">',note+'<div class="chapters">')
+    elif config.get('reaction_nut_alignment',{}).get('enabled'):
         note='<p class="note"><b>M1.52已同步两枚试配螺母的30°转正：</b>打印件与螺钉轴不动。下部横向锁紧的螺母、螺钉和名义工具进入路径通过；上部舵盘夹口仍按预装总成演示，初装工序及最终接口未完成。<a href="../studies/prearrival_finish/reaction_access_M1_51/index.html">查看剖面与检查范围</a>。</p>'
         page=page.replace('<div class="chapters">',note+'<div class="chapters">')
     (out/'index.html').write_text(page)
@@ -79,13 +101,15 @@ def generate(root):
         section=section.replace('<h2>Blender 装配动画</h2>','<h2>Blender 装配动画</h2><p class="notice">完整视频已并入上壳／承重桥的独立分步运动，以及小舵机离机预装顺序。保留M1.44防脱压板，已应用P5R7板卡与插接候选；完整线束和舵盘资料仍待完成。</p>')
     elif config.get('interface_completion',{}).get('enabled'):
         section=section.replace('<h2>Blender 装配动画</h2>','<h2>Blender 装配动画</h2><p class="notice">当前上壳服务路径尚未通过，视频是零件与步骤展示；待确认的候选没有混入动画。</p>')
-    if reaction_open:
+    if reaction_open and not r2_enabled:
         section=section.replace('<h2>Blender 装配动画</h2>','<h2>Blender 装配动画</h2><p class="notice">反力夹口初装与工具路线仍受头座阻挡；视频中的预装总成不构成该处装配证明。<a href="studies/prearrival_finish/reaction_assembly_review.html">查看检查剖面</a>。</p>')
     if m.get('body_sequence_kind')=='front_rear':
         section=re.sub(r'<p class="notice">完整视频已并入上壳.*?</p>',
             '<p class="notice">已同步前后分壳、底部插舌及四枚框架螺钉的装配顺序。完整线束和反力夹初装仍待完成；视频不作为整机可制造或实物装配证明。</p>',section,flags=re.S)
     if config.get('reaction_nut_alignment',{}).get('enabled'):
         section=section.replace('已同步前后分壳、底部插舌及四枚框架螺钉的装配顺序。','已同步两枚试配螺母方向，以及前后分壳、底部插舌及四枚框架螺钉的装配顺序。')
+    if r2_enabled:
+        section=section.replace('完整线束和反力夹初装仍待完成；',r2_note)
     return section
 
 
