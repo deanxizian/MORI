@@ -26,7 +26,7 @@ STAGES = [
     ('基板与电源板装件', 'P5R6电源板已集成运动5V + CAM 5V；两枚M2×6固定', 96, 'body'),
     ('承重桥落座并锁紧', '外壳未装；桥下降18mm，侧向锁紧两枚M3，车轮后装', 96, 'bridge_lock'),
     ('电池托盘与电池', '台面套好20mm绑带，再把电池与托盘一起滑入；左右M2限位', 66, 'body'),
-    ('Yaw 转动座台面预装', '离机装入4枚M2螺母；C压板从侧面套入转动座', 78, 'head_bench'),
+    ('Yaw 转动座台面预装', '离机从下方装入反力轴；再装4枚M2螺母和C压板；实际舵盘配套仍待确认', 120, 'head_bench'),
     ('双舵机台面预装', 'Pitch先在右侧上方下放，再左移30mm；锁紧后装倒置Yaw', 144, 'head_bench'),
     ('CAM固定与头托', 'USB朝右；向前错开2mm下放，抬高8mm时预接USB，再落座并锁四枚M2', 96, 'head'),
     ('显示与摄像头', '先在台面用3枚M2×12固定LCD；装叉架，再插入相机，无独立压盖', 78, 'optics'),
@@ -70,7 +70,7 @@ def smooth(o):
         for k in fc.keyframe_points:
             if fc.data_path in ['hide_render', 'hide_viewport']:
                 k.interpolation = 'CONSTANT'
-            elif o.get('cam_path_linear') and fc.data_path=='location':
+            elif (o.get('cam_path_linear') or o.get('reaction_entry_path_linear')) and fc.data_path=='location':
                 k.interpolation = 'LINEAR'
             else:
                 k.interpolation = 'BEZIER'
@@ -276,17 +276,26 @@ def main():
     s=stages[8];span=s['end']-s['start'];r=roots['Battery_Bench']
     for fr,xyz in [(1,(0,80,0)),(s['start']+round(span*.53),(0,80,0)),(s['start']+round(span*.78),(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
     for sign in [-1,1]:assign(['Battery_Retainer_Screw_'+str(sign)],9,(sign*22,0,0),begin=.78,finish=.96)
-    assign(select('Pitch_Yoke','Yaw_Reaction_Link','Yaw_Horn',prefix=('Yaw_Reaction_Clamp_',)),10,begin=.0,finish=.05,parent='Yaw_Group')
+    if P.get('reaction_clamp_entry',{}).get('enabled'):
+        assign(['Pitch_Yoke'],10,begin=.0,finish=.05,parent='Yaw_Group')
+        assign(['Yaw_Reaction_Link'],10,(0,0,P['reaction_clamp_entry']['entry_Z_range_mm'][0]),begin=.07,finish=.42,parent='Yaw_Group')
+        actors['Yaw_Reaction_Link']['reaction_entry_path_linear']=True
+        # Unselected actual horn/fastener delivery remains an in-place reference,
+        # not a claim of a confirmed supplier accessory installation route.
+        assign(select('Yaw_Horn',prefix=('Yaw_Reaction_Clamp_',)),10,begin=.44,finish=.48,parent='Yaw_Group')
+    else:
+        assign(select('Pitch_Yoke','Yaw_Reaction_Link','Yaw_Horn',prefix=('Yaw_Reaction_Clamp_',)),10,begin=.0,finish=.05,parent='Yaw_Group')
     # Seat nuts on the detached yoke before lowering it into the fixed bridge.
     for n,offset in [('Head_Pitch_Ear_0_Nut',(0,12,0)),('Head_Pitch_Ear_1_Nut',(-12,0,0)),('Head_Yaw_Ear_0_Nut',(0,12,0)),('Head_Yaw_Ear_1_Nut',(0,0,-12))]:
-        assign([n],10,offset,begin=.06,finish=.24,parent='Yaw_Group')
-    assign(['Yaw_Anti_Lift_Keeper'],10,(0,60,0),begin=.27,finish=.94,parent='Yaw_Group')
+        assign([n],10,offset,begin=.50,finish=.65,parent='Yaw_Group')
+    assign(['Yaw_Anti_Lift_Keeper'],10,(0,60,0),begin=.68,finish=.96,parent='Yaw_Group')
     assign(['Yaw_Keeper_Screw_0','Yaw_Keeper_Screw_1'],22,(0,0,35),begin=.32,finish=.60,stagger=2)
     s=stages[21];r=roots['Yaw_Turn'];span=s['end']-s['start']
     for fr,angle in [(1,0),(s['start']+8,0),(s['start']+30,60),(s['start']+104,60),(s['end']-5,0),(scene.frame_end,0)]:
         r.rotation_euler.z=math.radians(angle);r.keyframe_insert(data_path='rotation_euler',frame=fr)
     s=stages[20];r=roots['Yaw_Group']
-    for fr,xyz in [(1,(0,0,64)),(s['start']+8,(0,0,64)),(s['start']+56,(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
+    for fr,xyz in [(1,(130,0,64)),(s['start']+8,(130,0,64)),(s['start']+28,(0,0,64)),(s['start']+62,(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
+    r['reaction_entry_path_linear']=True
     assign(select(prefix=('Yaw_Reaction_Retainer_',)),21,(0,24,0),begin=.78,finish=.98)
     for side,sign in [('L',-1),('R',1)]:assign(['Pitch_Bearing_'+side],11,(sign*25,0,0),begin=.01,finish=.15,parent='Yaw_Group')
     assign([n for n in actors if n.startswith('Head_Pitch_Ear_') and n.endswith('_Insert')],11,(15,0,0),begin=.01,finish=.16)

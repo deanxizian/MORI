@@ -1,5 +1,59 @@
 [
   {
+    "stage": "body_sequence",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_body_sequence_current.py"
+    ],
+    "started_utc": "2026-10-08T17:41:54.590433+00:00",
+    "finished_utc": "2026-10-08T17:42:09.552806+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/body_sequence.log",
+    "log_sha256": "9e8b7306c6c3e7a6ad0b7a355bacc6fee41432c2c9c7586e8fc316d7cb20502e"
+  },
+  {
+    "stage": "electronics",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-10-08T17:42:09.662363+00:00",
+    "finished_utc": "2026-10-08T17:43:01.432038+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/electronics.log",
+    "log_sha256": "54e52a3906c2bf49d44817af3659aa543088059ea7330d0c8d42e4c1f50c69a4"
+  },
+  {
+    "stage": "electronics_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_electronics_detail.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-10-08T17:43:01.525977+00:00",
+    "finished_utc": "2026-10-08T17:43:06.113507+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/electronics_check.log",
+    "log_sha256": "7df4a81dc8cb4656fea957f3bcd50860bc02b8a06d1138c3446a0bced9e7feee"
+  },
+  {
     "stage": "animation_build",
     "command": [
       "/Applications/Blender.app/Contents/MacOS/Blender",
@@ -17,12 +71,12 @@
       "--render",
       "stills"
     ],
-    "started_utc": "2026-10-08T02:56:10.416821+00:00",
-    "finished_utc": "2026-10-08T02:56:25.321787+00:00",
+    "started_utc": "2026-10-08T17:43:06.252324+00:00",
+    "finished_utc": "2026-10-08T17:43:19.546815+00:00",
     "returncode": 0,
-    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
-    "log": "studies/cam_right_adoption/animation_build.log",
-    "log_sha256": "a9b898474773198a283941beb7db22bb7a6eec733a2b83241efe5ac2d141c1be"
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/animation_build.log",
+    "log_sha256": "6a048eeab29884f9f72a9ebc0c03271ad2af78a09e609b782ffa4cb6d81befeb"
   },
   {
     "stage": "animation_native",
@@ -37,12 +91,30 @@
       "--",
       "--native-only"
     ],
-    "started_utc": "2026-10-08T02:56:25.507017+00:00",
-    "finished_utc": "2026-10-08T02:57:29.435344+00:00",
+    "started_utc": "2026-10-08T17:43:19.689361+00:00",
+    "finished_utc": "2026-10-08T17:44:19.853289+00:00",
     "returncode": 0,
-    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
-    "log": "studies/cam_right_adoption/animation_native.log",
-    "log_sha256": "a9d5b0cffa5b43709a8d3aabef3d5bfd73f62afd791fba5eba11c0b42a05b868"
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/animation_native.log",
+    "log_sha256": "bf3fca848dbe35625ac83dadaf7b8cdd16a8b4d90b07343877bc9bfc51d74d6f"
+  },
+  {
+    "stage": "animation_R2_entry",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/reaction_clamp_R2_adoption/check_animation_entry.py"
+    ],
+    "started_utc": "2026-10-08T17:44:19.947970+00:00",
+    "finished_utc": "2026-10-08T17:44:47.996415+00:00",
+    "returncode": 0,
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/animation_R2_entry.log",
+    "log_sha256": "0edd446c521256a0ec525e6fa8daabc0e97e7e281cbc9c5a352176475b37ce70"
   },
   {
     "stage": "animation_video",
@@ -53,14 +125,14 @@
       "1",
       "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
       "--python",
-      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/cam_right_adoption/render_video.py"
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/reaction_clamp_R2_adoption/render_video.py"
     ],
-    "started_utc": "2026-10-08T02:57:29.565676+00:00",
-    "finished_utc": "2026-10-08T03:04:19.157415+00:00",
+    "started_utc": "2026-10-08T17:44:48.088033+00:00",
+    "finished_utc": "2026-10-08T17:50:56.172756+00:00",
     "returncode": 0,
-    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
-    "log": "studies/cam_right_adoption/animation_video.log",
-    "log_sha256": "f7656e2f872e47e9470c33a3e5667524c177c4c8ea00150331ee2722d3efaeea"
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/animation_video.log",
+    "log_sha256": "e5a1c3f521699e1d77bdd611aa7dc9857339f05099c43f29d1e0a4863d925c29"
   },
   {
     "stage": "animation_check",
@@ -73,29 +145,58 @@
       "--python",
       "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_assembly_animation.py"
     ],
-    "started_utc": "2026-10-08T03:04:19.224524+00:00",
-    "finished_utc": "2026-10-08T03:05:03.117653+00:00",
+    "started_utc": "2026-10-08T17:50:56.247314+00:00",
+    "finished_utc": "2026-10-08T17:51:35.129408+00:00",
     "returncode": 0,
-    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
-    "log": "studies/cam_right_adoption/animation_check.log",
-    "log_sha256": "f6916fb653117227ff60eaadae51e22f077e578461b03091af3ade1e21efff5b"
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/animation_check.log",
+    "log_sha256": "4b687b71322209a784b2c87c7d9b23ddbfa015ad351c0246461efb17432d8eaf"
   },
   {
-    "stage": "animation_cam_readback",
+    "stage": "publish_animation",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/publish_animation_update.py"
+    ],
+    "started_utc": "2026-10-08T17:51:35.200394+00:00",
+    "finished_utc": "2026-10-08T17:51:35.398170+00:00",
+    "returncode": 1,
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/publish_animation.log",
+    "log_sha256": "6f812b7f000b8bfc9bf4dbd65b2414e5acf4a162c71e94bcf94e32755b14a54b",
+    "retry_verification": "PASS",
+    "resolved_by_stage": "publish_current",
+    "diagnostic": "Versioned changelog was absent; publish_current supplies it and successful publication receipt verifies final outputs."
+  },
+  {
+    "stage": "bench_followup",
     "command": [
       "/Applications/Blender.app/Contents/MacOS/Blender",
       "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
       "--python-exit-code",
       "1",
-      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_assembly_animation.blend",
       "--python",
-      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/cam_right_adoption/check_animation_cam.py"
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/reaction_clamp_R2_adoption/check_bench_followup.py"
     ],
-    "started_utc": "2026-10-08T03:05:03.182587+00:00",
-    "finished_utc": "2026-10-08T03:05:08.091099+00:00",
     "returncode": 0,
-    "source_blend_sha256": "37ceead52fc9348a10a6500774ac56fd8c71fe301a1dee499b157c6848a7511c",
-    "log": "studies/cam_right_adoption/animation_cam_readback.log",
-    "log_sha256": "d11d11a3f7e35f34ad12bc67c2a9478477861b217311decda3df248cf5f026f5"
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/bench_followup.log",
+    "log_sha256": "a7c7878d1b16ddf688868677969b4c267c38a7a3ec3b5c8dd0b361c60f0185bf",
+    "log_modified_utc": "2026-10-08T17:57:53.862597+00:00",
+    "recorded_from": "Executed tool command and completed log; no inferred execution-start timestamp"
+  },
+  {
+    "stage": "publish_current",
+    "command": [
+      "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/reaction_clamp_R2_adoption/publish_current.py"
+    ],
+    "returncode": 0,
+    "source_blend_sha256": "3587b9139f2969df22a0b11826ebb41091fbbe6997c28a30e7d1287848e5c9da",
+    "log": "studies/reaction_clamp_R2_adoption/publish_current.log",
+    "log_sha256": "19ace2bde56d93a6efb28b70a8eac73ba17d9553bfe7492cb0f654e6f527e4d9",
+    "log_modified_utc": "2026-10-08T18:04:38.053341+00:00",
+    "recorded_from": "Executed tool command and completed log; no inferred execution-start timestamp"
   }
 ]

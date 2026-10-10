@@ -1,9 +1,9 @@
 # MORI 装配动画
 
-MORI 装配动画 / V1.2-M1.54-A1
+MORI 装配动画 / V1.2-M1.55-A1
 
 当前场景：MORI_Assembly_Animation。空格播放，Shift+左方向键回到开头。
-总长 85.75 秒，24 fps，共 2058 帧。
+总长 87.50 秒，24 fps，共 2100 帧。
 时间轴的 22 个中文标记同时切换对应相机。每个零件保留独立物体与关键帧。
 在 Outliner 按步骤展开集合；选零件，在 Dope Sheet / Graph Editor 调整时间。
 原始 MORI_V1_Assembly 场景保留真实总装与运动轴，可切回检查尺寸。
@@ -26,11 +26,11 @@ M1.49采用6806ZZ轴承（30×42×7mm）；压板配对孔位为X±26.2mm，
 
 降压器区分：第6步的外置模块是轮驱9V（D36V50F9）和头部6V（D24V22F6）。
 第7步电源板上的U60/U70已集成运动5V和CAM 5V；没有另装两块外置5V模块。
-本视频采用V1.2-M1.54主模型，运动基板与后接口板已更新为P5R7；电源P5R6、IMU P5R4。
+本视频采用V1.2-M1.55主模型，运动基板与后接口板已更新为P5R7；电源P5R6、IMU P5R4。
 M1.54将CAM USB转向机器人右侧+X；CAM端相机FPC朝左-X，屏幕FPC朝下-Z。
 M1.52仅把两枚现有反力连接试配螺母绕原孔轴转正30°，与六角槽方向一致。
 M1.53将固定偏航桥左侧穿线口外边缘加宽0.8mm；轴承座和五金位置保持。
-下部横向紧固的名义进入路径通过；上部舵盘夹口初次装配和最终五金选型仍未完成。
+M1.55 R2 解决裸反力轴装入阻挡；实发舵盘与最终锁紧叠层仍待到货核对。
 槽口/触点仅为示意，真实插深、补强片和接触面仍未确认；完整线束尚未应用。
 WeAct元件面朝上、排针朝下；先放三组排母，再插入核心板与E直排针候选。
 E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，不能据动画确认实物配合或下单。
@@ -41,3 +41,18 @@ E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，�
 /Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_v1_2.blend --python mechanical/scripts/assembly_animation.py -- --width 1280 --render stills
 /Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_assembly_animation.blend -S MORI_Assembly_Animation -a
 ```
+
+## M1.55 裸打印件装入复核
+
+第11个播放章节（来源步骤10）先离机从下方装入裸反力轴。
+保存后的动画回读85个半帧位置；100mm直线行程分成294个连续区间，间隙下界≥0.3mm。
+另外保留镜头隐藏的102件已装身体零件，台面装入路径同样通过。
+试配舵盘和紧固件的示意不确认实发附件；完整柔性线束与真实装配仍未完成。
+
+完整本版派生文件和页面重新生成（需先成功生成并复核当前主模型）：
+
+```sh
+python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py
+```
+
+[当前采用记录](../../docs/M1_55_MODEL_UPDATE.md)

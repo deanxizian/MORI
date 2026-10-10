@@ -504,6 +504,9 @@ def v12_checks(solids):
 
 
 def main():
+    if P.get('reaction_clamp_entry',{}).get('enabled'):
+        from validate_reaction_clamp_entry import run_current
+        return run_current()
     if P.get('cam_orientation',{}).get('enabled'):
         from validate_cam_orientation import run_current
         return run_current()

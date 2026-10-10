@@ -1,11 +1,12 @@
 # 当前项目资料索引
 
-资料基线为 M1.54／P5R7，整理日期 2026-10-08；工程仍为 PROTOTYPE / UNVALIDATED。
+资料基线为 M1.55／P5R7，整理日期 2026-10-10；工程仍为 PROTOTYPE / UNVALIDATED。
 
 | 内容 | 当前入口 |
 |---|---|
 | PR 顺序与依赖 | [REVIEW_STACK](REVIEW_STACK.md) |
-| 当前状态与未完成项 | [CURRENT_STATUS](CURRENT_STATUS.md) · [M1.54 更新](M1_54_MODEL_UPDATE.md) |
+| 当前状态与未完成项 | [CURRENT_STATUS](CURRENT_STATUS.md) · [M1.55 更新](M1_55_MODEL_UPDATE.md) |
+| 到货前工作与研究证据 | [待补资料](PREARRIVAL_BLOCKERS.md) · [研究摘要](../mechanical/studies/harness_M1_55_summary/index.html) · [证据包清单](review_evidence/M1_55_archives.json) |
 | 规格与规则 | [V1.2](../MORI_SPEC_V1_2.md) · [AGENTS](../AGENTS.md) |
 | 机械唯一尺寸源 | [geometry.json](../config/geometry.json) · [机械接口](../contracts/mechanical_interfaces.json) |
 | 硬件选型与电气契约 | [components](../contracts/components.json) · [electrical_interfaces](../contracts/electrical_interfaces.json) |
