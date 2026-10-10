@@ -517,13 +517,14 @@ M1.49采用6806ZZ轴承（30×42×7mm）；压板配对孔位为X±26.2mm，
 {('M1.54将CAM USB转向机器人右侧+X；CAM端相机FPC朝左-X，屏幕FPC朝下-Z。' if P.get('cam_orientation',{}).get('enabled') else 'CAM相机排线入口朝上，屏幕排线入口朝板外；两处依据官方照片修正。')}
 M1.52仅把两枚现有反力连接试配螺母绕原孔轴转正30°，与六角槽方向一致。
 M1.53将固定偏航桥左侧穿线口外边缘加宽0.8mm；轴承座和五金位置保持。
-下部横向紧固的名义进入路径通过；上部舵盘夹口初次装配和最终五金选型仍未完成。
+{('M1.55 R2 已应用裸反力轴从下方装入的步骤；保存后路径须通过独立回读。实发舵盘与最终锁紧叠层仍待到货核对。' if P.get('reaction_clamp_entry',{}).get('enabled') else '下部横向紧固的名义进入路径通过；上部舵盘夹口初次装配和最终五金选型仍未完成。')}
 槽口/触点仅为示意，真实插深、补强片和接触面仍未确认；完整线束尚未应用。
 WeAct元件面朝上、排针朝下；先放三组排母，再插入核心板与E直排针候选。
 E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，不能据动画确认实物配合或下单。
 '''
     textblock=bpy.data.texts.get('MORI_动画使用说明') or bpy.data.texts.new('MORI_动画使用说明');textblock.clear();textblock.write(guide)
-    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成：\n\n```sh\n/Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_v1_2.blend --python mechanical/scripts/assembly_animation.py -- --width 1280 --render stills\n/Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_assembly_animation.blend -S MORI_Assembly_Animation -a\n```\n')
+    rebuild=('python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py' if P.get('reaction_clamp_entry',{}).get('enabled') else 'python mechanical/scripts/run_animation.py')
+    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成并回读验证（先成功生成当前主模型；R2 研究脚本可从 validation 资料包恢复）：\n\n```sh\n'+rebuild+'\n```\n\n[当前采用记录](../../docs/M1_55_MODEL_UPDATE.md)\n')
     script=bpy.data.texts.get('assembly_animation.py') or bpy.data.texts.new('assembly_animation.py');script.clear();script.write(Path(__file__).read_text())
     # Native saved state starts at the first assembly step, camera view ready.
     scene.frame_set(1)

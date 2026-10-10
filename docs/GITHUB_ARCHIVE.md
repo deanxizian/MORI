@@ -47,9 +47,9 @@ python3 tools/restore_archive_assets.py --group mechanical-data --group legacy-h
 
 ## M1.55 资料更新
 
-2026-10-10 更新同一份 [PR #13](https://github.com/deanxizian/MORI/pull/13)，尚未合并到 main。审阅最新模型时使用 `codex/mechanical-m1-54-model-sync` 分支；合并后才由 main 提供这一版。
+2026-10-10 更新同一份 [PR #13](https://github.com/deanxizian/MORI/pull/13)，合并状态以该 PR 页面为准。可从 PR 文件页或合并后的 main 查看这一版，具体文件哈希以 [current_assets.json](current_assets.json) 为准。
 
-三份 Blender 工程继续用 Git LFS。新增批准输入、几何执行证据和未采用线束记录分别为普通 Git ZIP，约 1.33、14.29 和 36.79 MiB，无需新增 LFS 规则。成员哈希和未包含的本地研究资产见 [包清单](review_evidence/M1_55_archives.json)。
+三份 Blender 工程继续用 Git LFS。批准输入、几何执行证据、未采用线束记录及 H06 引用报告使用普通 Git ZIP，无需新增 LFS 规则。包大小、成员哈希和未包含的本地研究资产见 [包清单](review_evidence/M1_55_archives.json)。[H06 引用资料](H06_REFERENCE_RECORDS.md) 区分历史容量研究、材料失败与当前未闭合项。
 
 ```sh
 python3 tools/restore_m1_55_evidence.py --list

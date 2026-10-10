@@ -30,26 +30,12 @@ M1.49采用6806ZZ轴承（30×42×7mm）；压板配对孔位为X±26.2mm，
 M1.54将CAM USB转向机器人右侧+X；CAM端相机FPC朝左-X，屏幕FPC朝下-Z。
 M1.52仅把两枚现有反力连接试配螺母绕原孔轴转正30°，与六角槽方向一致。
 M1.53将固定偏航桥左侧穿线口外边缘加宽0.8mm；轴承座和五金位置保持。
-M1.55 R2 解决裸反力轴装入阻挡；实发舵盘与最终锁紧叠层仍待到货核对。
+M1.55 R2 已应用裸反力轴从下方装入的步骤；保存后路径须通过独立回读。实发舵盘与最终锁紧叠层仍待到货核对。
 槽口/触点仅为示意，真实插深、补强片和接触面仍未确认；完整线束尚未应用。
 WeAct元件面朝上、排针朝下；先放三组排母，再插入核心板与E直排针候选。
 E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，不能据动画确认实物配合或下单。
 
-重新生成：
-
-```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_v1_2.blend --python mechanical/scripts/assembly_animation.py -- --width 1280 --render stills
-/Applications/Blender.app/Contents/MacOS/Blender --background --python-exit-code 1 mechanical/mori_assembly_animation.blend -S MORI_Assembly_Animation -a
-```
-
-## M1.55 裸打印件装入复核
-
-第11个播放章节（来源步骤10）先离机从下方装入裸反力轴。
-保存后的动画回读85个半帧位置；100mm直线行程分成294个连续区间，间隙下界≥0.3mm。
-另外保留镜头隐藏的102件已装身体零件，台面装入路径同样通过。
-试配舵盘和紧固件的示意不确认实发附件；完整柔性线束与真实装配仍未完成。
-
-完整本版派生文件和页面重新生成（需先成功生成并复核当前主模型）：
+重新生成并回读验证（先成功生成当前主模型；R2 研究脚本可从 validation 资料包恢复）：
 
 ```sh
 python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py

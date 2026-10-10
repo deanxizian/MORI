@@ -133,7 +133,9 @@ def run_current():
     probe-=manifold.Manifold.cylinder(b-a+.02,skin['inner_radius_mm'],skin['inner_radius_mm'],256).translate([0,0,a-.01])
     skin_diff=sym(current^probe,old^probe)
     before=json.loads((PROJECT/baseline['snapshot']/'config/geometry.json').read_text());config=copy.deepcopy(P);config.pop('reaction_clamp_entry');config.pop('revision');before.pop('revision')
-    excluded=[n for n in baseline['protected_hardware'] if '__pycache__' in Path(n).parts and Path(n).suffix=='.pyc']
+    # Finder view metadata and Python bytecode are not native hardware sources.
+    # Keep all PCB, contract, drawing and research source hashes protected.
+    excluded=[n for n in baseline['protected_hardware'] if Path(n).name=='.DS_Store' or ('__pycache__' in Path(n).parts and Path(n).suffix=='.pyc')]
     drift=[n for n,h in baseline['protected_hardware'].items() if n not in excluded and sha(PROJECT/n)!=h]
     scope=dict(changed_ids=changed,unchanged_native_parts=len(ss)-len(changed),part_count=len(ss),new_ids=[],retired_ids=[],
         changed_transform_ids=matrices,approved_mesh_difference_mm3=difference,comparison_limit_mm3=q['numerical_comparison_limit_mm3'],
