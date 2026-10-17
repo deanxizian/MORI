@@ -1,0 +1,499 @@
+{
+  "revision": "TEST_RIG_R55_OUTER_EDGE_ROUNDOVER",
+  "status": "PROTOTYPE / UNVALIDATED",
+  "units": "mm",
+  "axes": "+X right, +Y forward, +Z up",
+  "baseline": "../r41",
+  "user_confirmations": {
+    "layers": "2026-10-12: Only second layer now; display, CAM, BUCK and supplied speaker. Preserve third-layer expansion. No head servos in current phase.",
+    "orientation": "2026-10-12: Display face up horizontally on second layer now; move display to third layer in future. User confirmed central stack over speaker after feasibility review.",
+    "speaker": "CAM supplied speaker: user reports26x26mm, approximately3.5mm thick, supplied self-adhesive; use directly, no added tape stack",
+    "camera": "Latest2026-10-12: Keep existing short camera flex and camera at factory CAM-board location. Do not make a separate mount now. User will provide longer-flex camera before third-layer design.",
+    "lower_display": "2026-10-12 user requests lower screen support. Engineering implementation4mm posts andM2x10, retaining2mm nominal engagement. Exact4mm chosen from CAD clearance screening, not a user physical measurement.",
+    "corner_supports": "2026-10-12: User explicitly requests off-the-shelf standoffs instead of 3D-printed corner supports; implement with same corner holes for future stacking.",
+    "cable_layout": "2026-10-12: User authorizes placing second-layer cable holes according to actual component layout; first-layer alignment is optional.",
+    "remove_front_cable_slot": "2026-10-12: User marks the single front-center slot in screenshot and requests its removal. Preserve the two slots beside the circular LCD.",
+    "widen_remaining_slots": "2026-10-12: User approves width8 x total length12mm for both retained cable apertures.",
+    "square_expansion_holes": "2026-10-13: User confirms the four inner expansion holes should form a square; retain round holes. Choose48x48mm, preserving existing Y rows and moving X columns inward18mm each.",
+    "enlarge_square_expansion_holes": "2026-10-13: User requests enlarging square approximately to the distance between the two cable slots. Use documented slot center distance64mm to set64x64mm square, still centered, hole diameter2.8mm. Exact center-distance interpretation is an engineering choice within approximate requested size.",
+    "outer_edge_roundover": "2026-10-13: User reports missing small edge radii and requests completion before upload. Apply established first-layer R0.4 touch-edge treatment to the second plate outer upper/lower edges; no post thickening is authorized."
+  },
+  "expansion": {
+    "hole_centers_xy": [
+      [
+        -74,
+        -34
+      ],
+      [
+        -74,
+        34
+      ],
+      [
+        74,
+        -34
+      ],
+      [
+        74,
+        34
+      ]
+    ],
+    "hole_diameter": 2.8,
+    "original_deck_top": 74,
+    "plate_bottom": 109,
+    "plate_top": 113,
+    "outline": [
+      160,
+      80
+    ],
+    "thickness": 4,
+    "corner_radius": 6,
+    "third_layer": {
+      "installed": false,
+      "hole_centers_xy": [
+        [
+          -32.0,
+          -32.0
+        ],
+        [
+          -32.0,
+          32.0
+        ],
+        [
+          32.0,
+          -32.0
+        ],
+        [
+          32.0,
+          32.0
+        ]
+      ],
+      "pitch": [
+        64,
+        64
+      ],
+      "hole_diameter": 2.8,
+      "nominal_future_leg_diameter": 8,
+      "future_plate_bottom": 139,
+      "interface_origin": "Four inner64x64 square expansion holes on second plate; full-size stacking still uses original148x68 corner axes.",
+      "preferred_same_axis_hole_centers_xy": [
+        [
+          -74,
+          -34
+        ],
+        [
+          -74,
+          34
+        ],
+        [
+          74,
+          -34
+        ],
+        [
+          74,
+          34
+        ]
+      ],
+      "preferred_same_axis_pitch": [
+        148,
+        68
+      ],
+      "same_axis_connection": {
+        "status": "CAPACITY_PROPOSAL_ONLY",
+        "lower_post": "current M2.5 female/female35mm",
+        "upper_post": "off-the-shelf M2.5 female/female; body height selected with future third layer",
+        "middle_plate_thickness": 4,
+        "example_stud_thread": "M2.5x0.45",
+        "example_stud_length": 12,
+        "example_entry_each_end_mm": 4,
+        "note": "Remove only second-layer top screws/washers; bridge middle plate with headless threaded studs into upper/lower posts. No third layer installed now. Hold lower posts with wrench during assembly; do not claim independent lower-joint clamping when upper posts are removed."
+      }
+    },
+    "corner_support_type": "PURCHASED_REFERENCE",
+    "standoff": {
+      "supplier": "Vital Parts",
+      "manufacturer": "not separately identified by supplier",
+      "sku": "HFF-M2.5-35-S5-NPB",
+      "type": "female/female",
+      "thread": "M2.5x0.45",
+      "body_length_mm": 35,
+      "across_flats_mm": 5,
+      "female_thread_length_each_end_mm": 10,
+      "material": "nickel plated brass",
+      "bottom_z": 74,
+      "top_z": 109,
+      "evidence": "VENDOR_DOCUMENTED dimensions, simplified reconstructed body; no original vendor CAD",
+      "unknowns": [
+        "dimensional tolerances",
+        "un dimensioned end chamfers",
+        "actual purchased supplier revision",
+        "thread lead-in and drill tip"
+      ]
+    },
+    "corner_fastener": {
+      "thread": "M2.5x0.45",
+      "length": 8,
+      "head_diameter": 5,
+      "head_height": 2.1,
+      "washer_od": 6,
+      "washer_id": 2.7,
+      "washer_thickness": 0.5,
+      "nominal_entry": 3.5,
+      "type": "Phillips pan head, nominal envelope"
+    }
+  },
+  "electronics": {
+    "CAM33700": {
+      "center": [
+        55,
+        0,
+        118.8
+      ],
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          55
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          118.8
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "mount_centers_xy": [
+        [
+          38.7,
+          -16.3
+        ],
+        [
+          38.7,
+          16.3
+        ],
+        [
+          71.3,
+          -16.3
+        ],
+        [
+          71.3,
+          16.3
+        ]
+      ],
+      "post_height": 5,
+      "post_diameter": 5.6,
+      "trial_hole_diameter": 2.2,
+      "orientation": "Horizontal; camera/SD side up, USB toward rear -Y; camera FPC exit +Y according to prior photo direction receipt"
+    },
+    "BUCK_6V": {
+      "center_xy": [
+        -56,
+        -2
+      ],
+      "transform": [
+        [
+          0,
+          -1,
+          0,
+          -45.25
+        ],
+        [
+          1,
+          0,
+          0,
+          -19
+        ],
+        [
+          0,
+          0,
+          1,
+          119.6
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "mount_centers_xy": [
+        [
+          -63.194,
+          -15.233
+        ],
+        [
+          -55.986,
+          11.544
+        ]
+      ],
+      "post_height": 5,
+      "post_diameter": 5.6,
+      "trial_hole_diameter": 2.2,
+      "vendor_family_step": "sources/DC BUCK Adapter (7.2V).step",
+      "exact_6V_revision_match": "NOT_TESTED"
+    },
+    "speaker": {
+      "manufacturer": "Waveshare supplied accessory",
+      "exact_sku": "UNKNOWN",
+      "size_xyz_mm": [
+        26,
+        26,
+        3.5
+      ],
+      "size_evidence": "MEASURED approximate user ruler estimate; tolerance unknown",
+      "center_xy": [
+        0,
+        -3
+      ],
+      "bottom_z": 113,
+      "adhesive": "Existing factory adhesive, no separate tape or spacer added",
+      "reserved_flat_zone_xy": [
+        28,
+        28
+      ],
+      "surface_position": "Flat central plate under LCD, original adhesive; LCD supported by three separate integral posts without loading speaker.",
+      "lead_direction": "UNKNOWN; open approaches around footprint; actual lead length not measured",
+      "model_detail": "Rectangular dimensional envelope only, acoustic/front/back details UNKNOWN"
+    }
+  },
+  "optics": {
+    "LCD_center": [
+      0,
+      0,
+      126.1
+    ],
+    "LCD_transform": [
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        125.4
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "LCD_mount_axes_xy": [
+      [
+        0,
+        -20.94
+      ],
+      [
+        -14.84924240492,
+        14.90924240492
+      ],
+      [
+        14.84924240492,
+        14.90924240492
+      ]
+    ],
+    "LCD_rear_mount_plane_z": 117,
+    "post_height": 4,
+    "post_diameter": 6,
+    "LCD_trial_bore": 2.2,
+    "support": "Three integral short posts on second platform, no separate display bracket; removal upwards after undoing three screws from below with second layer detached.",
+    "screw": {
+      "diameter": 2,
+      "length": 10,
+      "head_diameter": 3.5,
+      "head_height": 1.3,
+      "head_bearing_z": 109,
+      "grip_length": 8,
+      "nominal_thread_entry": 2,
+      "evidence": "ASSUMED nominal machine screw; LCD blind thread depth and physical screw selection unverified"
+    },
+    "camera_fastening": "DEFERRED_BY_USER",
+    "camera_geometry": "Current short-flex camera physical pose on CAM board unknown; not independently positioned or detached in this CAD. Clear open CAM-side space retained; no claim of complete installed camera fit.",
+    "current_camera_separate_mount": false,
+    "future_display": "Transfer display to third layer later; current third interface preserved, no third platform built now."
+  },
+  "limits": {
+    "physical_fit": "NOT_TESTED",
+    "print_strength": "NOT_TESTED",
+    "FFC_reach_and_pin_mapping": "NOT_TESTED",
+    "camera_final_clamp_dimensions": "NOT_APPLICABLE: separate mount deferred by user",
+    "third_layer_motion": "NOT_APPLICABLE current fixed phase",
+    "balancing_with_payload": "NOT_TESTED",
+    "manufacturing_release": "BLOCKED pending trial interfaces and cable selection"
+  },
+  "electrical_files_changed": false,
+  "scope": "Add R0.4 to the complete upper and lower outside perimeter of the second platform only. Keep R54 bores, slots, posts, envelope and installed parts.",
+  "cable_apertures": [
+    {
+      "id": "W1",
+      "center_xy_mm": [
+        -32,
+        0
+      ],
+      "shape": "OBROUND",
+      "width_mm": 8,
+      "total_length_mm": 12,
+      "end_radius_mm": 4,
+      "lip_radius_mm": 0.3,
+      "long_axis": "Y",
+      "through_z_mm": [
+        109,
+        113
+      ],
+      "entry_mode": "OPEN_ABOVE",
+      "evidence": "ASSUMED design placement authorized by user",
+      "physical_fit": "NOT_TESTED",
+      "note": "Located outside current screen, speaker and board footprints; no requirement to align with first layer. Connector and full cable route fit remains untested."
+    },
+    {
+      "id": "W3",
+      "center_xy_mm": [
+        32,
+        0
+      ],
+      "shape": "OBROUND",
+      "width_mm": 8,
+      "total_length_mm": 12,
+      "end_radius_mm": 4,
+      "lip_radius_mm": 0.3,
+      "long_axis": "Y",
+      "through_z_mm": [
+        109,
+        113
+      ],
+      "entry_mode": "OPEN_ABOVE",
+      "evidence": "ASSUMED design placement authorized by user",
+      "physical_fit": "NOT_TESTED",
+      "note": "Located outside current screen, speaker and board footprints; no requirement to align with first layer. Connector and full cable route fit remains untested."
+    }
+  ],
+  "third_layer": {
+    "scope": "UNCHANGED, deferred by user",
+    "full_reference_baseline": "../r49/test_rig_R49_SCHEMATIC.blend",
+    "primary_view": "Two-layer assembly derived from R46; R49 complete reference additionally updated only at second plate"
+  },
+  "cable_layout": {
+    "status": "APPLIED",
+    "alignment_with_first_layer": "NOT_REQUIRED_BY_USER",
+    "locations": "W1 left of LCD, W3 between LCD and CAM; front W2 removed",
+    "speaker_adhesive_zone_preserved": true,
+    "first_layer_unchanged": true,
+    "previous_R50_side_holes": "Replaced, not retained in addition to new apertures",
+    "parameter_evidence": "Design dimensions, not physical measurements",
+    "prior_R51_change": "Close W2; enlarge W1/W3 to8x12mm, retaining original centers, axes and R0.3 lip radii"
+  },
+  "removed_cable_aperture": {
+    "id": "W2",
+    "previous_geometry": {
+      "id": "W2",
+      "center_xy_mm": [
+        0,
+        32
+      ],
+      "shape": "OBROUND",
+      "width_mm": 6,
+      "total_length_mm": 10,
+      "end_radius_mm": 3,
+      "lip_radius_mm": 0.3,
+      "long_axis": "X",
+      "through_z_mm": [
+        109,
+        113
+      ],
+      "entry_mode": "OPEN_ABOVE",
+      "evidence": "ASSUMED design placement authorized by user",
+      "physical_fit": "NOT_TESTED",
+      "note": "Located outside current screen, speaker and board footprints; no requirement to align with first layer. Connector and full cable route fit remains untested."
+    },
+    "status": "REMOVED_BY_USER",
+    "closure": "Restore original 4mm plate thickness including former R0.3 lip region"
+  },
+  "inner_expansion_change": {
+    "old_centers_xy_mm": [
+      [
+        -24,
+        -24
+      ],
+      [
+        -24,
+        24
+      ],
+      [
+        24,
+        -24
+      ],
+      [
+        24,
+        24
+      ]
+    ],
+    "new_centers_xy_mm": [
+      [
+        -32.0,
+        -32.0
+      ],
+      [
+        -32.0,
+        32.0
+      ],
+      [
+        32.0,
+        -32.0
+      ],
+      [
+        32.0,
+        32.0
+      ]
+    ],
+    "old_pitch_mm": [
+      48,
+      48
+    ],
+    "new_pitch_mm": [
+      64,
+      64
+    ],
+    "hole_diameter_mm": 2.8,
+    "old_holes_closed": true,
+    "third_reference_inner_holes": "Historical third plate inner84x48 holes remain unused in current corner-supported stack; future custom platforms should follow second plate64x64 pattern.",
+    "per_coordinate_outward_shift_mm": 8,
+    "matched_cable_slot_center_distance_mm": 64,
+    "nominal_hole_edge_to_plate_straight_edge_mm": 6.6
+  },
+  "outer_edge_roundover": {
+    "radius_mm": 0.4,
+    "upper_plane_z_mm": 113,
+    "lower_plane_z_mm": 109,
+    "outline_corner_radius_mm": 6,
+    "selected_edge_count": 16,
+    "evidence": "ASSUMED design dimensions; explicit user request, radius follows existing first-layer edge finish",
+    "nominal_outline_mm": [
+      160,
+      80
+    ],
+    "base_thickness_mm": 4,
+    "scope": "Outside perimeter only; no hole, slot or post-seat changes"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "client_date": "2026-10-13",
+  "scope": "Digital topology and reported dimensions only; manufacturing guideline and vendor acceptance are separate checks below",
+  "file": "/Users/dean/Documents/MORI/mechanical/test_rig/r55/exports/second_platform_R55.step",
+  "sha256": "506c25ccbf9c94c630f0b247d81b6210251a4759f51be7fe3803de67145b0b9e",
+  "solid_count": 1,
+  "shell_count": 1,
+  "shell_closed": [
+    true
+  ],
+  "overall_dimensions_mm": [
+    160.0,
+    80.0000001,
+    9.000000099999994
+  ],
+  "base_thickness_mm": 4,
+  "minimum_checked_post_radial_wall_mm": 1.6999999999999997,
+  "post_sections": [
+    {
+      "group": "CAM33700",
+      "axis_xy_mm": [
+        38.7,
+        -16.3
+      ],
+      "outer_diameter_mm": 5.6,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.6999999999999997,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "CAM33700",
+      "axis_xy_mm": [
+        38.7,
+        16.3
+      ],
+      "outer_diameter_mm": 5.6,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.6999999999999997,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "CAM33700",
+      "axis_xy_mm": [
+        71.3,
+        -16.3
+      ],
+      "outer_diameter_mm": 5.6,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.6999999999999997,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "CAM33700",
+      "axis_xy_mm": [
+        71.3,
+        16.3
+      ],
+      "outer_diameter_mm": 5.6,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.6999999999999997,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "BUCK_6V",
+      "axis_xy_mm": [
+        -63.194,
+        -15.233
+      ],
+      "outer_diameter_mm": 5.6,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.6999999999999997,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "BUCK_6V",
+      "axis_xy_mm": [
+        -55.986,
+        11.544
+      ],
+      "outer_diameter_mm": 5.6,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.6999999999999997,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "LCD35079",
+      "axis_xy_mm": [
+        0,
+        -20.94
+      ],
+      "outer_diameter_mm": 6.0,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.9,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "LCD35079",
+      "axis_xy_mm": [
+        -14.84924240492,
+        14.90924240492
+      ],
+      "outer_diameter_mm": 6.0,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.9,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    },
+    {
+      "group": "LCD35079",
+      "axis_xy_mm": [
+        14.84924240492,
+        14.90924240492
+      ],
+      "outer_diameter_mm": 6.0,
+      "bore_diameter_mm": 2.2,
+      "radial_wall_mm": 1.9,
+      "section_z_mm": [
+        115,
+        115.2
+      ]
+    }
+  ],
+  "round_through_hole_diameters_mm": [
+    2.2,
+    2.8
+  ],
+  "cable_slot_mm": [
+    8,
+    12
+  ],
+  "material_candidate": {
+    "name": "3301PA nylon",
+    "process": "SLS",
+    "wall_guideline_mm": "greater than1.0",
+    "dimensional_tolerance": "Plus/minus0.3mm within100mm; plus/minus0.4percent above100mm. Service specification, not an achieved measurement.",
+    "sources": [
+      "https://jlc3dp.com/help/article/3301pa-nylon",
+      "https://www.jlc-3dp.cn/materialDetail/11d2a89299874ed2a978d11972c22109.html"
+    ]
+  },
+  "manufacturing_file": "exports/second_platform_R55.step",
+  "quantity": 1,
+  "units": "mm",
+  "scale_percent": 100,
+  "hollow_post_guideline": {
+    "status": "FAIL",
+    "comparison": "Existing1.7/1.9mm radial walls do not meet generic hollow-post recommendation greater than2mm",
+    "source": "https://www.jlc.com/portal/q7i27832.html",
+    "source_type": "General supplier design recommendation, not a rejection of this file",
+    "applicability": "Vendor must confirm suitability of these short4/5mm posts in the selected material; material-specific general wall guidance alone is insufficient"
+  },
+  "recommendation": "File is ready for vendor review. Confirm short hollow-post manufacturability before placing a trial-print order; retain native solid, no hollowing or scaling",
+  "vendor_online_geometry_review": "NOT_TESTED",
+  "physical_assembly": "NOT_TESTED",
+  "print_warp_strength_and_balance": "NOT_TESTED",
+  "unresolved": [
+    "Short hollow posts are below supplier generic greater-than2mm wall recommendation; confirm or revise before ordering",
+    "Small2.2/2.8mm holes may need cleaning or measured finishing after print",
+    "Exact6V Buck revision versus family CAD not physically checked",
+    "LCD screw engagement and Type-C housing passage require physical trial"
+  ],
+  "no_geometry_modified": true
+}

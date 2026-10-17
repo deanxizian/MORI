@@ -1,0 +1,195 @@
+{
+  "revision": "TEST_RIG_R60_CAMERA_REAR_40DEG_PLUS5_CANDIDATE",
+  "status": "PROTOTYPE / UNVALIDATED",
+  "units": "mm",
+  "axes": "+X right, +Y forward, +Z up",
+  "baseline": "../r59/test_rig_R59_TWO_LAYER_CAMERA.blend",
+  "scope": "Independent comparison: rotate centered upper camera assembly180deg about vertical axis, face vehicle rear(-Y), retain40deg upward optical axis and lift5mm from R59. Rebuild only vertical support upper ends for this plate pose. Base and its holes remain unchanged. Preserve R59; third layer deferred.",
+  "user_confirmations": {
+    "2026-10-14": "Camera Module 3 Wide; simple second-layer front bracket. User superseded initial30deg choice with fixed40deg upward optical axis, prioritizing people at approximately0.6-2m.",
+    "2026-10-14-vertical-supports": "User requests vertical lower supports without rearward lean; R56 is the selected printed baseline.",
+    "2026-10-14-lower-center": "User requests lowering the camera platform slightly and centering the support contact on it. The required in-plane displacement is derived from the existing support pair and rectangular backplate center.",
+    "2026-10-14-rear-plus5": "User confirms rear-facing,40deg upward,5mm higher than R59; third layer will be adjusted later."
+  },
+  "camera": {
+    "manufacturer": "Raspberry Pi",
+    "product": "Camera Module 3 Wide visible-light",
+    "selection": "Wide explicitly selected; retains previous visible-light preference",
+    "class": "PURCHASED_REFERENCE",
+    "evidence": "VENDOR_DOCUMENTED simplified STEP; not physically measured",
+    "native_step": "../r48/sources/Camera_module_3_wide_model_simple.stp",
+    "source_sha256": "b13715ed4fac37ef8357ffddf824cfafe923e55aa849941c5508986cc625c994",
+    "published_size_mm": [
+      25,
+      24,
+      12.4
+    ],
+    "native_bounds_mm": [
+      0,
+      0,
+      -8.805,
+      23.861999511719,
+      25,
+      2.595
+    ],
+    "native_units": "mm",
+    "native_mounts_xy": [
+      [
+        2,
+        2
+      ],
+      [
+        14.5,
+        2
+      ],
+      [
+        2,
+        23
+      ],
+      [
+        14.5,
+        23
+      ]
+    ],
+    "native_mount_diameter_mm": 2.2,
+    "native_lens_front": [
+      14.4,
+      12.5,
+      -8.805
+    ],
+    "optical_elevation_deg": 40,
+    "horizontal_fov_deg": 102,
+    "vertical_fov_deg": 67,
+    "diagonal_fov_deg": 120,
+    "dimension_limits": "Official simplified STEP depth11.4mm, drawing12mm, and published approximate12.4mm differ. Preserve native CAD unscaled; add separate conservative rear-depth check. STEP PCB laminate thickness differs from drawing1.12mm; fastener stack also checked at1.12mm.",
+    "pcb_lens_axis_anchor_world_before_R59": [
+      0,
+      40,
+      134
+    ],
+    "pcb_lens_axis_anchor_world": "Derived rigid transform; see geometry_manifest.json",
+    "look_direction": "vehicle rear, -Y"
+  },
+  "bracket": {
+    "class": "PRINTABLE",
+    "evidence": "ASSUMED trial design",
+    "plate_top_z": 113,
+    "base_bounds_xy": [
+      -36,
+      28.5,
+      36,
+      39.5
+    ],
+    "base_thickness_mm": 3,
+    "base_plan_radius_mm": 2,
+    "base_mounts_xy": [
+      [
+        -32,
+        32
+      ],
+      [
+        32,
+        32
+      ]
+    ],
+    "base_hole_diameter_mm": 2.8,
+    "backplate_native_bounds_uv": [
+      -1,
+      -1,
+      17.5,
+      26
+    ],
+    "camera_back_clearance_mm": 3.5,
+    "backplate_thickness_mm": 3,
+    "camera_pad_radius_mm": 2.3,
+    "camera_trial_hole_diameter_mm": 2.2,
+    "web_centers_x": [
+      -6,
+      6
+    ],
+    "web_thickness_mm": 3,
+    "touch_edge_radius_mm": 0.4,
+    "mounting": "Two existing front inner expansion holes atX+/-32,Y32; removable M2.5 through-bolts. No plate modifications. Remove this accessory to restore those two expansion positions.",
+    "web_vertical_rear_y_mm": 29.5,
+    "web_vertical_front_rule": "Retain R58 actual Y37.22819001509493; supports do not move",
+    "web_foot_z_mm": 115.3,
+    "web_attach_native_n_mm": 5.8,
+    "web_attach_native_u_limits": "Centered on backplate; world endpoints derived from new pose",
+    "web_orientation": "Front/rear faces remain vertical; tops follow rotated and raised backplate"
+  },
+  "fasteners": {
+    "camera": {
+      "type": "M2x10 Phillips pan-head machine screw",
+      "quantity": 4,
+      "head_diameter_mm": 3.5,
+      "head_height_mm": 1.3,
+      "rear_washer": [
+        4.3,
+        2.2,
+        0.3
+      ],
+      "nut_af_mm": 4,
+      "nut_height_mm": 1.6,
+      "thread_pitch_mm": 0.4,
+      "evidence": "ASSUMED nominal envelopes; thread detail not modeled"
+    },
+    "base": {
+      "type": "M2.5x16 Phillips pan-head machine screw",
+      "quantity": 2,
+      "head_diameter_mm": 5,
+      "head_height_mm": 2.1,
+      "washer": [
+        5,
+        2.7,
+        0.5
+      ],
+      "nut_af_mm": 5,
+      "nut_height_mm": 2,
+      "thread_pitch_mm": 0.45,
+      "evidence": "ASSUMED nominal envelopes; thread detail not modeled",
+      "reference_source": "../r57; previously approved length only, unchanged nominal head and washers"
+    }
+  },
+  "cable": {
+    "interface": "15-pin standard CSI to Raspberry Pi4B CAMERA connector",
+    "approach": "Native camera connector stays at lower edge. Route a loose service bend over the second-platform front edge to the Pi4B; do not force the flat ribbon through8x12mm slots.",
+    "working_guide_radius_mm": 5,
+    "minimum_bend_radius": "UNKNOWN;5mm is only a geometric planning bend, not a vendor rating",
+    "complete_route": "NOT_TESTED",
+    "strain_relief": "Use a removable tape anchor on platform, leaving connector latch accessible; no clamp on camera module flex. Physical qualification pending."
+  },
+  "fov_assumptions": {
+    "face_height_m": 1.6,
+    "illustrative_face_half_height_m": 0.12,
+    "body_pitch_samples_deg": [
+      -10,
+      0,
+      10
+    ],
+    "uncropped_full_sensor": true,
+    "cropped_video_and_autofocus_shift": "NOT_TESTED"
+  },
+  "qualification": {
+    "physical_fit": "NOT_TESTED",
+    "print_strength": "NOT_TESTED",
+    "camera_video": "NOT_TESTED",
+    "complete_wiring": "NOT_TESTED"
+  },
+  "centering": {
+    "target": "Geometric center of inclined backplate rear face",
+    "preserve_supports": false,
+    "translation_rule": "Retain centered attachment while turning180deg and lifting5mm",
+    "rear_face_native_n_mm": 6.5,
+    "native_center_uv": [
+      8.25,
+      12.5
+    ]
+  },
+  "alternative": {
+    "yaw_deg": 180,
+    "lift_from_R59_mm": 5,
+    "pivot": "R59 backplate rear center",
+    "adoption": "COMPARISON_ONLY",
+    "third_layer": "DEFERRED_BY_USER"
+  }
+}
