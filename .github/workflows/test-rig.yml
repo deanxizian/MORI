@@ -1,0 +1,41 @@
+name: Test rig offline checks
+
+on:
+  pull_request:
+    paths:
+      - 'test_rig/**'
+      - '.github/workflows/test-rig.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'test_rig/**'
+      - '.github/workflows/test-rig.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, Node 24
+        with:
+          lfs: false
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6, Node 24
+        with:
+          python-version: '3.12'
+      - name: Verify imported artifacts, STL topology and documentation links
+        run: python test_rig/tools/check_release.py
+      - name: Recompute the published 60-second telemetry summary
+        run: python test_rig/tools/verify_trial71.py
+      - name: Test current v159 source without hardware
+        working-directory: test_rig/control
+        run: python -m unittest discover -s tests -q
+      - name: Test hash-reconstructed v142 baseline without hardware
+        run: |
+          python -m zipfile -e test_rig/evidence/balance/trial71-v142-source.zip "$RUNNER_TEMP/test-rig-v142"
+          cd "$RUNNER_TEMP/test-rig-v142"
+          python -m unittest discover -s tests -q

@@ -5,6 +5,7 @@
 | 内容 | 当前入口 |
 |---|---|
 | PR 顺序与依赖 | [REVIEW_STACK](REVIEW_STACK.md) |
+| 独立两轮验证车（2026-10-18） | [模型、装配与源码](../test_rig/README.md) · [有限实测与未完成项](../test_rig/STATUS.md) |
 | 当前状态与未完成项 | [CURRENT_STATUS](CURRENT_STATUS.md) · [M1.55 更新](M1_55_MODEL_UPDATE.md) |
 | 到货前工作与研究证据 | [待补资料](PREARRIVAL_BLOCKERS.md) · [研究摘要](../mechanical/studies/harness_M1_55_summary/index.html) · [证据包清单](review_evidence/M1_55_archives.json) |
 | 规格与规则 | [V1.2](../MORI_SPEC_V1_2.md) · [AGENTS](../AGENTS.md) |

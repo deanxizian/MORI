@@ -2,7 +2,9 @@
 
 MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏航与俯仰两只舵机、圆形屏幕、真实摄像头及板载音频。
 
-本仓库整理机械、硬件、软件、采购和验证资料。**当前为 PROTOTYPE / UNVALIDATED，未完成实物装配、上电和主动平衡验证，未制造放行。** 当前机械模型为 M1.55，已应用 C6 通道、CAM USB 朝右和用户批准的 R2 颈部装入修正，详见[本次更新](docs/M1_55_MODEL_UPDATE.md)。
+本仓库整理机械、硬件、软件、采购和验证资料。**主项目本体当前为 PROTOTYPE / UNVALIDATED，未完成实物装配、上电和主动平衡验证，未制造放行。** 当前机械模型为 M1.55，已应用 C6 通道、CAM USB 朝右和用户批准的 R2 颈部装入修正，详见[本次更新](docs/M1_55_MODEL_UPDATE.md)。
+
+另有独立的[两轮平衡可行性验证车](test_rig/README.md)：2026-10-18 整理了当前模型、打印件、装配/接线、控制源码和实测证据。它已完成一次用户确认的 60 秒无人接触平衡，后续长测保护退出，仍暂停调优；该结果不等于主项目本体已验证。
 
 ![MORI 当前结构预览](mechanical/renders/internal.png)
 
@@ -13,6 +15,7 @@ MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏
 | 要找的资料 | 入口 |
 |---|---|
 | 项目资料总索引 | [PROJECT_INDEX](docs/PROJECT_INDEX.md) |
+| 两轮验证车模型、装配与实测 | [test_rig](test_rig/README.md) · [验证状态](test_rig/STATUS.md) |
 | 当前版本与未完成事项 | [CURRENT_STATUS](docs/CURRENT_STATUS.md) |
 | 到货前剩余工作与资料依赖 | [待补资料清单](docs/PREARRIVAL_BLOCKERS.md) · [未采用线束研究摘要](mechanical/studies/harness_M1_55_summary/index.html) |
 | 从哪些厂家购买哪些产品 | [采购清单](mechanical/procurement/M1.52_按厂家采购清单_2026-10-06.md) · [已下单记录](mechanical/procurement/采购记录.md) |
@@ -53,7 +56,7 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 浏览器打开 `http://127.0.0.1:8000/mechanical/index.html`；装配动画入口为 `/mechanical/animation/index.html`。这只启动静态资料服务，不启动控制程序。
 
-旧软件 CI 配置保留在原始归档；这组资料 PR 没有新增自动构建或部署，也没有运行机器人或烧录固件。完整重建与历史对比的依赖边界见下载说明。
+旧软件 CI 配置保留在原始归档；独立验证车另有[离线检查工作流](.github/workflows/test-rig.yml)，只验证文件、遥测一致性和模拟测试，不部署或启用机器人。主项目完整重建与历史对比的依赖边界见下载说明。
 
 ## 来源与许可
 

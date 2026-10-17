@@ -1,0 +1,3203 @@
+{
+  "revision": "R41_INBOARD_EDGE_ROUNDS",
+  "status": "PROTOTYPE / UNVALIDATED",
+  "scope": "Independent two-wheel test rig. R41 inboard wheel rounding only; all R40 non-wheel geometry and poses retained.",
+  "units": "mm",
+  "axes": "+X right, +Y forward, +Z up; wheel axes parallel X",
+  "source_policy": "Reuse original purchased STEP geometry at scale 1. Only rigid transformations. Official drawings override third-party CAD for mount coordinates.",
+  "plate": {
+    "width": 160,
+    "depth": 80,
+    "center_y": 0,
+    "bottom_z": 70,
+    "thickness": 4,
+    "corner_radius": 8
+  },
+  "purchased": {
+    "pi4": {
+      "manufacturer": "Raspberry Pi",
+      "sku": "4 Model B; RAM/revision of owned unit not recorded",
+      "cache": "../../cad_cache/pi4.json",
+      "source_class": "THIRD_PARTY_CAD",
+      "evidence": "ASSUMED",
+      "matrix": [
+        [
+          1,
+          0,
+          0,
+          -70
+        ],
+        [
+          0,
+          1,
+          0,
+          -28
+        ],
+        [
+          0,
+          0,
+          1,
+          78
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "mount_native_xy": [
+        [
+          3.5,
+          3.5
+        ],
+        [
+          61.5,
+          3.5
+        ],
+        [
+          3.5,
+          52.5
+        ],
+        [
+          61.5,
+          52.5
+        ]
+      ],
+      "mount_source": "Official raspberry_pi_4_mechanical.pdf; hole centers vendor documented",
+      "vendor_hole_diameter": 2.7,
+      "reference_CAD_hole_diameter": 3.0,
+      "seat_top_z": 78,
+      "boss_outer_diameter": 7.4,
+      "trial_clearance_diameter": 2.8,
+      "fastener_intent": "4 x M2.5x13 cross-head integral-flange machine screws with retained washers and nuts; exact SKU/real head dimensions and physical fit NOT_TESTED.",
+      "limits": "Third-party STEP matches 85x56 outline and 58x49 hole pitch; hole diameter differs. Connector envelopes and full installed height remain unqualified."
+    },
+    "ups3s": {
+      "manufacturer": "Waveshare",
+      "sku": "UPS Module 3S",
+      "cache": "../../cad_cache/ups3s.json",
+      "source_class": "VENDOR_CAD",
+      "evidence": "VENDOR_DOCUMENTED",
+      "matrix": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          63.900000000000006
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "mount_native_xy": [
+        [
+          -23,
+          -43
+        ],
+        [
+          -23,
+          43
+        ],
+        [
+          23,
+          -43
+        ],
+        [
+          23,
+          43
+        ]
+      ],
+      "mount_source": "UPS_3S_official.dxf and UPS_3S_official.step",
+      "vendor_hole_diameter": 3.1,
+      "seat_top_z": 65.5,
+      "boss_outer_diameter": 7.0,
+      "trial_clearance_diameter": 3.3,
+      "fastener_intent": "Retain four nominal M2.5x16 cross-head integral-flange machine screws and existing nuts/washers. Nominal tip projection3.4mm; actual SKU and physical fit NOT_TESTED.",
+      "limits": "Official STEP is a simplified single solid, 60x93x23.1. Exact cells, acrylic insulating sheet, switch and mated cables not fully represented.",
+      "mount_side": "UNDERSIDE",
+      "spacer_strategy": "Four integral unthreaded underside supports OD7 / ID3.3 / H4.5 mm; no separate spacers."
+    },
+    "bmi323": {
+      "manufacturer": "DFRobot",
+      "sku": "Fermion BMI323 SEN0693 V1.0",
+      "cache": "../../cad_cache/bmi323.json",
+      "source_class": "VENDOR_CAD",
+      "evidence": "VENDOR_DOCUMENTED",
+      "matrix": [
+        [
+          -1.0,
+          0.0,
+          0.0,
+          40.0
+        ],
+        [
+          0.0,
+          -1.0,
+          0.0,
+          18.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          78.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "mount_native_xy": [
+        [
+          -5.5,
+          5.5
+        ],
+        [
+          5.5,
+          5.5
+        ]
+      ],
+      "mount_source": "SEN0693_dimension_V1.0.pdf and SEN0693_official.stp",
+      "vendor_hole_diameter": 2.0,
+      "seat_top_z": 78,
+      "boss_outer_diameter": 5.0,
+      "trial_clearance_diameter": 2.2,
+      "fastener_intent": "2 x M1.6x12 cross-head machine screws with retained washers and nuts; physical fit NOT_TESTED.",
+      "limits": "Official CAD includes vertical header, full Z span 11.54 mm; preserve it. Board holes are nominal 2 mm: do not assume an M2 clearance fit.",
+      "sensor_to_body_assumed": [
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0
+        ]
+      ],
+      "sensor_transform_status": "R32 geometric quarter-turn applied to documented DFRobot remapped-output transform; physical signs and firmware integration NOT_TESTED.",
+      "sensor_axis_reference": "DFRobot SEN0693 board silkscreen / official library output after its internal YXZ + XYZ inversion remap has completed",
+      "sensor_axis_review": "reports/imu_axis_change.json",
+      "sensor_axis_driver_commit": "46f8913034a594aa5fe2988ce2d049eb8bb9bde5"
+    },
+    "s288_left": {
+      "manufacturer": "Unitree",
+      "sku": "S288",
+      "cache": "../../cad_cache/s288.json",
+      "source_class": "VENDOR_CAD",
+      "evidence": "VENDOR_DOCUMENTED",
+      "matrix": [
+        [
+          1,
+          0,
+          0,
+          -64.72029379455799
+        ],
+        [
+          0,
+          0,
+          1,
+          -0.612980678113
+        ],
+        [
+          0,
+          -1,
+          0,
+          43.591673992714
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "limits": "Original simplified surface STEP, no closed solids. No recreated servo housing. Cable/mating parts absent."
+    },
+    "s288_right": {
+      "manufacturer": "Unitree",
+      "sku": "S288",
+      "cache": "../../cad_cache/s288.json",
+      "source_class": "VENDOR_CAD",
+      "evidence": "VENDOR_DOCUMENTED",
+      "matrix": [
+        [
+          -1,
+          0,
+          0,
+          64.72029379455799
+        ],
+        [
+          0,
+          0,
+          -1,
+          0.612980678113
+        ],
+        [
+          0,
+          -1,
+          0,
+          43.591673992714
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "limits": "Identical original CAD rotated, not mirrored or scaled. Surface-only model."
+    }
+  },
+  "motor_bracket": {
+    "quantity": 0,
+    "left_wall_x": [
+      -80,
+      -77
+    ],
+    "wall_y": [
+      -15,
+      15
+    ],
+    "wall_z": [
+      25,
+      70
+    ],
+    "mount_yz": [
+      [
+        -8,
+        32.5
+      ],
+      [
+        8,
+        32.5
+      ],
+      [
+        -8,
+        62.5
+      ],
+      [
+        8,
+        62.5
+      ]
+    ],
+    "mount_clearance_diameter": 2.3,
+    "output_axis_yz": [
+      0,
+      40
+    ],
+    "output_clearance_diameter": 16,
+    "vendor_interface": "S288 original STEP: 30x16 body pilot grid, diameter 1.7; face native X=-12.2797062. Official fixed plate retained separately as reference.",
+    "fastener_intent": "Retain 4 trial M2 self-tapping screws per motor. Four bracket-to-deck M3 bolts, four nuts and eight washers removed.",
+    "evidence": "ASSUMED",
+    "status": "PROTOTYPE / UNVALIDATED",
+    "integrated_into": "baseplate_R28",
+    "retired_foot_mount_xy": [
+      [
+        -86,
+        -16
+      ],
+      [
+        -86,
+        16
+      ]
+    ],
+    "retired_root_platform": {
+      "foot_x": [
+        -105.9,
+        -76
+      ],
+      "foot_y": [
+        -21,
+        21
+      ],
+      "foot_z": [
+        76,
+        80
+      ],
+      "foot_clearance_diameter": 3.4
+    },
+    "root_attachment": "Original R3 mounting-wall geometry translated inward20 from R4, integrated with new160x80 deck at z70. Physical strength NOT_TESTED."
+  },
+  "strap_slots": {
+    "centers_xy": [
+      [
+        -24,
+        -33.6
+      ],
+      [
+        -24,
+        33.6
+      ],
+      [
+        20,
+        -33.6
+      ],
+      [
+        20,
+        33.6
+      ]
+    ],
+    "width_x": 21,
+    "length_y": 2.5,
+    "purpose": "Four21x2.5mm slots; original centers,21mm length,R0.8 plan corners and R0.4 entry lips retained",
+    "corner_radius": 0.8,
+    "nominal_side_clearance_mm": 0.5,
+    "entry_lip_radius_mm": 0.4
+  },
+  "allocations": {},
+  "checks_required_before_release": [
+    "Trial-fit the diameter64 plain seat to FIT0500; confirm real groove/tread, stretch, side retention and circumferential slip before running",
+    "Validate S288 output radial load and screws",
+    "Confirm exact 18650 cells and insulating sheet",
+    "Physical cables/connector access and print trial fit",
+    "Strength, thermal, braking regeneration and balancing",
+    "Confirm USB adapter PCB thickness, populated/underside heights and clear adhesive contact patches before attachment",
+    "Confirm intended jumper header, function and actuator-disable path before powered tests"
+  ],
+  "physical_fit": "NOT_TESTED",
+  "print_strength": "NOT_TESTED",
+  "dynamics": "NOT_TESTED",
+  "complete_assembly": "PROTOTYPE CAD only; complete real-hardware fit and physical release remain BLOCKED",
+  "wheel": {
+    "output_face_x_abs": 80.1,
+    "axis_y": 0,
+    "axis_z": 40,
+    "output_holes_local_yz": [
+      [
+        4.563481643795446,
+        2.595599215353162
+      ],
+      [
+        0.0338859633589117,
+        5.249890640907421
+      ],
+      [
+        -4.529595680436561,
+        2.654291425554206
+      ],
+      [
+        -4.563481643795429,
+        -2.5955992153531957
+      ],
+      [
+        -0.03388596335888827,
+        -5.249890640907413
+      ],
+      [
+        4.5295956804365405,
+        -2.654291425554195
+      ]
+    ],
+    "hole_source": "Original S288 STEP negative-X output face, 6x diameter1.7 on diameter10.5 circle; angular phase retained",
+    "printed_hole_diameter": 2.3,
+    "root_radius": 7.6,
+    "root_axial_mm": [
+      0,
+      6
+    ],
+    "hub_radius": 10.5,
+    "hub_axial_mm": [
+      5,
+      21.75
+    ],
+    "central_relief_diameter": 5.2,
+    "central_relief_depth": 2,
+    "rim_outer_radius": 36.25,
+    "rim_inner_radius": 29.5,
+    "rim_axial_mm": [
+      7.25,
+      23.75
+    ],
+    "spoke_count": 6,
+    "spoke_width": 8,
+    "spoke_axial_mm": [
+      18.25,
+      21.75
+    ],
+    "tyre_outer_radius": 40,
+    "tyre_axial_mm": [
+      7,
+      24
+    ],
+    "tyre_status": "PLACEHOLDER / ASSUMED: nominal mating envelope based on original plastic rim measurements; silicone free bore, corner shapes, fit and tread not measured. Vendor outer80 x width17 retained.",
+    "fasteners": "Six trial M2x8 self tapping per wheel; modeled hub grip6 + penetration2 mm, below vendor output pilot depth maximum3 mm. Verify supplied screws and engagement before use.",
+    "bearing_load_path": "Direct attachment to S288 output. Output bearing radial load and printed fatigue NOT_TESTED; no added shaft/bearing hidden in model.",
+    "local_frame": "Local X points outboard; original S288 output face is u0. Left local Y=-world Y and local Z=world Z-40. Both wheel instances use proper rotations.",
+    "head_access_counterbore_diameter": 4.2,
+    "head_access_counterbore_from_u": 6,
+    "print_orientation": "Rim front u23.75 down is a reference transform only. Recessed web needs process-specific support/orientation review.",
+    "selected_tyre_record": "../selections/FIT0500.json",
+    "spoke_radial_mm": [
+      9,
+      34.5
+    ],
+    "trial_fit": {
+      "status": "NOT_TESTED",
+      "profile": "middle raised; lower side steps",
+      "overall_width_mm": 16.5,
+      "middle_band_diameter_mm": 72.5,
+      "middle_band_width_mm": 13.5,
+      "side_step_diameter_mm": 64,
+      "side_widths_mm": [
+        1.5,
+        1.5
+      ],
+      "side_widths_evidence": "ASSUMED derived symmetry",
+      "inside_profile_source": "User-measured original plastic rim, not measured free silicone bore",
+      "nominal_clearance_mm": 0,
+      "retention_and_slip": "NOT_TESTED"
+    },
+    "swept_axial_sections": [
+      {
+        "u0": 0,
+        "u1": 5,
+        "radius": 7.6
+      },
+      {
+        "u0": 5,
+        "u1": 7.25,
+        "radius": 14
+      },
+      {
+        "u0": 7.25,
+        "u1": 8.75,
+        "radius": 32
+      },
+      {
+        "u0": 8.75,
+        "u1": 22.25,
+        "radius": 36.25
+      },
+      {
+        "u0": 22.25,
+        "u1": 23.75,
+        "radius": 32
+      }
+    ],
+    "geometry_source": "R40/sources/wheel_structure_parameters.json plus retained R30 measured tyre datums. Original functional output interface within radius8 through u6.2 retained. Diameter28 outer flange and conical transition removed; main hub diameter21.",
+    "outboard_extension_per_side_mm": 3,
+    "tyre_source_axial_mm": [
+      4,
+      21
+    ],
+    "tyre_instance_outboard_shift_mm": 3,
+    "clearance_limits": "Output-root closest frame gap and lower case-flange clearance remain nominally0.412/0.866mm. Axial rim offset does not remove these root-region limits. Actual screw envelopes, tolerances, output runout, printed warping and loaded rubber deflection are unqualified.",
+    "cantilever_note": "Nominal tyre center from output face12.5\u219215.5mm; same radial force would increase its bending moment by24 percent. No allowable radial load, printed strength or bearing life has been validated.",
+    "rim_low_radius": 32,
+    "rim_profile": [
+      {
+        "u0": 7.25,
+        "u1": 8.75,
+        "outer_radius": 32
+      },
+      {
+        "u0": 8.75,
+        "u1": 22.25,
+        "outer_radius": 36.25
+      },
+      {
+        "u0": 22.25,
+        "u1": 23.75,
+        "outer_radius": 32
+      }
+    ],
+    "profile_measurement_source": "../selections/measurements/FIT0500_original_rim_20261011.json",
+    "profile_measurement_sha256": "773130d75042a50d37fbbb95acee600763d2a77afcbaaf92c78658261d5beb22",
+    "profile_evidence": {
+      "diameters_72_5_and_64_mm": "MEASURED",
+      "widths_16_5_and_13_5_mm": "MEASURED",
+      "both_side_widths_1_5_mm": "ASSUMED: derived with user tentative symmetry",
+      "new_print_tolerance_and_tyre_interference": "NOT_TESTED"
+    },
+    "tyre_inner_profile": [
+      {
+        "u0": 7,
+        "u1": 8.75,
+        "inner_radius": 32
+      },
+      {
+        "u0": 8.75,
+        "u1": 22.25,
+        "inner_radius": 36.25
+      },
+      {
+        "u0": 22.25,
+        "u1": 24,
+        "inner_radius": 32
+      }
+    ],
+    "print_orientation_note": "Rim front u23.75 down is a reference transform only. Recessed web needs process-specific support/orientation review.",
+    "touch_edge_policy": "R41 adds R0.4 to inboard spoke edges and root junctions. Same outboard rounds, functional holes and tyre profile.",
+    "hub_transition": null,
+    "hub_attachment_cap": null,
+    "spoke_outer_width": 10,
+    "spoke_profile_yz": [
+      [
+        9,
+        -4
+      ],
+      [
+        34.5,
+        -5
+      ],
+      [
+        34.5,
+        5
+      ],
+      [
+        9,
+        4
+      ]
+    ],
+    "inner_rim_groove": false,
+    "outer_spoke_root_radius": 3,
+    "inner_spoke_root_radius": 1.5,
+    "face_recess_mm": 2
+  },
+  "adapter": {
+    "center_xy": [
+      50,
+      -13
+    ],
+    "pcb_size": [
+      40,
+      30,
+      1.6
+    ],
+    "pcb_bottom_z": 78,
+    "estimated_height_above_pcb": 10.4,
+    "model_class": "PLACEHOLDER",
+    "evidence": "ASSUMED",
+    "source": "User measured 30x40 mm PCB and confirmed USB-C on 30 mm edge; received-board photo dated 2026-10-10. Photo detail sizes/heights ASSUMED.",
+    "matrix": [
+      [
+        1,
+        0,
+        0,
+        50
+      ],
+      [
+        0,
+        1,
+        0,
+        -13
+      ],
+      [
+        0,
+        0,
+        1,
+        78
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "mounting_holes": [],
+    "mounting_method": "One whole sheet of insulating foam double-sided adhesive, not two separate strips. Actual adhesive compression, thickness and bond remain unqualified.",
+    "adhesive_pad": {
+      "size_xyz": [
+        38,
+        28,
+        4
+      ],
+      "centers_local_xy": [
+        [
+          0,
+          0
+        ]
+      ],
+      "class": "PLACEHOLDER",
+      "evidence": "ASSUMED",
+      "supplier": null,
+      "bottom_z": 74,
+      "retention": "NOT_TESTED",
+      "note": "Whole-sheet illustrative foam38x28mm,1mm inset from measured40x30mm PCB edges. Nominal4mm thickness retains board height; not a procurement specification. A blind underside head-relief envelope represents unverified foam deformation over the retained UPS screw, not an instruction to cut a hole in the tape.",
+      "quantity": 1,
+      "material_intent": "Insulating foam double-sided adhesive",
+      "selection_status": "METHOD_SELECTED_PRODUCT_UNSELECTED",
+      "profile": "ROUNDED_RECTANGLE_R1",
+      "whole_sheet_user_confirmed": true,
+      "underside_compliance_reference": {
+        "center_local_xy_mm": [
+          -7,
+          -10
+        ],
+        "radius_mm": 3.3,
+        "depth_mm": 1.7,
+        "status": "ASSUMED",
+        "physical_compression": "NOT_TESTED"
+      }
+    },
+    "simplification_authorization": "\u6211\u662f\u8981\u6574\u4e2a\u7c98\u53cc\u9762\u80f6\u7684",
+    "estimated_total_height": 12,
+    "corner_radius_assumed": 1,
+    "field_evidence": {
+      "pcb_span_x_mm": {
+        "value": 40,
+        "evidence": "MEASURED",
+        "source": "Direct user report"
+      },
+      "pcb_span_y_mm": {
+        "value": 30,
+        "evidence": "MEASURED",
+        "source": "Direct user report"
+      },
+      "usb_c_edge_length_mm": {
+        "value": 30,
+        "evidence": "MEASURED",
+        "source": "User clarification 2026-10-10"
+      },
+      "populated_XY_overhang": {
+        "value": false,
+        "evidence": "MEASURED",
+        "source": "User observation; excludes mating plugs"
+      },
+      "pcb_thickness_mm": {
+        "value": 1.6,
+        "evidence": "ASSUMED"
+      },
+      "corner_radius_mm": {
+        "value": 1,
+        "evidence": "ASSUMED"
+      },
+      "total_height_mm": {
+        "value": 12,
+        "evidence": "ASSUMED"
+      },
+      "component_dimensions_and_offsets": {
+        "evidence": "ASSUMED",
+        "source": "Approximate photo-based reconstruction; not calibrated metrology"
+      },
+      "underside": {
+        "evidence": "ASSUMED",
+        "note": "Not photographed; no physical adhesive clearance qualification"
+      },
+      "mounting_holes": {
+        "value": [],
+        "evidence": "MEASURED",
+        "measurement_kind": "USER_OBSERVED_NOT_INSTRUMENT_MEASUREMENT",
+        "source": "Direct user confirmation 2026-10-10: \u5b83\u6ca1\u6709\u5b89\u88c5\u5b54"
+      },
+      "retention_method": {
+        "value": "insulating foam double-sided adhesive",
+        "evidence": "ASSUMED",
+        "selection_status": "USER_SELECTED",
+        "physical_qualification": "NOT_TESTED"
+      }
+    },
+    "photo_reference": {
+      "file": "sources/received_board_20261010.jpeg",
+      "sha256": "c66921c0920469bfd110023436f89c3975f0fa0f0fbf4cba7229af2be1c5fc07",
+      "record": "hardware/test_rig/specifications/02_Unitree_USB_Adapter/measurements/photo_inspection_20261010.json"
+    },
+    "connector_layout": {
+      "local_USB_face": "-X, 30mm edge",
+      "usb_c_center_y_assumed": 6,
+      "white_housing": "Opposite USB edge, +X/+Y corner",
+      "smaller_black_housing": "Opposite USB edge, +X/-Y half",
+      "larger_black_housing": "Adjacent -Y edge near -X corner",
+      "electrical_identification": "NOT_TESTED; connector functions and pinout are not derived from photo"
+    },
+    "installed_orientation_note": "Native board orientation retained from R9. USB-C local -X short edge faces Pi in installed -X direction. PCB remains 40x30 mm at scale 1.",
+    "photo_refinement": "R16 details use only visible front-photo morphology: curved USB shell, two black housings with two exposed bent contacts each, keyed white housing, capacitor with base/top, inductor and small packages. Sizes/offsets/hidden surfaces remain ASSUMED; no electrical identity inferred.",
+    "photo_geometry_features": [
+      {
+        "name": "pcb",
+        "shape": {
+          "type": "rounded_xy",
+          "width": 40,
+          "depth": 30,
+          "radius": 1,
+          "z": [
+            0,
+            1.6
+          ]
+        },
+        "display_material": "adapter_pcb",
+        "role": "40x30mm user-measured outline; no mounting holes user-confirmed. Thickness/corner radius ASSUMED.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "usb_c_shell",
+        "shape": {
+          "type": "cut",
+          "base": {
+            "type": "rounded_yz",
+            "x": [
+              -20,
+              -11.6
+            ],
+            "center_y": 6,
+            "center_z": 3.2,
+            "width_y": 8.8,
+            "height_z": 3.2,
+            "radius": 1.35
+          },
+          "tools": [
+            {
+              "type": "rounded_yz",
+              "x": [
+                -20.1,
+                -12.8
+              ],
+              "center_y": 6,
+              "center_z": 3.2,
+              "width_y": 7.5,
+              "height_z": 2.3,
+              "radius": 0.95
+            }
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Visible rounded USB-C shell/opening on measured30mm edge; exact offset and shell size ASSUMED.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "usb_c_tongue",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -19.3,
+            -12.8,
+            3,
+            9,
+            2.8,
+            3.45
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Illustrative connector tongue; detailed contact geometry not reconstructed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "black_housing_opposite_USB",
+        "shape": {
+          "type": "cut",
+          "base": {
+            "type": "box",
+            "bounds": [
+              10,
+              20,
+              -10,
+              3.5,
+              1.6,
+              9.6
+            ]
+          },
+          "tools": [
+            {
+              "type": "box",
+              "bounds": [
+                14,
+                20.1,
+                -9,
+                2.5,
+                2.6,
+                8.6
+              ]
+            },
+            {
+              "type": "box",
+              "bounds": [
+                11.5,
+                19,
+                -4.8,
+                -2.5,
+                9.25,
+                9.7
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Visible black connector with open end and top recess. Family/pinout not inferred.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "black_housing_adjacent_edge",
+        "shape": {
+          "type": "cut",
+          "base": {
+            "type": "box",
+            "bounds": [
+              -19,
+              -5,
+              -15,
+              -5,
+              1.6,
+              12
+            ]
+          },
+          "tools": [
+            {
+              "type": "box",
+              "bounds": [
+                -18,
+                -6,
+                -15.1,
+                -8,
+                3,
+                10.6
+              ]
+            },
+            {
+              "type": "box",
+              "bounds": [
+                -16,
+                -8,
+                -14,
+                -7,
+                11.65,
+                12.1
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Larger visible black connector; assumed12mm total height retained.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "white_housing",
+        "shape": {
+          "type": "cut",
+          "base": {
+            "type": "box",
+            "bounds": [
+              11,
+              20,
+              6,
+              14,
+              1.6,
+              8.5
+            ]
+          },
+          "tools": [
+            {
+              "type": "box",
+              "bounds": [
+                13,
+                20.1,
+                7,
+                13,
+                3,
+                7.5
+              ]
+            },
+            {
+              "type": "box",
+              "bounds": [
+                14.5,
+                18,
+                9,
+                11,
+                7.5,
+                8.6
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible white keyed housing; no unmeasured pin count or pitch asserted.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "opposite_contact_0",
+        "shape": {
+          "type": "fuse",
+          "items": [
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                8.2,
+                -7,
+                1.72
+              ],
+              "height": 3.78,
+              "direction": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                8.2,
+                -7,
+                5.5
+              ],
+              "height": 10.4,
+              "direction": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "sphere",
+              "radius": 0.65,
+              "center": [
+                8.2,
+                -7,
+                5.5
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Photo-visible bent metal contact, approximate profile; electrical assignment unknown.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "opposite_solder_pad_0",
+        "shape": {
+          "type": "cylinder",
+          "radius": 1.35,
+          "origin": [
+            8.2,
+            -7,
+            1.6
+          ],
+          "height": 0.12,
+          "direction": [
+            0,
+            0,
+            1
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative solder/contact landing; not a mounting hole.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "opposite_contact_1",
+        "shape": {
+          "type": "fuse",
+          "items": [
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                8.2,
+                0.5,
+                1.72
+              ],
+              "height": 3.78,
+              "direction": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                8.2,
+                0.5,
+                5.5
+              ],
+              "height": 10.4,
+              "direction": [
+                1,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "sphere",
+              "radius": 0.65,
+              "center": [
+                8.2,
+                0.5,
+                5.5
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Photo-visible bent metal contact, approximate profile; electrical assignment unknown.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "opposite_solder_pad_1",
+        "shape": {
+          "type": "cylinder",
+          "radius": 1.35,
+          "origin": [
+            8.2,
+            0.5,
+            1.6
+          ],
+          "height": 0.12,
+          "direction": [
+            0,
+            0,
+            1
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative solder/contact landing; not a mounting hole.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "adjacent_contact_0",
+        "shape": {
+          "type": "fuse",
+          "items": [
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                -15,
+                -2.5,
+                1.72
+              ],
+              "height": 4.08,
+              "direction": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                -15,
+                -13.6,
+                5.8
+              ],
+              "height": 11.1,
+              "direction": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "type": "sphere",
+              "radius": 0.65,
+              "center": [
+                -15,
+                -2.5,
+                5.8
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Photo-visible bent metal contact, approximate profile; electrical assignment unknown.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "adjacent_solder_pad_0",
+        "shape": {
+          "type": "cylinder",
+          "radius": 1.35,
+          "origin": [
+            -15,
+            -2.5,
+            1.6
+          ],
+          "height": 0.12,
+          "direction": [
+            0,
+            0,
+            1
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative solder/contact landing; not a mounting hole.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "adjacent_contact_1",
+        "shape": {
+          "type": "fuse",
+          "items": [
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                -8,
+                -2.5,
+                1.72
+              ],
+              "height": 4.08,
+              "direction": [
+                0,
+                0,
+                1
+              ]
+            },
+            {
+              "type": "cylinder",
+              "radius": 0.65,
+              "origin": [
+                -8,
+                -13.6,
+                5.8
+              ],
+              "height": 11.1,
+              "direction": [
+                0,
+                1,
+                0
+              ]
+            },
+            {
+              "type": "sphere",
+              "radius": 0.65,
+              "center": [
+                -8,
+                -2.5,
+                5.8
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Photo-visible bent metal contact, approximate profile; electrical assignment unknown.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "adjacent_solder_pad_1",
+        "shape": {
+          "type": "cylinder",
+          "radius": 1.35,
+          "origin": [
+            -8,
+            -2.5,
+            1.6
+          ],
+          "height": 0.12,
+          "direction": [
+            0,
+            0,
+            1
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative solder/contact landing; not a mounting hole.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "capacitor_base",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -2.6,
+            6.6,
+            -0.6,
+            8.6,
+            1.6,
+            2.05
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Visible square base beneath cylindrical capacitor; approximate.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "capacitor_body",
+        "shape": {
+          "type": "cylinder",
+          "radius": 4.1,
+          "origin": [
+            2,
+            4,
+            2.05
+          ],
+          "height": 7.55,
+          "direction": [
+            0,
+            0,
+            1
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Visible cylindrical capacitor; markings not used as rating evidence.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "capacitor_top",
+        "shape": {
+          "type": "cut",
+          "base": {
+            "type": "cylinder",
+            "radius": 4.1,
+            "origin": [
+              2,
+              4,
+              9.6
+            ],
+            "height": 0.5,
+            "direction": [
+              0,
+              0,
+              1
+            ]
+          },
+          "tools": [
+            {
+              "type": "box",
+              "bounds": [
+                -1.3,
+                5.3,
+                3.94,
+                4.06,
+                10.03,
+                10.2
+              ]
+            },
+            {
+              "type": "box",
+              "bounds": [
+                1.94,
+                2.06,
+                0.7,
+                7.3,
+                10.03,
+                10.2
+              ]
+            }
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Illustrative vent on visible top; nominal package height remains assumed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "inductor_body",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -4,
+            5,
+            -8,
+            -1,
+            1.85,
+            5.2
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Visible rectangular magnetic package. Chip identity and ratings not inferred.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "inductor_landing_0",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -3.5,
+            -2.1,
+            -7.3,
+            -1.7,
+            1.6,
+            1.85
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Unmeasured illustrative termination.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "inductor_landing_1",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            3.1,
+            4.5,
+            -7.3,
+            -1.7,
+            1.6,
+            1.85
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Unmeasured illustrative termination.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_side",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -9,
+            -3,
+            8,
+            13,
+            1.75,
+            3
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Unmeasured package from photograph; exact chip identity unknown.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_-1_0",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -9.75,
+            -9.0,
+            8.4,
+            8.8,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_-1_1",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -9.75,
+            -9.0,
+            9.55,
+            9.950000000000001,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_-1_2",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -9.75,
+            -9.0,
+            10.7,
+            11.100000000000001,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_-1_3",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -9.75,
+            -9.0,
+            11.85,
+            12.25,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_1_0",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -3,
+            -2.25,
+            8.4,
+            8.8,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_1_1",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -3,
+            -2.25,
+            9.55,
+            9.950000000000001,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_1_2",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -3,
+            -2.25,
+            10.7,
+            11.100000000000001,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_USB_lead_1_3",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -3,
+            -2.25,
+            11.85,
+            12.25,
+            1.6,
+            1.82
+          ]
+        },
+        "display_material": "adapter_metal",
+        "role": "Illustrative visible package leads; not a pinout reference.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_opposite_side",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            6.6,
+            9.1,
+            -5.6,
+            -1.5,
+            1.6,
+            2.7
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Photo-derived low package between contact legs; size/placement assumed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "IC_centre",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -9.8,
+            -5.5,
+            1,
+            5.8,
+            1.6,
+            2.6
+          ]
+        },
+        "display_material": "adapter_dark",
+        "role": "Photo-derived low package; size/placement assumed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_0",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -10.1,
+            -7.9,
+            6.05,
+            7.1499999999999995,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_1",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -2.1,
+            0.10000000000000009,
+            11.45,
+            12.55,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_2",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            2.9,
+            5.1,
+            11.45,
+            12.55,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_3",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            7.6499999999999995,
+            8.75,
+            8.0,
+            10.0,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_4",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            5.9,
+            8.1,
+            -12.55,
+            -11.45,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_5",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -3.1,
+            -0.8999999999999999,
+            -12.55,
+            -11.45,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_6",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -17.1,
+            -14.9,
+            12.25,
+            13.350000000000001,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_7",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            15.9,
+            18.1,
+            4.1,
+            5.1,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_8",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -11.8,
+            -10.2,
+            -0.6000000000000001,
+            0.2,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "small_component_9",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -0.10000000000000009,
+            2.1,
+            -10.2,
+            -9.2,
+            1.6,
+            2.3
+          ]
+        },
+        "display_material": "adapter_light",
+        "role": "Visible small-package allocation; not a supplier model or measured footprint.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "edge_contact_pad_0",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -19.0,
+            -17.8,
+            14,
+            14.65,
+            1.6,
+            1.68
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative edge contact pads visible beside USB; no mechanical hole or pinout assumed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "edge_contact_pad_1",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -17.25,
+            -16.05,
+            14,
+            14.65,
+            1.6,
+            1.68
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative edge contact pads visible beside USB; no mechanical hole or pinout assumed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "edge_contact_pad_2",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -15.5,
+            -14.3,
+            14,
+            14.65,
+            1.6,
+            1.68
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative edge contact pads visible beside USB; no mechanical hole or pinout assumed.",
+        "evidence": "ASSUMED"
+      },
+      {
+        "name": "edge_contact_pad_3",
+        "shape": {
+          "type": "box",
+          "bounds": [
+            -13.75,
+            -12.55,
+            14,
+            14.65,
+            1.6,
+            1.68
+          ]
+        },
+        "display_material": "adapter_contact",
+        "role": "Illustrative edge contact pads visible beside USB; no mechanical hole or pinout assumed.",
+        "evidence": "ASSUMED"
+      }
+    ]
+  },
+  "stop_switch": {
+    "present": false,
+    "user_request": "\u5b9a\u6b62\u5f00\u5173\u53ef\u4ee5\u4e0d\u8981\uff0c\u6211\u76f4\u63a5\u7528\u8df3\u7ebf\u5e3d\u3002",
+    "panel_hole": false,
+    "jumper_part": null,
+    "jumper_pin_location": null,
+    "electrical_status": "NOT_TESTED: user intends jumper, exact header and circuit not specified. No new electrical circuit or physical stop qualification is implied.",
+    "note_R31": "Historic independent stop-switch candidate remains retired. New stock UPS output switch is separately defined in ups_controls_R31; no motor emergency-stop qualification."
+  },
+  "cable_apertures": [
+    {
+      "id": "W1",
+      "center_xy_mm": [
+        -40,
+        6.5
+      ],
+      "shape": "OBROUND",
+      "lip_radius_mm": 0.3,
+      "through_z_mm": [
+        70,
+        74
+      ],
+      "entry_mode": "UNDER_PI_SIDE_EXIT",
+      "evidence": "ASSUMED",
+      "physical_fit": "NOT_TESTED",
+      "note": "6mm minimum throat; 10mm is total tip-to-tip length. Thread before board installation; plug passage and wire bends require actual verification.",
+      "width_mm": 6,
+      "total_length_mm": 10,
+      "end_radius_mm": 3,
+      "long_axis": "X"
+    },
+    {
+      "id": "W2",
+      "center_xy_mm": [
+        0,
+        6.5
+      ],
+      "shape": "OBROUND",
+      "lip_radius_mm": 0.3,
+      "through_z_mm": [
+        70,
+        74
+      ],
+      "entry_mode": "UNDER_PI_SIDE_EXIT",
+      "evidence": "ASSUMED",
+      "physical_fit": "NOT_TESTED",
+      "note": "6mm minimum throat; 10mm is total tip-to-tip length. Thread before board installation; plug passage and wire bends require actual verification.",
+      "width_mm": 6,
+      "total_length_mm": 10,
+      "end_radius_mm": 3,
+      "long_axis": "X"
+    },
+    {
+      "id": "W3",
+      "center_xy_mm": [
+        40,
+        6.5
+      ],
+      "shape": "OBROUND",
+      "lip_radius_mm": 0.3,
+      "through_z_mm": [
+        70,
+        74
+      ],
+      "entry_mode": "BETWEEN_BOARDS_PARTLY_UNDER_IMU",
+      "evidence": "ASSUMED",
+      "physical_fit": "NOT_TESTED",
+      "note": "6mm minimum throat; 10mm is total tip-to-tip length. Thread before board installation; plug passage and wire bends require actual verification.",
+      "width_mm": 6,
+      "total_length_mm": 10,
+      "end_radius_mm": 3,
+      "long_axis": "X"
+    }
+  ],
+  "retention_straps": {
+    "centers_x": [
+      -24,
+      20
+    ],
+    "width": 20,
+    "thickness": 0.8,
+    "outer_yz_bounds": [
+      -34,
+      34,
+      41.4,
+      75.3
+    ],
+    "corner_radius": 3.5,
+    "class": "PLACEHOLDER",
+    "evidence": "ASSUMED",
+    "note": "User20mm flexible strap illustration. Nominal0.8mm thickness retained; upper bendR3 instead ofR3.5 for narrow slots. Lower route/outerbounds unchanged. Actual thickness/buckle/tension/threading NOT_TESTED.",
+    "field_evidence": {
+      "width_mm": {
+        "value": 20,
+        "source": "User says purchased strap is2cm wide",
+        "physical_measurement": "NOT_TESTED"
+      },
+      "thickness_mm": {
+        "value": 0.8,
+        "evidence": "ASSUMED",
+        "source": "Retained previous generic envelope"
+      }
+    },
+    "upper_corner_radius_mm": 3,
+    "corner_radius_scope": "Lower corners only; upper corners3mm inR37"
+  },
+  "insulation": {
+    "size_xy": [
+      93,
+      60
+    ],
+    "z_range": [
+      63.5,
+      64.5
+    ],
+    "hole_xy": [
+      [
+        -43,
+        -23
+      ],
+      [
+        -43,
+        23
+      ],
+      [
+        43,
+        -23
+      ],
+      [
+        43,
+        23
+      ]
+    ],
+    "hole_diameter": 7.4,
+    "class": "PLACEHOLDER",
+    "evidence": "ASSUMED",
+    "note": "R26: user explicitly excludes this previously assumed yellow sheet. Retired from current assembly and exports; historical dimensions are not physical evidence. Blue UPS vendor CAD remains unchanged at1:1.",
+    "enabled": false,
+    "included_in_assembly": false,
+    "included_in_clearance_checks": false
+  },
+  "cradle": {
+    "enabled": false,
+    "status": "NOT_APPLICABLE",
+    "user_instruction": "\u554a\uff0c\u8fd9\u4e2a\u7528\u4e0d\u7740",
+    "date": "2026-10-12",
+    "historical_model": "../r37/exports/maintenance_cradle_R37.step"
+  },
+  "integrated_frame": {
+    "source_revision": "R27",
+    "approved_change": "R28 light R0.4 roundovers on external print edges and strap entry lips. R26 post heights and R27 assembly transforms retained.",
+    "side_walls_flush_to_plate": true,
+    "root_platform_retained": false,
+    "inboard_shift_per_side_mm": 20,
+    "wall_source": "Original R4 installed S288 wall slabs rigidly translated20mm inward",
+    "print_candidate_rotation": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "print_orientation_note": "Rear Y=-40 edge on bed is a retained trial orientation. Integral posts on both sides and servo walls need process-specific slicer review; physical print and strength NOT_TESTED."
+  },
+  "assembly_grounding": {
+    "source_revision": "R4",
+    "vehicle_translation_z_mm": 0,
+    "reason": "Retain R4 diameter80 trial tyre and40mm axle ground height; dimensions shrink only in XY",
+    "loaded_tyre_deflection": "NOT_TESTED"
+  },
+  "pi_revision": {
+    "rotation_degrees_about_PCB_centre": 180,
+    "translation_after_rotation_mm": [
+      3,
+      -6,
+      -4
+    ],
+    "post_height_mm": 6,
+    "previous_post_height_mm": 10,
+    "hole_centres_world_xy": [
+      [
+        -66.5,
+        -24.5
+      ],
+      [
+        -8.5,
+        -24.5
+      ],
+      [
+        -66.5,
+        24.5
+      ],
+      [
+        -8.5,
+        24.5
+      ]
+    ],
+    "reason_for_x_shift": "Avoid left strap and maintenance-cradle collisions identified in the previous read-only screen.",
+    "R8_update": "Additional-Y6 shift centers Pi PCB onY0; original +X3 shift and6mm post height retained."
+  },
+  "usb_connection": {
+    "user_choice": "\u7528\u5f2f\u5934\u77ed\u7ebf\uff0c\u4f18\u5148\u4fdd\u6301\u5e95\u677f\u7d27\u51d1",
+    "connector_types": "USB-A to USB-C, data-capable, angled ends as required",
+    "selected_sku": null,
+    "plug_geometry": "UNKNOWN; no fabricated selected plug or swept cable model",
+    "plug_and_cable_fit": "NOT_TESTED",
+    "physical_route": "BLOCKED until actual plug envelope and bend direction are checked",
+    "note": "Ports face each other. The middle Pi USB-A housing face reference is derived from the unchanged third-party CAD. Adapter face is a photo-based assumption. X face separation12mm is not a cable length or a verified mated-plug gap; actual angled data cable remains unselected.",
+    "reference_ports_mm": {
+      "Pi_middle_USB_A_housing_face": [
+        18,
+        -1.5,
+        89.1
+      ],
+      "adapter_USB_C_assumed_face": [
+        30,
+        -7,
+        81.2
+      ]
+    },
+    "installed_port_normals": {
+      "Pi_USB_A": [
+        1,
+        0,
+        0
+      ],
+      "adapter_USB_C": [
+        -1,
+        0,
+        0
+      ]
+    },
+    "assumed_face_x_separation_mm": 12
+  },
+  "fastener_selection": {
+    "source": "docs/fasteners_R26.md",
+    "screw_types": 5,
+    "nut_types": 2,
+    "loose_washer_types": 2,
+    "screw_count": 30,
+    "nut_count": 10,
+    "loose_washer_count": 12,
+    "new_Pi_length": "M2.5x13",
+    "model_detail": "Nominal smooth shanks and simplified cross recesses; no actual threads or vendor fastener CAD",
+    "new_UPS_length": "M2.5x16",
+    "new_IMU_length": "M1.6x12",
+    "selection_status": "Nominal dimensions only; exact13mm Pi screw SKU and full threads NOT_TESTED"
+  },
+  "layout_revision": {
+    "user_authorization": [
+      "\u4e24\u5757\u5c0f\u677f\u4e0a\u4e0b\u6392\u5217\u3001\u4e2d\u5fc3\u5bf9\u9f50\uff0c\u4f5c\u4e3a\u4e00\u7ec4\u4e0e\u6811\u8393\u6d3e\u642d\u914d",
+      "IMU\u548c\u8c03\u8bd5\u677f\u4e4b\u95f4\u7a7a\u7684\u518d\u591a\u4e00\u70b9\u5427\uff0c\u548c\u6811\u8393\u6d3e\u5bbd\u5ea6\u5bf9\u9f50",
+      "\u63a5\u53d7\uff0c\u6309 10 mm \u95f4\u8ddd\u7ee7\u7eed",
+      "2026-10-11: \u8fd8\u662f\u6b63\u9762\u671d\u4e0a\u5427\uff0c\u5782\u76f4\u4e8e\u5e95\u677f\u3002IMU\u90a3\u8fb9\u8c03\u4e00\u8c03"
+    ],
+    "source_revision": "R31",
+    "selected_study_case": "aligned_pair_full_width_10mm_with_adapter_removal_for_UPS",
+    "board_PCB_centres_world_xy": {
+      "pi4": [
+        -27.5,
+        0
+      ],
+      "bmi323": [
+        30,
+        20
+      ],
+      "adapter": [
+        50,
+        -13
+      ]
+    },
+    "board_PCB_union_xy_bounds_mm": [
+      -70,
+      -28,
+      70,
+      28
+    ],
+    "PCB_edge_margins_mm": {
+      "negative_X": 10,
+      "positive_X": 10,
+      "negative_Y": 12,
+      "positive_Y": 12
+    },
+    "native_board_rotations_about_Z_degrees": {
+      "pi4": 0,
+      "bmi323": -90,
+      "adapter": 0
+    },
+    "printed_post_height_mm": 4,
+    "small_board_gap_Y_mm": 10,
+    "small_board_group_width_Y_mm": 56,
+    "small_board_group_common_X": null,
+    "changed_fastener_types": false,
+    "mass_centering": "NOT_TESTED; visual/geometric layout only",
+    "connector_clearance": "Actual plugs and cable bends NOT_TESTED",
+    "study_report": "sources/layout_compare_before_service_approval.json",
+    "reason": "User rejects underside tabs; relocate IMU toward Pi, keep its rotation, place two top-facing controls to its right. Supersedes commonX small-board-column preference only.",
+    "note_R32": "Current board poses are defined by purchased matrices; earlier layouts are historical."
+  },
+  "service_sequence": {
+    "user_approved": true,
+    "date": "2026-10-10",
+    "user_reply": "\u63a5\u53d7\uff0c\u6309 10 mm \u95f4\u8ddd\u7ee7\u7eed",
+    "installation": [
+      "Tighten upright UPS switch and charging-socket nuts before installing UPS and right wheel servo; actual thread/tool/harness insertion NOT_TESTED.",
+      "Thread wiring through the three6x10mm obrounds before fitting Pi/IMU; the right hole partially underlaps the IMU PCB edge; route without pinching.",
+      "Attach UPS and all four screws; fit retained20mm straps",
+      "Fit Pi and IMU on existing4mm posts",
+      "Bond Unitree board last using one whole sheet of insulating foam tape; avoid pinching wires and verify real underside/UPS screw-head compression"
+    ],
+    "UPS_removal": [
+      "Disable wheel drives, remove power and relevant cables",
+      "Release and remove whole-sheet foam tape and Unitree board; remove Pi and BMI323 for top screwdriver access; replace tape when refitting",
+      "Remove four UPS screws and straps; support UPS and lower it"
+    ],
+    "covered_UPS_screw": "ups3s_6_screw",
+    "covered_UPS_screw_xy_mm": [
+      43,
+      -23
+    ],
+    "adapter_in_place_UPS_driver_access": "FAIL; intentional known obstruction accepted with disassembly prerequisite",
+    "actual_adhesive_removal_and_rebonding": "NOT_TESTED",
+    "no_new_holes_or_parts": false,
+    "R20_holes_added_without_new_parts": true,
+    "note_R32": "IMU is clockwise90deg from R31 with posts, bores and hardware moved together; center(40,18). Neither IMU nor its mounts overlap retained strap envelopes. Electrical sensor remap must use the new orientation; firmware unchanged."
+  },
+  "wheel_revision": {
+    "source_revision": "R10",
+    "user_confirmation": "\u6cbf\u8f6e\u8f74\u8fdc\u79bb\u5e95\u677f\uff0c\u589e\u52a0\u87ba\u4e1d\u95f4\u9699",
+    "selected_offset_each_side_mm": 3,
+    "old_printed_outer_width_mm": 204.2,
+    "new_printed_outer_width_mm": 210.2,
+    "old_tyre_center_track_mm": 185.2,
+    "new_tyre_center_track_mm": 191.2,
+    "fasteners_changed": false,
+    "new_printed_parts": 0,
+    "physical_trial": "NOT_TESTED",
+    "scope": "Historical R11 outward shift; retained tyre center track. Printed outer width is superseded by R30."
+  },
+  "servo_wall_corner_rounding": {
+    "radius_mm": 4,
+    "wall_sides": [
+      "left",
+      "right"
+    ],
+    "edges_per_wall": 4,
+    "root_edges_world_yz": [
+      [
+        -15,
+        70
+      ],
+      [
+        15,
+        70
+      ]
+    ],
+    "lower_edges_world_yz": [
+      [
+        -15,
+        25
+      ],
+      [
+        15,
+        25
+      ]
+    ],
+    "root_kind": "concave material addition",
+    "lower_kind": "convex material removal",
+    "edge_direction": "X through unchanged3mm wall thickness",
+    "evidence": "ASSUMED user-approved design",
+    "user_confirmation": "\u6309 R4 mm \u7ee7\u7eed",
+    "physical_strength": "NOT_TESTED",
+    "previous_radius_mm": 2,
+    "current_upper_root": "Superseded by servo_root_transition_R37; radius_mm4 now describes retained lower corners only"
+  },
+  "printing_plan": {
+    "supplier": "JLC3DP / \u7acb\u521b3D\u6253\u5370",
+    "supplier_source": "User selected service 2026-10-10",
+    "material_selected": null,
+    "process_selected": null,
+    "recommendation_status": "User requested recommendation; no order authorized",
+    "support_strength": "NOT_TESTED",
+    "reinforcement_study": "../studies/servo_support_R12/inspection.json",
+    "reinforcement_adopted": true
+  },
+  "servo_wall_ribs": {
+    "quantity": 4,
+    "side_y_intervals_mm": [
+      [
+        -15,
+        -12
+      ],
+      [
+        12,
+        15
+      ]
+    ],
+    "right_core_triangle_xz_mm": [
+      [
+        77,
+        70
+      ],
+      [
+        69,
+        70
+      ],
+      [
+        77,
+        56
+      ]
+    ],
+    "thickness_mm": 3,
+    "profile_transition_radius_mm": 0,
+    "exposed_edge_radius_mm": 0.4,
+    "evidence": "ASSUMED user-approved design",
+    "user_authorization": [
+      "\u52a0\u5f3a\u7b4b\u4e0d\u8981\u505a\u5706\u5f27\u4e86\uff0c\u548c\u8235\u673a\u652f\u6491\u652f\u67b6\u8fb9\u7f18\u9f50\u5e73\u5427",
+      "Confirmed: remove R2 end blends and R0.6 edge rounds; shift each rib outward0.5mm; retain original bracket R4 corners",
+      "\u662f\uff0c\u6309\u8fd9\u4e2a\u7406\u89e3\u4fee\u6539"
+    ],
+    "strength": "NOT_TESTED",
+    "outward_Y_shift_from_R14_mm": 0.5,
+    "profile": "STRAIGHT_TRIANGULAR",
+    "alignment": "Outer faces Y=-15 and Y=+15 coincide with existing straight servo-wall side faces",
+    "R28_edge_scope": "R0.4 cross-thickness free-edge roundovers only; straight triangular profile retained; four existing inner R4 root seam edges excluded."
+  },
+  "change_record_R16": {
+    "date": "2026-10-10",
+    "source_revision": "TEST_RIG_R15",
+    "printed_geometry_change": false,
+    "adapter_pose_change": false,
+    "board_holes_user_confirmed_absent": true,
+    "foam_strip_dimensions": "ASSUMED, not purchasing dimensions",
+    "strength_or_adhesive_qualification": "NOT_TESTED"
+  },
+  "integral_board_supports": {
+    "upper_height_mm": 4,
+    "lower_UPS_height_mm": 4.5,
+    "lower_UPS_outer_diameter_mm": 7,
+    "lower_UPS_bore_diameter_mm": 3.3,
+    "lower_UPS_centers_xy_mm": [
+      [
+        43,
+        -23
+      ],
+      [
+        -43,
+        -23
+      ],
+      [
+        43,
+        23
+      ],
+      [
+        -43,
+        23
+      ]
+    ],
+    "printed_threads": false,
+    "evidence": "ASSUMED",
+    "physical_fit": "NOT_TESTED",
+    "original_UPS_protection_kit_dimensions": "UNKNOWN; existing insulation placeholder is not a complete factory kit",
+    "source": "User requests lower supports based on blue UPS only. H4.5 retains nominal1.1mm from PiM2.5x13 tips to blue vendor CAD; H4 would leave0.6mm. Yellow placeholder excluded."
+  },
+  "expansion_interface": {
+    "status": "USER_REQUESTED_OUTWARD_SYMMETRIC_TRIAL_INTERFACE",
+    "enabled": true,
+    "centers_xy_mm": [
+      [
+        -74,
+        -34
+      ],
+      [
+        -74,
+        34
+      ],
+      [
+        74,
+        -34
+      ],
+      [
+        74,
+        34
+      ]
+    ],
+    "hole_diameter_mm": 2.8,
+    "pitch_xy_mm": [
+      148,
+      68
+    ],
+    "fastener_thread": "M2.5",
+    "future_support_check_diameter_mm": 8,
+    "future_support_check_height_mm": 55,
+    "scope": "Four deck holes only; no upper platform or supports included unless user selects otherwise. Trial geometric envelope does not certify load, plug access or balancing.",
+    "edge_center_distance_to_straight_sides_mm": 6,
+    "future_fasteners_on_maintenance_cradle": "NOT_APPLICABLE: independent cradle cancelled by user. Hole diameter2.8mm and M2.5 interface unchanged."
+  },
+  "change_record_R17": {
+    "date": "2026-10-11",
+    "user_instruction": "UPS\u90a3\u5757\u61d2\u5f97\u4e70\u87ba\u67f1\u4e86\uff0c\u90fd\u6539\u6210\u6253\u5370\u4e00\u4f53\u7684\u87ba\u67f1\u5427",
+    "additional_request": "\u6700\u597d\u8fd8\u80fd\u4fdd\u7559\u4e00\u70b9\u6269\u5c55\u6027\uff0c\u6bd4\u5982\u53ef\u4ee5\u901a\u8fc7\u518d\u589e\u52a0\u4e00\u5c42\u652f\u67b6\uff0c\u6765\u88c5\u4e00\u4e9b\u522b\u7684\u4e1c\u897f",
+    "integration_approved": true,
+    "expansion_holes_approved": true,
+    "preserved": "All boards, wheels, servo datums, bracket R4 corners and straight flush ribs; through-hole screws and nuts retained.",
+    "expansion_confirmation": "\u53ea\u9884\u7559\u8fd9 4 \u4e2a\u5b54\uff0c\u4e0a\u5c42\u677f\u4ee5\u540e\u518d\u505a\uff08\u63a8\u8350\uff09"
+  },
+  "change_record_R18": {
+    "date": "2026-10-11",
+    "user_instruction": "\u87ba\u67f1\u5c3d\u53ef\u80fd\u518d\u4f4e\u4e00\u70b9\u5427\u3002\u9884\u7559\u7684\u6269\u5c55\u5b54\u53ef\u4ee5\u5f80\u5916\u79fb\u4e00\u70b9\uff0c\u5bf9\u79f0\u5427\u3002",
+    "height_selection_reason": "Upper3mm has only about0.14mm modeled sensor-to-UPS-head clearance; retained original heads and strap path require upper4mm to keep the new nominal clearance target above1mm. Lower7.5mm gives about1.1mm between Pi screw tips and the insulation placeholder. Real solder/insulation/head dimensions not qualified.",
+    "upper_platform": "Deferred per prior user confirmation; four interface holes only",
+    "no_other_structural_redesign": true
+  },
+  "strap_revision": {
+    "source": "R18",
+    "user_request": "UPS\u7535\u6c60\u7684\u7ed1\u5e26\u8981\u4e0d\u76f4\u63a5\u6539\u62102\u5398\u7c73\u5bbd\u7684\uff1f\u56e0\u4e3a\u6211\u4e70\u7684\u5c31\u662f2\u5398\u7c73\u5bbd\u7684\uff0c\u61d2\u5f97\u88c1\u4e86",
+    "user_slot_correction": "\u653e\u5bbd\u523021\u5c31\u884c\u4e86\u5427",
+    "strap_width_mm": 20,
+    "slot_width_mm": 21,
+    "slot_depth_mm": 2.5,
+    "slot_corner_radius_mm": 0.8,
+    "left_strap_translation_x_mm": -4,
+    "right_strap_translation_x_mm": 0,
+    "reason": "A20mm strap at previous left X=-20 intersects Pi support posts. Shift only left strap/slots to X=-24; right X=20 retained to avoid Unitree adhesive pad. No board/fastener relocation.",
+    "latest_revision": "R37"
+  },
+  "cable_aperture_policy": {
+    "latest_user_authorization": "IMU\u53ef\u4ee5\u8f6c\u4e2a90\u5ea6\uff0c\u4f60\u90a3\u4e24\u4e2a\u6392\u5f97\u592a\u7d27\u51d1\u4e86\u3002\u8fc7\u7ebf\u7684\u6d1e\u6d1e\u4e0d\u4e00\u5b9a\u8981\u653e\u5728\u90a3\u4e2a\u4f4d\u7f6e",
+    "sizing_basis": "Three 6x10mm obrounds, long direction X; centers X=-40,0,40 and Y=6.5 unchanged. Total length includes R3 ends.",
+    "purpose": "Arrange small wires side by side while keeping a narrower opening between IMU and adapter.",
+    "maximum_actual_plug_dimensions": "UNKNOWN",
+    "physical_threading": "NOT_TESTED",
+    "full_cable_route": "NOT_TESTED",
+    "under_board_assembly": "Thread wires before fitting Pi where needed, then route sideways through existing under-board space; actual insulation, bend and wire bundles NOT_TESTED."
+  },
+  "change_record_R20": {
+    "date": "2026-10-11",
+    "source_revision": "TEST_RIG_R19",
+    "changed_parts": [
+      "baseplate_R20"
+    ],
+    "all_hardware_poses_unchanged": true,
+    "new_printed_part_types": 0,
+    "new_fasteners": 0,
+    "adopted_perimeter_study": false,
+    "material_or_strength_qualification": "NOT_TESTED"
+  },
+  "change_record_R21": {
+    "date": "2026-10-11",
+    "source_revision": "TEST_RIG_R20",
+    "deck_restoration_source": "R19",
+    "user_instruction": "\u4f60\u5f00\u7684\u8fd9\u51e0\u4e2a\u5b54\u610f\u4e49\u4e0d\u5927\uff0c\u5c24\u5176\u662f\u8c03\u8bd5\u677f\u4e0b\u9762\u7684\u90a3\u4e2a\uff0c\u6211\u662f\u8981\u6574\u4e2a\u7c98\u53cc\u9762\u80f6\u7684\u3002\u968f\u4fbf\u5f00\u51e0\u4e2a\u5c0f\u5706\u5b54\u5c31\u884c",
+    "new_round_holes": 3,
+    "diameter_mm": 6,
+    "retired_R20_oblong_holes": 3,
+    "all_hardware_poses_unchanged": true,
+    "foam_reference_change": "Two strips to one whole sheet",
+    "physical_fit": "NOT_TESTED"
+  },
+  "change_record_R22": {
+    "date": "2026-10-11",
+    "source_revision": "TEST_RIG_R21",
+    "user_instruction": "6\u6beb\u7c73\u7684\u76f4\u5f84\u5dee\u4e0d\u592a\u591a\uff0c\u4f46\u4f60\u53ef\u4ee5\u591a\u5206\u5e03\u51e0\u4e2a\uff0c\u4e0d\u4e00\u5b9a\u8981\u5728\u90a3\u8fb9\u7684\u4f4d\u7f6e\uff0c\u6811\u8393\u6d3e\u5e95\u4e0b\u4e5f\u53ef\u4ee5",
+    "retained_holes": 3,
+    "added_holes": 4,
+    "total_holes": 7,
+    "diameter_mm": 6,
+    "all_hardware_poses_unchanged": true,
+    "adhesive_reference_unchanged": true,
+    "physical_fit": "NOT_TESTED"
+  },
+  "cable_aperture_layout": {
+    "column_x_mm": [
+      -40,
+      0,
+      40
+    ],
+    "column_counts": [
+      1,
+      1,
+      1
+    ],
+    "horizontal_pitch_mm": 40,
+    "row_y_mm": [
+      6.5
+    ],
+    "previous_R31_centers": [
+      [
+        -60,
+        7
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        60,
+        7
+      ]
+    ],
+    "shape": "OBROUND",
+    "all_widths_mm": 6,
+    "all_total_lengths_mm": 10,
+    "long_axis": "X"
+  },
+  "change_record_R23": {
+    "date": "2026-10-11",
+    "source_revision": "TEST_RIG_R22",
+    "user_instruction": "\u75595\u4e2a\u5c31\u884c\u4e86\uff0c\u4fdd\u6301\u5de6\u53f3\u95f4\u8ddd\u4e00\u6837",
+    "total_holes": 5,
+    "diameter_mm": 6,
+    "horizontal_pitch_mm": 60,
+    "all_hardware_poses_unchanged": true,
+    "adhesive_reference_unchanged": true,
+    "physical_fit": "NOT_TESTED"
+  },
+  "change_record_R24": {
+    "date": "2026-10-11",
+    "source_revision": "TEST_RIG_R23",
+    "user_instruction": "\u5c31\u4fdd\u75593\u4e2a\u597d\u4e86\u3002\u5b54\u5f84\u518d\u7565\u5fae\u5927\u4e00\u70b9",
+    "total_holes": 3,
+    "previous_diameter_mm": 6,
+    "diameter_mm": 8,
+    "retained_previous_hole_ids": [
+      "W1",
+      "W3",
+      "W5"
+    ],
+    "restored_previous_hole_ids": [
+      "W2",
+      "W4"
+    ],
+    "horizontal_pitch_mm": 60,
+    "all_hardware_poses_unchanged": true,
+    "adhesive_reference_unchanged": true,
+    "physical_fit": "NOT_TESTED"
+  },
+  "ups_height_revision_R25": {
+    "previous_lower_height_mm": 7.5,
+    "lower_height_mm": 6.5,
+    "UPS_translation_z_mm": 1,
+    "Pi_screw_length_mm": 13,
+    "UPS_screw_length_mm": 16,
+    "upper_post_height_mm": 4,
+    "nominal_Pi_tip_beyond_nut_mm": 0.9,
+    "nominal_UPS_tip_beyond_nut_mm": 1.4,
+    "nominal_Pi_tip_to_assumed_insulation_gap_mm": 1.1,
+    "purchase_SKUs": "NOT_SELECTED",
+    "physical_fit": "NOT_TESTED"
+  },
+  "ups_height_revision_R26": {
+    "user_instruction": "UPS\u7684\u87ba\u67f1\u8fd8\u662f\u9ad8\u3002\u4f60\u4e0d\u7528\u8003\u8651\u90a3\u5c42\u9ec4\u8272\u7684\u7edd\u7f18\u7eb8\uff0c\u53ea\u8003\u8651\u84dd\u8272\u90e8\u5206",
+    "source_revision": "TEST_RIG_R25",
+    "previous_lower_height_mm": 6.5,
+    "lower_height_mm": 4.5,
+    "UPS_translation_z_mm": 2,
+    "excluded_instance": "factory_insulation_REFERENCE",
+    "Pi_screw_length_mm": 13,
+    "UPS_screw_length_mm": 16,
+    "screws_changed": false,
+    "upper_post_height_mm": 4,
+    "nominal_Pi_tip_beyond_nut_mm": 0.9,
+    "nominal_UPS_tip_beyond_nut_mm": 3.4,
+    "nominal_Pi_tip_to_blue_UPS_gap_mm": 1.1,
+    "height_candidates_mm_and_nominal_gaps": [
+      [
+        6.5,
+        3.1
+      ],
+      [
+        5.5,
+        2.1
+      ],
+      [
+        5,
+        1.6
+      ],
+      [
+        4.5,
+        1.1
+      ],
+      [
+        4,
+        0.6
+      ],
+      [
+        3.5,
+        0.1
+      ]
+    ],
+    "physical_fit": "NOT_TESTED",
+    "scope": "Documented simplified blue vendor solid only; no complete protective kit or solder-height qualification."
+  },
+  "ups_orientation_revision_R27": {
+    "date": "2026-10-11",
+    "source_revision": "TEST_RIG_R26",
+    "user_instruction": "UPS\u8981180\u8f6c\u4e2a\u65b9\u5411\uff0c\u63d2\u4ef6\u90a3\u4e00\u8fb9\u79bb\u6811\u8393\u6d3e\u8fd1\u4e00\u70b9",
+    "rotation_axis": "body +Z",
+    "angle_degrees": 180,
+    "center_unchanged": true,
+    "height_unchanged": true,
+    "before_matrix": [
+      [
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        63.900000000000006
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "after_matrix": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        63.900000000000006
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "connector_bank_body_side_before": "+X",
+    "connector_bank_body_side_after": "-X",
+    "printed_parts_unchanged": true,
+    "fasteners_unchanged": true,
+    "strap_geometry_and_poses_unchanged": true,
+    "physical_cable_fit": "NOT_TESTED"
+  },
+  "touch_edge_rounding_R28": {
+    "radius_mm": 0.4,
+    "user_instruction": "\u7ed9\u6253\u5370\u4ef6\u53ef\u4ee5\u6478\u5230\u7684\u8fb9\u7f18\u505a\u4e00\u70b9\u70b9\u8f7b\u5fae\u5706\u89d2",
+    "source_revision": "TEST_RIG_R27",
+    "protected": [
+      "board post seats and bores",
+      "servo screw and output bores",
+      "wheel drive seat and fastener bores/seats",
+      "tyre seat diameter and lip contact faces",
+      "maintenance bearing plane height and flat central bearing areas"
+    ],
+    "strap_slot_throat_mm": [
+      21,
+      2.5
+    ],
+    "strap_slot_entry_radius_mm": 0.4,
+    "all_instance_poses_unchanged": true,
+    "physical_touch_finish": "NOT_TESTED"
+  },
+  "mesh_export_refinement_R29": {
+    "geometry_source": "R28",
+    "geometry_changed": false,
+    "parameters": {
+      "Deflection": 0.01,
+      "Angle": 0.12,
+      "DeflectionInterior": 0.01,
+      "AngleInterior": 0.3,
+      "EnableControlSurfaceDeflectionAllSurfaces": true,
+      "ControlSurfaceDeflection": true,
+      "MinSize": 0.002,
+      "Relative": false,
+      "InParallel": false
+    },
+    "evidence": "Per-face analytic-surface sampling of reread STL; closedness, winding, connectivity and volume checked. Not a mathematical maximum-deviation proof.",
+    "source_STEP_bytes_unchanged": false,
+    "inherited_scope": "Historical R29 meshing parameters retained; R30 wheel geometry differs."
+  },
+  "wheel_revision_R30": {
+    "source_revision": "TEST_RIG_R29",
+    "measurement_record": "/Users/dean/Documents/MORI/mechanical/test_rig/selections/measurements/FIT0500_original_rim_20261011.json",
+    "profile": "middle raised, both sides lower",
+    "total_rim_width_mm": 16.5,
+    "raised_band_diameter_mm": 72.5,
+    "raised_band_width_mm": 13.5,
+    "lower_side_diameter_mm": 64,
+    "side_widths_mm": [
+      1.5,
+      1.5
+    ],
+    "side_widths_evidence": "ASSUMED, derived under user tentative symmetry",
+    "printed_outer_width_mm": 207.7,
+    "tyre_center_track_mm": 191.2,
+    "fasteners_changed": false,
+    "all_instance_poses_unchanged": true,
+    "unchanged_parts": "All purchased geometry, baseplate_R29, maintenance_cradle_R29",
+    "physical_trial": "NOT_TESTED"
+  },
+  "cable_slot_update_R33": {
+    "baseline": "R32",
+    "centers_unchanged": true,
+    "long_axis": "X",
+    "width_mm": 6,
+    "tip_to_tip_length_mm": 10,
+    "end_radius_mm": 3,
+    "hole_mouth_radius_mm": 0.3,
+    "minimum_clearance_reduced_from_mm": 8,
+    "actual_connector_passage": "NOT_TESTED",
+    "all_hardware_and_wheel_geometry_unchanged": true
+  },
+  "controls_alignment_R34": {
+    "source_revision": "R33",
+    "jack_translation_mm": [
+      10.5,
+      0,
+      0
+    ],
+    "switch_unchanged": true,
+    "all_boards_and_wire_slots_unchanged": true,
+    "same_column_x_mm": 59.5,
+    "center_pitch_mm": 16,
+    "nominal_flange_edge_gap_mm": 2.5,
+    "physical_fit": "NOT_TESTED",
+    "reason": "Preserve motor clearance and existing boards while aligning controls. Row samples encroach on maintenance cradle, extension holes and/or IMU/tool approaches."
+  },
+  "control_size_correction_R35": {
+    "measurement_source": "sources/UPS_controls_nut_correction_20261012.json",
+    "nut_AF_mm": {
+      "jack": 10.5,
+      "switch": 13.5
+    },
+    "trial_holes_mm": {
+      "jack": 8,
+      "switch": 12
+    },
+    "holes_are_not_thread_measurements": true,
+    "previous_assumptions_source": "../studies/ups_controls_R30_20261011/README.md",
+    "all_poses_unchanged": false,
+    "physical_fit": "NOT_TESTED",
+    "charge_translation_from_R34_mm": [
+      0,
+      -1,
+      0
+    ],
+    "user_followup": "\u5145\u7535\u5b54\u53ef\u4ee5\u518d\u5f80\uff0c\u505c\u7535\u5b54\u7a0d\u5fae\u8d34\u8fd1\u4e00\u70b9\uff0c\u8fd8\u6709\u4f59\u91cf\uff1b\u5e76\u4e14\u8fd9\u4e24\u4e2a\u5b54\u4e0d\u7528\u505a\u5c0f\u5706\u89d2\uff0c\u56e0\u4e3a\u5b83\u4eec\u7528\u4e8e\u5b89\u88c5",
+    "hole_mouth_radius_mm": 0
+  },
+  "controls_compaction_R36": {
+    "baseline": "R35",
+    "jack_translation_mm": [
+      -2,
+      -1,
+      0
+    ],
+    "switch_translation_mm": [
+      -2,
+      -0.5,
+      0
+    ],
+    "same_column_x_mm": 57.5,
+    "center_spacing_mm": 14.5,
+    "nut_gap_aligned_flats_mm": 2.5,
+    "nut_any_orientation_radial_bound_gap_mm": 0.6435935394489807,
+    "jack_hole_to_Y_edge_mm": 4,
+    "installation_bores_mm": {
+      "jack": 8,
+      "switch": 12
+    },
+    "installation_hole_roundover_mm": 0,
+    "other_geometry_and_poses_unchanged": true,
+    "physical_fit": "NOT_TESTED"
+  },
+  "ups_controls_R37": {
+    "source_study": "../studies/ups_wheelward_R36_20261012",
+    "rejected": "Rear-facing underside mounting tabs",
+    "adopted_case": "Both controls translated+1.5mm X toward adjacent wheel",
+    "direction": "Faces +Z; axes normal to deck; no added external mounting plates",
+    "controls": {
+      "jack": {
+        "hole_diameter": 8,
+        "thread_diameter_assumed": 8,
+        "nut_af": 10.5,
+        "nut_thickness_assumed": 2,
+        "flange_diameter_assumed": 10.5,
+        "flange_height_assumed": 2.5,
+        "body_diameter_assumed": 10,
+        "thread_length_assumed": 7,
+        "depth_capacity": 25,
+        "center_xy": [
+          59,
+          32
+        ],
+        "flange_evidence": "ASSUMED upper-bound round illustration contained in nut flats; not measured",
+        "nut_corner_to_corner_derived_mm": 12.124355652982143
+      },
+      "switch": {
+        "hole_diameter": 12,
+        "thread_diameter_assumed": 12,
+        "nut_af": 13.5,
+        "nut_thickness_assumed": 2,
+        "flange_diameter_assumed": 13.5,
+        "flange_height_assumed": 2.5,
+        "body_diameter_assumed": 12,
+        "thread_length_assumed": 10,
+        "depth_capacity": 25,
+        "center_xy": [
+          59,
+          17.5
+        ],
+        "flange_evidence": "ASSUMED upper-bound round illustration contained in nut flats; not measured",
+        "nut_corner_to_corner_derived_mm": 15.588457268119896
+      }
+    },
+    "measured_fields": {
+      "switch_nut_across_flats": 13.5,
+      "jack_nut_across_flats": 10.5,
+      "evidence": "MEASURED approximate user report; parallel-flat direction user-confirmed; accuracy unspecified",
+      "source": "sources/UPS_controls_max_envelope_20261012.json",
+      "max_feature": "User observed retaining hex nut is widest feature"
+    },
+    "plane_z": 74,
+    "deck_thickness": 4,
+    "hole_edge_radius": 0,
+    "IMU_rotation_changed": false,
+    "limits": [
+      "Nut AF10.5/13.5mm are user-reported approximate measurements. Thread diameter/length, nut thickness, flange and tail remain ASSUMED.",
+      "25mm tail depth is an ASSUMED envelope; real body, heatshrink, lead bend and insertion route are unmeasured.",
+      "Hole fit, retaining thread engagement and physical wiring remain NOT_TESTED",
+      "Socket-tool, finger and charging-plug volumes are ASSUMED access probes; no actual tool or mating plug was measured",
+      "No physical strength, print fit, electrical or emergency-stop qualification; supplied switch represents UPS power output control",
+      "Main deck is4mm thick. Actual thread length must accommodate this plus the retaining nut; engagement is not verified.",
+      "Nominal CAD radial clearance is zero against the unchanged assumed8/12mm thread envelopes. This is a trial design, not verified physical fit.",
+      "Round top head envelopes10.5/13.5mm are inferred upper-bound illustrations, not measured diameters. Nut corner-to-corner widths12.124/15.588mm are calculated from approximate across-flats reports."
+    ],
+    "physical_fit": "NOT_TESTED",
+    "webs_mm": {
+      "jack_to_straight_plate_edge_at_throat": 4,
+      "jack_to_straight_plate_edge_at_rounded_mouth": 4,
+      "strength": "NOT_TESTED",
+      "hole_mouth_radius_mm": 0
+    },
+    "IMU_center_xy": [
+      40,
+      18
+    ],
+    "IMU_quarter_turn_deg": -90,
+    "IMU_source_center_xy": [
+      50,
+      20
+    ],
+    "IMU_previous_R31_center_xy": [
+      30,
+      20
+    ],
+    "flange_gap_mm": 2.5,
+    "layout_source": "R36 plus1.5mm X; no Y/diameter/relative-spacing change",
+    "tool_refinement": "Retain established neighbouring-tool limits. Larger outward candidates approached the frame; +1.5mm retains declared permanent-frame capacity.",
+    "IMU_pose_inherited_from": "R32",
+    "alignment": "Same X59; charging Y32; switch Y17.5; faces +Z",
+    "center_spacing_mm": 14.5,
+    "nominal_flange_gap_mm": 2.5,
+    "hole_sizing_basis": "User-selected trial holes: charging8mm and switch12mm. These are not verified threaded-cylinder diameters. The former8/12mm thread envelopes were modelling assumptions, not vendor specifications."
+  },
+  "change_record_R37": {
+    "baseline": "R36",
+    "user_instructions": [
+      "\u4e24\u4e2a\u5b54\u90fd\u518d\u5f80\u90a3\u4e2a\u8f6e\u80ce\u8fb9\u7f18\u4e00\u70b9",
+      "\u7ed1\u5e26\u5f00\u5b54\u518d\u7ec6\u4e00\u70b9",
+      "\u7f1d\u5bbd\u4e0d\u89814\u6beb\u7c73\u5427\uff1f\u6211\u89c9\u5f97\u6539\u52302.5\u5c31\u591f\u4e86",
+      "\u6539\u6210\u76f4\u7684\u597d\u4e86\u3002\u7136\u540e\u76f4\u7684\u548c\u8fb9\u7f18\u8fde\u63a5\u7684\u5730\u65b9\u8fd8\u662fR4\u5012\u89d2",
+      "\u662f\uff0c\u6309\u8fd9\u4e2a\u5f62\u72b6\u4fee\u6539",
+      "\u540c\u6b65\u8c03\u6574\u7ef4\u62a4\u67b6\uff08\u63a8\u8350\uff09"
+    ],
+    "controls_translation_mm": [
+      1.5,
+      0,
+      0
+    ],
+    "strap_slots_previous_mm": [
+      21,
+      5
+    ],
+    "strap_slots_current_mm": [
+      21,
+      2.5
+    ],
+    "slot_centers_unchanged": true,
+    "two_strap_center_pitch_mm": 44,
+    "two_strap_inner_slot_gap_mm": 23,
+    "one_strap_front_rear_slot_center_pitch_mm": 67.2,
+    "control_holes_no_lip_roundover": true,
+    "cable_slots_unchanged": true,
+    "physical_fit": "NOT_TESTED",
+    "flexible_strap_reference_change": "Upper bendR3.5 toR3; lower route/width/thickness/bounds retained",
+    "upper_roots": "45-degree straight with R4 blends at each end; four upper roots symmetric. R6 circular candidate not adopted.",
+    "maintenance_cradle": "Four top corner reliefs enlarged with user confirmation to1.5x6.2x4.5mm; height92mm retained",
+    "unchanged_scope": "All geometry except declared baseplate edits, flexible top strap path and cradle corner reliefs; poses retained except two control bodies and nuts translated1.5mm X."
+  },
+  "servo_root_transition_R37": {
+    "profile": "45-degree straight segment with R4 tangent blends at both ends",
+    "nominal_diagonal_legs_mm": 6,
+    "end_blend_radius_mm": 4,
+    "root_count": 4,
+    "wall_sides": [
+      "left",
+      "right"
+    ],
+    "lower_corners_unchanged_radius_mm": 4,
+    "exposed_edge_roundover_mm": 0.4,
+    "evidence": "ASSUMED design, user approved shape",
+    "user_confirmation": "\u662f\uff0c\u6309\u8fd9\u4e2a\u5f62\u72b6\u4fee\u6539",
+    "physical_fit": "NOT_TESTED",
+    "strength": "NOT_TESTED"
+  },
+  "change_record_R38": {
+    "user_instruction": "\u554a\uff0c\u8fd9\u4e2a\u7528\u4e0d\u7740",
+    "removed_instances": [
+      "maintenance_cradle_R37"
+    ],
+    "vehicle_geometry_changed": false,
+    "printing": [
+      {
+        "part": "baseplate_R37",
+        "quantity": 1
+      },
+      {
+        "part": "wheel_hub_R30_TRIAL",
+        "quantity": 2
+      }
+    ],
+    "supersedes": "Earlier test-rig maintenance-cradle requirement only; main MORI design not edited."
+  },
+  "wheel_revision_R39": {
+    "status": "PROTOTYPE / UNVALIDATED",
+    "units": "mm",
+    "class_": "PRINTABLE",
+    "evidence": "New printed structure is ASSUMED; previously measured original tyre/rim dimensions retain their evidence status.",
+    "source": "R38 assembly / R30 attachment and measured tyre profile",
+    "source_step": "/Users/dean/Documents/MORI/mechanical/test_rig/r38/exports/wheel_hub_R30_TRIAL.step",
+    "source_sha256": "191ed2e9441971c5b883f31d54d279404157699f07ce0c30a5c46f66ae744700",
+    "interface_preserved_through_u": 6.2,
+    "hub_radius": 10.5,
+    "hub_front_u": 17.25,
+    "hub_transition": {
+      "u0": 6.2,
+      "u1": 9.5,
+      "r0": 14,
+      "r1": 10.5
+    },
+    "rim_profile": [
+      {
+        "u0": 7.25,
+        "u1": 8.75,
+        "ro": 32,
+        "ri": 29.5
+      },
+      {
+        "u0": 8.75,
+        "u1": 22.25,
+        "ro": 36.25,
+        "ri": 29.5
+      },
+      {
+        "u0": 22.25,
+        "u1": 23.75,
+        "ro": 32,
+        "ri": 29.5
+      }
+    ],
+    "inner_rim_groove": false,
+    "inner_rim_diameter": 59,
+    "spoke_count": 6,
+    "spoke_u": [
+      13.75,
+      17.25
+    ],
+    "spoke_profile_yz": [
+      [
+        9,
+        -4
+      ],
+      [
+        34.5,
+        -5
+      ],
+      [
+        34.5,
+        5
+      ],
+      [
+        9,
+        4
+      ]
+    ],
+    "tire_center_u": 15.5,
+    "spoke_midplane_u": 15.5,
+    "old_spoke_midplane_u": 22.25,
+    "face_recess_mm": 6.5,
+    "screw_grip": 6,
+    "screw": "M2x8",
+    "nominal_servo_entry": 2,
+    "outer_root_blend_radius": 3,
+    "inner_root_blend_radius": 1.5,
+    "free_edge_radius": 0.4,
+    "free_edge_scope": "Outboard web/window perimeter and both inner rim entry mouths; functional bores and tyre surfaces excluded. Rear web transitions are not given an additional edge fillet.",
+    "nominal_wall_design": {
+      "middle_radial": 6.75,
+      "side_step_radial": 2.5,
+      "spoke_axial": 3.5
+    },
+    "print_orientation": "Rim front u23.75 down is a reference transform only. Recessed web needs process-specific support/orientation review.",
+    "strength": "NOT_TESTED",
+    "physical_fit": "NOT_TESTED",
+    "material_density": "Not assumed",
+    "metrics": {
+      "before": {
+        "volume_mm3": 37531.09623605122,
+        "centroid_mm": [
+          15.29430953835244,
+          1.389044129679677e-11,
+          5.88111823426835e-12
+        ],
+        "polar_integral_mm5": 27650090.015055314
+      },
+      "after": {
+        "volume_mm3": 28712.14520881716,
+        "centroid_mm": [
+          14.423478339840225,
+          -5.826413095241268e-06,
+          -1.2202730138798745e-05
+        ],
+        "polar_integral_mm5": 23924789.57283493
+      },
+      "volume_reduction_percent": 23.497717657292526,
+      "polar_inertia_reduction_percent_same_density": 13.47301379558612,
+      "includes": "Printed wheel only; rubber, screws, servo unchanged; no density assumed"
+    }
+  },
+  "change_record_R39": {
+    "user_request": "\u5185\u51f9\u6ca1\u95ee\u9898\uff0c\u4f46\u4e0d\u8981\u589e\u52a0\u51f9\u69fd\u5427\uff1f6\u6839\u8f90\u6761\u4e0e\u8fb9\u7f18\u8fde\u63a5\u7684\u5730\u65b9\u6539\u6210\u5706\u6da6\u4e00\u70b9",
+    "changed_instances": [
+      "wheel_hub_L",
+      "wheel_hub_R"
+    ],
+    "retained": "All 68 other instances, all hardware poses, baseplate, tyres, screw seats and screw lengths. No maintenance cradle.",
+    "physical_fit": "NOT_TESTED"
+  },
+  "wheel_revision_R40": {
+    "status": "PROTOTYPE / UNVALIDATED",
+    "units": "mm",
+    "class_": "PRINTABLE",
+    "evidence": "New printed structure is ASSUMED; previously measured original tyre/rim dimensions retain their evidence status.",
+    "source": "R39 assembly and wheel / retained R30 measured tyre profile",
+    "source_step": "/Users/dean/Documents/MORI/mechanical/test_rig/r39/exports/wheel_hub_R39_TRIAL.step",
+    "source_sha256": "9a2e563200e0b2572be15acd35772758b1f388bc4c3fc4f5bbce83fa4f9c8d5d",
+    "functional_interface_preserved_radius": 8,
+    "functional_interface_preserved_through_u": 6.2,
+    "hub_radius": 10.5,
+    "hub_front_u": 21.75,
+    "hub_transition": null,
+    "removed_broad_flange": true,
+    "hub_body_u": [
+      5,
+      21.75
+    ],
+    "rim_profile": [
+      {
+        "u0": 7.25,
+        "u1": 8.75,
+        "ro": 32,
+        "ri": 29.5
+      },
+      {
+        "u0": 8.75,
+        "u1": 22.25,
+        "ro": 36.25,
+        "ri": 29.5
+      },
+      {
+        "u0": 22.25,
+        "u1": 23.75,
+        "ro": 32,
+        "ri": 29.5
+      }
+    ],
+    "inner_rim_groove": false,
+    "inner_rim_diameter": 59,
+    "spoke_count": 6,
+    "spoke_u": [
+      18.25,
+      21.75
+    ],
+    "spoke_profile_yz": [
+      [
+        9,
+        -4
+      ],
+      [
+        34.5,
+        -5
+      ],
+      [
+        34.5,
+        5
+      ],
+      [
+        9,
+        4
+      ]
+    ],
+    "tire_center_u": 15.5,
+    "spoke_midplane_u": 20,
+    "old_spoke_midplane_u": 15.5,
+    "face_recess_mm": 2,
+    "spoke_shift_outward_mm": 4.5,
+    "screw_grip": 6,
+    "screw": "M2x8",
+    "nominal_servo_entry": 2,
+    "outer_root_blend_radius": 3,
+    "inner_root_blend_radius": 1.5,
+    "free_edge_radius": 0.4,
+    "free_edge_scope": "Outboard web/window perimeter, both inner rim entry mouths, and rear diameter21 hub heel; functional bores and tyre surfaces excluded. Rear web transitions are not given an additional edge fillet.",
+    "nominal_wall_design": {
+      "middle_radial": 6.75,
+      "side_step_radial": 2.5,
+      "spoke_axial": 3.5
+    },
+    "print_orientation": "Rim front u23.75 down is a reference transform only. Recessed web needs process-specific support/orientation review.",
+    "strength": "NOT_TESTED",
+    "physical_fit": "NOT_TESTED",
+    "material_density": "Not assumed",
+    "metrics": {
+      "before": {
+        "volume_mm3": 28712.14520881716,
+        "centroid_mm": [
+          14.423478339840225,
+          -5.826413095241268e-06,
+          -1.2202730138798745e-05
+        ],
+        "polar_integral_mm5": 23924789.57283493
+      },
+      "after": {
+        "volume_mm3": 29150.847923281533,
+        "centroid_mm": [
+          15.400300038394565,
+          -5.388640410804853e-06,
+          -1.2108799409707608e-05
+        ],
+        "polar_integral_mm5": 23891911.352242284
+      },
+      "volume_reduction_percent": -1.5279342984433342,
+      "polar_inertia_reduction_percent_same_density": 0.1374232383217211,
+      "includes": "Printed wheel only; rubber, screws, servo unchanged; no density assumed"
+    }
+  },
+  "change_record_R40": {
+    "user_request": "\u7528\u6237\u786e\u8ba4\uff1a\u5185\u51f9 2 mm\uff0c\u5411\u5916\u79fb 4.5 mm\uff1b\u53bb\u6389\u5708\u51fa\u7684\u5bbd\u53f0\u9636\uff0c\u4fdd\u7559 R3\u3001\u63a5\u89e6\u9762\u3001\u516d\u5b54\u53ca\u539f\u87ba\u4e1d\u627f\u538b\u6df1\u5ea6",
+    "changed_instances": [
+      "wheel_hub_L",
+      "wheel_hub_R"
+    ],
+    "retained": "All 68 other instances, all hardware poses, baseplate, tyres, screw seats and screw lengths. No maintenance cradle.",
+    "physical_fit": "NOT_TESTED"
+  },
+  "wheel_revision_R41": {
+    "status": "PROTOTYPE / UNVALIDATED",
+    "units": "mm",
+    "class_": "PRINTABLE",
+    "evidence": "Printed geometry ASSUMED; no new physical measurements.",
+    "source": "R40 wheel and full assembly",
+    "source_step": "/Users/dean/Documents/MORI/mechanical/test_rig/r40/exports/wheel_hub_R40_TRIAL.step",
+    "source_sha256": "fa2f8aa54bee122a8805c9772d1148ecfe20bf45e98f5c1870d6834a546cde7f",
+    "functional_interface_preserved_radius": 8,
+    "functional_interface_preserved_through_u": 6.2,
+    "hub_radius": 10.5,
+    "hub_front_u": 21.75,
+    "hub_transition": null,
+    "removed_broad_flange": true,
+    "hub_body_u": [
+      5,
+      21.75
+    ],
+    "rim_profile": [
+      {
+        "u0": 7.25,
+        "u1": 8.75,
+        "ro": 32,
+        "ri": 29.5
+      },
+      {
+        "u0": 8.75,
+        "u1": 22.25,
+        "ro": 36.25,
+        "ri": 29.5
+      },
+      {
+        "u0": 22.25,
+        "u1": 23.75,
+        "ro": 32,
+        "ri": 29.5
+      }
+    ],
+    "inner_rim_groove": false,
+    "inner_rim_diameter": 59,
+    "spoke_count": 6,
+    "spoke_u": [
+      18.25,
+      21.75
+    ],
+    "spoke_profile_yz": [
+      [
+        9,
+        -4
+      ],
+      [
+        34.5,
+        -5
+      ],
+      [
+        34.5,
+        5
+      ],
+      [
+        9,
+        4
+      ]
+    ],
+    "tire_center_u": 15.5,
+    "spoke_midplane_u": 20,
+    "old_spoke_midplane_u": 15.5,
+    "face_recess_mm": 2,
+    "spoke_shift_outward_mm": 4.5,
+    "screw_grip": 6,
+    "screw": "M2x8",
+    "nominal_servo_entry": 2,
+    "outer_root_blend_radius": 3,
+    "inner_root_blend_radius": 1.5,
+    "free_edge_radius": 0.4,
+    "free_edge_scope": "Retain R40 outboard rounds. Add R0.4 to all six inboard spoke perimeters, including cylinder-to-spoke and rim-to-spoke roots. Functional holes and tyre surfaces excluded.",
+    "nominal_wall_design": {
+      "middle_radial": 6.75,
+      "side_step_radial": 2.5,
+      "spoke_axial": 3.5
+    },
+    "print_orientation": "Rim front u23.75 down is a reference transform only. Recessed web needs process-specific support/orientation review.",
+    "strength": "NOT_TESTED",
+    "physical_fit": "NOT_TESTED",
+    "material_density": "Not assumed",
+    "revision": "R41_INBOARD_EDGE_ROUNDS",
+    "inboard_edge_radius_mm": 0.4,
+    "build_method": "Exact R0.4 rolling-ball fillet on one 60-degree sector, sew six rounded sector skins only between u10 and u20, retaining the original R40 lower hub and upper/front skin verbatim; drop only temporary split planes. Material differences outside the authorized small-round region must be zero.",
+    "user_scope": "User clarified: keep the hub thickness; make its connection to the spokes smoother. Also add the missing small inboard R.",
+    "metrics": {
+      "before": {
+        "volume_mm3": 29150.847923281533,
+        "centroid_mm": [
+          15.400300038394565,
+          -5.388640410804853e-06,
+          -1.2108799409707608e-05
+        ],
+        "polar_integral_mm5": 23891911.352242284
+      },
+      "after": {
+        "volume_mm3": 29147.64407582502,
+        "centroid_mm": [
+          15.3999468853603,
+          -5.884913037570827e-06,
+          -1.3306864979697527e-05
+        ],
+        "polar_integral_mm5": 23891217.513699133
+      },
+      "volume_reduction_percent": 0.010990580668335248,
+      "polar_inertia_reduction_percent_same_density": 0.0029040729848772706,
+      "includes": "Printed wheel only; rubber, screws, servo unchanged; no density assumed"
+    }
+  },
+  "change_record_R41": {
+    "user_request": "\u7528\u6237\u8981\u6c42\u8865\u9f50\u5185\u4fa7\u5c0f R \u89d2\uff0c\u5e76\u660e\u786e\u4fdd\u7559\u8f6e\u6bc2\u7c97\u7ec6\uff0c\u4ec5\u5c06\u5176\u4e0e\u8f90\u6761\u7684\u8fde\u63a5\u5904\u7406\u5706\u987a\u3002",
+    "changed_instances": [
+      "wheel_hub_L",
+      "wheel_hub_R"
+    ],
+    "retained": "Hub diameter21, six holes and seats, R40 front geometry, all 68 other instances and all poses.",
+    "physical_fit": "NOT_TESTED"
+  }
+}

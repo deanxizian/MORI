@@ -1,0 +1,136 @@
+{
+  "document_id": "TR5-E01",
+  "revision": "R1",
+  "mechanical_context": "TEST_RIG_R5",
+  "date": "2026-10-09",
+  "timezone": "Asia/Shanghai",
+  "files": [
+    {
+      "path": "hardware/test_rig/specifications/01_Raspberry_Pi_4B/raspberry_pi_4_datasheet.pdf",
+      "sha256": "8febd042d004c7a2897a60fe6e1b2c007a941c3c4119f4fb791dc0afb669a860",
+      "manufacturer_url": "https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008341-DS-1-raspberry-pi-4-datasheet.pdf",
+      "evidence": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    },
+    {
+      "path": "hardware/test_rig/specifications/01_Raspberry_Pi_4B/raspberry_pi_4_reduced_schematics.pdf",
+      "sha256": "0ee3fd2b4976b1d614fc817b0d28564226d3ee8656a9108ccb69c099715d2374",
+      "manufacturer_url": "https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008345-DS-1-raspberry-pi-4-reduced-schematics.pdf",
+      "evidence": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    },
+    {
+      "path": "hardware/test_rig/specifications/02_Unitree_USB_Adapter/J288_S288_manual.pdf",
+      "sha256": "587cce7385d2d27704671c39db49c226ac127ae30d686207b812e78a960a0201",
+      "manufacturer_url": "https://www.unitree.com/images/%E6%97%A0%E5%88%B7%E6%95%B0%E5%AD%97%E8%88%B5%E6%9C%BAJ288S288%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.pdf",
+      "evidence": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    },
+    {
+      "path": "hardware/test_rig/specifications/03_Waveshare_UPS_3S/UPS_3S_schematic.pdf",
+      "sha256": "ea654047e0c8ae1b8128ecf878ae69e976646ea504c1e6619432751eb452a3b2",
+      "manufacturer_url": "https://www.waveshare.com/w/upload/5/53/Ups01.pdf",
+      "evidence": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    },
+    {
+      "path": "hardware/test_rig/specifications/05_DFRobot_SEN0693/SEN0693_schematics_V1.0.pdf",
+      "sha256": "b313288291286a6fa60a7f2048e57efa54549862034d03fe557f270a268e53e1",
+      "manufacturer_url": "https://dfimg.dfrobot.com/wiki/23754/SEN0693_bmi323-6-dof-imu-sensor_schematics_V1.0.pdf",
+      "evidence": "VENDOR_DOCUMENTED",
+      "physical_measurement": false
+    }
+  ],
+  "web_sources": [
+    {
+      "id": "S1",
+      "url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/",
+      "retrieval": "Official search result and local official datasheet/schematic",
+      "supports": [
+        "Pi4 USB-C 5V supply",
+        "USB host",
+        "Wi-Fi",
+        "GPIO pin assignments from local schematic"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://www.unitree.com/images/%E6%97%A0%E5%88%B7%E6%95%B0%E5%AD%97%E8%88%B5%E6%9C%BAJ288S288%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.pdf",
+      "retrieval": "Local archived official PDF read; pages3 and6 rendered and inspected; page5 extracted",
+      "supports": [
+        "USB-C to host, XT30 power and PH2.0 motor ports",
+        "PH2.0 pin1 SIGNAL, pin2 VCC, pin3 GND with orientation-dependent view",
+        "6Mbps 8N1 half-duplex bus, distinct IDs0-14"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.unitree.com/DigitalServo/",
+      "retrieval": "LIVE_WEB_READ",
+      "supports": [
+        "S288 6.4-12.6V",
+        "Maximum line current0.84A for S288",
+        "TTL multidrop"
+      ]
+    },
+    {
+      "id": "S4",
+      "url": "https://www.waveshare.com/wiki/UPS_Module_3S",
+      "retrieval": "Official page content in web search index; direct fetch403",
+      "indexed_revision": "111043",
+      "supports": [
+        "5V regulator rated5A",
+        "XH2.54 battery voltage output labeled12.6V2A",
+        "3 series18650 cells",
+        "12.6V2A DC5521 input; Type-C output"
+      ]
+    },
+    {
+      "id": "S5",
+      "url": "https://www.waveshare.com/w/upload/5/53/Ups01.pdf",
+      "retrieval": "Local official schematic read and rendered",
+      "supports": [
+        "SY8286 converter powers5V output",
+        "P2 output switch and shared VBAT bus",
+        "INA2190x41",
+        "J1 selects external I2C pullup voltage3V3 or5V",
+        "EXT_SDA/EXT_SCL and header"
+      ]
+    },
+    {
+      "id": "S6",
+      "url": "https://wiki.dfrobot.com/sen0693/",
+      "retrieval": "LIVE_WEB_READ plus local schematic",
+      "supports": [
+        "3.3V supply and logic",
+        "3V3,GND,SDA,SCL,INT1,INT2",
+        "default address0x69; short pad0x68"
+      ]
+    }
+  ],
+  "design_choices": [
+    {
+      "item": "I2C four-wire polling-first interface",
+      "evidence": "ASSUMED design selection; user selected SEN0693; no DRDY GPIO assigned"
+    },
+    {
+      "item": "Left motor ID0 and right motor ID1",
+      "evidence": "ASSUMED planned settings; not written to hardware"
+    },
+    {
+      "item": "S288 second PH2.0 port daisy-chain",
+      "evidence": "ASSUMED harness plan using documented multi-drop bus and two visible motor ports; continuity and combined current unverified"
+    },
+    {
+      "item": "H03 XH-to-XT30 supply",
+      "evidence": "ASSUMED harness; contacts and polarity unqualified"
+    },
+    {
+      "item": "Jumper",
+      "evidence": "User-selected method; exact part and function unknown; no invented pins"
+    }
+  ],
+  "documentation_review": "See reports/verification.json and visual_review.json",
+  "physical_wiring": "NOT_TESTED",
+  "powered_operation": "NOT_TESTED"
+}

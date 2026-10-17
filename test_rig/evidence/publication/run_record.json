@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-18",
+  "scope": "Offline publication checks only; no SSH, device I/O, firmware deployment or motion",
+  "python": "Python 3.12.14",
+  "cpp": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "commands": [
+    "python test_rig/tools/check_release.py",
+    "python test_rig/tools/check_step.py",
+    "python test_rig/tools/verify_trial71.py",
+    "cd test_rig/control && python -m unittest discover -s tests -q",
+    "extract hash-verified v142 source into new temporary directory; python -m unittest discover -s tests -q"
+  ],
+  "v159_tests": 492,
+  "v142_tests": 410
+}
