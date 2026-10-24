@@ -40,7 +40,7 @@ def current_inputs(project):
             target=project/entry['path']
             if not target.is_file() or sha(target)!=entry['sha256']:raise ValueError('Missing/changed restored build input: '+entry['path'])
             paths.add(entry['path'])
-    native=project/'hardware/v1_2/native_projects/manifest.json'
+    native=project/'mechanical/input_assets/pcb_reference/native_projects/manifest.json'
     if native.exists():
         paths.add(str(native.relative_to(project)))
         for bundle in json.loads(native.read_text())['projects']:

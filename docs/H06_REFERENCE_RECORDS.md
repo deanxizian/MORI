@@ -23,7 +23,7 @@
 
 包内 `cam_terminal_feed/housing_requirements.md` 保存完整交接，`material_boundary/receipt.json` 保存原始来源回执。用户已接受厂家压接、身体端暂不装 PHR-4 塑壳，装机后按原孔号入壳。
 
-孔号和信号以[现行逐针接线表](../hardware/v1_2/wiring_P5R7/03_逐针接线表.csv)为准。压接后最大外形、保护方式、锁舌朝向、入壳运动、对插和完整带线闭壳仍未完成，不可下发裁线长度。
+孔号和信号以[现行逐针接线表](../mechanical/input_assets/pcb_reference/wiring_P5R7/03_逐针接线表.csv)为准。压接后最大外形、保护方式、锁舌朝向、入壳运动、对插和完整带线闭壳仍未完成，不可下发裁线长度。
 
 <a id="awg28"></a>
 ## 未采用的 AWG28 参考

@@ -1,0 +1,76 @@
+{
+  "snapshot": "1.3.0-dev.1",
+  "date": "2026-10-25",
+  "status": "PASS",
+  "scope": "Publication, restoration and source-byte integrity only; engineering remains PROTOTYPE / UNVALIDATED",
+  "checks": [
+    {
+      "command": ".venv/bin/python tools/check_project.py",
+      "result": "PASS",
+      "scope": "42 current assets, 9 view/source fingerprints, native ZIP members, current entry links and versions"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tools/tests -q",
+      "result": "PASS",
+      "tests": 25
+    },
+    {
+      "command": "bash tools/node-env.sh test",
+      "result": "PASS",
+      "tests": 13
+    },
+    {
+      "command": "bash tools/node-env.sh build",
+      "result": "PASS",
+      "scope": "TypeScript/Vite; no device I/O"
+    },
+    {
+      "command": ".venv/bin/python test_rig/tools/check_release.py",
+      "result": "PASS",
+      "artifacts": 376,
+      "links": 77
+    },
+    {
+      "command": ".venv/bin/python tools/restore_archive_assets.py --root .state/project_reorganization_20261025/restored_test --group native-pcbs --group m1-58-inputs",
+      "result": "PASS",
+      "scope": "Fresh directory, SHA-verified restore, existing inputs not overwritten"
+    },
+    {
+      "command": "Blender 5.2.2 LTS -b mechanical/mori_v1_2.blend --python read_saved_model.py",
+      "result": "PASS",
+      "scope": "Reopened saved root model, M1.58 properties and shell objects read; no geometry edits or save"
+    },
+    {
+      "command": "KiCad 10.0.6 sch erc / pcb drc --schematic-parity on extracted portable ZIP",
+      "result": "PASS",
+      "erc_violations": 0,
+      "drc_violations": 0,
+      "unconnected": 45,
+      "schematic_parity": 0,
+      "engineering_status": "FAIL"
+    },
+    {
+      "command": "gitleaks 8.30.1 git --pre-commit --staged; dir scans for driver/input archives",
+      "result": "PASS",
+      "scope": "No staged/driver secret detections; 8 input hits classified as source file SHA256s"
+    },
+    {
+      "command": "git diff --cached --check",
+      "result": "PASS"
+    }
+  ],
+  "preserved": {
+    "model_sha256": "47f3e83da47a9c3a49dc785395a660fe65d138a2148423f6e9625a8602507d54",
+    "pcb_sha256": "7a6c596e4ca037b34c7f07e7f9db5c386d2cf0cf3b569e0e9f6f4aaf86ef848e",
+    "hardware_source_worktree_changed": false,
+    "sample_measurements_deleted": false,
+    "new_animation_generated": false,
+    "manufacturing_release": false
+  },
+  "not_claimed": [
+    "Full CAD rebuild under the newer electrical contract",
+    "C3 R98I adopted into main model",
+    "Complete harness or physical fit",
+    "Product robot balance or power-on qualification"
+  ]
+}

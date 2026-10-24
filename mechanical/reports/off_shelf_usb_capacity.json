@@ -1,0 +1,119 @@
+{
+  "revision": "V1.2-M1.58",
+  "source_blend_sha256": "47f3e83da47a9c3a49dc785395a660fe65d138a2148423f6e9625a8602507d54",
+  "USB_mouth_Y_mm": 6.629608631134033,
+  "USB_center_XZ_mm": [
+    -5.334010124206543,
+    135.53144073486328
+  ],
+  "USB_direction": "+Y/front",
+  "source": "Exact current WeAct vendor solid163 defines receptacle outer mouth; only that mating receptacle excluded",
+  "boot_tests": [
+    {
+      "boot_mm": [
+        10.0,
+        4.5,
+        16.0
+      ],
+      "status": "PASS",
+      "positions": 21,
+      "hits": []
+    },
+    {
+      "boot_mm": [
+        12.0,
+        6.0,
+        20.0
+      ],
+      "status": "FAIL",
+      "positions": 21,
+      "hits": [
+        {
+          "front_travel_mm": 0,
+          "hits": [
+            {
+              "part": "Yaw_Base",
+              "volume_mm3": 0.35916868974928734
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "boot_mm": [
+        14.0,
+        8.0,
+        24.0
+      ],
+      "status": "FAIL",
+      "positions": 21,
+      "hits": [
+        {
+          "front_travel_mm": 0,
+          "hits": [
+            {
+              "part": "Yaw_Base",
+              "volume_mm3": 14.137242582001393
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "J5_wire_exit": [
+    {
+      "route": "left_R6_stem1",
+      "boot_intersections": [
+        {
+          "USB_boot_mm": "10x4.5x16",
+          "overlap_mm3": 157.13773780740766
+        },
+        {
+          "USB_boot_mm": "12x6x20",
+          "overlap_mm3": 195.29067151762243
+        },
+        {
+          "USB_boot_mm": "14x8x24",
+          "overlap_mm3": 233.48355472877282
+        }
+      ],
+      "status": "FAIL",
+      "other_fixture_check": "Existing independent candidate ribbon clearance remains local only; complete new routing not adopted"
+    },
+    {
+      "route": "right_R6_stem1",
+      "boot_intersections": [
+        {
+          "USB_boot_mm": "10x4.5x16",
+          "overlap_mm3": 0.0
+        },
+        {
+          "USB_boot_mm": "12x6x20",
+          "overlap_mm3": 0.22700487840490652
+        },
+        {
+          "USB_boot_mm": "14x8x24",
+          "overlap_mm3": 26.157539097114675
+        }
+      ],
+      "status": "FAIL",
+      "other_fixture_check": "Existing independent candidate ribbon clearance remains local only; complete new routing not adopted"
+    }
+  ],
+  "removed_for_service": [
+    "Body_Front",
+    "Frame_Insert_0",
+    "Frame_Insert_1",
+    "Speaker",
+    "Speaker_Gasket",
+    "Speaker_Insert_-1",
+    "Speaker_Insert_1",
+    "Speaker_Screw_-1",
+    "Speaker_Screw_1"
+  ],
+  "source_fallbacks": [],
+  "boot_evidence": "ASSUMED whole overmould envelopes, no selected USB cable or mating metal shell",
+  "scope": "Capacity screening only. Complete front shell plus attached speaker removed. Real cable strain relief, engagement, handle/hand, bends and electrical role NOT_TESTED.",
+  "printed_geometry_changed": false,
+  "formal_harness_adoption": false
+}

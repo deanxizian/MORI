@@ -34,4 +34,26 @@ if q.get('enabled'):
                          screw_source_url=P['interface_completion']['M2_screw_source'])
     plan['final_source_blend_sha256']=r['final_source_blend_sha256']
     save_json(plan_path,plan)
+if P.get('off_shelf_modules',{}).get('enabled'):
+    # Earlier construction phases still emit their historical mounting schedule.
+    # Preserve it explicitly; never label the retired tray/power/IMU as current.
+    r.update(revision=P['revision'],remaining_service_parts=['Display_Frame','Motor_Retainer','Yaw_Reaction_Link','Speaker','UPS_Module'],
+             current_route='UPS direct mount, central controller, side BMI323 and 6V buck',
+             legacy_fields_scope='before and integration history describe earlier construction stages; after and current_source are current saved parts',
+             current_source='reports/off_shelf_geometry.json',
+             limits='Approved mechanical adoption only; electrical conversion, complete harness, hand operation and physical strength remain unqualified.')
+    save_json(path,r)
+    plan_path=ROOT/'reports/module_assembly.json'
+    old=json.loads(plan_path.read_text())
+    if old.get('schedule_scope')=='HISTORICAL_CONSTRUCTION_WITH_CURRENT_OVERRIDE':
+        old=old['historical_construction_schedule']
+    save_json(plan_path,dict(revision=P['revision'],schedule_scope='HISTORICAL_CONSTRUCTION_WITH_CURRENT_OVERRIDE',
+        final_source_blend_sha256=r['final_source_blend_sha256'],historical_construction_schedule=old,
+        current_mounts='reports/off_shelf_geometry.json',current_mount_checks='reports/off_shelf_mount_validation.json',
+        current_assembly_sequence='reports/body_split_validation.json',
+        previous_animation='animation/manifest.json; retains original version, not synchronized unless regenerated',
+        retired_ids=P['off_shelf_modules']['retired_ids']+P.get('ups_rear_controls',{}).get('retired_ids',[]),
+        current_controls='reports/ups_controls_geometry.json' if P.get('ups_rear_controls',{}).get('enabled') else None,
+        service='Open both body shells, support UPS, remove four screws/nuts, lower 0.5mm and withdraw 120mm forward; no Battery_Tray.',
+        scope='Historical joints are not a current complete assembly schedule. Current animation is rigid-part instruction, not wired manual-process qualification.'))
 print('STRUCTURE_METADATA_FINALIZED',len(objects),flush=True)

@@ -109,7 +109,7 @@ def main():
     if manifest["snapshot"] != SNAPSHOT or manifest["repository"] != REPOSITORY:
         parser.error("Manifest source differs from pinned archive")
     groups = manifest["groups"]
-    native = json.loads((DEFAULT_ROOT / "hardware/v1_2/native_projects/manifest.json").read_text())
+    native = json.loads((DEFAULT_ROOT / "mechanical/input_assets/pcb_reference/native_projects/manifest.json").read_text())
     groups["native-pcbs"] = [dict(entry, storage="LOCAL_ZIP", archive=project["archive"], archive_sha256=project["sha256"], member=entry["path"])
         for project in native["projects"] for entry in project["files"]]
     if args.list or not (args.group or args.path):

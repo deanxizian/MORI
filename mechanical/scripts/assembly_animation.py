@@ -42,6 +42,16 @@ STAGES = [
 ]
 # Stable stage IDs preserve head/wheel subassemblies; bridge locks before front/rear shells.
 STAGE_ORDER=[1,2,3,4,5,6,7,19,8,9,10,11,21,22,12,13,14,15,16,20,17,18]
+OFF_SHELF=P.get('off_shelf_modules',{}).get('enabled',False)
+if OFF_SHELF:
+    STAGES[5]=('承重板与两侧小板', '台面装好BMI323和6V Buck；螺母从下方装入，再接轮驱', 120, 'frame')
+    STAGES[6]=('主控居中安装', 'WeAct F412＋载板；原排针/排母接口仍待实物复核', 96, 'body')
+    STAGES[8]=('UPS直接固定', '托住UPS从前方送入；四枚M3×25穿栓＋螺母，无独立托盘', 120, 'body')
+    STAGES[14]=('前后壳附件台面预装', '前壳喇叭；后壳原接口板仅作历史参考，DC入口与电气适配待完成', 108, 'shell_bench')
+    STAGE_ORDER=[1,2,3,4,5,6,9,7,19,8,10,11,21,22,12,13,14,15,16,20,17,18]
+DC_TRIAL=P.get('dc_inlet_trial',{}).get('enabled',False)
+if DC_TRIAL:
+    STAGES[14]=('前后壳附件台面预装', '后壳DC孔座已应用；插座外装、螺母内锁关系示意，完整尾线穿孔待试配', 108, 'shell_bench')
 
 
 def tagged(block):
@@ -246,10 +256,15 @@ def main():
     assign(select(prefix=('Wheel_Cap_Clamp_Nut_',)),5,(0,0,22),begin=.03,finish=.40)
     assign(select(prefix=('Wheel_Cap_Clamp_Screw_',)),5,(0,0,-34),begin=.60,finish=.94)
     assign(['Load_Frame'],6,begin=0,finish=.04,parent='Frame_Bench')
-    assign(select('Body_IMU',prefix=('IMU_Insert_',)),6,(0,0,-22),begin=.06,finish=.30,parent='Frame_Bench')
-    assign(select(prefix=('IMU_Screw_',)),6,(0,0,-24),begin=.25,finish=.45,parent='Frame_Bench')
-    assign(select('Wheel_Buck','Head_Buck',prefix=('Wheel_Buck_Insert_','Head_Buck_Insert_')),6,(0,0,-22),begin=.05,finish=.30,parent='Frame_Bench')
-    assign(select(prefix=('Wheel_Buck_Screw_','Head_Buck_Screw_')),6,(0,0,-28),begin=.26,finish=.44,parent='Frame_Bench')
+    if OFF_SHELF:
+        assign(select(prefix=('BMI323_Nut_','Buck6V_Nut_')),6,(0,0,-10),begin=.05,finish=.13,parent='Frame_Bench')
+        assign(['IMU_BMI323','Head_Buck_6V'],6,(0,0,30),begin=.14,finish=.30,parent='Frame_Bench')
+        assign(select(prefix=('BMI323_Screw_','Buck6V_Screw_')),6,(0,0,22),begin=.30,finish=.44,parent='Frame_Bench')
+    else:
+        assign(select('Body_IMU',prefix=('IMU_Insert_',)),6,(0,0,-22),begin=.06,finish=.30,parent='Frame_Bench')
+        assign(select(prefix=('IMU_Screw_',)),6,(0,0,-24),begin=.25,finish=.45,parent='Frame_Bench')
+        assign(select('Wheel_Buck','Head_Buck',prefix=('Wheel_Buck_Insert_','Head_Buck_Insert_')),6,(0,0,-22),begin=.05,finish=.30,parent='Frame_Bench')
+        assign(select(prefix=('Wheel_Buck_Screw_','Head_Buck_Screw_')),6,(0,0,-28),begin=.26,finish=.44,parent='Frame_Bench')
     sr=stages[5];sp=sr['end']-sr['start'];r=roots['Frame_Bench']
     for fr,xyz in [(1,(0,-70,45)),(sr['start']+round(sp*.45),(0,-70,45)),(sr['start']+round(sp*.70),(0,0,45)),(sr['start']+round(sp*.86),(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
     for n in select(prefix=('Drive_L_', 'Drive_R_')):
@@ -266,16 +281,24 @@ def main():
     assign(select(prefix=('Carrier_Screw_',)),7,(0,0,24),begin=.34,finish=.60)
     assign(select(prefix=('Socket_',)),7,(0,0,30),begin=.42,finish=.62)
     assign(select('MCU_Motion','E_Straight_Header'),7,(0,0,35),begin=.64,finish=.94)
-    assign(['Power_Board_H2_Insert','Power_Board_H3_Insert'],7,(0,0,12),finish=.18)
-    assign(['Power_Module'],7,(0,0,26),begin=.20,finish=.67)
-    assign(['Power_Board_H2_Screw','Power_Board_H3_Screw'],7,(0,0,22),begin=.69,finish=.97)
-    assign([n for n in select('Battery_Tray',prefix=('Battery_Pad_', 'Battery_Retainer_Insert_')) if n!='Battery_Pad_Top'],9,begin=.02,finish=.08,parent='Battery_Bench')
-    assign(['Battery'],9,(0,0,25),begin=.1,finish=.32,parent='Battery_Bench')
-    assign(['Battery_Pad_Top'],9,(0,0,20),begin=.34,finish=.46,parent='Battery_Bench')
-    assign(['Battery_Strap'],9,begin=.47,finish=.5,parent='Battery_Bench')
-    s=stages[8];span=s['end']-s['start'];r=roots['Battery_Bench']
-    for fr,xyz in [(1,(0,80,0)),(s['start']+round(span*.53),(0,80,0)),(s['start']+round(span*.78),(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
-    for sign in [-1,1]:assign(['Battery_Retainer_Screw_'+str(sign)],9,(sign*22,0,0),begin=.78,finish=.96)
+    if OFF_SHELF:
+        assign(['UPS_Module'],9,(0,120,-.5),begin=.02,finish=.40)
+        actors['UPS_Module']['reaction_entry_path_linear']=True
+        s=stages[8];span=s['end']-s['start'];o=actors['UPS_Module'];p=bases['UPS_Module'].translation
+        move(o,s['start']+round(.34*span),p+Vector((0,0,-.5)))
+        assign(select(prefix=('UPS_Direct_Screw_',)),9,(0,0,25.5),begin=.43,finish=.65)
+        assign(select(prefix=('UPS_Direct_Nut_',)),9,(0,0,-12),begin=.68,finish=.94)
+    else:
+        assign(['Power_Board_H2_Insert','Power_Board_H3_Insert'],7,(0,0,12),finish=.18)
+        assign(['Power_Module'],7,(0,0,26),begin=.20,finish=.67)
+        assign(['Power_Board_H2_Screw','Power_Board_H3_Screw'],7,(0,0,22),begin=.69,finish=.97)
+        assign([n for n in select('Battery_Tray',prefix=('Battery_Pad_', 'Battery_Retainer_Insert_')) if n!='Battery_Pad_Top'],9,begin=.02,finish=.08,parent='Battery_Bench')
+        assign(['Battery'],9,(0,0,25),begin=.1,finish=.32,parent='Battery_Bench')
+        assign(['Battery_Pad_Top'],9,(0,0,20),begin=.34,finish=.46,parent='Battery_Bench')
+        assign(['Battery_Strap'],9,begin=.47,finish=.5,parent='Battery_Bench')
+        s=stages[8];span=s['end']-s['start'];r=roots['Battery_Bench']
+        for fr,xyz in [(1,(0,80,0)),(s['start']+round(span*.53),(0,80,0)),(s['start']+round(span*.78),(0,0,0)),(scene.frame_end,(0,0,0))]:move(r,fr,xyz)
+        for sign in [-1,1]:assign(['Battery_Retainer_Screw_'+str(sign)],9,(sign*22,0,0),begin=.78,finish=.96)
     if P.get('reaction_clamp_entry',{}).get('enabled'):
         assign(['Pitch_Yoke'],10,begin=.0,finish=.05,parent='Yaw_Group')
         assign(['Yaw_Reaction_Link'],10,(0,0,P['reaction_clamp_entry']['entry_Z_range_mm'][0]),begin=.07,finish=.42,parent='Yaw_Group')
@@ -351,12 +374,16 @@ def main():
     assign(select(prefix=('Head_Seam_Screw_',)),14,(0,-30,0),begin=.81,finish=.97)
     assign(select('Body_Front','Frame_Insert_0','Frame_Insert_1',prefix=('Speaker_Insert_',)),15,begin=.01,finish=.03,parent='Front_Shell')
     assign(select('Body_Rear','Frame_Insert_2','Frame_Insert_3',prefix=('Rear_Interface_Insert_',)),15,begin=.01,finish=.03,parent='Rear_Shell')
+    if DC_TRIAL:
+        # Present the accessory as already seated on the loose shell. Its
+        # oversized sample tail must not be animated through the trial bore.
+        assign(list(P['dc_inlet_trial']['reference_ids']),15,begin=.01,finish=.03,parent='Rear_Shell')
     from speaker_geometry import speaker_transform
     speaker_back=speaker_transform().to_3x3()@Vector((0,-1,0))
     assign(['Speaker_Gasket'],15,speaker_back*28,begin=.10,finish=.33,parent='Front_Shell')
     assign(['Speaker'],15,speaker_back*34,begin=.27,finish=.52,parent='Front_Shell')
     assign(select(prefix=('Speaker_Screw_',)),15,speaker_back*46,begin=.71,finish=.96,parent='Front_Shell')
-    assign(['Rear_Interface_PCB','USB_Receptacle','Power_Switch'],15,(0,0,-24),begin=.20,finish=.68,parent='Rear_Shell')
+    assign(['Rear_Interface_PCB','USB_Receptacle']+([] if OFF_SHELF else ['Power_Switch']),15,(0,0,-24),begin=.20,finish=.68,parent='Rear_Shell')
     assign(select(prefix=('Rear_Interface_Screw_',)),15,(0,0,-20),begin=.69,finish=.94,parent='Rear_Shell')
     assign(select(prefix=('Frame_Screw_',)),20,(0,0,-150),begin=.73,finish=.98)
     # Independent rigid modules; no source mesh edits and no hidden old shell.
@@ -523,8 +550,13 @@ WeAct元件面朝上、排针朝下；先放三组排母，再插入核心板与
 E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，不能据动画确认实物配合或下单。
 '''
     textblock=bpy.data.texts.get('MORI_动画使用说明') or bpy.data.texts.new('MORI_动画使用说明');textblock.clear();textblock.write(guide)
-    rebuild=('python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py' if P.get('reaction_clamp_entry',{}).get('enabled') else 'python mechanical/scripts/run_animation.py')
-    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成并回读验证（先成功生成当前主模型；R2 研究脚本可从 validation 资料包恢复）：\n\n```sh\n'+rebuild+'\n```\n\n[当前采用记录](../../docs/M1_55_MODEL_UPDATE.md)\n')
+    rebuild=('python mechanical/scripts/run_off_shelf_deliverables.py' if OFF_SHELF else 'python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py' if P.get('reaction_clamp_entry',{}).get('enabled') else 'python mechanical/scripts/run_animation.py')
+    if OFF_SHELF:
+        guide+='\nM1.56：取消电池托盘及旧电源/IMU/两块Buck，新增UPS直固、两侧小板和居中主控步骤。UPS安装依赖人工支撑；未显示的完整线束、电源保护和实际舵盘仍未完成。\n'
+        if DC_TRIAL:
+            guide+='M1.57：后壳已采用Ø8试配孔和4mm一体孔座。插座/螺母为样品容量参考，随预装后壳展示；未模拟其完整尾线穿孔，照片安装关系不是尺寸或实物装入验证。\n'
+        textblock.clear();textblock.write(guide)
+    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成并回读验证（先成功生成当前主模型）：\n\n```sh\n'+rebuild+'\n```\n\n[当前采用记录](../../docs/'+('M1_56_OFF_SHELF_ADOPTION.md' if OFF_SHELF else 'M1_55_MODEL_UPDATE.md')+')\n')
     script=bpy.data.texts.get('assembly_animation.py') or bpy.data.texts.new('assembly_animation.py');script.clear();script.write(Path(__file__).read_text())
     # Native saved state starts at the first assembly step, camera view ready.
     scene.frame_set(1)
@@ -552,6 +584,16 @@ E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，�
     assert audit['status']=='PASS' and audit['source_blend_sha256']==source_hash
     report={'revision':P['revision'],'animation_revision':ANIMATION_REVISION,'source_blend':str(source),'source_blend_sha256':source_hash,'source_is_unchanged':True,'animation_blend':str(TARGET),'source_geometry_signature':baseline,'actor_count':len(actors),'stage_count':len(stages),'fps':FPS,'frame_range':[1,scene.frame_end],'duration_seconds':scene.frame_end/FPS,'resolution':[scene.render.resolution_x,scene.render.resolution_y],'samples':a.samples,'final_transform_max_error_mm':max(errors.values()),'meshes_share_exact_source_data':False,'all_actor_geometry_matches_source':True,'material_only_mesh_copies':['Yaw_Base'],'all_actors_visible_at_end':True,'stages':published_stages,'part_stages':published_assignments,'geometry_status':'PASS_ENDPOINT_AND_SOURCE_PRESERVATION','body_sequence_kind':'front_rear','body_shell_path':'Front module -Y, rear module +Y; four frame screws from below; bridge previously fixed with shells absent','body_sequence_evidence':str(body_evidence.relative_to(ROOT)),'body_sequence_evidence_sha256':hashlib.sha256(body_evidence.read_bytes()).hexdigest(),'body_sequence_display_stages':[8,9,19,20],'retention_evidence':'reports/head_axial_retention_validation.json','continuous_assembly_path_collision':'NOT_TESTED','p5r7_adopted':bool(P.get('p5r7_adoption',{}).get('enabled')),'rendered_video':False,'blender':bpy.app.version_string,'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     save_json(OUT/'manifest.json',report)
+    if DC_TRIAL:
+        report['dc_inlet_trial_adopted']=True
+        report['dc_accessory_stage']='Already seated loose rear-shell reference; full lead insertion NOT_TESTED'
+        save_json(OUT/'manifest.json',report)
+    if OFF_SHELF:
+        report['off_shelf_adopted']=True
+        report['body_sequence_display_stages']=[s['index'] for s in published_stages if s['source_step'] in [19,8,16,20]]
+        report['off_shelf_assembly']='IMU/Buck on bench, frame to drive, UPS direct front entry and four through bolts, centered controller, bridge, head, shells'
+        report['historical_retention_evidence_not_rerun']=report.pop('retention_evidence')
+        save_json(OUT/'manifest.json',report)
     if a.render=='stills':
         scene.render.image_settings.media_type='IMAGE';scene.render.image_settings.file_format='PNG'
         for s in published_stages:

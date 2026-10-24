@@ -59,6 +59,9 @@ def generate(root):
 <p><a href="validation.json">动画文件与视频检查</a> · <a href="manifest.json">步骤、帧号与来源记录</a> · <a href="../scripts/assembly_animation.py">可重复生成脚本</a></p></main>
 <script>const video=document.getElementById('assembly-video');const buttons=[...document.querySelectorAll('[data-time]')];for(const b of buttons)b.addEventListener('click',()=>{{video.currentTime=Number(b.dataset.time);video.play().catch(()=>{{}})}});video.addEventListener('timeupdate',()=>{{let active=buttons[0];for(const b of buttons)if(Number(b.dataset.time)<=video.currentTime)active=b;for(const b of buttons)b.classList.toggle('active',b===active)}});</script></html>'''
     config=json.loads((root.parent/'config/geometry.json').read_text())
+    if config.get('off_shelf_modules',{}).get('enabled'):
+        from off_shelf_delivery import animation_page
+        return animation_page(root.parent,m)
     r2_enabled=config.get('reaction_clamp_entry',{}).get('enabled',False)
     r2_pass=r2_enabled and reaction_entry_verified(root,m)
     r2_note=('M1.55 R2 裸反力轴装入已通过当前保存模型与动画回读；含镜头隐藏的已装身体零件。' if r2_pass else

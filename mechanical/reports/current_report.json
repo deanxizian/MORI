@@ -1,33 +1,39 @@
 {
-  "revision": "V1.2-M1.55",
-  "status": "PASS",
-  "manufacturing_release": false,
-  "checks": {
-    "build": {
-      "file": "reports/build_manifest.json",
-      "sha256": "032874c269c74ef07d17b96e43958dd31643446872e68625fc751600e9342dbb"
-    },
-    "validation": {
-      "file": "reports/validation.json",
-      "sha256": "c40c0cfef5cef40282e0a305d3dd9aa865699d5b92f38df334753ad9805149a5"
-    },
-    "delivery": {
-      "file": "reports/delivery_consistency.json",
-      "sha256": "c8334b51c622dc864d4d2441cc88878804f92991f686822756e9899e44d78683"
-    },
-    "export": {
-      "file": "reports/export_manifest.json",
-      "sha256": "c5366f2aca8300eabbf2a63a844f877dcfa39924ecc48b060fcf581ed9c30ea6"
-    }
-  },
+  "revision": "V1.2-M1.58",
+  "status": "BLOCKED",
   "errors": [],
   "validation_counts": {
-    "PASS": 27,
+    "PASS": 14,
     "FAIL": 0,
-    "NOT_TESTED": 10,
-    "BLOCKED": 12,
+    "BLOCKED": 8,
+    "NOT_TESTED": 9,
     "NOT_APPLICABLE": 0
   },
-  "scope": "Executed source/export consistency only. No physical, strength, assembly, electrical or manufacturing release.",
-  "html_sha256": "38d25bd27d2dd42e37295e475e85a95f55558493b2b07ed7e3973bd16d4a1ce2"
+  "source_blend_sha256": "47f3e83da47a9c3a49dc785395a660fe65d138a2148423f6e9625a8602507d54",
+  "evidence_sha256": {
+    "reports/build_manifest.json": "9a62aa4fea1c70949fecec05e1afc22e8ac61d1c0a9471bed2ff6460db663fe6",
+    "reports/validation.json": "057a9fbcdf53004f4d819e441c1db8f0bc060ec59dff680ac7d7cdf33a845c30",
+    "reports/off_shelf_scope.json": "53c997072785e4a472709851d2edca1e0b6d189b3a27a0d2e7c1da8aeff8d2fe",
+    "reports/off_shelf_mount_validation.json": "b5ef6b9d7142b80655fc1f474ea00151a129d6b9677b64cf171dabb3b082625e",
+    "reports/body_split_validation.json": "effa776c707420d08cc18f7b9c14ab960b2d87aa2f0d9107f1e3c87c20ddf379",
+    "reports/export_manifest.json": "531a0272440b852d3ef5c6c01196394fe9e49098b0910e11bc7642394c76644d",
+    "reports/off_shelf_render_manifest.json": "507688a792dd2e0e5d4684fd1ddb9ea048f32afbafae2abce283a4473e4c739e",
+    "reports/electronics_detail_validation.json": "fb5ef8b7e468a7202e7ef8e5d33fc13203c245bdf2bc7c238aacb8e2ee4affbd",
+    "reports/ups_controls_geometry.json": "cfd7126a498345424846101ee7ae9482dc54ae36a49aa0342bf0b2e04c50b77b",
+    "reports/ups_controls_validation.json": "2426e8d33e55ed596949cd68d594d9fa5bb94581b8a71b11af0c973a0953efc5",
+    "reports/ups_controls_clearances.json": "91cdf68e30633bcafe843f3154ef4e20d2890d5eaae2c66104b2cf8f9411e97b"
+  },
+  "scope": "Current saved main, approved adoption comparison, static views, STL and electronic detail only; no animation regeneration or verification this run.",
+  "animation_checked_this_run": false,
+  "whole_product": "PROTOTYPE / UNVALIDATED",
+  "complete_harness": "BLOCKED",
+  "electrical_adaptation": "BLOCKED",
+  "physical_strength": "NOT_TESTED",
+  "manufacturing_release": false,
+  "html_sha256": "b059f9a9632fb3d343743b132efb99565f934b9992c9ef1fa4507d3a531275da",
+  "saved_geometry_scope_status": "PASS",
+  "hardware_requirement_revision_current": "V1.2-H0.6-UPS-R2",
+  "hardware_requirement_revision_at_saved_build": "V1.2-H0.6-UPS-R1",
+  "source_freshness_note": "Known owner metadata update recorded in mass_inertia_M1_58/hardware_owner_update.json; existing geometry checks retained, new complete electrical/harness fit not qualified.",
+  "mass_ledger": "studies/mass_inertia_M1_58/mass_ledger.json"
 }

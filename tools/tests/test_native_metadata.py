@@ -6,19 +6,19 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
-spec=importlib.util.spec_from_file_location('native_metadata',Path(__file__).resolve().parents[2]/'hardware/v1_2/tools/sync_native_metadata.py')
+spec=importlib.util.spec_from_file_location('native_metadata',Path(__file__).resolve().parents[2]/'mechanical/input_assets/pcb_reference/tools/sync_native_metadata.py')
 module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 
 class NativeMetadataTests(unittest.TestCase):
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.addCleanup(self.tmp.cleanup);self.root=Path(self.tmp.name)
-        folder=self.root/'hardware/v1_2/native_projects';folder.mkdir(parents=True)
+        folder=self.root/'mechanical/input_assets/pcb_reference/native_projects';folder.mkdir(parents=True)
         projects=[]
         for name in ('one_P1','two_P1'):
             base=f'hardware/v1_2/kicad/{name}';directory=self.root/base;directory.mkdir(parents=True)
             meta=base+'/connectivity.json';board=base+'/'+name+'.kicad_pcb'
             data={meta:json.dumps({'components':[{'ref':'R1','at':[0,0]}]}).encode(),board:b'(kicad_pcb (footprint "R" (layer "F.Cu") (at 2 3) (property "Reference" "R1")))'}
-            (self.root/meta).write_bytes(data[meta]);archive=f'hardware/v1_2/native_projects/{name}.zip'
+            (self.root/meta).write_bytes(data[meta]);archive=f'mechanical/input_assets/pcb_reference/native_projects/{name}.zip'
             with zipfile.ZipFile(self.root/archive,'w') as z:
                 for key,value in data.items():z.writestr(key,value)
             projects.append({'project':name,'archive':archive,'files':[{'path':p} for p in data]})
@@ -44,7 +44,7 @@ class NativeMetadataTests(unittest.TestCase):
         self.assertEqual(before,self.files())
         module.update(self.root);after=self.files();module.update(self.root)
         self.assertEqual(after,self.files())
-        for p in (self.root/'hardware/v1_2/native_projects').glob('*.zip'):
+        for p in (self.root/'mechanical/input_assets/pcb_reference/native_projects').glob('*.zip'):
             with zipfile.ZipFile(p) as z:self.assertIsNone(z.testzip())
 
 if __name__=='__main__':unittest.main()

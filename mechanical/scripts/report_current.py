@@ -6,6 +6,13 @@ from pipeline_evidence import verify_delivery_stamp
 def generate(project=None):
     project=Path(project or Path(__file__).resolve().parents[2]);root=project/'mechanical'
     params=json.loads((project/'config/geometry.json').read_text())
+    if params.get('off_shelf_modules',{}).get('enabled'):
+        from off_shelf_delivery import current_report
+        animation=root/'animation/manifest.json'
+        record=json.loads(animation.read_text()) if animation.exists() else {}
+        model_hash=hashlib.sha256((root/'mori_v1_2.blend').read_bytes()).hexdigest()
+        current_video=record.get('rendered_video') and record.get('source_blend_sha256')==model_hash
+        return current_report(project,model_only=not current_video)
     evidence={'revision':params['revision'],'status':'BLOCKED','manufacturing_release':False,'checks':{},'errors':[]}
     paths={'build':'build_manifest.json','validation':'validation.json','delivery':'delivery_consistency.json','export':'export_manifest.json'}
     docs={}
