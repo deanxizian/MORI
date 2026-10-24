@@ -30,5 +30,5 @@ MORI/
 - 规格原文保留，冲突条目由 `docs/REQUIREMENTS.md` 的后续用户决定解释；不要按目录名称推断硬件选型。
 - 新进度修改 `CURRENT_STATUS.md` 和对应域入口；已冻结的原始检查不改数字、不升级 PASS。历史执行证据保留日期与来源路径。
 - 研究只发布必要摘要、图和检查。可再生成的缓存、过渡模型、全部调参原始日志不加入 Git。
-- 本机尚在使用的原始样机试验放在 `test_rig/local/`；原 `hardware/bringup`、`hardware/test_rig`、`mechanical/test_rig` 仅留被 Git 忽略的兼容链接，避免打断其他对话。`.local/` 保存待分类本机资料，均非发布内容。
+- 本机原始样机试验从 `test_rig/local/` 的导航链接访问；实际 `hardware/bringup`、`hardware/test_rig`、`mechanical/test_rig` 保留原位置并被 Git 忽略，因为现有脚本用真实路径推导项目根目录。这样不会打断其他对话。`.local/` 保存待分类本机资料，均非发布内容。
 - Git 工作区是实际工程副本，不是聊天缓存。本次常用 Documents/MORI 已更新；另两个活跃工作区的未提交设计和实验记录未改写。

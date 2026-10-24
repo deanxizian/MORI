@@ -57,6 +57,11 @@
     {
       "command": "git diff --cached --check",
       "result": "PASS"
+    },
+    {
+      "command": "Clean shared clone with GIT_LFS_SKIP_SMUDGE=1; tools/check_project.py --allow-lfs-pointers",
+      "result": "PASS",
+      "scope": "Checks use only committed files; no ignored workstation assets can conceal missing publication links"
     }
   ],
   "preserved": {
@@ -65,7 +70,8 @@
     "hardware_source_worktree_changed": false,
     "sample_measurements_deleted": false,
     "new_animation_generated": false,
-    "manufacturing_release": false
+    "manufacturing_release": false,
+    "sample_working_paths": "Original physical paths retained; test_rig/local only provides navigation symlinks"
   },
   "not_claimed": [
     "Full CAD rebuild under the newer electrical contract",
