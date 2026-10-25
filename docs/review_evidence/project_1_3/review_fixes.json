@@ -1,0 +1,98 @@
+{
+  "metadata_repeated_run": "PASS",
+  "animation_scratch_build": {
+    "actor_count": 188,
+    "final_transform_max_error_mm": 3.5762786865234375e-07,
+    "source_is_unchanged": true,
+    "rendered_video": false,
+    "ups_rear_controls_adopted": true
+  },
+  "current_geometry_validation": {
+    "PASS": 14,
+    "FAIL": 0,
+    "BLOCKED": 10,
+    "NOT_TESTED": 9,
+    "NOT_APPLICABLE": 0
+  },
+  "matrix_receipt_scope": "PASS",
+  "dock_source_provenance": {
+    "status": "BLOCKED",
+    "recorded_source": "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/studies/off_shelf_modules_20261013/controller_center/controller_center_UNADOPTED.blend",
+    "expected_sha256": "777205d43d38eb37299b19960a2511a358c82f17cafbe0206079ce7b19341a8a",
+    "matrix_receipt": "mechanical/input_assets/off_shelf_M1_56/evaluated_dock_reference.json",
+    "matrix_receipt_sha256": "1ceb9af6da3406f589c1cf6bf3cc1be70d070d3c127a6d9982f705adf5c0cddd",
+    "reason": "Original comparison Blender source is not published; only the pinned evaluated matrices are checked."
+  },
+  "historical_hardware_provenance": {
+    "status": "BLOCKED",
+    "recorded_files": 846,
+    "matching_files": 3,
+    "scope": "Historical adoption receipt only. Current published driver integrity is checked by tools/check_project.py; no electrical fit or preservation qualification is inferred.",
+    "missing_count": 842,
+    "different_count": 1
+  },
+  "blender": "5.2.2 LTS",
+  "published_models_and_video_unchanged": "PASS",
+  "protected_sha256": {
+    "mechanical/mori_v1_2.blend": "47f3e83da47a9c3a49dc785395a660fe65d138a2148423f6e9625a8602507d54",
+    "mechanical/mori_assembly_animation.blend": "1b3437e9a67f286a356c8083799072225370a8b57aa41508a4018b16c236a48f",
+    "mechanical/animation/MORI_assembly.mp4": "ce6b603b91edac33d7d6bcda3f0352e2aa10eb90e21f4156a8c1962cb2369ac5"
+  },
+  "date": "2026-10-25",
+  "pr": 15,
+  "portable_saved_model_validation": {
+    "counts": {
+      "PASS": 14,
+      "FAIL": 0,
+      "BLOCKED": 10,
+      "NOT_TESTED": 9,
+      "NOT_APPLICABLE": 0
+    },
+    "source_blend_sha256": "47f3e83da47a9c3a49dc785395a660fe65d138a2148423f6e9625a8602507d54",
+    "restored_groups": [
+      "m1-58-inputs",
+      "m1-58-validation"
+    ],
+    "unpublished_original_source_available": false,
+    "historical_hardware_tree_available": false
+  },
+  "tool_regressions": {
+    "status": "PASS",
+    "tests": 31,
+    "command": ".venv/bin/python -m unittest discover -s tools/tests -q"
+  },
+  "publication_integrity": {
+    "status": "PASS",
+    "command": ".venv/bin/python tools/check_project.py"
+  },
+  "commands": [
+    "/Applications/Blender.app/Contents/MacOS/Blender --background mechanical/mori_v1_2.blend --python-exit-code 1 --python .state/pr15_review/verify_blender.py",
+    ".venv/bin/python tools/restore_archive_assets.py --group m1-58-inputs --group m1-58-validation",
+    "/Applications/Blender.app/Contents/MacOS/Blender --background mechanical/mori_v1_2.blend --python-exit-code 1 --python .state/pr15_review/verify_model.py",
+    ".venv/bin/python tools/restore_archive_assets.py --root .state/pr15_review/portable --group m1-58-inputs --group m1-58-validation",
+    "/Applications/Blender.app/Contents/MacOS/Blender --background mechanical/mori_v1_2.blend --python-exit-code 1 --python .state/pr15_review/verify_portable.py"
+  ],
+  "diagnostic_failures_fixed": [
+    "Initial saved-model validation exposed missing exact solids; packaged 10 matching-model solids.",
+    "Subsequent run exposed missing intended-contact context; included that file and the M1.12 comparison parameters. Existing vendor input group also restored."
+  ],
+  "limits": "Code/metadata/portable-input regressions only; retained 10 BLOCKED and 9 NOT_TESTED engineering checks. Published main model, animation blend and video unchanged; scratch animation was not rendered or published.",
+  "checked_inputs_sha256": {
+    "mechanical/scripts/finalize_structure_metadata.py": "4f4b79f0bf80521bed761c8837f5f9050d94682d102d21fd1bba665e72aa7f0b",
+    "mechanical/scripts/assembly_animation.py": "ae82c73ad00cb30faafbf31d21e6e44d99c8549ab02602e1cdd29680cdc77b73",
+    "mechanical/scripts/validate_off_shelf_modules.py": "aba852d08925a5102bff2d4b5736910725c78e6f57477eefddb0b50d9af8038d",
+    "mechanical/scripts/reference_provenance.py": "b0eaa938511f169c7d77c342f71e200e60314cb579ed87d068858743e9079cab",
+    "tools/tests/test_current_mechanical_review.py": "423302b71238ea1c53913a95b7a7572f6878f6cb5c74a2c1e3b6923a08a5d437",
+    "tools/check_project.py": "44f620efe81eb00b0b6d71b69e15c880667ff033421e3bfb998848f2b7ef9817",
+    "mechanical/input_assets/m1_58_validation_inputs.zip": "c0cd607c128bae019de81037e3c80432a92b445f5e760042218b126a33172a91",
+    "mechanical/input_assets/m1_58_validation_manifest.json": "a80b12dd886c80f4d85e694d33996dadd9c52e908c3c93419697874d86cee1dd"
+  },
+  "runners_scope": "Recorded one-off commands use the local project path; output and animation targets are isolated .state copies. Shipped validation inputs and production provenance checks do not depend on that path.",
+  "fix_secret_scan": {
+    "status": "PASS",
+    "staged_diff_bytes": 62846,
+    "validation_archive_extracted_bytes": 118810426,
+    "findings": 0,
+    "tool": "gitleaks 8.30.1"
+  }
+}

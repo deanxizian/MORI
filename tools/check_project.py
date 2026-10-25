@@ -76,6 +76,21 @@ def check(root, allow_lfs_pointers=False):
         require(z.testzip() is None, 'Build-input ZIP CRC failure')
         for row in source['files']:
             require(digest(z.read(row['member'])) == row['sha256'], 'Build input differs: '+row['path'])
+    solids = json.loads((root/'mechanical/input_assets/m1_58_validation_manifest.json').read_text())
+    require(solids['source_blend_sha256'] == model['sha256'], 'Validation solids belong to a different model')
+    require(digest((root/solids['archive']).read_bytes()) == solids['archive_sha256'], 'Validation-solids archive changed')
+    restore = json.loads((root/'docs/archive_assets.json').read_text())['groups']['m1-58-validation']
+    require({r['path'] for r in restore} == {r['path'] for r in solids['files']}, 'Validation-solids restoration set differs')
+    with zipfile.ZipFile(root/solids['archive']) as z:
+        require(z.testzip() is None, 'Validation-solids ZIP CRC failure')
+        require(sorted(z.namelist()) == sorted(r['member'] for r in solids['files']), 'Validation-solids members differ')
+        for row in solids['files']:
+            data = z.read(row['member'])
+            require(len(data) == row['bytes'] and digest(data) == row['sha256'], 'Validation solid differs: '+row['path'])
+            record = next(r for r in restore if r['path'] == row['path'])
+            require(all(record[k] == row[k] for k in ['member','bytes','sha256']) and
+                    record['archive'] == solids['archive'] and record['archive_sha256'] == solids['archive_sha256'],
+                    'Validation solid restore metadata differs: '+row['path'])
     # Check actual tracked paths, so ignored local files cannot conceal broken GitHub links.
     tracked = set(subprocess.check_output(['git', 'ls-files', '-z'], cwd=root).decode().split('\0'))
     for name in ENTRY_DOCS:

@@ -2,6 +2,7 @@
 import hashlib, time
 from common import *
 from off_shelf_modules import cylinder, hexagon
+from reference_provenance import evaluated_dock_reference, historical_hardware_provenance
 
 
 def raw_solid(row):
@@ -14,8 +15,7 @@ def scope_check(ss):
     sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
     assert sha(path)==q['baseline_sha256']
     for f,h in base['reference_files'].items():assert sha(root/f)==h,f
-    dock=json.loads((root/'evaluated_dock_reference.json').read_text())
-    assert sha(dock['source_file'])==dock['source_file_sha256'] and dock['preserved_main_sha256']==base['source_main_sha256']
+    dock,dock_provenance=evaluated_dock_reference(PROJECT,root/'evaluated_dock_reference.json',base['source_main_sha256'])
     actual={o.name.removeprefix(PREFIX):o for o in parts()};errors=[];moved=[];same=0
     new=set(q['modules'][k]['id'] for k in q['modules'])
     new|={f'{prefix}_{kind}_{i}' for prefix,num in [('BMI323',2),('Buck6V',2),('UPS_Direct',4)] for kind in ['Screw','Nut'] for i in range(num)}
@@ -73,13 +73,13 @@ def scope_check(ss):
     if controls.get('enabled'):
         received=controls['sources']['hardware_receipt'];assert sha(PROJECT/received['file'])==received['sha256']
         receipt=json.loads((PROJECT/received['file']).read_text());protected=receipt['protected_hardware'];owner_updates=receipt['owner_changes_since_M1_56']
-    hardware_drift=[n for n,h in protected.items() if not (PROJECT/n).exists() or sha(PROJECT/n)!=h]
-    if hardware_drift:errors.append(dict(kind='hardware_modified',files=hardware_drift))
+    hardware_provenance=historical_hardware_provenance(PROJECT,protected)
     return dict(status='PASS' if not errors else 'FAIL',errors=errors,part_count=len(actual),
         changed_prints=sorted(changed_prints),unchanged_parts=same,transformed_ids=moved,new_ids=sorted(new),retired_ids=sorted(retired),
         maximum_transform_error_mm=max(diffs.values()),approved_mesh_volume_differences_mm3=comparisons,
-        vendor_sources=source_rows,protected_hardware_files=len(base['protected_hardware']),hardware_drift=hardware_drift,received_owner_updates=owner_updates,
-        limits='Mesh/source and finite floating-point comparison only; not a fit tolerance or hardware qualification')
+        vendor_sources=source_rows,historical_hardware_provenance=hardware_provenance,received_owner_updates=owner_updates,
+        dock_source_provenance=dock_provenance,
+        limits='Pinned mesh/matrix receipts and finite floating-point comparison only. Original comparison Blender and historical hardware provenance are checked separately; not a fit tolerance or hardware qualification')
 
 
 def mounting_checks(ss):
@@ -157,6 +157,10 @@ def run_current():
     save_json(ROOT/'reports/off_shelf_scope.json',scope)
     v.check('off_shelf_exact_scope',scope['status'],'已确认布局与保存主模型逐件比较；只改承重板、移动主控组并替换已退役模块',scope)
     if scope['status']!='PASS':raise RuntimeError('Adoption scope mismatch: '+str(scope['errors'][:8]))
+    v.check('off_shelf_dock_source_provenance',scope['dock_source_provenance']['status'],
+            '独立源Blender的可追溯性与已发布矩阵回执分开记录；不访问作者绝对路径',scope['dock_source_provenance'])
+    v.check('off_shelf_historical_hardware_provenance',scope['historical_hardware_provenance']['status'],
+            '历史采用时硬件文件与当前驱动板快照分开记录；缺失或不同不冒称历史保护检查通过',scope['historical_hardware_provenance'])
     if P.get('ups_rear_controls',{}).get('enabled'):
         from validate_ups_rear_controls import validate_controls
         control=validate_controls(ss)

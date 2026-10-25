@@ -52,6 +52,9 @@ if OFF_SHELF:
 DC_TRIAL=P.get('dc_inlet_trial',{}).get('enabled',False)
 if DC_TRIAL:
     STAGES[14]=('前后壳附件台面预装', '后壳DC孔座已应用；插座外装、螺母内锁关系示意，完整尾线穿孔待试配', 108, 'shell_bench')
+UPS_CONTROLS=P.get('ups_rear_controls',{}).get('enabled',False)
+if UPS_CONTROLS:
+    STAGES[14]=('前后壳附件台面预装', '前壳喇叭；后壳上方DC、下方UPS开关按已就位展示，完整尾线穿孔待试配', 108, 'shell_bench')
 
 
 def tagged(block):
@@ -383,8 +386,13 @@ def main():
     assign(['Speaker_Gasket'],15,speaker_back*28,begin=.10,finish=.33,parent='Front_Shell')
     assign(['Speaker'],15,speaker_back*34,begin=.27,finish=.52,parent='Front_Shell')
     assign(select(prefix=('Speaker_Screw_',)),15,speaker_back*46,begin=.71,finish=.96,parent='Front_Shell')
-    assign(['Rear_Interface_PCB','USB_Receptacle']+([] if OFF_SHELF else ['Power_Switch']),15,(0,0,-24),begin=.20,finish=.68,parent='Rear_Shell')
-    assign(select(prefix=('Rear_Interface_Screw_',)),15,(0,0,-20),begin=.69,finish=.94,parent='Rear_Shell')
+    if UPS_CONTROLS:
+        # Like the DC sample, the switch/nut is already seated on the loose
+        # rear shell. Do not imply that its complete lead passes the trial bore.
+        assign(list(P['ups_rear_controls']['reference_ids']),15,begin=.01,finish=.03,parent='Rear_Shell')
+    else:
+        assign(['Rear_Interface_PCB','USB_Receptacle']+([] if OFF_SHELF else ['Power_Switch']),15,(0,0,-24),begin=.20,finish=.68,parent='Rear_Shell')
+        assign(select(prefix=('Rear_Interface_Screw_',)),15,(0,0,-20),begin=.69,finish=.94,parent='Rear_Shell')
     assign(select(prefix=('Frame_Screw_',)),20,(0,0,-150),begin=.73,finish=.98)
     # Independent rigid modules; no source mesh edits and no hidden old shell.
     for name,step,sign,finish in [('Front_Shell',16,1,.94),('Rear_Shell',20,-1,.55)]:
@@ -523,7 +531,8 @@ def main():
 原始 MORI_V1_Assembly 场景保留真实总装与运动轴，可切回检查尺寸。
 
 身体改为前后两片外壳。承重桥在身体外壳未装时单独下放、前移并锁紧。
-前壳喇叭和后壳接口板在台面分别预装；内部总成完成后，前壳沿-Y、后壳沿+Y合入。
+{('前壳喇叭和后壳上DC、下UPS开关在台面预装；控制件仅按已就位展示。' if P.get('ups_rear_controls',{}).get('enabled') else '前壳喇叭和后壳接口板在台面分别预装。')}
+内部总成完成后，前壳沿-Y、后壳沿+Y合入。
 底部两组一体插舌定位，四枚原框架螺钉经底部工具孔锁紧；旧拼缝螺钉和嵌件取消。
 每片模块含原生附件的名义平移路径各检查275个位置，不含独立插头包络。
 保存后的动画可另以半帧抽样；该项需单独的动画回读记录。
@@ -538,9 +547,10 @@ M1.49采用6806ZZ轴承（30×42×7mm）；压板配对孔位为X±26.2mm，
 完整软线束、紧固扭矩与真实零件公差仍未验证。头部舵盘／短轴仍未定型。
 橙色表示未完整确认的部件；没有缩放采购件或改变候选 STL。
 
-降压器区分：第6步的外置模块是轮驱9V（D36V50F9）和头部6V（D24V22F6）。
+{('当前为成品UPS、BMI323与外置6V Buck；主控载板仍为P5R7布局参考，未采用新C3。' if P.get('off_shelf_modules',{}).get('enabled') else '''降压器区分：第6步的外置模块是轮驱9V（D36V50F9）和头部6V（D24V22F6）。
 第7步电源板上的U60/U70已集成运动5V和CAM 5V；没有另装两块外置5V模块。
-本视频采用{P["revision"]}主模型，运动基板与后接口板已更新为P5R7；电源P5R6、IMU P5R4。
+运动基板与后接口板为P5R7；电源P5R6、IMU P5R4。''')}
+本演示采用{P["revision"]}主模型。
 {('M1.54将CAM USB转向机器人右侧+X；CAM端相机FPC朝左-X，屏幕FPC朝下-Z。' if P.get('cam_orientation',{}).get('enabled') else 'CAM相机排线入口朝上，屏幕排线入口朝板外；两处依据官方照片修正。')}
 M1.52仅把两枚现有反力连接试配螺母绕原孔轴转正30°，与六角槽方向一致。
 M1.53将固定偏航桥左侧穿线口外边缘加宽0.8mm；轴承座和五金位置保持。
@@ -550,13 +560,16 @@ WeAct元件面朝上、排针朝下；先放三组排母，再插入核心板与
 E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，不能据动画确认实物配合或下单。
 '''
     textblock=bpy.data.texts.get('MORI_动画使用说明') or bpy.data.texts.new('MORI_动画使用说明');textblock.clear();textblock.write(guide)
-    rebuild=('python mechanical/scripts/run_off_shelf_deliverables.py' if OFF_SHELF else 'python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py' if P.get('reaction_clamp_entry',{}).get('enabled') else 'python mechanical/scripts/run_animation.py')
+    rebuild=('python mechanical/scripts/run_off_shelf_deliverables.py --with-animation' if OFF_SHELF else 'python mechanical/studies/reaction_clamp_R2_adoption/run_deliverables.py' if P.get('reaction_clamp_entry',{}).get('enabled') else 'python mechanical/scripts/run_animation.py')
     if OFF_SHELF:
         guide+='\nM1.56：取消电池托盘及旧电源/IMU/两块Buck，新增UPS直固、两侧小板和居中主控步骤。UPS安装依赖人工支撑；未显示的完整线束、电源保护和实际舵盘仍未完成。\n'
         if DC_TRIAL:
             guide+='M1.57：后壳已采用Ø8试配孔和4mm一体孔座。插座/螺母为样品容量参考，随预装后壳展示；未模拟其完整尾线穿孔，照片安装关系不是尺寸或实物装入验证。\n'
+        if UPS_CONTROLS:
+            guide+='M1.58：取消后接口板、Type-C口及其安装五金，后壳上DC、下UPS开关。开关及螺母随后壳移动，未模拟完整尾线穿孔或验证实物配合。\n'
         textblock.clear();textblock.write(guide)
-    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成并回读验证（先成功生成当前主模型）：\n\n```sh\n'+rebuild+'\n```\n\n[当前采用记录](../../docs/'+('M1_56_OFF_SHELF_ADOPTION.md' if OFF_SHELF else 'M1_55_MODEL_UPDATE.md')+')\n')
+    adoption=('M1_58_UPS_CONTROLS_ADOPTION.md' if UPS_CONTROLS else 'M1_57_DC_TRIAL_ADOPTION.md' if DC_TRIAL else 'M1_56_OFF_SHELF_ADOPTION.md' if OFF_SHELF else 'M1_55_MODEL_UPDATE.md')
+    (OUT/'README.md').write_text('# MORI 装配动画\n\n'+guide+'\n重新生成并回读验证（先成功生成当前主模型）：\n\n```sh\n'+rebuild+'\n```\n\n[当前采用记录](../../docs/'+adoption+')\n')
     script=bpy.data.texts.get('assembly_animation.py') or bpy.data.texts.new('assembly_animation.py');script.clear();script.write(Path(__file__).read_text())
     # Native saved state starts at the first assembly step, camera view ready.
     scene.frame_set(1)
@@ -587,6 +600,10 @@ E排针与原厂STEP孔径资料矛盾仍为BLOCKED，11.04mm是候选叠层，�
     if DC_TRIAL:
         report['dc_inlet_trial_adopted']=True
         report['dc_accessory_stage']='Already seated loose rear-shell reference; full lead insertion NOT_TESTED'
+        save_json(OUT/'manifest.json',report)
+    if UPS_CONTROLS:
+        report['ups_rear_controls_adopted']=True
+        report['ups_switch_stage']='Already seated loose rear-shell reference; full lead insertion NOT_TESTED'
         save_json(OUT/'manifest.json',report)
     if OFF_SHELF:
         report['off_shelf_adopted']=True

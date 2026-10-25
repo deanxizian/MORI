@@ -25,6 +25,8 @@ q=P.get('assembly_issue_fixes',{})
 if q.get('enabled'):
     plan_path=ROOT/'reports/module_assembly.json'
     plan=json.loads(plan_path.read_text())
+    if plan.get('schedule_scope')=='HISTORICAL_CONSTRUCTION_WITH_CURRENT_OVERRIDE':
+        plan=plan['historical_construction_schedule']
     drive_ids={n.removesuffix('_Nut') for n in q['drive_nuts']['ids']}
     for joint in plan['joints']:
         if joint['id'] in drive_ids:
