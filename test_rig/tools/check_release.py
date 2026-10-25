@@ -66,7 +66,11 @@ def check_imports():
                         require(digest(f) == member['sha256'], f'ZIP hash: {info.filename}')
     source = ROOT / 'control'
     hashes = json.loads((source / 'source_manifest.json').read_text())['sha256']
-    require(len(hashes) == 295, 'Unexpected v159 source count')
+    project = json.loads((ROOT / 'project.json').read_text())
+    require(project['software_revision'] == 'v184', 'Unexpected control revision')
+    require(len(hashes) == project['source_file_count'], 'Unexpected control source count')
+    with (source / 'source_manifest.json').open('rb') as f:
+        require(digest(f) == project['source_manifest_sha256'], 'Control manifest differs from project version')
     for name, expected in hashes.items():
         with relative_path(source, name).open('rb') as f:
             require(digest(f) == expected, f'Control source hash: {name}')

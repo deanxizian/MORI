@@ -37,7 +37,12 @@ class PositionReturnLiveController(StationaryIntegralLiveController):
     def __call__(self,attitude,speeds,plan=PLAN):
         self.allocations={}
         update_position_reference(self,attitude,speeds,plan)
+        self.adjust_position_reference(attitude,speeds,plan)
         return super().__call__(attitude,speeds,plan)
+
+    def adjust_position_reference(self,attitude,speeds,plan):
+        """Default keeps the original reference; remote subclasses may shape it."""
+        return None
 
     def extra_telemetry(self,sample):
         info=sample['attitude']['position_hold']

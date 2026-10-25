@@ -166,8 +166,18 @@ class LiveTuningController(VelocityDiagnosticsController):
         if self.channel.disarm.is_set():raise Fault('operator_disarm_requested')
         if self.channel.failed.is_set():raise Fault('live_tuning_channel_failed')
 
+    @staticmethod
+    def status_window_limit(plan):
+        # Optional wire-status cap only. Full report history remains intact.
+        if 'live_status_window_limit' not in plan:return None
+        limit=plan['live_status_window_limit']
+        if type(limit) is not int or not 1<=limit<=32:
+            raise Fault('invalid_live_status_window_limit')
+        return limit
+
     def validate_arm(self,attitude,speeds,plan):
         self.check_external_stop()
+        self.status_window_limit(plan)
         # No request admission or live state is started during zero arm.
         return super().__call__(attitude,speeds,plan)
 
@@ -178,6 +188,7 @@ class LiveTuningController(VelocityDiagnosticsController):
     def __call__(self,attitude,speeds,plan):
         self.check_external_stop();t=attitude['t']
         if self.runtime_plan is None:
+            self.status_window_limit(plan)
             maximum=1800 if plan.get('half_hour_live_session') is True else 600
             if plan.get('allow_live_tuning') is not True or not 0<plan['duration_s']<=maximum:
                 raise Fault('invalid_live_tuning_plan')
@@ -248,10 +259,16 @@ class LiveTuningController(VelocityDiagnosticsController):
                 self.windows=self.windows[-keep:];self.window=None
         if t-self.last_publish>=.1:
             self.last_publish=t
+            limit=self.status_window_limit(self.source_plan)
+            retained=self.windows if limit is None else self.windows[-limit:]
+            history={} if limit is None else dict(
+                completed_windows_available=len(self.windows),
+                completed_windows_truncated=len(retained)<len(self.windows),
+                completed_windows_limit=limit)
             self.channel.publish(dict(phase='ACTIVE',tuning_state=info['state'],revision=self.revision,
                 current=info['current'].copy(),target=(self.ramp['target'].copy() if self.ramp else info['current'].copy()),
                 last_result=copy.deepcopy(self.last_result),last_window=(self.windows[-1].copy() if self.windows else None),
-                completed_windows=[w.copy() for w in self.windows],**self.last_telemetry))
+                completed_windows=[w.copy() for w in retained],**history,**self.last_telemetry))
 
     def finish(self):self.finish_reason='duration_elapsed'
 
