@@ -1,0 +1,29 @@
+{
+  "source_rule": "(rule \"R13 mapped planes and exact In2 signal corridors\"\n  (condition \"A.Type == 'Track' && (A.Layer == 'In1.Cu' || A.Layer == 'In4.Cu' || (A.Layer == 'In2.Cu' && !(A.NetName == '/01 {slash} Core/ARM_CLK' || A.NetName == '/01 {slash} Core/HEAD_TX' || A.NetName == '/01 {slash} Core/IMU_SDA' || A.NetName == '/01 {slash} Core/LINK_TX' || A.NetName == '/01 {slash} Core/WHEEL_TX' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/CLR_N' || A.NetName == '/FAULT_N' || A.NetName == '/HEAD_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(J501-TX43)' || A.NetName == 'Net-(U1101-OUT)' || A.NetName == 'Net-(U1301-INB-_{slash}_OV)' || A.NetName == 'Net-(U1501-INB-_{slash}_OV)' || A.NetName == 'Net-(U401-1Y)' || A.NetName == 'Net-(U402-1Y)' || A.NetName == 'Net-(U501-B)' || A.NetName == 'Net-(U502-B)')))\")\n  (constraint disallow track)\n)\n",
+  "candidate_rule": "(rule \"R13 mapped planes and exact In2 signal corridors\"\n  (condition \"A.Type == 'Track' && (A.Layer == 'In1.Cu' || A.Layer == 'In4.Cu' || (A.Layer == 'In2.Cu' && !(A.NetName == '/01 {slash} Core/ARM_CLK' || A.NetName == '/01 {slash} Core/HEAD_TX' || A.NetName == '/01 {slash} Core/IMU_SDA' || A.NetName == '/01 {slash} Core/LINK_TX' || A.NetName == '/01 {slash} Core/WHEEL_TX' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/CLR_N' || A.NetName == '/FAULT_N' || A.NetName == '/HEAD_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(J501-TX43)' || A.NetName == 'Net-(U1101-OUT)' || A.NetName == 'Net-(U1301-INB-_{slash}_OV)' || A.NetName == 'Net-(U1501-INB-_{slash}_OV)' || A.NetName == 'Net-(U401-1Y)' || A.NetName == 'Net-(U402-1Y)' || A.NetName == 'Net-(U501-B)' || A.NetName == 'Net-(U502-B)')))\")\n  (constraint disallow track)\n)\n",
+  "allowed_In2_nets": [
+    "/01 {slash} Core/ARM_CLK",
+    "/01 {slash} Core/HEAD_TX",
+    "/01 {slash} Core/IMU_SDA",
+    "/01 {slash} Core/LINK_TX",
+    "/01 {slash} Core/WHEEL_TX",
+    "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT",
+    "/CLR_N",
+    "/FAULT_N",
+    "/HEAD_VM",
+    "CAM_3V3_REF",
+    "MOTION_3V3",
+    "Net-(J501-TX43)",
+    "Net-(U1101-OUT)",
+    "Net-(U1301-INB-_{slash}_OV)",
+    "Net-(U1501-INB-_{slash}_OV)",
+    "Net-(U401-1Y)",
+    "Net-(U402-1Y)",
+    "Net-(U501-B)",
+    "Net-(U502-B)"
+  ],
+  "reason": "Retain all previous assignments and add exact CAM_3V3_REF logic supply corridor only. No reference layer or general power waiver.",
+  "rule_source": "/Users/dean/Documents/KiCad/Rules/README.md R13 actual stack mapping",
+  "all_other_rules_identical": true,
+  "manufacturing_release": false
+}

@@ -4,7 +4,7 @@
 
 | 部分 | 当前选择/入口 |
 |---|---|
-| 自制驱动/载板 | [C3 R98I](driver/README.md)，45 项未连接，不可制造 |
+| 自制驱动/载板 | [C3 R108P](driver/README.md)，40 项未连接，不可制造 |
 | 主控 | WeAct STM32F412RET6 64Pin V1.1 |
 | UPS | 微雪 UPS Module 3S，原配 DC 口与总开关 |
 | IMU | DFRobot BMI323 / SEN0693，使用板载小插座 |
@@ -14,4 +14,4 @@
 
 [采购记录](../mechanical/procurement/采购记录.md)记录已买状态和当时价格；[当前板 BOM](driver/bom_candidate.csv)是尚未发布制造的开发候选；[线束表](driver/harness/README.md)未给裁切长度。
 
-正式共享合同仍为 [IF-C1-R4](../contracts/components.json)，C3 R98I 还未晋升合同。主模型是 M1.58，旧载板/外置 Buck 尚未替换。旧多板数据收在 [机械构建参考](../mechanical/input_assets/pcb_reference/README.md)，不是当前采购列表。
+正式共享合同仍为 [IF-C1-R4](../contracts/components.json)，C3 R108P 还未晋升合同。主模型是 M1.58，旧载板/外置 Buck 尚未替换。旧多板数据收在 [机械构建参考](../mechanical/input_assets/pcb_reference/README.md)，不是当前采购列表。

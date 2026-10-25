@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "scope": "Portable package readback and native report reproduction; NOT an engineering DRC PASS or manufacturing qualification.",
+  "executed_at": "2026-10-25T17:42:58.630152+08:00",
+  "kicad_version": "10.0.6",
+  "bundle": {
+    "path": "hardware/driver/MORI_Driver_C3_R108P.zip",
+    "sha256": "ffc4a9aedd0056e9271f4c68bdda681d2fc261be89a945f1229f9210a0f9a0f1",
+    "bytes": 1124550
+  },
+  "temporary_extract_directory": "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/mori-r108p-publication-nqgdndup",
+  "commands": [
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "pcb",
+        "drc",
+        "--format",
+        "json",
+        "--schematic-parity",
+        "--refill-zones",
+        "--severity-all",
+        "--exit-code-violations",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/driver/publication/drc_reopened.json",
+        "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/mori-r108p-publication-nqgdndup/MORI_Interface_C3.kicad_pcb"
+      ],
+      "cwd": "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/mori-r108p-publication-nqgdndup",
+      "exit": 5,
+      "stdout": "发现 0 条违规项\n发现 40 个未连接的项目\n发现 0 个原理图一致性问题\n保存 DRC 报告到 /Users/dean/Documents/MORI/hardware/driver/publication/drc_reopened.json\n",
+      "stderr": "Fontconfig error: Cannot load default config file: File not found\n"
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "sch",
+        "erc",
+        "--format",
+        "json",
+        "--severity-all",
+        "--exit-code-violations",
+        "-o",
+        "/Users/dean/Documents/MORI/hardware/driver/publication/erc_reopened.json",
+        "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/mori-r108p-publication-nqgdndup/MORI_Interface_C3.kicad_sch"
+      ],
+      "cwd": "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/mori-r108p-publication-nqgdndup",
+      "exit": 0,
+      "stdout": "发现 0 条违规项\n已将 ERC 报告保存到文件 /Users/dean/Documents/MORI/hardware/driver/publication/erc_reopened.json\n",
+      "stderr": "Fontconfig error: Cannot load default config file: File not found\n"
+    }
+  ],
+  "checks": {
+    "board_sha256": "e27000e1cd67cc78f690aaae9a34fa0c78ac2b3bf15b6a7396be5a9e2f846d77",
+    "unconnected_items": 40,
+    "other_drc": 0,
+    "schematic_parity": 0,
+    "erc_enabled_all_severities": 0,
+    "ignored_erc_categories": [
+      {
+        "description": "Global label only appears once in the schematic",
+        "key": "single_global_label"
+      },
+      {
+        "description": "Four connection points are joined together",
+        "key": "four_way_junction"
+      },
+      {
+        "description": "SPICE model issue",
+        "key": "simulation_model_issue"
+      },
+      {
+        "description": "Assigned footprint doesn't match footprint filters",
+        "key": "footprint_filter"
+      }
+    ],
+    "native_bundle_members_unchanged": true,
+    "changed_members": []
+  },
+  "engineering_status": "FAIL",
+  "whole_board_visual": "NOT_TESTED",
+  "physical_tests": "NOT_TESTED",
+  "manufacturing_release": false
+}
