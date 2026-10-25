@@ -1,0 +1,23 @@
+# 接口板当前状态 — 2026-10-25 R108P
+
+[当前六层 PCB](routing/working_power_20261016/group_closure_20261016/candidate_6L_R108P/MORI_Interface_C3.kicad_pcb) · [KiCad 工程](routing/working_power_20261016/group_closure_20261016/candidate_6L_R108P/MORI_Interface_C3.kicad_pro)。
+
+**FAIL / PROTOTYPE / UNVALIDATED。仍有 40 项未连接，不可制造。** KiCad 10.0.6 原生其余 DRC 0、图板差异 0、启用全严重级 ERC 0；历史关闭的 4 类 ERC 检查未变。1107 段线、305 个过孔。
+
+本轮接通 R304 下拉到现有 ARMED 支路，未连接项 41→40。R304 移位并旋转，D1601 平移 (+0.20,-0.05)、C1201 平移 (0,-0.15) mm。保留原 3.3V 转接孔，协调 ARMED/OVLO 与接地孔位置，避免新增孔切窄 In2 供电铜区。增 14 段线、4 孔，替换 8 段线、2 孔。ARMED 仍有 5 个分离组，整条安全链尚未完成。
+
+70×35×1.6 mm 六层板、4 个安装孔、68 个核心板针位、9 个板座（6 个外接、3 个核心板座）不变。其余 212 个封装、全部焊盘电气/热连接参数、19 页原理图、BOM、原生规则及电源铜区轮廓/参数保持。
+
+147 个原连接组、17 对供电端点、50 项供电铜宽回归、155 个 GND 焊盘、327 段内层参考地、37 处敏感保护通过；4 条既有 Kelvin 路径保持。OVLO 新孔距地孔 2.390 mm，原始 2 mm 提示保留 FAIL；仅 B/In3 转接、共用同一连续 In4，依既有 R69 换参考层检查 NOT_APPLICABLE。历史 7 项换层提示及已有宽度/地回流处置仍待整板复核，没有声明整板回流、载流或温升合格。
+
+已实际查看 14 张局部分层/双面叠图，逐项记录 18 个新增铜对象，没有新增本体穿越例外。全板逐线视觉 NOT_TESTED，完整装配线束、最终报价和制造交接未完成；实物、温升、浪涌、EMC、平衡及续航均 NOT_TESTED。没有导出制造数据或下单。
+
+按可打样原型的完整工作量粗估仍约 75%，并非验证完成率。局部通道拥挤，继续在现有板框内收尾；尚无证据表明必须扩大尺寸。
+
+[本轮记录](routing/R108_control_closure_20261025/README.md) · [数值审计](routing/R108_control_closure_20261025/audit_P.json) · [逐线视觉](routing/R108_control_closure_20261025/visual_review_record_P.json) · [原生 DRC](routing/working_power_20261016/group_closure_20261016/candidate_6L_R108P/drc.json) · [余线表](routing/working_power_20261016/group_closure_20261016/candidate_6L_R108P/remaining_connections.csv)。
+
+PCB SHA256：e27000e1cd67cc78f690aaae9a34fa0c78ac2b3bf15b6a7396be5a9e2f846d77
+
+## R110 后续通道审查（2026-10-25）
+
+当前采用源仍为 R108P，40 项未连接，估算仍约 75%。R110 A–J 十个原生候选均未采用：新增孔或线路会切断局部电源通道；已有地孔改为信号孔的候选虽通过 50 项供电回归，却产生旧线参考地缺口。具体失败、坐标校正和后续成组调整事项见 [R110 审查记录](routing/R110_safety_power_corridors_20261025/README.md)。没有改写当前 PCB 或制造放行。

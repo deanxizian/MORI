@@ -1,4 +1,4 @@
-> Current entry (2026-10-25): project 1.3.0-dev.1; read docs/PROJECT_LAYOUT.md, docs/REQUIREMENTS.md and config/project_baseline.json first. The chronological decisions below remain evidence, with later user corrections taking precedence. Current model M1.58, PCB C3 R98I and software 1.2 are explicitly not synchronized.
+> Current entry (2026-10-25): project 1.3.0-dev.1; read docs/PROJECT_LAYOUT.md, docs/REQUIREMENTS.md and config/project_baseline.json first. The chronological decisions below remain evidence, with later user corrections taking precedence. Current model M1.58, PCB C3 R108P and software 1.2 are explicitly not synchronized.
 
 # MORI V1.2 project rules
 

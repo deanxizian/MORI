@@ -26,7 +26,7 @@
 | 最新进度、剩余事项 | [当前状态](docs/CURRENT_STATUS.md) · [待办](docs/PREARRIVAL_BLOCKERS.md) |
 | 最新完整 Blender 模型 | [mori_v1_2.blend](mechanical/mori_v1_2.blend) · [模型说明](mechanical/LATEST_MODEL.md) |
 | 机械图册、打印件 | [机械](mechanical/README.md) · [静态图册](mechanical/index.html) · [STL](mechanical/exports/stl/) |
-| 唯一自制驱动板 | [C3 R98I 工程、BOM 与检查](hardware/driver/README.md) |
+| 唯一自制驱动板 | [C3 R108P 工程、BOM 与检查](hardware/driver/README.md) |
 | 模块和采购情况 | [硬件总览](hardware/README.md) · [已采购记录](mechanical/procurement/采购记录.md) |
 | 固件、网页和模拟测试 | [软件](software/README.md) |
 | 树莓派可行性验证车 | [独立样机项目](test_rig/README.md) |
@@ -38,8 +38,8 @@
 |---|---|---|
 | 项目资料 | **1.3.0-dev.1** | 新供电/IMU/单载板架构开发快照；未发布正式 Release |
 | 完整机械模型 | **V1.2-M1.58** | UPS 直固、居中主控、上充电下开关；15 本体打印件，完整带线装配未闭合 |
-| 当前驱动板 | **C3 R98I** | 45 项未连接、30 个网络，**FAIL**；尚未替换主模型中的旧载板 |
-| 机械独立板卡检查 | **C3 R86B** | 局部空间/接口检查；不是 R98I 整机适配通过 |
+| 当前驱动板 | **C3 R108P** | 40 项未连接、27 个网络，**FAIL**；尚未替换主模型中的旧载板 |
+| 机械独立板卡检查 | **C3 R86B** | 局部空间/接口检查；不是 R108P 整机适配通过 |
 | 装配视频 | **M1.57-A1** | 旧参考，仍含已取消的接口板；本次按要求不重新生成 |
 | 成品软件 | **1.2.0-dev.1 / F412 基线** | 禁驱启动和主机/模拟验证；尚未适配新 UPS/BMI323/C3 |
 

@@ -1,0 +1,408 @@
+{
+  "status": "NOT_TESTED",
+  "board_SHA256": "e27000e1cd67cc78f690aaae9a34fa0c78ac2b3bf15b6a7396be5a9e2f846d77",
+  "scope": "Series path screening, not current/temperature qualification",
+  "floors_mm": [
+    0,
+    0.2,
+    0.3,
+    0.5,
+    1.0
+  ],
+  "threshold_basis": "0.50mm is the inherited R08 preferred width, not an ampacity rating or new DRC minimum",
+  "method": "Reload a disposable text copy per width floor with narrow segment blocks removed; rebuild native transitive connectivity. Preserve native pads/vias/zones. Source never saved; temporary files automatically removed.",
+  "paths": [
+    {
+      "source": "J701.6",
+      "destination": "Q1601.5",
+      "role": "UPS battery input: XH6 candidate pin6",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/UPS_BAT",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "Q1601.1",
+      "destination": "Q1602.1",
+      "role": "Back-to-back MOSFET common source",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "Q1602.5",
+      "destination": "R1101.1",
+      "role": "Actuator input current shunt",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/ACT_BAT_SWITCHED",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "R1101.2",
+      "destination": "J401.2",
+      "role": "Wheel daisychain supply",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/WHEEL_VM",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "R1101.2",
+      "destination": "D901.2",
+      "role": "Head converter source",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/WHEEL_VM",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "D901.1",
+      "destination": "U901.3",
+      "role": "Head converter input",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/09 {slash} Head_Buck/HEAD_BUCK_IN",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "U901.2",
+      "destination": "L901.1",
+      "role": "Head converter switch node",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "Net-(U901-SW)",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "L901.2",
+      "destination": "U1201.5",
+      "role": "Head converter output",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/HEAD_6V_RAW",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "U1201.6",
+      "destination": "J402.2",
+      "role": "Head servo supply",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/HEAD_VM",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "J701.1",
+      "destination": "U701.3",
+      "role": "CAM converter input",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/06 {slash} CAM_Buck/UPS_5V",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "J701.1",
+      "destination": "U801.5",
+      "role": "Motion power input",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/06 {slash} CAM_Buck/UPS_5V",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "U701.2",
+      "destination": "L701.1",
+      "role": "CAM converter switch node",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "Net-(U701-SW)",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    },
+    {
+      "source": "L701.2",
+      "destination": "U702.5",
+      "role": "CAM converter output",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/06 {slash} CAM_Buck/CAM_REG_3V87",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "U702.6",
+      "destination": "J702.1",
+      "role": "CAM BAT supply",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "U801.6",
+      "destination": "J102.27",
+      "role": "Motion 5V pin27",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/01 {slash} Core/MOTION_5V",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "U801.6",
+      "destination": "J102.29",
+      "role": "Motion 5V pin29",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": false,
+        "1.0": false
+      },
+      "net": "/01 {slash} Core/MOTION_5V",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": true
+    },
+    {
+      "source": "C1404.1",
+      "destination": "J402.2",
+      "role": "Head bulk capacitor to load",
+      "connected_after_width_filter": {
+        "0": true,
+        "0.2": true,
+        "0.3": true,
+        "0.5": true,
+        "1.0": false
+      },
+      "net": "/HEAD_VM",
+      "status": "NOT_TESTED",
+      "depends_on_sub_0p5mm_track": false
+    }
+  ],
+  "track_counts_by_net_and_width": {
+    "/09 {slash} Head_Buck/HEAD_BUCK_IN": {
+      "0.5": 7,
+      "0.8": 6
+    },
+    "/06 {slash} CAM_Buck/UPS_5V": {
+      "0.3": 9,
+      "0.5": 5,
+      "0.2": 14
+    },
+    "/HEAD_6V_RAW": {
+      "0.2": 11,
+      "0.5": 5,
+      "0.3": 10
+    },
+    "/UPS_BAT": {
+      "0.2": 3,
+      "0.5": 4,
+      "0.35": 2,
+      "0.3": 4
+    },
+    "/06 {slash} CAM_Buck/CAM_REG_3V87": {
+      "0.5": 9,
+      "0.2": 9,
+      "0.3": 1
+    },
+    "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT": {
+      "0.3": 2,
+      "0.5": 9
+    },
+    "/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE": {
+      "0.3": 12,
+      "0.6": 7
+    },
+    "Net-(U701-SW)": {
+      "0.2": 3,
+      "0.5": 1
+    },
+    "Net-(U901-SW)": {
+      "0.2": 4,
+      "0.8": 1,
+      "0.5": 1
+    },
+    "/HEAD_VM": {
+      "0.5": 8,
+      "0.3": 11,
+      "0.2": 21,
+      "0.8": 2,
+      "0.6": 1
+    },
+    "/ACT_BAT_SWITCHED": {
+      "0.2": 6,
+      "0.6": 1,
+      "0.5": 1
+    },
+    "/WHEEL_VM": {
+      "0.5": 6,
+      "0.2": 6,
+      "0.8": 9
+    },
+    "/01 {slash} Core/MOTION_5V": {
+      "0.3": 6,
+      "0.4": 1
+    }
+  },
+  "track_lengths_mm_by_net_and_width": {
+    "/09 {slash} Head_Buck/HEAD_BUCK_IN": {
+      "0.5": 8.98982,
+      "0.8": 6.6435
+    },
+    "/06 {slash} CAM_Buck/UPS_5V": {
+      "0.3": 12.37821,
+      "0.5": 5.54211,
+      "0.2": 24.31825
+    },
+    "/HEAD_6V_RAW": {
+      "0.2": 37.30624,
+      "0.5": 9.30711,
+      "0.3": 10.70711
+    },
+    "/UPS_BAT": {
+      "0.2": 1.9367,
+      "0.5": 5.36211,
+      "0.35": 2.32279,
+      "0.3": 2.64706
+    },
+    "/06 {slash} CAM_Buck/CAM_REG_3V87": {
+      "0.5": 16.25711,
+      "0.2": 24.8812,
+      "0.3": 0.6
+    },
+    "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT": {
+      "0.3": 0.65178,
+      "0.5": 8.91444
+    },
+    "/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE": {
+      "0.3": 10.373,
+      "0.6": 9.20921
+    },
+    "Net-(U701-SW)": {
+      "0.2": 4.9,
+      "0.5": 1.7125
+    },
+    "Net-(U901-SW)": {
+      "0.2": 3.85386,
+      "0.8": 1.35,
+      "0.5": 0.8125
+    },
+    "/HEAD_VM": {
+      "0.5": 7.73843,
+      "0.3": 11.56565,
+      "0.2": 19.55378,
+      "0.8": 1.94711,
+      "0.6": 0.74
+    },
+    "/ACT_BAT_SWITCHED": {
+      "0.2": 4.91777,
+      "0.6": 0.55,
+      "0.5": 1.395
+    },
+    "/WHEEL_VM": {
+      "0.5": 7.29206,
+      "0.2": 6.48492,
+      "0.8": 10.76127
+    },
+    "/01 {slash} Core/MOTION_5V": {
+      "0.3": 7.16495,
+      "0.4": 3.85
+    }
+  },
+  "limitations": [
+    "Does not model current sharing or equivalent copper cross-section of parallel paths.",
+    "Does not qualify vias, pads, zones, copper thickness, neck length, thermal rise or pulse capacity.",
+    "Sub0.5mm dependence requires individual package escape/length/current review; not blanket rejection of sense branches."
+  ],
+  "source_unchanged": true,
+  "manufacturing_release": false
+}

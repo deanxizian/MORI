@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "Publication integrity and repository tool regressions only; hardware remains FAIL / PROTOTYPE / UNVALIDATED.",
+  "recorded_at": "2026-10-25T17:49:23.919936+08:00",
+  "checks": [
+    {
+      "command": "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python tools/check_project.py",
+      "exit": 0,
+      "result": "PASS, actual bytes, no errors"
+    },
+    {
+      "command": "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python -m unittest discover -s tools/tests -q",
+      "exit": 0,
+      "result": "31 tests, OK"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit": 0,
+      "result": "No whitespace errors"
+    },
+    {
+      "check": "Copied source receipt hashes and portable hardware Markdown links",
+      "result": "PASS, no mismatches or broken links"
+    },
+    {
+      "check": "Limited high-confidence secret pattern scan of staged text and ZIP members",
+      "items": 134,
+      "result": "No findings",
+      "patterns": [
+        "private key PEM",
+        "GitHub token",
+        "AWS access-key ID",
+        "OpenAI token",
+        "Slack token"
+      ],
+      "limitation": "Pattern scan only, not an exhaustive credential audit"
+    }
+  ],
+  "manufacturing_release": false
+}

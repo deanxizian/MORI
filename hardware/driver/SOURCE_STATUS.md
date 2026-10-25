@@ -1,21 +1,21 @@
-> 硬件作者 2026-10-25 状态接收；路径是原工作区记录。可下载文件和当前检查请用 [本目录入口](README.md)。
+# C3 R108P 状态与边界
 
-# 接口板当前状态 — 2026-10-25 R98I
+2026-10-25，同步最新采用的 R108P，未改原工作区。原始作者记录见 [状态原文](evidence/R108P/source_status_original.txt)；其中的相对路径指原工程工作区，文件下载以[当前入口](README.md)为准。
 
-当前六层PCB（原工作路径：`routing/working_power_20261016/group_closure_20261016/candidate_6L_R98I/MORI_Interface_C3.kicad_pcb`） · KiCad工程（原工作路径：`routing/working_power_20261016/group_closure_20261016/candidate_6L_R98I/MORI_Interface_C3.kicad_pro`）。
+| 项目 | 结果 |
+|---|---|
+| 全板 | **FAIL / PROTOTYPE / UNVALIDATED**；40 项未连接、27 个网络 |
+| KiCad 原生检查 | 其余 DRC 0、图板差异 0、启用项全严重级 ERC 0 |
+| 历史 ERC 忽略项 | single_global_label、four_way_junction、simulation_model_issue、footprint_filter；本次未增加 |
+| 本轮局部视觉 | 作者已查看 14 张 R108P 原生局部图；全板逐线视觉 **NOT_TESTED** |
+| 回流 | 7 项历史提示尚未闭合；新孔距离原始筛查仍 FAIL，不以局部检查覆盖 |
+| 采购预算 | **FAIL**；本次没有重新核价或制造报价 |
+| 热、浪涌、EMC、平衡、续航 | **NOT_TESTED** |
+| 机械与合同 | M1.58 主模型尚未采用 C3；正式接口合同仍 IF-C1-R4 |
+| 制造 | `manufacturing_release=false`，无制造数据、无下单 |
 
-**FAIL / PROTOTYPE / UNVALIDATED。45项未连接、30个网络，不可制造。** KiCad10.0.6原生其余DRC0、图板差异0、启用全严重级ERC0；历史关闭4类ERC检查未变。1052段线、293个过孔。
+R108P 将 R304 下拉支路并入 D1601/J101/R903/U901 的 ARMED 分组；ARMED 仍有 5 个独立组，不能宣称使能链已经完整。原作者记录的 17 对供电端点、50 项铜宽回归、155 个 GND 焊盘、4 条 Kelvin 取样、327 段内层参考地及 37 处敏感区域检查是限定范围的数字检查，未证明载流、热或整机安全。
 
-本轮接通D1602.1—R1601.1钳位支路，46→45项未连接；完整GATE网络仍未接完。D1602左移/上移各0.15mm、R1601左移0.15mm，联合重排VCAP、RC、5V和地过孔局部连接。70×35×1.6mm板框、四孔、68个核心板针位、9个连接器及其他213个器件保持。没有扩大板子、改变接口或使用新的模块。
+[R110 A–J](evidence/R110/README.md) 尝试未达到采用门槛，未连接数或供电、回流、DRC 出现回退，当前仍采用 R108P。原作者完整试验目录留在工程工作区，本发布只带摘要和审查数据，不把失败候选当成新 PCB。
 
-保留152组源焊盘连接；17对供电端点、63项邻接、50项供电铜宽、155个GND焊盘、4条独立Kelvin取样、279段内层参考地及37处敏感区域检查通过。新旧外层铜线的参考地检查均通过。7项历史换层回流提示未消除。
-
-本轮不是“所有器件投影下均无铜线”：原始本体检查仍FAIL，7个具体外层对象和4个过孔逐项记录。六段外层对象属于已存在的局部VCAP/EN连接或其重布；新增GATE逃线在反面U1601下有0.12554mm²投影重叠。没有本面焊盘外穿越，也没有对任何网络作通用豁免。未采用新增5V走线从R1101背面边缘经过的G候选。VCAP前面1.510mm短线用0.20mm，名义35µm铜厚下估算3.776mΩ，非载流/温升实测。
-
-移动后的GND过孔(36.925,17.55)两地层仅42/64铜环采样，保留原始FAIL；实际0.20mm向西连续出口和完整地网连通已核验。另一个新地孔(40,18.7)两层64/64。已查看24张当前局部原生图，覆盖27段新增线及其邻接铜区；整板逐根视觉仍NOT_TESTED。
-
-局部拥挤已有证据，但未证明整块70×35板不可完成。R97失败试验保留；R98A–H比较和失败原因见本轮记录。仍须完成45项连接、7项回流提示、输入插座热连接载流/浪涌、整板视觉、完整装配/线束、最终报价及制造文件。实物、热、浪涌、EMC、平衡和续航均NOT_TESTED。没有制造数据或下单。
-
-本轮记录（原工作路径：`routing/R98_gate_placement_20261025/README.md`） · 检查（原工作路径：`routing/R98_gate_placement_20261025/audit_I.json`） · 视觉记录（原工作路径：`routing/R98_gate_placement_20261025/visual_review_record_I.json`） · 原生DRC（原工作路径：`routing/working_power_20261016/group_closure_20261016/candidate_6L_R98I/drc.json`） · 余线表（原工作路径：`routing/working_power_20261016/group_closure_20261016/candidate_6L_R98I/remaining_connections.csv`）。
-
-PCB SHA256：7a6c596e4ca037b34c7f07e7f9db5c386d2cf0cf3b569e0e9f6f4aaf86ef848e
+PCB SHA256：`e27000e1cd67cc78f690aaae9a34fa0c78ac2b3bf15b6a7396be5a9e2f846d77`。
