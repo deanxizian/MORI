@@ -1,0 +1,16 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S288 串接线内部收纳</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f5f2;color:#28383c;font:17px/1.7 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:25px 28px 60px}h1{font-size:33px;line-height:1.3;margin:18px 0 12px}h2{font-size:25px;margin-top:36px}a{color:#126b7a}nav{display:flex;gap:20px;flex-wrap:wrap}.note{padding:12px 18px;border-left:4px solid #ab7c28;background:#f0e8d6}figure{margin:20px 0}img{width:100%;height:auto;display:block}figcaption,small{color:#536569}figcaption{padding-top:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}table{width:100%;border-collapse:collapse}td,th{text-align:left;vertical-align:top;padding:11px 8px;border-bottom:1px solid #ccd5d3}td:first-child{width:25%}@media(max-width:700px){main{padding:20px 16px}.grid{grid-template-columns:1fr}h1{font-size:28px}}</style></head><body><main>
+<nav><a href="../../index.html#s288-vendor">主模型</a><a href="top_beam_review.html">上梁槽旧候选</a><a href="INSIDE_REVIEW.md">详细记录</a></nav>
+<h1>两台轮舵机的串接线可以收在里面</h1><p>独立名义路线 · 原上梁和底盖保持完整 · 主模型尚未同步</p>
+<p class="note"><strong>三芯各保留 190 mm，利用前后对角空腔回绕、分层通过中缝。</strong><br>这根串接线无需在上梁开出线槽，也不新增零件或螺钉。这里是打印电机座的内部；线路主体避开整个电机外包框，没有利用舵机齿轮腔。</p>
+<figure><a href="inside_open.png"><img src="inside_open.png" alt="隐藏原上座后，黄色三芯串接线在两台原厂S288前后空腔回绕，并从中缝通过"></a><figcaption>黄色是三根各 190 mm 的名义导线；原配插头尚未精细建模。仅隐藏上座供查看，检查使用完整上座实体。真实线材能否这样分层弯折、余线固定和防夹仍需试装。</figcaption></figure>
+<div class="grid"><figure><a href="inside_closed.png"><img src="inside_closed.png" alt="合上原上座后看不到外部串接线，顶梁没有新增槽"></a><figcaption>合上原上座：串接线藏在内部，上梁不用为 U04 开槽。</figcaption></figure><figure><a href="inside_plan.png"><img src="inside_plan.png" alt="俯视两台错位S288之间的内部串接路线"></a><figcaption>俯视分层路线：电机间缝名义 1.6 mm，采用单线外径约 1 mm。</figcaption></figure></div>
+<h2>名义检查已完成</h2><table><thead><tr><th>项目</th><th>结果与实际限制</th></tr></thead><tbody>
+<tr><td>内部空间</td><td>18 组名义组合无实体相交。所选路线与原厂电机最小约 0.3 mm、打印上座约 0.6 mm、线间约 0.4 mm；所选路线增粗到半径 0.6 / 0.7 mm也无相交。以上是离散网格结果。</td></tr>
+<tr><td>合盖与装入</td><td>先在台面装好电机、底盖和 U04，原上座从上方落下的 101 个位置通过；四螺钉各 69 个位置、前后壳各 275 个位置未碰 U04。人手保持余线、真实插头和防夹未验证。</td></tr>
+<tr><td>主控进来的线</td><td>另用左侧电机上口，9 个试值短段与内部 U04 不相交。<strong>该短段仍穿过原封闭上梁，出口和完整主控线路尚未完成。</strong>对 U04 不开槽，不等于所有进出线都无需开口。</td></tr>
+<tr><td>真实线材</td><td>190 mm 和约 1 mm 来自用户报告；插头外伸、端子直尾、最小弯曲半径及三芯是否粘连仍未确定。三条路径采用独立软线假设，实际要按随货线调整，不能作裁线／制造放行。</td></tr>
+<tr><td>结构与文件</td><td>打印件、固定孔和舵机位姿均未改。26 个主模型、STL、电子细模、视频保护文件保持原散列。原厂电机和内线仅在本局部模型中；完整主模型仍为 M1.58。</td></tr>
+</tbody></table>
+<p>局部内部收纳模型 <small>（原研究引用，未收录于本快照）</small> · <a href="evidence.zip" title="原始记录位于证据包内">静态实体检查</a> · <a href="evidence.zip" title="原始记录位于证据包内">装入检查</a> · <a href="evidence.zip" title="原始记录位于证据包内">进线短段共存检查</a> · <a href="evidence.zip" title="原始记录位于证据包内">实际命令和日志</a></p>
+<p><small>PROTOTYPE / UNVALIDATED。完整线束、余线固定和实物防夹仍未闭合；未更新视频，未向硬件对话发送指令。</small></p>
+</main></body></html>

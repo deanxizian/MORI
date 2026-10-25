@@ -1,63 +1,60 @@
 # MORI
 
-MORI 是一个两轮主动平衡机器人原型：两只轮驱舵机、头部偏航与俯仰两只舵机、圆形屏幕、真实摄像头及板载音频。
+两轮主动平衡机器人原型：两只轮驱舵机、两只头部舵机、圆形触摸屏、真实摄像头与板载音频。成品使用 **WeAct STM32F412**；树莓派验证车单独放在 `test_rig/`。
 
-本仓库整理机械、硬件、软件、采购和验证资料。**主项目本体当前为 PROTOTYPE / UNVALIDATED，未完成实物装配、上电和主动平衡验证，未制造放行。** 当前机械模型为 M1.55，已应用 C6 通道、CAM USB 朝右和用户批准的 R2 颈部装入修正，详见[本次更新](docs/M1_55_MODEL_UPDATE.md)。
+**当前项目版本：1.3.0-dev.1 · 2026-10-25 · PROTOTYPE / UNVALIDATED。** 成品 UPS、成品 IMU 和唯一自制驱动载板是当前方向；尚未完成成品整机装配、完整线束及上电验证，不是制造版本。
 
-另有独立的[两轮平衡可行性验证车](test_rig/README.md)：2026-10-18 整理了当前模型、打印件、装配/接线、控制源码和实测证据。它已完成一次用户确认的 60 秒无人接触平衡，后续长测保护退出，仍暂停调优；该结果不等于主项目本体已验证。
+## 当前外观
 
-![MORI 当前结构预览](mechanical/renders/internal.png)
+![MORI M1.58 带外壳总装](mechanical/renders/ups_controls_M1_58/assembled.png)
 
-首次归档的[拆分 PR 与审查修复](docs/REVIEW_STACK.md)已合并。历史与大批生成数据保留在不可变归档。
+上图来自保存的 M1.58 主模型，保留实际外壳、孔位和轮胎间隙；是 CAD 预览，非实物照片。
 
-## 先看这些
+<details>
+<summary>查看同版内部结构</summary>
 
-| 要找的资料 | 入口 |
+![MORI M1.58 内部结构](mechanical/renders/ups_controls_M1_58/internal.png)
+
+主模型仍含旧 P5R7 载板与外置 6 V Buck。新 C3 板和板载 6 V 供电尚未同步进去，完整线束也未采用。
+
+</details>
+
+## 从这里开始
+
+| 要找什么 | 当前入口 |
 |---|---|
-| 项目资料总索引 | [PROJECT_INDEX](docs/PROJECT_INDEX.md) |
-| 两轮验证车模型、装配与实测 | [test_rig](test_rig/README.md) · [验证状态](test_rig/STATUS.md) |
-| 当前版本与未完成事项 | [CURRENT_STATUS](docs/CURRENT_STATUS.md) |
-| 到货前剩余工作与资料依赖 | [待补资料清单](docs/PREARRIVAL_BLOCKERS.md) · [未采用线束研究摘要](mechanical/studies/harness_M1_55_summary/index.html) |
-| 从哪些厂家购买哪些产品 | [采购清单](mechanical/procurement/M1.52_按厂家采购清单_2026-10-06.md) · [已下单记录](mechanical/procurement/采购记录.md) |
-| 机械模型、图册与装配视频 | [机械入口](mechanical/README.md) · [网页图册源文件](mechanical/index.html) · [装配视频](mechanical/animation/MORI_assembly.mp4) |
-| 四块 PCB 的原生工程与接线 | [原生工程包与解压说明](hardware/v1_2/native_projects/README.md) · [P5R7 接线](hardware/v1_2/wiring_P5R7/README.md) |
-| 网页、固件和模拟测试 | [软件说明](README_SOFTWARE_V1_2.md) · [原有验收记录](https://github.com/deanxizian/MORI/blob/48fe22aa75554c9d7bb237e2d2dcacca7f83dde1/reports/v1_2/acceptance.md) |
-| 下载大文件、在本地打开图册 | [下载与归档说明](docs/GITHUB_ARCHIVE.md) |
-| 历史版本和旧文件的适用范围 | [历史索引](docs/HISTORY.md) |
+| 最新进度、剩余事项 | [当前状态](docs/CURRENT_STATUS.md) · [待办](docs/PREARRIVAL_BLOCKERS.md) |
+| 最新完整 Blender 模型 | [mori_v1_2.blend](mechanical/mori_v1_2.blend) · [模型说明](mechanical/LATEST_MODEL.md) |
+| 机械图册、打印件 | [机械](mechanical/README.md) · [静态图册](mechanical/index.html) · [STL](mechanical/exports/stl/) |
+| 唯一自制驱动板 | [C3 R98I 工程、BOM 与检查](hardware/driver/README.md) |
+| 模块和采购情况 | [硬件总览](hardware/README.md) · [已采购记录](mechanical/procurement/采购记录.md) |
+| 固件、网页和模拟测试 | [软件](software/README.md) |
+| 树莓派可行性验证车 | [独立样机项目](test_rig/README.md) |
+| 目录怎么用、资料在哪里 | [目录规则](docs/PROJECT_LAYOUT.md) · [资料索引](docs/PROJECT_INDEX.md) |
 
-## 当前基线
+## 版本与进度
 
-当前资料整理日期：**2026-10-10**。规格为 [MORI_SPEC_V1_2.md](MORI_SPEC_V1_2.md)。
-
-| 工作包 | 当前入口版本 | 说明 |
+| 工作包 | 当前版本 | 边界 |
 |---|---|---|
-| 机械 | **V1.2-M1.55** | 主模型、电子细模和预览；当前 16 件机器人打印件，导出目录的 21 个 STL 还含其他试配文件 |
-| 装配动画 | **V1.2-M1.55-A1** | 87.5 秒、22 步；裸打印件反力夹装入已修复，实际舵盘与完整带线装配仍未闭合 |
-| 硬件合同 | **V1.2-H0.5-P5R7** | 运动板／后接口板 P5R7，电源板 P5R6，IMU 板 P5R4 |
-| 软件 | **1.2.0-dev.1 历史交付记录** | 原验收日期 2026-09-22；不能据此声称已适配或验证后续 P5R7 硬件 |
+| 项目资料 | **1.3.0-dev.1** | 新供电/IMU/单载板架构开发快照；未发布正式 Release |
+| 完整机械模型 | **V1.2-M1.58** | UPS 直固、居中主控、上充电下开关；15 本体打印件，完整带线装配未闭合 |
+| 当前驱动板 | **C3 R98I** | 45 项未连接、30 个网络，**FAIL**；尚未替换主模型中的旧载板 |
+| 机械独立板卡检查 | **C3 R86B** | 局部空间/接口检查；不是 R98I 整机适配通过 |
+| 装配视频 | **M1.57-A1** | 旧参考，仍含已取消的接口板；本次按要求不重新生成 |
+| 成品软件 | **1.2.0-dev.1 / F412 基线** | 禁驱启动和主机/模拟验证；尚未适配新 UPS/BMI323/C3 |
 
-硬件合同选择 WeAct STM32F412RET6 64Pin V1.1。2026-10-07 的审查修复已迁移默认编译目标并完成交叉编译，板级接通与实机验证仍未完成；详见[复核记录](docs/REVIEW_CLOSURE.md)。本次机械更新没有改动固件。
+选择 1.3 开发版是因为系统架构已改变；机械、PCB 和固件保留真实修订号，不能把资料整理写成它们全部同步完成。原始 [V1.2 规格](MORI_SPEC_V1_2.md)保留为需求来源，后续已确认变更见 [当前需求](docs/REQUIREMENTS.md)和 [更新记录](docs/CHANGELOG.md)。V1 旧入口已移除，历史通过 Git 查看。
 
-## 资料的有效范围
-
-- 机械尺寸以 [config/geometry.json](config/geometry.json) 为当前唯一来源，安装契约为 [mechanical_interfaces.json](contracts/mechanical_interfaces.json)。单位 mm，+X 向右、+Y 向前、+Z 向上。
-- 硬件选型以 [components.json](contracts/components.json) 为准；电气契约、原生 KiCad 板和正式交接各保留来源与版本。
-- `mechanical/studies/` 同时包含已采用方案、未采用候选和失败试验。候选目录、截图或局部 PASS 不自动等于当前主模型。
-- 根目录 `params.json`、`scripts/`、`models/`、`renders/`、`exports/` 属于 A0 历史。`hardware/v1/` 和旧软件台架记录也不是当前接线或尺寸依据。
-- 几何检查、ERC／DRC、主机测试与仿真均不等于实物装配、热性能、材料强度、电池安全或平衡验证。
-
-## 本地阅读
-
-三个 Blender 工程采用 **Git LFS**；大型网格按需从不可变归档恢复，四套原生 KiCad 工程以 ZIP 保存完整文件，并保留可读的原理图与规则；工程包、视频、文档与源码使用普通 Git。克隆后先执行 `git lfs pull`，再按 [下载说明](docs/GITHUB_ARCHIVE.md)核对资产。GitHub 的 HTML 文件视图显示源代码；本地图册可这样打开：
+## 下载与本地查看
 
 ```sh
+git lfs pull
+python3 tools/check_project.py
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-浏览器打开 `http://127.0.0.1:8000/mechanical/index.html`；装配动画入口为 `/mechanical/animation/index.html`。这只启动静态资料服务，不启动控制程序。
+打开 `http://127.0.0.1:8000/mechanical/index.html`。三个当前 Blender 工程使用 Git LFS；驱动板工程、证据包和视频使用普通 Git。只有需要重建 CAD 时才恢复厂家网格及历史构建输入，见[下载与重建说明](docs/GITHUB_ARCHIVE.md)。以上操作不连接设备，不刷写或驱动电机。
 
-旧软件 CI 配置保留在原始归档；独立验证车另有[离线检查工作流](.github/workflows/test-rig.yml)，只验证文件、遥测一致性和模拟测试，不部署或启用机器人。主项目完整重建与历史对比的依赖边界见下载说明。
+## 来源
 
-## 来源与许可
-
-保留 [第三方通知](THIRD_PARTY_NOTICES.md)、[软件 V1.2 通知](software/THIRD_PARTY_V1_2.md)和 [机械来源说明](mechanical/THIRD_PARTY_NOTICES.md)。厂家文件与图片保留其原始来源和权利；公开仓库不改变第三方许可。本次没有为 MORI 自有内容另行指定开源许可证。
+保留[第三方通知](THIRD_PARTY_NOTICES.md)、[机械来源](mechanical/THIRD_PARTY_NOTICES.md)和[软件许可说明](software/THIRD_PARTY_V1_2.md)。厂家文件与图片保持原始来源；公开仓库不改变第三方权利。几何、ERC/DRC、主机或模拟检查均不等于实物资格验证。

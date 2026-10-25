@@ -229,7 +229,8 @@ def camera_checks(solids):
               'camera_window_diameter_mm':round(float(window.hi[0]-window.lo[0]),3),
               'projected_camera_to_mask_gap_mm':round(gap,3),'measured_contiguous_white_shell_band_mm':round(white_band,2),'white_shell_bridge_rays':bridge,
               'camera_pupil_in_pitch_mm':list(origin-Vector((0,0,D['head_z']))),
-              'drive_roof_to_battery_tray_vertical_gap_mm':round(float(solids['Battery_Tray'].lo[2]-solids['Drive_Bridge'].hi[2]),3),
+              'drive_roof_to_battery_tray_vertical_gap_mm':round(float(solids['Battery_Tray'].lo[2]-solids['Drive_Bridge'].hi[2]),3) if 'Battery_Tray' in solids else None,
+              'drive_roof_to_UPS_vertical_gap_mm':round(float(solids['UPS_Module'].lo[2]-solids['Drive_Bridge'].hi[2]),3) if 'UPS_Module' in solids else None,
               'limits':'Projected separation and seven actual shell rays only; optical ray-grid results are separate. Tyre supplier, camera package/FPC, fasteners, strength and dynamics remain unqualified.'}
         save_json(ROOT/'reports/wheels_camera_change.json',data)
         approved_ellipse=P.get('prearrival_completion',{}).get('enabled',False)
@@ -504,6 +505,9 @@ def v12_checks(solids):
 
 
 def main():
+    if P.get('off_shelf_modules',{}).get('enabled'):
+        from validate_off_shelf_modules import run_current
+        return run_current()
     if P.get('reaction_clamp_entry',{}).get('enabled'):
         from validate_reaction_clamp_entry import run_current
         return run_current()

@@ -18,6 +18,12 @@ modules={
     'rear':['Body_Rear','Frame_Insert_2','Frame_Insert_3','Power_Switch',
             'Rear_Interface_Insert_0','Rear_Interface_Insert_1','Rear_Interface_PCB',
             'Rear_Interface_Screw_0','Rear_Interface_Screw_1','USB_Receptacle']}
+if P.get('off_shelf_modules',{}).get('enabled'):
+    modules['rear'].remove('Power_Switch')
+if P.get('dc_inlet_trial',{}).get('enabled'):
+    modules['rear']+=list(P['dc_inlet_trial']['reference_ids'])
+if P.get('ups_rear_controls',{}).get('enabled'):
+    q=P['ups_rear_controls'];modules['rear']=[n for n in modules['rear'] if n not in q['retired_ids']]+list(q['reference_ids'])
 paths=[]
 for side,direction in [('front',1),('rear',-1)]:
     names=set(modules[side]);assert names<=set(ss)

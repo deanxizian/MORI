@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "revision": "V1.2-M1.55",
+  "revision": "V1.2-M1.58",
   "units": "mm",
   "data_status": "ASSUMED",
   "source": "MORI_SPEC_V1_2.md and 01_CODEX_MECHANICAL.md; user 2026-09-22",
@@ -7838,5 +7838,733 @@
     },
     "classification": "PRINTABLE / ASSUMED",
     "limits": "Bare-print entry only; actual SC-0090-C001 horn and locking deferred to arrival. Full wired assembly BLOCKED; open-rim PA12 stiffness/strength/fatigue NOT_TESTED; manufacturing_release=false."
+  },
+  "off_shelf_modules": {
+    "enabled": true,
+    "approved": true,
+    "revision": "V1.2-M1.56",
+    "approval": "USER_APPROVED: 采用直固方案（推荐）",
+    "approval_date": "2026-10-13",
+    "baseline": "mechanical/input_assets/off_shelf_M1_56/baseline.json",
+    "baseline_sha256": "b4b45c5537a4e482490e50a9bde8dd0440d5ba7e10103140038f06bd02efa22c",
+    "construction_source": "This geometry.json section only. Captured candidate meshes are independent verification references.",
+    "controller_pose": {
+      "id": "CTRL_RZ90_Y-6_DZ-1",
+      "matrix_world": [
+        [
+          6.123233995736766e-17,
+          -1.0,
+          0.0,
+          -44.0
+        ],
+        [
+          1.0,
+          6.123233995736766e-17,
+          0.0,
+          -5.999999999999997
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rotation_z_deg": 90,
+      "center_xy_mm": [
+        0,
+        -6.0
+      ],
+      "translation_z_mm": -1.0,
+      "bounds_xyz_mm": [
+        [
+          -17.500000000000004,
+          17.5
+        ],
+        [
+          -41.00000000000001,
+          29.000000000000004
+        ],
+        [
+          116.5999984741211,
+          137.58143615722656
+        ]
+      ],
+      "collisions": []
+    },
+    "controller_group_ids": [
+      "MCU_Carrier",
+      "MCU_Motion",
+      "Carrier_Screw_0",
+      "Carrier_Screw_1",
+      "Carrier_Screw_2",
+      "Carrier_Screw_3",
+      "Carrier_Insert_0",
+      "Carrier_Insert_1",
+      "Carrier_Insert_2",
+      "Carrier_Insert_3",
+      "E_Straight_Header",
+      "Socket_AC",
+      "Socket_BD",
+      "Socket_E"
+    ],
+    "retired_ids": [
+      "Battery_Tray",
+      "Battery",
+      "Body_IMU",
+      "Power_Module",
+      "Power_Switch",
+      "Wheel_Buck",
+      "Head_Buck",
+      "Battery_Strap",
+      "Battery_Retainer_Screw_-1",
+      "Battery_Retainer_Screw_1",
+      "Battery_Pad_-38.0",
+      "Battery_Pad_38.0",
+      "Battery_Pad_Base",
+      "IMU_Screw_0",
+      "IMU_Screw_1",
+      "Power_Board_H2_Screw",
+      "Power_Board_H3_Screw",
+      "Wheel_Buck_Screw_1",
+      "Wheel_Buck_Screw_2",
+      "Head_Buck_Screw_0",
+      "Head_Buck_Screw_1",
+      "Battery_Pad_Top",
+      "Battery_Retainer_Insert_-1",
+      "Battery_Retainer_Insert_1",
+      "Head_Buck_Insert_0",
+      "Head_Buck_Insert_1",
+      "IMU_Insert_0",
+      "IMU_Insert_1",
+      "Power_Board_H2_Insert",
+      "Power_Board_H3_Insert",
+      "Wheel_Buck_Insert_1",
+      "Wheel_Buck_Insert_2"
+    ],
+    "sources": {
+      "ups_step": {
+        "file": "mechanical/sources/off_shelf_20261013/UPS_3S_official.step",
+        "sha256": "7556ec677c398430626b7dad316dc6a7511cd54b8eb0c6e006c556535d16c7e1"
+      },
+      "ups_cache": {
+        "file": "mechanical/sources/off_shelf_20261013/ups3s.json",
+        "sha256": "b713929e49f8e3739197ee2de4704753c628b346a5bb3b3bb31dbc25f378d8f1"
+      },
+      "imu_step": {
+        "file": "mechanical/sources/off_shelf_20261013/SEN0693_official.stp",
+        "sha256": "62c501e175fc1ad746f05dd317af021519347791788fd94244738cbbae8b68a5"
+      },
+      "imu_cache": {
+        "file": "mechanical/sources/off_shelf_20261013/bmi323.json",
+        "sha256": "4db6cfe4e172488435265d06ed6a9c200e28322ca500a595c4dfc3b10ed1c20e"
+      },
+      "imu_socket": {
+        "file": "mechanical/sources/off_shelf_20261013/bmi323_socket_surface.json",
+        "sha256": "a82af18beb8ff7debfe7e5fe9f2ea83c809676bfe147be134b3accc0d72fb298"
+      },
+      "buck_step": {
+        "file": "mechanical/sources/off_shelf_20261013/DC BUCK Adapter (7.2V).step",
+        "sha256": "096fd68ecfeeeb9c0212c3e3c0277c5b5a76eb519e44c5be7d24f4e63e1e47da"
+      },
+      "buck_cache": {
+        "file": "mechanical/sources/off_shelf_20261013/buck_family.json",
+        "sha256": "0ef5dc9cbb75c27f7623831db348acbea87802f2b5e55f9971aa7643aa93cd10"
+      }
+    },
+    "modules": {
+      "ups": {
+        "id": "UPS_Module",
+        "label": "微雪 UPS Module 3S / 原厂简化总成",
+        "matrix_world": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            -12
+          ],
+          [
+            0,
+            0,
+            1,
+            97.5
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "manufacturer": "Waveshare",
+        "sku": "UPS Module 3S",
+        "category": "PURCHASED_REFERENCE",
+        "data_status": "VENDOR_DOCUMENTED",
+        "omit_solid_indices": [],
+        "limit": "原厂简化 CAD；电芯、绝缘板和接插件完整装件形状及实物修订仍待复核"
+      },
+      "imu": {
+        "id": "IMU_BMI323",
+        "label": "DFRobot SEN0693 / 无排针、保留小插座",
+        "matrix_world": [
+          [
+            -1.8369701987210297e-16,
+            1.0,
+            0.0,
+            -30.0
+          ],
+          [
+            -1.0,
+            -1.8369701987210297e-16,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            117.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "manufacturer": "DFRobot",
+        "sku": "SEN0693 Fermion BMI323",
+        "category": "PURCHASED_REFERENCE",
+        "data_status": "VENDOR_DOCUMENTED",
+        "omit_solid_indices": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "limit": "官方 CAD；未焊排针按用户配置去除。小插座为原始开放曲面，碰撞用保守框；插合待核"
+      },
+      "buck": {
+        "id": "Head_Buck_6V",
+        "label": "微雪 DC BUCK Adapter 6V / 同系列 CAD 占位",
+        "matrix_world": [
+          [
+            6.123233995736766e-17,
+            -1.0,
+            0.0,
+            40.75
+          ],
+          [
+            1.0,
+            6.123233995736766e-17,
+            0.0,
+            -17.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            120.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "manufacturer": "Waveshare",
+        "sku": "DC BUCK Adapter (6V)",
+        "category": "PLACEHOLDER",
+        "data_status": "ASSUMED",
+        "omit_solid_indices": [],
+        "limit": "34×21.5 外形与安装孔有系列资料；7.2V CAD 不证明 6V 版元件和高度一致。保持琥珀色"
+      }
+    },
+    "old_mount_sites": [
+      {
+        "kind": "power",
+        "xy": [
+          -37.0,
+          27.5
+        ],
+        "r": 3.3,
+        "side": "top"
+      },
+      {
+        "kind": "power",
+        "xy": [
+          -37.0,
+          -21.5
+        ],
+        "r": 3.3,
+        "side": "top"
+      },
+      {
+        "kind": "power",
+        "xy": [
+          37.0,
+          27.5
+        ],
+        "r": 3.3,
+        "side": "top"
+      },
+      {
+        "kind": "power",
+        "xy": [
+          37.0,
+          -21.5
+        ],
+        "r": 3.3,
+        "side": "top"
+      },
+      {
+        "kind": "imu",
+        "xy": [
+          -32.5,
+          -35.5
+        ],
+        "r": 3.5,
+        "side": "bottom"
+      },
+      {
+        "kind": "imu",
+        "xy": [
+          -17.5,
+          -35.5
+        ],
+        "r": 3.5,
+        "side": "bottom"
+      },
+      {
+        "kind": "Wheel_Buck",
+        "xy": [
+          5.4590000000000005,
+          -10.541
+        ],
+        "r": 3.3,
+        "side": "bottom"
+      },
+      {
+        "kind": "Wheel_Buck",
+        "xy": [
+          5.4590000000000005,
+          10.541
+        ],
+        "r": 3.3,
+        "side": "bottom"
+      },
+      {
+        "kind": "Wheel_Buck",
+        "xy": [
+          26.541,
+          -10.541
+        ],
+        "r": 3.3,
+        "side": "bottom"
+      },
+      {
+        "kind": "Head_Buck",
+        "xy": [
+          -22.604,
+          -6.603999999999999
+        ],
+        "r": 3.3,
+        "side": "bottom"
+      },
+      {
+        "kind": "Head_Buck",
+        "xy": [
+          -9.396,
+          6.604000000000001
+        ],
+        "r": 3.3,
+        "side": "bottom"
+      }
+    ],
+    "small_board_mounts": [
+      {
+        "module": "imu",
+        "index": 0,
+        "xy_mm": [
+          -24.5000032888,
+          5.500001907299999
+        ],
+        "seat_top": 116.96,
+        "seat_r": 2.4,
+        "pilot_r": 0.9,
+        "nut_af": 3.2,
+        "pocket_af": 3.45,
+        "nut_z0": 111.2,
+        "nut_z1": 112.5,
+        "shank_r": 0.8,
+        "head_d": 3.14,
+        "head_h": 1.6,
+        "head_bottom": 118.5562,
+        "length": 8.0,
+        "key_af": 1.5,
+        "socket_depth": 0.7,
+        "nut_thread_engagement_mm": 1.2999999999999972,
+        "screw_protrusion_below_nut_mm": 0.6437999999999988,
+        "print_deck_above_nut_pocket_mm": 2.5
+      },
+      {
+        "module": "imu",
+        "index": 1,
+        "xy_mm": [
+          -24.500003288800002,
+          -5.499998092700001
+        ],
+        "seat_top": 116.96,
+        "seat_r": 2.4,
+        "pilot_r": 0.9,
+        "nut_af": 3.2,
+        "pocket_af": 3.45,
+        "nut_z0": 111.2,
+        "nut_z1": 112.5,
+        "shank_r": 0.8,
+        "head_d": 3.14,
+        "head_h": 1.6,
+        "head_bottom": 118.5562,
+        "length": 8.0,
+        "key_af": 1.5,
+        "socket_depth": 0.7,
+        "nut_thread_engagement_mm": 1.2999999999999972,
+        "screw_protrusion_below_nut_mm": 0.6437999999999988,
+        "print_deck_above_nut_pocket_mm": 2.5
+      },
+      {
+        "module": "buck",
+        "index": 0,
+        "xy_mm": [
+          22.80599982,
+          -13.232999659999999
+        ],
+        "seat_top": 118.40000066,
+        "seat_r": 2.8,
+        "pilot_r": 1.1,
+        "nut_af": 4.0,
+        "pocket_af": 4.25,
+        "nut_z0": 111.2,
+        "nut_z1": 112.8,
+        "shank_r": 1.0,
+        "head_d": 3.98,
+        "head_h": 2.0,
+        "head_bottom": 120.0,
+        "length": 10.0,
+        "key_af": 1.5,
+        "socket_depth": 1.0,
+        "nut_thread_engagement_mm": 1.5999999999999943,
+        "screw_protrusion_below_nut_mm": 1.2000000000000028,
+        "print_deck_above_nut_pocket_mm": 2.200000000000003
+      },
+      {
+        "module": "buck",
+        "index": 1,
+        "xy_mm": [
+          30.01401436,
+          13.543990220000001
+        ],
+        "seat_top": 118.40000066,
+        "seat_r": 2.8,
+        "pilot_r": 1.1,
+        "nut_af": 4.0,
+        "pocket_af": 4.25,
+        "nut_z0": 111.2,
+        "nut_z1": 112.8,
+        "shank_r": 1.0,
+        "head_d": 3.98,
+        "head_h": 2.0,
+        "head_bottom": 120.0,
+        "length": 10.0,
+        "key_af": 1.5,
+        "socket_depth": 1.0,
+        "nut_thread_engagement_mm": 1.5999999999999943,
+        "screw_protrusion_below_nut_mm": 1.2000000000000028,
+        "print_deck_above_nut_pocket_mm": 2.200000000000003
+      }
+    ],
+    "deck": {
+      "bottom_z_mm": 111.0,
+      "top_z_mm": 115.0,
+      "carrier_seat_capture_z_mm": [
+        115.0,
+        122.0
+      ],
+      "carrier_seat_capture_radius_mm": 3.4,
+      "old_top_cut_z_mm": [
+        115.0,
+        122.0
+      ],
+      "old_bottom_cut_z_mm": [
+        102.0,
+        111.0
+      ],
+      "pilot_fill_radius_mm": 1.75,
+      "small_seat_start_z_mm": 114.8,
+      "small_hole_start_z_mm": 110.5,
+      "segments": 64,
+      "saved_float32_cleanup_mm": 1e-05
+    },
+    "ups_mount": {
+      "centers_xy_mm": [
+        [
+          -23.0,
+          -55.0
+        ],
+        [
+          23.0,
+          -55.0
+        ],
+        [
+          -23.0,
+          31.0
+        ],
+        [
+          23.0,
+          31.0
+        ]
+      ],
+      "seat_z_mm": [
+        99.1,
+        111.2
+      ],
+      "seat_radius_mm": 4.2,
+      "through_bore_z_mm": [
+        98.9,
+        115.2
+      ],
+      "through_bore_radius_mm": 1.65,
+      "screw_shank_z_mm": [
+        90.0,
+        115.01
+      ],
+      "screw_radius_mm": 1.5,
+      "screw_head_z_mm": [
+        115.0,
+        118.0
+      ],
+      "screw_head_radius_mm": 2.84,
+      "hex_socket_z_mm": [
+        116.5,
+        118.1
+      ],
+      "hex_socket_af_mm": 2.5,
+      "nut_z_mm": [
+        95.1,
+        97.5
+      ],
+      "nut_af_mm": 5.5,
+      "nut_bore_z_mm": [
+        95.0,
+        97.6
+      ],
+      "segments": 96,
+      "screws": "4x ISO4762 M3x25",
+      "nuts": "4x DIN934 M3 AF5.5 h2.4",
+      "thread_representation": "Nominal cylinders; supplier/threads/tolerances not physically qualified"
+    },
+    "service": {
+      "shells_removed": [
+        "Body_Front",
+        "Body_Rear"
+      ],
+      "UPS_independently_supported": true,
+      "screw_tool": "Short 2.5mm AF L key; straight long driver is obstructed",
+      "remove_fasteners": [
+        "UPS_Direct_Screw_0..3",
+        "UPS_Direct_Nut_0..3"
+      ],
+      "extraction_direction": "+Y/front, wires unplugged",
+      "flexible_harness": "NOT_TESTED"
+    },
+    "physical_strength": "NOT_TESTED",
+    "manufacturing_release": false,
+    "electrical_adaptation": "BLOCKED: BAT capacity, physical power-cut, 5V distribution, IMU I2C and rear DC interface remain unresolved"
+  },
+  "dc_inlet_trial": {
+    "enabled": true,
+    "approved": true,
+    "revision": "V1.2-M1.57",
+    "baseline": "mechanical/input_assets/dc_trial_M1_57/baseline.json",
+    "baseline_sha256": "46cd75273a75b7bb108dceb9be053d791aeab50aece7bbdd67855466d085b57b",
+    "sources": {
+      "jack_cache": {
+        "file": "mechanical/input_assets/dc_trial_M1_57/sources/ups_jack_R36_ASSUMED.json",
+        "sha256": "8591f6b12de9e9e7daf8c61d0e994432c49947f78b350096ef2c7c10c3abebb9"
+      },
+      "nut_cache": {
+        "file": "mechanical/input_assets/dc_trial_M1_57/sources/ups_jack_nut_R36_AF_REFERENCE.json",
+        "sha256": "89aca8557c499e17afa1cd7374cdeeba2b1f008e9495b16c81ab4e47d770e725"
+      },
+      "approval": {
+        "file": "mechanical/input_assets/dc_trial_M1_57/approval.json",
+        "sha256": "d74522a75ca39d4a0f80cf35a880363d74767d06ae1a8d98e2fbaaa48b902589"
+      },
+      "photo": {
+        "file": "mechanical/input_assets/dc_trial_M1_57/photo_installation_update.json",
+        "sha256": "ff00cac4dd57182bb0718ffcbe36d315e8e5e3446e60d59c10fd29bd03ccdcc6"
+      }
+    },
+    "outer_surface_reference_mm": [
+      0.0,
+      -74.26738739013672,
+      130.0
+    ],
+    "outward_normal": [
+      0.0,
+      -0.9453833103179932,
+      0.325960636138916
+    ],
+    "seat_diameter_mm": 15,
+    "seat_wall_mm": 4,
+    "external_seat_recess_mm": 0.5,
+    "trial_bore_mm": 8,
+    "face_cut_z_mm": [
+      0,
+      20
+    ],
+    "bore_cut_z_mm": [
+      -40,
+      20
+    ],
+    "segments": 512,
+    "sample_to_local_translation_mm": [
+      -57.5,
+      -32,
+      -74
+    ],
+    "reference_ids": {
+      "DC_Jack_Sample_Allocation": "jack_cache",
+      "DC_Nut_Sample_Allocation": "nut_cache"
+    },
+    "reference_limit": "Sample R41/R55 allocation, ASSUMED thread/tail/flange geometry. Photo confirms external flange and internal nut only. Actual bore fit and entire lead/heatshrink/end-plug passage unverified. No new switch hole.",
+    "new_prints": 0,
+    "manufacturing_release": false,
+    "saved_float32_cleanup_mm": 1e-05
+  },
+  "ups_rear_controls": {
+    "enabled": true,
+    "approved": true,
+    "revision": "V1.2-M1.58",
+    "baseline": "mechanical/input_assets/ups_controls_M1_58/baseline.json",
+    "baseline_sha256": "bd15c0b2205a1675ba66636b8dd54704afdd4c0e6eacd55553a7a65638f0902f",
+    "sources": {
+      "switch_cache": {
+        "file": "mechanical/input_assets/ups_controls_M1_58/sources/ups_switch_R36_ASSUMED.json",
+        "sha256": "40a0f98f341f8ad20afb4262bef5fbe22b78f93b7746cfcedb2d648837c9fd41"
+      },
+      "nut_cache": {
+        "file": "mechanical/input_assets/ups_controls_M1_58/sources/ups_switch_nut_R36_AF_REFERENCE.json",
+        "sha256": "d9e2be9be24b639c6ddd115477ca42baf08ed05d7b4003de8efeb68eafabb3b0"
+      },
+      "approval": {
+        "file": "mechanical/input_assets/ups_controls_M1_58/approval.json",
+        "sha256": "61429b77a76afabdc347a4f855672b60608dbe93e35ca71028a5c39c086493a0"
+      },
+      "hardware_receipt": {
+        "file": "mechanical/input_assets/ups_controls_M1_58/hardware_receipt.json",
+        "sha256": "4b9531b78e682d5a6f452fea1a15aa7b2e805dcb25566f35f6ed0ffc0db7299f"
+      }
+    },
+    "retired_ids": [
+      "Rear_Interface_PCB",
+      "USB_Receptacle",
+      "Rear_Interface_Insert_0",
+      "Rear_Interface_Insert_1",
+      "Rear_Interface_Screw_0",
+      "Rear_Interface_Screw_1"
+    ],
+    "reference_ids": {
+      "UPS_Switch_Sample_Allocation": "switch_cache",
+      "UPS_Switch_Nut_Sample_Allocation": "nut_cache"
+    },
+    "legacy_usb_fill_bounds_mm": [
+      [
+        -5.2,
+        -100,
+        106.46999816894531
+      ],
+      [
+        5.2,
+        -50,
+        111.36999816894532
+      ]
+    ],
+    "retired_ledge_bounds_mm": [
+      [
+        [
+          -12.2,
+          -100,
+          111.9
+        ],
+        [
+          -5.8,
+          -60.8,
+          118.2
+        ]
+      ],
+      [
+        [
+          5.8,
+          -100,
+          111.9
+        ],
+        [
+          12.2,
+          -60.8,
+          118.2
+        ]
+      ]
+    ],
+    "switch": {
+      "outer_surface_reference_mm": [
+        0.0,
+        -78.68221282958984,
+        108.91999816894531
+      ],
+      "outward_normal": [
+        0.0,
+        -0.9969583749771118,
+        0.07793625444173813
+      ],
+      "external_seat_recess_mm": 0.5,
+      "seat_diameter_mm": 20,
+      "seat_wall_mm": 4,
+      "trial_bore_mm": 12,
+      "face_cut_z_mm": [
+        0,
+        20
+      ],
+      "bore_cut_z_mm": [
+        -40,
+        20
+      ],
+      "segments": 1024,
+      "sample_to_local_translation_mm": [
+        -57.5,
+        -17.5,
+        -74
+      ]
+    },
+    "reference_limit": "Sample R36/R55 1:1 capacity, not vendor CAD. Thread/flange/depth/nut thickness ASSUMED. Nut AF13.5 approximate user measurement; bore12 is a trial selection, not metrology. Actual fit and complete tail insertion unresolved.",
+    "saved_float32_cleanup_mm": 1e-05,
+    "new_prints": 0,
+    "manufacturing_release": false
   }
 }

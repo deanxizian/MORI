@@ -1,17 +1,9 @@
-# 拆分发布检查（修复前的历史记录）
+# 当前发布检查
 
-以下是拆分阶段原记录；后续修复与重测见 [REVIEW_CLOSURE.md](REVIEW_CLOSURE.md)。
+1.3.0-dev.1 / 2026-10-25 的[实际检查记录](review_evidence/project_1_3/publication.json)。25项工具回归、13项前端测试、前端构建、验证车376件资产与77个链接、当前模型/图/STL哈希及新目录恢复检查通过。
 
-这轮只检查资料拆分及交付，不是新的机器人设计或硬件验证。原始提交为 `48fe22aa75554c9d7bb237e2d2dcacca7f83dde1`；具体结果见 [SPLIT_VALIDATION.json](SPLIT_VALIDATION.json)。
+KiCad工程包解出后 ERC0、其余DRC0、原理图一致性0，但仍有45项未连接，工程状态仍FAIL。主模型重新打开为M1.58，没有改几何或再生成视频。扫描的8个候选“密钥”均为JSON证据文件SHA256，逐条分类见[审阅记录](review_evidence/project_1_3/secret_scan_review.json)。
 
-- 594 个收到的源文件、原生 CAD 文本与资产，其 Git blob 与原归档一致；四套工程 ZIP 中全部 242 个原始文件也与原提交逐字节一致；导航、归档属性和恢复工具单独维护。
-- 172 个可恢复数据文件已对照原提交验证大小和 SHA256，LFS 数据核对对象指针。
-- 23 个当前关键文件在本地验证了完整 SHA256，包括三个 Blender 工程、视频、尺寸源、契约和四套原生 PCB 主文件（PCB 现打包于 ZIP）。
-- 新导航中的 91 个本地链接及 77 个固定提交证据链接检查通过。收到的原始源码说明保留原文，内部历史路径可能需要完整归档。
-- 恢复工具实际下载一个公开资料文件，重复执行保留原文件；已有不同文件、路径越界、符号链接、损坏下载及并发新建文件的保护检查通过。
-- 本地 `git lfs fsck` 通过；Gitleaks 扫描 13 个提交的约 4.75 MB 文本差异，无发现。原生 CAD 的二进制 diff、ZIP 内容和 LFS 载荷不在这次文本扫描范围。GitHub 忽略本地 binary 属性，原 PCB/封装组达到 220,265 行，仍返回 406；已改用保留完整原字节的工程 ZIP，重新核对全部 10 份 PR 后，公开完整 diff 均为 HTTP 200，文件段数与 PR 文件数一致；每份最多 148 个文件、17,349 行新增内容。
+这些是发布完整性检查，不是整机装配、电路、强度、热或平衡资格验证；当前待办见[状态](CURRENT_STATUS.md)。旧日期检查保留在review_evidence，用于追溯，不沿用为当前通过。
 
-- 四个原生工程 ZIP 已从公开地址完整下载并核对 SHA256；三个 Blender 的公开 LFS 对象大小、OID 和前 64 字节检查通过，没有重新完整下载这三个大文件。
-- 远端 diff 的精确提交与哈希记录在 JSON 中；随后仅补写记录的文档提交在交付时另行复核。自动代码审查结论不由这些检查代替。
-
-本轮使用 Git 2.54.0、Git LFS 3.8.0、GitHub CLI 2.92.0、Gitleaks 8.30.1。主要检查命令为 `git ls-tree -rz`、`git show`、`git diff --check`、`git lfs fsck`、`gitleaks git --log-opts=main..HEAD`，以及 SHA256／恢复工具行为检查。不会将 GitHub diff 可读、扫描通过或源码完整解释为工程构建、自动代码审查或实物验证通过。
+PR #15 复审修复后：工具回归增至31项；当前保存模型的便携输入恢复与真实 Blender 校验完成，0 FAIL，原有 BLOCKED/NOT_TESTED 保留。详见[本次修复记录](review_evidence/project_1_3/review_fixes.json)。

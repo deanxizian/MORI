@@ -13,4 +13,4 @@ The original user-supplied `REFERENCES.md` and its S01–S08 mapping were **not 
 | S06 | Not cited in the supplied V1.2 specification | Original meaning unknown; no replacement invented. |
 | S08 | Charging architecture / rejection of old 2S design | Original reference unknown; no final 3S charger qualification is implied. See the current electrical contract and procurement blockers. |
 
-[Full source catalogue](hardware/v1_2/sources/index.json) contains access dates, source IDs and original limitations. [Software source lock](software/references_v1_2.lock.json) pins protocol/example code. Manufacturer nominal values and archived reviews do not establish availability, current pricing, physical fit or electrical qualification.
+[Full source catalogue](mechanical/input_assets/pcb_reference/sources/index.json) contains access dates, source IDs and original limitations. [Software source lock](software/references_v1_2.lock.json) pins protocol/example code. Manufacturer nominal values and archived reviews do not establish availability, current pricing, physical fit or electrical qualification.

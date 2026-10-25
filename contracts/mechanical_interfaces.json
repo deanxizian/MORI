@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "revision": "V1.2-M1.54",
+  "revision": "V1.2-M1.58",
   "owner": "mechanical",
   "units": "mm",
   "coordinates": {
@@ -430,8 +430,8 @@
     "WeAct carrier/header stack and mounting access",
     "Rear USB-C actual plug clearance and fixation; external switch cancelled; physical power-cut/emergency-stop implementation remains a hardware gate"
   ],
-  "hardware_component_revision_read": "V1.2-H0.5-P5R7",
-  "hardware_component_sha256": "19e93b76f0aa75e625cd9e7b828dbe12088854104a9bafe2044fd6b1a0f5f236",
+  "hardware_component_revision_read": "V1.2-H0.6-UPS-R1",
+  "hardware_component_sha256": "7f88d83f9194a5aa0294b2dff0317a99e4e1937175946ae50132bab0ea3a9bb9",
   "purchased_modeling_policy": {
     "require_matching_manufacturer_model_revision": true,
     "priority": [
@@ -546,16 +546,17 @@
       "approved_estimates_ref": "config/geometry.json#/detail_fit/speaker/field_evidence/ASSUMED"
     }
   },
-  "structure_revision": "V1.2-M1.12",
+  "structure_revision": "V1.2-M1.58",
   "appearance_revision": "V1.2-M1.12",
   "hardware_read_scope": {
-    "revision": "V1.2-H0.5-P5R7",
-    "handoff": "hardware/v1_2/handoff/mechanical_P5R7.json",
-    "populated_fit": "NOMINAL_ONLY; E source pin/hole and full physical mating BLOCKED",
-    "note": "Motion and rear P5R7 adopted; power P5R6 and IMU P5R4 preserved. Component-up WeAct with downward headers and three catalogue socket candidates. Hardware sources read-only.",
+    "revision": "V1.2-H0.6-UPS-R1",
+    "handoff": "hardware/v1_2/ups_single_board_R1_20261013/MECHANICAL_HANDOFF.md",
+    "native_geometry_revision": "V1.2-H0.5-P5R7 retained carrier only",
+    "populated_fit": "BLOCKED for new UPS-R1 carrier; old CAD retained only as explicit capacity reference",
+    "note": "Hardware owner updates received read-only; old power/IMU/rear boards retired from assembly. Native CAM/WeAct/UPS USB ports retained.",
     "read_source_sha256": {
-      "contracts/components.json": "19e93b76f0aa75e625cd9e7b828dbe12088854104a9bafe2044fd6b1a0f5f236",
-      "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c"
+      "contracts/components.json": "7f88d83f9194a5aa0294b2dff0317a99e4e1937175946ae50132bab0ea3a9bb9",
+      "hardware/v1_2/ups_single_board_R1_20261013/MECHANICAL_HANDOFF.md": "7fef098c839c58caabb3940e5184a3200ea8d458ea21c9274561b4da20b75e21"
     }
   },
   "belly_relayout": {
@@ -1001,7 +1002,7 @@
     "status": "RETIRED",
     "superseded_by": "head_mount_simplification"
   },
-  "mechanical_revision": "V1.2-M1.55",
+  "mechanical_revision": "V1.2-M1.58",
   "waveshare_photo_reconstruction": {
     "config_source": "config/geometry.json#/waveshare_detail",
     "status": "ASSUMED",
@@ -1382,21 +1383,8 @@
     "E_pin_and_complete_mated_fit": "BLOCKED",
     "manufacturing_release": false
   },
-  "current_geometry_revision": "V1.2-M1.55",
-  "current_authority": {
-    "geometry": "config/geometry.json",
-    "nominal_dimensions": "Read current parameter blocks plus enabled later overrides; do not use old revision narratives as dimensions.",
-    "historical_fields": [
-      "structure_revision",
-      "appearance_revision",
-      "mechanical_selection_M1_10",
-      "custom_pcb_capacity_feedback"
-    ],
-    "historical_fields_note": "Retained for traceability; these refer to the revision where those decisions were introduced, not the complete current assembly.",
-    "current_status": "mechanical/studies/prearrival_finish/work_status.json",
-    "tyres": "User approved searching stock soft tyres first and adapting the hub after dimensions/selection review; present105x18 is still a design allocation, not a selected product.",
-    "scope": "M1.51: adopted two-piece front/rear body shells with bottom access and integral lower locating keys; original four frame axes unchanged. Other geometry is unchanged from M1.50. Full wired assembly remains BLOCKED."
-  },
+  "current_geometry_revision": "V1.2-M1.58",
+  "current_authority": "config/geometry.json; off_shelf_modules and ups_rear_controls override historical battery/power/IMU/buck/rear interface allocations. UPS-R1 requirements received read-only; retained P5R7 carrier is geometry capacity only, new PCB and connectors not frozen.",
   "prearrival_thin_cleanup": {
     "enabled": true,
     "revision": "V1.2-M1.47",
@@ -1554,7 +1542,7 @@
     "horn_and_final_fasteners": "BLOCKED",
     "physical_fit": "NOT_TESTED"
   },
-  "verification_note": "SOURCE_BACKED_MODELS_AND_GEOMETRY_CHECKS_PENDING_CURRENT_REPORT; NO_AS_BUILT_OR_MANUFACTURE_RELEASE",
+  "verification_note": "M1.56 mechanical adoption only. P5R7 electrical sources unchanged. Old battery/power/IMU and two-buck geometry are construction history, not the current installed route.",
   "review_metadata_receipt": {
     "date": "2026-10-07",
     "scope": "Correct current readout; no change to model dimensions, native PCB geometry or physical release",
@@ -1622,5 +1610,322 @@
     "full_wired_assembly": "BLOCKED",
     "physical_strength": "NOT_TESTED",
     "manufacturing_release": false
+  },
+  "off_shelf_modules": {
+    "revision": "V1.2-M1.56",
+    "approved": true,
+    "geometry_source": "config/geometry.json#/off_shelf_modules",
+    "controller": "WeAct STM32F412 + received P5R7 carrier; central rigid placement",
+    "modules": {
+      "ups": {
+        "id": "UPS_Module",
+        "label": "微雪 UPS Module 3S / 原厂简化总成",
+        "matrix_world": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            -12
+          ],
+          [
+            0,
+            0,
+            1,
+            97.5
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "manufacturer": "Waveshare",
+        "sku": "UPS Module 3S",
+        "category": "PURCHASED_REFERENCE",
+        "data_status": "VENDOR_DOCUMENTED",
+        "omit_solid_indices": [],
+        "limit": "原厂简化 CAD；电芯、绝缘板和接插件完整装件形状及实物修订仍待复核"
+      },
+      "imu": {
+        "id": "IMU_BMI323",
+        "label": "DFRobot SEN0693 / 无排针、保留小插座",
+        "matrix_world": [
+          [
+            -1.8369701987210297e-16,
+            1.0,
+            0.0,
+            -30.0
+          ],
+          [
+            -1.0,
+            -1.8369701987210297e-16,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            117.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "manufacturer": "DFRobot",
+        "sku": "SEN0693 Fermion BMI323",
+        "category": "PURCHASED_REFERENCE",
+        "data_status": "VENDOR_DOCUMENTED",
+        "omit_solid_indices": [
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "limit": "官方 CAD；未焊排针按用户配置去除。小插座为原始开放曲面，碰撞用保守框；插合待核"
+      },
+      "buck": {
+        "id": "Head_Buck_6V",
+        "label": "微雪 DC BUCK Adapter 6V / 同系列 CAD 占位",
+        "matrix_world": [
+          [
+            6.123233995736766e-17,
+            -1.0,
+            0.0,
+            40.75
+          ],
+          [
+            1.0,
+            6.123233995736766e-17,
+            0.0,
+            -17.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            120.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "manufacturer": "Waveshare",
+        "sku": "DC BUCK Adapter (6V)",
+        "category": "PLACEHOLDER",
+        "data_status": "ASSUMED",
+        "omit_solid_indices": [],
+        "limit": "34×21.5 外形与安装孔有系列资料；7.2V CAD 不证明 6V 版元件和高度一致。保持琥珀色"
+      }
+    },
+    "retired_ids": [
+      "Battery_Tray",
+      "Battery",
+      "Body_IMU",
+      "Power_Module",
+      "Power_Switch",
+      "Wheel_Buck",
+      "Head_Buck",
+      "Battery_Strap",
+      "Battery_Retainer_Screw_-1",
+      "Battery_Retainer_Screw_1",
+      "Battery_Pad_-38.0",
+      "Battery_Pad_38.0",
+      "Battery_Pad_Base",
+      "IMU_Screw_0",
+      "IMU_Screw_1",
+      "Power_Board_H2_Screw",
+      "Power_Board_H3_Screw",
+      "Wheel_Buck_Screw_1",
+      "Wheel_Buck_Screw_2",
+      "Head_Buck_Screw_0",
+      "Head_Buck_Screw_1",
+      "Battery_Pad_Top",
+      "Battery_Retainer_Insert_-1",
+      "Battery_Retainer_Insert_1",
+      "Head_Buck_Insert_0",
+      "Head_Buck_Insert_1",
+      "IMU_Insert_0",
+      "IMU_Insert_1",
+      "Power_Board_H2_Insert",
+      "Power_Board_H3_Insert",
+      "Wheel_Buck_Insert_1",
+      "Wheel_Buck_Insert_2"
+    ],
+    "sources": {
+      "ups_step": {
+        "file": "mechanical/sources/off_shelf_20261013/UPS_3S_official.step",
+        "sha256": "7556ec677c398430626b7dad316dc6a7511cd54b8eb0c6e006c556535d16c7e1"
+      },
+      "ups_cache": {
+        "file": "mechanical/sources/off_shelf_20261013/ups3s.json",
+        "sha256": "b713929e49f8e3739197ee2de4704753c628b346a5bb3b3bb31dbc25f378d8f1"
+      },
+      "imu_step": {
+        "file": "mechanical/sources/off_shelf_20261013/SEN0693_official.stp",
+        "sha256": "62c501e175fc1ad746f05dd317af021519347791788fd94244738cbbae8b68a5"
+      },
+      "imu_cache": {
+        "file": "mechanical/sources/off_shelf_20261013/bmi323.json",
+        "sha256": "4db6cfe4e172488435265d06ed6a9c200e28322ca500a595c4dfc3b10ed1c20e"
+      },
+      "imu_socket": {
+        "file": "mechanical/sources/off_shelf_20261013/bmi323_socket_surface.json",
+        "sha256": "a82af18beb8ff7debfe7e5fe9f2ea83c809676bfe147be134b3accc0d72fb298"
+      },
+      "buck_step": {
+        "file": "mechanical/sources/off_shelf_20261013/DC BUCK Adapter (7.2V).step",
+        "sha256": "096fd68ecfeeeb9c0212c3e3c0277c5b5a76eb519e44c5be7d24f4e63e1e47da"
+      },
+      "buck_cache": {
+        "file": "mechanical/sources/off_shelf_20261013/buck_family.json",
+        "sha256": "0ef5dc9cbb75c27f7623831db348acbea87802f2b5e55f9971aa7643aa93cd10"
+      }
+    },
+    "mount": {
+      "centers_xy_mm": [
+        [
+          -23.0,
+          -55.0
+        ],
+        [
+          23.0,
+          -55.0
+        ],
+        [
+          -23.0,
+          31.0
+        ],
+        [
+          23.0,
+          31.0
+        ]
+      ],
+      "seat_z_mm": [
+        99.1,
+        111.2
+      ],
+      "seat_radius_mm": 4.2,
+      "through_bore_z_mm": [
+        98.9,
+        115.2
+      ],
+      "through_bore_radius_mm": 1.65,
+      "screw_shank_z_mm": [
+        90.0,
+        115.01
+      ],
+      "screw_radius_mm": 1.5,
+      "screw_head_z_mm": [
+        115.0,
+        118.0
+      ],
+      "screw_head_radius_mm": 2.84,
+      "hex_socket_z_mm": [
+        116.5,
+        118.1
+      ],
+      "hex_socket_af_mm": 2.5,
+      "nut_z_mm": [
+        95.1,
+        97.5
+      ],
+      "nut_af_mm": 5.5,
+      "nut_bore_z_mm": [
+        95.0,
+        97.6
+      ],
+      "segments": 96,
+      "screws": "4x ISO4762 M3x25",
+      "nuts": "4x DIN934 M3 AF5.5 h2.4",
+      "thread_representation": "Nominal cylinders; supplier/threads/tolerances not physically qualified"
+    },
+    "service": {
+      "shells_removed": [
+        "Body_Front",
+        "Body_Rear"
+      ],
+      "UPS_independently_supported": true,
+      "screw_tool": "Short 2.5mm AF L key; straight long driver is obstructed",
+      "remove_fasteners": [
+        "UPS_Direct_Screw_0..3",
+        "UPS_Direct_Nut_0..3"
+      ],
+      "extraction_direction": "+Y/front, wires unplugged",
+      "flexible_harness": "NOT_TESTED"
+    },
+    "physical_strength": "NOT_TESTED",
+    "electrical_adaptation": "BLOCKED: BAT capacity, physical power-cut, 5V distribution, IMU I2C and rear DC interface remain unresolved",
+    "manufacturing_release": false
+  },
+  "dc_inlet_trial_M1_57": {
+    "status": "ASSUMED",
+    "approval": "2026-10-13 user: 采用，先按样品尺寸做试配孔座",
+    "construction_source": "config/geometry.json#/dc_inlet_trial",
+    "modified_print": "Body_Rear",
+    "trial_bore_mm": 8,
+    "seat_diameter_mm": 15,
+    "seat_thickness_mm": 4,
+    "location": "Rear centre, outer surface reference z130 mm; normal follows reviewed candidate",
+    "mounting": "Front flange outside; nut inside; insertion outside to inside based on user-confirmed photos",
+    "physical_fit": "NOT_TESTED",
+    "complete_lead_passage": "BLOCKED",
+    "electrical_adaptation": "BLOCKED",
+    "no_switch_hole": true,
+    "new_prints": 0,
+    "manufacturing_release": false
+  },
+  "ups_rear_controls_M1_58": {
+    "revision": "V1.2-M1.58",
+    "approved": true,
+    "geometry_source": "config/geometry.json#/ups_rear_controls",
+    "arrangement": "Upper existing DC / lower original UPS switch",
+    "changed_prints": [
+      "Body_Rear"
+    ],
+    "retired_ids": [
+      "Rear_Interface_PCB",
+      "USB_Receptacle",
+      "Rear_Interface_Insert_0",
+      "Rear_Interface_Insert_1",
+      "Rear_Interface_Screw_0",
+      "Rear_Interface_Screw_1"
+    ],
+    "new_reference_ids": [
+      "UPS_Switch_Sample_Allocation",
+      "UPS_Switch_Nut_Sample_Allocation"
+    ],
+    "reference_limit": "Sample R36/R55 1:1 capacity, not vendor CAD. Thread/flange/depth/nut thickness ASSUMED. Nut AF13.5 approximate user measurement; bore12 is a trial selection, not metrology. Actual fit and complete tail insertion unresolved.",
+    "hardware_owner_handoff": "hardware/v1_2/ups_single_board_R1_20261013/MECHANICAL_HANDOFF.md",
+    "carrier": "Only custom board is driver/carrier; retained P5R7 CAD is layout capacity, not a completed new UPS-R1 board",
+    "video_update": false,
+    "physical_fit": "NOT_TESTED",
+    "manufacturing_release": false
+  },
+  "historical_P5R7_geometry_receipt": {
+    "revision": "V1.2-H0.5-P5R7",
+    "handoff": "hardware/v1_2/handoff/mechanical_P5R7.json",
+    "populated_fit": "NOMINAL_ONLY; E source pin/hole and full physical mating BLOCKED",
+    "note": "Motion and rear P5R7 adopted; power P5R6 and IMU P5R4 preserved. Component-up WeAct with downward headers and three catalogue socket candidates. Hardware sources read-only.",
+    "read_source_sha256": {
+      "contracts/components.json": "19e93b76f0aa75e625cd9e7b828dbe12088854104a9bafe2044fd6b1a0f5f236",
+      "hardware/v1_2/handoff/mechanical_P5R7.json": "681e16573e647cce6bbe162c52e5cc9b60593d5eb15400d4d335f9556de8104c"
+    }
   }
 }

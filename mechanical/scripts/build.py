@@ -524,6 +524,12 @@ def main():
     apply_cam_orientation()
     from reaction_clamp_entry import apply_reaction_clamp_entry
     apply_reaction_clamp_entry()
+    from off_shelf_modules import apply_off_shelf_modules
+    apply_off_shelf_modules()
+    from dc_inlet_trial import apply_dc_inlet_trial
+    apply_dc_inlet_trial()
+    from ups_rear_controls import apply_ups_rear_controls
+    apply_ups_rear_controls()
     for o in parts():
         if o.get('actuator_id'):
             move_collection(o,'PURCHASED_REFERENCE');o['category']='PURCHASED_REFERENCE';o['data_status']='ASSUMED';o['documented_fields']=o.get('documented_fields','Manufacturer nominal body/output dimensions and mass; full simplified assembly geometry still assumed, no manufacturing qualification')
@@ -541,6 +547,26 @@ def main():
         inputs=[ROOT/'scripts/reaction_clamp_entry.py',PROJECT/q['approval'],PROJECT/q['baseline']]
         inputs += [PROJECT/a['file'] for a in receipt['source_geometry'].values()]
         manifest['input_sha256'].update({str(p.relative_to(PROJECT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs})
+        save_json(manifest_path,manifest)
+    if P.get('off_shelf_modules',{}).get('enabled'):
+        manifest_path=ROOT/'reports/build_manifest.json'
+        manifest=json.loads(manifest_path.read_text())
+        files=[ROOT/'scripts/off_shelf_modules.py']+[PROJECT/v['file'] for v in P['off_shelf_modules']['sources'].values()]
+        manifest['input_sha256'].update({str(p.relative_to(PROJECT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files})
+        manifest['current_route']='Approved off-shelf mechanical adoption; electrical adaptation and complete harness pending'
+        save_json(manifest_path,manifest)
+    if P.get('dc_inlet_trial',{}).get('enabled'):
+        manifest_path=ROOT/'reports/build_manifest.json';manifest=json.loads(manifest_path.read_text())
+        files=[ROOT/'scripts/dc_inlet_trial.py']+[PROJECT/v['file'] for v in P['dc_inlet_trial']['sources'].values()]
+        manifest['input_sha256'].update({str(p.relative_to(PROJECT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files})
+        manifest['dc_inlet_trial_adopted']=True
+        save_json(manifest_path,manifest)
+    if P.get('ups_rear_controls',{}).get('enabled'):
+        manifest_path=ROOT/'reports/build_manifest.json';manifest=json.loads(manifest_path.read_text())
+        q=P['ups_rear_controls'];files=[ROOT/'scripts/ups_rear_controls.py',PROJECT/q['baseline']]+[PROJECT/v['file'] for v in q['sources'].values()]
+        manifest['input_sha256'].update({str(p.relative_to(PROJECT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files})
+        manifest['ups_rear_controls_adopted']=True
+        manifest['hardware_geometry_scope']='P5R7 carrier retained as geometric reference; new UPS-R1 electrical ports and board layout are not adopted CAD'
         save_json(manifest_path,manifest)
     # Explicit position / extrinsic convention for later calibration.
     save_json(ROOT/'reports/camera_kinematics.json',{'status':'ASSUMED','units':'mm','frame_id':'body_axle','timestamp_utc':timestamp,'head_center_in_body_axle_mm':[0,0,D['head_z']-D['wheel_z']],'head_center_in_assembly_ground_mm':[0,0,D['head_z']],'nominal_T_body_axle_camera_mm':[[1,0,0,0],[0,0,1,P['camera']['pupil_from_head_mm'][1]],[0,-1,0,D['head_z']-D['wheel_z']+P['camera']['pupil_from_head_mm'][2]],[0,0,0,1]],'yaw_axis_body':[0,0,1],'pitch_axis_yaw':[1,0,0],'pupil_in_pitch':P['camera']['pupil_from_head_mm'],'camera_CV_axes_in_pitch':{'x_right':[1,0,0],'y_image_down':[0,0,-1],'z_optical':[0,1,0]},'transform':'T_body_axle_camera = T(0,0,head_z-wheel_radius) Rz(yaw_rad) Rx(pitch_rad) T(pupil) R_CV; T_world_camera = T_world_body_axle * T_body_axle_camera','angle_feedback':'estimated unless measured joint feedback is added','timestamp_requirement':'Frame and monotonic capture timestamp required for observations and joint estimates','calibration':'Intrinsics, distortion, window refraction, servo zero/backlash and actual extrinsics NOT_TESTED'})

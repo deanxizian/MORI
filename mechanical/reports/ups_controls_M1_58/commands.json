@@ -1,0 +1,184 @@
+[
+  {
+    "stage": "build",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/build.py"
+    ],
+    "started_utc": "2026-10-13T09:11:08.587420+00:00",
+    "finished_utc": "2026-10-13T09:12:40.071054+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/build.log",
+    "log_sha256": "f1e20e107e618cd03bea1d2ddf04a7741c78d9513054de8eff5cc508fbefd4f0"
+  },
+  {
+    "stage": "metadata",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/finalize_structure_metadata.py"
+    ],
+    "started_utc": "2026-10-13T09:12:40.082247+00:00",
+    "finished_utc": "2026-10-13T09:12:43.221920+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/metadata.log",
+    "log_sha256": "2db05c620ec431ac39c3ff21bdc3e540651416b2a50e61129dd3a574c0a9abbc"
+  },
+  {
+    "stage": "validate",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/validate.py"
+    ],
+    "started_utc": "2026-10-13T09:12:43.222240+00:00",
+    "finished_utc": "2026-10-13T09:13:29.726098+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/validate.log",
+    "log_sha256": "ffbb54111e8abadca3b16322486075891d0e9917f311d385b5a500d8b00d59de"
+  },
+  {
+    "stage": "controls_clearances",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_ups_controls_clearances.py"
+    ],
+    "started_utc": "2026-10-13T09:13:29.727023+00:00",
+    "finished_utc": "2026-10-13T09:13:37.333875+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/controls_clearances.log",
+    "log_sha256": "3d7c222024129da2e2306c435a6ff846a5b995c1374d7e7be5be49be5308161f"
+  },
+  {
+    "stage": "body_paths",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_body_sequence_current.py"
+    ],
+    "started_utc": "2026-10-13T09:13:37.334310+00:00",
+    "finished_utc": "2026-10-13T09:13:45.517691+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/body_paths.log",
+    "log_sha256": "8d48c6bf6dd7a6ca1e304b94f95e2fa9bbc84428d3b475ffbcf05bd49d6fe382"
+  },
+  {
+    "stage": "export",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/export.py"
+    ],
+    "started_utc": "2026-10-13T09:13:45.518033+00:00",
+    "finished_utc": "2026-10-13T09:13:48.474267+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/export.log",
+    "log_sha256": "b7a0575108c0cf3f256f9afc5de6e0503bab2a151fadfb11c29431617c6d3877"
+  },
+  {
+    "stage": "views",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/render_off_shelf_current.py"
+    ],
+    "started_utc": "2026-10-13T09:13:48.474669+00:00",
+    "finished_utc": "2026-10-13T09:13:59.885325+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/views.log",
+    "log_sha256": "051640dba1905e1b6f7e04b17b0a6c8f8c2cfbbdde8017e500b9ed763ff53578"
+  },
+  {
+    "stage": "detail",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/export_electronics_detail.py"
+    ],
+    "started_utc": "2026-10-13T09:13:59.885925+00:00",
+    "finished_utc": "2026-10-13T09:14:41.549038+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/detail.log",
+    "log_sha256": "1d29c0c9fc489bcc0dca3639c2ecf29d739fa865b4997b658ad57486a275e5cf"
+  },
+  {
+    "stage": "detail_check",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_electronics_detail.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_electronics_detail.py"
+    ],
+    "started_utc": "2026-10-13T09:14:41.550169+00:00",
+    "finished_utc": "2026-10-13T09:14:44.882787+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/detail_check.log",
+    "log_sha256": "eb8d4c8b611dea57a22001094b89aa7ba39606eccec328809cb60011e2a7c8c1"
+  },
+  {
+    "stage": "usb_capacity",
+    "command": [
+      "/Applications/Blender.app/Contents/MacOS/Blender",
+      "--background",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/mori_v1_2.blend",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/check_off_shelf_usb.py"
+    ],
+    "started_utc": "2026-10-13T09:14:44.883239+00:00",
+    "finished_utc": "2026-10-13T09:14:50.085998+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/usb_capacity.log",
+    "log_sha256": "2bfc76de139225f54692217e92c737e9caa5354cca1cebe34c5b63d49ab04720"
+  },
+  {
+    "stage": "publish_model_review",
+    "command": [
+      "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+      "/Users/dean/.codex/worktrees/archive-split/MORI/mechanical/scripts/off_shelf_delivery.py",
+      "--model-only"
+    ],
+    "started_utc": "2026-10-13T09:14:50.086485+00:00",
+    "finished_utc": "2026-10-13T09:14:50.522837+00:00",
+    "returncode": 0,
+    "log": "mechanical/reports/off_shelf_run/publish_model_review.log",
+    "log_sha256": "1ec23af0d4ec0d7f40e86d27249c0f61ddb2cfe27588116e26de58c915dbea96"
+  }
+]

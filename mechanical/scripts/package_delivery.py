@@ -39,7 +39,7 @@ def check(project):
 def collect(project):
     root=project/'mechanical';reports=root/'reports'
     names=set(read(reports/'build_manifest.json')['input_sha256'])
-    native='hardware/v1_2/native_projects/manifest.json';names.add(native)
+    native='mechanical/input_assets/pcb_reference/native_projects/manifest.json';names.add(native)
     for bundle in read(project/native)['projects']:
         names.add(bundle['archive'])
         if sha(safe(project,bundle['archive']))!=bundle['sha256']:raise ValueError('Native archive changed')

@@ -13,6 +13,8 @@ scene=bpy.data.scenes.new('MORI_PCB_Component_Detail');scene.unit_settings.syste
 scene.world=bpy.context.scene.world;outrows=[]
 names=[v['object'] for v in P['native_electronics']['boards'].values()]+['Power_Switch','USB_Receptacle','Wheel_Buck','Head_Buck','MCU_Motion','Display_PCB','CAM_Mainboard','Onboard_MIC_L','Onboard_MIC_R','Camera_PCB','Camera_Lens']
 names+=sorted(declared_p5r7_additions())
+if P.get('off_shelf_modules',{}).get('enabled'):
+    names+=[r['id'] for r in P['off_shelf_modules']['modules'].values()]
 for name in names:
     src=bpy.data.objects.get(PREFIX+name)
     if src is None:continue
@@ -33,6 +35,10 @@ for area in bpy.context.screen.areas:
         s=area.spaces.active;s.overlay.show_relationship_lines=False;s.overlay.show_extras=False;s.shading.color_type='MATERIAL';s.region_3d.view_distance=220;s.region_3d.view_location=(0,-8,132);s.region_3d.view_rotation=Vector((150,200,170)).to_track_quat('Z','Y');s.region_3d.view_perspective='ORTHO'
 scene['source_revision']=P['revision'];scene['source_main_sha256']=digest;scene['source_positions']='Same assembled coordinates. Board collections toggle visibility. Component ref objects independently editable; no source package rescaled.'
 text=bpy.data.texts.new('READ_ME_PCB_EVIDENCE');text.write('MORI '+P['revision']+'\nFour native PCBs: one object per reference; actual assembled coordinates. Native placement + generic KiCad packages or dimensioned manufacturer reconstructions are NOT measured samples. CAM/OV3660 modeled from official dimensions plus photographs: ASSUMED fields, not physical measurements. Original LCD35079 per-source-solid geometry retained. Charger unselected. Main assembly and electronic source reports remain authoritative.\n')
+if P.get('off_shelf_modules',{}).get('enabled'):
+    text.clear();text.write('MORI '+P['revision']+'\nCurrent source includes centered WeAct/carrier, UPS3S and no-header BMI323. Old custom power/IMU and old two bucks retired. Selected 6V Buck uses 7.2V family CAD (amber ASSUMED); UPS simplified source and BMI socket open surface do not establish full physical fit. Historical rear PCB remains pending DC/electrical redesign. Each vendor source entity remains separately inspectable at main-model coordinates.\n')
+if P.get('ups_rear_controls',{}).get('enabled'):
+    text.clear();text.write('MORI '+P['revision']+'\nOnly custom board is MCU_Carrier, retained P5R7 geometry for layout; new UPS-R1 carrier protection and connector placement remain unfrozen. Old rear interface PCB and its USB receptacle are retired. Supplier-native CAM, WeAct and UPS USB ports remain. Original UPS controls are ASSUMED sample capacities; not exact purchased CAD. UPS/BMI323 vendor CAD and amber 6V Buck family reference are unscaled.\n')
 from waveshare_bench import add_waveshare_bench
 add_waveshare_bench()
 bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'mori_electronics_detail.blend'))
