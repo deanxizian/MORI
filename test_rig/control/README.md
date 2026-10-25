@@ -1,6 +1,8 @@
-# 平衡控制源码快照 v159
+# 平衡控制源码快照 v184
 
-本目录按本地部署清单逐字节归档 **295 个文件**，清单见 [source_manifest.json](source_manifest.json)。它是第 95 轮的启动源码，含历史入口和回归测试；实际试验最终因反馈超时停止。**不是已完成全部验收的稳定发布，不是主项目 STM32 固件，也不是完整 ArduPilot 固件。** 第 71 轮的 60 秒结果属于 v141/v142，见[状态说明](../STATUS.md)。
+本目录按原始部署清单逐字节归档 **324 个文件**，清单见 [source_manifest.json](source_manifest.json)。这是树莓派验证车的 v184 平衡与遥控源码，保持原文件字节、默认禁能和保护逻辑。本地状态记录表明 v184 已部署，下一轮实测尚未启动；本次没有 SSH 或重新部署。**不是主项目 STM32 固件，也不是完整 ArduPilot 固件。**
+
+v184 增加行驶松手后的小位置误差容差；实物效果 NOT_TESTED。563 项原有离线测试的记录与本次执行结果分别保存。第 71 轮的 60 秒结果属于 v141/v142，不能归到 v184。来源和状态见 [v184 回执](../evidence/software/v184/receipt.json)、[验证状态](../STATUS.md)。
 
 主要实现：
 
@@ -9,7 +11,8 @@
 | 控制与故障退出循环 | [air_trial.py](air_trial.py)、[wheel_check.py](wheel_check.py) |
 | BMI323 采样、标定与姿态估计 | [preflight.py](preflight.py)、[calibration.py](calibration.py)、[attitude.py](attitude.py) |
 | ArduPilot 俯仰 PID 移植 | [ardupilot_balance_core.py](ardupilot_balance_core.py)、[ground_ardupilot_balance.py](ground_ardupilot_balance.py) |
-| 第 95 轮入口 | [two_deck_native_causal_balance.py](two_deck_native_causal_balance.py) |
+| 当前遥控/平衡入口 | [two_deck_remote_drive.py](two_deck_remote_drive.py)、[remote_drive_keys.py](remote_drive_keys.py) |
+| 历史第 95 轮入口 | [two_deck_native_causal_balance.py](two_deck_native_causal_balance.py) |
 | 总线协议、停止确认 | [bench_support/protocol.py](bench_support/protocol.py)、[torque_feedback_guard.py](torque_feedback_guard.py) |
 | 有界在线调整、落盘、CAM 提示 | [live_tuning.py](live_tuning.py)、[durable_report.py](durable_report.py)、[cam_indicator.py](cam_indicator.py) |
 | 硬件无关回归与上游数值对照 | [tests](tests/) |
@@ -25,7 +28,7 @@ Python 3.12+、POSIX 系统和 C++17 编译器；测试不需要 Pi、USB 舵机
 python3 -m unittest discover -s tests -q
 ```
 
-492 项测试覆盖默认不启用设备、IMU/串口故障、陈旧帧和截止时间、双轮停止、数据包 CRC/符号/预算、调参边界与 ArduPilot 公式对照。数值对照会在临时目录编译已随附的上游函数，不构建整个 ArduPilot。
+563 项测试覆盖默认不启用设备、IMU/串口故障、陈旧帧和截止时间、双轮停止、数据包 CRC/符号/预算、调参边界与 ArduPilot 公式对照。数值对照会在临时目录编译已随附的上游函数，不构建整个 ArduPilot。
 
 实际设备依赖为 `pyserial==3.5`、`smbus2==0.4.3`（历史现场 Python 3.13.5）。本包不安装服务，不复制标定文件为默认标定，不提供自动运行命令。显式运行入口要求本机标定、操作者就绪、新鲜反馈和启用参数；默认参数只打印计划。串口设备标识仍保留原试验设备以保持源码哈希，**其他机器不能直接套用**。
 

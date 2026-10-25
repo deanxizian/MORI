@@ -4,11 +4,13 @@ on:
   pull_request:
     paths:
       - 'test_rig/**'
+      - 'projects.json'
       - '.github/workflows/test-rig.yml'
   push:
     branches: [main]
     paths:
       - 'test_rig/**'
+      - 'projects.json'
       - '.github/workflows/test-rig.yml'
   workflow_dispatch:
 
@@ -31,7 +33,7 @@ jobs:
         run: python test_rig/tools/check_release.py
       - name: Recompute the published 60-second telemetry summary
         run: python test_rig/tools/verify_trial71.py
-      - name: Test current v159 source without hardware
+      - name: Test current v184 source without hardware
         working-directory: test_rig/control
         run: python -m unittest discover -s tests -q
       - name: Test hash-reconstructed v142 baseline without hardware

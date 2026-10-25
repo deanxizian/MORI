@@ -1,0 +1,91 @@
+{
+  "recorded_utc": "2026-10-25T12:32:37.881201+00:00",
+  "source_commit": "e26ef9f43b354431269cd0dac147a3fcca6951e6",
+  "clone": "/var/folders/dx/h7lhjhz15xv26dtgj56z32240000gn/T/mori-project-split-clean-rk8s6f94/MORI",
+  "lfs": "Pointers only; no payload/network required for this clone check. Actual source workspace payloads separately verified.",
+  "checks": [
+    {
+      "name": "workspace",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "cwd_relative_to_clone": ".",
+      "exit_code": 0,
+      "log_sha256": "278792e65b241b3eec28df18d0b5e4ff0eb3fbc46595d274524af77d70bfc020",
+      "output_tail": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Repository organization and provenance only; no hardware I/O\",\n  \"protected_files\": 541,\n  \"errors\": []\n}\n"
+    },
+    {
+      "name": "robot",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "cwd_relative_to_clone": ".",
+      "exit_code": 0,
+      "log_sha256": "c6ca6fcdc4a811c574687737a94bc10ae43ebb70db083b3479d6e36da4a806ab",
+      "output_tail": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Publication integrity only\",\n  \"lfs_mode\": \"pointers allowed\",\n  \"errors\": []\n}\n"
+    },
+    {
+      "name": "rig",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "cwd_relative_to_clone": ".",
+      "exit_code": 0,
+      "log_sha256": "d0267735f84b8c7c26e5cc6ae135bef552f30ae19d132db597b7aa86c67a9d9a",
+      "output_tail": "\n          9.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"wheel_hub_R41_TRIAL.stl\",\n      \"triangles\": 271664,\n      \"vertices\": 135810,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 29137.953587906122,\n      \"bounds_mm\": [\n        [\n          -36.25,\n          -36.25,\n          0.0\n        ],\n        [\n          36.25,\n          36.25,\n          23.75\n        ]\n      ]\n    }\n  ],\n  \"scope\": \"Integrity and digital topology only; no hardware I/O or physical qualification\"\n}\n"
+    },
+    {
+      "name": "tools",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "robot/tools/tests",
+        "-q"
+      ],
+      "cwd_relative_to_clone": ".",
+      "exit_code": 0,
+      "log_sha256": "aa77d73bf303cb533d9b1cbc1136257210614318e3a03f32cea360dacc8d405c",
+      "output_tail": "STRUCTURE_METADATA_FINALIZED 0\nSTRUCTURE_METADATA_FINALIZED 0\nSTRUCTURE_METADATA_FINALIZED 0\nSTRUCTURE_METADATA_FINALIZED 0\n----------------------------------------------------------------------\nRan 32 tests in 0.286s\n\nOK\n"
+    },
+    {
+      "name": "model_inputs",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "robot/tools/restore_archive_assets.py",
+        "--group",
+        "m1-58-inputs",
+        "--group",
+        "m1-58-validation"
+      ],
+      "cwd_relative_to_clone": ".",
+      "exit_code": 0,
+      "log_sha256": "ebf8df842f99102b4a4864abc51e7d2e260c64f54b7dce242af460771cc13b11",
+      "output_tail": "estored mechanical/reports/solid_Onboard_MIC_R.json\nrestored mechanical/reports/solid_Camera_PCB.json\nrestored mechanical/reports/solid_Camera_Lens.json\nrestored mechanical/reports/solid_MCU_Motion_M1_56.json\nrestored mechanical/reports/solid_UPS_Module.json\nrestored mechanical/reports/solid_IMU_BMI323.json\nrestored mechanical/reports/solid_Head_Buck_6V.json\nrestored mechanical/reports/intended_contacts.json\nrestored mechanical/revisions/V1.2-M1.12_before_part_consolidation/config/geometry.json\n"
+    },
+    {
+      "name": "v184",
+      "command": [
+        "/Users/dean/.cache/codex-runtimes/mori-cad/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "cwd_relative_to_clone": "test_rig/control",
+      "exit_code": 0,
+      "log_sha256": "ecd58e92d73f48ee763b799029d6aad0b54bab7fead7a7e984f3b5d88beebc4d",
+      "output_tail": "----------------------------------------------------------------------\nRan 563 tests in 17.521s\n\nOK\n"
+    }
+  ],
+  "status": "PASS"
+}

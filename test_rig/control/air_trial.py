@@ -67,7 +67,19 @@ def exchange_for(port,mid,report,now=time.monotonic,plan=AIR_PLAN):
         start=now()
         item=dict(monotonic=start,tx_hex=packet.hex(),phase=phase)
         report['transactions'].append(item)
-        item['bytes_written']=port.write(packet)
+        try:
+            item['bytes_written']=port.write(packet)
+        except Exception as exc:
+            failed=now()
+            item.update(write_failed_monotonic=failed,
+                        write_attempt_ms=(failed-start)*1000,
+                        write_error_type=type(exc).__name__,write_error=str(exc))
+            # A timeout may follow a partial/complete kernel write. Preserve
+            # that uncertainty and propagate the original fault; never retry.
+            raise
+        completed=now()
+        item.update(write_completed_monotonic=completed,
+                    write_attempt_ms=(completed-start)*1000)
         if item['bytes_written']!=len(packet):
             raise Fault('incomplete_serial_write')
         stream=FeedbackStream(mid)

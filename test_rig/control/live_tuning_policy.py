@@ -3,11 +3,14 @@ import math
 
 # physical key: plan key, lower, upper, maximum change per transaction
 FIELDS={
-    # v156 comparison: lower-only extension. This is an experimental tuning
+    # v171: experimental D ceiling0.15, unchanged0.015 transaction step.
+    # All entry initial gains, raw guards, ramps and no-rearm semantics stay.
+    # This is a bringup-only tuning range, not a stability guarantee.
+    # Prior v156 lower-only extension. This is an experimental tuning
     # range, not a stability guarantee. Output/health guards are immutable.
     'pitch_p':('ap_kp',2.00,3.50,.25),
     'pitch_i':('ap_ki',.15,.60,.15),
-    'pitch_d':('ap_kd',.050,.090,.015),
+    'pitch_d':('ap_kd',.050,.150,.015),
     'speed_p':('speed_kp_rad_per_m_s',.15,.40,.05),
 }
 

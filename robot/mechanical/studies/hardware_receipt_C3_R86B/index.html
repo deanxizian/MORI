@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>C3 R86B 接口板接收检查</title>
+<style>body{font:16px/1.7 system-ui,sans-serif;max-width:1100px;margin:40px auto;padding:0 22px;background:#f4f5f4;color:#1d2c2a}h1{line-height:1.25;font-size:34px}h2{margin-top:36px}a{color:#126657}.status{background:#fff1d6;padding:18px 22px;border-left:5px solid #c47f1a;border-radius:5px}.meta{color:#536660}figure{margin:24px 0;background:#e4e9e8;border-radius:10px;overflow:hidden}img{width:100%;display:block}figcaption{padding:12px 16px}table{border-collapse:collapse;width:100%;background:white}td,th{text-align:left;padding:12px;border-bottom:1px solid #dae1df}code{overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid figure{margin:0}details{margin:22px 0}@media(max-width:760px){.grid{grid-template-columns:1fr}body{margin-top:22px}}</style>
+<p class="meta">机械 M1.58 / 硬件 C3 R86B / 独立检查</p><h1>接口板已接收，主模型尚未替换</h1>
+<div class="status"><strong>BLOCKED · PROTOTYPE / UNVALIDATED</strong><br>安装轴、针位和本次覆盖到的空间检查通过。排母插合、配对插头、完整线束及 PCB 布线尚未完成。</div>
+<p>打开独立 Blender <small>（原研究引用，未收录于本快照）</small> · <a href="README.md">完整说明</a> · <a href="../../../docs/CURRENT_STATUS.md">项目当前状态</a> · <a href="../../mori.blend">原主模型 M1.58</a></p>
+<figure><img src="assembly_review.png" alt="新载板与原承重板、偏航桥和WeAct的独立空间检查"><figcaption>保持原孔轴与 WeAct 位姿。这里只替换独立研究中的载板参考；原主模型与打印件未改。</figcaption></figure>
+<h2>完成的检查</h2><table><thead><tr><th>项目</th><th>结果</th><th>边界</th></tr></thead><tbody>
+<tr><td>4 个安装轴 / 68 个 WeAct 针位</td><td>PASS</td><td>坐标逐项相符；不是插入深度验证。</td></tr>
+<tr><td>31 段线束 / 22 个已用载板触点</td><td>PASS</td><td>网络定义一致，每触点一根线；尚无发布线长。</td></tr>
+<tr><td>已覆盖几何 / 130 个头姿</td><td>PASS</td><td>有限静态姿态；不包含配对插头、全线束或连续扫掠。</td></tr>
+<tr><td>板底补充器件对承重板</td><td>PASS</td><td>最小名义间隙 2.3 mm，含 0.2 mm 假设焊高。</td></tr>
+<tr><td>排母与核心板非插合部件</td><td>PASS</td><td>每个排母逐项检查 219 个非插合原厂实体。</td></tr>
+<tr><td>排母簧片 / 对插 / 全板装配</td><td>BLOCKED</td><td>外包络与插合针座相交单列记录，未虚构内腔。</td></tr>
+<tr><td>PCB 制造 / 实物资格</td><td>FAIL / NOT_TESTED</td><td>硬件仍有 52 项未连接；未制造或上电放行。</td></tr>
+</tbody></table>
+<h2>外部尺寸依据已补齐</h2><p>灰色为收到的库模型或厂家 CAD；橙色为厂家图支持的外部包络，仍含焊高、内部形状或装配假设。它们有尺寸依据，但不能称为完整精细模型。</p>
+<div class="grid"><figure><img src="board_review.png" alt="载板正面与橙色外部包络"><figcaption>正面：新 XKB / HCTL 排母包络、两路降压等。</figcaption></figure><figure><img src="board_bottom_review.png" alt="载板背面器件与名义焊脚"><figcaption>背面：二极管等最大外形与名义排母焊脚。</figcaption></figure></div>
+<h2>接下来还要完成</h2><p>配对插头与尾线起点、全板元件间的完整装配、全部路线与余线固定、带线装入，以及 CAM 原板 PWR 的操作通路。硬件布线收尾后再核对来源并处理主模型同步。原视频保持 M1.57-A1。</p>
+<p><a href="evidence.zip" title="原始记录位于证据包内">几何结果</a> · <a href="evidence.zip" title="原始记录位于证据包内">接口结果</a> · <a href="carrier_pad_datums.csv">针面坐标（不是导线出线点）</a> · <a href="evidence.zip" title="原始记录位于证据包内">实际命令</a> · <a href="evidence.zip" title="原始记录位于证据包内">包络尺寸与来源</a></p>
+<details><summary>来源与复核范围</summary><p>PCB SHA256 <code>2a563d9c8a37ba7da104a20e6a5fe4b7bb076f3217f8b1f5fcc3deb4595cf641</code>。原生板、正式合同和线束文档版本分别接收；没有覆盖硬件文件。</p><ul><li>SMBJ.pdf <small>（原研究引用，未收录于本快照）</small> / 第 5 页</li><li>B340LA.pdf <small>（原研究引用，未收录于本快照）</small> / 第 4 页</li><li>CSD17577Q5A.pdf <small>（原研究引用，未收录于本快照）</small> / 第 8 页</li><li>Vishay_WSL.pdf <small>（原研究引用，未收录于本快照）</small> / 第 2 页</li><li>supplier_facts.json <small>（原研究引用，未收录于本快照）</small> / 原厂数据转录</li><li>TPS25947.pdf <small>（原研究引用，未收录于本快照）</small> / 第 72 页</li><li>LM74502.pdf <small>（原研究引用，未收录于本快照）</small> / 第 27 页</li><li>INA300.pdf <small>（原研究引用，未收录于本快照）</small> / 第 39 页</li><li>XKB_X6521FV.pdf <small>（原研究引用，未收录于本快照）</small> / 第 1 页</li><li>HCTL_PM254_2_04.pdf <small>（原研究引用，未收录于本快照）</small> / 第 1 页</li></ul><p>按原尺寸导入厂家 J402，未缩放硬件。三处排母内部簧片、针腔和实际啮合仍未知；外部包络与插合零件的重叠不视为通过，也不擅自修改主模型来消除它。</p></details></html>
