@@ -1,6 +1,6 @@
 # C3 R108P 状态与边界
 
-2026-10-25，同步最新采用的 R108P，未改原工作区。原始作者记录见 [状态原文](evidence/R108P/source_status_original.txt)；其中的相对路径指原工程工作区，文件下载以[当前入口](README.md)为准。
+2026-10-25，当前采用稿为 R108P。原始作者记录见 [状态原文](evidence/R108P/source_status_original.txt)；文件下载以[当前入口](README.md)为准，历史记录中的路径不作为当前入口。
 
 | 项目 | 结果 |
 |---|---|

@@ -28,7 +28,7 @@ python3 tools/restore_m1_55_evidence.py --group approval
 
 工具按记录的 SHA256 验证并拒绝覆盖不同文件。原始恢复清单固定在 `48fe22aa75554c9d7bb237e2d2dcacca7f83dde1`；M1.58 新厂家/批准输入另装入本仓库普通 Git ZIP。旧 PCB 包移动到 `mechanical/input_assets/pcb_reference/native_projects/`，解出时保留旧路径，防止篡改当时输入。
 
-只校验已保存的 M1.58 模型时，恢复 `m1-58-inputs` 与 `m1-58-validation` 两组即可。后者包含模型实际引用的 10 份精确实体数据，使用匹配主模型的原工作区字节；其中同名 CAM/相机资料较早期归档更新。若先前单独恢复过旧 `mechanical-data`，工具会拒绝覆盖不同文件，应先把冲突的旧副本移出当前输入位置，再恢复当前组，不要混用版本。
+只校验已保存的 M1.58 模型时，恢复 `m1-58-inputs` 与 `m1-58-validation` 两组即可。后者包含模型实际引用的 10 份精确实体数据，与已保存主模型的来源哈希对应；其中同名 CAM/相机资料较早期归档更新。若先前单独恢复过旧 `mechanical-data`，工具会拒绝覆盖不同文件，应先把冲突的旧副本移出当前输入位置，再恢复当前组，不要混用版本。
 
 原独立对比 Blender 未发布，停靠托架只按已发布且校验哈希的矩阵回执比较，原 Blender 追溯明确为 BLOCKED。旧硬件保护清单也单列历史追溯状态，缺失/版本不同不会冒称通过；当前驱动板文件完整性由 `tools/check_project.py` 单独检查。
 

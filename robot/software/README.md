@@ -10,7 +10,7 @@
 
 ## 启动网页
 
-在 `/Users/dean/Documents/MORI` 的两个终端中运行：
+以下命令均从仓库的 `robot/` 目录运行。在两个终端中分别启动后端和网页：
 
 ```sh
 .venv/bin/python -m backend.run
@@ -39,7 +39,7 @@ bash tools/build-firmware.sh legacy-motion
 .venv/bin/python -m simulation.dynamics --output reports/v1_2/SIMULATED_dynamics_v1_2.json
 ```
 
-新机器：Node 24.19.0/pnpm 11.19.0、Python 3.12，按 `pnpm-lock.yaml`、`backend/requirements.lock` 安装。STM32 使用 Arm GNU 14.2.Rel1、CMake/Ninja；运行 `python tools/fetch-motion-refs.py` 获取锁定源码，`python tools/bootstrap-arm.py` 下载并校验工具链，或设置 `MORI_ARM_BIN` 为已核验工具链的 bin 目录。ESP-IDF 固定 5.5.2，本机路径 `/Users/dean/esp/esp-idf`；可用 IDF_PATH 指定同版本。没有自动安装系统服务、打开端口、扫描串口、刷写或远程部署。
+开发依赖：Node 24.19.0/pnpm 11.19.0、Python 3.12+，按 `pnpm-lock.yaml`、`backend/requirements.lock` 安装。STM32 使用 Arm GNU 14.2.Rel1、CMake/Ninja；运行 `python tools/fetch-motion-refs.py` 获取锁定源码，`python tools/bootstrap-arm.py` 下载并校验工具链，或设置 `MORI_ARM_BIN` 为已核验工具链的 bin 目录。ESP-IDF 固定 5.5.2，用 `IDF_PATH` 指定其安装目录。没有自动安装系统服务、打开端口、扫描串口、刷写或远程部署。
 
 构建输出：`firmware/motion/build_stm32/mori_motion.elf/.bin`；`firmware/interaction/build_v1_2/mori_interaction.bin`。STM32 只启用内部 HSI 和 HAL 系统 tick，没有假造板 GPIO、PLL、收发器使能或驱动功率链；纯算法/协议模块已编译并在主机测试。电机 DMA/SPI 端口接线、实时调度、物理命令桥、ICM 初始化/滤波配置仍待板契约接入，不能把这个镜像当作可直接驱动整机的成品。
 

@@ -26,4 +26,4 @@
 | `config/`、`contracts/`、`apps/`、`backend/` | `robot/` 内同名目录 |
 | `test_rig/` | 保持原位置，补齐独立版本与 v184 |
 
-完整映射见 [迁移清单](robot/docs/organization/path_migration.json)。历史构建输入中的相对路径以 `robot/` 为根；不会恢复到仓库顶层。原工作区的忽略目录和实验原件没有移动或清理。
+完整映射见 [路径映射清单](robot/docs/organization/path_migration.json)。历史构建输入中的相对路径以 `robot/` 为根；不会恢复到仓库顶层。
