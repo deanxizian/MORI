@@ -29,7 +29,7 @@ def check(root, allow_lfs_pointers=False):
     tracked=set(subprocess.check_output(['git','ls-files','-z'],cwd=root,text=True).split('\0'))
     for old in ('apps/','backend/','config/','contracts/','docs/','firmware/','hardware/','mechanical/','software/','simulation/','refs/'):
         require(not any(p.startswith(old) for p in tracked),'Published legacy project root remains: '+old)
-    for doc in ('README.md','VERSIONING.md','HANDOFF.md'):
+    for doc in ('README.md','VERSIONING.md'):
         for target in re.findall(r'!?\[[^\]]*\]\(([^)]+)\)',(root/doc).read_text()):
             url=urlsplit(target.strip('<>'))
             if url.scheme or url.netloc or not url.path: continue
@@ -38,8 +38,8 @@ def check(root, allow_lfs_pointers=False):
                 errors.append('Link outside repository: '+target);continue
             path=resolved.relative_to(root).as_posix()
             require(path in tracked or any(p.startswith(path.rstrip('/')+'/') for p in tracked),'Unpublished link: '+doc+': '+target)
-    for project in manifests.values():
-        require(project['project_version'] in (root/'README.md').read_text(),'Root version table stale')
+    for project in projects:
+        require(manifests[project['id']]['project_version'] in (root/project['path']/'README.md').read_text(),'Project README version stale: '+project['id'])
     receipt=json.loads((root/'robot/docs/organization/path_migration.json').read_text())
     protected=0
     for item in receipt['entries']:

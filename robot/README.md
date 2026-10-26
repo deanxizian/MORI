@@ -6,20 +6,15 @@
 
 **当前项目版本：1.3.0-dev.2 · 2026-10-25 · PROTOTYPE / UNVALIDATED。** 成品 UPS、成品 IMU 和唯一自制驱动载板是当前方向；尚未完成成品整机装配、完整线束及上电验证，不是制造版本。
 
-## 当前外观
+## 当前外形与内部结构
 
-![MORI M1.58 带外壳总装](mechanical/renders/ups_controls_M1_58/assembled.png)
+| 外形 | 内部结构 |
+|---|---|
+| ![MORI M1.58 带外壳总装](mechanical/renders/ups_controls_M1_58/assembled.png) | ![MORI M1.58 内部结构](mechanical/renders/ups_controls_M1_58/internal.png) |
 
-上图来自保存的 M1.58 主模型，保留实际外壳、孔位和轮胎间隙；是 CAD 预览，非实物照片。
-
-<details>
-<summary>查看同版内部结构</summary>
-
-![MORI M1.58 内部结构](mechanical/renders/ups_controls_M1_58/internal.png)
+两图均来自保存的 M1.58 主模型，保留实际外壳、孔位和轮胎间隙；是 CAD 预览，非实物照片。
 
 主模型仍含旧 P5R7 载板与外置 6 V Buck。新 C3 板和板载 6 V 供电尚未同步进去，完整线束也未采用。
-
-</details>
 
 ## 从这里开始
 
