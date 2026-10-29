@@ -1,0 +1,50 @@
+{
+  "revision": "R112B",
+  "scope": "Join four dump-resistor drains with two outward bridges; MOSFET drain still pending",
+  "routes": [
+    {
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          12.8625,
+          20.25
+        ],
+        [
+          15.5875,
+          20.25
+        ],
+        [
+          16.3375,
+          21.0
+        ]
+      ],
+      "reason": "Short lateral drain bridge; existing opposite-facing terminals already provide a direct outward escape. No benefit from rotating the power resistors for this connection."
+    },
+    {
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "width_mm": 0.75,
+      "points_mm": [
+        [
+          16.3375,
+          21.0
+        ],
+        [
+          16.3375,
+          22.5
+        ],
+        [
+          17.0375,
+          23.2
+        ],
+        [
+          17.0375,
+          25.0
+        ]
+      ],
+      "reason": "Bridge on pad-side of both resistor bodies; no body crossing or additional vias."
+    }
+  ]
+}

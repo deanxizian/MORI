@@ -1,0 +1,86 @@
+{
+  "scope": "Read-only candidate for restoring the bias pair near its original right edge.\nR1311 uses the free slot above the old R1311 position; R1312 takes that old\nposition. Original resistor values/nets and native guards stay authoritative.\n",
+  "source_sha256": "bfa21d032592b73b0844b8fb2e49acd6b5665acf81159e992cfff4dff2851fb7",
+  "placements": [
+    {
+      "reference": "R1311",
+      "value": "100k",
+      "footprint": "C3_Packages:R_0603_1608Metric",
+      "position_mm": [
+        68.8,
+        18.25
+      ],
+      "rotation_deg": 90.0,
+      "face": "B.Cu",
+      "source_face": "B.Cu",
+      "pads": [
+        {
+          "number": "1",
+          "net": "Net-(R1311-~-Pad1)",
+          "position_mm": [
+            68.8,
+            19.075
+          ]
+        },
+        {
+          "number": "2",
+          "net": "/HEAD_UV_ENABLE",
+          "position_mm": [
+            68.8,
+            17.425
+          ]
+        }
+      ],
+      "placement_conflicts": [
+        {
+          "type": "courtyard",
+          "other": "R1312",
+          "area_mm2": 0.6525000000000054
+        }
+      ],
+      "pending_non_ground_copper": []
+    },
+    {
+      "reference": "R1312",
+      "value": "100k",
+      "footprint": "C3_Packages:R_0603_1608Metric",
+      "position_mm": [
+        68.8,
+        20.75
+      ],
+      "rotation_deg": 90.0,
+      "face": "B.Cu",
+      "source_face": "B.Cu",
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND",
+          "position_mm": [
+            68.8,
+            21.575
+          ]
+        },
+        {
+          "number": "2",
+          "net": "Net-(R1311-~-Pad1)",
+          "position_mm": [
+            68.8,
+            19.925
+          ]
+        }
+      ],
+      "placement_conflicts": [
+        {
+          "type": "courtyard",
+          "other": "R1311",
+          "area_mm2": 0.6525000000000054
+        }
+      ],
+      "pending_non_ground_copper": []
+    }
+  ],
+  "placement_conflict_count": 2,
+  "adopted": false,
+  "PCB_saved": false,
+  "native_verification_required": true
+}

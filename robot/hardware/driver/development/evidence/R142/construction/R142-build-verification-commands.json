@@ -1,0 +1,83 @@
+[
+  {
+    "step": "build_from_R134N",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/build_trial.py",
+      "robot/hardware/driver/development/native",
+      "robot/.state/c3-completion/trials/R142",
+      "robot/.state/c3-completion/trials/R142-plan.json"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 0.7595040798187256,
+    "stdout": "{\"candidate\": \"robot/.state/c3-completion/trials/R142\", \"added\": 127}\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'PNG file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'JPEG file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'TIFF file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'GIF file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'PNM file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'PCX file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'IFF file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'Windows icon file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'Windows cursor file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'Windows animated cursor file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'TGA file'\n06:55:29\u202fAM: Debug: Adding duplicate image handler for 'XPM file'\n"
+  },
+  {
+    "step": "refill_save_drc",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "robot/.state/c3-completion/trials/R142-refill-drc.json",
+      "robot/.state/c3-completion/trials/R142/MORI_Interface_C3.kicad_pcb"
+    ],
+    "returncode": 5,
+    "elapsed_seconds": 3.5173189640045166,
+    "stdout": "\u53d1\u73b0 0 \u6761\u8fdd\u89c4\u9879\n\u53d1\u73b0 29 \u4e2a\u672a\u8fde\u63a5\u7684\u9879\u76ee\n\u53d1\u73b0 0 \u4e2a\u539f\u7406\u56fe\u4e00\u81f4\u6027\u95ee\u9898\n\u4fdd\u5b58 DRC \u62a5\u544a\u5230 robot/.state/c3-completion/trials/R142-refill-drc.json\n\u5df2\u4fdd\u5b58\u7535\u8def\u677f\n",
+    "stderr": "Fontconfig error: Cannot load default config file: No such file: (null)\n"
+  },
+  {
+    "step": "native_erc_drc_regression",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/verify_trial.py",
+      "robot/hardware/driver/development/native",
+      "robot/.state/c3-completion/trials/R142",
+      "robot/.state/c3-completion/trials/R142-verification"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 12.860047101974487,
+    "stdout": "{\"executed_at\": \"2026-10-26T22:55:45.897536+00:00\", \"kicad_version\": \"10.0.7\", \"board_sha256\": \"2a7c04b8430875a0f8f9e4bdde4b789da6b8efb5f84ee991a360f1d5b6d006dd\", \"normalization\": {\"reason\": \"Only KiCad save normalization of disabled teardrops and empty maps; original project bytes restored\", \"source_sha256\": \"33c4ea2b2125b4b445c93be8aec365e9a5189f7025542cfb7c5782383131563a\", \"normalized_sha256\": \"0c4427846f091c8e802ff7475635200e621d9ed05bd313d7b965b86fd4921671\"}, \"violations\": 0, \"unconnected_items\": 29, \"schematic_parity\": 0, \"erc_violations\": 0, \"regression_status\": \"FAIL\", \"new_reference_gaps\": 0, \"new_body_projection_candidates\": 39, \"historical_transition_flags\": 6, \"whole_board_visual\": \"NOT_TESTED\", \"physical\": \"NOT_TESTED\", \"manufacturing_release\": false, \"engineering_status\": \"FAIL\"}\n",
+    "stderr": ""
+  },
+  {
+    "step": "planned_delta",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/review_planned_delta.py",
+      "robot/hardware/driver/development/native/MORI_Interface_C3.kicad_pcb",
+      "robot/.state/c3-completion/trials/R142/MORI_Interface_C3.kicad_pcb",
+      "robot/.state/c3-completion/trials/R142-plan.json",
+      "robot/.state/c3-completion/trials/R142-verification/regression.json",
+      "robot/hardware/driver/development/evidence/R134N/regression.json",
+      "robot/.state/c3-completion/trials/R142-verification/planned-delta.json"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 1.4845302104949951,
+    "stdout": "{\"status\": \"PASS\", \"errors\": [], \"checks\": 2622}\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'PNG file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'JPEG file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'TIFF file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'GIF file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'PNM file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'PCX file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'IFF file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'Windows icon file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'Windows cursor file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'Windows animated cursor file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'TGA file'\n06:55:46\u202fAM: Debug: Adding duplicate image handler for 'XPM file'\n"
+  },
+  {
+    "step": "mounted_body_review",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/.state/c3-completion/trials/R141_body_review.py",
+      "robot/hardware/driver/development/native/MORI_Interface_C3.kicad_pcb",
+      "robot/.state/c3-completion/trials/R142/MORI_Interface_C3.kicad_pcb",
+      "robot/.state/c3-completion/trials/R142-verification/body-review.json"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 1.0503242015838623,
+    "stdout": "{\n  \"scope\": \"Read-only new-copper body projections and local routing measurements.\\n\\nClosed native Fab outlines are nominal. L701/L901 use the 9.2 x 8.5 maximum\\nprojection recorded in bom_candidate.csv (not a new physical measurement).\\nUnsupported shapes stay explicit. Opposite/internal projections require separate\\ncoupling/thermal review; this report is not physical or manufacturing acceptance.\\n\",\n  \"source_sha256\": \"0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca\",\n  \"candidate_sha256\": \"2a7c04b8430875a0f8f9e4bdde4b789da6b8efb5f84ee991a360f1d5b6d006dd\",\n  \"moves\": [\n    {\n      \"reference\": \"R903\",\n      \"value\": \"100k\",\n      \"face\": \"B.Cu\",\n      \"source_position_mm\": [\n        32.25,\n        28.25\n      ],\n      \"source_rotation_deg\": 180.0,\n      \"candidate_position_mm\": [\n        33.0,\n        27.4\n      ],\n      \"candidate_rotation_deg\": 90.0\n    },\n    {\n      \"reference\": \"R1033\",\n      \"value\": \"100k\",\n      \"face\": \"B.Cu\",\n      \"source_position_mm\": [\n        50.5,\n        8.25\n      ],\n      \"source_rotation_deg\": 180.0,\n      \"candidate_position_mm\": [\n        21.1,\n        28.6\n      ],\n      \"candidate_rotation_deg\": 180.0\n    },\n    {\n      \"reference\": \"R1003\",\n      \"value\": \"1k\",\n      \"face\": \"B.Cu\",\n      \"source_position_mm\": [\n        50.5,\n        6.0\n      ],\n      \"source_rotation_deg\": 180.0,\n      \"candidate_position_mm\": [\n        28.6,\n        12.65\n      ],\n      \"candidate_rotation_deg\": -90.0\n    },\n    {\n      \"reference\": \"R301\",\n      \"value\": \"10k\",\n      \"face\": \"B.Cu\",\n      \"source_position_mm\": [\n        27.75,\n        10.6\n      ],\n      \"source_rotation_deg\": 180.0,\n      \"candidate_position_mm\": [\n        13.2,\n        10.8\n      ],\n      \"candidate_rotation_deg\": -90.0\n    }\n  ],\n  \"segment_count\": 1258,\n  \"via_count\": 322,\n  \"footprint_count\": 215,\n  \"new_segment_count\": 85,\n  \"removed_source_segments\": 32,\n  \"new_via_count\": 6,\n  \"same_face_projections\": [],\n  \"physical\": \"NOT_TESTED\",\n  \"manufacturing_release\": false\n}\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'PNG file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'JPEG file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'TIFF file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'GIF file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'PNM file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'PCX file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'IFF file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'Windows icon file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'Windows cursor file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'Windows animated cursor file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'TGA file'\n06:55:47\u202fAM: Debug: Adding duplicate image handler for 'XPM file'\n"
+  }
+]

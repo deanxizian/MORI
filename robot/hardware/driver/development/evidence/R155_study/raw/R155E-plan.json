@@ -1,0 +1,89 @@
+{
+  "revision": "R155E",
+  "board_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "scope": "Partial short OV escape using the existing upper UV hole; UV capacitor restoration is explicitly pending. No adoption.",
+  "translations": [],
+  "delete_copper": [
+    "78b0e0dc-5356-4cc3-b969-d2dde38b0526",
+    "d14a85c3-7a69-4ceb-924e-cfe1772934b7"
+  ],
+  "deleted_copper_expected": {
+    "78b0e0dc-5356-4cc3-b969-d2dde38b0526": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.75,
+        25.85
+      ],
+      "end_mm": [
+        40.75,
+        26.8
+      ]
+    },
+    "d14a85c3-7a69-4ceb-924e-cfe1772934b7": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.75,
+        26.8
+      ],
+      "end_mm": [
+        40.75,
+        28.6375
+      ]
+    }
+  },
+  "reassign_vias": [
+    {
+      "uuid": "fc152bf4-fbba-444c-ae12-f971486b6063",
+      "source_expected": {
+        "net": "Net-(U1301-INA+_{slash}_UV)",
+        "position_mm": [
+          40.75,
+          26.8
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "reason": "Repurpose the upper UV transfer for short outward OV escape; restore the UV capacitor to the unchanged lower UV transfer explicitly."
+    }
+  ],
+  "routes": [
+    {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          41.55,
+          25.9625
+        ],
+        [
+          40.75,
+          26.8
+        ]
+      ]
+    }
+  ],
+  "vias": [],
+  "adoption_prohibited_until_complete_verification": true
+}

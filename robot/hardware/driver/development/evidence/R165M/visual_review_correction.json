@@ -1,0 +1,41 @@
+{
+  "recorded_at_utc": "2026-10-28T06:17:51.850421+00:00",
+  "board_sha256": "899d526fda5da465fe2279448a0d2561bf6d0b5e6e964d478cfda28ddfad4f70",
+  "scope": "Correct component function in local review text only; no PCB or test result changes.",
+  "original_review_sha256": "6b40333e67011ea4d91098da3089d14a1573d015415ddfb251d7824d3495273e",
+  "preserved_original": "../R165_study/raw/R165M-visual-review.json",
+  "component": "C1503",
+  "original_description": "The In3 UV output passes under the B-side 100 nF decoupler through continuous In4 reference. Its original supply and direct ground paths remain. No thermal or transient immunity qualification is inferred.",
+  "corrected_description": "The In3 UV output passes under the unchanged B-side 100 nF H_DUMP_TEMP filter C1503; C1503 is not a VDD decoupler. Its pad 1 and U1501.3 share H_DUMP_TEMP and pad 2 is GND; the TH1501 connection remains one of the 21 opens. In4 reference is continuous between the new route and this analog filter. Temperature-input pickup, parasitics and thermal behavior remain unqualified.",
+  "native_pin_readback": {
+    "C1503.1": {
+      "position_mm": [
+        49.475,
+        30.4
+      ],
+      "net": "/15 {slash} Head_Output_OV/H_DUMP_TEMP"
+    },
+    "C1503.2": {
+      "position_mm": [
+        47.925,
+        30.4
+      ],
+      "net": "GND"
+    },
+    "U1501.3": {
+      "position_mm": [
+        50.8625,
+        31.8
+      ],
+      "net": "/15 {slash} Head_Output_OV/H_DUMP_TEMP"
+    },
+    "C1502.1": {
+      "position_mm": [
+        53.625,
+        30.15
+      ],
+      "net": "MOTION_3V3"
+    }
+  },
+  "reason": "Native pad nets distinguish the H_DUMP_TEMP filter from the separate C1502 VDD decoupler; the capacitor value alone was insufficient."
+}

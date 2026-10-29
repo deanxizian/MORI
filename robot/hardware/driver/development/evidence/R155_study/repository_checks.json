@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-10-27T19:28:56.878969+00:00",
+  "scope": "Repository integrity and evidence preservation only. No accepted PCB change or hardware qualification.",
+  "python_executable": "/Volumes/Sol/MORI/robot/.venv/bin/python",
+  "checks": [
+    {
+      "command": "tools/check_workspace.py --allow-lfs-pointers",
+      "status": "PASS",
+      "protected_files": 541
+    },
+    {
+      "command": "robot/tools/check_project.py --allow-lfs-pointers",
+      "status": "PASS"
+    },
+    {
+      "command": "test_rig/tools/check_release.py",
+      "status": "PASS",
+      "imported_artifacts": 405,
+      "control_source_files": 324
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "Verify archived and decompressed payload hashes and local Markdown links",
+      "status": "PASS",
+      "payload_count": 133
+    }
+  ],
+  "canonical_revision": "R154B",
+  "canonical_PCB_unchanged": true,
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

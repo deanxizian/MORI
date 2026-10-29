@@ -1,0 +1,737 @@
+{
+  "revision": "R171B",
+  "scope": "Remove the obsolete INA300 VS transfer and reuse the existing upper 3V3 via.\n\nR170J is an unadopted comparison. This explicit plan is rebuilt from R168G,\nretaining every source GND via and native rule. Move R1701 up 0.10 mm to test\nclearance for a short B supply path between its pad and the original GND stitch.\nRLIMIT direct return and every other original function still require restoration.\n",
+  "board_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "translations": [
+    {
+      "reference": "U1701",
+      "from_mm": [
+        47.25,
+        12.35
+      ],
+      "delta_mm": [
+        0,
+        0
+      ],
+      "rotation_deg": 180,
+      "reconstruct_fixed_via_guards": true,
+      "rotate_fixed_via_guards": true,
+      "repartition_fixed_via_guards": true
+    },
+    {
+      "reference": "R1310",
+      "from_mm": [
+        49.5,
+        14.25
+      ],
+      "delta_mm": [
+        1.75,
+        0
+      ],
+      "rotation_deg": 0
+    },
+    {
+      "reference": "R1701",
+      "from_mm": [
+        47.275,
+        9.7
+      ],
+      "delta_mm": [
+        0.1,
+        -0.05
+      ],
+      "rotation_deg": 0
+    },
+    {
+      "reference": "C1701",
+      "from_mm": [
+        51.4,
+        11.0
+      ],
+      "delta_mm": [
+        -8.15,
+        1.125
+      ],
+      "rotation_deg": 270
+    },
+    {
+      "reference": "R1707",
+      "from_mm": [
+        42.5,
+        12.15
+      ],
+      "delta_mm": [
+        8.75,
+        -1.15
+      ],
+      "rotation_deg": 270
+    },
+    {
+      "reference": "R1706",
+      "from_mm": [
+        44.65,
+        14.9
+      ],
+      "delta_mm": [
+        2.35,
+        -6.025
+      ],
+      "rotation_deg": 270,
+      "side_change": {
+        "from_face": "B.Cu",
+        "to_face": "F.Cu",
+        "from_rotation_deg": 0.0,
+        "axis": "LEFT_RIGHT",
+        "reason": "Joint INA300 input and RLIMIT return comparison; source pad numbers, values and networks are preserved."
+      }
+    }
+  ],
+  "delete_copper": [
+    "9e2909c0-b0c9-5aa7-9c9e-244071604eab",
+    "b57bf843-5b94-5584-a10e-602aeff0f3e3",
+    "4f924ffd-0a98-4505-abb3-161071e2d044",
+    "dae204fd-73d8-4e94-87b1-6099c0f5fc1d",
+    "e02fad2d-9aaa-4d85-a5d3-b17233af688c",
+    "05a6a6fa-7898-53a3-b429-7ff299f134af",
+    "3438b398-25d9-5bdf-b4b6-cf8bda43bee4",
+    "473a54b5-3233-517c-8ddd-032daebd4a5c",
+    "833a67fd-5416-5566-93ef-03cd02569f10",
+    "c1abb94c-5a18-5201-a7e5-0587f6dc6c27",
+    "d0ad615c-8f55-5421-be11-5ae7a5000b7e",
+    "7f8155d8-ae9b-5681-abf0-b9bd90943193",
+    "4e3cff17-d7fe-4cb4-87f2-0dfef758262e",
+    "bcdd7ab3-adde-4d13-afc7-60400ae05dc1",
+    "f53097d6-39cd-41f5-a174-4720708ce322",
+    "3c59ab5a-ed77-4497-bfe1-918eab519360",
+    "0d47044e-9370-425f-9e51-56a71547069d",
+    "0de6273a-710d-5be6-9fbf-0d57ba814746",
+    "1d4ee9c6-471f-4c4a-bbb3-a128d5d11e6d",
+    "4da58487-f076-5185-8828-943f5727193f",
+    "5406aba7-c615-41a9-a6e9-192a3ed4d599",
+    "65bcfb8b-ccb8-414b-9655-86c9c7b51068",
+    "7c457b1b-8640-4205-8467-6ef9cfeae45d",
+    "93815fe2-ca82-4388-8f2b-479a56ab871b",
+    "ad8bf9ab-c57f-55b6-993f-db8012d24229",
+    "c040599d-733a-5160-b4bf-a7e26a34ad04",
+    "d61b3009-7a0d-55cf-ab70-1f6e60d2465c",
+    "dcb2b41a-82bd-47f9-9a25-09dbdf14ff28",
+    "ea80aaef-5d61-4955-94cc-8a39248ba908",
+    "f920e850-34c0-4c5c-8e2e-3f4d7ce3a2ed",
+    "faea7b4d-249a-47b7-8402-16bf75873e0c",
+    "35011640-47d5-43d9-aa07-7c7e24d3d8e5",
+    "bc3e9793-b9cd-54b1-b44c-64b91f6e9a06"
+  ],
+  "deleted_copper_expected": {
+    "9e2909c0-b0c9-5aa7-9c9e-244071604eab": {
+      "net": "Net-(U1701-IN-)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.325,
+        12.85
+      ],
+      "end_mm": [
+        45.05,
+        12.85
+      ]
+    },
+    "b57bf843-5b94-5584-a10e-602aeff0f3e3": {
+      "net": "Net-(U1701-IN-)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.325,
+        12.15
+      ],
+      "end_mm": [
+        43.325,
+        12.85
+      ]
+    },
+    "4f924ffd-0a98-4505-abb3-161071e2d044": {
+      "net": "Net-(U1701-IN+)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.475,
+        14.9
+      ],
+      "end_mm": [
+        45.475,
+        14.1
+      ]
+    },
+    "dae204fd-73d8-4e94-87b1-6099c0f5fc1d": {
+      "net": "Net-(U1701-IN+)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.05,
+        13.675
+      ],
+      "end_mm": [
+        45.05,
+        13.35
+      ]
+    },
+    "e02fad2d-9aaa-4d85-a5d3-b17233af688c": {
+      "net": "Net-(U1701-IN+)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.475,
+        14.1
+      ],
+      "end_mm": [
+        45.05,
+        13.675
+      ]
+    },
+    "05a6a6fa-7898-53a3-b429-7ff299f134af": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        44.025,
+        12.35
+      ],
+      "end_mm": [
+        45.05,
+        12.35
+      ]
+    },
+    "3438b398-25d9-5bdf-b4b6-cf8bda43bee4": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        46.45,
+        9.975
+      ],
+      "end_mm": [
+        45.525,
+        10.9
+      ]
+    },
+    "473a54b5-3233-517c-8ddd-032daebd4a5c": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.525,
+        10.9
+      ],
+      "end_mm": [
+        44.025,
+        10.9
+      ]
+    },
+    "833a67fd-5416-5566-93ef-03cd02569f10": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        46.45,
+        9.7
+      ],
+      "end_mm": [
+        46.45,
+        9.975
+      ]
+    },
+    "c1abb94c-5a18-5201-a7e5-0587f6dc6c27": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        44.025,
+        10.9
+      ],
+      "end_mm": [
+        44.025,
+        11.3
+      ]
+    },
+    "d0ad615c-8f55-5421-be11-5ae7a5000b7e": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        44.025,
+        11.3
+      ],
+      "end_mm": [
+        44.025,
+        12.35
+      ]
+    },
+    "7f8155d8-ae9b-5681-abf0-b9bd90943193": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        49.875,
+        11.35
+      ],
+      "end_mm": [
+        49.875,
+        9.7
+      ]
+    },
+    "4e3cff17-d7fe-4cb4-87f2-0dfef758262e": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        49.45,
+        12.35
+      ],
+      "end_mm": [
+        50.5,
+        12.35
+      ]
+    },
+    "bcdd7ab3-adde-4d13-afc7-60400ae05dc1": {
+      "net": "Net-(U1302-CT)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.95,
+        13.775
+      ],
+      "end_mm": [
+        50.625,
+        14.1
+      ]
+    },
+    "f53097d6-39cd-41f5-a174-4720708ce322": {
+      "net": "Net-(U1302-CT)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.95,
+        13.375
+      ],
+      "end_mm": [
+        50.95,
+        13.775
+      ]
+    },
+    "3c59ab5a-ed77-4497-bfe1-918eab519360": {
+      "net": "MOTION_3V3",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        48.325,
+        14.1
+      ],
+      "end_mm": [
+        47.775,
+        14.1
+      ]
+    },
+    "0d47044e-9370-425f-9e51-56a71547069d": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        51.4,
+        12.15
+      ],
+      "end_mm": [
+        51.4,
+        11.775
+      ]
+    },
+    "0de6273a-710d-5be6-9fbf-0d57ba814746": {
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        41.675,
+        12.37
+      ],
+      "end_mm": [
+        42.3,
+        12.995
+      ]
+    },
+    "1d4ee9c6-471f-4c4a-bbb3-a128d5d11e6d": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        51.4,
+        11.875
+      ],
+      "end_mm": [
+        52.45,
+        11.875
+      ]
+    },
+    "4da58487-f076-5185-8828-943f5727193f": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        48.1,
+        9.7
+      ],
+      "end_mm": [
+        50.5,
+        9.7
+      ]
+    },
+    "5406aba7-c615-41a9-a6e9-192a3ed4d599": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.5,
+        12.35
+      ],
+      "end_mm": [
+        50.5,
+        11.125
+      ]
+    },
+    "65bcfb8b-ccb8-414b-9655-86c9c7b51068": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        51.4,
+        10.225
+      ],
+      "end_mm": [
+        51.45,
+        10.175
+      ]
+    },
+    "7c457b1b-8640-4205-8467-6ef9cfeae45d": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.755,
+        10.87
+      ],
+      "end_mm": [
+        51.4,
+        10.225
+      ]
+    },
+    "93815fe2-ca82-4388-8f2b-479a56ab871b": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.5,
+        11.125
+      ],
+      "end_mm": [
+        50.5,
+        10.87
+      ]
+    },
+    "ad8bf9ab-c57f-55b6-993f-db8012d24229": {
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        41.675,
+        11.475
+      ],
+      "end_mm": [
+        41.675,
+        12.15
+      ]
+    },
+    "c040599d-733a-5160-b4bf-a7e26a34ad04": {
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        41.675,
+        12.15
+      ],
+      "end_mm": [
+        41.675,
+        12.37
+      ]
+    },
+    "d61b3009-7a0d-55cf-ab70-1f6e60d2465c": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.5,
+        9.7
+      ],
+      "end_mm": [
+        50.5,
+        10.87
+      ]
+    },
+    "dcb2b41a-82bd-47f9-9a25-09dbdf14ff28": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.5,
+        10.87
+      ],
+      "end_mm": [
+        50.755,
+        10.87
+      ]
+    },
+    "ea80aaef-5d61-4955-94cc-8a39248ba908": {
+      "net": "/ACT_BAT_SWITCHED",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.5,
+        14.9
+      ],
+      "end_mm": [
+        42.9,
+        15.5
+      ]
+    },
+    "f920e850-34c0-4c5c-8e2e-3f4d7ce3a2ed": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        50.7,
+        12.85
+      ],
+      "end_mm": [
+        51.4,
+        12.15
+      ]
+    },
+    "faea7b4d-249a-47b7-8402-16bf75873e0c": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        51.45,
+        10.175
+      ],
+      "end_mm": [
+        51.45,
+        9.3
+      ]
+    },
+    "35011640-47d5-43d9-aa07-7c7e24d3d8e5": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.05,
+        11.85
+      ],
+      "end_mm": [
+        46.3,
+        11.85
+      ]
+    },
+    "bc3e9793-b9cd-54b1-b44c-64b91f6e9a06": {
+      "net": "MOTION_3V3",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        47.15,
+        11.0
+      ],
+      "end_mm": [
+        46.3,
+        11.85
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "/FAULT_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          49.45,
+          13.35
+        ],
+        [
+          49.45,
+          14
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          43.25,
+          11.35
+        ],
+        [
+          43.8,
+          11.35
+        ],
+        [
+          44.0,
+          11.55
+        ],
+        [
+          44.0,
+          11.85
+        ],
+        [
+          45.05,
+          11.85
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          43.25,
+          12.9
+        ],
+        [
+          43.8,
+          12.9
+        ],
+        [
+          44.0,
+          12.7
+        ],
+        [
+          44.0,
+          12.35
+        ],
+        [
+          45.05,
+          12.35
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1701-IN-)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          51.25,
+          11.85
+        ],
+        [
+          49.45,
+          11.85
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          44.0,
+          11.35
+        ],
+        [
+          44.0,
+          10.875
+        ],
+        [
+          45.35,
+          10.875
+        ],
+        [
+          45.75,
+          10.475
+        ],
+        [
+          46.85,
+          10.475
+        ],
+        [
+          46.925,
+          10.55
+        ],
+        [
+          47.15,
+          10.55
+        ]
+      ]
+    }
+  ],
+  "vias": [
+    {
+      "net": "/FAULT_N",
+      "position_mm": [
+        49.45,
+        14
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    }
+  ],
+  "adoption_prohibited": true,
+  "placement_comparison": "R170-cell-return-score.json",
+  "selected_candidate_index": 0,
+  "restored_original_tracks_after_pose_screen": [
+    "0b577a67-ae57-43c5-84b3-50ee8003fac9",
+    "35011640-47d5-43d9-aa07-7c7e24d3d8e5",
+    "3b2b6f74-d6fb-56a8-94bc-4488965c482b",
+    "44e785d8-303e-5e78-b5ba-3d13086b7fe0",
+    "bc1cff30-589b-5342-b4eb-e07415cd3de1",
+    "bc3e9793-b9cd-54b1-b44c-64b91f6e9a06",
+    "c7c08f58-c73c-4825-9a4c-a9ccae74dbcb"
+  ],
+  "remove_obsolete_vias": [
+    {
+      "uuid": "aa3ea505-081f-4d12-a9a9-b7d9b2cf4e57",
+      "source_expected": {
+        "net": "MOTION_3V3",
+        "position_mm": [
+          46.3,
+          11.85
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "remaining_contact_layers": [
+        "In2.Cu",
+        "In3.Cu"
+      ],
+      "isolated_zone_layers": [
+        "In2.Cu"
+      ],
+      "reason": "The original F/B transfer is replaced by a B connection to unchanged 3V3 via (47.15,10.55); after retiring its two leads, In2 contains only an explicitly checked isolated island with no other retained copper objects; In3 supply is retained through original vias and violates the rotated INA300 native guard."
+    }
+  ]
+}

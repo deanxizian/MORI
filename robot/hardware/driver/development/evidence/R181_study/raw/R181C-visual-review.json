@@ -1,0 +1,55 @@
+{
+  "source_sha256": "0314affe1179898dbb679292c8c4ecb8f59838d5753302436854bf4ea5e76af9",
+  "board_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "local_status": "PASS",
+  "scope": "Six actual native local copper layer views and two immutable source comparisons were viewed. Local prototype geometry only; all eight were re-viewed before adoption.",
+  "images_actually_viewed": [
+    {
+      "path": "images/B.Cu.png",
+      "sha256": "a2c788cd6559a20379e66871e8f33e8d6b511982c689da40c64c96b9c2af1f36"
+    },
+    {
+      "path": "images/F.Cu.png",
+      "sha256": "2a9a7af0c1a821cb301fa6261da5bb911650dae811bb2971378b0384d01f95dd"
+    },
+    {
+      "path": "images/In1.Cu.png",
+      "sha256": "f765ea821787e4edcf23d2a2879833fe5960ab24b29b0c076c8f4d5081fc041f"
+    },
+    {
+      "path": "images/In2.Cu.png",
+      "sha256": "079fc945b5e4f657aa7e97fc1c3cb86701de3f47f13139d68059ae5fe6cde8a5"
+    },
+    {
+      "path": "images/In3.Cu.png",
+      "sha256": "3951b1ede920937fc16c7056a68d3230f3e7967e0654419e49880dd3282b8d5a"
+    },
+    {
+      "path": "images/In4.Cu.png",
+      "sha256": "7f517d402a2f6887182f420884065c0d8c1db15042f9ecd2b3257814fad2a423"
+    },
+    {
+      "path": "images/source-F.Cu.png",
+      "sha256": "e07eeea665945fdac93173663f76d163951832dfda88aeb547ee569788b6b3a3"
+    },
+    {
+      "path": "images/source-In3.Cu.png",
+      "sha256": "e16a924cfcb2d42c47be295b176fb2738a67db281a64e3719e74e9a36b0e01ae"
+    }
+  ],
+  "decision": "Receive only C: replace thirteen S2/WHEEL_sense segments by thirteen F segments and retire one obsolete non-ground via. No footprint, U301/C301 pose, power feed, native rule or keepout change.",
+  "observations": [
+    "The F branch avoids mounted-face nominal bodies and the Q1602 drain pads, then passes above Q1602 toward the retained R1002 transfer. The old F stub and unused transfer at (45.6,9.35) are removed.",
+    "The old diagonal S2 branch on In3 is gone, freeing a local corridor. This alone does not establish a valid ARMED route: E cuts the MOTION_3V3 supply into two pad groups.",
+    "The In1 reference plane covers the new route outside its own transfer clearances. The two reused transfers retain nearby GND vias at about 0.716 and 0.721 mm; no new transition warning is introduced.",
+    "B U1001 and R303 body projections and the recorded internal/outer foreign-copper projections have intervening In1 ground in this geometric screen. They are not body keepout violations under the user clarification.",
+    "Minimum same-face copper edge distances are 0.2225 mm to Q1602 drain pads and 0.375 mm to C707.1. These are nominal native geometry, not manufacturing tolerances, measured crosstalk or thermal margins.",
+    "G attempts more MOSFET separation but shorts the CAM regulator trace/pad. H removes two small route offsets but loses reference coverage in two areas (0.0080647 and 0.0336962 mm2). Their cleaner appearance cannot replace electrical acceptance. C retains those offsets for reference continuity."
+  ],
+  "geometry_review": "geometry_review.json",
+  "full_noise_transient_thermal": "NOT_TESTED",
+  "whole_board_visual": "NOT_TESTED",
+  "whole_board_route_style": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

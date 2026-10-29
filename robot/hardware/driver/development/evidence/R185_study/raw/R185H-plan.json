@@ -1,0 +1,89 @@
+{
+  "revision": "R185H",
+  "board_sha256": "6be667d9847b4903c3f0be1ab3fd38a3e07ee008bb8374ebeaa3526b1240a772",
+  "move_ground_vias": [
+    {
+      "uuid": "2e7f36fc-97b4-4bdc-ac9d-b6a6321965ed",
+      "source_expected": {
+        "net": "GND",
+        "position_mm": [
+          57.85,
+          8.4
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        57.9,
+        8.4
+      ],
+      "reason": "Straighten C601 ground return and recover native 0.20 mm clearance to the new 0.50 mm supply bridge. Pre-fill full-annulus plane containment is only a conservative screen; actual native two-plane ground attachment is required."
+    }
+  ],
+  "delete_copper": [
+    "b7c20ca5-84ce-58c3-ab82-b478f888d162",
+    "f6eaefe0-9902-55b5-905c-2983bb8b7c4f"
+  ],
+  "deleted_copper_expected": {
+    "b7c20ca5-84ce-58c3-ab82-b478f888d162": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        57.9,
+        8.45
+      ],
+      "end_mm": [
+        57.85,
+        8.4
+      ]
+    },
+    "f6eaefe0-9902-55b5-905c-2983bb8b7c4f": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        57.9,
+        9.325
+      ],
+      "end_mm": [
+        57.9,
+        8.45
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          57.9,
+          9.325
+        ],
+        [
+          57.9,
+          8.4
+        ]
+      ]
+    }
+  ],
+  "rationale": "Independent combined ground/supply candidate. Retain all original ground identities and native rules; require full canonical audit. Source is rejected G, never a claim of intermediate adoption."
+}

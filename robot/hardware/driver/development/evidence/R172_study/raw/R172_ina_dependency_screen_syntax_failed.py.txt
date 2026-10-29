@@ -1,0 +1,75 @@
+"""Bounded INA300 placement-dependency diagnosis, not a legal-route claim.
+
+GND vias, fixed connector/hole parts and original U1701 guard cutouts are hard
+constraints. Every additional part, non-ground via, retained copper or reference
+conflict is enumerated as a prospective replacement dependency. Nothing is
+waived or saved to PCB; new routes still require native checks and full recovery.
+"""
+import ast,collections,json,math,sys,time
+from pathlib import Path
+from shapely.affinity import translate,rotate
+from shapely.geometry import box
+from shapely.ops import polygonize
+sys.path.insert(0,'robot/hardware/driver/development/scripts')
+from copper_geometry import *
+b=Path('robot/.state/c3-completion/trials');out=b/'R172-ina-dependency-screen.json';assert not out.exists()
+c=Copper('robot/hardware/driver/development/native/MORI_Interface_C3.kicad_pcb');base=json.loads((b/'R172-ina-pose-screen.json').read_text());assert c.sha==base['source_sha256']
+for name,fn in [('fab','R138_joint_search.py'),('outline','R167_joint_pose_screen.py')]:
+ node=next(n for n in ast.parse((b/fn).read_text()).body if isinstance(n,ast.FunctionDef) and n.name==name);exec(compile(ast.Module(body=[node],type_ignores=[]),name,'exec'))
+refs=set(base['prospectively_moved_parts']);padids={uid(p) for p in c.pads if c.pad_name(p).split('.')[0] in refs};retired=set(base['prospectively_retired_tracks']);fps={f.GetReference():f for f in c.footprints}
+old=fps['U1701'];origin=xy(old.GetPosition());owned=[k for k in c.keepouts if k['name'].startswith('BODY_U1701_')];body_guard=unary_union([k['shape'] for k in owned if k['tracks']]);fixed_holes=body_guard.difference(unary_union([k['shape'] for k in owned if k['vias']]))
+gnd=unary_union([c.shapes[uid(v),'B.Cu'] for v in c.vias if v.GetNetname()=='GND']);gv=[v for v in c.vias if v.GetNetname()=='GND'];nv=[v for v in c.vias if v.GetNetname()!='GND'];nonlocal=[f for f in c.footprints if f.GetReference() not in refs]
+bodyrows=[(f.GetReference(),fab(f),outline(f,pcb.B_CrtYd)) for f in nonlocal if f.GetLayer()==pcb.B_Cu]
+padrows=[(c.pad_name(p).split('.')[0],p.GetNetname(),c.shapes[uid(p),'B.Cu']) for p in c.pads if uid(p) not in padids and (uid(p),'B.Cu') in c.shapes]
+allpads=[(c.pad_name(p).split('.')[0],g) for p in c.pads if uid(p) not in padids for (u,ly),g in c.shapes.items() if u==uid(p)]
+keeps=[k for k in c.keepouts if not any(k['name'].startswith('BODY_'+r+'_') for r in refs)]
+tracks=[(t,c.board.GetLayerName(t.GetLayer()),c.shapes[uid(t),c.board.GetLayerName(t.GetLayer())]) for t in c.segments if uid(t) not in retired]
+reference={uid(t):s.intersection(c.copper.get(('GND',REFERENCE[ly]),GeometryCollection())).buffer(.657) for t,ly,s in tracks if t.GetNetname()!='GND' and ly in REFERENCE}
+hard_port=unary_union([Point(xy(v.GetPosition())).buffer(.707) for v in gv]+[Point(xy(p.GetPosition())).buffer(max(xy(p.GetDrillSize()))/2+.557) for p in c.pads if max(xy(p.GetDrillSize()))>0])
+def fixed(ref):return ref.startswith(('J','H'))
+def owner(k):return k['name'].split('_')[1] if k['name'].startswith('BODY_') else None
+rows=[];rejected=collections.Counter();start=time.monotonic()
+for x,y in [(x/4,y/4) for x in range(176,205) for y in range(38,65)]:
+ for angle in [0,90,180,270]:
+  f=pcb.FOOTPRINT(old);f.SetOrientationDegrees(angle);f.SetPosition(pcb.VECTOR2I(round(x*1e6),round(y*1e6)));body=fab(f);yard=outline(f,pcb.B_CrtYd);pp=[(p.GetNumber(),p.GetNetname(),shape(p,pcb.B_Cu),xy(p.GetPosition())) for p in f.Pads()]
+  if any(s.distance(gnd)<.2-1e-6 for _,_,s,_ in pp):rejected['fixed_GND_pad_clearance']+=1;continue
+  moved=translate(rotate(body_guard,-angle,origin=origin),xoff=x-origin[0],yoff=y-origin[1]);vg=moved.difference(fixed_holes)
+  if vg.intersection(gnd).area>1e-8:rejected['fixed_GND_native_guard']+=1;continue
+  extra={r for r,bd,yd in bodyrows if body.intersection(bd).area>1e-8 or yard.intersection(yd).area>1e-8}
+  extra.update(r for r,n,s in padrows if any(n!=pn and s.distance(ps)<.2-1e-6 for _,pn,ps,_ in pp))
+  if any(fixed(r) for r in extra) or len(extra)>2:rejected['fixed_or_many_parts']+=1;continue
+  viadeps={uid(v) for v in nv if any(s.distance(c.shapes[uid(v),'B.Cu'])<.2-1e-6 for _,_,s,_ in pp) or vg.intersects(c.shapes[uid(v),'B.Cu'])}
+  if len(viadeps)>4:rejected['many_non_ground_transfers']+=1;continue
+  tdeps={uid(t) for t,ly,s in tracks if ly=='B.Cu' and (moved.intersects(s) or body.intersection(s).area>1e-8 or any(t.GetNetname()!=pn and s.distance(ps)<.2-1e-6 for _,pn,ps,_ in pp))}
+  fault=next(p for p in pp if p[0]=='5');direction=[(-1,0),(0,1),(1,0),(0,-1)][angle//90];ports=[]
+  ownport=unary_union([p[2].buffer(.457) for p in pp]+[vg.buffer(.257)])
+  for length in [1.2+i*.1 for i in range(14)]:
+   pos=(fault[3][0]+length*direction[0],fault[3][1]+length*direction[1]);point=Point(pos)
+   if hard_port.intersects(point) or ownport.intersects(point):continue
+   deps=set(extra);deps.update(r for r,s in allpads if s.buffer(.457).intersects(point))
+   bad=False
+   for k in keeps:
+    if k['vias'] and k['shape'].buffer(.257).intersects(point):
+     r=owner(k)
+     if r is None:bad=True;break
+     deps.add(r)
+   if bad or any(fixed(r) for r in deps) or len(deps)>2:continue
+   line=LineString([fault[3],pos]);more=set(tdeps)
+   for k in keeps:
+    if k['tracks'] and 'B.Cu' in k['layers'] and k['shape'].buffer(.102).intersects(line):
+     r=owner(k)
+     if r is None:bad=True;break
+     deps.add(r)
+   if bad or any(fixed(r) for r in deps) or len(deps)>2:continue
+   vd=set(viadeps);vd.update(uid(v) for v in nv if point.distance(Point(xy(v.GetPosition())))<.707 or (v.GetNetname()!='/FAULT_N' and c.shapes[uid(v),'B.Cu'].buffer(.305).intersects(line)))
+   if len(vd)>4:continue
+   for t,ly,s in tracks:
+    if t.GetNetname()!='/FAULT_N' and (s.buffer(.457).intersects(point) or (ly=='B.Cu' and s.buffer(.305).intersects(line)) or (uid(t) in reference and reference[uid(t)].intersects(point))):more.add(uid(t))
+   ports.append(dict(position_mm=[round(v,6) for v in pos],straight_length_mm=length,required_other_parts=sorted(deps),required_non_ground_vias=sorted(vd),additional_retained_track_conflicts=sorted(more),score=20*len(deps)+8*len(vd)+3*len(more)+math.dist([x,y],origin)+length))
+  if ports:
+   ports.sort(key=lambda r:r['score']);rows.append(dict(position_mm=[x,y],rotation_deg=angle,pads={p[0]:list(p[3]) for p in pp},ports=ports[:5],score=ports[0]['score']))
+rows.sort(key=lambda r:r['score']);result=dict(scope=__doc__,source_sha256=c.sha,base_screen='R172-ina-pose-screen.json',grid_mm=.25,bounds_mm=[44,9.5,51,16],candidate_poses=len(rows),by_rotation=dict(collections.Counter(r['rotation_deg'] for r in rows)),rejections=dict(rejected),poses=rows,elapsed_seconds=time.monotonic()-start,adopted=False)
+out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k not in ['poses','scope']}),flush=True)
+for angle in [0,90,180,270]:
+ for row in [x for x in rows if x['rotation_deg']==angle][:3]:print(json.dumps(row),flush=True)
+assert hashlib.sha256(Path(c.path).read_bytes()).hexdigest()==c.sha

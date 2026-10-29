@@ -1,0 +1,88 @@
+{
+  "source_revision": "R129D",
+  "all_rejected": true,
+  "trials": [
+    {
+      "revision": "R130A",
+      "adopted": false,
+      "reason": "LINK_RX connects but MOTION_3V3 loses old pad pairs/power widths and HEAD_OE reference copper.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "3fd5827f7ba41d549609e1895e00c63852c559d63c918957d877f1dcd34a737c",
+      "opens": 33,
+      "other_DRC": 0,
+      "parity": 0
+    },
+    {
+      "revision": "R130B",
+      "adopted": false,
+      "reason": "Attempted MOTION bridge cuts HEAD_VM; native keepout/clearance and reference failures remain.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "0942088bf38a5d2babd85f2f53a1b0ae19f48eba4c81f7135d861115773ac91c",
+      "opens": 33,
+      "other_DRC": 3,
+      "parity": 0
+    },
+    {
+      "revision": "R131A",
+      "adopted": false,
+      "reason": "R1201 pose overlaps PTH/courtyard; starved thermal and silk violations.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "1ee63c623cb1e580a20db4c8536f49fdee6ce9dcda5cb9770ec510f18215e860",
+      "opens": 33,
+      "other_DRC": 4,
+      "parity": 0
+    },
+    {
+      "revision": "R131B",
+      "adopted": false,
+      "reason": "Original-center 90-degree rotation is DRC clean but bounded search finds no useful ARM route.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "bbe2f14a95417d3f036665406ba6452f469a268d66e0d16cd0109ea4c5ae2ec0",
+      "opens": 33,
+      "other_DRC": 0,
+      "parity": 0
+    },
+    {
+      "revision": "R131C",
+      "adopted": false,
+      "reason": "Original-center 0-degree rotation causes shorts/clearance/courtyard/mask failures.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "ade3040e8820e95c8c1188b17851996f100c16fc4e78fd0c75c299dfdc5227e3",
+      "opens": 33,
+      "other_DRC": 13,
+      "parity": 0
+    },
+    {
+      "revision": "R131D",
+      "adopted": false,
+      "reason": "Original-center 180-degree rotation causes shorts/clearance/courtyard/mask failures.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "bddab5f30d9be4a93bbb91a0ec8ab47b18cdf5a16566d12a7f2dc397f88d13f8",
+      "opens": 33,
+      "other_DRC": 13,
+      "parity": 0
+    },
+    {
+      "revision": "R131E",
+      "adopted": false,
+      "reason": "Grouped pose too close to DVDT and HEAD_VM vias; isolated ground island.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "d1784c268cbbf00e519b6e69c0cc4fb319dea51e7044b0f882234bfbe7261d82",
+      "opens": 33,
+      "other_DRC": 5,
+      "parity": 0
+    },
+    {
+      "revision": "R131F",
+      "adopted": false,
+      "reason": "Adjusted pose clears other DRC but leaves R1201.1/R1207.1 ground island, so no net open reduction.",
+      "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+      "board_sha256": "b96210ca1927d974dd334a9c394ad3331c4abb2fed77b9742380f1292b3cb058",
+      "opens": 33,
+      "other_DRC": 0,
+      "parity": 0
+    }
+  ],
+  "raw_native_trials_retained": "robot/.state/c3-completion/trials",
+  "manufacturing_release": false
+}

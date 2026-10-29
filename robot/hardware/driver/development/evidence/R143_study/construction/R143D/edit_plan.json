@@ -1,0 +1,190 @@
+{
+  "revision": "R143D",
+  "board_sha256": "bdc62f0f151cc1755157e20c8b9d8762fccbced28638c81d5376e2817653362e",
+  "purpose": "Joint refinement: move R1022 up, restore 0.2-mm supply-corridor regression,\nand remove the two ADC offsets made unnecessary by relocating U303.\nAll changes remain in an independent trial; preserve native constraints.\n",
+  "translations": [
+    {
+      "reference": "R1022",
+      "from_mm": [
+        41,
+        17.6
+      ],
+      "delta_mm": [
+        0,
+        -2
+      ],
+      "rotation_deg": 270
+    }
+  ],
+  "delete_copper": [
+    "011b9455-65d7-5fc9-9a0d-f757684af61c",
+    "6a9971ea-9e51-5351-820c-527cacd81391",
+    "6bdb7300-db2f-542d-bafa-72b3a1339c95",
+    "7fb2d1e6-436a-50cd-9bf0-bb8314a40391",
+    "b0ded6b1-445c-52e0-9523-365d1a854c44",
+    "bebcdfb8-cc7c-5718-8536-c45b5185d222",
+    "cc6c7b2b-921a-43bb-80ea-13d571df12ba",
+    "e50150f0-701a-5303-9d2d-cff21ae5e3e6"
+  ],
+  "deleted_copper_expected": {
+    "011b9455-65d7-5fc9-9a0d-f757684af61c": {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        26.8,
+        12.4
+      ],
+      "end_mm": [
+        26.7,
+        12.4
+      ]
+    },
+    "6a9971ea-9e51-5351-820c-527cacd81391": {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        27.05,
+        12.75
+      ],
+      "end_mm": [
+        27.775,
+        13.475
+      ]
+    },
+    "6bdb7300-db2f-542d-bafa-72b3a1339c95": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        21.9375,
+        12.4
+      ],
+      "end_mm": [
+        22.5,
+        12.4
+      ]
+    },
+    "7fb2d1e6-436a-50cd-9bf0-bb8314a40391": {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        27.05,
+        12.65
+      ],
+      "end_mm": [
+        26.8,
+        12.4
+      ]
+    },
+    "b0ded6b1-445c-52e0-9523-365d1a854c44": {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        26.7,
+        12.4
+      ],
+      "end_mm": [
+        26.05,
+        11.75
+      ]
+    },
+    "bebcdfb8-cc7c-5718-8536-c45b5185d222": {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        27.05,
+        12.75
+      ],
+      "end_mm": [
+        27.05,
+        12.65
+      ]
+    },
+    "cc6c7b2b-921a-43bb-80ea-13d571df12ba": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        22.5,
+        11.4
+      ],
+      "end_mm": [
+        22.5,
+        13.7
+      ]
+    },
+    "e50150f0-701a-5303-9d2d-cff21ae5e3e6": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        22.5,
+        13.7
+      ],
+      "end_mm": [
+        23.425,
+        13.7
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          22.5,
+          11.4
+        ],
+        [
+          22.5,
+          12.4
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "points_mm": [
+        [
+          21.9375,
+          12.4
+        ],
+        [
+          22.5,
+          12.4
+        ],
+        [
+          22.5,
+          13.7
+        ],
+        [
+          23.425,
+          13.7
+        ]
+      ]
+    },
+    {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          26.05,
+          11.75
+        ],
+        [
+          27.775,
+          13.475
+        ]
+      ]
+    }
+  ]
+}

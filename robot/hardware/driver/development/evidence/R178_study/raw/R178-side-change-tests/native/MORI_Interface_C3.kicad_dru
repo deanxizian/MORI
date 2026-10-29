@@ -1,0 +1,468 @@
+(version 1)
+
+# Fresh C3 mapping. Source SHA256: 5d49d0134ca8c32acc41736591db9e839c347a40a2baa061d32c9ce64a7c25b0
+
+# Last matching KiCad rule wins; AD priority number is inverse. Explicit zeros retained.
+
+(rule "R07 default"
+  (constraint clearance (min 0.499999mm))
+)
+
+(rule "R07 arc|arc"
+  (condition "((A.Type == 'Arc' && B.Type == 'Arc') || (A.Type == 'Arc' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 arc|track"
+  (condition "((A.Type == 'Arc' && B.Type == 'Track') || (A.Type == 'Track' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 arc|smd_pad"
+  (condition "((A.Type == 'Arc' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 arc|through_hole_pad"
+  (condition "((A.Type == 'Arc' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 arc|via"
+  (condition "((A.Type == 'Arc' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 arc|polygon"
+  (condition "((A.Type == 'Arc' && B.Type == 'Zone') || (A.Type == 'Zone' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.2999994mm))
+)
+
+(rule "R07 arc|copper_text"
+  (condition "((A.Type == 'Arc' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R07 track|track"
+  (condition "((A.Type == 'Track' && B.Type == 'Track') || (A.Type == 'Track' && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 track|smd_pad"
+  (condition "((A.Type == 'Track' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 track|through_hole_pad"
+  (condition "((A.Type == 'Track' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 track|via"
+  (condition "((A.Type == 'Track' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 track|polygon"
+  (condition "((A.Type == 'Track' && B.Type == 'Zone') || (A.Type == 'Zone' && B.Type == 'Track'))")
+  (constraint clearance (min 0.2999994mm))
+)
+
+(rule "R07 track|copper_text"
+  (condition "((A.Type == 'Track' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Track'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R07 smd_pad|smd_pad"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 smd_pad|through_hole_pad"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 smd_pad|via"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Via') || (A.Type == 'Via' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 smd_pad|polygon"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Zone') || (A.Type == 'Zone' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.2999994mm))
+)
+
+(rule "R07 smd_pad|copper_text"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R07 through_hole_pad|through_hole_pad"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 through_hole_pad|via"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Via') || (A.Type == 'Via' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 through_hole_pad|polygon"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Zone') || (A.Type == 'Zone' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.2999994mm))
+)
+
+(rule "R07 through_hole_pad|copper_text"
+  (condition "(((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R07 via|via"
+  (condition "((A.Type == 'Via' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Via'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R07 via|polygon"
+  (condition "((A.Type == 'Via' && B.Type == 'Zone') || (A.Type == 'Zone' && B.Type == 'Via'))")
+  (constraint clearance (min 0.2999994mm))
+)
+
+(rule "R07 via|copper_text"
+  (condition "((A.Type == 'Via' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Via'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R07 polygon|copper_text"
+  (condition "((A.Type == 'Zone' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Zone'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R07 copper_text|copper_text"
+  (condition "(((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Text' || B.Type == 'Text Box')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R07 inherited same-footprint-pad setting"
+  (condition "A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R06 default"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND')")
+  (constraint clearance (min 0.2999994mm))
+)
+
+(rule "R06 arc|arc"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Arc' && B.Type == 'Arc') || (A.Type == 'Arc' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 arc|track"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Arc' && B.Type == 'Track') || (A.Type == 'Track' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 arc|smd_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Arc' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 arc|through_hole_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Arc' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 arc|via"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Arc' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 arc|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Arc' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R06 track|track"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Track' && B.Type == 'Track') || (A.Type == 'Track' && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 track|smd_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Track' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 track|through_hole_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Track' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 track|via"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Track' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 track|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Track' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Track'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R06 smd_pad|smd_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 smd_pad|through_hole_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 smd_pad|via"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Via') || (A.Type == 'Via' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 smd_pad|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R06 through_hole_pad|through_hole_pad"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 through_hole_pad|via"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Via') || (A.Type == 'Via' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 through_hole_pad|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R06 via|via"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Via' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Via'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R06 via|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Via' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Via'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R06 polygon|polygon"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Zone' && B.Type == 'Zone') || (A.Type == 'Zone' && B.Type == 'Zone'))")
+  (constraint clearance (min 0.499999mm))
+)
+
+(rule "R06 polygon|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && ((A.Type == 'Zone' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Zone'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R06 copper_text|copper_text"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Text' || B.Type == 'Text Box')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R06 inherited same-footprint-pad setting"
+  (condition "(A.NetName == 'GND' || B.NetName == 'GND') && (A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent)")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R05 default"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)'))")
+  (constraint clearance (min 0.499999mm))
+)
+
+(rule "R05 arc|smd_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Arc' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 arc|through_hole_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Arc' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 arc|via"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Arc' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Arc'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 arc|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Arc' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Arc'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R05 track|track"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Track' && B.Type == 'Track') || (A.Type == 'Track' && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 track|smd_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Track' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 track|through_hole_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Track' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 track|via"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Track' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Track'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 track|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Track' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Track'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R05 smd_pad|smd_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')) || ((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 smd_pad|through_hole_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 smd_pad|via"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && B.Type == 'Via') || (A.Type == 'Via' && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 smd_pad|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'SMD') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Pad' && B.Pad_Type == 'SMD')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R05 through_hole_pad|through_hole_pad"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')) || ((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 through_hole_pad|via"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && B.Type == 'Via') || (A.Type == 'Via' && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 through_hole_pad|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Pad' && A.Pad_Type == 'Through-hole') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Pad' && B.Pad_Type == 'Through-hole')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R05 via|via"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Via' && B.Type == 'Via') || (A.Type == 'Via' && B.Type == 'Via'))")
+  (constraint clearance (min 0.1999996mm))
+)
+
+(rule "R05 via|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Via' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Via'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R05 polygon|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && ((A.Type == 'Zone' && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && B.Type == 'Zone'))")
+  (constraint clearance (min 0.0mm))
+)
+
+(rule "R05 copper_text|copper_text"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Text' || B.Type == 'Text Box')) || ((A.Type == 'Text' || A.Type == 'Text Box') && (B.Type == 'Text' || B.Type == 'Text Box')))")
+  (constraint clearance (min 0.0999998mm))
+)
+
+(rule "R05 inherited same-footprint-pad setting"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || (B.NetName == '/01 {slash} Core/MOTION_5V' || B.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || B.NetName == '/06 {slash} CAM_Buck/UPS_5V' || B.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || B.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || B.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || B.NetName == '/ACT_BAT_SWITCHED' || B.NetName == '/HEAD_6V_RAW' || B.NetName == '/HEAD_VM' || B.NetName == '/UPS_BAT' || B.NetName == '/WHEEL_VM' || B.NetName == 'CAM_3V3_REF' || B.NetName == 'MOTION_3V3' || B.NetName == 'Net-(Q1401-D)' || B.NetName == 'Net-(U701-SW)' || B.NetName == 'Net-(U901-SW)')) && (A.Type == 'Pad' && B.Type == 'Pad' && A.Parent == B.Parent)")
+  (constraint clearance (min 0mm))
+)
+
+(rule "R01 via-pad any net"
+  (condition "(A.Type == 'Via' && B.Type == 'Pad') || (B.Type == 'Via' && A.Type == 'Pad')")
+  (constraint physical_clearance (min 0.1999996mm))
+)
+
+(rule "R07 hole-copper"
+  (constraint hole_clearance (min 0.2999994mm))
+)
+
+(rule "R40 hole-hole"
+  (constraint hole_to_hole (min 0.1499997mm))
+)
+
+(rule "R09 signal width"
+  (constraint track_width (min 0.1999996mm) (opt 0.1999996mm) (max 2.00000108mm))
+)
+
+(rule "R08 power width"
+  (condition "((A.NetName == '/01 {slash} Core/MOTION_5V' || A.NetName == '/06 {slash} CAM_Buck/CAM_REG_3V87' || A.NetName == '/06 {slash} CAM_Buck/UPS_5V' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/09 {slash} Head_Buck/HEAD_BUCK_IN' || A.NetName == '/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE' || A.NetName == '/ACT_BAT_SWITCHED' || A.NetName == '/HEAD_6V_RAW' || A.NetName == '/HEAD_VM' || A.NetName == '/UPS_BAT' || A.NetName == '/WHEEL_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(Q1401-D)' || A.NetName == 'Net-(U701-SW)' || A.NetName == 'Net-(U901-SW)') || A.NetName == 'GND')")
+  (constraint track_width (min 0.1999996mm) (opt 0.499999mm) (max 5.00000016mm))
+)
+
+(rule "R29 hole size"
+  (constraint hole_size (min 0.0999998mm) (max 5.00000016mm))
+)
+
+(rule "R15 R16 vias"
+  (condition "A.Type == 'Via'")
+  (constraint via_diameter (min 0.499999mm) (opt 0.499999mm) (max 1.00000054mm))
+  (constraint hole_size (min 0.2499995mm) (opt 0.2499995mm) (max 0.499999mm))
+)
+
+(rule "R32 through-via layer pairs"
+  (condition "A.Type == 'Via'")
+  (constraint assertion "A.Via_Type == 'Through'")
+)
+
+(rule "R13 mapped planes and exact In2 signal corridors"
+  (condition "A.Type == 'Track' && (A.Layer == 'In1.Cu' || A.Layer == 'In4.Cu' || (A.Layer == 'In2.Cu' && !(A.NetName == '/01 {slash} Core/ARM_CLK' || A.NetName == '/01 {slash} Core/HEAD_TX' || A.NetName == '/01 {slash} Core/IMU_SDA' || A.NetName == '/01 {slash} Core/LINK_TX' || A.NetName == '/01 {slash} Core/WHEEL_TX' || A.NetName == '/07 {slash} CAM_Protection_Start/CAM_BAT_OUT' || A.NetName == '/CLR_N' || A.NetName == '/FAULT_N' || A.NetName == '/HEAD_VM' || A.NetName == 'CAM_3V3_REF' || A.NetName == 'MOTION_3V3' || A.NetName == 'Net-(J501-TX43)' || A.NetName == 'Net-(U1101-OUT)' || A.NetName == 'Net-(U1301-INB-_{slash}_OV)' || A.NetName == 'Net-(U1501-INB-_{slash}_OV)' || A.NetName == 'Net-(U401-1Y)' || A.NetName == 'Net-(U402-1Y)' || A.NetName == 'Net-(U501-B)' || A.NetName == 'Net-(U502-B)')))")
+  (constraint disallow track)
+)
+
+(rule "R17 internal copper zone spacing"
+  (condition "A.Type == 'Zone' && (A.Layer == 'In1.Cu' || A.Layer == 'In2.Cu' || A.Layer == 'In3.Cu' || A.Layer == 'In4.Cu')")
+  (constraint clearance (min 0.3999992mm))
+)
+
+(rule "R23 via count"
+  (constraint via_count (max 500))
+)
+
+(rule "R27 turn angle"
+  (constraint track_angle (min 60))
+)
+
+(rule "R26 SMD copper connection"
+  (constraint zone_connection solid)
+)
+
+(rule "R25 THT copper connection"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'")
+  (constraint zone_connection thermal_reliefs)
+  (constraint thermal_relief_gap (min 0.254mm))
+  (constraint thermal_spoke_width (opt 0.2999994mm))
+  (constraint min_resolved_spokes 4)
+)
+
+(rule "R43 silk-silk"
+  (condition "A.Layer == B.Layer")
+  (constraint silk_clearance (min 0.0499999mm))
+)
+
+(rule "R42 silk-exposed pad"
+  (condition "A.Type == 'Pad' || B.Type == 'Pad'")
+  (constraint silk_clearance (min 0.00999998mm))
+)
+
+(rule "R39 diff-pair (currently none)"
+  (condition "A.inDiffPair('*')")
+  (constraint track_width (min 0.381mm) (opt 0.381mm) (max 0.381mm))
+  (constraint diff_pair_gap (min 0.254mm) (opt 0.254mm) (max 0.254mm))
+  (constraint diff_pair_uncoupled (max 12.7mm))
+)

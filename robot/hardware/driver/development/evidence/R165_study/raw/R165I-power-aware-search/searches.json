@@ -1,0 +1,272 @@
+{
+  "scope": "Search UV output while preserving the proven In3 3V3 supply corridor.\nAdditional via reservations avoid the immediate THT ground thermal area.\nThese conservative planning restrictions supplement native rules and never\nwaive thermal, reference, power or body checks after native refill.\n",
+  "source_sha256": "7a143fae301e560be7590e49423b8bf76460854140caf4e42ba944f7b06729bf",
+  "grid_mm": 0.1,
+  "results": [
+    {
+      "request": "uv_output",
+      "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 0,
+        "regions": 448
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.05541529199999928
+    },
+    {
+      "request": "uv_output",
+      "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+      "mode": "weighted_50",
+      "result": {
+        "status": "PROPOSAL",
+        "expanded": 42585,
+        "routes": [
+          {
+            "layer": "In3.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                64.0,
+                29.6
+              ],
+              [
+                63.0,
+                28.6
+              ],
+              [
+                61.6,
+                28.6
+              ],
+              [
+                61.0,
+                28.0
+              ],
+              [
+                61.0,
+                26.5
+              ],
+              [
+                55.2,
+                20.7
+              ],
+              [
+                53.6,
+                20.7
+              ],
+              [
+                52.4,
+                19.5
+              ],
+              [
+                39.9,
+                19.5
+              ],
+              [
+                39.8,
+                19.6
+              ],
+              [
+                39.0,
+                18.8
+              ],
+              [
+                39.0,
+                17.6
+              ],
+              [
+                39.1,
+                17.5
+              ]
+            ]
+          },
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                39.1,
+                17.5
+              ],
+              [
+                39.1,
+                17.7
+              ],
+              [
+                38.7,
+                18.1
+              ],
+              [
+                38.7,
+                22.6
+              ],
+              [
+                38.4,
+                22.9
+              ],
+              [
+                38.4,
+                23.5
+              ],
+              [
+                38.8,
+                23.9
+              ]
+            ]
+          },
+          {
+            "layer": "In3.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                38.8,
+                23.9
+              ],
+              [
+                39.2,
+                23.9
+              ],
+              [
+                39.8,
+                24.5
+              ],
+              [
+                39.8,
+                25.2
+              ],
+              [
+                40.3,
+                25.7
+              ],
+              [
+                40.5,
+                25.7
+              ]
+            ]
+          },
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                40.5,
+                25.7
+              ],
+              [
+                41.9,
+                27.1
+              ],
+              [
+                41.9,
+                27.4
+              ],
+              [
+                45.0,
+                30.5
+              ]
+            ]
+          }
+        ],
+        "vias": [
+          {
+            "position_mm": [
+              39.1,
+              17.5
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          },
+          {
+            "position_mm": [
+              38.8,
+              23.9
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          },
+          {
+            "position_mm": [
+              40.5,
+              25.7
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          }
+        ],
+        "activate_pth_layers": [],
+        "length_mm": 48.15168106668146
+      },
+      "potential_power_cuts": [
+        {
+          "net": "MOTION_3V3",
+          "layer": "In2.Cu",
+          "area_mm2": 0.6618846179394574,
+          "bounds_mm": [
+            38.16416177070734,
+            18.000814,
+            40.76717633971457,
+            25.145
+          ]
+        },
+        {
+          "net": "/09 {slash} Head_Buck/HEAD_BUCK_IN",
+          "layer": "In2.Cu",
+          "area_mm2": 0.9003416464570011,
+          "bounds_mm": [
+            39.8500008,
+            25.5,
+            41.1499992,
+            26.3499992
+          ]
+        },
+        {
+          "net": "/HEAD_VM",
+          "layer": "In2.Cu",
+          "area_mm2": 0.5150798023939285,
+          "bounds_mm": [
+            38.4500008,
+            16.8500008,
+            39.568737409853924,
+            17.6
+          ]
+        },
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "layer": "In2.Cu",
+          "area_mm2": 0.090064098996008,
+          "bounds_mm": [
+            39.5,
+            17.45,
+            39.749999200000005,
+            17.933390670841593
+          ]
+        },
+        {
+          "net": "MOTION_3V3",
+          "layer": "In3.Cu",
+          "area_mm2": 22.6006919015213,
+          "bounds_mm": [
+            38.164161570395805,
+            19.0000008,
+            64.1566066498157,
+            29.879583419217937
+          ]
+        },
+        {
+          "net": "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT",
+          "layer": "In3.Cu",
+          "area_mm2": 5.666111713312777,
+          "bounds_mm": [
+            38.48203818776612,
+            16.8500008,
+            61.6,
+            28.9
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.8609351250000001
+    }
+  ],
+  "adopted": false
+}

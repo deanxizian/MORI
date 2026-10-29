@@ -1,0 +1,63 @@
+[
+  {
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "version"
+    ],
+    "cwd": "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B",
+    "returncode": 0,
+    "stdout": "10.0.7\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--schematic-parity",
+      "--refill-zones",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B-verified-v3/drc.json",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B/MORI_Interface_C3.kicad_pcb"
+    ],
+    "cwd": "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B",
+    "returncode": 5,
+    "stdout": "发现 0 条违规项\n发现 35 个未连接的项目\n发现 0 个原理图一致性问题\n保存 DRC 报告到 /Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B-verified-v3/drc.json\n",
+    "stderr": "Fontconfig error: Cannot load default config file: No such file: (null)\n"
+  },
+  {
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "sch",
+      "erc",
+      "--format",
+      "json",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B-verified-v3/erc.json",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B/MORI_Interface_C3.kicad_sch"
+    ],
+    "cwd": "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B",
+    "returncode": 0,
+    "stdout": "发现 0 条违规项\n已将 ERC 报告保存到文件 /Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B-verified-v3/erc.json\n",
+    "stderr": "Fontconfig error: Cannot load default config file: No such file: (null)\n"
+  },
+  {
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/audit_candidate.py",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/baseline/MORI_Interface_C3.kicad_pcb",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B/MORI_Interface_C3.kicad_pcb",
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B-verified-v3/regression.json"
+    ],
+    "cwd": "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R125B",
+    "returncode": 0,
+    "stdout": "{\"regression\": \"FAIL\", \"opens\": 35, \"power_width_losses\": 0, \"reference_losses\": 0, \"transition_flags\": 7}\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\n05:58:33 PM: Debug: Adding duplicate image handler for 'PNG file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'JPEG file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'TIFF file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'GIF file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'PNM file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'PCX file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'IFF file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'Windows icon file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'Windows cursor file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'TGA file'\n05:58:33 PM: Debug: Adding duplicate image handler for 'XPM file'\n"
+  }
+]

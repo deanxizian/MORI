@@ -1,0 +1,152 @@
+{
+  "scope": "Archive/source byte verification and repository integrity; not hardware acceptance or repeated native DRC.",
+  "executed_checks": [
+    {
+      "name": "workspace",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "elapsed_seconds": 0.441732666,
+      "result": {
+        "status": "PASS",
+        "scope": "Repository organization and provenance only; no hardware I/O",
+        "protected_files": 541,
+        "errors": []
+      }
+    },
+    {
+      "name": "robot",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "elapsed_seconds": 0.545276959,
+      "result": {
+        "status": "PASS",
+        "scope": "Publication integrity only",
+        "lfs_mode": "pointers allowed",
+        "errors": []
+      }
+    },
+    {
+      "name": "test_rig",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "exit_code": 0,
+      "elapsed_seconds": 2.515506542,
+      "result": {
+        "status": "PASS",
+        "imported_artifacts": 405,
+        "control_source_files": 324,
+        "links": 85,
+        "meshes": [
+          {
+            "file": "baseplate_R37_TRIAL.stl",
+            "triangles": 134888,
+            "vertices": 67380,
+            "components": 1,
+            "bad_edges": 0,
+            "volume_mm3": 57344.57737390249,
+            "bounds_mm": [
+              [
+                -80,
+                -26.5,
+                0
+              ],
+              [
+                80,
+                26.5,
+                80
+              ]
+            ]
+          },
+          {
+            "file": "camera_bracket_R59_40deg_TRIAL.stl",
+            "triangles": 30352,
+            "vertices": 15164,
+            "components": 1,
+            "bad_edges": 0,
+            "volume_mm3": 4661.658087943824,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                16.257375717163086,
+                29.523170471191406,
+                72
+              ]
+            ]
+          },
+          {
+            "file": "camera_bracket_R60_REAR_40deg_TRIAL.stl",
+            "triangles": 30352,
+            "vertices": 15164,
+            "components": 1,
+            "bad_edges": 0,
+            "volume_mm3": 4892.128234533014,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                16.61102867126465,
+                34.523170471191406,
+                72
+              ]
+            ]
+          },
+          {
+            "file": "second_platform_R55_TRIAL.stl",
+            "triangles": 47728,
+            "vertices": 23828,
+            "components": 1,
+            "bad_edges": 0,
+            "volume_mm3": 50967.6688024494,
+            "bounds_mm": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                160,
+                80,
+                9
+              ]
+            ]
+          },
+          {
+            "file": "wheel_hub_R41_TRIAL.stl",
+            "triangles": 271664,
+            "vertices": 135810,
+            "components": 1,
+            "bad_edges": 0,
+            "volume_mm3": 29137.953587906122,
+            "bounds_mm": [
+              [
+                -36.25,
+                -36.25,
+                0
+              ],
+              [
+                36.25,
+                36.25,
+                23.75
+              ]
+            ]
+          }
+        ],
+        "scope": "Integrity and digital topology only; no hardware I/O or physical qualification"
+      }
+    }
+  ],
+  "archive_payloads_verified": 104,
+  "local_native_board_hashes_verified": 8,
+  "canonical_board_sha256": "0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca",
+  "canonical_non_PCB_members_unchanged": 77,
+  "candidate_non_PCB_members": "76 byte-identical plus one exactly reviewed normalized .kicad_pro; see project_metadata_review.json.",
+  "local_readme_links": "PASS",
+  "engineering_status": "FAIL",
+  "manufacturing_release": false
+}

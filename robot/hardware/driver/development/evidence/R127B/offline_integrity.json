@@ -1,0 +1,27 @@
+{
+  "executed_at": "2026-10-26T10:48:35.748380+00:00",
+  "scope": "Integrity and provenance only; no hardware I/O or physical qualification",
+  "commands": [
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "status": "PASS"
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "status": "PASS"
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "remote_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "engineering_status": "FAIL",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "staged_whitespace_check": "Initial staged check found trailing whitespace in generated native SVGs. Trimmed whitespace only; restaged check required before commit."
+}

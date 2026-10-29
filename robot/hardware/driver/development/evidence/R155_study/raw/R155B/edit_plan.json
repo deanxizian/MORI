@@ -1,0 +1,195 @@
+{
+  "revision": "R155B",
+  "board_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "scope": "Joint OV and bypass orientation candidate; original supply still must be restored.",
+  "translations": [
+    {
+      "reference": "C1303",
+      "from_mm": [
+        42.9,
+        23.5
+      ],
+      "delta_mm": [
+        0,
+        0
+      ],
+      "rotation_deg": 270
+    },
+    {
+      "reference": "R802",
+      "from_mm": [
+        40.6,
+        23.9
+      ],
+      "delta_mm": [
+        -0.1,
+        0
+      ]
+    }
+  ],
+  "delete_copper": [
+    "2233b7b0-a172-414b-b05b-4bb9a08a453e",
+    "57330cbe-4127-4b66-8cbc-91bd347df963",
+    "68337903-98f5-4e4f-9ed8-5117238ed520",
+    "e6b35010-fab4-43b6-998f-221ea3ad499d"
+  ],
+  "deleted_copper_expected": {
+    "2233b7b0-a172-414b-b05b-4bb9a08a453e": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.6,
+        24.9
+      ],
+      "end_mm": [
+        42.05,
+        24.9
+      ]
+    },
+    "57330cbe-4127-4b66-8cbc-91bd347df963": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.05,
+        24.9
+      ],
+      "end_mm": [
+        42.25,
+        25.1
+      ]
+    },
+    "68337903-98f5-4e4f-9ed8-5117238ed520": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.25,
+        25.1
+      ],
+      "end_mm": [
+        42.25,
+        25.4125
+      ]
+    },
+    "e6b35010-fab4-43b6-998f-221ea3ad499d": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.75,
+        24.6
+      ],
+      "end_mm": [
+        42.25,
+        25.1
+      ]
+    }
+  },
+  "reassign_vias": [
+    {
+      "uuid": "a9324169-c8ab-4683-a35c-6b1360e838b3",
+      "source_expected": {
+        "net": "MOTION_3V3",
+        "position_mm": [
+          40.6,
+          24.9
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "reason": "Independent joint-routing study reuses the existing physical hole for OV escape. The detached U1301/C1303 supply must be restored explicitly before any adoption."
+    }
+  ],
+  "routes": [
+    {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          40.6,
+          24.9
+        ],
+        [
+          41.55,
+          25.85
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          57.275,
+          19.0
+        ],
+        [
+          50.8,
+          19.0
+        ],
+        [
+          45.4,
+          24.4
+        ],
+        [
+          41.1,
+          24.4
+        ],
+        [
+          40.6,
+          24.9
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          42.9,
+          22.725
+        ],
+        [
+          42.1,
+          22.725
+        ],
+        [
+          42.1,
+          24.85
+        ],
+        [
+          42.5,
+          25.25
+        ],
+        [
+          42.5,
+          25.6
+        ]
+      ]
+    }
+  ],
+  "vias": [],
+  "adoption_prohibited_until_supply_restored": true
+}

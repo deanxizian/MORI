@@ -1,0 +1,98 @@
+{
+  "scope": "Read-only INA300 RLIMIT return-path screen using saved native copper.\n\nTI SBOS613C section 10.1 (printed page 29) requires a direct RLIMIT return\nto the device ground terminal, including when a layer transition is needed.\nWhole-net continuity through a ground plane alone does not establish this.\n\nThis is a necessary-path screen, not complete manufacturer-layout approval:\nan explicit path still needs review for length, branching/plane contacts,\nloop area, capacitance, coupling, reference continuity and physical behavior.\nThe board must already have current native fills. No files are modified.\n",
+  "board_sha256": "c8f050d67a53ea9b56954f29c3232e828d4aa46e133f758c737054801d143806",
+  "datasheet": {
+    "url": "https://www.ti.com/lit/ds/symlink/ina300.pdf",
+    "document": "SBOS613C",
+    "revision": "June 2021",
+    "section": "10.1",
+    "printed_pages": [
+      29,
+      30
+    ]
+  },
+  "device": "INA300AIDGSR / DGS VSSOP-10",
+  "ground_terminal": "U1701.8",
+  "latch_terminal_is_not_ground_terminal": "U1701.6",
+  "geometry_polygon_error_max_mm": 0.002,
+  "rlimit_return": {
+    "from": "R1701.1",
+    "to": "U1701.8",
+    "native_pad_uuids": [
+      "5285005d-e3bf-457a-a8b3-e5a417012695",
+      "ea1c4762-47c4-475b-bdd2-d462e6f98a56"
+    ],
+    "mounted_faces": [
+      "B.Cu",
+      "B.Cu"
+    ],
+    "full_native_copper_connected": true,
+    "same_mounted_face_filled_component": true,
+    "explicit_track_pad_via_path_without_fills": true,
+    "source_explicit_component_pads": [
+      "C1701.2",
+      "R1701.1",
+      "U1701.6",
+      "U1701.8"
+    ],
+    "source_explicit_component_vias": [
+      {
+        "uuid": "01448c59-3902-4b17-8362-1f1ec1c425ab",
+        "position_mm": [
+          50.5,
+          10.87
+        ]
+      },
+      {
+        "uuid": "39f9a635-f748-4153-a2f2-1aeb2e2905ae",
+        "position_mm": [
+          51.45,
+          9.3
+        ]
+      }
+    ]
+  },
+  "bypass_return_positive_control": {
+    "from": "C1701.2",
+    "to": "U1701.8",
+    "native_pad_uuids": [
+      "ffe3d904-e1b0-4c52-b4c5-00bbbe95faab",
+      "ea1c4762-47c4-475b-bdd2-d462e6f98a56"
+    ],
+    "mounted_faces": [
+      "B.Cu",
+      "B.Cu"
+    ],
+    "full_native_copper_connected": true,
+    "same_mounted_face_filled_component": true,
+    "explicit_track_pad_via_path_without_fills": true,
+    "source_explicit_component_pads": [
+      "C1701.2",
+      "R1701.1",
+      "U1701.6",
+      "U1701.8"
+    ],
+    "source_explicit_component_vias": [
+      {
+        "uuid": "01448c59-3902-4b17-8362-1f1ec1c425ab",
+        "position_mm": [
+          50.5,
+          10.87
+        ]
+      },
+      {
+        "uuid": "39f9a635-f748-4153-a2f2-1aeb2e2905ae",
+        "position_mm": [
+          51.45,
+          9.3
+        ]
+      }
+    ]
+  },
+  "direct_return_screen": "PASS",
+  "reason": "Explicit path exists; full layout review remains required.",
+  "manufacturer_layout_qualification": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "board_bytes_unchanged": true
+}

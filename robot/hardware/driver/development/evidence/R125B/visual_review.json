@@ -1,0 +1,24 @@
+{
+  "status": "PASS_LOCAL_DEVELOPMENT_REVIEW",
+  "board_sha256": "7665fe14825d3f56f0e4154f605c5f20dd5b2923a28f94e39aa34466b9709d10",
+  "reviewed_images": [
+    "native-B-local.png",
+    "native-F-local.png",
+    "diagnostic-B.png",
+    "diagnostic-In4.png"
+  ],
+  "placement": "C1208 moves from B (3.75,10.75), 180 deg to B (25,22.25), 270 deg (native -90 deg). The single owned BODY guard rotates/translates exactly; no other component or native rule changes.",
+  "mounted_face_escape": "HEAD_VM pad1 faces -Y. Its 0.50-mm connection reaches the retained 0.80-mm HEAD_VM via with one 45-degree bend, outside the mounted-face body guards. Ground pad2 directly contacts B-side ground. No new via or removed/changed existing copper.",
+  "electrical": "HEAD_VM becomes one 20-pad group. New 0.48-mm corridor screen joins C1208 to the existing main output/connector/resistor group. All prior power-width, pad connectivity, 155 GND pads and 63 critical adjacency checks are retained. This is not an ampacity or transient guarantee.",
+  "reference": "In1/In4 ground is continuous under the moved native body and outside the existing HEAD_VM transfer void. Its 0.80-mm via and R17 0.40-mm inner-zone clearance require about 0.80-mm radius void; original fixed 0.655-mm check was inapplicable to that retained via. The measured native-plane edge is 0.800499 mm from the via center. Both new-stroke gaps are entirely inside this mandatory own-net void. No native design rule is relaxed.",
+  "coupling": "Opposite-face projection overlaps U901/C902 courtyard allocations; native body projects over HEAD_BUCK_IN input copper, not an added switch-node route. In1/In4 ground retained. Original buck, feedback and decoupling paths are unchanged. No EMC qualification is implied.",
+  "thermal": "C1208 is near R1412/R1414 and partly beneath U901 courtyard. Native Fab outline gap to nearest dump resistor is about 1.1 mm, not a measured clearance or a thermal limit. Existing pulse-duty, resistor/PCB temperature, capacitor DC-bias/effective capacitance and transient validation remain open; this placement is not frozen for manufacture.",
+  "assembly": "Native courtyard check passes; closest nominal courtyard gap is 0.05 mm to R1404. Courtyard/visual inspection does not establish soldering, rework or installed-clearance qualification.",
+  "alternative": "R125A at (25,23.75),90 deg closed HEAD_VM without new traces but had only 0.30-mm local feed; retained as comparison, not adopted. Read-only screen covered 99324 poses and four orientations; this is not that many native DRC trials.",
+  "limits": [
+    "Whole-board route/thermal/protection/interface review incomplete.",
+    "Physical, current, pulse, thermal, EMC and assembly validation NOT_TESTED.",
+    "Published R108P and mechanical main model unchanged."
+  ],
+  "manufacturing_release": false
+}

@@ -1,0 +1,146 @@
+{
+  "recorded_at_utc": "2026-10-29T00:25:03.840643+00:00",
+  "source_commit": "13856e0be4c1d6b978ca7a73ce38f6d1cdd8ce69",
+  "remote_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "source_revision": "R188C",
+  "source_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "adopted_revision": null,
+  "candidates": [
+    {
+      "revision": "R189A",
+      "board_sha256": "4e69bfa40717cd624e6b2adc1584e7640c63ab17087d0af2630b9433f50f94e7",
+      "unconnected_items": 21,
+      "other_DRC": 6,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {
+        "clearance": 1,
+        "starved_thermal": 4,
+        "via_dangling": 1
+      },
+      "power_checks_pass": 48,
+      "GND_group_sizes": [
+        154,
+        1
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [
+        "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT",
+        "GND"
+      ],
+      "old_reference_losses": [],
+      "new_reference_gap_count": 2,
+      "transition_flags": 8,
+      "adopted": false
+    },
+    {
+      "revision": "R189B",
+      "board_sha256": "32d11286b453def31470c47bff5b24bfa60f89776412f7fafce6d8d4c3ff6b35",
+      "unconnected_items": 20,
+      "other_DRC": 7,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {
+        "clearance": 3,
+        "shorting_items": 1,
+        "starved_thermal": 2,
+        "via_dangling": 1
+      },
+      "power_checks_pass": 48,
+      "GND_group_sizes": [
+        155
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [
+        "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT"
+      ],
+      "old_reference_losses": [
+        {
+          "uuid": "73be6ccd-56a9-4921-afe5-56eaba79e09b",
+          "net": "/03 {slash} Motor_Buses/WHEEL_BUS",
+          "layer": "B.Cu",
+          "new_unreferenced_area_mm2": 0.2348920333429189
+        }
+      ],
+      "new_reference_gap_count": 0,
+      "transition_flags": 6,
+      "adopted": false
+    },
+    {
+      "revision": "R189C",
+      "board_sha256": "88b06b2af12eb3fe70433bfae5b8041b0558ee070ffa0671c7f4a0ed6beea64e",
+      "unconnected_items": 20,
+      "other_DRC": 4,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {
+        "shorting_items": 1,
+        "clearance": 1,
+        "starved_thermal": 2
+      },
+      "power_checks_pass": 48,
+      "GND_group_sizes": [
+        155
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [
+        "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT"
+      ],
+      "old_reference_losses": [
+        {
+          "uuid": "73be6ccd-56a9-4921-afe5-56eaba79e09b",
+          "net": "/03 {slash} Motor_Buses/WHEEL_BUS",
+          "layer": "B.Cu",
+          "new_unreferenced_area_mm2": 0.2348920333429189
+        }
+      ],
+      "new_reference_gap_count": 0,
+      "transition_flags": 6,
+      "adopted": false
+    },
+    {
+      "revision": "R189D",
+      "board_sha256": "aff544b12705fa4d313295d639a0dbbf570479fcc5f0ecce16bbfeda01a7b7f8",
+      "unconnected_items": 19,
+      "other_DRC": 1,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {
+        "starved_thermal": 1
+      },
+      "power_checks_pass": 50,
+      "GND_group_sizes": [
+        155
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [],
+      "old_reference_losses": [],
+      "new_reference_gap_count": 0,
+      "transition_flags": 6,
+      "adopted": false
+    }
+  ],
+  "decision": {
+    "previous_goal_turn": "PROGRESS: R188C received and committed with one reference repair.",
+    "adopted": false,
+    "status_note": "No R189 PCB adopted. Twelve R1304 poses have no complete two-terminal access under retained copper. A/B/C lose CAM supply; A isolates a ground pad; D restores source connections and 50 power checks but retains one J401 front thermal failure. Current R188C remains nineteen opens.",
+    "next_step": "Expand the connected placement scope to R402, its WHEEL_BUS/R404 paths, R1304 input and the OV transfer. Before choosing a replacement port, screen complete all-layer supply reservations, J401 four-spoke/actual thermal connections, both wheel-signal tails and the analog path. R402 up-shift is only an unbuilt direction, not a cleared pose or route. Do not repeat A/B/C or accept D on connectivity alone.",
+    "space": "Specific local congestion established; no full-board unroutability proof. Keep the 70x35 outline. The existing R182 70x40 direction question remains unanswered; no expansion adopted.",
+    "initial_script_corrections": [
+      "A source return list was initially reversed; validation rejected it before creating a plan. Corrected source order and original failure logs retained.",
+      "B first build omitted the required move rationale; build rejected before saving the edited board. Initial copied source project, script and logs retained, then the explicit reason was added."
+    ],
+    "remaining_unconnected_items": 19,
+    "newly_completed_connections": 0,
+    "goal_complete": false
+  },
+  "accepted_revision_unchanged": "R188C",
+  "remaining_unconnected_items": 19,
+  "accepted_transition_flags": 6,
+  "newly_completed_connections_in_accepted_board": 0,
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_layout_qualification": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "goal_complete": false
+}

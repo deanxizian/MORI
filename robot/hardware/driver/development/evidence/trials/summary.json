@@ -1,0 +1,75 @@
+[
+  {
+    "revision": "R111B",
+    "decision": "REJECTED",
+    "reason": "Two GND vias cut MOTION_3V3; opens rose to 41.",
+    "board_sha256": "7d27838e79b7cde3d81806da16d3aecfad3454b30218c6e8c732adc8ef4449a2",
+    "opens": 41,
+    "regression": "FAIL",
+    "power_width_losses": [
+      {
+        "net": "MOTION_3V3",
+        "width_mm": 0,
+        "pairs": 2142
+      },
+      {
+        "net": "MOTION_3V3",
+        "width_mm": 0.2,
+        "pairs": 648
+      },
+      {
+        "net": "MOTION_3V3",
+        "width_mm": 0.3,
+        "pairs": 144
+      },
+      {
+        "net": "MOTION_3V3",
+        "width_mm": 0.4,
+        "pairs": 72
+      },
+      {
+        "net": "MOTION_3V3",
+        "width_mm": 0.48,
+        "pairs": 72
+      }
+    ]
+  },
+  {
+    "revision": "R112B",
+    "decision": "NOT_ADOPTED",
+    "reason": "Second bridge gives 38 opens but adds route outside existing lands under opposite-face L901. Requires alternative placement/routing or explicit justified exception; no blanket waiver.",
+    "board_sha256": "658d306b6f08d9e98040338001e78b6e5f439ea48b7cad64341bbce522d60914",
+    "opens": 38,
+    "regression": "PASS",
+    "power_width_losses": []
+  },
+  {
+    "revision": "R117B",
+    "decision": "REJECTED",
+    "board_sha256": "39fdc4a7944f4d3e50b01486798e5f221e172d651f4058e1326380294d40cd74",
+    "opens": 38,
+    "native_violations": 4,
+    "reasons": [
+      "间距违规 (规则 'R05 smd_pad|via' 间距 0.2000 mm; 实际 0.0973 mm)",
+      "孔间距违规 (规则 'R07 hole-copper' 间距 0.3000 mm; 实际 0.2973 mm)",
+      "间距违规 (规则 'R01 via-pad any net' 间距 0.2000 mm; 实际 0.0973 mm)",
+      "Courtyards overlap"
+    ]
+  },
+  {
+    "revision": "R117C",
+    "decision": "REJECTED",
+    "board_sha256": "9f2fea1bea88603a58cc5075c76ee87f962de3d00563a46b046f8a2a8a1a11be",
+    "opens": 37,
+    "native_violations": 7,
+    "reasons": [
+      "不允许的项目 (keepout 域 'BODY_R1413_0_VIA_1_VIA_1')",
+      "不允许的项目 (keepout 域 'BODY_R1413_0_VIA_1_VIA_0')",
+      "短路了两个不同网络的项目 (网络 GND 和 /HEAD_VM)",
+      "Courtyards overlap",
+      "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 B.Cu; 4 条引线与死铜相连)",
+      "Track endpoint not centered on via",
+      "Track endpoint not centered on via"
+    ]
+  }
+]

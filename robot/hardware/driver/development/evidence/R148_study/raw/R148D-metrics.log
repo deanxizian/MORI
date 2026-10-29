@@ -1,0 +1,18 @@
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+08:15:00 PM: Debug: Adding duplicate image handler for 'PNG file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'JPEG file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'TIFF file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'GIF file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'PNM file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'PCX file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'IFF file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'Windows icon file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'TGA file'
+08:15:00 PM: Debug: Adding duplicate image handler for 'XPM file'
+{"counts": {"segments": 1287, "vias": 323, "footprints": 215, "new_segments": 19, "removed_segments": 10, "new_vias": 1, "removed_obsolete_vias": 0}, "same_face_hits": 1, "projection_groups": [["C1003", "Net-(D1001-K)", "In3.Cu"], ["J102", "/01 {slash} Core/WDI", "B.Cu"], ["Q1601", "/16 {slash} Actuator_Direct_Switch/ACT_GATE", "B.Cu"], ["Q1601", "Net-(D1001-K)", "In3.Cu"], ["Q1602", "Net-(D1001-K)", "B.Cu"], ["Q1602", "Net-(D1001-K)", "In3.Cu"], ["R1001", "Net-(D1001-K)", "In3.Cu"], ["R303", "/01 {slash} Core/WDI", "B.Cu"], ["U1001", "Net-(D1001-K)", "In3.Cu"], ["U1601", "Net-(D1001-K)", "B.Cu"]], "new_transitions": [{"uuid": "ac54e9fd-c736-455d-9d74-9d30a773ab5d", "net": "/16 {slash} Actuator_Direct_Switch/ACT_GATE", "position_mm": [37.2, 7.3], "touched_layers": ["F.Cu", "B.Cu"], "zone_contact_layers": [], "reference_layers": ["In1.Cu", "In4.Cu"], "nearest_ground_mm": 0.9138688363217138, "nearest_ground_uuid": "5d257e0a-99bd-4ef0-a2f7-bc725638b67f", "status": "PASS"}, {"uuid": "b3bd108f-56ce-5df3-8b0e-a0b616be5b86", "net": "Net-(D1001-K)", "position_mm": [36.54, 7.55], "touched_layers": ["In3.Cu", "B.Cu"], "zone_contact_layers": [], "reference_layers": ["In4.Cu"], "nearest_ground_mm": 0.8384546797531749, "nearest_ground_uuid": "5d257e0a-99bd-4ef0-a2f7-bc725638b67f", "status": "NOT_APPLICABLE"}]}
+Traceback (most recent call last):
+  File "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R148D_metrics.py", line 18, in <module>
+    out.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'counts':report['counts'],'same_face_hits':report['same_face_body_hits'],'projection_groups':sorted({(h['reference'],row['net'],row['layer']) for row in rows for h in row['nominal_body_projections']}),'new_transitions':report['new_transitions']}));assert report['same_face_body_hits']==0
+AssertionError

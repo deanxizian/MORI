@@ -1,0 +1,153 @@
+{
+  "executed_at": "2026-10-29T00:01:19.011915+00:00",
+  "kicad_version": "10.0.7",
+  "board_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "normalization": {
+    "reason": "Only KiCad save normalization of disabled teardrops and empty maps; original project bytes restored",
+    "source_sha256": "33c4ea2b2125b4b445c93be8aec365e9a5189f7025542cfb7c5782383131563a",
+    "normalized_sha256": "0c4427846f091c8e802ff7475635200e621d9ed05bd313d7b965b86fd4921671"
+  },
+  "violations": 0,
+  "unconnected_items": 19,
+  "schematic_parity": 0,
+  "erc_violations": 0,
+  "regression_status": "FAIL",
+  "new_reference_gaps": 0,
+  "new_body_projection_candidates": 2,
+  "historical_transition_flags": 6,
+  "whole_board_visual": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "engineering_status": "FAIL",
+  "remaining_connectivity_fraction": 0.475,
+  "remaining_FAULT_N_groups": 2,
+  "remaining_ARMED_groups": 3,
+  "remaining_HEAD_VM_groups": 1,
+  "remaining_U401_2Y_groups": 1,
+  "remaining_ACT_CURRENT_ADC_groups": 1,
+  "remaining_U1001_D3_groups": 1,
+  "remaining_D1601_K_groups": 1,
+  "remaining_ACT_GATE_groups": 1,
+  "remaining_BAT_ADC_groups": 1,
+  "remaining_U1001_D1_BAT_ADC_groups": 2,
+  "revision": "C3 R188C",
+  "status": "INDEPENDENT_DEVELOPMENT_CANDIDATE",
+  "published_revision": "C3 R108P",
+  "adopted_in_main_model": false,
+  "previous_candidate": "C3 R187F",
+  "previous_candidate_sha256": "6dbcf638a4292c080a05c01f46f9317d69bd655f37d57f0da46d6e3d3bfcb876",
+  "strict_regression_explanation": "Raw geometry FAIL records ten retired segments, one planned GND-via move and one planned sampling-via move. All 2524 exact-delta checks pass, including the non-lengthened direct GND return. All original connections, power/ground and reference requirements preserved. No footprint, rule or keepout change.",
+  "step_regression_status": "FAIL",
+  "planned_delta_review_status": "PASS",
+  "planned_delta_check_count": 2524,
+  "electrical_regression_status": "PASS",
+  "local_visual_review": "PASS",
+  "local_visual_review_explanation": "Ten source/final layer images viewed. One U1702 input reference flag removed. Small added In3 sampling projection onto In2 receiver supply is explicitly unshielded; nearer continuous In4 GND and shorter C1002 direct return support local development acceptance. Complete noise/transient/thermal qualification remains open.",
+  "whole_board_route_style": "NOT_TESTED",
+  "new_same_face_nominal_body_projection_groups": 0,
+  "segment_count": 1418,
+  "via_count": 324,
+  "footprint_count": 215,
+  "baseline_unconnected_items": 40,
+  "connectivity_fraction_is_not_engineering_progress": true,
+  "remaining_HEAD_6V_RAW_groups": 2,
+  "C909_C911_connected_to_output": true,
+  "new_capacitor_branch_0_48_mm_screen": "PASS",
+  "inherited_U1201_input_0_48_mm_screen": "FAIL at the unchanged 0.30 mm native power land and 0.40 mm terminal escape; capacitor trunk is now 0.50 mm. 0.28 mm terminal screen passes.",
+  "battery_sampling_chain_complete": false,
+  "goal_complete": false,
+  "input_capacitor_trunk_0_48_mm_screen": "PASS for C1201/C1202 and retained C909/C911 paths",
+  "remaining_WHEEL_VM_groups": 1,
+  "R1702_wheel_tap_connected": true,
+  "R1002_wheel_tap_connected": true,
+  "last_followup_study": "R190",
+  "ina300_rlimit_return_screen": "PASS",
+  "ina300_rlimit_return_evidence": "evidence/R188C/ina300-return.json",
+  "manufacturer_layout_qualification": "NOT_TESTED",
+  "electrical_regression_scope": "Recorded connectivity, power-width, ground-pad, critical-adjacency and reference checks only; not manufacturer layout qualification.",
+  "open_manufacturer_layout_items": [
+    {
+      "id": "INA300_COMPLETE_LAYOUT_QUALIFICATION",
+      "status": "NOT_TESTED",
+      "from": "R1701.1",
+      "to": "U1701.8",
+      "reason": "The missing explicit return has been corrected with a same-B-face 6.1 mm nominal centerline path. It also contacts ground fill; no isolated Kelvin, parasitic, coupling or thermal qualification is inferred.",
+      "datasheet": "TI INA300 SBOS613C section 10.1, printed pages 29-30",
+      "evidence": "evidence/R159H/visual_review.json"
+    },
+    {
+      "id": "TPS3700_U1301_U1501_LAYOUT_AND_COUPLING",
+      "status": "NOT_TESTED",
+      "reason": "The grouped UV/OV layout restores original nets and joins OV, but full manufacturer input/decoupling, protection response, thermal and coupling qualification remains open. C1503 is the H_DUMP_TEMP analog filter, not the C1502 VDD decoupler; TH1501 remains disconnected.",
+      "evidence": "evidence/R165M/visual_review.json"
+    },
+    {
+      "id": "TPS3700_U1702_BYPASS_INPUT_AND_FAULT_COUPLING",
+      "status": "NOT_TESTED",
+      "reason": "Complete bypass loop, analog input noise, protection dynamics and new FAULT interlayer coupling require full-board/manufacturer/physical qualification; local geometry and reference checks alone do not close these.",
+      "evidence": "evidence/R168G/visual_review.json",
+      "current_geometry_evidence": "evidence/R188C/coupling-review.json"
+    },
+    {
+      "id": "D302_F_FACE_PROTOTYPE_LAYOUT",
+      "status": "NOT_TESTED",
+      "reason": "Local digital/source checks pass, but full fault/clear timing, EMC, thermal and complete installed front-face assembly remain unqualified.",
+      "evidence": "evidence/R178L/visual_review.json"
+    },
+    {
+      "id": "CLR_IN2_ADJACENT_SAMPLING_CROSSING",
+      "status": "NOT_TESTED",
+      "reason": "The specific perpendicular CLR/In3 WHEEL_sense crossing recorded at R179I is removed by R181C retirement of ddc4005e-7631-4fed-a5eb-0f0a3f672f63. Historical evidence remains unchanged. Complete CLR noise/EMC/timing/thermal qualification remains open; this geometry change is not a qualification pass.",
+      "evidence": "evidence/R179I/coupling_review.json",
+      "current_geometry_evidence": "evidence/R181C/plan.json"
+    },
+    {
+      "id": "WHEEL_SENSE_F_POWER_ADJACENCY",
+      "status": "NOT_TESTED",
+      "reason": "Local continuous-ground/body/native geometry screens pass; closest nominal Q1602 drain-pad gap 0.2225 mm and C707.1 gap 0.375 mm. Complete sampling accuracy, noise/transient coupling and thermal qualification remain open.",
+      "evidence": "evidence/R181C/geometry_review.json"
+    },
+    {
+      "id": "IMU_CLOCK_AND_WHEEL_TX_REFERENCE_REPAIR",
+      "status": "NOT_TESTED",
+      "reason": "Mapped-reference geometry now closes four IMU clock flags and one WHEEL_TX flag. Local In2/In3 receiver-supply coupling reviewed for development; complete signal/noise/transient/thermal and actual-stack qualification remain open.",
+      "evidence": "evidence/R187F/coupling-review.json"
+    },
+    {
+      "id": "C1002_WHEEL_SAMPLING_REFERENCE_REPAIR",
+      "status": "NOT_TESTED",
+      "reason": "One ground and one sampling via moved with original padstacks; the direct C1002 return shortens to 2.568503 mm. Added In3/In2 receiver-supply projection reviewed locally; full accuracy/noise/transient/thermal and supplier stack qualification remain open.",
+      "evidence": "evidence/R188C/coupling-review.json"
+    }
+  ],
+  "latest_study_evidence": "evidence/R190_study/summary.json",
+  "latest_study_adopted": false,
+  "latest_study_note": "R190 A/B/C are archived, not adopted. B restores local five-resistor connectivity with 19 opens and zero other native DRC, but exact-delta, ERC, visual and complete coupling review remain unfinished. C closes RAW but loses CAM/3V3 power connectivity and fails native DRC. Canonical R188C remains unchanged.",
+  "remaining_U1301_OV_groups": 1,
+  "ground_via_move_policy": "Native rules/keepouts remain. Original GND positions are not blanket-frozen; move_ground_vias requires exact UUID/net/padstack, source contact inventory, non-lengthened/nonnarrowed declared direct returns, actual plane attachment and all source electrical/reference checks.",
+  "reference_ground_contact_review": "evidence/R188C/ground-contact-review.json",
+  "whole_board_reference_review": {
+    "source_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+    "reviewed_tracks": 1305,
+    "flagged_tracks": 75,
+    "flagged_nets": 36,
+    "status": "REVIEW_REQUIRED",
+    "evidence": "evidence/R188C/reference-review-queue.json",
+    "confirmed_electrical_fault_count": "NOT_DETERMINED"
+  },
+  "current_power_reservations": {
+    "source_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+    "evidence": "evidence/R188_study/raw/R188-supply-reservations/result.json",
+    "source_width_checks": 50,
+    "serialization_checks": 50,
+    "status": "PASS",
+    "scope": "Conservative planning only; native fill and full source regression remain mandatory."
+  },
+  "board_space_assessment_authorization": {
+    "user_statement": "允许评估 70×40 mm 的机械空间",
+    "scope": "Independent mechanical-space assessment with fixed mounting holes and interfaces only.",
+    "assessment": "NOT_TESTED",
+    "adoption": false,
+    "main_model_changed": false
+  }
+}

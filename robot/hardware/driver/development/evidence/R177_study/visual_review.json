@@ -1,0 +1,49 @@
+{
+  "scope": "Eight actually viewed native local plots; no whole-board or physical qualification.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R177A-B.png",
+      "sha256": "9f38599550e8604b8e49e4e5c2ec3b1e5fb40c8160e1e5ddc34daad1778761e3"
+    },
+    {
+      "path": "raw/R177G-views/B.Cu.png",
+      "sha256": "838fbdab237fdb8a2103648b0ea58dafdec2057bceff9c04d1f867f83aff5d38"
+    },
+    {
+      "path": "raw/R177G-views/F.Cu.png",
+      "sha256": "23aaa657c31b4a83f8cab3f0e1346b93a035cbfc2f7b60746e3cae24ff1beac8"
+    },
+    {
+      "path": "raw/R177G-views/In1.Cu.png",
+      "sha256": "878959543a08aabd131b51ed2547fbcbb119a718d25e96dd79559c87a3b94e96"
+    },
+    {
+      "path": "raw/R177G-views/In4.Cu.png",
+      "sha256": "3e02025e017e8b546924a8d6353118e2694d0e7f0ff97e4b6667a50d8392c13a"
+    },
+    {
+      "path": "raw/R177G-views/source-B.Cu.png",
+      "sha256": "1a606ae8c2141d00670a0b572e878a59f605b7d1017ef0bed1933198ae3a8132"
+    },
+    {
+      "path": "raw/R177K-views/B.Cu.png",
+      "sha256": "d76b1ef668d524d374d687f858a3433f970c7e9e18dadb47fb0ebfabb5364b2d"
+    },
+    {
+      "path": "raw/R177K-views/In3.Cu.png",
+      "sha256": "4183769bf901fd1484f89fd8ba3d8dbfe198a744542c4547d35b391364a81a4c"
+    }
+  ],
+  "findings": [
+    "A exposes the rotated diode port; its small local move still has no guarded FAULT route.",
+    "G provides deliberate B-face CLR and FAULT paths without new vias. No same-face nominal body crossing; new CLR crosses the actual opposite L701/SW projection. Both intervening GND layers cover the new CLR stroke, but this is not magnetic/noise-margin/thermal qualification.",
+    "Source CLR already has a smaller L701/SW projection. The G concern is an increase, not a claim that every opposite-face overlap is forbidden.",
+    "K places D302 near the left header and adds one short FAULT transfer. Its B CLR line cuts the lower J102.2 thermal connections: native R25 counts 2 instead of 4. Do not waive the rule.",
+    "K diode Fab also projects 1.167462 mm2 into MOUNT_H1 regions. Preserve their native faces/flags; actual mounting/tail clearance is not established by PCB DRC."
+  ],
+  "whole_board_visual": "NOT_TESTED",
+  "thermal_coupling": "NOT_QUALIFIED",
+  "manufacturer_layout": "NOT_QUALIFIED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

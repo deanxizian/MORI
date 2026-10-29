@@ -1,0 +1,26 @@
+{
+  "adopted": false,
+  "source_revision": "R181C",
+  "status_note": "No R186 PCB adoption. Four-part swap preparations fit but do not restore the complete comparator path. Diagnostic signal routes in D break CAM_BAT_OUT/3V3 and split GND. Source-wide review newly exposes 81 inherited mapped-reference coverage items across 38 nets; these are review items, not confirmed faults. Canonical remains 19 opens and 6 transition flags.",
+  "local_space_finding": "The UPS/comparator/adjacent power area is locally congested. A movable-part pair can fit while its required feeds, signal outlets and return channels remain inaccessible. No finite screen proves global unroutability or that a 70x40 outline is sufficient.",
+  "outline_direction": "R182 70x40 direction question remains unanswered and unadopted; current 70x35 outline, four mounts and all interfaces stay fixed.",
+  "candidates": {
+    "A": "Reject: 21 other native DRC items plus old/new reference deficits.",
+    "B": "Preparation only: tiny reverse bends and three source net groups not restored; 23 opens.",
+    "C": "Preparation only: smoother pair traces and fixed R1704-U1702 branch retained; 22 opens, two dangling items, WHEEL_VM/current OUT/comparator input not restored.",
+    "D": "Reject: routes from diagnostic search restore two moved terminals but lose seven power screens and split GND into 153+2 pads; comparator input still open."
+  },
+  "next_step": "Continue from canonical R181C. Require all terminal escape paths before choosing a pair position. If pursuing this swap, jointly restore the actual CAM_BAT_OUT/3V3/GND corridors and include the R1704/U1702 input branch and obstructing neighboring control paths. Do not repeat the unchanged fixed-placement searches or accept power-reservation omission as a waiver. Review the inherited reference queue by circuit, starting with IMU_SCL, comparator input and sensing nodes.",
+  "tool_corrections": [
+    "Direct original GND trace starts can lie inside a pad away from its centre; an exact in-pad source exit is now supported and checked with six positive/negative controls.",
+    "A terminal graph walk can include a shared fixed branch. C retains the original R1704-U1702 branch instead of treating it as a disposable R1703-only tail.",
+    "Initial independent R1102/C1102 pose ordering used comparator distance; pair selection correctly evaluates filter distance to U1001. No initial independent ranking is an electrical placement decision.",
+    "Pair evaluation was accelerated by distributing intersection over union and taking minimum distance over foreign shapes; original partial process/log retained. Native DRC remains independent.",
+    "The initial local-copper query used GetWidth without a via layer and emitted an assertion warning; do not use those via widths as authoritative padstack evidence. Native per-layer snapshots govern designs."
+  ],
+  "circuit_values_changed": false,
+  "fixed_interfaces_changed": false,
+  "engineering_complete": false,
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

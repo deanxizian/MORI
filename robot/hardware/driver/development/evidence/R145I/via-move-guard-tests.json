@@ -1,0 +1,78 @@
+{
+  "scope": "Exercise invalid movement plans and verify the actual native round trip.\n\nThese are builder integrity tests, not electrical or manufacturing validation.\n",
+  "source_sha256": "f783cf5dfad0ff8020aac8906f12dd018287af6a6d548600d4776fb3603225a5",
+  "source_unchanged": true,
+  "results": [
+    {
+      "case": "wrong-source-hash",
+      "status": "PASS",
+      "exception": "Plan source PCB hash does not match"
+    },
+    {
+      "case": "missing-source-hash",
+      "status": "PASS",
+      "exception": "Via movement requires an exact source board hash"
+    },
+    {
+      "case": "wrong-source-drill",
+      "status": "PASS",
+      "exception": "Moved non-ground via snapshot mismatch: 48a80751-1835-4880-839b-49e61af8d8d1"
+    },
+    {
+      "case": "missing-reason",
+      "status": "PASS",
+      "exception": "Via move requires a distinct finite position and explicit rationale"
+    },
+    {
+      "case": "nonfinite-position",
+      "status": "PASS",
+      "exception": "Via move requires a distinct finite position and explicit rationale"
+    },
+    {
+      "case": "unchanged-position",
+      "status": "PASS",
+      "exception": "Via move requires a distinct finite position and explicit rationale"
+    },
+    {
+      "case": "duplicate-move",
+      "status": "PASS",
+      "exception": "Duplicate or conflicting via move"
+    },
+    {
+      "case": "ground-move",
+      "status": "PASS",
+      "exception": "Moved non-ground via snapshot mismatch: 01448c59-3902-4b17-8362-1f1ec1c425ab"
+    },
+    {
+      "case": "actual-native-refilled-roundtrip",
+      "status": "PASS",
+      "candidate_sha256": "53d6969590ad14d975cc3a3d838e587cb67102c07be407189515fec41e38b474",
+      "snapshot": {
+        "net": "/16 {slash} Actuator_Direct_Switch/ACT_FET_SOURCE",
+        "position_mm": [
+          33.575,
+          18.7
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      }
+    }
+  ],
+  "status": "PASS"
+}

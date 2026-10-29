@@ -1,0 +1,56 @@
+{
+  "revision": "R157A",
+  "board_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+  "scope": "Open a back-face wheel-sense corridor by rotating the nearby LIMIT resistor.\n\nR1701 moves from (42.5,10.6)/0 to (43.2,9.9)/-90 degrees. Its LIMIT pad still\ncovers the unchanged old trace start at (43.325,10.6); the original protection\ntrace is retained. Test the new ground connection and all original regressions\nwith native fill. R1002, R1707 and every via stay fixed. The new 0.20 mm branch\nserves only the 54.9k wheel-voltage divider, not the actuator load path.\n",
+  "translations": [
+    {
+      "reference": "R1701",
+      "from_mm": [
+        42.5,
+        10.6
+      ],
+      "delta_mm": [
+        0.7,
+        -0.7
+      ],
+      "rotation_deg": -90
+    }
+  ],
+  "delete_copper": [],
+  "deleted_copper_expected": {},
+  "routes": [
+    {
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          42.825,
+          6.75
+        ],
+        [
+          42.825,
+          7.2
+        ],
+        [
+          42.2,
+          7.825
+        ],
+        [
+          42.2,
+          10.95
+        ],
+        [
+          41.675,
+          11.475
+        ],
+        [
+          41.675,
+          12.15
+        ]
+      ]
+    }
+  ],
+  "vias": [],
+  "adoption_prohibited_until_complete_verification": true
+}

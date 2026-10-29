@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "source_sha256": "6f9d92ebf5a36598421f064cf29523081d8004d28d2e60ef7a0c36ff8b9bd099",
+  "candidate_sha256": "0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca",
+  "source_and_candidate_unchanged": true,
+  "cases": [
+    {
+      "case": "positive_native_R134N",
+      "expected": "PASS",
+      "actual": "PASS",
+      "errors": [],
+      "checks": 2595
+    },
+    {
+      "case": "undeclared_via_change",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "retained_copper_matches_plan"
+      ],
+      "checks": 2593
+    },
+    {
+      "case": "wrong_source_snapshot",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "reassigned_via_0c2b6dad-30ad-4479-bfea-d57088d24c72"
+      ],
+      "checks": 2595
+    },
+    {
+      "case": "undeclared_target_position",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "reassigned_via_0c2b6dad-30ad-4479-bfea-d57088d24c72"
+      ],
+      "checks": 2595
+    },
+    {
+      "case": "non_via_uuid",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "retained_copper_matches_plan",
+        "reassigned_via_a577a476-5966-4c4b-942c-5de414ca3445"
+      ],
+      "checks": 2595
+    },
+    {
+      "case": "duplicate_via_change",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "unique_via_reassignments"
+      ],
+      "checks": 2595
+    },
+    {
+      "case": "R131G_replay",
+      "expected": "PASS",
+      "actual": "PASS",
+      "checks": 2504
+    },
+    {
+      "case": "native_PTH_probe_replay",
+      "expected": "PASS",
+      "actual": "PASS",
+      "checks": 2494
+    }
+  ],
+  "scope": "Native candidate positive, exact-plan rejection controls, and prior placement/PTH replay; no physical qualification or adoption."
+}

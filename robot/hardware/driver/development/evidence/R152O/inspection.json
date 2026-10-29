@@ -1,0 +1,564 @@
+{
+  "scope": "Read-only native connectivity, actual ground contacts and local geometry for R152O.",
+  "source_sha256": "958eee80ba27a607e52507fcefe4c5b5aa4234d08a8d7bdb6f1257e79dea89a1",
+  "candidate_sha256": "7a74c8cf57681740216e47ab2f1b7f52af83a652cb6379c83d8dde4cb9353bd9",
+  "connectivity": {
+    "/01 {slash} Core/BAT_ADC": {
+      "source": [
+        [
+          "R1021.2",
+          "R1031.1"
+        ],
+        [
+          "J101.5"
+        ]
+      ],
+      "candidate": [
+        [
+          "J101.5",
+          "R1021.2",
+          "R1031.1"
+        ]
+      ]
+    },
+    "/FAULT_N": {
+      "source": [
+        [
+          "J102.7",
+          "Q1301.3",
+          "R305.2",
+          "U1301.6",
+          "U1501.1",
+          "U1501.6"
+        ],
+        [
+          "Q1701.3"
+        ],
+        [
+          "U1701.5"
+        ],
+        [
+          "D302.1"
+        ]
+      ],
+      "candidate": [
+        [
+          "J102.7",
+          "Q1301.3",
+          "R305.2",
+          "U1301.6",
+          "U1501.1",
+          "U1501.6"
+        ],
+        [
+          "Q1701.3"
+        ],
+        [
+          "U1701.5"
+        ],
+        [
+          "D302.1"
+        ]
+      ]
+    },
+    "Net-(U1001-D1_{slash}_BAT_ADC)": {
+      "source": [
+        [
+          "R1021.1"
+        ],
+        [
+          "U1001.3"
+        ]
+      ],
+      "candidate": [
+        [
+          "R1021.1"
+        ],
+        [
+          "U1001.3"
+        ]
+      ]
+    }
+  },
+  "battery_sampling_chain_complete": false,
+  "new_ground_via": {
+    "uuid": "cffcf1ad-f8aa-547b-a3e9-8b47885ca55a",
+    "net": "GND",
+    "position_mm": [
+      45.65,
+      30.0
+    ],
+    "drill_mm": 0.3,
+    "via_type": 4,
+    "layers": [
+      "F.Cu",
+      "In1.Cu",
+      "In2.Cu",
+      "In3.Cu",
+      "In4.Cu",
+      "B.Cu"
+    ],
+    "diameters_mm": {
+      "F.Cu": 0.5,
+      "In1.Cu": 0.5,
+      "In2.Cu": 0.5,
+      "In3.Cu": 0.5,
+      "In4.Cu": 0.5,
+      "B.Cu": 0.5
+    },
+    "native_contact_layers": [
+      "F.Cu",
+      "In1.Cu",
+      "In4.Cu",
+      "B.Cu"
+    ]
+  },
+  "new_trace_lengths_mm": {
+    "/01 {slash} Core/BAT_ADC": 42.41625605693431,
+    "/09 {slash} Head_Buck/HEAD_BUCK_IN": 2.065391052434012,
+    "/FAULT_N": 8.278059159102156,
+    "GND": 3.451345596729054
+  },
+  "front_ADC_to_FAULT_min_copper_distance_mm": 0.41999999999999454,
+  "same_face_nominal_body_intersections": [
+    {
+      "track_uuid": "5b6bdc43-fc26-554b-8885-0468e021c99b",
+      "net": "/01 {slash} Core/BAT_ADC",
+      "layer": "F.Cu",
+      "reference": "J101",
+      "mounted_layer": "F.Cu",
+      "projected_intersection_mm2": 0.07625823060779288,
+      "same_face": true
+    }
+  ],
+  "same_face_exception": "J101.5 straight outward connector escape through the nominal housing lip only; all native keepouts preserved. Not zero body overlap or measured fit.",
+  "projected_components": {
+    "D901": {
+      "value": "B340LA-13-F",
+      "layer": "B.Cu",
+      "position_mm": [
+        46.0,
+        25.25
+      ],
+      "pads": [
+        {
+          "number": "1",
+          "net": "/09 {slash} Head_Buck/HEAD_BUCK_IN",
+          "position_mm": [
+            46.0,
+            27.25
+          ]
+        },
+        {
+          "number": "2",
+          "net": "/WHEEL_VM",
+          "position_mm": [
+            46.0,
+            23.25
+          ]
+        }
+      ]
+    },
+    "J101": {
+      "value": "X6521FV-2x15-C85D32",
+      "layer": "F.Cu",
+      "position_mm": [
+        7.37,
+        32.74
+      ],
+      "pads": [
+        {
+          "number": "1",
+          "net": "unconnected-(J101-VB-Pad1)",
+          "position_mm": [
+            7.37,
+            32.74
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "position_mm": [
+            7.37,
+            30.2
+          ]
+        },
+        {
+          "number": "3",
+          "net": "unconnected-(J101-PC14-Pad3)",
+          "position_mm": [
+            9.91,
+            32.74
+          ]
+        },
+        {
+          "number": "4",
+          "net": "unconnected-(J101-PC13-Pad4)",
+          "position_mm": [
+            9.91,
+            30.2
+          ]
+        },
+        {
+          "number": "5",
+          "net": "/01 {slash} Core/BAT_ADC",
+          "position_mm": [
+            12.45,
+            32.74
+          ]
+        },
+        {
+          "number": "6",
+          "net": "unconnected-(J101-PC15-Pad6)",
+          "position_mm": [
+            12.45,
+            30.2
+          ]
+        },
+        {
+          "number": "7",
+          "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+          "position_mm": [
+            14.99,
+            32.74
+          ]
+        },
+        {
+          "number": "8",
+          "net": "/01 {slash} Core/WHEEL_ADC",
+          "position_mm": [
+            14.99,
+            30.2
+          ]
+        },
+        {
+          "number": "9",
+          "net": "unconnected-(J101-PA0-Pad9)",
+          "position_mm": [
+            17.53,
+            32.74
+          ]
+        },
+        {
+          "number": "10",
+          "net": "unconnected-(J101-PC3-Pad10)",
+          "position_mm": [
+            17.53,
+            30.2
+          ]
+        },
+        {
+          "number": "11",
+          "net": "/01 {slash} Core/HEAD_TX",
+          "position_mm": [
+            20.07,
+            32.74
+          ]
+        },
+        {
+          "number": "12",
+          "net": "unconnected-(J101-PA1-Pad12)",
+          "position_mm": [
+            20.07,
+            30.2
+          ]
+        },
+        {
+          "number": "13",
+          "net": "unconnected-(J101-PA4-Pad13)",
+          "position_mm": [
+            22.61,
+            32.74
+          ]
+        },
+        {
+          "number": "14",
+          "net": "/01 {slash} Core/HEAD_RX",
+          "position_mm": [
+            22.61,
+            30.2
+          ]
+        },
+        {
+          "number": "15",
+          "net": "unconnected-(J101-PA6-Pad15)",
+          "position_mm": [
+            25.15,
+            32.74
+          ]
+        },
+        {
+          "number": "16",
+          "net": "unconnected-(J101-PA5-Pad16)",
+          "position_mm": [
+            25.15,
+            30.2
+          ]
+        },
+        {
+          "number": "17",
+          "net": "unconnected-(J101-PC4-Pad17)",
+          "position_mm": [
+            27.69,
+            32.74
+          ]
+        },
+        {
+          "number": "18",
+          "net": "unconnected-(J101-PA7-Pad18)",
+          "position_mm": [
+            27.69,
+            30.2
+          ]
+        },
+        {
+          "number": "19",
+          "net": "unconnected-(J101-PB0-Pad19)",
+          "position_mm": [
+            30.23,
+            32.74
+          ]
+        },
+        {
+          "number": "20",
+          "net": "/01 {slash} Core/ARMED",
+          "position_mm": [
+            30.23,
+            30.2
+          ]
+        },
+        {
+          "number": "21",
+          "net": "unconnected-(J101-PB2-Pad21)",
+          "position_mm": [
+            32.77,
+            32.74
+          ]
+        },
+        {
+          "number": "22",
+          "net": "unconnected-(J101-PB1-Pad22)",
+          "position_mm": [
+            32.77,
+            30.2
+          ]
+        },
+        {
+          "number": "23",
+          "net": "unconnected-(J101-PB11_VCAP-Pad23)",
+          "position_mm": [
+            35.31,
+            32.74
+          ]
+        },
+        {
+          "number": "24",
+          "net": "/01 {slash} Core/UPS_SCL_MCU",
+          "position_mm": [
+            35.31,
+            30.2
+          ]
+        },
+        {
+          "number": "25",
+          "net": "MOTION_3V3",
+          "position_mm": [
+            37.85,
+            32.74
+          ]
+        },
+        {
+          "number": "26",
+          "net": "GND",
+          "position_mm": [
+            37.85,
+            30.2
+          ]
+        },
+        {
+          "number": "27",
+          "net": "MOTION_3V3",
+          "position_mm": [
+            40.39,
+            32.74
+          ]
+        },
+        {
+          "number": "28",
+          "net": "GND",
+          "position_mm": [
+            40.39,
+            30.2
+          ]
+        },
+        {
+          "number": "29",
+          "net": "MOTION_3V3",
+          "position_mm": [
+            42.93,
+            32.74
+          ]
+        },
+        {
+          "number": "30",
+          "net": "GND",
+          "position_mm": [
+            42.93,
+            30.2
+          ]
+        }
+      ]
+    },
+    "Q1301": {
+      "value": "AO3400A",
+      "layer": "B.Cu",
+      "position_mm": [
+        46.5,
+        32.5
+      ],
+      "pads": [
+        {
+          "number": "1",
+          "net": "/HEAD_UV_ENABLE",
+          "position_mm": [
+            47.45,
+            33.4375
+          ]
+        },
+        {
+          "number": "2",
+          "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+          "position_mm": [
+            45.55,
+            33.4375
+          ]
+        },
+        {
+          "number": "3",
+          "net": "/FAULT_N",
+          "position_mm": [
+            46.5,
+            31.5625
+          ]
+        }
+      ]
+    },
+    "R1031": {
+      "value": "100k",
+      "layer": "F.Cu",
+      "position_mm": [
+        44.5,
+        27.75
+      ],
+      "pads": [
+        {
+          "number": "1",
+          "net": "/01 {slash} Core/BAT_ADC",
+          "position_mm": [
+            43.675,
+            27.75
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "position_mm": [
+            45.325,
+            27.75
+          ]
+        }
+      ]
+    },
+    "R1308": {
+      "value": "100k",
+      "layer": "B.Cu",
+      "position_mm": [
+        43.25,
+        34.0
+      ],
+      "pads": [
+        {
+          "number": "1",
+          "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+          "position_mm": [
+            44.075,
+            34.0
+          ]
+        },
+        {
+          "number": "2",
+          "net": "MOTION_3V3",
+          "position_mm": [
+            42.425,
+            34.0
+          ]
+        }
+      ]
+    },
+    "U1301": {
+      "value": "TPS3700DDCR",
+      "layer": "B.Cu",
+      "position_mm": [
+        42.5,
+        27.1
+      ],
+      "pads": [
+        {
+          "number": "1",
+          "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+          "position_mm": [
+            43.45,
+            28.2375
+          ]
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "position_mm": [
+            42.5,
+            28.2375
+          ]
+        },
+        {
+          "number": "3",
+          "net": "Net-(U1301-INA+_{slash}_UV)",
+          "position_mm": [
+            41.55,
+            28.2375
+          ]
+        },
+        {
+          "number": "4",
+          "net": "Net-(U1301-INB-_{slash}_OV)",
+          "position_mm": [
+            41.55,
+            25.9625
+          ]
+        },
+        {
+          "number": "5",
+          "net": "MOTION_3V3",
+          "position_mm": [
+            42.5,
+            25.9625
+          ]
+        },
+        {
+          "number": "6",
+          "net": "/FAULT_N",
+          "position_mm": [
+            43.45,
+            25.9625
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Nominal body envelopes and polygonized native copper only.",
+    "Lengths and separation are local geometry; not ADC error, coupling, temperature or ampacity qualification.",
+    "D901 retains its original series diode role and unchanged pads; only its downstream wide trace and existing via position change."
+  ],
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

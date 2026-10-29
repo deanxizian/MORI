@@ -1,0 +1,147 @@
+{
+  "revision": "R145D",
+  "board_sha256": "c04bb1158c82ed281ce51167ff93e894c4cc18ad00bb9529057237703b5ba05d",
+  "purpose": "Close local ARMED branch on In3 and reroute the full upper EN path outside existing reference voids. Make a small C912/C913 group move to provide a real front-face corridor, while retaining critical power contacts for native verification. HEAD_VM power neck still requires a separate passing repair.",
+  "translations": [
+    {
+      "reference": "C912",
+      "from_mm": [
+        31.5,
+        17.25
+      ],
+      "delta_mm": [
+        -0.3,
+        0.35
+      ]
+    },
+    {
+      "reference": "C913",
+      "from_mm": [
+        29,
+        15.85
+      ],
+      "delta_mm": [
+        -0.2,
+        0
+      ]
+    }
+  ],
+  "delete_copper": [
+    "8fcbfcdd-3ac2-5f92-a8c4-39e774c955da",
+    "a5a2d605-9a69-5ee9-9808-157d6145aa15",
+    "ce4fa4ca-d6a6-51ce-9144-6866e391501d",
+    "d995cb02-edc0-5883-bf13-dcfc98fe9bf3",
+    "075a9542-09e3-46ce-8d71-36fbcf1bf8e3"
+  ],
+  "deleted_copper_expected": {
+    "8fcbfcdd-3ac2-5f92-a8c4-39e774c955da": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        32.775,
+        16.8
+      ],
+      "end_mm": [
+        32.775,
+        19.3
+      ]
+    },
+    "a5a2d605-9a69-5ee9-9808-157d6145aa15": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        34.15,
+        16.55
+      ],
+      "end_mm": [
+        33.9,
+        16.8
+      ]
+    },
+    "ce4fa4ca-d6a6-51ce-9144-6866e391501d": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        36.525,
+        16.55
+      ],
+      "end_mm": [
+        34.15,
+        16.55
+      ]
+    },
+    "d995cb02-edc0-5883-bf13-dcfc98fe9bf3": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        33.9,
+        16.8
+      ],
+      "end_mm": [
+        32.775,
+        16.8
+      ]
+    },
+    "075a9542-09e3-46ce-8d71-36fbcf1bf8e3": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        32.775,
+        19.3
+      ],
+      "end_mm": [
+        33.525,
+        20.05
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          36.525,
+          16.55
+        ],
+        [
+          36.275,
+          16.8
+        ],
+        [
+          32.5,
+          16.8
+        ],
+        [
+          32.5,
+          19.025
+        ],
+        [
+          33.525,
+          20.05
+        ]
+      ]
+    },
+    {
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          32.95,
+          15.9
+        ],
+        [
+          29.3225,
+          19.5275
+        ]
+      ]
+    }
+  ]
+}

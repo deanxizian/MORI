@@ -1,0 +1,113 @@
+{
+  "recorded_at_utc": "2026-10-27T23:52:23.108077+00:00",
+  "source_commit": "bddac967281a2ac862fa22b567e6b48a1e543636",
+  "source_revision": "R159H",
+  "source_sha256": "bf719a717ffba2a1468126f6a71a1cc3703980fedf647caf8af07c1a9cef62a0",
+  "adopted_revision": null,
+  "candidates": [
+    {
+      "revision": "R160A",
+      "board_sha256": "f1c59e727ce5b08ed61f5413841b0fdf5ee3172a71586447938b8e86d0610701",
+      "diagnostic_only": true,
+      "adopted": false,
+      "unconnected_items": 32,
+      "violations": 76,
+      "schematic_parity": 0,
+      "DRC_types": {
+        "items_not_allowed": 1,
+        "clearance": 15,
+        "shorting_items": 19,
+        "hole_clearance": 9,
+        "starved_thermal": 1,
+        "solder_mask_bridge": 22,
+        "track_dangling": 8,
+        "silk_over_copper": 1
+      },
+      "changed_retained_copper": [
+        {
+          "uuid": "0e3037d9-c29e-4eda-9f7f-a8ef15dfb01e",
+          "source_net": "GND",
+          "candidate_net": "MOTION_3V3"
+        }
+      ],
+      "changed_non_PCB_source_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "old_power_width_failures": 1,
+      "lost_pad_connection_nets": 7,
+      "ERC": "NOT_TESTED",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R160B",
+      "board_sha256": "656466cf7383be0504a3cb9668cbd52f3bb27cf62a3f2be0c74ccfa5a5471095",
+      "diagnostic_only": true,
+      "adopted": false,
+      "unconnected_items": 34,
+      "violations": 51,
+      "schematic_parity": 0,
+      "DRC_types": {
+        "items_not_allowed": 1,
+        "shorting_items": 14,
+        "clearance": 6,
+        "hole_clearance": 4,
+        "starved_thermal": 1,
+        "solder_mask_bridge": 17,
+        "track_dangling": 7,
+        "silk_over_copper": 1
+      },
+      "changed_retained_copper": [],
+      "changed_non_PCB_source_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "old_power_width_failures": 1,
+      "lost_pad_connection_nets": 8,
+      "ERC": "NOT_TESTED",
+      "physical": "NOT_TESTED"
+    }
+  ],
+  "bounded_placement_search": {
+    "poses_each": 4092,
+    "U1301_only_candidates": 0,
+    "joint_with_all_vias_fixed_candidates": 0,
+    "joint_with_only_ground_and_PTH_fixed_candidates": 5,
+    "passive_packing_grid_mm": 0.1,
+    "passive_domain_counts": {
+      "C1301": 16,
+      "C1302": 515,
+      "C1303": 342,
+      "R1303": 1817,
+      "R1307": 1532,
+      "R1502": 1531
+    },
+    "compatible_combinations_returned": 8,
+    "search_nodes": 14,
+    "limit": "Eight early compatible packing results are not an optimum, routing proof, or global impossibility proof."
+  },
+  "A_source_ground_identity_failure": "Old GND via 0e3037d9-c29e-4eda-9f7f-a8ef15dfb01e at (66.5,26.125) overlaps relocated C1303. The refilled failed A board assigns MOTION_3V3; retain source identity GND. Never use failed A as the net authority.",
+  "packing_screen_correction": "The first packing run compared drill-only body obstacles against full-annulus conflicts. V2 consistently screens full source GND annuli; both failed script and log are retained.",
+  "B_scope": "Seven component transforms only. All old copper is deliberately retained to expose required rerouting. No source ground via moves or net changes, and no courtyard-overlap violation; the board remains electrically invalid.",
+  "next_work": [
+    "Plan input-filter, decoupling and output escapes together before accepting a packing score. Preserve original GND vias and J702.2 native four-spoke requirement.",
+    "Jointly replace conflicting WHEEL_VM 0.80 mm TVS branch, U1501 OV/divider copper and affected non-ground transfers; restore all old connections and widths.",
+    "Rebuild from R159H with exact replacements and native refill. If this bounded group cannot provide clean escapes, compare a broader movable group; do not force long detours or waive checks.",
+    "Then continue the remaining 22 opens and the full engineering review; R160 A/B do not reduce the adopted count."
+  ],
+  "images_actually_viewed": [
+    "raw/R160A-views/source-F.png",
+    "raw/R160A-views/source-B.png",
+    "raw/R160A-views/R160A-F.png",
+    "raw/R160A-views/R160A-B.png",
+    "raw/R160B-views/R160B-F.png",
+    "raw/R160B-views/R160B-B.png"
+  ],
+  "view_scope": "Two outer-layer local regions, not six-layer or whole-board acceptance.",
+  "remaining_unconnected_items": 22,
+  "baseline_unconnected_items": 40,
+  "remaining_connectivity_fraction": 0.55,
+  "not_engineering_progress": true,
+  "engineering_status": "FAIL",
+  "manufacturing_release": false,
+  "physical": "NOT_TESTED",
+  "goal_complete": false
+}

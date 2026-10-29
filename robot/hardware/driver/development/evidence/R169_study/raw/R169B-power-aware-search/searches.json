@@ -1,0 +1,225 @@
+{
+  "scope": "Target changed-layout links while preferring preservation of foreign power fill.\nFull-fill avoidance is attempted first. The weighted fallback is only a routing\nproposal and never replaces native refill, all 50 width checks or references.\nEvery result is independent; proposals are not jointly compatible by inference.\n",
+  "source_sha256": "0e604bf10a4c4ab395637630ac5fc856bbc964b4d07db34cc097a5533ca97d09",
+  "grid_mm": 0.05,
+  "results": [
+    {
+      "request": "fault_ina",
+      "net": "/FAULT_N",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 21,
+        "regions": 541
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.20840800000000037
+    },
+    {
+      "request": "fault_ina",
+      "net": "/FAULT_N",
+      "mode": "weighted_50",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 3093,
+        "regions": 499
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.21206908299999938
+    },
+    {
+      "request": "restore_plus",
+      "net": "Net-(U1701-IN+)",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 11,
+        "regions": 488
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.06587279100000032
+    },
+    {
+      "request": "restore_plus",
+      "net": "Net-(U1701-IN+)",
+      "mode": "weighted_50",
+      "result": {
+        "status": "PROPOSAL",
+        "expanded": 25148,
+        "routes": [
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                49.55,
+                11.25
+              ],
+              [
+                49.55,
+                10.7
+              ]
+            ]
+          },
+          {
+            "layer": "In3.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                49.55,
+                10.7
+              ],
+              [
+                49.55,
+                10.9
+              ],
+              [
+                47.35,
+                13.1
+              ],
+              [
+                43.85,
+                13.1
+              ]
+            ]
+          },
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                43.85,
+                13.1
+              ],
+              [
+                44.0,
+                13.25
+              ],
+              [
+                44.0,
+                13.6
+              ],
+              [
+                44.75,
+                14.35
+              ],
+              [
+                45.5,
+                14.35
+              ],
+              [
+                45.6,
+                14.45
+              ]
+            ]
+          }
+        ],
+        "vias": [
+          {
+            "position_mm": [
+              49.55,
+              10.7
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          },
+          {
+            "position_mm": [
+              43.85,
+              13.1
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          }
+        ],
+        "activate_pth_layers": [],
+        "length_mm": 9.875483399593902
+      },
+      "potential_power_cuts": [
+        {
+          "net": "/01 {slash} Core/MOTION_5V",
+          "layer": "In2.Cu",
+          "area_mm2": 0.9791265895053207,
+          "bounds_mm": [
+            43.2000008,
+            12.4500008,
+            44.1,
+            13.7499992
+          ]
+        },
+        {
+          "net": "/UPS_BAT",
+          "layer": "In2.Cu",
+          "area_mm2": 1.12406666124327,
+          "bounds_mm": [
+            48.900000799999994,
+            10.0500008,
+            50.1000500932497,
+            11.3499992
+          ]
+        },
+        {
+          "net": "MOTION_3V3",
+          "layer": "In3.Cu",
+          "area_mm2": 7.48354359505145,
+          "bounds_mm": [
+            43.2000008,
+            10.0500008,
+            50.064328,
+            13.7499992
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.5282410420000012
+    },
+    {
+      "request": "restore_minus",
+      "net": "Net-(U1701-IN-)",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 11,
+        "regions": 487
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.06542712500000292
+    },
+    {
+      "request": "restore_minus",
+      "net": "Net-(U1701-IN-)",
+      "mode": "weighted_50",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 3083,
+        "regions": 485
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.06758520800000056
+    },
+    {
+      "request": "restore_limit",
+      "net": "Net-(U1701-LIMIT)",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 11,
+        "regions": 487
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.0660730419999993
+    },
+    {
+      "request": "restore_limit",
+      "net": "Net-(U1701-LIMIT)",
+      "mode": "weighted_50",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 3083,
+        "regions": 485
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.0672419590000004
+    }
+  ],
+  "adopted": false
+}

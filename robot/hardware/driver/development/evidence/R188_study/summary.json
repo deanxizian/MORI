@@ -1,0 +1,133 @@
+{
+  "recorded_at_utc": "2026-10-29T00:04:57.928266+00:00",
+  "source_commit": "5144d9ad7e35d61e2f39ef6e671cba659ffcacdf",
+  "remote_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "source_revision": "R187F",
+  "source_sha256": "6dbcf638a4292c080a05c01f46f9317d69bd655f37d57f0da46d6e3d3bfcb876",
+  "adopted_revision": "R188C",
+  "adopted_board_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "candidates": [
+    {
+      "revision": "R188A",
+      "board_sha256": "862cd57be2286a618302e5b042272c884e0378ebad42817dd4d4c03c8528abdd",
+      "unconnected_items": 19,
+      "other_DRC": 13,
+      "schematic_parity": 0,
+      "DRC_types": {
+        "clearance": 12,
+        "shorting_items": 1
+      },
+      "enabled_ERC": "NOT_RERUN",
+      "power_checks_pass": 50,
+      "GND_group_sizes": [
+        155
+      ],
+      "old_connection_loss_nets": [],
+      "old_reference_losses": 0,
+      "new_reference_gaps": 1,
+      "adopted": false
+    },
+    {
+      "revision": "R188B",
+      "board_sha256": "5d4fe7889b774554f9a185d5b969ddd61623e969a838639021a8f68defd4c9de",
+      "unconnected_items": 19,
+      "other_DRC": 2,
+      "schematic_parity": 0,
+      "DRC_types": {
+        "clearance": 2
+      },
+      "enabled_ERC": "NOT_RERUN",
+      "power_checks_pass": 50,
+      "GND_group_sizes": [
+        155
+      ],
+      "old_connection_loss_nets": [],
+      "old_reference_losses": 0,
+      "new_reference_gaps": 1,
+      "adopted": false
+    },
+    {
+      "revision": "R188C",
+      "board_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+      "unconnected_items": 19,
+      "other_DRC": 0,
+      "schematic_parity": 0,
+      "DRC_types": {},
+      "enabled_ERC": 0,
+      "power_checks_pass": 50,
+      "GND_group_sizes": [
+        155
+      ],
+      "old_connection_loss_nets": [],
+      "old_reference_losses": 0,
+      "new_reference_gaps": 0,
+      "adopted": true
+    }
+  ],
+  "completed_native_trials": 3,
+  "remaining_unconnected_items": 19,
+  "newly_completed_connections_in_accepted_board": 0,
+  "baseline_unconnected_items": 40,
+  "remaining_connectivity_fraction": 0.475,
+  "connectivity_fraction_is_not_engineering_progress": true,
+  "full_verification": {
+    "executed_at": "2026-10-29T00:01:19.011915+00:00",
+    "kicad_version": "10.0.7",
+    "board_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+    "normalization": {
+      "reason": "Only KiCad save normalization of disabled teardrops and empty maps; original project bytes restored",
+      "source_sha256": "33c4ea2b2125b4b445c93be8aec365e9a5189f7025542cfb7c5782383131563a",
+      "normalized_sha256": "0c4427846f091c8e802ff7475635200e621d9ed05bd313d7b965b86fd4921671"
+    },
+    "violations": 0,
+    "unconnected_items": 19,
+    "schematic_parity": 0,
+    "erc_violations": 0,
+    "regression_status": "FAIL",
+    "new_reference_gaps": 0,
+    "new_body_projection_candidates": 2,
+    "historical_transition_flags": 6,
+    "ina300_rlimit_return_screen": "PASS",
+    "manufacturer_layout_qualification": "NOT_TESTED",
+    "whole_board_visual": "NOT_TESTED",
+    "physical": "NOT_TESTED",
+    "manufacturing_release": false,
+    "engineering_status": "FAIL"
+  },
+  "planned_checks": 2524,
+  "reference_review_before": 76,
+  "reference_review_after": 75,
+  "removed_reference_flags": 1,
+  "U1702_INA_input_remaining_reference_flags": 0,
+  "unchanged_non_PCB_members": 77,
+  "moved_non_GND_vias": 1,
+  "moved_GND_vias": 1,
+  "new_holes": 0,
+  "source_ground_via_identities_preserved": 114,
+  "source_ground_via_positions_preserved": 113,
+  "direct_ground_return": [
+    {
+      "uuid": "9de23d3c-b74e-4fac-9c4e-98d191bd73df",
+      "direct_returns": [
+        {
+          "pad": "C1002.2",
+          "layer": "B.Cu",
+          "source_length_mm": 4.043502884254444,
+          "source_pad_exit_mm": [
+            52.25,
+            15.275
+          ],
+          "planned_length_mm": 2.5685028842544444,
+          "minimum_width_mm": 0.2
+        }
+      ]
+    }
+  ],
+  "power_reservations": "raw/R188-supply-reservations/result.json",
+  "space_finding": "Coordinated C1002 ground and sampling transfer moves repair one comparator reference defect within unchanged 70x35. TVS-adjacent upward via moves violate spacing. This local repair neither closes the nineteen opens nor proves total board area sufficient or insufficient. The R182 enlargement direction remains unapproved.",
+  "next_step": "Use R188C and its newly computed supply reservations. Continue the nineteen open connections and remaining sampling/reference items with complete endpoints, actual all-layer via access, supply and return preservation. Do not reuse rejected R188A/B geometry or unchanged R186 fixed-topology searches.",
+  "whole_board_visual": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "goal_complete": false
+}

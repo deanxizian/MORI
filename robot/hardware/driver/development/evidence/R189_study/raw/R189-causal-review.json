@@ -1,0 +1,104 @@
+{
+  "source_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "source_power_branch_groups": {
+    "source": [
+      [
+        "C709.1",
+        "J702.1",
+        "R716.2",
+        "U702.6"
+      ]
+    ],
+    "B": [
+      [
+        "C709.1",
+        "U702.6"
+      ],
+      [
+        "J702.1",
+        "R716.2"
+      ]
+    ]
+  },
+  "port_reservation_diagnostics": [
+    {
+      "position_mm": [
+        59,
+        17.975
+      ],
+      "source_planning_reservations_within_0_652_mm": [
+        {
+          "net": "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT",
+          "layer": "In3.Cu",
+          "distance_mm": 0.091999999999274
+        }
+      ]
+    },
+    {
+      "position_mm": [
+        59.6,
+        17.55
+      ],
+      "source_planning_reservations_within_0_652_mm": []
+    },
+    {
+      "position_mm": [
+        59.6,
+        17.65
+      ],
+      "source_planning_reservations_within_0_652_mm": []
+    },
+    {
+      "position_mm": [
+        59.65,
+        18.3
+      ],
+      "source_planning_reservations_within_0_652_mm": []
+    },
+    {
+      "position_mm": [
+        59.65,
+        18.35
+      ],
+      "source_planning_reservations_within_0_652_mm": []
+    },
+    {
+      "position_mm": [
+        61.1,
+        18.1
+      ],
+      "source_planning_reservations_within_0_652_mm": []
+    }
+  ],
+  "C_omits_RAW_hole_but_still_loses_CAM": true,
+  "D_restores_wheel_transfer_and_recovers_CAM": true,
+  "D_sole_remaining_DRC": {
+    "description": "缓释热焊盘 (花焊盘) 与填充区的连接不完整 (层 F.Cu; 1 条引线与死铜相连)",
+    "items": [
+      {
+        "description": "填充区[GND]在 F.Cu 上, 优先级 0",
+        "pos": {
+          "x": 0.35,
+          "y": 0.35
+        },
+        "uuid": "508a4352-b266-4527-bbf3-c3152d90f845"
+      },
+      {
+        "description": "J401 的PTH 焊盘 3 [GND]",
+        "pos": {
+          "x": 62.4,
+          "y": 18.7
+        },
+        "uuid": "58dae4f7-8989-48d4-933d-372014e335cb"
+      }
+    ],
+    "severity": "error",
+    "type": "starved_thermal"
+  },
+  "conclusion": "Within this controlled B/C/D comparison, moving the wheel transfer to (59,17.975) causes the CAM supply split; the OV F-only change independently produces the J401.3 F-ground thermal defect. A separately introduces ground isolation and two reference gaps. No variant is accepted.",
+  "limitations": "Reservation-free sample points are not cleared holes or legal component poses. Full simultaneous routing, refill, original connections and supply/reference/native requirements remain mandatory.",
+  "source_saved": false,
+  "adopted": false,
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

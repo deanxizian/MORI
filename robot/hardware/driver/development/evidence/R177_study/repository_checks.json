@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-10-28T18:35:59.179927+00:00",
+  "python": "/Volumes/Sol/MORI/robot/.venv/bin/python",
+  "checks": [
+    {
+      "command": "python tools/check_workspace.py --allow-lfs-pointers",
+      "status": "PASS",
+      "protected_files": 541,
+      "scope": "Repository organization and provenance only; no hardware I/O"
+    },
+    {
+      "command": "python robot/tools/check_project.py --allow-lfs-pointers",
+      "status": "PASS",
+      "scope": "Publication integrity only"
+    },
+    {
+      "command": "python test_rig/tools/check_release.py",
+      "status": "PASS",
+      "scope": "Separate test rig release integrity"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "remote_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "current_board_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "hardware_IO": false,
+  "adopted": false,
+  "engineering_complete": false
+}

@@ -1,0 +1,25 @@
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+12:34:48 PM: Debug: Adding duplicate image handler for 'PNG file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'JPEG file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'TIFF file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'GIF file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'PNM file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'PCX file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'IFF file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'Windows icon file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'TGA file'
+12:34:48 PM: Debug: Adding duplicate image handler for 'XPM file'
+Traceback (most recent call last):
+  File "/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/review_planned_delta.py", line 331, in <module>
+    a=p.parse_args();r=review(a.source,a.candidate,a.plan,a.regression,a.source_regression)
+  File "/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/review_planned_delta.py", line 22, in review
+    reg = json.loads(Path(regression_path).read_text())
+  File "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1266, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1252, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/pathlib.py", line 1120, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'robot/.state/c3-completion/trials/R162D-verified/regression.json'

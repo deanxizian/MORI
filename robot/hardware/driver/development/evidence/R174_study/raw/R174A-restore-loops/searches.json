@@ -1,0 +1,458 @@
+{
+  "scope": "Sequential local loop restoration on a refilled full placement candidate.\n\nAll native clearances, original references and own-face Fab bodies constrain\nthe proposals. Existing same-net through vias can be used at their true lands;\nno duplicate vias are inserted. Ground return uses existing vias only. Later\ndifferent-net paths avoid prior proposals and their reference anti-pads. These\nare bounded proposals that still require a complete native build and audits.\n",
+  "source_sha256": "9bc69c63e14dc235a38f36a55260b09bc02bbb1634e6fabe1cf6c0ff0f158a78",
+  "grid_mm": 0.025,
+  "bounds_mm": [
+    40,
+    5,
+    55,
+    21
+  ],
+  "results": [
+    {
+      "name": "ina_bypass_gnd",
+      "net": "GND",
+      "pads": [
+        "C1701.2",
+        "U1701.8"
+      ],
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 20,
+        "regions": 49
+      },
+      "attempts": [
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 0,
+          "regions": 24
+        },
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 20,
+          "regions": 49
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 3.6388638330000003
+    },
+    {
+      "name": "rlimit_direct_gnd",
+      "net": "GND",
+      "pads": [
+        "R1701.1",
+        "U1701.8"
+      ],
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 20,
+        "regions": 49
+      },
+      "attempts": [
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 20,
+          "regions": 49
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 0.6921607500000002
+    },
+    {
+      "name": "ina_limit",
+      "net": "Net-(U1701-LIMIT)",
+      "pads": [
+        "R1701.2",
+        "U1701.3"
+      ],
+      "result": {
+        "status": "PROPOSAL",
+        "expanded": 160365,
+        "routes": [
+          {
+            "layer": "F.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                48.35,
+                13.95
+              ],
+              [
+                48.35,
+                13.975
+              ],
+              [
+                49.925,
+                15.55
+              ],
+              [
+                50.15,
+                15.55
+              ]
+            ]
+          },
+          {
+            "layer": "In3.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                50.15,
+                15.55
+              ],
+              [
+                50.0,
+                15.55
+              ],
+              [
+                47.0,
+                12.55
+              ]
+            ]
+          },
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                47.0,
+                12.55
+              ],
+              [
+                47.125,
+                12.675
+              ],
+              [
+                47.125,
+                15.125
+              ],
+              [
+                47.5,
+                15.5
+              ],
+              [
+                48.5,
+                15.5
+              ],
+              [
+                48.725,
+                15.275
+              ],
+              [
+                48.725,
+                15.15
+              ]
+            ]
+          }
+        ],
+        "vias": [
+          {
+            "position_mm": [
+              50.15,
+              15.55
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          },
+          {
+            "position_mm": [
+              47.0,
+              12.55
+            ],
+            "diameter_mm": 0.5,
+            "drill_mm": 0.3
+          }
+        ],
+        "activate_pth_layers": [],
+        "length_mm": 11.470331880577403
+      },
+      "attempts": [
+        {
+          "status": "PROPOSAL",
+          "expanded": 160365,
+          "length_mm": 11.470331880577403
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 5.278177
+    },
+    {
+      "name": "ina_bypass_vs",
+      "net": "MOTION_3V3",
+      "pads": [
+        "C1701.1",
+        "U1701.9"
+      ],
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 1589,
+        "regions": 79
+      },
+      "attempts": [
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 0,
+          "regions": 28
+        },
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 1589,
+          "regions": 79
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 3.304841917000001
+    },
+    {
+      "name": "ina_input_minus",
+      "net": "Net-(U1701-IN-)",
+      "pads": [
+        "R1707.2",
+        "U1701.2"
+      ],
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 1246,
+        "regions": 90
+      },
+      "attempts": [
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 0,
+          "regions": 45
+        },
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 1246,
+          "regions": 90
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 2.162586874999999
+    },
+    {
+      "name": "ina_input_plus",
+      "net": "Net-(U1701-IN+)",
+      "pads": [
+        "R1706.2",
+        "U1701.1"
+      ],
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 1246,
+        "regions": 91
+      },
+      "attempts": [
+        {
+          "status": "NO_RASTER_CONNECTION",
+          "via_sites": 1246,
+          "regions": 91
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 2.1265086669999995
+    },
+    {
+      "name": "supervisor_ct",
+      "net": "Net-(U1302-CT)",
+      "pads": [
+        "R1310.1",
+        "U1302.4"
+      ],
+      "result": {
+        "status": "PROPOSAL",
+        "expanded": 6157,
+        "routes": [
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                43.15,
+                10.2
+              ],
+              [
+                43.15,
+                10.575
+              ],
+              [
+                42.95,
+                10.775
+              ],
+              [
+                42.95,
+                11.725
+              ],
+              [
+                43.4,
+                12.175
+              ],
+              [
+                45.575,
+                12.175
+              ],
+              [
+                45.675,
+                12.275
+              ],
+              [
+                45.675,
+                12.525
+              ]
+            ]
+          }
+        ],
+        "vias": [],
+        "activate_pth_layers": [],
+        "length_mm": 4.810660171779816
+      },
+      "attempts": [
+        {
+          "status": "PROPOSAL",
+          "expanded": 6157,
+          "length_mm": 4.810660171779816
+        }
+      ],
+      "reused_native_vias": [],
+      "elapsed_seconds": 2.2387198329999975
+    }
+  ],
+  "routes": [
+    {
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          48.35,
+          13.95
+        ],
+        [
+          48.35,
+          13.975
+        ],
+        [
+          49.925,
+          15.55
+        ],
+        [
+          50.15,
+          15.55
+        ]
+      ],
+      "net": "Net-(U1701-LIMIT)"
+    },
+    {
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          50.15,
+          15.55
+        ],
+        [
+          50.0,
+          15.55
+        ],
+        [
+          47.0,
+          12.55
+        ]
+      ],
+      "net": "Net-(U1701-LIMIT)"
+    },
+    {
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          47.0,
+          12.55
+        ],
+        [
+          47.125,
+          12.675
+        ],
+        [
+          47.125,
+          15.125
+        ],
+        [
+          47.5,
+          15.5
+        ],
+        [
+          48.5,
+          15.5
+        ],
+        [
+          48.725,
+          15.275
+        ],
+        [
+          48.725,
+          15.15
+        ]
+      ],
+      "net": "Net-(U1701-LIMIT)"
+    },
+    {
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          43.15,
+          10.2
+        ],
+        [
+          43.15,
+          10.575
+        ],
+        [
+          42.95,
+          10.775
+        ],
+        [
+          42.95,
+          11.725
+        ],
+        [
+          43.4,
+          12.175
+        ],
+        [
+          45.575,
+          12.175
+        ],
+        [
+          45.675,
+          12.275
+        ],
+        [
+          45.675,
+          12.525
+        ]
+      ],
+      "net": "Net-(U1302-CT)"
+    }
+  ],
+  "vias": [
+    {
+      "position_mm": [
+        50.15,
+        15.55
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "net": "Net-(U1701-LIMIT)"
+    },
+    {
+      "position_mm": [
+        47.0,
+        12.55
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "net": "Net-(U1701-LIMIT)"
+    }
+  ],
+  "adopted": false
+}

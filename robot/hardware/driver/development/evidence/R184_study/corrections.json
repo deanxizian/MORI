@@ -1,0 +1,11 @@
+{
+  "items": [
+    "The preliminary pair reporter omitted the fixed C1603 displacement field; failed script/log preserved, corrected script reran the same geometry with displacement 0.",
+    "Plan creation initially used exact Python float equality for 18.825; corrected to an explicit 1e-7 coordinate check and six-decimal native grid. No PCB was written in that attempt.",
+    "The first NRST call used an abbreviated net name and failed before solving. The exact /01 {slash} Core/NRST call is separately retained.",
+    "The R184 gate/RC inventory used the deprecated unlayered via GetWidth accessor and emitted warnings. The actual via plans use via_snapshot with per-layer dimensions; no via size was changed.",
+    "R184C disproves the guessed source-hole position (35,14.5); it must not be reused. Exact native readback caught the wrong net.",
+    "R184D restores the RC branch only. Removing the six UPS_BAT B-side leads also disconnected unchanged C1601; the two original C1601-to-(39.15,13) segments should be retained in a subsequent plan.",
+    "R184-only mixed-guard builder is a source-specific study helper; production builder and planned-delta validator are unchanged. Readback proof is not full candidate acceptance."
+  ]
+}

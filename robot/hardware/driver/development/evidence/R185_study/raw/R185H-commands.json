@@ -1,0 +1,52 @@
+[
+  {
+    "step": "build",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/.state/c3-completion/trials/R185_build_ground_trial.py",
+      "robot/.state/c3-completion/trials/R185G",
+      "robot/.state/c3-completion/trials/R185H",
+      "robot/.state/c3-completion/trials/R185H-plan.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\"source_sha256\": \"6be667d9847b4903c3f0be1ab3fd38a3e07ee008bb8374ebeaa3526b1240a772\", \"board_sha256\": \"3bdb7c3cd533f6070816b482468b2f3397ba8d1e143a3717b9bb82bf4d24ab95\", \"via_count\": 325, \"GND_via_count\": 114, \"moved_via_uuids\": [\"2e7f36fc-97b4-4bdc-ac9d-b6a6321965ed\"], \"removed_track_uuids\": [\"b7c20ca5-84ce-58c3-ab82-b478f888d162\", \"f6eaefe0-9902-55b5-905c-2983bb8b7c4f\"], \"added_track_uuids\": [\"d23350c6-5781-5cab-be5c-eb963afa72f1\"], \"exact_via_and_track_readback\": \"PASS\", \"adopted\": false}\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'PNG file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'JPEG file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'TIFF file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'GIF file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'PNM file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'PCX file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'IFF file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'Windows icon file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'Windows cursor file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'Windows animated cursor file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'TGA file'\n06:42:42\u202fAM: Debug: Adding duplicate image handler for 'XPM file'\n",
+    "elapsed_seconds": 0.7578301429748535
+  },
+  {
+    "step": "refill_drc",
+    "argv": [
+      "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+      "pcb",
+      "drc",
+      "--format",
+      "json",
+      "--schematic-parity",
+      "--refill-zones",
+      "--save-board",
+      "--severity-all",
+      "--exit-code-violations",
+      "-o",
+      "robot/.state/c3-completion/trials/R185H-drc.json",
+      "robot/.state/c3-completion/trials/R185H/MORI_Interface_C3.kicad_pcb"
+    ],
+    "returncode": 5,
+    "stdout": "\u53d1\u73b0 0 \u6761\u8fdd\u89c4\u9879\n\u53d1\u73b0 19 \u4e2a\u672a\u8fde\u63a5\u7684\u9879\u76ee\n\u53d1\u73b0 0 \u4e2a\u539f\u7406\u56fe\u4e00\u81f4\u6027\u95ee\u9898\n\u4fdd\u5b58 DRC \u62a5\u544a\u5230 robot/.state/c3-completion/trials/R185H-drc.json\n\u5df2\u4fdd\u5b58\u7535\u8def\u677f\n",
+    "stderr": "Fontconfig error: Cannot load default config file: No such file: (null)\n",
+    "elapsed_seconds": 3.5095529556274414
+  },
+  {
+    "step": "audit_from_canonical",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/audit_candidate.py",
+      "robot/hardware/driver/development/native/MORI_Interface_C3.kicad_pcb",
+      "robot/.state/c3-completion/trials/R185H/MORI_Interface_C3.kicad_pcb",
+      "robot/.state/c3-completion/trials/R185H-audit.json"
+    ],
+    "returncode": 0,
+    "stdout": "{\"regression\": \"FAIL\", \"opens\": 19, \"power_width_losses\": 0, \"reference_losses\": 0, \"transition_flags\": 5}\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'PNG file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'JPEG file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'TIFF file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'GIF file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'PNM file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'PCX file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'IFF file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'Windows icon file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'Windows cursor file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'Windows animated cursor file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'TGA file'\n06:42:47\u202fAM: Debug: Adding duplicate image handler for 'XPM file'\n",
+    "elapsed_seconds": 7.5497729778289795
+  }
+]

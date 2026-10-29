@@ -1,0 +1,23 @@
+{
+  "checked_url": "https://www.ti.com/lit/ds/symlink/ina300.pdf",
+  "checked_date": "2026-10-28",
+  "document": "SBOS613C",
+  "revision": "June 2021",
+  "printed_pages": [
+    3,
+    28,
+    29,
+    30
+  ],
+  "pin_table": {
+    "4": "ENABLE",
+    "8": "GND",
+    "9": "VS"
+  },
+  "findings": [
+    "The existing VS=U1701.9 and actual GND=U1701.8 mapping is confirmed; ENABLE is pin 4. No pin-map or gate change is required.",
+    "The bypass capacitor belongs close to VS and GND; source project distance targets remain assumptions rather than manufacturer numeric limits.",
+    "RLIMIT needs a direct return to the actual device ground terminal. Plane-net continuity alone does not meet this layout requirement."
+  ],
+  "scope": "Live read of the TI primary datasheet; no claim of complete manufacturer layout qualification."
+}

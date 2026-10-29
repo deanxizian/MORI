@@ -1,0 +1,82 @@
+{
+  "recorded_at_utc": "2026-10-28T23:01:02.664387+00:00",
+  "status": "PASS",
+  "source_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "candidate_sha256": "28037264b23c9bf47fe6dbe426013212abafd863dcedd0336734634cd1516d88",
+  "correction": "Previous ground-anchor tests intersected the land with full copper including itself. They now require positive-area contact with actual In1/In4 GND zone fill only.",
+  "corrected_consumers": [
+    "audit_candidate",
+    "plan_layered_route",
+    "review_planned_delta"
+  ],
+  "retained_older_reports": "Original raw/helpers and I/J geometry reports remain byte-identical. Their actual_plane_contacts used a full-copper proxy, not independent actual-zone evidence. Do not use those contact areas as fill-only measurements.",
+  "new_actual_fill_checks": [
+    {
+      "name": "R181C_actual_fill_contacts",
+      "status": "PASS",
+      "board_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+      "eligible_ground_anchors": 126,
+      "ground_vias_with_both_contacts": 114,
+      "moved_via_contact_mm2": {
+        "In1.Cu": 0.1969831472920004,
+        "In4.Cu": 0.1969831472920004
+      },
+      "transition_changes": [],
+      "transition_flags": 6
+    },
+    {
+      "name": "R185I_actual_fill_contacts",
+      "status": "PASS",
+      "board_sha256": "28037264b23c9bf47fe6dbe426013212abafd863dcedd0336734634cd1516d88",
+      "eligible_ground_anchors": 126,
+      "ground_vias_with_both_contacts": 114,
+      "moved_via_contact_mm2": {
+        "In1.Cu": 0.1594270847803458,
+        "In4.Cu": 0.1594270847803458
+      },
+      "transition_changes": [],
+      "transition_flags": 5
+    },
+    {
+      "name": "reject_missing_In1.Cu",
+      "status": "PASS",
+      "legacy_self_contact_proxy_would_pass": true,
+      "actual_fill_contact_mm2": {
+        "In1.Cu": 0.0,
+        "In4.Cu": 0.1594270847803458
+      },
+      "orphan_rejected": true,
+      "mutation": "Geometry-only in memory; no PCB saved."
+    },
+    {
+      "name": "reject_missing_In4.Cu",
+      "status": "PASS",
+      "legacy_self_contact_proxy_would_pass": true,
+      "actual_fill_contact_mm2": {
+        "In1.Cu": 0.1594270847803458,
+        "In4.Cu": 0.0
+      },
+      "orphan_rejected": true,
+      "mutation": "Geometry-only in memory; no PCB saved."
+    },
+    {
+      "name": "reject_missing_In1.Cu_In4.Cu",
+      "status": "PASS",
+      "legacy_self_contact_proxy_would_pass": true,
+      "actual_fill_contact_mm2": {
+        "In1.Cu": 0.0,
+        "In4.Cu": 0.0
+      },
+      "orphan_rejected": true,
+      "mutation": "Geometry-only in memory; no PCB saved."
+    }
+  ],
+  "candidate_planned_delta_checks": 2508,
+  "reference_transition_results_unchanged": true,
+  "accepted_transition_flags": 6,
+  "candidate_transition_flags": 5,
+  "native_DRC_ERC": "Existing source-bound results retained; no PCB geometry or saved bytes changed by this correction.",
+  "adopted": false,
+  "manufacturing_release": false,
+  "physical": "NOT_TESTED"
+}

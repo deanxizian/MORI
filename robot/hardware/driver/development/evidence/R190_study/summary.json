@@ -1,0 +1,144 @@
+{
+  "recorded_at_utc": "2026-10-29T01:16:42.578521+00:00",
+  "source_commit": "5993af7dd1e4b5ef027cd210a91133ee3ad35f39",
+  "source_revision": "R188C",
+  "source_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "adopted_revision": null,
+  "candidates": [
+    {
+      "revision": "R190A",
+      "board_sha256": "1c2def3e312a7f9148f52762441da29c8bf741c3fdebf54a0e665756f2861bc9",
+      "unconnected_items": 19,
+      "other_DRC": 2,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {
+        "via_dangling": 2
+      },
+      "power_checks_pass": 50,
+      "GND_group_sizes": [
+        155
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [],
+      "old_reference_losses": [],
+      "new_reference_gap_count": 0,
+      "transition_flags": 6,
+      "project_normalization": {
+        "source_sha256": "33c4ea2b2125b4b445c93be8aec365e9a5189f7025542cfb7c5782383131563a",
+        "normalized_sha256": "0c4427846f091c8e802ff7475635200e621d9ed05bd313d7b965b86fd4921671",
+        "semantic_changes": [
+          "disabled teardrop defaults",
+          "empty net_colors map",
+          "empty netclass_assignments map"
+        ],
+        "restored": false,
+        "normalized_original_preserved": true
+      },
+      "exact_planned_delta_review": "NOT_RUN",
+      "candidate_visual_review": "NOT_TESTED",
+      "full_coupling_review": "NOT_TESTED",
+      "adopted": false
+    },
+    {
+      "revision": "R190B",
+      "board_sha256": "3a54c90c2452081dc39db5098e1b6c948133501676f96b377976ef2f0d9bc33e",
+      "unconnected_items": 19,
+      "other_DRC": 0,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {},
+      "power_checks_pass": 50,
+      "GND_group_sizes": [
+        155
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [],
+      "old_reference_losses": [],
+      "new_reference_gap_count": 0,
+      "transition_flags": 6,
+      "project_normalization": {
+        "source_sha256": "33c4ea2b2125b4b445c93be8aec365e9a5189f7025542cfb7c5782383131563a",
+        "normalized_sha256": "0c4427846f091c8e802ff7475635200e621d9ed05bd313d7b965b86fd4921671",
+        "semantic_changes": [
+          "disabled teardrop defaults",
+          "empty net_colors map",
+          "empty netclass_assignments map"
+        ],
+        "restored": false,
+        "normalized_original_preserved": true
+      },
+      "exact_planned_delta_review": "NOT_RUN",
+      "candidate_visual_review": "NOT_TESTED",
+      "full_coupling_review": "NOT_TESTED",
+      "adopted": false
+    },
+    {
+      "revision": "R190C",
+      "board_sha256": "89475d8fb432d2c80256aed5fa437c730bf66ee0f6c88f0b83954b5cb5927b3a",
+      "unconnected_items": 20,
+      "other_DRC": 6,
+      "schematic_parity": 0,
+      "enabled_ERC": "NOT_RERUN",
+      "DRC_types": {
+        "starved_thermal": 4,
+        "track_not_centered_on_via": 2
+      },
+      "power_checks_pass": 43,
+      "GND_group_sizes": [
+        155
+      ],
+      "critical_adjacency_pass": 63,
+      "old_connection_loss_nets": [
+        "/07 {slash} CAM_Protection_Start/CAM_BAT_OUT",
+        "MOTION_3V3"
+      ],
+      "old_reference_losses": [],
+      "new_reference_gap_count": 1,
+      "transition_flags": 6,
+      "project_normalization": {
+        "source_sha256": "33c4ea2b2125b4b445c93be8aec365e9a5189f7025542cfb7c5782383131563a",
+        "normalized_sha256": "0c4427846f091c8e802ff7475635200e621d9ed05bd313d7b965b86fd4921671",
+        "semantic_changes": [
+          "disabled teardrop defaults",
+          "empty net_colors map",
+          "empty netclass_assignments map"
+        ],
+        "restored": false,
+        "normalized_original_preserved": true
+      },
+      "exact_planned_delta_review": "NOT_RUN",
+      "candidate_visual_review": "NOT_TESTED",
+      "full_coupling_review": "NOT_TESTED",
+      "adopted": false
+    }
+  ],
+  "decision": {
+    "adopted": false,
+    "status_note": "R190 A/B/C are archived, not adopted. B restores local five-resistor connectivity with 19 opens and zero other native DRC, but exact-delta, ERC, visual and complete coupling review remain unfinished. C closes RAW but loses CAM/3V3 power connectivity and fails native DRC. Canonical R188C remains unchanged.",
+    "space_authorization": {
+      "user_statement": "允许评估 70×40 mm 的机械空间",
+      "scope": "Independent mechanical-space assessment with fixed mounting holes and interfaces only.",
+      "assessment": "NOT_TESTED",
+      "adoption": false,
+      "main_model_changed": false
+    }
+  },
+  "accepted_revision_unchanged": "R188C",
+  "remaining_unconnected_items": 19,
+  "accepted_transition_flags": 6,
+  "canonical_reference_queue": {
+    "flagged_tracks": 75,
+    "flagged_nets": 36
+  },
+  "candidate_B_reference_survey": {
+    "reviewed_tracks": 1299,
+    "flagged_tracks": 74,
+    "flagged_nets": 35
+  },
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_layout_qualification": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "goal_complete": false
+}

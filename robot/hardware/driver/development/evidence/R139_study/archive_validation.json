@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-10-26T21:23:41.822017+00:00",
+  "archive_verification": [
+    {
+      "archive": "R138_followup",
+      "payloads": 36,
+      "local_boards": 3,
+      "byte_roundtrip_and_source_verification": "PASS"
+    },
+    {
+      "archive": "R139_study",
+      "payloads": 114,
+      "local_boards": 11,
+      "byte_roundtrip_and_source_verification": "PASS"
+    }
+  ],
+  "canonical_board_sha256": "0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca",
+  "unchanged_non_PCB_source_members": 77,
+  "unchanged_extra_local_UI_state": [
+    "MORI_Interface_C3.kicad_prl"
+  ],
+  "verification_correction": "The initial source-member count included the extra local .kicad_prl file and failed the 77-member count assertion. No byte mismatch was found; the corrected check explicitly separates 77 source members from this unchanged UI state.",
+  "executed_repository_checks": [
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "scope": "Repository organization and provenance only; no hardware I/O"
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "scope": "Publication integrity only"
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "scope": "Integrity and digital topology only; no hardware I/O or physical qualification"
+    }
+  ],
+  "origin_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "engineering_status": "FAIL",
+  "manufacturing_release": false,
+  "note": "This records the checks already executed in this turn; it is not a repeat native DRC or physical validation."
+}

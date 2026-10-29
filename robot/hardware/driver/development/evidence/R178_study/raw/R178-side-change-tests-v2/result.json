@@ -1,0 +1,101 @@
+{
+  "scope": "Native side-change fixtures and deliberate rejection controls.\n\nFixture copper is not refilled/qualified; only explicit structural assertions\nare tested. Negative copies deliberately retain the original audit hash so they\nalso fail provenance. Their specific pad/guard failures are required separately.\n",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "native_D302_outer_face_mirror_save_reload",
+      "source_rotation_deg": 0.0,
+      "target_rotation_deg": 90,
+      "status": "PASS",
+      "structural_checks": [
+        "declared_side_change_D302",
+        "footprint_D302",
+        "translation_source_D302",
+        "exact_moved_pad_set",
+        "exact_moved_guard_set",
+        "exact_moved_footprint_set",
+        "pad_c9d8a0d5-0686-4ee7-ae7b-d47ca7c4bdc8",
+        "pad_dd0c4cdf-8e56-4723-9508-461d57830826",
+        "moved_guard_79a64692-3f7d-413d-8049-28e4e6286b10",
+        "moved_guard_8426c4c2-47df-4efa-a271-170290984fb6",
+        "moved_guard_9635ae2f-ba1d-478b-9777-bdd067ea46ce",
+        "moved_guard_dfa3751c-234f-45db-957e-8ee5898999c5",
+        "moved_guard_e3bc4bf7-ebe6-4c20-a605-3fae3e4058d7",
+        "zone_constraints_79a64692-3f7d-413d-8049-28e4e6286b10",
+        "zone_constraints_8426c4c2-47df-4efa-a271-170290984fb6",
+        "zone_constraints_9635ae2f-ba1d-478b-9777-bdd067ea46ce",
+        "zone_constraints_dfa3751c-234f-45db-957e-8ee5898999c5",
+        "zone_constraints_e3bc4bf7-ebe6-4c20-a605-3fae3e4058d7"
+      ],
+      "overall_fixture_status": "FAIL",
+      "overall_errors": [
+        "all_prior_pad_connections",
+        "unchanged_other_project_members"
+      ]
+    },
+    {
+      "name": "wrong_pad_net",
+      "status": "PASS",
+      "specific_rejection": "pad_dd0c4cdf-8e56-4723-9508-461d57830826",
+      "provenance_also_rejected": true
+    },
+    {
+      "name": "wrong_pad_size",
+      "status": "PASS",
+      "specific_rejection": "pad_dd0c4cdf-8e56-4723-9508-461d57830826",
+      "provenance_also_rejected": true
+    },
+    {
+      "name": "guard_on_original_face",
+      "status": "PASS",
+      "specific_rejection": "zone_constraints_79a64692-3f7d-413d-8049-28e4e6286b10",
+      "provenance_also_rejected": true
+    },
+    {
+      "name": "same_face",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "missing_reason",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "wrong_source_rotation",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "fixed_connector",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "other_diode",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "wrong_diode_value",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "wrong_diode_footprint",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "source_polarity_swap",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "existing_resistor_validator",
+      "status": "PASS"
+    }
+  ],
+  "test_count": 13,
+  "fixture_adopted": false
+}

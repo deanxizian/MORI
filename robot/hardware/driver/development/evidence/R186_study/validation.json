@@ -1,0 +1,41 @@
+{
+  "recorded_at_utc": "2026-10-28T23:36:41.516866+00:00",
+  "scope": "Offline integrity and tool checks only; not electrical or physical qualification.",
+  "versions": {
+    "repository_python": "3.13.17",
+    "native_kicad_python": "3.9.13",
+    "kicad": "10.0.7"
+  },
+  "repository_checks": [
+    {
+      "command": "python tools/check_workspace.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "status": "PASS",
+      "protected_files": 541
+    },
+    {
+      "command": "python robot/tools/check_project.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python test_rig/tools/check_release.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "artifacts": 405,
+      "source_files": 324,
+      "links": 85
+    }
+  ],
+  "archive_payloads_verified": 156,
+  "source_non_PCB_members_preserved": 77,
+  "documentation_links": "PASS",
+  "ground_exit_controls": 6,
+  "ground_exit_status": "PASS",
+  "reference_survey_cross_control_tracks": 1296,
+  "reference_survey_cross_control_status": "PASS",
+  "accepted_PCB_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "hardware_IO": false,
+  "manufacturing_release": false,
+  "goal_complete": false
+}

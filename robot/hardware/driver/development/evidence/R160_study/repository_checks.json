@@ -1,0 +1,36 @@
+{
+  "scope": "Repository integrity only; no native trial acceptance or physical qualification",
+  "working_directory": "/Volumes/Sol/MORI-hardware-completion",
+  "python": "/Volumes/Sol/MORI/robot/.venv/bin/python",
+  "commands": [
+    {
+      "argv": ["git", "diff", "--check"],
+      "returncode": 0,
+      "result": "No whitespace errors"
+    },
+    {
+      "argv": ["/Volumes/Sol/MORI/robot/.venv/bin/python", "tools/check_workspace.py", "--allow-lfs-pointers"],
+      "returncode": 0,
+      "status": "PASS",
+      "protected_files": 541,
+      "errors": []
+    },
+    {
+      "argv": ["/Volumes/Sol/MORI/robot/.venv/bin/python", "robot/tools/check_project.py", "--allow-lfs-pointers"],
+      "returncode": 0,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "argv": ["/Volumes/Sol/MORI/robot/.venv/bin/python", "test_rig/tools/check_release.py"],
+      "returncode": 0,
+      "status": "PASS",
+      "imported_artifacts": 405,
+      "control_source_files": 324,
+      "links": 85
+    }
+  ],
+  "recording": "Compact transcription of completed command results, not a new test execution",
+  "manufacturing_release": false,
+  "physical": "NOT_TESTED"
+}

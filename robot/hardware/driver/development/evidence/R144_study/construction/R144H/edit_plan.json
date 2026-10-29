@@ -1,0 +1,311 @@
+{
+  "revision": "R144H",
+  "board_sha256": "2a7c04b8430875a0f8f9e4bdde4b789da6b8efb5f84ee991a360f1d5b6d006dd",
+  "purpose": "Apply only the grouped regen filter/divider/output-cap placement directly to accepted R142. Remove the winding C1403 ground bridge, retain native fixed interfaces and rules, straighten C1208 feed at its existing via, and replace the old H_DUMP branch with outward pad escapes and right-angle T joins. No R143 ADC or failed power experiments are included.",
+  "translations": [
+    {
+      "reference": "C1403",
+      "from_mm": [
+        28.825,
+        16.5
+      ],
+      "delta_mm": [
+        -2.975,
+        3.45
+      ],
+      "rotation_deg": 180
+    },
+    {
+      "reference": "R1404",
+      "from_mm": [
+        26.75,
+        19.75
+      ],
+      "delta_mm": [
+        -0.9,
+        -1.45
+      ],
+      "rotation_deg": 0
+    },
+    {
+      "reference": "C1208",
+      "from_mm": [
+        25,
+        22.25
+      ],
+      "delta_mm": [
+        0,
+        0.405
+      ]
+    }
+  ],
+  "delete_copper": [
+    "14120b5b-7296-5ca1-8603-a552ee726c3a",
+    "19587ce5-3c49-5ebb-ae07-bd327a55b4a6",
+    "48e31730-5a96-5ecf-b5a6-24b48806bbf7",
+    "58ea3a09-d899-5fae-941a-d37413cd5fb7",
+    "85ab00d9-cd16-5168-809b-4bc67e1aaf18",
+    "8c3dc0c6-a03f-5973-b986-4d670f9faa1b",
+    "f9561527-62f3-5994-8918-97c72ee3e4f6",
+    "da708e42-96e3-4cdd-9cfb-32b1fffdb3d9",
+    "453f6104-0f84-585f-abb4-42992f93899e",
+    "f60fe180-23ef-5094-848a-c7b1611b0a5f",
+    "7956c1f9-b33b-4dfa-a7fe-1a37eb25da94",
+    "9b3a2c5c-91c7-4bea-97bf-db80318a6a6a",
+    "aa3f9c42-7aff-4726-8466-8ea4bc076e9b",
+    "1d309d99-b7c8-431b-8b1b-80d4ff8d5678",
+    "ee9c2201-d872-4940-bd90-69f2748fec9e"
+  ],
+  "deleted_copper_expected": {
+    "14120b5b-7296-5ca1-8603-a552ee726c3a": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        28.6,
+        15.2
+      ],
+      "end_mm": [
+        28.15,
+        14.75
+      ]
+    },
+    "19587ce5-3c49-5ebb-ae07-bd327a55b4a6": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        27.5,
+        14.75
+      ],
+      "end_mm": [
+        27.1,
+        15.15
+      ]
+    },
+    "48e31730-5a96-5ecf-b5a6-24b48806bbf7": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        27.05,
+        15.3
+      ],
+      "end_mm": [
+        26.75,
+        15.6
+      ]
+    },
+    "58ea3a09-d899-5fae-941a-d37413cd5fb7": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        28.15,
+        14.75
+      ],
+      "end_mm": [
+        27.5,
+        14.75
+      ]
+    },
+    "85ab00d9-cd16-5168-809b-4bc67e1aaf18": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        26.75,
+        15.6
+      ],
+      "end_mm": [
+        25.0,
+        15.6
+      ]
+    },
+    "8c3dc0c6-a03f-5973-b986-4d670f9faa1b": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        28.6,
+        15.3
+      ],
+      "end_mm": [
+        28.6,
+        15.2
+      ]
+    },
+    "f9561527-62f3-5994-8918-97c72ee3e4f6": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        27.1,
+        15.15
+      ],
+      "end_mm": [
+        27.05,
+        15.3
+      ]
+    },
+    "da708e42-96e3-4cdd-9cfb-32b1fffdb3d9": {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        28.825,
+        17.775
+      ],
+      "end_mm": [
+        28.825,
+        17.61
+      ]
+    },
+    "453f6104-0f84-585f-abb4-42992f93899e": {
+      "net": "/HEAD_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "start_mm": [
+        23.675,
+        21.705
+      ],
+      "end_mm": [
+        24.08,
+        21.3
+      ]
+    },
+    "f60fe180-23ef-5094-848a-c7b1611b0a5f": {
+      "net": "/HEAD_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "start_mm": [
+        24.08,
+        21.3
+      ],
+      "end_mm": [
+        25.0,
+        21.3
+      ]
+    },
+    "7956c1f9-b33b-4dfa-a7fe-1a37eb25da94": {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        24.28,
+        17.22
+      ],
+      "end_mm": [
+        24.28,
+        18.35
+      ]
+    },
+    "9b3a2c5c-91c7-4bea-97bf-db80318a6a6a": {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        24.28,
+        18.35
+      ],
+      "end_mm": [
+        24.855,
+        18.925
+      ]
+    },
+    "aa3f9c42-7aff-4726-8466-8ea4bc076e9b": {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        24.855,
+        18.925
+      ],
+      "end_mm": [
+        26.75,
+        18.925
+      ]
+    },
+    "1d309d99-b7c8-431b-8b1b-80d4ff8d5678": {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        25.4,
+        16.9
+      ],
+      "end_mm": [
+        25.08,
+        17.22
+      ]
+    },
+    "ee9c2201-d872-4940-bd90-69f2748fec9e": {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        25.08,
+        17.22
+      ],
+      "end_mm": [
+        24.28,
+        17.22
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "/HEAD_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          23.675,
+          21.705
+        ],
+        [
+          25,
+          21.705
+        ]
+      ]
+    },
+    {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          24.28,
+          17.22
+        ],
+        [
+          24.28,
+          17.525
+        ],
+        [
+          27,
+          17.525
+        ],
+        [
+          27,
+          19.95
+        ]
+      ]
+    },
+    {
+      "net": "/14 {slash} Head_Regen/H_DUMP_SENSE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          25.4,
+          16.575
+        ],
+        [
+          25.4,
+          17.525
+        ]
+      ]
+    }
+  ]
+}

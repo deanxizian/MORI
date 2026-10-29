@@ -1,0 +1,110 @@
+{
+  "scope": "Actual local native-geometry image review and corresponding exact copper analysis. Independent development routing acceptance only.",
+  "source_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "board_sha256": "aceda44f2f65d235200d4542525ebe3e6d7a3779572369c181851b2af6760f32",
+  "local_status": "PASS",
+  "images_actually_viewed": [
+    {
+      "path": "images/B.Cu.png",
+      "sha256": "0ea95db88549d4bd2e3c384852a44f54384188bc671a076b42e62b3e39d1e09d"
+    },
+    {
+      "path": "images/F.Cu.png",
+      "sha256": "049892876d7cad1f01d63c6d16d87a4f08f00388c8fc6e771e1eb526771946b6"
+    },
+    {
+      "path": "images/In1.Cu.png",
+      "sha256": "be4ddef70d9bbc69a04af06111597ba2fb3090fa7dd3d95c9a931019c9170f9a"
+    },
+    {
+      "path": "images/In2.Cu.png",
+      "sha256": "95e9cef88431c1586940c010d220b2f25a9bdb3c41c5b0942381e8dcc685ce73"
+    },
+    {
+      "path": "images/In3.Cu.png",
+      "sha256": "c97648d58104f210c53ae58921f482401bb2540b7ecb9e46593dc87b2b662247"
+    },
+    {
+      "path": "images/In4.Cu.png",
+      "sha256": "be4ddef70d9bbc69a04af06111597ba2fb3090fa7dd3d95c9a931019c9170f9a"
+    },
+    {
+      "path": "images/new-old-position-B.png",
+      "sha256": "b4bcbfd46f42da9f186e0b3fffc30068886fc5b3e638aa1d53f00fe1bdf11542"
+    },
+    {
+      "path": "images/source-F.Cu.png",
+      "sha256": "86e38ada0f74df18cd6382ba79b82948c17dc3dac48b8f2f0a402161519cbad4"
+    },
+    {
+      "path": "images/source-old-position-B.png",
+      "sha256": "0c2414ecd3d4a1f25a5b952552cdc61900bc333d3e4e340d5a15a71f2c1d6f35"
+    }
+  ],
+  "findings": [
+    "D302 is vertical on F.Cu at (2,23), 270 degrees. Native pad 1 remains FAULT, pad 2 remains CLR; cathode/anode mapping and original SOD-323 package are preserved.",
+    "FAULT exits the upper pad toward the old (2.675,21.15) transfer; the final vertical approach clears the neighboring CLR reference aperture. CLR leaves the lower pad around the left side and reaches its old (1.55,21.1375) transfer. Neither crosses a mounted-face nominal body or any native guard.",
+    "CLR 4.106002884 mm and FAULT 1.079594155 mm add no vias. All seven new segments use 0.20 mm width; five original CLR leads are explicitly replaced. No fixed interface or board outline changes.",
+    "New FAULT has zero projected overlap with B.Cu DVDT copper and with L701/L901 nominal bodies. G was not adopted after its 0.009842952 mm2 unshielded DVDT overlap was identified; H violated BODY guards; K retained a 0.000568387 mm2 reference defect. L resolves these local findings without relaxing thresholds.",
+    "CLR projects onto opposite C1207, a 22uF HEAD_VM-to-GND capacitor. The actual opposite HEAD_VM copper overlap is 0.225246769 mm2 and is covered by intervening ground. This is a local low-power control-signal routing judgment, not a field calculation or measured noise/temperature result.",
+    "The old B-side diode position is cleared with its five replaced CLR leads; its adjacent components, source wiring and vias remain. Full-board visual review, complete manufacturer layout, installed face clearance, fault/clear timing, EMC and thermal/physical qualification remain NOT_TESTED."
+  ],
+  "opposite_or_internal_projections": [
+    {
+      "uuid": "0bc84a57-293a-57b6-b56a-bf476b5df1e0",
+      "net": "/CLR_N",
+      "layer": "F.Cu",
+      "component": "C1207",
+      "component_face": "B.Cu",
+      "area_mm2": 0.022397463640000184
+    },
+    {
+      "uuid": "cdea4c3d-3105-58de-bbde-8fb7720dff50",
+      "net": "/CLR_N",
+      "layer": "F.Cu",
+      "component": "C1207",
+      "component_face": "B.Cu",
+      "area_mm2": 0.06427237678262694
+    }
+  ],
+  "opposite_foreign_copper_review": [
+    {
+      "new_net": "/CLR_N",
+      "opposite_net": "/HEAD_VM",
+      "overlap_mm2": 0.22524676895899942,
+      "unshielded_by_both_mm2": 0.0
+    }
+  ],
+  "local_reference_evidence": {
+    "scope": "Measure a declared R178 candidate's opposite DVDT overlap and ground.\n\nThis is geometric source evidence for a local prototype routing review, not a\nfield simulation, thermal result or qualification of the complete eFuse layout.\n",
+    "source_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+    "board_sha256": "aceda44f2f65d235200d4542525ebe3e6d7a3779572369c181851b2af6760f32",
+    "new_FAULT_stroke_mm2": 0.24758184143499992,
+    "opposite_DVDT_copper_overlap_mm2": 0.0,
+    "overlap_unshielded_mm2": {
+      "In1.Cu": 0.0,
+      "In4.Cu": 0.0
+    },
+    "overlap_unshielded_by_both_mm2": 0.0,
+    "inductor_projections": {
+      "L701": 0.0,
+      "L901": 0.0
+    },
+    "physical_noise_or_thermal_qualification": "NOT_TESTED"
+  },
+  "manufacturer_sources": [
+    {
+      "url": "https://www.diodes.com/datasheet/download/BAT54WS.pdf",
+      "source": "Diodes DS30098 Rev14-2, July2022",
+      "review_scope": "BAT54WS-7-F SOD323 identity and cathode marking; no component substitution."
+    },
+    {
+      "url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+      "source": "TI SLVSFC9C, May2026, section8.4.1",
+      "review_scope": "DVDT is an analog support node needing short connections and avoidance of switching coupling. C1204 and its original circuit are unchanged; this study does not close complete eFuse layout qualification."
+    }
+  ],
+  "whole_board_visual": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

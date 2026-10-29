@@ -1,0 +1,67 @@
+{
+  "scope": "Check actual two-plane fill contacts; simulate orphaned vias in memory only.",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "R181C_actual_fill_contacts",
+      "status": "PASS",
+      "board_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+      "eligible_ground_anchors": 126,
+      "ground_vias_with_both_contacts": 114,
+      "moved_via_contact_mm2": {
+        "In1.Cu": 0.1969831472920004,
+        "In4.Cu": 0.1969831472920004
+      },
+      "transition_changes": [],
+      "transition_flags": 6
+    },
+    {
+      "name": "R185I_actual_fill_contacts",
+      "status": "PASS",
+      "board_sha256": "28037264b23c9bf47fe6dbe426013212abafd863dcedd0336734634cd1516d88",
+      "eligible_ground_anchors": 126,
+      "ground_vias_with_both_contacts": 114,
+      "moved_via_contact_mm2": {
+        "In1.Cu": 0.1594270847803458,
+        "In4.Cu": 0.1594270847803458
+      },
+      "transition_changes": [],
+      "transition_flags": 5
+    },
+    {
+      "name": "reject_missing_In1.Cu",
+      "status": "PASS",
+      "legacy_self_contact_proxy_would_pass": true,
+      "actual_fill_contact_mm2": {
+        "In1.Cu": 0.0,
+        "In4.Cu": 0.1594270847803458
+      },
+      "orphan_rejected": true,
+      "mutation": "Geometry-only in memory; no PCB saved."
+    },
+    {
+      "name": "reject_missing_In4.Cu",
+      "status": "PASS",
+      "legacy_self_contact_proxy_would_pass": true,
+      "actual_fill_contact_mm2": {
+        "In1.Cu": 0.1594270847803458,
+        "In4.Cu": 0.0
+      },
+      "orphan_rejected": true,
+      "mutation": "Geometry-only in memory; no PCB saved."
+    },
+    {
+      "name": "reject_missing_In1.Cu_In4.Cu",
+      "status": "PASS",
+      "legacy_self_contact_proxy_would_pass": true,
+      "actual_fill_contact_mm2": {
+        "In1.Cu": 0.0,
+        "In4.Cu": 0.0
+      },
+      "orphan_rejected": true,
+      "mutation": "Geometry-only in memory; no PCB saved."
+    }
+  ],
+  "boards_saved": false,
+  "limits": "Zone-contact geometry only; native connectivity, return impedance and physical qualification remain separate."
+}

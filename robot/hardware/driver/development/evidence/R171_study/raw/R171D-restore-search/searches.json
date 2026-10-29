@@ -1,0 +1,117 @@
+{
+  "scope": "Independent local restoration proposals on R171D; no PCB mutation.\n\nThe GND request uses explicit tracks/pads/vias only as its terminals. All requests\nretain original rules, reference guards and mounted-face bodies, and first avoid\nall foreign power fills. Failure is bounded; proposals are not jointly validated.\n",
+  "source_sha256": "9fba9d50a54599ce684da463644087610384bdc8be6289eaa01dcb869f2c8d74",
+  "grid_mm": 0.025,
+  "bounds_mm": [
+    39,
+    5,
+    54.5,
+    17.5
+  ],
+  "results": [
+    {
+      "request": "enable",
+      "net": "MOTION_3V3",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "PROPOSAL",
+        "expanded": 1447,
+        "routes": [
+          {
+            "layer": "B.Cu",
+            "width_mm": 0.2,
+            "points_mm": [
+              [
+                50.475,
+                12.775
+              ],
+              [
+                50.7,
+                12.55
+              ],
+              [
+                51.775,
+                12.55
+              ],
+              [
+                52.275,
+                12.05
+              ]
+            ]
+          }
+        ],
+        "vias": [],
+        "activate_pth_layers": [],
+        "length_mm": 2.1003048327204903
+      },
+      "elapsed_seconds": 0.5131663330000009
+    },
+    {
+      "request": "limit",
+      "net": "Net-(U1701-LIMIT)",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 0,
+        "regions": 76
+      },
+      "elapsed_seconds": 0.07952212500000044
+    },
+    {
+      "request": "limit",
+      "net": "Net-(U1701-LIMIT)",
+      "mode": "native_then_regression",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 655,
+        "regions": 79
+      },
+      "elapsed_seconds": 0.06968120899999874
+    },
+    {
+      "request": "in_plus",
+      "net": "Net-(U1701-IN+)",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 0,
+        "regions": 75
+      },
+      "elapsed_seconds": 0.06786591699999889
+    },
+    {
+      "request": "in_plus",
+      "net": "Net-(U1701-IN+)",
+      "mode": "native_then_regression",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 655,
+        "regions": 78
+      },
+      "elapsed_seconds": 0.06532558299999636
+    },
+    {
+      "request": "direct_ground",
+      "net": "GND",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 0,
+        "regions": 59
+      },
+      "elapsed_seconds": 0.05438587500000125
+    },
+    {
+      "request": "direct_ground",
+      "net": "GND",
+      "mode": "native_then_regression",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 801,
+        "regions": 52
+      },
+      "elapsed_seconds": 0.0721300840000012
+    }
+  ],
+  "adopted": false
+}

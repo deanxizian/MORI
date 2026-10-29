@@ -1,0 +1,351 @@
+[
+  {
+    "kind": "power_zone_expansion",
+    "uuid": "a80aa879-d438-45df-b4e9-32a8f0bace12",
+    "source_expected": {
+      "settings": {
+        "GetIsRuleArea": false,
+        "GetZoneName": "HEAD_6V_RAW_LOCAL",
+        "GetNetname": "/HEAD_6V_RAW",
+        "GetAssignedPriority": 34,
+        "GetDoNotAllowTracks": true,
+        "GetDoNotAllowVias": true,
+        "GetDoNotAllowPads": true,
+        "GetDoNotAllowFootprints": false,
+        "GetDoNotAllowZoneFills": false,
+        "GetLocalClearance": 400000,
+        "GetMinThickness": 200000,
+        "GetThermalReliefGap": 254000,
+        "GetThermalReliefSpokeWidth": 300000,
+        "GetPadConnection": 3,
+        "GetFillMode": 0,
+        "GetIslandRemovalMode": 0,
+        "GetMinIslandArea": 10000000000000,
+        "GetHatchGap": 1500000,
+        "GetHatchThickness": 1000000,
+        "GetHatchSmoothingLevel": 0,
+        "GetHatchSmoothingValue": 0.1,
+        "GetHatchHoleMinArea": 0.15,
+        "GetHatchBorderAlgorithm": 1,
+        "hatch_orientation_degrees": 0.0,
+        "layers": [
+          "In2.Cu"
+        ]
+      },
+      "outline_wkt": "POLYGON ((4 21.2, 12.2 21.2, 12.2 24, 4 24, 4 21.2))"
+    },
+    "union_patch_mm": [
+      [
+        3.6,
+        16.3
+      ],
+      [
+        5.0,
+        16.3
+      ],
+      [
+        5.8,
+        17.1
+      ],
+      [
+        5.8,
+        18.2
+      ],
+      [
+        6.2,
+        18.6
+      ],
+      [
+        7.4,
+        18.6
+      ],
+      [
+        7.4,
+        21.6
+      ],
+      [
+        3.5,
+        21.6
+      ],
+      [
+        3.5,
+        17.2
+      ]
+    ],
+    "expected_added_area_mm2": 15.345000000000002,
+    "reason": "Join the isolated C909/C911 output reservoir to its existing 6 V allocation using an explicit new power via and short local branch. Full native refill, original power and reference regression and actual added-path width review remain required."
+  },
+  {
+    "kind": "footprint_transform",
+    "reference": "C909",
+    "from_mm": [
+      3.85,
+      17.75
+    ],
+    "delta_mm": [
+      0,
+      0.65
+    ],
+    "rotation_deg": 180,
+    "source_rotation_deg": -90.0,
+    "translated_body_guards": [
+      "c63d8a75-81a5-499b-a5b4-3baf5eea21f2"
+    ],
+    "guard_reconstruction": null
+  },
+  {
+    "uuid": "9ab72324-cc9b-4135-85b6-936782a014dc",
+    "kind": "removed_track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.75,
+      16.8
+    ],
+    "end_mm": [
+      3.75,
+      14.7
+    ]
+  },
+  {
+    "uuid": "ced78e4e-39b4-4c37-b894-28bc932e3c5b",
+    "kind": "removed_track",
+    "net": "/HEAD_VM",
+    "layer": "B.Cu",
+    "width_mm": 0.6,
+    "start_mm": [
+      6.65,
+      18.695
+    ],
+    "end_mm": [
+      6.65,
+      17.955
+    ]
+  },
+  {
+    "uuid": "ebe9714d-6d8d-4fec-bd26-782fa2ab3317",
+    "kind": "removed_track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "F.Cu",
+    "width_mm": 0.3,
+    "start_mm": [
+      11.5,
+      22.8
+    ],
+    "end_mm": [
+      12.1,
+      22.8
+    ]
+  },
+  {
+    "uuid": "95939ce7-51b7-4556-a6d0-f60c624d713e",
+    "kind": "removed_track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "F.Cu",
+    "width_mm": 0.3,
+    "start_mm": [
+      11.5,
+      22.075
+    ],
+    "end_mm": [
+      11.5,
+      22.8
+    ]
+  },
+  {
+    "kind": "via_position_move",
+    "uuid": "9ea931c3-55b7-4755-93ce-ce123ea4042a",
+    "source_expected": {
+      "net": "/HEAD_VM",
+      "position_mm": [
+        6.65,
+        17.955
+      ],
+      "drill_mm": 0.4,
+      "via_type": 4,
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "diameters_mm": {
+        "F.Cu": 0.8,
+        "In1.Cu": 0.8,
+        "In2.Cu": 0.8,
+        "In3.Cu": 0.8,
+        "In4.Cu": 0.8,
+        "B.Cu": 0.8
+      }
+    },
+    "position_mm": [
+      6.65,
+      17.85
+    ],
+    "reason": "Create at least the intended 0.48 mm screened corridor for the added output-capacitor connection while preserving the existing HEAD_VM feed. Native reference and power checks remain mandatory."
+  },
+  {
+    "uuid": "7cd6d3df-030d-5077-b2f8-61858eb2b683",
+    "kind": "via",
+    "net": "/HEAD_6V_RAW",
+    "position_mm": [
+      4.55,
+      17.05
+    ],
+    "diameter_mm": 0.5,
+    "drill_mm": 0.3
+  },
+  {
+    "uuid": "fc4e52c2-6b01-5eee-8cf9-e0e50ae1e0bb",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.75,
+      14.7
+    ],
+    "end_mm": [
+      3.35,
+      15.1
+    ]
+  },
+  {
+    "uuid": "eabca0d5-6660-5462-8e8b-fa1328fdca17",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.35,
+      15.1
+    ],
+    "end_mm": [
+      3.35,
+      16.2
+    ]
+  },
+  {
+    "uuid": "bbf7f9de-58dc-5532-9bf4-7b0b9d8dc790",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.35,
+      16.2
+    ],
+    "end_mm": [
+      4.2,
+      17.05
+    ]
+  },
+  {
+    "uuid": "e0f33d58-6873-5727-a80b-73740781bc65",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.2,
+      17.05
+    ],
+    "end_mm": [
+      4.55,
+      17.05
+    ]
+  },
+  {
+    "uuid": "9f718951-8167-5890-a788-dca65c019ad9",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.55,
+      17.05
+    ],
+    "end_mm": [
+      4.55,
+      17.5
+    ]
+  },
+  {
+    "uuid": "00f9ff1b-873a-53cb-906c-e7b83d06c176",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.55,
+      17.5
+    ],
+    "end_mm": [
+      4.8,
+      17.75
+    ]
+  },
+  {
+    "uuid": "a78730b4-9359-5e42-8800-ce0a3bf79d53",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.8,
+      17.75
+    ],
+    "end_mm": [
+      4.8,
+      18.4
+    ]
+  },
+  {
+    "uuid": "e9eb1b2b-963b-5d26-9d68-a0f5809307f5",
+    "kind": "track",
+    "net": "/HEAD_VM",
+    "layer": "B.Cu",
+    "width_mm": 0.6,
+    "start_mm": [
+      6.65,
+      18.695
+    ],
+    "end_mm": [
+      6.65,
+      17.85
+    ]
+  },
+  {
+    "uuid": "198566c5-8e56-5aed-a7c3-3916209a9f8f",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "F.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      11.5,
+      22.8
+    ],
+    "end_mm": [
+      12.1,
+      22.8
+    ]
+  },
+  {
+    "uuid": "b8ddb646-d57d-5d5e-997c-2f1b32045731",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "F.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      11.5,
+      22.075
+    ],
+    "end_mm": [
+      11.5,
+      22.8
+    ]
+  }
+]

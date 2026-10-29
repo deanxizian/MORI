@@ -1,0 +1,104 @@
+{
+  "revision": "R145C",
+  "board_sha256": "a3ec01f712377b2732fa311dfe369bd7336e6776f8ea3fa71024ac462f6395cb",
+  "purpose": "Provide an ARMED transfer at the physically screened (32.95,15.9) site, explicitly rerouting the only two EN segments whose reference would be cut. Requires native refill and full connection/power/reference regression; no reference waiver.",
+  "delete_copper": [
+    "c9943081-7602-46bc-a70c-09e0ddae4600",
+    "eb0fbc1f-ca52-4b8c-8d5c-c80b04b5f34f"
+  ],
+  "deleted_copper_expected": {
+    "c9943081-7602-46bc-a70c-09e0ddae4600": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        32.775,
+        16.55
+      ],
+      "end_mm": [
+        32.775,
+        19.3
+      ]
+    },
+    "eb0fbc1f-ca52-4b8c-8d5c-c80b04b5f34f": {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        36.525,
+        16.55
+      ],
+      "end_mm": [
+        32.775,
+        16.55
+      ]
+    }
+  },
+  "vias": [
+    {
+      "net": "/01 {slash} Core/ARMED",
+      "position_mm": [
+        32.95,
+        15.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    }
+  ],
+  "routes": [
+    {
+      "net": "Net-(D1601-K)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          36.525,
+          16.55
+        ],
+        [
+          34.15,
+          16.55
+        ],
+        [
+          33.9,
+          16.8
+        ],
+        [
+          32.775,
+          16.8
+        ],
+        [
+          32.775,
+          19.3
+        ]
+      ]
+    },
+    {
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          33.9,
+          14.45
+        ],
+        [
+          33.725,
+          14.275
+        ],
+        [
+          33.275,
+          14.275
+        ],
+        [
+          32.95,
+          14.6
+        ],
+        [
+          32.95,
+          15.9
+        ]
+      ]
+    }
+  ]
+}

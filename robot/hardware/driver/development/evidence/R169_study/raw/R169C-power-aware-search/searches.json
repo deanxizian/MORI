@@ -1,0 +1,56 @@
+{
+  "scope": "Target changed-layout links while preferring preservation of foreign power fill.\nFull-fill avoidance is attempted first. The weighted fallback is only a routing\nproposal and never replaces native refill, all 50 width checks or references.\nEvery result is independent; proposals are not jointly compatible by inference.\n",
+  "source_sha256": "3a044aa405fe0062647bb9d71c93ed910e711ab5637b8faa15c39240b827c3e7",
+  "grid_mm": 0.05,
+  "results": [
+    {
+      "request": "fault_ina",
+      "net": "/FAULT_N",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 21,
+        "regions": 541
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.20707075000000064
+    },
+    {
+      "request": "fault_ina",
+      "net": "/FAULT_N",
+      "mode": "weighted_50",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 2964,
+        "regions": 499
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.21123750000000108
+    },
+    {
+      "request": "restore_limit",
+      "net": "Net-(U1701-LIMIT)",
+      "mode": "preserve_foreign_fill",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 11,
+        "regions": 487
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.06616308299999929
+    },
+    {
+      "request": "restore_limit",
+      "net": "Net-(U1701-LIMIT)",
+      "mode": "weighted_50",
+      "result": {
+        "status": "NO_RASTER_CONNECTION",
+        "via_sites": 2954,
+        "regions": 485
+      },
+      "potential_power_cuts": [],
+      "elapsed_seconds": 0.06743433299999957
+    }
+  ],
+  "adopted": false
+}

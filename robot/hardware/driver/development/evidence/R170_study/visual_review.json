@@ -1,0 +1,42 @@
+{
+  "scope": "Six actually viewed local native-geometry diagnostics; not full-board or physical qualification.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R170D-B.png",
+      "source_sha256": "f8ab5f58304c9854014c67cfe68df7a02247e69fd46418596714895562a50758"
+    },
+    {
+      "path": "raw/R170E-In3.png",
+      "source_sha256": "01847533b4a69e81de28a5a5344a920817a6628f73215efd9a7ba68095c51e34"
+    },
+    {
+      "path": "raw/R170-source-In3.png",
+      "source_sha256": "ab0dbf04c2940cead8cc10d666222f9878db082bd0b600476eadaa1b7ed2937d"
+    },
+    {
+      "path": "raw/R170H-B.png",
+      "source_sha256": "8e33394681c9cbbe5b3d211b6102c7b3adb8f7ba72d0d60b099a44479019618e"
+    },
+    {
+      "path": "raw/R170H-F.png",
+      "source_sha256": "075786e1dc3d1fed587cdf23245225d06b4411c86c3334d0351bf46df31a5a1b"
+    },
+    {
+      "path": "raw/R170J-B.png",
+      "source_sha256": "bd20708b3acd75e9be2c118254907430d2a118004bb7238a021701287512b267"
+    }
+  ],
+  "findings": [
+    "D shows the original INA300 orientation, left-side RLIMIT, restored LIMIT and retired WHEEL feed. Its GND fill reconnects the resistor, but no explicit RLIMIT return is present.",
+    "E and the unchanged source In3 views show the new long GND return cutting the 3V3 distribution. Exact native audits establish the split; E is not acceptable despite explicit-return PASS.",
+    "H B/F views show four passives rearranged with INA300 half-turned and R1706 on the front. The local C1701 VS/GND leads are routed; input, LIMIT, feed and RLIMIT return restoration remains incomplete.",
+    "J B shows the 1.8 mm IN- connection and retained feed tracks. The old 3V3 via and B lead still violate the rotated INA300 native keepout. The new-segment body screen does not waive this retained-segment violation."
+  ],
+  "new_same_face_nominal_hits": 0,
+  "new_opposite_internal_overlap_count": 7,
+  "local_status": "FAIL",
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_thermal_coupling": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

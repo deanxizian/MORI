@@ -1,0 +1,66 @@
+{
+  "source_sha256": "a9121d98d1c6c5d86acbdb473a0873b76fe07ae8e85f26212c999d552f844ca0",
+  "candidate_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "local_status": "PASS",
+  "images_actually_viewed": [
+    {
+      "path": "images/candidate-B.Cu.png",
+      "sha256": "3233f871b7852c1280798e8b1309c22695d0fc2938d139023a4ddcdd8a334357",
+      "svg_sha256": "b7c1bc1e0852d6c6b86e532b298edb11ffe8534fbde31fbfd67f19a0a4fcd2e9"
+    },
+    {
+      "path": "images/candidate-F.Cu.png",
+      "sha256": "20c2cea6db83d87abd0e8370ff0919f3d633e5f1a61e94ed324891f9760dc9b0",
+      "svg_sha256": "b5cb7dafd896f1d1a0fddfffc99500fd147ef369783c40494281ff3ee3fe7bed"
+    },
+    {
+      "path": "images/candidate-In1.Cu.png",
+      "sha256": "c8b645a9ab026baad0ccfd759530d14fe01601d3e6b7157f9b19d6840c05a9c0",
+      "svg_sha256": "d657bbb5426335073f374937eefacbe1bdf1f8d571c1f17e73b7e438479a640b"
+    },
+    {
+      "path": "images/candidate-In2.Cu.png",
+      "sha256": "5ae7072628a89b1f16f9a1838fbc305c96c88a220f8d06b4f9ca3485dab2055d",
+      "svg_sha256": "e4322a2632bd372132ec368afd9ba29e1392f6a35e3c4b4c53574878f1760b0f"
+    },
+    {
+      "path": "images/candidate-In3.Cu.png",
+      "sha256": "3d4bc80b00f98e3959aea6f487203bdcde8515930cf162ce223df69d7a9456f5",
+      "svg_sha256": "68ea72abbae21b07920d4c7e3e6fb9919ab74f617310f9bf078556870bbe92ee"
+    },
+    {
+      "path": "images/candidate-In4.Cu.png",
+      "sha256": "c8b645a9ab026baad0ccfd759530d14fe01601d3e6b7157f9b19d6840c05a9c0",
+      "svg_sha256": "d657bbb5426335073f374937eefacbe1bdf1f8d571c1f17e73b7e438479a640b"
+    },
+    {
+      "path": "images/source-B.Cu.png",
+      "sha256": "23e2674a496cbb8f77f90fe841ef09b2ead99dcd75a2caeda2ff2ee95341998d",
+      "svg_sha256": "2d31793a59328f107bdcd064e216a8d1dd18293d788982dbd2e6ed806c3f9dd6"
+    },
+    {
+      "path": "images/source-F.Cu.png",
+      "sha256": "b4d3ada3f972e6964f5601032f74f00019c739a7b91e5dc9e817edfb44a83a80",
+      "svg_sha256": "35ad8bd6c8a45cc94d6af99c81028de0709d8c6feca27c296a391bbc93ba6987"
+    }
+  ],
+  "findings": [
+    "Three 0.50 mm front input-trunk segments and one 0.30 mm terminal escape replace five partly overlapping 0.30 mm segments. The input-trunk turn to C1202 and branch to C1201 are direct orthogonal junctions, with no new small clearance jog.",
+    "C1201 moves left 0.05 mm, with orientation and all pad definitions unchanged. The existing RAW via moves left 0.05 mm to (8.85,23.05); its 0.50/0.30 mm pad/drill remain unchanged and it contacts F and In2. No new vias.",
+    "The existing GND via at (7.025,24) and every other GND via remain fixed. Its copper gap to the moved input capacitor pad is 0.217229 mm; native DRC passes the full copper/hole rules.",
+    "The real filled input path to C1201 and C1202 now passes the additional 0.48 mm erosion screen, where the source failed. Existing C909/C911 paths still pass. The final U1201.5 connection is 0.30 mm wide and 0.40 mm long; no 0.48 mm full-terminal claim.",
+    "Six candidate local layers and both outer source layers were actually viewed. The moved via retains its In2 contact and does not break old reference copper or any old supply/ground connectivity.",
+    "No new mounted-face body crossing outside same-net pad lands, and no opposite-face nominal body projections for these four new segments. Existing opposite pads and copper are separated by the retained reference planes; this does not establish coupling or temperature margins."
+  ],
+  "same_face_nominal_body_hit_count": 0,
+  "opposite_nominal_body_projections": [],
+  "limits": [
+    "Local native geometry plots, not measured package envelopes or a whole-board visual acceptance.",
+    "Nominal Fab/fallback body inventory excludes solder lands as component bodies.",
+    "Six historical reference-transition findings remain.",
+    "The erosion screen is connectivity/width evidence, not an ampacity, voltage-drop, current-distribution or thermal qualification."
+  ],
+  "whole_board": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

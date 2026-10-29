@@ -1,0 +1,47 @@
+{
+  "scope": "Seven actually viewed local native-copper diagnostic renders; no complete whole-board or physical qualification.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R174A-views/B.Cu.png",
+      "sha256": "2a876d1e2780f0009df4de48ca9bce77bd886eb467b4bb7d2e0e1afcdd7452a7"
+    },
+    {
+      "path": "raw/R174A-views/F.Cu.png",
+      "sha256": "ac34b7163e7a0776d1722f6fe4ab5cbe6eb33cecb106c2c3964cc09eab052ebd"
+    },
+    {
+      "path": "raw/R174A-views/In4.Cu.png",
+      "sha256": "22c84a73916e5c778ea46876565aaab3063c0286d7261007220b12acc35eefc3"
+    },
+    {
+      "path": "raw/R174D-views/B.Cu.png",
+      "sha256": "8c8064dbd5c4a5b24792703cd4fd827f11dfa4595e9b44c2e401715b9aef37fa"
+    },
+    {
+      "path": "raw/R174D-views/F.Cu.png",
+      "sha256": "3c48eeed052b2bf81bebcf430e71096d68e75eb1a470bb63a37e0bef00c22cc4"
+    },
+    {
+      "path": "raw/R174D-views/In2.Cu.png",
+      "sha256": "2a5ac67593158cd96266e3d28f4ebc8ade83a83abdefa78fbcdbf9551567fe17"
+    },
+    {
+      "path": "raw/R174D-views/In3.Cu.png",
+      "sha256": "3d2e6c5943b853df2bc6abcc048b2b9efafecf6daac8b50ae6afd57473d7fccb"
+    }
+  ],
+  "findings": [
+    "A shows the upper UPS_BAT trace and the 90-degree IC pin row with zero nominal routing margin in the measured local corridor. This is not a board-area or global no-fit claim.",
+    "D places INA300 at 270 degrees, moves it 0.10 mm down from the screened grid pose and places the bypass below it. All 63 native adjacency checks pass.",
+    "D has explicit bypass and RLIMIT ground paths. Its In3 ground route visibly separates existing 3V3 copper; the isolated F control restores the 0.30/0.40/0.48 mm checks.",
+    "D still has one missing INA input and open supply/sampling branches. The original U1702 INA+ trace is interrupted by the changed F-face resistor placement and must be restored.",
+    "Some local grid escape bends remain small and require complete-loop style review. Thirteen opposite/internal body projection hits remain unqualified."
+  ],
+  "new_same_face_nominal_hits": 0,
+  "new_opposite_internal_hits": 13,
+  "local_status": "FAIL",
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_thermal_coupling": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

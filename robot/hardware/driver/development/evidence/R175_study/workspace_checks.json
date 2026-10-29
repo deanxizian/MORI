@@ -1,0 +1,45 @@
+{
+  "recorded_at_utc": "2026-10-28 16:51:33 UTC",
+  "status": "PASS",
+  "scope": "Repository provenance, publication integrity and digital topology only; no physical/electrical qualification.",
+  "commands": [
+    {
+      "name": "workspace",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "scope": "Repository organization and provenance only; no hardware I/O",
+        "protected_files": 541,
+        "errors": []
+      }
+    },
+    {
+      "name": "robot",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "scope": "Publication integrity only",
+        "lfs_mode": "pointers allowed",
+        "errors": []
+      }
+    },
+    {
+      "name": "test_rig",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "exit_code": 0,
+      "report": {
+        "status": "PASS",
+        "imported_artifacts": 405,
+        "control_source_files": 324,
+        "links": 85,
+        "mesh_reports": 5,
+        "scope": "Integrity and digital topology only; no hardware I/O or physical qualification"
+      }
+    }
+  ],
+  "local_markdown_links_checked": 210,
+  "canonical_board_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "canonical_non_PCB_members_unchanged": 77
+}

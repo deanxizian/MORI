@@ -1,0 +1,156 @@
+{
+  "board_sha256": "6816b9c5783e5a699f5d3f1d0d102914269d37d6d756ef5158ed1b0b3fa129b6",
+  "local_status": "PASS",
+  "whole_board": "NOT_TESTED",
+  "images_actually_viewed": [
+    {
+      "path": "images/F.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    },
+    {
+      "path": "images/B.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    },
+    {
+      "path": "images/In1.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    },
+    {
+      "path": "images/In2.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    },
+    {
+      "path": "images/In3.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    },
+    {
+      "path": "images/In4.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    },
+    {
+      "path": "images/R145I-B.Cu.png",
+      "status": "PASS",
+      "scope": "Native-geometry local diagnostic; rendered in a separate process and actually viewed."
+    }
+  ],
+  "findings": [
+    "Q1601 gate and U1601 GATE are joined to the existing clamp/RC group. Q1602 gate remains separate.",
+    "C1602 moved 1.35 mm down; R1601 moved 2.4 mm right, retaining its original orientation. R1701 and R1707 are placed as a horizontal pair with short pin approaches.",
+    "Sampling escape follows the actual rounded pad before turning; no new same-face nominal body intersection remains.",
+    "Obsolete inner gate branch and two obsolete non-ground transfers removed; two new transfers installed. No ground via moved.",
+    "Inner gate branch stays above the CAM distribution region. All 50 power-width and 155 ground-pad checks remain valid.",
+    "Native owner BODY guards follow the explicit part transforms; R1601 retains the unchanged global via cutouts. No rules, exclusions or unrelated keepouts are relaxed."
+  ],
+  "projection_review": [
+    {
+      "reference": "C1601",
+      "net": "/16 {slash} Actuator_Direct_Switch/ACT_GATE",
+      "layer": "In3.Cu",
+      "review": "Inner gate branch projects below the fixed VS bypass capacitor; In4 lies between In3 and B. C1601 and its short VS/GND connection remain unchanged.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "D1601",
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "review": "D1001 K back trace projects opposite the fixed front enable diode; In4 coverage is continuous and the accepted D1601/ARMED/EN connections are retained.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "Q1601",
+      "net": "/16 {slash} Actuator_Direct_Switch/ACT_GATE",
+      "layer": "In3.Cu",
+      "review": "Gate inner branch and back-face WHEEL/IN-/LIMIT traces project below the fixed power MOSFET. In1/In4 ground separation and unchanged source/drain copper were checked; no asserted transient or temperature qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "Q1601",
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "review": "Gate inner branch and back-face WHEEL/IN-/LIMIT traces project below the fixed power MOSFET. In1/In4 ground separation and unchanged source/drain copper were checked; no asserted transient or temperature qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "Q1601",
+      "net": "Net-(U1701-IN-)",
+      "layer": "B.Cu",
+      "review": "Gate inner branch and back-face WHEEL/IN-/LIMIT traces project below the fixed power MOSFET. In1/In4 ground separation and unchanged source/drain copper were checked; no asserted transient or temperature qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "Q1601",
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "review": "Gate inner branch and back-face WHEEL/IN-/LIMIT traces project below the fixed power MOSFET. In1/In4 ground separation and unchanged source/drain copper were checked; no asserted transient or temperature qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "Q1602",
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "review": "D1001 K back trace projects below the fixed power MOSFET. In4 coverage and the original source/drain connections are retained; Q1602 gate remains unconnected.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "R1101",
+      "net": "/16 {slash} Actuator_Direct_Switch/ACT_GATE",
+      "layer": "B.Cu",
+      "review": "Back-face gate and WHEEL sense approaches project below the front shunt. The original shunt, sense via and power copper remain; continuous In4 reference is verified. Thermal drift and transient coupling remain open.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "R1101",
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "review": "Back-face gate and WHEEL sense approaches project below the front shunt. The original shunt, sense via and power copper remain; continuous In4 reference is verified. Thermal drift and transient coupling remain open.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "R805",
+      "net": "Net-(C1603-~-Pad1)",
+      "layer": "B.Cu",
+      "review": "Back-face gate RC trace projects below the front eFuse ILM resistor. The front ILM components and wiring are unchanged, with intervening In4 ground; noise injection/ILM behavior still needs engineering validation.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "U1601",
+      "net": "/16 {slash} Actuator_Direct_Switch/ACT_GATE",
+      "layer": "B.Cu",
+      "review": "Back gate-clamp and D1001 K traces project below the front controller. In4 reference coverage and existing controller-net connectivity are verified; this is not switching-waveform qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    },
+    {
+      "reference": "U1601",
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "review": "Back gate-clamp and D1001 K traces project below the front controller. In4 reference coverage and existing controller-net connectivity are verified; this is not switching-waveform qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; scoped layout separation reviewed, final engineering qualification remains open."
+    }
+  ],
+  "limits": [
+    "Local six-layer review only; whole-board per-track/per-via review is unfinished.",
+    "Nominal Fab/fallback geometry is not a manufacturer maximum envelope or physical measurement.",
+    "C1602 body separation improves in plan view only; no measured temperature/capacitance qualification.",
+    "Six historical reference-transition flags remain."
+  ],
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}
