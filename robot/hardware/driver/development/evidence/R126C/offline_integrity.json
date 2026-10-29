@@ -1,0 +1,33 @@
+{
+  "executed_at": "2026-10-26T10:23:06.609018+00:00",
+  "scope": "Integrity and provenance only; no hardware I/O or physical qualification",
+  "commands": [
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "status": "PASS",
+      "protected_files": 541
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "status": "PASS"
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "status": "PASS",
+      "imported_artifacts": 405,
+      "control_source_files": 324
+    },
+    {
+      "command": "robot/.state/c3-completion/venv/bin/python -m py_compile robot/hardware/driver/development/scripts/build_trial.py robot/hardware/driver/development/scripts/review_planned_delta.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "remote_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "engineering_status": "FAIL",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

@@ -1,0 +1,53 @@
+{
+  "images_actually_viewed": [
+    {
+      "path": "raw/R185-local-views/source-B.png",
+      "sha256": "e76930304eeb12e52195d6fbee2acf708d489dbd9066ec780efb8f6f1a04560c"
+    },
+    {
+      "path": "raw/R185-local-views/source-In3.png",
+      "sha256": "5f787084c69eb74c563d2e0a31773686a272cc918fbc387d29aa0732da761cf6"
+    },
+    {
+      "path": "raw/R185-local-views/B-In3.png",
+      "sha256": "450fb0b295c41b6086883586406d8e4215c688773ea6def43e90c4a7aca6df82"
+    },
+    {
+      "path": "raw/R185I-views/F.Cu.png",
+      "sha256": "9b51a270a668527ab48e550eed9031c98ae2c4df635fe501e97edfa553cda9d5"
+    },
+    {
+      "path": "raw/R185I-views/In1.Cu.png",
+      "sha256": "e88e343574ae4150881b399dda41d10eca65a5d4f9ead4206e13ecce2c924499"
+    },
+    {
+      "path": "raw/R185I-views/In2.Cu.png",
+      "sha256": "6fc2444ab32b7eac639141c8c8860de3c92780d47412df3a04564007ee3c0f05"
+    },
+    {
+      "path": "raw/R185I-views/In3.Cu.png",
+      "sha256": "356e8a6404452b2ef0b80cf655b6bc3146580c48e32ede12557ebdf6d0310699"
+    },
+    {
+      "path": "raw/R185I-views/In4.Cu.png",
+      "sha256": "e88e343574ae4150881b399dda41d10eca65a5d4f9ead4206e13ecce2c924499"
+    },
+    {
+      "path": "raw/R185I-views/B.Cu.png",
+      "sha256": "baaa7688440e05ef87dc1607b163d82c6fcd38bfdf8b998c6b4190d64193d411"
+    }
+  ],
+  "scope": "Three source/B local comparisons and six I copper-layer views, window x54-61/y5-11 mm. Native geometry plots, not GUI captures or physical images.",
+  "decision": "No board adoption. I passes digital regression but retains a new unshielded TVS/3V3 projection; J avoids that projection but creates a new reference deficit and greater adjacent-layer HEAD_OE overlap.",
+  "observations": [
+    "C601 return in I is a straight 0.925 mm B trace, compared with the original 1.719975 mm two-segment return. The same GND via UUID is retained at (57.9,8.4).",
+    "I has a 2.793503 mm, 0.50 mm In2 supply bridge and one new 3V3 via at (57.2,8.05). All original GND identities, source connections and 50 power screens remain, but the layout is not qualified.",
+    "I has no mounted-face nominal-body intersection. Its In2 route and In3 HEAD_OE overlap by 0.1031798 mm2 with no intervening ground layer; do not claim they are shielded by a ground layer between In2 and In3.",
+    "I projects beneath front-side UPS_BAT/TVS copper. A 0.0134372 mm2 portion lacks intervening In1 ground, within the local supply-transfer region. Complete transient/thermal assessment is open; this is not a measured fault.",
+    "J is not visually reviewed here. Its geometry audit confirms zero unshielded front UPS_BAT projection, but the native new-reference deficit is 0.00105835 mm2, and adjacent-layer HEAD_OE overlap rises to 0.3010551 mm2."
+  ],
+  "local_coupling_review": "OPEN",
+  "whole_board": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

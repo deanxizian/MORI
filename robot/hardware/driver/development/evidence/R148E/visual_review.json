@@ -1,0 +1,147 @@
+{
+  "board_sha256": "958eee80ba27a607e52507fcefe4c5b5aa4234d08a8d7bdb6f1257e79dea89a1",
+  "local_status": "PASS",
+  "whole_board": "NOT_TESTED",
+  "images_actually_viewed": [
+    {
+      "path": "images/F.Cu.png",
+      "sha256": "38689294a8747a60fb3f239d4a9743d51386c94e8398e173c9f28a2c1f171315",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/B.Cu.png",
+      "sha256": "70172ed469b30cd939557c13314766f1e29891439faf6961f1ce5f9349df3498",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/In1.Cu.png",
+      "sha256": "a8a4c8c19137cf8a4ba50ffee6e24ccaf7990e1a73cd2cf1afbe8f2e85cfc443",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/In2.Cu.png",
+      "sha256": "ddeda3cb752c92aefe6161bacfb5a5f9d2b8b392671a6f112df1a4002ddba268",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/In3.Cu.png",
+      "sha256": "127812bc9f97fc2e6af1d9b2ae9817355435b110300f1b1664bcd238a41dc194",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/In4.Cu.png",
+      "sha256": "e9e788a30384294cb6e195246e7889434ec998a367d9b7357567f645213ebe39",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/R147L-B.Cu.png",
+      "sha256": "37f8dc733fd441438d82ed037cd50c3c9d20c2c22481917d46998b728e226605",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "images/R147L-In3.Cu.png",
+      "sha256": "7f0a0e82bb64e85c6a3d785e98c71619f636aab16b369b5dd62227820ab550e1",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "details/F.Cu.png",
+      "sha256": "9a5cb508d0b15bd06347d4229964188870322e9f537a10e5290ff874a71529d9",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    },
+    {
+      "path": "details/B.Cu.png",
+      "sha256": "0ca870dadab060504ccaa2f3003baf78eea0b7cf053c944e7c8ca9e5e58b0cd9",
+      "scope": "Native geometry rendered in separate processes; actually viewed for local routing/reference review."
+    }
+  ],
+  "findings": [
+    "Q1602.4 now joins Q1601.4, U1601.6, D1602.1 and R1601.1 in one ACT_GATE group.",
+    "C1003 moves left 0.15 mm and R303 up 0.35 mm without rotation; their owner guards follow the explicit plan.",
+    "A former clamp via is explicitly reassigned and moved to gate (37.2,7.3); a new clamp via is at (36.54,7.55). No ground via moves.",
+    "The front gate approach uses one outward escape and deliberate bends to avoid source copper and the actual merged reference-plane void. No new same-face nominal body hit remains.",
+    "The inner clamp detour preserves filled 3V3 corridors and reference ground; native fill minimum thickness matters in addition to trace clearance.",
+    "WDI uses a single direct pad-centre segment; the tiny rounded-pad/body intersection in candidate D is eliminated.",
+    "All original connections, 50 power-width, 155 ground-pad and 63 adjacency screens remain valid. Six historical transition flags remain."
+  ],
+  "projection_review": [
+    {
+      "reference": "C1003",
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "review": "The rerouted inner clamp branch projects below the slightly translated back-face bypass capacitor. Intervening In4 ground and the short restored 3V3 feed were checked; all 50 power-width screens and capacitor ground connectivity remain intact. Actual supply noise and temperature remain unqualified.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "J102",
+      "net": "/01 {slash} Core/WDI",
+      "layer": "B.Cu",
+      "review": "WDI leaves the unchanged front-mounted through-hole header on the back face and runs directly between actual pad centres. Intervening ground and native hole/land clearances were checked; the header and mating geometry were not moved or qualified.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "Q1601",
+      "net": "/16 {slash} Actuator_Direct_Switch/ACT_GATE",
+      "layer": "B.Cu",
+      "review": "Back gate copper and the inner clamp branch project opposite the fixed front power MOSFET. Existing source/drain copper is preserved and In1/In4 ground geometry was inspected. A ground-reference screen is not high-side GATE-to-SOURCE switching-loop or thermal qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "Q1601",
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "review": "Back gate copper and the inner clamp branch project opposite the fixed front power MOSFET. Existing source/drain copper is preserved and In1/In4 ground geometry was inspected. A ground-reference screen is not high-side GATE-to-SOURCE switching-loop or thermal qualification.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "Q1602",
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "review": "The back/inner clamp branch projects opposite the fixed front MOSFET. The new front gate escape leaves pad 4 outward without entering the nominal body; original source/drain copper and reference coverage remain intact. Drain coupling, gate transients and temperature are not qualified.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "Q1602",
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "review": "The back/inner clamp branch projects opposite the fixed front MOSFET. The new front gate escape leaves pad 4 outward without entering the nominal body; original source/drain copper and reference coverage remain intact. Drain coupling, gate transients and temperature are not qualified.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "R1001",
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "review": "The inner clamp branch passes beneath the fixed back-face resistor with intervening In4 reference ground. Existing resistor pads, nets and adjacent routes are preserved. The local geometric separation does not establish noise or thermal performance.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "U1001",
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "review": "The inner clamp branch remains beneath the fixed back-face ADC switch, separated by In4 ground. Old ADC connections, reference coverage and the nearby C1003 feed remain intact. Clamp-to-ADC coupling and dynamic measurement error remain open.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    },
+    {
+      "reference": "U1601",
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "review": "The back-face clamp branch extends opposite the fixed front gate controller, with continuous In4 reference. Existing controller connections are preserved. Controller noise, switching waveforms and thermal behavior remain unqualified.",
+      "reference_screen": "PASS",
+      "coupling_and_thermal": "NOT_TESTED; local geometry reviewed, full engineering qualification remains open."
+    }
+  ],
+  "limits": [
+    "Nominal Fab/fallback bodies are not manufacturer maximum or measured envelopes.",
+    "Whole-board review, GATE/SOURCE dynamics, parasitics, heat and physical assembly remain unfinished.",
+    "The 2 mm return-via criterion is a project screen, not EMC qualification."
+  ],
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

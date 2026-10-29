@@ -1,0 +1,42 @@
+{
+  "scope": "Executed offline integrity checks only; not engineering or physical acceptance.",
+  "python": "Python 3.13.17",
+  "checks": [
+    {
+      "name": "workspace",
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "exit_code": 0,
+      "log": "offline_workspace.log",
+      "sha256": "278792e65b241b3eec28df18d0b5e4ff0eb3fbc46595d274524af77d70bfc020",
+      "scope": "Repository organization and provenance only; no hardware I/O"
+    },
+    {
+      "name": "robot",
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "exit_code": 0,
+      "log": "offline_robot.log",
+      "sha256": "c6ca6fcdc4a811c574687737a94bc10ae43ebb70db083b3479d6e36da4a806ab",
+      "scope": "Publication integrity only"
+    },
+    {
+      "name": "test_rig",
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "exit_code": 0,
+      "log": "offline_test_rig.log",
+      "sha256": "d0267735f84b8c7c26e5cc6ae135bef552f30ae19d132db597b7aa86c67a9d9a",
+      "scope": "Integrity and digital topology only; no hardware I/O or physical qualification"
+    }
+  ],
+  "status": "PASS"
+}

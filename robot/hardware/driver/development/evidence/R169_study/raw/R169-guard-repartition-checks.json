@@ -1,0 +1,38 @@
+{
+  "scope": "Actual-board save/readback and refusal checks for explicit guard repartition.",
+  "source_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "comparison_sha256": "0e604bf10a4c4ab395637630ac5fc856bbc964b4d07db34cc097a5533ca97d09",
+  "status": "PASS",
+  "checks": {
+    "same_native_zone_ids": true,
+    "all_native_zone_settings_unchanged": true,
+    "unowned_native_outlines_unchanged": true,
+    "rotated_track_guards_exact": true,
+    "via_union_exact_after_native_save_refill": true,
+    "fixed_source_cutouts_not_filled": true,
+    "each_native_via_guard_contiguous": true,
+    "all_114_source_ground_vias_exact": true,
+    "no_explicit_repartition_refused": true,
+    "mixed_native_guard_rules_refused": true,
+    "repartition_without_reconstruction_refused": true,
+    "canonical_bytes_unchanged": true
+  },
+  "refusals": [
+    {
+      "case": "no_explicit_repartition",
+      "error": "A native rule area must have one contiguous outline; split or merge explicitly"
+    },
+    {
+      "case": "mixed_native_guard_rules",
+      "error": "Via guard repartition requires identical native restrictions"
+    },
+    {
+      "case": "repartition_without_reconstruction",
+      "error": "Fixed-cutout repartition requires explicit guard reconstruction"
+    }
+  ],
+  "original_via_guard_count": 10,
+  "target_union_area_mm2": 5.693400000000021,
+  "native_union_difference_mm2": 8.633094239485241e-15,
+  "complete_board_qualification": false
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "Native save/reload and rejected-plan checks for exact coordinate conversion; no electrical qualification.",
+  "status": "PASS",
+  "source_sha256": "6ecafc01c9f21eb8693d8734e91774d8ea693b2e23be076f7815f1c5ecccd452",
+  "source_unchanged": true,
+  "results": [
+    {
+      "case": "native-exact-coordinate-roundtrip",
+      "status": "PASS",
+      "legacy_FromMM_32_3": 32299999,
+      "actual_track_x_iu": 32300000
+    },
+    {
+      "case": "wrong-source-hash",
+      "status": "PASS",
+      "exception": "Plan source PCB hash does not match"
+    },
+    {
+      "case": "missing-source-hash",
+      "status": "PASS",
+      "exception": "Via movement requires an exact source board hash"
+    },
+    {
+      "case": "wrong-source-drill",
+      "status": "PASS",
+      "exception": "Moved non-ground via snapshot mismatch: 60d40a49-97dd-4384-b4d2-40ca6ff20c2e"
+    },
+    {
+      "case": "missing-reason",
+      "status": "PASS",
+      "exception": "Via move requires a distinct finite position and explicit rationale"
+    },
+    {
+      "case": "nonfinite-position",
+      "status": "PASS",
+      "exception": "Via move requires a distinct finite position and explicit rationale"
+    },
+    {
+      "case": "unchanged-position",
+      "status": "PASS",
+      "exception": "Via move requires a distinct finite position and explicit rationale"
+    },
+    {
+      "case": "duplicate-move",
+      "status": "PASS",
+      "exception": "Duplicate or conflicting via move"
+    },
+    {
+      "case": "ground-move",
+      "status": "PASS",
+      "exception": "Moved non-ground via snapshot mismatch: 9261d2ee-ab5f-4342-9b5b-413cd4ceaaee"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "scope": "Check actual SES fixed-state and layer use after a no-routing load.",
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "R152-routeB",
+      "states": [
+        {
+          "kind": "via",
+          "state": "protect",
+          "count": 323
+        },
+        {
+          "kind": "wire",
+          "state": "protect",
+          "count": 1181
+        },
+        {
+          "kind": "wire",
+          "state": "unfixed",
+          "count": 42
+        }
+      ],
+      "protected_movable_wire_count": 290,
+      "protected_movable_nets": [
+        "/01 {slash} Core/ACT_CURRENT_ADC",
+        "/01 {slash} Core/ARMED",
+        "/01 {slash} Core/BAT_ADC",
+        "/01 {slash} Core/UPS_SCL_MCU",
+        "/01 {slash} Core/UPS_SDA_MCU",
+        "/01 {slash} Core/WDI",
+        "/01 {slash} Core/WHEEL_ADC",
+        "/01 {slash} Core/WHEEL_OE_REQ_N",
+        "/15 {slash} Head_Output_OV/H_DUMP_TEMP",
+        "/ACT_CURRENT_FILTERED",
+        "/CLR_N",
+        "/FAULT_N",
+        "/HEAD_UV_ENABLE",
+        "Net-(D1001-K)",
+        "Net-(U1001-D3_{slash}_current_ADC)",
+        "Net-(U1001-S2_{slash}_WHEEL_sense)",
+        "Net-(U1301-INB-_{slash}_OV)"
+      ],
+      "unfixed_other_wire_nets": [
+        "/HEAD_6V_RAW",
+        "/WHEEL_VM"
+      ],
+      "components": 215,
+      "pins": 651,
+      "vias": 323,
+      "nets": 156,
+      "classes": 9,
+      "routing_enabled": true,
+      "active_layers": [
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "result_ses_sha256": "01e88a48a60cf5c9693e7caea0d8d24bf3a5c5f7b2172ee6f72879c1edb39e42"
+    },
+    {
+      "run": "R152-readbackC",
+      "states": [
+        {
+          "kind": "via",
+          "state": "protect",
+          "count": 323
+        },
+        {
+          "kind": "wire",
+          "state": "protect",
+          "count": 891
+        },
+        {
+          "kind": "wire",
+          "state": "unfixed",
+          "count": 94
+        }
+      ],
+      "protected_movable_wire_count": 0,
+      "protected_movable_nets": [],
+      "unfixed_other_wire_nets": [],
+      "components": 215,
+      "pins": 651,
+      "vias": 323,
+      "nets": 156,
+      "classes": 9,
+      "routing_enabled": false,
+      "active_layers": [
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "result_ses_sha256": "ea067bdcc7a011a593f126def444884b8c86f667a15c4f6f8d9dd875b21d4169"
+    }
+  ],
+  "finding": "type route imports as protected in this build; type normal is confirmed unfixed for selected signals. Other wires and all source vias remain protected.",
+  "native_unchanged": true,
+  "source_board_sha256": "958eee80ba27a607e52507fcefe4c5b5aa4234d08a8d7bdb6f1257e79dea89a1",
+  "limits": [
+    "This validates transport loading, not native DRC, routing completeness, power, reference, thermal, or physical qualification."
+  ]
+}

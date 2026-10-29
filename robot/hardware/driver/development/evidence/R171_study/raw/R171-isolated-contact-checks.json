@@ -1,0 +1,253 @@
+{
+  "scope": "Native-source positive and refusal cases for explicit isolated-zone contacts.",
+  "source_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "checks": [
+    {
+      "name": "isolated_In2_only",
+      "expected_allowed": true,
+      "result": {
+        "allowed": true,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In3.Cu"
+        ],
+        "isolated_zone_review": [
+          {
+            "layer": "In2.Cu",
+            "area_mm2": 0.2015793043627406,
+            "bounds_mm": [
+              46.05,
+              11.6,
+              46.579921,
+              12.1
+            ],
+            "other_retained_objects": [],
+            "isolated_fill_only": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "legacy_no_exclusion",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "isolated_zone_review": []
+      }
+    },
+    {
+      "name": "real_In3_distribution",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In2.Cu"
+        ],
+        "isolated_zone_review": [
+          {
+            "layer": "In3.Cu",
+            "area_mm2": 216.77753673548304,
+            "bounds_mm": [
+              6.250499,
+              1.500499,
+              51.099501,
+              14.35
+            ],
+            "other_retained_objects": [
+              "1d166027-d4d4-4438-b824-dad6ba956450",
+              "6ea4012f-82b4-4256-9b16-92c478ed66f1",
+              "8578b857-35f5-42ac-b70f-5cb3584b4aad",
+              "9fc6be27-25b2-4bce-8f44-98f39ccd1aa1",
+              "c89d9b75-62b7-4bdc-8fe8-09516366b58c"
+            ],
+            "isolated_fill_only": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "both_layers",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [],
+        "isolated_zone_review": [
+          {
+            "layer": "In2.Cu",
+            "area_mm2": 0.2015793043627406,
+            "bounds_mm": [
+              46.05,
+              11.6,
+              46.579921,
+              12.1
+            ],
+            "other_retained_objects": [],
+            "isolated_fill_only": true
+          },
+          {
+            "layer": "In3.Cu",
+            "area_mm2": 216.77753673548304,
+            "bounds_mm": [
+              6.250499,
+              1.500499,
+              51.099501,
+              14.35
+            ],
+            "other_retained_objects": [
+              "1d166027-d4d4-4438-b824-dad6ba956450",
+              "6ea4012f-82b4-4256-9b16-92c478ed66f1",
+              "8578b857-35f5-42ac-b70f-5cb3584b4aad",
+              "9fc6be27-25b2-4bce-8f44-98f39ccd1aa1",
+              "c89d9b75-62b7-4bdc-8fe8-09516366b58c"
+            ],
+            "isolated_fill_only": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "wrong_contact_snapshot",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In3.Cu"
+        ],
+        "isolated_zone_review": [
+          {
+            "layer": "In2.Cu",
+            "area_mm2": 0.2015793043627406,
+            "bounds_mm": [
+              46.05,
+              11.6,
+              46.579921,
+              12.1
+            ],
+            "other_retained_objects": [],
+            "isolated_fill_only": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate_declaration",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "isolated_zone_review": []
+      }
+    },
+    {
+      "name": "outer_layer_exclusion",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "isolated_zone_review": []
+      }
+    },
+    {
+      "name": "missing_reason",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In3.Cu"
+        ],
+        "isolated_zone_review": [
+          {
+            "layer": "In2.Cu",
+            "area_mm2": 0.2015793043627406,
+            "bounds_mm": [
+              46.05,
+              11.6,
+              46.579921,
+              12.1
+            ],
+            "other_retained_objects": [],
+            "isolated_fill_only": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "malformed_declaration",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "effective_contact_layers": [
+          "In2.Cu",
+          "In3.Cu"
+        ],
+        "isolated_zone_review": []
+      }
+    },
+    {
+      "name": "ground_via_refused",
+      "expected_allowed": false,
+      "result": {
+        "allowed": false,
+        "contact_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "effective_contact_layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "isolated_zone_review": []
+      }
+    }
+  ],
+  "status": "PASS"
+}

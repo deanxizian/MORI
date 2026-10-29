@@ -1,0 +1,56 @@
+{
+  "executed_at": "2026-10-26T20:21:03.566836+00:00",
+  "scope": "Documentation/archive integrity only; no candidate adoption, physical operation or engineering qualification",
+  "python_version": "3.13.17 (main, Oct 21 2026, 17:49:18) [Clang 23.1.3 ]",
+  "commands": [
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Repository organization and provenance only; no hardware I/O\",\n  \"protected_files\": 541,\n  \"errors\": []\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.28033995628356934
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Publication integrity only\",\n  \"lfs_mode\": \"pointers allowed\",\n  \"errors\": []\n}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.49335575103759766
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.013185977935791016
+    },
+    {
+      "argv": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli",
+        "version"
+      ],
+      "returncode": 0,
+      "stdout": "10.0.7\n",
+      "stderr": "",
+      "elapsed_seconds": 0.11115097999572754
+    }
+  ],
+  "archive_payloads_verified": {
+    "R137_study": 138,
+    "R138_study": 45
+  },
+  "canonical_sha256_unchanged": "0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca",
+  "status": "PASS"
+}

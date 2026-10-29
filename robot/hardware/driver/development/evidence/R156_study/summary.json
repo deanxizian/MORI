@@ -1,0 +1,136 @@
+{
+  "recorded_at_utc": "2026-10-27T20:03:31.780316+00:00",
+  "source_commit": "12937ca39f6b77dce86b2fcdf19e7345e817358e",
+  "source_revision": "R154B",
+  "source_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "adopted_revision": "R156G",
+  "adopted_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+  "candidates": [
+    {
+      "revision": "R156A",
+      "board_sha256": "9ab656f558840a680f1cd2e27f259149d6308f3889e86f9ad27b5ddcc67e6de2",
+      "adopted": false,
+      "unconnected_items": 25,
+      "violations": 6,
+      "schematic_parity": 0,
+      "old_power_width_failures": 5,
+      "lost_connection_nets": 1,
+      "retained_reference_loss_count": 1,
+      "new_reference_gap_count": 1,
+      "changed_other_native_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R156B",
+      "board_sha256": "c44b55e8511d9bb84477d8a7c58194e86d77dd07dd849dd7eb6ee432dc615e83",
+      "adopted": false,
+      "unconnected_items": 25,
+      "violations": 0,
+      "schematic_parity": 0,
+      "old_power_width_failures": 5,
+      "lost_connection_nets": 1,
+      "retained_reference_loss_count": 1,
+      "new_reference_gap_count": 1,
+      "changed_other_native_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R156C",
+      "board_sha256": "b1b8eaf0b8832f8e978f4eea4aa40fe2910df46c809d5d730e716915cc7ae3d8",
+      "adopted": false,
+      "unconnected_items": 24,
+      "violations": 6,
+      "schematic_parity": 0,
+      "old_power_width_failures": 0,
+      "lost_connection_nets": 0,
+      "retained_reference_loss_count": 0,
+      "new_reference_gap_count": 0,
+      "changed_other_native_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R156D",
+      "board_sha256": "a8d753ace6fc6947de6da4cce136be6d841ae6933a96fef77916e79e20525308",
+      "adopted": false,
+      "unconnected_items": 24,
+      "violations": 0,
+      "schematic_parity": 0,
+      "old_power_width_failures": 0,
+      "lost_connection_nets": 0,
+      "retained_reference_loss_count": 0,
+      "new_reference_gap_count": 0,
+      "changed_other_native_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R156E",
+      "board_sha256": "9ec967d1d8561f84fd98a79eb3f550da2a753d0b8ccfa8bd9b72e6d1c38d5525",
+      "adopted": false,
+      "unconnected_items": 23,
+      "violations": 4,
+      "schematic_parity": 0,
+      "old_power_width_failures": 0,
+      "lost_connection_nets": 0,
+      "retained_reference_loss_count": 0,
+      "new_reference_gap_count": 3,
+      "changed_other_native_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R156F",
+      "board_sha256": "320fc0a310890b7635f0fe191fa34844d0c614adadf9d9f4b6840cd6fed4a409",
+      "adopted": false,
+      "unconnected_items": 23,
+      "violations": 1,
+      "schematic_parity": 0,
+      "old_power_width_failures": 0,
+      "lost_connection_nets": 0,
+      "retained_reference_loss_count": 0,
+      "new_reference_gap_count": 0,
+      "changed_other_native_members": [
+        "MORI_Interface_C3.kicad_pro"
+      ],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    },
+    {
+      "revision": "R156G",
+      "board_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+      "adopted": true,
+      "unconnected_items": 23,
+      "violations": 0,
+      "schematic_parity": 0,
+      "old_power_width_failures": 0,
+      "lost_connection_nets": 0,
+      "retained_reference_loss_count": 0,
+      "new_reference_gap_count": 0,
+      "changed_other_native_members": [],
+      "erc": "0 in final G; otherwise not rerun",
+      "physical": "NOT_TESTED"
+    }
+  ],
+  "remaining_unconnected_items": 23,
+  "baseline_unconnected_items": 40,
+  "remaining_connectivity_fraction": 0.575,
+  "not_engineering_progress": true,
+  "OV_study": "A/B retain the old MOTION_3V3 split; C crosses the existing UPS 5V tree. Joint supply searches produce excessive 35-79 mm detours and are not adopted.",
+  "wheel_study": "D in-place rotation alone retains 24 opens. E connects R1702 but conflicts with a fixed ground hole and has reference gaps. F fixes those but has a courtyard overlap. G passes the recorded reception and preserves R1002.1 as the sole remaining WHEEL_VM island.",
+  "checker_tests": "Initial v1 harness used the wrong audit API argument and did not finish; v2 had extra project normalization differences. V3 isolates one guard per negative case and rejects exactly the expected geometry/change-set checks. The original pre-fix false rejection and all cases remain preserved.",
+  "manufacturing_release": false,
+  "goal_complete": false
+}

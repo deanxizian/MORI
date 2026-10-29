@@ -1,0 +1,16 @@
+[
+  {
+    "step": "build",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/build_trial.py",
+      "robot/.state/c3-completion/trials/R143K",
+      "robot/.state/c3-completion/trials/R143L",
+      "robot/.state/c3-completion/trials/R143L-plan.json"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 241, in <module>\n    p=argparse.ArgumentParser();p.add_argument('source');p.add_argument('destination');p.add_argument('plan');a=p.parse_args();build(a.source,a.destination,a.plan)\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 98, in build\n    plan = json.loads(Path(plan_file).read_text())\n  File \"/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1266, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n  File \"/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1252, in open\n    return io.open(self, mode, buffering, encoding, errors, newline,\n  File \"/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1120, in _opener\n    return self._accessor.open(self, flags, mode)\nFileNotFoundError: [Errno 2] No such file or directory: 'robot/.state/c3-completion/trials/R143L-plan.json'\n",
+    "elapsed_seconds": 0.24538707733154297
+  }
+]

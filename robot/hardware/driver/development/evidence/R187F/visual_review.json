@@ -1,0 +1,62 @@
+{
+  "source_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "board_sha256": "6dbcf638a4292c080a05c01f46f9317d69bd655f37d57f0da46d6e3d3bfcb876",
+  "local_status": "PASS",
+  "scope": "Four source layer images and six final native local layer images actually viewed; diagnostic native geometry, not KiCad GUI screenshots.",
+  "images_actually_viewed": [
+    {
+      "path": "R187-IMU-source/B.Cu.png",
+      "sha256": "68f708faa3a0b3243c1c87517052558c43fd363e3a2a69eef61c1a6aee2af3ca"
+    },
+    {
+      "path": "R187-IMU-source/F.Cu.png",
+      "sha256": "9d11c8305acc80101aa09f97e557f3df98765312ac3fad59fa125aee559c6eb9"
+    },
+    {
+      "path": "R187-IMU-source/In1.Cu.png",
+      "sha256": "b7df309020e8e9d2126941889a4c97196941fa7285931add67a0799d5a7d4804"
+    },
+    {
+      "path": "R187-IMU-source/In3.Cu.png",
+      "sha256": "68625d9b6ad86c1b88ad9c324201c5872fbebd255e3211c3dda14be31759ef9b"
+    },
+    {
+      "path": "R187F-views/B.Cu.png",
+      "sha256": "0471b73e576ec454a1c2df2765e14a57087171c068b90b359a5284db2d79a848"
+    },
+    {
+      "path": "R187F-views/F.Cu.png",
+      "sha256": "f0f4420c141c430f958a2ee5f58566a290e0685bcc3f278e9bb614ad4be5ffc6"
+    },
+    {
+      "path": "R187F-views/In1.Cu.png",
+      "sha256": "70484d33f0aaea717f57df421b461058b6f1e6f619f6539d8e9acf68b989ac6d"
+    },
+    {
+      "path": "R187F-views/In2.Cu.png",
+      "sha256": "2cce29adbeb8617ddff479fd7ce758ef4205c8d42448c7c29918eb1dcba90073"
+    },
+    {
+      "path": "R187F-views/In3.Cu.png",
+      "sha256": "4c63f0ebf4dc41ce6ba80059a95e842d1919cc857e5291780af6761994115606"
+    },
+    {
+      "path": "R187F-views/In4.Cu.png",
+      "sha256": "70484d33f0aaea717f57df421b461058b6f1e6f619f6539d8e9acf68b989ac6d"
+    }
+  ],
+  "observations": [
+    "F clock leaves the existing left transfer and follows the open corridor below the unchanged J701 guards. Final clockwise bend approaches the right existing transfer from below, avoiding the remaining reference bite without moving the 3V3 via farther upward.",
+    "The 0.20 mm final clock segment and 0.10 mm WHEEL_TX centering segment are inside their existing via lands; they are not exposed tiny zigzags.",
+    "In2 WHEEL_TX makes one deliberate lower bypass around the relocated sampling transfer. Its short added span has full mapped In1 reference. The original In3 sampling connection is restored with a shorter local lead.",
+    "B R1001 escape remains outward. The changed 3V3 feed retains 0.50 mm trunk and 0.20 mm bypass widths and unchanged combined centerline length.",
+    "The two reference planes have the expected via antipads; the complete per-track audit closes all four IMU clock coverage flags and one WHEEL_TX In2 flag without changing exclusions or the 1e-6 mm2 threshold.",
+    "The new In2/In3 supply projection has no intervening GND and is explicitly reviewed in coupling-review.json. It is not described as shielded."
+  ],
+  "coupling_review": "coupling-review.json",
+  "whole_board_visual": "NOT_TESTED",
+  "whole_board_route_style": "NOT_TESTED",
+  "full_noise_transient_thermal": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

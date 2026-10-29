@@ -1,0 +1,291 @@
+[
+  {
+    "kind": "power_zone_expansion",
+    "uuid": "a80aa879-d438-45df-b4e9-32a8f0bace12",
+    "source_expected": {
+      "settings": {
+        "GetIsRuleArea": false,
+        "GetZoneName": "HEAD_6V_RAW_LOCAL",
+        "GetNetname": "/HEAD_6V_RAW",
+        "GetAssignedPriority": 34,
+        "GetDoNotAllowTracks": true,
+        "GetDoNotAllowVias": true,
+        "GetDoNotAllowPads": true,
+        "GetDoNotAllowFootprints": false,
+        "GetDoNotAllowZoneFills": false,
+        "GetLocalClearance": 400000,
+        "GetMinThickness": 200000,
+        "GetThermalReliefGap": 254000,
+        "GetThermalReliefSpokeWidth": 300000,
+        "GetPadConnection": 3,
+        "GetFillMode": 0,
+        "GetIslandRemovalMode": 0,
+        "GetMinIslandArea": 10000000000000,
+        "GetHatchGap": 1500000,
+        "GetHatchThickness": 1000000,
+        "GetHatchSmoothingLevel": 0,
+        "GetHatchSmoothingValue": 0.1,
+        "GetHatchHoleMinArea": 0.15,
+        "GetHatchBorderAlgorithm": 1,
+        "hatch_orientation_degrees": 0.0,
+        "layers": [
+          "In2.Cu"
+        ]
+      },
+      "outline_wkt": "POLYGON ((4 21.2, 12.2 21.2, 12.2 24, 4 24, 4 21.2))"
+    },
+    "union_patch_mm": [
+      [
+        3.6,
+        16.3
+      ],
+      [
+        5.0,
+        16.3
+      ],
+      [
+        5.7,
+        17.0
+      ],
+      [
+        5.7,
+        18.55
+      ],
+      [
+        6.05,
+        18.9
+      ],
+      [
+        8.2,
+        18.9
+      ],
+      [
+        8.2,
+        21.6
+      ],
+      [
+        3.5,
+        21.6
+      ],
+      [
+        3.5,
+        17.2
+      ]
+    ],
+    "expected_added_area_mm2": 16.50125000000001,
+    "reason": "Join the isolated C909/C911 output reservoir to its existing 6 V allocation using an explicit new power via and short local branch. Full native refill, original power and reference regression and actual added-path width review remain required."
+  },
+  {
+    "kind": "footprint_transform",
+    "reference": "C909",
+    "from_mm": [
+      3.85,
+      17.75
+    ],
+    "delta_mm": [
+      0,
+      0.725
+    ],
+    "rotation_deg": 180,
+    "source_rotation_deg": -90.0,
+    "translated_body_guards": [
+      "c63d8a75-81a5-499b-a5b4-3baf5eea21f2"
+    ],
+    "guard_reconstruction": null
+  },
+  {
+    "uuid": "9ab72324-cc9b-4135-85b6-936782a014dc",
+    "kind": "removed_track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.75,
+      16.8
+    ],
+    "end_mm": [
+      3.75,
+      14.7
+    ]
+  },
+  {
+    "uuid": "ced78e4e-39b4-4c37-b894-28bc932e3c5b",
+    "kind": "removed_track",
+    "net": "/HEAD_VM",
+    "layer": "B.Cu",
+    "width_mm": 0.6,
+    "start_mm": [
+      6.65,
+      18.695
+    ],
+    "end_mm": [
+      6.65,
+      17.955
+    ]
+  },
+  {
+    "kind": "via_position_move",
+    "uuid": "9ea931c3-55b7-4755-93ce-ce123ea4042a",
+    "source_expected": {
+      "net": "/HEAD_VM",
+      "position_mm": [
+        6.65,
+        17.955
+      ],
+      "drill_mm": 0.4,
+      "via_type": 4,
+      "layers": [
+        "F.Cu",
+        "In1.Cu",
+        "In2.Cu",
+        "In3.Cu",
+        "In4.Cu",
+        "B.Cu"
+      ],
+      "diameters_mm": {
+        "F.Cu": 0.8,
+        "In1.Cu": 0.8,
+        "In2.Cu": 0.8,
+        "In3.Cu": 0.8,
+        "In4.Cu": 0.8,
+        "B.Cu": 0.8
+      }
+    },
+    "position_mm": [
+      6.65,
+      17.8
+    ],
+    "reason": "Preserve the adjacent existing HEAD_VM feed and a usable 6 V allocation corridor while retaining the original 0.80/0.40 mm power transfer."
+  },
+  {
+    "uuid": "91d225fb-c13e-5582-9721-84932b2c484a",
+    "kind": "via",
+    "net": "/HEAD_6V_RAW",
+    "position_mm": [
+      4.575,
+      17.125
+    ],
+    "diameter_mm": 0.8,
+    "drill_mm": 0.4
+  },
+  {
+    "uuid": "65339103-0e05-500f-a462-cefd7dd82e99",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.75,
+      14.7
+    ],
+    "end_mm": [
+      3.35,
+      15.1
+    ]
+  },
+  {
+    "uuid": "22a3e94b-b798-534b-bce6-016159de520d",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.35,
+      15.1
+    ],
+    "end_mm": [
+      3.35,
+      16.15
+    ]
+  },
+  {
+    "uuid": "ee549628-486a-5e9e-b941-9322638cecfb",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      3.35,
+      16.15
+    ],
+    "end_mm": [
+      4.325,
+      17.125
+    ]
+  },
+  {
+    "uuid": "e238a4aa-f72f-5628-91e2-33fc2b5defd7",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.325,
+      17.125
+    ],
+    "end_mm": [
+      4.575,
+      17.125
+    ]
+  },
+  {
+    "uuid": "bac16114-9df3-547b-ae8e-437d82ebfe12",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.575,
+      17.125
+    ],
+    "end_mm": [
+      4.575,
+      17.525
+    ]
+  },
+  {
+    "uuid": "48210e71-61e4-5d82-8c92-6a211c03e7bb",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.575,
+      17.525
+    ],
+    "end_mm": [
+      4.8,
+      17.75
+    ]
+  },
+  {
+    "uuid": "117ffbf6-08e4-508b-87ed-a0f81ee6d1be",
+    "kind": "track",
+    "net": "/HEAD_6V_RAW",
+    "layer": "B.Cu",
+    "width_mm": 0.5,
+    "start_mm": [
+      4.8,
+      17.75
+    ],
+    "end_mm": [
+      4.8,
+      18.475
+    ]
+  },
+  {
+    "uuid": "0afd3fe3-dc97-528c-bfc2-c3cc00781800",
+    "kind": "track",
+    "net": "/HEAD_VM",
+    "layer": "B.Cu",
+    "width_mm": 0.6,
+    "start_mm": [
+      6.65,
+      18.695
+    ],
+    "end_mm": [
+      6.65,
+      17.8
+    ]
+  }
+]

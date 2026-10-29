@@ -1,0 +1,16 @@
+[
+  {
+    "step": "build",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/build_trial.py",
+      "robot/hardware/driver/development/native",
+      "robot/.state/c3-completion/trials/R180F",
+      "robot/.state/c3-completion/trials/R180F-plan.json"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\nTraceback (most recent call last):\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 419, in <module>\n    p=argparse.ArgumentParser();p.add_argument('source');p.add_argument('destination');p.add_argument('plan');a=p.parse_args();build(a.source,a.destination,a.plan)\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 280, in build\n    move_body_guards(owned, spec['delta_mm'], reconstruct, new_angle-old_angle,\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 156, in move_body_guards\n    raise ValueError('Guard reconstruction requires separate body and via-only guards')\nValueError: Guard reconstruction requires separate body and via-only guards\n",
+    "elapsed_seconds": 0.4644789695739746
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "source_sha256": "0314affe1179898dbb679292c8c4ecb8f59838d5753302436854bf4ea5e76af9",
+  "candidate_sha256": "541c1deefa1eddf02e188ef4157448e9cc0d2395f0761c782e91a176bf55bbef",
+  "candidate": "R180R",
+  "scope": "Five listed native diagnostic images were viewed. These are renders of actual native copper, not GUI screenshots or a whole-board review.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R180A-U301-B.png",
+      "sha256": "d9d2934bf6e581e1604bdcd80efeda6fe1146fc979afdedb715158e1622c2f52"
+    },
+    {
+      "path": "raw/R180L-U301-B.png",
+      "sha256": "1007ada01473da0790fe2acb31f37e1bada5539a08541cb90d0ef2a754c36af4"
+    },
+    {
+      "path": "raw/R180R-U301-B.png",
+      "sha256": "f102a1e9f0eac892667e0d63fe6ad71aad40ae1cb72c4a4075967ad7639db8e7"
+    },
+    {
+      "path": "raw/R180R-U301-F.png",
+      "sha256": "a6096adb0c161361a70b99ee9d84dae24ac38b00e911cb29b362c9fb3430d8e4"
+    },
+    {
+      "path": "raw/R180R-U301-In3.png",
+      "sha256": "b59857bd87d4b7c713a762fe1fcb7f102b2ca2d71d83b59a8199807a1566efd6"
+    }
+  ],
+  "observations": [
+    "R180R DISARMED lower-right pad is enclosed by its body, the new CLR wrap and the nearby source power/reference void. The strict raster source region is only 70 cells at 0.05 mm, with no legal new via site.",
+    "R180R F view confirms the L701 switching pad and nearby C702 input pad occupy candidate through-via locations. Empty B copper alone does not establish a through-via opportunity.",
+    "R180R In3 view confirms the nearby retained diagonal belongs to ACT_CURRENT_ADC; it is not a regulator feedback trace.",
+    "Inspection reports two new ARMED F-segment projections into the nominal J102 body near (36,6), total 0.027663486706764866 mm2. This is an unresolved same-face routing defect, not waived by native DRC.",
+    "S/T retire the old CLR In2 branch and reassign its fixed via to ARMED. Restoring DISARMED in T blocks both subsequent ARMED and CLR proposals; independent proposals cannot be combined blindly."
+  ],
+  "local_acceptance": "FAIL",
+  "opposite_face_coupling_thermal": "NOT_TESTED",
+  "whole_board_visual": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false,
+  "manufacturing_release": false
+}

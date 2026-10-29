@@ -1,0 +1,72 @@
+{
+  "scope": "Validate actual offset pad exits without allowing arbitrary source endpoints.",
+  "source_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "native_offset_exit",
+      "status": "PASS",
+      "result": [
+        {
+          "uuid": "9de23d3c-b74e-4fac-9c4e-98d191bd73df",
+          "direct_returns": [
+            {
+              "pad": "C1002.2",
+              "layer": "B.Cu",
+              "source_length_mm": 4.043502884254444,
+              "source_pad_exit_mm": [
+                52.25,
+                15.275
+              ],
+              "planned_length_mm": 1.7245689014324252,
+              "minimum_width_mm": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "existing_centre_exit",
+      "status": "PASS",
+      "result": [
+        {
+          "uuid": "2e7f36fc-97b4-4bdc-ac9d-b6a6321965ed",
+          "direct_returns": [
+            {
+              "pad": "C601.2",
+              "layer": "B.Cu",
+              "source_length_mm": 1.7199747468305837,
+              "source_pad_exit_mm": [
+                57.9,
+                9.325
+              ],
+              "planned_length_mm": 0.9249999999999989,
+              "minimum_width_mm": 0.2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "outside_pad",
+      "status": "PASS",
+      "rejected": "Source ground-return exit is outside its pad copper"
+    },
+    {
+      "name": "inside_pad_but_not_actual_track_endpoint",
+      "status": "PASS",
+      "rejected": "Ground return path is not continuous"
+    },
+    {
+      "name": "nonfinite_exit",
+      "status": "PASS",
+      "rejected": "Source ground-return exit is outside its pad copper"
+    },
+    {
+      "name": "missing_offset_declaration",
+      "status": "PASS",
+      "rejected": "Ground return path is not continuous"
+    }
+  ],
+  "source_saved": false
+}

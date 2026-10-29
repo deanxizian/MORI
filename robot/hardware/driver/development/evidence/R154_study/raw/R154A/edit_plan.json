@@ -1,0 +1,182 @@
+{
+  "revision": "R154A",
+  "scope": "Independent local power-feed proposal, preserving the real narrow U1201 input land.",
+  "board_sha256": "a9121d98d1c6c5d86acbdb473a0873b76fe07ae8e85f26212c999d552f844ca0",
+  "translations": [
+    {
+      "reference": "C1201",
+      "from_mm": [
+        7.95,
+        23.75
+      ],
+      "delta_mm": [
+        -0.2,
+        0
+      ]
+    }
+  ],
+  "move_vias": [
+    {
+      "uuid": "1b3035a7-c9ba-44db-9674-ec974420a31b",
+      "source_expected": {
+        "net": "/HEAD_6V_RAW",
+        "position_mm": [
+          8.9,
+          23.05
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        8.75,
+        23.05
+      ],
+      "reason": "Move the original raw-input transfer within its existing allocation to allow a straight 0.50 mm trunk clear of the actual neighbouring U1201 pads; preserve via size and all native rules."
+    }
+  ],
+  "delete_copper": [
+    "b937e90f-41ec-4bc9-bc39-aad58b3709e5",
+    "8722d3b6-7a19-4458-ac60-865b470b4f8a",
+    "b5fbb078-87d1-432a-bec1-d734b6208dbd",
+    "37de691e-845b-4753-92e4-6d35e88f4106",
+    "1a512477-0860-46ba-8a5d-e236670b2551"
+  ],
+  "deleted_copper_expected": {
+    "b937e90f-41ec-4bc9-bc39-aad58b3709e5": {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        8.9,
+        23.05
+      ],
+      "end_mm": [
+        8.9,
+        24.75
+      ]
+    },
+    "8722d3b6-7a19-4458-ac60-865b470b4f8a": {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        9.35,
+        24.75
+      ],
+      "end_mm": [
+        8.9,
+        24.75
+      ]
+    },
+    "b5fbb078-87d1-432a-bec1-d734b6208dbd": {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        8.05,
+        24.75
+      ],
+      "end_mm": [
+        9.35,
+        24.75
+      ]
+    },
+    "37de691e-845b-4753-92e4-6d35e88f4106": {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        8.9,
+        24.75
+      ],
+      "end_mm": [
+        8.9,
+        26.225
+      ]
+    },
+    "1a512477-0860-46ba-8a5d-e236670b2551": {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.3,
+      "start_mm": [
+        8.9,
+        26.225
+      ],
+      "end_mm": [
+        8.0,
+        26.225
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          8.75,
+          23.05
+        ],
+        [
+          8.75,
+          26.225
+        ],
+        [
+          8.0,
+          26.225
+        ]
+      ]
+    },
+    {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          7.75,
+          24.75
+        ],
+        [
+          8.95,
+          24.75
+        ]
+      ]
+    },
+    {
+      "net": "/HEAD_6V_RAW",
+      "layer": "F.Cu",
+      "width_mm": 0.3,
+      "points_mm": [
+        [
+          8.95,
+          24.75
+        ],
+        [
+          9.35,
+          24.75
+        ]
+      ]
+    }
+  ],
+  "design_notes": [
+    "The unchanged input pin is only 0.30 mm high; the local 0.30 mm escape is intentional and must not be replaced by a false 0.48 mm full-terminal claim.",
+    "The aim is a wider trunk to both local input capacitors and a short real-pad escape, not current or physical qualification."
+  ]
+}

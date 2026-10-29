@@ -1,0 +1,42 @@
+{
+  "checked_at_utc": "2026-10-28T19:15:04.179060+00:00",
+  "status": "PASS",
+  "scope": "Repository integrity and local evidence only; no device I/O, builds, manufacturing, or physical qualification.",
+  "checks": [
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "status": "PASS",
+      "protected_files": 541
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "exit_code": 0,
+      "status": "PASS",
+      "scope": "Publication integrity only"
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "imported_artifacts": 405,
+      "control_source_files": 324,
+      "links": 85
+    },
+    {
+      "check": "Development README/NEXT and new evidence Markdown links",
+      "status": "PASS",
+      "links": 235
+    },
+    {
+      "check": "All frozen R178 payload hashes and decompressed original-byte hashes",
+      "status": "PASS",
+      "payloads": 433
+    }
+  ],
+  "remote_main": "aa94dddebcc8ca40cc4b63616147f81448ef087f",
+  "published_PCB": "C3 R108P",
+  "development_PCB": "C3 R178L",
+  "remaining_unconnected_items": 19,
+  "goal_complete": false
+}

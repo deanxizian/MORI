@@ -1,0 +1,166 @@
+{
+  "revision": "R153D",
+  "scope": "Retain both existing supplies while widening the actual new output-capacitor neck; exact independent trial.",
+  "board_sha256": "7a74c8cf57681740216e47ab2f1b7f52af83a652cb6379c83d8dde4cb9353bd9",
+  "translations": [
+    {
+      "reference": "C909",
+      "from_mm": [
+        3.85,
+        17.75
+      ],
+      "delta_mm": [
+        0,
+        0.65
+      ],
+      "rotation_deg": 180
+    }
+  ],
+  "delete_copper": [
+    "9ab72324-cc9b-4135-85b6-936782a014dc"
+  ],
+  "deleted_copper_expected": {
+    "9ab72324-cc9b-4135-85b6-936782a014dc": {
+      "net": "/HEAD_6V_RAW",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "start_mm": [
+        3.75,
+        16.8
+      ],
+      "end_mm": [
+        3.75,
+        14.7
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "/HEAD_6V_RAW",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          3.75,
+          14.7
+        ],
+        [
+          3.35,
+          15.1
+        ],
+        [
+          3.35,
+          16.2
+        ],
+        [
+          4.2,
+          17.05
+        ],
+        [
+          4.55,
+          17.05
+        ],
+        [
+          4.55,
+          17.5
+        ],
+        [
+          4.8,
+          17.75
+        ],
+        [
+          4.8,
+          18.4
+        ]
+      ]
+    }
+  ],
+  "vias": [
+    {
+      "net": "/HEAD_6V_RAW",
+      "position_mm": [
+        4.55,
+        17.05
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    }
+  ],
+  "power_zone_expansions": [
+    {
+      "uuid": "a80aa879-d438-45df-b4e9-32a8f0bace12",
+      "source_expected": {
+        "settings": {
+          "GetIsRuleArea": false,
+          "GetZoneName": "HEAD_6V_RAW_LOCAL",
+          "GetNetname": "/HEAD_6V_RAW",
+          "GetAssignedPriority": 34,
+          "GetDoNotAllowTracks": true,
+          "GetDoNotAllowVias": true,
+          "GetDoNotAllowPads": true,
+          "GetDoNotAllowFootprints": false,
+          "GetDoNotAllowZoneFills": false,
+          "GetLocalClearance": 400000,
+          "GetMinThickness": 200000,
+          "GetThermalReliefGap": 254000,
+          "GetThermalReliefSpokeWidth": 300000,
+          "GetPadConnection": 3,
+          "GetFillMode": 0,
+          "GetIslandRemovalMode": 0,
+          "GetMinIslandArea": 10000000000000,
+          "GetHatchGap": 1500000,
+          "GetHatchThickness": 1000000,
+          "GetHatchSmoothingLevel": 0,
+          "GetHatchSmoothingValue": 0.1,
+          "GetHatchHoleMinArea": 0.15,
+          "GetHatchBorderAlgorithm": 1,
+          "hatch_orientation_degrees": 0.0,
+          "layers": [
+            "In2.Cu"
+          ]
+        },
+        "outline_wkt": "POLYGON ((4 21.2, 12.2 21.2, 12.2 24, 4 24, 4 21.2))"
+      },
+      "union_patch_mm": [
+        [
+          3.6,
+          16.3
+        ],
+        [
+          5.0,
+          16.3
+        ],
+        [
+          5.8,
+          17.1
+        ],
+        [
+          5.8,
+          18.35
+        ],
+        [
+          6.05,
+          18.6
+        ],
+        [
+          7.4,
+          18.6
+        ],
+        [
+          7.4,
+          21.6
+        ],
+        [
+          3.5,
+          21.6
+        ],
+        [
+          3.5,
+          17.2
+        ]
+      ],
+      "expected_added_area_mm2": 15.296249999999997,
+      "reason": "Join the isolated C909/C911 output reservoir to its existing 6 V allocation using an explicit new power via and short local branch. Full native refill, original power and reference regression and actual added-path width review remain required."
+    }
+  ]
+}

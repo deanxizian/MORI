@@ -1,0 +1,48 @@
+{
+  "source_sha256": "2a7c04b8430875a0f8f9e4bdde4b789da6b8efb5f84ee991a360f1d5b6d006dd",
+  "candidate_sha256": "f783cf5dfad0ff8020aac8906f12dd018287af6a6d548600d4776fb3603225a5",
+  "scope": "Only U303 translation, upper ADC simplification and C1403 ground-bridge replacement; four listed images actually inspected.",
+  "status": "PASS",
+  "images": [
+    {
+      "file": "images/R142-B.Cu.png",
+      "sha256": "0c666a8144b63fe0a77c3b6580acbff835a810b4e88228749d614c9fc95de658",
+      "actually_viewed_as_png": true,
+      "kind": "Diagnostic rendered from native polygons; not a screenshot or manufacturing data"
+    },
+    {
+      "file": "images/R144M-B.Cu.png",
+      "sha256": "781a686f9d879877c831a20e4610c41a5e4aea2560fb35d7fa720e9d247b3979",
+      "actually_viewed_as_png": true,
+      "kind": "Diagnostic rendered from native polygons; not a screenshot or manufacturing data"
+    },
+    {
+      "file": "images/R144M-F.Cu.png",
+      "sha256": "fb8c6727556fee6b136474f008d408459ceba2ebd62c75a09417f1c7df4fe08e",
+      "actually_viewed_as_png": true,
+      "kind": "Diagnostic rendered from native polygons; not a screenshot or manufacturing data"
+    },
+    {
+      "file": "images/R144M-In4.Cu.png",
+      "sha256": "a62b493291ea70f7027f39c21f0011fcc7af37b96f2d06288bc58f31dabd2ea1",
+      "actually_viewed_as_png": true,
+      "kind": "Diagnostic rendered from native polygons; not a screenshot or manufacturing data"
+    }
+  ],
+  "findings": [
+    "U303 left shift 0.20 mm provides measured pad clearance for the straight ADC route and the reference-aware ground bridge; native courtyard and existing connections pass.",
+    "C1403 stays fixed; its local comparator sense path is unchanged. H filter relocation was rejected for a longer actual path despite passing Euclidean adjacency.",
+    "Ground bridge retains 0.30 mm width, with four deliberate segments and full In4 reference coverage. The three-segment K proposal was rejected for reference gaps.",
+    "Upper ADC retains outward routing outside nominal same-face bodies; two 0.10 mm offsets are removed.",
+    "The GND bridge overlaps opposite-face R702/C913 projections. Their F copper and placement are unchanged; In4 ground is continuous beneath the new traces. This is scoped geometric review, not coupling or thermal qualification."
+  ],
+  "same_face_nominal_body_status": "PASS",
+  "opposite_side_coupling": "NOT_TESTED",
+  "thermal": "NOT_TESTED",
+  "whole_board_per_track_per_via": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "remaining_local_style_items": [
+    "FAULT In2 0.10 mm offset; further group-layout and whole-board review remain."
+  ],
+  "manufacturing_release": false
+}

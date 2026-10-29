@@ -1,0 +1,49 @@
+{
+  "executed_at_utc": "2026-10-28T07:05:21.044004+00:00",
+  "scope": "Repository/project offline integrity only; no hardware performance or physical qualification.",
+  "commands": [
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "--version"
+      ],
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "returncode": 0,
+      "stdout": "Python 3.13.17\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Repository organization and provenance only; no hardware I/O\",\n  \"protected_files\": 541,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Publication integrity only\",\n  \"lfs_mode\": \"pointers allowed\",\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"imported_artifacts\": 405,\n  \"control_source_files\": 324,\n  \"links\": 85,\n  \"meshes\": [\n    {\n      \"file\": \"baseplate_R37_TRIAL.stl\",\n      \"triangles\": 134888,\n      \"vertices\": 67380,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 57344.57737390249,\n      \"bounds_mm\": [\n        [\n          -80.0,\n          -26.5,\n          0.0\n        ],\n        [\n          80.0,\n          26.5,\n          80.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"camera_bracket_R59_40deg_TRIAL.stl\",\n      \"triangles\": 30352,\n      \"vertices\": 15164,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 4661.658087943824,\n      \"bounds_mm\": [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          16.257375717163086,\n          29.523170471191406,\n          72.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"camera_bracket_R60_REAR_40deg_TRIAL.stl\",\n      \"triangles\": 30352,\n      \"vertices\": 15164,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 4892.128234533014,\n      \"bounds_mm\": [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          16.61102867126465,\n          34.523170471191406,\n          72.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"second_platform_R55_TRIAL.stl\",\n      \"triangles\": 47728,\n      \"vertices\": 23828,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 50967.6688024494,\n      \"bounds_mm\": [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          160.0,\n          80.0,\n          9.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"wheel_hub_R41_TRIAL.stl\",\n      \"triangles\": 271664,\n      \"vertices\": 135810,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 29137.953587906122,\n      \"bounds_mm\": [\n        [\n          -36.25,\n          -36.25,\n          0.0\n        ],\n        [\n          36.25,\n          36.25,\n          23.75\n        ]\n      ]\n    }\n  ],\n  \"scope\": \"Integrity and digital topology only; no hardware I/O or physical qualification\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "status": "PASS"
+}

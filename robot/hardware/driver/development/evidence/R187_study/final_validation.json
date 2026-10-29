@@ -1,0 +1,34 @@
+{
+  "python": "3.13.17 (main, Oct 21 2026, 17:49:18) [Clang 23.1.3 ]",
+  "checks": [
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "status": "PASS",
+      "output": "validation/workspace.json",
+      "sha256": "278792e65b241b3eec28df18d0b5e4ff0eb3fbc46595d274524af77d70bfc020"
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "status": "PASS",
+      "output": "validation/project.json",
+      "sha256": "c6ca6fcdc4a811c574687737a94bc10ae43ebb70db083b3479d6e36da4a806ab"
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "cwd": "/Volumes/Sol/MORI-hardware-completion",
+      "status": "PASS",
+      "output": "validation/rig.json",
+      "sha256": "d0267735f84b8c7c26e5cc6ae135bef552f30ae19d132db597b7aa86c67a9d9a"
+    }
+  ],
+  "git_diff_check": "PASS",
+  "archive_payloads": 153,
+  "verified_source_non_PCB_members": 77,
+  "verified_viewed_images": 10,
+  "scope": "Offline integrity and evidence checks; does not close PCB engineering or physical qualification.",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false,
+  "goal_complete": false
+}

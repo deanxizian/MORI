@@ -1,0 +1,117 @@
+{
+  "scope": "Read-only diagnosis of the FAULT escape reachable from U1701.5.\n\nUse the same full native/reference/body graph as route search. Report actual\nreachable regions and obstacles to through-via placement, not a global\nimpossibility claim. No routing rule or source geometry is changed.\n",
+  "source_sha256": "0e604bf10a4c4ab395637630ac5fc856bbc964b4d07db34cc097a5533ca97d09",
+  "revision": "R169B",
+  "endpoint": "U1701.5",
+  "position_mm": [
+    49.45,
+    13.35
+  ],
+  "grid_mm": 0.05,
+  "start_points": 87,
+  "reachable_layers": [
+    {
+      "layer": "B.Cu",
+      "raster_points": 616,
+      "area_mm2": 1.5400000000000003,
+      "bounds_mm": [
+        48.55000000000004,
+        13.350000000000012,
+        50.50000000000004,
+        14.250000000000012
+      ],
+      "via_free_points": 0
+    },
+    {
+      "layer": "F.Cu",
+      "raster_points": 0,
+      "area_mm2": 0.0,
+      "bounds_mm": null,
+      "via_free_points": 0
+    },
+    {
+      "layer": "In2.Cu",
+      "raster_points": 0,
+      "area_mm2": 0.0,
+      "bounds_mm": null,
+      "via_free_points": 0
+    },
+    {
+      "layer": "In3.Cu",
+      "raster_points": 0,
+      "area_mm2": 0.0,
+      "bounds_mm": null,
+      "via_free_points": 0
+    }
+  ],
+  "reference_guard_blocked_B_points": 271,
+  "through_via_obstacles": [
+    {
+      "kind": "physical_via_to_pad",
+      "pad": "U1701.5",
+      "net": "/FAULT_N",
+      "layer": "B.Cu",
+      "blocked_reachable_B_points": 370
+    },
+    {
+      "kind": "physical_via_to_pad",
+      "pad": "R1310.1",
+      "net": "Net-(U1302-CT)",
+      "layer": "F.Cu",
+      "blocked_reachable_B_points": 300
+    },
+    {
+      "kind": "physical_via_to_pad",
+      "pad": "R1310.2",
+      "net": "MOTION_3V3",
+      "layer": "F.Cu",
+      "blocked_reachable_B_points": 267
+    },
+    {
+      "kind": "native_via_keepout",
+      "name": "BODY_R1310_0",
+      "layers": [
+        "F.Cu"
+      ],
+      "blocked_reachable_B_points": 213
+    },
+    {
+      "kind": "physical_via_to_pad",
+      "pad": "U1701.4",
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "blocked_reachable_B_points": 87
+    },
+    {
+      "kind": "physical_via_to_pad",
+      "pad": "U1302.4",
+      "net": "Net-(U1302-CT)",
+      "layer": "B.Cu",
+      "blocked_reachable_B_points": 68
+    },
+    {
+      "kind": "native_via_keepout",
+      "name": "BODY_U1302_0_VIA_0",
+      "layers": [
+        "B.Cu"
+      ],
+      "blocked_reachable_B_points": 28
+    },
+    {
+      "kind": "physical_via_to_pad",
+      "pad": "U1302.3",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "B.Cu",
+      "blocked_reachable_B_points": 6
+    },
+    {
+      "kind": "native_via_keepout",
+      "name": "BODY_U1701_0_VIA_1_VIA_0_VIA_1_VIA_0",
+      "layers": [
+        "B.Cu"
+      ],
+      "blocked_reachable_B_points": 3
+    }
+  ],
+  "adopted": false
+}

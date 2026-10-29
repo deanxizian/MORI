@@ -1,0 +1,89 @@
+{
+  "scope": "Extract new copper proposals from SES; never import its replacement geometry.",
+  "source_board_sha256": "958eee80ba27a607e52507fcefe4c5b5aa4234d08a8d7bdb6f1257e79dea89a1",
+  "placements_preserved": 215,
+  "control_segments": 1286,
+  "control_vias": 323,
+  "control_native_track_count": 1287,
+  "control_geometry_differences_at_0_2um": [],
+  "padstack_transport": [
+    {
+      "ses_name": "Via[0-5]_499:300_um",
+      "ses_diameter_mm": 0.5,
+      "source_name": "Via[0-5]_499.999:300_um",
+      "diameter_mm": 0.499999,
+      "drill_mm": 0.3
+    },
+    {
+      "ses_name": "Via[0-5]_500:300_um",
+      "ses_diameter_mm": 0.5,
+      "source_name": "Via[0-5]_500:300_um",
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    },
+    {
+      "ses_name": "Via[0-5]_800:400_um",
+      "ses_diameter_mm": 0.8,
+      "source_name": "Via[0-5]_800:400_um",
+      "diameter_mm": 0.8,
+      "drill_mm": 0.4
+    },
+    {
+      "ses_name": "Via[0-5]_600:300_um",
+      "ses_diameter_mm": 0.6,
+      "source_name": "Via[0-5]_600:300_um",
+      "diameter_mm": 0.6,
+      "drill_mm": 0.3
+    }
+  ],
+  "result_segments": 1349,
+  "result_vias": 323,
+  "output_R13_violations": [],
+  "new_segment_count": 10,
+  "new_via_count": 0,
+  "explicitly_replaced_source_tracks": 0,
+  "nets": [
+    {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "new_segments": 1,
+      "new_vias": 0,
+      "source_pad_groups": 1
+    },
+    {
+      "net": "/01 {slash} Core/ARMED",
+      "new_segments": 3,
+      "new_vias": 0,
+      "source_pad_groups": 3
+    },
+    {
+      "net": "/CLR_N",
+      "new_segments": 2,
+      "new_vias": 0,
+      "source_pad_groups": 1
+    },
+    {
+      "net": "/HEAD_6V_RAW",
+      "new_segments": 1,
+      "new_vias": 0,
+      "source_pad_groups": 3
+    },
+    {
+      "net": "/WHEEL_VM",
+      "new_segments": 1,
+      "new_vias": 0,
+      "source_pad_groups": 3
+    },
+    {
+      "net": "Net-(U1001-D3_{slash}_current_ADC)",
+      "new_segments": 2,
+      "new_vias": 0,
+      "source_pad_groups": 1
+    }
+  ],
+  "native_candidate_built": false,
+  "limits": [
+    "A 3 um geometry tolerance only removes transport noise; it does not waive native clearance or reference checks.",
+    "New copper is reapplied to exact R148E native objects. The SES board and its altered old padstacks are never imported.",
+    "These are proposals, not accepted connections or a completed board."
+  ]
+}

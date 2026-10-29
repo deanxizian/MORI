@@ -1,0 +1,76 @@
+{
+  "scope": "Native side-change fixtures and deliberate rejection controls.\n\nFixture copper is not refilled/qualified; only explicit structural assertions\nare tested. Negative copies deliberately retain the original audit hash so they\nalso fail provenance. Their specific pad/guard failures are required separately.\n",
+  "status": "PASS",
+  "tests": [
+    {
+      "name": "native_B_180_to_F_90_save_reload",
+      "status": "PASS",
+      "structural_checks": [
+        "declared_side_change_R716",
+        "footprint_R716",
+        "translation_source_R716",
+        "exact_moved_pad_set",
+        "exact_moved_guard_set",
+        "exact_moved_footprint_set",
+        "pad_5f3dde1c-d809-4b77-9a52-bd6a88491d99",
+        "pad_5aa870a9-049e-445e-a311-6536f37a2c8c",
+        "moved_guard_34d7f932-10c0-40a0-8370-c36d02454bfa",
+        "zone_constraints_34d7f932-10c0-40a0-8370-c36d02454bfa"
+      ],
+      "overall_fixture_status": "FAIL",
+      "overall_errors": [
+        "all_prior_pad_connections",
+        "power_width",
+        "unchanged_other_project_members"
+      ]
+    },
+    {
+      "name": "wrong_pad_net",
+      "status": "PASS",
+      "specific_rejection": "pad_5aa870a9-049e-445e-a311-6536f37a2c8c",
+      "provenance_also_rejected": true
+    },
+    {
+      "name": "wrong_pad_size",
+      "status": "PASS",
+      "specific_rejection": "pad_5aa870a9-049e-445e-a311-6536f37a2c8c",
+      "provenance_also_rejected": true
+    },
+    {
+      "name": "guard_on_original_face",
+      "status": "PASS",
+      "specific_rejection": "zone_constraints_34d7f932-10c0-40a0-8370-c36d02454bfa",
+      "provenance_also_rejected": true
+    },
+    {
+      "name": "same_face",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "missing_reason",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "wrong_source_rotation",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "fixed_connector",
+      "status": "PASS",
+      "rejected": true
+    },
+    {
+      "name": "legacy_R162D_same_face_replay",
+      "status": "PASS",
+      "unchanged_expected_errors": [
+        "all_prior_pad_connections"
+      ],
+      "check_count": 2731
+    }
+  ],
+  "test_count": 9,
+  "fixture_adopted": false
+}

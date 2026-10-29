@@ -1,0 +1,48 @@
+{
+  "source_sha256": "2a7c04b8430875a0f8f9e4bdde4b789da6b8efb5f84ee991a360f1d5b6d006dd",
+  "scope": "Specific local routing-smoothness constraints, not proof of global optimality or a whole-board style pass. No DRC/reference/body rule is weakened.",
+  "cases": [
+    {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "direct_comparison_mm": [
+        [
+          26.05,
+          11.75
+        ],
+        [
+          27.775,
+          13.475
+        ]
+      ],
+      "native_obstacle_hits": [
+        {
+          "uuid": "517233f3-e741-44cb-80ff-137513c1780f",
+          "item": "U303.1",
+          "net": "GND",
+          "kind": "PAD",
+          "centerline_to_copper_mm": 0.2565864234755988
+        }
+      ]
+    },
+    {
+      "net": "/FAULT_N",
+      "layer": "In2.Cu",
+      "direct_comparison_mm": [
+        [
+          20.5,
+          27.65
+        ],
+        [
+          21.75,
+          26.4
+        ]
+      ],
+      "native_obstacle_hits": []
+    }
+  ],
+  "ADC_direct_families_tested": 213,
+  "FAULT_smooth_family_tested": 2365,
+  "whole_board_style_optimization": "NOT_TESTED",
+  "remaining_style_work": "Revisit ADC/CLR/U303 and lower ADC/FAULT component/copper groups during the remaining layout pass. Small offsets are retained explicitly in this unvalidated development candidate, not declared globally unavoidable."
+}

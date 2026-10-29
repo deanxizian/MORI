@@ -1,0 +1,27 @@
+{
+  "scope": "Three actually viewed native-copper local renders; not whole-board review or physical qualification.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R175A-B.png",
+      "sha256": "57913e196741b7366411a50de5ba84ad8918f37bc60bf4fb089da09fc89d7f63"
+    },
+    {
+      "path": "raw/R175A-F.png",
+      "sha256": "32458576c57dc4265bcfa3a0795104b3f85396d60e3fbbb93c99efa072401034"
+    },
+    {
+      "path": "raw/R175G-B.png",
+      "sha256": "5a76f5eb22c0759bbfddf82bebed98fe2c3ae708dc384dadf3b96aff2e2a1a2c"
+    }
+  ],
+  "findings": [
+    "A keeps the rotated INA300 pose and changes the input transfer and explicit inner ground return. Native power and reference checks confirm restoration of the prior UPS/3V3 wide-copper regressions.",
+    "A front view shows the input resistor between neighbouring sample/sense routing and other-layer body/pad restrictions. Its bounded outward-access region has no legal transfer in the tested search.",
+    "G rotates the supervisor to 180 degrees and C1304 to 0 degrees. All 155 GND pads form one native group, with an explicit approximately 3.677 mm B-face capacitor-to-supervisor GND trace. Its CT pin and supply/input branches are still unfinished.",
+    "Small local route bends still need complete-loop style review. The new same-face nominal body-hit count is zero for A/G; opposite/internal projections and manufacturer, thermal and coupling requirements are not qualified."
+  ],
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_layout": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

@@ -1,0 +1,425 @@
+{
+  "status": "PASS_LOCAL_DEVELOPMENT_REVIEW",
+  "board_sha256": "451f80c86c690f54539a73a73057644838ef4d1533b71c93859187ae5ee52060",
+  "reviewed_images": [
+    "native-B-local.png",
+    "native-F-local.png",
+    "diagnostic-B.png",
+    "diagnostic-In4.png"
+  ],
+  "mounted_face_escape": "Q1401 drain faces +Y and exits directly toward the resistor group with 0.50-mm B copper; its 5.565-mm new route stays outside mounted-face body guards. Gate and OUT paths also stay outside all mounted-face guards. Native source GND pour contacts the retained stitch 0.750 mm away.",
+  "placements": {
+    "Q1401": {
+      "position_mm": [
+        20.05,
+        16.5
+      ],
+      "native_angle_deg": -90.0,
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(Q1401-G)",
+          "position_mm": [
+            19.1,
+            15.5625
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "position_mm": [
+            21.0,
+            15.5625
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "Net-(Q1401-D)",
+          "position_mm": [
+            20.05,
+            17.4375
+          ]
+        }
+      ]
+    },
+    "R1406": {
+      "position_mm": [
+        17.25,
+        15.125
+      ],
+      "native_angle_deg": 90.0,
+      "pads": [
+        {
+          "pin": "1",
+          "net": "Net-(U1401-OUT)",
+          "position_mm": [
+            17.25,
+            15.95
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(Q1401-G)",
+          "position_mm": [
+            17.25,
+            14.3
+          ]
+        }
+      ]
+    },
+    "R1407": {
+      "position_mm": [
+        16.825,
+        17.875
+      ],
+      "native_angle_deg": 0.0,
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "position_mm": [
+            16.0,
+            17.875
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "Net-(Q1401-G)",
+          "position_mm": [
+            17.65,
+            17.875
+          ]
+        }
+      ]
+    }
+  },
+  "copper_scope": "Delete exactly two old gate segments and one R1406 OUT approach, identified by source hash and exact UUID/net/layer/endpoints/width snapshots. Add 12 segments, no vias. All other retained copper objects unchanged. Seven pads and five component-owned guard shapes follow the explicit poses; all native guard IDs, layers and prohibitions retained.",
+  "electrical": "Q1401 drain and four dump resistor lands form one group. 0.48-mm corridor reaches all four resistors; source GND has a 0.48-mm corridor to the retained ground stitch. Old pad connections, 50 power-width checks, 155 GND pads, 63 critical adjacency and retained reference copper pass regression.",
+  "opposite_face_projection_review": [
+    {
+      "reference": "L701",
+      "nets": [
+        "Net-(Q1401-G)"
+      ],
+      "review": "A short part of the B-side gate approach projects beneath the F-side inductor footprint. In4 reference is continuous under the full new stroke outside own pad lands; no new via is added, and the F buck/SW/feedback copper is unchanged. This is a documented coupling-sensitive candidate area; continuous ground does not prove immunity to magnetic coupling or gate glitches."
+    },
+    {
+      "reference": "L901",
+      "nets": [
+        "Net-(Q1401-D)"
+      ],
+      "review": "B-side local traces project beneath parts of the F inductor footprint. In4 ground is retained beneath the full strokes; the drain route stays on B and has no new transfer. Switching-current coupling and inductor/dump-stage thermal interaction remain required whole-board/bench checks."
+    }
+  ],
+  "thermal": "Q1401 moves 0.70 mm left and rotates toward existing dump resistors. No power dissipation or duty rating is upgraded. MOSFET pulse SOA, comparator loaded-gate timing, resistor duty/temperature, copper current capability and interactions with nearby buck inductors remain unqualified.",
+  "assembly": "Native courtyard/spacing and saved/reloaded guard checks pass; nearest moved-group courtyard gap is about 0.055 mm. This is nominal CAD evidence, not measured soldering/rework or installed clearance.",
+  "alternatives": "Four original-center Q1401 rotations plus two grouped placements screened. Original pose is clearance-valid but drain remains open. Rotations alone hit existing copper/vias. R126B shifts R1406 left and fails at retained MOTION_3V3 via (15.5,15.4375); it also leaves an unconnected ground zone. R126C instead rotates R1406 90 degrees and raises it 0.875 mm.",
+  "new_projection_details": [
+    {
+      "uuid": "5cd2165b-7b28-52f5-afc3-c512a4042302",
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "start_mm": [
+        20.05,
+        18.2
+      ],
+      "end_mm": [
+        19.4,
+        18.85
+      ],
+      "width_mm": 0.5,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.42075299784896986
+        },
+        {
+          "body_rule": "BODY_L901_3",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.15029832623890926
+        }
+      ]
+    },
+    {
+      "uuid": "81c407d7-50b7-532a-8b79-015be3779e39",
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "start_mm": [
+        20.05,
+        17.4375
+      ],
+      "end_mm": [
+        20.05,
+        18.2
+      ],
+      "width_mm": 0.5,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.010291871620103542
+        },
+        {
+          "body_rule": "BODY_L901_3",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.10294042502339666
+        }
+      ]
+    },
+    {
+      "uuid": "b6ea40bd-452a-59f3-afb0-f392cc84f684",
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "start_mm": [
+        16.337499,
+        19.4125
+      ],
+      "end_mm": [
+        16.337499,
+        20.0
+      ],
+      "width_mm": 0.5,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.02011999781076248
+        }
+      ]
+    },
+    {
+      "uuid": "bcc154b3-bb85-517e-9773-266d4c01760b",
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "start_mm": [
+        19.4,
+        18.85
+      ],
+      "end_mm": [
+        16.9,
+        18.85
+      ],
+      "width_mm": 0.5,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 1.4469831472919985
+        }
+      ]
+    },
+    {
+      "uuid": "e14e33e8-b0ab-5c86-93ed-2ff7e5a8eda2",
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "start_mm": [
+        16.9,
+        18.85
+      ],
+      "end_mm": [
+        16.337499,
+        19.4125
+      ],
+      "width_mm": 0.5,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.38542329081372956
+        }
+      ]
+    },
+    {
+      "uuid": "659d24ac-740e-50df-bb2b-0f63fdf36b06",
+      "net": "Net-(U1401-OUT)",
+      "layer": "B.Cu",
+      "start_mm": [
+        17.175,
+        16.925
+      ],
+      "end_mm": [
+        17.25,
+        16.85
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.05303944495200022,
+      "own_transfer_voids": [
+        {
+          "uuid": "02b1487e-0eff-44fd-82b0-20ada3d4977f",
+          "diameter_mm": 0.5,
+          "clearance_mm": 0.4,
+          "polygon_tolerance_mm": 0.005
+        }
+      ],
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "97de174d-b1b6-589b-9acd-6bc4cb170763",
+      "net": "Net-(U1401-OUT)",
+      "layer": "B.Cu",
+      "start_mm": [
+        17.25,
+        16.85
+      ],
+      "end_mm": [
+        17.25,
+        15.95
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.11591305531917157,
+      "own_transfer_voids": [
+        {
+          "uuid": "02b1487e-0eff-44fd-82b0-20ada3d4977f",
+          "diameter_mm": 0.5,
+          "clearance_mm": 0.4,
+          "polygon_tolerance_mm": 0.005
+        }
+      ],
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "8ba5b6d3-53f3-5b38-b3a5-0f55408e43a8",
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "start_mm": [
+        17.8375,
+        14.3
+      ],
+      "end_mm": [
+        19.1,
+        15.5625
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L701_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.23370247227819915
+        }
+      ]
+    },
+    {
+      "uuid": "bd9dcc0f-9112-5471-ab58-7ab0e3219cb6",
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "start_mm": [
+        17.25,
+        14.3
+      ],
+      "end_mm": [
+        17.8375,
+        14.3
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L701_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.03841305531922856
+        }
+      ]
+    },
+    {
+      "uuid": "c2a6d194-146e-5d50-bc50-08fed2187b76",
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "start_mm": [
+        17.65,
+        17.875
+      ],
+      "end_mm": [
+        18.25,
+        17.275
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "efa869a0-8301-51c5-96b9-09054ae58e0a",
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "start_mm": [
+        18.25,
+        16.4125
+      ],
+      "end_mm": [
+        19.1,
+        15.5625
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "fab2a2fa-b631-5cd1-ab41-ae93070df502",
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "start_mm": [
+        18.25,
+        17.275
+      ],
+      "end_mm": [
+        18.25,
+        16.4125
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "reference_uncovered_mm2_before_own_transfer_exclusion": 0.0,
+      "own_transfer_voids": [],
+      "body_projections_outside_existing_lands": []
+    }
+  ],
+  "limits": [
+    "Local visual/development review only; whole-board review incomplete.",
+    "34 unconnected items and seven historical return-reference flags remain.",
+    "Pulse, thermal, EMC, dynamic protection and physical assembly NOT_TESTED."
+  ],
+  "manufacturing_release": false
+}

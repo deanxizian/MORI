@@ -1,0 +1,360 @@
+{
+  "revision": "R158B",
+  "board_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+  "scope": "Compare a top-side RLIMIT location with explicit B-face return to INA300 GND.\n\nC505 moves above the group; only its non-ground 3V3 feed via and the UPS_BAT\nsampling via move. All ground vias and U1701/input filters remain fixed. The\nnew RLIMIT ground trace terminates at the existing native GND8/bypass return,\nnot merely at the LATCH6 ground strap. No source rules or fills are changed.\nNative refill and full regressions decide whether this study can be accepted.\n",
+  "translations": [
+    {
+      "reference": "R1701",
+      "from_mm": [
+        42.5,
+        10.6
+      ],
+      "delta_mm": [
+        4.825,
+        -0.8
+      ],
+      "rotation_deg": 180
+    },
+    {
+      "reference": "C505",
+      "from_mm": [
+        49.1,
+        9.8
+      ],
+      "delta_mm": [
+        -0.1,
+        -3.9
+      ]
+    }
+  ],
+  "delete_copper": [
+    "283e8a76-85a8-4770-9806-c99b814d086e",
+    "4b276614-22f2-4764-801a-f2163e40a1dc",
+    "adad3143-5df1-4ec5-880d-250d5d2e7fda",
+    "2676fa86-af16-488d-8e96-d09ab84abdbd",
+    "d782638a-9a73-4961-94f5-f6517808de6f",
+    "7fbd282c-71e5-45fd-b08b-e396095322e8",
+    "14c68f5c-96be-5ffa-8644-c62a6a64ab4b"
+  ],
+  "deleted_copper_expected": {
+    "283e8a76-85a8-4770-9806-c99b814d086e": {
+      "net": "/UPS_BAT",
+      "layer": "F.Cu",
+      "width_mm": 0.5,
+      "start_mm": [
+        45.35,
+        11.655
+      ],
+      "end_mm": [
+        45.35,
+        10.5
+      ]
+    },
+    "4b276614-22f2-4764-801a-f2163e40a1dc": {
+      "net": "/UPS_BAT",
+      "layer": "B.Cu",
+      "width_mm": 0.35,
+      "start_mm": [
+        45.35,
+        10.5
+      ],
+      "end_mm": [
+        46.25,
+        9.6
+      ]
+    },
+    "adad3143-5df1-4ec5-880d-250d5d2e7fda": {
+      "net": "/UPS_BAT",
+      "layer": "B.Cu",
+      "width_mm": 0.35,
+      "start_mm": [
+        46.25,
+        9.6
+      ],
+      "end_mm": [
+        46.25,
+        8.55
+      ]
+    },
+    "2676fa86-af16-488d-8e96-d09ab84abdbd": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        48.325,
+        9.8
+      ],
+      "end_mm": [
+        47.15,
+        9.8
+      ]
+    },
+    "d782638a-9a73-4961-94f5-f6517808de6f": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        47.15,
+        9.8
+      ],
+      "end_mm": [
+        46.6,
+        10.35
+      ]
+    },
+    "7fbd282c-71e5-45fd-b08b-e396095322e8": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        49.875,
+        9.8
+      ],
+      "end_mm": [
+        49.875,
+        11.35
+      ]
+    },
+    "14c68f5c-96be-5ffa-8644-c62a6a64ab4b": {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.325,
+        10.6
+      ],
+      "end_mm": [
+        44.025,
+        11.3
+      ]
+    }
+  },
+  "move_vias": [
+    {
+      "uuid": "4150016a-d870-4d6e-beae-177f9b3cdd3a",
+      "source_expected": {
+        "net": "/UPS_BAT",
+        "position_mm": [
+          45.35,
+          10.5
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        45.35,
+        8.325
+      ],
+      "reason": "Move the existing same-net sampling feed out of the proposed RLIMIT land; restore original 0.50 mm front and 0.35 mm back connections at the new point."
+    },
+    {
+      "uuid": "9fc6be27-25b2-4bce-8f44-98f39ccd1aa1",
+      "source_expected": {
+        "net": "MOTION_3V3",
+        "position_mm": [
+          46.6,
+          10.35
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        47.3,
+        6.2
+      ],
+      "reason": "Move C505 supply feed with C505 to clear RLIMIT; preserve its same-net In2/In3 plane contacts and check every source width pair after refill."
+    }
+  ],
+  "routes": [
+    {
+      "net": "/UPS_BAT",
+      "layer": "F.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          45.35,
+          11.655
+        ],
+        [
+          45.35,
+          8.325
+        ]
+      ]
+    },
+    {
+      "net": "/UPS_BAT",
+      "layer": "B.Cu",
+      "width_mm": 0.35,
+      "points_mm": [
+        [
+          45.35,
+          8.325
+        ],
+        [
+          46.25,
+          8.325
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          48.225,
+          5.9
+        ],
+        [
+          47.6,
+          5.9
+        ],
+        [
+          47.3,
+          6.2
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          49.775,
+          5.9
+        ],
+        [
+          49.775,
+          6.475
+        ],
+        [
+          49.15,
+          7.1
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1701-LIMIT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          46.5,
+          9.8
+        ],
+        [
+          45.4,
+          10.9
+        ],
+        [
+          44.025,
+          10.9
+        ],
+        [
+          44.025,
+          11.3
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          48.15,
+          9.8
+        ],
+        [
+          49.43,
+          9.8
+        ],
+        [
+          50.5,
+          10.87
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          49.875,
+          11.35
+        ],
+        [
+          49.875,
+          10.245
+        ]
+      ]
+    },
+    {
+      "net": "/WHEEL_VM",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          42.825,
+          6.75
+        ],
+        [
+          42.825,
+          7.2
+        ],
+        [
+          42.2,
+          7.825
+        ],
+        [
+          42.2,
+          10.95
+        ],
+        [
+          41.675,
+          11.475
+        ],
+        [
+          41.675,
+          12.15
+        ]
+      ]
+    }
+  ],
+  "vias": [],
+  "adoption_prohibited_until_complete_verification": true
+}

@@ -1,0 +1,35 @@
+{
+  "reviewed_at_utc": "2026-10-28T05:22:53.581342+00:00",
+  "method": "Four native geometry diagnostic PNGs actually viewed; not KiCad GUI screenshots and not a whole-board review.",
+  "images": [
+    {
+      "path": "R164-local-views/R164A-B_Cu.png",
+      "sha256": "8212b881b7e83b47174298132a413a1f05620f234894195ed7cd965afcf9a9af"
+    },
+    {
+      "path": "R164-local-views/R164A-In3_Cu.png",
+      "sha256": "329bdf48238725204319ed4faa46e270c6976080b8ffee7a28937f0a84c68e56"
+    },
+    {
+      "path": "R164-local-views/R164G-F_Cu.png",
+      "sha256": "2d755ae550873db255c736bd517862baa2d871c61272ca168db606018bfca511"
+    },
+    {
+      "path": "R164-local-views/R164G-In3_Cu.png",
+      "sha256": "87958cf3224552d8b9c529982057ad0b599735e5f8b0f350b54a38ed2ba1c7be"
+    }
+  ],
+  "observations": [
+    "A B view shows the right-edge bias pair with outward ENABLE escape, a straight intermediate-node connection and a direct local ground connection. The restored ENABLE In3 branch is visible in the companion layer view.",
+    "G F view shows the J101.30 filled-ground lobe next to the new (42.1,28.6) transfer and the unchanged BAT_ADC route. Native DRC still reports two spokes touching dead copper; visual continuity through the pad does not waive this failure.",
+    "G In3 view shows the shortened divider path close to two existing UV transfers. The separate In4 reference audit reports two uncovered portions; the In3 image alone cannot prove reference coverage."
+  ],
+  "same_face_nominal_body_screen": {
+    "R164A": 0,
+    "R164G": 0
+  },
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_thermal_coupling": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

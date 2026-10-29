@@ -1,0 +1,86 @@
+{
+  "board_sha256": "1d32097f2b72c2add4d9a2fd68a2c4ed088b23cbf7606aa1ae3256cc5e48330c",
+  "local_status": "PASS",
+  "whole_board": "NOT_TESTED",
+  "images_actually_viewed": [
+    {
+      "path": "images/F.Cu.png",
+      "status": "PASS",
+      "scope": "Local native-geometry diagnostic, rendered in a separate process and actually inspected."
+    },
+    {
+      "path": "images/B.Cu.png",
+      "status": "PASS",
+      "scope": "Local native-geometry diagnostic, rendered in a separate process and actually inspected."
+    },
+    {
+      "path": "images/In1.Cu.png",
+      "status": "PASS",
+      "scope": "Local native-geometry diagnostic, rendered in a separate process and actually inspected."
+    },
+    {
+      "path": "images/In2.Cu.png",
+      "status": "PASS",
+      "scope": "Local native-geometry diagnostic, rendered in a separate process and actually inspected."
+    },
+    {
+      "path": "images/In3.Cu.png",
+      "status": "PASS",
+      "scope": "Local native-geometry diagnostic, rendered in a separate process and actually inspected."
+    },
+    {
+      "path": "images/In4.Cu.png",
+      "status": "PASS",
+      "scope": "Local native-geometry diagnostic, rendered in a separate process and actually inspected."
+    },
+    {
+      "path": "images/R144M-B.Cu.png",
+      "status": "PASS",
+      "scope": "Previous local geometry inspected for comparison."
+    },
+    {
+      "path": "images/former-D1601-F.Cu.png",
+      "status": "PASS",
+      "scope": "Former D1601 location inspected; obsolete transfer removed, original inner-layer main junction retained."
+    }
+  ],
+  "findings": [
+    "D1601 retains its 90 degree front-face orientation; both terminals escape outside the nominal body. EN joins the local U1601/R1602 branch.",
+    "The back-face ARMED path enters the existing R903 pad from above. The upper search zigzag is replaced by straight runs. The remaining dogleg follows the fixed J105 hole and its reference void; the attempted shortcut failed exact clearance/reference geometry.",
+    "C912, C913, R1602 and all fixed connectors remain in their original positions. D301 moved 0.075 mm left and 0.05 mm upward; its original CLR connection and NRST net assignment are retained.",
+    "The moved ACT_FET_SOURCE via retains its UUID, net, drill and annuli; its B/In3 tails are restored. No ground via was moved or reassigned.",
+    "The six local layers and corrected back-face pad annuli were inspected. The first batched back-face diagnostic omitted annuli; it is retained as superseded evidence, not used as the accepted view."
+  ],
+  "projection_review": [
+    {
+      "reference": "C912",
+      "relationship": "Opposite-face projection of the new back-face ARMED path",
+      "review": "Front input capacitor and copper unchanged. B signal remains outside the mounted-side bodies and references continuous In4. No placement beneath a same-face capacitor is introduced.",
+      "coupling_and_thermal": "NOT_TESTED"
+    },
+    {
+      "reference": "D1602",
+      "relationship": "Front EN and inner source-tail projections",
+      "review": "D1602 stays fixed. The source tail is its existing electrical return group, with exact pad connectivity and reference coverage verified.",
+      "coupling_and_thermal": "NOT_TESTED"
+    },
+    {
+      "reference": "D301",
+      "relationship": "Opposite-face projection of the front ARMED escape",
+      "review": "Actual D301 body/guards move together; mounted-side clearance and unchanged CLR/NRST mapping verified. Each route retains its own reference layer.",
+      "coupling_and_thermal": "NOT_TESTED"
+    },
+    {
+      "reference": "J105",
+      "relationship": "Back-face and inner projection below the fixed front connector",
+      "review": "Actual pad lands, plated holes and native keepouts remain. Back-face path deliberately follows the In4 corridor between hole voids; no connector move or all-layer exemption.",
+      "coupling_and_thermal": "NOT_TESTED"
+    }
+  ],
+  "limits": [
+    "Scoped local visual review only; whole-board per-track/per-via review is unfinished.",
+    "The nominal Fab screen is not a measured body envelope or thermal/EMC qualification.",
+    "Six historical reference-transition flags remain."
+  ],
+  "manufacturing_release": false
+}

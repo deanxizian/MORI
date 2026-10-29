@@ -1,0 +1,16 @@
+[
+  {
+    "step": "build",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/build_trial.py",
+      "robot/hardware/driver/development/native",
+      "robot/.state/c3-completion/trials/R163A",
+      "robot/.state/c3-completion/trials/R163A-plan.json"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\nTraceback (most recent call last):\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 322, in <module>\n    p=argparse.ArgumentParser();p.add_argument('source');p.add_argument('destination');p.add_argument('plan');a=p.parse_args();build(a.source,a.destination,a.plan)\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 174, in build\n    mirrored = scale(polyset(z.Outline()), xfact=-1, yfact=1, origin=actual)\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/lib/python3.9/site-packages/shapely/affinity.py\", line 193, in scale\n    x0, y0, z0 = interpret_origin(geom, origin, 3)\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/lib/python3.9/site-packages/shapely/affinity.py\", line 121, in interpret_origin\n    return origin + (0.0,)\nTypeError: can only concatenate list (not \"tuple\") to list\n",
+    "elapsed_seconds": 0.476132869720459
+  }
+]

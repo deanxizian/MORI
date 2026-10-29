@@ -1,0 +1,39 @@
+{
+  "scope": "Five actually viewed local native-copper diagnostic renders, not screenshots or complete layout qualification.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R171-images/R171D-B.Cu.png",
+      "sha256": "c0e005a1e72c8f21e146615c1f7ab3194f9d7a4c9b2d7341414d559b11cf291f"
+    },
+    {
+      "path": "raw/R171-images/R171D-F.Cu.png",
+      "sha256": "97f3901fe6bbf2ddb09276f51ec45d65349cc582b3398954bb43534e0b5a3a62"
+    },
+    {
+      "path": "raw/R171-images/R171D-In3.Cu.png",
+      "sha256": "49e19ba5332f9d36e2c67825f9f177f4c1a7fc544f8125541549753af1988220"
+    },
+    {
+      "path": "raw/R171-images/R171E-B.Cu.png",
+      "sha256": "d56388d29bc14a1776af5d473a5ce6a0c391c3d239ace13f3c97ef60aac98f6e"
+    },
+    {
+      "path": "raw/R171-images/R171E-F.Cu.png",
+      "sha256": "47de25988a517a7c7a3a9b6c0b02590f0f8f34c9b0c3dca25dd80f082d97805d"
+    }
+  ],
+  "findings": [
+    "D B shows the left C1701 VS feed reaching the unchanged upper 3V3 via. Its small terminal joins are still candidate routing, requiring final simplification/review with the completed local circuit.",
+    "D F and In3 expose the retained power and transfer topology. The retired transfer at (46.3,11.85) is absent; native audits, not visual inference, establish the actual retained-anchor and reference results.",
+    "E B shows ENABLE escaping rightward to the unchanged 3V3 via at (52.45,11.875). E F confirms the replaced upper VS stub is removed. R1310 power and CT remain open.",
+    "Both candidate resistor and IC grounds have same-face filled connectivity but no explicit RLIMIT-to-U1701.8 track/pad/via path. This has not passed the required return review.",
+    "New mounted-face nominal body intersections are zero. Nine opposite/internal projection hits remain limited evidence, without complete thermal/coupling/manufacturer review."
+  ],
+  "new_same_face_nominal_hits": 0,
+  "new_opposite_internal_hits": 9,
+  "local_status": "FAIL",
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_thermal_coupling": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

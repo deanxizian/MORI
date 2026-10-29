@@ -1,0 +1,36 @@
+{
+  "source_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "cases": [
+    {
+      "case": "source_via_guard",
+      "hits": [],
+      "area_mm2": 0.9201978599999975,
+      "change_from_original_mm2": 0.0
+    },
+    {
+      "case": "rigid_180_via_guard",
+      "hits": [],
+      "area_mm2": 0.9201978599999975,
+      "change_from_original_mm2": 4.280000004399655e-06
+    },
+    {
+      "case": "v2_track_based_reconstruction",
+      "hits": [
+        {
+          "uuid": "8889e26d-813c-4713-bc3a-641fb810e63b",
+          "net": "GND",
+          "at_mm": [
+            42.5,
+            27.1
+          ],
+          "intersection_area_mm2": 0.027600016438225232
+        }
+      ],
+      "area_mm2": 0.947798319999997,
+      "change_from_original_mm2": 0.027604740000003895
+    }
+  ],
+  "finding": "V2 reconstructs a via guard from track guards that already have their own asymmetric track cutout. Its 180-degree rejection at the existing ground via is not an intrinsic component-placement collision. A rigid native-via-guard rotation does not create that collision. This does not validate rotation of the complete block, tracks, pad connections, fixed cutouts or reference copper. No native rules were edited.",
+  "v1_limits": "V1 did not check overlap of transformed via guards with retained vias. Its candidates were preliminary only.",
+  "adopted": false
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "step": "build",
+    "argv": [
+      "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/bin/python",
+      "robot/hardware/driver/development/scripts/build_trial.py",
+      "/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/native",
+      "robot/.state/c3-completion/trials/R150A",
+      "robot/.state/c3-completion/trials/R150A-plan.json"
+    ],
+    "returncode": 1,
+    "stdout": "swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.\n",
+    "stderr": "./src/common/stdpbase.cpp(59): assert \"\"traits\"\" failed in Get(): create wxApp before calling this\nTraceback (most recent call last):\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 282, in <module>\n    p=argparse.ArgumentParser();p.add_argument('source');p.add_argument('destination');p.add_argument('plan');a=p.parse_args();build(a.source,a.destination,a.plan)\n  File \"/Volumes/Sol/MORI-hardware-completion/robot/hardware/driver/development/scripts/build_trial.py\", line 248, in build\n    t.SetNet(nets[spec['net']])\nKeyError: '/ARMED'\n",
+    "elapsed_seconds": 0.45848703384399414
+  }
+]

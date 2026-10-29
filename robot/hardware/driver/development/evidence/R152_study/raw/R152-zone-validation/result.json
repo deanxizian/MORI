@@ -1,0 +1,102 @@
+{
+  "scope": "Native positive/negative checks for explicit allocation changes; never modifies source or accepted PCB.",
+  "source_sha256": "958eee80ba27a607e52507fcefe4c5b5aa4234d08a8d7bdb6f1257e79dea89a1",
+  "candidate_sha256": "74c59cd3747424fef36e16ec5893eb20cd8978a0d580d011a1fa7cfe01338caa",
+  "checks": [
+    {
+      "name": "native_expansion_matches_declared_union",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "native_fill_spacing_and_thermal_settings_preserved",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "wrong_source_clearance",
+      "status": "PASS",
+      "details": "Power-zone source snapshot mismatch"
+    },
+    {
+      "name": "wrong_source_outline",
+      "status": "PASS",
+      "details": "Power-zone source snapshot mismatch"
+    },
+    {
+      "name": "wrong_area",
+      "status": "PASS",
+      "details": "Power-zone expansion area differs from the explicit plan"
+    },
+    {
+      "name": "blank_reason",
+      "status": "PASS",
+      "details": "Power-zone expansion needs an explicit rationale"
+    },
+    {
+      "name": "nonfinite_vertex",
+      "status": "PASS",
+      "details": "Power-zone patch needs finite polygon coordinates"
+    },
+    {
+      "name": "self_crossing_patch",
+      "status": "PASS",
+      "details": "Power-zone patch is invalid"
+    },
+    {
+      "name": "disjoint_patch",
+      "status": "PASS",
+      "details": "Power-zone expansion must preserve one contiguous original allocation"
+    },
+    {
+      "name": "patch_inside_original",
+      "status": "PASS",
+      "details": "Power-zone expansion area differs from the explicit plan"
+    },
+    {
+      "name": "outside_board",
+      "status": "PASS",
+      "details": "Power-zone expansion extends outside the board bounds"
+    },
+    {
+      "name": "native_keepout",
+      "status": "PASS",
+      "details": "Only an existing positive-priority solid In2 power allocation may expand"
+    },
+    {
+      "name": "ground_reference_plane",
+      "status": "PASS",
+      "details": "Only an existing positive-priority solid In2 power allocation may expand"
+    },
+    {
+      "name": "other_copper_layer",
+      "status": "PASS",
+      "details": "Only an existing positive-priority solid In2 power allocation may expand"
+    },
+    {
+      "name": "complete_native_planned_delta",
+      "status": "PASS",
+      "details": 2535
+    },
+    {
+      "name": "undeclared_allocation_change_rejected",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "name": "native_clearance_change_rejected",
+      "status": "PASS",
+      "details": {
+        "expected_additional_hash_failure": true,
+        "fixture_is_not_an_engineering_trial": true
+      }
+    },
+    {
+      "name": "source_and_candidate_bytes_unchanged",
+      "status": "PASS",
+      "details": null
+    }
+  ],
+  "status": "PASS",
+  "manufacturing_release": false
+}

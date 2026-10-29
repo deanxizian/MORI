@@ -1,0 +1,147 @@
+{
+  "scope": "Native-source positive and rejection controls for explicit GND movement.",
+  "source_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "positive": [
+    {
+      "uuid": "2e7f36fc-97b4-4bdc-ac9d-b6a6321965ed",
+      "direct_returns": [
+        {
+          "pad": "C601.2",
+          "layer": "B.Cu",
+          "source_length_mm": 1.7199747468305837,
+          "planned_length_mm": 0.9249999999999989,
+          "minimum_width_mm": 0.2
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "source_bound_shorter_return",
+      "expected": "ALLOW",
+      "actual": "ALLOW",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_source_hash",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via movement requires an exact source hash",
+      "status": "PASS"
+    },
+    {
+      "name": "source_drill_changed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via source snapshot/net/lock mismatch",
+      "status": "PASS"
+    },
+    {
+      "name": "source_net_changed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via source snapshot/net/lock mismatch",
+      "status": "PASS"
+    },
+    {
+      "name": "nonfinite_destination",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via move needs a new finite position and reason",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate_ground_move",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Duplicate or conflicting ground-via operation",
+      "status": "PASS"
+    },
+    {
+      "name": "conflicting_non_ground_move",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Duplicate or conflicting ground-via operation",
+      "status": "PASS"
+    },
+    {
+      "name": "omitted_source_contact",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via source contact inventory mismatch",
+      "status": "PASS"
+    },
+    {
+      "name": "abandoned_direct_return",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via move leaves a direct source return undeclared",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_source_return_segment",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground return path is not continuous",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_replacement_return",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground return does not terminate at the declared via",
+      "status": "PASS"
+    },
+    {
+      "name": "return_wrong_net",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground return changed net/face or narrowed copper",
+      "status": "PASS"
+    },
+    {
+      "name": "return_narrowed",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground return changed net/face or narrowed copper",
+      "status": "PASS"
+    },
+    {
+      "name": "return_wrong_face",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground return changed net/face or narrowed copper",
+      "status": "PASS"
+    },
+    {
+      "name": "return_lengthened",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "This operation cannot lengthen an existing direct ground return",
+      "status": "PASS"
+    },
+    {
+      "name": "return_not_to_via",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground return does not terminate at the declared via",
+      "status": "PASS"
+    },
+    {
+      "name": "anchor_pad_moved",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Direct ground return needs an unchanged GND pad",
+      "status": "PASS"
+    },
+    {
+      "name": "locked_via",
+      "expected": "REJECT",
+      "actual": "REJECT",
+      "error": "Ground-via source snapshot/net/lock mismatch",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "source_saved": false
+}

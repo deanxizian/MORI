@@ -1,0 +1,31 @@
+{
+  "executed_at": "2026-10-26T11:40:17.814280+00:00",
+  "kicad_version": "10.0.7",
+  "native_candidate": "C3 R127B",
+  "native_board_sha256": "94613985cb2082fb9ea5e7161b04bbdaff1e73eb03f7e06a1c9024b0cb187352",
+  "source_commit": "8b2de2e",
+  "scripts_sha256": {
+    "copper_geometry.py": "026c8b9e51726ef5bcd4e61b5da21cb0301417240628ac37cb188225b4094a65",
+    "audit_candidate.py": "981148986586e7c0688c398be470572b681b1909e9f5a3f73ecf51708c977ec7",
+    "plan_layered_route.py": "96cabaa336944ab98686b91ab2ac71344d93b7a0032f852a8b65bef2b7e83e3d",
+    "check_transfer_model.py": "d6d400fcba0e6cf4c62bbd11d225d4c784a77e917b00b790780c202c86ecc270"
+  },
+  "commands": [
+    "robot/.state/c3-completion/venv/bin/python -m py_compile robot/hardware/driver/development/scripts/copper_geometry.py robot/hardware/driver/development/scripts/audit_candidate.py robot/hardware/driver/development/scripts/plan_layered_route.py",
+    "robot/.state/c3-completion/venv/bin/python robot/hardware/driver/development/scripts/check_transfer_model.py robot/hardware/driver/development/native/MORI_Interface_C3.kicad_pcb robot/.state/c3-completion/trials/PTH-model-check.json",
+    "robot/.state/c3-completion/venv/bin/python robot/hardware/driver/development/scripts/audit_candidate.py robot/.state/c3-completion/trials/R126C-PTH-recheck-source/MORI_Interface_C3.kicad_pcb robot/.state/c3-completion/trials/R127B/MORI_Interface_C3.kicad_pcb robot/.state/c3-completion/trials/R127B-PTH-clean-audit.json"
+  ],
+  "input_note": "Clean replay source uses the R126C PCB hash and the 77 byte-identical original non-PCB members. The initial comparison between trial folders also compared their different edit_plan/edit_manifest files and therefore returned raw FAIL; that report is preserved separately. Clean replay is PASS and all original geometric/electrical outcome fields match.",
+  "manufacturing_release": false,
+  "final_checks": {
+    "executed_at": "2026-10-26T11:42:15.452797+00:00",
+    "workspace_integrity": "PASS; 541 protected files",
+    "robot_project_integrity": "PASS",
+    "four_scripts_py_compile": "PASS",
+    "evidence_JSON_parse": "PASS",
+    "native_board_hash_matches_R127B": "PASS",
+    "MCP_expected_board_dirty_false": "PASS; SWIG offline backend, not realtime IPC",
+    "original_main_worktree_clean": "PASS",
+    "test_rig_note": "Earlier R127B check passed 405 artifacts / 324 source files / 85 links; test_rig files unchanged in this tooling change."
+  }
+}

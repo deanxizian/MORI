@@ -1,0 +1,61 @@
+{
+  "recorded_at_utc": "2026-10-28T08:20:52.055191+00:00",
+  "python_version": "3.13.17",
+  "results": [
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "returncode": 0,
+      "output_summary": {
+        "status": "PASS",
+        "scope": "Repository organization and provenance only; no hardware I/O",
+        "protected_files": 541,
+        "errors": []
+      }
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "returncode": 0,
+      "output_summary": {
+        "status": "PASS",
+        "scope": "Publication integrity only",
+        "lfs_mode": "pointers allowed",
+        "errors": []
+      }
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "returncode": 0,
+      "output_summary": {
+        "status": "PASS",
+        "imported_artifacts": 405,
+        "control_source_files": 324,
+        "links": 85,
+        "mesh_files_checked": 5,
+        "scope": "Integrity and digital topology only; no hardware I/O or physical qualification"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "output_summary": "No whitespace errors"
+    }
+  ],
+  "archive_payload_byte_verification": "PASS, 137 payloads",
+  "canonical_PCB_sha256_unchanged": "899d526fda5da465fe2279448a0d2561bf6d0b5e6e964d478cfda28ddfad4f70",
+  "scope": "Offline repository/source integrity only. No candidate adoption, manufacturing release, deployment or physical test."
+}

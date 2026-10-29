@@ -1,0 +1,166 @@
+{
+  "revision": "R126B",
+  "board_sha256": "7665fe14825d3f56f0e4154f605c5f20dd5b2923a28f94e39aa34466b9709d10",
+  "scope": "Independent local dump-stage placement and exact two-segment gate replacement. Native checks, old connections, return/power/critical paths and visual review required. No adoption implied.",
+  "translations": [
+    {
+      "reference": "Q1401",
+      "from_mm": [
+        20.75,
+        16.5
+      ],
+      "delta_mm": [
+        -0.7,
+        0
+      ],
+      "rotation_deg": 270
+    },
+    {
+      "reference": "R1406",
+      "from_mm": [
+        17.25,
+        16
+      ],
+      "delta_mm": [
+        -0.425,
+        0
+      ]
+    },
+    {
+      "reference": "R1407",
+      "from_mm": [
+        17.25,
+        17.75
+      ],
+      "delta_mm": [
+        -0.425,
+        0.125
+      ]
+    }
+  ],
+  "delete_copper": [
+    "3d28f70a-dcf4-4144-9558-decbb7f9feca",
+    "b905fcd1-cd48-4f51-86df-f423b4d3dcfb"
+  ],
+  "deleted_copper_expected": {
+    "3d28f70a-dcf4-4144-9558-decbb7f9feca": {
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        18.275,
+        17.4
+      ],
+      "end_mm": [
+        18.275,
+        16.4
+      ]
+    },
+    "b905fcd1-cd48-4f51-86df-f423b4d3dcfb": {
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        19.6625,
+        17.45
+      ],
+      "end_mm": [
+        18.3625,
+        17.45
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          17.65,
+          16
+        ],
+        [
+          18.6625,
+          16
+        ],
+        [
+          19.1,
+          15.5625
+        ]
+      ]
+    },
+    {
+      "net": "Net-(Q1401-G)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          17.65,
+          16
+        ],
+        [
+          18.05,
+          16.4
+        ],
+        [
+          18.05,
+          17.475
+        ],
+        [
+          17.65,
+          17.875
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1401-OUT)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          16.425,
+          16.425
+        ],
+        [
+          16.0,
+          16.0
+        ]
+      ]
+    },
+    {
+      "net": "Net-(Q1401-D)",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          20.05,
+          17.4375
+        ],
+        [
+          20.05,
+          18.2
+        ],
+        [
+          19.4,
+          18.85
+        ],
+        [
+          16.9,
+          18.85
+        ],
+        [
+          16.3375,
+          19.4125
+        ],
+        [
+          16.3375,
+          20.0
+        ]
+      ]
+    }
+  ],
+  "vias": [],
+  "reason": "Turn drain toward resistor group; source becomes closer to retained ground stitch. Move gate resistors left just enough to retain courtyards and via-pad spacing. Replace exactly two old gate segments and preserve the U1401 OUT copper with a short extension. All fixed interfaces and all vias unchanged.",
+  "prior_build": "R126A stopped before save: missing xy import in new deletion snapshot code; copied source trial retained."
+}

@@ -1,0 +1,1911 @@
+{
+  "revision": "R161J",
+  "scope": "Unfinished joint working board with local circuit restoration.\n\nKeep both clamps and the complete existing wheel-power branch unchanged. Move\nC1501 beside U1501 and put R1504 in its former place. All source ground vias,\nmechanical interfaces, native rules and zone allocations are retained.\nLong detector outputs, OV upstream, the UV divider and UV filter still need\ncomplete routes and manufacturer-layout review. Never adopt this partial board.\n\nRefine C from measured native keepout polygons and DRC, not inferred radii.\nThe detector's six unfinished upstream/output/filter links remain incomplete.\n\nRefine D using actual native keepouts and localized reference-gap geometry.\nAll six unfinished links remain open and no acceptance is implied.\n\nJoint C1301/R1503 F-face placement and actual short UV filter connection.\nReturns to the electrically preserved E working layout. The four mutually\nincompatible raster proposals in F are not reused. No adoption is implied.\n\nResolve G courtyard/land clearance and separate OV from the mid-node antipad.\nKeep the source fixed ground holes and mount keepout; move only the declared\nnon-ground transfer and restore all its native layer branches explicitly.\n\nUse one 45-degree VDD escape and preserve native land/via clearances.\nH already retained all power/reference checks; two measured local conflicts\nare corrected here without relaxing any native rule or altering ground vias.\n\nRetire two complete dead transfer branches left by the explicit relocation.\nAll source terminal-to-terminal copper is retained. These tails now end at\nunused transfer holes, after the old U1301/R1311 escapes were explicitly\nremoved in E. Replacement circuit links remain unfinished, preventing adoption.\n",
+  "board_sha256": "bf719a717ffba2a1468126f6a71a1cc3703980fedf647caf8af07c1a9cef62a0",
+  "translations": [
+    {
+      "reference": "U1301",
+      "from_mm": [
+        42.5,
+        27.1
+      ],
+      "delta_mm": [
+        22.7,
+        0.8
+      ],
+      "rotation_deg": 0.0,
+      "reconstruct_fixed_via_guards": true,
+      "rotate_fixed_via_guards": true
+    },
+    {
+      "reference": "C1301",
+      "from_mm": [
+        41.525,
+        25.85
+      ],
+      "delta_mm": [
+        24.125,
+        1.65
+      ],
+      "rotation_deg": 90
+    },
+    {
+      "reference": "C1302",
+      "from_mm": [
+        62.2,
+        16.25
+      ],
+      "delta_mm": [
+        6.6,
+        8.0
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "reference": "C1303",
+      "from_mm": [
+        42.9,
+        23.5
+      ],
+      "delta_mm": [
+        25.9,
+        4.4
+      ],
+      "rotation_deg": -90.0
+    },
+    {
+      "reference": "R1307",
+      "from_mm": [
+        63.5,
+        29.75
+      ],
+      "delta_mm": [
+        -1.3,
+        -13.45
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "reference": "R1502",
+      "from_mm": [
+        64.75,
+        27.0
+      ],
+      "delta_mm": [
+        -1.85,
+        4.15
+      ],
+      "rotation_deg": -90.0
+    },
+    {
+      "reference": "R1504",
+      "from_mm": [
+        67.75,
+        28.5
+      ],
+      "delta_mm": [
+        -8.25,
+        4.25
+      ],
+      "rotation_deg": -90.0
+    },
+    {
+      "reference": "C1501",
+      "from_mm": [
+        59.5,
+        32.75
+      ],
+      "delta_mm": [
+        -4.15,
+        -1.15
+      ],
+      "rotation_deg": 90
+    },
+    {
+      "reference": "R1311",
+      "from_mm": [
+        68.8,
+        20.75
+      ],
+      "delta_mm": [
+        -25.9,
+        2.75
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "reference": "R1312",
+      "from_mm": [
+        68.8,
+        24.25
+      ],
+      "delta_mm": [
+        -25.45,
+        2.65
+      ],
+      "rotation_deg": 90.0
+    },
+    {
+      "reference": "R1503",
+      "from_mm": [
+        65.75,
+        28.0
+      ],
+      "delta_mm": [
+        3.15,
+        0.5
+      ],
+      "rotation_deg": 90
+    }
+  ],
+  "routes": [
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "points_mm": [
+        [
+          64.0625,
+          27.9
+        ],
+        [
+          63.5,
+          27.9
+        ],
+        [
+          62.95,
+          27.3
+        ],
+        [
+          62,
+          27.3
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "points_mm": [
+        [
+          62.2,
+          17.125
+        ],
+        [
+          62.2,
+          17.4
+        ],
+        [
+          61.6,
+          18.0
+        ],
+        [
+          60.325,
+          18.0
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          66.3375,
+          27.9
+        ],
+        [
+          66.825,
+          27.9
+        ],
+        [
+          68.225,
+          26.5
+        ],
+        [
+          68.8,
+          26.5
+        ],
+        [
+          68.8,
+          27.125
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          69.15,
+          26.15
+        ],
+        [
+          68.8,
+          26.5
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          68.8,
+          25.025
+        ],
+        [
+          68.8,
+          25.25
+        ],
+        [
+          67.1,
+          26.95
+        ],
+        [
+          66.3375,
+          26.95
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          67.7,
+          25.55
+        ],
+        [
+          68.1,
+          25.95
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          62.75,
+          25.25
+        ],
+        [
+          62.75,
+          25.875
+        ],
+        [
+          63.4,
+          26.525
+        ],
+        [
+          63.4,
+          26.95
+        ],
+        [
+          64.0625,
+          26.95
+        ]
+      ]
+    },
+    {
+      "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          64.0625,
+          28.85
+        ],
+        [
+          63.35,
+          28.85
+        ],
+        [
+          63.35,
+          29.35
+        ],
+        [
+          64.2,
+          29.85
+        ]
+      ]
+    },
+    {
+      "net": "Net-(R1311-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          42.9,
+          24.325
+        ],
+        [
+          42.9,
+          24.9
+        ],
+        [
+          43.35,
+          25.35
+        ],
+        [
+          43.35,
+          26.075
+        ]
+      ]
+    },
+    {
+      "net": "Net-(R1501-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          62.9,
+          31.975
+        ],
+        [
+          62.9,
+          32.65
+        ],
+        [
+          63.325,
+          33.075
+        ],
+        [
+          63.325,
+          33.5
+        ]
+      ]
+    },
+    {
+      "net": "Net-(R1502-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          62.9,
+          30.325
+        ],
+        [
+          64.2,
+          30.6
+        ]
+      ]
+    },
+    {
+      "net": "Net-(R1502-~-Pad1)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          64.2,
+          30.6
+        ],
+        [
+          63.4,
+          30.6
+        ],
+        [
+          63.4,
+          28.35
+        ],
+        [
+          67.45,
+          28.35
+        ]
+      ]
+    },
+    {
+      "net": "Net-(R1502-~-Pad1)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          67.45,
+          28.35
+        ],
+        [
+          67.2,
+          28.1
+        ],
+        [
+          67.2,
+          27.0
+        ],
+        [
+          67.4,
+          26.8
+        ],
+        [
+          68.4,
+          26.8
+        ],
+        [
+          68.9,
+          27.3
+        ],
+        [
+          68.9,
+          27.675
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          68.9,
+          29.325
+        ],
+        [
+          68.3,
+          29.175
+        ],
+        [
+          66.6,
+          29.175
+        ],
+        [
+          66.35,
+          29.025
+        ],
+        [
+          65.05,
+          29.025
+        ],
+        [
+          65.0,
+          29.95
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          65.0,
+          29.95
+        ],
+        [
+          65.0,
+          28.9
+        ],
+        [
+          63.4,
+          28.9
+        ],
+        [
+          63.4,
+          31.5
+        ],
+        [
+          64.2,
+          31.5
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          64.2,
+          31.5
+        ],
+        [
+          64.2,
+          33.1
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          62.0,
+          31.4
+        ],
+        [
+          64.1,
+          31.4
+        ],
+        [
+          64.2,
+          31.5
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          64.2,
+          33.1
+        ],
+        [
+          63.75,
+          33.3
+        ],
+        [
+          62.4,
+          33.3
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          55.35,
+          32.375
+        ],
+        [
+          54.4,
+          31.8
+        ]
+      ]
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.3,
+      "points_mm": [
+        [
+          68.8,
+          28.675
+        ],
+        [
+          67.875,
+          27.75
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          64.2,
+          26.1
+        ],
+        [
+          63.775,
+          26.525
+        ],
+        [
+          63.4,
+          26.525
+        ]
+      ]
+    },
+    {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          64.2,
+          26.1
+        ],
+        [
+          64.2,
+          27.875
+        ],
+        [
+          64.6,
+          28.275
+        ],
+        [
+          65.65,
+          28.275
+        ]
+      ]
+    }
+  ],
+  "vias": [
+    {
+      "net": "Net-(R1502-~-Pad1)",
+      "position_mm": [
+        64.2,
+        30.6
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    },
+    {
+      "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+      "position_mm": [
+        64.2,
+        29.85
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    },
+    {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "position_mm": [
+        64.2,
+        26.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3
+    }
+  ],
+  "move_vias": [
+    {
+      "uuid": "4235992b-10c1-49b9-b6d7-b3df51cada3c",
+      "source_expected": {
+        "net": "Net-(U1301-INB-_{slash}_OV)",
+        "position_mm": [
+          64.275,
+          28.8
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        67.7,
+        25.55
+      ],
+      "reason": "Retain the detector OV transfer identity outside the new U1301 body; the upstream detector connection remains unfinished."
+    },
+    {
+      "uuid": "7bd5c3f2-f767-42af-b113-c3a4bc91e615",
+      "source_expected": {
+        "net": "Net-(U1501-INB-_{slash}_OV)",
+        "position_mm": [
+          68.675,
+          29.45
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        65.0,
+        29.95
+      ],
+      "reason": "Restore R1503 on F and the existing U1501 OV network on In2 outside the relocated UV capacitor. Native MOUNT_H4 polygon excludes the C position; D uses the left opening and preserves pad/hole spacing."
+    },
+    {
+      "uuid": "ed145f08-9ec4-48e7-acaf-aabdac5dea88",
+      "source_expected": {
+        "net": "Net-(U1501-INB-_{slash}_OV)",
+        "position_mm": [
+          62.7,
+          30.7
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        64.2,
+        31.5
+      ],
+      "reason": "Restore the original In2/In3/B OV bridge outside relocated R1502."
+    },
+    {
+      "uuid": "fcd6ec6b-0145-4092-9c84-0765c014a1fa",
+      "source_expected": {
+        "net": "Net-(U1501-INB-_{slash}_OV)",
+        "position_mm": [
+          63.4,
+          32.3
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        64.2,
+        33.1
+      ],
+      "reason": "Restore the original B/In3 OV bridge outside relocated R1502."
+    },
+    {
+      "uuid": "fe2d0371-b479-48d2-a727-17898dd668f7",
+      "source_expected": {
+        "net": "Net-(R1502-~-Pad1)",
+        "position_mm": [
+          65.7,
+          25.775
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        67.45,
+        28.35
+      ],
+      "reason": "Restore R1503 F input and relocate its signal transfer outside the detector input/UV-filter region."
+    },
+    {
+      "uuid": "da2cdecc-acee-4e55-bfbf-62ae3ca0fb49",
+      "source_expected": {
+        "net": "MOTION_3V3",
+        "position_mm": [
+          69.075,
+          26.75
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        69.15,
+        26.15
+      ],
+      "reason": "Retain both original power-plane connections while clearing the relocated detector decoupling capacitor; refill and all width checks still required."
+    }
+  ],
+  "delete_copper": [
+    "00db68fa-5261-4a3e-a091-7ea627856b4a",
+    "01545c64-2a38-466e-aab5-3311a7972327",
+    "01b66695-81b9-4e9a-874e-a592451161c8",
+    "02a75889-bc2b-44db-b36d-1ddaeb4a7cb1",
+    "0304f4ed-7143-5fe2-bfbe-e391135a2ad7",
+    "065a3ffe-2d85-4351-a474-d215b837dc51",
+    "06666dfa-0de5-402c-bae2-bc05c666dd08",
+    "08181aa8-ba08-4f54-bf08-f96b5ec78ef3",
+    "1055b3ba-8754-508d-b5f4-31b66c31db8f",
+    "1a12ec16-5781-54a2-aa3d-064772912870",
+    "1a5a148b-b984-4d09-bf9e-272711d553dd",
+    "1bd1ae8f-eb6b-4499-b44c-123ca84ea1d2",
+    "1ebf5391-ab70-4d45-9504-1d210934b78b",
+    "21d9d0f7-6b63-4b8c-b413-bbf095b838ab",
+    "2233b7b0-a172-414b-b05b-4bb9a08a453e",
+    "2235b5ae-efa2-5220-aee8-faeb535c3fba",
+    "266c3e5c-3fb1-4f46-bc20-cae4ac685a04",
+    "29babd0c-55ef-42a3-8843-dd80ccac3c80",
+    "4096ad0d-74f9-477d-92d0-d0d7e2fff356",
+    "40a78ed9-4762-45a9-9c19-f6420388f0ee",
+    "4409c219-1388-48d3-ae72-7d1577541e6e",
+    "4a8d7b35-3b4b-4c24-a53f-f414b78f9d61",
+    "56034b58-b97f-468c-8f8b-1fac2a3a724f",
+    "57330cbe-4127-4b66-8cbc-91bd347df963",
+    "5c71492c-4a1e-5185-a73f-b9991395ff02",
+    "5d62fdca-804d-4814-a024-423193e01d38",
+    "62082821-1f25-4f46-bea7-5e4a836b0b07",
+    "643f309e-cd9b-4247-abbe-b06bf2a72438",
+    "68337903-98f5-4e4f-9ed8-5117238ed520",
+    "6ddd369c-b213-47e4-b912-136d7483b0f5",
+    "78376622-5ac9-47cf-9ca7-94e86072783f",
+    "785f917d-97ad-40e6-86aa-aab0fb545610",
+    "78b0e0dc-5356-4cc3-b969-d2dde38b0526",
+    "7a4650b4-1dc9-5ff9-af73-2ad3564d32de",
+    "7d202a1c-9df5-4dc1-9c35-040935191fb9",
+    "823c0a50-334b-4c56-af7f-de028d3d14d4",
+    "836b7b34-1a59-4e54-a08c-4046578ad1d4",
+    "8bc8d6c2-cfce-4b18-a22d-1c1e34ec824c",
+    "8be9b471-8f71-4399-bacd-1505bd948c87",
+    "9190a68b-7129-432e-9cb5-65d545ea14c4",
+    "9466a214-ecd8-4661-b06b-384e4b46a1d8",
+    "97d26239-9dbe-408c-96cb-e552d5dae574",
+    "b130a920-cb43-4d6b-9fe2-3d972d8968c2",
+    "b1900d8d-74f4-48d3-8934-283fa82eb8f1",
+    "b4ef6c8e-58ee-4bb0-a41e-15e6f25db318",
+    "b5ea458b-8f13-4fc1-af11-4e066cb85117",
+    "bc8b83c4-d9b5-4be7-8ccd-c346eaaca4ff",
+    "c4334895-0ab2-408e-b907-bd106ff971bb",
+    "c4c6ccde-384e-4b39-a5e3-f4176038df29",
+    "d14a85c3-7a69-4ceb-924e-cfe1772934b7",
+    "d994b9d8-51cd-57ab-9726-675ece8b8ff4",
+    "d9cc182c-425f-4fd4-8509-5b298ed552a8",
+    "e0595101-3239-45dd-ad6c-30d07a9fad40",
+    "e6b35010-fab4-43b6-998f-221ea3ad499d",
+    "f556a927-d747-489f-a89c-c97db2181d02",
+    "f6fe6085-a811-4489-9526-b02a625e8eb6",
+    "f8211576-1249-4d4d-acd1-824ac342c948",
+    "f9fbb5bd-dda9-49b0-b49a-3bedfd0eb994",
+    "fcade418-13ee-4ae4-bad4-7a6aeafcf1aa",
+    "45103aba-d39e-40aa-8d49-a3561158cb0e",
+    "46b2af7b-5664-4ddc-922b-482d7e85fa1f",
+    "e96be0e9-2209-45b0-bbfd-a0fdaca3d7cd",
+    "c327aae5-610d-4bfa-bac6-0b685880c8fb",
+    "e518cf78-8855-44fb-b1e4-749f134ebe36"
+  ],
+  "deleted_copper_expected": {
+    "00db68fa-5261-4a3e-a091-7ea627856b4a": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        63.775,
+        30.7
+      ],
+      "end_mm": [
+        62.7,
+        30.7
+      ]
+    },
+    "01545c64-2a38-466e-aab5-3311a7972327": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.675,
+        29.45
+      ],
+      "end_mm": [
+        68.175,
+        28.95
+      ]
+    },
+    "01b66695-81b9-4e9a-874e-a592451161c8": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.45,
+        28.6375
+      ],
+      "end_mm": [
+        45.45,
+        30.6375
+      ]
+    },
+    "02a75889-bc2b-44db-b36d-1ddaeb4a7cb1": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        53.55,
+        31.0375
+      ],
+      "end_mm": [
+        53.55,
+        33.2875
+      ]
+    },
+    "0304f4ed-7143-5fe2-bfbe-e391135a2ad7": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        56.525,
+        23.075
+      ],
+      "end_mm": [
+        56.525,
+        26.5
+      ]
+    },
+    "065a3ffe-2d85-4351-a474-d215b837dc51": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        65.25,
+        27.75
+      ],
+      "end_mm": [
+        65.25,
+        29.25
+      ]
+    },
+    "06666dfa-0de5-402c-bae2-bc05c666dd08": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        63.4,
+        31.4
+      ],
+      "end_mm": [
+        63.4,
+        32.3
+      ]
+    },
+    "08181aa8-ba08-4f54-bf08-f96b5ec78ef3": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        63.4,
+        32.3
+      ],
+      "end_mm": [
+        62.4,
+        33.3
+      ]
+    },
+    "1055b3ba-8754-508d-b5f4-31b66c31db8f": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        56.525,
+        26.5
+      ],
+      "end_mm": [
+        56.25,
+        26.775
+      ]
+    },
+    "1a12ec16-5781-54a2-aa3d-064772912870": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        56.25,
+        26.775
+      ],
+      "end_mm": [
+        56.25,
+        28.225
+      ]
+    },
+    "1a5a148b-b984-4d09-bf9e-272711d553dd": {
+      "net": "Net-(R1501-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        64.125,
+        31.5
+      ],
+      "end_mm": [
+        65.075,
+        30.55
+      ]
+    },
+    "1bd1ae8f-eb6b-4499-b44c-123ca84ea1d2": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        41.25,
+        28.6375
+      ],
+      "end_mm": [
+        40.75,
+        28.6375
+      ]
+    },
+    "1ebf5391-ab70-4d45-9504-1d210934b78b": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        55.75,
+        22.3
+      ],
+      "end_mm": [
+        56.25,
+        22.8
+      ]
+    },
+    "21d9d0f7-6b63-4b8c-b413-bbf095b838ab": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        56.25,
+        28.225
+      ],
+      "end_mm": [
+        57.525,
+        29.5
+      ]
+    },
+    "2233b7b0-a172-414b-b05b-4bb9a08a453e": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.6,
+        24.9
+      ],
+      "end_mm": [
+        42.05,
+        24.9
+      ]
+    },
+    "2235b5ae-efa2-5220-aee8-faeb535c3fba": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        56.25,
+        22.8
+      ],
+      "end_mm": [
+        56.525,
+        23.075
+      ]
+    },
+    "266c3e5c-3fb1-4f46-bc20-cae4ac685a04": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.75,
+        28.6375
+      ],
+      "end_mm": [
+        43.45,
+        28.6375
+      ]
+    },
+    "29babd0c-55ef-42a3-8843-dd80ccac3c80": {
+      "net": "Net-(R1502-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        65.15,
+        25.775
+      ],
+      "end_mm": [
+        65.7,
+        25.775
+      ]
+    },
+    "4096ad0d-74f9-477d-92d0-d0d7e2fff356": {
+      "net": "Net-(R1311-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.8,
+        21.575
+      ],
+      "end_mm": [
+        68.8,
+        23.425
+      ]
+    },
+    "40a78ed9-4762-45a9-9c19-f6420388f0ee": {
+      "net": "Net-(R1501-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        65.075,
+        30.55
+      ],
+      "end_mm": [
+        65.075,
+        28.1
+      ]
+    },
+    "4409c219-1388-48d3-ae72-7d1577541e6e": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        63.575,
+        29.5
+      ],
+      "end_mm": [
+        64.275,
+        28.8
+      ]
+    },
+    "4a8d7b35-3b4b-4c24-a53f-f414b78f9d61": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.5,
+        28.2375
+      ],
+      "end_mm": [
+        42.5,
+        27.1
+      ]
+    },
+    "56034b58-b97f-468c-8f8b-1fac2a3a724f": {
+      "net": "/HEAD_UV_ENABLE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.8,
+        19.725
+      ],
+      "end_mm": [
+        69.15,
+        19.375
+      ]
+    },
+    "57330cbe-4127-4b66-8cbc-91bd347df963": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.05,
+        24.9
+      ],
+      "end_mm": [
+        42.25,
+        25.1
+      ]
+    },
+    "5c71492c-4a1e-5185-a73f-b9991395ff02": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        60.925,
+        18.0
+      ],
+      "end_mm": [
+        60.325,
+        18.0
+      ]
+    },
+    "5d62fdca-804d-4814-a024-423193e01d38": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        65.25,
+        29.25
+      ],
+      "end_mm": [
+        61.75,
+        32.75
+      ]
+    },
+    "62082821-1f25-4f46-bea7-5e4a836b0b07": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        62.75,
+        25.25
+      ],
+      "end_mm": [
+        65.25,
+        27.75
+      ]
+    },
+    "643f309e-cd9b-4247-abbe-b06bf2a72438": {
+      "net": "Net-(R1501-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        63.525,
+        33.75
+      ],
+      "end_mm": [
+        64.125,
+        33.75
+      ]
+    },
+    "68337903-98f5-4e4f-9ed8-5117238ed520": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.25,
+        25.1
+      ],
+      "end_mm": [
+        42.25,
+        25.4125
+      ]
+    },
+    "6ddd369c-b213-47e4-b912-136d7483b0f5": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        53.55,
+        33.2875
+      ],
+      "end_mm": [
+        54.4,
+        34.1375
+      ]
+    },
+    "78376622-5ac9-47cf-9ca7-94e86072783f": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        61.75,
+        32.75
+      ],
+      "end_mm": [
+        58.0375,
+        32.75
+      ]
+    },
+    "785f917d-97ad-40e6-86aa-aab0fb545610": {
+      "net": "Net-(R1502-~-Pad1)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        65.7,
+        25.775
+      ],
+      "end_mm": [
+        65.7,
+        26.825
+      ]
+    },
+    "78b0e0dc-5356-4cc3-b969-d2dde38b0526": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.75,
+        25.85
+      ],
+      "end_mm": [
+        40.75,
+        26.8
+      ]
+    },
+    "7a4650b4-1dc9-5ff9-af73-2ad3564d32de": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        61.9,
+        17.025
+      ],
+      "end_mm": [
+        60.925,
+        18.0
+      ]
+    },
+    "7d202a1c-9df5-4dc1-9c35-040935191fb9": {
+      "net": "/FAULT_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.85,
+        25.15
+      ],
+      "end_mm": [
+        43.85,
+        23.1
+      ]
+    },
+    "823c0a50-334b-4c56-af7f-de028d3d14d4": {
+      "net": "Net-(R1502-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        64.85,
+        26.075
+      ],
+      "end_mm": [
+        65.15,
+        25.775
+      ]
+    },
+    "836b7b34-1a59-4e54-a08c-4046578ad1d4": {
+      "net": "/FAULT_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.45,
+        25.55
+      ],
+      "end_mm": [
+        43.85,
+        25.15
+      ]
+    },
+    "8bc8d6c2-cfce-4b18-a22d-1c1e34ec824c": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        57.375,
+        18.9
+      ],
+      "end_mm": [
+        55.75,
+        20.525
+      ]
+    },
+    "8be9b471-8f71-4399-bacd-1505bd948c87": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        65.525,
+        28.95
+      ],
+      "end_mm": [
+        63.775,
+        30.7
+      ]
+    },
+    "9190a68b-7129-432e-9cb5-65d545ea14c4": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        55.75,
+        20.525
+      ],
+      "end_mm": [
+        55.75,
+        22.3
+      ]
+    },
+    "9466a214-ecd8-4661-b06b-384e4b46a1d8": {
+      "net": "/13 {slash} Head_Fault_Delay/HEAD_UV_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.45,
+        28.75
+      ],
+      "end_mm": [
+        44.6,
+        28.75
+      ]
+    },
+    "97d26239-9dbe-408c-96cb-e552d5dae574": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        62.7,
+        30.7
+      ],
+      "end_mm": [
+        63.4,
+        31.4
+      ]
+    },
+    "b130a920-cb43-4d6b-9fe2-3d972d8968c2": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.45,
+        30.6375
+      ],
+      "end_mm": [
+        53.15,
+        30.6375
+      ]
+    },
+    "b1900d8d-74f4-48d3-8934-283fa82eb8f1": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        57.525,
+        29.5
+      ],
+      "end_mm": [
+        63.575,
+        29.5
+      ]
+    },
+    "b4ef6c8e-58ee-4bb0-a41e-15e6f25db318": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.675,
+        29.45
+      ],
+      "end_mm": [
+        68.325,
+        29.1
+      ]
+    },
+    "b5ea458b-8f13-4fc1-af11-4e066cb85117": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.175,
+        28.95
+      ],
+      "end_mm": [
+        65.525,
+        28.95
+      ]
+    },
+    "bc8b83c4-d9b5-4be7-8ccd-c346eaaca4ff": {
+      "net": "/HEAD_UV_ENABLE",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        69.15,
+        19.375
+      ],
+      "end_mm": [
+        69.15,
+        16.525
+      ]
+    },
+    "c4334895-0ab2-408e-b907-bd106ff971bb": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        54.4,
+        34.1375
+      ],
+      "end_mm": [
+        56.65,
+        34.1375
+      ]
+    },
+    "c4c6ccde-384e-4b39-a5e3-f4176038df29": {
+      "net": "Net-(R1501-~-Pad1)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        64.125,
+        33.75
+      ],
+      "end_mm": [
+        64.125,
+        31.5
+      ]
+    },
+    "d14a85c3-7a69-4ceb-924e-cfe1772934b7": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.75,
+        26.8
+      ],
+      "end_mm": [
+        40.75,
+        28.6375
+      ]
+    },
+    "d994b9d8-51cd-57ab-9726-675ece8b8ff4": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        62.2,
+        17.025
+      ],
+      "end_mm": [
+        61.9,
+        17.025
+      ]
+    },
+    "d9cc182c-425f-4fd4-8509-5b298ed552a8": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        53.15,
+        30.6375
+      ],
+      "end_mm": [
+        53.55,
+        31.0375
+      ]
+    },
+    "e0595101-3239-45dd-ad6c-30d07a9fad40": {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        64.275,
+        28.8
+      ],
+      "end_mm": [
+        64.275,
+        29.3
+      ]
+    },
+    "e6b35010-fab4-43b6-998f-221ea3ad499d": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        42.75,
+        24.6
+      ],
+      "end_mm": [
+        42.25,
+        25.1
+      ]
+    },
+    "f556a927-d747-489f-a89c-c97db2181d02": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.675,
+        28.6
+      ],
+      "end_mm": [
+        68.675,
+        29.45
+      ]
+    },
+    "f6fe6085-a811-4489-9526-b02a625e8eb6": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        41.35,
+        28.5375
+      ],
+      "end_mm": [
+        41.25,
+        28.6375
+      ]
+    },
+    "f8211576-1249-4d4d-acd1-824ac342c948": {
+      "net": "Net-(U1301-INA+_{slash}_UV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        58.0375,
+        32.75
+      ],
+      "end_mm": [
+        56.65,
+        34.1375
+      ]
+    },
+    "f9fbb5bd-dda9-49b0-b49a-3bedfd0eb994": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        62.0,
+        31.4
+      ],
+      "end_mm": [
+        62.7,
+        30.7
+      ]
+    },
+    "fcade418-13ee-4ae4-bad4-7a6aeafcf1aa": {
+      "net": "Net-(U1501-INB-_{slash}_OV)",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        68.325,
+        29.1
+      ],
+      "end_mm": [
+        66.075,
+        29.1
+      ]
+    },
+    "45103aba-d39e-40aa-8d49-a3561158cb0e": {
+      "net": "/FAULT_N",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.85,
+        23.1
+      ],
+      "end_mm": [
+        43.25,
+        23.7
+      ]
+    },
+    "46b2af7b-5664-4ddc-922b-482d7e85fa1f": {
+      "net": "/FAULT_N",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.25,
+        23.7
+      ],
+      "end_mm": [
+        43.25,
+        25.875
+      ]
+    },
+    "e96be0e9-2209-45b0-bbfd-a0fdaca3d7cd": {
+      "net": "/FAULT_N",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        43.25,
+        25.875
+      ],
+      "end_mm": [
+        44.2,
+        26.825
+      ]
+    },
+    "c327aae5-610d-4bfa-bac6-0b685880c8fb": {
+      "net": "/HEAD_UV_ENABLE",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        69.15,
+        11.675
+      ],
+      "end_mm": [
+        65.8,
+        8.325
+      ]
+    },
+    "e518cf78-8855-44fb-b1e4-749f134ebe36": {
+      "net": "/HEAD_UV_ENABLE",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        69.15,
+        16.525
+      ],
+      "end_mm": [
+        69.15,
+        11.675
+      ]
+    }
+  },
+  "remove_obsolete_vias": [
+    {
+      "uuid": "45a1d39e-cb5b-4ef8-b13d-fe20aed2dfaf",
+      "source_expected": {
+        "net": "Net-(U1301-INA+_{slash}_UV)",
+        "position_mm": [
+          40.75,
+          28.6375
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "remaining_contact_layers": [],
+      "reason": "Explicitly retire the isolated old left UV-only branch after the detector and its capacitor move. This working board leaves the replacement UV divider/filter unfinished, so it is prohibited from adoption. No power or ground transfer is removed."
+    },
+    {
+      "uuid": "fc152bf4-fbba-444c-ae12-f971486b6063",
+      "source_expected": {
+        "net": "Net-(U1301-INA+_{slash}_UV)",
+        "position_mm": [
+          40.75,
+          26.8
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "remaining_contact_layers": [],
+      "reason": "Explicitly retire the isolated old left UV-only branch after the detector and its capacitor move. This working board leaves the replacement UV divider/filter unfinished, so it is prohibited from adoption. No power or ground transfer is removed."
+    },
+    {
+      "uuid": "c2efb4d1-237c-4555-a92a-581a184c8584",
+      "source_expected": {
+        "net": "Net-(U1301-INA+_{slash}_UV)",
+        "position_mm": [
+          54.4,
+          34.1375
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "remaining_contact_layers": [],
+      "reason": "Explicitly retire the isolated old left UV-only branch after the detector and its capacitor move. This working board leaves the replacement UV divider/filter unfinished, so it is prohibited from adoption. No power or ground transfer is removed."
+    },
+    {
+      "uuid": "c56d70fa-8404-4e66-b4ea-0eb4f4ba7226",
+      "source_expected": {
+        "net": "/FAULT_N",
+        "position_mm": [
+          43.85,
+          23.1
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "remaining_contact_layers": [],
+      "reason": "Retire two complete dead transfer branches left by the explicit relocation.\nAll source terminal-to-terminal copper is retained. These tails now end at\nunused transfer holes, after the old U1301/R1311 escapes were explicitly\nremoved in E. Replacement circuit links remain unfinished, preventing adoption.\n"
+    },
+    {
+      "uuid": "61f593f6-35ac-484f-8d2f-a7902a0a6d0e",
+      "source_expected": {
+        "net": "/HEAD_UV_ENABLE",
+        "position_mm": [
+          69.15,
+          16.525
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "remaining_contact_layers": [],
+      "reason": "Retire two complete dead transfer branches left by the explicit relocation.\nAll source terminal-to-terminal copper is retained. These tails now end at\nunused transfer holes, after the old U1301/R1311 escapes were explicitly\nremoved in E. Replacement circuit links remain unfinished, preventing adoption.\n"
+    }
+  ],
+  "adoption_prohibited_until_complete_verification": true,
+  "unfinished_connections": [
+    "U1301 FAULT output to existing FAULT group",
+    "HEAD_UV_N new transfer to retained left output group",
+    "R1311 HEAD_UV_ENABLE to original enable group",
+    "U1301 OV/new local C1302 to upstream R1306/R1307",
+    "UV divider R1302 to R1303/U1301 group"
+  ],
+  "filter_path_requires_native_verification": true
+}

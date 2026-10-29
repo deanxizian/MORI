@@ -1,0 +1,34 @@
+{
+  "scope": "Four actually viewed local native-copper diagnostic renders; no complete whole-board or physical qualification.",
+  "images_actually_viewed": [
+    {
+      "path": "raw/R173C-B.png",
+      "sha256": "ad44c360d6868739a76c51b601bb095a636274aecd75bd3a403b32ea60b0a165"
+    },
+    {
+      "path": "raw/R173D-F.png",
+      "sha256": "07d0ccee41a659ba6fbda7a7479aef530dc42d77e451173d13864ab7aff06ed4"
+    },
+    {
+      "path": "raw/R173D-B.png",
+      "sha256": "88da71f0c081adfaa89b46279722b177fc3591a566cbaa7f9494dc2e56b9c088"
+    },
+    {
+      "path": "raw/R173E-B.png",
+      "sha256": "f89f93e237a703f13835b95d87039a8a53a1bc0b3a732eeeb6c8bb76784cf8d9"
+    }
+  ],
+  "findings": [
+    "C exposes R1706 collisions with existing R1601/vias; these are rejected, not waived.",
+    "D moves R1706 to F.Cu while retaining the widened supervisor/INA300 group. Footprint placement alone does not satisfy the 3 mm input requirement.",
+    "E has a visible explicit B-face R1701.1 to actual U1701.8 path and supervisor bypass loop; INA300 bypass, input and timing connections remain incomplete.",
+    "Small search endpoint joins and the supervisor supply jog remain candidate routing to be cleaned with the complete group. Thirteen opposite/internal body projections remain unqualified."
+  ],
+  "new_same_face_nominal_hits": 0,
+  "new_opposite_internal_hits": 13,
+  "local_status": "FAIL",
+  "whole_board_visual": "NOT_TESTED",
+  "manufacturer_thermal_coupling": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "adopted": false
+}

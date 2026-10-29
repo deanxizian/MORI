@@ -1,0 +1,56 @@
+{
+  "source_sha256": "6dbcf638a4292c080a05c01f46f9317d69bd655f37d57f0da46d6e3d3bfcb876",
+  "candidate_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "local_development_layout_decision": "PASS",
+  "new_unshielded_projection": {
+    "net": "Net-(U1001-S2_{slash}_WHEEL_sense)",
+    "layer": "In3.Cu",
+    "other_net": "MOTION_3V3",
+    "other_layer": "In2.Cu",
+    "overlap_mm2": 0.06805966822673801,
+    "added_overlap_mm2": 0.0017289639594437467,
+    "intervening_ground_layers": [],
+    "unshielded_added_mm2": 0.0017289639594437467
+  },
+  "intervening_ground_between_In2_and_In3": false,
+  "native_stack_dielectrics_mm": {
+    "In3_to_In4_GND": 0.13,
+    "In3_to_In2_power": 0.9328
+  },
+  "native_stack_is_not_supplier_verified": true,
+  "sampling_via_nearest_circle_clearances": [
+    {
+      "other_uuid": "91ef992b-7d59-4fdf-9c25-f80e62b58f1e",
+      "other_net": "MOTION_3V3",
+      "nominal_circle_edge_gap_mm": 0.20754858490424655
+    },
+    {
+      "other_uuid": "0d890a6c-c371-4632-8523-46e775782752",
+      "other_net": "GND",
+      "nominal_circle_edge_gap_mm": 0.2040063920164339
+    }
+  ],
+  "direct_ground_return": {
+    "pad": "C1002.2",
+    "layer": "B.Cu",
+    "source_length_mm": 4.043502884254444,
+    "source_pad_exit_mm": [
+      52.25,
+      15.275
+    ],
+    "planned_length_mm": 2.5685028842544444,
+    "minimum_width_mm": 0.2
+  },
+  "disposition": "Accept for continued development: the small added In3 sampling projection faces the same 3V3 supply used by U1001, with continuous nearer In4 ground and a shorter C1002 ground return. No new unshielded foreign signal/switching-node projection was found. This is a local design judgment, not a zero-noise or blanket power-plane exception.",
+  "geometry": "New F comparator copper avoids mounted-face bodies. Its added opposite-face C1702 projection has intervening actual GND. The original In3 projection beneath D1801 contains no newly added copper. All 114 GND vias contact actual fill on both reference planes.",
+  "narrow_spacing": "Nominal sampling-via circle gaps are only about 0.204 and 0.208 mm. They meet unchanged native rules; no extra fabrication tolerance or measured margin is inferred.",
+  "manufacturer_review": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps3700.pdf",
+    "document": "TPS3700 SBVS187G, sections 8.3 and 10.1",
+    "observation": "The manufacturer recommends local 0.1 uF VDD bypassing and attention to noisy monitored rails. C1702 remains the original 100 nF part with original supply and ground paths. Complete U1702 bypass/input/transient qualification remains open."
+  },
+  "full_noise_transient_thermal": "NOT_TESTED",
+  "whole_board_visual": "NOT_TESTED",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

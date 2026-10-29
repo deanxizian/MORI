@@ -1,0 +1,31 @@
+{
+  "board_sha256": "b6da4de8fc7341e01971efb11f1720f6cdf68364958675948ef76ef03830722a",
+  "cwd": "/Volumes/Sol/MORI-hardware-completion",
+  "completed_recorded_at_utc": "2026-10-29T00:06:46.339Z",
+  "checks": [
+    {
+      "id": "workspace",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers > robot/hardware/driver/development/evidence/R188_study/offline_workspace.log 2>&1",
+      "started_at_utc": "2026-10-29T00:06:22.135Z",
+      "exit_code": 0,
+      "log": "offline_workspace.log"
+    },
+    {
+      "id": "robot",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers > robot/hardware/driver/development/evidence/R188_study/offline_robot.log 2>&1",
+      "started_at_utc": "2026-10-29T00:06:22.135Z",
+      "exit_code": 0,
+      "log": "offline_robot.log"
+    },
+    {
+      "id": "test_rig",
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py > robot/hardware/driver/development/evidence/R188_study/offline_test_rig.log 2>&1",
+      "started_at_utc": "2026-10-29T00:06:22.135Z",
+      "exit_code": 0,
+      "log": "offline_test_rig.log"
+    }
+  ],
+  "scope": "Repository offline integrity only. Does not qualify board manufacture, full electrical performance or physical behavior.",
+  "physical": "NOT_TESTED",
+  "manufacturing_release": false
+}

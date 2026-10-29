@@ -1,0 +1,184 @@
+{
+  "status": "PASS_LOCAL_DEVELOPMENT_REVIEW",
+  "source_sha256": "6f9d92ebf5a36598421f064cf29523081d8004d28d2e60ef7a0c36ff8b9bd099",
+  "board_sha256": "0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca",
+  "reviewed_images": [
+    "F.Cu-native-local.png",
+    "B.Cu-native-local.png",
+    "In2.Cu-native-local.png",
+    "F.Cu-diagnostic.png",
+    "In3.Cu-diagnostic.png"
+  ],
+  "scope": "Connect U401.3 to U402.10; R407 translation and R1704 rotation; exact local HEAD_TX/HEAD_BUS/DISARMED/OV/INA+/ACT_UV_N/power/ground restoration. Independent development candidate only.",
+  "route": "U401-2Y total 32.30809450078489 mm centerline, five through vias, 0.20 mm signal traces. End pins escape outward on B.Cu. Long runs and deliberate bends replace the raster proposal; a 0.070711 mm F.Cu offset is entirely inside its transfer annulus. The lower F.Cu corner clears C1102/R1102; a shorter diagonal trial failed clearance.",
+  "placement_comparison": "R407 shifted (-0.25,+0.60) mm at 90 degrees. R1704 retained center and rotated 180 to 270 degrees, preserving actual pin numbering. R406 90-degree trial caused reference gaps and was rejected; R406 is unchanged. Fixed connectors, MCU interfaces, outline and holes unchanged.",
+  "mounted_face_exception": {
+    "component": "J402",
+    "net": "/03 {slash} Motor_Buses/HEAD_BUS",
+    "pad": "J402.3",
+    "pad_position_mm": [
+      54.2,
+      27
+    ],
+    "reason": "The fixed connector pin is inside its nominal Fab outline. Its own outward north escape must traverse a short portion of that outline before turning. This is a local package escape exception, not a route through another component. All native keepouts remain enforced.",
+    "projection_outside_own_lands_mm2_before": 0.1303129872211577,
+    "projection_outside_own_lands_mm2_after": 0.0942890900367293,
+    "new_projection_beyond_source_mm2": 0.08711643245313841,
+    "other_new_mounted_face_body_projections": 0,
+    "measurement_scope": "Union of native trace strokes outside same-net pad lands against nominal Fab outlines. Not actual installed-body measurements."
+  },
+  "individual_opposite_and_internal_reviews": [
+    {
+      "nets": [
+        "HEAD_TX"
+      ],
+      "layers": [
+        "In3.Cu"
+      ],
+      "components": [
+        "J402",
+        "R407"
+      ],
+      "review": "Replacement via and trace retain HEAD_TX connectivity. In4 reference remains continuous outside the same-net transfer void; R407 is a passive load, and the fixed connector remains unmoved. Bus-edge coupling and actual plug fit NOT_TESTED."
+    },
+    {
+      "nets": [
+        "DISARMED"
+      ],
+      "layers": [
+        "In3.Cu"
+      ],
+      "components": [
+        "U401"
+      ],
+      "review": "Rerouted between existing branch endpoints with replacement F/B/In3 transfer at (63.5,6.7). In4 separates the internal segment from the B-side logic package. Nearest reference stitch is 1.796087 mm; safety-signal transient behavior NOT_TESTED."
+    },
+    {
+      "nets": [
+        "HEAD_BUS"
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "components": [
+        "R1208"
+      ],
+      "review": "Opposite-face passive projection only; original circuit and connector pin retained. In1 provides continuous reference. Signal integrity and thermal effects remain open."
+    },
+    {
+      "nets": [
+        "ACT_UV_N"
+      ],
+      "layers": [
+        "In3.Cu"
+      ],
+      "components": [
+        "C1302",
+        "D1802"
+      ],
+      "review": "Local corridor shift retains endpoint connectivity and centerline length. In4 remains the reference between this line and the B-side capacitor/TVS. No TVS power-pad or clamp loop is rerouted. Surge coupling and thermal behavior NOT_TESTED."
+    },
+    {
+      "nets": [
+        "GND"
+      ],
+      "layers": [
+        "B.Cu"
+      ],
+      "components": [
+        "J401"
+      ],
+      "review": "C1302 ground bridge reaches the pre-existing ground via (60.325,18), rather than using J401 ground-pin thermal spokes as a signal-reference bridge. It lies on the opposite face of the connector; all 155 ground pads remain one group. Quiet-ground impedance and load-return transients NOT_TESTED."
+    },
+    {
+      "nets": [
+        "MOTION_3V3"
+      ],
+      "layers": [
+        "B.Cu"
+      ],
+      "components": [
+        "R1704"
+      ],
+      "review": "Local trunk remains 0.50 mm and retains all 50 power-width screens. Its opposite-face projection crosses the rotated passive, with In4 reference preserved. Threshold noise, thermal drift and actual load capability NOT_TESTED."
+    },
+    {
+      "nets": [
+        "MOTION_3V3"
+      ],
+      "layers": [
+        "In2.Cu"
+      ],
+      "components": [
+        "C401",
+        "R406"
+      ],
+      "review": "Added 0.50 mm bridge joins existing supply vias under the unchanged native R13 whitelist. In1 reference passes; native rules and converter switching copper unchanged. Coupling to decoupling/logic passives and current/temperature capability require later validation."
+    },
+    {
+      "nets": [
+        "Net-(U1301-INB-_{slash}_OV)"
+      ],
+      "layers": [
+        "In3.Cu"
+      ],
+      "components": [
+        "J402",
+        "R407"
+      ],
+      "review": "OV corridor shifts locally from x=56.25 to x=56.525 while preserving all pad connections and In4 reference. This is a sensitive analog net; bus-edge injection, parasitic capacitance and threshold margin NOT_TESTED."
+    },
+    {
+      "nets": [
+        "Net-(U1702-INA+)"
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "components": [
+        "C1702"
+      ],
+      "review": "R1704 pin 2 is now at (60.9,12.575), connected outward; nominal opposite-face capacitor projection is separated by the retained ground structure. Comparator threshold/noise/temperature behavior NOT_TESTED."
+    },
+    {
+      "nets": [
+        "Net-(U401-2Y)"
+      ],
+      "layers": [
+        "F.Cu"
+      ],
+      "components": [
+        "C1302",
+        "R1303",
+        "R405"
+      ],
+      "review": "Mounted on B.Cu, these parts are opposite the new F.Cu signal runs. In1 is continuous outside explicit transfer voids. No converter switch node or inductor body is in this changed region. Crosstalk and transient functional qualification remain open."
+    },
+    {
+      "nets": [
+        "Net-(U401-2Y)"
+      ],
+      "layers": [
+        "In3.Cu"
+      ],
+      "components": [
+        "C401",
+        "J401",
+        "R1704",
+        "R406"
+      ],
+      "review": "Each internal projection retains In4 reference; the F-side resistor/connector projections are also separated by the existing stack. Four dual-reference transitions pass the project stitch-distance screen. This does not establish controlled impedance, EMC immunity or physical thermal performance."
+    }
+  ],
+  "reference": "No retained trace loses reference copper and no new reference gap remains. HEAD_TX and the U401-side B/In3 transfer share In4, so the dual-reference stitch screen is not applicable to those transfers. Four other new/reassigned transfers have ground distances 0.806226 to 1.932938 mm. Two new GND vias support the transitions. Six inherited flags remain; 2 mm is a project screening heuristic, not an IPC/EMC limit.",
+  "regression": "2595 exact-plan checks PASS. Old pad connections, all 50 power-width checks, all 63 adjacency checks and 77 non-PCB project member bytes are retained. Strict geometry audits preserve FAIL for explicitly declared changes; ordinary native DRC/parity/enabled ERC are zero, but 31 connections remain open.",
+  "geometry_limits": "Nominal Fab geometry only; H1-H4 have no closed Fab body and C1404 contains unsupported arc geometry. They are outside the modified component set. Measurements union overlapping segments to avoid double-counting.",
+  "remaining_limits": [
+    "31 unconnected items; full-board route-by-route review incomplete.",
+    "Six historical reference-transition flags.",
+    "Digital timing/EMC/coupling, analog parasitics and quiet-ground performance NOT_TESTED.",
+    "Power current, thermal, surge, physical assembly and system behavior NOT_TESTED.",
+    "Published PCB remains C3 R108P; no mechanical/software adoption."
+  ],
+  "manufacturing_release": false
+}

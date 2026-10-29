@@ -1,0 +1,104 @@
+{
+  "scope": "Exact-geometry and native roundtrip checks for vacated guard partitions.\n\nNo accepted board is written. Repartition keeps every source zone identity and\nrestriction and exactly the moved body minus original fixed via windows.\n",
+  "source_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "empty_partition_reused",
+      "status": "PASS"
+    },
+    {
+      "name": "multiple_empty_partitions_reused",
+      "status": "PASS"
+    },
+    {
+      "name": "empty_partition_for_disconnected_target",
+      "status": "PASS"
+    },
+    {
+      "name": "nonempty_legacy_case",
+      "status": "PASS"
+    },
+    {
+      "name": "synthetic_legacy_shapes_identical",
+      "status": "PASS"
+    },
+    {
+      "name": "empty_target_refused",
+      "status": "PASS",
+      "message": "Cannot preserve every native guard UUID in the exact target"
+    },
+    {
+      "name": "too_few_UUIDs_for_disconnected_target_refused",
+      "status": "PASS",
+      "message": "Exact via guard union needs more contiguous native zones"
+    },
+    {
+      "name": "geometry_outside_target_refused",
+      "status": "PASS",
+      "message": "Repartition changed the exact guard union or identity set"
+    },
+    {
+      "name": "R176_INA_small_translation_frozen_code_reproduces_rejection",
+      "status": "PASS",
+      "vacated_UUIDs": [
+        "602527bc-67ca-4e81-b5a0-d7491386ce12"
+      ]
+    },
+    {
+      "name": "R176_INA_small_translation_native_roundtrip",
+      "status": "PASS",
+      "zone_count": 30,
+      "via_guard_count": 10,
+      "vacated_partitions": 1,
+      "target_difference_mm2": 3.4461322684364945e-15
+    },
+    {
+      "name": "R176_supervisor_small_translation_legacy_geometry_identical",
+      "status": "PASS"
+    },
+    {
+      "name": "R176_supervisor_small_translation_native_roundtrip",
+      "status": "PASS",
+      "zone_count": 3,
+      "via_guard_count": 2,
+      "vacated_partitions": 0,
+      "target_difference_mm2": 1.5276668818842396e-15
+    },
+    {
+      "name": "R174_INA_270_replay_legacy_geometry_identical",
+      "status": "PASS"
+    },
+    {
+      "name": "R174_INA_270_replay_native_roundtrip",
+      "status": "PASS",
+      "zone_count": 30,
+      "via_guard_count": 10,
+      "vacated_partitions": 0,
+      "target_difference_mm2": 2.5437429940211575e-14
+    },
+    {
+      "name": "R174_supervisor_replay_legacy_geometry_identical",
+      "status": "PASS"
+    },
+    {
+      "name": "R174_supervisor_replay_native_roundtrip",
+      "status": "PASS",
+      "zone_count": 3,
+      "via_guard_count": 2,
+      "vacated_partitions": 0,
+      "target_difference_mm2": 0.0
+    },
+    {
+      "name": "altered_native_restrictions_refused",
+      "status": "PASS",
+      "message": "Guard reconstruction requires separate body and via-only guards"
+    },
+    {
+      "name": "accepted_source_bytes_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "native_rules_changed": false,
+  "adopted": false
+}

@@ -1,0 +1,52 @@
+{
+  "scope": "Offline integrity and evidence checks only; no physical or manufacturing qualification",
+  "cwd": "/Volumes/Sol/MORI-hardware-completion",
+  "accepted_revision": "R148E",
+  "checks": [
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python tools/check_workspace.py --allow-lfs-pointers",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "f897ef",
+        "wall_time_seconds": 0.168252417,
+        "exit_code": 0,
+        "original_token_count": 35,
+        "output": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Repository organization and provenance only; no hardware I/O\",\n  \"protected_files\": 541,\n  \"errors\": []\n}\n"
+      }
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python robot/tools/check_project.py --allow-lfs-pointers",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "8329df",
+        "wall_time_seconds": 0.3980095,
+        "exit_code": 0,
+        "original_token_count": 29,
+        "output": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Publication integrity only\",\n  \"lfs_mode\": \"pointers allowed\",\n  \"errors\": []\n}\n"
+      }
+    },
+    {
+      "command": "/Volumes/Sol/MORI/robot/.venv/bin/python test_rig/tools/check_release.py",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "39fec3",
+        "wall_time_seconds": 0.000011,
+        "exit_code": 0,
+        "original_token_count": 516,
+        "output": "{\n  \"status\": \"PASS\",\n  \"imported_artifacts\": 405,\n  \"control_source_files\": 324,\n  \"links\": 85,\n  \"meshes\": [\n    {\n      \"file\": \"baseplate_R37_TRIAL.stl\",\n      \"triangles\": 134888,\n      \"vertices\": 67380,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 57344.57737390249,\n      \"bounds_mm\": [\n        [\n          -80.0,\n          -26.5,\n          0.0\n        ],\n        [\n          80.0,\n          26.5,\n          80.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"camera_bracket_R59_40deg_TRIAL.stl\",\n      \"triangles\": 30352,\n      \"vertices\": 15164,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 4661.658087943824,\n      \"bounds_mm\": [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          16.257375717163086,\n          29.523170471191406,\n          72.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"camera_bracket_R60_REAR_40deg_TRIAL.stl\",\n      \"triangles\": 30352,\n      \"vertices\": 15164,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 4892.128234533014,\n      \"bounds_mm\": [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          16.61102867126465,\n          34.523170471191406,\n          72.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"second_platform_R55_TRIAL.stl\",\n      \"triangles\": 47728,\n      \"vertices\": 23828,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 50967.6688024494,\n      \"bounds_mm\": [\n        [\n          0.0,\n          0.0,\n          0.0\n        ],\n        [\n          160.0,\n          80.0,\n          9.0\n        ]\n      ]\n    },\n    {\n      \"file\": \"wheel_hub_R41_TRIAL.stl\",\n      \"triangles\": 271664,\n      \"vertices\": 135810,\n      \"components\": 1,\n      \"bad_edges\": 0,\n      \"volume_mm3\": 29137.953587906122,\n      \"bounds_mm\": [\n        [\n          -36.25,\n          -36.25,\n          0.0\n        ],\n        [\n          36.25,\n          36.25,\n          23.75\n        ]\n      ]\n    }\n  ],\n  \"scope\": \"Integrity and digital topology only; no hardware I/O or physical qualification\"\n}\n"
+      }
+    },
+    {
+      "command": "python3 - <<'PY'\nimport hashlib,json,gzip\nfrom pathlib import Path\np=Path('robot/hardware/driver/development');s=p/'evidence/R149_study';m=json.loads((s/'archive_manifest.json').read_text())\nfor r in m['payloads']:\n q=s/r['path'];data=q.read_bytes();assert hashlib.sha256(data).hexdigest()==r['sha256'];raw=gzip.decompress(data) if r['gzip'] else data;assert hashlib.sha256(raw).hexdigest()==r['source_sha256']\na=json.loads(Path('robot/.state/c3-completion/trials/R149C-audit.json').read_text())\nassert len(a['critical_placement'])==63 and all(x['status']=='PASS' for x in a['critical_placement'])\nassert len(a['power_width'])==50 and all(x['status']=='PASS' for x in a['power_width'])\nassert [len(g) for g in a['GND_groups']]==[155] and not a['lost_pad_connections']\nassert hashlib.sha256((p/'native/MORI_Interface_C3.kicad_pcb').read_bytes()).hexdigest()=='958eee80ba27a607e52507fcefe4c5b5aa4234d08a8d7bdb6f1257e79dea89a1'\nprint(json.dumps({'status':'PASS','archive_payloads':len(m['payloads']),'current_board_unchanged':True,'C_supply_and_ground_checks_verified':True,'C_accepted':False}))\nPY",
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "17f84a",
+        "wall_time_seconds": 0.000007042,
+        "exit_code": 0,
+        "original_token_count": 36,
+        "output": "{\"status\": \"PASS\", \"archive_payloads\": 99, \"current_board_unchanged\": true, \"C_supply_and_ground_checks_verified\": true, \"C_accepted\": false}\n"
+      }
+    }
+  ],
+  "status": "PASS"
+}

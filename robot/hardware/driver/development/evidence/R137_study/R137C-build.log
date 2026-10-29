@@ -1,0 +1,33 @@
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+03:06:03 AM: Debug: Adding duplicate image handler for 'PNG file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'JPEG file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'TIFF file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'GIF file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'PNM file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'PCX file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'IFF file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'Windows icon file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'TGA file'
+03:06:03 AM: Debug: Adding duplicate image handler for 'XPM file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'PNG file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'JPEG file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'TIFF file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'GIF file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'PNM file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'PCX file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'IFF file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'Windows icon file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'TGA file'
+03:06:04 AM: Debug: Adding duplicate image handler for 'XPM file'
+Traceback (most recent call last):
+  File "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/trials/R137_build_placement_v3.py", line 49, in <module>
+    oldguard=next(k['shape'] for k in c.keepouts if k['id']==spec['owned_guard_uuids'][0]);expected_guard=translate(rotate(scale(oldguard,xfact=1,yfact=-1,origin=spec['from_mm']),-(spec['rotation_deg']-flipped_angle),origin=spec['from_mm']),xoff=spec['position_mm'][0]-spec['from_mm'][0],yoff=spec['position_mm'][1]-spec['from_mm'][1]);assert expected_guard.symmetric_difference(polyset(sg[0].Outline())).area<1e-7
+  File "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/lib/python3.9/site-packages/shapely/affinity.py", line 193, in scale
+    x0, y0, z0 = interpret_origin(geom, origin, 3)
+  File "/Volumes/Sol/MORI-hardware-completion/robot/.state/c3-completion/venv/lib/python3.9/site-packages/shapely/affinity.py", line 121, in interpret_origin
+    return origin + (0.0,)
+TypeError: can only concatenate list (not "tuple") to list

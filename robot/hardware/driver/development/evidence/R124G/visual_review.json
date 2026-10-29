@@ -1,0 +1,560 @@
+{
+  "status": "PASS_LOCAL_DEVELOPMENT_REVIEW",
+  "board_sha256": "7fb87f0d58dbc2d00de4732af22ccc84abc921c70edb4c46290b155f11c0bdca",
+  "reviewed_images": [
+    "native-F-local.png",
+    "native-B-local.png",
+    "diagnostic-In3.png"
+  ],
+  "mounted_face_escape": "U1201.1 exits toward +Y outside its F-side body. PGTH pad4 escapes toward +X to the added GND stitch. Native mounted-face track and via restrictions remain enforced.",
+  "placement": "R1413 retains 180-degree orientation, moves +0.40 mm Y only; read-only 4-rotation and 5-translation comparisons attached. Same-face courtyard screen and native DRC pass; nearest other-pad copper gap 0.325 mm to J101.8.",
+  "guard_semantics": "All original native rule-area UUIDs/flags/layers retained. Only nine R1413-owned shapes move/reconstruct. Via exclusion union equals moved native body minus the two original stationary 0.52-mm square cutouts. Saved/reloaded union verified. No global rule relaxed.",
+  "ground": "Keep original GND stitch at (12,27), add one at (12.2,25.45) for PGTH. Actual device GND is U1201.8; its original path stays unchanged. New ARMED transfer at (13.1,25.5) is about 0.901 mm from the new GND stitch joining both reference planes.",
+  "opposite_and_internal_review": [
+    {
+      "reference": "R1413",
+      "net": "/01 {slash} Core/ARMED",
+      "layers": [
+        "F.Cu",
+        "In3.Cu"
+      ],
+      "reason": "Opposite face/internal routes under B-side resistor projection; original B-face track prohibition retained. Continuous In1 reference for F and In4 for In3. Resistor pulse/temperature qualification remains open."
+    },
+    {
+      "reference": "R1414 and L901",
+      "net": "/01 {slash} Core/ARMED",
+      "layers": [
+        "In3.Cu"
+      ],
+      "reason": "Internal projection crossings retain In4 ground reference; the F-side buck and its critical copper are unchanged. Local In3 gap to FAULT_N increased from 0.25 to 0.40 mm."
+    }
+  ],
+  "routing": "F-side ARMED escape uses deliberate 45-degree bends around existing OVLO and GND vias. Existing regulator and decoupling paths remain unchanged. The translated R1413.2 feed is deliberately extended 0.65 mm at 0.50 mm width to preserve its 0.48-mm corridor regression; pulse-loop/thermal behavior remains unqualified.",
+  "limits": [
+    "Local static inspection only; whole-board review incomplete.",
+    "Continuous planes and spacing are design evidence, not a crosstalk or EMC measurement.",
+    "Pulse resistor temperature, eFuse thermal behavior, transient response and physical assembly remain NOT_TESTED."
+  ],
+  "manufacturer_reference": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+    "document": "SLVSFC9C Rev C, May 2026",
+    "pages": [
+      5,
+      62,
+      63
+    ],
+    "used_for": "Pin1 EN/UVLO, pin4 PGTH, pin8 GND; retain compact power/decoupling and device-ground paths. Does not validate the complete PCB."
+  },
+  "new_projection_details": [
+    {
+      "uuid": "28cb84ca-0f7d-5c65-9d55-7dd3c2c7a0da",
+      "net": "GND",
+      "layer": "F.Cu",
+      "start_mm": [
+        11.975,
+        25.225
+      ],
+      "end_mm": [
+        12.2,
+        25.45
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "9c820733-4f57-5007-9627-df232be3c57b",
+      "net": "GND",
+      "layer": "F.Cu",
+      "start_mm": [
+        11.375,
+        25.225
+      ],
+      "end_mm": [
+        11.975,
+        25.225
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "235f59c7-b15c-5f3d-a7f3-afe7237b89f6",
+      "net": "/HEAD_VM",
+      "layer": "B.Cu",
+      "start_mm": [
+        9.605,
+        25.55
+      ],
+      "end_mm": [
+        9.605,
+        26.2
+      ],
+      "width_mm": 0.5,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "099d0044-9e22-54a4-bc60-7c870bc6557c",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        10.8,
+        27.85
+      ],
+      "end_mm": [
+        11.4,
+        27.25
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0_VIA_3",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.008161709678467154
+        },
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.20153254495200057
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.19337083527353405
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.19337083527353405
+        }
+      ]
+    },
+    {
+      "uuid": "1dcf68a3-f753-5408-a146-a9697009ceb8",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        10.2,
+        27.85
+      ],
+      "end_mm": [
+        10.8,
+        27.85
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0_VIA_3",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.10399999999999955
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.005999999999999851
+        },
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.1339129553189995
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.023912955319000093
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.023912955319000093
+        }
+      ]
+    },
+    {
+      "uuid": "53afe648-bae6-54e4-9f56-fca4c966e2c6",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        12.55,
+        26.05
+      ],
+      "end_mm": [
+        13.1,
+        25.5
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.09228080425153598
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.09228080425153598
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.09228080425153598
+        }
+      ]
+    },
+    {
+      "uuid": "7cd53fdf-49be-535a-b355-44397d90250b",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        11.4,
+        26.6
+      ],
+      "end_mm": [
+        11.95,
+        26.05
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_2",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.0753096465443176
+        },
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.18738945353099903
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.18738945353099903
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.11207980698668146
+        }
+      ]
+    },
+    {
+      "uuid": "9e66624a-6acd-5004-af8e-1762fed1b329",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        9.7,
+        27.35
+      ],
+      "end_mm": [
+        10.2,
+        27.85
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0_VIA_3",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.008161651576570153
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.006408893595060415
+        },
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.014570545171630537
+        }
+      ]
+    },
+    {
+      "uuid": "c72a2967-0a72-51fc-b8e7-da01791f8be8",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        9.7,
+        25.65
+      ],
+      "end_mm": [
+        9.7,
+        27.35
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "d762c509-b3ca-528d-931b-5c55c4b34e1e",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        11.4,
+        27.25
+      ],
+      "end_mm": [
+        11.4,
+        26.6
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.1618259106379997
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.1618259106379997
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.1618259106379997
+        }
+      ]
+    },
+    {
+      "uuid": "ed2734b4-402a-5c5f-aa10-f46caa27668d",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "F.Cu",
+      "start_mm": [
+        11.95,
+        26.05
+      ],
+      "end_mm": [
+        12.55,
+        26.05
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_2",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.07791295531899974
+        },
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.15182591063799958
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.07391295531899984
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.15182591063799958
+        }
+      ]
+    },
+    {
+      "uuid": "78f022e3-5521-5ffc-9c28-42cc2b531841",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "In3.Cu",
+      "start_mm": [
+        13.1,
+        25.5
+      ],
+      "end_mm": [
+        13.35,
+        25.75
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.010163078475429946
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.010163078475429946
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.010163078475429946
+        }
+      ]
+    },
+    {
+      "uuid": "9bc5fa59-ed3a-5bed-b1fc-534a63ee1a4b",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "In3.Cu",
+      "start_mm": [
+        13.35,
+        25.75
+      ],
+      "end_mm": [
+        18.25,
+        25.75
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.3314342116790032
+        },
+        {
+          "body_rule": "BODY_L901_2",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.4471000000000046
+        },
+        {
+          "body_rule": "BODY_R1413_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.07777764228370918
+        },
+        {
+          "body_rule": "BODY_R1414_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.08391295531900136
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.07777764228370918
+        },
+        {
+          "body_rule": "BODY_R1413_0_VIA_1",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.07777764228370918
+        }
+      ]
+    },
+    {
+      "uuid": "b2c658ca-75f3-59de-8eab-2248233444f6",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "In3.Cu",
+      "start_mm": [
+        19.35,
+        26.85
+      ],
+      "end_mm": [
+        19.35,
+        28.55
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": []
+    },
+    {
+      "uuid": "e42cc4da-5e6d-5075-a1f7-644ffc911a9b",
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "In3.Cu",
+      "start_mm": [
+        18.25,
+        25.75
+      ],
+      "end_mm": [
+        19.35,
+        26.85
+      ],
+      "width_mm": 0.2,
+      "reference_uncovered_mm2_outside_existing_lands_and_own_transfers": 0.0,
+      "body_projections_outside_existing_lands": [
+        {
+          "body_rule": "BODY_L901_0",
+          "body_layers": [
+            "F.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.03571215247600081
+        },
+        {
+          "body_rule": "BODY_R1414_0",
+          "body_layers": [
+            "B.Cu"
+          ],
+          "outside_existing_pad_mm2": 0.24784515247600106
+        }
+      ]
+    }
+  ],
+  "manufacturing_release": false
+}

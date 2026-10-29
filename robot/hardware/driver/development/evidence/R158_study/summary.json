@@ -1,0 +1,235 @@
+{
+  "recorded_at_utc": "2026-10-27T21:50:00.525155+00:00",
+  "source_commit": "e46ddac2d552f3bb28d0d677f1bed27cc8fbce10",
+  "source_revision": "R156G",
+  "source_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+  "failed_build": {
+    "revision": "R158A",
+    "reason": "Explicit via-move rationale omitted; builder refused before saving altered PCB.",
+    "copied_board_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+    "native_DRC": "NOT_TESTED"
+  },
+  "candidates": [
+    {
+      "revision": "R158B",
+      "board_sha256": "50496f547886d42b706ac1dee64389f228d2f9187c78b7769467720ac9d44568",
+      "unconnected_items": 26,
+      "violations": 13,
+      "schematic_parity": 0,
+      "old_power_width_failures": 12,
+      "lost_pad_connection_nets": [
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "pair_count": 9
+        },
+        {
+          "net": "/UPS_BAT",
+          "pair_count": 18
+        },
+        {
+          "net": "MOTION_3V3",
+          "pair_count": 701
+        }
+      ],
+      "ground_group_sizes": [
+        155
+      ],
+      "critical_placement_failures": 0,
+      "old_reference_loss_count": 11,
+      "new_reference_gap_count": 2,
+      "ERC": "NOT_TESTED",
+      "adopted": false
+    },
+    {
+      "revision": "R158C",
+      "board_sha256": "8e81d82045a2f7221e57920e1887b947768db4732f9d34dc2d4311a750ce0557",
+      "unconnected_items": 24,
+      "violations": 5,
+      "schematic_parity": 0,
+      "old_power_width_failures": 4,
+      "lost_pad_connection_nets": [
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "pair_count": 9
+        },
+        {
+          "net": "MOTION_3V3",
+          "pair_count": 663
+        }
+      ],
+      "ground_group_sizes": [
+        155
+      ],
+      "critical_placement_failures": 0,
+      "old_reference_loss_count": 5,
+      "new_reference_gap_count": 4,
+      "ERC": "NOT_TESTED",
+      "adopted": false
+    }
+  ],
+  "counterfactuals": [
+    {
+      "case": "remove_new_sampling_via",
+      "board_sha256": "e4c9aa592ec79e1808f60396618ded43dfd4a08cbb60971ccd425616cf8320a1",
+      "unconnected_items": 23,
+      "violations": 7,
+      "schematic_parity": 0,
+      "power_failures": [
+        {
+          "net": "/UPS_BAT",
+          "width_mm": 0,
+          "lost_pair_count": 13
+        },
+        {
+          "net": "/UPS_BAT",
+          "width_mm": 0.2,
+          "lost_pair_count": 9
+        },
+        {
+          "net": "/UPS_BAT",
+          "width_mm": 0.3,
+          "lost_pair_count": 8
+        }
+      ],
+      "not_a_layout_candidate": true
+    },
+    {
+      "case": "restore_3V3_via",
+      "board_sha256": "a7337d2336e45f1252912e3f3433f978efac13c189c1a3aab319d9903691a3fe",
+      "unconnected_items": 24,
+      "violations": 6,
+      "schematic_parity": 0,
+      "power_failures": [
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "width_mm": 0,
+          "lost_pair_count": 17
+        },
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "width_mm": 0.2,
+          "lost_pair_count": 11
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0,
+          "lost_pair_count": 1847
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.2,
+          "lost_pair_count": 629
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.3,
+          "lost_pair_count": 29
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.4,
+          "lost_pair_count": 2
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.48,
+          "lost_pair_count": 2
+        }
+      ],
+      "not_a_layout_candidate": true
+    },
+    {
+      "case": "restore_UPS_via",
+      "board_sha256": "dd8c06752a6556d95fbed43b89aa7d73505a0d707eb200f03cd050ec7c1d474e",
+      "unconnected_items": 24,
+      "violations": 9,
+      "schematic_parity": 0,
+      "power_failures": [
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "width_mm": 0,
+          "lost_pair_count": 17
+        },
+        {
+          "net": "/06 {slash} CAM_Buck/UPS_5V",
+          "width_mm": 0.2,
+          "lost_pair_count": 11
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0,
+          "lost_pair_count": 1782
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.2,
+          "lost_pair_count": 588
+        }
+      ],
+      "not_a_layout_candidate": true
+    },
+    {
+      "case": "remove_sampling_and_3V3_vias",
+      "board_sha256": "b95af4ac1e5ec64922a7f724d779147ef371dc9740bee0000a7c7381fd982ce3",
+      "unconnected_items": 23,
+      "violations": 6,
+      "schematic_parity": 0,
+      "power_failures": [
+        {
+          "net": "/UPS_BAT",
+          "width_mm": 0,
+          "lost_pair_count": 13
+        },
+        {
+          "net": "/UPS_BAT",
+          "width_mm": 0.2,
+          "lost_pair_count": 9
+        },
+        {
+          "net": "/UPS_BAT",
+          "width_mm": 0.3,
+          "lost_pair_count": 8
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0,
+          "lost_pair_count": 92
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.2,
+          "lost_pair_count": 55
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.3,
+          "lost_pair_count": 29
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.4,
+          "lost_pair_count": 2
+        },
+        {
+          "net": "MOTION_3V3",
+          "width_mm": 0.48,
+          "lost_pair_count": 2
+        }
+      ],
+      "not_a_layout_candidate": true
+    }
+  ],
+  "causal_finding": "Removing only the new UPS sampling via (45.3,8.6) restores both CAM UPS_5V and MOTION_3V3 original width/connectivity checks, but disconnects R1001 sampling. Restoring either moved source via alone does not restore those two supplies.",
+  "redundant_via_finding": "In the no-new-sampling-hole control, deleting the moved one-layer 3V3 via loses only width pairs whose endpoint is that deleted via UUID. All other 3V3 width pairs and pads remain connected. This is bounded evidence, not authority to waive a regression or delete source/ground vias.",
+  "MOTION_3V3_In2_tracks_allowed_by_existing_R13": true,
+  "search_limits": "The 11.910660 mm, 0.50 mm In2 power bypass is only an unbuilt proposal; CAM 5V and LIMIT fixed-copper searches found no path. All are bounded, not global impossibility proofs.",
+  "source_ina300_screen": "FAIL",
+  "candidate_C_ina300_necessary_path_screen": "PASS; full layout/plane-contact/coupling qualification NOT_TESTED",
+  "current_unconnected_items": 23,
+  "remaining_connectivity_fraction": 0.575,
+  "not_engineering_progress": true,
+  "adopted": false,
+  "manufacturing_release": false,
+  "physical": "NOT_TESTED",
+  "goal_complete": false
+}

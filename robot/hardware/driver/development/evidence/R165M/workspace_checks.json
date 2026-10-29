@@ -1,0 +1,50 @@
+{
+  "recorded_at_utc": "2026-10-28T06:17:51.851677+00:00",
+  "python_version": "3.13.17",
+  "cwd": "/Volumes/Sol/MORI-hardware-completion",
+  "commands": [
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "returncode": 0,
+      "observed_result": {
+        "status": "PASS",
+        "scope": "Repository organization and provenance only; no hardware I/O",
+        "protected_files": 541,
+        "errors": []
+      }
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "returncode": 0,
+      "observed_result": {
+        "status": "PASS",
+        "scope": "Publication integrity only",
+        "lfs_mode": "pointers allowed",
+        "errors": []
+      }
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "returncode": 0,
+      "observed_result_summary": {
+        "status": "PASS",
+        "imported_artifacts": 405,
+        "control_source_files": 324,
+        "links": 85,
+        "scope": "Integrity and digital topology only; no hardware I/O or physical qualification"
+      }
+    }
+  ],
+  "hardware_qualification": false
+}

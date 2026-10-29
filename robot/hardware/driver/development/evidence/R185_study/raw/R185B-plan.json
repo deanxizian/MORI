@@ -1,0 +1,93 @@
+{
+  "revision": "R185B",
+  "board_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "move_ground_vias": [
+    {
+      "uuid": "2e7f36fc-97b4-4bdc-ac9d-b6a6321965ed",
+      "source_expected": {
+        "net": "GND",
+        "position_mm": [
+          57.55,
+          7.75
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        57.85,
+        8.4
+      ],
+      "reason": "Keep C601 direct ground return, shorten it, and bring existing dual-plane GND within the project 2 mm HEAD_OE transition screen without adding a hole."
+    }
+  ],
+  "delete_copper": [
+    "1e6e4d91-7a6d-45e9-b841-a86fe7e91a87",
+    "9c5adea9-2cc4-48c2-b27e-6f1e509908f4"
+  ],
+  "deleted_copper_expected": {
+    "1e6e4d91-7a6d-45e9-b841-a86fe7e91a87": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        57.9,
+        8.1
+      ],
+      "end_mm": [
+        57.55,
+        7.75
+      ]
+    },
+    "9c5adea9-2cc4-48c2-b27e-6f1e509908f4": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        57.9,
+        9.325
+      ],
+      "end_mm": [
+        57.9,
+        8.1
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          57.9,
+          9.325
+        ],
+        [
+          57.9,
+          8.45
+        ],
+        [
+          57.85,
+          8.4
+        ]
+      ]
+    }
+  ],
+  "rationale": "Independent GND relocation; all original GND identities and padstacks retained. Full native refill and source regression mandatory. No rule waiver or adoption implied."
+}

@@ -1,0 +1,99 @@
+{
+  "revision": "R137A",
+  "board_sha256": "0d25f5871d7e5521a07b75ab1cd8662a8492fd97d1d19b7fb98a95a22ba1e2ca",
+  "scope": "Build one explicitly declared face-change prototype, never an adopted board.\n\nUses the existing guarded builder for translations/deletions. The sole additional\noperation is native TOP_BOTTOM flip of R1033 and its one intact BODY rule area,\nfollowed by the declared in-plane transform. Full planned-delta support is still\nrequired before any possible adoption; no acceptance rule is relaxed here.\n",
+  "translations": [
+    {
+      "reference": "R1003",
+      "from_mm": [
+        50.5,
+        6.0
+      ],
+      "delta_mm": [
+        -29.4,
+        22.6
+      ],
+      "rotation_deg": 180
+    }
+  ],
+  "delete_copper": [
+    "a3bd846a-f816-4a29-a3b8-1fa46647bbda",
+    "2e941596-56a3-44d9-9be1-4269516af7b1",
+    "60c16ff0-1985-5e62-8b16-14517a64d7d7"
+  ],
+  "deleted_copper_expected": {
+    "a3bd846a-f816-4a29-a3b8-1fa46647bbda": {
+      "net": "/01 {slash} Core/ACT_CURRENT_ADC",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        49.8,
+        6.0
+      ],
+      "end_mm": [
+        49.8,
+        8.25
+      ]
+    },
+    "2e941596-56a3-44d9-9be1-4269516af7b1": {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        51.45,
+        8.25
+      ],
+      "end_mm": [
+        51.45,
+        9.3
+      ]
+    },
+    "60c16ff0-1985-5e62-8b16-14517a64d7d7": {
+      "net": "/FAULT_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        19.15,
+        27.15
+      ],
+      "end_mm": [
+        21.4,
+        29.4
+      ]
+    }
+  },
+  "routes": [],
+  "vias": [],
+  "placement_comparison": "R136_adc_centre_reroute_poses.json chosen[0]",
+  "face_transforms": [
+    {
+      "reference": "R1033",
+      "from_mm": [
+        50.5,
+        8.25
+      ],
+      "from_layer": "B.Cu",
+      "to_layer": "F.Cu",
+      "from_rotation_deg": 180,
+      "flip_direction": "TOP_BOTTOM",
+      "position_mm": [
+        7.3,
+        21.4
+      ],
+      "rotation_deg": 0,
+      "expected_pad_positions_mm": {
+        "1": [
+          6.475,
+          21.4
+        ],
+        "2": [
+          8.125,
+          21.4
+        ]
+      },
+      "owned_guard_uuids": [
+        "af535114-9de2-48cb-b30d-9f70ae3e3049"
+      ]
+    }
+  ]
+}

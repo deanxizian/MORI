@@ -1,0 +1,47 @@
+{
+  "scope": "Native save/reload tests for opt-in rotation with fixed global via cutouts.",
+  "source_sha256": "1d32097f2b72c2add4d9a2fd68a2c4ed088b23cbf7606aa1ae3256cc5e48330c",
+  "checks": [
+    {
+      "case": "rotate180",
+      "status": "PASS",
+      "native_readback_area_error_mm2": 5.4356519285647705e-15,
+      "all_original_via_snapshots_unchanged": true
+    },
+    {
+      "case": "rotate90",
+      "status": "PASS",
+      "native_readback_area_error_mm2": 2.344783922580979e-15,
+      "all_original_via_snapshots_unchanged": true
+    },
+    {
+      "case": "rotate270",
+      "status": "PASS",
+      "native_readback_area_error_mm2": 2.344783922580979e-15,
+      "all_original_via_snapshots_unchanged": true
+    },
+    {
+      "case": "same_position180",
+      "status": "PASS",
+      "native_readback_area_error_mm2": 5.3379523023977446e-15,
+      "all_original_via_snapshots_unchanged": true
+    },
+    {
+      "case": "old_translation",
+      "status": "PASS",
+      "native_readback_area_error_mm2": 0.0,
+      "all_original_via_snapshots_unchanged": true
+    },
+    {
+      "case": "reject_implicit",
+      "status": "PASS",
+      "rejected": "Rotation with fixed-via cutouts requires explicit rotate_fixed_via_guards"
+    },
+    {
+      "case": "reject_no_reconstruction",
+      "status": "PASS",
+      "rejected": "BODY guard contains fixed-via cutouts; explicit regeneration required: R1601"
+    }
+  ],
+  "status": "PASS"
+}

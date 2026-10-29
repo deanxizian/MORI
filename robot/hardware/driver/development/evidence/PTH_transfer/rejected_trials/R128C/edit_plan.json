@@ -1,0 +1,230 @@
+{
+  "revision": "R128C",
+  "board_sha256": "94613985cb2082fb9ea5e7161b04bbdaff1e73eb03f7e06a1c9024b0cb187352",
+  "scope": "Independent D302 local rotation/shift and complete FAULT_N connection proposal; source and native keepouts preserved except exact owned rigid transform and one recorded CLR approach replacement; validation required.",
+  "routes": [
+    {
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          11.2,
+          1.7
+        ],
+        [
+          11.8,
+          1.1
+        ]
+      ],
+      "net": "/FAULT_N"
+    },
+    {
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          11.8,
+          1.1
+        ],
+        [
+          13.0,
+          1.1
+        ],
+        [
+          13.8,
+          1.9
+        ],
+        [
+          13.8,
+          5.2
+        ],
+        [
+          16.7,
+          8.1
+        ],
+        [
+          16.7,
+          11.7
+        ],
+        [
+          20.2,
+          15.2
+        ],
+        [
+          20.2,
+          15.4
+        ]
+      ],
+      "net": "/FAULT_N"
+    },
+    {
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          20.2,
+          15.4
+        ],
+        [
+          21.7,
+          13.9
+        ],
+        [
+          21.7,
+          13.4
+        ],
+        [
+          22.6,
+          12.5
+        ],
+        [
+          27.9,
+          12.5
+        ],
+        [
+          28.5,
+          11.9
+        ]
+      ],
+      "net": "/FAULT_N"
+    },
+    {
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          28.5,
+          11.9
+        ],
+        [
+          28,
+          11.9
+        ],
+        [
+          27.4,
+          12.5
+        ],
+        [
+          26.9,
+          12.5
+        ],
+        [
+          26.1,
+          11.7
+        ],
+        [
+          26.1,
+          9.6
+        ],
+        [
+          25.75,
+          9.25
+        ],
+        [
+          25.75,
+          8.95
+        ]
+      ],
+      "net": "/FAULT_N"
+    },
+    {
+      "net": "/CLR_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          27.5,
+          6.5125
+        ],
+        [
+          27.1625,
+          6.85
+        ],
+        [
+          25.75,
+          6.85
+        ]
+      ]
+    }
+  ],
+  "vias": [
+    {
+      "position_mm": [
+        11.8,
+        1.1
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "net": "/FAULT_N"
+    },
+    {
+      "position_mm": [
+        20.2,
+        15.4
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "net": "/FAULT_N"
+    },
+    {
+      "position_mm": [
+        28.5,
+        11.9
+      ],
+      "diameter_mm": 0.5,
+      "drill_mm": 0.3,
+      "net": "/FAULT_N"
+    }
+  ],
+  "search": {
+    "grid_mm": 0.1,
+    "layers": [
+      "B.Cu",
+      "In3.Cu",
+      "F.Cu"
+    ],
+    "endpoint_groups": [
+      [
+        "J102.7",
+        "R305.2"
+      ],
+      [
+        "D302.1"
+      ]
+    ],
+    "expanded": 56440
+  },
+  "translations": [
+    {
+      "reference": "D302",
+      "from_mm": [
+        25.75,
+        7.5
+      ],
+      "delta_mm": [
+        0,
+        0.4
+      ],
+      "rotation_deg": 90
+    }
+  ],
+  "delete_copper": [
+    "f4966ca0-550f-4c37-ae36-5f587849fb8c"
+  ],
+  "deleted_copper_expected": {
+    "f4966ca0-550f-4c37-ae36-5f587849fb8c": {
+      "net": "/CLR_N",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        27.5,
+        6.5125
+      ],
+      "end_mm": [
+        26.7,
+        7.3125
+      ]
+    }
+  },
+  "comparison": "Four original rotations and four local poses screened. 0.4-mm down + 90-degree pose avoids the DISARMED branch, preserves same-face outward exits and shortens the final FAULT_N approach; lower placements collide with U303/U1001/C1403. All other poses are unadopted."
+}

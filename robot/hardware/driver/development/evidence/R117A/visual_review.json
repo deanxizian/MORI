@@ -1,0 +1,47 @@
+{
+  "board_sha256": "f0266711c6ce1fd3bb8405db604974d67bf508139755d521a74e08e915df2383",
+  "status": "PASS",
+  "scope": "Only the three R117A copper strokes; no blanket power/GND exception, full-board qualification, or physical validation",
+  "viewed_images": [
+    "native-B-local.png",
+    "native-F-local.png"
+  ],
+  "observations": [
+    "B-side bridge is straight and supply branch has one 45-degree bend; no new B-side component-body crossing.",
+    "Existing parts, core header/connector positions, holes, outline, layer rules and critical local loops are unchanged.",
+    "Only the two listed opposite-F-face body projections are new outside existing lands; both have continuous adjacent In4 ground."
+  ],
+  "exceptions": [
+    {
+      "track_uuid": "d515bd13-dc94-5880-b248-d20a3ef4e29f",
+      "net": "/HEAD_VM",
+      "trace_layer": "B.Cu",
+      "body_rule": "BODY_C1201_0",
+      "body_layers": [
+        "F.Cu"
+      ],
+      "outside_existing_pad_mm2": 0.07521137644650087,
+      "decision": "ACCEPTED_LOCAL_DEVELOPMENT_EXCEPTION",
+      "reason": "One-bend B-side branch between the existing HEAD_VM resistor lands, preserving C1201 input-capacitor placement and its front-side power loop. Moving the bend later in R117C shorted an existing ground via; rotations did not shorten the terminal separation. Continuous In4 ground covers the exposed stroke. Only this small opposite-face C1201 projection is accepted; power transient and temperature remain untested."
+    },
+    {
+      "track_uuid": "959e473a-255e-5b91-a13a-13b5d81aa940",
+      "net": "Net-(Q1401-D)",
+      "trace_layer": "B.Cu",
+      "body_rule": "BODY_L901_0",
+      "body_layers": [
+        "F.Cu"
+      ],
+      "outside_existing_pad_mm2": 0.34644381751643744,
+      "decision": "ACCEPTED_LOCAL_DEVELOPMENT_EXCEPTION",
+      "reason": "Short direct B-side bridge between adjacent dump resistor lands. Both resistor terminals keep their outward side; no via, component, switching loop, or rule changes. Nearby rotation and translation alternatives were screened; R117B/C caused explicit clearance/courtyard violations. Continuous In4 ground covers the exposed stroke. This opposite-face L901 projection is bounded to this track and does not qualify coupling or thermal behaviour."
+    }
+  ],
+  "rotation_comparisons": 32,
+  "translation_comparisons": 63,
+  "comparison_limits": "Rotation/courtyard/pad screening is read-only, not 95 fully rerouted native candidates. R117B/C are saved and independently native-DRC-checked rejected candidates. Alternatives are not proven globally impossible.",
+  "whole_board_visual": "NOT_TESTED",
+  "thermal_and_emc": "NOT_TESTED",
+  "manufacturing_release": false,
+  "qualification": "Only local visual inspection with two explicitly documented development exceptions"
+}

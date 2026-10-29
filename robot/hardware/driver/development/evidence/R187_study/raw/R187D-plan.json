@@ -1,0 +1,345 @@
+{
+  "revision": "R187D",
+  "board_sha256": "13f4f91514c85d54c8802c1cb061967ee915272a3d1ad34daac18e419bb47d66",
+  "scope": "Complete the IMU clock reference repair by moving the explicit 3V3 transfer another 0.10 mm upward. Preserve the reviewed sampling transfer and WHEEL_TX tail; exact source rules, native padstacks, supply widths and every source connection remain mandatory.",
+  "move_vias": [
+    {
+      "uuid": "653a04c5-88b4-4cb7-8d79-e41a023ab117",
+      "source_expected": {
+        "net": "Net-(D1001-K)",
+        "position_mm": [
+          47.3,
+          7.075
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        47.3,
+        7.4
+      ],
+      "reason": "Restore reference beneath IMU SCL while explicitly retaining the clamp/sampling B and In3 connections."
+    },
+    {
+      "uuid": "59a70a25-522c-4185-8c33-4f6fbc2eecbf",
+      "source_expected": {
+        "net": "MOTION_3V3",
+        "position_mm": [
+          52.25,
+          7.65
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "position_mm": [
+        52.25,
+        7.3
+      ],
+      "reason": "Restore reference beneath the retained clock bend; preserve the 0.50 mm supply branch and 0.20 mm bypass branch."
+    }
+  ],
+  "delete_copper": [
+    "a93c6a20-eae0-4527-86b8-95853466dda0",
+    "31b7439e-6c1d-4cea-ae06-e85607dd94ab",
+    "5238e0b6-c38f-44e4-95e6-75fd8a7c27db",
+    "130145db-8b13-4841-95e4-1df81a6bb5b6",
+    "504c67a9-2a4c-425c-b4c3-c3f99e699631",
+    "9bf8637a-5f8b-4375-8494-c38f014753d0",
+    "d5eb6e3a-1ff2-42ba-859f-5e4d297bd054",
+    "0b577a67-ae57-43c5-84b3-50ee8003fac9",
+    "8810cd1f-de34-4e47-b0de-3a2b96db87e6",
+    "f75a488c-0442-45ff-98da-c51572a36518"
+  ],
+  "deleted_copper_expected": {
+    "a93c6a20-eae0-4527-86b8-95853466dda0": {
+      "net": "/01 {slash} Core/IMU_SCL",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        45.84,
+        6.5
+      ],
+      "end_mm": [
+        47.69,
+        6.5
+      ]
+    },
+    "31b7439e-6c1d-4cea-ae06-e85607dd94ab": {
+      "net": "/01 {slash} Core/IMU_SCL",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        47.69,
+        6.5
+      ],
+      "end_mm": [
+        48.84,
+        7.65
+      ]
+    },
+    "5238e0b6-c38f-44e4-95e6-75fd8a7c27db": {
+      "net": "/01 {slash} Core/IMU_SCL",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        48.84,
+        7.65
+      ],
+      "end_mm": [
+        51.39,
+        7.65
+      ]
+    },
+    "130145db-8b13-4841-95e4-1df81a6bb5b6": {
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        46.9,
+        6.675
+      ],
+      "end_mm": [
+        47.3,
+        7.075
+      ]
+    },
+    "504c67a9-2a4c-425c-b4c3-c3f99e699631": {
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        46.575,
+        7.8
+      ],
+      "end_mm": [
+        47.3,
+        7.075
+      ]
+    },
+    "9bf8637a-5f8b-4375-8494-c38f014753d0": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "start_mm": [
+        52.25,
+        7.65
+      ],
+      "end_mm": [
+        52.45,
+        7.85
+      ]
+    },
+    "d5eb6e3a-1ff2-42ba-859f-5e4d297bd054": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        52.25,
+        5.9
+      ],
+      "end_mm": [
+        52.25,
+        7.65
+      ]
+    },
+    "0b577a67-ae57-43c5-84b3-50ee8003fac9": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "start_mm": [
+        52.45,
+        7.85
+      ],
+      "end_mm": [
+        52.45,
+        11.875
+      ]
+    },
+    "8810cd1f-de34-4e47-b0de-3a2b96db87e6": {
+      "net": "/01 {slash} Core/WHEEL_TX",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        38.83,
+        7.85
+      ],
+      "end_mm": [
+        47.85,
+        7.85
+      ]
+    },
+    "f75a488c-0442-45ff-98da-c51572a36518": {
+      "net": "/01 {slash} Core/WHEEL_TX",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        47.85,
+        7.85
+      ],
+      "end_mm": [
+        48.0,
+        7.7
+      ]
+    }
+  },
+  "routes": [
+    {
+      "net": "/01 {slash} Core/IMU_SCL",
+      "layer": "F.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          45.84,
+          6.5
+        ],
+        [
+          49.75,
+          6.5
+        ],
+        [
+          50.9,
+          7.65
+        ],
+        [
+          51.39,
+          7.65
+        ]
+      ]
+    },
+    {
+      "net": "Net-(D1001-K)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          46.9,
+          6.675
+        ],
+        [
+          47.3,
+          7.075
+        ],
+        [
+          47.3,
+          7.4
+        ]
+      ]
+    },
+    {
+      "net": "Net-(D1001-K)",
+      "layer": "In3.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          46.575,
+          7.8
+        ],
+        [
+          46.975,
+          7.4
+        ],
+        [
+          47.3,
+          7.4
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          52.25,
+          5.9
+        ],
+        [
+          52.25,
+          7.3
+        ]
+      ]
+    },
+    {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.5,
+      "points_mm": [
+        [
+          52.25,
+          7.3
+        ],
+        [
+          52.45,
+          7.5
+        ],
+        [
+          52.45,
+          11.875
+        ]
+      ]
+    },
+    {
+      "net": "/01 {slash} Core/WHEEL_TX",
+      "layer": "In2.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          38.83,
+          7.85
+        ],
+        [
+          46.2,
+          7.85
+        ],
+        [
+          46.6,
+          8.25
+        ],
+        [
+          47.55,
+          8.25
+        ],
+        [
+          48,
+          7.8
+        ],
+        [
+          48,
+          7.7
+        ]
+      ]
+    }
+  ]
+}

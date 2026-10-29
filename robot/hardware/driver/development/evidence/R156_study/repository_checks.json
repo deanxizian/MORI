@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-10-27T20:06:40.896194+00:00",
+  "scope": "Observed offline integrity checks after R156G reception and documentation edits; no hardware I/O or physical qualification.",
+  "checks": [
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "tools/check_workspace.py",
+        "--allow-lfs-pointers"
+      ],
+      "reported_status": "PASS",
+      "protected_files": 541,
+      "errors": []
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "robot/tools/check_project.py",
+        "--allow-lfs-pointers"
+      ],
+      "reported_status": "PASS",
+      "scope": "Publication integrity only",
+      "errors": []
+    },
+    {
+      "argv": [
+        "/Volumes/Sol/MORI/robot/.venv/bin/python",
+        "test_rig/tools/check_release.py"
+      ],
+      "reported_status": "PASS",
+      "imported_artifacts": 405,
+      "control_source_files": 324,
+      "links": 85,
+      "all_five_listed_meshes_bad_edges": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "output": "",
+      "returncode": 0
+    }
+  ],
+  "execution_note": "Three Python commands reported PASS in one shell batch; their individual exit codes were not separately captured. The final git diff --check and aggregate shell returned 0."
+}

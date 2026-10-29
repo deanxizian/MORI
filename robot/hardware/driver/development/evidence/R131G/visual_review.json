@@ -1,0 +1,64 @@
+{
+  "status": "PASS_LOCAL_DEVELOPMENT_REVIEW",
+  "source_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+  "board_sha256": "6f9d92ebf5a36598421f064cf29523081d8004d28d2e60ef7a0c36ff8b9bd099",
+  "reviewed_images": [
+    "before-native-B-local.png",
+    "after-native-B-local.png",
+    "after-native-F-local.png",
+    "diagnostic-B-arm.png",
+    "diagnostic-B-ground.png",
+    "diagnostic-In4.png"
+  ],
+  "scope": "Move R1207 slightly up/left; relocate and rotate R1201 beside the existing ARMED via; replace one exact ILM segment and add short ARMED/GND connections. No new vias. Rules, fixed mechanical interfaces, other 77 source members unchanged.",
+  "new_routes": [
+    {
+      "net": "Net-(U1201-ILM)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "centerline_length_mm": 1.6490663761154787
+    },
+    {
+      "net": "/01 {slash} Core/ARMED",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "centerline_length_mm": 1.1356601717798207
+    },
+    {
+      "net": "GND",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "centerline_length_mm": 1.5588834764831856
+    }
+  ],
+  "mounted_face": "All native keepouts preserved, with only the two owned BODY guards rigidly transformed with their components. New ILM/ARM traces escape outward. Ground uses deliberate bends above R1413 drain land. Native DRC has no non-connectivity violation. Minimum nominal courtyard gap is 0.025 mm; this is not measured assembly clearance.",
+  "reference": "Eight added B.Cu segments have continuous In4 reference outside their own existing transfer void. No retained trace loses reference copper. Six inherited transition-screen flags remain. All old pad pairs, 50 power-width checks, 155 GND pads and 63 critical adjacency checks retained.",
+  "opposite_face_review": {
+    "ILM": "Complete ILM copper projection on L901 nominal Fab body reduces from 0.410787 mm2 to zero; total ILM track length reduces 6.958560 to 6.224676 mm. Projected copper separation from U901 SW grows 5.95 to 6.65 mm. These are geometric measurements, not a coupling or <50 pF capacitance result.",
+    "R1207": "Opposite-face body projection on L901 reduces 1.32 to 0.804375 mm2; ground and ILM pad distances to U1201 shrink. Ground remains connected to actual GND pin 8; PGTH pin 4 is not substituted for pin 8. Quiet star/Kelvin return impedance is not qualified.",
+    "R1201": "100k ARMED pulldown now lies under the output-side edge of L901 nominal body; 1.32 mm2 nominal body overlap. Short 1.135660 mm ARM connection reuses the existing via and avoids the SW node. It is also close to the unchanged dump resistors: hot-state bias/noise and assembly remain NOT_TESTED.",
+    "GND_bridge": "Only the four new GND bridge segments intersect the opposite-face native L901 BODY guard. In4 copper under them is continuous. This reconnects the two-pad ground island created by the placement trial without another hole. No buck/SW/feedback power copper is modified. Reference copper cannot establish magnetic shielding or thermal suitability."
+  },
+  "datasheet_review": [
+    {
+      "device": "TPS25947",
+      "document": "SLVSFC9C, May 2026, 8.4.1, pp62-63",
+      "url": "https://www.ti.com/lit/ds/symlink/tps25947.pdf",
+      "application": "Short ILM/support connections and quiet device ground; avoid switching coupling; ILM parasitic target below 50 pF requires separate extraction/validation. Local geometry improves; full compliance remains open."
+    },
+    {
+      "device": "TPS54302",
+      "document": "SLVSDG6C, March 2026, 7.4.1, p21",
+      "url": "https://www.ti.com/lit/ds/symlink/tps54302.pdf",
+      "application": "Keep switching/feedback loops compact and separated, with appropriate ground/Kelvin returns. Existing converter placement and copper preserved; no new full-converter qualification."
+    }
+  ],
+  "remaining_limits": [
+    "32 unconnected items, including three ARMED groups.",
+    "Quiet-ground/star/Kelvin impedance, ILM parasitic capacitance and actual coupling NOT_TESTED.",
+    "Six historical return-screen flags remain; 2 mm is a project screening heuristic.",
+    "Hot-state resistance/thresholds, dump-pulse effects, inductor temperature, EMC and assembled fit NOT_TESTED.",
+    "Whole-board visual/electrical/physical release incomplete."
+  ],
+  "manufacturing_release": false
+}

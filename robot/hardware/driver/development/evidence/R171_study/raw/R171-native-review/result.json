@@ -1,0 +1,67 @@
+{
+  "scope": "Verify native via retention and power-anchor accounting on rejected R171 trials.\n\nPositive and negative reviews use actual saved native boards. No failed retained\npad/power connection becomes a pass when an obsolete anchor is accounted for.\n",
+  "source_sha256": "7acdf187325f5eb86d44205b3276f316e08cfdc69ed5ff9e84308f0128fe155e",
+  "via_checks": [
+    {
+      "revision": "R171B",
+      "board_sha256": "dd96e2febb014df97dc2403c1a5176780659e7a411c73de9ea983bb98b9aa95b",
+      "source_vias": 325,
+      "source_ground_vias": 114,
+      "exact_retained_source_vias": 324,
+      "removed_non_ground_via": "aa3ea505-081f-4d12-a9a9-b7d9b2cf4e57",
+      "added_vias": 1,
+      "status": "PASS"
+    },
+    {
+      "revision": "R171C",
+      "board_sha256": "cb9f50a07b83fc89febe7dd026ea153f1b079339d05591be5c902f062848e9f4",
+      "source_vias": 325,
+      "source_ground_vias": 114,
+      "exact_retained_source_vias": 324,
+      "removed_non_ground_via": "aa3ea505-081f-4d12-a9a9-b7d9b2cf4e57",
+      "added_vias": 1,
+      "status": "PASS"
+    },
+    {
+      "revision": "R171D",
+      "board_sha256": "9fba9d50a54599ce684da463644087610384bdc8be6289eaa01dcb869f2c8d74",
+      "source_vias": 325,
+      "source_ground_vias": 114,
+      "exact_retained_source_vias": 324,
+      "removed_non_ground_via": "aa3ea505-081f-4d12-a9a9-b7d9b2cf4e57",
+      "added_vias": 1,
+      "status": "PASS"
+    },
+    {
+      "revision": "R171E",
+      "board_sha256": "1939016975ccee1de45d5b33ad7027c52fc1762c949798ea335bba82d8dcc809",
+      "source_vias": 325,
+      "source_ground_vias": 114,
+      "exact_retained_source_vias": 324,
+      "removed_non_ground_via": "aa3ea505-081f-4d12-a9a9-b7d9b2cf4e57",
+      "added_vias": 1,
+      "status": "PASS"
+    }
+  ],
+  "valid_plan_review": {
+    "status": "FAIL",
+    "checks": 2598,
+    "errors": [
+      "all_prior_pad_connections",
+      "power_width"
+    ],
+    "retained_power_failures": 3
+  },
+  "invalid_plan_review": {
+    "status": "FAIL",
+    "errors": [
+      "obsolete_via_removed_aa3ea505-081f-4d12-a9a9-b7d9b2cf4e57",
+      "all_prior_pad_connections",
+      "power_width"
+    ],
+    "retained_power_failures": 7,
+    "removed_anchor_exclusions": 0
+  },
+  "status": "PASS",
+  "adopted": false
+}

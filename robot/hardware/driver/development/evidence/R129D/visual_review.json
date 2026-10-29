@@ -1,0 +1,26 @@
+{
+  "status": "PASS_LOCAL_DEVELOPMENT_REVIEW",
+  "board_sha256": "42c17eaeb2588938e987a824ffdf5ba4770982bce8673eca89e7faefa16811df",
+  "reviewed_images": [
+    "native-B-local.png",
+    "native-F-local.png",
+    "diagnostic-B.png",
+    "diagnostic-F.png",
+    "diagnostic-In1.png",
+    "diagnostic-In4.png",
+    "diagnostic-In2.png",
+    "diagnostic-In3.png"
+  ],
+  "scope": "One GND through via at (1.95,16.45), diameter 0.50 mm / drill 0.30 mm. No tracks, placements, padstacks, rules, or native keepouts changed.",
+  "reference": "Native geometry confirms contact to both In1/In4 ground fills. The MOTION_3V3 F/B transition at (1.05,16.55) now has a reference-ground stitch 0.905539 mm away; previously 4.026941 mm. The project screen falls from seven to six flags.",
+  "mounted_faces": "The new hole is outside both mounted-face component bodies and all native via guards. Front-side C302/U302 and back-side R602/C909/C911 placements and tracks remain unchanged.",
+  "power": "In2/In3 power copper has a new local clearance hole. All 50 inherited width/continuity checks pass, including 0.48 mm screen; all previous pad pairs and 155 GND pads remain connected. This is not ampacity qualification.",
+  "thermal_coupling": "No heat source or signal route is added. Ground return geometry improves locally; stackup impedance, crosstalk, thermal, EMC and physical assembly remain unqualified.",
+  "rejected_alternative": "R129B adds this via plus (57.85,8.4); R129C isolates the latter. Both split MOTION_3V3, producing 34 opens, so only the independently verified left via is adopted. R129A FAULT_N In2 route also remains unadopted due power/reference/thermal-connection regressions.",
+  "limits": [
+    "33 unconnected items remain.",
+    "Six historical return-screen flags remain.",
+    "Whole-board electrical and physical qualification remain incomplete."
+  ],
+  "manufacturing_release": false
+}

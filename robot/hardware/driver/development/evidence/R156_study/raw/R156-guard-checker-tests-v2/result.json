@@ -1,0 +1,41 @@
+{
+  "scope": "End-to-end guard regression: valid symmetric rotation and two rejected mutations.",
+  "status": "PASS",
+  "source_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "candidate_sha256": "83d86e884816d8d5422775d79624ff3db09793066103cba90c762caa4febc8e7",
+  "cases": [
+    {
+      "case": "unmodified_R156G_symmetric_half_turn",
+      "status": "PASS",
+      "expected_result": "PASS",
+      "observed_result": "PASS",
+      "checks": 2520
+    },
+    {
+      "case": "unexpected_symmetric_guard_shift",
+      "status": "PASS",
+      "expected_result": "FAIL",
+      "observed_result": "FAIL",
+      "guard_uuid": "d8903c86-31f1-4900-ae0e-deac387ca989",
+      "errors": [
+        "moved_guard_d8903c86-31f1-4900-ae0e-deac387ca989",
+        "exact_moved_guard_set",
+        "unchanged_other_project_members"
+      ]
+    },
+    {
+      "case": "unplanned_unrelated_guard_shift",
+      "status": "PASS",
+      "expected_result": "FAIL",
+      "observed_result": "FAIL",
+      "guard_uuid": "e532486d-81e0-4917-bfe0-cc3d7f79dbdb",
+      "errors": [
+        "zone_constraints_e532486d-81e0-4917-bfe0-cc3d7f79dbdb",
+        "exact_moved_guard_set",
+        "unchanged_other_project_members"
+      ]
+    }
+  ],
+  "original_boards_unchanged": true,
+  "limits": "Tests validate planned guard-delta checking, not electrical or physical qualification."
+}

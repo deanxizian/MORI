@@ -1,0 +1,75 @@
+{
+  "revision": "R155A",
+  "board_sha256": "65ab9844163d4c7e081471e7a877000ebdfe5d17125324ddd78c0050e63ceede",
+  "scope": "Independent partial OV escape study; supply restoration is mandatory before adoption.",
+  "translations": [],
+  "delete_copper": [
+    "2233b7b0-a172-414b-b05b-4bb9a08a453e"
+  ],
+  "deleted_copper_expected": {
+    "2233b7b0-a172-414b-b05b-4bb9a08a453e": {
+      "net": "MOTION_3V3",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "start_mm": [
+        40.6,
+        24.9
+      ],
+      "end_mm": [
+        42.05,
+        24.9
+      ]
+    }
+  },
+  "reassign_vias": [
+    {
+      "uuid": "a9324169-c8ab-4683-a35c-6b1360e838b3",
+      "source_expected": {
+        "net": "MOTION_3V3",
+        "position_mm": [
+          40.6,
+          24.9
+        ],
+        "drill_mm": 0.3,
+        "via_type": 4,
+        "layers": [
+          "F.Cu",
+          "In1.Cu",
+          "In2.Cu",
+          "In3.Cu",
+          "In4.Cu",
+          "B.Cu"
+        ],
+        "diameters_mm": {
+          "F.Cu": 0.5,
+          "In1.Cu": 0.5,
+          "In2.Cu": 0.5,
+          "In3.Cu": 0.5,
+          "In4.Cu": 0.5,
+          "B.Cu": 0.5
+        }
+      },
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "reason": "Independent joint-routing study reuses the existing physical hole for OV escape. The detached U1301/C1303 supply must be restored explicitly before any adoption."
+    }
+  ],
+  "routes": [
+    {
+      "net": "Net-(U1301-INB-_{slash}_OV)",
+      "layer": "B.Cu",
+      "width_mm": 0.2,
+      "points_mm": [
+        [
+          40.6,
+          24.9
+        ],
+        [
+          41.55,
+          25.85
+        ]
+      ]
+    }
+  ],
+  "vias": [],
+  "adoption_prohibited_until_supply_restored": true
+}
