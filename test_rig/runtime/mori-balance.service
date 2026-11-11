@@ -1,0 +1,25 @@
+[Unit]
+Description=MORI two-wheel stand and Bluetooth remote
+After=bluetooth.service
+Wants=bluetooth.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/mori-balance/current/runtime
+ExecStart=/usr/bin/python3 -B /opt/mori-balance/current/runtime/main.py --run --config /etc/mori-balance.json
+Restart=no
+KillSignal=SIGTERM
+TimeoutStopSec=15
+RuntimeDirectory=mori-balance
+RuntimeDirectoryPreserve=yes
+StateDirectory=mori-balance
+CPUAffinity=3
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=10
+Nice=-10
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

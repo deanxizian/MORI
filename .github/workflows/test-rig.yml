@@ -36,6 +36,10 @@ jobs:
       - name: Test current v184 source without hardware
         working-directory: test_rig/control
         run: python -m unittest discover -s tests -q
+      - name: Test boot and remote runtime without hardware
+        run: |
+          python -m pip install pyserial==3.5
+          PYTHONPATH=test_rig/runtime:test_rig/control:test_rig/control/tests python -B -m unittest discover -s test_rig/runtime/tests -q
       - name: Test hash-reconstructed v142 baseline without hardware
         run: |
           python -m zipfile -e test_rig/evidence/balance/trial71-v142-source.zip "$RUNNER_TEMP/test-rig-v142"
