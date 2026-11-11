@@ -29,11 +29,27 @@ def stop_for_runtime(exchanges, report, plan, now, sleep, *, observer=None, stat
                 raise
             latest[mid] = row
             try:
-                health(row, 0, plan=plan)
+                # The first disabled-command reply can still report the
+                # prior enabled mode. Validate all health fields, but do not
+                # count it as disabled confirmation. Later replies must be 0.
+                expected_mode = 1 if phase == 'stop_transition' and row['mode'] == 1 else 0
+                try:
+                    health(row, expected_mode, plan=plan)
+                except Fault as exc:
+                    # A known active motion stop can still be visible in that
+                    # pre-disable reply. health() checks finite fields, error,
+                    # timeout, temperature and voltage before motion limits.
+                    # Preserve pending motion; require healthy mode-0 replies
+                    # afterward. Never apply this to confirmation or faults.
+                    if not (expected_mode == 1 and motion_stop_candidate(report, plan)
+                            and str(exc) in ('wheel_speed_stop', 'estimated_torque_stop')):
+                        raise
+                    report.setdefault('pending_motion_at_disable', []).append(dict(
+                        id=mid, t=now(), reason=str(exc), feedback=dict(row)))
             except Exception as exc:
                 retain_fault(mid, phase, 'health', exc)
             else:
-                healthy_disabled_counts[mid] += 1
+                healthy_disabled_counts[mid] = healthy_disabled_counts[mid] + 1 if row['mode'] == 0 else 0
             return row
         checked[mid] = exchange
     stop_both(checked, report, now, sleep, observer=observer)

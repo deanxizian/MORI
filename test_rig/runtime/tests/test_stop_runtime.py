@@ -10,6 +10,74 @@ from test_boot_recovery import BOOT_A, BOOT_B
 
 
 class StopRuntimeTests(unittest.TestCase):
+    def transitional_feedback(self, *, bad_phase=None, bad_field=None, bad_value=None,
+                              report=None, prior_torque=None):
+        bus=Bus();report=stopped_report() if report is None else report;injected=[]
+        def exchange(mid):
+            original=bus.exchange(mid)
+            def call(packet,phase):
+                self.assertEqual(packet[2]&0x70,0)
+                row=original(packet,phase)
+                # Recorded S288 feedback still reports the pre-command mode
+                # for the first disabled exchange, then confirms mode 0.
+                if phase=='stop_transition':
+                    row['mode']=1
+                    if prior_torque is not None:row['torque_estimate_nm']=prior_torque[mid]
+                if phase==bad_phase and mid==0 and not injected:
+                    injected.append(True);row[bad_field]=bad_value
+                return row
+            return call
+        stop_for_runtime({m:exchange(m) for m in (0,1)},report,PLAN,bus.now,bus.sleep)
+        return report
+
+    def test_prior_mode_in_first_disable_reply_is_not_a_stop_fault(self):
+        r=self.transitional_feedback()
+        self.assertTrue(r['final_disabled_verified'])
+        self.assertFalse(r.get('stop_fault_count'))
+        self.assertTrue(recoverable_motion_stop(r,PLAN))
+        self.assertTrue(all(row['mode']==0 for row in r['final_rows'].values()))
+
+    def test_transition_health_faults_and_later_mode_one_remain_latched(self):
+        cases=[('stop_transition','temperature_c',81),('stop_transition','errors_raw',1),
+               ('stop_transition','timeout_active',True),('stop_transition','mode',2),
+               ('stop_confirm','mode',1)]
+        for phase,field,value in cases:
+            with self.subTest(phase=phase,field=field):
+                r=self.transitional_feedback(bad_phase=phase,bad_field=field,bad_value=value)
+                self.assertTrue(r['final_disabled_verified'])
+                self.assertTrue(r.get('stop_fault_count'))
+                self.assertFalse(recoverable_motion_stop(r,PLAN))
+
+    def test_recorded_tipping_torque_can_remain_in_first_reply_until_disable_confirmed(self):
+        r=stopped_report('estimated_torque_stop')
+        row=dict(r['final_rows'][0],mode=1,torque_estimate_nm=.151)
+        r['samples']=[dict(attitude=dict(pitch_deg=16.,roll_deg=0.,accel_norm_g=1.),
+                           wheels={0:dict(feedback=row)})]
+        # First stop replies from the successful 0.1.10 recovery: both mode 1,
+        # then mode 0. These are pending motion, not disabled-health samples.
+        r=self.transitional_feedback(report=r,prior_torque=(.12164930555555556,-.15206163194444447))
+        self.assertTrue(r['final_disabled_verified'])
+        self.assertFalse(r.get('stop_fault_count'))
+        self.assertEqual(len(r['pending_motion_at_disable']),2)
+        self.assertTrue(recoverable_motion_stop(r,PLAN))
+
+    def test_pending_motion_never_hides_nonmotion_health_or_confirmation_fault(self):
+        for phase,field,value in [('stop_transition','temperature_c',81),
+                                  ('stop_transition','voltage_v',6),
+                                  ('stop_transition','errors_raw',1),
+                                  ('stop_transition','timeout_active',True),
+                                  ('stop_transition','torque_estimate_nm',float('nan')),
+                                  ('stop_confirm','torque_estimate_nm',.152)]:
+            with self.subTest(phase=phase,field=field):
+                r=self.transitional_feedback(prior_torque=(.152,-.152),
+                    bad_phase=phase,bad_field=field,bad_value=value)
+                self.assertTrue(r['final_disabled_verified'])
+                self.assertTrue(r.get('stop_fault_count'))
+                self.assertFalse(recoverable_motion_stop(r,PLAN))
+        r=self.transitional_feedback(report=stopped_report('late_servo_feedback'),prior_torque=(.152,-.152))
+        self.assertTrue(r.get('stop_fault_count'))
+        self.assertFalse(recoverable_motion_stop(r,PLAN))
+
     def confirmation_fault(self, fault, *, moving=False, phase='stop_confirm', mid=0):
         bus=Bus();report=stopped_report();injected=[]
         def exchange(m):

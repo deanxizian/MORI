@@ -9,7 +9,7 @@ from drive_profile import ResponsiveDriveProfile
 
 PLAN = dict(
     BASE,
-    name='boot_stand_runtime_0_1_11',
+    name='boot_stand_runtime_0_1_12',
     arm_stable_s=1.5,
     arm_pitch_limit_deg=BASE['arm_pitch_limit_deg'],
     arm_roll_limit_deg=min(5., BASE['arm_roll_limit_deg']),

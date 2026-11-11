@@ -68,7 +68,7 @@ def execute(config, calibration):
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         startup = begin_session(state)
         report = dict(utc=datetime.now(timezone.utc).isoformat(), status='FAIL',
-                      runtime_version='0.1.11', continuous=True, config=config, startup=startup,
+                      runtime_version='0.1.12', continuous=True, config=config, startup=startup,
                       evidence_scope='bounded tail, not a complete high-rate recording',
                       imu={}, gc={}, per_id={m:dict(transactions=deque(maxlen=1000)) for m in (0, 1)})
         interrupted = False
